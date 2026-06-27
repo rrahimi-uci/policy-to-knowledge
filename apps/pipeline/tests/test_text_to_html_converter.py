@@ -10,7 +10,40 @@ sys.path.insert(0, str(PROJECT_ROOT))
 from utils.text_to_html_converter import (  # noqa: E402
     convert_text_to_html,
     convert_report_file,
+    convert_all_optimization_reports,
 )
+
+
+RICH_REPORT = """\
+========================================
+COMPLIANCE KNOWLEDGE GRAPH OPTIMIZATION REPORT
+========================================
+Source Document: Fancy <Policy> & Co
+Generated: 2026-06-27
+Model: gpt-4o-mini
+
+Optimization Summary:
+  Total Rules: 197
+  Duplicates Removed: 12
+
+EXECUTIVE OVERVIEW
+----------------------------------------
+This is a sentence. Another sentence follows here.
+
+Strategy:
+- first bullet item
+- second bullet item
+
+Duplicate Group 1
+  Rationale: These rules overlap heavily. They were merged into one.
+  Enhanced Description: A combined rule covering both cases.
+  Severity: high
+
+Duplicate Group 2
+  Note: trivial
+
+A trailing paragraph.
+"""
 
 
 @allure.feature("Pipeline reporting")
@@ -64,3 +97,53 @@ class TestConvertReportFile:
         dest = tmp_path / "out.html"
         out = convert_report_file(src, dest)
         assert out == dest and dest.exists()
+
+    @allure.title("Raises FileNotFoundError for a missing input file")
+    def test_missing_input(self, tmp_path):
+        import pytest
+        with pytest.raises(FileNotFoundError):
+            convert_report_file(tmp_path / "ghost.txt")
+
+    @allure.title("Derives the source document from a pipeline-output path")
+    def test_source_from_pipeline_path(self, tmp_path):
+        d = tmp_path / "pipeline-output" / "bank_a" / "agent-5-optimized"
+        d.mkdir(parents=True)
+        infile = d / "optimization_report.txt"
+        infile.write_text(RICH_REPORT, encoding="utf-8")
+        out = convert_report_file(infile)
+        assert out.exists()
+        assert "bank_a -" in out.read_text(encoding="utf-8")
+
+
+@allure.feature("Pipeline reporting")
+@allure.story("Rich section rendering")
+class TestRichRendering:
+    @allure.title("All section types render and HTML is escaped")
+    def test_full_report(self):
+        html = convert_text_to_html(RICH_REPORT, title="Demo", source_document="Bank A")
+        assert 'class="metadata source-document"' in html
+        assert 'class="summary-item"' in html and "Total Rules" in html
+        assert 'class="section-title"' in html and "EXECUTIVE OVERVIEW" in html
+        assert 'class="subsection-title"' in html        # "Strategy:"
+        assert 'class="list-item"' in html               # bullet points
+        assert 'class="duplicate-group"' in html
+        # The source-document header line is rendered as metadata
+        assert "Fancy" in html
+        assert "&lt;Policy&gt;" in html and "&amp;" in html
+        assert "<Policy>" not in html
+
+
+@allure.feature("Pipeline reporting")
+@allure.story("Batch conversion")
+class TestConvertAll:
+    @allure.title("Returns [] when no optimization reports are present")
+    def test_none_found(self, tmp_path):
+        assert convert_all_optimization_reports(tmp_path) == []
+
+    @allure.title("Converts every matching optimization report")
+    def test_converts_matches(self, tmp_path):
+        d = tmp_path / "g" / "agent-5-optimized"
+        d.mkdir(parents=True)
+        (d / "x_optimization_report.txt").write_text(RICH_REPORT, encoding="utf-8")
+        out = convert_all_optimization_reports(tmp_path)
+        assert len(out) == 1 and out[0].exists()

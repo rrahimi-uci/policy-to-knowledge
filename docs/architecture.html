@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Policy to Knowledge — Architecture</title>
+  <style>
+    :root { --bg:#0b1020; --panel:#121a33; --ink:#e6ebff; --muted:#9aa6c7; --accent:#6ea8fe; --border:#243154; }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.6 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; }
+    header { padding:2rem 1.5rem; border-bottom:1px solid var(--border); background:linear-gradient(180deg,#101736,#0b1020); }
+    header h1 { margin:0 0 .25rem; font-size:1.7rem; }
+    header p { margin:0; color:var(--muted); }
+    .wrap { max-width:1100px; margin:0 auto; padding:1.5rem; }
+    nav.toc { display:flex; flex-wrap:wrap; gap:.5rem; margin:1rem 0 2rem; }
+    nav.toc a { font-size:.85rem; color:var(--accent); text-decoration:none; border:1px solid var(--border); border-radius:999px; padding:.25rem .7rem; }
+    section { margin:2.5rem 0; }
+    h2 { font-size:1.3rem; border-left:3px solid var(--accent); padding-left:.6rem; }
+    p.lead { color:var(--muted); }
+    .diagram { background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:1rem; overflow:auto; }
+    table { width:100%; border-collapse:collapse; margin:1rem 0; font-size:.9rem; }
+    th,td { border:1px solid var(--border); padding:.5rem .6rem; text-align:left; }
+    th { background:#172244; }
+    code { background:#0d1430; border:1px solid var(--border); border-radius:5px; padding:.05rem .35rem; font-size:.85em; }
+    a.home { color:var(--accent); }
+    footer { color:var(--muted); border-top:1px solid var(--border); padding:1.5rem; text-align:center; font-size:.85rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap" style="padding-bottom:0">
+      <h1>Policy to Knowledge — Architecture</h1>
+      <p>How compliance documents become a queryable, traceable knowledge graph. <a class="home" href="index.html">← Back to overview</a></p>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <nav class="toc">
+      <a href="#context">System context</a>
+      <a href="#containers">Containers & ports</a>
+      <a href="#pipeline">Extraction pipeline</a>
+      <a href="#comparison">Graph comparison</a>
+      <a href="#explorer">Explorer runtime</a>
+      <a href="#data">Data layer</a>
+      <a href="#trace">Traceability</a>
+      <a href="#shell">Suite shell</a>
+      <a href="#cicd">CI / testing</a>
+    </nav>
+
+    <section id="context">
+      <h2>1. System context</h2>
+      <p class="lead">Three apps in one monorepo turn source policy documents into an explorable knowledge graph.</p>
+      <pre class="diagram"><code class="language-mermaid">flowchart TB
+    user["Compliance analyst"]
+    docs["Source documents<br/>(PDF / DOCX / MD)"]
+    subgraph P2K["Policy to Knowledge"]
+      shell["Suite Shell (React)"]
+      pipeline["Pipeline (FastAPI + 10 agents)"]
+      explorer["Explorer (Flask + D3)"]
+    end
+    openai["OpenAI API"]
+    data[("JanusGraph · Cassandra<br/>OpenSearch · Redis")]
+
+    user --> shell
+    docs --> pipeline
+    shell --> pipeline
+    shell --> explorer
+    pipeline --> openai
+    explorer --> openai
+    pipeline --> data
+    explorer --> data</code></pre>
+    </section>
+
+    <section id="containers">
+      <h2>2. Containers &amp; ports</h2>
+      <table>
+        <thead><tr><th>Container</th><th>Tech</th><th>Port</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>suite-shell</td><td>React + Vite (nginx)</td><td>4000</td><td>Navigation hub; embeds the apps via iframes</td></tr>
+          <tr><td>kg-frontend</td><td>React + Vite</td><td>5173</td><td>Pipeline UI: upload, run, compare, explore</td></tr>
+          <tr><td>kg-backend</td><td>FastAPI</td><td>8000</td><td>Pipeline API + WebSocket run streaming</td></tr>
+          <tr><td>explorer</td><td>Flask + vanilla JS/D3</td><td>5000</td><td>Graph explorer + AI chat</td></tr>
+          <tr><td>janusgraph</td><td>JanusGraph 1.0</td><td>8182</td><td>Graph database (Gremlin)</td></tr>
+          <tr><td>cassandra</td><td>Cassandra 4.1</td><td>9042</td><td>JanusGraph storage backend</td></tr>
+          <tr><td>opensearch</td><td>OpenSearch 2.17</td><td>9200</td><td>Full-text + k-NN vector index</td></tr>
+          <tr><td>redis</td><td>Redis 7</td><td>6379</td><td>Query cache (LRU)</td></tr>
+        </tbody>
+      </table>
+      <pre class="diagram"><code class="language-mermaid">flowchart LR
+    browser["Browser :4000"] --> shell["suite-shell"]
+    shell -->|iframe| kgfe["kg-frontend :5173"]
+    shell -->|iframe| exp["explorer :5000"]
+    kgfe --> kgbe["kg-backend :8000"]
+    kgbe --> oai["OpenAI"]
+    exp --> jg["janusgraph :8182"]
+    exp --> os["opensearch :9200"]
+    exp --> redis["redis :6379"]
+    jg --> cass["cassandra :9042"]
+    jg --> os</code></pre>
+    </section>
+
+    <section id="pipeline">
+      <h2>3. Extraction pipeline (10 agents)</h2>
+      <p class="lead">Each document flows through six per-document agents; multi-graph merges add agents 7–10.</p>
+      <pre class="diagram"><code class="language-mermaid">flowchart TD
+    A0["Source PDF/DOCX"] --> A1["Agent 1 · Document Organizer<br/>chunk + normalize"]
+    A1 --> A2["Agent 2 · Entity Extractor"]
+    A2 --> A3["Agent 3 · Rules Extractor<br/>(word-balanced batches)"]
+    A3 --> A35["Agent 3.5 · Rule Validator"]
+    A35 --> A4["Agent 4 · Rules + Entities Merger"]
+    A4 --> A5["Agent 5 · KG Optimizer<br/>dedupe + dependencies"]
+    A5 --> A6["Agent 6 · Visualization & Report"]
+    A5 --> KG["optimized_compliance_knowledge_graph.json"]
+
+    subgraph Merge["Multi-graph merge (compare)"]
+      A7["Agent 7 · Rule Clusterer"] --> A8["Agent 8 · Semantic Matcher"]
+      A8 --> A9["Agent 9 · Set Operations"]
+      A9 --> A10["Agent 10 · Set Visualization"]
+    end
+    KG --> A7</code></pre>
+      <p class="lead">Outputs land under <code>pipeline-output/&lt;source&gt;/agent-N-.../</code> (provider-flat). The optimizer emits the canonical KG JSON the Explorer loads.</p>
+    </section>
+
+    <section id="comparison">
+      <h2>4. Graph comparison</h2>
+      <pre class="diagram"><code class="language-mermaid">flowchart LR
+    g1["KG: graph A"] --> M["Agent 7-9<br/>cluster · match · set-ops"]
+    g2["KG: graph B"] --> M
+    M --> U["Union"]
+    M --> I["Intersection"]
+    M --> D["A − B / B − A"]
+    M --> C["Contradictions"]
+    U & I & D & C --> V["Agent 10 · interactive Venn/HTML"]
+    V --> out["pipeline-output/_merged/&lt;a_b&gt;/"]</code></pre>
+    </section>
+
+    <section id="explorer">
+      <h2>5. Explorer runtime</h2>
+      <pre class="diagram"><code class="language-mermaid">sequenceDiagram
+    participant U as User
+    participant E as Explorer (Flask)
+    participant R as Redis
+    participant J as JanusGraph
+    participant O as OpenSearch
+    participant L as OpenAI
+    U->>E: Ask question (SSE)
+    E->>R: cache lookup
+    alt cache miss
+      E->>L: plan tool calls
+      L-->>E: tool (gremlin / semantic_search / …)
+      E->>J: Gremlin traversal (read-only guard)
+      E->>O: k-NN semantic search
+      E->>R: cache result
+    end
+    E-->>U: streamed answer + graph events</code></pre>
+      <p class="lead">The raw Gremlin endpoint is read-only by default (mutating steps require <code>GREMLIN_ALLOW_MUTATIONS=true</code>).</p>
+    </section>
+
+    <section id="data">
+      <h2>6. Data layer</h2>
+      <pre class="diagram"><code class="language-mermaid">flowchart TB
+    subgraph JG["JanusGraph"]
+      V["business_rule / entity_category vertices"]
+      Edg["depends_on / belongs_to_category edges"]
+    end
+    JG --> CASS[("Cassandra<br/>adjacency storage")]
+    JG --> OSF[("OpenSearch<br/>mixed full-text index")]
+    OSK[("OpenSearch k-NN<br/>384-dim embeddings")]
+    SQL[("SQLite app.db<br/>annotations / review state")]
+    V --> OSK
+    explorer["Explorer"] --> JG
+    explorer --> OSK
+    explorer --> SQL</code></pre>
+    </section>
+
+    <section id="trace">
+      <h2>7. Document-to-graph traceability</h2>
+      <p class="lead">Every rule carries a structured <code>source_reference</code> back to the exact document chunk and word range.</p>
+      <pre class="diagram"><code class="language-mermaid">flowchart LR
+    chunk["kbs/&lt;graph&gt;/...md<br/>(document chunk)"] --> rule["business_rule vertex<br/>source_reference {chunk, words}"]
+    rule --> node["Graph node in Explorer"]
+    node -->|click reference| resolve["/api/reference/resolve"]
+    resolve --> chunk
+    resolve --> hl["highlighted source span"]</code></pre>
+    </section>
+
+    <section id="shell">
+      <h2>8. Suite shell &amp; iframe bridge</h2>
+      <pre class="diagram"><code class="language-mermaid">flowchart TB
+    shell["Suite Shell (React Router)"]
+    shell -->|postMessage theme-change| kgfe["Pipeline UI iframe"]
+    shell -->|postMessage theme-change| exp["Explorer iframe"]
+    kgfe -->|navigate / status| shell
+    exp -->|navigate / status| shell
+    note["Origin-checked bridge:<br/>messages validated against an allowlist"]</code></pre>
+    </section>
+
+    <section id="cicd">
+      <h2>9. CI &amp; testing</h2>
+      <pre class="diagram"><code class="language-mermaid">flowchart LR
+    push["push / PR → main"] --> ci{"GitHub Actions"}
+    ci --> p1["pipeline · pytest + cov"]
+    ci --> p2["explorer · pytest + cov"]
+    ci --> p3["shell · vitest + cov + build"]
+    ci --> p4["pipeline-ui · vitest + cov + build"]
+    p1 & p2 & p3 & p4 --> allure["Allure · merged report artifact"]</code></pre>
+      <p class="lead">Every suite emits Allure results and coverage; CI publishes a merged Allure report artifact.</p>
+    </section>
+  </div>
+
+  <footer>Policy to Knowledge · architecture reference · diagrams rendered with Mermaid</footer>
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: false, theme: 'dark' });
+    // Mermaid blocks are authored as <code class="language-mermaid"> inside <pre>.
+    document.querySelectorAll('pre.diagram > code.language-mermaid').forEach((el, i) => {
+      const pre = el.parentElement;
+      const div = document.createElement('div');
+      div.className = 'mermaid';
+      div.textContent = el.textContent;
+      pre.replaceWith(div);
+    });
+    await mermaid.run({ querySelector: '.mermaid' });
+  </script>
+</body>
+</html>
