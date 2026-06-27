@@ -60,6 +60,13 @@ services:
     container_name: jg-server
     ports:
       - "${JANUSGRAPH_PORT:-8182}:8182"
+    # Cap the JVM heap and container memory so JanusGraph fits on memory-
+    # constrained hosts. Without a cap the JVM sizes its heap to a fraction of
+    # total host RAM, which can trigger an OOM kill when other stacks are
+    # running. Override via JANUSGRAPH_MEM_LIMIT / JAVA_OPTIONS if you have room.
+    mem_limit: ${JANUSGRAPH_MEM_LIMIT:-2g}
+    environment:
+      JAVA_OPTIONS: ${JANUSGRAPH_JAVA_OPTIONS:--Xms256m -Xmx1024m}
     volumes:
       # Mount the entire conf/ directory (auto-generated from graphs.yaml).
       # This supports any number of graphs without changing docker-compose.yml.
