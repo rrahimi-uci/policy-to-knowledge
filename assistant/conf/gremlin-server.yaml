@@ -1,0 +1,54 @@
+# Auto-generated from graphs.yaml — DO NOT EDIT
+# JanusGraph Gremlin Server Configuration with Multi-Graph Support
+
+host: 0.0.0.0
+port: 8182
+evaluationTimeout: 120000
+channelizer: org.apache.tinkerpop.gremlin.server.channel.WebSocketChannelizer
+graphManager: org.janusgraph.graphdb.management.JanusGraphManager
+graphs:
+  sample_guidelines: conf-graphs/janusgraph-sample_guidelines.properties
+  example_policies: conf-graphs/janusgraph-example_policies.properties
+scriptEngines:
+  gremlin-groovy:
+    plugins:
+      org.janusgraph.graphdb.tinkerpop.plugin.JanusGraphGremlinPlugin: {}
+      org.apache.tinkerpop.gremlin.server.jsr223.GremlinServerGremlinPlugin: {}
+      org.apache.tinkerpop.gremlin.tinkergraph.jsr223.TinkerGraphGremlinPlugin: {}
+      org.apache.tinkerpop.gremlin.jsr223.ImportGremlinPlugin:
+        classImports:
+        - java.lang.Math
+        methodImports:
+        - java.lang.Math#*
+      org.apache.tinkerpop.gremlin.jsr223.ScriptFileGremlinPlugin:
+        files:
+        - conf-graphs/init-graphs.groovy
+processors:
+- className: org.apache.tinkerpop.gremlin.server.op.session.SessionOpProcessor
+  config:
+    sessionTimeout: 28800000
+- className: org.apache.tinkerpop.gremlin.server.op.traversal.TraversalOpProcessor
+  config:
+    cacheExpirationTime: 600000
+    cacheMaxSize: 1000
+metrics:
+  consoleReporter:
+    enabled: true
+    interval: 180000
+  csvReporter:
+    enabled: true
+    interval: 180000
+    fileName: /tmp/gremlin-server-metrics.csv
+  jmxReporter:
+    enabled: true
+  slf4jReporter:
+    enabled: true
+    interval: 180000
+maxInitialLineLength: 4096
+maxHeaderSize: 8192
+maxChunkSize: 65536
+maxContentLength: 10485760
+maxAccumulationBufferComponents: 1024
+resultIterationBatchSize: 32
+writeBufferLowWaterMark: 1048576
+writeBufferHighWaterMark: 10485760

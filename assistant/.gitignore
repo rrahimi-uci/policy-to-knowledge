@@ -1,0 +1,35 @@
+# Byte-compiled
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Environment variables (contains secrets)
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Model cache
+models/
+*.bin
+*.onnx
+
+# Redis dump
+dump.rdb
+
+# SQLite database
+app.db

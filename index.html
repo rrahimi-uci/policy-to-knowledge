@@ -1,0 +1,1939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Policy to Knowledge — Documentation</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<style>
+  /* ── Reset & Base ──────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #ffffff; --bg-card: #f6f8fa; --bg-card-hover: #eef1f5;
+    --border: #d1d9e0; --border-light: #e1e4e8;
+    --text: #1f2328; --text-muted: #59636e; --text-dim: #8b949e;
+    --accent: #0969da; --accent-glow: rgba(9,105,218,.08);
+    --green: #1a7f37; --green-bg: rgba(26,127,55,.08);
+    --purple: #8250df; --purple-bg: rgba(130,80,223,.08);
+    --orange: #bf8700; --orange-bg: rgba(191,135,0,.08);
+    --red: #cf222e; --red-bg: rgba(207,34,46,.08);
+    --cyan: #0891b2; --cyan-bg: rgba(8,145,178,.08);
+    --pink: #d63384;
+    --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    --mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'SF Mono', Menlo, monospace;
+    --radius: 12px; --radius-sm: 8px;
+    --shadow: 0 8px 32px rgba(0,0,0,.08);
+    --nav-w: 280px;
+  }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+  a { color: var(--accent); text-decoration: none; transition: color .2s; }
+  a:hover { color: #0550ae; text-decoration: underline; }
+  img { max-width: 100%; border-radius: var(--radius); }
+  code, pre {
+    font-family: var(--mono);
+    font-size: .875rem;
+  }
+  code {
+    background: rgba(175,184,193,.2);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #0550ae;
+  }
+  pre {
+    background: #f6f8fa;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.25rem;
+    overflow-x: auto;
+    line-height: 1.5;
+  }
+  pre code {
+    background: none;
+    padding: 0;
+    color: var(--text);
+  }
+  ::selection {
+    background: rgba(9,105,218,.2);
+  }
+
+  /* ── Layout ────────────────────────────────── */
+  .layout {
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* ── Sidebar Nav ───────────────────────────── */
+  .sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    width: var(--nav-w);
+    height: 100vh;
+    background: var(--bg-card);
+    border-right: 1px solid var(--border);
+    padding: 2rem 0;
+    overflow-y: auto;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+  }
+  .sidebar-brand {
+    text-align: center;
+    padding: 0 1.5rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .sidebar-brand .logo {
+    width: 56px; height: 56px;
+    border-radius: 14px;
+    margin-bottom: .5rem;
+    box-shadow: 0 0 20px rgba(9,105,218,.1);
+  }
+  .sidebar-brand h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -.02em;
+    background: linear-gradient(135deg, var(--accent), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .sidebar-brand p {
+    font-size: .72rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+  .nav-section {
+    padding: 1.25rem 1.25rem .5rem;
+    font-size: .65rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 1.5rem;
+    font-size: .85rem;
+    color: var(--text-muted);
+    transition: all .2s;
+    border-left: 3px solid transparent;
+    text-decoration: none;
+  }
+  .nav-link:hover {
+    color: var(--text);
+    background: var(--accent-glow);
+    border-left-color: var(--accent);
+    text-decoration: none;
+  }
+  .nav-link .icon { font-size: 1rem; width: 20px; text-align: center; }
+  .sidebar-footer {
+    margin-top: auto;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-size: .7rem;
+    color: var(--text-dim);
+  }
+
+  /* ── Main Content ──────────────────────────── */
+  .main {
+    margin-left: var(--nav-w);
+    flex: 1;
+    padding: 3rem 4rem 6rem;
+  }
+
+  /* ── Hero ──────────────────────────────────── */
+  .hero {
+    text-align: center;
+    padding: 4rem 2rem 3rem;
+    margin-bottom: 3rem;
+    background: linear-gradient(145deg, rgba(9,105,218,.04), rgba(130,80,223,.04));
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle at 30% 30%, rgba(9,105,218,.05), transparent 60%),
+                radial-gradient(circle at 70% 70%, rgba(130,80,223,.04), transparent 60%);
+    animation: hero-glow 8s ease-in-out infinite alternate;
+  }
+  @keyframes hero-glow {
+    from { transform: translate(0,0); }
+    to   { transform: translate(-5%,-5%); }
+  }
+  .hero > * { position: relative; z-index: 1; }
+  .hero h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: -.04em;
+    line-height: 1.15;
+    margin-bottom: .75rem;
+    background: linear-gradient(135deg, #1f2328, var(--accent), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero .tagline {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+  }
+  .hero .badge-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 12px;
+    border-radius: 99px;
+    font-size: .75rem;
+    font-weight: 600;
+  }
+  .badge-blue   { background: var(--accent-glow); color: var(--accent); border: 1px solid rgba(9,105,218,.2); }
+  .badge-green  { background: var(--green-bg); color: var(--green); border: 1px solid rgba(26,127,55,.2); }
+  .badge-purple { background: var(--purple-bg); color: var(--purple); border: 1px solid rgba(130,80,223,.2); }
+  .badge-orange { background: var(--orange-bg); color: var(--orange); border: 1px solid rgba(191,135,0,.2); }
+  .badge-red    { background: var(--red-bg); color: var(--red); border: 1px solid rgba(207,34,46,.2); }
+  .badge-cyan   { background: var(--cyan-bg); color: var(--cyan); border: 1px solid rgba(8,145,178,.2); }
+
+  /* ── Sections ──────────────────────────────── */
+  section { margin-bottom: 4rem; }
+  section > h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    padding-bottom: .75rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: -.02em;
+  }
+  section > h2 .sec-icon {
+    font-size: 1.3rem;
+  }
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 2rem 0 .75rem;
+    color: var(--text);
+  }
+  h4 {
+    font-size: .95rem;
+    font-weight: 600;
+    margin: 1.5rem 0 .5rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: .04em;
+  }
+  p { margin-bottom: 1rem; color: var(--text-muted); }
+
+  /* ── Cards ─────────────────────────────────── */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+    transition: border-color .3s, box-shadow .3s;
+  }
+  .card:hover {
+    border-color: rgba(9,105,218,.3);
+    box-shadow: 0 4px 20px rgba(9,105,218,.06);
+  }
+  .card h3 { margin-top: 0; }
+
+  /* ── Stat Cards ────────────────────────────── */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    text-align: center;
+  }
+  .stat-card .stat-value {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+  .stat-card .stat-label {
+    font-size: .78rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  /* ── Feature Grid ──────────────────────────── */
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .feature-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    transition: all .3s;
+  }
+  .feature-card:hover {
+    border-color: rgba(9,105,218,.3);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  }
+  .feature-card .f-icon {
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+  }
+  .feature-card h4 {
+    font-size: .9rem;
+    margin: 0 0 .4rem;
+    color: var(--text);
+    text-transform: none;
+    letter-spacing: normal;
+  }
+  .feature-card p {
+    font-size: .82rem;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* ── Agent Pipeline ────────────────────────── */
+  .agent-pipeline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+    margin: 1rem 0 2rem;
+  }
+  .agent-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 99px;
+    font-size: .78rem;
+    font-weight: 600;
+    border: 1px solid;
+    white-space: nowrap;
+  }
+  .agent-chip .num {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .7rem;
+    font-weight: 700;
+  }
+  .phase-extract .num { background: rgba(88,166,255,.2); color: var(--accent); }
+  .phase-extract { border-color: rgba(88,166,255,.25); color: var(--accent); }
+  .phase-merge .num { background: rgba(188,140,255,.2); color: var(--purple); }
+  .phase-merge { border-color: rgba(188,140,255,.25); color: var(--purple); }
+  .agent-arrow {
+    display: flex;
+    align-items: center;
+    color: var(--text-dim);
+    font-size: 1rem;
+  }
+
+  /* ── Screenshot Gallery ────────────────────── */
+  .screenshot-gallery {
+    display: grid;
+    gap: 2rem;
+    margin: 1.5rem 0;
+  }
+  .screenshot-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: all .3s;
+  }
+  .screenshot-item:hover {
+    border-color: rgba(9,105,218,.3);
+    box-shadow: var(--shadow);
+  }
+  .screenshot-item img {
+    width: 100%;
+    display: block;
+    border-radius: 0;
+    transition: transform .3s;
+  }
+  .screenshot-item:hover img {
+    transform: scale(1.01);
+  }
+  .screenshot-caption {
+    padding: 1rem 1.25rem;
+    border-top: 1px solid var(--border);
+  }
+  .screenshot-caption h4 {
+    margin: 0 0 .25rem;
+    font-size: .9rem;
+    color: var(--text);
+    text-transform: none;
+    letter-spacing: normal;
+  }
+  .screenshot-caption p {
+    margin: 0;
+    font-size: .8rem;
+  }
+
+  /* ── Step List ─────────────────────────────── */
+  .step-list {
+    counter-reset: step;
+    list-style: none;
+    padding: 0;
+  }
+  .step-list > li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 56px;
+    margin-bottom: 2rem;
+    min-height: 40px;
+  }
+  .step-list > li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0; top: 0;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--purple));
+    color: #fff;
+    font-size: .85rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 12px rgba(9,105,218,.2);
+  }
+  .step-list > li::after {
+    content: '';
+    position: absolute;
+    left: 17px; top: 40px;
+    bottom: -2rem;
+    width: 2px;
+    background: var(--border);
+  }
+  .step-list > li:last-child::after { display: none; }
+  .step-list h3 { margin: 0 0 .5rem; font-size: 1rem; }
+  .step-list p { font-size: .88rem; margin-bottom: .5rem; }
+
+  /* ── Tables ────────────────────────────────── */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 1rem 0 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .85rem;
+  }
+  thead { background: rgba(110,118,129,.08); }
+  th {
+    text-align: left;
+    padding: 10px 14px;
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: .78rem;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    border-bottom: 1px solid var(--border);
+  }
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-muted);
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(110,118,129,.04); }
+
+  /* ── Mermaid ───────────────────────────────── */
+  .mermaid-wrap {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2.5rem 2rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    text-align: center;
+  }
+  .mermaid {
+    display: inline-block;
+    min-width: 700px;
+    width: 100%;
+  }
+  .mermaid svg {
+    max-width: 100%;
+    height: auto;
+    min-height: 400px;
+  }
+
+  /* ── CLI Reference ─────────────────────────── */
+  .cli-block {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+  }
+  .cli-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: rgba(110,118,129,.06);
+    border-bottom: 1px solid var(--border);
+    font-size: .78rem;
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+  .cli-header .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .cli-header .dot-r { background: #ff5f56; }
+  .cli-header .dot-y { background: #ffbd2e; }
+  .cli-header .dot-g { background: #27c93f; }
+  .cli-block pre {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    padding: 1rem 1.25rem;
+  }
+  .cli-block pre code .comment { color: #6e7681; }
+  .cli-block pre code .cmd { color: var(--green); }
+  .cli-block pre code .flag { color: var(--orange); }
+  .cli-block pre code .arg { color: var(--purple); }
+
+  /* ── Accordion ─────────────────────────────── */
+  details {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    margin-bottom: .75rem;
+  }
+  details[open] { border-color: rgba(9,105,218,.2); }
+  summary {
+    padding: 12px 16px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: .9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    list-style: none;
+    user-select: none;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::before {
+    content: '▸';
+    font-size: .8rem;
+    color: var(--text-dim);
+    transition: transform .2s;
+  }
+  details[open] summary::before { transform: rotate(90deg); }
+  details > div {
+    padding: 0 16px 16px;
+    font-size: .88rem;
+  }
+
+  /* ── Back to top ───────────────────────────── */
+  .top-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(9,105,218,.25);
+    opacity: 0;
+    transition: opacity .3s;
+    z-index: 200;
+  }
+  .top-btn.show { opacity: 1; }
+
+  /* ── Responsive ────────────────────────────── */
+  @media (max-width: 900px) {
+    .sidebar { display: none; }
+    .main { margin-left: 0; padding: 2rem 1.5rem; max-width: 100%; }
+    .mermaid { min-width: 500px; }
+    .mermaid svg { min-height: 300px; }
+    .hero h1 { font-size: 2rem; }
+    .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .stat-grid { grid-template-columns: 1fr; }
+    .feature-grid { grid-template-columns: 1fr; }
+    .hero { padding: 2.5rem 1rem 2rem; }
+    .hero h1 { font-size: 1.5rem; }
+  }
+
+  /* Intro video player */
+  .video-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #0c0a18;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 16px 48px rgba(9,105,218,.18);
+    margin: 1.25rem 0;
+  }
+  .video-frame video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: #0c0a18;
+  }
+  .video-meta {
+    font-size: .875rem;
+    color: var(--text-muted);
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════ SIDEBAR NAV ═══════════════════════ -->
+<nav class="sidebar">
+  <div class="sidebar-brand">
+    <img src="frontend/public/logo.svg" alt="Policy to Knowledge Logo" class="logo">
+    <h2>Policy to Knowledge</h2>
+    <p>Compliance Knowledge Extraction,<br>Exploration, Editing &amp; Versioning</p>
+  </div>
+
+  <div class="nav-section">Overview</div>
+  <a href="#intro" class="nav-link"><span class="icon">▶️</span> Watch the intro</a>
+  <a href="#goal" class="nav-link"><span class="icon">🎯</span> Goal &amp; Use Case</a>
+  <a href="#features" class="nav-link"><span class="icon">✨</span> Key Features</a>
+
+  <div class="nav-section">Architecture</div>
+  <a href="#architecture" class="nav-link"><span class="icon">🏗️</span> System Architecture</a>
+  <a href="#pipeline-arch" class="nav-link"><span class="icon">🤖</span> AI Pipeline</a>
+  <a href="#prompt-arch" class="nav-link"><span class="icon">📝</span> Prompt Architecture</a>
+  <a href="#data-arch" class="nav-link"><span class="icon">🗄️</span> Data Architecture</a>
+  <a href="#tech-stack" class="nav-link"><span class="icon">⚡</span> Technology Stack</a>
+
+  <div class="nav-section">User Guide</div>
+  <a href="#walkthrough" class="nav-link"><span class="icon">📖</span> Step-by-Step Usage</a>
+  <a href="#screenshots" class="nav-link"><span class="icon">📸</span> Screenshots</a>
+
+  <div class="nav-section">Developer</div>
+  <a href="#installation" class="nav-link"><span class="icon">⬇️</span> Installation Guide</a>
+  <a href="#cli" class="nav-link"><span class="icon">💻</span> CLI Reference</a>
+  <a href="#api" class="nav-link"><span class="icon">🔌</span> API Endpoints</a>
+  <a href="#deployment" class="nav-link"><span class="icon">☁️</span> Deployment</a>
+
+  <div class="sidebar-footer">
+    &copy; 2025 Policy to Knowledge &middot; Policy to Knowledge v1.0
+  </div>
+</nav>
+
+<!-- ═══════════════════════ MAIN CONTENT ═══════════════════════ -->
+<div class="main">
+
+<!-- ── Hero ─────────────────────────────────────────────────── -->
+<header class="hero">
+  <h1>Policy to Knowledge</h1>
+  <p class="tagline">Enterprise compliance automation that transforms regulatory documents into structured, queryable knowledge graphs using a 10-agent AI pipeline.</p>
+  <div class="badge-row">
+    <span class="badge badge-blue">10-Agent Pipeline</span>
+    <span class="badge badge-green">Knowledge Graphs</span>
+    <span class="badge badge-purple">AI Chat Explorer</span>
+    <span class="badge badge-orange">Multi-Domain</span>
+    <span class="badge badge-cyan">Semantic Search</span>
+  </div>
+</header>
+
+<!-- ╔═══════════════════════════════════════════════════════════╗ -->
+<!-- ║  WATCH THE INTRO                                         ║ -->
+<!-- ╚═══════════════════════════════════════════════════════════╝ -->
+<section id="intro">
+  <h2><span class="sec-icon">▶️</span> Watch the intro</h2>
+  <p>A narrated walkthrough of the Policy to Knowledge — the 10-agent extraction pipeline, knowledge-graph exploration, and the UI surfaces from a single rule set through publish.</p>
+  <div class="video-frame">
+    <video controls preload="metadata" playsinline>
+      <source src="video/output/policy-to-knowledge.mp4" type="video/mp4">
+      Your browser does not support embedded video.
+      <a href="video/output/policy-to-knowledge.mp4">Download the MP4</a>
+      or
+      <a href="video/presentation.html">open the interactive slide deck</a>.
+    </video>
+  </div>
+  <p class="video-meta">
+    Narrated · 1920 × 1080 · MP4 ·
+    <a href="video/output/policy-to-knowledge.mp4">download</a> ·
+    <a href="video/presentation.html" target="_blank">open the interactive deck ↗</a>
+  </p>
+</section>
+
+<!-- ╔═══════════════════════════════════════════════════════════╗ -->
+<!-- ║  1. GOAL & USE CASE                                      ║ -->
+<!-- ╚═══════════════════════════════════════════════════════════╝ -->
+<section id="goal">
+  <h2><span class="sec-icon">🎯</span> Goal &amp; Use Case</h2>
+
+  <p>Policy to Knowledge is an enterprise compliance automation platform built by <strong>Policy to Knowledge</strong>. It addresses the challenge of navigating complex, interconnected regulatory rule sets where relationships between rules are as critical as the rules themselves.</p>
+
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-value" style="color:var(--accent)">10</div>
+      <div class="stat-label">AI Agents in Pipeline</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" style="color:var(--green)">2,000+</div>
+      <div class="stat-label">Rules Extracted</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" style="color:var(--purple)">4</div>
+      <div class="stat-label">Compliance Domains</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" style="color:var(--orange)">88.6%</div>
+      <div class="stat-label">Avg. Confidence Score</div>
+    </div>
+  </div>
+
+  <h3>The Problem</h3>
+  <p>Financial compliance requires navigating complex, interconnected rule sets where rules reference and depend on other rules (transitive dependencies), relationships are first-class domain concepts, natural language queries must resolve to precise requirements, and multi-hop relationships must be understood for rule interpretation.</p>
+
+  <h3>The Solution</h3>
+  <p>Policy to Knowledge unifies <strong>document extraction</strong>, <strong>graph storage</strong>, <strong>semantic search</strong>, and an <strong>interactive AI-powered explorer</strong> into a single interface. It automatically ingests compliance documents (PDF, DOCX, Markdown, CSV, Excel), extracts business rules and entities using a multi-agent AI pipeline, builds a structured knowledge graph, and provides intelligent exploration through natural language chat, graph visualization, impact analysis, and obligation tracking.</p>
+
+  <h3>Supported Domains</h3>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="f-icon">🏠</div>
+      <h4>Mortgage Lending</h4>
+      <p>Fannie Mae, Freddie Mac, Policy to Knowledge Guidelines, PRMI, Revolution overlays</p>
+    </div>
+    <div class="feature-card">
+      <div class="f-icon">🏦</div>
+      <h4>Anti-Money Laundering</h4>
+      <p>Absa, Barclays — AML compliance rules and entity relationships</p>
+    </div>
+    <div class="feature-card">
+      <div class="f-icon">💼</div>
+      <h4>Commercial Lending</h4>
+      <p>Business lending compliance rules and regulatory frameworks</p>
+    </div>
+    <div class="feature-card">
+      <div class="f-icon">🏥</div>
+      <h4>Healthcare</h4>
+      <p>Healthcare regulatory compliance and policy enforcement</p>
+    </div>
+  </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════════════════════╗ -->
+<!-- ║  KEY FEATURES                                            ║ -->
+<!-- ╚═══════════════════════════════════════════════════════════╝ -->
+<section id="features">
+  <h2><span class="sec-icon">✨</span> Key Features</h2>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="f-icon">🤖</div>
+      <h4>10-Agent AI Pipeline</h4>
+      <p>Automated extraction from documents through entities, rules, validation, optimization, and visualization.</p>
+    </div>
+    <div class="feature-card">
+      <div class="f-icon">💬</div>
+      <h4>AI Chat Assistant</h4>
+      <p>GPT-4o powered conversational agent with 12 tool calls for graph traversal, semantic search, and analysis.</p>
+    </div>
+    <div class="feature-card">
+      <div class="f-icon">🕸️</div>
+      <h4>Interactive Graph Explorer</h4>
+      <p>D3.js force-directed visualization with zoom, click-to-inspect, color-coded node types, and live search.</p>
+    </div>
+    <div class="feature-card">
+      <div class="f-icon">🔀</div>
+      <h4>Knowledge Graph Merging</h4>
+      <p>Compare graphs with intersection, union, differences, contradictions, and AI-powered semantic matching.</p>
+    </div>
+    <div class="feature-card">
+      <div class="f-icon">📊</div>
+      <h4>Graph Analytics</h4>
+      <p>Rule type distribution, risk levels, dependency analysis, confidence scores, and entity coverage charts.</p>
+    </div>
+    <div class="feature-card">
+      <div class="f-icon">⚡</div>
+      <h4>Impact Analysis</h4>
+      <p>Upload old and new regulatory docs to identify affected rules, severity, and recommended actions.</p>
+    </div>
+    <div class="feature-card">
+      <div class="f-icon">📋</div>
+      <h4>Obligation Tracking</h4>
+      <p>Map internal controls to compliance obligations, identify coverage gaps, and generate heatmaps.</p>
+    </div>
+    <div class="feature-card">
+      <div class="f-icon">🔖</div>
+      <h4>Release Management</h4>
+      <p>Create immutable graph snapshots with semantic versioning, lock graphs, and browse release history.</p>
+    </div>
+    <div class="feature-card">
+      <div class="f-icon">🔍</div>
+      <h4>Semantic + Full-Text Search</h4>
+      <p>OpenSearch k-NN with sentence-transformer embeddings plus JanusGraph mixed index full-text search.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════════════════════╗ -->
+<!-- ║  2. ARCHITECTURE                                         ║ -->
+<!-- ╚═══════════════════════════════════════════════════════════╝ -->
+<section id="architecture">
+  <h2><span class="sec-icon">🏗️</span> System Architecture</h2>
+
+  <p>Policy to Knowledge is composed of three tightly integrated applications orchestrated via Docker Compose, with a central navigation hub (Suite Shell) routing to all services.</p>
+
+  <h3>High-Level Architecture</h3>
+  <div class="mermaid-wrap">
+    <pre class="mermaid">
+graph TD
+    Browser["🌐 Browser"]
+
+    subgraph FE["Frontend Layer"]
+        Shell["Suite Shell<br/>React + Vite · :4000"]
+        PipeUI["Pipeline UI<br/>React + Vite · :5173"]
+        CopilotUI["KG Explorer<br/>D3.js · :5000"]
+    end
+
+    subgraph BE["Backend Layer"]
+        PipeAPI["Pipeline API<br/>FastAPI · :8000"]
+        CopilotAPI["Assistant<br/>Flask · :5000"]
+    end
+
+    subgraph AI["AI Inference"]
+        LiteLLM["LiteLLM"]
+        OpenAI["OpenAI GPT"]
+        Anthropic["Anthropic Claude"]
+    end
+
+    subgraph Data["Data Layer"]
+        JanusGraph["JanusGraph · :8182<br/>Graph Database"]
+        Cassandra["Apache Cassandra · :9042<br/>Storage Backend"]
+        OpenSearch["OpenSearch · :9200<br/>Full-text + Vector k-NN"]
+        Redis["Redis · :6379<br/>Query Cache LRU"]
+    end
+
+    Browser --> Shell
+    Shell -->|"iframe"| PipeUI
+    Shell -->|"iframe"| CopilotUI
+    PipeUI --> PipeAPI
+    CopilotUI --> CopilotAPI
+    PipeAPI --> LiteLLM
+    LiteLLM --> OpenAI
+    LiteLLM --> Anthropic
+    CopilotAPI --> Redis
+    CopilotAPI --> JanusGraph
+    JanusGraph --> Cassandra
+    JanusGraph --> OpenSearch
+    </pre>
+  </div>
+
+  <h3>Layered Service Architecture</h3>
+  <div class="mermaid-wrap">
+    <pre class="mermaid">
+graph TB
+    subgraph Presentation["Presentation Layer"]
+        UI["Web Client — D3.js + EventSource API<br/>Visualization · User Interaction · SSE"]
+    end
+
+    subgraph Application["Application Layer"]
+        API["REST API Gateway — Flask + CORS<br/>Request Routing · Auth · Rate Limiting"]
+        ConnMgr["Connection Manager — Singleton Pools<br/>Resource Lifecycle · Circuit Breaking"]
+    end
+
+    subgraph Services["Service Layer"]
+        AIOrch["AI Orchestration — GPT-4o + Tool Calling<br/>Query Understanding · Tool Selection"]
+        GraphSvc["Graph Query Service — Gremlin<br/>Traversals · Pattern Matching"]
+        VectorSvc["Vector Search — Embeddings + k-NN<br/>Semantic Similarity · Ranking"]
+    end
+
+    subgraph DataLayer["Data Layer"]
+        GraphDB[("JanusGraph<br/>Multi-Graph")]
+        VectorDB[("OpenSearch<br/>k-NN Index")]
+        Cache[("Redis<br/>LRU Cache")]
+    end
+
+    UI --> API
+    API --> ConnMgr
+    API --> AIOrch
+    AIOrch --> GraphSvc
+    AIOrch --> VectorSvc
+    ConnMgr --> GraphDB
+    ConnMgr --> VectorDB
+    GraphSvc --> ConnMgr
+    VectorSvc --> ConnMgr
+    Cache -.-> GraphSvc
+    Cache -.-> VectorSvc
+    </pre>
+  </div>
+
+  <h3>Startup Sequence</h3>
+  <div class="mermaid-wrap">
+    <pre class="mermaid">
+sequenceDiagram
+    participant S as start.sh
+    participant C as Cassandra :9042
+    participant O as OpenSearch :9200
+    participant R as Redis :6379
+    participant J as JanusGraph :8182
+    participant P as Pipeline API :8000
+    participant U as Pipeline UI :5173
+    participant K as Assistant :5000
+    participant F as Suite Shell :4000
+
+    S->>C: start + health check
+    S->>O: start + health check
+    S->>R: start + health check
+    S->>J: start (depends on C + O)
+    J-->>S: ready
+    S->>P: start FastAPI
+    S->>U: start Vite dev server
+    S->>K: load KGs into JanusGraph
+    K-->>S: graphs loaded
+    S->>K: start Flask server
+    S->>F: start Vite dev server
+    F-->>S: Suite ready at localhost:4000
+    </pre>
+  </div>
+</section>
+
+<!-- ── Pipeline Architecture ─────────────────────────────────── -->
+<section id="pipeline-arch">
+  <h2><span class="sec-icon">🤖</span> AI Pipeline Architecture</h2>
+
+  <p>Policy to Knowledge (<strong>CO</strong>mpliance <strong>R</strong>ules <strong>T</strong>ransformation &amp; <strong>EX</strong>traction) uses a 10-agent pipeline divided into two phases: extraction and merging.</p>
+
+  <h3>Pipeline Flow</h3>
+  <div class="mermaid-wrap">
+    <pre class="mermaid">
+flowchart TB
+    Docs["📄 Compliance Documents\nPDF · DOCX · MD · CSV · XLSX"]
+
+    subgraph Extraction["Phase 1 — Extraction Pipeline"]
+        direction TB
+
+        A1["🗂️ Agent 1 — Document Organizer\nTOC-based hierarchical chunking\nSplits documents into structured sections"]
+        A1out["📁 Organized Chunks\nknowledge-files-organized/"]
+
+        A2["🔍 Agent 2 — Entity Extractor\nMeta-agent prompt optimization\nExtracts domain entities &amp; relationships"]
+        A2out["📋 Entity Definitions\nentity_types_and_relationships.json"]
+
+        A3["⚖️ Agent 3 — Rules Extractor\nParallel batch processing\n10-category rule taxonomy"]
+        A3out["📜 Business Rules\ncompliance_rules_with_entities.json"]
+
+        A35["✅ Agent 3.5 — Rule Validator\nSource verification · Numeric consistency\nContradiction detection · Confidence scoring"]
+        A35out["📊 Validation Report\nvalidation_report.json"]
+
+        A4["🔗 Agent 4 — Rules + Entities Merger\nEnriches rules with entity context\nAssembles complete knowledge graph"]
+        A4out["🗃️ Complete Knowledge Graph\ncompliance_knowledge_graph.json"]
+
+        A5["⚡ Agent 5 — KG Optimizer\nRule deduplication · 7 dependency types\nImpact analysis &amp; confidence scoring"]
+        A5out["💎 Optimized Knowledge Graph\noptimized_compliance_knowledge_graph.json"]
+
+        A6["🎨 Agent 6 — Visualization Generator\nvis.js network graphs\nSearchable rule tables &amp; metrics"]
+        A6out["🌐 Interactive HTML Report\n{name}_knowledge_graph.html"]
+
+        A1 --> A1out --> A2
+        A2 --> A2out --> A3
+        A3 --> A3out --> A35
+        A35 --> A35out -.->|non-blocking| A4
+        A2out -->|entities| A4
+        A3out -->|rules| A4
+        A4 --> A4out --> A5
+        A5 --> A5out --> A6
+        A6 --> A6out
+    end
+
+    subgraph Merging["Phase 2 — Merge Pipeline (Multi-Graph Comparison)"]
+        direction TB
+
+        KG_A["📊 Knowledge Graph A"]
+        KG_B["📊 Knowledge Graph B"]
+
+        A7["📦 Agent 7 — Rule Type Clusterer\nGroups by behavior type\nformula · threshold · sequence\nmethod · mandate · prohibition\nclassification · timing"]
+        A7out["🏷️ Rule Clusters\nrule_clusters.json"]
+
+        A8["🧠 Agent 8 — Semantic Rule Matcher\nLLM-powered pairwise comparison\nBatch parallelism for scale\nIDENTICAL · EQUIVALENT\nCONTRADICTORY · UNRELATED"]
+        A8out["🔎 Match Results\nmatch_results.json"]
+
+        A9["🔀 Agent 9 — Set Operations\nComputes 5 set operations"]
+        A9i["∩ Intersection"]
+        A9u["∪ Union"]
+        A9d1["A \\ B Difference"]
+        A9d2["B \\ A Difference"]
+        A9c["⚠️ Contradictions"]
+
+        A10["📈 Agent 10 — Set Visualization\nVenn diagrams · Dashboard\nComparison HTML reports"]
+        A10out["🌐 6 HTML Reports\nindex · intersection · union\ndifferences · contradictions"]
+
+        KG_A --> A7
+        KG_B --> A7
+        A7 --> A7out --> A8
+        A8 --> A8out --> A9
+        A9 --> A9i
+        A9 --> A9u
+        A9 --> A9d1
+        A9 --> A9d2
+        A9 --> A9c
+        A9i --> A10
+        A9u --> A10
+        A9d1 --> A10
+        A9d2 --> A10
+        A9c --> A10
+        A10 --> A10out
+    end
+
+    subgraph Infra["AI Infrastructure"]
+        LLM["🤖 LLM Provider\nOpenAI GPT · Anthropic Claude\nvia LiteLLM unified interface"]
+    end
+
+    Docs --> A1
+    A6out -->|"Per-document KG"| KG_A
+    A6out -->|"Per-document KG"| KG_B
+    A3 -.->|API calls| LLM
+    A2 -.->|API calls| LLM
+    A5 -.->|API calls| LLM
+    A8 -.->|API calls| LLM
+    </pre>
+  </div>
+
+  <h3>Extraction Agents (1–6)</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Agent</th><th>Name</th><th>Input</th><th>Output</th><th>Key Techniques</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="badge badge-blue">1</span></td>
+          <td><strong>Document Organizer</strong></td>
+          <td>Raw compliance files (PDF, DOCX, MD, CSV, XLSX)</td>
+          <td><code>knowledge-files-organized/</code> — hierarchical text chunks</td>
+          <td>TOC-based hierarchical splitting; supports multi-format parsing via PyPDF2, python-docx, pandas, openpyxl; OCR fallback via pytesseract</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-blue">2</span></td>
+          <td><strong>Entity Extractor</strong></td>
+          <td>Organized document chunks</td>
+          <td><code>entity_types_and_relationships.json</code> — entities &amp; relationship definitions</td>
+          <td>Meta-agent prompt optimization; iterative entity refinement loop; extracts domain entities (borrower, property, loan, etc.) with typed relationships</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-blue">3</span></td>
+          <td><strong>Rules Extractor</strong></td>
+          <td>Organized chunks + entity definitions</td>
+          <td><code>compliance_rules_with_entities.json</code> — structured business rules</td>
+          <td>Parallel batch processing (10 rules/batch) for 3–10× speedup; 10-category rule taxonomy (eligibility, calculation, validation, threshold, prohibition, timing, method, mandate, classification, reporting)</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-blue">3.5</span></td>
+          <td><strong>Rule Validator</strong></td>
+          <td>Extracted business rules</td>
+          <td><code>validation_report.json</code> — quality scores &amp; recommendations</td>
+          <td>Non-blocking validation; source text verification; numeric consistency checks; contradiction detection; per-rule confidence scoring (0.0–1.0)</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-blue">4</span></td>
+          <td><strong>Rules + Entities Merger</strong></td>
+          <td>Entity definitions (Agent 2) + Business rules (Agent 3)</td>
+          <td><code>compliance_knowledge_graph.json</code> — complete KG</td>
+          <td>Dual-input assembly; enriches every rule with entity context; links rules to governing entities; batch parallelism for large graphs</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-blue">5</span></td>
+          <td><strong>KG Optimizer</strong></td>
+          <td>Complete knowledge graph</td>
+          <td><code>optimized_compliance_knowledge_graph.json</code> — deduplicated KG with dependencies</td>
+          <td>Conservative rule deduplication with rationale; 7 dependency types (prerequisite, sequential, conditional, complementary, contradictory, override, validation); impact analysis per dependency</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-blue">6</span></td>
+          <td><strong>Visualization Generator</strong></td>
+          <td>Optimized knowledge graph</td>
+          <td><code>{name}_knowledge_graph.html</code> — interactive report</td>
+          <td>vis.js network graph with color-coded dependency edges; searchable rules table; 5 key metrics dashboard (rules, dependencies, confidence, low-confidence alerts, duplicates removed); responsive design</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Merge Agents (7–10)</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Agent</th><th>Name</th><th>Input</th><th>Output</th><th>Key Techniques</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="badge badge-purple">7</span></td>
+          <td><strong>Rule Type Clusterer</strong></td>
+          <td>Two knowledge graphs (KG A + KG B)</td>
+          <td><code>rule_clusters.json</code> — rules grouped by behavior</td>
+          <td>Groups rules into 8 behavior types: formula, classification, threshold, prohibition, timing, sequence, method, mandate; reduces comparison space for downstream matching</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-purple">8</span></td>
+          <td><strong>Semantic Rule Matcher</strong></td>
+          <td>Clustered rules by behavior type</td>
+          <td><code>match_results.json</code> — pairwise match classifications with confidence</td>
+          <td>LLM-powered pairwise comparison within each cluster; batch parallelism for scale; classifies each pair as IDENTICAL, EQUIVALENT, CONTRADICTORY, or UNRELATED with confidence score</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-purple">9</span></td>
+          <td><strong>Set Operations</strong></td>
+          <td>Semantic match results</td>
+          <td>5 JSON files: <code>intersection.json</code>, <code>union.json</code>, <code>g1_minus_g2.json</code>, <code>g2_minus_g1.json</code>, <code>contradictions.json</code></td>
+          <td>Computes intersection (rules in both graphs), union (all unique rules), A∖B and B∖A differences (exclusive rules), and contradictions (conflicting rule pairs) with AI-generated analysis</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-purple">10</span></td>
+          <td><strong>Set Visualization</strong></td>
+          <td>Set operation JSON files</td>
+          <td>6 HTML files: <code>index.html</code> (dashboard) + one per set operation</td>
+          <td>Generates Venn diagram encoding; summary dashboard with overlap percentages; dedicated pages for intersection, union, differences, and contradictions; confidence score display per matched pair</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ── Prompt Architecture ─────────────────────────────────────── -->
+<section id="prompt-arch">
+  <h2><span class="sec-icon">📝</span> Prompt Architecture</h2>
+  <p>The pipeline uses a <strong>two-tier prompt system</strong> that separates domain-agnostic pipeline logic from domain-specific terminology, examples, and entity vocabularies. This allows the same 10-agent pipeline to operate across entirely different compliance domains without code changes.</p>
+
+  <h3>Resolution Strategy</h3>
+  <div class="mermaid-wrap">
+    <pre class="mermaid">
+flowchart LR
+    A["Agent requests prompt\n(e.g. entity_extraction)"] --> B{"domain-prompts/\n{domain}/{prompt}.txt\nexists?"}
+    B -- Yes --> C["Load domain-specific\nprompt"]
+    B -- No --> D["Load shared fallback\nprompts/{prompt}.txt"]
+    C --> E["Substitute parameters\n(entity_context, batch_num, etc.)"]
+    D --> E
+    E --> F["Send to LLM\n(GPT / Claude)"]
+    </pre>
+  </div>
+  <p>The <code>PromptManager</code> class resolves prompts with <strong>domain-first precedence</strong>: it checks <code>domain-prompts/{active_domain}/</code> first, then falls back to the shared <code>prompts/</code> directory. This means every domain can override any prompt while inheriting the rest.</p>
+
+  <h3>Directory Layout</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Path</th><th>Scope</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><code>prompts/</code></td><td>Shared (fallback)</td><td>Domain-agnostic prompt templates — the default baseline for all agents</td></tr>
+        <tr><td><code>domain-prompts/mortgage/</code></td><td>Mortgage Lending</td><td>Fannie Mae, Freddie Mac, PRMI, Revolution — mortgage-specific terminology, entity types (Borrower, Property, Loan), and FMNA regulatory references</td></tr>
+        <tr><td><code>domain-prompts/aml/</code></td><td>Anti-Money Laundering</td><td>AML/BSA compliance — SAR, CTR, CDD, KYC entity types; FinCEN regulatory references</td></tr>
+        <tr><td><code>domain-prompts/commercial_lending/</code></td><td>Commercial Lending</td><td>Commercial loan origination — borrower financials, collateral valuation, covenant tracking</td></tr>
+        <tr><td><code>domain-prompts/healthcare/</code></td><td>Healthcare</td><td>Healthcare compliance — HIPAA, patient entities, provider relationships, clinical protocols</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Prompt Inventory (11 templates × 4 domains)</h3>
+  <p>Each domain contains a full set of 11 prompt templates — one for every agent stage. The domain-specific versions inject specialized terminology, entity vocabularies, rule taxonomies, and worked examples.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Prompt Template</th><th>Agent</th><th>Lines</th><th>What Gets Domain-Specialized</th></tr></thead>
+      <tbody>
+        <tr><td><code>document_structure_analysis.txt</code></td><td>1 — Document Organizer</td><td>~94</td><td>Section heading patterns, document structure conventions</td></tr>
+        <tr><td><code>entity_extraction.txt</code></td><td>2 — Entity Extractor</td><td>~245</td><td>Domain entity vocabulary (e.g., Borrower/Loan vs. SAR/CTR vs. Patient/Provider), relationship definitions, attribute schemas</td></tr>
+        <tr><td><code>entity_refinement.txt</code></td><td>2 — Meta-Agent</td><td>~266</td><td>5-dimensional quality scoring criteria, domain-specific completeness benchmarks</td></tr>
+        <tr><td><code>entity_resolution.txt</code></td><td>2 — Resolution</td><td>—</td><td>Synonyms and canonical name mappings per domain</td></tr>
+        <tr><td><code>business_rules_extraction.txt</code></td><td>3 — Rules Extractor</td><td>~343</td><td>Rule type taxonomy (10 categories), batch size tuning, domain examples, confidence scoring factors</td></tr>
+        <tr><td><code>validation_report.txt</code></td><td>3.5 — Rule Validator</td><td>~401</td><td>Domain-specific validation criteria, expected numeric ranges, regulatory cross-references</td></tr>
+        <tr><td><code>rule_resolution.txt</code></td><td>4 — Merger</td><td>—</td><td>Entity-rule linkage heuristics per domain</td></tr>
+        <tr><td><code>dependency_analysis.txt</code></td><td>5 — KG Optimizer</td><td>~401</td><td>7 dependency types with domain-specific examples and strength rating criteria</td></tr>
+        <tr><td><code>rule_deduplication.txt</code></td><td>5 — Deduplication</td><td>~280</td><td>Conservative merge criteria, domain-specific variation preservation rules</td></tr>
+        <tr><td><code>rule_matcher.txt</code></td><td>8 — Semantic Matcher</td><td>—</td><td>Match classification criteria (IDENTICAL / EQUIVALENT / CONTRADICTORY / UNRELATED) tuned per domain</td></tr>
+        <tr><td><code>rule_matcher_batch.txt</code></td><td>8 — Batch Matcher</td><td>—</td><td>Batch parallelism parameters and domain-specific pairwise comparison prompts</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Domain Adaptation Example</h3>
+  <p>The same <code>entity_extraction.txt</code> prompt is specialized for each domain by changing the opening context, entity vocabulary, and relationship definitions:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Domain</th><th>Opening Context</th><th>Example Entities</th><th>Example Relationships</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Mortgage</strong></td><td><em>"…specializing in domain modeling for compliance and regulatory systems… mortgage lending compliance knowledge graph"</em></td><td>Borrower, Loan, Property, Appraisal, Credit Report, Underwriting</td><td>BORROWER_APPLIES_FOR_LOAN, PROPERTY_SECURES_LOAN</td></tr>
+        <tr><td><strong>AML</strong></td><td><em>"…specializing in domain modeling for Anti-Money Laundering (AML) and Bank Secrecy Act (BSA) compliance"</em></td><td>Customer, Transaction, SAR, CTR, Beneficial Owner, CDD Profile</td><td>CUSTOMER_FILES_SAR, TRANSACTION_TRIGGERS_ALERT</td></tr>
+        <tr><td><strong>Healthcare</strong></td><td><em>"…specializing in domain modeling for healthcare compliance and regulatory systems"</em></td><td>Patient, Provider, Procedure, Diagnosis, Coverage, Authorization</td><td>PROVIDER_TREATS_PATIENT, PROCEDURE_REQUIRES_AUTH</td></tr>
+        <tr><td><strong>Commercial Lending</strong></td><td><em>"…specializing in domain modeling for commercial lending compliance"</em></td><td>Borrower, Facility, Collateral, Covenant, Financial Statement</td><td>FACILITY_SECURED_BY_COLLATERAL, BORROWER_COMPLIES_WITH_COVENANT</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>LLM Provider Optimization</h3>
+  <p>Prompts are tuned for dual-provider execution with different batch strategies:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Parameter</th><th>OpenAI GPT</th><th>Anthropic Claude</th></tr></thead>
+      <tbody>
+        <tr><td>Rules per batch (Agent 3)</td><td>10</td><td>2–3</td></tr>
+        <tr><td>Rules per dependency batch (Agent 5)</td><td>50</td><td>15–20</td></tr>
+        <tr><td>Temperature</td><td>0.7</td><td>0.7</td></tr>
+        <tr><td>Total prompt engineering</td><td colspan="2">~2,030 lines across 11 shared templates</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ── Data Architecture ─────────────────────────────────────── -->
+<section id="data-arch">
+  <h2><span class="sec-icon">🗄️</span> Data Architecture</h2>
+
+  <h3>Graph Schema</h3>
+  <div class="mermaid-wrap">
+    <pre class="mermaid">
+erDiagram
+    business_rule ||--o{ business_rule : "depends_on"
+    business_rule }o--|| entity_category : "belongs_to_category"
+    business_rule ||--o{ business_rule : "relates_to"
+
+    business_rule {
+        string rule_id PK
+        string rule_name
+        string rule_type
+        string description
+        string conditions
+        string consequences
+        string exceptions
+        string reference
+        boolean mandatory
+        double confidence_score
+        boolean requires_review
+        string review_reason
+        string node_type
+        string vertex_uuid UK
+        string source_reference
+        string effective_date
+        string expiration_date
+        string superseded_by
+        string jurisdiction
+        string risk_level
+        string enforcement_action
+        string applicability_scope
+        string data_points_required
+        string audit_frequency
+        boolean reference_verified
+        string reference_verification_note
+        string confidence_breakdown
+        string deduplication_info
+        string related_rules
+    }
+
+    entity_category {
+        string name
+        string entity_type
+        string entity_or_relationship
+        string description
+        string extraction_notes
+        string content
+        string category
+    }
+    </pre>
+  </div>
+
+  <h4>Vertex Labels</h4>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Label</th><th>Description</th><th>Key Properties</th></tr></thead>
+      <tbody>
+        <tr><td><code>business_rule</code></td><td>Compliance rule extracted from regulatory documents. Carries full rule semantics, conditions, exceptions, confidence scores, and v2 metadata (jurisdiction, risk, audit).</td><td><code>rule_id</code>, <code>rule_name</code>, <code>rule_type</code>, <code>confidence_score</code>, <code>mandatory</code></td></tr>
+        <tr><td><code>entity_category</code></td><td>Domain entity or relationship category (e.g., Borrower, Property, Loan Product). Groups related business rules.</td><td><code>name</code>, <code>entity_type</code>, <code>entity_or_relationship</code>, <code>category</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4>Edge Labels</h4>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Label</th><th>Source → Target</th><th>Edge Properties</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><code>depends_on</code></td><td><code>business_rule</code> → <code>business_rule</code></td><td><code>dependency_type</code>, <code>rationale</code>, <code>impact_if_fails</code>, <code>strength</code></td><td>Models 7 dependency types: prerequisite, sequential, conditional, complementary, contradictory, override, validation</td></tr>
+        <tr><td><code>belongs_to_category</code></td><td><code>business_rule</code> → <code>entity_category</code></td><td>—</td><td>Links a business rule to its governing entity category</td></tr>
+        <tr><td><code>relates_to</code></td><td><code>business_rule</code> → <code>business_rule</code></td><td>—</td><td>General semantic relationship between related rules</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4>Property Keys — Business Rule Vertex</h4>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Property</th><th>Type</th><th>Category</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><code>rule_id</code></td><td>String</td><td>Core</td><td>Unique rule identifier</td></tr>
+        <tr><td><code>rule_name</code></td><td>String</td><td>Core</td><td>Human-readable rule name</td></tr>
+        <tr><td><code>rule_type</code></td><td>String</td><td>Core</td><td>Taxonomy: eligibility, calculation, validation, threshold, prohibition, timing, method, mandate, classification, reporting</td></tr>
+        <tr><td><code>description</code></td><td>String</td><td>Core</td><td>Full rule description text</td></tr>
+        <tr><td><code>conditions</code></td><td>String</td><td>Core</td><td>When-conditions triggering the rule</td></tr>
+        <tr><td><code>consequences</code></td><td>String</td><td>Core</td><td>Then-outcomes when rule fires</td></tr>
+        <tr><td><code>exceptions</code></td><td>String</td><td>Core</td><td>Unless-exceptions to the rule</td></tr>
+        <tr><td><code>reference</code></td><td>String</td><td>Core</td><td>Source document section reference</td></tr>
+        <tr><td><code>mandatory</code></td><td>Boolean</td><td>Core</td><td>Whether the rule is mandatory vs. advisory</td></tr>
+        <tr><td><code>confidence_score</code></td><td>Double</td><td>Quality</td><td>AI extraction confidence (0.0–1.0)</td></tr>
+        <tr><td><code>requires_review</code></td><td>Boolean</td><td>Quality</td><td>Flagged for human review</td></tr>
+        <tr><td><code>review_reason</code></td><td>String</td><td>Quality</td><td>Reason the rule was flagged</td></tr>
+        <tr><td><code>confidence_breakdown</code></td><td>String (JSON)</td><td>Quality</td><td>Per-dimension confidence scores</td></tr>
+        <tr><td><code>reference_verified</code></td><td>Boolean</td><td>Quality</td><td>Source reference verified by validator</td></tr>
+        <tr><td><code>reference_verification_note</code></td><td>String</td><td>Quality</td><td>Verification outcome detail</td></tr>
+        <tr><td><code>deduplication_info</code></td><td>String (JSON)</td><td>Quality</td><td>Dedup merge rationale from optimizer</td></tr>
+        <tr><td><code>source_reference</code></td><td>String</td><td>v2 Metadata</td><td>Full source document citation</td></tr>
+        <tr><td><code>effective_date</code></td><td>String</td><td>v2 Metadata</td><td>Rule effective date (ISO 8601)</td></tr>
+        <tr><td><code>expiration_date</code></td><td>String</td><td>v2 Metadata</td><td>Rule expiration date</td></tr>
+        <tr><td><code>superseded_by</code></td><td>String</td><td>v2 Metadata</td><td>ID of the superseding rule</td></tr>
+        <tr><td><code>jurisdiction</code></td><td>String</td><td>v2 Metadata</td><td>Geographic or regulatory jurisdiction</td></tr>
+        <tr><td><code>risk_level</code></td><td>String</td><td>v2 Metadata</td><td>Associated risk level</td></tr>
+        <tr><td><code>enforcement_action</code></td><td>String</td><td>v2 Metadata</td><td>Enforcement consequence for non-compliance</td></tr>
+        <tr><td><code>applicability_scope</code></td><td>String</td><td>v2 Metadata</td><td>Scope of the rule's applicability</td></tr>
+        <tr><td><code>data_points_required</code></td><td>String</td><td>v2 Metadata</td><td>Data needed to evaluate the rule</td></tr>
+        <tr><td><code>audit_frequency</code></td><td>String</td><td>v2 Metadata</td><td>How often the rule should be audited</td></tr>
+        <tr><td><code>related_rules</code></td><td>String (JSON)</td><td>v2 Metadata</td><td>IDs of semantically related rules</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4>Edge Properties</h4>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Property</th><th>Type</th><th>Used On</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><code>dependency_type</code></td><td>String</td><td><code>depends_on</code></td><td>One of: prerequisite, sequential, conditional, complementary, contradictory, override, validation</td></tr>
+        <tr><td><code>rationale</code></td><td>String</td><td><code>depends_on</code></td><td>AI-generated explanation of why the dependency exists</td></tr>
+        <tr><td><code>impact_if_fails</code></td><td>String</td><td><code>depends_on</code></td><td>Downstream impact description if the dependency is broken</td></tr>
+        <tr><td><code>strength</code></td><td>Integer</td><td><code>depends_on</code></td><td>Dependency strength score</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Index Strategy</h3>
+  <p>The <code>mixedContentIndex</code> is an OpenSearch-backed mixed index covering 12 property keys across both vertex labels, enabling full-text search, exact-match filtering, and faceted queries.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Index Name</th><th>Fields (Mapping)</th><th>Purpose</th><th>Backend</th></tr></thead>
+      <tbody>
+        <tr><td><code>mixedContentIndex</code></td><td><code>content</code> (TEXT), <code>name</code> (TEXTSTRING)</td><td>Full-text search + exact match</td><td>OpenSearch</td></tr>
+        <tr><td></td><td><code>rule_type</code>, <code>node_type</code>, <code>rule_id</code>, <code>category</code> (STRING)</td><td>Exact-match filtering</td><td>OpenSearch</td></tr>
+        <tr><td></td><td><code>entity_or_relationship</code>, <code>vertex_uuid</code> (STRING)</td><td>Entity lookups &amp; dedup</td><td>OpenSearch</td></tr>
+        <tr><td></td><td><code>jurisdiction</code>, <code>risk_level</code>, <code>effective_date</code>, <code>audit_frequency</code> (STRING)</td><td>v2 metadata facets</td><td>OpenSearch</td></tr>
+        <tr><td>k-NN Vector</td><td><code>embedding</code> (384-dim float[])</td><td>Semantic similarity search</td><td>OpenSearch</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Multi-Graph Isolation</h3>
+  <p>Each compliance domain gets its own logically isolated graph within JanusGraph, backed by separate Cassandra keyspaces and OpenSearch indices. The manifest is driven by <code>graphs.yaml</code>.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Graph</th><th>Domain</th></tr></thead>
+      <tbody>
+        <tr><td>Policy to Knowledge Guidelines</td><td>Mortgage Lending</td></tr>
+        <tr><td>Fannie Mae</td><td>Mortgage Lending</td></tr>
+        <tr><td>Freddie Mac</td><td>Mortgage Lending</td></tr>
+        <tr><td>PRMI</td><td>Mortgage Lending</td></tr>
+        <tr><td>Revolution</td><td>Mortgage Lending</td></tr>
+        <tr><td>Absa</td><td>Anti-Money Laundering</td></tr>
+        <tr><td>Barclays</td><td>Anti-Money Laundering</td></tr>
+        <tr><td>Comercial Lending</td><td>Commercial Lending</td></tr>
+        <tr><td>Healthcare</td><td>Healthcare</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ── Technology Stack ──────────────────────────────────────── -->
+<section id="tech-stack">
+  <h2><span class="sec-icon">⚡</span> Technology Stack</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Layer</th><th>Technology</th></tr></thead>
+      <tbody>
+        <tr><td>Frontend (Suite Shell)</td><td>React 19, TypeScript, Tailwind CSS, Vite</td></tr>
+        <tr><td>Frontend (Pipeline UI)</td><td>React 19, TypeScript, Tailwind CSS, Vite</td></tr>
+        <tr><td>Frontend (KG Explorer)</td><td>Vanilla JavaScript, D3.js v7, marked.js</td></tr>
+        <tr><td>Backend (Pipeline)</td><td>FastAPI, Uvicorn, SQLite, SQLAlchemy</td></tr>
+        <tr><td>Backend (Assistant)</td><td>Flask 3.1, Gremlin WebSocket, OpenSearch HTTP</td></tr>
+        <tr><td>AI Inference</td><td>LiteLLM (OpenAI GPT, Anthropic Claude)</td></tr>
+        <tr><td>Graph Database</td><td>JanusGraph 1.0</td></tr>
+        <tr><td>Storage Backend</td><td>Apache Cassandra 4.1</td></tr>
+        <tr><td>Search &amp; Vectors</td><td>OpenSearch 2.17 (full-text + k-NN, 384-dim)</td></tr>
+        <tr><td>Embeddings</td><td>sentence-transformers (all-MiniLM-L6-v2)</td></tr>
+        <tr><td>Cache</td><td>Redis 7 (LRU eviction)</td></tr>
+        <tr><td>Document Parsing</td><td>PyPDF2, python-docx, pandas, openpyxl, pytesseract (OCR)</td></tr>
+        <tr><td>Containerization</td><td>Docker, Docker Compose</td></tr>
+        <tr><td>Cloud Deployment</td><td>Azure Container Apps, Bicep IaC</td></tr>
+        <tr><td>Testing</td><td>Playwright (E2E), pytest (backend)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════════════════════╗ -->
+<!-- ║  3. STEP-BY-STEP USAGE                                   ║ -->
+<!-- ╚═══════════════════════════════════════════════════════════╝ -->
+<section id="walkthrough">
+  <h2><span class="sec-icon">📖</span> Step-by-Step Usage</h2>
+
+  <ol class="step-list">
+    <li>
+      <h3>Launch the Suite &amp; Open the Dashboard</h3>
+      <p>After running <code>./start.sh</code>, open <a href="http://localhost:4000">http://localhost:4000</a> in your browser. The Dashboard shows all loaded knowledge graphs, recent pipeline runs, service health, and quick action buttons.</p>
+      <div class="screenshot-item" style="margin-top:.75rem">
+        <img src="assets/screenshots/home.png" alt="Policy to Knowledge Dashboard">
+        <div class="screenshot-caption">
+          <h4>Dashboard — Central Navigation Hub</h4>
+          <p>Overview of all knowledge graphs, source documents, pipeline runs, and assistant status with quick action cards.</p>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <h3>Upload Compliance Documents</h3>
+      <p>Navigate to <strong>Documents</strong> in the sidebar. Upload PDFs, DOCX, Markdown, CSV, or Excel files into organized folders. Each folder can be associated with a compliance domain (mortgage, AML, commercial lending, healthcare).</p>
+    </li>
+
+    <li>
+      <h3>Run the Extraction Pipeline</h3>
+      <p>Go to <strong>Pipeline</strong>, select your uploaded documents and the AI provider (OpenAI or Anthropic), then click <strong>Start Extraction</strong>. Monitor progress through the visual agent pipeline tracker showing all 6 extraction stages in real time.</p>
+      <div class="screenshot-item" style="margin-top:.75rem">
+        <img src="assets/screenshots/suite_pipeline.png" alt="Pipeline Progress Tracker">
+        <div class="screenshot-caption">
+          <h4>Pipeline — Real-time Agent Progress</h4>
+          <p>Visual tracker showing the 6-agent extraction pipeline with step-by-step status, duration, and log output.</p>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <h3>Review Run History</h3>
+      <p>Check <strong>Run History</strong> to see all past pipeline runs with their status (completed, running, failed), domain, source, duration, and timestamps. Expand any run for detailed agent-by-step progress.</p>
+      <div class="screenshot-item" style="margin-top:.75rem">
+        <img src="assets/screenshots/suite_extraction.png" alt="Run History">
+        <div class="screenshot-caption">
+          <h4>Run History — Pipeline Execution Log</h4>
+          <p>Filterable list of all pipeline runs with status badges, timing, and expandable step details.</p>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <h3>Explore the Knowledge Graph</h3>
+      <p>Open <strong>Assistant</strong> to interact with the knowledge graph. The split-pane interface shows an interactive D3.js force-directed graph on the left and an AI chat panel on the right. Ask questions like "Show me the full graph", "Count rules", "Find prohibitions", or "Search appraisal rules".</p>
+      <div class="screenshot-item" style="margin-top:.75rem">
+        <img src="assets/screenshots/suite_kg_explorer.png" alt="Knowledge Graph Explorer">
+        <div class="screenshot-caption">
+          <h4>Assistant — AI-Powered Knowledge Graph Explorer</h4>
+          <p>Interactive D3.js graph visualization with color-coded node types, chat agent with tool-calling capabilities, and quick actions.</p>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <h3>View Graph Analytics</h3>
+      <p>Navigate to <strong>Analytics</strong> for a comprehensive dashboard showing rule type distribution, risk level breakdown, dependency types, confidence score distribution, entity coverage, and most connected rules.</p>
+      <div class="screenshot-item" style="margin-top:.75rem">
+        <img src="assets/screenshots/suite_analytics.png" alt="Graph Analytics">
+        <div class="screenshot-caption">
+          <h4>Analytics — Rule Distribution &amp; Graph Health</h4>
+          <p>Charts for rule types, risk levels, dependency analysis, confidence scores, entity coverage, and top connected rules.</p>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <h3>Compare Knowledge Graphs</h3>
+      <p>Use <strong>Compare Knowledge Graphs</strong> to select two graphs (e.g., Fannie Mae vs. Freddie Mac). The system uses LLM-powered semantic matching to detect common rules, unique rules, and contradictions with AI-generated analysis.</p>
+      <div class="screenshot-item" style="margin-top:.75rem">
+        <img src="assets/screenshots/suite_compare.png" alt="Compare Knowledge Graphs">
+        <div class="screenshot-caption">
+          <h4>Compare — Semantic Graph Comparison with Contradiction Detection</h4>
+          <p>Side-by-side comparison showing overlap percentages, exclusive rules, contradictions with AI analysis, and confidence scores.</p>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <h3>Run Impact Analysis</h3>
+      <p>Open <strong>Impact Analysis</strong> to upload old and new versions of a regulatory document. The system identifies affected rules, assesses severity, and provides recommended actions — useful for tracking regulatory changes.</p>
+      <div class="screenshot-item" style="margin-top:.75rem">
+        <img src="assets/screenshots/suite_impact.png" alt="Impact Analysis">
+        <div class="screenshot-caption">
+          <h4>Impact Analysis — Regulatory Change Detection</h4>
+          <p>Upload old and new regulatory documents to identify affected rules, severity levels, and recommended remediation actions.</p>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <h3>Track Obligations</h3>
+      <p>Go to <strong>Obligations</strong> to initialize an obligation register from graph rules. Map internal controls to compliance obligations, identify coverage gaps, and generate heatmaps for gap analysis.</p>
+      <div class="screenshot-item" style="margin-top:.75rem">
+        <img src="assets/screenshots/suite_obligations.png" alt="Obligations">
+        <div class="screenshot-caption">
+          <h4>Obligation Register — Compliance Gap Analysis</h4>
+          <p>Track compliance obligations, map internal controls, and identify coverage gaps with heatmap visualizations.</p>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <h3>Edit, Review &amp; Publish</h3>
+      <p>In the <strong>Knowledge Graph Explorer</strong>, click any node to inspect details, add comments, edit content, or mark as reviewed/approved. When ready, click <strong>Release</strong> to create an immutable version snapshot with semantic versioning.</p>
+      <div class="screenshot-item" style="margin-top:.75rem">
+        <img src="assets/screenshots/suite_versions.png" alt="Release Management">
+        <div class="screenshot-caption">
+          <h4>Release Management — Create Immutable Graph Snapshots</h4>
+          <p>Semantic versioning with version number, title, and release notes. Locks the graph to prevent edits during released state.</p>
+        </div>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<!-- ╔═══════════════════════════════════════════════════════════╗ -->
+<!-- ║  4. INSTALLATION GUIDE                                   ║ -->
+<!-- ╚═══════════════════════════════════════════════════════════╝ -->
+<section id="installation">
+  <h2><span class="sec-icon">⬇️</span> Installation Guide</h2>
+
+  <h3>Prerequisites</h3>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="f-icon">🐳</div>
+      <h4>Docker &amp; Docker Compose</h4>
+      <p>Required for running infrastructure services (JanusGraph, Cassandra, OpenSearch, Redis)</p>
+    </div>
+    <div class="feature-card">
+      <div class="f-icon">🐍</div>
+      <h4>Python 3.11 or 3.12</h4>
+      <p>Required for running agents and backends outside Docker</p>
+    </div>
+    <div class="feature-card">
+      <div class="f-icon">🟢</div>
+      <h4>Node.js 20+</h4>
+      <p>Required for frontend development and the Suite Shell</p>
+    </div>
+    <div class="feature-card">
+      <div class="f-icon">🔑</div>
+      <h4>OpenAI API Key</h4>
+      <p>Required. Anthropic API key is optional for dual-provider support</p>
+    </div>
+  </div>
+
+  <h3>Quick Start</h3>
+  <div class="cli-block">
+    <div class="cli-header">
+      <span class="dot dot-r"></span>
+      <span class="dot dot-y"></span>
+      <span class="dot dot-g"></span>
+      Terminal — Quick Start
+    </div>
+    <pre><code><span class="comment"># 1. Clone the repository</span>
+<span class="cmd">git clone</span> https://github.com/your-org/policy-to-knowledge.git
+<span class="cmd">cd</span> kernel-lab/policy-to-knowledge
+
+<span class="comment"># 2. Configure environment</span>
+<span class="cmd">cp</span> .env.example .env
+<span class="comment"># Open .env and set OPENAI_API_KEY at minimum</span>
+
+<span class="comment"># 3. Start the full stack (~2-3 minutes on first run)</span>
+<span class="cmd">./start.sh</span>
+
+<span class="comment"># 4. Open the suite</span>
+<span class="cmd">open</span> http://localhost:4000</code></pre>
+  </div>
+
+  <h3>Environment Variables</h3>
+  <div class="cli-block">
+    <div class="cli-header">
+      <span class="dot dot-r"></span>
+      <span class="dot dot-y"></span>
+      <span class="dot dot-g"></span>
+      .env — Configuration
+    </div>
+    <pre><code><span class="comment"># Required</span>
+OPENAI_API_KEY=sk-...
+
+<span class="comment"># Optional</span>
+ANTHROPIC_API_KEY=sk-ant-...
+OPENAI_CHAT_MODEL=gpt-4o-mini       <span class="comment"># Default chat model</span>
+OPENAI_REASONING_EFFORT=low          <span class="comment"># For reasoning models</span>
+MAX_TOOL_ROUNDS=3                    <span class="comment"># Max tool-call rounds per chat turn</span>
+
+<span class="comment"># Port overrides (all optional)</span>
+SUITE_PORT=4000
+KG_BACKEND_PORT=8000
+KG_FRONTEND_PORT=5173
+CA_PORT=5000
+JANUSGRAPH_PORT=8182
+CASSANDRA_PORT=9042
+OPENSEARCH_PORT=9200
+REDIS_PORT=6379</code></pre>
+  </div>
+
+  <h3>What <code>start.sh</code> Does</h3>
+  <ol style="list-style:decimal;padding-left:1.5rem;color:var(--text-muted)">
+    <li>Validates Docker, Python venv, and port availability</li>
+    <li>Generates JanusGraph configuration from <code>assistant/conf/graphs.yaml</code></li>
+    <li>Starts infrastructure services in dependency order (Cassandra → OpenSearch → Redis → JanusGraph)</li>
+    <li>Waits for each service to pass its health check</li>
+    <li>Starts the Pipeline API (FastAPI, port 8000) and Pipeline UI (Vite, port 5173)</li>
+    <li>Loads knowledge graphs into JanusGraph (incremental by default)</li>
+    <li>Starts Assistant (Flask, port 5000)</li>
+    <li>Starts the Suite Shell (Vite, port 4000)</li>
+  </ol>
+
+  <h3>Stopping Services</h3>
+  <div class="cli-block">
+    <div class="cli-header">
+      <span class="dot dot-r"></span>
+      <span class="dot dot-y"></span>
+      <span class="dot dot-g"></span>
+      Terminal — Stop Commands
+    </div>
+    <pre><code><span class="comment"># Stop application processes (Docker stays running for fast restart)</span>
+<span class="cmd">./stop.sh</span>
+
+<span class="comment"># Stop everything including Docker infrastructure</span>
+<span class="cmd">./stop.sh</span> <span class="flag">--all</span>
+
+<span class="comment"># Nuclear reset — wipe all volumes + DBs, then rebuild from scratch</span>
+<span class="cmd">./start.sh</span> <span class="flag">--clean</span></code></pre>
+  </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════════════════════╗ -->
+<!-- ║  CLI REFERENCE                                           ║ -->
+<!-- ╚═══════════════════════════════════════════════════════════╝ -->
+<section id="cli">
+  <h2><span class="sec-icon">💻</span> CLI Reference</h2>
+
+  <h3>Suite Management</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Command</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><code>./start.sh</code></td><td>Start full stack (incremental — preserves existing data)</td></tr>
+        <tr><td><code>./start.sh --fresh</code></td><td>Rebuild graphs &amp; re-index; keeps Docker volumes intact</td></tr>
+        <tr><td><code>./start.sh --clean</code></td><td>Wipe everything (volumes + SQLite + Redis) and rebuild</td></tr>
+        <tr><td><code>./stop.sh</code></td><td>Stop application processes (Docker infra stays running)</td></tr>
+        <tr><td><code>./stop.sh --all</code></td><td>Stop application processes + Docker containers</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Extraction Pipeline</h3>
+
+  <details>
+    <summary>knowledge_graph_generation.py — Document-to-KG Extraction</summary>
+    <div>
+      <div class="cli-block">
+        <div class="cli-header">
+          <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+          pipeline/
+        </div>
+        <pre><code><span class="comment"># Process all files with OpenAI</span>
+<span class="cmd">python3</span> knowledge_graph_generation.py <span class="flag">--provider</span> <span class="arg">openai</span>
+
+<span class="comment"># Process a single document</span>
+<span class="cmd">python3</span> knowledge_graph_generation.py <span class="flag">--provider</span> <span class="arg">openai</span> <span class="flag">--file</span> <span class="arg">compliance-files/FMNA.pdf</span>
+
+<span class="comment"># Use Anthropic Claude</span>
+<span class="cmd">python3</span> knowledge_graph_generation.py <span class="flag">--provider</span> <span class="arg">anthropic</span>
+
+<span class="comment"># Run a specific agent step (1-6)</span>
+<span class="cmd">python3</span> knowledge_graph_generation.py <span class="flag">--step</span> <span class="arg">1</span>   <span class="comment"># Document organizer only</span>
+<span class="cmd">python3</span> knowledge_graph_generation.py <span class="flag">--step</span> <span class="arg">6</span>   <span class="comment"># Visualization only</span>
+
+<span class="comment"># Process in batches by subdirectory</span>
+<span class="cmd">python3</span> knowledge_graph_generation.py <span class="flag">--batch</span>
+
+<span class="comment"># Process a specific domain subdirectory</span>
+<span class="cmd">python3</span> knowledge_graph_generation.py <span class="flag">--batch-dir</span> <span class="arg">healthcare</span>
+
+<span class="comment"># Run merge phase with existing KGs</span>
+<span class="cmd">python3</span> knowledge_graph_generation.py <span class="flag">--merge</span>
+<span class="cmd">python3</span> knowledge_graph_generation.py <span class="flag">--merge-only</span> <span class="flag">--merge-strategy</span> <span class="arg">provenance</span></code></pre>
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>join_graphs.py — Knowledge Graph Merging</summary>
+    <div>
+      <div class="cli-block">
+        <div class="cli-header">
+          <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+          pipeline/
+        </div>
+        <pre><code><span class="comment"># List available knowledge graphs</span>
+<span class="cmd">python3</span> join_graphs.py <span class="flag">--list</span>
+
+<span class="comment"># Merge two graphs (computes all set operations)</span>
+<span class="cmd">python3</span> join_graphs.py <span class="flag">--g1</span> <span class="arg">FMNA</span> <span class="flag">--g2</span> <span class="arg">Revolution-Overlay</span> <span class="flag">--workers</span> <span class="arg">15</span>
+
+<span class="comment"># Merge with custom batch size</span>
+<span class="cmd">python3</span> join_graphs.py <span class="flag">--g1</span> <span class="arg">FM</span> <span class="flag">--g2</span> <span class="arg">FMNA</span> <span class="flag">--workers</span> <span class="arg">20</span> <span class="flag">--batch-size</span> <span class="arg">15</span></code></pre>
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Assistant — Knowledge Graph Management</summary>
+    <div>
+      <div class="cli-block">
+        <div class="cli-header">
+          <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+          assistant/
+        </div>
+        <pre><code><span class="comment"># Full rebuild (clears and reloads all graphs)</span>
+<span class="cmd">python3</span> -m src.main <span class="arg">setup</span>
+
+<span class="comment"># Incremental load (only load what is missing)</span>
+<span class="cmd">python3</span> -m src.main <span class="arg">setup-if-empty</span>
+
+<span class="comment"># Nuclear reset (wipe all data and rebuild)</span>
+<span class="cmd">python3</span> -m src.main <span class="arg">force-clean</span>
+
+<span class="comment"># Start server only (infra must be running)</span>
+<span class="cmd">python3</span> -m src.main <span class="arg">serve</span></code></pre>
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Individual Service Start Commands</summary>
+    <div>
+      <div class="cli-block">
+        <div class="cli-header">
+          <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+          Development — Run Individual Services
+        </div>
+        <pre><code><span class="comment"># Assistant (Flask)</span>
+<span class="cmd">cd</span> assistant && <span class="cmd">python3</span> -m src.server
+
+<span class="comment"># Suite Shell (React)</span>
+<span class="cmd">cd</span> frontend && <span class="cmd">npm install</span> && <span class="cmd">npm run dev</span>
+
+<span class="comment"># Pipeline UI + API</span>
+<span class="cmd">cd</span> pipeline && <span class="cmd">./ui/start.sh</span>
+
+<span class="comment"># Run backend tests</span>
+<span class="cmd">cd</span> pipeline && <span class="cmd">pytest</span> tests/
+
+<span class="comment"># Run E2E tests (requires all services)</span>
+<span class="cmd">cd</span> frontend && <span class="cmd">npx playwright test</span></code></pre>
+      </div>
+    </div>
+  </details>
+</section>
+
+<!-- ╔═══════════════════════════════════════════════════════════╗ -->
+<!-- ║  API ENDPOINTS                                           ║ -->
+<!-- ╚═══════════════════════════════════════════════════════════╝ -->
+<section id="api">
+  <h2><span class="sec-icon">🔌</span> API Endpoints</h2>
+
+  <h3>Services &amp; Ports</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Service</th><th>URL</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>Suite Shell</td><td><code>http://localhost:4000</code></td><td>Main navigation hub (React SPA)</td></tr>
+        <tr><td>Pipeline UI</td><td><code>http://localhost:5173</code></td><td>Document upload &amp; pipeline control</td></tr>
+        <tr><td>Pipeline API</td><td><code>http://localhost:8000</code></td><td>FastAPI backend for extraction</td></tr>
+        <tr><td>Assistant</td><td><code>http://localhost:5000/app</code></td><td>KG explorer &amp; AI chat</td></tr>
+        <tr><td>JanusGraph</td><td><code>localhost:8182</code></td><td>Gremlin WebSocket endpoint</td></tr>
+        <tr><td>OpenSearch</td><td><code>http://localhost:9200</code></td><td>Full-text &amp; vector search</td></tr>
+        <tr><td>Cassandra</td><td><code>localhost:9042</code></td><td>Graph storage backend</td></tr>
+        <tr><td>Redis</td><td><code>localhost:6379</code></td><td>Query result cache</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>KG Backend — FastAPI</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Method</th><th>Path</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><span class="badge badge-green" style="font-size:.65rem">GET</span></td><td><code>/api/health</code></td><td>Health check</td></tr>
+        <tr><td><span class="badge badge-green" style="font-size:.65rem">GET</span></td><td><code>/api/documents</code></td><td>List document folders</td></tr>
+        <tr><td><span class="badge badge-blue" style="font-size:.65rem">POST</span></td><td><code>/api/documents/upload</code></td><td>Upload compliance documents</td></tr>
+        <tr><td><span class="badge badge-blue" style="font-size:.65rem">POST</span></td><td><code>/api/pipeline/start</code></td><td>Start extraction pipeline</td></tr>
+        <tr><td><span class="badge badge-green" style="font-size:.65rem">GET</span></td><td><code>/api/pipeline/{run_id}/status</code></td><td>Get pipeline run status</td></tr>
+        <tr><td><span class="badge badge-green" style="font-size:.65rem">GET</span></td><td><code>/api/graphs</code></td><td>List knowledge graphs</td></tr>
+        <tr><td><span class="badge badge-green" style="font-size:.65rem">GET</span></td><td><code>/api/graphs/{name}/visualization</code></td><td>Get graph visualization data</td></tr>
+        <tr><td><span class="badge badge-blue" style="font-size:.65rem">POST</span></td><td><code>/api/compare</code></td><td>Compare two knowledge graphs</td></tr>
+        <tr><td><span class="badge badge-blue" style="font-size:.65rem">POST</span></td><td><code>/api/impact/analyze</code></td><td>Run impact analysis</td></tr>
+        <tr><td><span class="badge badge-blue" style="font-size:.65rem">POST</span></td><td><code>/api/obligations/{graph}/seed</code></td><td>Initialize obligations from graph</td></tr>
+        <tr><td><span class="badge badge-green" style="font-size:.65rem">GET</span></td><td><code>/api/obligations/{graph}/heatmap</code></td><td>Get obligation heatmap</td></tr>
+        <tr><td><span class="badge badge-green" style="font-size:.65rem">GET</span></td><td><code>/api/runs</code></td><td>List all pipeline runs</td></tr>
+        <tr><td><span class="badge badge-green" style="font-size:.65rem">GET</span></td><td><code>/api/settings</code></td><td>Get pipeline settings</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Assistant — Flask</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Method</th><th>Path</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><span class="badge badge-green" style="font-size:.65rem">GET</span></td><td><code>/api/graph</code></td><td>Get full graph data</td></tr>
+        <tr><td><span class="badge badge-green" style="font-size:.65rem">GET</span></td><td><code>/api/vertex/{id}</code></td><td>Get vertex details</td></tr>
+        <tr><td><span class="badge badge-green" style="font-size:.65rem">GET</span></td><td><code>/api/search/text</code></td><td>Full-text search</td></tr>
+        <tr><td><span class="badge badge-green" style="font-size:.65rem">GET</span></td><td><code>/api/search/semantic</code></td><td>Semantic vector search</td></tr>
+        <tr><td><span class="badge badge-blue" style="font-size:.65rem">POST</span></td><td><code>/api/gremlin/execute</code></td><td>Execute custom Gremlin traversal</td></tr>
+        <tr><td><span class="badge badge-green" style="font-size:.65rem">GET</span></td><td><code>/api/annotations/{node_id}</code></td><td>Get node annotations</td></tr>
+        <tr><td><span class="badge badge-orange" style="font-size:.65rem">PUT</span></td><td><code>/api/annotations/{node_id}</code></td><td>Update annotation</td></tr>
+        <tr><td><span class="badge badge-blue" style="font-size:.65rem">POST</span></td><td><code>/api/graph/release</code></td><td>Create immutable release</td></tr>
+        <tr><td><span class="badge badge-green" style="font-size:.65rem">GET</span></td><td><code>/api/graph/releases</code></td><td>List all releases</td></tr>
+        <tr><td><span class="badge badge-green" style="font-size:.65rem">GET</span></td><td><code>/api/graph/available</code></td><td>List available graphs</td></tr>
+        <tr><td><span class="badge badge-blue" style="font-size:.65rem">POST</span></td><td><code>/api/rewrite</code></td><td>AI rewrite content</td></tr>
+        <tr><td><span class="badge badge-blue" style="font-size:.65rem">POST</span></td><td><code>/api/suggest-rule-id</code></td><td>Auto-generate Rule ID</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Admin Endpoints</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Method</th><th>Path</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><span class="badge badge-blue" style="font-size:.65rem">POST</span></td><td><code>/api/admin/reset</code></td><td>Drop &amp; re-load all graphs, rebuild indices</td></tr>
+        <tr><td><span class="badge badge-green" style="font-size:.65rem">GET</span></td><td><code>/api/admin/consistency</code></td><td>Vertex/edge counts per graph (sanity check)</td></tr>
+        <tr><td><span class="badge badge-blue" style="font-size:.65rem">POST</span></td><td><code>/api/admin/rebuild-embeddings</code></td><td>Re-embed all vertices into OpenSearch k-NN</td></tr>
+        <tr><td><span class="badge badge-blue" style="font-size:.65rem">POST</span></td><td><code>/api/admin/rebuild-tasks</code></td><td>Regenerate task queue from graph state</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════════════════════╗ -->
+<!-- ║  DEPLOYMENT                                              ║ -->
+<!-- ╚═══════════════════════════════════════════════════════════╝ -->
+<section id="deployment">
+  <h2><span class="sec-icon">☁️</span> Azure Deployment</h2>
+
+  <p>Policy to Knowledge can be deployed to <strong>Azure Container Apps</strong>. Build and push all 5 container images to an Azure Container Registry with a unique UTC timestamp tag per build, then roll each Container App to the freshly tagged image.</p>
+
+  <div class="cli-block">
+    <div class="cli-header">
+      <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+      Azure Deployment
+    </div>
+    <pre><code><span class="comment"># Login to Azure</span>
+<span class="cmd">az login</span>
+
+<span class="comment"># Build + push each image to ACR, then update the Container Apps</span>
+<span class="cmd">az acr build</span> --registry p2kdemo --image p2k/&lt;svc&gt;:&lt;tag&gt; .
+<span class="cmd">az containerapp update</span> --name &lt;app&gt; --image p2kdemo.azurecr.io/app/&lt;svc&gt;:&lt;tag&gt;</code></pre>
+  </div>
+
+  <h3>Container App Layout</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>App</th><th>Ingress</th><th>Port</th><th>Public Mount</th></tr></thead>
+      <tbody>
+        <tr><td><code>p2k-preview</code></td><td>External</td><td>4000</td><td><code>/app/</code></td></tr>
+        <tr><td><code>kg-frontend</code></td><td>External</td><td>5173</td><td><code>/app/{documents,pipeline,...}</code></td></tr>
+        <tr><td><code>kg-backend</code></td><td>Internal</td><td>8000</td><td><code>/app/api/kg/</code></td></tr>
+        <tr><td><code>assistant</code></td><td>External</td><td>5000</td><td><code>/app/api/ca/</code></td></tr>
+        <tr><td><code>janusgraph</code></td><td>Internal</td><td>8182</td><td>(not exposed publicly)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+</div><!-- /.main -->
+
+<!-- ── Back to Top Button ────────────────────────────────────── -->
+<button class="top-btn" id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- ── Scripts ───────────────────────────────────────────────── -->
+<script>
+  // Initialize Mermaid
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'default',
+    themeVariables: {
+      primaryColor:      '#dbeafe',
+      primaryTextColor:  '#1f2328',
+      primaryBorderColor:'#93c5fd',
+      lineColor:         '#0969da',
+      secondaryColor:    '#f3e8ff',
+      tertiaryColor:     '#f0fdf4',
+      fontFamily:        'Inter, -apple-system, sans-serif',
+      fontSize:          '14px',
+      noteBkgColor:      '#fef9c3',
+      noteTextColor:     '#1f2328',
+      noteBorderColor:   '#d1d9e0',
+      actorBkg:          '#dbeafe',
+      actorBorder:       '#93c5fd',
+      actorTextColor:    '#1f2328',
+      signalColor:       '#1f2328',
+      signalTextColor:   '#1f2328',
+    },
+    flowchart: { curve: 'basis', useMaxWidth: true, htmlLabels: true, padding: 15 },
+    sequence:  { useMaxWidth: true, mirrorActors: false, diagramMarginX: 30, diagramMarginY: 20, actorMargin: 80, messageMargin: 40 },
+  });
+
+  // Back to top button
+  const topBtn = document.getElementById('topBtn');
+  window.addEventListener('scroll', () => {
+    topBtn.classList.toggle('show', window.scrollY > 400);
+  });
+
+  // Active nav link highlight
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(l => l.style.borderLeftColor = 'transparent');
+        navLinks.forEach(l => l.style.color = '');
+        const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+        if (active) {
+          active.style.borderLeftColor = 'var(--accent)';
+          active.style.color = 'var(--text)';
+        }
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>

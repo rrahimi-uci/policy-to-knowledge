@@ -1,0 +1,73 @@
+# =============================================================================
+# p2k .gitignore
+# NOTE: OS, IDE, and general Python rules are in the root ../../.gitignore.
+#       This file contains only project-specific rules.
+# =============================================================================
+
+# --- Python bytecode (belt-and-suspenders, root also covers this) ---
+**/__pycache__/
+*.pyc
+
+# --- Virtual environment ---
+.venv/
+
+# --- Environment variables & secrets ---
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# --- Configuration files with secrets ---
+config.json
+config_test.json
+secrets.json
+
+# --- Pipeline output (regeneratable, ~8 MB+) ---
+# These files are produced by running the pipeline and should not be committed.
+# Use `git rm -r --cached pipeline-output/` after adding this rule if already tracked.
+#pipeline-output/**
+#!pipeline-output/README.md
+#!pipeline-output/**/.gitkeep
+
+# --- Pipeline data (SQLite run history DB) ---
+pipeline-data/
+
+# --- Compliance source documents ---
+# Markdown/CSV compliance files ARE tracked.
+# Ignore PDFs if they appear (large binaries).
+#*.pdf
+
+# --- Data directories (legacy structure) ---
+data/input/knowledge-files/*.pdf
+data/intermediate/knowledge-files-organized/*
+!data/intermediate/knowledge-files-organized/.gitkeep
+data/intermediate/entity-relationship/*.json
+data/intermediate/entity-relationship/*.csv
+data/output/knowledge-graph-files/*
+!data/output/knowledge-graph-files/.gitkeep
+
+# --- Logs ---
+*.log
+logs/
+
+# --- Testing ---
+.pytest_cache/
+.coverage
+htmlcov/
+ui/frontend/playwright-report/
+ui/frontend/test-results/
+
+# --- Docker ---
+.dockerignore.bak
+docker-compose.override.yml
+
+# --- Backup / temp files ---
+*.backup
+*.bak
+*.tmp
+*.old
+
+# --- Report temporary files ---
+reports/*.txt.tmp
+reports/*.html.tmp

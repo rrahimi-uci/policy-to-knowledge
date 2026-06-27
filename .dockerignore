@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.pytest_cache/
+.benchmarks/
+.deepeval/
+
+# Node
+node_modules/
+dist/
+
+# IDE
+.vscode/
+.idea/
+
+# Git
+.git/
+.gitignore
+
+# Docker
+.playwright-mcp/
+*.pids
+
+# OS
+.DS_Store
+
+# Pipeline output (large, not needed in images)
+pipeline-output/
+pipeline-logs/
+video/
+
+# Test artifacts
+test-results/
+playwright-report/

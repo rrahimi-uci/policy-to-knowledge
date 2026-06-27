@@ -1,0 +1,79 @@
+# Entity Resolution Prompt
+# Matches entities across multiple compliance knowledge graphs
+
+You are an expert in mortgage compliance entity resolution. Your task is to analyze entities extracted from multiple compliance documents and identify which entities across different sources represent the SAME real-world concept.
+
+## Input Documents
+The following entities have been extracted from these source documents:
+{source_documents}
+
+## Entities by Source
+{entities_by_source}
+
+## Your Task
+Analyze all entities and identify clusters where entities from DIFFERENT sources represent the same concept.
+
+### Matching Criteria
+Consider entities as matching if they:
+1. **Same Name**: Identical or very similar names (e.g., "Borrower" = "Borrower")
+2. **Synonyms**: Different names for same concept (e.g., "DTI Ratio" = "Debt-to-Income Ratio")
+3. **Abbreviations**: Full form vs abbreviation (e.g., "LTV" = "Loan-to-Value")
+4. **Semantic Equivalence**: Same meaning in context (e.g., "Applicant" = "Borrower" in lending context)
+5. **Hierarchical Match**: Parent-child with same meaning (e.g., "Primary Borrower" is a type of "Borrower")
+
+### DO NOT Match If:
+- Entities have different scopes (e.g., "VA Loan" vs "Conventional Loan")
+- Entities have different thresholds (these are RULES not entities)
+- Context makes them distinct (e.g., "Seller" in FM may differ from "Seller" in lender overlay)
+
+## Output Format
+Return a JSON object with the following structure:
+
+```json
+{{
+  "entity_clusters": [
+    {{
+      "canonical_id": "ENTITY_001",
+      "canonical_name": "Human-readable name for this entity",
+      "entity_type": "PARTY|DOCUMENT|METRIC|PROPERTY|CONSTRAINT|PROCESS|SYSTEM|OTHER",
+      "definition": "Unified definition combining all source definitions",
+      "members": [
+        {{
+          "source": "Source document name",
+          "original_name": "Original entity name in that document",
+          "original_type": "Original entity type",
+          "match_reason": "Why this matches the cluster"
+        }}
+      ],
+      "confidence": 0.0-1.0,
+      "notes": "Any important notes about this entity cluster"
+    }}
+  ],
+  "unmatched_entities": [
+    {{
+      "source": "Source document name",
+      "name": "Entity name",
+      "type": "Entity type",
+      "reason": "Why this entity has no matches in other documents"
+    }}
+  ],
+  "resolution_summary": {{
+    "total_input_entities": 0,
+    "total_clusters": 0,
+    "total_unmatched": 0,
+    "cross_document_matches": 0,
+    "single_document_entities": 0
+  }},
+  "analysis_notes": "Overall analysis of entity alignment across documents"
+}}
+```
+
+## Important Guidelines
+1. Be CONSERVATIVE - only cluster entities you're confident represent the same concept
+2. Preserve source information - we need full traceability
+3. Use descriptive canonical names that work across all contexts
+4. Document your reasoning for each match
+5. Flag uncertain matches with lower confidence scores
+6. Entities unique to one document should go in unmatched_entities
+
+Analyze the entities and provide your resolution:

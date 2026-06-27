@@ -1,0 +1,12 @@
+# ─────────────────────────────────────────────────────────────────
+# deploy-config.yaml — Policy to Knowledge deployment configuration
+#
+# Change base_path here to serve the entire suite under a different
+# URL prefix. Re-run deploy.sh after any change (images must rebuild).
+# ─────────────────────────────────────────────────────────────────
+
+app:
+  # URL prefix under which Policy to Knowledge is served.
+  # No trailing slash. Use "/" for root-level deployment.
+  # base_path: /app
+  base_path: /

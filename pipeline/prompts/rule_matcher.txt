@@ -1,0 +1,114 @@
+# Rule Matcher Prompt
+# Compares rules WITHIN the same rule_behavior (HOW) from two knowledge graphs
+
+You are an expert mortgage compliance analyst specializing in rule comparison and conflict detection.
+
+## TASK
+Compare two business rules from different compliance documents and classify their relationship.
+
+## INPUT
+You will receive pairs of rules that are ALREADY from the same rule_behavior category (HOW dimension).
+
+**Rule A** (from {g1_name}):
+```json
+{rule_a}
+```
+
+**Rule B** (from {g2_name}):
+```json
+{rule_b}
+```
+
+## CLASSIFICATION CRITERIA
+
+### 1. IDENTICAL (Score: 95-100)
+Rules that express the EXACT same requirement:
+- Same numeric thresholds
+- Same conditions
+- Same consequences
+- May differ only in wording/formatting
+
+Examples:
+- "Credit score minimum 620" = "Minimum FICO score: 620"
+- "DTI cannot exceed 43%" = "Maximum DTI ratio 43%"
+
+### 2. EQUIVALENT (Score: 80-94)
+Rules with the SAME practical effect but different expression:
+- Same intent and outcome
+- Minor threshold variations that don't change compliance (e.g., "≥620" vs ">619")
+- Different scope but overlapping requirements
+
+Examples:
+- "2 years tax returns required" ≈ "Provide 24 months of tax documentation"
+- "Property must be owner-occupied" ≈ "Primary residence only"
+
+### 3. CONTRADICTORY (Score: 60-79)
+Rules about the SAME topic with CONFLICTING requirements:
+- Different numeric thresholds for same metric
+- Opposite conditions or consequences
+- Mutually exclusive requirements
+
+Examples:
+- G1: "Max LTV 97%" vs G2: "Max LTV 95%" (THRESHOLD_CONFLICT)
+- G1: "FHA loans eligible" vs G2: "FHA loans not permitted" (POLICY_CONFLICT)
+- G1: "60-day docs" vs G2: "90-day docs" (TIMEFRAME_CONFLICT)
+
+### 4. UNRELATED (Score: 0-59)
+Rules that:
+- Address different topics despite same rule_type
+- Have no meaningful connection
+- Cannot be compared directly
+
+## OUTPUT FORMAT
+
+Return ONLY valid JSON:
+```json
+{{
+  "relationship": "IDENTICAL|EQUIVALENT|CONTRADICTORY|UNRELATED",
+  "confidence": 0.85,
+  "similarity_score": 92,
+  "reasoning": "Brief explanation of the classification",
+  "key_comparison": {{
+    "topic_match": true,
+    "threshold_match": true,
+    "condition_match": true,
+    "consequence_match": true
+  }},
+  "conflict_detail": {{
+    "type": "THRESHOLD_CONFLICT|POLICY_CONFLICT|TIMEFRAME_CONFLICT|SCOPE_CONFLICT|null",
+    "g1_value": "value from G1 rule",
+    "g2_value": "value from G2 rule",
+    "resolution_hint": "Which rule is stricter or how to resolve"
+  }}
+}}
+```
+
+## IMPORTANT GUIDELINES
+
+1. **Same Behavior Comparison**: Both rules are already from the same rule_behavior (HOW) - focus on semantic similarity
+2. **Threshold Precision**: Pay close attention to numeric values - 43% vs 45% is a conflict
+3. **Condition Alignment**: Check if rules apply to same scenarios
+4. **Be Conservative**: When uncertain, classify as UNRELATED rather than forcing a match
+5. **Conflict Detection**: CONTRADICTORY classification is critical - never miss threshold conflicts
+
+## EXAMPLES
+
+### Example 1: IDENTICAL
+Rule A: "Maximum DTI ratio for conventional loans is 43%"
+Rule B: "Debt-to-income cannot exceed 43% for conforming mortgages"
+→ IDENTICAL (same 43% threshold, same loan type)
+
+### Example 2: EQUIVALENT  
+Rule A: "Borrower must provide 2 years of W-2 forms"
+Rule B: "Employment income verified with W-2s for prior 24 months"
+→ EQUIVALENT (same requirement, different wording)
+
+### Example 3: CONTRADICTORY
+Rule A: "LTV maximum 97% with PMI for first-time buyers"
+Rule B: "First-time buyer LTV capped at 95% regardless of MI"
+→ CONTRADICTORY (97% vs 95% threshold conflict)
+
+### Example 4: UNRELATED
+Rule A: "Credit score minimum 620 for conventional"
+Rule B: "Appraisal must be dated within 120 days"
+→ UNRELATED (different topics despite both being threshold rules)

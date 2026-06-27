@@ -1,0 +1,89 @@
+# ─────────────────────────────────────────────────────────────────
+# Dependencies
+# ─────────────────────────────────────────────────────────────────
+node_modules/
+.venv/
+venv/
+env/
+
+# ─────────────────────────────────────────────────────────────────
+# Build output
+# ─────────────────────────────────────────────────────────────────
+dist/
+build/
+*.tsbuildinfo
+
+# ─────────────────────────────────────────────────────────────────
+# Python
+# ─────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.benchmarks/
+.deepeval/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ─────────────────────────────────────────────────────────────────
+# Environment / secrets — never commit real values
+# ─────────────────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+!.env.development
+!.env.production
+*.key
+*.pem
+secrets.json
+config.json
+.suite.pids
+.server.pids
+
+# ─────────────────────────────────────────────────────────────────
+# Local databases (generated at runtime)
+# ─────────────────────────────────────────────────────────────────
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+# ─────────────────────────────────────────────────────────────────
+# Proprietary / user-supplied data — NOT distributed
+# Users supply their own; see each app's README.
+# ─────────────────────────────────────────────────────────────────
+assistant/kbs/
+assistant/kgs/
+pipeline/compliance-files/
+pipeline/pipeline-output/
+pipeline/pipeline-data/
+pipeline/pipeline-logs/
+
+# ─────────────────────────────────────────────────────────────────
+# Media / generated artifacts
+# ─────────────────────────────────────────────────────────────────
+video/output/
+video/screenshots/
+video/raw_video/
+*.mp4
+*.webm
+*.mp3
+
+# ─────────────────────────────────────────────────────────────────
+# Test outputs
+# ─────────────────────────────────────────────────────────────────
+**/test-results/
+**/playwright-report/
+**/.playwright-mcp/
+
+# ─────────────────────────────────────────────────────────────────
+# OS / editor
+# ─────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

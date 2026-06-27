@@ -1,0 +1,162 @@
+/* ── Header ────────────────────────────────── */
+header {
+    background: linear-gradient(135deg, rgba(99,102,241,0.08) 0%, rgba(34,211,238,0.04) 100%);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    padding: 0.5rem 1.25rem;
+    border-bottom: none;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    z-index: 200;
+    position: relative;
+    flex-shrink: 0;
+    min-height: 0;
+    overflow: hidden;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-bright), transparent);
+}
+
+.logo { height: 36px; width: 36px; border-radius: var(--radius-sm); object-fit: contain; }
+
+/* Fallback when logo image fails to load */
+.logo-fallback {
+    width: 36px; height: 36px;
+    border-radius: var(--radius-sm);
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: var(--fs-base);
+    color: #fff;
+}
+
+/* Inline layout helpers */
+.flex-center-gap {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.loading-placeholder {
+    color: var(--text-muted);
+    text-align: center;
+    padding: 2rem;
+}
+
+h1 {
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    background: linear-gradient(135deg, #e0e7ff 0%, var(--accent-light) 50%, var(--cyan) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.header-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.status-badge {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 10px;
+    background: rgba(52,211,153,0.08);
+    border: 1px solid rgba(52,211,153,0.15);
+    border-radius: var(--radius-pill);
+    font-size: var(--fs-xs);
+    font-weight: 500;
+    color: var(--emerald);
+}
+
+.status-badge.disconnected {
+    background: rgba(251,113,133,0.1);
+    border-color: rgba(251,113,133,0.2);
+    color: var(--rose);
+}
+.status-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--emerald);
+    animation: pulse 2s ease-in-out infinite;
+}
+.status-badge.disconnected::before {
+    background: var(--rose);
+}
+
+@keyframes pulse {
+    0%,100%{ opacity:1; box-shadow: 0 0 0 0 rgba(52,211,153,0.4); }
+    50%{ opacity:0.6; box-shadow: 0 0 0 4px rgba(52,211,153,0); }
+}
+
+/* ── Main Layout ───────────────────────────── */
+main {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    min-height: 0;
+}
+
+/* ── Resize Handle ──────────────────────────── */
+.resize-handle {
+    width: 4px;
+    cursor: col-resize;
+    background: transparent;
+    position: relative;
+    flex-shrink: 0;
+    z-index: 20;
+    transition: background 0.15s;
+}
+.resize-handle:hover,
+.resize-handle.active {
+    background: linear-gradient(180deg, transparent, var(--accent), transparent);
+}
+.resize-handle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2px;
+    height: 24px;
+    border-radius: 2px;
+    background: var(--border-bright);
+    opacity: 0;
+    transition: opacity 0.15s;
+}
+.resize-handle:hover::after,
+.resize-handle.active::after {
+    opacity: 1;
+    background: var(--accent-light);
+}
+
+/* ── Embedded mode: chat on the right ──────── */
+body.embedded main {
+    flex-direction: row;
+}
+body.embedded .chat-panel {
+    order: 3;
+}
+body.embedded .chat-panel::after {
+    /* move separator line from right edge to left edge */
+    right: auto;
+    left: 0;
+}
+body.embedded .resize-handle {
+    order: 2;
+}
+body.embedded .graph-panel {
+    order: 1;
+}

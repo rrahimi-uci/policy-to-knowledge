@@ -1,0 +1,172 @@
+# Policy to Knowledge — Full Stack Docker Compose
+# Usage:
+#   cp .env.example .env   # add your API keys
+#   docker compose up -d
+#   open http://localhost:4000
+
+services:
+
+  # ════════════════════════════════════════════════════════════════
+  # Infrastructure
+  # ════════════════════════════════════════════════════════════════
+
+  cassandra:
+    image: cassandra:4.1
+    container_name: jg-cassandra
+    ports:
+      - "${CASSANDRA_PORT:-9042}:9042"
+    environment:
+      - CASSANDRA_START_RPC=true
+      - CASSANDRA_CLUSTER_NAME=${CASSANDRA_CLUSTER_NAME:-jg-cluster}
+      - MAX_HEAP_SIZE=${CASSANDRA_MAX_HEAP:-512M}
+      - HEAP_NEWSIZE=${CASSANDRA_HEAP_NEWSIZE:-128M}
+    volumes:
+      - cassandra-data:/var/lib/cassandra
+    healthcheck:
+      test: ["CMD-SHELL", "cqlsh -e 'DESCRIBE KEYSPACES'"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+
+  opensearch:
+    image: opensearchproject/opensearch:2.17.1
+    container_name: jg-opensearch
+    ports:
+      - "${OPENSEARCH_PORT:-9200}:9200"
+    environment:
+      - discovery.type=single-node
+      - plugins.security.disabled=true
+      - compatibility.override_main_response_version=true
+      - OPENSEARCH_INITIAL_ADMIN_PASSWORD=${OPENSEARCH_ADMIN_PASSWORD:-Admin_12345!}
+      - OPENSEARCH_JAVA_OPTS=${OPENSEARCH_JAVA_OPTS:--Xms256m -Xmx256m}
+      - DISABLE_INSTALL_DEMO_CONFIG=true
+    volumes:
+      - opensearch-data:/usr/share/opensearch/data
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:9200/_cluster/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    container_name: jg-redis
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    volumes:
+      - redis-data:/data
+    command: redis-server --appendonly yes --maxmemory ${REDIS_MAX_MEMORY:-256mb} --maxmemory-policy ${REDIS_EVICTION_POLICY:-allkeys-lru}
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  janusgraph:
+    image: janusgraph/janusgraph:1.0.0
+    container_name: jg-server
+    ports:
+      - "${JANUSGRAPH_PORT:-8182}:8182"
+    volumes:
+      - ./assistant/conf:/opt/janusgraph/conf-graphs:ro
+    entrypoint: []
+    command: ["/bin/bash", "-c", "cd /opt/janusgraph && exec bin/janusgraph-server.sh conf-graphs/gremlin-server.yaml"]
+    depends_on:
+      cassandra:
+        condition: service_healthy
+      opensearch:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "cd /opt/janusgraph && bin/gremlin.sh -e scripts/empty-sample.groovy 2>/dev/null || exit 0"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+      start_period: 45s
+
+  # ════════════════════════════════════════════════════════════════
+  # Application Services
+  # ════════════════════════════════════════════════════════════════
+
+  assistant:
+    build:
+      context: ./assistant
+      dockerfile: Dockerfile
+    container_name: assistant
+    ports:
+      - "${CA_PORT:-5000}:5000"
+    environment:
+      - JANUSGRAPH_HOST=janusgraph
+      - JANUSGRAPH_PORT=8182
+      - CASSANDRA_HOST=cassandra
+      - CASSANDRA_PORT=9042
+      - OPENSEARCH_HOST=opensearch
+      - OPENSEARCH_PORT=9200
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - SERVER_HOST=0.0.0.0
+      - SERVER_PORT=5000
+      - URL_PREFIX=/app
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_CHAT_MODEL=${OPENAI_CHAT_MODEL:-gpt-4o-mini}
+      - MAX_TOOL_ROUNDS=${MAX_TOOL_ROUNDS:-3}
+    volumes:
+      - ./assistant/kgs:/app/kgs
+      - ./assistant/kbs:/app/kbs
+      - ./assistant/conf:/app/conf
+      - ./pipeline/pipeline-output:/app/pipeline-output:ro
+    depends_on:
+      janusgraph:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  kg-backend:
+    build:
+      context: ./pipeline
+      dockerfile: Dockerfile.api
+    container_name: kg-backend
+    ports:
+      - "${KG_BACKEND_PORT:-8000}:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - PIPELINE_DATA_DIR=/app/pipeline-data
+    volumes:
+      - ./pipeline/compliance-files:/app/compliance-files:rw
+      - ./pipeline/pipeline-output:/app/pipeline-output:rw
+      - ./pipeline/pipeline-data:/app/pipeline-data:rw
+      - ./pipeline/domain-prompts:/app/domain-prompts:ro
+      - ./pipeline/prompts:/app/prompts:ro
+      - ./pipeline/config.json:/app/config.json:rw
+    restart: unless-stopped
+
+  kg-frontend:
+    build:
+      context: ./pipeline/ui/frontend
+      dockerfile: Dockerfile
+    container_name: kg-frontend
+    ports:
+      - "${KG_FRONTEND_PORT:-5173}:5173"
+    depends_on:
+      - kg-backend
+      - assistant
+    restart: unless-stopped
+
+  suite-shell:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: suite-shell
+    ports:
+      - "${SUITE_PORT:-4000}:4000"
+    depends_on:
+      - kg-backend
+      - kg-frontend
+      - assistant
+    restart: unless-stopped
+
+volumes:
+  cassandra-data:
+  opensearch-data:
+  redis-data:
