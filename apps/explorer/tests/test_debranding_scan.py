@@ -14,6 +14,18 @@ SKIP_DIRS = {
     "dist",
     "build",
     "coverage",
+    # Gitignored generated artifacts and user-supplied proprietary inputs.
+    # These never enter the public repo, so they are out of scope for the
+    # branding scan (which guards what is actually committed).
+    "coverage-html",
+    "htmlcov",
+    "allure-results",
+    "pipeline-output",
+    "pipeline-data",
+    "pipeline-logs",
+    "compliance-files",
+    "kbs",
+    "kgs",
 }
 TEXT_SUFFIXES = {
     ".css",

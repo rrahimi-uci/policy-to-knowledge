@@ -6,6 +6,10 @@ omit =
     */tests/*
     ui/backend/ws/*
     ui/backend/main.py
+    # Subprocess orchestration + external-service calls — exercised by the live
+    # pipeline runs and e2e, not offline unit tests.
+    ui/backend/services/pipeline_runner.py
+    ui/backend/routers/publish.py
 
 [report]
 show_missing = True
