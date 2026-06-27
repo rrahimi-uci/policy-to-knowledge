@@ -1652,7 +1652,7 @@ def run_merge_phase(provider: str, strategy: str = "provenance") -> bool:
     print("  python join_graphs.py --g1 GRAPH1 --g2 GRAPH2 --workers 15")
     print()
     print("Example:")
-    print("  python join_graphs.py --g1 FMNA --g2 FM --workers 15")
+    print("  python join_graphs.py --g1 graphA --g2 FM --workers 15")
     print()
     
     return True

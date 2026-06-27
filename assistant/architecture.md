@@ -194,19 +194,19 @@ erDiagram
 graph LR
     subgraph "Logical Isolation"
         JG[Policy to Knowledge Guidelines Graph<br/>sample_guidelines_g]
-        RG[Revolution Graph<br/>revolution_g]
+        RG[Overlay Graph<br/>overlays_g]
     end
     
     subgraph "Shared Cassandra Cluster"
         KS1[Keyspace: janusgraph_sample_guidelines]
-        KS2[Keyspace: janusgraph_revolution]
+        KS2[Keyspace: janusgraph_overlays]
     end
     
     subgraph "Shared OpenSearch Cluster"
         IDX1[Index: sample_guidelines_search]
-        IDX2[Index: revolution_search]
+        IDX2[Index: overlays_search]
         VIDX1[Vector Index: sample_guidelines_vectors]
-        VIDX2[Vector Index: revolution_vectors]
+        VIDX2[Vector Index: overlays_vectors]
     end
     
     JG -->|Tables| KS1
@@ -227,7 +227,7 @@ graph LR
 | Graph | Traversal Source | Cassandra Keyspace | OpenSearch Index | KG File |
 | ----- | ---------------- | ------------------ | ---------------- | ------- |
 | Policy to Knowledge Guidelines | `sample_guidelines_g` | `janusgraph_sample_guidelines` | `sample_guidelines_search` | `kgs/sample-guidelines-kg.json` |
-| Revolution | `revolution_g` | `janusgraph_revolution` | `revolution_search` | `kgs/revolution-kg.json` |
+| Overlay | `overlays_g` | `janusgraph_overlays` | `overlays_search` | `kgs/example-overlays-kg.json` |
 
 New graphs are added by appending an entry to `graphs.yaml` and running `python scripts/generate_graph_config.py`, which auto-generates JanusGraph properties files, `gremlin-server.yaml`, and `init-graphs.groovy`.
 

@@ -9,7 +9,7 @@ Reads knowledge graph JSON files and creates:
 
 Supports multiple graphs:
   - 'g' (compliance/fama) - Fannie Mae business rules
-  - 'contracts_g' (contracts/revolution) - Revolution/contract rules
+  - 'contracts_g' (contracts/overlays) - overlay/contract rules
 """
 
 import sys

@@ -89,7 +89,7 @@ class SetOperationsVisualizer:
         
         Args:
             provider: The provider folder (openai/anthropic)
-            merge_subfolder: Subfolder name for merged outputs (e.g., 'FMNA_Revolution-Overlay')
+            merge_subfolder: Subfolder name for merged outputs (e.g., 'graphA_graphB')
         """
         self.provider = provider
         self.merge_subfolder = merge_subfolder

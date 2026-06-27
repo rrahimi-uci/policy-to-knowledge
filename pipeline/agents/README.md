@@ -259,7 +259,7 @@ PDF → [1] → [2] → [3] → [3.5] → [4] → [5] → [6] → Knowledge Grap
 
 **10 Rule Domains**: borrower, income, property, loan, appraisal, underwriting, documentation, closing, servicing, compliance
 
-**Run**: `python join_graphs.py --g1 FMNA --g2 Revolution-Overlay`
+**Run**: `python join_graphs.py --g1 graphA --g2 graphB`
 
 ---
 
@@ -292,7 +292,7 @@ PDF → [1] → [2] → [3] → [3.5] → [4] → [5] → [6] → Knowledge Grap
 - Confidence scores for each match
 - Thread-safe progress tracking
 
-**Run**: `python join_graphs.py --g1 FMNA --g2 Revolution --workers 15 --batch-size 10`
+**Run**: `python join_graphs.py --g1 graphA --g2 graphB --workers 15 --batch-size 10`
 
 ---
 
@@ -318,7 +318,7 @@ PDF → [1] → [2] → [3] → [3.5] → [4] → [5] → [6] → Knowledge Grap
 | Union | G1 ∪ G2 | All unique rules | `union.json` |
 | Contradictions | G1 ⊕ G2 | Conflicting pairs | `contradictions.json` |
 
-**Run**: `python join_graphs.py --g1 FMNA --g2 Revolution-Overlay`
+**Run**: `python join_graphs.py --g1 graphA --g2 graphB`
 
 ---
 
@@ -350,7 +350,7 @@ PDF → [1] → [2] → [3] → [3.5] → [4] → [5] → [6] → Knowledge Grap
 - **RECTANGLE**: G1-only rules
 - **CIRCLE**: G2-only rules
 
-**Run**: `python join_graphs.py --g1 FMNA --g2 Revolution-Overlay`
+**Run**: `python join_graphs.py --g1 graphA --g2 graphB`
 
 ---
 
@@ -386,8 +386,8 @@ python knowledge_graph_generation.py --batch                      # Process all 
 
 # Phase 2: Knowledge graph comparison
 python join_graphs.py --list             # List available graphs
-python join_graphs.py --g1 FMNA --g2 Revolution-Overlay
-python join_graphs.py --g1 FM --g2 FMNA --workers 20 --batch-size 15
+python join_graphs.py --g1 graphA --g2 graphB
+python join_graphs.py --g1 FM --g2 graphA --workers 20 --batch-size 15
 ```
 
 ### Configuration

@@ -1,6 +1,6 @@
 # Explorer
 
-An AI-powered **Compliance Knowledge Graph** platform built with **JanusGraph**, **OpenAI**, and **D3.js**. Explorer enables intelligent exploration of compliance regulations — Policy to Knowledge internal guidelines, Fannie Mae, Freddie Mac, and Revolution overlays — through natural language conversation, semantic search, interactive graph visualization, collaborative annotation, and release management.
+An AI-powered **Compliance Knowledge Graph** platform built with **JanusGraph**, **OpenAI**, and **D3.js**. Explorer enables intelligent exploration of compliance regulations — agency/investor guidelines, lender overlays, and any rule set you load — through natural language conversation, semantic search, interactive graph visualization, collaborative annotation, and release management.
 
 > **Backend:** this folder is the JanusGraph/Cassandra/OpenSearch
 > implementation that serves the shared frontend via the `apiBaseUrl` setting.
@@ -39,7 +39,7 @@ An AI-powered **Compliance Knowledge Graph** platform built with **JanusGraph**,
 │                     │   │  │ Full-Text Indices       │ │
 │  sample_guidelines_g │   │  │  (JanusGraph mixed idx) │ │
 │  fannie_mae_g       │   │  ├────────────────────────┤ │
-│  revolution_g       │   │  │ k-NN Vector Indices    │ │
+│  overlays_g       │   │  │ k-NN Vector Indices    │ │
 │                     │   │  │  (Semantic Search)      │ │
 └──────────┬──────────┘   │  └────────────────────────┘ │
            │              └─────────────────────────────┘
@@ -145,24 +145,10 @@ assistant/
 │   ├── gremlin-server.yaml     # Gremlin Server config (auto-generated)
 │   ├── init-graphs.groovy      # Graph initialization script (auto-generated)
 │   └── janusgraph-*.properties # Per-graph JanusGraph properties (auto-generated)
-├── kgs/
-│   ├── absa-kg.json            # Absa AML knowledge graph
-│   ├── barclays-kg.json        # Barclays AML knowledge graph
-│   ├── comercial_lending-kg.json # Commercial lending knowledge graph
-│   ├── fannie_mae-kg.json      # Fannie Mae knowledge graph
-│   ├── freddie_mac-kg.json     # Freddie Mac knowledge graph
-│   ├── healthcare-kg.json      # Healthcare compliance knowledge graph
-│   ├── prmi-kg.json            # PRMI knowledge graph
-│   └── revolution-kg.json      # Revolution overlays knowledge graph
-├── kbs/
-│   ├── absa/                   # Source documents (Absa AML)
-│   ├── barclays/               # Source documents (Barclays AML)
-│   ├── comercial-lending/      # Source documents (Commercial lending)
-│   ├── fannie-mae/             # Source documents (Fannie Mae guidelines)
-│   ├── freddie-mac/            # Source documents (Freddie Mac guidelines)
-│   ├── healthcare/             # Source documents (Healthcare compliance)
-│   ├── prmi/                   # Source documents (PRMI guidelines)
-│   └── revolution/             # Source documents (Revolution overlays)
+├── kgs/                        # Knowledge-graph JSON (user-supplied; gitignored)
+│   └── <graph>-kg.json         # one per graph defined in conf/graphs.yaml
+├── kbs/                        # Source document chunks (user-supplied; gitignored)
+│   └── <graph>/                # one folder per graph's docs_folder
 ├── scripts/
 │   └── generate_graph_config.py # Auto-generates conf/ files from graphs.yaml
 ├── src/
@@ -226,17 +212,11 @@ Knowledge graphs are defined in `graphs.yaml` and loaded at startup. Only graphs
 
 | Graph | Traversal Source | KG File | Domain |
 |-------|-----------------|---------|--------|
-| Sample Guidelines | `sample_guidelines_g` | `kgs/sample-guidelines-kg.json` | Policy to Knowledge internal policy |
-| Fannie Mae | `fannie_mae_g` | `kgs/fannie_mae-kg.json` | Mortgage |
-| Freddies Mac | `freddies_mac_g` | `kgs/freddies_mac-kg.json` | Mortgage |
-| Freddie Mac | `freddie_mac_g` | `kgs/freddie_mac-kg.json` | Mortgage |
-| Revolution | `revolution_g` | `kgs/revolution-kg.json` | Mortgage overlays |
-| PRMI | `prmi_g` | `kgs/prmi-kg.json` | Mortgage |
-| Absa | `absa_g` | `kgs/absa-kg.json` | Anti-money laundering |
-| Barclays | `barclays_g` | `kgs/barclays-kg.json` | Anti-money laundering |
-| Anti Money Laundry | `anti_money_laundry_g` | `kgs/anti_money_laundry-kg.json` | Anti-money laundering |
-| Comercial Lending | `comercial_lending_g` | `kgs/comercial_lending-kg.json` | Commercial lending |
-| Healthcare | `healthcare_g` | `kgs/healthcare-kg.json` | Healthcare |
+| Sample Guidelines | `sample_guidelines_g` | `kgs/sample-guidelines-kg.json` | Mortgage |
+| Example Policies | `example_policies_g` | `kgs/example-policies-kg.json` | Mortgage |
+
+Add your own graphs by editing `conf/graphs.yaml` and running
+`python scripts/generate_graph_config.py`.
 
 ### Vertex Properties
 
