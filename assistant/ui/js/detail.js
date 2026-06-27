@@ -125,17 +125,11 @@ function renderDetail(info) {
     // Determine approved button states from persisted data
     const approvedYesActive = persisted.approved === 'yes' ? ' active-yes' : '';
     const approvedNoActive = persisted.approved === 'no' ? ' active-no' : (persisted.approved === null ? ' active-no' : '');
-    const commentCount = persisted.comments?.length || 0;
-    const commentBadge = commentCount > 0 ? ` (${commentCount})` : '';
 
     // ── Action Buttons Toolbar
     html += `<div class="detail-actions">
         <div class="detail-actions-title">Actions</div>
         <div class="detail-actions-grid">
-            <button class="action-btn action-btn--comment" onclick="handleAction('comment','${safeNodeName}')" title="Add a comment to this node">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                Comment${commentBadge}
-            </button>
             <button class="action-btn action-btn--edit" onclick="handleAction('edit','${safeNodeName}')" title="Edit this node">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
                 Edit
@@ -433,8 +427,6 @@ function renderEdgeDetail(d, edgeId, srcId, tgtId, srcName, tgtName) {
     const encSrcId = encodeURIComponent(String(srcId));
     const encTgtId = encodeURIComponent(String(tgtId));
     const edgeLabel = d.dependency_type || d.label || 'Edge';
-    const commentCount = persisted.comments?.length || 0;
-    const commentBadge = commentCount > 0 ? ` (${commentCount})` : '';
     // Determine approved button states for edge
     const edgeApprovedYes = persisted.approved === 'yes' ? ' active-yes' : '';
     const edgeApprovedNo = persisted.approved === 'no' ? ' active-no' : (persisted.approved === null ? ' active-no' : '');
@@ -470,10 +462,6 @@ function renderEdgeDetail(d, edgeId, srcId, tgtId, srcName, tgtName) {
     html += `<div class="edge-detail-actions">
         <div class="detail-actions-title">Actions</div>
         <div class="edge-actions-grid">
-            <button class="action-btn action-btn--comment" onclick="handleEdgeAction('comment',decodeURIComponent('${encEdgeId}'))" title="Add a comment">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                Comment${commentBadge}
-            </button>
             <button class="action-btn action-btn--edit" onclick="handleEdgeAction('edit',decodeURIComponent('${encEdgeId}'))" title="Edit edge properties">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
                 Edit

@@ -21,7 +21,6 @@ function handleAction(action, nodeName) {
     if (!nodeId) return;
 
     switch (action) {
-        case 'comment': openCommentPanel(nodeId, nodeName); break;
         case 'edit': openEditPanel(nodeId, nodeName); break;
         case 'reviewed_yes': setReviewStatus(nodeId, nodeName, 'yes'); break;
         case 'reviewed_no': setReviewStatus(nodeId, nodeName, 'no'); break;
@@ -30,107 +29,6 @@ function handleAction(action, nodeName) {
         case 'version': openVersionPanel(nodeId, nodeName); break;
         case 'delete': openDeleteConfirm(nodeId, nodeName); break;
     }
-}
-
-// ── Comment ──────────────────────────────────
-const _commentAuthors = ['Jack', 'Tom', 'Gina', 'Rose'];
-
-function openCommentPanel(nodeId, nodeName) {
-    const data = getNodeData(nodeId);
-    const savedAuthor = localStorage.getItem('p2k-comment-author') || '';
-    const commentsHTML = data.comments.length
-        ? data.comments.map((c, i) => {
-            const authorBadge = c.author ? `<span class="comment-author">@${escapeHtml(c.author)}</span>` : '';
-            const editedBadge = c.edited ? `<span class="comment-edited-badge">edited</span>` : '';
-            const safeNodeName = escapeHtml(nodeName).replace(/'/g,"&#39;");
-            return `<div class="comment-item">${authorBadge}<div class="comment-text">${escapeHtml(c.text)}${editedBadge}</div><div class="comment-meta"><span>${c.time}</span><div class="comment-actions"><button class="comment-edit" title="Edit this comment" onclick="startEditComment('${nodeId}', ${i}, '${safeNodeName}')">Edit</button><button class="comment-delete" title="Delete this comment" onclick="deleteComment('${nodeId}', ${i}, '${safeNodeName}')">Delete</button></div></div></div>`;
-        }).join('')
-        : '<div class="comment-empty">No comments yet</div>';
-
-    const authorOptions = _commentAuthors.map(name =>
-        `<option value="${escapeHtml(name)}"${name === savedAuthor ? ' selected' : ''}>${escapeHtml(name)}</option>`
-    ).join('');
-
-    insertSubPanel(`
-        <div class="action-subpanel-header">
-            <span class="action-subpanel-title">Comments</span>
-            <button class="action-subpanel-close" title="Close panel" onclick="closeSubPanel()">&times;</button>
-        </div>
-        <div class="comment-author-row">
-            <label class="comment-author-label" for="commentAuthor">Post as</label>
-            <select class="comment-author-select" id="commentAuthor" onchange="localStorage.setItem('p2k-comment-author', this.value)">
-                <option value="">Select person...</option>
-                ${authorOptions}
-            </select>
-        </div>
-        <div class="comment-form">
-            <div class="textarea-with-sparkle">
-                <textarea class="comment-input" id="commentInput" placeholder="Write a comment..." rows="1"></textarea>
-                ${sparkleBtn('commentInput', 'comment')}
-            </div>
-            <button class="comment-submit" title="Post comment" onclick="addComment('${nodeId}', '${escapeHtml(nodeName).replace(/'/g,"&#39;")}')">Add</button>
-        </div>
-        <div class="comment-list" id="commentList">${commentsHTML}</div>
-    `);
-    document.getElementById('commentInput')?.focus();
-}
-
-function addComment(nodeId, nodeName) {
-    const input = document.getElementById('commentInput');
-    const authorSelect = document.getElementById('commentAuthor');
-    const text = input?.value.trim();
-    if (!text) return;
-    const author = authorSelect?.value || '';
-    if (!author) {
-        authorSelect?.focus();
-        showToast('Please select a person first', ICONS.warning);
-        return;
-    }
-    const data = getNodeData(nodeId);
-    data.comments.push({ text, author, time: new Date().toLocaleString() });
-    setNodeData(nodeId, data);
-    input.value = '';
-    openCommentPanel(nodeId, nodeName);
-    showToast('Comment added', ICONS.comment);
-}
-
-async function deleteComment(nodeId, idx, nodeName) {
-    const ok = await confirmAction('Delete this comment?', { variant: 'danger', confirmLabel: 'Delete' });
-    if (!ok) return;
-    const data = getNodeData(nodeId);
-    data.comments.splice(idx, 1);
-    setNodeData(nodeId, data);
-    openCommentPanel(nodeId, nodeName); // re-render
-}
-
-function startEditComment(nodeId, idx, nodeName) {
-    const data = getNodeData(nodeId);
-    const comment = data.comments[idx];
-    const items = document.querySelectorAll('#commentList .comment-item');
-    const item = items[idx];
-    if (!item) return;
-    const safeNodeName = escapeHtml(nodeName).replace(/'/g, "&#39;");
-    item.innerHTML = `
-        <div class="comment-edit-form">
-            <textarea class="comment-edit-input" id="commentEditInput_${idx}">${escapeHtml(comment.text)}</textarea>
-            <div class="comment-edit-actions">
-                <button class="comment-edit-cancel" title="Cancel edit" onclick="openCommentPanel('${nodeId}','${safeNodeName}')">Cancel</button>
-                <button class="comment-edit-save" title="Save edit" onclick="saveEditComment('${nodeId}',${idx},'${safeNodeName}')">Save</button>
-            </div>
-        </div>`;
-    const ta = document.getElementById(`commentEditInput_${idx}`);
-    if (ta) { ta.focus(); ta.setSelectionRange(ta.value.length, ta.value.length); }
-}
-
-function saveEditComment(nodeId, idx, nodeName) {
-    const input = document.getElementById(`commentEditInput_${idx}`);
-    const text = input?.value.trim();
-    if (!text) return;
-    const data = getNodeData(nodeId);
-    data.comments[idx] = { ...data.comments[idx], text, edited: true };
-    setNodeData(nodeId, data);
-    openCommentPanel(nodeId, nodeName);
-    showToast('Comment updated', ICONS.editCyan);
 }
 
 // ── Edit ─────────────────────────────────────
@@ -466,7 +364,7 @@ function openVersionPanel(nodeId, nodeName) {
             <span class="action-subpanel-title">Version History</span>
             <button class="action-subpanel-close" title="Close panel" onclick="closeSubPanel()">&times;</button>
         </div>
-        <div class="version-info">All edits, reviews, and comments are saved on the server and persist across sessions and browsers.</div>
+        <div class="version-info">All edits and reviews are saved on the server and persist across sessions and browsers.</div>
         <div class="version-list">${versionHTML}</div>
     `);
 }
@@ -661,109 +559,12 @@ function insertEdgeSubPanel(html) {
 function handleEdgeAction(action, edgeId) {
     if (!edgeId) return;
     switch (action) {
-        case 'comment': openEdgeCommentPanel(edgeId); break;
         case 'edit': openEdgeEditPanel(edgeId); break;
         case 'reverse': openEdgeReverseConfirm(edgeId); break;
         case 'delete': openEdgeDeleteConfirm(edgeId); break;
         case 'approved_yes': setEdgeApprovalStatus(edgeId, 'yes'); break;
         case 'approved_no': setEdgeApprovalStatus(edgeId, 'no'); break;
     }
-}
-
-// ── Edge Comment ─────────────────────────────
-function openEdgeCommentPanel(edgeId) {
-    const data = getEdgeData(edgeId);
-    const encEdgeId = encodeURIComponent(edgeId);
-    const savedAuthor = localStorage.getItem('p2k-comment-author') || '';
-    const commentsHTML = data.comments.length
-        ? data.comments.map((c, i) => {
-            const authorBadge = c.author ? `<span class="comment-author">@${escapeHtml(c.author)}</span>` : '';
-            const editedBadge = c.edited ? `<span class="comment-edited-badge">edited</span>` : '';
-            return `<div class="comment-item">${authorBadge}<div class="comment-text">${escapeHtml(c.text)}${editedBadge}</div><div class="comment-meta"><span>${c.time}</span><div class="comment-actions"><button class="comment-edit" title="Edit this comment" onclick="startEditEdgeComment(decodeURIComponent('${encEdgeId}'), ${i})">Edit</button><button class="comment-delete" title="Delete this comment" onclick="deleteEdgeComment(decodeURIComponent('${encEdgeId}'), ${i})">Delete</button></div></div></div>`;
-        }).join('')
-        : '<div class="comment-empty">No comments yet</div>';
-
-    const authorOptions = _commentAuthors.map(name =>
-        `<option value="${escapeHtml(name)}"${name === savedAuthor ? ' selected' : ''}>${escapeHtml(name)}</option>`
-    ).join('');
-
-    insertEdgeSubPanel(`
-        <div class="action-subpanel-header">
-            <span class="action-subpanel-title">Edge Comments</span>
-            <button class="action-subpanel-close" title="Close panel" onclick="closeEdgeSubPanel()">&times;</button>
-        </div>
-        <div class="comment-author-row">
-            <label class="comment-author-label" for="edgeCommentAuthor">Post as</label>
-            <select class="comment-author-select" id="edgeCommentAuthor" onchange="localStorage.setItem('p2k-comment-author', this.value)">
-                <option value="">Select person...</option>
-                ${authorOptions}
-            </select>
-        </div>
-        <div class="comment-form">
-            <textarea class="comment-input" id="edgeCommentInput" placeholder="Write a comment..." rows="1"></textarea>
-            <button class="comment-submit" title="Post comment" onclick="addEdgeComment(decodeURIComponent('${encEdgeId}'))">Add</button>
-        </div>
-        <div class="comment-list" id="edgeCommentList">${commentsHTML}</div>
-    `);
-    document.getElementById('edgeCommentInput')?.focus();
-}
-
-function addEdgeComment(edgeId) {
-    const input = document.getElementById('edgeCommentInput');
-    const authorSelect = document.getElementById('edgeCommentAuthor');
-    const text = input?.value.trim();
-    if (!text) return;
-    const author = authorSelect?.value || '';
-    if (!author) {
-        authorSelect?.focus();
-        showToast('Please select a person first', ICONS.warning);
-        return;
-    }
-    const data = getEdgeData(edgeId);
-    data.comments.push({ text, author, time: new Date().toLocaleString() });
-    setEdgeData(edgeId, data);
-    input.value = '';
-    openEdgeCommentPanel(edgeId);
-    showToast('Comment added to edge', ICONS.comment);
-}
-
-async function deleteEdgeComment(edgeId, idx) {
-    const ok = await confirmAction('Delete this comment?', { variant: 'danger', confirmLabel: 'Delete' });
-    if (!ok) return;
-    const data = getEdgeData(edgeId);
-    data.comments.splice(idx, 1);
-    setEdgeData(edgeId, data);
-    openEdgeCommentPanel(edgeId);
-}
-
-function startEditEdgeComment(edgeId, idx) {
-    const data = getEdgeData(edgeId);
-    const comment = data.comments[idx];
-    const items = document.querySelectorAll('#edgeCommentList .comment-item');
-    const item = items[idx];
-    if (!item) return;
-    const encEdgeId = encodeURIComponent(edgeId);
-    item.innerHTML = `
-        <div class="comment-edit-form">
-            <textarea class="comment-edit-input" id="edgeCommentEditInput_${idx}">${escapeHtml(comment.text)}</textarea>
-            <div class="comment-edit-actions">
-                <button class="comment-edit-cancel" title="Cancel edit" onclick="openEdgeCommentPanel(decodeURIComponent('${encEdgeId}'))">Cancel</button>
-                <button class="comment-edit-save" title="Save edit" onclick="saveEditEdgeComment(decodeURIComponent('${encEdgeId}'),${idx})">Save</button>
-            </div>
-        </div>`;
-    const ta = document.getElementById(`edgeCommentEditInput_${idx}`);
-    if (ta) { ta.focus(); ta.setSelectionRange(ta.value.length, ta.value.length); }
-}
-
-function saveEditEdgeComment(edgeId, idx) {
-    const input = document.getElementById(`edgeCommentEditInput_${idx}`);
-    const text = input?.value.trim();
-    if (!text) return;
-    const data = getEdgeData(edgeId);
-    data.comments[idx] = { ...data.comments[idx], text, edited: true };
-    setEdgeData(edgeId, data);
-    openEdgeCommentPanel(edgeId);
-    showToast('Comment updated', ICONS.editCyan);
 }
 
 // ── Edge Edit ────────────────────────────────
