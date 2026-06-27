@@ -61,3 +61,40 @@ class TestPromptEndpoints:
         result = prompts.get_prompt("default", "p")
         assert result["content"] == "hello world"
         assert result["name"] == "p"
+
+
+@allure.feature("Pipeline API")
+@allure.story("Prompts router via TestClient")
+class TestPromptsRoutes:
+    @pytest.fixture
+    def client(self, tmp_path, monkeypatch):
+        monkeypatch.setattr(prompts, "PROJECT_ROOT", tmp_path)
+        dom = tmp_path / "domain-prompts" / "mortgage"
+        dom.mkdir(parents=True)
+        (dom / "rules.txt").write_text("extract the rules")
+        default = tmp_path / "prompts"
+        default.mkdir()
+        (default / "base.txt").write_text("base prompt\nline2")
+        from fastapi.testclient import TestClient
+        from ui.backend.main import app
+        return TestClient(app)
+
+    @allure.title("GET / lists domains + default prompts")
+    def test_list(self, client):
+        body = client.get("/api/prompts").json()
+        assert any(d["name"] == "mortgage" and "rules" in d["prompts"] for d in body["domains"])
+        assert "base" in body["default"]["prompts"]
+
+    @allure.title("GET a domain prompt and the default prompt")
+    def test_get(self, client):
+        r = client.get("/api/prompts/mortgage/rules").json()
+        assert r["content"] == "extract the rules" and r["size"] > 0
+        assert client.get("/api/prompts/default/base").json()["lines"] == 2
+
+    @allure.title("PUT saves an existing domain prompt; unknown 404s")
+    def test_update(self, client):
+        ok = client.put("/api/prompts/mortgage/rules", json={"content": "new body"})
+        assert ok.json()["status"] == "saved"
+        assert client.get("/api/prompts/mortgage/rules").json()["content"] == "new body"
+        assert client.put("/api/prompts/mortgage/ghost", json={"content": "x"}).status_code == 404
+        assert client.get("/api/prompts/mortgage/missing").status_code == 404

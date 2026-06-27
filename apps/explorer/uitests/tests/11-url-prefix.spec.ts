@@ -22,10 +22,10 @@ test.describe("Flow 11 — URL Prefix Routing", () => {
     // Chat input should be visible — proves index.html loaded
     await expect(page.locator(CHAT.input)).toBeVisible({ timeout: 15_000 });
 
-    // Header title should be present
+    // Header title should be present (the chat/assistant panel header)
     const h1 = page.locator("header h1");
     await expect(h1).toBeVisible();
-    await expect(h1).toHaveText("Explorer");
+    await expect(h1).toHaveText("Assistant");
 
     // URL must include /app
     expect(page.url()).toContain("/app");

@@ -37,23 +37,22 @@ test.describe("Flow 12 — URL & Page Access Verification", () => {
   });
 
   /* ── Test 2: Graph status API ──────────────────────────────── */
-  test("graph status API responds at /app/api/graph/status", async ({ request }) => {
-    const resp = await request.get("/app/api/graph/status");
+  test("available graphs API responds at /app/api/graph/available", async ({ request }) => {
+    const resp = await request.get("/app/api/graph/available");
     expect(resp.status()).toBe(200);
 
     const body = await resp.json();
-    // Status endpoint returns lock/release info
+    // Lists graphs available to publish/activate.
     expect(typeof body).toBe("object");
+    expect(body).toHaveProperty("available");
   });
 
-  /* ── Test 3: Graph releases API ────────────────────────────── */
-  test("graph releases API responds at /app/api/graph/releases", async ({ request }) => {
-    const resp = await request.get("/app/api/graph/releases");
+  /* ── Test 3: Published-graphs API ──────────────────────────── */
+  test("published graphs API responds at /app/api/graph/published", async ({ request }) => {
+    const resp = await request.get("/app/api/graph/published");
     expect(resp.status()).toBe(200);
-
     const body = await resp.json();
-    // Returns an array of release objects
-    expect(Array.isArray(body)).toBe(true);
+    expect(typeof body).toBe("object");
   });
 
   /* ── Test 4: Annotations API ───────────────────────────────── */

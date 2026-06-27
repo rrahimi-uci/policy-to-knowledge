@@ -33,7 +33,17 @@ from openai import OpenAI
 from dotenv import load_dotenv
 
 from src.graph_connection import get_traversal
-from src.semantic_search import SemanticSearchEngine
+try:
+    from src.semantic_search import SemanticSearchEngine
+    _SEMANTIC_AVAILABLE = True
+except ImportError as _e:  # sentence-transformers/torch not installed
+    SemanticSearchEngine = None
+    _SEMANTIC_AVAILABLE = False
+    import logging as _logging
+    _logging.getLogger(__name__).warning(
+        "Semantic search disabled (optional dependency missing: %s). "
+        "Graph exploration and keyword search remain available.", _e,
+    )
 from src.models import init_db, SessionLocal, NodeAnnotation
 from src.docs_sync import copy_docs_tree, docs_folder_rel
 from src.cache import get_cache
@@ -83,8 +93,8 @@ APP_ROOT = Path(os.environ.get("CA_APP_ROOT", "/app")).resolve()
 app = Flask(__name__, static_folder="../ui", static_url_path="")
 CORS(app, origins=["http://localhost:3000", "http://localhost:5173", "http://localhost:4000"])
 
-# Shared semantic search engine
-_engine = SemanticSearchEngine()
+# Shared semantic search engine (None when the optional dependency is absent)
+_engine = SemanticSearchEngine() if _SEMANTIC_AVAILABLE else None
 
 # Initialize OpenAI client
 _openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
@@ -717,6 +727,9 @@ def semantic_search():
     Semantic similarity search.
     Query params: q (natural-language query), top_k (default SEMANTIC_SEARCH_DEFAULT_TOP_K), graph_name (optional)
     """
+    if _engine is None:
+        return jsonify({"error": "Semantic search is unavailable on this server "
+                                 "(optional dependency 'sentence-transformers' not installed)."}), 503
     query = request.args.get("q", "").strip()
     try:
         top_k = int(request.args.get("top_k", str(SEMANTIC_SEARCH_DEFAULT_TOP_K)))
