@@ -17,13 +17,15 @@ SUPPORTED_DOMAINS = {"mortgage", "aml", "healthcare", "commercial_lending"}
 
 # Keyword fallback used when the folder hasn't been explicitly assigned a
 # domain via the Documents UI (i.e. missing from .folder_domains.json).
+# Order matters: more specific domains first so e.g. "commercial-lending" is not
+# captured by the generic mortgage keyword ("lend").
 _DOMAIN_KEYWORDS: list[tuple[str, list[str]]] = [
-    ("mortgage", [
-        "mortgage", "loan", "fnma", "fhlmc", "underwriting", "servicing", "lend",
-    ]),
-    ("aml", ["anti-money", "anti_money", "money-laundry", "money_laundering", "aml", "kyc", "sanctions"]),
     ("commercial_lending", ["commercial", "comercial", "lending"]),
+    ("aml", ["anti-money", "anti_money", "money-laundry", "money_laundering", "aml", "kyc", "sanctions"]),
     ("healthcare", ["healthcare", "health-care", "hipaa"]),
+    ("mortgage", [
+        "mortgage", "loan", "sample_guidelines", "example_policies", "underwriting", "servicing", "lend",
+    ]),
 ]
 
 
@@ -305,8 +307,12 @@ def apply_theme(html: str, theme: str) -> str:
 
 
 def _comparison_base_dirs(provider: str = "openai") -> List[Path]:
-    """Return all directories that may contain comparison subfolders."""
-    base = _pipeline_output() / provider
+    """Return all directories that may contain comparison subfolders.
+
+    `provider` is accepted for backward compatibility but ignored — outputs are
+    no longer namespaced by provider (they live directly under pipeline-output/).
+    """
+    base = _pipeline_output()
     return [base / d for d in ("_joined", "_merged") if (base / d).exists()]
 
 

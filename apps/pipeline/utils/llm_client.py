@@ -45,8 +45,10 @@ def _estimate_cost(model: str, prompt_tokens: int, completion_tokens: int) -> fl
     key = (model or "").lower()
     rates = _PRICING_PER_1M.get(key)
     if not rates:
-        # Try a prefix match (e.g. "gpt-4o-2024-08-06" -> "gpt-4o")
-        for name, r in _PRICING_PER_1M.items():
+        # Try a prefix match (e.g. "gpt-4o-2024-08-06" -> "gpt-4o"). Match the
+        # LONGEST prefix first so "gpt-4o-mini-..." resolves to "gpt-4o-mini",
+        # not the pricier "gpt-4o".
+        for name, r in sorted(_PRICING_PER_1M.items(), key=lambda kv: -len(kv[0])):
             if key.startswith(name):
                 rates = r
                 break
@@ -106,6 +108,7 @@ class LLMClient:
         Covers current and future OpenAI reasoning series (o1, o3, o4, …)
         as well as gpt-5.x models.
         """
+        model = model or ""
         return bool(
             re.match(r'^o\d', model, re.IGNORECASE)
             or 'gpt-5' in model.lower()

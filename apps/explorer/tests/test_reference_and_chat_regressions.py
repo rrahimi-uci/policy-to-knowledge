@@ -167,7 +167,7 @@ def test_activate_graph_clears_target_graph_before_loading():
 def test_load_all_graphs_clears_before_load():
     """Container restarts re-run startup load_all_graphs against persistent
     JanusGraph storage. Without clear_first=True every restart doubles the
-    business_rule vertex count (observed: fannie_mae 392 file rules → 784
+    business_rule vertex count (observed: sample_guidelines 392 file rules → 784
     live nodes after a redeploy)."""
     src = (REPO_ROOT / "src" / "data_loader.py").read_text()
     start = src.index("def load_all_graphs")
@@ -188,7 +188,7 @@ def test_setup_if_empty_reloads_drifted_graphs():
     """Persistent JanusGraph state means a baked KG file change does NOT
     propagate on container restart unless setup-if-empty also reloads graphs
     whose live business_rule count differs from the file. Without this, a
-    stale fannie_mae (e.g. doubled to 784) survives indefinite redeploys."""
+    stale sample_guidelines (e.g. doubled to 784) survives indefinite redeploys."""
     src = (REPO_ROOT / "src" / "main.py").read_text()
     assert "_get_drifted_graphs" in src, (
         "main.py must define _get_drifted_graphs() so cmd_setup_if_empty can "
@@ -211,7 +211,7 @@ def test_setup_if_empty_reloads_drifted_graphs():
 def test_baked_kgs_match_optimized_pipeline_output():
     """The KG JSON files baked into the assistant image must match the
     canonical optimized pipeline output. Drift here is what produced the
-    user-visible mismatches (assistant said 850/723 for fannie_mae while
+    user-visible mismatches (assistant said 850/723 for sample_guidelines while
     Explorer correctly showed 352 rules)."""
     pipeline_root = REPO_ROOT.parent / "pipeline" / "pipeline-output" / "openai"
     if not pipeline_root.is_dir():
@@ -219,8 +219,8 @@ def test_baked_kgs_match_optimized_pipeline_output():
     pairs = [
         ("anti_money_laundry-kg.json",   "anti-money-laundry"),
         ("comercial_lending-kg.json",    "comercial-lending"),
-        ("fannie_mae-kg.json",           "fannie-mae"),
-        ("freddies_mac-kg.json",         "freddies-mac"),
+        ("sample_guidelines-kg.json",           "sample-guidelines"),
+        ("example_policies-kg.json",         "example-policies"),
         ("healthcare-kg.json",           "healthcare"),
         ("sample-guidelines-kg.json",     "sample-guidelines"),
         ("example-overlays-kg.json",           "overlay"),
@@ -267,11 +267,11 @@ def sample_docs_folder():
     return str(folder)
 
 
-def test_reference_resolve_finds_freddie_mac_chunk(sample_docs_folder):
+def test_reference_resolve_finds_example_policies_chunk(sample_docs_folder):
     """The exact reference reported by the user must resolve to a real chunk.
 
     User-reported reference (from a node in sample_guidelines_g):
-       Freddie Mac Single-Family Seller_Servicer Guide PDF Sep 2025/
+       Example Policies Single-Family Seller_Servicer Guide PDF Sep 2025/
          Chapter 6301 Documentation Delivery/
          Chapter 6302 Mortgage Delivery Instructions/
          6302.7 Loan data required for ARMs (100121)/
@@ -280,7 +280,7 @@ def test_reference_resolve_finds_freddie_mac_chunk(sample_docs_folder):
     server = _import_server()
 
     expected_rel = (
-        "Freddie Mac Single-Family Seller_Servicer Guide PDF Sep 2025/"
+        "Example Policies Single-Family Seller_Servicer Guide PDF Sep 2025/"
         "Chapter 6301 Documentation Delivery/"
         "Chapter 6302 Mortgage Delivery Instructions/"
         "6302.7 Loan data required for ARMs (100121)/"

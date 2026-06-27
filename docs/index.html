@@ -819,12 +819,12 @@ graph TD
     subgraph FE["Frontend Layer"]
         Shell["Suite Shell<br/>React + Vite · :4000"]
         PipeUI["Pipeline UI<br/>React + Vite · :5173"]
-        CopilotUI["KG Explorer<br/>D3.js · :5000"]
+        ExplorerUI["KG Explorer<br/>D3.js · :5000"]
     end
 
     subgraph BE["Backend Layer"]
         PipeAPI["Pipeline API<br/>FastAPI · :8000"]
-        CopilotAPI["Assistant<br/>Flask · :5000"]
+        AssistantAPI["Assistant<br/>Flask · :5000"]
     end
 
     subgraph AI["AI Inference"]
@@ -840,12 +840,12 @@ graph TD
 
     Browser --> Shell
     Shell -->|"iframe"| PipeUI
-    Shell -->|"iframe"| CopilotUI
+    Shell -->|"iframe"| ExplorerUI
     PipeUI --> PipeAPI
-    CopilotUI --> CopilotAPI
+    ExplorerUI --> AssistantAPI
     PipeAPI --> OpenAI
-    CopilotAPI --> Redis
-    CopilotAPI --> JanusGraph
+    AssistantAPI --> Redis
+    AssistantAPI --> JanusGraph
     JanusGraph --> Cassandra
     JanusGraph --> OpenSearch
     </pre>
@@ -1481,8 +1481,8 @@ erDiagram
       Terminal — Quick Start
     </div>
     <pre><code><span class="comment"># 1. Clone the repository</span>
-<span class="cmd">git clone</span> https://github.com/your-org/policy-to-knowledge.git
-<span class="cmd">cd</span> kernel-lab/policy-to-knowledge
+<span class="cmd">git clone</span> &lt;repository-url&gt;
+<span class="cmd">cd</span> policy-to-knowledge
 
 <span class="comment"># 2. Configure environment</span>
 <span class="cmd">cp</span> .env.example .env

@@ -50,4 +50,23 @@ describe('ErrorBoundary', () => {
     fireEvent.click(screen.getByRole('button', { name: /try again/i }));
     expect(screen.getByRole('alert')).toBeInTheDocument();
   });
+
+  it('"Try again" recovers once the underlying condition clears (remount)', () => {
+    let shouldThrow = true;
+    function Flaky() {
+      if (shouldThrow) throw new Error('transient');
+      return <div>recovered</div>;
+    }
+    render(
+      <ErrorBoundary>
+        <Flaky />
+      </ErrorBoundary>,
+    );
+    expect(screen.getByRole('alert')).toBeInTheDocument();
+    // The transient condition clears, then the user clicks Try again.
+    shouldThrow = false;
+    fireEvent.click(screen.getByRole('button', { name: /try again/i }));
+    expect(screen.getByText('recovered')).toBeInTheDocument();
+    expect(screen.queryByRole('alert')).toBeNull();
+  });
 });

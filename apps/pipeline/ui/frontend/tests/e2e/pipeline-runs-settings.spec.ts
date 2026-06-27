@@ -44,9 +44,9 @@ test('compare page renders completed comparison visualizations', async ({ page }
   await page.goto('/compare');
 
   await expect(page.getByRole('heading', { name: 'Graph Compare' })).toBeVisible();
-  await page.getByText('Fannie_Mae vs Freddie_Mac').click();
+  await page.getByText('Sample_Guidelines vs Example_Policies').click();
   await expect(page.getByRole('button', { name: /Intersection/ })).toBeVisible();
-  await expect(page.getByTitle(/Fannie_Mae_vs_Freddie_Mac/)).toBeVisible();
+  await expect(page.getByTitle(/Sample_Guidelines_vs_Example_Policies/)).toBeVisible();
 });
 
 test('run history filters and expands completed runs', async ({ page }) => {

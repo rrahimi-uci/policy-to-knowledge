@@ -33,7 +33,7 @@ export interface RunState {
 const SESSION_KEY = (type: string) => `p2k_runs_${type}`;
 const ACTIVE_KEY = (type: string) => `p2k_active_${type}`;
 
-function inferLabel(type: string, config: any | undefined): string | undefined {
+export function inferLabel(type: string, config: any | undefined): string | undefined {
   if (!config) return undefined;
   if (type === 'comparison') {
     if (config.g1 && config.g2) return `${config.g1} vs ${config.g2}`;
@@ -42,7 +42,9 @@ function inferLabel(type: string, config: any | undefined): string | undefined {
   if (config.folder) return config.folder;
   if (config.documents && config.documents.length > 0) {
     const first = String(config.documents[0]);
-    const folder = first.includes('/') ? first.split('/')[0] : first;
+    // Use the first non-empty path segment so leading/trailing slashes don't
+    // yield an empty folder label (e.g. "/a/b.pdf" -> "a", not "").
+    const folder = first.split('/').filter(Boolean)[0] ?? first;
     return config.documents.length > 1 ? `${folder} (${config.documents.length} files)` : folder;
   }
   return undefined;

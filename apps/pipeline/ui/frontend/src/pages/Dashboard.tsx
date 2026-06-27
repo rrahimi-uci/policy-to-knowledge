@@ -36,8 +36,14 @@ const DOMAINS = [
 /** Map a graph's output folder name to a domain value. */
 function graphDomain(name: string): string {
   const l = name.toLowerCase();
-  // Mortgage: p2k-*, fannie mae, freddie mac, fnma, fhlmc
-  if (l.startsWith('p2k') || l.includes('fannie') || l.includes('freddie') || l.includes('fnma') || l.includes('fhlmc')) return 'mortgage';
+  const normalized = l.replace(/[-\s]+/g, '_');
+  // Mortgage: p2k-*, mortgage*, sample-guidelines*, example-policies*
+  if (
+    normalized.startsWith('p2k') ||
+    normalized.startsWith('mortgage') ||
+    normalized.includes('sample_guidelines') ||
+    normalized.includes('example_policies')
+  ) return 'mortgage';
   // AML
   if (l.startsWith('aml') || l.includes('anti_money') || l.includes('anti-money')) return 'aml';
   // Healthcare: healthcare, cms (Centers for Medicare & Medicaid), hipaa, medicare, medicaid

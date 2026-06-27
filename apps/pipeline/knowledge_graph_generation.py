@@ -31,21 +31,21 @@ sys.path.insert(0, str(Path(__file__).parent))
 from utils.config import get_config, reload_config
 
 
-def sync_knowledge_graph_to_fama_code(provider: str = "openai", source_file_name: str = None):
+def sync_knowledge_graph_to_catalog(provider: str = "openai", source_file_name: str = None):
     """
-    Sync optimized knowledge graph files to fama-to-code catalog.
+    Sync optimized knowledge graph files to the local catalog.
     
     Copies all files from:
       policy-to-knowledge/pipeline-output/{source_file_name}/agent-5-optimized
     To:
-      fama-to-code/data/catalogs/knowledge-graph/{source_file_name}/
+      knowledge-catalog/data/catalogs/knowledge-graph/{source_file_name}/
     
     Args:
         provider: The provider used (openai)
         source_file_name: The name of the source file (without extension)
     """
     print("\n" + "=" * 80)
-    print("📦 SYNCING KNOWLEDGE GRAPH TO FAMA-TO-CODE")
+    print("📦 SYNCING KNOWLEDGE GRAPH TO CATALOG")
     print("=" * 80)
     
     try:
@@ -53,10 +53,10 @@ def sync_knowledge_graph_to_fama_code(provider: str = "openai", source_file_name
         project_root = Path(__file__).parent.parent
         if source_file_name:
             source_dir = Path(__file__).parent / "pipeline-output" / source_file_name / "agent-5-optimized"
-            dest_dir = project_root / "fama-to-code" / "data" / "catalogs" / "knowledge-graph" / source_file_name
+            dest_dir = project_root / "knowledge-catalog" / "data" / "catalogs" / "knowledge-graph" / source_file_name
         else:
             source_dir = Path(__file__).parent / "pipeline-output" / "agent-5-optimized"
-            dest_dir = project_root / "fama-to-code" / "data" / "catalogs" / "knowledge-graph"
+            dest_dir = project_root / "knowledge-catalog" / "data" / "catalogs" / "knowledge-graph"
         
         # Validate source directory exists
         if not source_dir.exists():
@@ -86,7 +86,7 @@ def sync_knowledge_graph_to_fama_code(provider: str = "openai", source_file_name
                 print(f"   ✓ {file_path.name}")
                 copied_count += 1
         
-        print(f"\n✅ Successfully copied {copied_count} files to fama-to-code catalog")
+        print(f"\n✅ Successfully copied {copied_count} files to the local catalog")
         print("=" * 80 + "\n")
         return True
         

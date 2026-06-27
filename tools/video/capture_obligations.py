@@ -17,10 +17,10 @@ async def main() -> None:
 
         await page.goto(f"{BASE}/obligations", wait_until="networkidle", timeout=20000)
         await page.wait_for_timeout(2500)
-        # Select fannie-mae graph.
+        # Select sample-guidelines graph.
         try:
             sel = page.locator("select").first
-            for value in ("fannie-mae", "Fannie_Mae", "Fannie Mae"):
+            for value in ("sample-guidelines", "Sample_Guidelines", "Sample Guidelines"):
                 try:
                     await sel.select_option(value=value)
                     print(f"selected value={value}")

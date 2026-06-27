@@ -7,7 +7,7 @@ PID_FILE="$SCRIPT_DIR/.suite.pids"
 
 KG_DIR="$SCRIPT_DIR/apps/pipeline"
 CA_DIR="$SCRIPT_DIR/apps/explorer"
-CK_DIR="$SCRIPT_DIR/apps/shell/server"
+ASSISTANT_RUNTIME_DIR="$SCRIPT_DIR/apps/shell/server"
 
 # ── Colors ─────────────────────────────────────
 GREEN='\033[0;32m'
@@ -38,9 +38,9 @@ KG_BACKEND_PORT="${KG_BACKEND_PORT:-8000}"
 KG_FRONTEND_PORT="${KG_FRONTEND_PORT:-5173}"
 CA_PORT="${SERVER_PORT:-${CA_PORT:-5000}}"
 SUITE_PORT="${SUITE_PORT:-4000}"
-COPILOTKIT_PORT="${COPILOTKIT_PORT:-4100}"
+ASSISTANT_RUNTIME_PORT="${ASSISTANT_RUNTIME_PORT:-4100}"
 
-export KG_BACKEND_PORT KG_FRONTEND_PORT CA_PORT SUITE_PORT COPILOTKIT_PORT
+export KG_BACKEND_PORT KG_FRONTEND_PORT CA_PORT SUITE_PORT ASSISTANT_RUNTIME_PORT
 export P2K_BACKEND_PORT="$KG_BACKEND_PORT"
 export P2K_FRONTEND_PORT="$KG_FRONTEND_PORT"
 export SERVER_PORT="$CA_PORT"
@@ -123,7 +123,7 @@ if [ "$ERRORS" -ne 0 ]; then
 fi
 
 # Check port conflicts
-for p in "$KG_BACKEND_PORT" "$KG_FRONTEND_PORT" "$CA_PORT" "$SUITE_PORT" "$COPILOTKIT_PORT"; do
+for p in "$KG_BACKEND_PORT" "$KG_FRONTEND_PORT" "$CA_PORT" "$SUITE_PORT" "$ASSISTANT_RUNTIME_PORT"; do
     if port_in_use "$p"; then
         err "Port $p already in use by $(port_owner "$p")"
         ERRORS=1
@@ -249,16 +249,24 @@ npx vite --port "$SUITE_PORT" > /dev/null 2>&1 &
 echo $! >> "$PID_FILE"
 log "Suite shell started (PID $!)"
 
-# ── 6. CopilotKit Runtime (optional) ──────────
-if [ -f "$CK_DIR/package.json" ]; then
-    echo -e "${BOLD}[6/6] Starting CopilotKit runtime${NC} (port $COPILOTKIT_PORT)..."
-    cd "$CK_DIR"
+# ── 6. Assistant Runtime (optional) ──────────
+if [ -f "$ASSISTANT_RUNTIME_DIR/package.json" ]; then
+    echo -e "${BOLD}[6/6] Starting assistant runtime${NC} (port $ASSISTANT_RUNTIME_PORT)..."
+    cd "$ASSISTANT_RUNTIME_DIR"
     [ ! -d node_modules ] && npm install --silent
-    COPILOTKIT_PORT="$COPILOTKIT_PORT" node copilotkit-runtime.mjs > /dev/null 2>&1 &
-    echo $! >> "$PID_FILE"
-    log "CopilotKit runtime started (PID $!)"
+    RUNTIME_ENTRY="${ASSISTANT_RUNTIME_ENTRY:-assistant-runtime.mjs}"
+    if [ ! -f "$RUNTIME_ENTRY" ]; then
+        RUNTIME_ENTRY="$(find . -maxdepth 1 -type f -name '*.mjs' | head -n 1)"
+    fi
+    if [ -n "${RUNTIME_ENTRY:-}" ] && [ -f "$RUNTIME_ENTRY" ]; then
+        ASSISTANT_RUNTIME_PORT="$ASSISTANT_RUNTIME_PORT" node "$RUNTIME_ENTRY" > /dev/null 2>&1 &
+        echo $! >> "$PID_FILE"
+        log "Assistant runtime started (PID $!)"
+    else
+        info "Assistant runtime entrypoint not found — skipping"
+    fi
 else
-    info "CopilotKit runtime not found — skipping (enable in Settings)"
+    info "Assistant runtime not found — skipping (enable in Settings)"
 fi
 
 # ── Summary ───────────────────────────────────
@@ -270,7 +278,7 @@ printf "${GREEN}║${NC}  %-24s %-32s ${GREEN}║${NC}\n" "Suite Shell:" "http:/
 printf "${GREEN}║${NC}  %-24s %-32s ${GREEN}║${NC}\n" "KG Extraction API:" "http://localhost:$KG_BACKEND_PORT"
 printf "${GREEN}║${NC}  %-24s %-32s ${GREEN}║${NC}\n" "KG Extraction UI:" "http://localhost:$KG_FRONTEND_PORT"
 printf "${GREEN}║${NC}  %-24s %-32s ${GREEN}║${NC}\n" "Assistant:" "http://localhost:$CA_PORT$URL_PREFIX"
-printf "${GREEN}║${NC}  %-24s %-32s ${GREEN}║${NC}\n" "CopilotKit Runtime:" "http://localhost:$COPILOTKIT_PORT"
+printf "${GREEN}║${NC}  %-24s %-32s ${GREEN}║${NC}\n" "Assistant Runtime:" "http://localhost:$ASSISTANT_RUNTIME_PORT"
 printf "${GREEN}║${NC}  %-24s %-32s ${GREEN}║${NC}\n" "Docker (infra):" "Cassandra, OpenSearch, Redis, JanusGraph"
 echo -e "${BOLD}${GREEN}╚══════════════════════════════════════════════════════════╝${NC}"
 echo ""

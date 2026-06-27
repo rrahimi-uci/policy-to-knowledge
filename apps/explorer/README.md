@@ -100,6 +100,6 @@ contains data.
 
 ## Related Docs
 
-- [architecture.md](architecture.md): detailed JanusGraph and service architecture
+- [docs/architecture.md](docs/architecture.md): detailed JanusGraph and service architecture
 - [e2etests/README.md](e2etests/README.md): backend E2E test notes
 - [uitests/README.md](uitests/README.md): Playwright UI test notes

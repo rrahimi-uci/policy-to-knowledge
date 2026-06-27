@@ -77,12 +77,12 @@ run; the Python virtualenvs must already exist.
 ## Common Workflows
 
 - Full suite: `./start.sh`
-- Pipeline only: `cd pipeline && ./start.sh`
-- Explorer only: `cd assistant && ./start.sh`
-- Extract one document: `cd pipeline && .venv/bin/python knowledge_graph_generation.py --file compliance-files/<batch>/<file>.pdf --provider openai`
-- Run batch extraction: `cd pipeline && .venv/bin/python knowledge_graph_generation.py --batch --provider openai`
-- Compare two graphs: `cd pipeline && .venv/bin/python join_graphs.py --g1 graphA --g2 graphB --workers 15`
-- Incremental graph load without a full restart: `cd assistant && .venv/bin/python -m src.main setup-if-empty`
+- Pipeline only: `cd apps/pipeline && ./start.sh`
+- Explorer only: `cd apps/explorer && ./start.sh`
+- Extract one document: `cd apps/pipeline && .venv/bin/python knowledge_graph_generation.py --file compliance-files/<batch>/<file>.pdf --provider openai`
+- Run batch extraction: `cd apps/pipeline && .venv/bin/python knowledge_graph_generation.py --batch --provider openai`
+- Compare two graphs: `cd apps/pipeline && .venv/bin/python join_graphs.py --g1 graphA --g2 graphB --workers 15`
+- Incremental graph load without a full restart: `cd apps/explorer && .venv/bin/python -m src.main setup-if-empty`
 
 ## Key Files
 
@@ -104,16 +104,35 @@ chunks locally.
 - [apps/pipeline/docs/DOCKER.md](apps/pipeline/docs/DOCKER.md): containerized pipeline workflows.
 - [apps/pipeline/docs/SETUP.md](apps/pipeline/docs/SETUP.md): pipeline config and secrets.
 - [tools/video/README.md](tools/video/README.md): demo-video generation.
-- [CONTRIBUTING.md](CONTRIBUTING.md): local setup and test expectations.
+- [.github/CONTRIBUTING.md](.github/CONTRIBUTING.md): local setup and test expectations.
 
 ## Testing
 
+Every suite emits [Allure](https://allurereport.org/) results and code coverage.
+
 ```bash
-(cd pipeline && .venv/bin/python -m pytest tests/ -q)
-(cd assistant && .venv/bin/python -m pytest tests/ -q)
-(cd frontend && npm test)
-(cd apps/pipeline/ui/frontend && npm test)
+# Backend (pytest → coverage + allure-results/)
+(cd apps/pipeline  && .venv/bin/python -m pytest)
+(cd apps/explorer  && .venv/bin/python -m pytest)
+
+# Frontend (vitest → coverage + allure-results/)
+(cd apps/shell                 && npm test -- --coverage)
+(cd apps/pipeline/ui/frontend  && npm test -- --coverage)
 ```
 
-Live Playwright and API E2E suites need the corresponding services running
+Generate a combined Allure report from all suites (requires the
+[Allure CLI](https://allurereport.org/docs/install/)):
+
+```bash
+mkdir -p /tmp/allure
+cp apps/*/allure-results/* apps/pipeline/ui/frontend/allure-results/* /tmp/allure/ 2>/dev/null
+allure serve /tmp/allure
+```
+
+CI runs all four suites with coverage, uploads each suite's `allure-results`,
+and publishes a merged **Allure report** artifact.
+
+Unit tests focus on the logic layer (config, services, stores, hooks, pure
+helpers). Data-heavy page components and live-backend modules are exercised by
+the Playwright / API E2E suites, which need the corresponding services running
 first; see the component READMEs.

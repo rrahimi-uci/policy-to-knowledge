@@ -116,8 +116,8 @@ test.describe("Flow 12 — URL & Page Access Verification", () => {
     await page.waitForLoadState("networkidle");
     await expect(page.locator(CHAT.input)).toBeVisible({ timeout: 15_000 });
 
-    // Ask copilot to show a graph
-    await sendChatMessage(page, "show fannie mae graph");
+    // Ask assistant to show a graph
+    await sendChatMessage(page, "show sample guidelines graph");
 
     // Wait for graph to render
     await waitForGraphRendered(page, 30_000);
@@ -138,7 +138,7 @@ test.describe("Flow 12 — URL & Page Access Verification", () => {
     await expect(page.locator(CHAT.input)).toBeVisible({ timeout: 15_000 });
 
     // Load a graph
-    await sendChatMessage(page, "show fannie mae graph");
+    await sendChatMessage(page, "show sample guidelines graph");
     await waitForGraphRendered(page, 30_000);
 
     // Click a random node to open detail panel

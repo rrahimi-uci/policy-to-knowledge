@@ -145,9 +145,9 @@ class TestImpactStoreInit:
 
 class TestImpactStoreAnalysisCRUD:
     def test_create_analysis(self, store):
-        a = store.create_analysis("Fannie_Mae", "openai", "old.txt", "new.txt")
+        a = store.create_analysis("Sample_Guidelines", "openai", "old.txt", "new.txt")
         assert a is not None
-        assert a["graph_name"] == "Fannie_Mae"
+        assert a["graph_name"] == "Sample_Guidelines"
         assert a["provider"] == "openai"
         assert a["old_doc_name"] == "old.txt"
         assert a["new_doc_name"] == "new.txt"

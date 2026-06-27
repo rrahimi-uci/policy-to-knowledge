@@ -9,8 +9,8 @@ import {
 } from 'react';
 
 export interface SuiteSettings {
-  copilotKitEnabled: boolean;
-  copilotKitUrl: string;
+  assistantRuntimeEnabled: boolean;
+  assistantRuntimeUrl: string;
 }
 
 interface SettingsCtx {
@@ -22,8 +22,8 @@ interface SettingsCtx {
 const STORAGE_KEY = 'p2k-suite-settings';
 
 const DEFAULT_SETTINGS: SuiteSettings = {
-  copilotKitEnabled: false,
-  copilotKitUrl: '/api/copilotkit',
+  assistantRuntimeEnabled: false,
+  assistantRuntimeUrl: '/api/assistant-runtime',
 };
 
 const SettingsContext = createContext<SettingsCtx>({

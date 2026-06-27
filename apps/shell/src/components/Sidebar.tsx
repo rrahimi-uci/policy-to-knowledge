@@ -20,6 +20,15 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 
+/**
+ * Whether a nav link should be marked active for the current path. Matches on
+ * a path-segment boundary so `/obligations` is not active on `/obligations-x`.
+ */
+export function isLinkActive(pathname: string, to: string): boolean {
+  if (to === '/') return pathname === '/';
+  return pathname === to || pathname.startsWith(to + '/');
+}
+
 const sections: { heading: string | null; headingIcon?: LucideIcon; links: { to: string; icon: LucideIcon; label: string }[] }[] = [
   {
     heading: null,
@@ -92,10 +101,7 @@ export default function Sidebar() {
               </div>
             )}
             {section.links.map(({ to, icon: Icon, label }) => {
-              const isActive =
-                to === '/'
-                  ? location.pathname === '/'
-                  : location.pathname.startsWith(to);
+              const isActive = isLinkActive(location.pathname, to);
               return (
                 <NavLink
                   key={to}

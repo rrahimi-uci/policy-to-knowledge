@@ -240,7 +240,7 @@ Each business rule MUST include:
 ✓ **consequences**: What happens if met/violated (40-100 chars)
 ✓ **exceptions**: Special cases, waivers, or N/A (20-80 chars)
 ✓ **source_reference**: A structured object pinpointing the exact location of the rule in the source chunk:
-  - chunk_path (required): Relative path to the source chunk file — MUST match the FILE path from the input documents exactly (e.g., "FAMA/FAMA_001.txt")
+  - chunk_path (required): Relative path to the source chunk file — MUST match the FILE path from the input documents exactly (e.g., "Sample_Guidelines/SG_001.txt")
   - section_id (required): Document section identifier if available, or "N/A" (e.g., "B2-1-01, Part A.2.3")
   - start_word_position (required): 0-based word offset where the rule text begins within the chunk content (count words from the start of the chunk)
   - end_word_position (required): 0-based word offset where the rule text ends (exclusive)
@@ -253,7 +253,7 @@ Each business rule MUST include:
 ✓ **effective_date**: Date the rule became effective in ISO 8601 format (YYYY-MM-DD), or null if not stated in the document
 ✓ **expiration_date**: Date the rule expires or was superseded (YYYY-MM-DD), or null if still active
 ✓ **superseded_by**: rule_id of the replacement rule, or null if this rule is current
-✓ **jurisdiction**: Scope of authority. One of: "federal" | "state:<XX>" (e.g., "state:CA") | "agency:FNMA" | "agency:FHLMC" | "agency:FHA" | "agency:VA" | "lender_overlay"
+✓ **jurisdiction**: Scope of authority. One of: "federal" | "state:<XX>" (e.g., "state:CA") | "agency:SAMPLE_GUIDELINES" | "agency:EXAMPLE_POLICIES" | "agency:FHA" | "agency:VA" | "lender_overlay"
 ✓ **risk_level**: Business impact if violated. One of: "critical" | "high" | "medium" | "low"
 ✓ **related_rules**: Array of rule_ids that interact with this rule (dependencies, conflicts, prerequisites). Empty array [] if none known.
 ✓ **enforcement_action**: Specific consequence on violation (e.g., "loan repurchase demand", "indemnification", "suspension", "fine"). Use "N/A" if not applicable.
@@ -397,7 +397,7 @@ Return ONLY valid JSON. No markdown, no explanations, ONLY JSON:
           "consequences": "What happens if rule is met; what happens if violated",
           "exceptions": "Special cases, waivers, or state 'None'",
           "source_reference": {{{{
-            "chunk_path": "FAMA/FAMA_042.txt",
+            "chunk_path": "Sample_Guidelines/SG_042.txt",
             "section_id": "B2-1-01, Part A.2",
             "start_word_position": 120,
             "end_word_position": 185,
@@ -412,7 +412,7 @@ Return ONLY valid JSON. No markdown, no explanations, ONLY JSON:
           "effective_date": "2025-01-01",
           "expiration_date": null,
           "superseded_by": null,
-          "jurisdiction": "agency:FNMA",
+          "jurisdiction": "agency:SAMPLE_GUIDELINES",
           "risk_level": "high",
           "related_rules": ["BR_RELATED_CONSTRAINT_003_002"],
           "enforcement_action": "Loan repurchase demand",
@@ -444,7 +444,7 @@ Return ONLY valid JSON. No markdown, no explanations, ONLY JSON:
           "consequences": "Consequences",
           "exceptions": "Exceptions or None",
           "source_reference": {{{{
-            "chunk_path": "FAMA/FAMA_015.txt",
+            "chunk_path": "Sample_Guidelines/SG_015.txt",
             "section_id": "Section reference",
             "start_word_position": 45,
             "end_word_position": 112,
@@ -488,7 +488,7 @@ FORMAT VALIDATION CHECKLIST (Self-validate before responding):
 ✓ source_reference.chunk_path matches the FILE path from input documents exactly
 ✓ source_reference.source_text is a verbatim excerpt (30-150 words), not paraphrased
 ✓ source_reference.start_word_position and end_word_position are integers ≥ 0 and start < end
-✓ jurisdiction is a valid value (federal, state:<XX>, agency:FNMA, agency:FHLMC, agency:FHA, agency:VA, lender_overlay)
+✓ jurisdiction is a valid value (federal, state:<XX>, agency:SAMPLE_GUIDELINES, agency:EXAMPLE_POLICIES, agency:FHA, agency:VA, lender_overlay)
 ✓ risk_level is one of: critical, high, medium, low
 ✓ applicability_scope has loan_types, occupancy_types, and transaction_types arrays
 ✓ data_points_required is a non-empty array of field names

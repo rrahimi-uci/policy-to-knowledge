@@ -17,6 +17,17 @@ def _default_prompts() -> Path:
     return PROJECT_ROOT / "prompts"
 
 
+def _safe_segment(value: str, label: str) -> str:
+    """Reject path-traversal in a single URL path segment.
+
+    `domain` and `prompt_name` are interpolated into a filesystem path, so a
+    value containing a separator or `..` could read/overwrite arbitrary files.
+    """
+    if not value or "/" in value or "\\" in value or ".." in value or value in (".", ""):
+        raise HTTPException(400, f"Invalid {label}")
+    return value
+
+
 @router.get("")
 def list_domains():
     """List available domains and the default (base) prompts."""
@@ -44,6 +55,8 @@ def list_domains():
 @router.get("/{domain}/{prompt_name}")
 def get_prompt(domain: str, prompt_name: str):
     """Get the content of a specific prompt."""
+    domain = _safe_segment(domain, "domain")
+    prompt_name = _safe_segment(prompt_name, "prompt name")
     if domain == "default":
         prompt_file = _default_prompts() / f"{prompt_name}.txt"
     else:
@@ -65,6 +78,8 @@ def get_prompt(domain: str, prompt_name: str):
 @router.put("/{domain}/{prompt_name}")
 def update_prompt(domain: str, prompt_name: str, body: dict):
     """Update the content of a specific prompt."""
+    domain = _safe_segment(domain, "domain")
+    prompt_name = _safe_segment(prompt_name, "prompt name")
     content = body.get("content")
     if content is None:
         raise HTTPException(400, "Missing 'content' field")

@@ -1,6 +1,11 @@
-# Minimal dependencies to run the Explorer's offline unit tests.
-# The full runtime (gremlinpython, opensearch-py, sentence-transformers, …) is
-# only needed for the live backend; tests that require it skip when it's absent.
+# Dependencies to run the Explorer's offline unit tests.
+# The heavy live-backend extras (opensearch-py, sentence-transformers) are NOT
+# needed; those modules are excluded from unit coverage and covered by e2e.
 pytest>=8.0
+pytest-cov>=5.0
+allure-pytest>=2.13
 PyYAML>=6.0
 SQLAlchemy>=2.0
+python-dotenv>=1.0
+redis>=5.0
+gremlinpython>=3.7

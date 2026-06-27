@@ -6,7 +6,7 @@ const KG_BACKEND_PORT = process.env.KG_BACKEND_PORT ?? '8000'
 const KG_FRONTEND_PORT = process.env.KG_FRONTEND_PORT ?? '5173'
 const CA_PORT = process.env.CA_PORT ?? '5000'
 const SUITE_PORT = Number(process.env.SUITE_PORT ?? '4000')
-const COPILOTKIT_PORT = process.env.COPILOTKIT_PORT ?? '4100'
+const ASSISTANT_RUNTIME_PORT = process.env.ASSISTANT_RUNTIME_PORT ?? '4100'
 
 const BASE_PATH = (process.env.VITE_BASE_PATH ?? '/app').replace(/\/$/, '')
 
@@ -19,10 +19,10 @@ export default defineConfig({
   server: {
     port: SUITE_PORT,
     proxy: {
-      '/api/copilotkit': {
-        target: `http://localhost:${COPILOTKIT_PORT}`,
+      '/api/assistant-runtime': {
+        target: `http://localhost:${ASSISTANT_RUNTIME_PORT}`,
         changeOrigin: true,
-        rewrite: (p) => p.replace(/^\/api\/copilotkit/, '/copilotkit'),
+        rewrite: (p) => p.replace(/^\/api\/assistant-runtime/, '/assistant-runtime'),
       },
       '/api/kg': {
         target: `http://localhost:${KG_BACKEND_PORT}`,

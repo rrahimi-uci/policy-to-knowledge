@@ -72,7 +72,7 @@ Examples:
 - Entity supports actionable rules or workflows: 5 pts
 
 Examples:
-✅ HIGH (10/10): FREDDIE_MAC_APPROVAL_GUIDELINE - directly impacts compliance decisions
+✅ HIGH (10/10): INVESTOR_APPROVAL_GUIDELINE - directly impacts compliance decisions
 ❌ LOW (3/10): GENERAL_INDUSTRY_TREND - tangentially related, no actionable logic
 
 **QUALITY THRESHOLDS:**
@@ -131,7 +131,7 @@ Focus Areas:
 Example Refinements:
 - Remove redundant attribute: "description_text" and "description" → keep "description"
 - Clarify relationship: --RELATED_TO--> → --VALIDATES--> (more specific)
-- Consolidate: FREDDIE_MAC_GUIDELINE and FREDDIE_MAC_REQUIREMENT → FREDDIE_MAC_APPROVAL_GUIDELINE (if semantically identical)
+- Consolidate: INVESTOR_GUIDELINE and INVESTOR_REQUIREMENT → INVESTOR_APPROVAL_GUIDELINE (if semantically identical)
 
 Stop Iteration 3 When:
 - Entity quality scores stable (change < 5 points)
@@ -159,7 +159,7 @@ Example: Don't add "color", "font_size", "ui_display_order" to LOAN_DISCLOSURE
 Example: Don't add LOAN --LOCATED_IN--> STATE if no compliance rule references this
 
 ❌ **Unnecessary Renaming**: Don't rename entities that already follow conventions
-Example: Don't change FREDDIE_MAC_APPROVAL → FREDDIE_MAC_LOAN_APPROVAL if original is sufficiently specific
+Example: Don't change INVESTOR_APPROVAL → INVESTOR_LOAN_APPROVAL if original is sufficiently specific
 
 ❌ **External Entity Introduction**: Don't add entities not mentioned in source documents
 Example: Don't add FEDERAL_RESERVE_POLICY if it's not referenced in analyzed documents

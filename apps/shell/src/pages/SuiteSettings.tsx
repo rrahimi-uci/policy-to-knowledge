@@ -8,18 +8,18 @@ export default function SuiteSettings() {
       <h1 className="text-2xl font-bold mb-6">Suite Settings</h1>
 
       <section className="mb-8 rounded-lg border border-gray-800 bg-gray-900/40 p-6">
-        <h2 className="text-lg font-semibold mb-4">CopilotKit Runtime</h2>
+        <h2 className="text-lg font-semibold mb-4">Assistant Runtime</h2>
 
         <label className="flex items-center gap-3 mb-4">
           <input
             type="checkbox"
             className="h-4 w-4"
-            checked={settings.copilotKitEnabled}
+            checked={settings.assistantRuntimeEnabled}
             onChange={(e) =>
-              updateSettings({ copilotKitEnabled: e.target.checked })
+              updateSettings({ assistantRuntimeEnabled: e.target.checked })
             }
           />
-          <span>Enable CopilotKit integration</span>
+          <span>Enable assistant runtime integration</span>
         </label>
 
         <label className="block text-sm">
@@ -27,8 +27,8 @@ export default function SuiteSettings() {
           <input
             type="text"
             className="w-full rounded border border-gray-700 bg-gray-950 px-3 py-2 font-mono text-sm"
-            value={settings.copilotKitUrl}
-            onChange={(e) => updateSettings({ copilotKitUrl: e.target.value })}
+            value={settings.assistantRuntimeUrl}
+            onChange={(e) => updateSettings({ assistantRuntimeUrl: e.target.value })}
           />
         </label>
       </section>

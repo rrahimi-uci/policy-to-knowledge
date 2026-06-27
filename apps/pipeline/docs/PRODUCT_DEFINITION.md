@@ -52,7 +52,7 @@
 
 | Metric | Value | Source |
 |--------|-------|--------|
-| Rules Extracted | 300-400 per document | `pipeline-output/openai/FMNA/` - 345 rules |
+| Rules Extracted | 300-400 per document | `pipeline-output/openai/SAMPLE_GUIDELINES/` - 345 rules |
 | Entity Types | 40+ per document | `entity_types_and_relationships.json` |
 | Dependency Types | 7 categories | `dependency_analysis.txt` |
 | Rule Categories | 10 taxonomies | `business_rules_extraction.txt` |
@@ -89,7 +89,7 @@ Organizations in regulated industries face a **critical knowledge management cri
 #### The Conflict Problem: When Rules Collide
 
 One of the most dangerous compliance challenges is **conflicting rules** across:
-- Different regulatory bodies (Fannie Mae vs. Freddie Mac vs. FHA)
+- Different regulatory bodies (Sample Guidelines vs. Example Policies vs. FHA)
 - Document versions (2023 guidelines vs. 2024 updates)
 - Overlapping jurisdictions (Federal vs. State requirements)
 - Internal policies vs. external regulations
@@ -212,7 +212,7 @@ One of the most dangerous compliance challenges is **conflicting rules** across:
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                         COMPLIANCE DOCUMENTS                                 │
-│              (Fannie Mae, Freddie Mac, HIPAA, AML/KYC, SEC, etc.)           │
+│              (Sample Guidelines, Example Policies, HIPAA, AML/KYC, SEC, etc.)           │
 └──────────────────────────────────┬──────────────────────────────────────────┘
                                    │
                                    ▼
@@ -233,7 +233,7 @@ One of the most dangerous compliance challenges is **conflicting rules** across:
                                    ▼
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                      KNOWLEDGE GRAPHS (Per Document)                         │
-│    FM.json (352 rules) │ FMNA.json (345 rules) │ Revolution-Overlay.json    │
+│    FM.json (352 rules) │ SAMPLE_GUIDELINES.json (345 rules) │ Policy-Overlay.json    │
 └──────────────────────────────────┬──────────────────────────────────────────┘
                                    │
                                    ▼
@@ -360,7 +360,7 @@ From `prompts/README.md`:
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │ STAGE 1: Document Organization (Agent 1)                                     │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│ Input:  PDF document (e.g., FMNA.pdf - 500+ pages)                          │
+│ Input:  PDF document (e.g., SAMPLE_GUIDELINES.pdf - 500+ pages)                          │
 │ Process: Extract TOC, split into hierarchical chunks                         │
 │ Output: 438 text files in pipeline-output/{provider}/agent-1-organized/      │
 │ Config: chunk_size_target=2000, max_chunk_size=3000                         │
@@ -435,7 +435,7 @@ From `prompts/README.md`:
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │ STAGE 7: Rule Clustering (Agent 7)                                           │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│ Input:  Two knowledge graphs (e.g., FMNA.json, Revolution-Overlay.json)     │
+│ Input:  Two knowledge graphs (e.g., SAMPLE_GUIDELINES.json, Policy-Overlay.json)     │
 │ Process: Group rules by behavior type (HOW dimension)                        │
 │ Behaviors: formula, threshold, sequence, method, mandate                     │
 │ Output: rule_clusters.json                                                  │
@@ -556,8 +556,8 @@ A regional mortgage lender with $2B in annual originations faced a compliance cr
 ├─────────────────────────────────────────────────────────────────────────────┤
 │                                                                              │
 │   📚 Documents to manage:                                                   │
-│      • Fannie Mae Selling Guide (1,200 pages)                               │
-│      • Freddie Mac Seller/Servicer Guide (800 pages)                        │
+│      • Sample Guidelines Selling Guide (1,200 pages)                               │
+│      • Example Policies Seller/Servicer Guide (800 pages)                        │
 │      • FHA Single Family Housing Policy Handbook (500 pages)                │
 │      • VA Lender's Handbook (400 pages)                                     │
 │      • State-specific overlays (50 states × 20 pages avg)                   │
@@ -578,7 +578,7 @@ The lender discovered **conflicting DTI requirements** only after rejecting 47 l
 
 | Source | DTI Requirement | Discovered |
 |--------|-----------------|------------|
-| Fannie Mae | Max DTI 50% with compensating factors | Initial implementation |
+| Sample Guidelines | Max DTI 50% with compensating factors | Initial implementation |
 | Internal Policy | Max DTI 45% (outdated) | After customer complaints |
 | State Overlay (CA) | Max DTI 43% for certain loan types | After audit finding |
 
@@ -617,7 +617,7 @@ Policy to Knowledge automatically detected this contradiction:
 │ ⚠️  CONTRADICTION DETECTED                                                   │
 ├─────────────────────────────────────────────────────────────────────────────┤
 │                                                                              │
-│ RULE A (Fannie Mae - BR_LTV_023):                                           │
+│ RULE A (Sample Guidelines - BR_LTV_023):                                           │
 │   "Maximum LTV for investment properties: 85%"                              │
 │   Source: B2-1-01, Section 4.2.3                                            │
 │                                                                              │
@@ -626,7 +626,7 @@ Policy to Knowledge automatically detected this contradiction:
 │   Source: Lending Policy Manual, Section 3.4                                │
 │                                                                              │
 │ CONFLICT TYPE: Threshold contradiction                                       │
-│ IMPACT: Conservative internal policy may reject Fannie Mae-eligible loans   │
+│ IMPACT: Conservative internal policy may reject Sample Guidelines-eligible loans   │
 │ RECOMMENDATION: Align internal policy with agency guidelines or document    │
 │                 intentional overlay with business justification              │
 │                                                                              │
@@ -704,7 +704,7 @@ The bank faced regulations from:
 
 ### 9.1 Use Case: Mortgage Compliance (Primary)
 
-**Scenario**: Extract rules from Fannie Mae Selling Guide (FMNA.pdf)
+**Scenario**: Extract rules from Sample Guidelines Selling Guide (SAMPLE_GUIDELINES.pdf)
 
 **Input Document**:
 - 547 TOC entries
@@ -713,7 +713,7 @@ The bank faced regulations from:
 
 **Pipeline Output**:
 ```
-pipeline-output/openai/FMNA/
+pipeline-output/openai/SAMPLE_GUIDELINES/
 ├── agent-1-organized-documents/
 │   └── 438 text chunks
 ├── agent-2-entities/
@@ -723,7 +723,7 @@ pipeline-output/openai/FMNA/
 ├── agent-5-optimized/
 │   └── optimized_compliance_knowledge_graph.json (244 rules, 18+ dependencies)
 └── agent-6-visualization-and-report/
-    └── FMNA_knowledge_graph.html
+    └── SAMPLE_GUIDELINES_knowledge_graph.html
 ```
 
 **Example Extracted Rule**:
@@ -744,24 +744,24 @@ pipeline-output/openai/FMNA/
 
 ### 9.2 Use Case: Regulatory Update Impact Analysis
 
-**Scenario**: Fannie Mae releases updated Selling Guide (Q1 2026)
+**Scenario**: Sample Guidelines releases updated Selling Guide (Q1 2026)
 
 **Business Need**: Understand what changed and how it affects current operations
 
 **Policy to Knowledge Workflow**:
 ```bash
 # Step 1: Process new document version
-python knowledge_graph_generation.py --source-file compliance-files/FMNA-2026-Q1.pdf --provider openai
+python knowledge_graph_generation.py --source-file compliance-files/SAMPLE_GUIDELINES-2026-Q1.pdf --provider openai
 
 # Step 2: Compare with previous version
-python join_graphs.py --g1 FMNA --g2 FMNA-2026-Q1 --workers 15
+python join_graphs.py --g1 SAMPLE_GUIDELINES --g2 SAMPLE_GUIDELINES-2026-Q1 --workers 15
 ```
 
 **Output Analysis**:
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                    REGULATORY CHANGE IMPACT ANALYSIS                         │
-│                    FMNA (2025) vs FMNA-2026-Q1                               │
+│                    SAMPLE_GUIDELINES (2025) vs SAMPLE_GUIDELINES-2026-Q1                               │
 ├─────────────────────────────────────────────────────────────────────────────┤
 │                                                                              │
 │   📊 COMPARISON SUMMARY                                                      │
@@ -787,23 +787,23 @@ python join_graphs.py --g1 FMNA --g2 FMNA-2026-Q1 --workers 15
 
 ### 9.3 Use Case: Cross-Document Conflict Resolution
 
-**Scenario**: Compare FMNA Selling Guide with Revolution-Overlay requirements
+**Scenario**: Compare SAMPLE_GUIDELINES Selling Guide with Policy-Overlay requirements
 
 **Command**:
 ```bash
-python join_graphs.py --g1 FMNA --g2 Revolution-Overlay --workers 15
+python join_graphs.py --g1 SAMPLE_GUIDELINES --g2 Policy-Overlay --workers 15
 ```
 
 **Output**:
 ```
-pipeline-output/openai/_joined/FMNA_Revolution-Overlay/
+pipeline-output/openai/_joined/SAMPLE_GUIDELINES_Policy-Overlay/
 ├── agent-7-rule-clusters/
 │   └── rule_clusters.json (grouped by behavior)
 ├── agent-8-rule-matches/
 │   └── match_results.json (pairwise comparisons)
 ├── agent-9-set-operations/
 │   ├── intersection.json (∩ rules in both graphs)
-│   ├── g1_minus_g2.json (FMNA-specific rules)
+│   ├── g1_minus_g2.json (SAMPLE_GUIDELINES-specific rules)
 │   ├── g2_minus_g1.json (overlay-specific rules)
 │   ├── union.json (∪ all unique rules)
 │   └── contradictions.json (conflicting pairs)
@@ -820,23 +820,23 @@ pipeline-output/openai/_joined/FMNA_Revolution-Overlay/
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                         CONFLICT ANALYSIS REPORT                             │
-│                    FMNA vs Revolution-Overlay                                │
+│                    SAMPLE_GUIDELINES vs Policy-Overlay                                │
 ├─────────────────────────────────────────────────────────────────────────────┤
 │                                                                              │
 │   🔴 CONTRADICTIONS FOUND: 7                                                 │
 │                                                                              │
 │   1. Credit Score Minimum                                                    │
-│      FMNA: "Minimum credit score 620 for conforming loans"                  │
+│      SAMPLE_GUIDELINES: "Minimum credit score 620 for conforming loans"                  │
 │      Overlay: "Minimum credit score 640 for all loans"                      │
 │      Resolution: Overlay is more restrictive (compliant)                    │
 │                                                                              │
 │   2. LTV Maximum - Investment Property                                       │
-│      FMNA: "Maximum LTV 85% for investment property"                        │
+│      SAMPLE_GUIDELINES: "Maximum LTV 85% for investment property"                        │
 │      Overlay: "Maximum LTV 75% for investment property"                     │
 │      Resolution: Overlay is more restrictive (compliant)                    │
 │                                                                              │
 │   3. Gift Fund Source Documentation                                          │
-│      FMNA: "Gift letter required, source verification recommended"          │
+│      SAMPLE_GUIDELINES: "Gift letter required, source verification recommended"          │
 │      Overlay: "Gift letter AND bank statements required"                    │
 │      Resolution: Overlay adds requirement (compliant but burdensome)        │
 │                                                                              │
@@ -909,7 +909,7 @@ OPENAI_API_KEY=sk-...
 
 ## 10. Extensibility & Domain Support
 
-The pipeline currently supports mortgage compliance (Fannie Mae, Freddie Mac). The prompt system in `prompts/` can be adapted for other domains by modifying the prompt text files directly.
+The pipeline currently supports mortgage compliance (Sample Guidelines, Example Policies). The prompt system in `prompts/` can be adapted for other domains by modifying the prompt text files directly.
 
 ---
 
@@ -930,7 +930,7 @@ The pipeline currently supports mortgage compliance (Fannie Mae, Freddie Mac). T
 ```json
 {
   "metadata": {
-    "document_name": "FMNA",
+    "document_name": "SAMPLE_GUIDELINES",
     "extraction_date": "2026-01-23",
     "total_rules": 244,
     "total_entities": 44,
@@ -988,11 +988,11 @@ pipeline-output/
     │   ├── agent-5-optimized/
     │   └── agent-6-visualization-and-report/
     │
-    ├── FMNA/                        # Document 2
+    ├── SAMPLE_GUIDELINES/                        # Document 2
     │   └── ... (same structure)
     │
     └── _merged/                     # Merge outputs
-        └── FMNA_Revolution-Overlay/
+        └── SAMPLE_GUIDELINES_Policy-Overlay/
             ├── agent-7-rule-clusters/
             ├── agent-8-rule-matches/
             ├── agent-9-set-operations/

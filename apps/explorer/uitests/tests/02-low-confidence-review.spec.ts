@@ -2,7 +2,7 @@
  * Flow 2 — Low-Confidence Review
  *
  * Scenario:
- *   1. Load the graph via copilot and click a random node.
+ *   1. Load the graph via assistant and click a random node.
  *   2. Detail panel opens — check reference link.
  *   3. Add a comment with a random author.
  *   4. Select another node and edit its name & content, then save.

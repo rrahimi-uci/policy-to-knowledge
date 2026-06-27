@@ -2,7 +2,7 @@
 Schema creation for the Explorer compliance knowledge graph.
 
 Creates vertex labels, edge labels, property keys, and mixed indexes
-backed by OpenSearch for full-text search over Fannie Mae business rules.
+backed by OpenSearch for full-text search over Sample Guidelines business rules.
 
 In multi-graph mode (JanusGraphManager), each graph object is available
 as a Groovy variable named after its ``graph_ref`` (from gremlin-server.yaml).

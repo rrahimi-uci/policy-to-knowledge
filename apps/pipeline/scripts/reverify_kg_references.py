@@ -9,8 +9,8 @@ Usage:
     python scripts/reverify_kg_references.py <kg_json> <source_dir>
 
 Examples:
-    python scripts/reverify_kg_references.py pipeline-output/freddie_mac-kg.json \
-        ../explorer/kbs/freddie-mac/
+    python scripts/reverify_kg_references.py pipeline-output/sample_guidelines-kg.json \
+        ../explorer/kbs/sample-guidelines/
 
     # Re-verify all KG files:
     for kg in pipeline-output/*-kg.json; do

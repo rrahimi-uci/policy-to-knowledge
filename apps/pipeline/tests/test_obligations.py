@@ -413,7 +413,7 @@ class TestEnrichedSchema:
         ob = store.upsert_obligation(
             "G1", "openai", "R001", "LTV Rule", "eligibility", "critical",
             description="Loan-to-value must not exceed 80%",
-            jurisdiction="agency:FNMA",
+            jurisdiction="agency:SAMPLE_GUIDELINES",
             mandatory=1,
             effective_date="2023-01-01",
             conditions=json.dumps(["LTV > 80%", "Property is residential"]),
@@ -425,7 +425,7 @@ class TestEnrichedSchema:
             source_reference=json.dumps({"section_id": "B3-3.1", "source_text": "LTV must not exceed 80 percent"}),
         )
         assert ob["description"] == "Loan-to-value must not exceed 80%"
-        assert ob["jurisdiction"] == "agency:FNMA"
+        assert ob["jurisdiction"] == "agency:SAMPLE_GUIDELINES"
         assert ob["mandatory"] == 1
         assert ob["effective_date"] == "2023-01-01"
         assert ob["audit_frequency"] == "quarterly"
@@ -435,12 +435,12 @@ class TestEnrichedSchema:
         store.upsert_obligation(
             "G1", "openai", "R001", "Rule A", "eligibility", "high",
             description="Desc A",
-            jurisdiction="agency:FHLMC",
+            jurisdiction="agency:EXAMPLE_POLICIES",
         )
         obs = store.list_obligations("G1", "openai")
         assert len(obs) == 1
         assert obs[0]["description"] == "Desc A"
-        assert obs[0]["jurisdiction"] == "agency:FHLMC"
+        assert obs[0]["jurisdiction"] == "agency:EXAMPLE_POLICIES"
 
     def test_upsert_preserves_status_updates_enriched(self, store):
         store.upsert_obligation("G1", "openai", "R001", "Rule A", "eligibility", "high")
@@ -449,12 +449,12 @@ class TestEnrichedSchema:
         store.upsert_obligation(
             "G1", "openai", "R001", "Rule A Updated", "eligibility", "critical",
             description="New description",
-            jurisdiction="agency:FNMA",
+            jurisdiction="agency:SAMPLE_GUIDELINES",
         )
         ob = store.get_obligation("G1", "openai", "R001")
         # Note: upsert ON CONFLICT doesn't update status/notes, so they are preserved
         assert ob["description"] == "New description"
-        assert ob["jurisdiction"] == "agency:FNMA"
+        assert ob["jurisdiction"] == "agency:SAMPLE_GUIDELINES"
         assert ob["rule_name"] == "Rule A Updated"
 
     def test_default_enriched_fields_are_empty(self, store):
@@ -500,7 +500,7 @@ class TestEnrichedSeeding:
                         "section_id": "B3-3.1",
                         "source_text": "The combined LTV must not exceed 80 percent.",
                     },
-                    "jurisdiction": "agency:FNMA",
+                    "jurisdiction": "agency:SAMPLE_GUIDELINES",
                     "mandatory": True,
                     "effective_date": "2023-06-01",
                     "applicability_scope": {
@@ -519,7 +519,7 @@ class TestEnrichedSeeding:
 
         ob = store.get_obligation("TestGraph", "openai", "R001")
         assert ob["description"] == "The combined LTV must not exceed 80 percent."
-        assert ob["jurisdiction"] == "agency:FNMA"
+        assert ob["jurisdiction"] == "agency:SAMPLE_GUIDELINES"
         assert ob["mandatory"] == 1
         assert ob["effective_date"] == "2023-06-01"
         assert ob["audit_frequency"] == "quarterly"
@@ -554,7 +554,7 @@ class TestEnrichedSeeding:
                     "rule_type": "eligibility",
                     "risk_level": "critical",
                     "description": "New description",
-                    "jurisdiction": "agency:FNMA",
+                    "jurisdiction": "agency:SAMPLE_GUIDELINES",
                     "enforcement_action": "Repurchase",
                 },
             ],
@@ -573,7 +573,7 @@ class TestEnrichedSeeding:
         assert ob["status"] == "mapped"
         assert ob["notes"] == "Reviewed"
         assert ob["description"] == "New description"
-        assert ob["jurisdiction"] == "agency:FNMA"
+        assert ob["jurisdiction"] == "agency:SAMPLE_GUIDELINES"
         assert ob["enforcement_action"] == "Repurchase"
 
     def test_seed_optional_rule(self, store, service):
@@ -601,7 +601,7 @@ class TestEnrichedExport:
         store.upsert_obligation(
             "G", "openai", "R001", "LTV Rule", "eligibility", "critical", "mapped",
             description="LTV must be under 80%",
-            jurisdiction="agency:FNMA",
+            jurisdiction="agency:SAMPLE_GUIDELINES",
             mandatory=1,
             effective_date="2023-06-01",
             audit_frequency="quarterly",
@@ -614,16 +614,16 @@ class TestEnrichedExport:
         assert "Effective Date" in csv_str
         assert "Audit Frequency" in csv_str
         assert "Enforcement Action" in csv_str
-        assert "agency:FNMA" in csv_str
+        assert "agency:SAMPLE_GUIDELINES" in csv_str
         assert "quarterly" in csv_str
 
     def test_json_export_includes_enriched(self, store, service):
         store.upsert_obligation(
             "G", "openai", "R001", "LTV Rule", "eligibility", "critical", "mapped",
             description="Test desc",
-            jurisdiction="agency:FNMA",
+            jurisdiction="agency:SAMPLE_GUIDELINES",
         )
         result = service.export_obligations("G", "openai", "json")
         ob = result["obligations"][0]
         assert ob["description"] == "Test desc"
-        assert ob["jurisdiction"] == "agency:FNMA"
+        assert ob["jurisdiction"] == "agency:SAMPLE_GUIDELINES"

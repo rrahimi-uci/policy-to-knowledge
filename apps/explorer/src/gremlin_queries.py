@@ -201,7 +201,7 @@ def run_all_queries() -> None:
     """Execute all example queries."""
     with get_traversal() as (g, conn):
         print("\n" + "=" * 60)
-        print("  Policy to Knowledge COPILOT — GREMLIN QUERIES")
+        print("  Policy to Knowledge EXPLORER — GREMLIN QUERIES")
         print("=" * 60)
 
         # Overview

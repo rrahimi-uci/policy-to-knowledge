@@ -568,9 +568,9 @@ class TestMortgageDocStructureAnalysisContent:
     def test_mentions_dti(self):
         assert "DTI" in self._read()
 
-    def test_mentions_fannie_mae_or_freddie(self):
+    def test_mentions_sample_guidelines_or_example_policies(self):
         content = self._read()
-        assert "Fannie Mae" in content or "Freddie Mac" in content
+        assert "Sample Guidelines" in content or "Example Policies" in content
 
     def test_mentions_fha(self):
         assert "FHA" in self._read()

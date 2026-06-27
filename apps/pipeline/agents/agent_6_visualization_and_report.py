@@ -285,7 +285,7 @@ def generate_html_content(data, rules, entity_types, entity_definitions):
         # Make color lighter for individual rules
         lighter_color = _lighten_color(color)
         
-        reference = rule.get('source_reference', rule.get('fannie_mae_reference', ''))
+        reference = rule.get('source_reference', rule.get('legacy_source_reference', ''))
         # Format structured source_reference for tooltip
         if isinstance(reference, dict):
             ref_display = reference.get('chunk_path', '')
@@ -1915,7 +1915,7 @@ def generate_html_content(data, rules, entity_types, entity_definitions):
                 
                 // Format source_reference for display
                 let refDisplay = 'N/A';
-                const srcRef = rule.source_reference || rule.fannie_mae_reference;
+                const srcRef = rule.source_reference || rule.legacy_source_reference;
                 if (srcRef && typeof srcRef === 'object' && !Array.isArray(srcRef)) {{
                     const cp = srcRef.chunk_path || '';
                     const sec = srcRef.section_id && srcRef.section_id !== 'N/A' ? ` | ${{srcRef.section_id}}` : '';

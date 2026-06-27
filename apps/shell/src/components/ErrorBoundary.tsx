@@ -1,4 +1,4 @@
-import { Component, type ErrorInfo, type ReactNode } from 'react';
+import { Component, Fragment, type ErrorInfo, type ReactNode } from 'react';
 
 interface Props {
   children: ReactNode;
@@ -8,6 +8,8 @@ interface Props {
 
 interface State {
   error: Error | null;
+  /** Bumped on reset to force the subtree to remount and re-attempt rendering. */
+  resetKey: number;
 }
 
 /**
@@ -16,9 +18,9 @@ interface State {
  * of white-screening the whole suite.
  */
 export default class ErrorBoundary extends Component<Props, State> {
-  state: State = { error: null };
+  state: State = { error: null, resetKey: 0 };
 
-  static getDerivedStateFromError(error: Error): State {
+  static getDerivedStateFromError(error: Error): Partial<State> {
     return { error };
   }
 
@@ -27,11 +29,14 @@ export default class ErrorBoundary extends Component<Props, State> {
     console.error('Unhandled UI error:', error, info.componentStack);
   }
 
-  reset = () => this.setState({ error: null });
+  // Clear the error AND bump the key so the subtree remounts fresh — otherwise
+  // a child that throws on mount would immediately re-throw and "Try again"
+  // would be a no-op.
+  reset = () => this.setState((s) => ({ error: null, resetKey: s.resetKey + 1 }));
 
   render() {
-    const { error } = this.state;
-    if (!error) return this.props.children;
+    const { error, resetKey } = this.state;
+    if (!error) return <Fragment key={resetKey}>{this.props.children}</Fragment>;
     if (this.props.fallback) return this.props.fallback(error, this.reset);
 
     return (

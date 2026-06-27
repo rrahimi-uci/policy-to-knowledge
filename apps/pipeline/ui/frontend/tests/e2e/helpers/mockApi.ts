@@ -51,7 +51,7 @@ export function createMockState(): MockState {
     documentsByDir: {
       'sample-guidelines': [
         {
-          name: 'Fannie Mae November 2025 Selling Guide.md',
+          name: 'Sample Guidelines November 2025 Selling Guide.md',
           size: 58240,
           extension: '.md',
         },
@@ -78,9 +78,9 @@ export function createMockState(): MockState {
       ],
     },
     previews: {
-      'sample-guidelines/Fannie Mae November 2025 Selling Guide.md': {
-        filename: 'Fannie Mae November 2025 Selling Guide.md',
-        content: '# Fannie Mae Selling Guide\n\nBorrowers must meet credit, income, and occupancy eligibility rules.',
+      'sample-guidelines/Sample Guidelines November 2025 Selling Guide.md': {
+        filename: 'Sample Guidelines November 2025 Selling Guide.md',
+        content: '# Sample Guidelines Selling Guide\n\nBorrowers must meet credit, income, and occupancy eligibility rules.',
       },
       'sample-guidelines/Conventional escrow waiver policy.md': {
         filename: 'Conventional escrow waiver policy.md',
@@ -121,11 +121,11 @@ export function createMockState(): MockState {
       },
     },
     graphs: [
-      { name: 'Fannie_Mae', provider: 'openai', rules: 120, entities: 8 },
-      { name: 'Freddie_Mac', provider: 'openai', rules: 98, entities: 7 },
+      { name: 'Sample_Guidelines', provider: 'openai', rules: 120, entities: 8 },
+      { name: 'Example_Policies', provider: 'openai', rules: 98, entities: 7 },
     ],
     graphData: {
-      Fannie_Mae: {
+      Sample_Guidelines: {
         entity_types: {
           BORROWER: {
             description: 'A mortgage applicant evaluated for credit, income, and occupancy eligibility.',
@@ -169,10 +169,10 @@ export function createMockState(): MockState {
           },
         ],
       },
-      Freddie_Mac: {
+      Example_Policies: {
         entity_types: {
           BORROWER: {
-            description: 'A borrower evaluated under Freddie Mac underwriting standards.',
+            description: 'A borrower evaluated under Example Policies underwriting standards.',
             attributes: ['credit_score', 'assets'],
             business_rules: [],
           },
@@ -191,9 +191,9 @@ export function createMockState(): MockState {
     },
     comparisons: [
       {
-        name: 'Fannie_Mae_vs_Freddie_Mac',
-        g1: 'Fannie_Mae',
-        g2: 'Freddie_Mac',
+        name: 'Sample_Guidelines_vs_Example_Policies',
+        g1: 'Sample_Guidelines',
+        g2: 'Example_Policies',
         has_visualizations: true,
       },
     ],

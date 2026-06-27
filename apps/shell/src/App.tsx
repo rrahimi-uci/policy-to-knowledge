@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Sidebar from '@/components/Sidebar';
 import CommandPalette from '@/components/CommandPalette';
-import CopilotProvider from '@/components/CopilotProvider';
+import AssistantRuntimeProvider from '@/components/AssistantRuntimeProvider';
 import ErrorBoundary from '@/components/ErrorBoundary';
 import Home from '@/pages/Home';
 import Extraction from '@/pages/Extraction';
@@ -14,7 +14,7 @@ import SuiteSettings from '@/pages/SuiteSettings';
 
 export default function App() {
   return (
-    <CopilotProvider>
+    <AssistantRuntimeProvider>
       <div className="min-h-screen bg-gray-950 text-gray-100">
         <Sidebar />
         <CommandPalette />
@@ -33,6 +33,6 @@ export default function App() {
           </ErrorBoundary>
         </main>
       </div>
-    </CopilotProvider>
+    </AssistantRuntimeProvider>
   );
 }

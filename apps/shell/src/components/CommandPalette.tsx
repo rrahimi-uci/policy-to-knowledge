@@ -20,13 +20,42 @@ import {
 
 /* ─── types ──────────────────────────────────────────────────── */
 
-interface SearchResult {
+export interface SearchResult {
   id: string;
   label: string;
   description: string;
   category: 'graph' | 'document' | 'run' | 'page';
   route: string;
   icon: typeof Network;
+}
+
+/** Fixed category display order so keyboard nav and the grouped render agree. */
+export const CATEGORY_ORDER: SearchResult['category'][] = ['page', 'graph', 'document', 'run'];
+
+export const CATEGORY_LABELS: Record<string, string> = {
+  page: 'Pages',
+  graph: 'Knowledge Graphs',
+  document: 'Documents',
+  run: 'Pipeline Runs',
+};
+
+/**
+ * Flatten results into the exact order they are rendered (grouped by
+ * CATEGORY_ORDER, stable within each category). Keyboard navigation indexes
+ * into this array so the highlighted row always matches the activated row.
+ */
+export function flattenGrouped(results: SearchResult[]): SearchResult[] {
+  const ordered: SearchResult[] = [];
+  for (const cat of CATEGORY_ORDER) {
+    for (const r of results) {
+      if (r.category === cat) ordered.push(r);
+    }
+  }
+  // Include any results whose category is not in CATEGORY_ORDER (defensive).
+  for (const r of results) {
+    if (!CATEGORY_ORDER.includes(r.category)) ordered.push(r);
+  }
+  return ordered;
 }
 
 /* ─── static pages ───────────────────────────────────────────── */
@@ -186,17 +215,21 @@ export default function CommandPalette() {
     return () => clearTimeout(t);
   }, [query, search]);
 
+  // Results in the exact order they render — used for keyboard nav so the
+  // highlighted item and the activated item are always the same row.
+  const ordered = flattenGrouped(results);
+
   /* ── Keyboard nav ─────────────────────────────── */
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'ArrowDown') {
       e.preventDefault();
-      setActiveIdx((i) => Math.min(i + 1, results.length - 1));
+      setActiveIdx((i) => Math.min(i + 1, ordered.length - 1));
     } else if (e.key === 'ArrowUp') {
       e.preventDefault();
       setActiveIdx((i) => Math.max(i - 1, 0));
-    } else if (e.key === 'Enter' && results[activeIdx]) {
+    } else if (e.key === 'Enter' && ordered[activeIdx]) {
       e.preventDefault();
-      go(results[activeIdx].route);
+      go(ordered[activeIdx].route);
     }
   };
 
@@ -215,19 +248,10 @@ export default function CommandPalette() {
 
   if (!open) return null;
 
-  /* Group results by category */
-  const grouped: Record<string, SearchResult[]> = {};
-  results.forEach((r) => {
-    (grouped[r.category] ??= []).push(r);
-  });
-  const categoryLabels: Record<string, string> = {
-    page: 'Pages',
-    graph: 'Knowledge Graphs',
-    document: 'Documents',
-    run: 'Pipeline Runs',
-  };
-
-  let flatIdx = 0;
+  /* Group results by category, in the fixed CATEGORY_ORDER */
+  const grouped: [string, SearchResult[]][] = CATEGORY_ORDER
+    .map((cat) => [cat, ordered.filter((r) => r.category === cat)] as [string, SearchResult[]])
+    .filter(([, items]) => items.length > 0);
 
   return (
     <>
@@ -275,15 +299,15 @@ export default function CommandPalette() {
                 <p className="text-sm text-gray-500">No results for &ldquo;{query}&rdquo;</p>
               </div>
             ) : (
-              Object.entries(grouped).map(([cat, items]) => {
-                const catLabel = categoryLabels[cat] ?? cat;
+              grouped.map(([cat, items]) => {
+                const catLabel = CATEGORY_LABELS[cat] ?? cat;
                 return (
                   <div key={cat} role="group" aria-label={catLabel}>
                     <div className="px-4 pt-2 pb-1 text-[10px] font-semibold uppercase tracking-widest text-gray-600">
                       {catLabel}
                     </div>
                     {items.map((item) => {
-                      const idx = flatIdx++;
+                      const idx = ordered.indexOf(item);
                       const Icon = item.icon;
                       return (
                         <button

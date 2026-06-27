@@ -7,9 +7,9 @@ Reads knowledge graph JSON files and creates:
   - depends_on edges (rule-to-rule dependency relationships)
   - belongs_to_category edges (rule-to-category links)
 
-Supports multiple graphs:
-  - 'g' (compliance/fama) - Fannie Mae business rules
-  - 'contracts_g' (contracts/overlays) - overlay/contract rules
+Supports multiple graphs declared in conf/graphs.yaml, including:
+  - sample_guidelines_g - Sample Guidelines business rules
+  - example_policies_g - Example Policies business rules
 """
 
 import sys
@@ -26,6 +26,22 @@ from src.log import log as _log
 
 # Graph configurations — driven by graphs.yaml
 GRAPH_CONFIGS = get_graph_configs()
+
+
+def _safe_int(value, default: int = 0) -> int:
+    """Coerce externally-produced KG values to int without aborting the load."""
+    try:
+        return int(float(value))
+    except (TypeError, ValueError):
+        return default
+
+
+def _safe_float(value, default: float = 0.0) -> float:
+    """Coerce externally-produced KG values to float without aborting the load."""
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return default
 
 
 def _safe_str(val) -> str:
@@ -217,7 +233,7 @@ def load_data(graph_name: str = "g", json_file: str = None, *, clear_first: bool
                 .property("exceptions", _safe_str(rule.get("exceptions", "")))
                 .property("reference", _safe_str(reference_str))
                 .property("mandatory", bool(rule.get("mandatory", False)))
-                .property("confidence_score", float(rule.get("confidence_score", 0.0)))
+                .property("confidence_score", _safe_float(rule.get("confidence_score"), 0.0))
                 .property("requires_review", bool(rule.get("requires_review", False)))
                 .property("review_reason", _safe_str(rule.get("review_reason", "")))
                 .property("entity_or_relationship", rule.get("entity_or_relationship", ""))
@@ -348,7 +364,7 @@ def load_data(graph_name: str = "g", json_file: str = None, *, clear_first: bool
                     .property("dependency_type", dep.get("dependency_type", "unknown"))
                     .property("rationale", _safe_str(dep.get("rationale", "")))
                     .property("impact_if_fails", _safe_str(dep.get("impact_if_fails", "")))
-                    .property("strength", int(dep.get("strength", 0)))
+                    .property("strength", _safe_int(dep.get("strength"), 0))
                     .next()
                 )
                 dep_count += 1
