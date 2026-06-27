@@ -38,7 +38,7 @@ SCENES = [
         "duration": 23,
         "narration": (
             "In mortgage lending, regulatory compliance is not optional. It is operational. "
-            "Fannie Mae, Freddie Mac, and federal agencies issue hundreds of updates every year. "
+            "Sample Guidelines, Example Policies, and federal agencies issue hundreds of updates every year. "
             "Policy to Knowledge transforms that complexity into structured, actionable intelligence."
         ),
     },
@@ -84,7 +84,7 @@ SCENES = [
         "narration": (
             "Everything starts here, with the Policy to Knowledge dashboard. "
             "Policy to Knowledge has created seven knowledge graphs spanning high-compliance domains, "
-            "including Fannie Mae and Freddie Mac in mortgage, Anti-Money Laundering, "
+            "including Sample Guidelines and Example Policies in mortgage, Anti-Money Laundering, "
             "commercial lending, and healthcare. "
             "Fifty-three source documents ingested, over two thousand rules extracted "
             "across these enterprise domains, and the compliance assistant connected and ready."
@@ -124,10 +124,10 @@ SCENES = [
         "duration": 35,
         "narration": (
             "Policy to Knowledge lets you compare any two knowledge graphs side by side using AI-powered "
-            "semantic analysis. Here, the Fannie Mae Selling Guide with three hundred fifty-two rules "
-            "is compared against Freddie Mac with three hundred eighty-three rules. "
-            "The comparison reveals sixteen shared rules, three hundred thirty-six unique to Fannie Mae, "
-            "three hundred sixty-seven unique to Freddie Mac, and fourteen semantic contradictions. "
+            "semantic analysis. Here, the Sample Guidelines Selling Guide with three hundred fifty-two rules "
+            "is compared against Example Policies with three hundred eighty-three rules. "
+            "The comparison reveals sixteen shared rules, three hundred thirty-six unique to Sample Guidelines, "
+            "three hundred sixty-seven unique to Example Policies, and fourteen semantic contradictions. "
             "Each contradiction includes a detailed AI analysis explaining the conflict and its implications. "
             "This is then reviewed by human experts and used to refine the extraction and comparison models for even deeper insights over time."
         ),
@@ -150,7 +150,7 @@ SCENES = [
         "title": "Graph Analytics",
         "duration": 29,
         "narration": (
-            "Policy to Knowledge provides deep analytics on every knowledge graph. For example, the Fannie Mae "
+            "Policy to Knowledge provides deep analytics on every knowledge graph. For example, the Sample Guidelines "
             "Selling Guide analysis shows three hundred fifty-two rules, thirteen "
             "dependencies, and forty-three entity types. The risk breakdown reveals "
             "two hundred three high-risk and one hundred twenty-eight critical rules, "

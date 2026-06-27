@@ -15,7 +15,7 @@ from conftest import KNOWN_GRAPHS
 
 # ── Graph names for v1 vs v2 testing ─────────────────────────────
 V2_GRAPH = "sample_guidelines_g"    # v2 format with extended properties
-V1_GRAPH = "fannie_mae_g"          # alternate graph for comparison
+V1_GRAPH = "sample_guidelines_g"          # alternate graph for comparison
 
 # ── v2 property names (extended fields added to schema) ──────────
 V2_STRING_PROPERTIES = [
@@ -418,7 +418,7 @@ class TestCreateVertexV2:
                 "name": unique_name,
                 "content": "E2E test rule to verify retrieval of v2 properties.",
                 "rule_type": "process",
-                "jurisdiction": "agency:FNMA",
+                "jurisdiction": "agency:SAMPLE_GUIDELINES",
                 "risk_level": "medium",
                 "reference_verified": False,
             },
@@ -431,7 +431,7 @@ class TestCreateVertexV2:
         detail = api.get(f"/api/vertex/{vid}", params={"graph_name": V2_GRAPH})
         assert detail.status_code == 200
         data = detail.json()
-        assert data["jurisdiction"] == "agency:FNMA"
+        assert data["jurisdiction"] == "agency:SAMPLE_GUIDELINES"
         assert data["risk_level"] == "medium"
         assert data["reference_verified"] is False
 
@@ -466,7 +466,7 @@ class TestReferenceResolutionV2:
     def test_resolve_with_source_reference_parameter(self, api):
         """Passing source_reference JSON should be accepted by the endpoint."""
         source_ref = json.dumps({
-            "chunk_path": "Freddie Mac Guide/Chapter 5202/test.txt",
+            "chunk_path": "Example Policies Guide/Chapter 5202/test.txt",
             "section_id": "5202.1",
         })
         resp = api.get("/api/reference/resolve", params={

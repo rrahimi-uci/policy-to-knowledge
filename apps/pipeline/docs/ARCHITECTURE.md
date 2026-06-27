@@ -402,10 +402,10 @@ docker-compose up -d
 docker-compose exec pipeline python knowledge_graph_generation.py --provider openai --document FM
 
 # Run joins pipeline
-docker-compose exec pipeline python join_graphs.py --g1 FMNA --g2 Revolution-Overlay
+docker-compose exec pipeline python join_graphs.py --g1 SAMPLE_GUIDELINES --g2 Policy-Overlay
 
 # View reports directly
-open pipeline-output/openai/FMNA/agent-6-visualization-and-report/FMNA_knowledge_graph.html
+open pipeline-output/openai/SAMPLE_GUIDELINES/agent-6-visualization-and-report/SAMPLE_GUIDELINES_knowledge_graph.html
 ```
 
 ---

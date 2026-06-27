@@ -23,7 +23,7 @@ CHUNKING PRINCIPLES:
    - Each chunk should contain complete, self-contained information
    - Include sufficient context for mortgage entity identification (Borrower, Loan, Property, Servicer, etc.)
    - Include complete rule descriptions with dollar limits, LTV ratios, DTI limits, and credit score floors
-   - Preserve regulatory cites (e.g., Fannie Mae Selling Guide section numbers, Freddie Mac Guide B3 references, FHA handbook section numbers, VA pamphlet chapters)
+   - Preserve regulatory cites (e.g., Sample Guidelines Selling Guide section numbers, Example Policies Guide B3 references, FHA handbook section numbers, VA pamphlet chapters)
    - Keep cross-references to AUS (DU/LP) approval conditions intact
 
 3. **SIZE OPTIMIZATION**
@@ -49,7 +49,7 @@ CHUNKING PRINCIPLES:
      * Servicing transfer and loss mitigation procedures
      * AUS (DU / LP / GUS) findings interpretation
    - Detect enumerated eligibility matrices, LTV tables, and income calculation examples
-   - Note cross-references to Fannie Mae Selling Guide, Freddie Mac Single-Family Guide, FHA Handbook 4000.1, VA Lender Handbook
+   - Note cross-references to Sample Guidelines Selling Guide, Example Policies Single-Family Guide, FHA Handbook 4000.1, VA Lender Handbook
 
 5. **METADATA RICHNESS**
    - Provide descriptive titles that indicate mortgage content type (e.g., "Conventional Loan LTV Limits — Purchase vs. Refinance Matrix", "FHA Credit Score Minimums and MIP Rate Table")
@@ -59,7 +59,7 @@ CHUNKING PRINCIPLES:
 
 REQUIRED JSON FORMAT:
 {{
-  "document_type": "Type of document (e.g., 'fannie_mae_selling_guide', 'freddie_mac_guide', 'fha_handbook', 'va_lender_handbook', 'conventional_program_matrix', 'underwriting_policy')",
+  "document_type": "Type of document (e.g., 'sample_guidelines_selling_guide', 'example_policies_guide', 'fha_handbook', 'va_lender_handbook', 'conventional_program_matrix', 'underwriting_policy')",
   "overall_structure": "Brief description of document organization and key mortgage/underwriting sections",
   "sections": [
     {{

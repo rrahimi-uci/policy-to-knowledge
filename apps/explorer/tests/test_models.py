@@ -6,6 +6,7 @@ import importlib
 import sys
 from pathlib import Path
 
+import allure
 import pytest
 
 ASSISTANT_ROOT = Path(__file__).resolve().parent.parent
@@ -22,6 +23,7 @@ def models(tmp_path, monkeypatch):
     return m
 
 
+@allure.feature("Explorer models")
 class TestModels:
     def test_init_db_creates_tables(self, models):
         # A session round-trip should work after init_db.
@@ -59,3 +61,32 @@ class TestModels:
 
     def test_uses_env_db_url(self, models, tmp_path):
         assert str(tmp_path) in models._DB_URL
+
+    @allure.title("from_dict / to_dict round-trips the frontend shape")
+    def test_from_dict_roundtrip(self, models):
+        data = {
+            "reviewed": "yes",
+            "approved": "no",
+            "deleted": True,
+            "deletedAt": "2026-01-01",
+            "edits": {"name": "New"},
+            "reviewHistory": [{"by": "a"}],
+            "approvalHistory": [],
+            "versionHistory": [{"v": 1}],
+        }
+        ann = models.NodeAnnotation.from_dict("n1", data)
+        out = ann.to_dict()
+        assert out["edits"] == {"name": "New"}
+        assert out["reviewHistory"] == [{"by": "a"}]
+        assert out["versionHistory"] == [{"v": 1}]
+        assert out["deleted"] is True
+
+    @allure.title("update_from_dict merges only provided fields")
+    def test_update_from_dict(self, models):
+        ann = models.NodeAnnotation(node_id="n2", reviewed="no")
+        ann.update_from_dict({"reviewed": "yes", "edits": {"content": "x"}})
+        out = ann.to_dict()
+        assert out["reviewed"] == "yes"
+        assert out["edits"] == {"content": "x"}
+        # approved was not in the patch → stays default (None)
+        assert out["approved"] is None

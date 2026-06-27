@@ -427,7 +427,7 @@ class SetOperationsVisualizer:
     def _build_tooltip(self, rule: dict, g1_name: str = "G1", g2_name: str = "G2") -> str:
         """Build a simple plain text tooltip for a rule node."""
         rule_name = rule.get('rule_name', 'N/A')
-        reference = rule.get('source_reference', rule.get('fannie_mae_reference', ''))
+        reference = rule.get('source_reference', rule.get('legacy_source_reference', ''))
         
         provenance = rule.get('provenance', {})
         sources = provenance.get('sources', [])
@@ -436,8 +436,8 @@ class SetOperationsVisualizer:
         if len(sources) == 2 and provenance.get('g1_rule') and provenance.get('g2_rule'):
             g1_info = provenance['g1_rule']
             g2_info = provenance['g2_rule']
-            g1_ref = self._format_ref_for_tooltip(g1_info.get('source_reference', g1_info.get('fannie_mae_reference', 'N/A')))
-            g2_ref = self._format_ref_for_tooltip(g2_info.get('source_reference', g2_info.get('fannie_mae_reference', 'N/A')))
+            g1_ref = self._format_ref_for_tooltip(g1_info.get('source_reference', g1_info.get('legacy_source_reference', 'N/A')))
+            g2_ref = self._format_ref_for_tooltip(g2_info.get('source_reference', g2_info.get('legacy_source_reference', 'N/A')))
             return (f"INTERSECTION ({g1_name} ∩ {g2_name})\n\n"
                     f"[G1] {g1_name}:\n"
                     f"  ID: {g1_info.get('rule_id', 'N/A')}\n"
@@ -1382,7 +1382,7 @@ class SetOperationsVisualizer:
                 
                 // Format structured source_reference
                 let refDisplay = 'N/A';
-                const srcRef = rule.source_reference || rule.fannie_mae_reference;
+                const srcRef = rule.source_reference || rule.legacy_source_reference;
                 if (srcRef && typeof srcRef === 'object' && !Array.isArray(srcRef)) {{
                     const cp = srcRef.chunk_path || '';
                     const sec = srcRef.section_id && srcRef.section_id !== 'N/A' ? ` | ${{srcRef.section_id}}` : '';
@@ -1784,7 +1784,7 @@ class SetOperationsVisualizer:
                 const isHighlighted = selectedNodeId !== null;
                 // Format structured source_reference
                 let refDisplay = 'N/A';
-                const srcRef = rule.source_reference || rule.fannie_mae_reference;
+                const srcRef = rule.source_reference || rule.legacy_source_reference;
                 if (srcRef && typeof srcRef === 'object' && !Array.isArray(srcRef)) {{
                     const cp = srcRef.chunk_path || '';
                     const sec = srcRef.section_id && srcRef.section_id !== 'N/A' ? ` | ${{srcRef.section_id}}` : '';

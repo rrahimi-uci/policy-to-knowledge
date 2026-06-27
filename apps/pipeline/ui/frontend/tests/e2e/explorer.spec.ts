@@ -4,7 +4,7 @@ test('explorer renders rules and entity-driven filtering', async ({ page }) => {
   await page.goto('/explorer');
 
   await expect(page.getByRole('heading', { name: 'Knowledge Graph Explorer' })).toBeVisible();
-  await expect(page.getByLabel('Knowledge graph')).toHaveValue('Fannie_Mae');
+  await expect(page.getByLabel('Knowledge graph')).toHaveValue('Sample_Guidelines');
 
   await page.getByRole('button', { name: /Rules \(/ }).click();
   await page.getByPlaceholder('Search rules...').fill('LTV');

@@ -16,7 +16,7 @@ BASE_URL = os.getenv("BASE_URL", "http://localhost:5001")
 TIMEOUT = 30  # seconds — graph queries can be slow
 
 # Known graph traversal sources (must match graphs.yaml)
-KNOWN_GRAPHS = ["fannie_mae_g", "sample_guidelines_g", "overlays_g"]
+KNOWN_GRAPHS = ["sample_guidelines_g", "example_policies_g"]
 
 # ── Fixtures ─────────────────────────────────────────────────────────
 

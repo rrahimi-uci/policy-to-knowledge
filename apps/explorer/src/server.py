@@ -899,24 +899,9 @@ def gremlin_execute():
                 pass
 
 
-# Mutating / host-level Gremlin & Groovy tokens that must not run on the
-# read-only execute endpoint. Matched case-insensitively as whole words.
-_GREMLIN_BLOCKLIST = (
-    "drop", "addv", "adde", "property", "remove",
-    "system", "thread", "runtime", "process", "file",
-    "import", "new ", "evaluate", "java.", "groovy.", "execfile", "exec(",
-)
-
-
-def _gremlin_safety_violation(query_str):
-    """Return the first blocked token found in a query, or None if it looks safe."""
-    lowered = query_str.lower()
-    for token in _GREMLIN_BLOCKLIST:
-        # Word-ish boundary so 'property' matches but 'propertyMap'/'properties' (read) don't.
-        pattern = re.escape(token) if token.endswith((" ", "(")) else r"\b" + re.escape(token) + r"\b(?!\w)"
-        if re.search(pattern, lowered):
-            return token.strip()
-    return None
+# Read-only Gremlin guard lives in src/gremlin_safety.py (no heavy imports) so
+# it can be unit-tested in isolation.
+from src.gremlin_safety import gremlin_safety_violation as _gremlin_safety_violation
 
 
 def _serialize_gremlin_result(results):
@@ -2202,7 +2187,7 @@ def _build_chunk_index(docs_folder: str) -> list:
     than the cached timestamp.
 
     Paths recorded in _metadata.json may be relative to either:
-      1. The top-level docs_folder  (e.g. sample-guidelines, fannie-mae)
+      1. The top-level docs_folder  (e.g. sample-guidelines, sample-guidelines)
       2. The parent of the _metadata.json file  (e.g. overlay
          where metadata lives inside agent-1-organized-documents/<sub>/)
 
@@ -2330,7 +2315,7 @@ def _match_reference(reference: str, chunk_index: list) -> list:
             scored.append((70 + int(overlap * 20), entry))
             continue
 
-        # Chunk ID match (e.g., 'FAMA_097' in reference)
+        # Chunk ID match (e.g., 'SG_097' in reference)
         if entry["chunk_id"] and entry["chunk_id"].lower() in ref_lower:
             scored.append((75, entry))
             continue
@@ -2515,7 +2500,7 @@ def serve_chunk():
                 past_first_heading = True
                 continue
             if past_first_heading and stripped.startswith("**") and ":**" in stripped:
-                # e.g. **Source:** FAMA.pdf
+                # e.g. **Source:** Sample_Guidelines.pdf
                 key_val = stripped.lstrip("*").split(":**", 1)
                 if len(key_val) == 2:
                     k = key_val[0].strip().rstrip("*")
@@ -3171,7 +3156,7 @@ def _build_reference_html(
   </div>
 </div>
 <div class="ref-footer">
-  <p>Policy to Knowledge Copilot — Source Document Reference</p>
+  <p>Policy to Knowledge Assistant — Source Document Reference</p>
 </div>
 <script>
 // Auto-scroll to the first highlighted reference mark on page load
@@ -3810,7 +3795,7 @@ Round 2: get_source_reference(rule_name=...) → retrieve original document text
 ## Graph Schema
 
 Vertex labels (366 total):
-- "business_rule" — properties: name, rule_id, rule_type (constraint|eligibility|process|prohibition|documentation|validation), description, content, category, entity_or_relationship, mandatory (boolean), confidence_score (float 0-100), requires_review (boolean), review_reason, conditions, consequences, exceptions, reference, source_reference (JSON: chunk_path, section_id, source_text, text_match_score), effective_date, expiration_date, superseded_by, jurisdiction (e.g. "agency:FHLMC"), risk_level (high|medium|low), related_rules (JSON array of rule_ids), enforcement_action, applicability_scope (JSON: loan_types[], occupancy_types[], transaction_types[]), data_points_required (JSON array), audit_frequency (e.g. "at_origination"), reference_verified (boolean), reference_verification_note, confidence_breakdown (JSON: extraction_clarity, numeric_precision, context_completeness, source_authority, logical_consistency), deduplication_info (JSON: merged_from[], merge_count, rationale)
+- "business_rule" — properties: name, rule_id, rule_type (constraint|eligibility|process|prohibition|documentation|validation), description, content, category, entity_or_relationship, mandatory (boolean), confidence_score (float 0-100), requires_review (boolean), review_reason, conditions, consequences, exceptions, reference, source_reference (JSON: chunk_path, section_id, source_text, text_match_score), effective_date, expiration_date, superseded_by, jurisdiction (e.g. "agency:EXAMPLE_POLICIES"), risk_level (high|medium|low), related_rules (JSON array of rule_ids), enforcement_action, applicability_scope (JSON: loan_types[], occupancy_types[], transaction_types[]), data_points_required (JSON array), audit_frequency (e.g. "at_origination"), reference_verified (boolean), reference_verification_note, confidence_breakdown (JSON: extraction_clarity, numeric_precision, context_completeness, source_authority, logical_consistency), deduplication_info (JSON: merged_from[], merge_count, rationale)
 - "entity_category" — properties: name, content, description
 
 Edge labels (457 total):
@@ -3910,7 +3895,7 @@ For research questions (e.g. "explain the appraisal requirements", "what do the 
 
 ### Multi-Graph Awareness
 Always pass the correct `graph_name` parameter when the user mentions a specific domain:
-- Compliance / FAMA → graph_name = the first traversal source (default)
+- Sample Guidelines / mortgage → graph_name = the first traversal source (default)
 - Contracts / overlays / Overlay → use the contracts traversal source
 - Commercial lending → use the commercial lending traversal source
 - **If unclear or no graph is mentioned → use `cross_graph_search` to cover all graphs at once.**

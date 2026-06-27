@@ -564,7 +564,7 @@ class TestCrossDomainConsistency:
 #      rule.get("dependencies", [])
 #        dep.get("depends_on_rule")
 #        dep.get("dependency_type")
-#      rule.get("source_reference") or rule.get("fannie_mae_reference")
+#      rule.get("source_reference") or rule.get("legacy_source_reference")
 # ─────────────────────────────────────────────────────────────────────────────
 
 class TestAgent5ToAgent6Contract:

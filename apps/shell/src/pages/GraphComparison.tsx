@@ -127,8 +127,8 @@ const DOMAIN_ORDER: string[] = ['mortgage', 'aml', 'commercial_lending', 'health
 function inferDomain(name: string): string {
   const l = (name || '').toLowerCase();
   if (
-    l.includes('fnma') ||
-    l.includes('fhlmc') ||
+    l.includes('sample_guidelines') ||
+    l.includes('example_policies') ||
     l.includes('mortgage') ||
     l.includes('loan') ||
     l.includes('underwriting') ||

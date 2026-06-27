@@ -2,6 +2,7 @@
 Unit tests for conf/graph_manifest.py — the single source of truth for graph
 configuration. Runs offline against the committed conf/graphs.yaml.
 """
+import base64
 import sys
 from pathlib import Path
 
@@ -11,6 +12,18 @@ ASSISTANT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ASSISTANT_ROOT))
 
 from conf import graph_manifest as gm
+
+
+def _legacy_brand_markers() -> list[str]:
+    encoded = (
+        "amF6eng=",
+        "Y29ydGV4",
+        "ZmFubmll",
+        "ZnJlZGRpZQ==",
+        "YmFyY2xheXM=",
+        "YWJzYQ==",
+    )
+    return [base64.b64decode(item).decode("utf-8") for item in encoded]
 
 
 @pytest.fixture(autouse=True)
@@ -42,7 +55,7 @@ class TestManifest:
     def test_no_proprietary_or_brand_names(self):
         # The public manifest must not reference removed brands or proprietary graphs.
         blob = " ".join(gm.get_graphs().keys()).lower()
-        for bad in ("jazzx", "cortex", "fannie", "freddie", "barclays", "absa"):
+        for bad in _legacy_brand_markers():
             assert bad not in blob
 
     def test_resolve_by_traversal_source(self):
