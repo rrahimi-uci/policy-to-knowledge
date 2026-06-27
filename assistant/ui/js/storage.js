@@ -1,7 +1,7 @@
 /* ── Persistent Storage Helpers (SQLAlchemy backend) ─── */
 
-const _DEFAULTS = { comments: [], reviewed: null, reviewHistory: [], approved: null, approvalHistory: [], versionHistory: [], deleted: false, deletedAt: null, edits: {} };
-const _EDGE_DEFAULTS = { comments: [], edits: {}, approved: null, approvalHistory: [], versionHistory: [] };
+const _DEFAULTS = { reviewed: null, reviewHistory: [], approved: null, approvalHistory: [], versionHistory: [], deleted: false, deletedAt: null, edits: {} };
+const _EDGE_DEFAULTS = { edits: {}, approved: null, approvalHistory: [], versionHistory: [] };
 
 // In-memory cache so reads are instant; writes always persist to server
 const _nodeCache = {};

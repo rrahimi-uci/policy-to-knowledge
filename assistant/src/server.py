@@ -34,7 +34,7 @@ from dotenv import load_dotenv
 
 from src.graph_connection import get_traversal
 from src.semantic_search import SemanticSearchEngine
-from src.models import init_db, SessionLocal, NodeAnnotation, GraphRelease, GraphState
+from src.models import init_db, SessionLocal, NodeAnnotation
 from src.docs_sync import copy_docs_tree, docs_folder_rel
 from src.cache import get_cache
 from conf.config import (
@@ -170,7 +170,7 @@ def get_annotation(node_id):
         if row:
             return jsonify(row.to_dict())
         return jsonify({
-            "comments": [], "reviewed": None, "reviewHistory": [],
+            "reviewed": None, "reviewHistory": [],
             "approved": None, "approvalHistory": [],
             "versionHistory": [], "deleted": False, "deletedAt": None, "edits": {},
         })
@@ -977,219 +977,6 @@ def _rule_type_affinity(type_a: str, type_b: str) -> float:
            _RULE_TYPE_AFFINITY.get((type_b, type_a), 0.3))
 
 
-# ── Graph lock guard ──────────────────────────────────────────────
-
-def _check_graph_locked(graph_name: str):
-    """Return a 403 response if the graph is locked, else None."""
-    session = SessionLocal()
-    try:
-        state = session.get(GraphState, graph_name)
-        if state and state.locked:
-            return jsonify({
-                "errors": [f"Graph is locked at release {state.current_release_version or '?'}. Unlock to make changes."],
-                "locked": True,
-                "release_version": state.current_release_version,
-            }), 403
-        return None
-    finally:
-        session.close()
-
-
-# ── Release & Lock endpoints ─────────────────────────────────────
-
-@app.route("/api/graph/status")
-def get_graph_status():
-    """Return the lock/release status for a graph."""
-    graph_name = _resolve_graph_name(request.args.get("graph_name"))
-    session = SessionLocal()
-    try:
-        state = session.get(GraphState, graph_name)
-        if state:
-            return jsonify(state.to_dict())
-        return jsonify({
-            "graph_name": graph_name,
-            "locked": False,
-            "locked_at": None,
-            "locked_by": None,
-            "current_release_id": None,
-            "current_release_version": None,
-        })
-    finally:
-        session.close()
-
-
-@app.route("/api/graph/releases")
-def list_releases():
-    """List all releases for a graph, newest first."""
-    graph_name = _resolve_graph_name(request.args.get("graph_name"))
-    session = SessionLocal()
-    try:
-        rows = (
-            session.query(GraphRelease)
-            .filter_by(graph_name=graph_name)
-            .order_by(GraphRelease.released_at.desc())
-            .all()
-        )
-        return jsonify([r.to_dict() for r in rows])
-    finally:
-        session.close()
-
-
-@app.route("/api/graph/release/<release_id>")
-def get_release(release_id):
-    """Get a single release with its full snapshot."""
-    session = SessionLocal()
-    try:
-        row = session.get(GraphRelease, release_id)
-        if not row:
-            return jsonify({"errors": ["Release not found"]}), 404
-        return jsonify(row.to_dict_with_snapshot())
-    finally:
-        session.close()
-
-
-@app.route("/api/graph/release", methods=["POST"])
-def create_release():
-    """Create a new release: snapshot the current graph and lock it.
-
-    Request JSON:
-        {
-            "graph_name": "fannie_mae_g",
-            "version": "v1.0.0",
-            "title": "Q4 2025 Final",
-            "notes": "All rules reviewed and approved."
-        }
-    """
-    data = request.get_json(force=True)
-    graph_name = _resolve_graph_name(data.get("graph_name"))
-    version = (data.get("version") or "").strip()
-    title = (data.get("title") or "").strip()
-    notes = (data.get("notes") or "").strip()
-
-    if not version:
-        return jsonify({"errors": ["version is required"]}), 400
-    if not title:
-        return jsonify({"errors": ["title is required"]}), 400
-
-    # Snapshot the current live graph
-    try:
-        with get_traversal(graph_name) as (g, conn):
-            raw_vertices = (
-                g.V()
-                .project("id", "label", "props")
-                .by(__.id_())
-                .by(__.label())
-                .by(__.valueMap())
-                .toList()
-            )
-            raw_edges = (
-                g.E()
-                .project("id", "label", "source", "target", "props")
-                .by(__.id_())
-                .by(__.label())
-                .by(__.outV().id_())
-                .by(__.inV().id_())
-                .by(__.valueMap())
-                .toList()
-            )
-    except Exception as exc:
-        _log("ERROR", f"Failed to snapshot graph for release: {exc}")
-        return jsonify({"errors": [str(exc)]}), 500
-
-    # Build snapshot
-    nodes = []
-    for v in raw_vertices:
-        props = {}
-        for k, val in (v.get("props") or {}).items():
-            props[k] = val[0] if isinstance(val, list) and len(val) == 1 else val
-        props["id"] = str(v["id"])
-        props["label"] = v["label"]
-        nodes.append(props)
-
-    links = []
-    for e in raw_edges:
-        ep = {}
-        for k, val in (e.get("props") or {}).items():
-            ep[k] = val[0] if isinstance(val, list) and len(val) == 1 else val
-        ep["id"] = str(e["id"])
-        ep["label"] = e["label"]
-        ep["source"] = str(e["source"])
-        ep["target"] = str(e["target"])
-        links.append(ep)
-
-    snapshot = {"nodes": nodes, "links": links}
-    release_id = str(uuid.uuid4())
-    now = datetime.now(timezone.utc)
-
-    session = SessionLocal()
-    try:
-        # Check for duplicate version
-        existing = (
-            session.query(GraphRelease)
-            .filter_by(graph_name=graph_name, version=version)
-            .first()
-        )
-        if existing:
-            return jsonify({"errors": [f"Version '{version}' already exists for this graph"]}), 409
-
-        release = GraphRelease(
-            id=release_id,
-            graph_name=graph_name,
-            version=version,
-            title=title,
-            notes=notes,
-            released_by="user",
-            released_at=now,
-            node_count=len(nodes),
-            edge_count=len(links),
-            snapshot_json=json.dumps(snapshot),
-        )
-        session.add(release)
-
-        # Upsert the graph lock state
-        state = session.get(GraphState, graph_name)
-        if not state:
-            state = GraphState(graph_name=graph_name)
-            session.add(state)
-        state.locked = True
-        state.locked_at = now
-        state.locked_by = "user"
-        state.current_release_id = release_id
-        state.current_release_version = version
-
-        session.commit()
-        _log("INFO", f"Created release {version} for graph '{graph_name}' ({len(nodes)} nodes, {len(links)} edges) — graph locked")
-        return jsonify(release.to_dict()), 201
-    except Exception as exc:
-        session.rollback()
-        _log("ERROR", f"Failed to create release: {exc}")
-        return jsonify({"errors": [str(exc)]}), 500
-    finally:
-        session.close()
-
-
-@app.route("/api/graph/unlock", methods=["POST"])
-def unlock_graph():
-    """Unlock a graph for editing. Does not delete the release."""
-    data = request.get_json(force=True)
-    graph_name = _resolve_graph_name(data.get("graph_name"))
-    session = SessionLocal()
-    try:
-        state = session.get(GraphState, graph_name)
-        if not state or not state.locked:
-            return jsonify({"message": "Graph is already unlocked", "locked": False})
-        state.locked = False
-        session.commit()
-        _log("INFO", f"Unlocked graph '{graph_name}' (release {state.current_release_version} preserved)")
-        return jsonify({"message": "Graph unlocked for editing", "locked": False})
-    except Exception as exc:
-        session.rollback()
-        _log("ERROR", f"Failed to unlock graph: {exc}")
-        return jsonify({"errors": [str(exc)]}), 500
-    finally:
-        session.close()
-
-
 # ── Graph publishing (pipeline output → JanusGraph + OpenSearch) ──
 
 @app.route("/api/graph/available")
@@ -1765,10 +1552,6 @@ def clean_graph():
     body = request.get_json(force=True)
     graph_name = _resolve_graph_name(body.get("graph_name"))
 
-    locked_resp = _check_graph_locked(graph_name)
-    if locked_resp:
-        return locked_resp
-
     from src.data_loader import clear_graph as _clear_graph
 
     vertices_dropped = 0
@@ -1814,10 +1597,6 @@ def remove_graph(graph_key: str):
 
     graph = graphs[graph_key]
     graph_name = graph["traversal_source"]
-
-    locked_resp = _check_graph_locked(graph_name)
-    if locked_resp:
-        return locked_resp
 
     from src.data_loader import clear_graph as _clear_graph
 
@@ -1868,16 +1647,6 @@ def remove_graph(graph_key: str):
     except Exception as exc:
         errors.append(f"Failed to delete properties file: {exc}")
 
-    # 7. Delete SQLite release and state records so the graph disappears from
-    #    the release history and lock-state endpoints immediately.
-    try:
-        session = SessionLocal()
-        session.query(GraphRelease).filter(GraphRelease.graph_name == graph_name).delete()
-        session.query(GraphState).filter(GraphState.graph_name == graph_name).delete()
-        session.commit()
-        session.close()
-    except Exception as exc:
-        errors.append(f"Failed to delete database records: {exc}")
 
     # 8. Evict the data-presence cache so the system prompt no longer lists
     #    this graph on the very next chat request.
@@ -1906,10 +1675,6 @@ def create_vertex():
     """
     body = request.get_json(force=True)
     graph_name = _resolve_graph_name(body.get("graph_name"))
-
-    locked_resp = _check_graph_locked(graph_name)
-    if locked_resp:
-        return locked_resp
 
     label = body.get("label", "business_rule")
     props = body.get("properties") or {}
@@ -2045,10 +1810,6 @@ def create_edge():
     body = request.get_json(force=True)
     graph_name = _resolve_graph_name(body.get("graph_name"))
 
-    locked_resp = _check_graph_locked(graph_name)
-    if locked_resp:
-        return locked_resp
-
     source_id = body.get("source_id")
     target_id = body.get("target_id")
     edge_label = body.get("label", "depends_on")
@@ -2132,10 +1893,6 @@ def delete_vertex(vertex_id):
     """
     graph_name = _resolve_graph_name(request.args.get("graph_name"))
 
-    locked_resp = _check_graph_locked(graph_name)
-    if locked_resp:
-        return locked_resp
-
     try:
         try:
             vid = int(vertex_id)
@@ -2189,10 +1946,6 @@ def delete_edge():
     body = request.get_json(force=True)
     graph_name = _resolve_graph_name(body.get("graph_name"))
 
-    locked_resp = _check_graph_locked(graph_name)
-    if locked_resp:
-        return locked_resp
-
     source_id = body.get("source_id")
     target_id = body.get("target_id")
     edge_label = body.get("label", "depends_on")
@@ -2242,10 +1995,6 @@ def reverse_edge():
     """
     body = request.get_json(force=True)
     graph_name = _resolve_graph_name(body.get("graph_name"))
-
-    locked_resp = _check_graph_locked(graph_name)
-    if locked_resp:
-        return locked_resp
 
     source_id = body.get("source_id")
     target_id = body.get("target_id")
@@ -3869,8 +3618,8 @@ def _build_chat_tools():
             "name": "get_review_status",
             "description": (
                 "Get the review and approval status of rules across the knowledge graph. Shows which rules "
-                "are reviewed, approved, have comments, or still need attention. "
-                "USE WHEN: the user asks 'what needs review', 'what has been approved', 'show me commented rules', "
+                "are reviewed, approved, or still need attention. "
+                "USE WHEN: the user asks 'what needs review', 'what has been approved', "
                 "'review status', 'pending approvals', or any question about the annotation/review workflow. "
                 "Can filter by status type."
             ),
@@ -3880,7 +3629,7 @@ def _build_chat_tools():
                     "filter": {
                         "type": "string",
                         "description": "Filter annotations by status",
-                        "enum": ["all", "needs_review", "needs_approval", "reviewed", "approved", "commented"],
+                        "enum": ["all", "needs_review", "needs_approval", "reviewed", "approved"],
                         "default": "all"
                     },
                     "graph_name": {"type": "string", "description": get_graph_enum_description(), "enum": get_loaded_traversal_sources(), "default": get_default_traversal_source()}
@@ -4122,7 +3871,7 @@ Follow this decision tree IN ORDER to choose the right tool(s):
 6. **Does the user ask for the original source document / reference behind a rule?**
    → `get_source_reference` (for a specific named rule) **OR** `search_knowledge_base` (when the user wants to search source documents, guidelines, or policies by topic without knowing the exact rule name).
 7. **Does the user ask about review status, approval status, or annotation progress?**
-   → `get_review_status` — summarizes annotation/review/approval state, pending tasks, and recent comments.
+   → `get_review_status` — summarizes annotation/review/approval state and pending tasks.
 8. **Is the question about a concept, topic, or regulatory area WITHOUT specifying a particular graph?**
    → **DEFAULT: `cross_graph_search` with `mode="both"` and `include_kb=true`** — searches ALL graphs AND knowledge-base documents simultaneously. This is the right choice whenever the user asks a general question like "what are the rules about X?", "find anything related to Y", or "search for Z". Use `top_k=8` or higher for broad queries. Only narrow to `semantic_search` / `text_search` if the user explicitly names a specific graph.
 9. **Does the user ask to search source documents, guidelines, or policy files by keyword or topic?**
@@ -5200,7 +4949,6 @@ def _execute_get_review_status(function_args):
     approved_rules = []
     needs_review = []
     needs_approval = []
-    commented_rules = []
 
     for ann in all_annotations:
         nid = ann.node_id
@@ -5211,17 +4959,6 @@ def _execute_get_review_status(function_args):
             "reviewed": ann.reviewed,
             "approved": ann.approved,
         }
-
-        # Parse comments
-        comments = []
-        if ann.comments_json:
-            try:
-                comments = json.loads(ann.comments_json)
-            except (json.JSONDecodeError, TypeError):
-                pass
-        entry["comment_count"] = len(comments)
-        if comments:
-            entry["latest_comment"] = comments[-1] if isinstance(comments[-1], dict) else {"text": str(comments[-1])}
 
         # Parse edits
         has_edits = False
@@ -5243,9 +4980,6 @@ def _execute_get_review_status(function_args):
         elif ann.approved != "yes":
             needs_approval.append(entry)
 
-        if comments:
-            commented_rules.append(entry)
-
     # Apply filter
     if status_filter == "reviewed":
         filtered = reviewed_rules
@@ -5255,8 +4989,6 @@ def _execute_get_review_status(function_args):
         filtered = needs_review
     elif status_filter == "needs_approval":
         filtered = needs_approval
-    elif status_filter == "commented":
-        filtered = commented_rules
     else:
         filtered = None  # Return summary for "all"
 
@@ -5270,7 +5002,6 @@ def _execute_get_review_status(function_args):
             "approved": len(approved_rules),
             "needs_review": len(needs_review),
             "needs_approval": len(needs_approval),
-            "with_comments": len(commented_rules),
             "pending_tasks": len(pending_tasks),
         },
         "graph_name": graph_name,
@@ -5284,7 +5015,6 @@ def _execute_get_review_status(function_args):
         # For "all", include top-level summaries with sample rules
         result["recently_reviewed"] = reviewed_rules[:5]
         result["recently_approved"] = approved_rules[:5]
-        result["recent_comments"] = commented_rules[:5]
         result["open_tasks"] = [
             {"id": t["id"], "title": t["title"], "type": t["type"], "priority": t.get("priority", ""), "assignee": t.get("assignee", "")}
             for t in pending_tasks[:10]
