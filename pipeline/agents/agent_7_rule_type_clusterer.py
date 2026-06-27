@@ -93,14 +93,14 @@ class RuleBehaviorClusterer:
         Initialize the clusterer.
         
         Args:
-            provider: The provider folder (openai/anthropic)
+            provider: The provider folder (openai)
             g1_name: Name of the first graph (for subfolder naming)
             g2_name: Name of the second graph (for subfolder naming)
         """
         self.provider = provider
         self.g1_name = g1_name
         self.g2_name = g2_name
-        self.base_path = Path(__file__).parent.parent / "pipeline-output" / provider
+        self.base_path = Path(__file__).parent.parent / "pipeline-output"
         
         # Create subfolder based on graph names if provided
         if g1_name and g2_name:
@@ -285,7 +285,7 @@ def main():
     import argparse
     
     parser = argparse.ArgumentParser(description='Cluster rules by behavior for two knowledge graphs')
-    parser.add_argument('--provider', type=str, default='openai', choices=['openai', 'anthropic'])
+    parser.add_argument('--provider', type=str, default='openai', choices=['openai'])
     parser.add_argument('--g1', type=str, help='Name of first graph (folder name)')
     parser.add_argument('--g2', type=str, help='Name of second graph (folder name)')
     parser.add_argument('--list', action='store_true', help='List available graphs')

@@ -14,7 +14,7 @@ PDF → [1] → [2] → [3] → [3.5] → [4] → [5] → [6] → Knowledge Grap
 
 **File**: `agent_1_document_organizer.py`  
 **Class**: `DocumentChunkingAgent`  
-**LLM**: ✅ GPT-5.2 / Claude (for TOC detection and structure analysis)
+**LLM**: ✅ GPT-5.2 (for TOC detection and structure analysis)
 
 **Purpose**: Chunk and organize compliance documents using table of contents structure.
 
@@ -60,7 +60,7 @@ PDF → [1] → [2] → [3] → [3.5] → [4] → [5] → [6] → Knowledge Grap
 
 **File**: `agent_2_entity_extractor.py`  
 **Class**: `ComplianceEntityRelationshipAgent`  
-**LLM**: ✅ GPT-5.2 / Claude Sonnet 4
+**LLM**: ✅ GPT-5.2
 
 **Purpose**: Extract entity types and relationships using meta-agent prompt optimization.
 
@@ -99,7 +99,7 @@ PDF → [1] → [2] → [3] → [3.5] → [4] → [5] → [6] → Knowledge Grap
 
 **File**: `agent_3_rules_extractor.py`  
 **Class**: `BusinessRulesExtractor`  
-**LLM**: ✅ GPT-5.2 / Claude Sonnet 4  
+**LLM**: ✅ GPT-5.2  
 **Workers**: 10 (parallel)
 
 **Purpose**: Extract business rules with parallel batch processing.
@@ -119,7 +119,7 @@ PDF → [1] → [2] → [3] → [3.5] → [4] → [5] → [6] → Knowledge Grap
   "rules_extractor": {
     "target_rules": 240,
     "rules_per_batch": 10,
-    "rules_per_batch_anthropic": 4,
+    
     "rules_per_batch_openai": 10
   }
 }
@@ -133,7 +133,7 @@ PDF → [1] → [2] → [3] → [3.5] → [4] → [5] → [6] → Knowledge Grap
 
 **File**: `agent_3_5_rule_validator.py`  
 **Class**: `RuleValidationAgent`  
-**LLM**: ✅ GPT-5.2 / Claude Sonnet 4  
+**LLM**: ✅ GPT-5.2  
 **Blocking**: ❌ No (pipeline continues on failure)
 
 **Purpose**: Validate extracted rules for quality, consistency, and completeness.
@@ -179,7 +179,7 @@ PDF → [1] → [2] → [3] → [3.5] → [4] → [5] → [6] → Knowledge Grap
 
 **File**: `agent_5_knowledge_graph_optimizer.py`  
 **Class**: `KnowledgeGraphOptimizer`  
-**LLM**: ✅ GPT-5.2 / Claude (configured reasoning model)  
+**LLM**: ✅ GPT-5.2 (configured reasoning model)  
 **Parallel**: ✅ Sequential deduplication then dependency analysis
 
 **Purpose**: Optimize knowledge graph through deduplication and dependency analysis.
@@ -267,7 +267,7 @@ PDF → [1] → [2] → [3] → [3.5] → [4] → [5] → [6] → Knowledge Grap
 
 **File**: `agent_8_semantic_rule_matcher.py`  
 **Class**: `SemanticRuleMatcher`  
-**LLM**: ✅ GPT-5.2 / Claude Sonnet 4  
+**LLM**: ✅ GPT-5.2  
 **Workers**: 15 (default, configurable via `--workers`)  
 **Batch Size**: 10 pairs/call (configurable via `--batch-size`)
 
@@ -380,7 +380,6 @@ PDF → [1] → [2] → [3] → [3.5] → [4] → [5] → [6] → Knowledge Grap
 # Phase 1: Single document extraction
 python knowledge_graph_generation.py                              # Full pipeline (interactive)
 python knowledge_graph_generation.py --provider openai            # Use OpenAI
-python knowledge_graph_generation.py --provider anthropic         # Use Anthropic
 python knowledge_graph_generation.py --step 3                     # Run specific step
 python knowledge_graph_generation.py --batch                      # Process all subdirectories
 
@@ -400,12 +399,6 @@ python join_graphs.py --g1 FM --g2 graphA --workers 20 --batch-size 15
       "reasoning": "gpt-5.2",
       "reasoning_effort": "medium"
     }
-  },
-  "anthropic": {
-    "models": {
-      "reasoning": "anthropic/claude-sonnet-4-20250514",
-      "reasoning_effort": "high"
-    }
   }
 }
 ```
@@ -415,7 +408,7 @@ python join_graphs.py --g1 FM --g2 graphA --workers 20 --batch-size 15
 | Agent | Setting | Default | How to Change |
 |-------|---------|---------|---------------|
 | 3 | `max_workers` | 10 | Code |
-| 3 | `rules_per_batch` | 10 (OpenAI), 4 (Anthropic) | `config.json` |
+| 3 | `rules_per_batch` | 10 | `config.json` |
 | 8 | `max_workers` | 15 | `--workers` CLI |
 | 8 | `batch_size` | 10 | `--batch-size` CLI |
 

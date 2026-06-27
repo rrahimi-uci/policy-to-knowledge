@@ -247,8 +247,7 @@ export default function Settings() {
             <h3 className="text-sm font-semibold text-gray-300 mb-4">Rules Extraction</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <Field label="Target Rules" path="rules_extractor.target_rules" type="number" />
-              <Field label="Batch Size (OpenAI)" path="rules_extractor.rules_per_batch_openai" type="number" />
-              <Field label="Batch Size (Anthropic)" path="rules_extractor.rules_per_batch_anthropic" type="number" />
+              <Field label="Batch Size" path="rules_extractor.rules_per_batch_openai" type="number" />
               <Field label="Temperature" path="rules_extractor.temperature" type="number" />
             </div>
           </div>

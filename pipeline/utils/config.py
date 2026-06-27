@@ -63,7 +63,7 @@ class Config:
         
         Args:
             config_path: Path to config.json file. Defaults to config.json in project root.
-            provider: Explicitly set provider ('openai' or 'anthropic'). If None, auto-detects.
+            provider: Explicitly set provider ('openai'). If None, auto-detects.
             source_file_name: Name of the source file being processed (without extension).
                             When set, outputs are organized by this name.
             batch_name: Name of the batch/subdirectory being processed.
@@ -212,61 +212,27 @@ class Config:
             )
         return api_key
 
-    def get_anthropic_api_key(self) -> str:
-        """Get Anthropic API key from config or environment."""
-        api_key = self.get('anthropic.api_key', '')
-        if not api_key:
-            api_key = os.getenv('ANTHROPIC_API_KEY', '')
-        if not api_key:
-            raise ValueError(
-                "Anthropic API key not found. Set ANTHROPIC_API_KEY environment "
-                "variable or update config.json"
-            )
-        return api_key
-
     def get_reasoning_model(self) -> str:
-        """Get reasoning model name based on provider."""
-        provider = self.get_model_provider()
-        if provider == 'anthropic':
-            return self.get('anthropic.models.reasoning', 'anthropic/claude-sonnet-4-20250514')
-        else:
-            return self.get('openai.models.reasoning', 'gpt-5.2')
-    
+        """Get reasoning model name."""
+        return self.get('openai.models.reasoning', 'gpt-5.2')
+
     def get_reasoning_effort(self) -> str:
         """Get reasoning effort level (low, medium, high)."""
-        provider = self.get_model_provider()
-        if provider == 'anthropic':
-            return self.get('anthropic.models.reasoning_effort', 'high')
-        else:
-            return self.get('openai.models.reasoning_effort', 'medium')
-    
+        return self.get('openai.models.reasoning_effort', 'medium')
+
     def get_model_provider(self) -> str:
-        """Get the model provider (openai or anthropic)."""
-        # If provider explicitly set, use it
-        if self._provider is not None:
-            return self._provider
-        
-        # Otherwise, auto-detect from reasoning model in openai section
-        reasoning_model = self.get('openai.models.reasoning', 'gpt-5.2')
-        
-        # Check if reasoning model matches Anthropic models
-        if reasoning_model and reasoning_model.startswith('claude'):
-            return 'anthropic'
-        elif 'anthropic/' in reasoning_model:
-            return 'anthropic'
-        else:
-            return 'openai'
-    
+        """Return the model provider. This build is OpenAI-only."""
+        return 'openai'
+
     def get_pipeline_base_path(self) -> Path:
-        """Get base path for pipeline outputs based on model provider and batch/source file name.
-        
+        """Get base path for pipeline outputs based on batch/source file name.
+
         Priority order:
-        1. batch_name (if set): pipeline-output/{provider}/{batch_name}/
-        2. source_file_name (if set): pipeline-output/{provider}/{source_file_name}/
-        3. Neither: pipeline-output/{provider}/
+        1. batch_name (if set): pipeline-output/{batch_name}/
+        2. source_file_name (if set): pipeline-output/{source_file_name}/
+        3. Neither: pipeline-output/
         """
-        provider = self.get_model_provider()
-        base = Path('pipeline-output') / provider
+        base = Path('pipeline-output')
         # Batch name takes precedence over source file name
         if self._batch_name:
             base = base / self._batch_name
@@ -299,12 +265,8 @@ class Config:
         return self._batch_name
     
     def get_optimizer_model(self) -> str:
-        """Get optimizer model name based on provider."""
-        provider = self.get_model_provider()
-        if provider == 'anthropic':
-            return self.get('anthropic.models.reasoning', 'anthropic/claude-sonnet-4-20250514')
-        else:
-            return self.get('openai.models.optimizer', 'gpt-5.2')
+        """Get optimizer model name."""
+        return self.get('openai.models.optimizer', 'gpt-5.2')
     
     def get_source_dir(self) -> Path:
         """Get source directory path."""
@@ -375,36 +337,17 @@ class Config:
     def get_rules_per_batch(self) -> int:
         """Get number of rules to extract per batch.
         
-        Returns provider-specific batch size:
-        - Anthropic: 4 (due to 8K token output limit)
-        - OpenAI: 10 (larger output capacity)
-        
-        Can be configured per provider in config:
-        rules_extractor.rules_per_batch_anthropic
-        rules_extractor.rules_per_batch_openai
+        Configurable via rules_extractor.rules_per_batch_openai (default 10).
         """
-        provider = self.get_model_provider()
-        if provider == 'anthropic':
-            return self.get('rules_extractor.rules_per_batch_anthropic', 4)
-        elif provider == 'openai':
-            return self.get('rules_extractor.rules_per_batch_openai', 10)
-        # Fallback for other providers
-        return self.get('rules_extractor.rules_per_batch', 10)
-    
+        return self.get('rules_extractor.rules_per_batch_openai',
+                        self.get('rules_extractor.rules_per_batch', 10))
+
     def get_max_retries(self) -> int:
         """Get maximum number of API retries."""
-        provider = self.get_model_provider()
-        if provider == 'anthropic':
-            return self.get('anthropic.rate_limiting.max_retries',
-                            self.get('openai.rate_limiting.max_retries', 3))
         return self.get('openai.rate_limiting.max_retries', 3)
 
     def get_timeout(self) -> int:
         """Get API timeout in seconds."""
-        provider = self.get_model_provider()
-        if provider == 'anthropic':
-            return self.get('anthropic.rate_limiting.timeout',
-                            self.get('openai.rate_limiting.timeout', 300))
         return self.get('openai.rate_limiting.timeout', 300)
 
     # ── LLM defaults ──
@@ -626,7 +569,7 @@ def get_config(provider: Optional[str] = None, source_file_name: Optional[str] =
     Get global configuration instance.
     
     Args:
-        provider: AI provider to use ('openai' or 'anthropic')
+        provider: AI provider to use ('openai')
         source_file_name: Name of the source file being processed (without extension)
         batch_name: Name of the batch/subdirectory being processed
         domain: Active compliance domain (e.g., 'mortgage', 'aml')
@@ -673,7 +616,7 @@ def reload_config(config_path: Optional[str] = None, source_file_name: Optional[
         source_file_name: Name of the source file being processed (without extension)
         batch_name: Name of the batch/subdirectory being processed
         domain: Active compliance domain (e.g., 'mortgage', 'aml')
-        provider: LLM provider override ('openai' or 'anthropic'); if omitted the
+        provider: LLM provider override ('openai'); if omitted the
                   previously-active provider is preserved via KG_PROVIDER env var.
     """
     global _config

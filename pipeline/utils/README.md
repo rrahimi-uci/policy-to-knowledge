@@ -31,7 +31,7 @@ This directory contains **utility modules and helper functions** that support th
 **Configuration Structure**:
 ```python
 {
-    "llm_provider": "openai",  # or "anthropic"
+    "llm_provider": "openai",
     "primary_model": "gpt-5.2",
     "fallback_model": "gpt-4o",
     "document_organizer": {
@@ -82,7 +82,6 @@ chunk_size = config["document_organizer"]["chunk_size"]
 ```bash
 # Required
 export OPENAI_API_KEY="sk-proj-..."
-export ANTHROPIC_API_KEY="sk-ant-..."
 
 # Optional (overrides config.json)
 export LLM_PROVIDER="openai"
@@ -90,7 +89,7 @@ export PRIMARY_MODEL="gpt-5.2"
 ```
 
 **Recent Enhancements** (Dec 2025):
-- ✅ Added multi-provider support (OpenAI, Anthropic)
+- ✅ OpenAI-only LLM client
 - ✅ Agent-specific configuration sections
 - ✅ Validation step configuration (enabled/disabled)
 
@@ -98,10 +97,10 @@ export PRIMARY_MODEL="gpt-5.2"
 
 ### 2. **llm_client.py** - LLM API Abstraction
 
-**Purpose**: Unified interface for multiple LLM providers using LiteLLM
+**Purpose**: OpenAI chat-completion client
 
 **Key Features**:
-- **Provider abstraction**: Single API for OpenAI, Anthropic, Azure, etc.
+- **Provider abstraction**: OpenAI chat completions
 - **Automatic retries**: Exponential backoff for rate limits and transient errors
 - **Error handling**: Graceful degradation and informative error messages
 - **Token usage tracking**: Monitor API costs
@@ -111,7 +110,6 @@ export PRIMARY_MODEL="gpt-5.2"
 ```python
 SUPPORTED_PROVIDERS = {
     "openai": ["gpt-5.2", "gpt-4o", "gpt-4", "gpt-3.5-turbo"],
-    "anthropic": ["claude-sonnet-4", "claude-3-opus"],
     "azure": ["gpt-4-turbo-azure"],
     "together": ["mixtral-8x7b-instruct"],
 }
@@ -150,11 +148,11 @@ tokens_used = response.usage.total_tokens
     retry=retry_if_exception_type((RateLimitError, APIError))
 )
 def _make_request(self, messages):
-    return litellm.completion(...)
+    return client.chat.completions.create(...)
 ```
 
 **Recent Enhancements** (Dec 2025):
-- ✅ LiteLLM integration for unified API
+- ✅ OpenAI SDK integration
 - ✅ Multi-provider fallback support
 - ✅ Improved error messages with retry guidance
 
@@ -316,7 +314,7 @@ with open("report.html", "w") as f:
 |------|--------|--------|--------|
 | Feb 2026 | rule_uniqueness.py | New module | Deterministic rule ID dedup |
 | Feb 2026 | prompt_manager.py | Domain-first precedence | Multi-domain prompt support |
-| Dec 21, 2025 | llm_client.py | LiteLLM integration | Multi-provider support |
+| Dec 21, 2025 | llm_client.py | OpenAI SDK integration | Chat completions |
 | Dec 15, 2025 | config.py | Validation step config | Agent 3.5 toggle |
 | Dec 10, 2025 | prompt_manager.py | Nested substitution | Complex prompt parameters |
 
@@ -324,4 +322,4 @@ with open("report.html", "w") as f:
 
 **Last Updated**: February 2026
 **Status**: ✅ Production-ready
-**Dependencies**: LiteLLM, tenacity, json
+**Dependencies**: openai, json
