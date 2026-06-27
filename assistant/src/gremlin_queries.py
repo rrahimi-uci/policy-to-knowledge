@@ -228,5 +228,6 @@ def run_all_queries() -> None:
 
 
 if __name__ == "__main__":
+    import logging
     logging.basicConfig(level=logging.INFO, stream=sys.stdout)
     run_all_queries()

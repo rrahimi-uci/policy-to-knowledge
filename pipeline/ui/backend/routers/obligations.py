@@ -138,6 +138,8 @@ def get_obligation_detail(graph_name: str, rule_id: str, provider: str = "openai
 @router.get("/{graph_name}/{rule_id}/suggest")
 def suggest_controls(graph_name: str, rule_id: str, provider: str = "openai"):
     """Get AI-suggested control mappings for a specific obligation."""
+    if not obligation_store.get_obligation(graph_name, provider, rule_id):
+        raise HTTPException(404, f"Obligation '{rule_id}' not found")
     suggestions = obligation_service.suggest_controls(graph_name, provider, rule_id)
     return {"suggestions": suggestions}
 

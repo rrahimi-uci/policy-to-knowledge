@@ -110,8 +110,12 @@ def _graph_has_jg_data(traversal_source: str) -> bool:
     try:
         with get_traversal(traversal_source) as (g, _conn):
             has = g.V().limit(1).count().next() > 0
-    except Exception:
-        has = True  # assume data present when JanusGraph is unreachable
+    except Exception as exc:
+        # Assume data present so a temporary hiccup doesn't hide graphs, but do
+        # NOT cache this guess — otherwise the wrong answer is served for the
+        # full TTL even after JanusGraph recovers. Re-query on the next call.
+        _log("WARNING", f"_graph_has_jg_data({traversal_source}) failed, assuming present: {exc}")
+        return True
     _graph_data_cache[traversal_source] = (has, time.time())
     return has
 
@@ -263,7 +267,7 @@ def rewrite_text():
             temperature=0.4,
             max_tokens=1024,
         )
-        rewritten = resp.choices[0].message.content.strip()
+        rewritten = (resp.choices[0].message.content or "").strip()
         _log("INFO", f"Rewrite: {len(text)} chars → {len(rewritten)} chars")
         return jsonify({"rewritten": rewritten})
     except Exception as exc:
@@ -320,7 +324,7 @@ def suggest_rule_id():
             temperature=0.3,
             max_tokens=80,
         )
-        suggested = resp.choices[0].message.content.strip().strip('"').strip("'")
+        suggested = (resp.choices[0].message.content or "").strip().strip('"').strip("'")
         _log("INFO", f"Rule-ID suggestion for '{name}': {suggested}")
         return jsonify({"rule_id": suggested})
     except Exception as exc:
@@ -714,7 +718,10 @@ def semantic_search():
     Query params: q (natural-language query), top_k (default SEMANTIC_SEARCH_DEFAULT_TOP_K), graph_name (optional)
     """
     query = request.args.get("q", "").strip()
-    top_k = int(request.args.get("top_k", str(SEMANTIC_SEARCH_DEFAULT_TOP_K)))
+    try:
+        top_k = int(request.args.get("top_k", str(SEMANTIC_SEARCH_DEFAULT_TOP_K)))
+    except (TypeError, ValueError):
+        return jsonify({"error": "top_k must be an integer"}), 400
     graph_name = request.args.get("graph_name", "").strip() or None
 
     if not query:
@@ -833,8 +840,19 @@ def gremlin_execute():
     if not query_str:
         return jsonify({"error": "query field is required"}), 400
 
-    # Safety: block mutation keywords by default unless user opts in
-    # For a PoC this is fine; production would need proper auth
+    # Safety: this endpoint executes raw Gremlin/Groovy against JanusGraph. Block
+    # mutating and host-level operations unless explicitly opted in via the
+    # GREMLIN_ALLOW_MUTATIONS env var (and, ideally, real auth in front of it).
+    blocked = _gremlin_safety_violation(query_str)
+    if blocked and os.getenv("GREMLIN_ALLOW_MUTATIONS", "false").lower() != "true":
+        return jsonify({
+            "error": (
+                f"Blocked potentially unsafe operation '{blocked}'. This endpoint is "
+                "read-only; set GREMLIN_ALLOW_MUTATIONS=true to allow write queries."
+            ),
+            "query": query_str,
+        }), 403
+
     conn = None
     try:
         url = f"ws://{JANUSGRAPH_HOST}:{JANUSGRAPH_PORT}/gremlin"
@@ -879,6 +897,26 @@ def gremlin_execute():
                 conn.close()
             except Exception:
                 pass
+
+
+# Mutating / host-level Gremlin & Groovy tokens that must not run on the
+# read-only execute endpoint. Matched case-insensitively as whole words.
+_GREMLIN_BLOCKLIST = (
+    "drop", "addv", "adde", "property", "remove",
+    "system", "thread", "runtime", "process", "file",
+    "import", "new ", "evaluate", "java.", "groovy.", "execfile", "exec(",
+)
+
+
+def _gremlin_safety_violation(query_str):
+    """Return the first blocked token found in a query, or None if it looks safe."""
+    lowered = query_str.lower()
+    for token in _GREMLIN_BLOCKLIST:
+        # Word-ish boundary so 'property' matches but 'propertyMap'/'properties' (read) don't.
+        pattern = re.escape(token) if token.endswith((" ", "(")) else r"\b" + re.escape(token) + r"\b(?!\w)"
+        if re.search(pattern, lowered):
+            return token.strip()
+    return None
 
 
 def _serialize_gremlin_result(results):
@@ -1874,7 +1912,9 @@ def create_vertex():
         return locked_resp
 
     label = body.get("label", "business_rule")
-    props = body.get("properties", {})
+    props = body.get("properties") or {}
+    if not isinstance(props, dict):
+        return jsonify({"error": "'properties' must be an object"}), 400
 
     # Strip read-only / system-managed fields that clients must not set
     for _ro in ("vertex_uuid", "node_type"):
@@ -1884,9 +1924,9 @@ def create_vertex():
     errors = []
     if label not in VALID_LABELS:
         errors.append(f"label must be one of: {', '.join(sorted(VALID_LABELS))}")
-    if not props.get("name", "").strip():
+    if not (props.get("name") or "").strip():
         errors.append("properties.name is required")
-    if not props.get("content", "").strip() or len(props.get("content", "").strip()) < 10:
+    if not (props.get("content") or "").strip() or len((props.get("content") or "").strip()) < 10:
         errors.append("properties.content is required (min 10 characters)")
     if label == "business_rule" and props.get("rule_type") and props["rule_type"] not in VALID_RULE_TYPES:
         errors.append(f"rule_type must be one of: {', '.join(sorted(VALID_RULE_TYPES))}")
@@ -2012,7 +2052,9 @@ def create_edge():
     source_id = body.get("source_id")
     target_id = body.get("target_id")
     edge_label = body.get("label", "depends_on")
-    props = body.get("properties", {})
+    props = body.get("properties") or {}
+    if not isinstance(props, dict):
+        return jsonify({"error": "'properties' must be an object"}), 400
 
     # ── Validation ──
     errors = []
@@ -2289,7 +2331,10 @@ def suggest_connections():
     rule_type = body.get("rule_type", "")
     entity = body.get("entity_or_relationship", "")
     category = body.get("category", "")
-    top_k = int(body.get("top_k", 5))
+    try:
+        top_k = int(body.get("top_k", 5))
+    except (TypeError, ValueError):
+        return jsonify({"errors": ["top_k must be an integer"]}), 400
 
     if not content:
         return jsonify({"errors": ["content is required for suggestions"]}), 400
@@ -2684,9 +2729,14 @@ def serve_chunk():
     if not docs_folder:
         return jsonify({"error": f"No docs folder configured for graph '{graph_name}'"}), 404
 
-    # Security: ensure path doesn't escape docs folder
-    full_path = os.path.normpath(os.path.join(docs_folder, rel_path))
-    if not full_path.startswith(os.path.normpath(docs_folder)):
+    # Security: ensure path doesn't escape the docs folder. Reject absolute
+    # inputs and verify containment via realpath + commonpath (a plain
+    # startswith check is fooled by sibling dirs like "<docs>-evil/").
+    if os.path.isabs(rel_path):
+        return jsonify({"error": "Invalid path"}), 403
+    base = os.path.realpath(docs_folder)
+    full_path = os.path.realpath(os.path.join(base, rel_path))
+    if full_path != base and os.path.commonpath([full_path, base]) != base:
         return jsonify({"error": "Invalid path"}), 403
 
     if not os.path.isfile(full_path):
@@ -4253,6 +4303,15 @@ def _execute_chat_tool(function_name, function_args):
     elif function_name == "execute_gremlin":
         query_str = function_args["query"]
         gremlin_graph = function_args.get("graph_name") or get_default_traversal_source()
+        # The chat agent can emit arbitrary Gremlin; apply the same read-only
+        # guard as the HTTP endpoint so a prompt-injected query can't mutate data.
+        blocked = _gremlin_safety_violation(query_str)
+        if blocked and os.getenv("GREMLIN_ALLOW_MUTATIONS", "false").lower() != "true":
+            return (
+                {"error": f"Blocked unsafe Gremlin operation '{blocked}' (read-only mode)."},
+                {"type": "error", "tool": "execute_gremlin",
+                 "message": f"Blocked unsafe operation '{blocked}'."},
+            )
         conn = None
         try:
             url = f"ws://{JANUSGRAPH_HOST}:{JANUSGRAPH_PORT}/gremlin"

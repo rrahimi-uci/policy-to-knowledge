@@ -23,6 +23,9 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   // Listen for theme-change messages from parent shell (embedded mode)
   useEffect(() => {
     const handler = (e: MessageEvent) => {
+      // Only trust messages from the embedding parent frame, not arbitrary
+      // windows (a `data.source` string alone is attacker-spoofable).
+      if (window.parent === window || e.source !== window.parent) return;
       if (e.data?.source === 'p2k-suite' && e.data?.type === 'theme-change') {
         const t = e.data.payload?.theme;
         if (t === 'dark' || t === 'light') setTheme(t);

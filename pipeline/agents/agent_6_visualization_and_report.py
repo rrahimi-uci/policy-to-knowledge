@@ -120,10 +120,13 @@ def _get_rule_type_description(rule_type):
         }
     elif domain == 'aml':
         descriptions = {
-            'reporting': 'Rules requiring reports to financial intelligence units or regulators.',
-            'monitoring': 'Rules for ongoing surveillance of transactions and customer activity.',
-            'screening': 'Rules for checking customers and transactions against watchlists.',
-            'eligibility': 'Rules defining customer or product eligibility criteria.',
+            'reporting': 'Rules mandating regulatory filings such as SAR (Suspicious Activity Reports) and CTR (Currency Transaction Reports) to financial intelligence units.',
+            'monitoring': 'Rules for ongoing transaction monitoring and alert generation to surface suspicious customer activity.',
+            'screening': 'Rules for screening customers and transactions against OFAC, PEP, and sanctions watchlists.',
+            'investigation': 'Rules defining the case investigation workflow, including escalation and SAR decisioning.',
+            'onboarding': 'Rules governing customer onboarding via KYC (Know Your Customer) and CDD (Customer Due Diligence).',
+            'prohibition': 'Rules that prohibit dealings with sanctioned or forbidden parties and jurisdictions.',
+            'eligibility': 'Rules defining AML obligations triggered by customer, product, or transaction criteria.',
             'constraint': 'Rules that specify limits or restrictions on financial activities.',
             'compliance': 'Rules ensuring adherence to AML/CFT regulatory requirements.',
             'documentation': 'Rules specifying required records and documentation.',
@@ -150,7 +153,7 @@ def _get_rule_type_description(rule_type):
         descriptions = {
             'eligibility': 'Rules that define qualification criteria and requirements for loans, borrowers, or properties.',
             'constraint': 'Rules that specify limits, thresholds, or restrictions on values and conditions.',
-            'compliance': 'Rules ensuring adherence to regulatory requirements and Fannie Mae policies.',
+            'compliance': 'Rules ensuring adherence to regulatory requirements and organizational policies.',
             'validation': 'Rules that verify data accuracy, completeness, and consistency.',
             'documentation': 'Rules specifying required documents, forms, and record-keeping requirements.',
             'process': 'Rules defining workflows, sequences, and operational procedures.',

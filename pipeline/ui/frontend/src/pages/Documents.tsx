@@ -598,13 +598,17 @@ export default function Documents() {
                     key={s.name}
                     className="flex items-center gap-3 p-4 bg-gray-900 border border-gray-800 rounded-xl hover:border-gray-700 cursor-pointer transition-colors group"
                   >
-                    <div className="flex items-center gap-3 flex-1" onClick={() => load(s.name)}>
+                    <button
+                      type="button"
+                      className="flex items-center gap-3 flex-1 text-left"
+                      onClick={() => load(s.name)}
+                    >
                       <FolderOpen size={20} className="text-amber-400" />
                       <div>
                         <p className="text-sm font-medium text-gray-200">{s.name}</p>
                         <p className="text-xs text-gray-500">{s.file_count} files{resolveFolderDomain(s) ? ` · ${DOMAINS.find(d => d.value === resolveFolderDomain(s))?.label ?? resolveFolderDomain(s)}` : ''}</p>
                       </div>
-                    </div>
+                    </button>
                     <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                       <button
                         type="button"

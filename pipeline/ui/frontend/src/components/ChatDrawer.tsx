@@ -34,6 +34,15 @@ export default function ChatDrawer({ entityName, graphName }: Props) {
     if (open) setTimeout(() => inputRef.current?.focus(), 150);
   }, [open]);
 
+  // Abort any in-flight stream on unmount so the fetch reader is cancelled and
+  // setState doesn't fire on an unmounted component.
+  useEffect(() => () => abortRef.current?.abort(), []);
+
+  // Also abort when the drawer is closed mid-stream.
+  useEffect(() => {
+    if (!open) abortRef.current?.abort();
+  }, [open]);
+
   const sendMessage = useCallback(async (text: string) => {
     const trimmed = text.trim();
     if (!trimmed || streaming) return;

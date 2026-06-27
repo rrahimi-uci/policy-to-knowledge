@@ -24,6 +24,7 @@ def _get_conn() -> sqlite3.Connection:
         _local.conn = sqlite3.connect(str(_DB_PATH), check_same_thread=False)
         _local.conn.row_factory = sqlite3.Row
         _local.conn.execute("PRAGMA journal_mode=WAL")
+        _local.conn.execute("PRAGMA busy_timeout=5000")
     return _local.conn
 
 
@@ -79,6 +80,8 @@ def create_analysis(
 
 
 def update_analysis(analysis_id: str, **fields) -> None:
+    if not fields:
+        return
     conn = _get_conn()
     sets, vals = [], []
     for k, v in fields.items():
