@@ -73,7 +73,7 @@ const DEP_DEFAULT = '#64748b';
 /* ------------------------------------------------------------------ */
 
 /** Lighten a hex color by mixing 60% original + 40% white */
-function lighten(hex: string): string {
+export function lighten(hex: string): string {
   // Guard against malformed colors from API/config: parseInt on a bad slice
   // yields NaN and produces "#nan…" fills (or throws on undefined).
   if (typeof hex !== 'string' || !/^#[0-9a-fA-F]{6}$/.test(hex)) {
