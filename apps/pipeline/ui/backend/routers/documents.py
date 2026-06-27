@@ -244,14 +244,12 @@ def _folder_domain_path() -> Path:
 
 
 def _infer_folder_domain(name: str) -> str:
-    lower = name.lower()
+    normalized = name.lower().replace("-", "_").replace(" ", "_")
     if (
-        lower.startswith("p2k")
-        or lower.startswith("fannie")
-        or lower.startswith("freddie")
-        or lower.startswith("freddies")
-        or lower.startswith("fnma")
-        or lower.startswith("fhlmc")
+        normalized.startswith("p2k")
+        or normalized.startswith("mortgage")
+        or normalized.startswith("sample_guidelines")
+        or normalized.startswith("example_policies")
     ):
         return "mortgage"
     return ""

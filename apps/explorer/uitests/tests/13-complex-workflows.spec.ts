@@ -40,7 +40,7 @@ test.describe("Flow 13 — Complex Workflow Validation", () => {
     await page.waitForLoadState("networkidle");
 
     // Step 1: Load a graph
-    await sendChatMessage(page, "show fannie mae graph");
+    await sendChatMessage(page, "show sample guidelines graph");
     await waitForGraphRendered(page);
     const initial = await getGraphStats(page);
     expect(initial.nodes).toBeGreaterThan(0);
@@ -90,7 +90,7 @@ test.describe("Flow 13 — Complex Workflow Validation", () => {
     // Step 2: Load graph in the UI
     await page.goto("/");
     await page.waitForLoadState("networkidle");
-    await sendChatMessage(page, "show fannie mae graph");
+    await sendChatMessage(page, "show sample guidelines graph");
     await waitForGraphRendered(page);
 
     // Step 3: Use graph search to find the same node
@@ -176,7 +176,7 @@ test.describe("Flow 13 — Complex Workflow Validation", () => {
     await page.waitForLoadState("networkidle");
 
     // Step 1: Load graph and open create wizard
-    await sendChatMessage(page, "show fannie mae graph");
+    await sendChatMessage(page, "show sample guidelines graph");
     await waitForGraphRendered(page);
     await page.locator(GRAPH.createNodeBtn).dispatchEvent('click');
     await expect(page.locator(CREATE.nameInput)).toBeVisible({ timeout: 5_000 });
@@ -222,7 +222,7 @@ test.describe("Flow 13 — Complex Workflow Validation", () => {
 
   /* ── 5. Graph release lifecycle via API ────────────────────── */
   test("graph release lifecycle: status → create → list → get → unlock", async ({ request }) => {
-    const graphName = "fannie_mae_g";
+    const graphName = "sample_guidelines_g";
 
     // Step 1: Check current status
     const statusResp = await request.get(`/app/api/graph/status?graph_name=${graphName}`);
@@ -366,7 +366,7 @@ test.describe("Flow 13 — Complex Workflow Validation", () => {
     await page.waitForLoadState("networkidle");
 
     // Step 1: Load graph and click a node
-    await sendChatMessage(page, "show fannie mae graph");
+    await sendChatMessage(page, "show sample guidelines graph");
     await waitForGraphRendered(page);
     const originalTitle = await clickRandomNode(page);
     await waitForDetailLoaded(page);
@@ -439,7 +439,7 @@ test.describe("Flow 13 — Complex Workflow Validation", () => {
     // Step 2: Load graph and open create wizard
     await page.goto("/");
     await page.waitForLoadState("networkidle");
-    await sendChatMessage(page, "show fannie mae graph");
+    await sendChatMessage(page, "show sample guidelines graph");
     await waitForGraphRendered(page);
     // Use force:true — toolbar overlay can intercept the click
     await page.locator(GRAPH.createNodeBtn).dispatchEvent('click');
@@ -472,7 +472,7 @@ test.describe("Flow 13 — Complex Workflow Validation", () => {
     await page.waitForLoadState("networkidle");
 
     // Step 1: Load graph
-    await sendChatMessage(page, "show fannie mae graph");
+    await sendChatMessage(page, "show sample guidelines graph");
     await waitForGraphRendered(page);
 
     // Step 2: Click a random node to open detail

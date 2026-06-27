@@ -4,7 +4,7 @@ let _taskData = [];
 let _taskFilter = 'all';
 
 const GRAPH_DISPLAY = {
-    fannie_mae_g: 'Fannie Mae',
+    sample_guidelines_g: 'Sample Guidelines',
     sample_guidelines_g: 'Policy to Knowledge Guidelines',
     overlays_g: 'Example Overlays',
 };

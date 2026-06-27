@@ -1,0 +1,16 @@
+[run]
+source =
+    utils
+    ui/backend
+omit =
+    */tests/*
+    ui/backend/ws/*
+    ui/backend/main.py
+
+[report]
+show_missing = True
+skip_covered = False
+exclude_lines =
+    pragma: no cover
+    if __name__ == .__main__.:
+    raise NotImplementedError

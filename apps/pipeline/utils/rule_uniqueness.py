@@ -27,7 +27,6 @@ def enforce_rule_uniqueness(
     """
     seen_ids: Dict[str, int] = {}    # canonical id  -> occurrence count
     seen_names: Dict[str, int] = {}  # lower-cased name -> occurrence count
-    id_renames: Dict[str, str] = {}  # old_id -> new_id  (for dependency patching)
     id_fixes = 0
     name_fixes = 0
 
@@ -45,10 +44,9 @@ def enforce_rule_uniqueness(
                 while new_rid in seen_ids:
                     seen_ids[rid] += 1
                     new_rid = f"{rid}_v{seen_ids[rid]}"
-                # Map this exact original id to its new id.  Each occurrence
-                # gets its own entry so dependency patching targets the right
-                # renamed copy rather than the last rename of the base id.
-                id_renames[rid] = new_rid
+                # Only the duplicate is renamed; the first occurrence keeps its
+                # id, so existing dependency references stay valid (we do NOT
+                # rewrite them — doing so would point them at the wrong rule).
                 rule["rule_id"] = new_rid
                 seen_ids[new_rid] = 1
                 id_fixes += 1
@@ -66,13 +64,5 @@ def enforce_rule_uniqueness(
                 name_fixes += 1
             else:
                 seen_names[key] = 1
-
-    # ── patch dependency references for renamed ids ───────────────────────
-    if id_renames:
-        for rule in rules:
-            for dep in rule.get("dependencies", []):
-                old = dep.get("depends_on_rule", "")
-                if old in id_renames:
-                    dep["depends_on_rule"] = id_renames[old]
 
     return rules, {"id_fixes": id_fixes, "name_fixes": name_fixes}

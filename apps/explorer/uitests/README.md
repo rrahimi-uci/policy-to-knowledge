@@ -23,7 +23,7 @@ docker compose up -d
 ```
 
 Most flows work with the current sample manifest. Some older specs still assume
-legacy graph names such as `fannie_mae_g`; update those fixtures if your local
+legacy graph names such as `sample_guidelines_g`; update those fixtures if your local
 manifest only contains `sample_guidelines_g` and `example_policies_g`.
 
 ## Running

@@ -10,7 +10,7 @@ test('incomplete impact analysis flow shows validation instead of silently submi
       body: JSON.stringify({
         graphs: [
           {
-            name: 'Fannie_Mae',
+            name: 'Sample_Guidelines',
             provider: 'openai',
             rules: 392,
             entities: 35,
@@ -42,7 +42,7 @@ test('incomplete impact analysis flow shows validation instead of silently submi
   await expect(page.getByRole('button', { name: 'Select a Graph to Continue' })).toBeVisible();
   await expect(page.getByText('No analyses yet')).toBeVisible();
 
-  await page.getByRole('combobox', { name: 'Target Knowledge Graph' }).selectOption('Fannie_Mae');
+  await page.getByRole('combobox', { name: 'Target Knowledge Graph' }).selectOption('Sample_Guidelines');
 
   await expect(
     page.getByText('Graph selected. Next, upload both the old and new regulatory documents to run analysis.')

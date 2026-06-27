@@ -87,6 +87,14 @@ tools/video/raw_video/
 **/playwright-report/
 **/.playwright-mcp/
 
+# Allure + coverage artifacts
+**/allure-results/
+**/allure-report/
+**/coverage/
+**/coverage-html/
+**/coverage.xml
+.coverage
+
 # ─────────────────────────────────────────────────────────────────
 # OS / editor
 # ─────────────────────────────────────────────────────────────────

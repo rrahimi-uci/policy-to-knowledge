@@ -16,7 +16,13 @@ import {
 /** Same naming conventions as Documents.tsx + Dashboard.tsx */
 function getFolderDomain(name: string): string {
   const l = name.toLowerCase();
-  if (l.startsWith('p2k') || l.includes('fannie') || l.includes('freddie') || l.includes('fnma') || l.includes('fhlmc')) return 'mortgage';
+  const normalized = l.replace(/[-\s]+/g, '_');
+  if (
+    normalized.startsWith('p2k') ||
+    normalized.startsWith('mortgage') ||
+    normalized.includes('sample_guidelines') ||
+    normalized.includes('example_policies')
+  ) return 'mortgage';
   if (l.startsWith('aml') || l.includes('anti_money') || l.includes('anti-money')) return 'aml';
   if (l.startsWith('healthcare') || l.startsWith('cms') || l.includes('hipaa') || l.includes('medicare') || l.includes('medicaid')) return 'healthcare';
   if (l.includes('lending') || l.includes('commercial') || l.includes('comercial')) return 'commercial_lending';

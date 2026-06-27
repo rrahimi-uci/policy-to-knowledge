@@ -2,7 +2,7 @@
  * Flow 5 — Node Deletion (Permanent)
  *
  * Steps tested:
- *  1. Load a graph via the copilot chat.
+ *  1. Load a graph via the assistant chat.
  *  2. Click a random node to open the detail panel.
  *  3. Click "Delete" → confirmation dialog opens.
  *  4. Cancel the confirmation → dialog closes, node unchanged.
@@ -22,7 +22,7 @@ test.describe("Flow 5 – Node Deletion", () => {
 
   test.beforeEach(async ({ page }) => {
     await page.goto("/");
-    // Load a graph via the copilot chat
+    // Load a graph via the assistant chat
     await sendChatMessage(page, "Show me the full graph.");
     await waitForGraphRendered(page, 60_000);
   });

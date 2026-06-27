@@ -26,15 +26,18 @@ _MATERIAL_KEYWORDS = {
 }
 
 
+def _has_keyword(text: str, keywords) -> bool:
+    """Whole-word/phrase match so 'limit' doesn't fire on 'unlimited'."""
+    return any(re.search(r"\b" + re.escape(kw) + r"\b", text) for kw in keywords)
+
+
 def _classify_severity(text: str, affected_count: int) -> str:
     """Heuristic severity classification based on provision text and blast radius."""
     lower = text.lower()
-    for kw in _BREAKING_KEYWORDS:
-        if kw in lower:
-            return "breaking"
-    for kw in _MATERIAL_KEYWORDS:
-        if kw in lower:
-            return "material"
+    if _has_keyword(lower, _BREAKING_KEYWORDS):
+        return "breaking"
+    if _has_keyword(lower, _MATERIAL_KEYWORDS):
+        return "material"
     if affected_count >= 5:
         return "material"
     return "cosmetic"

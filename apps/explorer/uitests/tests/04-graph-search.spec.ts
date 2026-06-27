@@ -2,7 +2,7 @@
  * Flow 4 — Graph Search
  *
  * Scenario:
- *   1. User asks copilot to show the full graph (loads the visualization).
+ *   1. User asks the assistant to show the full graph (loads the visualization).
  *   2. User types "credit" in the graph search bar.
  *   3. Matching nodes remain bright; non-matching nodes and edges are dimmed.
  *   4. The match count indicator shows a positive number.
@@ -29,7 +29,7 @@ test.describe("Flow 4 — Graph Search", () => {
     // ── Step 1: Load the graph via chat ──────────────────────────
     test.info().annotations.push({
       type: "step",
-      description: "Ask copilot to show the full graph",
+      description: "Ask assistant to show the full graph",
     });
 
     await sendChatMessage(page, "Show me the full graph.");
