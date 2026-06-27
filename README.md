@@ -1,6 +1,13 @@
 # Policy to Knowledge
 
+[![CI](https://github.com/your-org/policy-to-knowledge/actions/workflows/ci.yml/badge.svg)](https://github.com/your-org/policy-to-knowledge/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/)
+[![React 19](https://img.shields.io/badge/react-19-149eca.svg)](https://react.dev/)
+
 An enterprise compliance automation platform that transforms compliance documents into structured, queryable knowledge graphs using a multi-agent AI pipeline. The suite integrates document extraction, graph storage, semantic search, and an interactive chat-based explorer into a single unified interface.
+
+> 📖 **Documentation site:** a browsable overview lives in [`docs/`](docs/) and is published via GitHub Pages once enabled (Settings → Pages → `main` / `docs`).
 
 ---
 
@@ -609,3 +616,41 @@ Verify `OPENAI_API_KEY` is set in `.env` and that the documents in `compliance-f
 
 **Port conflicts**
 Override any port in `.env` using the `*_PORT` variables listed in the Configuration section.
+
+---
+
+## Testing
+
+Each app has its own offline test suite (run in [CI](.github/workflows/ci.yml)):
+
+```bash
+cd pipeline && python -m pytest                  # pipeline (Python)
+cd assistant && python -m pytest tests/          # explorer offline unit tests
+cd frontend && npm test                          # suite shell (Vitest)
+cd pipeline/ui/frontend && npm test              # pipeline UI (Vitest)
+```
+
+Playwright and live-backend end-to-end suites require the services running and
+are not part of CI.
+
+---
+
+## Data & secrets
+
+No proprietary data or secrets are distributed with this repository. The
+`assistant/kbs/`, `assistant/kgs/`, `pipeline/compliance-files/`, and
+`pipeline/pipeline-output/` directories are gitignored placeholders — supply
+your own data locally (see the README in each). `.env` and `config.json` are
+gitignored; configure all keys via environment variables.
+
+---
+
+## Contributing
+
+Contributions are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md) for setup,
+testing, and PR guidelines, and [SECURITY.md](SECURITY.md) to report
+vulnerabilities privately.
+
+## License
+
+Released under the [MIT License](LICENSE).

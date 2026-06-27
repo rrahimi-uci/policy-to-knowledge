@@ -627,13 +627,13 @@
 <!-- ═══════════════════════ SIDEBAR NAV ═══════════════════════ -->
 <nav class="sidebar">
   <div class="sidebar-brand">
-    <img src="frontend/public/logo.svg" alt="Policy to Knowledge Logo" class="logo">
+    <img src="logo.svg" alt="Policy to Knowledge Logo" class="logo">
     <h2>Policy to Knowledge</h2>
     <p>Compliance Knowledge Extraction,<br>Exploration, Editing &amp; Versioning</p>
   </div>
 
   <div class="nav-section">Overview</div>
-  <a href="#intro" class="nav-link"><span class="icon">▶️</span> Watch the intro</a>
+  <a href="#intro" class="nav-link"><span class="icon">▶️</span> Overview</a>
   <a href="#goal" class="nav-link"><span class="icon">🎯</span> Goal &amp; Use Case</a>
   <a href="#features" class="nav-link"><span class="icon">✨</span> Key Features</a>
 
@@ -679,21 +679,14 @@
 <!-- ║  WATCH THE INTRO                                         ║ -->
 <!-- ╚═══════════════════════════════════════════════════════════╝ -->
 <section id="intro">
-  <h2><span class="sec-icon">▶️</span> Watch the intro</h2>
-  <p>A narrated walkthrough of the Policy to Knowledge — the 10-agent extraction pipeline, knowledge-graph exploration, and the UI surfaces from a single rule set through publish.</p>
+  <h2><span class="sec-icon">▶️</span> At a glance</h2>
+  <p>Policy to Knowledge takes a single rule set from raw compliance documents through a 10-agent extraction pipeline, into an explorable knowledge graph, and out to obligation registers, impact analysis, and graph comparison — all from one unified shell.</p>
   <div class="video-frame">
-    <video controls preload="metadata" playsinline>
-      <source src="video/output/policy-to-knowledge.mp4" type="video/mp4">
-      Your browser does not support embedded video.
-      <a href="video/output/policy-to-knowledge.mp4">Download the MP4</a>
-      or
-      <a href="video/presentation.html">open the interactive slide deck</a>.
-    </video>
+    <img src="screenshots/home.png" alt="Policy to Knowledge home dashboard" style="width:100%;border-radius:8px;display:block">
   </div>
   <p class="video-meta">
-    Narrated · 1920 × 1080 · MP4 ·
-    <a href="video/output/policy-to-knowledge.mp4">download</a> ·
-    <a href="video/presentation.html" target="_blank">open the interactive deck ↗</a>
+    Explore the sections below, or jump straight to
+    <a href="#installation">installation</a>.
   </p>
 </section>
 
@@ -1412,7 +1405,7 @@ erDiagram
       <h3>Launch the Suite &amp; Open the Dashboard</h3>
       <p>After running <code>./start.sh</code>, open <a href="http://localhost:4000">http://localhost:4000</a> in your browser. The Dashboard shows all loaded knowledge graphs, recent pipeline runs, service health, and quick action buttons.</p>
       <div class="screenshot-item" style="margin-top:.75rem">
-        <img src="assets/screenshots/home.png" alt="Policy to Knowledge Dashboard">
+        <img src="screenshots/home.png" alt="Policy to Knowledge Dashboard">
         <div class="screenshot-caption">
           <h4>Dashboard — Central Navigation Hub</h4>
           <p>Overview of all knowledge graphs, source documents, pipeline runs, and assistant status with quick action cards.</p>
@@ -1429,7 +1422,7 @@ erDiagram
       <h3>Run the Extraction Pipeline</h3>
       <p>Go to <strong>Pipeline</strong>, select your uploaded documents and the AI provider (OpenAI or Anthropic), then click <strong>Start Extraction</strong>. Monitor progress through the visual agent pipeline tracker showing all 6 extraction stages in real time.</p>
       <div class="screenshot-item" style="margin-top:.75rem">
-        <img src="assets/screenshots/suite_pipeline.png" alt="Pipeline Progress Tracker">
+        <img src="screenshots/suite_pipeline.png" alt="Pipeline Progress Tracker">
         <div class="screenshot-caption">
           <h4>Pipeline — Real-time Agent Progress</h4>
           <p>Visual tracker showing the 6-agent extraction pipeline with step-by-step status, duration, and log output.</p>
@@ -1441,7 +1434,7 @@ erDiagram
       <h3>Review Run History</h3>
       <p>Check <strong>Run History</strong> to see all past pipeline runs with their status (completed, running, failed), domain, source, duration, and timestamps. Expand any run for detailed agent-by-step progress.</p>
       <div class="screenshot-item" style="margin-top:.75rem">
-        <img src="assets/screenshots/suite_extraction.png" alt="Run History">
+        <img src="screenshots/suite_extraction.png" alt="Run History">
         <div class="screenshot-caption">
           <h4>Run History — Pipeline Execution Log</h4>
           <p>Filterable list of all pipeline runs with status badges, timing, and expandable step details.</p>
@@ -1453,7 +1446,7 @@ erDiagram
       <h3>Explore the Knowledge Graph</h3>
       <p>Open <strong>Assistant</strong> to interact with the knowledge graph. The split-pane interface shows an interactive D3.js force-directed graph on the left and an AI chat panel on the right. Ask questions like "Show me the full graph", "Count rules", "Find prohibitions", or "Search appraisal rules".</p>
       <div class="screenshot-item" style="margin-top:.75rem">
-        <img src="assets/screenshots/suite_kg_explorer.png" alt="Knowledge Graph Explorer">
+        <img src="screenshots/suite_kg_explorer.png" alt="Knowledge Graph Explorer">
         <div class="screenshot-caption">
           <h4>Assistant — AI-Powered Knowledge Graph Explorer</h4>
           <p>Interactive D3.js graph visualization with color-coded node types, chat agent with tool-calling capabilities, and quick actions.</p>
@@ -1465,7 +1458,7 @@ erDiagram
       <h3>View Graph Analytics</h3>
       <p>Navigate to <strong>Analytics</strong> for a comprehensive dashboard showing rule type distribution, risk level breakdown, dependency types, confidence score distribution, entity coverage, and most connected rules.</p>
       <div class="screenshot-item" style="margin-top:.75rem">
-        <img src="assets/screenshots/suite_analytics.png" alt="Graph Analytics">
+        <img src="screenshots/suite_analytics.png" alt="Graph Analytics">
         <div class="screenshot-caption">
           <h4>Analytics — Rule Distribution &amp; Graph Health</h4>
           <p>Charts for rule types, risk levels, dependency analysis, confidence scores, entity coverage, and top connected rules.</p>
@@ -1477,7 +1470,7 @@ erDiagram
       <h3>Compare Knowledge Graphs</h3>
       <p>Use <strong>Compare Knowledge Graphs</strong> to select two graphs (e.g., Fannie Mae vs. Freddie Mac). The system uses LLM-powered semantic matching to detect common rules, unique rules, and contradictions with AI-generated analysis.</p>
       <div class="screenshot-item" style="margin-top:.75rem">
-        <img src="assets/screenshots/suite_compare.png" alt="Compare Knowledge Graphs">
+        <img src="screenshots/suite_compare.png" alt="Compare Knowledge Graphs">
         <div class="screenshot-caption">
           <h4>Compare — Semantic Graph Comparison with Contradiction Detection</h4>
           <p>Side-by-side comparison showing overlap percentages, exclusive rules, contradictions with AI analysis, and confidence scores.</p>
@@ -1489,7 +1482,7 @@ erDiagram
       <h3>Run Impact Analysis</h3>
       <p>Open <strong>Impact Analysis</strong> to upload old and new versions of a regulatory document. The system identifies affected rules, assesses severity, and provides recommended actions — useful for tracking regulatory changes.</p>
       <div class="screenshot-item" style="margin-top:.75rem">
-        <img src="assets/screenshots/suite_impact.png" alt="Impact Analysis">
+        <img src="screenshots/suite_impact.png" alt="Impact Analysis">
         <div class="screenshot-caption">
           <h4>Impact Analysis — Regulatory Change Detection</h4>
           <p>Upload old and new regulatory documents to identify affected rules, severity levels, and recommended remediation actions.</p>
@@ -1501,7 +1494,7 @@ erDiagram
       <h3>Track Obligations</h3>
       <p>Go to <strong>Obligations</strong> to initialize an obligation register from graph rules. Map internal controls to compliance obligations, identify coverage gaps, and generate heatmaps for gap analysis.</p>
       <div class="screenshot-item" style="margin-top:.75rem">
-        <img src="assets/screenshots/suite_obligations.png" alt="Obligations">
+        <img src="screenshots/suite_obligations.png" alt="Obligations">
         <div class="screenshot-caption">
           <h4>Obligation Register — Compliance Gap Analysis</h4>
           <p>Track compliance obligations, map internal controls, and identify coverage gaps with heatmap visualizations.</p>
@@ -1513,7 +1506,7 @@ erDiagram
       <h3>Edit, Review &amp; Publish</h3>
       <p>In the <strong>Knowledge Graph Explorer</strong>, click any node to inspect details, add comments, edit content, or mark as reviewed/approved. When ready, click <strong>Release</strong> to create an immutable version snapshot with semantic versioning.</p>
       <div class="screenshot-item" style="margin-top:.75rem">
-        <img src="assets/screenshots/suite_versions.png" alt="Release Management">
+        <img src="screenshots/suite_versions.png" alt="Release Management">
         <div class="screenshot-caption">
           <h4>Release Management — Create Immutable Graph Snapshots</h4>
           <p>Semantic versioning with version number, title, and release notes. Locks the graph to prevent edits during released state.</p>
