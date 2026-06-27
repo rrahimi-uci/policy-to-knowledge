@@ -1,5 +1,6 @@
 # Core Dependencies
 openai>=1.59.7
+python-dotenv>=1.0.0             # Load .env (was previously pulled in via litellm)
 PyPDF2>=3.0.1
 
 # OCR for scanned PDFs
