@@ -100,6 +100,20 @@ class TestImpactAnalysisAPI:
             assert data["stats"]["total_changes"] > 0
             assert "items" in data
 
+    def test_analyze_rejects_binary_upload(self, client):
+        # A binary .docx (or any file with NUL bytes) must be rejected with 400
+        # rather than latin-1 decoded into garbage and sent to the LLM.
+        binary = b"PK\x03\x04\x00\x00binary\x00content"
+        resp = client.post(
+            "/api/impact/analyze",
+            data={"graph_name": "G", "provider": "openai", "mode": "basic"},
+            files=[
+                ("old_doc", ("old.docx", binary, "application/octet-stream")),
+                ("new_doc", ("new.txt", b"plain text here", "text/plain")),
+            ],
+        )
+        assert resp.status_code == 400
+
     def test_analyze_empty_old_doc(self, client):
         resp = client.post(
             "/api/impact/analyze",
