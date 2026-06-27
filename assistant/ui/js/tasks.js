@@ -127,61 +127,6 @@ async function handleTaskClick(taskId) {
 
     // Wait for D3 zoom animation to finish before opening subpanel
     await new Promise(r => setTimeout(r, 900));
-
-    // For approval tasks, auto-open comment with a pre-suggested comment
-    // (_autoCommentForApproval handles its own wait for DOM readiness)
-    if (task.type === 'approval') {
-        await _autoCommentForApproval(task, task.node_id);
-    }
-}
-
-/* ── Auto-add comment for approval tasks ────── */
-async function _autoCommentForApproval(task, nodeId) {
-    // Wait for the detail panel to fully render (action buttons must be in DOM)
-    // before opening the comment subpanel
-    const deadline = Date.now() + 10_000;
-    while (!document.querySelector('.detail-actions') && Date.now() < deadline) {
-        await new Promise(r => setTimeout(r, 150));
-    }
-
-    if (!document.querySelector('.detail-actions')) {
-        console.warn('[tasks] detail-actions never appeared; skipping auto-comment');
-        return;
-    }
-
-    // Use the node ID we navigated to directly — avoids relying on selectedNodeId
-    const targetId = nodeId || selectedNodeId;
-    if (!targetId) {
-        console.warn('[tasks] no nodeId available for auto-comment');
-        return;
-    }
-
-    // Open comment panel directly (bypasses handleAction's selectedNodeId guard)
-    openCommentPanel(targetId, task.node_name);
-
-    // Wait for the sub-panel + textarea to appear, then pre-fill
-    const inputDeadline = Date.now() + 5_000;
-    let input = null;
-    while (!input && Date.now() < inputDeadline) {
-        await new Promise(r => setTimeout(r, 100));
-        input = document.getElementById('commentInput');
-    }
-
-    if (input) {
-        const approvalComments = [
-            `Reviewed and approved. This rule aligns with ${'agency'} requirements. No exceptions noted.`,
-            `Approved after cross-referencing with source documentation. Conditions and scope are correctly captured.`,
-            `Approval granted — the rule accurately reflects the regulatory intent. Recommend including in next compliance report.`,
-        ];
-        input.value = approvalComments[Math.floor(Math.random() * approvalComments.length)];
-        input.style.height = 'auto';
-        input.style.height = input.scrollHeight + 'px';
-    }
-
-    const authorSelect = document.getElementById('commentAuthor');
-    if (authorSelect && task.assignee) {
-        authorSelect.value = task.assignee;
-    }
 }
 
 /* ── Toggle task panel open/close ───────────── */

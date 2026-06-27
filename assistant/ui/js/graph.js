@@ -739,8 +739,7 @@ function exportGraphJSON() {
             // Merge persisted annotations
             const persisted = getNodeData(String(n.id));
             if (persisted.reviewed) node.review_status = persisted.reviewed;
-            if (persisted.comments?.length) node.comments = persisted.comments;
-            if (persisted.reviewHistory?.length) node.comment_history = persisted.reviewHistory;
+            if (persisted.reviewHistory?.length) node.review_history = persisted.reviewHistory;
             if (persisted.versionHistory?.length) node.version_history = persisted.versionHistory;
             if (persisted.deleted) node.flagged_for_deletion = true;
             if (persisted.edits && Object.keys(persisted.edits).length) node.local_edits = persisted.edits;
