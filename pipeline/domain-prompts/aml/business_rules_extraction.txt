@@ -28,20 +28,20 @@ BATCH SIZE ADAPTATION STRATEGY
 
 This batch will extract {rules_per_batch} rules. Adapt your extraction strategy:
 
-**For 2-3 rules per batch (Anthropic Claude models):**
+**For 2-3 rules per batch (small batches):**
 - Focus on MOST CRITICAL rules only (mandatory=true, highest regulatory impact)
 - Prioritize by type: reporting > eligibility > constraint > compliance
 - Extract rules with HIGHEST specificity (exact dollar thresholds, day counts, percentages)
 - Skip advisory/optional rules if batch size < 3
 - Each rule must be complete with all fields (no placeholders)
 
-**For 4-6 rules per batch (Anthropic with larger output capacity):**
+**For 4-6 rules per batch (medium batches):**
 - Balance across rule types (don't overload one category)
 - Include both mandatory filing obligations and conditional monitoring rules
 - Mix high-level policy rules with specific technical rules
 - Ensure variety in type coverage
 
-**For 7-10 rules per batch (OpenAI GPT models):**
+**For 7-10 rules per batch (large batches):**
 - Comprehensive extraction across all rule types
 - Include both mandatory and conditional rules
 - Cover edge cases and exceptions (structuring detection, layering scenarios)

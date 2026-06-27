@@ -133,7 +133,7 @@ async def _run_publish(
         # Locate local artifacts on this (kg-backend) container so we can
         # upload them — assistant doesn't share the pipeline-output
         # filesystem in Azure Container Apps.
-        base = PIPELINE_OUTPUT_DIR / provider / source_name
+        base = PIPELINE_OUTPUT_DIR / source_name
         kg_path = base / "agent-5-optimized" / "optimized_compliance_knowledge_graph.json"
         if not kg_path.exists():
             kg_path = base / "agent-4-rules-with-entities" / "compliance_knowledge_graph.json"

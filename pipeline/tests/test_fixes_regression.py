@@ -48,36 +48,26 @@ class TestConfigFallback:
         assert cfg.get("llm.default_model") == "envmodel"
 
 
-# ── config: anthropic key getter exists (was AttributeError) ──
+# ── config: OpenAI-only provider ──
 
-class TestAnthropicKey:
-    def test_get_anthropic_api_key_from_env(self, monkeypatch):
+class TestProvider:
+    def test_provider_is_openai(self, monkeypatch):
         monkeypatch.setenv("P2K_CONFIG_PATH", str(PROJECT_ROOT / "config.example.json"))
-        monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-ant-test")
         Config._instance = None
         Config._config = None
-        assert Config().get_anthropic_api_key() == "sk-ant-test"
+        assert Config().get_model_provider() == "openai"
 
-    def test_get_anthropic_api_key_missing_raises(self, monkeypatch):
-        monkeypatch.setenv("P2K_CONFIG_PATH", str(PROJECT_ROOT / "config.example.json"))
-        monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
-        Config._instance = None
-        Config._config = None
-        # config.example.json uses the ${ANTHROPIC_API_KEY} placeholder which
-        # resolves to empty without the env var → should raise, not return junk.
-        with pytest.raises(ValueError):
-            Config().get_anthropic_api_key()
+    def test_no_anthropic_key_getter(self):
+        # Anthropic support was removed; the getter must be gone.
+        assert not hasattr(Config, "get_anthropic_api_key")
 
 
-# ── utils package: importing Config must not pull in litellm ──
+# ── utils package: importing Config must not pull in the LLM client ──
 
 class TestLazyImport:
     def test_config_import_is_lightweight(self):
-        # Importing the package and Config should not import llm_client/litellm.
         for mod in ("utils", "utils.config"):
             importlib.import_module(mod)
-        # llm_client is only loaded on demand
-        assert "utils.llm_client" not in sys.modules or True  # tolerant if a prior test loaded it
         import utils
         # The lazy attribute access path resolves without raising AttributeError.
         assert hasattr(utils, "Config")

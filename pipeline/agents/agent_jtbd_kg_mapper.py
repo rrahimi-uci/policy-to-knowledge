@@ -1170,7 +1170,7 @@ def main():
     )
     parser.add_argument(
         "--kg",
-        default="pipeline-output/openai/fannie_mae/agent-5-optimized/optimized_compliance_knowledge_graph.json",
+        default="pipeline-output/sample/agent-5-optimized/optimized_compliance_knowledge_graph.json",
         help="Path to the knowledge graph JSON",
     )
     parser.add_argument(
@@ -1180,7 +1180,7 @@ def main():
     )
     parser.add_argument(
         "--output",
-        default="pipeline-output/openai/fannie_mae/JTBD_Gap_Analysis_Report.html",
+        default="pipeline-output/sample/JTBD_Gap_Analysis_Report.html",
         help="Path for the output HTML report",
     )
     parser.add_argument(

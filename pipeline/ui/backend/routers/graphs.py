@@ -55,9 +55,9 @@ def export_graph(name: str, fmt: str, provider: str = "openai"):
         )
     elif fmt == "csv":
         from pathlib import Path
-        csv_path = graph_service._pipeline_output() / provider / name / "agent-5-optimized" / "optimized-business_rules_export.csv"
+        csv_path = graph_service._pipeline_output() / name / "agent-5-optimized" / "optimized-business_rules_export.csv"
         if not csv_path.exists():
-            csv_path = graph_service._pipeline_output() / provider / name / "agent-4-rules-with-entities" / "business_rules_complete.csv"
+            csv_path = graph_service._pipeline_output() / name / "agent-4-rules-with-entities" / "business_rules_complete.csv"
         if not csv_path.exists():
             raise HTTPException(404, "CSV export not found")
         from fastapi.responses import FileResponse

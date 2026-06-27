@@ -24,10 +24,9 @@ __all__ = [
 def __getattr__(name):
     """Lazily expose the LLM-dependent symbols.
 
-    ``llm_client`` imports litellm (a heavy dependency). Importing it eagerly
-    forced every config-only consumer (and the test suite) to install litellm.
-    Resolve those names on first access instead so ``from utils import Config``
-    stays lightweight.
+    ``llm_client`` imports the OpenAI SDK. Resolve these names on first access
+    so ``from utils import Config`` stays lightweight for config-only consumers
+    (and the test suite) without importing the SDK.
     """
     if name in ('LLMClient', 'create_llm_client'):
         from . import llm_client

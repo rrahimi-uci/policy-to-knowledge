@@ -10,7 +10,7 @@ If you just want to view existing reports without rerunning the pipeline:
 
 ```bash
 # Open visualization directly
-open pipeline-output/openai/*/agent-6-visualization-and-report/*_knowledge_graph.html
+open pipeline-output/*/agent-6-visualization-and-report/*_knowledge_graph.html
 ```
 
 ---
@@ -19,7 +19,7 @@ open pipeline-output/openai/*/agent-6-visualization-and-report/*_knowledge_graph
 
 - **Docker**: Version 20.10+ ([Install Docker](https://docs.docker.com/get-docker/))
 - **Docker Compose**: Version 2.0+ (included with Docker Desktop)
-- **API Keys**: OpenAI and/or Anthropic API keys
+- **API Keys**: an OpenAI API key
 - **Input Files**: Compliance documents in `compliance-files/` directory
 
 ## 🚀 Run the Pipeline (Generate New Reports)
@@ -27,11 +27,7 @@ open pipeline-output/openai/*/agent-6-visualization-and-report/*_knowledge_graph
 To run the complete pipeline and generate new reports:
 
 ```bash
-# OpenAI
 docker compose run --rm p2k --provider openai
-
-# Anthropic
-docker compose run --rm p2k --provider anthropic
 ```
 
 ## 🌐 Run the Web UI
@@ -64,7 +60,6 @@ nano .env  # or use your preferred editor
 **Required in .env**:
 ```bash
 OPENAI_API_KEY=sk-proj-your-actual-key-here
-ANTHROPIC_API_KEY=sk-ant-your-actual-key-here
 ```
 
 ### 2. Prepare Configuration
@@ -100,10 +95,10 @@ docker compose run --rm p2k --provider openai
 
 ```bash
 # Check output
-ls -lh pipeline-output/openai/
+ls -lh pipeline-output/
 
 # View HTML visualization
-open pipeline-output/openai/*/agent-6-visualization-and-report/*_knowledge_graph.html
+open pipeline-output/*/agent-6-visualization-and-report/*_knowledge_graph.html
 ```
 
 ---
@@ -159,12 +154,11 @@ docker compose run --rm p2k
 docker compose run --rm p2k
 
 # Open results directly
-open pipeline-output/openai/*/agent-6-visualization-and-report/*_knowledge_graph.html
+open pipeline-output/*/agent-6-visualization-and-report/*_knowledge_graph.html
 ```
 
 **Output provides:**
-- 📊 OpenAI GPT-5.2 pipeline results
-- 🧠 Anthropic Claude Sonnet 4 pipeline results  
+- 📊 OpenAI GPT pipeline results
 - 📁 All outputs in `pipeline-output/` directory
 
 ### Run Specific Agent (Single Step)
@@ -178,17 +172,6 @@ docker compose run --rm p2k --step 2
 
 # Run only Agent 6 (Visualization)
 docker compose run --rm p2k --step 6
-```
-
-### Run with Different Provider
-
-```bash
-# Use Anthropic Claude instead of OpenAI
-docker compose run --rm p2k --provider anthropic
-
-# Or set in .env file
-echo "LLM_PROVIDER=anthropic" >> .env
-docker compose up -d p2k-ui
 ```
 
 ### Interactive Shell
@@ -249,22 +232,6 @@ deploy:
 ```bash
 # Build with custom Python version
 docker build --build-arg PYTHON_VERSION=3.12 -t p2k-builder:custom .
-```
-
-### Multi-Provider Setup
-
-Run both OpenAI and Anthropic pipelines:
-
-```bash
-# OpenAI pipeline
-docker compose run --rm -e LLM_PROVIDER=openai p2k
-
-# Anthropic pipeline
-docker compose run --rm -e LLM_PROVIDER=anthropic p2k
-
-# Compare results
-ls -lh pipeline-output/openai/
-ls -lh pipeline-output/anthropic/
 ```
 
 ### Development Mode (Hot Reload)
@@ -422,13 +389,13 @@ networks:
 
 ```bash
 # Tag image
-docker tag p2k:latest your-org/p2k-builder:1.0.0
+docker tag p2k:latest <dockerhub-user>/p2k-builder:1.0.0
 
 # Push to Docker Hub
-docker push your-org/p2k-builder:1.0.0
+docker push <dockerhub-user>/p2k-builder:1.0.0
 
 # Pull on production server
-docker pull your-org/p2k-builder:1.0.0
+docker pull <dockerhub-user>/p2k-builder:1.0.0
 ```
 
 ### Using Private Registry
@@ -453,7 +420,7 @@ spec:
     spec:
       containers:
       - name: kg-builder
-        image: your-org/p2k-builder:1.0.0
+        image: <dockerhub-user>/p2k-builder:1.0.0
         env:
         - name: OPENAI_API_KEY
           valueFrom:
@@ -479,7 +446,7 @@ spec:
 
 ## 📚 Related Documentation
 
-- [Main README](README.md) - Project overview
+- [Main README](../README.md) - Project overview
 - [SETUP.md](SETUP.md) - Native setup instructions
 - [ARCHITECTURE.md](ARCHITECTURE.md) - Technical architecture
 - [Docker Documentation](https://docs.docker.com/)
@@ -495,7 +462,7 @@ For Docker-specific issues:
 3. Verify `.env` file has correct API keys
 4. Ensure compliance files are in `compliance-files/` directory
 
-For pipeline issues, see [agents/README.md](agents/README.md)
+For pipeline issues, see [agents/README.md](../agents/README.md)
 
 ---
 

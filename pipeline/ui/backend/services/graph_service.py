@@ -80,9 +80,13 @@ def _resolve_graph_domain(graph_name: str, folder_domains: dict[str, str]) -> st
 
 
 def delete_graph(name: str, provider: str = "openai") -> bool:
-    """Delete all pipeline output files for a knowledge graph. Returns True if deleted."""
+    """Delete all pipeline output files for a knowledge graph. Returns True if deleted.
+
+    `provider` is accepted for backward compatibility but ignored — outputs are
+    no longer namespaced by provider.
+    """
     import shutil
-    graph_dir = _pipeline_output() / provider / name
+    graph_dir = _pipeline_output() / name
     if not graph_dir.exists() or not graph_dir.is_dir():
         return False
     shutil.rmtree(graph_dir)
@@ -90,73 +94,68 @@ def delete_graph(name: str, provider: str = "openai") -> bool:
 
 
 def list_graphs(provider: str = None) -> List[dict]:
-    """Return metadata for every generated knowledge graph."""
+    """Return metadata for every generated knowledge graph.
+
+    Each source subdirectory directly under ``pipeline-output/`` (excluding
+    internal ``_``-prefixed folders such as ``_merged`` / ``_joined``) is a graph.
+    """
     base = _pipeline_output()
     if not base.exists():
         return []
 
-    providers = [provider] if provider else [p.name for p in base.iterdir() if p.is_dir() and not p.name.startswith("_")]
     graphs: list[dict] = []
     folder_domains = _load_folder_domains()
 
-    for prov in providers:
-        prov_dir = base / prov
-        if not prov_dir.exists():
+    for sub in sorted(base.iterdir()):
+        if not sub.is_dir() or sub.name.startswith("_"):
             continue
 
-        # Each subdirectory (except _joined) is a graph output
-        for sub in sorted(prov_dir.iterdir()):
-            if not sub.is_dir() or sub.name.startswith("_"):
-                continue
+        optimized = sub / "agent-5-optimized" / "optimized_compliance_knowledge_graph.json"
+        merged = sub / "agent-4-rules-with-entities" / "compliance_knowledge_graph.json"
+        kg_file = optimized if optimized.exists() else merged if merged.exists() else None
 
-            optimized = sub / "agent-5-optimized" / "optimized_compliance_knowledge_graph.json"
-            merged = sub / "agent-4-rules-with-entities" / "compliance_knowledge_graph.json"
-            kg_file = optimized if optimized.exists() else merged if merged.exists() else None
+        info: dict[str, Any] = {
+            "name": sub.name,
+            "provider": "openai",
+            "path": str(sub),
+            "has_optimized": optimized.exists(),
+            "has_visualization": False,
+            "rules": 0,
+            "entities": 0,
+            # Inherit categorization from the source folder so the
+            # Graph Comparison view matches the Documents view.
+            "domain": _resolve_graph_domain(sub.name, folder_domains) or None,
+        }
 
-            info: dict[str, Any] = {
-                "name": sub.name,
-                "provider": prov,
-                "path": str(sub),
-                "has_optimized": optimized.exists(),
-                "has_visualization": False,
-                "rules": 0,
-                "entities": 0,
-                # Inherit categorization from the source folder so the
-                # Graph Comparison view matches the Documents view.
-                "domain": _resolve_graph_domain(sub.name, folder_domains) or None,
-            }
+        # Count rules and entities from the KG JSON. Only root-level
+        # business_rules are loaded into JanusGraph by data_loader.py, so we
+        # count only those here for consistency.
+        if kg_file and kg_file.exists():
+            try:
+                data = json.loads(kg_file.read_text())
+                info["entities"] = len(data.get("entity_types", {}))
+                info["rules"] = sum(
+                    1 for r in data.get("business_rules", []) if isinstance(r, dict)
+                )
+            except Exception:
+                pass
 
-            # Count rules and entities from the KG JSON.
-            # Only root-level business_rules are loaded into JanusGraph by
-            # data_loader.py, so we count only those here for consistency.
-            # entity_types[].business_rules entries are either summaries (strings)
-            # or duplicates of root rules already counted below.
-            if kg_file and kg_file.exists():
-                try:
-                    data = json.loads(kg_file.read_text())
-                    info["entities"] = len(data.get("entity_types", {}))
-                    info["rules"] = sum(
-                        1 for r in data.get("business_rules", []) if isinstance(r, dict)
-                    )
-                except Exception:
-                    pass
+        # Check for visualization HTML
+        viz_dir = sub / "agent-6-visualization-and-report"
+        if viz_dir.exists():
+            html_files = list(viz_dir.glob("*.html"))
+            info["has_visualization"] = len(html_files) > 0
+            if html_files:
+                info["visualization_file"] = str(html_files[0])
 
-            # Check for visualization HTML
-            viz_dir = sub / "agent-6-visualization-and-report"
-            if viz_dir.exists():
-                html_files = list(viz_dir.glob("*.html"))
-                info["has_visualization"] = len(html_files) > 0
-                if html_files:
-                    info["visualization_file"] = str(html_files[0])
-
-            graphs.append(info)
+        graphs.append(info)
 
     return graphs
 
 
 def get_graph_data(name: str, provider: str = "openai") -> Optional[dict]:
-    """Load full knowledge graph JSON."""
-    base = _pipeline_output() / provider / name
+    """Load full knowledge graph JSON. `provider` is ignored (kept for compat)."""
+    base = _pipeline_output() / name
     optimized = base / "agent-5-optimized" / "optimized_compliance_knowledge_graph.json"
     merged = base / "agent-4-rules-with-entities" / "compliance_knowledge_graph.json"
     kg_file = optimized if optimized.exists() else merged if merged.exists() else None
@@ -166,8 +165,8 @@ def get_graph_data(name: str, provider: str = "openai") -> Optional[dict]:
 
 
 def get_visualization_html(name: str, provider: str = "openai") -> Optional[str]:
-    """Return the HTML content of the visualization file."""
-    viz_dir = _pipeline_output() / provider / name / "agent-6-visualization-and-report"
+    """Return the HTML content of the visualization file. `provider` ignored."""
+    viz_dir = _pipeline_output() / name / "agent-6-visualization-and-report"
     if not viz_dir.exists():
         return None
     html_files = list(viz_dir.glob("*.html"))

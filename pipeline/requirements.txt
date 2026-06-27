@@ -1,6 +1,4 @@
-# Core Dependencies  
-# Note: LiteLLM requires Python 3.10+. For Python 3.9, using version 1.30.x
-litellm==1.30.7
+# Core Dependencies
 openai>=1.59.7
 PyPDF2>=3.0.1
 

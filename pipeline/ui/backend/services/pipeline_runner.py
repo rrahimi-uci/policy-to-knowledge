@@ -482,7 +482,7 @@ def _orphan_succeeded(
             "agent-10-visualizations" if run_type == "comparison"
             else "agent-6-visualization-and-report"
         )
-        output_base = PROJECT_ROOT / "pipeline-output" / provider
+        output_base = PROJECT_ROOT / "pipeline-output"
         if output_base.exists():
             for subdir in output_base.iterdir():
                 if not subdir.is_dir() or subdir.name.startswith("_"):

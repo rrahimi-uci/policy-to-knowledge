@@ -5,7 +5,7 @@
 > **Document Status**: Technical Product Definition  
 > **Version**: 1.1.0  
 > **Last Updated**: February 2026  
-> **Author**: your-org Engineering Team
+> **Author**: Policy to Knowledge contributors
 
 ---
 
@@ -272,8 +272,8 @@ One of the most dangerous compliance challenges is **conflicting rules** across:
 | Layer | Technology | Purpose |
 |-------|------------|---------|
 | **Language** | Python 3.11 | Core pipeline implementation |
-| **LLM Interface** | LiteLLM | Unified multi-provider support |
-| **LLM Providers** | OpenAI GPT-5.2, Anthropic Claude Sonnet 4 | Reasoning and extraction |
+| **LLM Interface** | OpenAI SDK | OpenAI chat completions |
+| **LLM Providers** | OpenAI GPT-5.2 | Reasoning and extraction |
 | **PDF Processing** | PyPDF2, pdfplumber | Document chunking |
 | **Visualization** | vis.js (embedded) | Interactive network graphs |
 
@@ -291,25 +291,19 @@ From `config.json`:
       "reasoning_effort": "medium",
       "optimizer": "gpt-5.2"
     }
-  },
-  "anthropic": {
-    "models": {
-      "reasoning": "anthropic/claude-sonnet-4-20250514",
-      "reasoning_effort": "high"
-    }
   }
 }
 ```
 
-### 4.3 Provider Comparison (Evidence-Based)
+### 4.3 Extraction Characteristics
 
-| Aspect | OpenAI GPT-5.2 | Anthropic Claude Sonnet 4 |
-|--------|----------------|---------------------------|
-| **Rules/Batch** | 10 | 4 |
-| **Extraction Style** | Comprehensive, literal | Selective, conceptual |
-| **Entity Granularity** | Document-specific | Role-based |
-| **Processing Time** | ~25-30 min | ~20-25 min |
-| **Output Quality** | Higher volume, detailed | Lower volume, synthesized |
+| Aspect | OpenAI GPT-5.2 |
+|--------|----------------|
+| **Rules/Batch** | 10 |
+| **Extraction Style** | Comprehensive, literal |
+| **Entity Granularity** | Document-specific |
+| **Processing Time** | ~25-30 min |
+| **Output Quality** | High volume, detailed |
 
 ---
 
@@ -351,7 +345,7 @@ From `prompts/README.md`:
 
 | Module | Purpose | Key Features |
 |--------|---------|--------------|
-| `utils/llm_client.py` | LiteLLM unified interface | Multi-provider support, automatic retry |
+| `utils/llm_client.py` | OpenAI Python SDK | Multi-provider support, automatic retry |
 | `utils/config.py` | Configuration management | Environment variable substitution |
 | `utils/prompt_manager.py` | Prompt loading/formatting | Template variable injection |
 | `utils/text_to_html_converter.py` | Report generation | Styled HTML from text |
@@ -388,7 +382,7 @@ From `prompts/README.md`:
 │ STAGE 3: Rules Extraction (Agent 3 - Parallel Batch)                         │
 ├─────────────────────────────────────────────────────────────────────────────┤
 │ Input:  Document chunks + entity definitions                                 │
-│ Process: 20 parallel workers, 10 rules/batch (OpenAI) or 4/batch (Anthropic)│
+│ Process: 20 parallel workers, 10 rules/batch│
 │ Taxonomy: 10 rule categories (eligibility, constraint, calculation, etc.)   │
 │ Scoring: 5-factor confidence (source, metric, condition, example, consequence)│
 │ Output: compliance_rules_with_entities.json (300+ rules)                    │
@@ -872,14 +866,14 @@ pipeline-output/openai/_joined/FMNA_Revolution-Overlay/
 | Provider | Required Keys | Rate Limits |
 |----------|--------------|-------------|
 | **OpenAI** | `OPENAI_API_KEY` | Tier 3+ recommended |
-| **Anthropic** | `ANTHROPIC_API_KEY` | Standard tier |
+
 
 ### 9.3 Dependencies
 
 From `requirements.txt`:
 
 ```
-litellm>=1.0.0          # Unified LLM interface
+openai>=1.59.7         # OpenAI Python SDK
 PyPDF2>=3.0.0           # PDF processing
 pdfplumber>=0.9.0       # Advanced PDF extraction
 python-dotenv>=1.0.0    # Environment management
@@ -890,7 +884,6 @@ python-dotenv>=1.0.0    # Environment management
 **Environment Variables** (`.env`):
 ```bash
 OPENAI_API_KEY=sk-...
-ANTHROPIC_API_KEY=sk-ant-...
 ```
 
 **Pipeline Configuration** (`config.json`):
@@ -1019,7 +1012,6 @@ services:
     build: .
     environment:
       - OPENAI_API_KEY=${OPENAI_API_KEY}
-      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
     volumes:
       - ./compliance-files:/app/compliance-files
       - ./pipeline-output:/app/pipeline-output
@@ -1189,7 +1181,7 @@ open pipeline-output/openai/*/agent-6-visualization-and-report/*_knowledge_graph
 
 ## Appendix B: References
 
-- **Project Repository**: `your-org/kernel-lab/policy-to-knowledge`
+- **Project Repository**: `policy-to-knowledge`
 - **Architecture Documentation**: [docs/ARCHITECTURE.md](ARCHITECTURE.md)
 - **Docker Documentation**: [docs/DOCKER.md](DOCKER.md)
 - **Agent Documentation**: [agents/README.md](../agents/README.md)

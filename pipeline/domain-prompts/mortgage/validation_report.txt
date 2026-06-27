@@ -161,8 +161,8 @@ Respond with JSON:
     "report_metadata": {
       "generated_at": "2024-01-15T10:30:00Z",
       "pipeline_version": "1.0",
-      "llm_provider": "OpenAI|Anthropic",
-      "llm_model": "gpt-5.2|claude-sonnet-4.5",
+      "llm_provider": "OpenAI",
+      "llm_model": "gpt-5.2",
       "analysis_duration_seconds": 0
     },
     "executive_summary": {
