@@ -77,12 +77,12 @@ run; the Python virtualenvs must already exist.
 ## Common Workflows
 
 - Full suite: `./start.sh`
-- Pipeline only: `cd pipeline && ./start.sh`
-- Explorer only: `cd assistant && ./start.sh`
-- Extract one document: `cd pipeline && .venv/bin/python knowledge_graph_generation.py --file compliance-files/<batch>/<file>.pdf --provider openai`
-- Run batch extraction: `cd pipeline && .venv/bin/python knowledge_graph_generation.py --batch --provider openai`
-- Compare two graphs: `cd pipeline && .venv/bin/python join_graphs.py --g1 graphA --g2 graphB --workers 15`
-- Incremental graph load without a full restart: `cd assistant && .venv/bin/python -m src.main setup-if-empty`
+- Pipeline only: `cd apps/pipeline && ./start.sh`
+- Explorer only: `cd apps/explorer && ./start.sh`
+- Extract one document: `cd apps/pipeline && .venv/bin/python knowledge_graph_generation.py --file compliance-files/<batch>/<file>.pdf --provider openai`
+- Run batch extraction: `cd apps/pipeline && .venv/bin/python knowledge_graph_generation.py --batch --provider openai`
+- Compare two graphs: `cd apps/pipeline && .venv/bin/python join_graphs.py --g1 graphA --g2 graphB --workers 15`
+- Incremental graph load without a full restart: `cd apps/explorer && .venv/bin/python -m src.main setup-if-empty`
 
 ## Key Files
 
@@ -104,14 +104,14 @@ chunks locally.
 - [apps/pipeline/docs/DOCKER.md](apps/pipeline/docs/DOCKER.md): containerized pipeline workflows.
 - [apps/pipeline/docs/SETUP.md](apps/pipeline/docs/SETUP.md): pipeline config and secrets.
 - [tools/video/README.md](tools/video/README.md): demo-video generation.
-- [CONTRIBUTING.md](CONTRIBUTING.md): local setup and test expectations.
+- [.github/CONTRIBUTING.md](.github/CONTRIBUTING.md): local setup and test expectations.
 
 ## Testing
 
 ```bash
-(cd pipeline && .venv/bin/python -m pytest tests/ -q)
-(cd assistant && .venv/bin/python -m pytest tests/ -q)
-(cd frontend && npm test)
+(cd apps/pipeline && .venv/bin/python -m pytest tests/ -q)
+(cd apps/explorer && .venv/bin/python -m pytest tests/ -q)
+(cd apps/shell && npm test)
 (cd apps/pipeline/ui/frontend && npm test)
 ```
 
