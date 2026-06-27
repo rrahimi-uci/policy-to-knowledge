@@ -272,5 +272,6 @@ def create_schema() -> None:
 
 
 if __name__ == "__main__":
+    import logging
     logging.basicConfig(level=logging.INFO, stream=sys.stdout)
     create_schema()

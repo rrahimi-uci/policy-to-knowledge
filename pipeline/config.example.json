@@ -57,8 +57,8 @@
     "output": "pipeline-output/agent-6-visualization-and-report"
   },
   "document_organizer": {
-    "chunk_size_target": 2000,
-    "max_chunk_size": 3000,
+    "chunk_size_target": 1000,
+    "max_chunk_size": 2000,
     "min_chunk_size": 500,
     "chunk_overlap": 200,
     "csv_rows_per_chunk": 50,
@@ -81,7 +81,7 @@
     "min_score_threshold": 70
   },
   "rules_extractor": {
-    "target_rules": 200,
+    "target_rules": 300,
     "rules_per_batch": 10,
     "rules_per_batch_anthropic": 4,
     "rules_per_batch_openai": 10,
@@ -138,7 +138,7 @@
   "domain": {
     "active": "mortgage",
     "prompts_base_dir": "domain-prompts",
-    "available": ["mortgage"]
+    "available": ["mortgage", "aml", "healthcare", "commercial_lending"]
   },
   "output": {
     "formats": ["json", "csv"],

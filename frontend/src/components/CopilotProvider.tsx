@@ -1,19 +1,14 @@
 import type { ReactNode } from 'react';
-import { useSettings } from '@/hooks/useSettings';
 
 /**
- * Lightweight wrapper for CopilotKit integration. The actual `@copilotkit/*`
- * packages are loaded by the optional CopilotKit runtime (frontend/server).
- * When the runtime is disabled in Suite Settings, this is a pure passthrough.
+ * Placeholder wrapper reserved for an optional CopilotKit integration.
+ *
+ * The `@copilotkit/*` React bindings are not wired up yet, so this is currently
+ * a pure passthrough regardless of the Suite Settings toggle. It exists as a
+ * single seam where the real provider can be mounted later without touching
+ * every call site. When that happens, read `useSettings().copilotKitEnabled`
+ * here and conditionally mount the runtime.
  */
 export default function CopilotProvider({ children }: { children: ReactNode }) {
-  const { settings } = useSettings();
-
-  if (!settings.copilotKitEnabled) {
-    return <>{children}</>;
-  }
-
-  // CopilotKit runtime is opt-in. Until the React bindings are wired up,
-  // we still render children so the suite remains usable when toggled on.
   return <>{children}</>;
 }

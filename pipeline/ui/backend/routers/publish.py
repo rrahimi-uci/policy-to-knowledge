@@ -205,6 +205,11 @@ async def _run_publish(
                     )
                     await asyncio.sleep(delay)
 
+            if resp is None:
+                # max_retries < 1 (or every attempt was skipped) — no request was made.
+                raise RuntimeError(
+                    f"publish made no request to the assistant (max_retries={max_retries})"
+                )
             raw_body = resp.text.strip()
             try:
                 data = resp.json() if raw_body else {}

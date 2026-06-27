@@ -26,6 +26,8 @@ def _get_conn() -> sqlite3.Connection:
         _local.conn = sqlite3.connect(str(_DB_PATH), check_same_thread=False)
         _local.conn.row_factory = sqlite3.Row
         _local.conn.execute("PRAGMA journal_mode=WAL")
+        # Wait instead of failing immediately when another thread holds the lock.
+        _local.conn.execute("PRAGMA busy_timeout=5000")
     return _local.conn
 
 
@@ -51,12 +53,11 @@ def init_db() -> None:
         )
     """)
     # Migrate existing installs that pre-date the pid / log_file columns
+    existing_cols = {row["name"] for row in conn.execute("PRAGMA table_info(runs)")}
     for col, typedef in [("pid", "INTEGER"), ("log_file", "TEXT")]:
-        try:
+        if col not in existing_cols:
             conn.execute(f"ALTER TABLE runs ADD COLUMN {col} {typedef}")
             conn.commit()
-        except Exception:
-            pass  # column already exists
     conn.execute("""
         CREATE TABLE IF NOT EXISTS run_steps (
             id       INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -143,6 +144,8 @@ def list_running_runs() -> List[dict]:
 
 
 def update_run(run_id: str, **fields) -> None:
+    if not fields:
+        return
     conn = _get_conn()
     sets = []
     vals = []

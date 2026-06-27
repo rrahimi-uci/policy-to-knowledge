@@ -43,7 +43,8 @@ class TestConfigJsonStructure:
 
     @pytest.fixture
     def config_data(self):
-        config_path = Path(__file__).parent.parent / "config.json"
+        # Assert against the committed canonical config, not a local config.json.
+        config_path = Path(__file__).parent.parent / "config.example.json"
         with open(config_path) as f:
             return json.load(f)
 

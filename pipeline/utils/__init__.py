@@ -9,8 +9,6 @@ Contains non-agent utility modules:
 """
 
 from .config import Config, get_config
-from .llm_client import LLMClient, create_llm_client
-from .prompt_manager import PromptManager
 from .rule_uniqueness import enforce_rule_uniqueness
 
 __all__ = [
@@ -21,3 +19,20 @@ __all__ = [
     'PromptManager',
     'enforce_rule_uniqueness',
 ]
+
+
+def __getattr__(name):
+    """Lazily expose the LLM-dependent symbols.
+
+    ``llm_client`` imports litellm (a heavy dependency). Importing it eagerly
+    forced every config-only consumer (and the test suite) to install litellm.
+    Resolve those names on first access instead so ``from utils import Config``
+    stays lightweight.
+    """
+    if name in ('LLMClient', 'create_llm_client'):
+        from . import llm_client
+        return getattr(llm_client, name)
+    if name == 'PromptManager':
+        from .prompt_manager import PromptManager
+        return PromptManager
+    raise AttributeError(f"module {__name__!r} has no attribute {name!r}")

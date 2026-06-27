@@ -160,6 +160,9 @@ export function usePipeline(type: 'extraction' | 'comparison' = 'extraction') {
 
         ws.onopen = () => updateRun(id, { connected: true });
         ws.onclose = () => updateRun(id, { connected: false });
+        // Surface socket errors instead of silently staying disconnected; the
+        // HTTP poller below remains the source of truth for run status.
+        ws.onerror = () => updateRun(id, { connected: false });
         ws.onmessage = (e) => {
           try {
             const msg: WsMessage = JSON.parse(e.data);
@@ -331,8 +334,15 @@ export function usePipeline(type: 'extraction' | 'comparison' = 'extraction') {
     }));
     try {
       await cancelPipeline(target);
-    } catch {
-      // Run may already be gone — that's fine
+    } catch (err) {
+      // The cancel request itself failed — don't claim success. Allow a retry.
+      cancelledRefs.current.delete(target);
+      const message = err instanceof Error ? err.message : String(err);
+      updateRun(target, prev => ({
+        isCancelling: false,
+        logs: [...prev.logs, { type: 'log' as const, level: 'ERROR', message: `⚠ Cancellation failed: ${message}. You can try again.` }],
+      }));
+      return;
     }
     updateRun(target, prev => ({
       status: 'cancelled',

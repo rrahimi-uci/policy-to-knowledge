@@ -65,7 +65,8 @@ class TestConfigJsonDomainSection:
 
     @pytest.fixture
     def config_data(self):
-        with open(PROJECT_ROOT / "config.json") as f:
+        # Assert against the committed canonical config, not a local config.json.
+        with open(PROJECT_ROOT / "config.example.json") as f:
             return json.load(f)
 
     def test_has_domain_section(self, config_data):

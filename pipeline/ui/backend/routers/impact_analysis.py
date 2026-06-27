@@ -140,7 +140,18 @@ def _extract_text(raw_bytes: bytes, filename: str) -> str:
             return "\n\n".join(pages)
         except Exception as exc:
             raise HTTPException(400, f"Failed to parse PDF: {exc}")
-    # Treat everything else as UTF-8 text
+    # Reject binary office formats outright — a latin-1 fallback would happily
+    # decode them into garbage and feed it to the LLM, wasting tokens.
+    if lower.endswith((".docx", ".doc", ".xlsx", ".xls", ".pptx", ".zip")):
+        raise HTTPException(
+            400,
+            f"Unsupported file type for '{filename}'. Provide a .pdf, .txt, or .md file.",
+        )
+    # Treat everything else as UTF-8 text; reject anything that looks binary.
+    if b"\x00" in raw_bytes[:8192]:
+        raise HTTPException(
+            400, f"'{filename}' appears to be binary, not text. Provide a .pdf, .txt, or .md file."
+        )
     try:
         return raw_bytes.decode("utf-8")
     except UnicodeDecodeError:

@@ -1,5 +1,6 @@
 import { Routes, Route, useLocation, useSearchParams } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
+import ErrorBoundary from './components/ErrorBoundary';
 import Dashboard from './pages/Dashboard';
 import Documents from './pages/Documents';
 import Pipeline from './pages/Pipeline';
@@ -18,6 +19,7 @@ export default function App() {
       {!embedded && <Sidebar />}
       <main className={embedded ? 'p-6' : 'ml-60 p-8'}>
         <div key={location.pathname} className="page-enter">
+          <ErrorBoundary>
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/documents" element={<Documents />} />
@@ -27,6 +29,7 @@ export default function App() {
             <Route path="/runs" element={<RunHistory />} />
             <Route path="/settings" element={<Settings />} />
           </Routes>
+          </ErrorBoundary>
         </div>
       </main>
     </div>

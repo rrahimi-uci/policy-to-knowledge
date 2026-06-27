@@ -110,19 +110,37 @@ class Config:
             self._domain = os.getenv('KG_DOMAIN')
             
         if config_path is None:
-            # Find project root (where config.json should be)
-            current_dir = Path(__file__).parent
-            config_path = current_dir.parent / "config.json"
-        
+            # Allow an explicit override (used by tests/CI to pin the canonical
+            # config.example.json), otherwise default to config.json in the root.
+            env_path = os.getenv("P2K_CONFIG_PATH")
+            if env_path:
+                config_path = env_path
+            else:
+                current_dir = Path(__file__).parent
+                config_path = current_dir.parent / "config.json"
+
         self.config_path = Path(config_path)
         self._load_config()
     
     def _load_config(self):
-        """Load configuration from JSON file."""
-        if not self.config_path.exists():
-            raise FileNotFoundError(f"Configuration file not found: {self.config_path}")
-        
-        with open(self.config_path, 'r') as f:
+        """Load configuration from JSON file.
+
+        Falls back to ``config.example.json`` when ``config.json`` is absent so a
+        fresh clone, CI, or the test suite work without a manual copy step.
+        """
+        path = self.config_path
+        if not path.exists():
+            example = path.with_name("config.example.json")
+            if example.exists():
+                path = example
+            else:
+                raise FileNotFoundError(
+                    f"Configuration file not found: {self.config_path} "
+                    f"(and no {example.name} fallback). "
+                    "Copy config.example.json to config.json to get started."
+                )
+
+        with open(path, 'r') as f:
             self._config = json.load(f)
         
         # Process environment variable substitutions (assign the result!)
@@ -193,7 +211,19 @@ class Config:
                 "or update config.json"
             )
         return api_key
-    
+
+    def get_anthropic_api_key(self) -> str:
+        """Get Anthropic API key from config or environment."""
+        api_key = self.get('anthropic.api_key', '')
+        if not api_key:
+            api_key = os.getenv('ANTHROPIC_API_KEY', '')
+        if not api_key:
+            raise ValueError(
+                "Anthropic API key not found. Set ANTHROPIC_API_KEY environment "
+                "variable or update config.json"
+            )
+        return api_key
+
     def get_reasoning_model(self) -> str:
         """Get reasoning model name based on provider."""
         provider = self.get_model_provider()

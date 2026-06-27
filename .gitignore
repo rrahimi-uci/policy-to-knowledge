@@ -52,12 +52,20 @@ config.json
 *.sqlite3
 
 # ─────────────────────────────────────────────────────────────────
-# Proprietary / user-supplied data — NOT distributed
-# Users supply their own; see each app's README.
+# Proprietary / user-supplied data — NOT distributed.
+# The directory skeletons (README + .gitkeep) are kept so the apps and
+# Docker builds work; their data contents are ignored. Users supply their
+# own data — see each app's README.
 # ─────────────────────────────────────────────────────────────────
-assistant/kbs/
-assistant/kgs/
-pipeline/compliance-files/
+assistant/kbs/*
+!assistant/kbs/.gitkeep
+!assistant/kbs/README.md
+assistant/kgs/*
+!assistant/kgs/.gitkeep
+!assistant/kgs/README.md
+pipeline/compliance-files/*
+!pipeline/compliance-files/.gitkeep
+!pipeline/compliance-files/README.md
 pipeline/pipeline-output/
 pipeline/pipeline-data/
 pipeline/pipeline-logs/

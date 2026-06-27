@@ -207,8 +207,10 @@ export default function CommandPalette() {
 
   /* ── Scroll active into view ──────────────────── */
   useEffect(() => {
-    const el = listRef.current?.children[activeIdx] as HTMLElement | undefined;
-    el?.scrollIntoView({ block: 'nearest' });
+    // Results are nested inside per-category group <div>s, so index the actual
+    // option buttons rather than listRef.children (which are the groups).
+    const buttons = listRef.current?.querySelectorAll<HTMLElement>('[role="option"]');
+    buttons?.[activeIdx]?.scrollIntoView({ block: 'nearest' });
   }, [activeIdx]);
 
   if (!open) return null;
@@ -238,7 +240,12 @@ export default function CommandPalette() {
       />
 
       {/* Dialog */}
-      <div className="fixed top-[15%] left-1/2 -translate-x-1/2 w-full max-w-xl z-50">
+      <div
+        className="fixed top-[15%] left-1/2 -translate-x-1/2 w-full max-w-xl z-50"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Command palette"
+      >
         <div className="rounded-xl border border-gray-700 bg-gray-900 shadow-2xl overflow-hidden">
           {/* Input */}
           <div className="flex items-center gap-3 px-4 py-3 border-b border-gray-800">
@@ -262,7 +269,7 @@ export default function CommandPalette() {
           </div>
 
           {/* Results */}
-          <div ref={listRef} className="max-h-80 overflow-y-auto py-1">
+          <div ref={listRef} role="listbox" aria-label="Search results" className="max-h-80 overflow-y-auto py-1">
             {results.length === 0 && !loading ? (
               <div className="px-4 py-8 text-center">
                 <p className="text-sm text-gray-500">No results for &ldquo;{query}&rdquo;</p>
@@ -271,7 +278,7 @@ export default function CommandPalette() {
               Object.entries(grouped).map(([cat, items]) => {
                 const catLabel = categoryLabels[cat] ?? cat;
                 return (
-                  <div key={cat}>
+                  <div key={cat} role="group" aria-label={catLabel}>
                     <div className="px-4 pt-2 pb-1 text-[10px] font-semibold uppercase tracking-widest text-gray-600">
                       {catLabel}
                     </div>
@@ -282,6 +289,8 @@ export default function CommandPalette() {
                         <button
                           key={item.id}
                           type="button"
+                          role="option"
+                          aria-selected={idx === activeIdx ? 'true' : 'false'}
                           onClick={() => go(item.route)}
                           onMouseEnter={() => setActiveIdx(idx)}
                           className={`flex items-center gap-3 w-full px-4 py-2.5 text-left transition-colors ${

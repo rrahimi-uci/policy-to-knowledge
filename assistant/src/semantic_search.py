@@ -396,5 +396,6 @@ def run_semantic_search_demo() -> None:
 
 
 if __name__ == "__main__":
+    import logging
     logging.basicConfig(level=logging.INFO, stream=sys.stdout)
     run_semantic_search_demo()

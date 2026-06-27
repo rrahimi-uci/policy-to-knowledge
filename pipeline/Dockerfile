@@ -48,7 +48,9 @@ COPY --chown=appuser:appuser agents/ ./agents/
 COPY --chown=appuser:appuser prompts/ ./prompts/
 COPY --chown=appuser:appuser utils/ ./utils/
 COPY --chown=appuser:appuser knowledge_graph_generation.py .
-COPY --chown=appuser:appuser config.example.json .
+# Seed config.json from the committed example (config.json is gitignored and not
+# in the build context). Runtime env vars are substituted by the app at load time.
+COPY --chown=appuser:appuser config.example.json config.json
 COPY --chown=appuser:appuser README.md .
 COPY --chown=appuser:appuser logo.svg .
 

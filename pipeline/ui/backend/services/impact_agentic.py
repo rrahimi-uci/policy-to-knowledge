@@ -112,7 +112,8 @@ Return JSON with this exact structure:
 === NEW DOCUMENT ===
 {_truncate(new_text)}"""
 
-    response = client.get_text_response(
+    response = await asyncio.to_thread(
+        client.get_text_response,
         messages=[
             {"role": "system", "content": "You are an expert regulatory document parser. Always respond with valid JSON only."},
             {"role": "user", "content": prompt},
@@ -174,7 +175,8 @@ Return JSON:
 === NEW PROVISIONS ===
 {json.dumps(new_provisions[:60], indent=1)}"""
 
-    response = client.get_text_response(
+    response = await asyncio.to_thread(
+        client.get_text_response,
         messages=[
             {"role": "system", "content": "You are an expert at regulatory change analysis. Always respond with valid JSON only."},
             {"role": "user", "content": prompt},
@@ -253,7 +255,8 @@ Return JSON:
 === KNOWLEDGE GRAPH RULES ===
 {json.dumps(rule_index, indent=1)}"""
 
-    response = client.get_text_response(
+    response = await asyncio.to_thread(
+        client.get_text_response,
         messages=[
             {"role": "system", "content": "You are an expert at mapping regulatory changes to compliance rules. Always respond with valid JSON only."},
             {"role": "user", "content": prompt},
@@ -320,7 +323,8 @@ Return JSON:
 === RULE MAPPINGS ===
 {json.dumps(mappings[:40], indent=1)}"""
 
-    response = client.get_text_response(
+    response = await asyncio.to_thread(
+        client.get_text_response,
         messages=[
             {"role": "system", "content": "You are a regulatory risk scoring expert. Always respond with valid JSON only."},
             {"role": "user", "content": prompt},
@@ -395,7 +399,8 @@ Return JSON:
 === SCORED CHANGES (top 20) ===
 {json.dumps(scored[:20], indent=1)}"""
 
-    response = client.get_text_response(
+    response = await asyncio.to_thread(
+        client.get_text_response,
         messages=[
             {"role": "system", "content": "You are an expert Chief Compliance Officer. Always respond with valid JSON only."},
             {"role": "user", "content": prompt},
@@ -578,21 +583,3 @@ async def run_agentic_analysis(
             "message": f"Analysis failed: {exc}",
         })
         return impact_store.get_analysis(analysis_id)
-
-
-# ── Sync wrappers for asyncio.to_thread usage --------------------------------
-
-async def _step_parse_sync(client, old_text, new_text, cb):
-    return await _step_parse(client, old_text, new_text, cb)
-
-async def _step_diff_sync(client, parsed, cb):
-    return await _step_diff(client, parsed, cb)
-
-async def _step_map_sync(client, diff_result, rules, graph_name, cb):
-    return await _step_map(client, diff_result, rules, graph_name, cb)
-
-async def _step_score_sync(client, diff_result, map_result, cb):
-    return await _step_score(client, diff_result, map_result, cb)
-
-async def _step_summarize_sync(client, parsed, diff_result, score_result, map_result, graph_name, cb):
-    return await _step_summarize(client, parsed, diff_result, score_result, map_result, graph_name, cb)

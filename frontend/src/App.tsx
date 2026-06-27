@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import Sidebar from '@/components/Sidebar';
 import CommandPalette from '@/components/CommandPalette';
 import CopilotProvider from '@/components/CopilotProvider';
+import ErrorBoundary from '@/components/ErrorBoundary';
 import Home from '@/pages/Home';
 import Extraction from '@/pages/Extraction';
 import Assistant from '@/pages/Assistant';
@@ -18,6 +19,7 @@ export default function App() {
         <Sidebar />
         <CommandPalette />
         <main className="ml-60 h-screen overflow-y-auto">
+          <ErrorBoundary>
           <Routes>
             <Route path="/" element={<div className="p-8 page-enter"><Home /></div>} />
             <Route path="/extraction/compare" element={<GraphComparison />} />
@@ -28,6 +30,7 @@ export default function App() {
             <Route path="/obligations" element={<div className="p-8 page-enter"><Obligations /></div>} />
             <Route path="/settings" element={<SuiteSettings />} />
           </Routes>
+          </ErrorBoundary>
         </main>
       </div>
     </CopilotProvider>

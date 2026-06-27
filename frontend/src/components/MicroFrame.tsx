@@ -8,17 +8,35 @@ interface MicroFrameProps {
   title: string;
 }
 
+// How long to wait for an iframe to load before assuming the service is down.
+// iframe `onError` does NOT fire for HTTP errors (404/500) or refused
+// connections, so a watchdog timer is the only reliable failure signal.
+const LOAD_TIMEOUT_MS = 12000;
+
 export default function MicroFrame({ src, title }: MicroFrameProps) {
   const ref = useRef<HTMLIFrameElement>(null);
   const { theme } = useTheme();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const initialSrc = useRef(src);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // When src changes after initial mount, navigate inside the iframe
-  // without reloading it (avoids full SPA restart on every sidebar click).
+  const armWatchdog = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => {
+      setError(true);
+      setLoading(false);
+    }, LOAD_TIMEOUT_MS);
+  };
+
+  // When src changes after initial mount, navigate inside the iframe without
+  // reloading it (avoids a full SPA restart on every sidebar click). Reset the
+  // loading/error state and re-arm the watchdog for the new destination.
   useEffect(() => {
     if (src === initialSrc.current) return;
+    setLoading(true);
+    setError(false);
+    armWatchdog();
     const win = ref.current?.contentWindow;
     if (win) {
       try {
@@ -30,18 +48,28 @@ export default function MicroFrame({ src, title }: MicroFrameProps) {
     }
   }, [src]);
 
+  // Arm the watchdog for the initial load and clear it on unmount.
+  useEffect(() => {
+    armWatchdog();
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, []);
+
   // sync theme whenever it changes
   useEffect(() => {
     if (!loading) syncThemeToFrame(ref.current, theme);
   }, [theme, loading]);
 
   const handleLoad = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
     setLoading(false);
     setError(false);
     syncThemeToFrame(ref.current, theme);
   };
 
   const handleError = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
     setLoading(false);
     setError(true);
   };

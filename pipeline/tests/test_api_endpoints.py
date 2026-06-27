@@ -87,7 +87,8 @@ class TestImpactAnalysisAPI:
             new_content = b"Section 1: LTV\n\nThe maximum loan-to-value ratio is 90% for conventional loans. This must be mandatory."
             resp = client.post(
                 "/api/impact/analyze",
-                data={"graph_name": "TestGraph", "provider": "openai"},
+                # mode=basic → deterministic heuristic engine (no LLM calls)
+                data={"graph_name": "TestGraph", "provider": "openai", "mode": "basic"},
                 files=[
                     ("old_doc", ("old.txt", old_content, "text/plain")),
                     ("new_doc", ("new.txt", new_content, "text/plain")),
