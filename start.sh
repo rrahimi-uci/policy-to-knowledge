@@ -5,9 +5,9 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PID_FILE="$SCRIPT_DIR/.suite.pids"
 
-KG_DIR="$SCRIPT_DIR/pipeline"
-CA_DIR="$SCRIPT_DIR/assistant"
-CK_DIR="$SCRIPT_DIR/frontend/server"
+KG_DIR="$SCRIPT_DIR/apps/pipeline"
+CA_DIR="$SCRIPT_DIR/apps/explorer"
+CK_DIR="$SCRIPT_DIR/apps/shell/server"
 
 # ── Colors ─────────────────────────────────────
 GREEN='\033[0;32m'
@@ -243,7 +243,7 @@ echo ""; log "Assistant started (PID $CA_PID)"
 
 # ── 5. Policy to Knowledge Shell ─────────────────────
 echo -e "${BOLD}[5/6] Starting Policy to Knowledge shell${NC} (port $SUITE_PORT)..."
-cd "$SCRIPT_DIR/frontend"
+cd "$SCRIPT_DIR/apps/shell"
 [ ! -d node_modules ] && npm install --silent
 npx vite --port "$SUITE_PORT" > /dev/null 2>&1 &
 echo $! >> "$PID_FILE"

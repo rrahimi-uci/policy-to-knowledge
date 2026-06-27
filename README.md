@@ -8,10 +8,27 @@ suite.
 
 | Path | Purpose | Default URL |
 | --- | --- | --- |
-| `frontend/` | Suite shell that links the apps together | `http://localhost:4000` |
-| `pipeline/` | Extraction pipeline, compare workflow, FastAPI API, and React UI | `http://localhost:8000`, `http://localhost:5173` |
-| `assistant/` | Explorer backed by JanusGraph, Cassandra, OpenSearch, and Redis | `http://localhost:5000/app` |
-| `video/` | Demo capture and narration assets | n/a |
+| `apps/shell/` | Suite shell that links the apps together | `http://localhost:4000` |
+| `apps/pipeline/` | Extraction pipeline, compare workflow, FastAPI API, and React UI | `http://localhost:8000`, `http://localhost:5173` |
+| `apps/explorer/` | Explorer backed by JanusGraph, Cassandra, OpenSearch, and Redis | `http://localhost:5000/app` |
+| `tools/video/` | Demo capture and narration assets | n/a |
+
+## Project structure
+
+```text
+.
+├── apps/
+│   ├── shell/        # Suite shell — React + Vite (port 4000)
+│   ├── pipeline/     # Extraction pipeline + FastAPI API + React UI
+│   └── explorer/     # Graph explorer — Flask + vanilla JS UI
+├── tools/
+│   └── video/        # Demo capture & narration tooling
+├── docs/             # GitHub Pages site (served from /docs)
+├── assets/           # Shared brand assets (logo)
+├── docker-compose.yml  # Full-stack local stack
+├── start.sh / stop.sh  # One-command local orchestration
+└── .github/workflows/  # CI (pytest + vitest + builds)
+```
 
 ## Quick Start
 
@@ -19,25 +36,25 @@ suite.
 
 ```bash
 cp .env.example .env
-cp pipeline/config.example.json pipeline/config.json
+cp apps/pipeline/config.example.json apps/pipeline/config.json
 ```
 
 2. Create the Python environments expected by the launchers:
 
 ```bash
-python3 -m venv pipeline/.venv
-pipeline/.venv/bin/pip install -r pipeline/requirements-dev.txt
+python3 -m venv apps/pipeline/.venv
+apps/pipeline/.venv/bin/pip install -r apps/pipeline/requirements-dev.txt
 
-python3 -m venv assistant/.venv
-assistant/.venv/bin/pip install -r assistant/requirements.txt
+python3 -m venv apps/explorer/.venv
+apps/explorer/.venv/bin/pip install -r apps/explorer/requirements.txt
 ```
 
 3. Add your local data:
 
-- Put source documents under `pipeline/compliance-files/`.
-- Put graph JSON files under `assistant/kgs/`.
-- Put source document chunks under `assistant/kbs/`.
-- Make sure `assistant/conf/graphs.yaml` matches those files.
+- Put source documents under `apps/pipeline/compliance-files/`.
+- Put graph JSON files under `apps/explorer/kgs/`.
+- Put source document chunks under `apps/explorer/kbs/`.
+- Make sure `apps/explorer/conf/graphs.yaml` matches those files.
 
 4. Start the full stack:
 
@@ -69,9 +86,9 @@ run; the Python virtualenvs must already exist.
 
 ## Key Files
 
-- `assistant/conf/graphs.yaml`: graph manifest and traversal-source names.
-- `pipeline/config.json`: pipeline provider and runtime settings.
-- `pipeline/domain-prompts/`: domain-specific prompt overrides.
+- `apps/explorer/conf/graphs.yaml`: graph manifest and traversal-source names.
+- `apps/pipeline/config.json`: pipeline provider and runtime settings.
+- `apps/pipeline/domain-prompts/`: domain-specific prompt overrides.
 - `pipeline-output/`: generated artifacts; gitignored.
 - `.env`: shared local environment overrides; gitignored.
 
@@ -81,12 +98,12 @@ chunks locally.
 
 ## Documentation Map
 
-- [pipeline/README.md](pipeline/README.md): extraction pipeline, compare workflow, and UI/API.
-- [assistant/README.md](assistant/README.md): Explorer runtime, data manifest, and graph loading.
-- [pipeline/docs/ARCHITECTURE.md](pipeline/docs/ARCHITECTURE.md): pipeline architecture.
-- [pipeline/docs/DOCKER.md](pipeline/docs/DOCKER.md): containerized pipeline workflows.
-- [pipeline/docs/SETUP.md](pipeline/docs/SETUP.md): pipeline config and secrets.
-- [video/README.md](video/README.md): demo-video generation.
+- [apps/pipeline/README.md](apps/pipeline/README.md): extraction pipeline, compare workflow, and UI/API.
+- [apps/explorer/README.md](apps/explorer/README.md): Explorer runtime, data manifest, and graph loading.
+- [apps/pipeline/docs/ARCHITECTURE.md](apps/pipeline/docs/ARCHITECTURE.md): pipeline architecture.
+- [apps/pipeline/docs/DOCKER.md](apps/pipeline/docs/DOCKER.md): containerized pipeline workflows.
+- [apps/pipeline/docs/SETUP.md](apps/pipeline/docs/SETUP.md): pipeline config and secrets.
+- [tools/video/README.md](tools/video/README.md): demo-video generation.
 - [CONTRIBUTING.md](CONTRIBUTING.md): local setup and test expectations.
 
 ## Testing
@@ -95,7 +112,7 @@ chunks locally.
 (cd pipeline && .venv/bin/python -m pytest tests/ -q)
 (cd assistant && .venv/bin/python -m pytest tests/ -q)
 (cd frontend && npm test)
-(cd pipeline/ui/frontend && npm test)
+(cd apps/pipeline/ui/frontend && npm test)
 ```
 
 Live Playwright and API E2E suites need the corresponding services running

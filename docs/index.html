@@ -1525,7 +1525,7 @@ REDIS_PORT=6379</code></pre>
   <h3>What <code>start.sh</code> Does</h3>
   <ol style="list-style:decimal;padding-left:1.5rem;color:var(--text-muted)">
     <li>Validates Docker, Python venv, and port availability</li>
-    <li>Generates JanusGraph configuration from <code>assistant/conf/graphs.yaml</code></li>
+    <li>Generates JanusGraph configuration from <code>apps/explorer/conf/graphs.yaml</code></li>
     <li>Starts infrastructure services in dependency order (Cassandra → OpenSearch → Redis → JanusGraph)</li>
     <li>Waits for each service to pass its health check</li>
     <li>Starts the Pipeline API (FastAPI, port 8000) and Pipeline UI (Vite, port 5173)</li>
@@ -1581,7 +1581,7 @@ REDIS_PORT=6379</code></pre>
       <div class="cli-block">
         <div class="cli-header">
           <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
-          pipeline/
+          apps/pipeline/
         </div>
         <pre><code><span class="comment"># Process all files with OpenAI</span>
 <span class="cmd">python3</span> knowledge_graph_generation.py <span class="flag">--provider</span> <span class="arg">openai</span>
@@ -1612,7 +1612,7 @@ REDIS_PORT=6379</code></pre>
       <div class="cli-block">
         <div class="cli-header">
           <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
-          pipeline/
+          apps/pipeline/
         </div>
         <pre><code><span class="comment"># List available knowledge graphs</span>
 <span class="cmd">python3</span> join_graphs.py <span class="flag">--list</span>
@@ -1632,7 +1632,7 @@ REDIS_PORT=6379</code></pre>
       <div class="cli-block">
         <div class="cli-header">
           <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
-          assistant/
+          apps/explorer/
         </div>
         <pre><code><span class="comment"># Full rebuild (clears and reloads all graphs)</span>
 <span class="cmd">python3</span> -m src.main <span class="arg">setup</span>

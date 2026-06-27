@@ -57,25 +57,25 @@ config.json
 # Docker builds work; their data contents are ignored. Users supply their
 # own data — see each app's README.
 # ─────────────────────────────────────────────────────────────────
-assistant/kbs/*
-!assistant/kbs/.gitkeep
-!assistant/kbs/README.md
-assistant/kgs/*
-!assistant/kgs/.gitkeep
-!assistant/kgs/README.md
-pipeline/compliance-files/*
-!pipeline/compliance-files/.gitkeep
-!pipeline/compliance-files/README.md
-pipeline/pipeline-output/
-pipeline/pipeline-data/
-pipeline/pipeline-logs/
+apps/explorer/kbs/*
+!apps/explorer/kbs/.gitkeep
+!apps/explorer/kbs/README.md
+apps/explorer/kgs/*
+!apps/explorer/kgs/.gitkeep
+!apps/explorer/kgs/README.md
+apps/pipeline/compliance-files/*
+!apps/pipeline/compliance-files/.gitkeep
+!apps/pipeline/compliance-files/README.md
+apps/pipeline/pipeline-output/
+apps/pipeline/pipeline-data/
+apps/pipeline/pipeline-logs/
 
 # ─────────────────────────────────────────────────────────────────
 # Media / generated artifacts
 # ─────────────────────────────────────────────────────────────────
-video/output/
-video/screenshots/
-video/raw_video/
+tools/video/output/
+tools/video/screenshots/
+tools/video/raw_video/
 *.mp4
 *.webm
 *.mp3
