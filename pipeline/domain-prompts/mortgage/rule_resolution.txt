@@ -1,0 +1,99 @@
+# Rule Resolution Prompt
+# Matches business rules across multiple compliance knowledge graphs
+
+You are an expert in mortgage compliance rule resolution. Your task is to analyze business rules extracted from multiple compliance documents and identify which rules across different sources represent the SAME or RELATED compliance requirements.
+
+## Input Documents
+The following rules have been extracted from these source documents:
+{source_documents}
+
+## Rules by Source
+{rules_by_source}
+
+## Your Task
+Analyze all rules and identify clusters where rules from DIFFERENT sources represent the same or related compliance requirement.
+
+### Matching Criteria - Rules are SAME if they:
+1. **Identical Requirement**: Same metric, same threshold, same conditions (e.g., "LTV ≤ 80%" = "Maximum LTV is 80%")
+2. **Semantic Equivalence**: Different wording but same meaning (e.g., "Borrower must have 2 years employment" = "Employment history requirement: 24 months minimum")
+3. **Same Constraint Different Phrasing**: (e.g., "DTI cannot exceed 43%" = "Maximum DTI ratio: 43%")
+
+### Matching Criteria - Rules are RELATED (but different) if they:
+1. **Same Topic, Different Threshold**: (e.g., "LTV ≤ 80%" vs "LTV ≤ 75%" - both LTV rules but different limits)
+2. **Subset/Superset**: One rule is more restrictive than another
+3. **Same Entity, Different Constraint**: Rules about same subject but different requirements
+
+### DO NOT Match If:
+- Rules apply to completely different loan types (e.g., VA vs Conventional)
+- Rules govern different aspects (e.g., income rule vs property rule)
+- Rules have different triggering conditions
+
+## Output Format
+Return a JSON object with the following structure:
+
+```json
+{{
+  "rule_clusters": [
+    {{
+      "cluster_id": "RULE_CLUSTER_001",
+      "canonical_rule_id": "BR_MERGED_001",
+      "canonical_description": "Unified description of this rule requirement",
+      "rule_category": "LTV|DTI|INCOME|EMPLOYMENT|PROPERTY|CREDIT|DOCUMENTATION|OTHER",
+      "constraint_type": "THRESHOLD|REQUIREMENT|PROHIBITION|CONDITION|PROCESS",
+      "members": [
+        {{
+          "source": "Source document name",
+          "original_rule_id": "Original rule ID",
+          "original_description": "Original rule description",
+          "threshold_or_value": "The specific value/threshold if applicable",
+          "match_type": "IDENTICAL|SEMANTIC_EQUIVALENT|RELATED_DIFFERENT_THRESHOLD",
+          "match_reason": "Why this rule matches the cluster"
+        }}
+      ],
+      "has_conflicts": false,
+      "conflict_details": "Description of any threshold or value conflicts",
+      "confidence": 0.0-1.0,
+      "notes": "Any important notes about this rule cluster"
+    }}
+  ],
+  "unmatched_rules": [
+    {{
+      "source": "Source document name",
+      "rule_id": "Rule ID",
+      "description": "Rule description",
+      "reason": "Why this rule has no matches in other documents"
+    }}
+  ],
+  "conflicts_detected": [
+    {{
+      "cluster_id": "RULE_CLUSTER_XXX",
+      "conflict_type": "THRESHOLD_MISMATCH|CONTRADICTORY|SCOPE_OVERLAP",
+      "description": "Description of the conflict",
+      "sources_involved": ["Source1", "Source2"],
+      "values": {{"Source1": "value1", "Source2": "value2"}},
+      "severity": "HIGH|MEDIUM|LOW",
+      "resolution_suggestion": "How to resolve this conflict"
+    }}
+  ],
+  "resolution_summary": {{
+    "total_input_rules": 0,
+    "total_clusters": 0,
+    "identical_matches": 0,
+    "semantic_matches": 0,
+    "related_with_conflicts": 0,
+    "unmatched_rules": 0,
+    "total_conflicts": 0
+  }},
+  "analysis_notes": "Overall analysis of rule alignment across documents"
+}}
+```
+
+## Important Guidelines
+1. Be THOROUGH - mortgage rules often have subtle wording differences but same meaning
+2. Flag ALL threshold conflicts - these are critical for compliance
+3. Preserve original rule IDs and descriptions for traceability
+4. Group rules by topic first, then by similarity
+5. Lower confidence for rules with partial matches or conflicts
+6. Pay special attention to numeric thresholds (%, years, amounts)
+
+Analyze the rules and provide your resolution:

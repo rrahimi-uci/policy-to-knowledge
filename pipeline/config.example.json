@@ -1,0 +1,148 @@
+{
+  "openai": {
+    "api_key": "${OPENAI_API_KEY}",
+    "models": {
+      "reasoning": "gpt-5.2",
+      "reasoning_effort": "medium",
+      "optimizer": "gpt-5.2",
+      "embeddings": "text-embedding-ada-002",
+      "available_models": {
+        "gpt-5.2": "gpt-5.2",
+        "o1-preview": "o1-preview",
+        "o1-mini": "o1-mini",
+        "gpt-4o": "gpt-4o",
+        "gpt-4o-mini": "gpt-4o-mini"
+      }
+    },
+    "rate_limiting": {
+      "max_retries": 3,
+      "retry_delay": 100,
+      "timeout": 300
+    }
+  },
+  "anthropic": {
+    "api_key": "${ANTHROPIC_API_KEY}",
+    "models": {
+      "reasoning": "claude-sonnet-4-20250514",
+      "reasoning_effort": "high",
+      "available_models": {
+        "sonnet-4.5": "claude-sonnet-4-20250514",
+        "sonnet-4": "claude-sonnet-4-20241022",
+        "opus-3.5": "claude-3-5-opus-20241022"
+      }
+    },
+    "rate_limiting": {
+      "max_retries": 3,
+      "retry_delay": 100,
+      "timeout": 300
+    }
+  },
+  "llm": {
+    "default_temperature": 0.7,
+    "default_max_tokens": 8192,
+    "default_model": "gpt-4o"
+  },
+  "pipeline": {
+    "max_workers": 20,
+    "supported_extensions": [".pdf", ".txt", ".md", ".docx"]
+  },
+  "directories": {
+    "source": "compliance-files",
+    "organized": "pipeline-output/agent-1-organized-documents",
+    "entity_relationship": "pipeline-output/agent-2-entities",
+    "rules_extracted": "pipeline-output/agent-3-rules",
+    "rules_with_entities": "pipeline-output/agent-4-rules-with-entities",
+    "optimized": "pipeline-output/agent-5-optimized",
+    "visualization": "pipeline-output/agent-6-visualization-and-report",
+    "output": "pipeline-output/agent-6-visualization-and-report"
+  },
+  "document_organizer": {
+    "chunk_size_target": 2000,
+    "max_chunk_size": 3000,
+    "min_chunk_size": 500,
+    "chunk_overlap": 200,
+    "csv_rows_per_chunk": 50,
+    "max_content_for_analysis": 12000,
+    "simple_chunk_size": 3000,
+    "docx_fallback_chunk_size": 2000,
+    "supported_formats": [".pdf", ".txt", ".docx", ".md"]
+  },
+  "entity_extractor": {
+    "n_iterations": 2,
+    "temperature": 0.7,
+    "max_tokens": 8192,
+    "scoring_weights": {
+      "completeness": 20,
+      "relationship_quality": 20,
+      "attribute_coverage": 20,
+      "clarity": 20,
+      "consistency": 20
+    },
+    "min_score_threshold": 70
+  },
+  "rules_extractor": {
+    "target_rules": 200,
+    "rules_per_batch": 10,
+    "rules_per_batch_anthropic": 4,
+    "rules_per_batch_openai": 10,
+    "batch_size": 8,
+    "max_content_length": 8000,
+    "target_words_per_batch": 8000,
+    "temperature": 0.7,
+    "max_tokens": 8192,
+    "low_confidence_threshold": 70,
+    "default_confidence_score": 75,
+    "confidence_weights": {
+      "extraction_clarity": 0.30,
+      "numeric_precision": 0.25,
+      "context_completeness": 0.20,
+      "source_authority": 0.15,
+      "logical_consistency": 0.10
+    },
+    "rule_categories": [
+      "Eligibility",
+      "Compliance",
+      "Documentation",
+      "Process",
+      "Calculation",
+      "Validation",
+      "Notification",
+      "Timing",
+      "Audit",
+      "Exception Handling",
+      "Reporting"
+    ]
+  },
+  "optimizer": {
+    "model": "gpt-5-mini",
+    "dedup_temperature": 0.2,
+    "dedup_max_tokens": 8192,
+    "dependency_temperature": 0.7,
+    "dependency_max_tokens": 16384,
+    "batch_size": 50,
+    "description_truncation_length": 500,
+    "batched_temperature": 0.2,
+    "batched_max_tokens": 16384,
+    "cross_batch_temperature": 0.2,
+    "cross_batch_max_tokens": 8192
+  },
+  "semantic_matcher": {
+    "max_workers": 20,
+    "batch_size": 10,
+    "max_tokens": 8000
+  },
+  "join_graphs": {
+    "max_workers": 15,
+    "batch_size": 10
+  },
+  "domain": {
+    "active": "mortgage",
+    "prompts_base_dir": "domain-prompts",
+    "available": ["mortgage"]
+  },
+  "output": {
+    "formats": ["json", "csv"],
+    "include_metadata": true,
+    "pretty_print": true
+  }
+}

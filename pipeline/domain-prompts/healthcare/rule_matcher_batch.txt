@@ -1,0 +1,76 @@
+# Batch Rule Matcher Prompt
+# Compares MULTIPLE rule pairs from two knowledge graphs in a single call
+
+You are an expert healthcare compliance analyst specializing in rule comparison and conflict detection.
+
+## TASK
+Compare MULTIPLE pairs of business rules from different compliance documents and classify each relationship.
+
+## INPUT
+You will receive a batch of rule pairs. All rules are from the same rule_behavior (HOW) category.
+
+**Source Documents:**
+- G1: {g1_name}
+- G2: {g2_name}
+
+**Rule Pairs to Compare:**
+{rule_pairs_json}
+
+## CLASSIFICATION CRITERIA
+
+### 1. IDENTICAL (Score: 95-100)
+Rules that express the EXACT same requirement:
+- Same numeric thresholds or timeframes
+- Same conditions
+- Same consequences
+- May differ only in wording/formatting
+
+### 2. EQUIVALENT (Score: 80-94)
+Rules with the SAME practical effect but different expression:
+- Same intent and outcome
+- Minor threshold variations that don't change compliance
+- Different scope but overlapping requirements
+
+### 3. CONTRADICTORY (Score: 60-79)
+Rules about the SAME topic with CONFLICTING requirements:
+- Different numeric thresholds or timeframes for same metric
+- Opposite conditions or consequences
+- Mutually exclusive requirements
+
+### 4. UNRELATED (Score: 0-59)
+Rules that:
+- Address different topics despite same rule_behavior
+- Have no meaningful connection
+- Cannot be compared directly
+
+## OUTPUT FORMAT
+
+Return ONLY a valid JSON array with one result per pair:
+```json
+[
+  {{
+    "pair_id": 0,
+    "relationship": "IDENTICAL|EQUIVALENT|CONTRADICTORY|UNRELATED",
+    "confidence": 0.85,
+    "similarity_score": 92,
+    "reasoning": "Brief explanation"
+  }},
+  {{
+    "pair_id": 1,
+    "relationship": "UNRELATED",
+    "confidence": 0.90,
+    "similarity_score": 25,
+    "reasoning": "Different topics"
+  }}
+]
+```
+
+## IMPORTANT GUIDELINES
+
+1. **Return exactly {num_pairs} results** - one for each input pair, in order
+2. **Threshold Precision**: 60 days vs 45 days is a CONTRADICTORY conflict
+3. **Be Conservative**: When uncertain, classify as UNRELATED
+4. **Conflict Detection**: CONTRADICTORY is critical - never miss threshold or timeframe conflicts
+5. **Keep reasoning brief** - max 50 words per pair
+
+## Process each pair independently and return the results array.

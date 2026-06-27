@@ -1,0 +1,72 @@
+services:
+  p2k:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: p2k:latest
+    container_name: p2k-builder
+    
+    # Environment variables (API keys and configuration)
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - LLM_PROVIDER=${LLM_PROVIDER:-openai}
+      - PRIMARY_MODEL=${PRIMARY_MODEL:-gpt-5.2}
+    
+    # Volume mounts for input/output persistence
+    volumes:
+      # Input: Compliance documents
+      - ./compliance-files:/app/compliance-files:ro
+      
+      # Output: Pipeline results
+      - ./pipeline-output:/app/pipeline-output:rw
+      
+      # Configuration (optional - can override default)
+      - ./config.json:/app/config.json:rw
+    
+    # Resource limits (adjust based on your needs)
+    deploy:
+      resources:
+        limits:
+          cpus: '4'
+          memory: 8G
+        reservations:
+          cpus: '2'
+          memory: 4G
+    
+    # Restart policy
+    restart: on-failure
+    
+    # Network mode
+    network_mode: bridge
+    
+    # Command arguments (override default CMD)
+    # Examples:
+    # docker-compose run p2k --provider openai
+    # docker-compose run p2k --step 1
+    # docker-compose run p2k --help
+    command: []
+
+  p2k-ui:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    image: p2k-ui:latest
+    container_name: p2k-ui
+
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - LLM_PROVIDER=${LLM_PROVIDER:-openai}
+      - PRIMARY_MODEL=${PRIMARY_MODEL:-gpt-5.2}
+
+    volumes:
+      - ./compliance-files:/app/compliance-files:rw
+      - ./pipeline-output:/app/pipeline-output:rw
+      - ./pipeline-logs:/app/pipeline-logs:rw
+      - ./config.json:/app/config.json:rw
+
+    ports:
+      - "8000:8000"
+
+    restart: unless-stopped

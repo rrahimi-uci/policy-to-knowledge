@@ -1,0 +1,17 @@
+# Core Dependencies  
+# Note: LiteLLM requires Python 3.10+. For Python 3.9, using version 1.30.x
+litellm==1.30.7
+openai>=1.59.7
+PyPDF2>=3.0.1
+
+# OCR for scanned PDFs
+pytesseract>=0.3.10               # Tesseract OCR wrapper
+pdf2image>=1.17.0                 # Convert PDF pages to images for OCR
+Pillow>=10.0.0                    # Image processing (pdf2image dependency)
+
+# Document Chunking Libraries
+langchain-text-splitters>=0.2.0  # Markdown/text splitting with header metadata
+pandas>=2.0.0                     # CSV/Excel processing
+openpyxl>=3.1.0                   # Excel file support for pandas
+python-docx>=1.1.0                # Word document (.docx) support
+mammoth>=1.7.0                    # Convert .docx to semantic HTML for previews

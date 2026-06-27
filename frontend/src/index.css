@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base tokens (match KG Extraction) ─────── */
+:root {
+  --sidebar-w: 240px;
+}
+
+html {
+  font-size: 15.36px; /* 19.2px reduced 20% */
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  letter-spacing: -0.005em;
+}
+
+/* ── Focus visible ─────────────────────────── */
+:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* ── Custom scrollbar ──────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+
+/* ================================================================
+   Light Theme Overrides — tuned to match Policy to Knowledge AI builder studio
+   ================================================================ */
+[data-theme="light"] { color-scheme: light; }
+[data-theme="light"] body {
+  background-color: #ffffff;
+  color: #0f172a;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* — Backgrounds — */
+/* Page / app shell — very subtle off-white */
+[data-theme="light"] .bg-gray-950     { background-color: #f7f8fb !important; }
+[data-theme="light"] .bg-gray-950\/80 { background-color: rgba(247,248,251,0.85) !important; }
+[data-theme="light"] .bg-gray-950\/90 { background-color: rgba(247,248,251,0.92) !important; }
+[data-theme="light"] .bg-gray-950\/95 { background-color: rgba(247,248,251,0.96) !important; }
+/* Sidebar / cards / panels — pure white with soft elevation */
+[data-theme="light"] .bg-gray-900     {
+  background-color: #ffffff !important;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+[data-theme="light"] .bg-gray-900\/60 { background-color: rgba(255,255,255,0.7) !important; }
+[data-theme="light"] .bg-gray-900\/50 { background-color: rgba(255,255,255,0.6) !important; }
+[data-theme="light"] .bg-gray-900\/80 { background-color: rgba(255,255,255,0.85) !important; }
+/* Inputs / chips — very light slate */
+[data-theme="light"] .bg-gray-800     { background-color: #f1f5f9 !important; }
+[data-theme="light"] .bg-gray-800\/20 { background-color: rgba(241,245,249,0.45) !important; }
+[data-theme="light"] .bg-gray-800\/30 { background-color: rgba(241,245,249,0.55) !important; }
+[data-theme="light"] .bg-gray-800\/40 { background-color: rgba(241,245,249,0.65) !important; }
+[data-theme="light"] .bg-gray-800\/50 { background-color: rgba(241,245,249,0.75) !important; }
+[data-theme="light"] .bg-gray-800\/60 { background-color: rgba(241,245,249,0.85) !important; }
+[data-theme="light"] .bg-gray-700     { background-color: #e2e8f0 !important; }
+[data-theme="light"] .bg-black\/20    { background-color: rgba(15,23,42,0.05) !important; }
+[data-theme="light"] .bg-black\/60    { background-color: rgba(15,23,42,0.18) !important; }
+
+/* — Text — */
+[data-theme="light"] .text-white    { color: #0f172a !important; }
+[data-theme="light"] .text-gray-100 { color: #111827 !important; }
+[data-theme="light"] .text-gray-200 { color: #1f2937 !important; }
+[data-theme="light"] .text-gray-300 { color: #334155 !important; }
+[data-theme="light"] .text-gray-400 { color: #64748b !important; }
+[data-theme="light"] .text-gray-500 { color: #94a3b8 !important; }
+[data-theme="light"] .text-gray-600 { color: #94a3b8 !important; }
+[data-theme="light"] .text-gray-700 { color: #cbd5e1 !important; }
+
+/* — Borders — softer, slate-200 — */
+[data-theme="light"] .border-gray-800    { border-color: #e5e7eb !important; }
+[data-theme="light"] .border-gray-800\/50 { border-color: rgba(229,231,235,0.7) !important; }
+[data-theme="light"] .border-gray-800\/60 { border-color: rgba(229,231,235,0.8) !important; }
+[data-theme="light"] .border-gray-700    { border-color: #d1d5db !important; }
+[data-theme="light"] .border-gray-600    { border-color: #9ca3af !important; }
+[data-theme="light"] .divide-gray-800 > :not([hidden]) ~ :not([hidden]) { border-color: #e5e7eb !important; }
+
+/* — Hover states — */
+[data-theme="light"] .hover\:text-gray-200:hover { color: #0f172a !important; }
+[data-theme="light"] .hover\:text-gray-300:hover { color: #1f2937 !important; }
+[data-theme="light"] .hover\:bg-gray-800:hover   { background-color: #f1f5f9 !important; }
+[data-theme="light"] .hover\:bg-gray-800\/50:hover { background-color: #f3f4f6 !important; }
+[data-theme="light"] .hover\:bg-gray-800\/40:hover { background-color: #f3f4f6 !important; }
+[data-theme="light"] .hover\:bg-gray-800\/60:hover { background-color: #eef2f7 !important; }
+[data-theme="light"] .hover\:bg-gray-700:hover    { background-color: #e5e7eb !important; }
+[data-theme="light"] .hover\:border-gray-700:hover { border-color: #cbd5e1 !important; }
+
+/* — Placeholder / input — */
+[data-theme="light"] .placeholder-gray-600::placeholder { color: #94a3b8 !important; }
+
+/* — SVG fills — */
+[data-theme="light"] .fill-gray-200 { fill: #1f2937 !important; }
+[data-theme="light"] .fill-gray-500 { fill: #64748b !important; }
+
+/* — Primary accent buttons (indigo-tinted blue, matches "+ Create Process") — */
+[data-theme="light"] .bg-blue-600 {
+  background-color: #4f46e5 !important;
+  color: #fff !important;
+  box-shadow: 0 1px 2px rgba(79, 70, 229, 0.2);
+}
+[data-theme="light"] .hover\:bg-blue-500:hover { background-color: #6366f1 !important; color: #fff !important; }
+[data-theme="light"] .bg-red-600  { background-color: #dc2626 !important; color: #fff !important; }
+[data-theme="light"] .hover\:bg-red-500:hover  { background-color: #ef4444 !important; color: #fff !important; }
+[data-theme="light"] .bg-blue-600 .text-white,
+[data-theme="light"] .bg-red-600 .text-white,
+[data-theme="light"] .bg-blue-600.text-white,
+[data-theme="light"] .bg-red-600.text-white { color: #fff !important; }
+
+/* — Active sidebar nav (NavLink isActive: text-blue-400 bg-blue-500/10 border-blue-400) — */
+[data-theme="light"] .text-blue-400        { color: #4f46e5 !important; }
+[data-theme="light"] .bg-blue-500\/10      { background-color: #eef2ff !important; }
+[data-theme="light"] .border-blue-400      { border-color: #4f46e5 !important; }
+
+/* — Scrollbar — */
+[data-theme="light"] ::-webkit-scrollbar-thumb       { background: #d1d5db; }
+[data-theme="light"] ::-webkit-scrollbar-thumb:hover  { background: #9ca3af; }
+
+/* — Brand ring (sidebar logo) — */
+[data-theme="light"] .ring-blue-500\/20 { --tw-ring-color: rgba(79,70,229,0.18) !important; }
+[data-theme="light"] .shadow-blue-500\/10 { --tw-shadow-color: rgba(79,70,229,0.10) !important; }
+
+/* — Section heading accent (BUILD / MORTGAGE / LEARNING) — muted slate, not blue — */
+[data-theme="light"] .text-blue-400\/70 { color: #94a3b8 !important; }
+
+/* ── Page enter animation ──────────────────── */
+.page-enter {
+  animation: pageIn 0.25s ease-out;
+}
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

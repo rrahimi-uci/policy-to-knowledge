@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1920,height=1080">
+  <title>Policy to Knowledge — Regulatory Intelligence for Mortgage Compliance</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html,
+    body {
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #030712;
+      color: #f1f5f9
+    }
+
+    :root {
+      --bg: #030712;
+      --bg2: #0f172a;
+      --bg-card: rgba(15, 23, 42, .8);
+      --border: rgba(30, 58, 95, .5);
+      --border-glow: rgba(6, 182, 212, .25);
+      --text: #f1f5f9;
+      --text2: #94a3b8;
+      --text3: #64748b;
+      --cyan: #06b6d4;
+      --purple: #8b5cf6;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --red: #ef4444;
+      --blue: #3b82f6;
+      --glow-cyan: 0 0 40px rgba(6, 182, 212, .3);
+    }
+
+    #particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none
+    }
+
+    .progress-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: rgba(255, 255, 255, .05);
+      z-index: 100
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, var(--cyan), var(--purple));
+      transition: width .3s linear
+    }
+
+    .watermark {
+      position: fixed;
+      bottom: 20px;
+      right: 40px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .2em;
+      color: rgba(148, 163, 184, .15);
+      z-index: 90;
+      text-transform: uppercase
+    }
+
+    .scene {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 1s ease;
+      z-index: 10
+    }
+
+    .scene.active {
+      opacity: 1;
+      pointer-events: auto
+    }
+
+    .scene-inner {
+      width: 1700px;
+      max-width: 92%;
+      text-align: center;
+      position: relative;
+      z-index: 2
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: none
+    }
+
+    .scene.active .reveal {
+      animation: fadeInUp .8s ease-out both;
+      animation-delay: var(--d, 0s)
+    }
+
+    .section-tag {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: inline-block;
+      padding: 6px 18px;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      background: rgba(6, 182, 212, .06)
+    }
+
+    .section-title {
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -.02em
+    }
+
+    .section-subtitle {
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--text2);
+      line-height: 1.6;
+      max-width: 1000px;
+      margin: 0 auto 36px
+    }
+
+    .accent-line {
+      width: 0;
+      height: 2px;
+      margin: 20px auto;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      border-radius: 2px
+    }
+
+    .scene.active .accent-line {
+      animation: expandWidth 1s ease-out .5s both
+    }
+
+    .glow-text {
+      background: linear-gradient(135deg, var(--cyan), var(--purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text
+    }
+
+    .stat-grid {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin: 40px 0
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px 48px;
+      min-width: 280px;
+      backdrop-filter: blur(12px);
+      position: relative;
+      overflow: hidden
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      border-radius: 20px 20px 0 0
+    }
+
+    .stat-card.red::before {
+      background: var(--red)
+    }
+
+    .stat-card.amber::before {
+      background: var(--amber)
+    }
+
+    .stat-card.purple::before {
+      background: var(--purple)
+    }
+
+    .stat-card.cyan::before {
+      background: var(--cyan)
+    }
+
+    .stat-card.emerald::before {
+      background: var(--emerald)
+    }
+
+    .stat-value {
+      font-size: 56px;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 8px
+    }
+
+    .stat-label {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text2);
+      text-transform: uppercase;
+      letter-spacing: .15em
+    }
+
+    .stat-desc {
+      font-size: 13px;
+      color: var(--text3);
+      margin-top: 8px;
+      line-height: 1.5
+    }
+
+    .cl-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: nowrap;
+      margin: 28px auto 0;
+      max-width: 1560px
+    }
+
+    .cl-step {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text2);
+      text-align: center;
+      min-width: 150px;
+      position: relative;
+      transition: all .4s ease
+    }
+
+    .cl-step.highlight {
+      background: rgba(6, 182, 212, .12);
+      border-color: rgba(6, 182, 212, .5);
+      color: var(--cyan);
+      box-shadow: 0 0 24px rgba(6, 182, 212, .2)
+    }
+
+    .cl-step.dim {
+      opacity: .35
+    }
+
+    .cl-arrow {
+      color: var(--text3);
+      font-size: 14px;
+      margin: 0 2px;
+      flex-shrink: 0;
+      opacity: .4
+    }
+
+    .cl-bracket {
+      position: relative;
+      margin-top: 16px;
+      text-align: center
+    }
+
+    .cl-bracket-line {
+      display: block;
+      width: 70%;
+      margin: 0 auto;
+      height: 20px;
+      border: 2px solid var(--cyan);
+      border-top: none;
+      border-radius: 0 0 12px 12px;
+      opacity: .5
+    }
+
+    .cl-bracket-label {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--cyan);
+      margin-top: 8px;
+      letter-spacing: .04em
+    }
+
+    .feature-grid {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin: 40px 0
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px;
+      width: 320px;
+      text-align: left;
+      backdrop-filter: blur(12px);
+      position: relative;
+      overflow: hidden
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--card-color, var(--cyan))
+    }
+
+    .feature-card .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 16px;
+      border: 1px solid rgba(255, 255, 255, .08)
+    }
+
+    .feature-card .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px
+    }
+
+    .feature-card .card-desc {
+      font-size: 14px;
+      color: var(--text2);
+      line-height: 1.6
+    }
+
+    .screenshot-frame {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      max-width: 1400px;
+      margin: 20px auto;
+      box-shadow: 0 25px 80px rgba(0, 0, 0, .5), 0 0 60px rgba(6, 182, 212, .08)
+    }
+
+    .screenshot-frame .frame-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background: rgba(15, 23, 42, .9);
+      border-bottom: 1px solid var(--border)
+    }
+
+    .screenshot-frame .frame-bar .frame-dots {
+      display: flex;
+      gap: 6px
+    }
+
+    .screenshot-frame .frame-bar .frame-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%
+    }
+
+    .screenshot-frame .frame-bar .frame-url {
+      flex: 1;
+      text-align: center;
+      font-size: 11px;
+      color: var(--text3);
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: .04em
+    }
+
+    .screenshot-frame .frame-body {
+      width: 100%;
+      height: 580px;
+      overflow: hidden;
+      position: relative
+    }
+
+    .screenshot-frame .frame-body img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top left;
+      display: block
+    }
+
+    .module-orbit {
+      position: relative;
+      width: 700px;
+      height: 440px;
+      margin: 20px auto
+    }
+
+    .module-core {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(135deg, rgba(6, 182, 212, .15), rgba(139, 92, 246, .15));
+      border: 2px solid rgba(6, 182, 212, .4);
+      border-radius: 20px;
+      padding: 28px 48px;
+      text-align: center;
+      z-index: 2
+    }
+
+    .module-core .core-label {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 4px
+    }
+
+    .module-core .core-sub {
+      font-size: 12px;
+      color: var(--text3)
+    }
+
+    .module-sat {
+      position: absolute;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 22px;
+      font-size: 13px;
+      font-weight: 600;
+      text-align: center;
+      z-index: 2
+    }
+
+    .module-sat.active-mod {
+      border-color: var(--cyan);
+      box-shadow: var(--glow-cyan)
+    }
+
+    .module-sat.future-mod {
+      border-style: dashed;
+      opacity: .7
+    }
+
+    .kpi-bar {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      margin-top: 32px;
+      padding: 16px 0;
+      border-top: 1px solid rgba(255, 255, 255, .05)
+    }
+
+    .kpi-item {
+      text-align: center
+    }
+
+    .kpi-value {
+      font-size: 24px;
+      font-weight: 800;
+      font-family: 'JetBrains Mono', monospace
+    }
+
+    .kpi-label {
+      font-size: 11px;
+      color: var(--text3);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      margin-top: 4px
+    }
+
+    .closing-brand {
+      font-size: 72px;
+      font-weight: 900;
+      letter-spacing: .06em;
+      margin-bottom: 16px
+    }
+
+    .closing-tag {
+      font-size: 24px;
+      color: var(--text2);
+      font-weight: 400;
+      margin-bottom: 40px
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes expandWidth {
+      from {
+        width: 0
+      }
+
+      to {
+        width: 120px
+      }
+    }
+
+    @keyframes glowPulse {
+
+      0%,
+      100% {
+        text-shadow: 0 0 20px rgba(6, 182, 212, .3)
+      }
+
+      50% {
+        text-shadow: 0 0 40px rgba(6, 182, 212, .6), 0 0 80px rgba(6, 182, 212, .2)
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <canvas id="particles"></canvas>
+  <div class="progress-bar">
+    <div class="progress-fill" id="progress"></div>
+  </div>
+  <div class="watermark">Policy to Knowledge SUITE</div>
+
+  <!-- SCENE 1 — TITLE -->
+  <section class="scene" data-scene="1">
+    <div class="scene-inner">
+      <div class="reveal" style="--d:1s">
+        <div style="font-size:84px;font-weight:900;letter-spacing:.12em;animation:glowPulse 3s ease-in-out infinite">
+          Policy to Knowledge SUITE
+        </div>
+      </div>
+      <div class="accent-line"></div>
+      <div class="reveal" style="--d:1.8s">
+        <div style="font-size:26px;color:var(--text2);font-weight:300;letter-spacing:.08em;margin-top:8px">
+          Regulatory Intelligence &amp; Compliance Operations
+        </div>
+      </div>
+      <div class="reveal" style="--d:2.6s">
+        <div style="font-size:18px;color:var(--text3);margin-top:24px;letter-spacing:.04em">
+          Built for highly regulated enterprises &nbsp;&middot;&nbsp; Mortgage &amp; Lending
+        </div>
+      </div>
+      <div class="reveal" style="--d:3.4s">
+        <div style="font-size:14px;color:var(--text3);margin-top:40px;letter-spacing:.06em">
+          p2k suite
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 2 — THE CHALLENGE -->
+  <section class="scene" data-scene="2">
+    <div class="scene-inner">
+      <div class="reveal" style="--d:.2s">
+        <span class="section-tag" style="color:var(--red);border-color:rgba(239,68,68,.3)">The Problem</span>
+      </div>
+      <div class="reveal" style="--d:.5s">
+        <div class="section-title">The Mortgage Compliance Challenge</div>
+      </div>
+      <div class="reveal" style="--d:.9s">
+        <div class="section-subtitle" style="font-size:18px">
+          Mortgage lenders navigate one of the most complex regulatory environments in financial services. Fannie Mae,
+          Freddie Mac, FHA, VA, and state-level agencies issue hundreds of updates every year.
+        </div>
+      </div>
+      <div class="stat-grid reveal" style="--d:1.4s">
+        <div class="stat-card red">
+          <div class="stat-value" style="color:var(--red)"><span data-count="300">0</span>+</div>
+          <div class="stat-label">Regulatory Updates / Year</div>
+          <div class="stat-desc">Selling Guides, Bulletins, Handbook revisions &sup1;</div>
+        </div>
+        <div class="stat-card amber">
+          <div class="stat-value" style="color:var(--amber)">72hrs</div>
+          <div class="stat-label">Avg. Impact Analysis</div>
+          <div class="stat-desc">Manual review per major Selling Guide update &sup2;</div>
+        </div>
+        <div class="stat-card purple">
+          <div class="stat-value" style="color:var(--purple)">5&times;</div>
+          <div class="stat-label">Audit Prep Overhead</div>
+          <div class="stat-desc">Evidence gathering repeated across siloed teams &sup3;</div>
+        </div>
+      </div>
+      <div class="reveal" style="--d:2.4s">
+        <div
+          style="font-size:10px;color:var(--text3);margin-top:16px;line-height:1.8;max-width:1000px;margin-left:auto;margin-right:auto;text-align:left;opacity:.7">
+          &sup1; Thomson Reuters Regulatory Intelligence — Cost of Compliance Report, 2024. Aggregate of Fannie Mae
+          Announcements, Freddie Mac Guide Bulletins, FHA Mortgagee Letters, CFPB rules, and state-level changes.<br>
+          &sup2; Wolters Kluwer Regulatory Compliance Survey, 2023. Estimated per major guide revision across mid-size
+          lenders.<br>
+          &sup3; Deloitte Center for Regulatory Strategy — Cost of Compliance in Banking, 2023. Reflects duplicated
+          effort across siloed compliance, legal, and audit functions.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 3 — LIFECYCLE -->
+  <section class="scene" data-scene="3">
+    <div class="scene-inner">
+      <div class="reveal" style="--d:.2s">
+        <span class="section-tag" style="color:var(--blue);border-color:rgba(59,130,246,.3)">Context</span>
+      </div>
+      <div class="reveal" style="--d:.5s">
+        <div class="section-title">The Compliance Lifecycle</div>
+      </div>
+      <div class="reveal" style="--d:.9s">
+        <div class="section-subtitle" style="font-size:17px">
+          Every mortgage compliance team follows this continuous cycle. Most are doing it with spreadsheets, PDFs, and
+          manual reviews.
+        </div>
+      </div>
+      <div class="cl-flow reveal" style="--d:1.4s">
+        <div class="cl-step">Regulatory<br>Monitoring</div>
+        <div class="cl-arrow">&rarr;</div>
+        <div class="cl-step">Document<br>Ingestion</div>
+        <div class="cl-arrow">&rarr;</div>
+        <div class="cl-step">Knowledge<br>Extraction</div>
+        <div class="cl-arrow">&rarr;</div>
+        <div class="cl-step">Change<br>Detection</div>
+        <div class="cl-arrow">&rarr;</div>
+        <div class="cl-step">Impact<br>Analysis</div>
+        <div class="cl-arrow">&rarr;</div>
+        <div class="cl-step">Obligation<br>Management</div>
+        <div class="cl-arrow">&rarr;</div>
+        <div class="cl-step">Control<br>Mapping</div>
+        <div class="cl-arrow">&rarr;</div>
+        <div class="cl-step">Audit &amp;<br>Evidence</div>
+      </div>
+      <div class="reveal" style="--d:2.6s">
+        <div style="display:flex;justify-content:center;gap:40px;margin-top:32px;font-size:14px;color:var(--text3)">
+          <div><span
+              style="display:inline-block;width:10px;height:10px;border-radius:3px;background:rgba(6,182,212,.5);margin-right:8px;vertical-align:middle"></span>Fannie
+            Mae &amp; Freddie Mac</div>
+          <div><span
+              style="display:inline-block;width:10px;height:10px;border-radius:3px;background:rgba(139,92,246,.5);margin-right:8px;vertical-align:middle"></span>FHA
+            / VA / USDA</div>
+          <div><span
+              style="display:inline-block;width:10px;height:10px;border-radius:3px;background:rgba(16,185,129,.5);margin-right:8px;vertical-align:middle"></span>State
+            Regulators</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 4 — INTRODUCING Policy to Knowledge -->
+  <section class="scene" data-scene="4">
+    <div class="scene-inner">
+      <div class="reveal" style="--d:.2s">
+        <span class="section-tag" style="color:var(--cyan);border-color:var(--border-glow)">The Solution</span>
+      </div>
+      <div class="reveal" style="--d:.5s">
+        <div class="section-title" style="font-size:44px">
+          Introducing <span class="glow-text">Policy to Knowledge</span>
+        </div>
+      </div>
+      <div class="reveal" style="--d:.9s">
+        <div class="section-subtitle" style="font-size:17px">
+          A regulatory intelligence platform that transforms mortgage compliance documents into structured knowledge,
+          detects change, assesses impact, and manages obligations — end to end.
+        </div>
+      </div>
+      <div class="cl-flow reveal" style="--d:1.3s">
+        <div class="cl-step dim">Regulatory<br>Monitoring</div>
+        <div class="cl-arrow">&rarr;</div>
+        <div class="cl-step highlight">Document<br>Ingestion</div>
+        <div class="cl-arrow" style="opacity:.8">&rarr;</div>
+        <div class="cl-step highlight">Knowledge<br>Extraction</div>
+        <div class="cl-arrow" style="opacity:.8">&rarr;</div>
+        <div class="cl-step highlight">Change<br>Detection</div>
+        <div class="cl-arrow" style="opacity:.8">&rarr;</div>
+        <div class="cl-step highlight">Impact<br>Analysis</div>
+        <div class="cl-arrow" style="opacity:.8">&rarr;</div>
+        <div class="cl-step highlight">Obligation<br>Management</div>
+        <div class="cl-arrow" style="opacity:.8">&rarr;</div>
+        <div class="cl-step highlight">Control<br>Mapping</div>
+        <div class="cl-arrow">&rarr;</div>
+        <div class="cl-step dim">Audit &amp;<br>Evidence</div>
+      </div>
+      <div class="cl-bracket reveal" style="--d:2s">
+        <div class="cl-bracket-line"></div>
+        <div class="cl-bracket-label">Powered by Policy to Knowledge</div>
+      </div>
+      <div class="feature-grid reveal" style="--d:2.6s">
+        <div class="feature-card" style="--card-color:var(--cyan)">
+          <div class="card-icon" style="background:rgba(6,182,212,.1);color:var(--cyan)">&diams;</div>
+          <div class="card-title">Knowledge Graphs</div>
+          <div class="card-desc">Extract every rule, entity, and dependency from Selling Guides into a living knowledge
+            graph.</div>
+        </div>
+        <div class="feature-card" style="--card-color:var(--purple)">
+          <div class="card-icon" style="background:rgba(139,92,246,.1);color:var(--purple)">&Theta;</div>
+          <div class="card-title">Impact Intelligence</div>
+          <div class="card-desc">Detect regulatory changes, classify severity, and map impact to every affected rule and
+            obligation.</div>
+        </div>
+        <div class="feature-card" style="--card-color:var(--emerald)">
+          <div class="card-icon" style="background:rgba(16,185,129,.1);color:var(--emerald)">&target;</div>
+          <div class="card-title">Compliance Workflow</div>
+          <div class="card-desc">Track obligations, map controls, identify gaps, and produce audit-ready evidence
+            packages.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 5 — DASHBOARD (REAL SCREENSHOT) -->
+  <section class="scene" data-scene="5">
+    <div class="scene-inner">
+      <div class="reveal" style="--d:.2s">
+        <span class="section-tag">Control Plane</span>
+      </div>
+      <div class="reveal" style="--d:.4s">
+        <div class="section-title" style="font-size:44px">Unified Dashboard</div>
+      </div>
+      <div class="reveal" style="--d:.7s">
+        <div class="section-subtitle" style="font-size:17px;margin-bottom:16px">
+          A single view of your entire compliance posture &mdash; seven knowledge graphs, over two thousand extracted rules,
+          and fifty-three source documents across mortgage, AML, commercial lending, and healthcare.
+        </div>
+      </div>
+      <div class="reveal" style="--d:1s">
+        <div class="screenshot-frame">
+          <div class="frame-bar">
+            <div class="frame-dots"><span style="background:#ef4444"></span><span
+                style="background:#f59e0b"></span><span style="background:#10b981"></span></div>
+            <div class="frame-url">app.example.com &mdash; Policy to Knowledge Dashboard</div>
+          </div>
+          <div class="frame-body">
+            <img src="screenshots/home.png" alt="Policy to Knowledge Dashboard">
+          </div>
+        </div>
+      </div>
+      <div class="kpi-bar reveal" style="--d:2s">
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--cyan)">7</div>
+          <div class="kpi-label">Knowledge Graphs</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--purple)">53</div>
+          <div class="kpi-label">Source Documents</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--emerald)">2,062</div>
+          <div class="kpi-label">Rules Extracted</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--amber)">Connected</div>
+          <div class="kpi-label">Compliance Assistant</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 6 — KG EXTRACTION (REAL SCREENSHOT) -->
+  <section class="scene" data-scene="6">
+    <div class="scene-inner">
+      <div class="reveal" style="--d:.2s">
+        <span class="section-tag" style="color:var(--cyan);border-color:var(--border-glow)">Knowledge Extraction</span>
+      </div>
+      <div class="reveal" style="--d:.4s">
+        <div class="section-title" style="font-size:44px">Extract Rules from Regulatory Documents</div>
+      </div>
+      <div class="reveal" style="--d:.7s">
+        <div class="section-subtitle" style="font-size:17px;margin-bottom:16px">
+          Upload the Fannie Mae Selling Guide or Freddie Mac Single-Family Guide. Policy to Knowledge extracts every rule, entity,
+          and dependency into a structured knowledge graph &mdash; with multi-provider AI and automatic optimization.
+        </div>
+      </div>
+      <div class="reveal" style="--d:1s">
+        <div class="screenshot-frame">
+          <div class="frame-bar">
+            <div class="frame-dots"><span style="background:#ef4444"></span><span
+                style="background:#f59e0b"></span><span style="background:#10b981"></span></div>
+            <div class="frame-url">app.example.com/extraction &mdash; Policy to Knowledge Knowledge Extraction</div>
+          </div>
+          <div class="frame-body">
+            <img src="screenshots/suite_extraction.png" alt="Knowledge Extraction Dashboard">
+          </div>
+        </div>
+      </div>
+      <div class="kpi-bar reveal" style="--d:2s">
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--cyan)">2,062</div>
+          <div class="kpi-label">Rules Extracted</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--purple)">210</div>
+          <div class="kpi-label">Entity Types</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--emerald)">7</div>
+          <div class="kpi-label">Knowledge Graphs</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--amber)">4</div>
+          <div class="kpi-label">Domains</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 7 — KG EXTRACTION PIPELINE (REAL SCREENSHOT) -->
+  <section class="scene" data-scene="7">
+    <div class="scene-inner">
+      <div class="reveal" style="--d:.2s">
+        <span class="section-tag" style="color:var(--cyan);border-color:var(--border-glow)">Extraction Pipeline</span>
+      </div>
+      <div class="reveal" style="--d:.4s">
+        <div class="section-title" style="font-size:44px">Seven-Step AI Extraction Pipeline</div>
+      </div>
+      <div class="reveal" style="--d:.7s">
+        <div class="section-subtitle" style="font-size:17px;margin-bottom:16px">
+          Behind every knowledge graph is an automated seven-step pipeline &mdash; from document segmentation through
+          entity discovery, rule extraction, quality validation, integration, deduplication, and final graph
+          visualization.
+        </div>
+      </div>
+      <div class="reveal" style="--d:1s">
+        <div class="screenshot-frame">
+          <div class="frame-bar">
+            <div class="frame-dots"><span style="background:#ef4444"></span><span
+                style="background:#f59e0b"></span><span style="background:#10b981"></span></div>
+            <div class="frame-url">app.example.com/extraction/runs &mdash; KG Extraction Pipeline &middot; 7 of 7 Steps
+              Complete</div>
+          </div>
+          <div class="frame-body">
+            <img src="screenshots/suite_pipeline.png" alt="KG Extraction Pipeline">
+          </div>
+        </div>
+      </div>
+      <div class="kpi-bar reveal" style="--d:2s">
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--cyan)">7</div>
+          <div class="kpi-label">Pipeline Steps</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--emerald)">Parallel</div>
+          <div class="kpi-label">Rule Extraction</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--purple)">AI Validation</div>
+          <div class="kpi-label">Quality Assurance</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--amber)">Automated</div>
+          <div class="kpi-label">End-to-End</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 8 — COMPARE KNOWLEDGE GRAPHS (REAL SCREENSHOT) -->
+  <section class="scene" data-scene="8">
+    <div class="scene-inner">
+      <div class="reveal" style="--d:.2s">
+        <span class="section-tag" style="color:var(--purple);border-color:rgba(139,92,246,.3)">Compare Knowledge Graphs</span>
+      </div>
+      <div class="reveal" style="--d:.4s">
+        <div class="section-title" style="font-size:44px">AI-Powered Cross-Document Comparison</div>
+      </div>
+      <div class="reveal" style="--d:.7s">
+        <div class="section-subtitle" style="font-size:17px;margin-bottom:16px">
+          Compare any two knowledge graphs side by side. Policy to Knowledge uses semantic analysis to find
+          shared rules, unique provisions, and contradictions between documents &mdash; with
+          detailed AI explanations for every conflict detected.
+        </div>
+      </div>
+      <div class="reveal" style="--d:1s">
+        <div class="screenshot-frame">
+          <div class="frame-bar">
+            <div class="frame-dots"><span style="background:#ef4444"></span><span
+                style="background:#f59e0b"></span><span style="background:#10b981"></span></div>
+            <div class="frame-url">app.example.com/extraction/compare &mdash; Fannie Mae vs Freddie Mac &middot; 16 shared, 14 contradictions</div>
+          </div>
+          <div class="frame-body">
+            <img src="screenshots/suite_compare.png" alt="Compare Knowledge Graphs — Fannie Mae vs Freddie Mac">
+          </div>
+        </div>
+      </div>
+      <div class="kpi-bar reveal" style="--d:2s">
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--purple)">16</div>
+          <div class="kpi-label">Common Rules</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--cyan)">336</div>
+          <div class="kpi-label">Unique to Fannie Mae</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--amber)">367</div>
+          <div class="kpi-label">Unique to Freddie Mac</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--emerald)">14</div>
+          <div class="kpi-label">Contradictions Detected</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 9 — KNOWLEDGE GRAPH & Policy to Knowledge ASSISTANT (REAL SCREENSHOT) -->
+  <section class="scene" data-scene="9">
+    <div class="scene-inner">
+      <div class="reveal" style="--d:.2s">
+        <span class="section-tag" style="color:var(--emerald);border-color:rgba(16,185,129,.3)">Knowledge Graph &amp;
+          Assistant</span>
+      </div>
+      <div class="reveal" style="--d:.4s">
+        <div class="section-title" style="font-size:44px">Explore, Query &amp; Navigate the Knowledge Graph</div>
+      </div>
+      <div class="reveal" style="--d:.7s">
+        <div class="section-subtitle" style="font-size:17px;margin-bottom:16px">
+          Every extracted rule becomes a node in a living knowledge graph. Explore two hundred ninety-nine nodes and three
+          hundred sixty-six edges &mdash; with an integrated AI assistant for natural-language queries, dependency
+          tracing, and citation-backed answers.
+        </div>
+      </div>
+      <div class="reveal" style="--d:1s">
+        <div class="screenshot-frame">
+          <div class="frame-bar">
+            <div class="frame-dots"><span style="background:#ef4444"></span><span
+                style="background:#f59e0b"></span><span style="background:#10b981"></span></div>
+            <div class="frame-url">app.example.com/assistant/chat &mdash; Policy to Knowledge Chat &amp; Explore &middot; 299
+              Nodes &middot; 366 Edges</div>
+          </div>
+          <div class="frame-body">
+            <img src="screenshots/suite_kg_explorer.png" alt="Knowledge Graph & Assistant">
+          </div>
+        </div>
+      </div>
+      <div class="kpi-bar reveal" style="--d:2s">
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--emerald)">299</div>
+          <div class="kpi-label">Nodes</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--cyan)">366</div>
+          <div class="kpi-label">Edges</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--blue)">Graph-Grounded</div>
+          <div class="kpi-label">AI Assistant</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--purple)">Multi-Model</div>
+          <div class="kpi-label">OpenAI &middot; Anthropic &middot; Gemini</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 10 — ANALYTICS (REAL SCREENSHOT) -->
+  <section class="scene" data-scene="10">
+    <div class="scene-inner">
+      <div class="reveal" style="--d:.2s">
+        <span class="section-tag" style="color:var(--purple);border-color:rgba(139,92,246,.3)">Analytics</span>
+      </div>
+      <div class="reveal" style="--d:.4s">
+        <div class="section-title" style="font-size:44px">Graph Analytics &amp; Rule Intelligence</div>
+      </div>
+      <div class="reveal" style="--d:.7s">
+        <div class="section-subtitle" style="font-size:17px;margin-bottom:16px">
+          Deep analytics on the Fannie Mae knowledge graph &mdash; three hundred fifty-two rules, forty-three
+          entity types, and a clear view of rule types, risk levels, and confidence scores.
+        </div>
+      </div>
+      <div class="reveal" style="--d:1s">
+        <div class="screenshot-frame">
+          <div class="frame-bar">
+            <div class="frame-dots"><span style="background:#ef4444"></span><span
+                style="background:#f59e0b"></span><span style="background:#10b981"></span></div>
+            <div class="frame-url">app.example.com/analytics &mdash; Fannie Mae Graph Analytics</div>
+          </div>
+          <div class="frame-body">
+            <img src="screenshots/suite_analytics.png" alt="Graph Analytics">
+          </div>
+        </div>
+      </div>
+      <div class="kpi-bar reveal" style="--d:2s">
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--cyan)">352</div>
+          <div class="kpi-label">Rules &middot; 13 Dependencies</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--purple)">43</div>
+          <div class="kpi-label">Entity Types</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--red)">203 / 128</div>
+          <div class="kpi-label">High-Risk / Critical Rules</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--emerald)">88.6%</div>
+          <div class="kpi-label">Avg. Confidence</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 11 — IMPACT ANALYSIS (REAL SCREENSHOT) -->
+  <section class="scene" data-scene="11">
+    <div class="scene-inner">
+      <div class="reveal" style="--d:.2s">
+        <span class="section-tag" style="color:var(--amber);border-color:rgba(245,158,11,.3)">Impact Analysis</span>
+      </div>
+      <div class="reveal" style="--d:.4s">
+        <div class="section-title" style="font-size:44px">Regulatory Change Impact Analysis</div>
+      </div>
+      <div class="reveal" style="--d:.7s">
+        <div class="section-subtitle" style="font-size:17px;margin-bottom:16px">
+          When Fannie Mae issues a new Selling Guide, upload both versions. Policy to Knowledge detects every change, classifies
+          severity, and maps impact &mdash; with agentic AI enrichment for executive summaries and priority
+          recommendations.
+        </div>
+      </div>
+      <div class="reveal" style="--d:1s">
+        <div class="screenshot-frame">
+          <div class="frame-bar">
+            <div class="frame-dots"><span style="background:#ef4444"></span><span
+                style="background:#f59e0b"></span><span style="background:#10b981"></span></div>
+            <div class="frame-url">app.example.com/impact-analysis &mdash; Regulatory Change Impact Analysis</div>
+          </div>
+          <div class="frame-body">
+            <img src="screenshots/suite_impact.png" alt="Impact Analysis">
+          </div>
+        </div>
+      </div>
+      <div class="kpi-bar reveal" style="--d:2s">
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--red)">Breaking</div>
+          <div class="kpi-label">LTV Limits Changed</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--amber)">Material</div>
+          <div class="kpi-label">New Income Reqs</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--blue)">Cosmetic</div>
+          <div class="kpi-label">Renumbered Sections</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--purple)">Agentic</div>
+          <div class="kpi-label">Executive Summary</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 12 — OBLIGATIONS (REAL SCREENSHOT) -->
+  <section class="scene" data-scene="12">
+    <div class="scene-inner">
+      <div class="reveal" style="--d:.2s">
+        <span class="section-tag" style="color:var(--emerald);border-color:rgba(16,185,129,.3)">Obligation
+          Management</span>
+      </div>
+      <div class="reveal" style="--d:.4s">
+        <div class="section-title" style="font-size:44px">Obligation Register &amp; Gap Analysis</div>
+      </div>
+      <div class="reveal" style="--d:.7s">
+        <div class="section-subtitle" style="font-size:17px;margin-bottom:16px">
+          Every rule extracted from the Fannie Mae knowledge graph becomes a trackable obligation. Map internal
+          controls, identify coverage gaps, and track compliance scores &mdash; all exportable for audit and exam.
+        </div>
+      </div>
+      <div class="reveal" style="--d:1s">
+        <div class="screenshot-frame">
+          <div class="frame-bar">
+            <div class="frame-dots"><span style="background:#ef4444"></span><span
+                style="background:#f59e0b"></span><span style="background:#10b981"></span></div>
+            <div class="frame-url">app.example.com/obligations &mdash; Obligation Register &amp; Gap Analysis</div>
+          </div>
+          <div class="frame-body">
+            <img src="screenshots/suite_obligations.png" alt="Obligation Register">
+          </div>
+        </div>
+      </div>
+      <div class="kpi-bar reveal" style="--d:2s">
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--emerald)">Auto-Import</div>
+          <div class="kpi-label">From Knowledge Graph</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--purple)">AI Suggestions</div>
+          <div class="kpi-label">Control Recommendations</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--amber)">Heatmaps</div>
+          <div class="kpi-label">Compliance Scores</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--cyan)">Export</div>
+          <div class="kpi-label">CSV &amp; Reports</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 13 — GRAPH EDITOR & COLLABORATIVE REVIEW -->
+  <section class="scene" data-scene="13">
+    <div class="scene-inner">
+      <div class="reveal" style="--d:.2s">
+        <span class="section-tag" style="color:var(--cyan);border-color:var(--border-glow)">Graph Editor</span>
+      </div>
+      <div class="reveal" style="--d:.4s">
+        <div class="section-title" style="font-size:44px">Collaborative Editing &amp; Review Workflows</div>
+      </div>
+      <div class="reveal" style="--d:.7s">
+        <div class="section-subtitle" style="font-size:17px;margin-bottom:16px">
+          The Graph Editor transforms the knowledge graph from a read-only output into a living, team-curated compliance
+          asset &mdash; with inline editing, AI-assisted refinement, formal review and approval workflows, commenting,
+          and full version history with one-click revert.
+        </div>
+      </div>
+      <div class="reveal" style="--d:1s">
+        <div class="screenshot-frame">
+          <div class="frame-bar">
+            <div class="frame-dots"><span style="background:#ef4444"></span><span
+                style="background:#f59e0b"></span><span style="background:#10b981"></span></div>
+            <div class="frame-url">app.example.com/assistant/editor &mdash; Policy to Knowledge Graph Editor &middot; 299 Nodes
+              &middot; 366 Edges</div>
+          </div>
+          <div class="frame-body">
+            <img src="screenshots/suite_editor.png" alt="Graph Editor & Collaborative Review">
+          </div>
+        </div>
+      </div>
+      <div class="kpi-bar reveal" style="--d:2s">
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--cyan)">Inline Edit</div>
+          <div class="kpi-label">AI-Assisted Refinement</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--emerald)">Review &amp; Approve</div>
+          <div class="kpi-label">Per-Node Workflow</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--purple)">Comments</div>
+          <div class="kpi-label">Attributed &amp; Timestamped</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--amber)">Version History</div>
+          <div class="kpi-label">Full Diff &amp; Revert</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 14 — VERSIONING & AUDIT TRAIL -->
+  <section class="scene" data-scene="14">
+    <div class="scene-inner">
+      <div class="reveal" style="--d:.2s">
+        <span class="section-tag" style="color:var(--emerald);border-color:rgba(16,185,129,.3)">Versions &amp;
+          Releases</span>
+      </div>
+      <div class="reveal" style="--d:.4s">
+        <div class="section-title" style="font-size:44px">Versioning, Releases &amp; Audit Trail</div>
+      </div>
+      <div class="reveal" style="--d:.7s">
+        <div class="section-subtitle" style="font-size:17px;margin-bottom:16px">
+          Create frozen, semantically-versioned snapshots of the entire knowledge graph. Released graphs are
+          automatically locked, with a full release timeline for comparison. Every edit, review, and approval is
+          timestamped &mdash; producing defensible audit evidence of compliance state at any point.
+        </div>
+      </div>
+      <div class="reveal" style="--d:1s">
+        <div class="screenshot-frame">
+          <div class="frame-bar">
+            <div class="frame-dots"><span style="background:#ef4444"></span><span
+                style="background:#f59e0b"></span><span style="background:#10b981"></span></div>
+            <div class="frame-url">app.example.com/assistant/versions &mdash; Policy to Knowledge Versions &amp; Releases</div>
+          </div>
+          <div class="frame-body">
+            <img src="screenshots/suite_versions.png" alt="Versioning & Releases">
+          </div>
+        </div>
+      </div>
+      <div class="kpi-bar reveal" style="--d:2s">
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--emerald)">Semantic Versions</div>
+          <div class="kpi-label">v1.0.0 &rarr; v1.0.1</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--cyan)">Frozen Snapshots</div>
+          <div class="kpi-label">Nodes &amp; Edges</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--amber)">Auto-Lock</div>
+          <div class="kpi-label">Release Protection</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color:var(--purple)">Audit Trail</div>
+          <div class="kpi-label">Regulatory Evidence</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 15 — PLATFORM VISION -->
+  <section class="scene" data-scene="15">
+    <div class="scene-inner">
+      <div class="reveal" style="--d:.2s">
+        <span class="section-tag">Platform</span>
+      </div>
+      <div class="reveal" style="--d:.4s">
+        <div class="section-title" style="font-size:44px">One Platform. <span class="glow-text">Every Regulatory
+            Domain.</span></div>
+      </div>
+      <div class="module-orbit reveal" style="--d:.8s">
+        <div class="module-core">
+          <div class="core-label glow-text">Policy to Knowledge Engine</div>
+          <div class="core-sub">Ingest &middot; Extract &middot; Analyze &middot; Operate</div>
+        </div>
+        <div class="module-sat active-mod" style="top:10px;left:50%;transform:translateX(-50%)">Mortgage &amp; Lending
+        </div>
+        <div class="module-sat active-mod" style="top:50%;right:10px;transform:translateY(-50%)">Banking Regulations
+        </div>
+        <div class="module-sat future-mod" style="bottom:10px;left:50%;transform:translateX(-50%)">AML / BSA</div>
+        <div class="module-sat future-mod" style="top:50%;left:10px;transform:translateY(-50%)">Insurance Compliance
+        </div>
+      </div>
+      <div class="reveal" style="--d:1.6s">
+        <div style="font-size:20px;color:var(--text2);font-weight:500;margin-top:4px">
+          Same knowledge graph engine &nbsp;&middot;&nbsp; Same compliance workflow &nbsp;&middot;&nbsp; Any regulatory
+          domain
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    /* Particle system */
+    (function () {
+      const c = document.getElementById('particles'), x = c.getContext('2d');
+      c.width = 1920; c.height = 1080;
+      const dots = []; for (let i = 0; i < 80; i++)dots.push({ x: Math.random() * 1920, y: Math.random() * 1080, vx: (Math.random() - .5) * .3, vy: (Math.random() - .5) * .3, r: Math.random() * 1.5 + .5, a: Math.random() * .3 + .1 });
+      (function draw() {
+        x.clearRect(0, 0, 1920, 1080);
+        for (let i = 0; i < dots.length; i++) {
+          const d = dots[i]; d.x += d.vx; d.y += d.vy;
+          if (d.x < 0) d.x = 1920; if (d.x > 1920) d.x = 0; if (d.y < 0) d.y = 1080; if (d.y > 1080) d.y = 0;
+          x.beginPath(); x.arc(d.x, d.y, d.r, 0, Math.PI * 2); x.fillStyle = 'rgba(6,182,212,' + d.a + ')'; x.fill();
+          for (let j = i + 1; j < dots.length; j++) {
+            const d2 = dots[j], dx = d.x - d2.x, dy = d.y - d2.y, dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 120) { x.beginPath(); x.moveTo(d.x, d.y); x.lineTo(d2.x, d2.y); x.strokeStyle = 'rgba(6,182,212,' + (.06 * (1 - dist / 120)) + ')'; x.lineWidth = .5; x.stroke() }
+          }
+        }
+        requestAnimationFrame(draw);
+      })();
+    })();
+
+    /* Counter animation */
+    function animateCounter(el, target, dur) {
+      dur = dur || 2000; const start = performance.now();
+      (function tick(now) {
+        const p = Math.min((now - start) / dur, 1), ease = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * ease);
+        if (p < 1) requestAnimationFrame(tick);
+      })(performance.now());
+    }
+
+    /* Scene manager */
+    var SCENE_TIMINGS = [20, 26, 21, 27, 27, 31, 43, 43, 28, 25, 30, 23, 24, 27, 22];
+    var scenes = Array.from(document.querySelectorAll('.scene'));
+    var progressFill = document.getElementById('progress');
+    var totalDuration = SCENE_TIMINGS.reduce(function (a, b) { return a + b }, 0);
+    var currentScene = -1, isPlaying = false, startTime = 0, sceneTimerID = null;
+
+    function showScene(i) {
+      scenes.forEach(function (s, j) {
+        if (j === i) { s.classList.add('active') } else { s.classList.remove('active') }
+        if (j === i) {
+          s.querySelectorAll('.reveal').forEach(function (el) { el.style.animation = 'none'; el.offsetHeight; el.style.animation = '' });
+          s.querySelectorAll('[data-count]').forEach(function (el) { animateCounter(el, parseInt(el.dataset.count), 2000) });
+        }
+      });
+      currentScene = i;
+    }
+
+    function updateProgress() {
+      if (!isPlaying) return;
+      var pct = Math.min(((Date.now() - startTime) / 1000 / totalDuration) * 100, 100);
+      progressFill.style.width = pct + '%';
+      if (pct < 100) requestAnimationFrame(updateProgress);
+    }
+
+    function play() { isPlaying = true; startTime = Date.now(); currentScene = -1; nextScene(); updateProgress() }
+    function nextScene() { currentScene++; if (currentScene >= scenes.length) { isPlaying = false; return } showScene(currentScene); sceneTimerID = setTimeout(nextScene, (SCENE_TIMINGS[currentScene] || 10) * 1000) }
+    function prevScene() { if (currentScene > 0) { clearTimeout(sceneTimerID); currentScene -= 2; nextScene() } }
+    function togglePause() { if (isPlaying) { clearTimeout(sceneTimerID); isPlaying = false } else { isPlaying = true; nextScene(); updateProgress() } }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.code === 'Space') { e.preventDefault(); togglePause() }
+      if (e.code === 'ArrowRight') { clearTimeout(sceneTimerID); nextScene() }
+      if (e.code === 'ArrowLeft') { prevScene() }
+      if (e.code === 'KeyR') { clearTimeout(sceneTimerID); play() }
+    });
+
+    var autoplay = new URLSearchParams(window.location.search).get('autoplay') !== 'false';
+    window.addEventListener('load', function () { if (autoplay) setTimeout(play, 500); else showScene(0) });
+  </script>
+</body>
+
+</html>

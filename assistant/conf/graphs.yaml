@@ -1,0 +1,41 @@
+defaults:
+  storage_backend: cql
+  storage_hostname: cassandra
+  index_backend: elasticsearch
+  index_hostname: opensearch
+  index_auth_type: none
+  graph_set_vertex_id: false
+  ids_block_size: 100000
+  storage_batch_loading: false
+  query_batch: true
+aliases: {}
+
+# ---------------------------------------------------------------------------
+# Graph manifest — single source of truth for every knowledge graph the
+# Explorer serves. Add one block per graph and regenerate the JanusGraph
+# config with:
+#
+#     python scripts/generate_graph_config.py
+#
+# Each graph needs a KG JSON at `kg_file` and (optionally) source documents
+# at `docs_folder`. Sample data is NOT distributed with this repo — supply
+# your own under assistant/kgs/ and assistant/kbs/. See the README.
+# ---------------------------------------------------------------------------
+graphs:
+  sample_guidelines:
+    display_name: Sample Guidelines
+    graph_ref: sample_guidelines
+    traversal_source: sample_guidelines_g
+    cassandra_keyspace: janusgraph_sample_guidelines
+    opensearch_index: sample_guidelines_search
+    kg_file: kgs/sample-guidelines-kg.json
+    docs_folder: kbs/sample-guidelines
+
+  example_policies:
+    display_name: Example Policies
+    graph_ref: example_policies
+    traversal_source: example_policies_g
+    cassandra_keyspace: janusgraph_example_policies
+    opensearch_index: example_policies_search
+    kg_file: kgs/example-policies-kg.json
+    docs_folder: kbs/example-policies

@@ -1,0 +1,335 @@
+/* ── Skeleton Loaders ───────────────────── */
+.skeleton {
+    background: linear-gradient(90deg, var(--bg-tertiary) 25%, var(--bg-elevated) 50%, var(--bg-tertiary) 75%);
+    background-size: 200% 100%;
+    animation: skeletonShimmer 1.5s ease-in-out infinite;
+    border-radius: var(--radius-sm);
+}
+@keyframes skeletonShimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+.skeleton-line { height: 12px; margin-bottom: 8px; border-radius: var(--radius-xs); }
+.skeleton-line.w-60 { width: 60%; }
+.skeleton-line.w-80 { width: 80%; }
+.skeleton-line.w-40 { width: 40%; }
+.skeleton-block { height: 60px; margin-bottom: 12px; }
+.skeleton-grid { display: grid; grid-template-columns: 100px 1fr; gap: 8px; margin-bottom: 16px; }
+.skeleton-grid-item { height: 14px; }
+
+/* ── New Chat Button ────────────────────── */
+.new-chat-btn {
+    background: transparent;
+    border: 1px solid var(--glass-border);
+    color: var(--text-muted);
+    padding: 5px 10px;
+    border-radius: var(--radius-pill);
+    font-size: var(--fs-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-family: 'Inter', sans-serif;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+.new-chat-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent-light);
+    background: var(--accent-glow);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(99,102,241,0.12);
+}
+.new-chat-btn svg { width: 12px; height: 12px; }
+
+/* ── Copy Message Button ────────────────── */
+.msg-copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 26px; height: 26px;
+    border-radius: var(--radius-xs);
+    background: var(--bg-secondary);
+    border: 1px solid var(--glass-border);
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all var(--transition-fast);
+    z-index: 2;
+}
+.msg-bubble:hover .msg-copy-btn { opacity: 1; }
+.msg-copy-btn:hover {
+    background: var(--bg-elevated);
+    border-color: var(--accent);
+    color: var(--accent-light);
+    transform: scale(1.05);
+}
+.msg-copy-btn.copied { color: var(--emerald); border-color: var(--emerald); }
+.msg-copy-btn svg { width: 14px; height: 14px; }
+
+/* ── Toast Notification ─────────────────────── */
+.toast-container {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 0.5rem;
+    pointer-events: none;
+}
+
+.toast {
+    pointer-events: auto;
+    padding: 0.625rem 1rem;
+    background: var(--bg-elevated);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+    color: var(--text-primary);
+    font-size: var(--fs-base);
+    font-weight: 500;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25), 0 2px 6px rgba(0,0,0,0.1);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    animation: toastIn 0.3s cubic-bezier(0.16,1,0.3,1) forwards;
+    max-width: 320px;
+}
+
+.toast.toast-out {
+    animation: toastOut 0.25s ease-in forwards;
+}
+
+.toast-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+@keyframes toastIn {
+    from { opacity: 0; transform: translateY(12px) scale(0.95); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes toastOut {
+    from { opacity: 1; transform: translateY(0) scale(1); }
+    to   { opacity: 0; transform: translateY(-8px) scale(0.95); }
+}
+
+/* ── Theme Toggle ──────────────────────────── */
+.theme-toggle {
+    position: relative;
+    width: 34px; height: 34px;
+    border-radius: 10px;
+    border: 1px solid var(--glass-border);
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+}
+.theme-toggle:hover {
+    background: var(--bg-elevated);
+    border-color: var(--accent);
+    transform: scale(1.05);
+}
+.theme-toggle svg {
+    width: 18px; height: 18px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+.theme-toggle .icon-sun { display: none; color: #f59e0b; }
+.theme-toggle .icon-moon { display: block; color: var(--text-secondary); }
+body.light-theme .theme-toggle .icon-sun { display: block; }
+body.light-theme .theme-toggle .icon-moon { display: none; }
+
+/* Red X in Policy to Knowledge */
+.brand-x { color: #ef4444; -webkit-text-fill-color: #ef4444; }
+
+/* ── Gremlin copy button ──────────────────── */
+.gremlin-copy-btn {
+    background: transparent;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xs);
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 2px 8px;
+    font-size: var(--fs-xs);
+    font-family: inherit;
+    transition: all var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+.gremlin-copy-btn:hover {
+    color: var(--accent-light);
+    border-color: var(--accent-light);
+    background: rgba(129,140,248,0.08);
+    transform: translateY(-1px);
+}
+.gremlin-copy-btn.copied {
+    color: var(--emerald);
+    border-color: var(--emerald);
+}
+
+/* ── AI Rewrite Sparkle Button ─────────────── */
+.ai-rewrite-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 2px;
+    border-radius: var(--radius-xs);
+    transition: all var(--transition-fast);
+    vertical-align: middle;
+    margin-left: 4px;
+}
+.ai-rewrite-btn:hover {
+    color: var(--amber);
+    background: rgba(251,191,36,0.12);
+    transform: scale(1.15);
+}
+.ai-rewrite-btn:active {
+    transform: scale(0.95);
+}
+.ai-rewrite-btn .sparkle-icon {
+    font-size: 13px;
+    line-height: 1;
+    letter-spacing: -2px;
+}
+.ai-rewrite-btn.ai-rewrite-loading {
+    pointer-events: none;
+    animation: sparkle-spin 0.8s linear infinite;
+}
+.ai-rewrite-btn.ai-rewrite-loading .sparkle-icon {
+    filter: brightness(1.3);
+}
+@keyframes sparkle-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Textarea wrapper for inline sparkle in comment form */
+.textarea-with-sparkle {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+}
+.textarea-with-sparkle textarea {
+    width: 100%;
+    padding-right: 28px;
+}
+.textarea-with-sparkle .ai-rewrite-btn {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    z-index: 1;
+}
+
+/* Sparkle buttons inside labels (create/edit forms) */
+.create-field label .ai-rewrite-btn,
+.edit-field label .ai-rewrite-btn {
+    margin-left: 6px;
+    opacity: 0.6;
+}
+.create-field label .ai-rewrite-btn:hover,
+.edit-field label .ai-rewrite-btn:hover {
+    opacity: 1;
+}
+
+/* ── Button Loading State ───────────────── */
+.btn-loading {
+    opacity: 0.7;
+    pointer-events: none;
+    position: relative;
+}
+.btn-loading::after {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-left: 6px;
+    border: 2px solid transparent;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: btnSpin 0.6s linear infinite;
+    vertical-align: middle;
+}
+@keyframes btnSpin {
+    to { transform: rotate(360deg); }
+}
+
+/* ── Confirmation Dialog ────────────────── */
+.confirm-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.6);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.15s ease-out;
+}
+.confirm-dialog {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    max-width: 380px;
+    width: 90%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+.confirm-message {
+    font-size: var(--fs-sm);
+    color: var(--text-primary);
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+}
+.confirm-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+.confirm-btn {
+    padding: 6px 16px;
+    border-radius: var(--radius-xs);
+    font-size: var(--fs-xs);
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    transition: background 0.15s, border-color 0.15s;
+}
+.confirm-btn.cancel {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+.confirm-btn.cancel:hover {
+    background: var(--bg-elevated);
+}
+.confirm-btn.primary {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+}
+.confirm-btn.primary:hover {
+    background: var(--accent-light);
+}
+.confirm-btn.danger {
+    background: var(--rose);
+    color: #fff;
+    border-color: var(--rose);
+}
+.confirm-btn.danger:hover {
+    background: #f43f5e;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }

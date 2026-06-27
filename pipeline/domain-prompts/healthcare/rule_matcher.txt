@@ -1,0 +1,88 @@
+# Rule Matcher Prompt
+# Compares rules WITHIN the same rule_behavior (HOW) from two knowledge graphs
+
+You are an expert healthcare compliance analyst specializing in rule comparison and conflict detection.
+
+## TASK
+Compare two business rules from different compliance documents and classify their relationship.
+
+## INPUT
+You will receive pairs of rules that are ALREADY from the same rule_behavior category (HOW dimension).
+
+**Rule A** (from {g1_name}):
+```json
+{rule_a}
+```
+
+**Rule B** (from {g2_name}):
+```json
+{rule_b}
+```
+
+## CLASSIFICATION CRITERIA
+
+### 1. IDENTICAL (Score: 95-100)
+Rules that express the EXACT same requirement:
+- Same numeric thresholds or timeframes
+- Same conditions
+- Same consequences
+- May differ only in wording/formatting
+
+Examples:
+- "PHI breach ≥500 must be reported within 60 days" = "60-day HHS notification for breaches of 500+ individuals"
+- "H&P required within 24 hours of admission" = "History and physical must be completed no later than 24 hours post-admission"
+
+### 2. EQUIVALENT (Score: 80-94)
+Rules with the SAME practical effect but different expression:
+- Same intent and outcome
+- Minor threshold variations that don't change compliance
+- Different scope but overlapping requirements
+
+Examples:
+- "2-year reappointment cycle required" ≈ "Credentialing renewal every 24 months"
+- "Universal protocol before every surgery" ≈ "Time-out required prior to all invasive procedures"
+
+### 3. CONTRADICTORY (Score: 60-79)
+Rules about the SAME topic with CONFLICTING requirements:
+- Different numeric thresholds for same metric
+- Opposite conditions or consequences
+- Mutually exclusive requirements
+
+Examples:
+- G1: "Breach notification within 60 days" vs G2: "Notification within 45 days" (TIMEFRAME_CONFLICT)
+- G1: "H&P within 24 hours" vs G2: "H&P within 30 hours" (THRESHOLD_CONFLICT)
+
+### 4. UNRELATED (Score: 0-59)
+Rules that address different topics despite same rule_type.
+
+## OUTPUT FORMAT
+
+Return ONLY valid JSON:
+```json
+{{
+  "relationship": "IDENTICAL|EQUIVALENT|CONTRADICTORY|UNRELATED",
+  "confidence": 0.85,
+  "similarity_score": 92,
+  "reasoning": "Brief explanation of the classification",
+  "key_comparison": {{
+    "topic_match": true,
+    "threshold_match": true,
+    "condition_match": true,
+    "consequence_match": true
+  }},
+  "conflict_detail": {{
+    "type": "THRESHOLD_CONFLICT|POLICY_CONFLICT|TIMEFRAME_CONFLICT|SCOPE_CONFLICT|null",
+    "g1_value": "value from G1 rule",
+    "g2_value": "value from G2 rule",
+    "resolution_hint": "Which rule is stricter or how to resolve"
+  }}
+}}
+```
+
+## IMPORTANT GUIDELINES
+
+1. **Same Behavior Comparison**: Both rules are already from the same rule_behavior — focus on semantic similarity
+2. **Threshold Precision**: Pay close attention to timeframes and numeric values — 60 days vs 45 days is a conflict
+3. **Condition Alignment**: Check if rules apply to same care settings and patient populations
+4. **Be Conservative**: When uncertain, classify as UNRELATED rather than forcing a match
+5. **Conflict Detection**: CONTRADICTORY classification is critical — never miss threshold conflicts

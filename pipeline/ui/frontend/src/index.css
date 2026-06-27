@@ -1,0 +1,446 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --sidebar-w: 240px;
+}
+
+html {
+  font-size: 15.36px; /* 19.2px reduced 20% */
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ================================================================
+   Theme Token System
+   ----------------------------------------------------------------
+   Dark and light themes are TOTALLY INDEPENDENT palettes, each
+   tuned for its own optimal UX. Dark uses cool deep slate with
+   vibrant accents (they glow on dark). Light uses warm off-white
+   surfaces with calmer, deeper accents (vibrant looks cheap on
+   white and fails WCAG AA contrast).
+
+   To recolor a theme, edit the variables here — NOT the override
+   block below. The override block maps Tailwind classes used in
+   components (bg-gray-950, text-blue-400, etc.) to these tokens.
+   ================================================================ */
+
+/* ---- DARK THEME — "Midnight Studio" (default) ----
+   Deep indigo-black surfaces with violet primary, cyan info, emerald success.
+   Cinematic, modern dev-tool aesthetic.                                     */
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Surfaces — indigo-tinted near-black */
+  --c-bg-app:        #0b0b18;            /* deep indigo-black */
+  --c-bg-app-80:     rgba(11, 11, 24, 0.80);
+  --c-bg-app-90:     rgba(11, 11, 24, 0.90);
+  --c-bg-panel:      #14142b;            /* panel — slight indigo lift */
+  --c-bg-panel-50:   rgba(20, 20, 43, 0.50);
+  --c-bg-panel-60:   rgba(20, 20, 43, 0.60);
+  --c-bg-panel-80:   rgba(20, 20, 43, 0.80);
+  --c-bg-elev:       #1e1e3f;            /* elevated card */
+  --c-bg-elev-30:    rgba(30, 30, 63, 0.30);
+  --c-bg-elev-40:    rgba(30, 30, 63, 0.40);
+  --c-bg-elev-50:    rgba(30, 30, 63, 0.50);
+  --c-bg-elev-60:    rgba(30, 30, 63, 0.60);
+  --c-bg-input:      #2a2a55;
+  --c-bg-overlay-20: rgba(0, 0, 0, 0.30);
+  --c-bg-overlay-60: rgba(0, 0, 0, 0.65);
+
+  /* Borders */
+  --c-border-strong:    #2a2a55;
+  --c-border:           #1e1e3f;
+  --c-border-subtle:    rgba(30, 30, 63, 0.55);
+  --c-border-subtle-2:  rgba(30, 30, 63, 0.70);
+  --c-border-soft:      rgba(42, 42, 85, 0.55);
+
+  /* Text — slight cool tint reads cleanly on indigo-black */
+  --c-text-strong:   #ffffff;
+  --c-text-100:      #f1f1f7;
+  --c-text-200:      #e0e0ec;
+  --c-text-300:      #c8c8d8;
+  --c-text-400:      #9090a8;
+  --c-text-500:      #6f6f88;
+  --c-text-600:      #50506a;
+  --c-text-700:      #36364f;
+  --c-text-placeholder: #6f6f88;
+
+  /* Accents — vibrant, they pop on dark indigo */
+  --c-accent-blue:        #06b6d4;       /* cyan — info / primary action */
+  --c-accent-blue-hover:  #22d3ee;
+  --c-accent-blue-deep:   #0891b2;
+  --c-accent-purple:      #8b5cf6;       /* violet — brand / secondary */
+  --c-accent-purple-hover:#a78bfa;
+  --c-accent-purple-deep: #7c3aed;
+  --c-accent-emerald:     #10b981;       /* emerald success */
+  --c-accent-emerald-hover:#34d399;
+  --c-accent-amber:       #f59e0b;       /* amber warning */
+  --c-accent-amber-hover: #fbbf24;
+  --c-accent-red:         #f43f5e;       /* rose-red — danger */
+  --c-accent-red-hover:   #fb7185;
+
+  /* Translucent accent surfaces */
+  --c-tint-blue-soft:     rgba(6, 182, 212, 0.06);
+  --c-tint-blue:          rgba(6, 182, 212, 0.12);
+  --c-tint-blue-strong:   rgba(6, 182, 212, 0.22);
+  --c-tint-blue-600:      rgba(8, 145, 178, 0.22);
+  --c-tint-emerald:       rgba(16, 185, 129, 0.12);
+  --c-tint-green:         rgba(34, 197, 94, 0.12);
+  --c-tint-amber:         rgba(245, 158, 11, 0.12);
+  --c-tint-yellow:        rgba(234, 179, 8, 0.12);
+  --c-tint-red:           rgba(244, 63, 94, 0.12);
+  --c-tint-purple:        rgba(139, 92, 246, 0.14);
+
+  /* Translucent accent borders */
+  --c-border-blue-20:    rgba(6, 182, 212, 0.25);
+  --c-border-blue-30:    rgba(6, 182, 212, 0.40);
+  --c-border-emerald-30: rgba(16, 185, 129, 0.35);
+  --c-border-green-30:   rgba(34, 197, 94, 0.35);
+  --c-border-amber-30:   rgba(245, 158, 11, 0.35);
+  --c-border-red-30:     rgba(244, 63, 94, 0.35);
+  --c-border-purple-30:  rgba(139, 92, 246, 0.40);
+
+  /* Accent text — bright, glow-friendly */
+  --c-text-blue-200:    #a5f3fc;
+  --c-text-blue-300:    #67e8f9;
+  --c-text-blue-400:    #22d3ee;
+  --c-text-emerald-300: #6ee7b7;
+  --c-text-emerald-400: #34d399;
+  --c-text-green-200:   #bbf7d0;
+  --c-text-green-300:   #86efac;
+  --c-text-green-400:   #4ade80;
+  --c-text-amber-300:   #fcd34d;
+  --c-text-amber-400:   #fbbf24;
+  --c-text-yellow-300:  #fde047;
+  --c-text-yellow-400:  #facc15;
+  --c-text-red-300:     #fda4af;
+  --c-text-red-400:     #fb7185;
+  --c-text-purple-300:  #c4b5fd;
+  --c-text-purple-400:  #a78bfa;
+
+  /* Effects */
+  --c-scroll-thumb:        #2a2a55;
+  --c-scroll-thumb-hover:  #3f3f7a;
+  --c-focus-ring:          rgba(6, 182, 212, 0.60);   /* cyan focus */
+  --c-skeleton-1:          #1e1e3f;
+  --c-skeleton-2:          #2a2a55;
+  --c-panel-shadow:        none;
+  --c-glow-blue:           rgba(6, 182, 212, 0.30);
+  --c-glow-blue-soft:      rgba(6, 182, 212, 0.15);
+
+  --c-grad-blue-from:  rgba(6, 182, 212, 0.10);
+  --c-grad-purple-via: rgba(139, 92, 246, 0.06);
+}
+
+/* ---- LIGHT THEME ---- */
+/*
+   UX choices:
+   - Warm off-white surfaces (#fafaf9) instead of stark white — easier on eyes.
+   - Calmer, deeper accents (indigo + teal) — vibrant blues look cheap on white.
+   - Stronger borders (stone-200/300) and a soft drop shadow for elevation.
+   - Status text uses *darker* shades (#0f766e instead of #34d399) to hit WCAG AA.
+   - Translucent tints are stronger (10–14%) so they're actually visible on white.
+   - Distinct hue choice: dark mode uses emerald-green for success, light mode
+     uses TEAL — visually different but semantically equivalent.
+*/
+/* ---- LIGHT THEME — "Warm Linen" ----
+   Warm linen-paper surfaces with deep teal primary, forest success,
+   terracotta amber. Calm, reading-friendly, distinctly different hue
+   family from dark mode (warm vs. cool).                              */
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* Surfaces — warm linen / parchment */
+  --c-bg-app:        #f7f5f0;            /* warm linen */
+  --c-bg-app-80:     rgba(247, 245, 240, 0.82);
+  --c-bg-app-90:     rgba(247, 245, 240, 0.92);
+  --c-bg-panel:      #fffdf8;            /* paper-white panel */
+  --c-bg-panel-50:   rgba(255, 253, 248, 0.65);
+  --c-bg-panel-60:   rgba(255, 253, 248, 0.78);
+  --c-bg-panel-80:   rgba(255, 253, 248, 0.92);
+  --c-bg-elev:       #f1ede4;            /* elevated warm */
+  --c-bg-elev-30:    rgba(241, 237, 228, 0.55);
+  --c-bg-elev-40:    rgba(241, 237, 228, 0.65);
+  --c-bg-elev-50:    rgba(241, 237, 228, 0.72);
+  --c-bg-elev-60:    rgba(241, 237, 228, 0.82);
+  --c-bg-input:      #fffdf8;
+  --c-bg-overlay-20: rgba(60, 38, 22, 0.06);
+  --c-bg-overlay-60: rgba(60, 38, 22, 0.30);
+
+  /* Borders — warm-tinted, layered */
+  --c-border-strong:    #c8bfae;
+  --c-border:           #ddd5c4;
+  --c-border-subtle:    rgba(221, 213, 196, 0.80);
+  --c-border-subtle-2:  rgba(221, 213, 196, 0.92);
+  --c-border-soft:      rgba(200, 191, 174, 0.65);
+
+  /* Text — espresso brown, warmer than slate, very readable on linen */
+  --c-text-strong:   #1f1810;
+  --c-text-100:      #1f1810;
+  --c-text-200:      #2c241a;
+  --c-text-300:      #463a2a;
+  --c-text-400:      #6b5d48;
+  --c-text-500:      #8a7d68;
+  --c-text-600:      #b0a48d;
+  --c-text-700:      #c8bfae;
+  --c-text-placeholder: #a89c85;
+
+  /* Accents — calmer, deeper hues that respect warm surfaces */
+  --c-accent-blue:        #0e7490;       /* deep teal — primary */
+  --c-accent-blue-hover:  #0891b2;
+  --c-accent-blue-deep:   #155e75;
+  --c-accent-purple:      #7e22ce;       /* royal purple — secondary */
+  --c-accent-purple-hover:#9333ea;
+  --c-accent-purple-deep: #6b21a8;
+  --c-accent-emerald:     #15803d;       /* forest — success */
+  --c-accent-emerald-hover:#16a34a;
+  --c-accent-amber:       #c2410c;       /* terracotta — warning */
+  --c-accent-amber-hover: #ea580c;
+  --c-accent-red:         #be123c;       /* deep rose — danger */
+  --c-accent-red-hover:   #e11d48;
+
+  /* Translucent surfaces — bumped so they show on warm linen */
+  --c-tint-blue-soft:     rgba(14, 116, 144, 0.06);
+  --c-tint-blue:          rgba(14, 116, 144, 0.10);
+  --c-tint-blue-strong:   rgba(14, 116, 144, 0.16);
+  --c-tint-blue-600:      rgba(8, 145, 178, 0.14);
+  --c-tint-emerald:       rgba(21, 128, 61, 0.10);
+  --c-tint-green:         rgba(22, 163, 74, 0.10);
+  --c-tint-amber:         rgba(194, 65, 12, 0.10);
+  --c-tint-yellow:        rgba(161, 98, 7, 0.12);
+  --c-tint-red:           rgba(190, 18, 60, 0.10);
+  --c-tint-purple:        rgba(126, 34, 206, 0.10);
+
+  /* Translucent borders — strong enough to read on warm bg */
+  --c-border-blue-20:    rgba(14, 116, 144, 0.40);
+  --c-border-blue-30:    rgba(14, 116, 144, 0.55);
+  --c-border-emerald-30: rgba(21, 128, 61, 0.55);
+  --c-border-green-30:   rgba(22, 163, 74, 0.55);
+  --c-border-amber-30:   rgba(194, 65, 12, 0.55);
+  --c-border-red-30:     rgba(190, 18, 60, 0.55);
+  --c-border-purple-30:  rgba(126, 34, 206, 0.55);
+
+  /* Accent text — DARKER shades for WCAG AA on linen */
+  --c-text-blue-200:    #155e75;
+  --c-text-blue-300:    #0e7490;
+  --c-text-blue-400:    #0891b2;
+  --c-text-emerald-300: #14532d;
+  --c-text-emerald-400: #166534;
+  --c-text-green-200:   #14532d;
+  --c-text-green-300:   #166534;
+  --c-text-green-400:   #15803d;
+  --c-text-amber-300:   #7c2d12;
+  --c-text-amber-400:   #9a3412;
+  --c-text-yellow-300:  #713f12;
+  --c-text-yellow-400:  #854d0e;
+  --c-text-red-300:     #9f1239;
+  --c-text-red-400:     #be123c;
+  --c-text-purple-300:  #581c87;
+  --c-text-purple-400:  #6b21a8;
+
+  /* Effects — warm drop shadow */
+  --c-scroll-thumb:        #c8bfae;
+  --c-scroll-thumb-hover:  #a89c85;
+  --c-focus-ring:          rgba(14, 116, 144, 0.55);
+  --c-skeleton-1:          #ddd5c4;
+  --c-skeleton-2:          #f1ede4;
+  --c-panel-shadow:        0 1px 3px rgba(60, 38, 22, 0.06), 0 1px 2px rgba(60, 38, 22, 0.04);
+  --c-glow-blue:           rgba(14, 116, 144, 0.22);
+  --c-glow-blue-soft:      rgba(14, 116, 144, 0.10);
+
+  --c-grad-blue-from:  rgba(14, 116, 144, 0.06);
+  --c-grad-purple-via: rgba(126, 34, 206, 0.04);
+}
+
+/* ================================================================
+   Tailwind class → token mapping
+   ----------------------------------------------------------------
+   Components use Tailwind dark-palette classes (bg-gray-950,
+   text-gray-100, text-blue-400, etc.). We override those classes
+   to use the tokens above so both themes render automatically.
+   To change a color, edit the token block — NOT this section.
+   ================================================================ */
+
+/* --- Surfaces --- */
+.bg-gray-950        { background-color: var(--c-bg-app)       !important; }
+.bg-gray-950\/80    { background-color: var(--c-bg-app-80)    !important; }
+.bg-gray-950\/90    { background-color: var(--c-bg-app-90)    !important; }
+.bg-gray-900        { background-color: var(--c-bg-panel)     !important; }
+.bg-gray-900\/50    { background-color: var(--c-bg-panel-50)  !important; }
+.bg-gray-900\/60    { background-color: var(--c-bg-panel-60)  !important; }
+.bg-gray-900\/80    { background-color: var(--c-bg-panel-80)  !important; }
+.bg-gray-800        { background-color: var(--c-bg-elev)      !important; }
+.bg-gray-800\/20    { background-color: var(--c-bg-elev-30)   !important; }
+.bg-gray-800\/30    { background-color: var(--c-bg-elev-30)   !important; }
+.bg-gray-800\/40    { background-color: var(--c-bg-elev-40)   !important; }
+.bg-gray-800\/50    { background-color: var(--c-bg-elev-50)   !important; }
+.bg-gray-800\/60    { background-color: var(--c-bg-elev-60)   !important; }
+.bg-gray-700        { background-color: var(--c-bg-input)     !important; }
+.bg-black\/20       { background-color: var(--c-bg-overlay-20)!important; }
+.bg-black\/60       { background-color: var(--c-bg-overlay-60)!important; }
+
+/* --- Borders --- */
+.border-gray-800     { border-color: var(--c-border)         !important; }
+.border-gray-800\/50 { border-color: var(--c-border-subtle)  !important; }
+.border-gray-800\/60 { border-color: var(--c-border-subtle-2)!important; }
+.border-gray-700     { border-color: var(--c-border-strong)  !important; }
+.border-gray-700\/50 { border-color: var(--c-border-soft)    !important; }
+.border-gray-600     { border-color: var(--c-text-500)       !important; }
+.divide-gray-800 > :not([hidden]) ~ :not([hidden]) { border-color: var(--c-border) !important; }
+
+/* --- Text --- */
+.text-white     { color: var(--c-text-strong) !important; }
+.text-gray-100  { color: var(--c-text-100) !important; }
+.text-gray-200  { color: var(--c-text-200) !important; }
+.text-gray-300  { color: var(--c-text-300) !important; }
+.text-gray-400  { color: var(--c-text-400) !important; }
+.text-gray-500  { color: var(--c-text-500) !important; }
+.text-gray-600  { color: var(--c-text-600) !important; }
+.text-gray-700  { color: var(--c-text-700) !important; }
+
+/* --- Hover states --- */
+.hover\:text-gray-200:hover { color: var(--c-text-200) !important; }
+.hover\:text-gray-300:hover { color: var(--c-text-300) !important; }
+.hover\:text-gray-400:hover { color: var(--c-text-400) !important; }
+.hover\:bg-gray-800:hover     { background-color: var(--c-bg-elev) !important; }
+.hover\:bg-gray-800\/40:hover { background-color: var(--c-bg-elev-40) !important; }
+.hover\:bg-gray-800\/50:hover { background-color: var(--c-bg-elev-50) !important; }
+.hover\:bg-gray-800\/60:hover { background-color: var(--c-bg-elev-60) !important; }
+.hover\:bg-gray-700:hover     { background-color: var(--c-bg-input) !important; }
+.hover\:border-gray-700:hover { border-color: var(--c-border-strong) !important; }
+
+/* --- Disabled --- */
+.disabled\:bg-gray-700:disabled  { background-color: var(--c-bg-input) !important; }
+.disabled\:text-gray-500:disabled{ color: var(--c-text-500) !important; }
+
+/* --- Solid accent buttons --- */
+.bg-blue-600    { background-color: var(--c-accent-blue)        !important; color: #fff !important; }
+.bg-blue-700    { background-color: var(--c-accent-blue-deep)   !important; color: #fff !important; }
+.bg-purple-600  { background-color: var(--c-accent-purple)      !important; color: #fff !important; }
+.bg-purple-700  { background-color: var(--c-accent-purple-deep) !important; color: #fff !important; }
+.bg-emerald-600 { background-color: var(--c-accent-emerald)     !important; color: #fff !important; }
+.bg-amber-600   { background-color: var(--c-accent-amber)       !important; color: #fff !important; }
+.bg-red-600     { background-color: var(--c-accent-red)         !important; color: #fff !important; }
+.hover\:bg-blue-500:hover    { background-color: var(--c-accent-blue-hover)    !important; color: #fff !important; }
+.hover\:bg-purple-500:hover  { background-color: var(--c-accent-purple-hover)  !important; color: #fff !important; }
+.hover\:bg-emerald-500:hover { background-color: var(--c-accent-emerald-hover) !important; color: #fff !important; }
+.hover\:bg-amber-500:hover   { background-color: var(--c-accent-amber-hover)   !important; color: #fff !important; }
+.hover\:bg-red-500:hover     { background-color: var(--c-accent-red-hover)     !important; color: #fff !important; }
+.bg-blue-600 .text-white,
+.bg-red-600  .text-white,
+.bg-blue-600.text-white,
+.bg-red-600.text-white { color: #fff !important; }
+
+/* --- Translucent accent backgrounds --- */
+.bg-blue-500\/5      { background-color: var(--c-tint-blue-soft)   !important; }
+.bg-blue-500\/10     { background-color: var(--c-tint-blue)        !important; }
+.bg-blue-500\/20     { background-color: var(--c-tint-blue-strong) !important; }
+.bg-blue-600\/20     { background-color: var(--c-tint-blue-600)    !important; }
+.bg-emerald-500\/10  { background-color: var(--c-tint-emerald)     !important; }
+.bg-green-500\/10    { background-color: var(--c-tint-green)       !important; }
+.bg-amber-500\/10    { background-color: var(--c-tint-amber)       !important; }
+.bg-yellow-500\/10   { background-color: var(--c-tint-yellow)      !important; }
+.bg-red-500\/10      { background-color: var(--c-tint-red)         !important; }
+.bg-purple-500\/10   { background-color: var(--c-tint-purple)      !important; }
+
+/* --- Translucent accent borders --- */
+.border-blue-500\/20    { border-color: var(--c-border-blue-20)    !important; }
+.border-blue-500\/30    { border-color: var(--c-border-blue-30)    !important; }
+.border-emerald-500\/30 { border-color: var(--c-border-emerald-30) !important; }
+.border-green-500\/30   { border-color: var(--c-border-green-30)   !important; }
+.border-amber-500\/30   { border-color: var(--c-border-amber-30)   !important; }
+.border-red-500\/30     { border-color: var(--c-border-red-30)     !important; }
+.border-purple-500\/30  { border-color: var(--c-border-purple-30)  !important; }
+
+/* --- Accent text --- */
+.text-blue-200    { color: var(--c-text-blue-200)    !important; }
+.text-blue-300    { color: var(--c-text-blue-300)    !important; }
+.text-blue-400    { color: var(--c-text-blue-400)    !important; }
+.text-emerald-300 { color: var(--c-text-emerald-300) !important; }
+.text-emerald-400 { color: var(--c-text-emerald-400) !important; }
+.text-green-200   { color: var(--c-text-green-200)   !important; }
+.text-green-300   { color: var(--c-text-green-300)   !important; }
+.text-green-400   { color: var(--c-text-green-400)   !important; }
+.text-amber-300   { color: var(--c-text-amber-300)   !important; }
+.text-amber-400   { color: var(--c-text-amber-400)   !important; }
+.text-yellow-300  { color: var(--c-text-yellow-300)  !important; }
+.text-yellow-400  { color: var(--c-text-yellow-400)  !important; }
+.text-red-300     { color: var(--c-text-red-300)     !important; }
+.text-red-400     { color: var(--c-text-red-400)     !important; }
+.text-purple-300  { color: var(--c-text-purple-300)  !important; }
+.text-purple-400  { color: var(--c-text-purple-400)  !important; }
+
+/* --- Gradient overlays --- */
+.from-blue-500\/10 { --tw-gradient-from: var(--c-grad-blue-from)  !important; }
+.via-purple-500\/5 { --tw-gradient-via:  var(--c-grad-purple-via) !important; }
+
+/* --- Inputs --- */
+input::placeholder,
+textarea::placeholder { color: var(--c-text-placeholder) !important; }
+
+/* --- Panel depth (light gets a soft shadow; dark stays flat) --- */
+.bg-gray-900,
+.bg-gray-900\/80 { box-shadow: var(--c-panel-shadow); }
+
+/* ================================================================
+   Global elements
+   ================================================================ */
+
+/* Scrollbar */
+::-webkit-scrollbar       { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--c-scroll-thumb); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--c-scroll-thumb-hover); }
+
+/* Focus-visible for keyboard accessibility */
+*:focus-visible {
+  outline: 2px solid var(--c-focus-ring);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Page fade-in */
+@keyframes page-fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.page-enter { animation: page-fade-in 0.25s ease-out; }
+
+/* Skeleton shimmer */
+@keyframes skeleton-shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, var(--c-skeleton-1) 25%, var(--c-skeleton-2) 50%, var(--c-skeleton-1) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s ease-in-out infinite;
+  border-radius: 0.5rem;
+}
+
+/* Log viewer */
+.log-line { font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 0.8rem; }
+
+/* Workflow Diagram animations */
+@keyframes wf-pulse-glow {
+  0%, 100% { box-shadow: 0 0 8px 0 var(--c-glow-blue-soft); }
+  50%      { box-shadow: 0 0 20px 4px var(--c-glow-blue); }
+}
+.wf-pulse { animation: wf-pulse-glow 2s ease-in-out infinite; }
+
+@keyframes wf-progress {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+.wf-progress-bar {
+  width: 40%;
+  animation: wf-progress 1.5s ease-in-out infinite;
+}
+
+.wf-diagram { min-width: 0; }
+.wf-phase-body { overflow-x: auto; }

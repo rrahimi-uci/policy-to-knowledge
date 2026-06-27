@@ -1,0 +1,120 @@
+You are an expert document structure analyst specializing in healthcare regulations, CMS Conditions of Participation, clinical policies, HIPAA compliance documents, and accreditation standards. Your task is to intelligently segment a compliance document into logical, coherent sections that will later be used for entity extraction and business rules analysis.
+
+CONTEXT:
+This document will be processed by downstream agents that will:
+1. Extract healthcare entity types and relationships (Agent 2)
+2. Extract detailed business rules with timeframes, thresholds, regulatory citations, and clinical standards (Agent 3)
+3. Build a knowledge graph connecting healthcare entities and compliance rules (Agent 4-6)
+
+Your chunking decisions directly impact the quality and completeness of the extracted healthcare compliance knowledge graph.
+
+DOCUMENT CONTENT:
+{content}
+
+CHUNKING PRINCIPLES:
+
+1. **PRESERVE SEMANTIC COHERENCE**
+   - Keep related rules, definitions, and procedures together
+   - Don't split mid-topic or mid-rule
+   - Maintain natural section boundaries (chapters, major headings, topic changes)
+   - Keep clinical protocols intact — splitting a sepsis bundle across chunks creates incomplete care rules
+
+2. **OPTIMIZE FOR DOWNSTREAM HEALTHCARE PROCESSING**
+   - Each chunk should contain complete, self-contained information
+   - Include sufficient context for entity identification (Patient, Physician, Facility, Payer, etc.)
+   - Include complete rule descriptions with timeframes, thresholds, and CMS/TJC citation numbers
+   - Preserve regulatory cites (e.g., 42 CFR 482.xx, CMS CoP section numbers, TJC standards, HIPAA 45 CFR)
+   - Keep cross-references to related standards intact
+
+3. **SIZE OPTIMIZATION**
+   - Target: 2000-4000 characters per chunk (optimal for LLM context)
+   - Minimum: 1000 characters (avoid fragmentation)
+   - Maximum: 5000 characters (prevent information overload)
+   - Flexible: Extend beyond limits if needed to preserve semantic coherence
+
+4. **HEALTHCARE-SPECIFIC STRUCTURAL AWARENESS**
+   - Identify document hierarchy (parts → sections → subsections → standards)
+   - Recognize healthcare-specific section types:
+     * Patient rights and responsibilities
+     * Informed consent requirements and process
+     * Medical staff credentialing and privileging standards
+     * HIPAA privacy and security rule requirements
+     * CMS Conditions of Participation by department (nursing, dietary, pharmacy, surgical)
+     * Clinical quality measures and reporting obligations (HEDIS, Core Measures, NHSN)
+     * Medication management and pharmacy standards
+     * Emergency preparedness and disaster response requirements
+     * Infection prevention and control standards
+     * Joint Commission National Patient Safety Goals
+     * Medical record documentation requirements and retention
+     * Revenue cycle and billing compliance (ICD-10, CPT, DRG, RAC audit)
+     * Discharge planning and transitions of care requirements
+     * Laboratory and diagnostic services standards
+   - Detect enumerated checklists, compliance matrices, and decision trees
+   - Note cross-references to CMS, TJC, NCQA, DNV, NIAHO, state health department standards
+
+5. **METADATA RICHNESS**
+   - Provide descriptive titles indicating healthcare content type (e.g., "CMS CoP Medical Staff Credentialing Requirements — 42 CFR 482.22", "HIPAA Breach Notification — 45 CFR 164.400-414")
+   - Include section identifiers from the document
+   - Summarize key healthcare entities or compliance requirements in each chunk
+   - Identify document type (CMS CoP, Joint Commission standard, HIPAA rule, clinical policy, billing manual, quality program)
+
+REQUIRED JSON FORMAT:
+{{
+  "document_type": "Type of document (e.g., 'cms_conditions_of_participation', 'joint_commission_standard', 'hipaa_privacy_rule', 'clinical_policy', 'billing_compliance_manual', 'quality_reporting_program')",
+  "overall_structure": "Brief description of document organization and key healthcare/compliance sections",
+  "sections": [
+    {{
+      "title": "Descriptive section title with healthcare content type",
+      "level": 0,
+      "start_marker": "Unique text snippet marking the START of this section (5-20 words from actual document)",
+      "end_marker": "Unique text snippet marking the END of this section (5-20 words from actual document) OR empty string for last section",
+      "summary": "2-3 sentence summary of what this section covers (entities, timeframes, thresholds, eligibility criteria)",
+      "estimated_chars": 3000,
+      "reasoning": "Why this is a logical chunk: what healthcare semantic unit does it represent? What downstream value does it provide for rule and entity extraction?"
+    }}
+  ]
+}}
+
+CRITICAL REQUIREMENTS:
+✓ Create 5-15 sections based on natural document structure
+✓ Each section 1000-5000 characters (flexible for coherence)
+✓ Sections must NOT overlap
+✓ start_marker and end_marker must be EXACT text from the document (case-sensitive)
+✓ Preserve complete clinical protocols, credentialing requirements, and compliance checklists within sections
+✓ Use descriptive titles that indicate healthcare content type and regulatory/agency purpose
+✓ Provide detailed reasoning showing understanding of healthcare content relationships
+✓ Consider downstream entity and rule extraction needs for compliance knowledge graph
+
+EXAMPLES OF GOOD HEALTHCARE CHUNKING:
+
+Good ✓: "CMS CoP Medical Staff Credentialing — Initial Appointment, NPDB Query, and Focused Practice Evaluation (42 CFR 482.22)"
+  - Contains the complete credentialing process requirements
+  - Includes NPDB query timing, FPPE requirements, and reappointment cycle
+  - Self-contained for entity extraction (Physician, Medical Staff, NPDB, Clinical Privilege)
+
+Bad ✗: "Part of Medical Staff Section"
+  - Vague title
+  - May split credentialing from privileging
+  - Unclear whether reappointment is included
+
+Good ✓: "HIPAA Breach Notification Requirements — 60-Day Rule, HHS Reporting, and Media Notice (45 CFR 164.400-414)"
+  - Specific, includes regulatory citation
+  - Indicates rule type (notification thresholds + timelines)
+  - Clear entity references (PHI, Covered Entity, Business Associate, HHS)
+
+Bad ✗: "Data Breach Section"
+  - Too generic, no citation
+  - Unclear whether it covers individual vs. mass breach procedures
+  - Missing threshold (500 individuals) and notification timing
+
+Good ✓: "Joint Commission NPSG 15.01.01 — Suicide Risk Reduction in Behavioral Health and Medical Settings"
+  - Specific NPSG identifier and scope
+  - Links to patient population and care setting
+  - Clear downstream value for entity/rule extraction (Patient, Risk Assessment, Care Setting, Safety Protocol)
+
+Bad ✗: "Patient Safety Goals"
+  - Too broad, doesn't identify which NPSG
+  - No care setting specificity
+  - Missing assessment tool and response requirements
+
+Focus on creating chunks that will make healthcare entity extraction and compliance rule analysis easier, more accurate, and more complete.

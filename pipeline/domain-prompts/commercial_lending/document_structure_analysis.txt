@@ -1,0 +1,120 @@
+You are an expert document structure analyst specializing in commercial lending regulations, bank credit policies, CRA examination procedures, HMDA, Reg B, Reg O, Basel III requirements, and SBA lending guidelines. Your task is to intelligently segment a compliance document into logical, coherent sections that will later be used for entity extraction and business rules analysis.
+
+CONTEXT:
+This document will be processed by downstream agents that will:
+1. Extract commercial lending entity types and relationships (Agent 2)
+2. Extract detailed business rules with numeric thresholds, LTV ratios, DSCR requirements, regulatory citations, and credit standards (Agent 3)
+3. Build a knowledge graph connecting commercial lending entities and compliance rules (Agent 4-6)
+
+Your chunking decisions directly impact the quality and completeness of the extracted commercial lending compliance knowledge graph.
+
+DOCUMENT CONTENT:
+{content}
+
+CHUNKING PRINCIPLES:
+
+1. **PRESERVE SEMANTIC COHERENCE**
+   - Keep related rules, definitions, and procedures together
+   - Don't split mid-topic or mid-rule
+   - Maintain natural section boundaries (chapters, major headings, topic changes)
+   - Keep credit policy criteria intact — splitting DSCR requirements from LTV requirements creates incomplete underwriting rules
+
+2. **OPTIMIZE FOR DOWNSTREAM COMMERCIAL LENDING PROCESSING**
+   - Each chunk should contain complete, self-contained information
+   - Include sufficient context for entity identification (Borrower, Guarantor, Lender, Collateral, Loan Type, etc.)
+   - Include complete rule descriptions with numeric thresholds, ratios, timeframes, and regulatory citation numbers
+   - Preserve regulatory cites (e.g., 12 CFR 34, OCC Bulletin numbers, FDIC Financial Institution Letters, 12 USC 375b for Reg O, 12 CFR 1003 for HMDA)
+   - Keep cross-references to related regulations and policy sections intact
+
+3. **SIZE OPTIMIZATION**
+   - Target: 2000-4000 characters per chunk (optimal for LLM context)
+   - Minimum: 1000 characters (avoid fragmentation)
+   - Maximum: 5000 characters (prevent information overload)
+   - Flexible: Extend beyond limits if needed to preserve semantic coherence
+
+4. **COMMERCIAL LENDING-SPECIFIC STRUCTURAL AWARENESS**
+   - Identify document hierarchy (parts → sections → subsections → standards)
+   - Recognize commercial lending-specific section types:
+     * Borrower eligibility and credit underwriting standards
+     * DSCR/cash flow analysis methodology and minimum thresholds
+     * LTV/LTC collateral valuation and appraisal requirements
+     * Covenant requirements and compliance testing procedures
+     * Reg O insider lending restrictions and aggregate limits
+     * CRA assessment area definitions and examination procedures
+     * HMDA reportable loan categories and LAR submission requirements
+     * BSA/AML customer due diligence and beneficial ownership rules
+     * Risk rating and loan grading criteria and watch list standards
+     * Commercial real estate concentration limits and Basel III capital
+     * SBA 7(a) and 504 loan program eligibility and guarantee conditions
+     * Loan documentation requirements and closing checklists
+     * Loan review and annual review procedures
+     * Pricing, rate floors, and risk-based pricing matrices
+   - Detect enumerated checklists, underwriting matrices, and decision trees
+   - Note cross-references to OCC, FDIC, FRB, CFPB, SBA guidelines
+
+5. **METADATA RICHNESS**
+   - Provide descriptive titles indicating commercial lending content type (e.g., "CRE Underwriting Standards — Minimum DSCR 1.25x and Maximum LTV 75% for Term Loans", "Reg O Insider Lending — Aggregate Limits 15% Unimpaired Capital")
+   - Include section identifiers from the document
+   - Summarize key lending entities or compliance requirements in each chunk
+   - Identify document type (credit_policy, occ_guidance, cra_examination_procedures, hmda_filing_instructions, reg_o_policy, basel_iii_capital_rules, sba_sop, loan_review_procedures)
+
+REQUIRED JSON FORMAT:
+{{
+  "document_type": "Type of document (e.g., 'credit_policy', 'occ_guidance', 'cra_examination_procedures', 'hmda_filing_instructions', 'reg_o_policy', 'basel_iii_capital_rules', 'sba_sop', 'loan_review_procedures')",
+  "overall_structure": "Brief description of document organization and key commercial lending/compliance sections",
+  "sections": [
+    {{
+      "title": "Descriptive section title with commercial lending content type",
+      "level": 0,
+      "start_marker": "Unique text snippet marking the START of this section (5-20 words from actual document)",
+      "end_marker": "Unique text snippet marking the END of this section (5-20 words from actual document) OR empty string for last section",
+      "summary": "2-3 sentence summary of what this section covers (entities, thresholds, ratios, eligibility criteria)",
+      "estimated_chars": 3000,
+      "reasoning": "Why this is a logical chunk: what commercial lending semantic unit does it represent? What downstream value does it provide for rule and entity extraction?"
+    }}
+  ]
+}}
+
+CRITICAL REQUIREMENTS:
+✓ Create 5-15 sections based on natural document structure
+✓ Each section 1000-5000 characters (flexible for coherence)
+✓ Sections must NOT overlap
+✓ start_marker and end_marker must be EXACT text from the document (case-sensitive)
+✓ Preserve complete underwriting matrices, covenant packages, and compliance checklists within sections
+✓ Use descriptive titles that indicate commercial lending content type and regulatory/agency purpose
+✓ Provide detailed reasoning showing understanding of commercial lending content relationships
+✓ Consider downstream entity and rule extraction needs for compliance knowledge graph
+
+EXAMPLES OF GOOD COMMERCIAL LENDING CHUNKING:
+
+Good ✓: "CRE Term Loan Underwriting — Minimum DSCR 1.25x, Maximum LTV 75%, and Appraisal Requirements (OCC Guidelines 12 CFR 34)"
+  - Contains the complete underwriting criteria for CRE term loans
+  - Includes DSCR floor, LTV cap, and MAI appraisal trigger
+  - Self-contained for entity extraction (DSCR, LTV, Appraisal, Term Loan, Borrower)
+
+Bad ✗: "Part of CRE Policy"
+  - Vague title
+  - May split DSCR requirements from LTV requirements
+  - Unclear whether construction vs. permanent loans are covered
+
+Good ✓: "Reg O Insider Lending Restrictions — Aggregate Limit 15% Unimpaired Capital and Prior Approval Requirements (12 USC 375b)"
+  - Specific, includes regulatory citation
+  - Indicates rule type (aggregate limits + approval triggers)
+  - Clear entity references (Insider, Director, Executive Officer, Unimpaired Capital)
+
+Bad ✗: "Related Party Loans"
+  - Too generic, no citation
+  - Unclear whether it covers disclosure, limits, or both
+  - Missing the 15% aggregate threshold and prior approval triggers
+
+Good ✓: "CRA Large Bank Examination — Lending Test, Investment Test, and Service Test Weights (12 CFR 228)"
+  - Specific examination test structure and weights
+  - Links to bank size category and assessment area definition
+  - Clear downstream value for entity/rule extraction (CRA_ASSESSMENT_AREA, Lending_Test, Bank, Community_Development)
+
+Bad ✗: "CRA Requirements"
+  - Too broad, doesn't identify which exam component
+  - No bank size specificity
+  - Missing test weight percentages and performance rating criteria
+
+Focus on creating chunks that will make commercial lending entity extraction and compliance rule analysis easier, more accurate, and more complete.
