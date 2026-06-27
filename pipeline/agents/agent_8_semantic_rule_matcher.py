@@ -46,7 +46,7 @@ class SemanticRuleMatcher:
             provider: The provider folder (openai/anthropic)
             max_workers: Maximum parallel LLM calls (from config if not set)
             batch_size: Number of pairs per LLM call (from config if not set)
-            merge_subfolder: Subfolder name for merged outputs (e.g., 'FMNA_Revolution-Overlay')
+            merge_subfolder: Subfolder name for merged outputs (e.g., 'graphA_graphB')
         """
         self.provider = provider
         self.config = get_config()

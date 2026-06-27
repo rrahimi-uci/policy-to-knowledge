@@ -127,18 +127,13 @@ const DOMAIN_ORDER: string[] = ['mortgage', 'aml', 'commercial_lending', 'health
 function inferDomain(name: string): string {
   const l = (name || '').toLowerCase();
   if (
-    l.includes('p2k') ||
-    l.includes('fannie') ||
-    l.includes('freddie') ||
     l.includes('fnma') ||
     l.includes('fhlmc') ||
-    l.includes('revolution') ||
     l.includes('mortgage') ||
     l.includes('loan') ||
-    l.includes('prmi') ||
-    l.includes('uwm') ||
-    l.includes('rocket') ||
-    l.includes('wholesale-lend')
+    l.includes('underwriting') ||
+    l.includes('servicing') ||
+    l.includes('lend')
   ) return 'mortgage';
   if (l.includes('anti') && l.includes('money')) return 'aml';
   if (l.includes('aml')) return 'aml';
@@ -616,7 +611,7 @@ interface SelectorProps {
 
 function GraphSelector({ graphs, value, onChange, label, accentColor, exclude, loading }: SelectorProps) {
   const available = graphs.filter(g => g.name !== exclude);
-  // Group by domain (prefer the backend-provided value so PRMI uploaded
+  // Group by domain (prefer the backend-provided value so a folder uploaded
   // under the Mortgage tab appears under Mortgage, not Other).
   const byDomain = available.reduce<Record<string, GraphSummary[]>>((acc, g) => {
     const d = graphDomainFor(g);

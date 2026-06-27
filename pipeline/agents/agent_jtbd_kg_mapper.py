@@ -1175,7 +1175,7 @@ def main():
     )
     parser.add_argument(
         "--jtbds",
-        default="jtbds_revolution.json",
+        default="jtbds.json",
         help="Path to the JTBDs JSON",
     )
     parser.add_argument(

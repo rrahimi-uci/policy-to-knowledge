@@ -170,7 +170,7 @@ See [docs/SETUP.md](docs/SETUP.md) for the detailed setup guide.
 python3 knowledge_graph_generation.py
 
 # Process a specific file
-python3 knowledge_graph_generation.py --file compliance-files/FMNA.pdf
+python3 knowledge_graph_generation.py --file compliance-files/graphA.pdf
 
 # Use a specific provider
 python3 knowledge_graph_generation.py --provider anthropic
@@ -204,10 +204,10 @@ Compare and merge knowledge graphs from different compliance documents:
 python3 join_graphs.py --list
 
 # Join two graphs (computes all set operations)
-python3 join_graphs.py --g1 FMNA --g2 Revolution-Overlay --workers 15
+python3 join_graphs.py --g1 graphA --g2 graphB --workers 15
 
 # Join with custom batch size
-python3 join_graphs.py --g1 FM --g2 FMNA --workers 20 --batch-size 15
+python3 join_graphs.py --g1 FM --g2 graphA --workers 20 --batch-size 15
 ```
 
 ---
@@ -217,7 +217,7 @@ python3 join_graphs.py --g1 FM --g2 FMNA --workers 20 --batch-size 15
 ### Per-Document Output (Agents 1-6)
 
 ```
-pipeline-output/openai/FMNA/
+pipeline-output/openai/graphA/
 ├── agent-1-organized-documents/              # Organized text chunks
 ├── agent-2-entities/
 │   └── entity_types_and_relationships.json   # Entities & relationships
@@ -230,13 +230,13 @@ pipeline-output/openai/FMNA/
 ├── agent-5-optimized/
 │   └── optimized_compliance_knowledge_graph.json  # Deduplicated + dependencies
 └── agent-6-visualization-and-report/
-    └── FMNA_knowledge_graph.html              # Interactive visualization
+    └── graphA_knowledge_graph.html              # Interactive visualization
 ```
 
 ### Merge Output (Agents 7-10)
 
 ```
-pipeline-output/openai/_merged/FMNA_Revolution-Overlay/
+pipeline-output/openai/_merged/graphA_graphB/
 ├── agent-7-rule-clusters/
 │   └── rule_clusters.json                    # Rules grouped by behavior
 ├── agent-8-rule-matches/
@@ -262,10 +262,10 @@ pipeline-output/openai/_merged/FMNA_Revolution-Overlay/
 
 ```bash
 # Open extraction visualization
-open pipeline-output/openai/FMNA/agent-6-visualization-and-report/FMNA_knowledge_graph.html
+open pipeline-output/openai/graphA/agent-6-visualization-and-report/graphA_knowledge_graph.html
 
 # Open merge comparison dashboard
-open pipeline-output/openai/_merged/FMNA_Revolution-Overlay/agent-10-visualizations/index.html
+open pipeline-output/openai/_merged/graphA_graphB/agent-10-visualizations/index.html
 ```
 
 ### Visualization Features
@@ -278,7 +278,7 @@ open pipeline-output/openai/_merged/FMNA_Revolution-Overlay/agent-10-visualizati
 
 ---
 
-## 📈 Pipeline Results (FMNA.pdf)
+## 📈 Pipeline Results (graphA.pdf)
 
 ### Model Comparison
 

@@ -27,7 +27,7 @@ These prompts are the **shared baseline** templates. Each compliance domain has 
 | Directory | Domain | Description |
 |-----------|--------|-------------|
 | `prompts/` | Shared (fallback) | Domain-agnostic baseline templates |
-| `domain-prompts/mortgage/` | Mortgage Lending | Fannie Mae, Freddie Mac, PRMI, Revolution — mortgage-specific terminology |
+| `domain-prompts/mortgage/` | Mortgage Lending | Agency/investor guidelines and lender overlays — mortgage-specific terminology |
 | `domain-prompts/aml/` | Anti-Money Laundering | AML/BSA compliance — SAR, CTR, CDD, KYC entities |
 | `domain-prompts/commercial_lending/` | Commercial Lending | Commercial loan origination — collateral, covenants |
 | `domain-prompts/healthcare/` | Healthcare | HIPAA, patient entities, provider relationships |

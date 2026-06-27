@@ -682,7 +682,7 @@
   <h2><span class="sec-icon">▶️</span> At a glance</h2>
   <p>Policy to Knowledge takes a single rule set from raw compliance documents through a 10-agent extraction pipeline, into an explorable knowledge graph, and out to obligation registers, impact analysis, and graph comparison — all from one unified shell.</p>
   <div class="video-frame">
-    <img src="screenshots/home.png" alt="Policy to Knowledge home dashboard" style="width:100%;border-radius:8px;display:block">
+    <img src="logo.svg" alt="Policy to Knowledge logo" style="width:120px;height:120px;display:block;margin:0 auto">
   </div>
   <p class="video-meta">
     Explore the sections below, or jump straight to
@@ -728,12 +728,12 @@
     <div class="feature-card">
       <div class="f-icon">🏠</div>
       <h4>Mortgage Lending</h4>
-      <p>Fannie Mae, Freddie Mac, Policy to Knowledge Guidelines, PRMI, Revolution overlays</p>
+      <p>Agency and investor guidelines, servicing policies, and lender-specific overlays</p>
     </div>
     <div class="feature-card">
       <div class="f-icon">🏦</div>
       <h4>Anti-Money Laundering</h4>
-      <p>Absa, Barclays — AML compliance rules and entity relationships</p>
+      <p>Suspicious-activity, KYC/CDD, and sanctions-screening rules and entity relationships</p>
     </div>
     <div class="feature-card">
       <div class="f-icon">💼</div>
@@ -1145,7 +1145,7 @@ flowchart LR
       <thead><tr><th>Path</th><th>Scope</th><th>Description</th></tr></thead>
       <tbody>
         <tr><td><code>prompts/</code></td><td>Shared (fallback)</td><td>Domain-agnostic prompt templates — the default baseline for all agents</td></tr>
-        <tr><td><code>domain-prompts/mortgage/</code></td><td>Mortgage Lending</td><td>Fannie Mae, Freddie Mac, PRMI, Revolution — mortgage-specific terminology, entity types (Borrower, Property, Loan), and FMNA regulatory references</td></tr>
+        <tr><td><code>domain-prompts/mortgage/</code></td><td>Mortgage Lending</td><td>Mortgage-specific terminology, entity types (Borrower, Property, Loan), and agency/investor regulatory references</td></tr>
         <tr><td><code>domain-prompts/aml/</code></td><td>Anti-Money Laundering</td><td>AML/BSA compliance — SAR, CTR, CDD, KYC entity types; FinCEN regulatory references</td></tr>
         <tr><td><code>domain-prompts/commercial_lending/</code></td><td>Commercial Lending</td><td>Commercial loan origination — borrower financials, collateral valuation, covenant tracking</td></tr>
         <tr><td><code>domain-prompts/healthcare/</code></td><td>Healthcare</td><td>Healthcare compliance — HIPAA, patient entities, provider relationships, clinical protocols</td></tr>
@@ -1353,15 +1353,8 @@ erDiagram
     <table>
       <thead><tr><th>Graph</th><th>Domain</th></tr></thead>
       <tbody>
-        <tr><td>Policy to Knowledge Guidelines</td><td>Mortgage Lending</td></tr>
-        <tr><td>Fannie Mae</td><td>Mortgage Lending</td></tr>
-        <tr><td>Freddie Mac</td><td>Mortgage Lending</td></tr>
-        <tr><td>PRMI</td><td>Mortgage Lending</td></tr>
-        <tr><td>Revolution</td><td>Mortgage Lending</td></tr>
-        <tr><td>Absa</td><td>Anti-Money Laundering</td></tr>
-        <tr><td>Barclays</td><td>Anti-Money Laundering</td></tr>
-        <tr><td>Comercial Lending</td><td>Commercial Lending</td></tr>
-        <tr><td>Healthcare</td><td>Healthcare</td></tr>
+        <tr><td>Sample Guidelines</td><td>Mortgage Lending</td></tr>
+        <tr><td>Example Policies</td><td>Mortgage Lending</td></tr>
       </tbody>
     </table>
   </div>
@@ -1404,13 +1397,6 @@ erDiagram
     <li>
       <h3>Launch the Suite &amp; Open the Dashboard</h3>
       <p>After running <code>./start.sh</code>, open <a href="http://localhost:4000">http://localhost:4000</a> in your browser. The Dashboard shows all loaded knowledge graphs, recent pipeline runs, service health, and quick action buttons.</p>
-      <div class="screenshot-item" style="margin-top:.75rem">
-        <img src="screenshots/home.png" alt="Policy to Knowledge Dashboard">
-        <div class="screenshot-caption">
-          <h4>Dashboard — Central Navigation Hub</h4>
-          <p>Overview of all knowledge graphs, source documents, pipeline runs, and assistant status with quick action cards.</p>
-        </div>
-      </div>
     </li>
 
     <li>
@@ -1421,97 +1407,41 @@ erDiagram
     <li>
       <h3>Run the Extraction Pipeline</h3>
       <p>Go to <strong>Pipeline</strong>, select your uploaded documents and the AI provider (OpenAI or Anthropic), then click <strong>Start Extraction</strong>. Monitor progress through the visual agent pipeline tracker showing all 6 extraction stages in real time.</p>
-      <div class="screenshot-item" style="margin-top:.75rem">
-        <img src="screenshots/suite_pipeline.png" alt="Pipeline Progress Tracker">
-        <div class="screenshot-caption">
-          <h4>Pipeline — Real-time Agent Progress</h4>
-          <p>Visual tracker showing the 6-agent extraction pipeline with step-by-step status, duration, and log output.</p>
-        </div>
-      </div>
     </li>
 
     <li>
       <h3>Review Run History</h3>
       <p>Check <strong>Run History</strong> to see all past pipeline runs with their status (completed, running, failed), domain, source, duration, and timestamps. Expand any run for detailed agent-by-step progress.</p>
-      <div class="screenshot-item" style="margin-top:.75rem">
-        <img src="screenshots/suite_extraction.png" alt="Run History">
-        <div class="screenshot-caption">
-          <h4>Run History — Pipeline Execution Log</h4>
-          <p>Filterable list of all pipeline runs with status badges, timing, and expandable step details.</p>
-        </div>
-      </div>
     </li>
 
     <li>
       <h3>Explore the Knowledge Graph</h3>
       <p>Open <strong>Assistant</strong> to interact with the knowledge graph. The split-pane interface shows an interactive D3.js force-directed graph on the left and an AI chat panel on the right. Ask questions like "Show me the full graph", "Count rules", "Find prohibitions", or "Search appraisal rules".</p>
-      <div class="screenshot-item" style="margin-top:.75rem">
-        <img src="screenshots/suite_kg_explorer.png" alt="Knowledge Graph Explorer">
-        <div class="screenshot-caption">
-          <h4>Assistant — AI-Powered Knowledge Graph Explorer</h4>
-          <p>Interactive D3.js graph visualization with color-coded node types, chat agent with tool-calling capabilities, and quick actions.</p>
-        </div>
-      </div>
     </li>
 
     <li>
       <h3>View Graph Analytics</h3>
       <p>Navigate to <strong>Analytics</strong> for a comprehensive dashboard showing rule type distribution, risk level breakdown, dependency types, confidence score distribution, entity coverage, and most connected rules.</p>
-      <div class="screenshot-item" style="margin-top:.75rem">
-        <img src="screenshots/suite_analytics.png" alt="Graph Analytics">
-        <div class="screenshot-caption">
-          <h4>Analytics — Rule Distribution &amp; Graph Health</h4>
-          <p>Charts for rule types, risk levels, dependency analysis, confidence scores, entity coverage, and top connected rules.</p>
-        </div>
-      </div>
     </li>
 
     <li>
       <h3>Compare Knowledge Graphs</h3>
-      <p>Use <strong>Compare Knowledge Graphs</strong> to select two graphs (e.g., Fannie Mae vs. Freddie Mac). The system uses LLM-powered semantic matching to detect common rules, unique rules, and contradictions with AI-generated analysis.</p>
-      <div class="screenshot-item" style="margin-top:.75rem">
-        <img src="screenshots/suite_compare.png" alt="Compare Knowledge Graphs">
-        <div class="screenshot-caption">
-          <h4>Compare — Semantic Graph Comparison with Contradiction Detection</h4>
-          <p>Side-by-side comparison showing overlap percentages, exclusive rules, contradictions with AI analysis, and confidence scores.</p>
-        </div>
-      </div>
+      <p>Use <strong>Compare Knowledge Graphs</strong> to select two graphs (e.g., two regulatory rule sets). The system uses LLM-powered semantic matching to detect common rules, unique rules, and contradictions with AI-generated analysis.</p>
     </li>
 
     <li>
       <h3>Run Impact Analysis</h3>
       <p>Open <strong>Impact Analysis</strong> to upload old and new versions of a regulatory document. The system identifies affected rules, assesses severity, and provides recommended actions — useful for tracking regulatory changes.</p>
-      <div class="screenshot-item" style="margin-top:.75rem">
-        <img src="screenshots/suite_impact.png" alt="Impact Analysis">
-        <div class="screenshot-caption">
-          <h4>Impact Analysis — Regulatory Change Detection</h4>
-          <p>Upload old and new regulatory documents to identify affected rules, severity levels, and recommended remediation actions.</p>
-        </div>
-      </div>
     </li>
 
     <li>
       <h3>Track Obligations</h3>
       <p>Go to <strong>Obligations</strong> to initialize an obligation register from graph rules. Map internal controls to compliance obligations, identify coverage gaps, and generate heatmaps for gap analysis.</p>
-      <div class="screenshot-item" style="margin-top:.75rem">
-        <img src="screenshots/suite_obligations.png" alt="Obligations">
-        <div class="screenshot-caption">
-          <h4>Obligation Register — Compliance Gap Analysis</h4>
-          <p>Track compliance obligations, map internal controls, and identify coverage gaps with heatmap visualizations.</p>
-        </div>
-      </div>
     </li>
 
     <li>
       <h3>Edit, Review &amp; Publish</h3>
       <p>In the <strong>Knowledge Graph Explorer</strong>, click any node to inspect details, add comments, edit content, or mark as reviewed/approved. When ready, click <strong>Release</strong> to create an immutable version snapshot with semantic versioning.</p>
-      <div class="screenshot-item" style="margin-top:.75rem">
-        <img src="screenshots/suite_versions.png" alt="Release Management">
-        <div class="screenshot-caption">
-          <h4>Release Management — Create Immutable Graph Snapshots</h4>
-          <p>Semantic versioning with version number, title, and release notes. Locks the graph to prevent edits during released state.</p>
-        </div>
-      </div>
     </li>
   </ol>
 </section>
@@ -1662,7 +1592,7 @@ REDIS_PORT=6379</code></pre>
 <span class="cmd">python3</span> knowledge_graph_generation.py <span class="flag">--provider</span> <span class="arg">openai</span>
 
 <span class="comment"># Process a single document</span>
-<span class="cmd">python3</span> knowledge_graph_generation.py <span class="flag">--provider</span> <span class="arg">openai</span> <span class="flag">--file</span> <span class="arg">compliance-files/FMNA.pdf</span>
+<span class="cmd">python3</span> knowledge_graph_generation.py <span class="flag">--provider</span> <span class="arg">openai</span> <span class="flag">--file</span> <span class="arg">compliance-files/graphA.pdf</span>
 
 <span class="comment"># Use Anthropic Claude</span>
 <span class="cmd">python3</span> knowledge_graph_generation.py <span class="flag">--provider</span> <span class="arg">anthropic</span>
@@ -1696,10 +1626,10 @@ REDIS_PORT=6379</code></pre>
 <span class="cmd">python3</span> join_graphs.py <span class="flag">--list</span>
 
 <span class="comment"># Merge two graphs (computes all set operations)</span>
-<span class="cmd">python3</span> join_graphs.py <span class="flag">--g1</span> <span class="arg">FMNA</span> <span class="flag">--g2</span> <span class="arg">Revolution-Overlay</span> <span class="flag">--workers</span> <span class="arg">15</span>
+<span class="cmd">python3</span> join_graphs.py <span class="flag">--g1</span> <span class="arg">graphA</span> <span class="flag">--g2</span> <span class="arg">graphB</span> <span class="flag">--workers</span> <span class="arg">15</span>
 
 <span class="comment"># Merge with custom batch size</span>
-<span class="cmd">python3</span> join_graphs.py <span class="flag">--g1</span> <span class="arg">FM</span> <span class="flag">--g2</span> <span class="arg">FMNA</span> <span class="flag">--workers</span> <span class="arg">20</span> <span class="flag">--batch-size</span> <span class="arg">15</span></code></pre>
+<span class="cmd">python3</span> join_graphs.py <span class="flag">--g1</span> <span class="arg">FM</span> <span class="flag">--g2</span> <span class="arg">graphA</span> <span class="flag">--workers</span> <span class="arg">20</span> <span class="flag">--batch-size</span> <span class="arg">15</span></code></pre>
       </div>
     </div>
   </details>

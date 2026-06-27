@@ -223,7 +223,7 @@ def test_baked_kgs_match_optimized_pipeline_output():
         ("freddies_mac-kg.json",         "freddies-mac"),
         ("healthcare-kg.json",           "healthcare"),
         ("sample-guidelines-kg.json",     "sample-guidelines"),
-        ("revolution-kg.json",           "revolution"),
+        ("example-overlays-kg.json",           "overlay"),
     ]
     import json as _json
     mismatches = []

@@ -11,18 +11,17 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent.parent  # policy-to
 
 # Keep these in sync with routers/documents.py — the user-facing taxonomy on
 # the Documents page. Graphs inherit the domain of their source folder so the
-# Graph Comparison view groups them under the same labels (e.g. PRMI uploaded
-# under the Mortgage tab must appear under "Mortgage", not "Other").
+# Graph Comparison view groups them under the same labels (e.g. a folder
+# uploaded under the Mortgage tab appears under "Mortgage", not "Other").
 SUPPORTED_DOMAINS = {"mortgage", "aml", "healthcare", "commercial_lending"}
 
 # Keyword fallback used when the folder hasn't been explicitly assigned a
 # domain via the Documents UI (i.e. missing from .folder_domains.json).
 _DOMAIN_KEYWORDS: list[tuple[str, list[str]]] = [
     ("mortgage", [
-        "p2k", "fannie", "freddie", "fnma", "fhlmc", "revolution",
-        "mortgage", "loan", "prmi", "uwm", "rocket", "wholesale-lend",
+        "mortgage", "loan", "fnma", "fhlmc", "underwriting", "servicing", "lend",
     ]),
-    ("aml", ["anti-money", "anti_money", "money-laundry", "money_laundering", "aml"]),
+    ("aml", ["anti-money", "anti_money", "money-laundry", "money_laundering", "aml", "kyc", "sanctions"]),
     ("commercial_lending", ["commercial", "comercial", "lending"]),
     ("healthcare", ["healthcare", "health-care", "hipaa"]),
 ]

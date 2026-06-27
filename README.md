@@ -262,7 +262,7 @@ cd pipeline
 python3 join_graphs.py --list
 
 # Merge two graphs
-python3 join_graphs.py --g1 FMNA --g2 Revolution-Overlay --workers 15
+python3 join_graphs.py --g1 graphA --g2 graphB --workers 15
 ```
 
 ### Supported Domains
@@ -346,17 +346,17 @@ Explorer exposes admin endpoints for repairing or rebuilding the loaded graphs w
 
 The canonical list lives in [assistant/conf/graphs.yaml](assistant/conf/graphs.yaml) — `start.sh` regenerates JanusGraph configuration from this file on every launch.
 
+The default manifest ships with two example graphs; add your own in
+`assistant/conf/graphs.yaml` and regenerate with
+`python scripts/generate_graph_config.py`.
+
 | Graph | Domain |
 |---|---|
-| Policy to Knowledge Guidelines | Internal compliance policy (mortgage) |
-| Fannie Mae | Mortgage lending standards |
-| Freddie Mac | Mortgage lending standards |
-| PRMI | Mortgage lending standards |
-| Revolution | Mortgage compliance overlays |
-| Absa | Anti-money laundering |
-| Barclays | Anti-money laundering |
-| Comercial Lending | Commercial lending |
-| Healthcare | Healthcare |
+| Sample Guidelines | Mortgage lending standards |
+| Example Policies | Mortgage lending standards |
+
+The pipeline and prompts support four domains out of the box — **mortgage**,
+**aml**, **commercial_lending**, and **healthcare**.
 
 Graph JSON files live in `assistant/kgs/`. Source documents are in `assistant/kbs/` and `pipeline/compliance-files/`. Each folder is associated with one of the four supported domains (mortgage, aml, commercial_lending, healthcare) via `pipeline/compliance-files/.folder_domains.json`; the same taxonomy drives the **Compare Knowledge Graphs** dropdown so every domain appears in a fixed order even when it has no graphs yet.
 

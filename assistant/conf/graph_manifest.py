@@ -106,7 +106,7 @@ def get_graph_configs() -> Dict[str, dict]:
     Returns a dict like:
         {
             "compliance_g":        {"file": "/abs/path/kgs/fama-kg.json",       "name": "compliance (FAMA)"},
-            "overlays_g":          {"file": "/abs/path/kgs/revolution-kg.json", "name": "overlays (Revolution)"},
+            "overlays_g":          {"file": "/abs/path/kgs/example-overlays-kg.json", "name": "overlays (example)"},
         }
     """
     root = _MANIFEST_PATH.parent.parent   # project root (one level up from conf/)
