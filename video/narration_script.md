@@ -75,7 +75,7 @@
 
 > Here is what extraction produces: a living knowledge graph with two hundred ninety-nine nodes and three hundred sixty-six edges, color-coded across eleven node types. The integrated Assistant lets you query eligibility requirements, trace dependencies, and get citation-backed answers grounded in your regulatory knowledge. It also helps compliance teams edit, share, and refine the extracted rules.
 
-**Visual:** Interactive force-directed knowledge graph with Assistant chat panel. KPIs: 299 nodes · 366 edges · graph-grounded AI · OpenAI · Anthropic · Gemini.
+**Visual:** Interactive force-directed knowledge graph with Assistant chat panel. KPIs: 299 nodes · 366 edges · graph-grounded AI · OpenAI.
 
 ---
 

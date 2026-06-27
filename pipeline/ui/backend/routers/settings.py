@@ -32,7 +32,7 @@ def get_settings():
     """Return current configuration (API keys masked)."""
     cfg = _load_config()
     # Mask sensitive values
-    for provider in ("openai", "anthropic"):
+    for provider in ("openai",):
         if provider in cfg and "api_key" in cfg[provider]:
             cfg[provider]["api_key"] = _mask_key(cfg[provider]["api_key"])
     return cfg
@@ -49,7 +49,7 @@ def update_settings(req: UpdateSettingsRequest):
     _deep_merge(cfg, req.settings)
 
     # Don't allow overwriting api_key with masked value
-    for provider in ("openai", "anthropic"):
+    for provider in ("openai",):
         if provider in req.settings and "api_key" in req.settings.get(provider, {}):
             key_val = req.settings[provider]["api_key"]
             if "••" in key_val:

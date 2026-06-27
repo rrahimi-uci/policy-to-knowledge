@@ -28,7 +28,7 @@ BATCH SIZE ADAPTATION STRATEGY
 
 This batch will extract {rules_per_batch} rules. Adapt your extraction strategy:
 
-**For 2-3 rules per batch (Anthropic Claude models):**
+**For 2-3 rules per batch (small batches):**
 - Focus on MOST CRITICAL rules only (mandatory=true, highest patient safety or regulatory impact)
 - Prioritize by type: patient_safety > clinical_guideline > regulatory > hipaa_privacy
 - Extract rules with HIGHEST specificity (exact timeframes, clear thresholds)
@@ -40,7 +40,7 @@ This batch will extract {rules_per_batch} rules. Adapt your extraction strategy:
 - Include both mandatory and important conditional rules
 - Mix high-level policy rules with specific technical rules
 
-**For 7-10 rules per batch (OpenAI GPT models):**
+**For 7-10 rules per batch (large batches):**
 - Comprehensive extraction across all 10 rule types
 - Include both mandatory and conditional rules
 - Cover edge cases and exceptions

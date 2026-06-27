@@ -581,17 +581,14 @@ def main():
     
     args = parser.parse_args()
     
-    # Get API key — use provider-specific env var to avoid cross-contamination
-    openai_key = args.api_key or os.getenv('OPENAI_API_KEY', '')
-    anthropic_key = os.getenv('ANTHROPIC_API_KEY', '')
-    api_key = openai_key or anthropic_key
+    # Get API key
+    api_key = args.api_key or os.getenv('OPENAI_API_KEY', '')
     if not api_key:
-        print("Error: API key required (--api-key, OPENAI_API_KEY, or ANTHROPIC_API_KEY)")
+        print("Error: API key required (--api-key or OPENAI_API_KEY)")
         sys.exit(1)
 
-    # Initialize validator — pass only the OpenAI key to avoid injecting an
-    # Anthropic key into the OPENAI_API_KEY environment variable.
-    validator = RuleValidationAgent(api_key=openai_key)
+    # Initialize validator
+    validator = RuleValidationAgent(api_key=api_key)
     
     # Load rules
     rules_data = validator.load_rules(Path(args.rules_file))

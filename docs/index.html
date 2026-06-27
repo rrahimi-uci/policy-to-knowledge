@@ -828,9 +828,7 @@ graph TD
     end
 
     subgraph AI["AI Inference"]
-        LiteLLM["LiteLLM"]
         OpenAI["OpenAI GPT"]
-        Anthropic["Anthropic Claude"]
     end
 
     subgraph Data["Data Layer"]
@@ -845,9 +843,7 @@ graph TD
     Shell -->|"iframe"| CopilotUI
     PipeUI --> PipeAPI
     CopilotUI --> CopilotAPI
-    PipeAPI --> LiteLLM
-    LiteLLM --> OpenAI
-    LiteLLM --> Anthropic
+    PipeAPI --> OpenAI
     CopilotAPI --> Redis
     CopilotAPI --> JanusGraph
     JanusGraph --> Cassandra
@@ -1011,7 +1007,7 @@ flowchart TB
     end
 
     subgraph Infra["AI Infrastructure"]
-        LLM["🤖 LLM Provider\nOpenAI GPT · Anthropic Claude\nvia LiteLLM unified interface"]
+        LLM["🤖 LLM Provider\nOpenAI GPT\nvia the official OpenAI SDK"]
     end
 
     Docs --> A1
@@ -1134,7 +1130,7 @@ flowchart LR
     B -- No --> D["Load shared fallback\nprompts/{prompt}.txt"]
     C --> E["Substitute parameters\n(entity_context, batch_num, etc.)"]
     D --> E
-    E --> F["Send to LLM\n(GPT / Claude)"]
+    E --> F["Send to LLM\n(OpenAI GPT)"]
     </pre>
   </div>
   <p>The <code>PromptManager</code> class resolves prompts with <strong>domain-first precedence</strong>: it checks <code>domain-prompts/{active_domain}/</code> first, then falls back to the shared <code>prompts/</code> directory. This means every domain can override any prompt while inheriting the rest.</p>
@@ -1189,15 +1185,15 @@ flowchart LR
   </div>
 
   <h3>LLM Provider Optimization</h3>
-  <p>Prompts are tuned for dual-provider execution with different batch strategies:</p>
+  <p>Prompt batch strategy (OpenAI):</p>
   <div class="table-wrap">
     <table>
-      <thead><tr><th>Parameter</th><th>OpenAI GPT</th><th>Anthropic Claude</th></tr></thead>
+      <thead><tr><th>Parameter</th><th>OpenAI GPT</th></tr></thead>
       <tbody>
-        <tr><td>Rules per batch (Agent 3)</td><td>10</td><td>2–3</td></tr>
-        <tr><td>Rules per dependency batch (Agent 5)</td><td>50</td><td>15–20</td></tr>
-        <tr><td>Temperature</td><td>0.7</td><td>0.7</td></tr>
-        <tr><td>Total prompt engineering</td><td colspan="2">~2,030 lines across 11 shared templates</td></tr>
+        <tr><td>Rules per batch (Agent 3)</td><td>10</td></tr>
+        <tr><td>Rules per dependency batch (Agent 5)</td><td>50</td></tr>
+        <tr><td>Temperature</td><td>0.7</td></tr>
+        <tr><td>Total prompt engineering</td><td>~2,030 lines across 11 shared templates</td></tr>
       </tbody>
     </table>
   </div>
@@ -1372,7 +1368,7 @@ erDiagram
         <tr><td>Frontend (KG Explorer)</td><td>Vanilla JavaScript, D3.js v7, marked.js</td></tr>
         <tr><td>Backend (Pipeline)</td><td>FastAPI, Uvicorn, SQLite, SQLAlchemy</td></tr>
         <tr><td>Backend (Assistant)</td><td>Flask 3.1, Gremlin WebSocket, OpenSearch HTTP</td></tr>
-        <tr><td>AI Inference</td><td>LiteLLM (OpenAI GPT, Anthropic Claude)</td></tr>
+        <tr><td>AI Inference</td><td>OpenAI GPT (official OpenAI Python SDK)</td></tr>
         <tr><td>Graph Database</td><td>JanusGraph 1.0</td></tr>
         <tr><td>Storage Backend</td><td>Apache Cassandra 4.1</td></tr>
         <tr><td>Search &amp; Vectors</td><td>OpenSearch 2.17 (full-text + k-NN, 384-dim)</td></tr>
@@ -1406,7 +1402,7 @@ erDiagram
 
     <li>
       <h3>Run the Extraction Pipeline</h3>
-      <p>Go to <strong>Pipeline</strong>, select your uploaded documents and the AI provider (OpenAI or Anthropic), then click <strong>Start Extraction</strong>. Monitor progress through the visual agent pipeline tracker showing all 6 extraction stages in real time.</p>
+      <p>Go to <strong>Pipeline</strong>, select your uploaded documents, then click <strong>Start Extraction</strong>. Monitor progress through the visual agent pipeline tracker showing all 6 extraction stages in real time.</p>
     </li>
 
     <li>
@@ -1472,7 +1468,7 @@ erDiagram
     <div class="feature-card">
       <div class="f-icon">🔑</div>
       <h4>OpenAI API Key</h4>
-      <p>Required. Anthropic API key is optional for dual-provider support</p>
+      <p>Required — set <code>OPENAI_API_KEY</code> in your environment</p>
     </div>
   </div>
 
@@ -1511,7 +1507,6 @@ erDiagram
 OPENAI_API_KEY=sk-...
 
 <span class="comment"># Optional</span>
-ANTHROPIC_API_KEY=sk-ant-...
 OPENAI_CHAT_MODEL=gpt-4o-mini       <span class="comment"># Default chat model</span>
 OPENAI_REASONING_EFFORT=low          <span class="comment"># For reasoning models</span>
 MAX_TOOL_ROUNDS=3                    <span class="comment"># Max tool-call rounds per chat turn</span>
@@ -1593,9 +1588,6 @@ REDIS_PORT=6379</code></pre>
 
 <span class="comment"># Process a single document</span>
 <span class="cmd">python3</span> knowledge_graph_generation.py <span class="flag">--provider</span> <span class="arg">openai</span> <span class="flag">--file</span> <span class="arg">compliance-files/graphA.pdf</span>
-
-<span class="comment"># Use Anthropic Claude</span>
-<span class="cmd">python3</span> knowledge_graph_generation.py <span class="flag">--provider</span> <span class="arg">anthropic</span>
 
 <span class="comment"># Run a specific agent step (1-6)</span>
 <span class="cmd">python3</span> knowledge_graph_generation.py <span class="flag">--step</span> <span class="arg">1</span>   <span class="comment"># Document organizer only</span>

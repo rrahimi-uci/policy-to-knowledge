@@ -20,23 +20,6 @@
       "timeout": 300
     }
   },
-  "anthropic": {
-    "api_key": "${ANTHROPIC_API_KEY}",
-    "models": {
-      "reasoning": "claude-sonnet-4-20250514",
-      "reasoning_effort": "high",
-      "available_models": {
-        "sonnet-4.5": "claude-sonnet-4-20250514",
-        "sonnet-4": "claude-sonnet-4-20241022",
-        "opus-3.5": "claude-3-5-opus-20241022"
-      }
-    },
-    "rate_limiting": {
-      "max_retries": 3,
-      "retry_delay": 100,
-      "timeout": 300
-    }
-  },
   "llm": {
     "default_temperature": 0.7,
     "default_max_tokens": 8192,
@@ -83,7 +66,6 @@
   "rules_extractor": {
     "target_rules": 300,
     "rules_per_batch": 10,
-    "rules_per_batch_anthropic": 4,
     "rules_per_batch_openai": 10,
     "batch_size": 8,
     "max_content_length": 8000,

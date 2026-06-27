@@ -86,7 +86,7 @@ rules = json.loads(response.choices[0].message.content)
 **Purpose**: Extract detailed business rules from document chunks
 
 **Key Features**:
-- **Batch size adaptation**: 10 rules/batch for OpenAI, 2-3 for Anthropic
+- **Batch size adaptation**: 10 rules/batch (OpenAI)
 - **7 rule types**: eligibility, compliance, constraint, calculation, validation, process, documentation
 - **Complete metadata**: conditions, consequences, exceptions, source references, examples
 - **Confidence scoring**: 5-factor algorithm guidance
@@ -245,14 +245,13 @@ prompt = pm.get_prompt("business_rules_extraction")
 | Total prompt instances | 55 (11 templates × 5 directories) |
 | Largest prompt | dependency_analysis.txt (401 lines) |
 | Parameters per prompt | 3-5 |
-| LLM providers | 2 (OpenAI GPT-5.2, Anthropic Claude Sonnet 4) |
+| LLM providers | 2 (OpenAI GPT-5.2) |
 
 ## 🎯 Key Prompt Engineering Principles
 
 ### 1. **Batch Size Adaptation**
 Prompts automatically adjust extraction strategy based on LLM provider:
 - **OpenAI GPT-5.2**: 10 rules/batch (comprehensive)
-- **Anthropic Claude Sonnet 4**: 2-3 rules/batch (focused on critical rules)
 
 ### 2. **Quality Over Quantity**
 All prompts emphasize complete, detailed extraction over rule count:
@@ -299,7 +298,7 @@ print(prompt)  # Verify no {placeholders} remain
 ```json
 // config.json
 "rules_extractor": {
-  "rules_per_batch": 3  // Reduce for Anthropic
+  "rules_per_batch": 10
 }
 ```
 

@@ -55,14 +55,14 @@ flowchart TB
     end
 
     subgraph Services["🔧 Services Layer"]
-        LLMC[LLM Client<br/>LiteLLM]
+        LLMC[LLM Client<br/>OpenAI SDK]
         PM[Prompt Manager]
     end
 
     subgraph Infrastructure["🏗️ Infrastructure Layer"]
         DOCKER[Docker Containers]
         FS[File System I/O]
-        API[LLM APIs<br/>OpenAI/Anthropic]
+        API[LLM API<br/>OpenAI]
     end
 
     Presentation --> Orchestration
@@ -298,32 +298,28 @@ flowchart TB
 
 ## 5. LLM Integration Architecture
 
-### Unified Provider Interface
+### LLM Interface
 
 ```mermaid
 flowchart TB
     subgraph Client["utils/llm_client.py"]
-        LITE[LiteLLM<br/>Universal Adapter]
+        LITE[OpenAI SDK]
     end
 
-    subgraph Providers["LLM Providers"]
+    subgraph Providers["LLM Provider"]
         OAI[OpenAI<br/>GPT-4/GPT-5]
-        ANT[Anthropic<br/>Claude]
-        OTHER[Other Providers<br/>Azure, Bedrock, etc.]
     end
 
     Client --> OAI
-    Client --> ANT
-    Client --> OTHER
 ```
 
-### Provider-Specific Optimizations
+### Extraction Settings
 
-| Aspect | OpenAI | Anthropic |
-|--------|--------|-----------|
-| Batch Size | 10 rules/batch | 4 rules/batch |
-| Worker Count | 20 parallel | 20 parallel |
-| Output Path | `pipeline-output/openai/` | `pipeline-output/anthropic/` |
+| Aspect | Value |
+|--------|-------|
+| Batch Size | 10 rules/batch |
+| Worker Count | 20 parallel |
+| Output Path | `pipeline-output/` |
 
 ---
 

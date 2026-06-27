@@ -88,12 +88,12 @@ class SetOperationsVisualizer:
         Initialize the visualizer.
         
         Args:
-            provider: The provider folder (openai/anthropic)
+            provider: The provider folder (openai)
             merge_subfolder: Subfolder name for merged outputs (e.g., 'graphA_graphB')
         """
         self.provider = provider
         self.merge_subfolder = merge_subfolder
-        self.base_path = Path(__file__).parent.parent / "pipeline-output" / provider
+        self.base_path = Path(__file__).parent.parent / "pipeline-output"
         self._setup_paths()
         self._original_rules_cache = {}  # Cache for original graph rules
     
@@ -2286,7 +2286,7 @@ def main():
     import argparse
     
     parser = argparse.ArgumentParser(description='Generate set operations visualizations')
-    parser.add_argument('--provider', type=str, default='openai', choices=['openai', 'anthropic'])
+    parser.add_argument('--provider', type=str, default='openai', choices=['openai'])
     
     args = parser.parse_args()
     

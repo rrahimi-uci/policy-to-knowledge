@@ -1,21 +1,35 @@
 """
-LLM Client Abstraction Layer using LiteLLM
+LLM Client — thin wrapper over the official OpenAI Python SDK.
 
-This module provides a unified interface for LLM completions using LiteLLM,
-which supports multiple providers (OpenAI, Anthropic, Azure, etc.) through
-a consistent API.
+Provides a consistent chat-completion interface for the pipeline, with support
+for both standard chat models (gpt-4o, gpt-4o-mini, …) and reasoning models
+(o1/o3/o4, gpt-5.x), plus token/cost accounting emitted for the UI runner.
 """
 
-import copy
 import json
-import os
 import re
 import sys
 from typing import Dict, Any, List, Optional
-import litellm
-from litellm import completion, completion_cost
 
-# Lazy config access to avoid circular imports
+from openai import OpenAI
+
+
+# Approximate OpenAI pricing in USD per 1M tokens (input, output). Used only to
+# emit a best-effort cost estimate for the UI; unknown models report cost 0 but
+# still report token usage. Update as pricing changes.
+_PRICING_PER_1M = {
+    "gpt-4o":       (2.50, 10.00),
+    "gpt-4o-mini":  (0.15, 0.60),
+    "gpt-4.1":      (2.00, 8.00),
+    "gpt-4.1-mini": (0.40, 1.60),
+    "o1":           (15.00, 60.00),
+    "o1-mini":      (1.10, 4.40),
+    "o3":           (2.00, 8.00),
+    "o3-mini":      (1.10, 4.40),
+    "o4-mini":      (1.10, 4.40),
+}
+
+
 def _get_config_value(getter_name: str, fallback):
     """Safely get a config value, returning fallback if config is not available."""
     try:
@@ -26,46 +40,65 @@ def _get_config_value(getter_name: str, fallback):
         return fallback
 
 
+def _estimate_cost(model: str, prompt_tokens: int, completion_tokens: int) -> float:
+    """Best-effort USD cost estimate; 0.0 when the model's pricing is unknown."""
+    key = (model or "").lower()
+    rates = _PRICING_PER_1M.get(key)
+    if not rates:
+        # Try a prefix match (e.g. "gpt-4o-2024-08-06" -> "gpt-4o")
+        for name, r in _PRICING_PER_1M.items():
+            if key.startswith(name):
+                rates = r
+                break
+    if not rates:
+        return 0.0
+    in_rate, out_rate = rates
+    return (prompt_tokens * in_rate + completion_tokens * out_rate) / 1_000_000
+
+
 class LLMClient:
-    """
-    Unified LLM client using LiteLLM for multi-provider support.
-    
-    This client abstracts away provider-specific details and provides
-    a consistent interface for chat completions across different LLM providers.
-    """
-    
+    """Unified chat-completion client backed by the OpenAI SDK."""
+
     def __init__(
-        self, 
+        self,
         api_key: Optional[str] = None,
-        anthropic_api_key: Optional[str] = None,
         model: str = None,
         timeout: int = None,
-        max_retries: int = None
+        max_retries: int = None,
     ):
         """
-        Initialize LLM client.
-        
+        Initialize the client.
+
         Args:
-            api_key: API key for OpenAI (defaults to OPENAI_API_KEY env var)
-            anthropic_api_key: API key for Anthropic (defaults to ANTHROPIC_API_KEY env var)
-            model: Model identifier (e.g., 'gpt-4o', 'o1', 'claude-sonnet-4-20250514')
-            timeout: Request timeout in seconds
-            max_retries: Maximum number of retry attempts
+            api_key: OpenAI API key (defaults to config / OPENAI_API_KEY env var).
+            model: Model identifier (e.g. 'gpt-4o', 'o3-mini', 'gpt-5.2').
+            timeout: Request timeout in seconds.
+            max_retries: Maximum number of retry attempts (handled by the SDK).
         """
         self.model = model or _get_config_value('get_default_model', 'gpt-4o')
         self.timeout = timeout if timeout is not None else _get_config_value('get_timeout', 300)
         self.max_retries = max_retries if max_retries is not None else _get_config_value('get_max_retries', 3)
-        
-        # Set API keys in environment for LiteLLM
-        if api_key:
-            os.environ['OPENAI_API_KEY'] = api_key
-        if anthropic_api_key:
-            os.environ['ANTHROPIC_API_KEY'] = anthropic_api_key
-        
-        # Configure LiteLLM settings
-        litellm.drop_params = True  # Drop unsupported params instead of failing
-        litellm.set_verbose = False  # Disable verbose logging by default
-    
+
+        self._api_key = api_key
+        self._client: Optional[OpenAI] = None
+
+    def _get_client(self) -> OpenAI:
+        """Lazily build the OpenAI client on first use.
+
+        Deferring construction means simply instantiating an LLMClient (e.g. to
+        read its configured model) does not require an API key to be present.
+        """
+        if self._client is None:
+            api_key = self._api_key or _get_config_value('get_openai_api_key', None)
+            # The SDK falls back to OPENAI_API_KEY in the env when api_key is None;
+            # pass it explicitly when we have it (without mutating the environment).
+            self._client = OpenAI(
+                api_key=api_key,
+                timeout=self.timeout,
+                max_retries=self.max_retries,
+            )
+        return self._client
+
     @staticmethod
     def is_reasoning_model(model: str) -> bool:
         """Detect reasoning models that need max_completion_tokens instead of max_tokens.
@@ -78,44 +111,6 @@ class LLMClient:
             or 'gpt-5' in model.lower()
         )
 
-    def _is_anthropic_model(self) -> bool:
-        """Check if the configured model is an Anthropic/Claude model."""
-        m = self.model.lower()
-        return 'claude' in m or 'anthropic' in m
-
-    @staticmethod
-    def _add_cache_control(messages: List[Dict]) -> List[Dict]:
-        """Add Anthropic cache_control breakpoints to large static message content.
-
-        Marks the last message whose content exceeds ~1 024 characters with
-        ``cache_control: {"type": "ephemeral"}``.  Anthropic caches the entire
-        prefix up to (and including) the marked block, so later calls with
-        the same prefix receive a cache hit and pay only for the new tokens.
-        """
-        messages = copy.deepcopy(messages)
-        # Walk in reverse so we mark only the *last* large block
-        for msg in reversed(messages):
-            content = msg.get("content", "")
-            if isinstance(content, str) and len(content) > 1024:
-                msg["content"] = [
-                    {
-                        "type": "text",
-                        "text": content,
-                        "cache_control": {"type": "ephemeral"},
-                    }
-                ]
-                break
-            # Already a list of content blocks — mark the last large block
-            if isinstance(content, list):
-                for block in reversed(content):
-                    if block.get("type") == "text" and len(block.get("text", "")) > 1024:
-                        block["cache_control"] = {"type": "ephemeral"}
-                        break  # inner: found a large block in this message
-                else:
-                    continue   # no large block in this message; keep scanning
-                break          # outer: a large block was marked, stop scanning
-        return messages
-
     def chat_completion(
         self,
         messages: List[Dict[str, str]],
@@ -125,119 +120,96 @@ class LLMClient:
         **kwargs
     ) -> Any:
         """
-        Create a chat completion using LiteLLM.
-        
+        Create a chat completion.
+
         Args:
-            messages: List of message dicts with 'role' and 'content'
-            temperature: Sampling temperature (0.0 to 2.0)
-            max_tokens: Maximum tokens to generate
-            response_format: Response format specification (e.g., {"type": "json_object"})
-            **kwargs: Additional provider-specific parameters
-        
+            messages: List of message dicts with 'role' and 'content'.
+            temperature: Sampling temperature (ignored for reasoning models).
+            max_tokens: Maximum tokens to generate.
+            response_format: e.g. {"type": "json_object"} for JSON mode.
+            **kwargs: Additional OpenAI parameters (e.g. reasoning_effort).
+
         Returns:
-            LiteLLM completion response object
-        
-        Raises:
-            Exception: If the completion fails after all retries
+            The OpenAI ChatCompletion response object.
         """
         is_reasoning = self.is_reasoning_model(self.model)
 
-        # Anthropic prompt caching: inject cache_control breakpoints so the
-        # provider caches the static prompt prefix across batched calls.
-        if self._is_anthropic_model():
-            messages = self._add_cache_control(messages)
-
-        params = {
+        params: Dict[str, Any] = {
             "model": self.model,
             "messages": messages,
-            "timeout": self.timeout,
-            "num_retries": self.max_retries,
         }
-        
-        # Reasoning models (o1, o3, o4, gpt-5) don't support temperature
-        # parameter but DO support reasoning_effort.
-        # litellm.drop_params = True will also silently drop unsupported
-        # params, but we explicitly skip temperature for clarity.
+
+        # Reasoning models reject `temperature` but accept `reasoning_effort`.
         if not is_reasoning:
             params["temperature"] = temperature
-        
-        # Handle reasoning_effort for reasoning models
-        if is_reasoning and 'reasoning_effort' in kwargs:
+            kwargs.pop('reasoning_effort', None)
+        elif 'reasoning_effort' in kwargs:
             params["reasoning_effort"] = kwargs.pop('reasoning_effort')
-        
+
         # ── Token budget strategy ──
-        # For reasoning models, set max_completion_tokens to 4× the requested
-        # max_tokens (min 32768) to allow sufficient internal reasoning space
-        # while preventing indefinite hangs.  Without a cap, reasoning models
-        # can run for hours when given complex prompts.
-        # For non-reasoning models we honour the caller's max_tokens directly.
+        # Reasoning models need generous headroom for internal reasoning; give
+        # them 4× the requested budget (min 32768) so they don't truncate, while
+        # still capping runaway generations. Non-reasoning models honour the
+        # caller's max_tokens directly.
         if is_reasoning:
-            reasoning_budget = max(max_tokens * 4, 32768) if max_tokens else 32768
-            params["max_completion_tokens"] = reasoning_budget
-            # Remove caller-supplied max_completion_tokens from kwargs (set above)
+            params["max_completion_tokens"] = max(max_tokens * 4, 32768) if max_tokens else 32768
             kwargs.pop('max_completion_tokens', None)
+            kwargs.pop('max_tokens', None)
         elif max_tokens:
             params["max_tokens"] = max_tokens
-        
+
         if response_format:
             params["response_format"] = response_format
-        
+
         params.update(kwargs)
-        
+
         try:
-            response = completion(**params)
-
-            # ── Safety check: warn on unexpected empty or truncated output ──
-            content = (response.choices[0].message.content or "").strip()
-            finish = getattr(response.choices[0], 'finish_reason', None)
-
-            if not content:
-                print(
-                    f"  ⚠️  Empty response from model (finish_reason={finish}).",
-                    file=sys.stderr, flush=True
-                )
-            elif finish == 'length':
-                print(
-                    f"  ⚠️  Response truncated (finish_reason=length, "
-                    f"{len(content)} chars). Output may contain incomplete JSON.",
-                    file=sys.stderr, flush=True
-                )
-
-            # ── Cost & cache tracking ──
-            usage = getattr(response, 'usage', None)
-            if usage:
-                cached = getattr(
-                    getattr(usage, 'prompt_tokens_details', None),
-                    'cached_tokens', 0
-                ) or getattr(usage, 'cache_read_input_tokens', 0)
-                if cached:
-                    print(
-                        f"  💾 Prompt cache hit: {cached} tokens cached "
-                        f"(of {usage.prompt_tokens} prompt tokens)",
-                        file=sys.stderr, flush=True,
-                    )
-
-                # Emit structured cost line for the pipeline runner to aggregate
-                try:
-                    cost = completion_cost(completion_response=response)
-                except Exception:
-                    cost = 0.0
-                if cost > 0:
-                    cost_entry = {
-                        "model": self.model,
-                        "prompt_tokens": usage.prompt_tokens,
-                        "completion_tokens": usage.completion_tokens,
-                        "total_tokens": usage.total_tokens,
-                        "cached_tokens": cached or 0,
-                        "cost": round(cost, 6),
-                    }
-                    # Structured line — pipeline_runner parses lines starting with [LLM_COST]
-                    print(f"[LLM_COST]{json.dumps(cost_entry)}", flush=True)
-
-            return response
+            response = self._get_client().chat.completions.create(**params)
         except Exception as e:
             raise Exception(f"LLM completion failed: {str(e)}")
-    
+
+        # ── Safety check: warn on unexpected empty or truncated output ──
+        content = (response.choices[0].message.content or "").strip()
+        finish = getattr(response.choices[0], 'finish_reason', None)
+        if not content:
+            print(
+                f"  ⚠️  Empty response from model (finish_reason={finish}).",
+                file=sys.stderr, flush=True,
+            )
+        elif finish == 'length':
+            print(
+                f"  ⚠️  Response truncated (finish_reason=length, "
+                f"{len(content)} chars). Output may contain incomplete JSON.",
+                file=sys.stderr, flush=True,
+            )
+
+        # ── Cost & cache tracking (emitted for the UI run aggregator) ──
+        usage = getattr(response, 'usage', None)
+        if usage:
+            cached = getattr(
+                getattr(usage, 'prompt_tokens_details', None),
+                'cached_tokens', 0,
+            ) or 0
+            if cached:
+                print(
+                    f"  💾 Prompt cache hit: {cached} tokens cached "
+                    f"(of {usage.prompt_tokens} prompt tokens)",
+                    file=sys.stderr, flush=True,
+                )
+            cost = _estimate_cost(self.model, usage.prompt_tokens, usage.completion_tokens)
+            cost_entry = {
+                "model": self.model,
+                "prompt_tokens": usage.prompt_tokens,
+                "completion_tokens": usage.completion_tokens,
+                "total_tokens": usage.total_tokens,
+                "cached_tokens": cached,
+                "cost": round(cost, 6),
+            }
+            # Structured line — pipeline_runner parses lines starting with [LLM_COST]
+            print(f"[LLM_COST]{json.dumps(cost_entry)}", flush=True)
+
+        return response
+
     def get_text_response(
         self,
         messages: List[Dict[str, str]],
@@ -245,18 +217,7 @@ class LLMClient:
         max_tokens: Optional[int] = None,
         **kwargs
     ) -> str:
-        """
-        Get text response from chat completion.
-        
-        Args:
-            messages: List of message dicts with 'role' and 'content'
-            temperature: Sampling temperature
-            max_tokens: Maximum tokens to generate
-            **kwargs: Additional parameters
-        
-        Returns:
-            Text content from the completion
-        """
+        """Return just the text content from a chat completion."""
         response = self.chat_completion(
             messages=messages,
             temperature=temperature,
@@ -271,28 +232,14 @@ class LLMClient:
 
 def create_llm_client(
     api_key: Optional[str] = None,
-    anthropic_api_key: Optional[str] = None,
     model: str = None,
     timeout: int = None,
-    max_retries: int = None
+    max_retries: int = None,
 ) -> LLMClient:
-    """
-    Factory function to create an LLM client.
-    
-    Args:
-        api_key: API key for OpenAI
-        anthropic_api_key: API key for Anthropic
-        model: Model identifier (gpt-4o, o1, claude-sonnet-4-20250514, etc.)
-        timeout: Request timeout in seconds
-        max_retries: Maximum retry attempts
-    
-    Returns:
-        Configured LLMClient instance
-    """
+    """Factory for an OpenAI-backed LLMClient."""
     return LLMClient(
         api_key=api_key,
-        anthropic_api_key=anthropic_api_key,
         model=model,
         timeout=timeout,
-        max_retries=max_retries
+        max_retries=max_retries,
     )

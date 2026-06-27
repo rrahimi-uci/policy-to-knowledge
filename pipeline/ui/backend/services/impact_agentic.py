@@ -33,7 +33,7 @@ def _create_client(provider: str = "openai"):
     from utils.llm_client import create_llm_client
 
     config = get_config(provider=provider)
-    api_key = config.get_openai_api_key() if provider == "openai" else config.get_anthropic_api_key()
+    api_key = config.get_openai_api_key()
     return create_llm_client(
         api_key=api_key,
         model=config.get_reasoning_model(),

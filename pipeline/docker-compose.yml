@@ -9,7 +9,6 @@ services:
     # Environment variables (API keys and configuration)
     environment:
       - OPENAI_API_KEY=${OPENAI_API_KEY}
-      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
       - LLM_PROVIDER=${LLM_PROVIDER:-openai}
       - PRIMARY_MODEL=${PRIMARY_MODEL:-gpt-5.2}
     
@@ -56,7 +55,6 @@ services:
 
     environment:
       - OPENAI_API_KEY=${OPENAI_API_KEY}
-      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
       - LLM_PROVIDER=${LLM_PROVIDER:-openai}
       - PRIMARY_MODEL=${PRIMARY_MODEL:-gpt-5.2}
 

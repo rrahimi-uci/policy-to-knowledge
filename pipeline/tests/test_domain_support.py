@@ -903,7 +903,7 @@ def _build_kg_parser():
     """Build the argparse parser matching the one in main()."""
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("--provider", type=str, choices=["openai", "anthropic"])
+    parser.add_argument("--provider", type=str, choices=["openai"])
     parser.add_argument("--batch", action="store_true")
     parser.add_argument("--workers", type=int, default=None)
     parser.add_argument("--source", default=None)

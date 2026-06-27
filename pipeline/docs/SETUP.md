@@ -25,21 +25,12 @@ Then edit `.env` and add your actual API keys:
 ```bash
 # OpenAI API Key (required)
 OPENAI_API_KEY=sk-proj-your-actual-openai-key-here
-
-# Anthropic API Key (optional, only if using Claude models)
-ANTHROPIC_API_KEY=sk-ant-your-actual-anthropic-key-here
 ```
 
-### 3. Get Your API Keys
+### 3. Get Your API Key
 
 #### OpenAI
 1. Go to [OpenAI Platform](https://platform.openai.com/api-keys)
-2. Sign in or create an account
-3. Create a new API key
-4. Copy the key and paste it into your `.env` file
-
-#### Anthropic (Optional)
-1. Go to [Anthropic Console](https://console.anthropic.com/settings/keys)
 2. Sign in or create an account
 3. Create a new API key
 4. Copy the key and paste it into your `.env` file
@@ -78,7 +69,7 @@ If you see an error about missing API keys:
 
 1. Ensure `.env` file exists in the project root
 2. Check that your API keys are correctly formatted (no extra spaces)
-3. Verify the config.json uses `${OPENAI_API_KEY}` and `${ANTHROPIC_API_KEY}` placeholders
+3. Verify the config.json uses the `${OPENAI_API_KEY}` placeholder
 
 ### Configuration Not Loading
 

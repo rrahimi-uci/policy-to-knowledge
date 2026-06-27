@@ -173,7 +173,7 @@ class BusinessRulesExtractor:
             batches.append(current_batch)
         
         # Calculate how many batches needed based on target rules
-        # Get rules_per_batch from config (4 for Anthropic, 10 for OpenAI by default)
+        # Get rules_per_batch from config (4 for smaller models, 10 for OpenAI by default)
         rules_per_batch = self.global_config.get_rules_per_batch()
         needed_batches = min(len(batches), (self.config.target_rules_count // rules_per_batch) + 10)  # +10 for safety/failures
         batches_to_process = needed_batches

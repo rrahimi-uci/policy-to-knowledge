@@ -112,7 +112,7 @@ def run_joins_pipeline(g1_name: str, g2_name: str, provider: str = "openai", wor
     visualizer.run()
     
     # Summary - use the dynamic joins_subfolder path
-    output_dir = Path(__file__).parent / "pipeline-output" / provider / "_joined" / joins_subfolder / "agent-10-visualizations"
+    output_dir = Path(__file__).parent / "pipeline-output" / "_joined" / joins_subfolder / "agent-10-visualizations"
     
     print(f"""
 ╔══════════════════════════════════════════════════════════════════════╗
@@ -153,8 +153,6 @@ Examples:
     # Join two graphs (computes all set operations)
     python joins_pipeline.py --g1 optimized --g2 agent-4-rules
     
-    # Use anthropic provider
-    python joins_pipeline.py --g1 optimized --g2 agent-4-rules --provider anthropic
     
     # Use 20 parallel workers
     python joins_pipeline.py --g1 graphA --g2 FM --workers 20
@@ -171,7 +169,7 @@ Set Operations Computed:
     parser.add_argument('--list', action='store_true', help='List available knowledge graphs')
     parser.add_argument('--g1', type=str, help='First knowledge graph name')
     parser.add_argument('--g2', type=str, help='Second knowledge graph name')
-    parser.add_argument('--provider', type=str, default='openai', choices=['openai', 'anthropic'],
+    parser.add_argument('--provider', type=str, default='openai', choices=['openai'],
                         help='LLM provider (default: openai)')
     config = get_config()
     parser.add_argument('--workers', type=int, default=None, 

@@ -36,12 +36,12 @@ def sync_knowledge_graph_to_fama_code(provider: str = "openai", source_file_name
     Sync optimized knowledge graph files to fama-to-code catalog.
     
     Copies all files from:
-      policy-to-knowledge/pipeline-output/{provider}/{source_file_name}/agent-5-optimized
+      policy-to-knowledge/pipeline-output/{source_file_name}/agent-5-optimized
     To:
       fama-to-code/data/catalogs/knowledge-graph/{source_file_name}/
     
     Args:
-        provider: The provider used (openai or anthropic)
+        provider: The provider used (openai)
         source_file_name: The name of the source file (without extension)
     """
     print("\n" + "=" * 80)
@@ -52,10 +52,10 @@ def sync_knowledge_graph_to_fama_code(provider: str = "openai", source_file_name
         # Define source and destination paths
         project_root = Path(__file__).parent.parent
         if source_file_name:
-            source_dir = Path(__file__).parent / "pipeline-output" / provider / source_file_name / "agent-5-optimized"
+            source_dir = Path(__file__).parent / "pipeline-output" / source_file_name / "agent-5-optimized"
             dest_dir = project_root / "fama-to-code" / "data" / "catalogs" / "knowledge-graph" / source_file_name
         else:
-            source_dir = Path(__file__).parent / "pipeline-output" / provider / "agent-5-optimized"
+            source_dir = Path(__file__).parent / "pipeline-output" / "agent-5-optimized"
             dest_dir = project_root / "fama-to-code" / "data" / "catalogs" / "knowledge-graph"
         
         # Validate source directory exists
@@ -126,7 +126,7 @@ class KnowledgeExtractionPipeline:
             organized_dir: Directory for organized/chunked documents
             output_dir: Directory for final knowledge graph outputs
             target_rules: Target number of business rules to extract
-            provider: AI provider to use ('openai' or 'anthropic')
+            provider: AI provider to use ('openai')
             max_workers: Maximum number of parallel workers for LLM calls (default: 20)
             domain: Compliance domain to use for prompts (e.g., 'mortgage', 'aml')
         """
@@ -1369,11 +1369,11 @@ def run_batch_mode(args, provider: str, pipeline_start_time: datetime, domain: s
     
     Each subdirectory in compliance-files becomes a batch:
     - All files in the subdirectory are processed together
-    - Output is stored under pipeline-output/{provider}/{batch_name}/
+    - Output is stored under pipeline-output/{batch_name}/
     
     Args:
         args: Parsed command line arguments
-        provider: AI provider (openai/anthropic)
+        provider: AI provider (openai)
         pipeline_start_time: Start time for total duration tracking
         domain: Compliance domain (e.g. 'aml', 'mortgage')
     """
@@ -1554,7 +1554,7 @@ def run_batch_mode(args, provider: str, pipeline_start_time: datetime, domain: s
     
     print()
     print("📁 Output Structure:")
-    print(f"   pipeline-output/{provider}/")
+    print("   pipeline-output/")
     for result in all_results:
         status = "✅" if result["success"] else "❌"
         print(f"   {status} {result['batch_name']}/")
@@ -1576,7 +1576,7 @@ def run_batch_mode(args, provider: str, pipeline_start_time: datetime, domain: s
         merge_success = run_merge_phase(provider, args.merge_strategy)
         if merge_success:
             print("\n✅ Merge phase completed successfully!")
-            print(f"   📁 Merged output: pipeline-output/{provider}/_merged/")
+            print(f"   📁 Merged output: pipeline-output/_merged/")
         else:
             print("\n⚠️  Merge phase failed")
     elif args.merge and len(successful_batches) < 2:
@@ -1598,7 +1598,7 @@ def run_merge_phase(provider: str, strategy: str = "provenance") -> bool:
     - Agent 10: Set Visualization (HTML reports)
     
     Args:
-        provider: AI provider (openai/anthropic)
+        provider: AI provider (openai)
         strategy: Merge strategy (not used in new pipeline, kept for compatibility)
         
     Returns:
@@ -1680,7 +1680,6 @@ Examples:
   
   # Run with explicit provider validation
   python knowledge_graph_generation.py --provider openai
-  python knowledge_graph_generation.py --provider anthropic
   
   # Run with custom directories and target rules
   python knowledge_graph_generation.py --source knowledge-files --output my-kg --target-rules 150
@@ -1690,11 +1689,10 @@ Examples:
   python knowledge_graph_generation.py --step 3  # Business rules extraction only
   
   # Run with provider validation and specific step
-  python knowledge_graph_generation.py --provider anthropic --step 2
   
   # Custom configuration
   python knowledge_graph_generation.py \
-    --provider anthropic \
+    --provider openai \
     --source my-documents \
     --organized my-documents-organized \
     --output my-knowledge-graph \
@@ -1793,8 +1791,9 @@ Examples:
     parser.add_argument(
         "--provider",
         type=str,
-        choices=["openai", "anthropic"],
-        help="Explicitly specify AI provider (openai or anthropic). If not specified, prompts user to select."
+        default="openai",
+        choices=["openai"],
+        help="AI provider. This build is OpenAI-only."
     )
     
     parser.add_argument(
@@ -1816,43 +1815,9 @@ Examples:
     # Determine domain: args > env var > config.json
     domain = getattr(args, 'domain', None) or os.getenv('KG_DOMAIN') or None
 
-    # Determine provider: args > env var > interactive prompt
-    provider = args.provider
-    if not provider:
-        # Check for environment variable
-        env_provider = os.getenv("LLM_PROVIDER", "").lower()
-        if env_provider in ["openai", "anthropic"]:
-            provider = env_provider
-            print(f"✅ Using provider from environment: {provider}")
-        # Check if running in non-interactive mode (Docker, CI/CD, etc.)
-        elif not sys.stdin.isatty():
-            # Default to openai in non-interactive mode
-            provider = "openai"
-            print(f"⚙️  Non-interactive mode detected. Defaulting to: {provider}")
-        else:
-            # Interactive prompt
-            print("\n" + "=" * 80)
-            print("🤖 SELECT AI PROVIDER")
-            print("=" * 80)
-            print("Available providers:")
-            print("  1. OpenAI (GPT-5.2) - Comprehensive, fine-grained extraction")
-            print("  2. Anthropic (Claude Sonnet 4) - Selective, concept-focused extraction")
-            print("=" * 80)
-            
-            while True:
-                choice = input("\nSelect provider (1 for OpenAI, 2 for Anthropic): ").strip()
-                if choice == "1":
-                    provider = "openai"
-                    print(f"✅ Selected: OpenAI (GPT-5.2)")
-                    break
-                elif choice == "2":
-                    provider = "anthropic"
-                    print(f"✅ Selected: Anthropic (Claude Sonnet 4)")
-                    break
-                else:
-                    print("❌ Invalid choice. Please enter 1 or 2.")
-            print()
-    
+    # This build is OpenAI-only.
+    provider = args.provider or "openai"
+
     # Handle --merge-only flag (skip per-document processing)
     if args.merge_only:
         print("\n" + "=" * 80)
@@ -2049,7 +2014,7 @@ Examples:
     
     print()
     print("📁 Output Structure:")
-    print(f"   pipeline-output/{provider}/")
+    print("   pipeline-output/")
     for result in all_results:
         status = "✅" if result["success"] else "❌"
         print(f"   {status} {result['file_stem']}/")
@@ -2071,7 +2036,7 @@ Examples:
         merge_success = run_merge_phase(provider, args.merge_strategy)
         if merge_success:
             print("\n✅ Merge phase completed successfully!")
-            print(f"   📁 Merged output: pipeline-output/{provider}/_merged/")
+            print(f"   📁 Merged output: pipeline-output/_merged/")
         else:
             print("\n⚠️  Merge phase failed")
     elif args.merge and len(successful_files) < 2:

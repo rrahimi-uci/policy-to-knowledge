@@ -43,7 +43,7 @@ class SemanticRuleMatcher:
         Initialize the matcher.
         
         Args:
-            provider: The provider folder (openai/anthropic)
+            provider: The provider folder (openai)
             max_workers: Maximum parallel LLM calls (from config if not set)
             batch_size: Number of pairs per LLM call (from config if not set)
             merge_subfolder: Subfolder name for merged outputs (e.g., 'graphA_graphB')
@@ -61,7 +61,7 @@ class SemanticRuleMatcher:
         self._completed_count = 0
         self._total_count = 0
         
-        self.base_path = Path(__file__).parent.parent / "pipeline-output" / provider
+        self.base_path = Path(__file__).parent.parent / "pipeline-output"
         self._setup_paths()
         
         # Thread-local storage for LLM clients
@@ -104,7 +104,6 @@ class SemanticRuleMatcher:
             
             self._thread_local.client = create_llm_client(
                 api_key=self.config.get('openai_api_key'),
-                anthropic_api_key=self.config.get('anthropic_api_key'),
                 model=model
             )
         return self._thread_local.client
@@ -539,7 +538,7 @@ def main():
     import argparse
     
     parser = argparse.ArgumentParser(description='Semantic rule matching using LLM (BATCH mode)')
-    parser.add_argument('--provider', type=str, default='openai', choices=['openai', 'anthropic'])
+    parser.add_argument('--provider', type=str, default='openai', choices=['openai'])
     config = get_config()
     parser.add_argument('--workers', type=int, default=None, help=f'Number of parallel workers (default: {config.get_matcher_max_workers()} from config)')
     parser.add_argument('--batch-size', type=int, default=None, help=f'Number of pairs per LLM call (default: {config.get_matcher_batch_size()} from config)')

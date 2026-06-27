@@ -416,15 +416,14 @@ def convert_report_file(input_path: Path, output_path: Path = None) -> Path:
     else:
         output_path = Path(output_path)
     
-    # Extract source document name from path (e.g., pipeline-output/openai/FM/agent-5-optimized/)
-    # The source document name is the folder between provider and agent folder
+    # Extract source document name from path (e.g., pipeline-output/FM/agent-5-optimized/)
+    # The source document name is the folder directly under pipeline-output/.
     source_document = None
     path_parts = input_path.parts
     for i, part in enumerate(path_parts):
-        if part in ['openai', 'anthropic'] and i + 1 < len(path_parts):
-            # Next part after provider is the source document name
+        if part == 'pipeline-output' and i + 1 < len(path_parts):
             next_part = path_parts[i + 1]
-            if not next_part.startswith('agent-'):
+            if not next_part.startswith('agent-') and not next_part.startswith('_'):
                 source_document = next_part
             break
     

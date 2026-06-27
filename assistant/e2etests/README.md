@@ -15,23 +15,23 @@ server + JanusGraph** instance and exercise every public endpoint.
 
 ```bash
 cd e2etests
-pip install -r requirements.txt
+../.venv/bin/pip install -r requirements.txt
 ```
 
 ## Running
 
 ```bash
 # All tests (server must be running on localhost:5001)
-pytest -v
+../.venv/bin/pytest -v
 
 # Specific test file
-pytest -v test_graph_api.py
+../.venv/bin/pytest -v test_graph_api.py
 
 # With BASE_URL override
-BASE_URL=http://localhost:5001 pytest -v
+BASE_URL=http://localhost:5001 ../.venv/bin/pytest -v
 
 # Stop on first failure
-pytest -v -x
+../.venv/bin/pytest -v -x
 ```
 
 ## Test files

@@ -60,7 +60,7 @@ class TestCLIArgumentParsing:
         """Build the argparse parser the same way main() does."""
         import argparse
         parser = argparse.ArgumentParser()
-        parser.add_argument("--provider", type=str, choices=["openai", "anthropic"])
+        parser.add_argument("--provider", type=str, choices=["openai"])
         parser.add_argument("--batch", action="store_true")
         parser.add_argument("--workers", type=int, default=None)
         parser.add_argument("--source", default=None)

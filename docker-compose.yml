@@ -130,7 +130,6 @@ services:
       - "${KG_BACKEND_PORT:-8000}:8000"
     environment:
       - OPENAI_API_KEY=${OPENAI_API_KEY}
-      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
       - PIPELINE_DATA_DIR=/app/pipeline-data
     volumes:
       - ./pipeline/compliance-files:/app/compliance-files:rw

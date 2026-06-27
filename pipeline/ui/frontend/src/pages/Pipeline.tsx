@@ -176,7 +176,6 @@ const DOMAINS = [
 
 const PROVIDERS = [
   { value: 'openai', label: 'OpenAI' },
-  { value: 'anthropic', label: 'Anthropic' },
 ];
 
 const STEP_LABELS: Record<number, string> = {
