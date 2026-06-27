@@ -157,7 +157,7 @@ Examples:
     python joins_pipeline.py --g1 optimized --g2 agent-4-rules --provider anthropic
     
     # Use 20 parallel workers
-    python joins_pipeline.py --g1 FMNA --g2 FM --workers 20
+    python joins_pipeline.py --g1 graphA --g2 FM --workers 20
 
 Set Operations Computed:
     ∩ Intersection (G1 ∩ G2)  - Rules in both graphs

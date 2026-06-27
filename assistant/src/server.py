@@ -2454,7 +2454,7 @@ def _build_chunk_index(docs_folder: str) -> list:
 
     Paths recorded in _metadata.json may be relative to either:
       1. The top-level docs_folder  (e.g. sample-guidelines, fannie-mae)
-      2. The parent of the _metadata.json file  (e.g. revolution
+      2. The parent of the _metadata.json file  (e.g. overlay
          where metadata lives inside agent-1-organized-documents/<sub>/)
 
     We try both and keep whichever resolves to an existing file.  The stored
@@ -4162,7 +4162,7 @@ For research questions (e.g. "explain the appraisal requirements", "what do the 
 ### Multi-Graph Awareness
 Always pass the correct `graph_name` parameter when the user mentions a specific domain:
 - Compliance / FAMA → graph_name = the first traversal source (default)
-- Contracts / overlays / Revolution → use the contracts traversal source
+- Contracts / overlays / Overlay → use the contracts traversal source
 - Commercial lending → use the commercial lending traversal source
 - **If unclear or no graph is mentioned → use `cross_graph_search` to cover all graphs at once.**
 
