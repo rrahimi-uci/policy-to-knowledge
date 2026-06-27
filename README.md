@@ -108,12 +108,31 @@ chunks locally.
 
 ## Testing
 
+Every suite emits [Allure](https://allurereport.org/) results and code coverage.
+
 ```bash
-(cd apps/pipeline && .venv/bin/python -m pytest tests/ -q)
-(cd apps/explorer && .venv/bin/python -m pytest tests/ -q)
-(cd apps/shell && npm test)
-(cd apps/pipeline/ui/frontend && npm test)
+# Backend (pytest → coverage + allure-results/)
+(cd apps/pipeline  && .venv/bin/python -m pytest)
+(cd apps/explorer  && .venv/bin/python -m pytest)
+
+# Frontend (vitest → coverage + allure-results/)
+(cd apps/shell                 && npm test -- --coverage)
+(cd apps/pipeline/ui/frontend  && npm test -- --coverage)
 ```
 
-Live Playwright and API E2E suites need the corresponding services running
+Generate a combined Allure report from all suites (requires the
+[Allure CLI](https://allurereport.org/docs/install/)):
+
+```bash
+mkdir -p /tmp/allure
+cp apps/*/allure-results/* apps/pipeline/ui/frontend/allure-results/* /tmp/allure/ 2>/dev/null
+allure serve /tmp/allure
+```
+
+CI runs all four suites with coverage, uploads each suite's `allure-results`,
+and publishes a merged **Allure report** artifact.
+
+Unit tests focus on the logic layer (config, services, stores, hooks, pure
+helpers). Data-heavy page components and live-backend modules are exercised by
+the Playwright / API E2E suites, which need the corresponding services running
 first; see the component READMEs.

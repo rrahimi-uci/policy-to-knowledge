@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { MessageSquare, X, Send, Loader2, Sparkles, ChevronRight } from 'lucide-react';
+import { applySSELine, initialSSEState, type SSEState } from '../lib/sse';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -82,6 +83,7 @@ export default function ChatDrawer({ entityName, graphName }: Props) {
       const reader = res.body?.getReader();
       const decoder = new TextDecoder();
       let buffer = '';
+      let sse: SSEState = { ...initialSSEState };
 
       while (reader) {
         const { done, value } = await reader.read();
@@ -92,37 +94,19 @@ export default function ChatDrawer({ entityName, graphName }: Props) {
         buffer = lines.pop() || '';
 
         for (const line of lines) {
-          if (line.startsWith('event: ')) {
-            const eventType = line.slice(7).trim();
-            // read next data line
-            continue;
+          const prevContent = sse.content;
+          const prevStep = sse.currentStep;
+          sse = applySSELine(line, sse);
+          if (sse.content !== prevContent) {
+            assistantContent = sse.content;
+            setMessages(prev => {
+              const updated = [...prev];
+              updated[updated.length - 1] = { role: 'assistant', content: assistantContent };
+              return updated;
+            });
           }
-          if (line.startsWith('data: ')) {
-            try {
-              const data = JSON.parse(line.slice(6));
-              if (data.content !== undefined) {
-                // token event
-                assistantContent += data.content;
-                setMessages(prev => {
-                  const updated = [...prev];
-                  updated[updated.length - 1] = { role: 'assistant', content: assistantContent };
-                  return updated;
-                });
-              }
-              if (data.label !== undefined) {
-                // step event
-                setCurrentStep(data.status === 'done' ? null : data.label);
-              }
-              if (data.message !== undefined && !data.content) {
-                // error event
-                assistantContent += data.message;
-                setMessages(prev => {
-                  const updated = [...prev];
-                  updated[updated.length - 1] = { role: 'assistant', content: assistantContent };
-                  return updated;
-                });
-              }
-            } catch { /* non-JSON line, skip */ }
+          if (sse.currentStep !== prevStep) {
+            setCurrentStep(sse.currentStep);
           }
         }
       }

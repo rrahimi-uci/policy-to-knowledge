@@ -13,19 +13,19 @@ test('documents page supports filtering and preview', async ({ page }) => {
   await page.getByRole('button', { name: 'Mortgage' }).click();
 
   await page.getByText('sample-guidelines').click();
-  await expect(page.getByText('Fannie Mae November 2025 Selling Guide.md')).toBeVisible();
+  await expect(page.getByText('Sample Guidelines November 2025 Selling Guide.md')).toBeVisible();
   await expect(page.getByText('Conventional escrow waiver policy.md')).toBeVisible();
 
   await page.getByLabel('Filter files').fill('escrow');
   await expect(page.getByText('Conventional escrow waiver policy.md')).toBeVisible();
-  await expect(page.getByText('Fannie Mae November 2025 Selling Guide.md')).not.toBeVisible();
+  await expect(page.getByText('Sample Guidelines November 2025 Selling Guide.md')).not.toBeVisible();
 
   await page.getByLabel('Filter files').fill('');
-  const previewButton = page.getByLabel('Preview Fannie Mae November 2025 Selling Guide.md');
+  const previewButton = page.getByLabel('Preview Sample Guidelines November 2025 Selling Guide.md');
   await previewButton.hover();
   await previewButton.click();
 
-  await expect(page.getByRole('heading', { name: 'Fannie Mae November 2025 Selling Guide.md' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Sample Guidelines November 2025 Selling Guide.md' })).toBeVisible();
   await expect(page.getByText('Borrowers must meet credit, income, and occupancy eligibility rules.')).toBeVisible();
   await page.getByRole('button', { name: 'Close' }).click();
 

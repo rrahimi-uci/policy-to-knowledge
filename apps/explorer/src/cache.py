@@ -80,19 +80,21 @@ class CacheManager:
         Returns:
             Cache key string
         """
-        # Sanitise args so non-serialisable objects (e.g. `self` from bound
-        # methods) don't break json.dumps – fall back to repr() for those.
-        safe_args = []
-        for a in args:
+        # Sanitise args AND kwargs so non-serialisable objects (e.g. `self` from
+        # bound methods) don't break json.dumps – fall back to repr() for those.
+        def _safe(value):
             try:
-                json.dumps(a)
-                safe_args.append(a)
+                json.dumps(value)
+                return value
             except (TypeError, ValueError):
-                safe_args.append(repr(a))
+                return repr(value)
+
+        safe_args = [_safe(a) for a in args]
+        safe_kwargs = {k: _safe(v) for k, v in kwargs.items()}
 
         key_data = json.dumps({
             "args": safe_args,
-            "kwargs": sorted(kwargs.items())
+            "kwargs": sorted(safe_kwargs.items())
         }, sort_keys=True)
         key_hash = hashlib.md5(key_data.encode()).hexdigest()
         return f"p2k:{prefix}:{key_hash}"

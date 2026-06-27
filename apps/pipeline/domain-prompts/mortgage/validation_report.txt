@@ -265,9 +265,9 @@ Respond with JSON:
       "missing_entities": [
         {
           "expected_entity": "SUBORDINATE_FINANCING_TERMS",
-          "reason_expected": "Mentioned in source document 'Fannie Mae Chapter 5' but not extracted",
+          "reason_expected": "Mentioned in source document 'Sample Guidelines Chapter 5' but not extracted",
           "impact": "MEDIUM - Affects accuracy of subordinate financing rules",
-          "recommended_action": "Re-process 'Fannie Mae Chapter 5' with focus on subordinate financing section"
+          "recommended_action": "Re-process 'Sample Guidelines Chapter 5' with focus on subordinate financing section"
         }
       ],
       "orphaned_entities": [
@@ -380,7 +380,7 @@ REPORT QUALITY STANDARDS
 
 ✅ **Recommendations Must Be Actionable**
 ❌ BAD: "Improve data quality"
-✅ GOOD: "Add 3 missing attributes to LOAN_APPROVAL_CRITERIA: approval_threshold, validation_method, regulatory_source. Reference source document 'Fannie Mae Selling Guide Section B3-3'."
+✅ GOOD: "Add 3 missing attributes to LOAN_APPROVAL_CRITERIA: approval_threshold, validation_method, regulatory_source. Reference source document 'Sample Guidelines Selling Guide Section B3-3'."
 
 ✅ **Gap Analysis Must Identify Root Causes**
 - Why was entity missed? (document not processed, extraction error, ambiguous text)

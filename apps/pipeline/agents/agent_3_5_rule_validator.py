@@ -305,11 +305,11 @@ class RuleValidationAgent:
         }
         
         # For backward compatibility, accept rule_type in place of rule_behavior/rule_domain
-        # and fannie_mae_reference in place of source_reference
+        # and legacy_source_reference in place of source_reference
         legacy_compatible_fields = {
             'rule_behavior': 'rule_type',  # If rule_behavior missing, check for rule_type
             'rule_domain': 'rule_type',  # If rule_domain missing, check for rule_type
-            'source_reference': 'fannie_mae_reference'  # If source_reference missing, check for fannie_mae_reference
+            'source_reference': 'legacy_source_reference'  # If source_reference missing, check for legacy_source_reference
         }
         
         incomplete_rules = []
@@ -383,7 +383,7 @@ class RuleValidationAgent:
                         })
 
             # Validate structured source_reference
-            src_ref = rule.get('source_reference', rule.get('fannie_mae_reference', ''))
+            src_ref = rule.get('source_reference', rule.get('legacy_source_reference', ''))
             if isinstance(src_ref, dict):
                 # Structured format — validate required sub-fields
                 _ref_required = ['chunk_path', 'section_id', 'start_word_position', 'end_word_position', 'source_text']
@@ -509,7 +509,7 @@ class RuleValidationAgent:
         for rule in sampled_rules:
             # This is a placeholder - full implementation would use LLM to verify
             # For now, just check if the reference exists in documents
-            reference = rule.get('source_reference', rule.get('fannie_mae_reference', ''))
+            reference = rule.get('source_reference', rule.get('legacy_source_reference', ''))
             
             # Handle both structured and legacy string formats
             if isinstance(reference, dict):

@@ -13,7 +13,7 @@ const DOMAINS = [
 ];
 
 /** Map a folder name to its domain value using naming conventions.
- *  - p2k-* / fannie* / freddie* / fnma* / fhlmc* → mortgage
+ *  - p2k-* / mortgage* / sample-guidelines* / example-policies* → mortgage
  *  - aml*             → aml
  *  - *lending* / *commercial* / *comercial* → commercial_lending
  *  - healthcare*      → healthcare
@@ -21,13 +21,12 @@ const DOMAINS = [
  */
 function getFolderDomain(name: string): string {
   const lower = name.toLowerCase();
+  const normalized = lower.replace(/[-\s]+/g, '_');
   if (
-    lower.startsWith('p2k') ||
-    lower.startsWith('fannie') ||
-    lower.startsWith('freddie') ||
-    lower.startsWith('freddies') ||
-    lower.startsWith('fnma') ||
-    lower.startsWith('fhlmc')
+    normalized.startsWith('p2k') ||
+    normalized.startsWith('mortgage') ||
+    normalized.startsWith('sample_guidelines') ||
+    normalized.startsWith('example_policies')
   ) return 'mortgage';
   if (lower.startsWith('aml')) return 'aml';
   if (lower.includes('lending') || lower.includes('commercial') || lower.includes('comercial')) return 'commercial_lending';

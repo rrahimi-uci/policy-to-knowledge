@@ -7,27 +7,27 @@ from src.docs_sync import copy_docs_tree, docs_folder_rel
 
 
 def test_docs_folder_rel_uses_graph_key_slug():
-    assert docs_folder_rel("fannie_mae") == "kbs/fannie-mae"
+    assert docs_folder_rel("sample_guidelines") == "kbs/sample-guidelines"
 
 
 def test_copy_docs_tree_preserves_top_level_files_and_nested_chunks(tmp_path):
     source = tmp_path / "agent-1-organized-documents"
-    nested = source / "Fannie_Mae"
+    nested = source / "Sample_Guidelines"
     nested.mkdir(parents=True)
 
     (source / "_processing_results.json").write_text("{}", encoding="utf-8")
     (nested / "_metadata.json").write_text(
-        '{"structure": [{"title": "Chunk", "path": "Fannie_Mae/chunk.txt", "chunk_id": "chunk-1"}]}',
+        '{"structure": [{"title": "Chunk", "path": "Sample_Guidelines/chunk.txt", "chunk_id": "chunk-1"}]}',
         encoding="utf-8",
     )
     (nested / "chunk.txt").write_text("chunk body", encoding="utf-8")
 
-    destination = tmp_path / "kbs" / "fannie-mae"
+    destination = tmp_path / "kbs" / "sample-guidelines"
     copy_docs_tree(source, destination)
 
     assert (destination / "_processing_results.json").read_text(encoding="utf-8") == "{}"
-    assert (destination / "Fannie_Mae" / "_metadata.json").is_file()
-    assert (destination / "Fannie_Mae" / "chunk.txt").read_text(encoding="utf-8") == "chunk body"
+    assert (destination / "Sample_Guidelines" / "_metadata.json").is_file()
+    assert (destination / "Sample_Guidelines" / "chunk.txt").read_text(encoding="utf-8") == "chunk body"
 
 
 def _load_server(monkeypatch):

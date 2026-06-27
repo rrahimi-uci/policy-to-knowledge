@@ -9,7 +9,7 @@
 
 ## Scene 1 — Title & Hook · 23s
 
-> In mortgage lending, regulatory compliance is not optional. It is operational. Fannie Mae, Freddie Mac, and federal agencies issue hundreds of updates every year. Policy to Knowledge transforms that complexity into structured, actionable intelligence.
+> In mortgage lending, regulatory compliance is not optional. It is operational. Sample Guidelines, Example Policies, and federal agencies issue hundreds of updates every year. Policy to Knowledge transforms that complexity into structured, actionable intelligence.
 
 **Visual:** Brand title "Policy to Knowledge SUITE" fades in with glow. Subtitle: "Regulatory Intelligence & Compliance Operations". Particle constellation background.
 
@@ -27,7 +27,7 @@
 
 > That burden spans an entire lifecycle, from regulatory monitoring and document ingestion, through knowledge extraction and change detection, to impact analysis, obligation management, and audit defense. Today, most teams handle this entire cycle with spreadsheets and manual reviews.
 
-**Visual:** Eight-step compliance lifecycle flow diagram. Domain legend: Fannie Mae & Freddie Mac, FHA / VA / USDA, State Regulators.
+**Visual:** Eight-step compliance lifecycle flow diagram. Domain legend: Sample Guidelines & Example Policies, FHA / VA / USDA, State Regulators.
 
 ---
 
@@ -41,7 +41,7 @@
 
 ## Scene 5 — Unified Dashboard · 29s
 
-> Everything starts here, with the Policy to Knowledge dashboard. Policy to Knowledge has created seven knowledge graphs spanning high-compliance domains, including Fannie Mae and Freddie Mac in mortgage, Anti-Money Laundering, commercial lending, and healthcare. Fifty-three source documents ingested, over two thousand rules extracted across these enterprise domains, and the compliance assistant connected and ready.
+> Everything starts here, with the Policy to Knowledge dashboard. Policy to Knowledge has created seven knowledge graphs spanning high-compliance domains, including Sample Guidelines and Example Policies in mortgage, Anti-Money Laundering, commercial lending, and healthcare. Fifty-three source documents ingested, over two thousand rules extracted across these enterprise domains, and the compliance assistant connected and ready.
 
 **Visual:** Live Policy to Knowledge dashboard screenshot. KPIs: 7 Knowledge Graphs · 53 Source Documents · 2,062 Rules Extracted · Compliance Assistant Connected.
 
@@ -65,9 +65,9 @@
 
 ## Scene 8 — Compare Knowledge Graphs · 35s
 
-> Policy to Knowledge lets you compare any two knowledge graphs side by side using AI-powered semantic analysis. Here, the Fannie Mae Selling Guide with three hundred fifty-two rules is compared against Freddie Mac with three hundred eighty-three rules. The comparison reveals sixteen shared rules, three hundred thirty-six unique to Fannie Mae, three hundred sixty-seven unique to Freddie Mac, and fourteen semantic contradictions. Each contradiction includes a detailed AI analysis explaining the conflict and its implications. This is then reviewed by human experts and used to refine the extraction and comparison models for even deeper insights over time.
+> Policy to Knowledge lets you compare any two knowledge graphs side by side using AI-powered semantic analysis. Here, the Sample Guidelines Selling Guide with three hundred fifty-two rules is compared against Example Policies with three hundred eighty-three rules. The comparison reveals sixteen shared rules, three hundred thirty-six unique to Sample Guidelines, three hundred sixty-seven unique to Example Policies, and fourteen semantic contradictions. Each contradiction includes a detailed AI analysis explaining the conflict and its implications. This is then reviewed by human experts and used to refine the extraction and comparison models for even deeper insights over time.
 
-**Visual:** Compare Knowledge Graphs view (Fannie Mae vs Freddie Mac). KPIs: 16 common rules · 336 unique to Fannie Mae · 367 unique to Freddie Mac · 14 contradictions detected.
+**Visual:** Compare Knowledge Graphs view (Sample Guidelines vs Example Policies). KPIs: 16 common rules · 336 unique to Sample Guidelines · 367 unique to Example Policies · 14 contradictions detected.
 
 ---
 
@@ -81,7 +81,7 @@
 
 ## Scene 10 — Graph Analytics · 29s
 
-> Policy to Knowledge provides deep analytics on every knowledge graph. For example, the Fannie Mae Selling Guide analysis shows three hundred fifty-two rules, thirteen dependencies, and forty-three entity types. The risk breakdown reveals two hundred three high-risk and one hundred twenty-eight critical rules, with an average confidence of eighty-eight point six percent.
+> Policy to Knowledge provides deep analytics on every knowledge graph. For example, the Sample Guidelines Selling Guide analysis shows three hundred fifty-two rules, thirteen dependencies, and forty-three entity types. The risk breakdown reveals two hundred three high-risk and one hundred twenty-eight critical rules, with an average confidence of eighty-eight point six percent.
 
 **Visual:** Analytics dashboard with rule type distribution, risk level breakdown, dependency types, confidence histogram. KPIs: 352 rules · 13 dependencies · 43 entity types · 203 high / 128 critical · 88.6% confidence.
 
@@ -99,7 +99,7 @@
 
 > Every extracted rule becomes a trackable obligation. The Obligation Register lets teams auto-import from the graph, map controls, identify gaps, and track compliance scores through heatmaps. AI-powered suggestions recommend controls based on risk level. Everything is exportable for audit and exam.
 
-**Visual:** Obligation Register & Gap Analysis view with Fannie Mae graph selected (352 rules).
+**Visual:** Obligation Register & Gap Analysis view with Sample Guidelines graph selected (352 rules).
 
 ---
 

@@ -3,7 +3,7 @@
 JTBD-to-Knowledge-Graph Rule Mapper Agent
 
 Maps each Job-To-Be-Done (JTBD) from a JTBD set to relevant business rules
-in a Fannie Mae compliance knowledge graph using GPT-5.2 semantic analysis.
+in a Sample Guidelines compliance knowledge graph using GPT-5.2 semantic analysis.
 
 Generates a professional HTML gap analysis report.
 
@@ -39,7 +39,8 @@ STOP_WORDS = {
     "the", "and", "for", "that", "with", "this", "from", "are", "was", "were",
     "have", "has", "had", "into", "onto", "under", "over", "must", "shall",
     "such", "than", "then", "when", "where", "which", "while", "also", "only",
-    "loan", "loans", "rule", "rules", "fannie", "mae", "jtbd", "base", "version",
+    "loan", "loans", "rule", "rules", "sample", "guideline", "guidelines",
+    "example", "policy", "policies", "jtbd", "base", "version",
     "step", "steps", "review", "identify", "validate", "required", "information",
 }
 
@@ -98,19 +99,19 @@ def build_rule_catalog(kg: Dict) -> List[Dict]:
 
 
 def get_jtbd_text(jtbd: Dict) -> str:
-    """Extract the effective requirement text for a JTBD (COMMON + FNMA overlay)."""
+    """Extract the effective requirement text for a JTBD (COMMON + SAMPLE_GUIDELINES overlay)."""
     common_text = ""
-    fnma_text = ""
+    sample_guidelines_text = ""
     for req in jtbd.get("requirements", []):
         inv = req.get("investor", "")
         txt = req.get("requirement_text", "")
         if inv == "COMMON" and txt and txt != "NO_CHANGE":
             common_text = txt
-        elif inv == "FNMA" and txt and txt != "NO_CHANGE":
-            fnma_text = txt
+        elif inv == "SAMPLE_GUIDELINES" and txt and txt != "NO_CHANGE":
+            sample_guidelines_text = txt
     combined = common_text
-    if fnma_text:
-        combined += "\n\n--- FNMA OVERLAY ---\n" + fnma_text
+    if sample_guidelines_text:
+        combined += "\n\n--- SAMPLE_GUIDELINES OVERLAY ---\n" + sample_guidelines_text
     # Truncate to keep within token limits
     return combined[:3000]
 
@@ -254,7 +255,7 @@ def build_forced_mapping_prompt(jtbd: Dict, candidates: List[Dict]) -> List[Dict
     """Build a strict second-pass prompt that guarantees at least one mapped rule."""
     system_msg = """You are a mortgage compliance expert.
 
-Your task: map ONE JTBD to the best matching Fannie Mae rules from the provided candidate list.
+Your task: map ONE JTBD to the best matching Sample Guidelines rules from the provided candidate list.
 
 Rules:
 1) You MUST return at least one matched rule.
@@ -414,7 +415,7 @@ def ensure_complete_mappings(
 def build_mapping_prompt(jtbd_batch: List[Dict], rule_catalog_json: str) -> List[Dict]:
     """Build the prompt messages for mapping a batch of JTBDs to KG rules."""
     system_msg = """You are a mortgage compliance expert. Your task is to map Jobs-To-Be-Done (JTBDs) 
-to Fannie Mae Knowledge Graph business rules.
+to Sample Guidelines Knowledge Graph business rules.
 
 For each JTBD, identify ALL rules from the Knowledge Graph that are relevant to that job.
 A rule is relevant if:
@@ -874,7 +875,7 @@ def generate_html_report(analysis: Dict, jtbd_title: str) -> str:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JTBD Gap Analysis Using Fannie Mae Knowledge Graph</title>
+    <title>JTBD Gap Analysis Using Sample Guidelines Knowledge Graph</title>
     <style>
         * {{ box-sizing: border-box; }}
         body {{
@@ -1007,7 +1008,7 @@ def generate_html_report(analysis: Dict, jtbd_title: str) -> str:
     <!-- Back to Top Button -->
     <button class="back-to-top" onclick="window.scrollTo({{top: 0, behavior: 'smooth'}})" title="Back to top">&uarr;</button>
 
-    <h1>JTBD Gap Analysis Using Fannie Mae Knowledge Graph</h1>
+    <h1>JTBD Gap Analysis Using Sample Guidelines Knowledge Graph</h1>
     <p class="subtitle">Comprehensive Analysis of Jobs-To-Be-Done Coverage Against Knowledge Graph Business Rules<br>
     <small>Source: {_esc(jtbd_title)} | Generated: {timestamp} | Model: {MODEL}</small></p>
 
@@ -1040,13 +1041,13 @@ def generate_html_report(analysis: Dict, jtbd_title: str) -> str:
         <h2 style="margin-top: 0; border: none; padding: 0;">1. Executive Summary</h2>
 
         <h3>Purpose</h3>
-        <p>This report maps each Job-To-Be-Done from the <strong>{_esc(jtbd_title)}</strong> to Fannie Mae Knowledge Graph business rules using <strong>{MODEL}</strong> semantic analysis. It identifies coverage gaps and unmapped rules requiring attention.</p>
+        <p>This report maps each Job-To-Be-Done from the <strong>{_esc(jtbd_title)}</strong> to Sample Guidelines Knowledge Graph business rules using <strong>{MODEL}</strong> semantic analysis. It identifies coverage gaps and unmapped rules requiring attention.</p>
 
         <h3>Scope of Analysis</h3>
         <div class="highlight-box">
             <ul style="margin: 0;">
                 <li><strong>JTBD Inventory:</strong> {total_jtbds} Jobs-To-Be-Done across {len(section_mappings)} underwriting domains</li>
-                <li><strong>Knowledge Graph Rules:</strong> {total_kg} business rules extracted from Fannie Mae Selling Guide</li>
+                <li><strong>Knowledge Graph Rules:</strong> {total_kg} business rules extracted from Sample Guidelines Selling Guide</li>
                 <li><strong>Mapping Methodology:</strong> {MODEL} semantic analysis matching JTBD requirements to KG rule implementations</li>
             </ul>
         </div>
@@ -1166,7 +1167,7 @@ def main():
     import argparse
 
     parser = argparse.ArgumentParser(
-        description="Map JTBDs to Fannie Mae Knowledge Graph rules using GPT-5.2"
+        description="Map JTBDs to Sample Guidelines Knowledge Graph rules using GPT-5.2"
     )
     parser.add_argument(
         "--kg",

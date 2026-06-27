@@ -368,9 +368,9 @@ class TestStepMap:
         })
         cb = AsyncMock()
         await agentic._step_map(mock_llm_client, diff_result,
-                                 sample_graph_data["business_rules"], "Fannie_Mae", cb)
+                                 sample_graph_data["business_rules"], "Sample_Guidelines", cb)
         running_msg = cb.await_args_list[0][0][0]["message"]
-        assert "Fannie_Mae" in running_msg
+        assert "Sample_Guidelines" in running_msg
 
 
 # ═════════════════════════════════════════════════════════════════

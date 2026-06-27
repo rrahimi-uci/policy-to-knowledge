@@ -34,7 +34,7 @@ ENTITY EXTRACTION PRINCIPLES
    - "Document" → Use "Loan_Application", "Closing_Disclosure", "Appraisal_Report"
    - "Person" → Use "Borrower", "Co-Borrower", "Loan_Officer", "Underwriter"
    - "Property" → Use "Single_Family_Home", "Condominium", "Investment_Property"
-   - "Organization" → Use "Lender", "Title_Company", "Credit_Bureau", "Fannie_Mae"
+   - "Organization" → Use "Lender", "Title_Company", "Credit_Bureau", "Secondary_Market_Investor"
 
    ✅ USE SPECIFIC, ACTIONABLE ENTITIES:
    - Each entity should have clear business significance

@@ -127,26 +127,26 @@ async def cap_kg_joining(page: Page) -> None:
 
 
 async def cap_compare(page: Page) -> None:
-    """Fannie Mae vs Freddie Mac side-by-side compare with results."""
-    print("suite_compare (Fannie Mae vs Freddie Mac)")
+    """Sample Guidelines vs Example Policies side-by-side compare with results."""
+    print("suite_compare (Sample Guidelines vs Example Policies)")
     await page.goto(f"{BASE}/extraction/compare", wait_until="networkidle", timeout=20000)
     await page.wait_for_timeout(2500)
     # Pick the first two <select> as Graph A and Graph B
     selects = page.locator("select")
     count = await selects.count()
     if count >= 2:
-        # Graph A → fannie-mae
+        # Graph A → sample-guidelines
         try:
-            await selects.nth(0).select_option(value="fannie-mae")
+            await selects.nth(0).select_option(value="sample-guidelines")
             await selects.nth(0).dispatch_event("change")
-            print("   Graph A = fannie-mae")
+            print("   Graph A = sample-guidelines")
         except Exception:
-            await select_first_option_containing(page, "fannie")
+            await select_first_option_containing(page, "sample")
         await page.wait_for_timeout(1500)
 
-        # Graph B → freddies-mac (real graph slug)
+        # Graph B → example-policies (real graph slug)
         graph_b_set = False
-        for candidate in ("freddies-mac", "freddie-mac", "Freddie_Mac"):
+        for candidate in ("example-policies", "example-policies", "Example_Policies"):
             try:
                 await selects.nth(1).select_option(value=candidate)
                 await selects.nth(1).dispatch_event("change")
@@ -156,9 +156,9 @@ async def cap_compare(page: Page) -> None:
             except Exception:
                 continue
         if not graph_b_set:
-            # Fallback: pick first option whose visible text contains 'freddie'
+            # Fallback: pick first option whose visible text contains 'example'
             try:
-                option = selects.nth(1).locator("option", has_text=re.compile(r"freddie", re.I)).first
+                option = selects.nth(1).locator("option", has_text=re.compile(r"example", re.I)).first
                 value = await option.get_attribute("value")
                 if value:
                     await selects.nth(1).select_option(value=value)
@@ -176,7 +176,7 @@ async def cap_compare(page: Page) -> None:
 
 
 async def cap_kg_explorer(page: Page) -> None:
-    print("suite_kg_explorer (Fannie Mae graph loaded)")
+    print("suite_kg_explorer (Sample Guidelines graph loaded)")
     await page.goto(
         f"{BASE}/assistant/chat", wait_until="networkidle", timeout=20000
     )
@@ -184,8 +184,8 @@ async def cap_kg_explorer(page: Page) -> None:
     # The Assistant is iframed; target the inner frame
     target = next((f for f in page.frames if "5000" in f.url), page)
     try:
-        if not await select_option_value_anywhere(target, "Fannie_Mae_g"):
-            if not await select_first_option_containing(target, "fannie"):
+        if not await select_option_value_anywhere(target, "Sample_Guidelines_g"):
+            if not await select_first_option_containing(target, "sample"):
                 await select_first_option_containing(target, "mortgage")
         await page.wait_for_timeout(2500)
     except Exception as e:
@@ -203,8 +203,8 @@ async def cap_analytics(page: Page) -> None:
     await page.goto(f"{BASE}/analytics", wait_until="networkidle", timeout=20000)
     await page.wait_for_timeout(2500)
     try:
-        if not await select_option_value_anywhere(page, "Fannie_Mae"):
-            await select_first_option_containing(page, "fannie")
+        if not await select_option_value_anywhere(page, "Sample_Guidelines"):
+            await select_first_option_containing(page, "sample")
     except Exception:
         pass
     await page.wait_for_timeout(5000)
@@ -217,24 +217,24 @@ async def cap_impact(page: Page) -> None:
         f"{BASE}/impact-analysis", wait_until="networkidle", timeout=20000
     )
     await page.wait_for_timeout(3500)
-    # Select Fannie Mae as the target knowledge graph
+    # Select Sample Guidelines as the target knowledge graph
     try:
-        if not await select_option_value_anywhere(page, "Fannie_Mae"):
-            await select_first_option_containing(page, "fannie")
+        if not await select_option_value_anywhere(page, "Sample_Guidelines"):
+            await select_first_option_containing(page, "sample")
         await page.wait_for_timeout(1500)
-        print("   selected Fannie_Mae graph")
+        print("   selected Sample_Guidelines graph")
     except Exception:
         pass
     await shot(page, "suite_impact")
 
 
 async def cap_obligations(page: Page) -> None:
-    print("suite_obligations (Fannie Mae populated)")
+    print("suite_obligations (Sample Guidelines populated)")
     await page.goto(f"{BASE}/obligations", wait_until="networkidle", timeout=20000)
     await page.wait_for_timeout(2500)
     try:
-        if not await select_option_value_anywhere(page, "Fannie_Mae"):
-            await select_first_option_containing(page, "fannie")
+        if not await select_option_value_anywhere(page, "Sample_Guidelines"):
+            await select_first_option_containing(page, "sample")
     except Exception as e:
         print(f"   FAIL select: {e}")
     await page.wait_for_timeout(6000)
@@ -249,8 +249,8 @@ async def cap_editor(page: Page) -> None:
     await page.wait_for_timeout(3000)
     target = next((f for f in page.frames if "5000" in f.url), page)
     try:
-        if not await select_option_value_anywhere(target, "Fannie_Mae_g"):
-            await select_first_option_containing(target, "fannie")
+        if not await select_option_value_anywhere(target, "Sample_Guidelines_g"):
+            await select_first_option_containing(target, "sample")
         await page.wait_for_timeout(2500)
     except Exception:
         pass
@@ -270,8 +270,8 @@ async def cap_versions(page: Page) -> None:
     await page.wait_for_timeout(3000)
     target = next((f for f in page.frames if "5000" in f.url), page)
     try:
-        if not await select_option_value_anywhere(target, "Fannie_Mae_g"):
-            await select_first_option_containing(target, "fannie")
+        if not await select_option_value_anywhere(target, "Sample_Guidelines_g"):
+            await select_first_option_containing(target, "sample")
         await page.wait_for_timeout(2500)
     except Exception:
         pass

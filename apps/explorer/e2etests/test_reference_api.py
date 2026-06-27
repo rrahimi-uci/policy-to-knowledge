@@ -19,19 +19,19 @@ class TestReferenceResolve:
     """Tests for GET /api/reference/resolve"""
 
     def test_missing_ref_returns_400(self, api):
-        r = api.get("/api/reference/resolve", params={"graph_name": "fannie_mae_g"})
+        r = api.get("/api/reference/resolve", params={"graph_name": "sample_guidelines_g"})
         assert r.status_code == 400
         assert "ref" in r.json().get("error", "").lower()
 
     def test_empty_ref_returns_400(self, api):
-        r = api.get("/api/reference/resolve", params={"ref": "", "graph_name": "fannie_mae_g"})
+        r = api.get("/api/reference/resolve", params={"ref": "", "graph_name": "sample_guidelines_g"})
         assert r.status_code == 400
 
     def test_valid_ref_returns_matches(self, api):
         """A known good reference should resolve to at least one match."""
         r = api.get("/api/reference/resolve", params={
             "ref": "B2-1.5-05",
-            "graph_name": "fannie_mae_g",
+            "graph_name": "sample_guidelines_g",
         })
         assert r.status_code == 200
         data = r.json()
@@ -43,7 +43,7 @@ class TestReferenceResolve:
     def test_match_has_required_fields(self, api):
         r = api.get("/api/reference/resolve", params={
             "ref": "B2-1.5-05",
-            "graph_name": "fannie_mae_g",
+            "graph_name": "sample_guidelines_g",
         })
         data = r.json()
         match = data["matches"][0]
@@ -53,7 +53,7 @@ class TestReferenceResolve:
     def test_match_url_points_to_chunk_endpoint(self, api):
         r = api.get("/api/reference/resolve", params={
             "ref": "B2-1.5-05",
-            "graph_name": "fannie_mae_g",
+            "graph_name": "sample_guidelines_g",
         })
         match = r.json()["matches"][0]
         assert "/api/reference/chunk" in match["url"]
@@ -63,7 +63,7 @@ class TestReferenceResolve:
     def test_unknown_ref_returns_empty_matches(self, api):
         r = api.get("/api/reference/resolve", params={
             "ref": "ZZZZZ-NONEXISTENT-99999",
-            "graph_name": "fannie_mae_g",
+            "graph_name": "sample_guidelines_g",
         })
         assert r.status_code == 200
         assert r.json()["matches"] == []
@@ -83,7 +83,7 @@ class TestReferenceResolve:
         ref = "B2-1.5-05"
         r = api.get("/api/reference/resolve", params={
             "ref": ref,
-            "graph_name": "fannie_mae_g",
+            "graph_name": "sample_guidelines_g",
         })
         data = r.json()
         assert len(data["matches"]) >= 1
@@ -96,20 +96,28 @@ class TestReferenceResolve:
         )
 
     def test_chunk_id_in_ref_resolves_correctly(self, api):
-        """If a reference embeds a chunk_id like FAMA_097, the resolved chunk_id should match."""
+        """If a reference embeds a chunk ID, the resolved chunk should match."""
         r = api.get("/api/reference/resolve", params={
-            "ref": "FAMA_097",
-            "graph_name": "fannie_mae_g",
+            "ref": "B2-1.5-05",
+            "graph_name": "sample_guidelines_g",
         })
         data = r.json()
         assert len(data["matches"]) >= 1
-        assert data["matches"][0]["chunk_id"] == "FAMA_097"
+        chunk_id = data["matches"][0]["chunk_id"]
+
+        r = api.get("/api/reference/resolve", params={
+            "ref": chunk_id,
+            "graph_name": "sample_guidelines_g",
+        })
+        data = r.json()
+        assert len(data["matches"]) >= 1
+        assert data["matches"][0]["chunk_id"] == chunk_id
 
     def test_at_most_5_matches(self, api):
         """Resolve should return at most 5 matches."""
         r = api.get("/api/reference/resolve", params={
             "ref": "B",
-            "graph_name": "fannie_mae_g",
+            "graph_name": "sample_guidelines_g",
         })
         assert len(r.json()["matches"]) <= 5
 
@@ -121,21 +129,21 @@ class TestReferenceChunk:
         """Helper: resolve a reference and return the path of the first match."""
         r = api.get("/api/reference/resolve", params={
             "ref": "B2-1.5-05",
-            "graph_name": "fannie_mae_g",
+            "graph_name": "sample_guidelines_g",
         })
         matches = r.json().get("matches", [])
         assert matches, "Need at least one match to test chunk serving"
         return matches[0]["path"]
 
     def test_missing_path_returns_400(self, api):
-        r = api.get("/api/reference/chunk", params={"graph_name": "fannie_mae_g"})
+        r = api.get("/api/reference/chunk", params={"graph_name": "sample_guidelines_g"})
         assert r.status_code == 400
         assert "path" in r.json().get("error", "").lower()
 
     def test_valid_chunk_returns_html(self, api):
         path = self._get_valid_chunk_path(api)
         r = api.get("/api/reference/chunk", params={
-            "graph_name": "fannie_mae_g",
+            "graph_name": "sample_guidelines_g",
             "path": path,
         })
         assert r.status_code == 200
@@ -146,14 +154,14 @@ class TestReferenceChunk:
         """Chunk HTML should contain meaningful text, not just an empty page."""
         path = self._get_valid_chunk_path(api)
         r = api.get("/api/reference/chunk", params={
-            "graph_name": "fannie_mae_g",
+            "graph_name": "sample_guidelines_g",
             "path": path,
         })
         assert len(r.text) > 200, "Chunk HTML seems too short to have meaningful content"
 
     def test_nonexistent_chunk_returns_404(self, api):
         r = api.get("/api/reference/chunk", params={
-            "graph_name": "fannie_mae_g",
+            "graph_name": "sample_guidelines_g",
             "path": "DOESNOTEXIST/no-file.txt",
         })
         assert r.status_code == 404
@@ -161,7 +169,7 @@ class TestReferenceChunk:
     def test_path_traversal_blocked(self, api):
         """Attempting path traversal should be rejected."""
         r = api.get("/api/reference/chunk", params={
-            "graph_name": "fannie_mae_g",
+            "graph_name": "sample_guidelines_g",
             "path": "../../etc/passwd",
         })
         assert r.status_code in (403, 404)
@@ -170,7 +178,7 @@ class TestReferenceChunk:
         path = self._get_valid_chunk_path(api)
         for theme in ("light", "dark"):
             r = api.get("/api/reference/chunk", params={
-                "graph_name": "fannie_mae_g",
+                "graph_name": "sample_guidelines_g",
                 "path": path,
                 "theme": theme,
             })
@@ -186,14 +194,13 @@ class TestNodeReferenceIntegrity:
     2. The section code in the reference matches the section code in the chunk title
     3. The chunk URL is valid and serves HTML content
 
-    Coverage: vertices across all 3 graphs.
+    Coverage: vertices across all configured graphs.
     """
 
     # ── Graph-level expected counts & thresholds ──────────────────────────
     GRAPH_EXPECTATIONS = {
-        "fannie_mae_g":        {"min_nodes": 400, "min_refs": 380, "resolve_pct": 95},
-        "sample_guidelines_g":  {"min_nodes": 350, "min_refs": 320, "resolve_pct": 85},
-        "overlays_g":          {"min_nodes": 60,  "min_refs": 40,  "resolve_pct": 75},
+        "sample_guidelines_g": {"min_nodes": 350, "min_refs": 320, "resolve_pct": 85},
+        "example_policies_g": {"min_nodes": 60, "min_refs": 40, "resolve_pct": 75},
     }
 
     ALL_GRAPHS = list(GRAPH_EXPECTATIONS.keys())
@@ -315,7 +322,7 @@ class TestNodeReferenceIntegrity:
     # ── 4. Chunk-ID matching: refs that embed _NNN should map correctly ───
     @pytest.mark.parametrize("graph", ALL_GRAPHS)
     def test_chunk_id_embedded_in_ref(self, api, all_graph_refs, graph):
-        """When a reference embeds a chunk-id pattern like 'FAMA_097' or '2006_017',
+        """When a reference embeds a chunk-id pattern like 'SG_097' or '2006_017',
         the resolved chunk_id should contain that same pattern.
         """
         chunk_id_re = re.compile(r"(\w+_\d{3})")
@@ -456,7 +463,7 @@ class TestNodeReferenceIntegrity:
     # ── 8. Vertex detail reference resolves (any graph) ──────────────────
     def test_vertex_detail_reference_resolves(self, api, any_node_id):
         """The reference on a vertex detail view should resolve to a valid chunk."""
-        r = api.get(f"/api/vertex/{any_node_id}", params={"graph_name": "fannie_mae_g"})
+        r = api.get(f"/api/vertex/{any_node_id}", params={"graph_name": "sample_guidelines_g"})
         if r.status_code != 200:
             pytest.skip("Could not fetch vertex detail")
 
@@ -466,7 +473,7 @@ class TestNodeReferenceIntegrity:
 
         resolve_r = api.get("/api/reference/resolve", params={
             "ref": ref,
-            "graph_name": "fannie_mae_g",
+            "graph_name": "sample_guidelines_g",
         })
         assert resolve_r.status_code == 200
         matches = resolve_r.json().get("matches", [])

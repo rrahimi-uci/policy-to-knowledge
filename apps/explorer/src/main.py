@@ -116,7 +116,7 @@ def _get_drifted_graphs() -> list[str]:
     JanusGraph storage is persistent across container restarts, so updating a
     baked KG file does not propagate to the live graph unless we explicitly
     detect the drift and reload. Without this check, redeploys silently keep
-    stale data (e.g. a doubled fannie_mae from a previous accidental reload).
+    stale data (for example, duplicate graph content from a previous accidental reload).
     """
     import json
     from src.graph_connection import get_traversal

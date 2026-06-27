@@ -2,8 +2,8 @@
  * Flow 1 — Graph Discovery
  *
  * Scenario:
- *   1. User asks the copilot how many graphs are available.
- *   2. Copilot answers with the graph count.
+ *   1. User asks the assistant how many graphs are available.
+ *   2. Assistant answers with the graph count.
  *   3. User asks to show one of the graphs (randomly chosen by the LLM).
  *   4. A graph renders in the right panel with nodes and edges.
  *   5. Verify that node count, link count, and graph-name badge are populated.
@@ -21,7 +21,7 @@ test.describe("Flow 1 — Graph Discovery", () => {
     await page.locator(CHAT.input).waitFor({ state: "visible" });
   });
 
-  test("Step 1-2: Ask copilot about the number of available graphs", async ({
+  test("Step 1-2: Ask assistant about the number of available graphs", async ({
     page,
   }) => {
     const response = await sendChatMessage(
@@ -36,7 +36,7 @@ test.describe("Flow 1 — Graph Discovery", () => {
     expect(hasNumber).toBe(true);
   });
 
-  test("Step 3-5: Ask copilot to show a graph and verify it renders", async ({
+  test("Step 3-5: Ask assistant to show a graph and verify it renders", async ({
     page,
   }) => {
     // First ask about graphs to set context

@@ -4,7 +4,7 @@ test('app shell navigation and theme toggle remain stable', async ({ page }) => 
   await page.goto('/');
 
   await expect(page.getByRole('heading', { name: 'Dashboard' })).toBeVisible();
-  await expect(page.getByText('Fannie_Mae')).toBeVisible();
+  await expect(page.getByText('Sample_Guidelines')).toBeVisible();
   await expect(page.getByText('AML_Handbook')).toBeVisible();
 
   await page.getByRole('button', { name: 'Light Mode' }).click();

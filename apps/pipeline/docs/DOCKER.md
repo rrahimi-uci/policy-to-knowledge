@@ -75,7 +75,7 @@ cp config.example.json config.json
 
 ```bash
 # Place your PDF files in compliance-files/
-cp /path/to/FMNA.pdf compliance-files/
+cp /path/to/SAMPLE_GUIDELINES.pdf compliance-files/
 ```
 
 ### 4. Build and Run
@@ -370,7 +370,7 @@ networks:
 
 ## 📊 Performance Benchmarks
 
-### FMNA.pdf (547 pages) Processing Time
+### SAMPLE_GUIDELINES.pdf (547 pages) Processing Time
 
 | Environment | Agents 1-2 | Agent 3 | Agents 4-6 | **Total** |
 |-------------|-----------|---------|------------|-----------|

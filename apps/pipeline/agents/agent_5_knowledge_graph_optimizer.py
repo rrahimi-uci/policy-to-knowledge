@@ -236,7 +236,7 @@ class KnowledgeGraphOptimizer:
                 r = rule_lookup.get(rid)
                 if not r:
                     continue
-                ref = r.get('source_reference', r.get('fannie_mae_reference', ''))
+                ref = r.get('source_reference', r.get('legacy_source_reference', ''))
                 if isinstance(ref, dict) and ref.get('chunk_path'):
                     collected_refs.append(ref)
                 elif isinstance(ref, list):
