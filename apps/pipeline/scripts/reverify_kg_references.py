@@ -10,12 +10,12 @@ Usage:
 
 Examples:
     python scripts/reverify_kg_references.py pipeline-output/freddie_mac-kg.json \
-        ../assistant/kbs/freddie-mac/
+        ../explorer/kbs/freddie-mac/
 
     # Re-verify all KG files:
     for kg in pipeline-output/*-kg.json; do
         domain=$(basename "$kg" -kg.json | tr '_' '-')
-        python scripts/reverify_kg_references.py "$kg" "../assistant/kbs/$domain/"
+        python scripts/reverify_kg_references.py "$kg" "../explorer/kbs/$domain/"
     done
 """
 import json

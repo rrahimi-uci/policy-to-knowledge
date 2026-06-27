@@ -4,7 +4,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PID_FILE="$SCRIPT_DIR/.suite.pids"
-CA_DIR="$SCRIPT_DIR/assistant"
+CA_DIR="$SCRIPT_DIR/apps/explorer"
 
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'

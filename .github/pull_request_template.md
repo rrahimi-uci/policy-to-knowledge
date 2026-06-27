@@ -4,9 +4,9 @@
 
 ## Which app(s)?
 
-- [ ] Suite Shell (`frontend/`)
-- [ ] Pipeline (`pipeline/`)
-- [ ] Explorer / Assistant (`assistant/`)
+- [ ] Suite Shell (`apps/shell/`)
+- [ ] Pipeline (`apps/pipeline/`)
+- [ ] Explorer / Assistant (`apps/explorer/`)
 - [ ] Docs / CI / tooling
 
 ## How was it tested?

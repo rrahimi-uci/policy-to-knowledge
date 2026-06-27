@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: pipeline
+        working-directory: apps/pipeline
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -36,7 +36,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: assistant
+        working-directory: apps/explorer
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -55,14 +55,14 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: frontend
+        working-directory: apps/shell
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: npm
-          cache-dependency-path: frontend/package-lock.json
+          cache-dependency-path: apps/shell/package-lock.json
       - run: npm ci
       - run: npm run test
       - run: npm run build
@@ -72,14 +72,14 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: pipeline/ui/frontend
+        working-directory: apps/pipeline/ui/frontend
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: npm
-          cache-dependency-path: pipeline/ui/frontend/package-lock.json
+          cache-dependency-path: apps/pipeline/ui/frontend/package-lock.json
       - run: npm ci
       - run: npm run test
       - run: npm run build

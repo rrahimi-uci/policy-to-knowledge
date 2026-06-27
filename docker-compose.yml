@@ -68,7 +68,7 @@ services:
     ports:
       - "${JANUSGRAPH_PORT:-8182}:8182"
     volumes:
-      - ./assistant/conf:/opt/janusgraph/conf-graphs:ro
+      - ./apps/explorer/conf:/opt/janusgraph/conf-graphs:ro
     entrypoint: []
     command: ["/bin/bash", "-c", "cd /opt/janusgraph && exec bin/janusgraph-server.sh conf-graphs/gremlin-server.yaml"]
     depends_on:
@@ -89,7 +89,7 @@ services:
 
   assistant:
     build:
-      context: ./assistant
+      context: ./apps/explorer
       dockerfile: Dockerfile
     container_name: assistant
     ports:
@@ -110,10 +110,10 @@ services:
       - OPENAI_CHAT_MODEL=${OPENAI_CHAT_MODEL:-gpt-4o-mini}
       - MAX_TOOL_ROUNDS=${MAX_TOOL_ROUNDS:-3}
     volumes:
-      - ./assistant/kgs:/app/kgs
-      - ./assistant/kbs:/app/kbs
-      - ./assistant/conf:/app/conf
-      - ./pipeline/pipeline-output:/app/pipeline-output:ro
+      - ./apps/explorer/kgs:/app/kgs
+      - ./apps/explorer/kbs:/app/kbs
+      - ./apps/explorer/conf:/app/conf
+      - ./apps/pipeline/pipeline-output:/app/pipeline-output:ro
     depends_on:
       janusgraph:
         condition: service_healthy
@@ -123,7 +123,7 @@ services:
 
   kg-backend:
     build:
-      context: ./pipeline
+      context: ./apps/pipeline
       dockerfile: Dockerfile.api
     container_name: kg-backend
     ports:
@@ -132,17 +132,17 @@ services:
       - OPENAI_API_KEY=${OPENAI_API_KEY}
       - PIPELINE_DATA_DIR=/app/pipeline-data
     volumes:
-      - ./pipeline/compliance-files:/app/compliance-files:rw
-      - ./pipeline/pipeline-output:/app/pipeline-output:rw
-      - ./pipeline/pipeline-data:/app/pipeline-data:rw
-      - ./pipeline/domain-prompts:/app/domain-prompts:ro
-      - ./pipeline/prompts:/app/prompts:ro
-      - ./pipeline/config.json:/app/config.json:rw
+      - ./apps/pipeline/compliance-files:/app/compliance-files:rw
+      - ./apps/pipeline/pipeline-output:/app/pipeline-output:rw
+      - ./apps/pipeline/pipeline-data:/app/pipeline-data:rw
+      - ./apps/pipeline/domain-prompts:/app/domain-prompts:ro
+      - ./apps/pipeline/prompts:/app/prompts:ro
+      - ./apps/pipeline/config.json:/app/config.json:rw
     restart: unless-stopped
 
   kg-frontend:
     build:
-      context: ./pipeline/ui/frontend
+      context: ./apps/pipeline/ui/frontend
       dockerfile: Dockerfile
     container_name: kg-frontend
     ports:
@@ -154,7 +154,7 @@ services:
 
   suite-shell:
     build:
-      context: ./frontend
+      context: ./apps/shell
       dockerfile: Dockerfile
     container_name: suite-shell
     ports:
