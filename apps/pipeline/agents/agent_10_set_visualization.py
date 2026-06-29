@@ -73,16 +73,28 @@ class SetOperationsVisualizer:
 
     @classmethod
     def _get_logo_base64(cls) -> str:
-        """Load logo.svg as a base64-encoded data URI (cached)."""
+        """Load the brand logo as a base64 data URI (cached).
+
+        Prefers logo.png, falls back to logo.svg, and emits the correct MIME
+        type for the file found (previously always claimed image/png, which made
+        the embedded SVG fail to render).
+        """
         if cls._logo_cache is None:
-            logo_path = Path(__file__).parent.parent / 'logo.svg'
-            if logo_path.exists():
-                with open(logo_path, 'rb') as f:
-                    encoded = base64.b64encode(f.read()).decode('utf-8')
-                cls._logo_cache = f'data:image/png;base64,{encoded}'
-            else:
-                cls._logo_cache = ''
+            base = Path(__file__).parent.parent
+            cls._logo_cache = ''
+            for name, mime in (("logo.png", "image/png"), ("logo.svg", "image/svg+xml")):
+                path = base / name
+                if path.exists():
+                    encoded = base64.b64encode(path.read_bytes()).decode("utf-8")
+                    cls._logo_cache = f"data:{mime};base64,{encoded}"
+                    break
         return cls._logo_cache
+
+    @classmethod
+    def _logo_img_tag(cls) -> str:
+        """Brand logo <img>, or '' when no logo is bundled (avoids a broken image)."""
+        uri = cls._get_logo_base64()
+        return f'<img src="{uri}" alt="Policy to Knowledge" />' if uri else ''
     
     def __init__(self, provider: str = "openai", merge_subfolder: str = None):
         """
@@ -960,7 +972,7 @@ class SetOperationsVisualizer:
     <div class="container">
         <header>
             <div class="logo-container">
-                <img src="{self._get_logo_base64()}" alt="Policy to Knowledge" />
+                {self._logo_img_tag()}
             </div>
             <h1>[G1] {g1_name}, [G2] {g2_name} - Join Operation Results</h1>
             
@@ -1504,7 +1516,7 @@ class SetOperationsVisualizer:
 <body>
     <div class="header">
         <div class="logo-container">
-            <img src="{self._get_logo_base64()}" alt="Policy to Knowledge" />
+            {self._logo_img_tag()}
         </div>
         <h1>INTERSECTION: {g1_name} ∩ {g2_name}</h1>
         <p class="subtitle">Rules present in BOTH knowledge graphs</p>
@@ -1709,7 +1721,7 @@ class SetOperationsVisualizer:
 <body>
     <div class="header">
         <div class="logo-container">
-            <img src="{self._get_logo_base64()}" alt="Policy to Knowledge" />
+            {self._logo_img_tag()}
         </div>
         <h1>{title}</h1>
         <p class="subtitle">{subtitle}</p>
@@ -1920,7 +1932,7 @@ class SetOperationsVisualizer:
 <body>
     <div class="header">
         <div class="logo-container">
-            <img src="{self._get_logo_base64()}" alt="Policy to Knowledge" />
+            {self._logo_img_tag()}
         </div>
         <h1>⚠️ CONTRADICTIONS</h1>
         <p class="subtitle">Conflicting rules between {g1_name} and {g2_name}</p>
@@ -2114,7 +2126,7 @@ class SetOperationsVisualizer:
 <body>
     <div class="header">
         <div class="logo-container">
-            <img src="{self._get_logo_base64()}" alt="Policy to Knowledge" />
+            {self._logo_img_tag()}
         </div>
         <h1>Knowledge Graph Merge Summary</h1>
         <p class="subtitle">{g1_name} vs {g2_name}</p>
