@@ -81,6 +81,68 @@ fi
 # ── Helpers ────────────────────────────────────
 port_in_use() { lsof -tiTCP:"$1" -sTCP:LISTEN >/dev/null 2>&1; }
 port_owner() { lsof -nP -iTCP:"$1" -sTCP:LISTEN 2>/dev/null | awk 'NR==2{print $1" (PID "$2")"}'; }
+pid_cmd() { ps -p "$1" -o command= 2>/dev/null || true; }
+
+stop_pid() {
+    local pid="$1"
+    local label="${2:-Process}"
+    if ! kill -0 "$pid" 2>/dev/null; then
+        return 0
+    fi
+    kill "$pid" 2>/dev/null || true
+    for _ in $(seq 1 10); do
+        if ! kill -0 "$pid" 2>/dev/null; then
+            return 0
+        fi
+        sleep 0.5
+    done
+    kill -9 "$pid" 2>/dev/null || true
+    for _ in $(seq 1 10); do
+        if ! kill -0 "$pid" 2>/dev/null; then
+            return 0
+        fi
+        sleep 0.2
+    done
+    err "$label did not stop cleanly (PID $pid)"
+    return 1
+}
+
+is_expected_listener() {
+    local port="$1"
+    local pid="$2"
+    local cmd
+    cmd="$(pid_cmd "$pid")"
+    case "$port" in
+        "$KG_BACKEND_PORT")
+            [[ "$cmd" == *"uvicorn"* && "$cmd" == *"ui.backend.main:app"* ]]
+            ;;
+        "$KG_FRONTEND_PORT"|"$SUITE_PORT")
+            [[ "$cmd" == *"vite"* ]]
+            ;;
+        "$CA_PORT")
+            [[ "$cmd" == *"src.server"* ]]
+            ;;
+        "$ASSISTANT_RUNTIME_PORT")
+            [[ "$cmd" == *"assistant-runtime"* || "$cmd" == *".mjs"* ]]
+            ;;
+        *)
+            return 1
+            ;;
+    esac
+}
+
+reclaim_known_port() {
+    local port="$1"
+    local pids pid
+    pids="$(lsof -tiTCP:"$port" -sTCP:LISTEN 2>/dev/null || true)"
+    [ -z "$pids" ] && return 0
+    for pid in $pids; do
+        if is_expected_listener "$port" "$pid"; then
+            warn "Stopping stale repo process on port $port ($(port_owner "$port"))"
+            stop_pid "$pid" "Port $port listener" || return 1
+        fi
+    done
+}
 
 cleanup() {
     echo ""
@@ -91,6 +153,7 @@ cleanup() {
         done < "$PID_FILE"
         rm -f "$PID_FILE"
     }
+    rm -f "$CA_DIR/.server.pid"
     exit 0
 }
 trap cleanup INT TERM
@@ -135,6 +198,9 @@ fi
 
 # Check port conflicts
 for p in "$KG_BACKEND_PORT" "$KG_FRONTEND_PORT" "$CA_PORT" "$SUITE_PORT" "$ASSISTANT_RUNTIME_PORT"; do
+    if port_in_use "$p"; then
+        reclaim_known_port "$p" || true
+    fi
     if port_in_use "$p"; then
         err "Port $p already in use by $(port_owner "$p")"
         ERRORS=1
@@ -234,9 +300,11 @@ info "Checking graph data..."
 "$CA_VENV/bin/python3" -m src.server > /dev/null 2>&1 &
 CA_PID=$!
 echo $CA_PID >> "$PID_FILE"
+echo "$CA_PID" > "$CA_DIR/.server.pid"
 
 # Wait for assistant to be ready
 RETRIES=0; MAX=30
+ASSISTANT_READY=false
 while ! curl -sf "http://localhost:${CA_PORT}${URL_PREFIX}/" &>/dev/null; do
     RETRIES=$((RETRIES + 1))
     if [ "$RETRIES" -ge "$MAX" ]; then
@@ -250,7 +318,17 @@ while ! curl -sf "http://localhost:${CA_PORT}${URL_PREFIX}/" &>/dev/null; do
     printf "."
     sleep 2
 done
-echo ""; log "Assistant started (PID $CA_PID)"
+if curl -sf "http://localhost:${CA_PORT}${URL_PREFIX}/" &>/dev/null; then
+    ASSISTANT_READY=true
+fi
+echo ""
+if [ "$ASSISTANT_READY" != true ]; then
+    stop_pid "$CA_PID" "Assistant" || true
+    rm -f "$CA_DIR/.server.pid"
+    err "Assistant failed to become ready — aborting startup"
+    exit 1
+fi
+log "Assistant started (PID $CA_PID)"
 
 # ── 5. Policy to Knowledge Shell ─────────────────────
 echo -e "${BOLD}[5/6] Starting Policy to Knowledge shell${NC} (port $SUITE_PORT)..."
