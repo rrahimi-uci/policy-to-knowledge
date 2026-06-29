@@ -18,11 +18,25 @@ import os
 from src.log import log as _log
 
 
+def _semantic_engine():
+    """Return a SemanticSearchEngine, or None when the optional
+    `sentence-transformers` dependency is not installed.
+
+    Lets graph loading / setup proceed (and the server start) without semantic
+    embeddings instead of crashing; embedding/index steps are skipped.
+    """
+    try:
+        from src.semantic_search import SemanticSearchEngine
+    except ImportError as exc:
+        _log("WARN", f"Semantic search unavailable ({exc}); skipping embedding step")
+        return None
+    return SemanticSearchEngine()
+
+
 def cmd_setup() -> None:
     """Clear graphs, recreate schema, load all KG data, and index embeddings."""
     from src.schema import create_schema
     from src.data_loader import clear_all_graphs, load_all_graphs
-    from src.semantic_search import SemanticSearchEngine
 
     _log("INFO", "Step 1/5 – Creating schema")
     create_schema()
@@ -34,9 +48,10 @@ def cmd_setup() -> None:
     load_all_graphs()
 
     _log("INFO", "Step 4/5 – Rebuilding embeddings index")
-    engine = SemanticSearchEngine()
-    engine.delete_index()
-    engine.index_all_graph_embeddings()
+    engine = _semantic_engine()
+    if engine:
+        engine.delete_index()
+        engine.index_all_graph_embeddings()
 
     _log("INFO", "Step 5/5 – Running post-load consistency checks")
     _post_load_consistency()
@@ -45,23 +60,24 @@ def cmd_setup() -> None:
 
 def _post_load_consistency() -> None:
     """Run lightweight consistency checks after data load and log results."""
-    from src.semantic_search import SemanticSearchEngine
     from src.graph_connection import get_traversal
     from conf.graph_manifest import get_graph_configs, get_docs_folder
 
     configs = get_graph_configs()
-    engine = SemanticSearchEngine()
+    engine = _semantic_engine()
 
     for ts, cfg in configs.items():
         # Verify vertex count matches embedding count
-        emb_count = engine.embedding_count(ts)
+        emb_count = engine.embedding_count(ts) if engine else None
         try:
             with get_traversal(ts) as (g, conn):
                 v_count = g.V().count().next()
         except Exception:
             v_count = -1
 
-        if emb_count == v_count:
+        if emb_count is None:
+            _log("INFO", f"  • '{ts}' ({cfg['name']}): {v_count} vertices (embeddings skipped — semantic search off)")
+        elif emb_count == v_count:
             _log("INFO", f"  ✓ '{ts}' ({cfg['name']}): {v_count} vertices, {emb_count} embeddings — OK")
         else:
             _log("WARN", f"  ✗ '{ts}' ({cfg['name']}): {v_count} vertices vs {emb_count} embeddings — MISMATCH")
@@ -166,9 +182,9 @@ def cmd_setup_if_empty() -> None:
     if not to_load:
         _log("INFO", "All graphs already contain data and match KG files — skipping setup")
         _log("INFO", "Use './start.sh --fresh' or './start.sh --clean' to force a rebuild")
-        from src.semantic_search import SemanticSearchEngine
-        engine = SemanticSearchEngine()
-        engine.index_all_if_needed()
+        engine = _semantic_engine()
+        if engine:
+            engine.index_all_if_needed()
         return
 
     if empty_graphs:
@@ -178,7 +194,6 @@ def cmd_setup_if_empty() -> None:
 
     from src.schema import create_schema
     from src.data_loader import clear_graph, load_data
-    from src.semantic_search import SemanticSearchEngine
     from conf.graph_manifest import get_graph_configs
 
     configs = get_graph_configs()
@@ -201,13 +216,15 @@ def cmd_setup_if_empty() -> None:
         # Drifted graphs need their embeddings rebuilt too, since vertex IDs changed
         if graph_name in drifted_graphs:
             try:
-                engine = SemanticSearchEngine()
-                engine.delete_embeddings_for_graph(graph_name)
+                engine = _semantic_engine()
+                if engine:
+                    engine.delete_embeddings_for_graph(graph_name)
             except Exception as exc:
                 _log("WARN", f"Failed to delete stale embeddings for '{graph_name}': {exc}")
 
-    engine = SemanticSearchEngine()
-    engine.index_all_if_needed()
+    engine = _semantic_engine()
+    if engine:
+        engine.index_all_if_needed()
     _post_load_consistency()
     _log("INFO", "Setup complete for new/empty/drifted graphs")
 
@@ -229,7 +246,6 @@ def cmd_force_clean() -> None:
     """
     from src.schema import create_schema
     from src.data_loader import clear_all_graphs, load_all_graphs
-    from src.semantic_search import SemanticSearchEngine
     from src.models import Base, engine as _db_engine
 
     _log("INFO", "╔══════════════════════════════════════════╗")
@@ -256,9 +272,10 @@ def cmd_force_clean() -> None:
 
     # Step 5: Rebuild embeddings
     _log("INFO", "Step 5/6 – Rebuilding embedding index")
-    engine = SemanticSearchEngine()
-    engine.delete_index()
-    engine.index_all_graph_embeddings()
+    engine = _semantic_engine()
+    if engine:
+        engine.delete_index()
+        engine.index_all_graph_embeddings()
 
     # Step 6: Consistency checks
     _log("INFO", "Step 6/6 – Running consistency checks")
@@ -268,14 +285,13 @@ def cmd_force_clean() -> None:
 
 def cmd_consistency() -> None:
     """Run consistency checks and print a detailed report."""
-    from src.semantic_search import SemanticSearchEngine
     from src.graph_connection import get_traversal
     from conf.graph_manifest import get_graph_configs, get_docs_folder
 
     _log("INFO", "Running consistency checks …")
 
     configs = get_graph_configs()
-    engine = SemanticSearchEngine()
+    engine = _semantic_engine()
     issues = []
 
     print("\n" + "=" * 60)
@@ -299,17 +315,20 @@ def cmd_consistency() -> None:
 
     # 2. Embeddings
     print("\n── Embeddings ──────────────────────────────────────────")
-    for ts, cfg in configs.items():
-        emb = engine.embedding_count(ts)
-        try:
-            with get_traversal(ts) as (g, conn):
-                v = g.V().count().next()
-        except Exception:
-            v = -1
-        match = "OK" if emb == v else "MISMATCH"
-        print(f"  {cfg['name']:<30} {emb:>5} indexed / {v:>5} expected  [{match}]")
-        if emb != v:
-            issues.append(f"Embedding mismatch for '{ts}': {emb} vs {v}")
+    if engine is None:
+        print("  (semantic search unavailable — embedding checks skipped)")
+    else:
+        for ts, cfg in configs.items():
+            emb = engine.embedding_count(ts)
+            try:
+                with get_traversal(ts) as (g, conn):
+                    v = g.V().count().next()
+            except Exception:
+                v = -1
+            match = "OK" if emb == v else "MISMATCH"
+            print(f"  {cfg['name']:<30} {emb:>5} indexed / {v:>5} expected  [{match}]")
+            if emb != v:
+                issues.append(f"Embedding mismatch for '{ts}': {emb} vs {v}")
 
     # 3. References
     print("\n── Reference → Chunk Resolution ────────────────────────")
