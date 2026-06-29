@@ -9,18 +9,10 @@ const FIELD_TIPS: Record<string, string> = {
   'join_graphs.max_workers': 'Parallel workers used by the graph-joining pipeline.',
   'join_graphs.batch_size': 'Rules processed per batch during graph joining.',
   'openai.api_key': 'Your OpenAI API key from platform.openai.com',
-  'openai.models.reasoning': 'Primary model for extraction/reasoning agents',
-  'openai.models.optimizer': 'Model used by the merge / set-operation agents',
-  'openai.models.embeddings': 'Embedding model for semantic search (e.g., text-embedding-3-small)',
+  'openai.models.reasoning': 'Model name for reasoning tasks (e.g., o3-mini)',
   'openai.models.reasoning_effort': 'How much effort the model should spend reasoning',
   'openai.rate_limiting.timeout': 'Max seconds to wait for a single API call',
   'openai.rate_limiting.max_retries': 'Number of automatic retries on rate-limit errors',
-  'llm.default_model': 'Fallback model for general LLM calls',
-  'llm.default_temperature': 'Default LLM temperature (0 = deterministic)',
-  'llm.default_max_tokens': 'Default max output tokens per call',
-  'optimizer.model': 'Model the KG optimizer agent runs on',
-  'semantic_matcher.batch_size': 'Rule pairs per LLM call during matching',
-  'semantic_matcher.max_tokens': 'Max output tokens per matcher call',
 
   'document_organizer.chunk_size_target': 'Target character count per document chunk',
   'document_organizer.max_chunk_size': 'Maximum allowed chunk size in characters',
@@ -148,44 +140,6 @@ export default function Settings() {
     );
   };
 
-  // Model options sourced from openai.models.available_models (config-driven).
-  const modelOptions: string[] = Array.from(
-    new Set(Object.values((cfg.openai?.models?.available_models ?? {}) as Record<string, string>)),
-  );
-
-  const Select = ({ label, path, options }: { label: string; path: string; options: string[] }) => {
-    const keys = path.split('.');
-    let val: any = cfg;
-    for (const k of keys) val = val?.[k];
-    const tip = FIELD_TIPS[path];
-    // Always include the current value so a custom/unlisted model still shows.
-    const opts = val && !options.includes(val) ? [val, ...options] : options;
-    return (
-      <div>
-        <label className="text-xs text-gray-500 mb-1 flex items-center gap-1.5">
-          {label}
-          {tip && (
-            <span className="group relative">
-              <HelpCircle size={12} className="text-gray-600 hover:text-gray-400 cursor-help" />
-              <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-2.5 py-1.5 bg-gray-700 border border-gray-600 text-gray-200 text-[11px] rounded-lg whitespace-nowrap opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-10 shadow-lg">
-                {tip}
-              </span>
-            </span>
-          )}
-        </label>
-        <select
-          value={val ?? ''}
-          onChange={(e) => update(path, e.target.value)}
-          title={label}
-          aria-label={label}
-          className="w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-sm text-gray-200 focus:outline-none focus:border-blue-500"
-        >
-          {opts.map((o) => <option key={o} value={o}>{o}</option>)}
-        </select>
-      </div>
-    );
-  };
-
   return (
     <div>
       <div className="flex items-center justify-between mb-6">
@@ -231,6 +185,7 @@ export default function Settings() {
             <h3 className="text-sm font-semibold text-gray-300 mb-4">OpenAI</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <Field label="API Key" path="openai.api_key" secret />
+              <Field label="Reasoning Model" path="openai.models.reasoning" />
               <div>
                 <label className="text-xs text-gray-500 mb-1 block">Reasoning Effort</label>
                 <select
@@ -248,17 +203,9 @@ export default function Settings() {
               <Field label="Timeout (seconds)" path="openai.rate_limiting.timeout" type="number" />
               <Field label="Max Retries" path="openai.rate_limiting.max_retries" type="number" />
             </div>
-
-            <h4 className="text-xs font-semibold text-gray-400 mt-6 mb-3 uppercase tracking-wide">Models</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <Select label="Reasoning Model" path="openai.models.reasoning" options={modelOptions} />
-              <Select label="Optimizer / Merge Model" path="openai.models.optimizer" options={modelOptions} />
-              <Field label="Embeddings Model" path="openai.models.embeddings" />
-            </div>
-            <p className="text-[11px] text-gray-600 mt-2">
-              Model choices come from <code className="text-gray-500">available_models</code> in config.json.
-            </p>
           </div>
+
+
         </div>
       )}
 
@@ -275,17 +222,6 @@ export default function Settings() {
               <Field label="Extraction Workers" path="pipeline.max_workers" type="number" />
               <Field label="Semantic Matcher Workers" path="semantic_matcher.max_workers" type="number" />
               <Field label="Join Pipeline Workers" path="join_graphs.max_workers" type="number" />
-              <Field label="Semantic Matcher Batch" path="semantic_matcher.batch_size" type="number" />
-              <Field label="Join Pipeline Batch" path="join_graphs.batch_size" type="number" />
-            </div>
-          </div>
-
-          <div className="bg-gray-900 border border-gray-800 rounded-xl p-6">
-            <h3 className="text-sm font-semibold text-gray-300 mb-4">LLM Defaults</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <Select label="Default Model" path="llm.default_model" options={modelOptions} />
-              <Field label="Default Temperature" path="llm.default_temperature" type="number" />
-              <Field label="Default Max Tokens" path="llm.default_max_tokens" type="number" />
             </div>
           </div>
 
@@ -319,7 +255,6 @@ export default function Settings() {
           <div className="bg-gray-900 border border-gray-800 rounded-xl p-6">
             <h3 className="text-sm font-semibold text-gray-300 mb-4">Optimizer</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <Select label="Optimizer Model" path="optimizer.model" options={modelOptions} />
               <Field label="Dedup Temperature" path="optimizer.dedup_temperature" type="number" />
               <Field label="Dependency Temperature" path="optimizer.dependency_temperature" type="number" />
               <Field label="Batch Size" path="optimizer.batch_size" type="number" />
