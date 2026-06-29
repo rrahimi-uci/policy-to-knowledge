@@ -1,10 +1,10 @@
-# Compliance Knowledge Graph Builder - Architecture
+# Pipeline Architecture
 
-> **Technical Architecture v4.1** | February 2026
+Technical architecture of the **pipeline** app: a 10-agent OpenAI extraction pipeline, a FastAPI backend, and a React/Vite UI.
 
 ## System Overview
 
-A multi-agent AI system that transforms unstructured compliance documents into structured knowledge graphs. The system is **domain-agnostic** and can be configured for any industry's regulatory requirements through pluggable domain configurations.
+A multi-agent system that transforms unstructured documents into structured knowledge graphs. The pipeline is **domain-agnostic** and configured for a specific industry through pluggable domain prompts (for example `mortgage`, `aml`, `healthcare`, `commercial_lending`).
 
 ```mermaid
 flowchart LR
@@ -45,13 +45,13 @@ flowchart TB
 
     subgraph Orchestration["🎯 Orchestration Layer"]
         MAIN[cli/extract.py<br/>Extraction]
-        JOINS[cli/compare.py<br/>Set Operations]
+        COMPARE[cli/compare.py<br/>Set Operations]
     end
 
     subgraph Agents["🤖 Agent Layer"]
         direction LR
         EXT[Extraction Pipeline<br/>Agents 1→2→3→3.5→4→5→6]
-        JOIN[Joins Pipeline<br/>Agents 7→8→9→10]
+        CMP[Comparison Pipeline<br/>Agents 7→8→9→10]
     end
 
     subgraph Services["🔧 Services Layer"]
@@ -76,10 +76,26 @@ flowchart TB
 | Layer | Components | Responsibility |
 |-------|------------|----------------|
 | **Presentation** | HTML Reports | User-facing outputs and visualization |
-| **Orchestration** | cli/extract.py, cli/compare.py | Pipeline execution coordination |
+| **Orchestration** | `cli/extract.py`, `cli/compare.py` | Pipeline execution coordination |
 | **Agent** | 10 specialized agents | Domain-specific processing logic |
-| **Services** | Utils modules | Shared infrastructure (LLM, prompts, config) |
+| **Services** | `utils/` modules | Shared infrastructure (LLM client, prompts, config) |
 | **Infrastructure** | Docker, File I/O | Deployment and data persistence |
+
+### Agent Roster
+
+| # | Agent | Pipeline | Role |
+|---|-------|----------|------|
+| 1 | Document Organizer | Extraction | Chunk and structure source documents |
+| 2 | Entity Extractor | Extraction | Discover entities and relationships |
+| 3 | Rules Extractor | Extraction | Extract business rules with a taxonomy |
+| 3.5 | Validator | Extraction | Verify rules against source text |
+| 4 | Merger | Extraction | Merge rules and entities into a graph |
+| 5 | Optimizer | Extraction | Deduplicate and map dependencies |
+| 6 | Visualization | Extraction | Render HTML report and graph |
+| 7 | Clusterer | Comparison | Cluster rules across two graphs |
+| 8 | Semantic Matcher | Comparison | Match semantically equivalent rules |
+| 9 | Set Operations | Comparison | Compute intersection/difference/union |
+| 10 | Set Visualization | Comparison | Render comparison HTML outputs |
 
 ---
 
@@ -94,11 +110,11 @@ flowchart LR
     subgraph Extraction["Extraction Pipeline"]
         A1[🔧 Agent 1<br/>Document<br/>Organizer]
         A2[🏷️ Agent 2<br/>Entity<br/>Extractor]
-        A3[📜 Agent 3<br/>Rule<br/>Extractor]
-        A35[✅ Agent 3.5<br/>Rule<br/>Validator]
+        A3[📜 Agent 3<br/>Rules<br/>Extractor]
+        A35[✅ Agent 3.5<br/>Validator]
         A4[🔗 Agent 4<br/>Merger]
         A5[⚡ Agent 5<br/>Optimizer]
-        A6[📊 Agent 6<br/>Visualizer]
+        A6[📊 Agent 6<br/>Visualization]
     end
 
     A1 -->|chunks.txt| A2
@@ -110,20 +126,20 @@ flowchart LR
     A6 -->|HTML Report| OUT((Output))
 ```
 
-### Joins Pipeline (Agents 7-10)
+### Comparison Pipeline (Agents 7-10)
 
-Set operations for comparing and merging knowledge graphs:
+Set operations for comparing two knowledge graphs (`cli/compare.py`):
 
 ```mermaid
 flowchart TB
     KG1[(Knowledge<br/>Graph 1)]
     KG2[(Knowledge<br/>Graph 2)]
     
-    subgraph Joins["Joins Pipeline"]
+    subgraph Compare["Comparison Pipeline"]
         A7[📊 Agent 7<br/>Clusterer]
-        A8[🔍 Agent 8<br/>Matcher]
+        A8[🔍 Agent 8<br/>Semantic Matcher]
         A9[➗ Agent 9<br/>Set Operations]
-        A10[🎨 Agent 10<br/>Visualizer]
+        A10[🎨 Agent 10<br/>Set Visualization]
     end
 
     KG1 --> A7
@@ -307,19 +323,27 @@ flowchart TB
     end
 
     subgraph Providers["LLM Provider"]
-        OAI[OpenAI<br/>GPT-4/GPT-5]
+        OAI[OpenAI]
     end
 
     Client --> OAI
 ```
 
+The system is **OpenAI-only**. Models are configured in `config.json` and read by `utils/config.py`:
+
+| Role | Config key | Default |
+|------|------------|---------|
+| Reasoning | `openai.models.reasoning` | `gpt-5.2` |
+| Optimizer | `openai.models.optimizer` | `gpt-5.2` |
+| Embeddings | `openai.models.embeddings` | `text-embedding-ada-002` |
+
 ### Extraction Settings
 
-| Aspect | Value |
-|--------|-------|
-| Batch Size | 10 rules/batch |
-| Worker Count | 20 parallel |
-| Output Path | `pipeline-output/` |
+| Aspect | Config key | Default |
+|--------|------------|---------|
+| Worker count | `pipeline.max_workers` | 30 parallel |
+| Rules per batch | `rules_extractor.rules_per_batch` | 10 |
+| Output path | `directories.output` | `pipeline-output/` |
 
 ---
 
@@ -377,35 +401,40 @@ flowchart LR
 ```mermaid
 flowchart TB
     subgraph Docker["Docker Environment"]
-        subgraph Pipeline["Pipeline Container<br/>python:3.11-slim"]
+        subgraph CLI["p2k (Dockerfile.cli)<br/>python:3.11-slim"]
             AGENTS[Agent Execution]
             LLMCALL[LLM API Calls]
         end
 
+        subgraph API["p2k-ui (Dockerfile.api)<br/>python:3.12-slim"]
+            FASTAPI[FastAPI Backend]
+            REACT[Built React UI]
+        end
+
         subgraph Volumes["Shared Volumes"]
-            CF["compliance-files/ RO"]
+            CF["compliance-files/"]
             PO["pipeline-output/ RW"]
-            CONFIG["config.json RO"]
+            CONFIG["config.json"]
         end
     end
 
-    Pipeline --> Volumes
+    CLI --> Volumes
+    API --> Volumes
 ```
+
+The batch CLI image (`Dockerfile.cli`) runs `cli/extract.py` as its entrypoint. The API image (`Dockerfile.api`) builds the React frontend and serves it from FastAPI on port `8000`. See [DOCKER.md](DOCKER.md) for full details.
 
 ### Running with Docker
 
 ```bash
-# Build and start all services
-docker-compose up -d
+# Run extraction pipeline (Agents 1–6)
+docker compose run --rm p2k --provider openai
 
-# Run extraction pipeline
-docker-compose exec pipeline python cli/extract.py --provider openai --document FM
-
-# Run joins pipeline
-docker-compose exec pipeline python cli/compare.py --g1 SAMPLE_GUIDELINES --g2 Policy-Overlay
+# Run comparison pipeline (Agents 7–10)
+docker compose run --rm --entrypoint python p2k cli/compare.py --g1 mortgage --g2 commercial_lending
 
 # View reports directly
-open pipeline-output/openai/SAMPLE_GUIDELINES/agent-6-visualization-and-report/SAMPLE_GUIDELINES_knowledge_graph.html
+open pipeline-output/*/agent-6-visualization-and-report/*_knowledge_graph.html
 ```
 
 ---
@@ -458,13 +487,8 @@ flowchart TB
 
 | Document | Purpose |
 |----------|---------|
-| [README.md](../README.md) | Project overview and quick start |
+| [README.md](../README.md) | App overview and quick start |
 | [DOCKER.md](DOCKER.md) | Container deployment guide |
 | [SETUP.md](SETUP.md) | Local environment setup |
 | [agents/README.md](../agents/README.md) | Agent implementation details |
 | [prompts/README.md](../prompts/README.md) | Production prompt reference |
-
-
----
-
-**Version**: 4.1 | **Updated**: February 2026 | **Mermaid Diagrams**: ✅

@@ -1,51 +1,55 @@
-# Explorer UI Tests
+# Explorer — Playwright UI Tests
 
-Playwright suite for the Explorer UI in `uitests/tests/`.
+End-to-end browser tests for the Explorer UI, driven by Playwright. This package has
+its own `package.json` and `playwright.config.ts`.
+
+> This directory was previously named `uitests/`. It is now `tests/e2e/`.
 
 ## Prerequisites
 
-- Explorer running at `http://localhost:5001/app`
-- Docker infrastructure running from `assistant/`
+- A running Explorer server (Flask) reachable under the `/app` prefix
+- The Docker data stack running (`docker compose up -d` from `apps/explorer`)
 - At least one loaded graph with data
 
-Start the backend on the expected port:
+The test base URL comes from the `BASE_URL` environment variable and defaults to
+`http://localhost:5001/app` (see `playwright.config.ts`). Start the server on the
+matching port first:
 
 ```bash
-cd ..
-SERVER_PORT=5001 .venv/bin/python -m src.server
-```
-
-Start the Docker services in a second terminal:
-
-```bash
-cd ..
+# from apps/explorer
 docker compose up -d
+SERVER_PORT=5050 URL_PREFIX=/app .venv/bin/python -m src.server
 ```
-
-Most flows work with the current sample manifest. Some older specs still assume
-legacy graph names such as `sample_guidelines_g`; update those fixtures if your local
-manifest only contains `sample_guidelines_g` and `example_policies_g`.
 
 ## Running
 
 ```bash
+# from apps/explorer/tests/e2e
 npm install
-node_modules/.bin/playwright install chromium
-npm test
-node_modules/.bin/playwright test tests/01-graph-discovery.spec.ts
-node_modules/.bin/playwright test --headed
-node_modules/.bin/playwright test --debug
+npx playwright install chromium
+
+# Run the full suite against the server
+BASE_URL=http://localhost:5050/app npx playwright test
+
+# A single spec
+BASE_URL=http://localhost:5050/app npx playwright test 01-graph-discovery.spec.ts
+
+# Headed / debug
+BASE_URL=http://localhost:5050/app npx playwright test --headed
+BASE_URL=http://localhost:5050/app npx playwright test --debug
 ```
 
-Use the checked-in local binary or `npm test` rather than `npx playwright` to
-avoid version mismatches.
+Tests run sequentially with a single worker because they share server state.
 
 ## Coverage
 
-The suite exercises:
+The specs in this directory exercise:
 
 - graph discovery and search
-- review and approval workflows
-- node creation, deletion, and edge inspection
+- low-confidence review and approval toggles
+- node creation and deletion
+- edge detail inspection
 - task-box flows
 - AI rewrite and rule-ID suggestion helpers
+- URL-prefix and URL-access behavior
+- complex multi-step workflows and loaded-graph data checks

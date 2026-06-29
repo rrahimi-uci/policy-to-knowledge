@@ -1,80 +1,139 @@
 # Setup Guide
 
-## Security Setup
+Local development setup for the **pipeline** app: a FastAPI backend, a React/Vite UI, and a 10-agent OpenAI extraction pipeline.
 
-This project uses environment variables to securely store API keys. Follow these steps to set up your environment:
+## Prerequisites
 
-### 1. Create Configuration File
+| Requirement | Version | Notes |
+|-------------|---------|-------|
+| Python | 3.11+ | Backend and CLI |
+| Node.js | 20+ | React/Vite UI |
+| OpenAI API key | — | Reasoning, optimizer, and embeddings calls |
 
-Copy the example configuration file:
+## 1. Create a Python Environment
+
+The dev scripts resolve a virtual environment automatically: they prefer this app's `.venv`, and fall back to a repo-root `.venv` shared across the monorepo. Create whichever you prefer.
 
 ```bash
-cp config.example.json config.json
+# App-local environment (from apps/pipeline/)
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 ```
 
-### 2. Set Up Environment Variables
-
-Create a `.env` file from the example:
+To install developer tooling (tests, linters) as well:
 
 ```bash
+pip install -r requirements-dev.txt
+```
+
+## 2. Configure Credentials
+
+The pipeline is **OpenAI-only**. Configuration lives in `config.json`, which is gitignored and copied from the committed template.
+
+```bash
+# Copy the configuration template
+cp config.example.json config.json
+
+# Copy the environment template
 cp .env.example .env
 ```
 
-Then edit `.env` and add your actual API keys:
+Edit `.env` and add your key:
 
 ```bash
 # OpenAI API Key (required)
-OPENAI_API_KEY=sk-proj-your-actual-openai-key-here
+OPENAI_API_KEY=sk-your-actual-openai-key-here
 ```
 
-### 3. Get Your API Key
+`config.json` references the key via the `${OPENAI_API_KEY}` placeholder, which `utils/config.py` substitutes from the environment at load time. The default models are:
 
-#### OpenAI
-1. Go to [OpenAI Platform](https://platform.openai.com/api-keys)
-2. Sign in or create an account
-3. Create a new API key
-4. Copy the key and paste it into your `.env` file
+| Role | Model |
+|------|-------|
+| Reasoning | `gpt-5.2` |
+| Optimizer | `gpt-5.2` |
+| Embeddings | `text-embedding-ada-002` |
 
-### 4. Verify Setup
+Get an API key from the [OpenAI Platform](https://platform.openai.com/api-keys).
 
-Test that your configuration is working:
+## 3. Add Source Documents
+
+Place the documents you want to process in `compliance-files/` (gitignored). Supported formats: PDF, DOCX, Markdown, CSV, and Excel.
+
+```bash
+cp /path/to/your-document.pdf compliance-files/
+```
+
+## 4. Verify the Configuration
 
 ```bash
 python3 -c "
 import sys
 sys.path.insert(0, 'utils')
 from config import get_config
-config = get_config()
-print('✓ Configuration loaded successfully')
-print('✓ OpenAI API key configured')
+get_config()
+print('Configuration loaded successfully')
 "
 ```
 
+## 5. Run
+
+### Extraction pipeline (Agents 1–6)
+
+```bash
+# Process all documents in compliance-files/
+python cli/extract.py --provider openai
+
+# Process a single file
+python cli/extract.py --file compliance-files/my-document.pdf
+```
+
+### Comparison pipeline (Agents 7–10)
+
+```bash
+# List available graphs
+python cli/compare.py --list
+
+# Compare two extracted graphs
+python cli/compare.py --g1 mortgage --g2 commercial_lending
+```
+
+### Web UI (backend + frontend)
+
+```bash
+./start.sh
+```
+
+| Service | URL | Notes |
+|---------|-----|-------|
+| Backend (FastAPI) | `http://localhost:8000` | API + WebSocket |
+| Frontend (Vite) | `http://localhost:5173` | Open this in your browser |
+
+Override ports with `P2K_BACKEND_PORT` / `P2K_FRONTEND_PORT`. Stop both servers with `./stop.sh`.
+
 ## Security Notes
 
-⚠️ **IMPORTANT**: Never commit the following files to version control:
-- `.env` - Contains your actual API keys
-- `config.json` - May contain sensitive configuration
+> **Never commit** `.env` or `config.json` — they hold (or reference) your API key.
 
-✅ **Safe to commit**:
-- `.env.example` - Template without real keys
-- `config.example.json` - Template configuration
-- `.gitignore` - Already configured to ignore sensitive files
+Safe to commit: `.env.example`, `config.example.json`, and the `.gitignore` (already configured to exclude the sensitive files and `compliance-files/`).
 
 ## Troubleshooting
 
-### Missing API Key Error
+### Missing API key
 
-If you see an error about missing API keys:
+1. Confirm `.env` exists and `OPENAI_API_KEY` is set with no surrounding spaces or quotes.
+2. Confirm `config.json` references the key as `${OPENAI_API_KEY}`.
 
-1. Ensure `.env` file exists in the project root
-2. Check that your API keys are correctly formatted (no extra spaces)
-3. Verify the config.json uses the `${OPENAI_API_KEY}` placeholder
+### Configuration not loading
 
-### Configuration Not Loading
+1. Confirm you copied `config.example.json` to `config.json`.
+2. Validate the JSON syntax.
+3. Confirm the venv is active and dependencies are installed.
 
-If the configuration isn't loading properly:
+## Related Documentation
 
-1. Make sure you copied `config.example.json` to `config.json`
-2. Verify the JSON syntax is valid
-3. Check that environment variables are set correctly in `.env`
+| Document | Purpose |
+|----------|---------|
+| [README.md](../README.md) | App overview and quick start |
+| [DOCKER.md](DOCKER.md) | Container deployment guide |
+| [ARCHITECTURE.md](ARCHITECTURE.md) | Technical architecture |

@@ -1,20 +1,16 @@
 # Pipeline UI
 
-`pipeline/ui/` contains the FastAPI backend and React frontend that sit on top
-of the extraction pipeline.
+The FastAPI backend and React/Vite frontend that sit on top of the extraction
+pipeline. The backend exposes REST and WebSocket endpoints for running the
+pipeline and browsing results; the frontend is the operator interface (documents,
+pipeline runs, graph explorer, and the Settings page that edits `config.json`).
 
 ## Start
 
-From `pipeline/`:
+From `pipeline/` (or use the wrapper `./ui/start.sh`):
 
 ```bash
 ./start.sh
-```
-
-Or use the wrapper in this directory:
-
-```bash
-./ui/start.sh
 ```
 
 This starts:
@@ -24,39 +20,39 @@ This starts:
 
 ## Manual Development
 
-Backend:
+Backend (from `pipeline/`):
 
 ```bash
-cd pipeline
 .venv/bin/uvicorn ui.backend.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-Frontend:
+Frontend (from `pipeline/ui/frontend/`):
 
 ```bash
-cd pipeline/ui/frontend
 npm install
 npm run dev
 ```
 
 ## Tests
 
+From `pipeline/ui/frontend/`:
+
 ```bash
-cd pipeline/ui/frontend
-npm test
-npm run build
-npm run test:e2e
+npm test          # Vitest unit tests
+npm run build     # production build
+npm run test:e2e  # Playwright E2E
 ```
 
-The frontend build and Vitest checks run in the root CI workflow at
-`.github/workflows/ci.yml`.
+The frontend build and Vitest checks run in the root CI workflow
+(`.github/workflows/ci.yml`).
 
 ## Structure
 
 | Path | Purpose |
 | --- | --- |
-| `backend/routers/` | REST endpoints |
-| `backend/ws/` | WebSocket handlers |
-| `backend/services/` | run storage and orchestration helpers |
+| `backend/main.py` | FastAPI app entrypoint |
+| `backend/routers/` | REST endpoints (documents, pipeline, graphs, settings, …) |
+| `backend/ws/` | WebSocket handlers (pipeline and impact-analysis streams) |
+| `backend/services/` | Run storage and orchestration helpers |
 | `frontend/src/` | React application |
 | `frontend/tests/e2e/` | Playwright tests |

@@ -6,7 +6,7 @@ labels: enhancement
 ---
 
 **Which app / area?**
-<!-- Suite Shell, Pipeline, Explorer, docs, CI, … -->
+<!-- Shell, Pipeline, Explorer, docs, CI, … -->
 
 **What problem does this solve?**
 A clear and concise description of the problem or use case.

@@ -9,27 +9,37 @@ identity and expression, level of experience, education, socio-economic status,
 nationality, personal appearance, race, religion, or sexual identity and
 orientation.
 
+We pledge to act and interact in ways that contribute to an open, welcoming,
+diverse, inclusive, and healthy community.
+
 ## Our standards
 
 Examples of behavior that contributes to a positive environment:
 
-- Demonstrating empathy and kindness toward other people
-- Being respectful of differing opinions, viewpoints, and experiences
-- Giving and gracefully accepting constructive feedback
-- Accepting responsibility and apologizing to those affected by our mistakes
+- Demonstrating empathy and kindness toward other people.
+- Being respectful of differing opinions, viewpoints, and experiences.
+- Giving and gracefully accepting constructive feedback.
+- Accepting responsibility and apologizing to those affected by our mistakes.
 
 Examples of unacceptable behavior:
 
-- The use of sexualized language or imagery, and unwelcome sexual attention
-- Trolling, insulting or derogatory comments, and personal or political attacks
-- Public or private harassment
-- Publishing others' private information without explicit permission
+- The use of sexualized language or imagery, and unwelcome sexual attention.
+- Trolling, insulting or derogatory comments, and personal or political attacks.
+- Public or private harassment.
+- Publishing others' private information without their explicit permission.
 
 ## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the maintainers via GitHub. All complaints will be reviewed and
-investigated promptly and fairly.
+investigated promptly and fairly, and the privacy and security of the reporter
+will be respected.
+
+Maintainers are responsible for clarifying and enforcing these standards and
+may take appropriate corrective action in response to any behavior they deem
+inappropriate, threatening, offensive, or harmful.
+
+## Attribution
 
 This Code of Conduct is adapted from the [Contributor Covenant][homepage],
 version 2.1.

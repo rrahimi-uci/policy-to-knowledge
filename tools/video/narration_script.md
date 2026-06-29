@@ -1,9 +1,9 @@
 # Policy to Knowledge — Video Narration Script
 
-**Total runtime:** ~7 minutes (≈422s including inter-scene buffers)
-**Voice:** en-US-AndrewMultilingualNeural
-**Rate:** +5% (slightly faster, professional pace)
-**Pauses:** 250ms silence inserted before each scene; ~3s buffer after each narration
+- **Total runtime:** ~7 minutes (≈422s including inter-scene buffers)
+- **Voice:** `en-US-AndrewMultilingualNeural`
+- **Rate:** +5% (slightly faster, professional pace)
+- **Pauses:** 250ms silence before each scene; ~3s buffer after each narration
 
 ---
 
