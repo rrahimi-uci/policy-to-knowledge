@@ -310,6 +310,73 @@ def test_reference_resolve_finds_example_policies_chunk(sample_docs_folder):
 
 
 # ────────────────────────────────────────────────────────────────────
+# Bug 1c: the reference LINK must open against the backend, not the page
+# origin. window.open() bypasses the fetch() API-routing wrapper, so when the
+# explorer is embedded in the suite shell (or served cross-origin) a raw
+# root-relative chunk URL 404s. openReference must route the chunk URL the same
+# way fetch() is routed, and the backend must keep returning a `path` for it.
+# ────────────────────────────────────────────────────────────────────
+
+def test_resolve_match_includes_path_field():
+    """Every resolve match must carry a `path` — the frontend builds the chunk
+    URL from it (routed through resolveApiUrl) rather than the prefix-baked
+    `url`, so dropping `path` would silently break the reference link."""
+    server_src = (REPO_ROOT / "src" / "server.py").read_text()
+    start = server_src.index("def resolve_reference")
+    end = server_src.index("def serve_chunk")
+    body = server_src[start:end]
+    # Both the structured-source-reference builder and the fuzzy fallback must
+    # emit a "path" key in their match dicts.
+    assert body.count('"path":') >= 2, (
+        "resolve_reference match dicts must include a \"path\" field for the "
+        "frontend to build the chunk URL from (found "
+        f"{body.count(chr(34) + 'path' + chr(34) + ':')} occurrences)."
+    )
+
+
+def test_state_js_exposes_resolveApiUrl_helper():
+    """state.js must expose resolveApiUrl() and route fetch() through it, so
+    non-fetch navigations (window.open) can reuse the exact same backend
+    routing (apiBaseUrl cross-origin, else the page's url prefix)."""
+    state_js = (REPO_ROOT / "ui" / "js" / "state.js").read_text()
+    assert "function resolveApiUrl" in state_js, (
+        "state.js must define resolveApiUrl() — the single source of truth for "
+        "mapping a root-relative '/api/...' path to the real backend URL."
+    )
+    assert "window.resolveApiUrl = resolveApiUrl" in state_js, (
+        "resolveApiUrl must be exposed globally so detail.js can use it."
+    )
+    assert "resolveApiUrl(resource)" in state_js, (
+        "the patched window.fetch must delegate to resolveApiUrl so fetch and "
+        "window.open share identical routing."
+    )
+
+
+def test_openreference_routes_chunk_url_through_resolveApiUrl():
+    """openReference must build the chunk URL from the bare API path and route
+    it via resolveApiUrl — NOT window.open(best.url) directly, which targets
+    the embedding origin and 404s when the explorer is embedded/cross-origin."""
+    detail_js = (REPO_ROOT / "ui" / "js" / "detail.js").read_text()
+    start = detail_js.index("function openReference")
+    end = detail_js.index("\n}", start)
+    body = detail_js[start:end]
+
+    assert "resolveApiUrl(" in body, (
+        "openReference must resolve the chunk URL through resolveApiUrl so the "
+        "new tab hits the explorer backend, not the embedding page's origin."
+    )
+    assert "/api/reference/chunk" in body and "best.path" in body, (
+        "openReference should construct the chunk URL from the bare "
+        "'/api/reference/chunk' path plus best.path, then route it."
+    )
+    # The regressed pattern: window.open on the raw, prefix-baked best.url.
+    assert "window.open(best.url" not in body.replace(" ", ""), (
+        "openReference must not window.open(best.url) directly — that bypasses "
+        "API routing and breaks the link when embedded/cross-origin."
+    )
+
+
+# ────────────────────────────────────────────────────────────────────
 # Bug 2: Chat system prompt must forbid inventing graph statistics
 # ────────────────────────────────────────────────────────────────────
 

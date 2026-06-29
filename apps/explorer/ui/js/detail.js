@@ -564,7 +564,14 @@ function openReference(encodedRef, encodedGraph, encodedSourceRef) {
                 // Open the best match in a new tab, passing current theme
                 const best = data.matches[0];
                 const theme = localStorage.getItem('p2k-theme') || 'dark';
-                let url = best.url;
+                // Build the chunk URL from the bare API path and route it the
+                // same way fetch() is (apiBaseUrl cross-origin, else url prefix).
+                // window.open bypasses the fetch wrapper, so opening best.url
+                // directly targets the embedding origin and 404s when the
+                // explorer is embedded in the suite shell or served cross-origin.
+                let url = best.path
+                    ? resolveApiUrl(`/api/reference/chunk?graph_name=${encodeURIComponent(graphName)}&path=${encodeURIComponent(best.path)}`)
+                    : best.url;
                 const sep = url.includes('?') ? '&' : '?';
                 url += sep + 'theme=' + theme;
                 // Pass word positions from source_reference for precise highlighting
