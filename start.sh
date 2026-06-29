@@ -9,6 +9,13 @@ KG_DIR="$SCRIPT_DIR/apps/pipeline"
 CA_DIR="$SCRIPT_DIR/apps/explorer"
 ASSISTANT_RUNTIME_DIR="$SCRIPT_DIR/apps/shell/server"
 
+# Resolve a Python venv per app: prefer the app-local .venv, otherwise fall back
+# to the repo-root .venv (the monorepo's shared environment). This lets the
+# stack run from a single root venv without duplicating heavy deps.
+ROOT_VENV="$SCRIPT_DIR/.venv"
+KG_VENV="$KG_DIR/.venv";  [ -x "$KG_VENV/bin/python" ]  || KG_VENV="$ROOT_VENV"
+CA_VENV="$CA_DIR/.venv";  [ -x "$CA_VENV/bin/python" ]  || CA_VENV="$ROOT_VENV"
+
 # ── Colors ─────────────────────────────────────
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
@@ -109,11 +116,15 @@ if [ ! -d "$CA_DIR" ]; then
     err "Assistant repo not found at $CA_DIR"; ERRORS=1
 fi
 
-if [ ! -f "$KG_DIR/.venv/bin/python" ]; then
-    err "KG Extraction venv not found — run: python3 -m venv $KG_DIR/.venv && $KG_DIR/.venv/bin/pip install -r $KG_DIR/requirements.txt"; ERRORS=1
+if [ ! -x "$KG_VENV/bin/python" ]; then
+    err "KG Extraction venv not found — create the app venv: python3 -m venv $KG_DIR/.venv && $KG_DIR/.venv/bin/pip install -r $KG_DIR/requirements.txt   (or a repo-root .venv)"; ERRORS=1
+else
+    info "KG Extraction venv: ${KG_VENV/$SCRIPT_DIR\//}"
 fi
-if [ ! -f "$CA_DIR/.venv/bin/python" ]; then
-    err "Assistant venv not found — run: python3 -m venv $CA_DIR/.venv && $CA_DIR/.venv/bin/pip install -r $CA_DIR/requirements.txt"; ERRORS=1
+if [ ! -x "$CA_VENV/bin/python" ]; then
+    err "Assistant venv not found — create the app venv: python3 -m venv $CA_DIR/.venv && $CA_DIR/.venv/bin/pip install -r $CA_DIR/requirements.txt   (or a repo-root .venv)"; ERRORS=1
+else
+    info "Assistant venv: ${CA_VENV/$SCRIPT_DIR\//}"
 fi
 
 if [ "$ERRORS" -ne 0 ]; then
@@ -144,7 +155,7 @@ cd "$CA_DIR"
 # Generate JanusGraph configs if the script exists
 if [ -f "scripts/generate_graph_config.py" ]; then
     info "Generating JanusGraph config from graphs.yaml..."
-    .venv/bin/python3 scripts/generate_graph_config.py 2>/dev/null || true
+    "$CA_VENV/bin/python3" scripts/generate_graph_config.py 2>/dev/null || true
 fi
 
 docker compose up -d 2>&1 | tail -5
@@ -197,7 +208,7 @@ echo ""
 # ── 2. KG Extraction Backend ──────────────────
 echo -e "${BOLD}[2/6] Starting KG Extraction backend${NC} (port $KG_BACKEND_PORT)..."
 cd "$KG_DIR"
-.venv/bin/python -m uvicorn ui.backend.main:app \
+"$KG_VENV/bin/python" -m uvicorn ui.backend.main:app \
     --host 0.0.0.0 --port "$KG_BACKEND_PORT" \
     --reload --reload-dir "$KG_DIR" \
     --app-dir "$KG_DIR" > /dev/null 2>&1 &
@@ -218,9 +229,9 @@ cd "$CA_DIR"
 
 # Ensure graph data is loaded
 info "Checking graph data..."
-.venv/bin/python3 -m src.main setup-if-empty 2>/dev/null || warn "Graph setup check skipped"
+"$CA_VENV/bin/python3" -m src.main setup-if-empty 2>/dev/null || warn "Graph setup check skipped"
 
-.venv/bin/python3 -m src.server > /dev/null 2>&1 &
+"$CA_VENV/bin/python3" -m src.server > /dev/null 2>&1 &
 CA_PID=$!
 echo $CA_PID >> "$PID_FILE"
 
@@ -229,11 +240,11 @@ RETRIES=0; MAX=30
 while ! curl -sf "http://localhost:${CA_PORT}${URL_PREFIX}/" &>/dev/null; do
     RETRIES=$((RETRIES + 1))
     if [ "$RETRIES" -ge "$MAX" ]; then
-        err "Assistant did not start. Debug: $CA_DIR/.venv/bin/python3 -m src.server"
+        err "Assistant did not start. Debug: $CA_VENV/bin/python3 -m src.server"
         break
     fi
     if ! kill -0 "$CA_PID" 2>/dev/null; then
-        err "Assistant process exited. Debug: $CA_DIR/.venv/bin/python3 -m src.server"
+        err "Assistant process exited. Debug: $CA_VENV/bin/python3 -m src.server"
         break
     fi
     printf "."

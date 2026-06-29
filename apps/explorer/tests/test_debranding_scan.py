@@ -20,6 +20,8 @@ SKIP_DIRS = {
     "coverage-html",
     "htmlcov",
     "allure-results",
+    "playwright-report",
+    "test-results",
     "pipeline-output",
     "pipeline-data",
     "pipeline-logs",

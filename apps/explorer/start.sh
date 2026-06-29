@@ -2,6 +2,10 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
+# Resolve the Python venv: prefer this app's .venv, else fall back to the
+# repo-root .venv (the monorepo's shared environment).
+VENV="$(pwd)/.venv"; [ -x "$VENV/bin/python3" ] || VENV="$(cd ../.. && pwd)/.venv"
+
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 RED='\033[0;31m'
@@ -66,11 +70,12 @@ if ! docker info &>/dev/null; then
     err "Docker daemon is not running. Please start Docker Desktop."
     exit 1
 fi
-if [ ! -d ".venv" ]; then
-    err "Python virtual environment (.venv) not found."
+if [ ! -x "$VENV/bin/python3" ]; then
+    err "Python virtual environment not found (looked for ./.venv and ../../.venv)."
     echo "   Run: python3 -m venv .venv && .venv/bin/pip install -r requirements.txt"
     exit 1
 fi
+info "Using venv: $VENV"
 log "Pre-flight checks passed"
 
 # ── Load configuration from .env (if present) ─────────────────────
@@ -85,7 +90,7 @@ KNN_INDEX_NAME="${KNN_INDEX_NAME:-vertex_embeddings}"
 
 # ── 1a. Generate config files from graphs.yaml ────────────────────
 info "Generating JanusGraph config from graphs.yaml …"
-.venv/bin/python3 scripts/generate_graph_config.py
+${VENV}/bin/python3 scripts/generate_graph_config.py
 log "Config files generated"
 
 # ── 1. Kill any existing server on port ────────────────────────────
@@ -159,7 +164,7 @@ info "Waiting for JanusGraph Gremlin server …"
 RETRIES=0
 MAX=40
 while true; do
-    if .venv/bin/python3 -c "
+    if ${VENV}/bin/python3 -c "
 from src.graph_connection import get_traversal
 with get_traversal() as (g, conn):
     g.V().limit(1).toList()
@@ -181,7 +186,7 @@ log "JanusGraph Gremlin server is ready"
 # ── 6. Load graphs ────────────────────────────────────────────────
 if [ "$MODE" = "clean" ]; then
     info "Clean mode: loading all knowledge graphs from scratch …"
-    .venv/bin/python3 -m src.main setup
+    ${VENV}/bin/python3 -m src.main setup
 elif [ "$MODE" = "fresh" ]; then
     info "Fresh mode: clearing and reloading all knowledge graphs …"
 
@@ -198,14 +203,14 @@ elif [ "$MODE" = "fresh" ]; then
         docker exec jg-redis redis-cli FLUSHALL &>/dev/null && log "Redis cache flushed" || warn "Could not flush Redis"
     fi
 
-    .venv/bin/python3 -m src.main setup
+    ${VENV}/bin/python3 -m src.main setup
 else
     info "Checking existing graph data …"
-    .venv/bin/python3 -m src.main setup-if-empty
+    ${VENV}/bin/python3 -m src.main setup-if-empty
 fi
 
 # Collect per-graph and total counts across loaded graphs (those with KG files)
-GRAPH_STATS=$(.venv/bin/python3 -c "
+GRAPH_STATS=$(${VENV}/bin/python3 -c "
 from src.graph_connection import get_traversal
 from conf.graph_manifest import get_graph_configs, get_loaded_traversal_sources
 import json
@@ -226,8 +231,8 @@ for ts in get_loaded_traversal_sources():
 print(json.dumps({'total_v': total_v, 'total_e': total_e, 'graphs': rows}))
 " 2>/dev/null || echo '{"total_v":0,"total_e":0,"graphs":[]}')
 
-VERTEX_COUNT=$(echo "$GRAPH_STATS" | .venv/bin/python3 -c "import sys,json; print(json.load(sys.stdin)['total_v'])" 2>/dev/null || echo "0")
-EDGE_COUNT=$(echo "$GRAPH_STATS" | .venv/bin/python3 -c "import sys,json; print(json.load(sys.stdin)['total_e'])" 2>/dev/null || echo "0")
+VERTEX_COUNT=$(echo "$GRAPH_STATS" | ${VENV}/bin/python3 -c "import sys,json; print(json.load(sys.stdin)['total_v'])" 2>/dev/null || echo "0")
+EDGE_COUNT=$(echo "$GRAPH_STATS" | ${VENV}/bin/python3 -c "import sys,json; print(json.load(sys.stdin)['total_e'])" 2>/dev/null || echo "0")
 
 if [ "$VERTEX_COUNT" -gt 0 ] 2>/dev/null; then
     log "Setup complete — ${BOLD}${VERTEX_COUNT} vertices${NC}, ${BOLD}${EDGE_COUNT} edges${NC} loaded across all graphs"
@@ -239,7 +244,7 @@ fi
 # ── 7. Check semantic search index ────────────────────────────────
 info "Checking semantic search index …"
 EMBED_COUNT=$(curl -sf http://localhost:${OPENSEARCH_PORT}/${KNN_INDEX_NAME}/_count 2>/dev/null \
-    | .venv/bin/python3 -c "import sys,json; print(json.load(sys.stdin).get('count',0))" 2>/dev/null \
+    | ${VENV}/bin/python3 -c "import sys,json; print(json.load(sys.stdin).get('count',0))" 2>/dev/null \
     || echo "0")
 
 if [ "$EMBED_COUNT" -gt 0 ] 2>/dev/null; then
@@ -251,7 +256,7 @@ fi
 # ── 8. Start the Flask server ─────────────────────────────────────
 export URL_PREFIX="${URL_PREFIX:-/app}"
 info "Starting Explorer server …"
-.venv/bin/python3 -m src.server > /dev/null 2>&1 &
+${VENV}/bin/python3 -m src.server > /dev/null 2>&1 &
 SERVER_PID=$!
 echo "$SERVER_PID" > .server.pid
 
@@ -261,7 +266,7 @@ MAX=30
 while ! curl -sf http://localhost:${SERVER_PORT}${URL_PREFIX}/ &>/dev/null; do
     RETRIES=$((RETRIES + 1))
     if [ "$RETRIES" -ge "$MAX" ]; then
-        err "Server did not start within $(( MAX * 2 ))s. Check: .venv/bin/python3 -m src.server"
+        err "Server did not start within $(( MAX * 2 ))s. Check: ${VENV}/bin/python3 -m src.server"
         kill "$SERVER_PID" 2>/dev/null || true
         rm -f .server.pid
         exit 1
@@ -269,7 +274,7 @@ while ! curl -sf http://localhost:${SERVER_PORT}${URL_PREFIX}/ &>/dev/null; do
     # Check if process is still alive
     if ! kill -0 "$SERVER_PID" 2>/dev/null; then
         err "Server process exited unexpectedly."
-        echo "   Debug: .venv/bin/python3 -m src.server"
+        echo "   Debug: ${VENV}/bin/python3 -m src.server"
         rm -f .server.pid
         exit 1
     fi
@@ -280,7 +285,7 @@ echo ""
 log "Server started (PID: ${SERVER_PID})"
 
 # ── 9. Summary ────────────────────────────────────────────────────
-NUM_GRAPHS=$(echo "$GRAPH_STATS" | .venv/bin/python3 -c "import sys,json; print(len(json.load(sys.stdin)['graphs']))" 2>/dev/null || echo "?")
+NUM_GRAPHS=$(echo "$GRAPH_STATS" | ${VENV}/bin/python3 -c "import sys,json; print(len(json.load(sys.stdin)['graphs']))" 2>/dev/null || echo "?")
 
 echo ""
 echo -e "${BOLD}${GREEN}╔════════════════════════════════════════════════════════╗${NC}"
@@ -296,7 +301,7 @@ printf "${GREEN}║${NC}  %-14s ${BOLD}%-38s${NC} ${GREEN}║${NC}\n" "PID:" "$S
 echo -e "${BOLD}${GREEN}╠════════════════════════════════════════════════════════╣${NC}"
 
 # Per-graph breakdown
-echo "$GRAPH_STATS" | .venv/bin/python3 -c "
+echo "$GRAPH_STATS" | ${VENV}/bin/python3 -c "
 import sys, json
 data = json.load(sys.stdin)
 for g in data['graphs']:
@@ -308,5 +313,5 @@ for g in data['graphs']:
 echo -e "${BOLD}${GREEN}╚════════════════════════════════════════════════════════╝${NC}"
 echo ""
 echo -e "  ${CYAN}Stop:${NC}  ./stop.sh"
-echo -e "  ${CYAN}Logs:${NC}  .venv/bin/python3 -m src.server  (foreground mode)"
+echo -e "  ${CYAN}Logs:${NC}  ${VENV}/bin/python3 -m src.server  (foreground mode)"
 echo ""

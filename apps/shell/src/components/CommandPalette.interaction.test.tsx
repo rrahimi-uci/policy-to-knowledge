@@ -26,7 +26,7 @@ beforeEach(() => {
   navigateMock.mockReset();
   // jsdom does not implement scrollIntoView (used to keep the active row visible)
   Element.prototype.scrollIntoView = vi.fn();
-  global.fetch = vi.fn(async (url: string) => {
+  globalThis.fetch = vi.fn(async (url: string) => {
     const u = String(url);
     const body = u.includes('graphs')
       ? { graphs: [{ name: 'alpha_bank', provider: 'openai', rules: 5, entities: 2 }] }
@@ -86,11 +86,11 @@ describe('CommandPalette interactions', () => {
     expect(await screen.findByText('alpha bank')).toBeTruthy();   // graph (underscores → spaces)
     expect(screen.getByText('alpha_docs')).toBeTruthy();          // document
     expect(screen.getByText(/Run abcd1234/)).toBeTruthy();        // run
-    expect(global.fetch).toHaveBeenCalled();
+    expect(globalThis.fetch).toHaveBeenCalled();
   });
 
   it('shows an empty state for a query with no matches', async () => {
-    (global.fetch as ReturnType<typeof vi.fn>).mockImplementation(async () => ({
+    (globalThis.fetch as ReturnType<typeof vi.fn>).mockImplementation(async () => ({
       json: async () => ({ graphs: [], subdirectories: [], runs: [] }),
     }));
     renderPalette();

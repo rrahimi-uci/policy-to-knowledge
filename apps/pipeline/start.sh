@@ -5,6 +5,10 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROJECT_ROOT="$SCRIPT_DIR"
 PID_FILE="$PROJECT_ROOT/.server.pids"
+
+# Resolve the Python venv: prefer this app's .venv, else fall back to the
+# repo-root .venv (the monorepo's shared environment).
+VENV="$PROJECT_ROOT/.venv"; [ -x "$VENV/bin/python3" ] || VENV="$(cd "$PROJECT_ROOT/../.." && pwd)/.venv"
 BACKEND_PORT="${P2K_BACKEND_PORT:-8000}"
 FRONTEND_PORT="${P2K_FRONTEND_PORT:-5173}"
 
@@ -61,7 +65,7 @@ echo "================================================"
 # 1. Install backend deps if needed
 echo ""
 echo "[1/3] Checking Python dependencies..."
-"$PROJECT_ROOT/.venv/bin/python3" -m pip install fastapi uvicorn python-multipart 2>/dev/null | tail -1
+"$VENV/bin/python3" -m pip install fastapi uvicorn python-multipart 2>/dev/null | tail -1
 
 # 2. Install frontend deps if needed
 echo "[2/3] Checking frontend dependencies..."
@@ -84,7 +88,7 @@ echo ""
 
 # Start backend in background
 cd "$PROJECT_ROOT"
-"$PROJECT_ROOT/.venv/bin/uvicorn" ui.backend.main:app --host 0.0.0.0 --port "$BACKEND_PORT" --reload &
+"$VENV/bin/python3" -m uvicorn ui.backend.main:app --host 0.0.0.0 --port "$BACKEND_PORT" --reload &
 BACKEND_PID=$!
 
 # Start frontend in background
