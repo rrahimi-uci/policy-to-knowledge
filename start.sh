@@ -53,6 +53,11 @@ export P2K_FRONTEND_PORT="$KG_FRONTEND_PORT"
 export SERVER_PORT="$CA_PORT"
 export URL_PREFIX="${URL_PREFIX:-/app}"
 
+# The suite shell's Assistant page iframes the Explorer via VITE_CA_URL (read by
+# Vite at dev start). Without it the iframe defaults to :5000, which breaks when
+# CA_PORT is overridden (e.g. 5000 is taken by Docker/AirPlay on macOS).
+export VITE_CA_URL="${VITE_CA_URL:-http://localhost:${CA_PORT}${URL_PREFIX}/}"
+
 # Tell kg-backend how to reach assistant when running on the host
 # (the in-code default points at the docker-compose hostname which is not
 # resolvable outside the container network).
