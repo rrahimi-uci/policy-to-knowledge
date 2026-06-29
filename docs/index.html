@@ -627,7 +627,7 @@
 <!-- ═══════════════════════ SIDEBAR NAV ═══════════════════════ -->
 <nav class="sidebar">
   <div class="sidebar-brand">
-    <img src="logo.svg" alt="Policy to Knowledge Logo" class="logo">
+    <img src="logo.png" alt="Policy to Knowledge Logo" class="logo">
     <h2>Policy to Knowledge</h2>
     <p>Compliance Knowledge Extraction,<br>Exploration, Editing &amp; Versioning</p>
   </div>
@@ -683,7 +683,7 @@
   <h2><span class="sec-icon">▶️</span> At a glance</h2>
   <p>Policy to Knowledge takes a single rule set from raw compliance documents through a 10-agent extraction pipeline, into an explorable knowledge graph, and out to obligation registers, impact analysis, and graph comparison — all from one unified shell.</p>
   <div class="video-frame">
-    <img src="logo.svg" alt="Policy to Knowledge logo" style="width:120px;height:120px;display:block;margin:0 auto">
+    <img src="logo.png" alt="Policy to Knowledge logo" style="width:120px;height:120px;display:block;margin:0 auto;object-fit:contain">
   </div>
   <p class="video-meta">
     Explore the sections below, or jump straight to
@@ -1565,11 +1565,11 @@ REDIS_PORT=6379</code></pre>
     <table>
       <thead><tr><th>Command</th><th>Description</th></tr></thead>
       <tbody>
-        <tr><td><code>./start.sh</code></td><td>Start full stack (incremental — preserves existing data)</td></tr>
-        <tr><td><code>./start.sh --fresh</code></td><td>Rebuild graphs &amp; re-index; keeps Docker volumes intact</td></tr>
-        <tr><td><code>./start.sh --clean</code></td><td>Wipe everything (volumes + SQLite + Redis) and rebuild</td></tr>
+        <tr><td><code>./start.sh</code></td><td>Start the full stack (Explorer DB + Pipeline API/UI + suite shell)</td></tr>
         <tr><td><code>./stop.sh</code></td><td>Stop application processes (Docker infra stays running)</td></tr>
         <tr><td><code>./stop.sh --all</code></td><td>Stop application processes + Docker containers</td></tr>
+        <tr><td><code>cd apps/explorer &amp;&amp; ./start.sh --fresh</code></td><td>Explorer only: rebuild graphs &amp; re-index; keeps Docker volumes intact</td></tr>
+        <tr><td><code>cd apps/explorer &amp;&amp; ./start.sh --clean</code></td><td>Explorer only: wipe all data stores (volumes + SQLite + Redis) and rebuild</td></tr>
       </tbody>
     </table>
   </div>
@@ -1658,20 +1658,20 @@ REDIS_PORT=6379</code></pre>
           <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
           Development — Run Individual Services
         </div>
-        <pre><code><span class="comment"># Assistant (Flask)</span>
-<span class="cmd">cd</span> assistant && <span class="cmd">python3</span> -m src.server
+        <pre><code><span class="comment"># Explorer (Flask + JanusGraph)</span>
+<span class="cmd">cd</span> apps/explorer && <span class="cmd">SERVER_PORT=5050</span> <span class="cmd">.venv/bin/python3</span> -m src.server
 
 <span class="comment"># Suite Shell (React)</span>
-<span class="cmd">cd</span> frontend && <span class="cmd">npm install</span> && <span class="cmd">npm run dev</span>
+<span class="cmd">cd</span> apps/shell && <span class="cmd">npm install</span> && <span class="cmd">npm run dev</span>
 
-<span class="comment"># Pipeline UI + API</span>
-<span class="cmd">cd</span> pipeline && <span class="cmd">./ui/start.sh</span>
+<span class="comment"># Pipeline API + UI</span>
+<span class="cmd">cd</span> apps/pipeline && <span class="cmd">./start.sh</span>
 
 <span class="comment"># Run backend tests</span>
-<span class="cmd">cd</span> pipeline && <span class="cmd">pytest</span> tests/
+<span class="cmd">cd</span> apps/pipeline && <span class="cmd">.venv/bin/python</span> -m pytest tests/
 
-<span class="comment"># Run E2E tests (requires all services)</span>
-<span class="cmd">cd</span> frontend && <span class="cmd">npx playwright test</span></code></pre>
+<span class="comment"># Run Playwright UI tests (services must be running)</span>
+<span class="cmd">cd</span> apps/explorer/tests/e2e && <span class="cmd">npx playwright test</span></code></pre>
       </div>
     </div>
   </details>
@@ -1691,7 +1691,7 @@ REDIS_PORT=6379</code></pre>
         <tr><td>Suite Shell</td><td><code>http://localhost:4000</code></td><td>Main navigation hub (React SPA)</td></tr>
         <tr><td>Pipeline UI</td><td><code>http://localhost:5173</code></td><td>Document upload &amp; pipeline control</td></tr>
         <tr><td>Pipeline API</td><td><code>http://localhost:8000</code></td><td>FastAPI backend for extraction</td></tr>
-        <tr><td>Assistant</td><td><code>http://localhost:5000/app</code></td><td>KG explorer &amp; AI chat</td></tr>
+        <tr><td>Explorer</td><td><code>http://localhost:5000/app</code> <small>(or <code>:5050</code>)</small></td><td>Graph explorer &amp; AI chat. Falls back to <code>:5050</code> when <code>:5000</code> is taken (Docker/AirPlay on macOS).</td></tr>
         <tr><td>JanusGraph</td><td><code>localhost:8182</code></td><td>Gremlin WebSocket endpoint</td></tr>
         <tr><td>OpenSearch</td><td><code>http://localhost:9200</code></td><td>Full-text &amp; vector search</td></tr>
         <tr><td>Cassandra</td><td><code>localhost:9042</code></td><td>Graph storage backend</td></tr>
