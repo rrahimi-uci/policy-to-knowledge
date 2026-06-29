@@ -13,17 +13,25 @@ Instead, use GitHub's private vulnerability reporting:
 
 We aim to acknowledge reports within a few business days.
 
-## Scope & hardening notes
+## Handling secrets
+
+- **Never commit secrets.** API keys and database credentials belong in
+  gitignored `.env` files (and `apps/pipeline/config.json`), never in source
+  control or committed configuration.
+- Copy the provided `.env.example` files to `.env` and fill in your own values
+  locally.
+- If a secret is ever committed, treat it as compromised: rotate the credential
+  immediately and remove it from history.
+
+## Scope and hardening notes
 
 This project integrates several backends (JanusGraph/Cassandra/OpenSearch,
 PostgreSQL, Redis) and calls third-party LLM APIs. When self-hosting:
 
-- **Never commit secrets.** `.env` and `config.json` are gitignored; use
-  environment variables for all API keys and database credentials.
 - The Explorer's raw Gremlin endpoint is **read-only by default**. Write
   queries require `GREMLIN_ALLOW_MUTATIONS=true` and should sit behind
   authentication — do not expose it directly to untrusted clients.
-- Change all default passwords (e.g. `OPENSEARCH_ADMIN_PASSWORD`) before any
-  non-local deployment.
+- Change all default passwords (for example `OPENSEARCH_ADMIN_PASSWORD`) before
+  any non-local deployment.
 - Put the apps behind an authenticating reverse proxy for any shared or public
   deployment; the services do not implement authentication themselves.

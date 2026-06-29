@@ -1,38 +1,38 @@
 # Docker Deployment Guide
 
-This guide explains how to build and run the Policy to Knowledge using Docker.
+How to build and run the **pipeline** app with Docker: a batch extraction CLI and a containerized FastAPI + React UI.
 
----
+## Prerequisites
 
-## ⚡ Quick Start (View Existing Reports)
+| Requirement | Version | Notes |
+|-------------|---------|-------|
+| Docker | 20.10+ | [Install Docker](https://docs.docker.com/get-docker/) |
+| Docker Compose | 2.0+ | Bundled with Docker Desktop |
+| OpenAI API key | — | Set in `.env` |
+| Source documents | — | Placed in `compliance-files/` |
 
-If you just want to view existing reports without rerunning the pipeline:
+## Images and Services
 
-```bash
-# Open visualization directly
-open pipeline-output/*/agent-6-visualization-and-report/*_knowledge_graph.html
-```
+The app ships two images, built from two Dockerfiles and wired up in `docker-compose.yml`.
 
----
+| Service | Image | Dockerfile | Base | Purpose | Port |
+|---------|-------|------------|------|---------|------|
+| `p2k` | `p2k:latest` | `Dockerfile.cli` | `python:3.11-slim` | Batch extraction runner; entrypoint `cli/extract.py` | — |
+| `p2k-ui` | `p2k-ui:latest` | `Dockerfile.api` | `python:3.12-slim` | FastAPI backend + built React UI | `8000` |
 
-## 📋 Prerequisites
+`Dockerfile.api` is a multi-stage build: it compiles the React/Vite frontend, installs the FastAPI backend, and serves the bundled UI from FastAPI on a single port.
 
-- **Docker**: Version 20.10+ ([Install Docker](https://docs.docker.com/get-docker/))
-- **Docker Compose**: Version 2.0+ (included with Docker Desktop)
-- **API Keys**: an OpenAI API key
-- **Input Files**: Compliance documents in `compliance-files/` directory
+> The repo-root `docker-compose.yml` builds the pipeline backend (`kg-backend`) from this app's `Dockerfile.api` as part of the full monorepo stack. This guide covers the app-local `docker-compose.yml`.
 
-## 🚀 Run the Pipeline (Generate New Reports)
+## Quick Start
 
-To run the complete pipeline and generate new reports:
+### Run the extraction pipeline
 
 ```bash
 docker compose run --rm p2k --provider openai
 ```
 
-## 🌐 Run the Web UI
-
-To start the containerized FastAPI + React UI stack:
+### Run the web UI
 
 ```bash
 docker compose up -d p2k-ui
@@ -41,47 +41,40 @@ docker compose up -d p2k-ui
 open http://localhost:8000
 ```
 
-The `p2k-ui` service builds the React frontend into the API image and serves it from FastAPI, so the document upload flow and extraction handoff run from a single container on port `8000`.
+The `p2k-ui` service builds the React frontend into the API image and serves it from FastAPI, so document upload and extraction run from a single container on port `8000`.
 
----
+## Full Setup
 
-## 🛠️ Full Setup
-
-### 1. Set Up Environment Variables
+### 1. Environment variables
 
 ```bash
-# Copy the example environment file
 cp .env.example .env
-
-# Edit .env and add your API keys
-nano .env  # or use your preferred editor
 ```
 
-**Required in .env**:
+Set your key in `.env`:
+
 ```bash
-OPENAI_API_KEY=sk-proj-your-actual-key-here
+OPENAI_API_KEY=sk-your-actual-key-here
 ```
 
-### 2. Prepare Configuration
+### 2. Configuration
 
 ```bash
-# Copy the example configuration
 cp config.example.json config.json
-
-# (Optional) Customize config.json for your needs
 ```
 
-### 3. Add Compliance Documents
+`config.json` is gitignored. The images seed a default `config.json` from `config.example.json` at build time, and runtime environment variables (such as `OPENAI_API_KEY`) are substituted by the app when the config is loaded.
+
+### 3. Add source documents
 
 ```bash
-# Place your PDF files in compliance-files/
-cp /path/to/SAMPLE_GUIDELINES.pdf compliance-files/
+cp /path/to/your-document.pdf compliance-files/
 ```
 
-### 4. Build and Run
+### 4. Build and run
 
 ```bash
-# Build the Docker images
+# Build both images
 docker compose build
 
 # Start the web UI/API
@@ -91,327 +84,225 @@ docker compose up -d p2k-ui
 docker compose run --rm p2k --provider openai
 ```
 
-### 5. View Results
+### 5. View results
 
 ```bash
-# Check output
 ls -lh pipeline-output/
 
-# View HTML visualization
+# Open the generated knowledge-graph visualization
 open pipeline-output/*/agent-6-visualization-and-report/*_knowledge_graph.html
 ```
 
----
+## Architecture
 
-## 🏗️ Docker Architecture
+### CLI image layout (`Dockerfile.cli`)
 
-### Image Structure
-
-```
-p2k:latest
-├── Python 3.11 (slim base)
-├── Application code
-│   ├── agents/ (7 agents)
-│   ├── prompts/ (production prompts)
-│   ├── utils/ (utilities)
-│   └── cli/extract.py (orchestrator)
-├── Dependencies (from requirements.txt)
-└── Non-root user (appuser)
+```text
+p2k:latest  (python:3.11-slim)
+├── agents/          # 10-agent pipeline
+├── prompts/         # production prompts
+├── utils/           # config, LLM client, helpers
+├── cli/
+│   ├── extract.py   # entrypoint — Agents 1–6
+│   └── compare.py   # set operations — Agents 7–10
+├── config.json      # seeded from config.example.json
+└── non-root user (appuser)
 ```
 
-**Image Size**: ~500MB (with dependencies)
-
-### Volume Mounts
+### Volume mounts (`p2k` service)
 
 | Host Path | Container Path | Mode | Purpose |
-|-----------|---------------|------|---------|
+|-----------|----------------|------|---------|
 | `./compliance-files/` | `/app/compliance-files` | ro | Input documents |
 | `./pipeline-output/` | `/app/pipeline-output` | rw | Pipeline results |
-| `./config.json` | `/app/config.json` | ro/rw | Configuration |
+| `./config.json` | `/app/config.json` | rw | Configuration |
+
+### Volume mounts (`p2k-ui` service)
+
+| Host Path | Container Path | Mode | Purpose |
+|-----------|----------------|------|---------|
+| `./compliance-files/` | `/app/compliance-files` | rw | Uploaded documents |
+| `./pipeline-output/` | `/app/pipeline-output` | rw | Pipeline results |
 | `./pipeline-logs/` | `/app/pipeline-logs` | rw | Backend run logs |
+| `./config.json` | `/app/config.json` | rw | Configuration |
 
-## 🧩 Services
+## Usage Examples
 
-| Service | Purpose | Port |
-|---------|---------|------|
-| `p2k` | Batch extraction runner (`cli/extract.py`) | none |
-| `p2k-ui` | FastAPI backend + built React frontend | `8000` |
-
----
-
-## 📖 Usage Examples
-
-### Run Full Pipeline (Default)
+### Run the full extraction pipeline
 
 ```bash
-docker compose run --rm p2k
+docker compose run --rm p2k --provider openai
 ```
 
-### Run Full Pipeline with Report Viewing
+### Run a single agent step
 
 ```bash
-# Run pipeline
-docker compose run --rm p2k
-
-# Open results directly
-open pipeline-output/*/agent-6-visualization-and-report/*_knowledge_graph.html
-```
-
-**Output provides:**
-- 📊 OpenAI GPT pipeline results
-- 📁 All outputs in `pipeline-output/` directory
-
-### Run Specific Agent (Single Step)
-
-```bash
-# Run only Agent 1 (Document Organizer)
+# Agent 1 — Document Organizer
 docker compose run --rm p2k --step 1
 
-# Run only Agent 2 (Entity Extractor)
+# Agent 2 — Entity Extractor
 docker compose run --rm p2k --step 2
 
-# Run only Agent 6 (Visualization)
+# Agent 6 — Visualization
 docker compose run --rm p2k --step 6
 ```
 
-### Interactive Shell
+### Compare two graphs (Agents 7–10)
 
 ```bash
-# Access container shell for debugging
+# List available graphs
+docker compose run --rm --entrypoint python p2k cli/compare.py --list
+
+# Compare two extracted graphs
+docker compose run --rm --entrypoint python p2k cli/compare.py --g1 mortgage --g2 commercial_lending
 ```
 
-### Clean Up
+> The `p2k` entrypoint is `cli/extract.py`. To run `cli/compare.py`, override the entrypoint as shown above.
 
-### View Logs
+### View logs and status
 
 ```bash
-# Follow logs in real-time
+# Follow UI logs
 docker compose logs -f p2k-ui
 
-# View last 100 lines
+# Last 100 lines
 docker compose logs --tail=100 p2k-ui
 
-# Check container status
+# Container status
 docker compose ps
 ```
 
-### Clean Up
+### Clean up
 
 ```bash
 # Stop and remove containers
 docker compose down
 
-# Remove volumes (WARNING: deletes output!)
+# Remove volumes (WARNING: deletes named-volume data)
 docker compose down -v
 
 # Remove images
-docker rmi p2k:latest
+docker rmi p2k:latest p2k-ui:latest
 ```
 
----
+## Advanced Configuration
 
-## 🔧 Advanced Configuration
+### Resource limits
 
-### Resource Limits
-
-Edit `docker-compose.yml` to adjust resources:
+The `p2k` service defines limits in `docker-compose.yml`. Adjust for larger documents:
 
 ```yaml
 deploy:
   resources:
     limits:
-      cpus: '8'      # Increase for faster processing
-      memory: 16G    # Increase for large documents
-    reservations:
       cpus: '4'
       memory: 8G
+    reservations:
+      cpus: '2'
+      memory: 4G
 ```
 
-### Custom Dockerfile Build Args
+### Development mode (hot reload)
 
-```bash
-# Build with custom Python version
-docker build --build-arg PYTHON_VERSION=3.12 -t p2k-builder:custom .
-```
-
-### Development Mode (Hot Reload)
-
-Mount source code as volume for development:
+Mount source code as volumes so changes take effect without rebuilding:
 
 ```yaml
-# Add to docker-compose.yml under volumes:
+# Add under the service's volumes:
 volumes:
   - ./agents:/app/agents:rw
   - ./utils:/app/utils:rw
   - ./cli/extract.py:/app/cli/extract.py:rw
 ```
 
----
+## Troubleshooting
 
-## 🐛 Troubleshooting
+### "Permission denied" when writing output
 
-### Issue: "Permission denied" when writing output
+User ID mismatch between host and container. Run as your host user:
 
-**Cause**: User ID mismatch between host and container
-
-**Solution**: Run with host user ID
 ```bash
-docker-compose run --rm --user $(id -u):$(id -g) p2k
+docker compose run --rm --user $(id -u):$(id -g) p2k
 ```
 
-Or fix permissions on host:
+Or fix ownership on the host:
+
 ```bash
-sudo chown -R $USER:$USER pipeline-output/
+sudo chown -R $USER pipeline-output/
 ```
 
-### Issue: "API key not found"
+### "API key not found"
 
-**Cause**: Environment variables not loaded
+The environment was not loaded. Confirm `.env` exists with a valid `OPENAI_API_KEY`, then recreate the containers:
 
-**Solution**: 
-1. Check `.env` file exists and has correct keys
-2. Restart Docker Compose to reload environment
 ```bash
-docker-compose down
-docker-compose up
+docker compose down
+docker compose up -d p2k-ui
 ```
 
-### Issue: Container runs out of memory
+### Container runs out of memory
 
-**Cause**: Large document processing exceeds memory limit
+Increase the memory limit for the `p2k` service in `docker-compose.yml`:
 
-**Solution**: Increase memory in `docker-compose.yml`:
 ```yaml
 deploy:
   resources:
     limits:
-      memory: 16G  # Increase from 8G
+      memory: 16G
 ```
 
-### Issue: Build fails with "No space left on device"
+### Build fails: "No space left on device"
 
-**Cause**: Docker ran out of disk space
-
-**Solution**: Clean up Docker resources
 ```bash
 docker system prune -a
 docker volume prune
 ```
 
-### Issue: Slow performance in Docker
+### "Module not found" errors
 
-**Causes & Solutions**:
+Rebuild without cache:
 
-1. **Volume performance (macOS/Windows)**: Use named volumes instead of bind mounts
+```bash
+docker compose build --no-cache
+```
+
+## Security Best Practices
+
+### API key management
+
+- **Do not** commit `.env` or `config.json` with a real key — both are gitignored.
+- Use Docker secrets for production:
+
+  ```bash
+  echo "your-api-key" | docker secret create openai_key -
+  ```
+
+### Non-root user
+
+The CLI image runs as a non-root user (`appuser`).
+
+### Read-only inputs
+
+For the batch runner, source documents are mounted read-only:
+
 ```yaml
 volumes:
-  - kg-output:/app/pipeline-output  # Named volume (faster)
+  - ./compliance-files:/app/compliance-files:ro
 ```
 
-2. **CPU limits too low**: Increase CPU allocation
-```yaml
-deploy:
-  resources:
-    limits:
-      cpus: '8'  # Use more cores
-```
+## Production Deployment
 
-3. **I/O bottleneck**: Use SSD for Docker storage, avoid network drives
-
-### Issue: "Module not found" errors
-
-**Cause**: Dependencies not installed or Python path issue
-
-**Solution**: Rebuild image
-```bash
-docker-compose build --no-cache
-```
-
----
-
-## 🔒 Security Best Practices
-
-### 1. API Key Management
-
-**❌ Don't**:
-- Commit `.env` or `config.json` with API keys to Git
-- Hard-code API keys in Dockerfile
-
-**✅ Do**:
-- Use `.env` file (gitignored)
-- Use Docker secrets for production
-```bash
-echo "your-api-key" | docker secret create openai_key -
-```
-
-### 2. Non-Root User
-
-The Dockerfile already creates a non-root user (`appuser`) for security.
-
-### 3. Read-Only Mounts
-
-Input files are mounted read-only:
-```yaml
-volumes:
-  - ./compliance-files:/app/compliance-files:ro  # :ro = read-only
-```
-
-### 4. Network Isolation
-
-For production, use custom networks:
-```yaml
-networks:
-  kg-network:
-    driver: bridge
-    internal: true  # No external access
-```
-
----
-
-## 📊 Performance Benchmarks
-
-### SAMPLE_GUIDELINES.pdf (547 pages) Processing Time
-
-| Environment | Agents 1-2 | Agent 3 | Agents 4-6 | **Total** |
-|-------------|-----------|---------|------------|-----------|
-| Native (M1 Mac) | 8 min | 15 min | 5 min | **28 min** |
-| Docker (M1 Mac, 4 CPU) | 9 min | 16 min | 6 min | **31 min** |
-| Docker (Linux, 8 CPU) | 7 min | 12 min | 4 min | **23 min** |
-| Docker (Windows WSL2) | 11 min | 19 min | 7 min | **37 min** |
-
-**Docker Overhead**: ~10% slower than native (due to virtualization)
-
----
-
-## 🚢 Production Deployment
-
-### Using Docker Hub
+### Push to a registry
 
 ```bash
-# Tag image
-docker tag p2k:latest <dockerhub-user>/p2k-builder:1.0.0
-
-# Push to Docker Hub
-docker push <dockerhub-user>/p2k-builder:1.0.0
-
-# Pull on production server
-docker pull <dockerhub-user>/p2k-builder:1.0.0
+# Tag and push the API image
+docker tag p2k-ui:latest registry.example.com/p2k-ui:1.0.0
+docker push registry.example.com/p2k-ui:1.0.0
 ```
 
-### Using Private Registry
-
-```bash
-# Tag for private registry
-docker tag p2k:latest registry.company.com/p2k-builder:latest
-
-# Push
-docker push registry.company.com/p2k-builder:latest
-```
-
-### Kubernetes Deployment (Example)
+### Kubernetes batch job (example)
 
 ```yaml
-apiVersion: apps/v1
+apiVersion: batch/v1
 kind: Job
 metadata:
   name: p2k-pipeline
@@ -419,8 +310,9 @@ spec:
   template:
     spec:
       containers:
-      - name: kg-builder
-        image: <dockerhub-user>/p2k-builder:1.0.0
+      - name: p2k
+        image: registry.example.com/p2k:1.0.0
+        args: ["--provider", "openai"]
         env:
         - name: OPENAI_API_KEY
           valueFrom:
@@ -442,31 +334,10 @@ spec:
           claimName: output-pvc
 ```
 
----
+## Related Documentation
 
-## 📚 Related Documentation
-
-- [Main README](../README.md) - Project overview
-- [SETUP.md](SETUP.md) - Native setup instructions
-- [ARCHITECTURE.md](ARCHITECTURE.md) - Technical architecture
-- [Docker Documentation](https://docs.docker.com/)
-- [Docker Compose Documentation](https://docs.docker.com/compose/)
-
----
-
-## 🆘 Support
-
-For Docker-specific issues:
-1. Check [Troubleshooting](#troubleshooting) section above
-2. Review Docker logs: `docker compose logs p2k-ui`
-3. Verify `.env` file has correct API keys
-4. Ensure compliance files are in `compliance-files/` directory
-
-For pipeline issues, see [agents/README.md](../agents/README.md)
-
----
-
-**Last Updated**: December 21, 2025  
-**Docker Version**: 24.0+  
-**Compose Version**: 2.0+  
-**Status**: ✅ Production-ready
+| Document | Purpose |
+|----------|---------|
+| [README.md](../README.md) | App overview |
+| [SETUP.md](SETUP.md) | Local environment setup |
+| [ARCHITECTURE.md](ARCHITECTURE.md) | Technical architecture |

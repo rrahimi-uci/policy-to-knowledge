@@ -1,198 +1,172 @@
-# Policy to Knowledge Agents
+# Pipeline Agents
 
-**Policy to Knowledge** (COmpliance Rules Transformation & EXtraction System) uses a 10-agent pipeline to transform compliance documents into structured knowledge graphs.
+Agent reference for the Policy to Knowledge extraction and comparison pipeline.
+Each agent is a self-contained module in this directory. Agents 1–6 turn source
+documents into an optimized knowledge graph (driven by `cli/extract.py`); agents
+7–10 compare and merge two existing graphs (driven by `cli/compare.py`).
 
+```text
+Documents → [1] → [2] → [3] → [3.5] → [4] → [5] → [6] → Knowledge Graph
+                                                              │
+                        KG₁ + KG₂ → [7] → [8] → [9] → [10] → Comparison Reports
 ```
-PDF → [1] → [2] → [3] → [3.5] → [4] → [5] → [6] → Knowledge Graph
-                                                          ↓
-                              KG₁ + KG₂ → [7] → [8] → [9] → [10] → Comparison Reports
-```
+
+All LLM-using agents call the OpenAI model configured in `config.json`
+(default reasoning model `gpt-5.2`, `reasoning_effort: medium`; the optimizer
+agent uses `gpt-5-mini`). See [Configuration](#configuration).
+
+## Agent Summary
+
+| # | Agent | File | Class | LLM | Workers |
+| --- | --- | --- | --- | :---: | :---: |
+| 1 | Document Organizer | `agent_1_document_organizer.py` | `DocumentChunkingAgent` | ✓ | — |
+| 2 | Entity & Relationship Extractor | `agent_2_entity_extractor.py` | `ComplianceEntityRelationshipAgent` | ✓ | — |
+| 3 | Rules Extractor | `agent_3_rules_extractor.py` | `BusinessRulesExtractor` | ✓ | 10 |
+| 3.5 | Rule Validator | `agent_3_5_rule_validator.py` | `RuleValidationAgent` | ✓ | — |
+| 4 | Rules + Entities Merger | `agent_4_rules_with_entities_merger.py` | `RulesEntitiesMerger` | — | — |
+| 5 | Knowledge Graph Optimizer | `agent_5_knowledge_graph_optimizer.py` | `KnowledgeGraphOptimizer` | ✓ | — |
+| 6 | Visualization & Report | `agent_6_visualization_and_report.py` | `KnowledgeGraphVisualizer` | — | — |
+| 7 | Rule-Type Clusterer | `agent_7_rule_type_clusterer.py` | `RuleBehaviorClusterer` | — | — |
+| 8 | Semantic Rule Matcher | `agent_8_semantic_rule_matcher.py` | `SemanticRuleMatcher` | ✓ | 15 |
+| 9 | Set Operations | `agent_9_set_operations.py` | `SetOperationsCalculator` | — | — |
+| 10 | Set Visualization | `agent_10_set_visualization.py` | `SetOperationsVisualizer` | — | — |
+
+Per-document outputs land in `pipeline-output/<source>/agent-N-.../`; comparison
+outputs land in `pipeline-output/_merged/<g1>_<g2>/agent-N-.../`.
 
 ---
 
-## Agent 1: Document Organizer
+## Extraction agents (1–6)
 
-**File**: `agent_1_document_organizer.py`  
-**Class**: `DocumentChunkingAgent`  
-**LLM**: ✅ GPT-5.2 (for TOC detection and structure analysis)
+### Agent 1 — Document Organizer
 
-**Purpose**: Chunk and organize compliance documents using table of contents structure.
+Chunks and organizes source documents using their table-of-contents structure.
 
-| Input | Output |
-|-------|--------|
-| Raw PDF files from `compliance-files/` | Text chunks in `pipeline-output/{provider}/agent-1-organized-documents/` |
+| | |
+|---|---|
+| **Consumes** | Raw files from `compliance-files/<batch>/` |
+| **Produces** | Text chunks in `agent-1-organized-documents/` |
+| **Run** | `.venv/bin/python cli/extract.py --step 1` |
 
-**Features**:
-- Extracts PDF table of contents (TOC) using PyPDF2 bookmarks
-- **LLM-assisted TOC detection** when no bookmarks exist (analyzes first 5 pages)
-- **LLM-based document structure analysis** for files without clear TOC
-- Format-specific chunkers: PDF, Markdown, CSV, Excel, DOCX
-- Preserves section references, page numbers, metadata
-- Handles large PDFs (500+ pages)
+- Extracts the PDF table of contents from bookmarks (PyPDF2).
+- Falls back to LLM-assisted TOC detection and structure analysis when no
+  bookmarks exist.
+- Format-specific chunkers preserve section references, page numbers, and metadata.
 
-**Chunker Tools**:
 | Format | Chunker | Method |
 |--------|---------|--------|
-| PDF | PDFChunker | TOC-based or AI reasoning |
-| Markdown | MarkdownChunker | Header-based (langchain) |
-| CSV/TSV | CSVChunker | Row-based (pandas) |
-| Excel | ExcelChunker | Sheet-aware (pandas) |
-| DOCX | DocxChunker | Heading-based (python-docx) |
-| TXT | TextChunker | AI structure analysis |
+| PDF | `PDFChunker` | TOC-based, or LLM reasoning fallback |
+| Markdown | `MarkdownChunker` | Header-based (LangChain) |
+| CSV/TSV | `CSVChunker` | Row-based (pandas) |
+| Excel | `ExcelChunker` | Sheet-aware (pandas) |
+| DOCX | `DocxChunker` | Heading-based (python-docx) |
+| TXT | `TextChunker` | LLM structure analysis |
 
-**Config** (`config.json`):
 ```json
-{
-  "document_organizer": {
-    "chunk_size_target": 2000,
-    "max_chunk_size": 3000,
-    "min_chunk_size": 500,
-    "supported_formats": [".pdf", ".txt", ".docx", ".md", ".csv", ".xlsx"]
+"document_organizer": {
+  "chunk_size_target": 2000,
+  "max_chunk_size": 3000,
+  "min_chunk_size": 500,
+  "supported_formats": [".pdf", ".txt", ".docx", ".md", ".csv", ".xlsx"]
+}
+```
+
+### Agent 2 — Entity & Relationship Extractor
+
+Extracts entity types and relationships using iterative prompt optimization.
+
+| | |
+|---|---|
+| **Consumes** | Organized chunks from Agent 1 |
+| **Produces** | `agent-2-entities/entity_types_and_relationships.json` |
+| **Run** | `.venv/bin/python cli/extract.py --step 2` |
+
+- Meta-agent prompt optimization across `n_iterations` refinement passes.
+- Entities carry name, definition, attributes, and examples; relationships carry
+  cardinality, directionality, and constraints.
+- Quality scoring across five factors (20 points each, 100 max).
+
+```json
+"entity_extractor": {
+  "n_iterations": 3,
+  "min_score_threshold": 70,
+  "scoring_weights": {
+    "completeness": 20,
+    "relationship_quality": 20,
+    "attribute_coverage": 20,
+    "clarity": 20,
+    "consistency": 20
   }
 }
 ```
 
-**Run**: `python cli/extract.py --step 1`
+### Agent 3 — Rules Extractor
 
----
+Extracts business rules with parallel batch processing.
 
-## Agent 2: Entity Extractor
+| | |
+|---|---|
+| **Consumes** | Organized chunks (Agent 1) + entity definitions (Agent 2) |
+| **Produces** | `agent-3-rules/compliance_rules_with_entities.json` and `.csv` |
+| **Run** | `.venv/bin/python cli/extract.py --step 3` |
 
-**File**: `agent_2_entity_extractor.py`  
-**Class**: `ComplianceEntityRelationshipAgent`  
-**LLM**: ✅ GPT-5.2
+- Parallel batches via `ThreadPoolExecutor` (10 workers).
+- 11 rule categories: Eligibility, Compliance, Documentation, Process,
+  Calculation, Validation, Notification, Timing, Audit, Exception Handling,
+  Reporting.
+- Five-factor confidence scoring (source specificity, metric clarity, condition
+  completeness, example quality, consequence clarity).
 
-**Purpose**: Extract entity types and relationships using meta-agent prompt optimization.
-
-| Input | Output |
-|-------|--------|
-| Organized chunks from Agent 1 | `agent-2-entities/entity_types_and_relationships.json` |
-
-**Features**:
-- Meta-agent prompt optimization (iterative refinement)
-- Extracts entities with: name, definition, attributes, examples
-- Identifies relationships with: cardinality, directionality, constraints
-- Quality scoring (5 factors × 20 points = 100 max)
-
-**Config** (`config.json`):
 ```json
-{
-  "entity_extractor": {
-    "n_iterations": 3,
-    "min_score_threshold": 70,
-    "scoring_weights": {
-      "completeness": 20,
-      "relationship_quality": 20,
-      "attribute_coverage": 20,
-      "clarity": 20,
-      "consistency": 20
-    }
-  }
+"rules_extractor": {
+  "target_rules": 300,
+  "rules_per_batch": 10,
+  "rules_per_batch_openai": 10
 }
 ```
 
-**Run**: `python cli/extract.py --step 2`
+### Agent 3.5 — Rule Validator
 
----
+Validates extracted rules for quality, consistency, and completeness.
+Non-blocking: the pipeline continues even if validation reports issues.
 
-## Agent 3: Rules Extractor
+| | |
+|---|---|
+| **Consumes** | Rules from Agent 3 |
+| **Produces** | `agent-3-5-validation/validation_summary.txt` |
+| **Run** | Automatically after Agent 3 (`--step 3`) |
 
-**File**: `agent_3_rules_extractor.py`  
-**Class**: `BusinessRulesExtractor`  
-**LLM**: ✅ GPT-5.2  
-**Workers**: 10 (parallel)
+- Assesses completeness, specificity, and consistency.
+- Detects duplicates, validates cross-references, analyzes confidence scores, and
+  emits recommendations.
 
-**Purpose**: Extract business rules with parallel batch processing.
+### Agent 4 — Rules + Entities Merger
 
-| Input | Output |
-|-------|--------|
-| Organized chunks + entity definitions | `compliance_rules_with_entities.json`, `.csv` |
+Merges business rules with entity definitions into a complete knowledge graph.
+No LLM calls.
 
-**Features**:
-- Parallel batch processing with `ThreadPoolExecutor`
-- 11 rule categories: Eligibility, Compliance, Documentation, Process, Calculation, Validation, Notification, Timing, Audit, Exception Handling, Reporting
-- 5-factor confidence scoring (source specificity, metric clarity, condition completeness, example quality, consequence clarity)
+| | |
+|---|---|
+| **Consumes** | Rules (Agent 3) + entities (Agent 2) |
+| **Produces** | `agent-4-rules-with-entities/business_rules_complete.json` and `.csv` |
+| **Run** | `.venv/bin/python cli/extract.py --step 4` |
 
-**Config** (`config.json`):
-```json
-{
-  "rules_extractor": {
-    "target_rules": 240,
-    "rules_per_batch": 10,
-    
-    "rules_per_batch_openai": 10
-  }
-}
-```
+- Combines rules with entity context and maintains referential integrity.
+- Exports a unified graph structure to JSON and CSV.
 
-**Run**: `python cli/extract.py --step 3`
+### Agent 5 — Knowledge Graph Optimizer
 
----
+Optimizes the knowledge graph through deduplication and dependency analysis.
 
-## Agent 3.5: Rule Validator
+| | |
+|---|---|
+| **Consumes** | Complete KG from Agent 4 |
+| **Produces** | `agent-5-optimized/optimized_compliance_knowledge_graph.json`, `optimized-dependency_graph.json`, `optimized-optimization_report.txt` |
+| **Run** | `.venv/bin/python cli/extract.py --step 5` |
 
-**File**: `agent_3_5_rule_validator.py`  
-**Class**: `RuleValidationAgent`  
-**LLM**: ✅ GPT-5.2  
-**Blocking**: ❌ No (pipeline continues on failure)
-
-**Purpose**: Validate extracted rules for quality, consistency, and completeness.
-
-| Input | Output |
-|-------|--------|
-| Rules from Agent 3 | `agent-3-5-validation/validation_summary.txt` |
-
-**Features**:
-- Rule quality assessment (completeness, specificity, consistency)
-- Duplicate detection
-- Cross-reference validation
-- Confidence score analysis
-- Generates recommendations
-
-**Run**: `python cli/extract.py --step 3` (runs automatically after Agent 3)
-
----
-
-## Agent 4: Rules with Entities Merger
-
-**File**: `agent_4_rules_with_entities_merger.py`  
-**Class**: `RulesEntitiesMerger`  
-**LLM**: ❌ Not required
-
-**Purpose**: Merge business rules with entity definitions to create complete knowledge graph.
-
-| Input | Output |
-|-------|--------|
-| Agent 3 rules + Agent 2 entities | `business_rules_complete.json`, `.csv` |
-
-**Features**:
-- Combines rules with entity context
-- Maintains referential integrity
-- Creates unified knowledge graph structure
-- Exports to JSON and CSV (18 columns)
-
-**Run**: `python cli/extract.py --step 4`
-
----
-
-## Agent 5: Knowledge Graph Optimizer
-
-**File**: `agent_5_knowledge_graph_optimizer.py`  
-**Class**: `KnowledgeGraphOptimizer`  
-**LLM**: ✅ GPT-5.2 (configured reasoning model)  
-**Parallel**: ✅ Sequential deduplication then dependency analysis
-
-**Purpose**: Optimize knowledge graph through deduplication and dependency analysis.
-
-| Input | Output |
-|-------|--------|
-| Complete KG from Agent 4 | `optimized_compliance_knowledge_graph.json`, `optimized-dependency_graph.json`, `optimized-optimization_report.txt` |
-
-**Features**:
-- Uses configured reasoning model (gpt-5.2 with medium reasoning by default)
-- Conservative deduplication (preserves meaningful variations)
-- Batched processing for large rule sets (50 rules/batch)
-- 7 dependency types:
+- Conservative deduplication that preserves meaningful variations.
+- Batched processing for large rule sets (50 rules per batch).
+- Classifies seven dependency types:
 
 | Type | Description |
 |------|-------------|
@@ -204,47 +178,41 @@ PDF → [1] → [2] → [3] → [3.5] → [4] → [5] → [6] → Knowledge Grap
 | `override` | Rule B supersedes Rule A |
 | `validation` | Rule B validates Rule A's outcome |
 
-**Run**: `python cli/extract.py --step 5`
+> Skip this step with `--skip-optimize`; Agent 6 then uses Agent 4 output directly.
+
+### Agent 6 — Visualization & Report
+
+Generates an interactive HTML visualization and report. No LLM calls.
+
+| | |
+|---|---|
+| **Consumes** | Optimized KG from Agent 5 |
+| **Produces** | `agent-6-visualization-and-report/<source>_knowledge_graph.html`, `extraction_metadata.json` |
+| **Run** | `.venv/bin/python cli/extract.py --step 6` |
+
+- Interactive network graph (vis.js), color-coded by rule type.
+- Searchable, sortable rules table with a dependency evidence column.
+- Self-contained HTML with a statistics dashboard.
 
 ---
 
-## Agent 6: Visualization and Report Generator
+## Comparison agents (7–10)
 
-**File**: `agent_6_visualization_and_report.py`  
-**Class**: `KnowledgeGraphVisualizer`  
-**LLM**: ❌ Not required
+These agents run via `cli/compare.py` and operate on two optimized graphs
+(`--g1`, `--g2`). Use `--list` to see available graphs.
 
-**Purpose**: Generate interactive HTML visualization and reports.
+### Agent 7 — Rule-Type Clusterer
 
-| Input | Output |
-|-------|--------|
-| Optimized KG from Agent 5 | `{source_name}_knowledge_graph.html`, `extraction_metadata.json` |
+Groups rules from both graphs by behavior (the "how" dimension) so comparison
+happens within like-for-like clusters. No LLM calls.
 
-**Features**:
-- Interactive network graph (vis.js)
-- 9-column rules table with search/filter/sort
-- Dependency evidence column (rationale, strength, impact)
-- Color-coded visualization by rule type
-- Self-contained HTML (no external dependencies)
-- Statistics dashboard
+| | |
+|---|---|
+| **Consumes** | Two optimized KGs (G1, G2) |
+| **Produces** | `_merged/<g1>_<g2>/agent-7-rule-clusters/rule_clusters.json` |
+| **Run** | `.venv/bin/python cli/compare.py --g1 <g1> --g2 <g2>` |
 
-**Run**: `python cli/extract.py --step 6`
-
----
-
-## Agent 7: Rule Behavior Clusterer
-
-**File**: `agent_7_rule_type_clusterer.py`  
-**Class**: `RuleBehaviorClusterer`  
-**LLM**: ❌ Not required
-
-**Purpose**: Group rules from two knowledge graphs by behavior (HOW dimension) for comparison.
-
-| Input | Output |
-|-------|--------|
-| Two optimized KGs (G1, G2) | `_merged/{G1}_{G2}/agent-7-rule-clusters/rule_clusters.json` |
-
-**8 Rule Behaviors**:
+Eight rule behaviors:
 
 | Behavior | Description | Example |
 |----------|-------------|---------|
@@ -252,193 +220,122 @@ PDF → [1] → [2] → [3] → [3.5] → [4] → [5] → [6] → Knowledge Grap
 | `classification` | Defines a category | Property Type: SFR, Condo |
 | `threshold` | Numeric min/max limit | LTV ≤ 97% |
 | `prohibition` | Forbids something | No prepayment penalties |
-| `timing` | Deadline/time window | Appraisal valid 120 days |
+| `timing` | Deadline or time window | Appraisal valid 120 days |
 | `sequence` | Specific order | Inspect → Appraise → Underwrite |
-| `method` | How to verify/execute | Use DU for underwriting |
+| `method` | How to verify or execute | Use automated underwriting |
 | `mandate` | Requires existence | Flood insurance required |
 
-**10 Rule Domains**: borrower, income, property, loan, appraisal, underwriting, documentation, closing, servicing, compliance
+Ten rule domains: borrower, income, property, loan, appraisal, underwriting,
+documentation, closing, servicing, compliance.
 
-**Run**: `python cli/compare.py --g1 graphA --g2 graphB`
+### Agent 8 — Semantic Rule Matcher
 
----
+Compares rules within each behavior cluster using LLM semantic matching.
 
-## Agent 8: Semantic Rule Matcher
+| | |
+|---|---|
+| **Consumes** | Rule clusters from Agent 7 |
+| **Produces** | `agent-8-rule-matches/match_results.json` |
+| **Run** | `.venv/bin/python cli/compare.py --g1 <g1> --g2 <g2> --workers 15 --batch-size 10` |
 
-**File**: `agent_8_semantic_rule_matcher.py`  
-**Class**: `SemanticRuleMatcher`  
-**LLM**: ✅ GPT-5.2  
-**Workers**: 15 (default, configurable via `--workers`)  
-**Batch Size**: 10 pairs/call (configurable via `--batch-size`)
-
-**Purpose**: Compare rules within each behavior cluster using LLM semantic matching.
-
-| Input | Output |
-|-------|--------|
-| Rule clusters from Agent 7 | `agent-8-rule-matches/match_results.json` |
-
-**4 Match Classifications**:
+- Batched parallel processing (10 rule pairs per LLM call) via `ThreadPoolExecutor`.
+- Workers and batch size are configurable with `--workers` and `--batch-size`.
+- Emits a confidence score for each match.
 
 | Classification | Description | Action |
 |----------------|-------------|--------|
 | `IDENTICAL` | Same rule, same thresholds | Merge (keep one) |
-| `EQUIVALENT` | Same practical effect | Merge with note |
+| `EQUIVALENT` | Same practical effect | Merge with a note |
 | `CONTRADICTORY` | Conflicting requirements | Flag for review |
 | `UNRELATED` | No meaningful connection | Keep separate |
 
-**Features**:
-- BATCH parallel processing (10 pairs per LLM call = 10x speedup)
-- ThreadPoolExecutor with configurable workers
-- Confidence scores for each match
-- Thread-safe progress tracking
+### Agent 9 — Set Operations
 
-**Run**: `python cli/compare.py --g1 graphA --g2 graphB --workers 15 --batch-size 10`
+Computes set operations from the match results. No LLM calls.
 
----
+| | |
+|---|---|
+| **Consumes** | Match results from Agent 8 |
+| **Produces** | Five JSON files in `agent-9-set-operations/` |
+| **Run** | `.venv/bin/python cli/compare.py --g1 <g1> --g2 <g2>` |
 
-## Agent 9: Set Operations Calculator
-
-**File**: `agent_9_set_operations.py`  
-**Class**: `SetOperationsCalculator`  
-**LLM**: ❌ Not required
-
-**Purpose**: Compute 5 distinct set operations from match results.
-
-| Input | Output |
-|-------|--------|
-| Match results from Agent 8 | 5 JSON files in `agent-9-set-operations/` |
-
-**5 Set Operations**:
-
-| Operation | Symbol | Description | Output File |
-|-----------|--------|-------------|-------------|
+| Operation | Symbol | Description | Output |
+|-----------|--------|-------------|--------|
 | Intersection | G1 ∩ G2 | Rules in both graphs | `intersection.json` |
-| Left Difference | G1 - G2 | Rules only in G1 | `g1_minus_g2.json` |
-| Right Difference | G2 - G1 | Rules only in G2 | `g2_minus_g1.json` |
+| Left difference | G1 − G2 | Rules only in G1 | `g1_minus_g2.json` |
+| Right difference | G2 − G1 | Rules only in G2 | `g2_minus_g1.json` |
 | Union | G1 ∪ G2 | All unique rules | `union.json` |
 | Contradictions | G1 ⊕ G2 | Conflicting pairs | `contradictions.json` |
 
-**Run**: `python cli/compare.py --g1 graphA --g2 graphB`
+### Agent 10 — Set Visualization
 
----
+Renders an HTML view for each set-operation result. No LLM calls.
 
-## Agent 10: Set Operations Visualizer
-
-**File**: `agent_10_set_visualization.py`  
-**Class**: `SetOperationsVisualizer`  
-**LLM**: ❌ Not required
-
-**Purpose**: Create HTML visualizations for each set operation result.
-
-| Input | Output |
-|-------|--------|
-| Set operation results from Agent 9 | 6 HTML files in `agent-10-visualizations/` |
-
-**Generated Files**:
+| | |
+|---|---|
+| **Consumes** | Set-operation results from Agent 9 |
+| **Produces** | Six HTML files in `agent-10-visualizations/` |
+| **Run** | `.venv/bin/python cli/compare.py --g1 <g1> --g2 <g2>` |
 
 | File | Contents |
 |------|----------|
 | `index.html` | Summary dashboard with Venn diagram |
 | `intersection.html` | G1 ∩ G2 rules |
-| `g1_minus_g2.html` | G1 - G2 rules |
-| `g2_minus_g1.html` | G2 - G1 rules |
+| `g1_minus_g2.html` | G1 − G2 rules |
+| `g2_minus_g1.html` | G2 − G1 rules |
 | `union.html` | G1 ∪ G2 rules |
 | `contradictions.html` | Conflicting rule pairs |
 
-**Visual Encoding**:
-- **ELLIPSE**: Matched rules (from both graphs)
-- **RECTANGLE**: G1-only rules
-- **CIRCLE**: G2-only rules
-
-**Run**: `python cli/compare.py --g1 graphA --g2 graphB`
+Node shapes encode origin: ellipse for matched rules, rectangle for G1-only,
+circle for G2-only.
 
 ---
 
-## Quick Reference
+## Configuration
 
-### All Agents Summary
+LLM-using agents read their model from `config.json` (copy from
+`config.example.json`; override the path with `P2K_CONFIG_PATH`). All values are
+also editable from the UI Settings page.
 
-| # | Agent | File | LLM | Workers | Purpose |
-|---|-------|------|-----|---------|---------|
-| 1 | Document Organizer | `agent_1_document_organizer.py` | ✅ | - | Chunk PDFs/docs (LLM for TOC detection) |
-| 2 | Entity Extractor | `agent_2_entity_extractor.py` | ✅ | - | Extract entities & relationships |
-| 3 | Rules Extractor | `agent_3_rules_extractor.py` | ✅ | 10 | Extract business rules |
-| 3.5 | Rule Validator | `agent_3_5_rule_validator.py` | ✅ | - | Validate rules (non-blocking) |
-| 4 | Rules+Entities Merger | `agent_4_rules_with_entities_merger.py` | ❌ | - | Merge rules with entities |
-| 5 | KG Optimizer | `agent_5_knowledge_graph_optimizer.py` | ✅ | - | Dedup + dependencies |
-| 6 | Visualizer | `agent_6_visualization_and_report.py` | ❌ | - | Generate HTML reports |
-| 7 | Behavior Clusterer | `agent_7_rule_type_clusterer.py` | ❌ | - | Cluster rules by type |
-| 8 | Semantic Matcher | `agent_8_semantic_rule_matcher.py` | ✅ | 15 | LLM semantic matching |
-| 9 | Set Operations | `agent_9_set_operations.py` | ❌ | - | Compute ∩, ∪, -, ⊕ |
-| 10 | Set Visualizer | `agent_10_set_visualization.py` | ❌ | - | Generate comparison HTML |
-
-**All LLM-using agents use the configured reasoning model (default: gpt-5.2 with medium reasoning)**
-
-### Run Commands
-
-```bash
-# Phase 1: Single document extraction
-python cli/extract.py                              # Full pipeline (interactive)
-python cli/extract.py --provider openai            # Use OpenAI
-python cli/extract.py --step 3                     # Run specific step
-python cli/extract.py --batch                      # Process all subdirectories
-
-# Phase 2: Knowledge graph comparison
-python cli/compare.py --list             # List available graphs
-python cli/compare.py --g1 graphA --g2 graphB
-python cli/compare.py --g1 FM --g2 graphA --workers 20 --batch-size 15
-```
-
-### Configuration
-
-**LLM Models** (`config.json`):
 ```json
 {
   "openai": {
     "models": {
       "reasoning": "gpt-5.2",
-      "reasoning_effort": "medium"
+      "reasoning_effort": "medium",
+      "optimizer": "gpt-5.2",
+      "embeddings": "text-embedding-ada-002"
     }
-  }
+  },
+  "optimizer": { "model": "gpt-5-mini" }
 }
 ```
 
-**Workers & Batch Sizes**:
+Worker counts and batch sizes:
 
-| Agent | Setting | Default | How to Change |
-|-------|---------|---------|---------------|
-| 3 | `max_workers` | 10 | Code |
+| Agent | Setting | Default | Set via |
+|-------|---------|---------|---------|
+| 3 | workers | 10 | code |
 | 3 | `rules_per_batch` | 10 | `config.json` |
-| 8 | `max_workers` | 15 | `--workers` CLI |
-| 8 | `batch_size` | 10 | `--batch-size` CLI |
+| 8 | workers | 15 | `--workers` |
+| 8 | `batch_size` | 10 | `--batch-size` |
 
-### Performance
+## Run commands
 
-| Agent | Time | Notes |
-|-------|------|-------|
-| 1 | ~30-60 sec | LLM only when no TOC bookmarks |
-| 2 | ~5 min | 3 iterations |
-| 3 | ~8-12 min | Parallel batching |
-| 3.5 | ~2 min | Non-blocking |
-| 4 | ~10 sec | No LLM |
-| 5 | ~6-8 min | Uses configured model |
-| 6 | ~15 sec | No LLM |
-| 7 | ~5 sec | No LLM |
-| 8 | ~8-15 min | 15 workers |
-| 9 | ~2 sec | No LLM |
-| 10 | ~10 sec | No LLM |
+```bash
+# Extraction (agents 1–6)
+.venv/bin/python cli/extract.py --provider openai            # full pipeline
+.venv/bin/python cli/extract.py --file compliance-files/<batch>/<file>.pdf --provider openai
+.venv/bin/python cli/extract.py --batch-dir <domain> --domain <domain> --target-rules 300 --workers 30
+.venv/bin/python cli/extract.py --step 3 --provider openai   # single step
 
-**Total**: Phase 1 ~25-30 min | Phase 2 ~10-15 min
+# Comparison (agents 7–10)
+.venv/bin/python cli/compare.py --list
+.venv/bin/python cli/compare.py --g1 <graphA> --g2 <graphB> --workers 15
+```
 
----
+## Related
 
-## Related Documentation
-
-- [Main README](../README.md) - Project overview
-- [Architecture](../docs/ARCHITECTURE.md) - Technical architecture
-- [Product Definition](../docs/PRODUCT_DEFINITION.md) - Features and use cases
-- [Prompts README](../prompts/README.md) - Prompt engineering guide
-
----
-
-**Last Updated**: February 2026 | **Version**: 1.1.0
+- [agents/experimental/README.md](experimental/README.md) — non-pipeline prototypes
+- [../README.md](../README.md) — pipeline app overview
+- [../prompts/README.md](../prompts/README.md) — prompt packs and domain overrides

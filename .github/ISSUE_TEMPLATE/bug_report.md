@@ -6,13 +6,14 @@ labels: bug
 ---
 
 **Which app?**
-<!-- Suite Shell (frontend), Pipeline, or Explorer/Assistant -->
+<!-- Shell, Pipeline, or Explorer -->
 
 **Describe the bug**
 A clear and concise description of what the bug is.
 
 **To reproduce**
 Steps to reproduce the behavior:
+
 1. ...
 2. ...
 
@@ -23,6 +24,7 @@ What you expected to happen.
 Any relevant error output (redact secrets).
 
 **Environment**
+
 - OS:
 - Python / Node version:
-- Running via Docker or locally:
+- Running via `./start.sh`, Docker, or another setup:
