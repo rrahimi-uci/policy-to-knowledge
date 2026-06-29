@@ -157,10 +157,10 @@ def index():
     return send_from_directory(app.static_folder, "index.html")
 
 
-@app.route("/logo.png")
+@app.route("/logo.svg")
 def logo():
     root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    return send_from_directory(root_dir, "logo.png")
+    return send_from_directory(root_dir, "logo.svg")
 
 
 @app.route("/api/")
@@ -3140,7 +3140,7 @@ def _build_reference_html(
 <div class="ref-header">
   <div class="ref-header-inner">
     <div class="header-top">
-      <img class="header-logo" src="{URL_PREFIX}/logo.png" alt="Explorer"/>
+      <img class="header-logo" src="{URL_PREFIX}/logo.svg" alt="Explorer"/>
       <span class="header-brand">Explorer</span>
       <span class="graph-badge">{_html_escape(graph_name)}</span>
     </div>
