@@ -17,7 +17,10 @@ def list_graphs(provider: str = None):
 @router.get("/{name}")
 def get_graph(name: str, provider: str = "openai"):
     """Get full knowledge graph data."""
-    data = graph_service.get_graph_data(name, provider)
+    try:
+        data = graph_service.get_graph_data(name, provider)
+    except graph_service.UnsafeNameError:
+        raise HTTPException(400, "Invalid graph name")
     if not data:
         raise HTTPException(404, f"Knowledge graph '{name}' not found")
     return data
@@ -26,7 +29,10 @@ def get_graph(name: str, provider: str = "openai"):
 @router.get("/{name}/visualization")
 def get_visualization(name: str, provider: str = "openai", theme: str = "light"):
     """Serve the interactive HTML visualization themed to match the app."""
-    html = graph_service.get_visualization_html(name, provider)
+    try:
+        html = graph_service.get_visualization_html(name, provider)
+    except graph_service.UnsafeNameError:
+        raise HTTPException(400, "Invalid graph name")
     if not html:
         raise HTTPException(404, "Visualization not found")
     html = graph_service.apply_theme(html, theme)
@@ -36,7 +42,10 @@ def get_visualization(name: str, provider: str = "openai", theme: str = "light")
 @router.delete("/{name}")
 def delete_graph(name: str, provider: str = "openai"):
     """Delete a knowledge graph and all its pipeline output files."""
-    deleted = graph_service.delete_graph(name, provider)
+    try:
+        deleted = graph_service.delete_graph(name, provider)
+    except graph_service.UnsafeNameError:
+        raise HTTPException(400, "Invalid graph name")
     if not deleted:
         raise HTTPException(404, f"Knowledge graph '{name}' not found")
     return {"deleted": name}
@@ -46,7 +55,10 @@ def delete_graph(name: str, provider: str = "openai"):
 def export_graph(name: str, fmt: str, provider: str = "openai"):
     """Export knowledge graph as JSON or CSV."""
     if fmt == "json":
-        data = graph_service.get_graph_data(name, provider)
+        try:
+            data = graph_service.get_graph_data(name, provider)
+        except graph_service.UnsafeNameError:
+            raise HTTPException(400, "Invalid graph name")
         if not data:
             raise HTTPException(404, "Graph not found")
         return JSONResponse(
@@ -54,10 +66,13 @@ def export_graph(name: str, fmt: str, provider: str = "openai"):
             headers={"Content-Disposition": f'attachment; filename="{name}_graph.json"'},
         )
     elif fmt == "csv":
-        from pathlib import Path
-        csv_path = graph_service._pipeline_output() / name / "agent-5-optimized" / "optimized-business_rules_export.csv"
+        try:
+            base = graph_service._safe_subpath(name)
+        except graph_service.UnsafeNameError:
+            raise HTTPException(400, "Invalid graph name")
+        csv_path = base / "agent-5-optimized" / "optimized-business_rules_export.csv"
         if not csv_path.exists():
-            csv_path = graph_service._pipeline_output() / name / "agent-4-rules-with-entities" / "business_rules_complete.csv"
+            csv_path = base / "agent-4-rules-with-entities" / "business_rules_complete.csv"
         if not csv_path.exists():
             raise HTTPException(404, "CSV export not found")
         from fastapi.responses import FileResponse

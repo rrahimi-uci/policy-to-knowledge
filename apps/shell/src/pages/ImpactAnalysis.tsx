@@ -540,13 +540,13 @@ export default function ImpactAnalysis() {
                 </div>
                 <div className="flex gap-2">
                   <a
-                    href={`/api/kg/impact/analyses/${activeAnalysis.id}/export/csv`}
+                    href={apiUrl(`kg/impact/analyses/${activeAnalysis.id}/export/csv`)}
                     className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gray-800 text-xs text-gray-400 hover:text-white transition-colors"
                   >
                     <Download className="h-3 w-3" /> CSV
                   </a>
                   <a
-                    href={`/api/kg/impact/analyses/${activeAnalysis.id}/export/json`}
+                    href={apiUrl(`kg/impact/analyses/${activeAnalysis.id}/export/json`)}
                     className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gray-800 text-xs text-gray-400 hover:text-white transition-colors"
                   >
                     <Download className="h-3 w-3" /> JSON

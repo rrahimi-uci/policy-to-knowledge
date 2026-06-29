@@ -33,6 +33,30 @@ def _pipeline_output() -> Path:
     return PROJECT_ROOT / "pipeline-output"
 
 
+class UnsafeNameError(ValueError):
+    """Raised when a graph/comparison/operation name would escape the
+    pipeline-output tree (path traversal)."""
+
+
+def _safe_subpath(name: str, *parts: str) -> Path:
+    """Resolve `pipeline-output / name [/ *parts]` and guarantee the result
+    stays inside the pipeline-output tree. Rejects empty names, names
+    containing path separators or '..', and any resolved path that escapes
+    the base directory. Returns the validated (resolved) Path."""
+    if not name or not isinstance(name, str):
+        raise UnsafeNameError("empty name")
+    # Reject separators / parent refs in any user-supplied component.
+    for component in (name, *parts):
+        if not component or component in (".", "..") \
+                or "/" in component or "\\" in component:
+            raise UnsafeNameError(f"unsafe path component: {component!r}")
+    base = _pipeline_output().resolve()
+    target = base.joinpath(name, *parts).resolve()
+    if target != base and not target.is_relative_to(base):
+        raise UnsafeNameError(f"path escapes pipeline-output: {name!r}")
+    return target
+
+
 def _compliance_files_dir() -> Path:
     return PROJECT_ROOT / "compliance-files"
 
@@ -88,7 +112,7 @@ def delete_graph(name: str, provider: str = "openai") -> bool:
     no longer namespaced by provider.
     """
     import shutil
-    graph_dir = _pipeline_output() / name
+    graph_dir = _safe_subpath(name)
     if not graph_dir.exists() or not graph_dir.is_dir():
         return False
     shutil.rmtree(graph_dir)
@@ -157,7 +181,7 @@ def list_graphs(provider: str = None) -> List[dict]:
 
 def get_graph_data(name: str, provider: str = "openai") -> Optional[dict]:
     """Load full knowledge graph JSON. `provider` is ignored (kept for compat)."""
-    base = _pipeline_output() / name
+    base = _safe_subpath(name)
     optimized = base / "agent-5-optimized" / "optimized_compliance_knowledge_graph.json"
     merged = base / "agent-4-rules-with-entities" / "compliance_knowledge_graph.json"
     kg_file = optimized if optimized.exists() else merged if merged.exists() else None
@@ -168,7 +192,7 @@ def get_graph_data(name: str, provider: str = "openai") -> Optional[dict]:
 
 def get_visualization_html(name: str, provider: str = "openai") -> Optional[str]:
     """Return the HTML content of the visualization file. `provider` ignored."""
-    viz_dir = _pipeline_output() / name / "agent-6-visualization-and-report"
+    viz_dir = _safe_subpath(name, "agent-6-visualization-and-report")
     if not viz_dir.exists():
         return None
     html_files = list(viz_dir.glob("*.html"))
@@ -316,10 +340,22 @@ def _comparison_base_dirs(provider: str = "openai") -> List[Path]:
     return [base / d for d in ("_joined", "_merged") if (base / d).exists()]
 
 
+def _safe_comparison_name(comparison_name: str) -> str:
+    """Reject comparison names that contain path separators or parent refs."""
+    if not comparison_name or comparison_name in (".", "..") \
+            or "/" in comparison_name or "\\" in comparison_name:
+        raise UnsafeNameError(f"unsafe comparison name: {comparison_name!r}")
+    return comparison_name
+
+
 def _find_comparison_dir(comparison_name: str, provider: str = "openai") -> Optional[Path]:
     """Locate the directory for a named comparison across all base dirs."""
+    _safe_comparison_name(comparison_name)
     for base in _comparison_base_dirs(provider):
-        p = base / comparison_name
+        base_resolved = base.resolve()
+        p = (base / comparison_name).resolve()
+        if p != base_resolved and not p.is_relative_to(base_resolved):
+            continue
         if p.exists():
             return p
     return None
@@ -388,6 +424,9 @@ def get_comparison_html(comparison_name: str, operation: str, provider: str = "o
     comp_dir = _find_comparison_dir(comparison_name, provider)
     if not comp_dir:
         return None
+    if not operation or operation in (".", "..") \
+            or "/" in operation or "\\" in operation:
+        raise UnsafeNameError(f"unsafe operation name: {operation!r}")
     html_file = comp_dir / "agent-10-visualizations" / f"{operation}.html"
     return html_file.read_text() if html_file.exists() else None
 

@@ -3,6 +3,7 @@ Impact Store — SQLite persistence for regulatory change impact analyses.
 """
 
 import json
+import os
 import sqlite3
 import threading
 import uuid
@@ -11,7 +12,9 @@ from typing import Any, Dict, List, Optional
 
 from pathlib import Path
 
-_DB_PATH = Path(__file__).resolve().parent.parent / "runs.db"
+# Mirror run_store: honour PIPELINE_DATA_DIR so all stores share one DB file.
+_DB_DIR = Path(os.environ.get("PIPELINE_DATA_DIR", str(Path(__file__).resolve().parent.parent)))
+_DB_PATH = _DB_DIR / "runs.db"
 _local = threading.local()
 
 

@@ -21,7 +21,8 @@ async def broadcast_impact(analysis_id: str, payload: dict):
             await ws.send_text(json.dumps(payload))
         except Exception:
             dead.add(ws)
-    _subscribers[analysis_id] -= dead
+    if dead and analysis_id in _subscribers:
+        _subscribers[analysis_id] -= dead
 
 
 async def ws_impact(websocket: WebSocket, analysis_id: str):

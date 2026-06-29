@@ -20,6 +20,17 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
       const body = await res.text();
       throw new Error(`${res.status}: ${body}`);
     }
+    // No-content responses (204, or DELETE endpoints returning an empty body)
+    // have no JSON to parse — calling res.json() on them throws "Unexpected end
+    // of JSON input". Return null instead of failing the request.
+    if (res.status === 204 || res.headers.get('content-length') === '0') {
+      return null as T;
+    }
+    const contentType = res.headers.get('content-type') ?? '';
+    if (!contentType.includes('application/json')) {
+      const text = await res.text();
+      return (text ? (text as unknown as T) : (null as T));
+    }
     return res.json();
   } finally {
     clearTimeout(timeout);

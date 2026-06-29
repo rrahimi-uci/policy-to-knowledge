@@ -23,6 +23,7 @@ Key design decisions
 import asyncio
 import json
 import os
+import re
 import signal
 import subprocess
 import sys
@@ -84,7 +85,7 @@ def _conflicting_running_run(provider: str, batch_name: Optional[str]) -> Option
     if not target:
         return None
     for run in run_store.list_running_runs():
-        if run.get("run_type") != "extraction":
+        if run.get("type") != "extraction":
             continue
         if (run.get("provider") or "").lower() != provider.lower():
             continue
@@ -304,20 +305,42 @@ async def attach_orphan(run_id: str, pid: int, log_file: Optional[str]) -> None:
 
 # ── Internal helpers ─────────────────────────────────────────────────────────
 
+def _pid_alive(pid: int) -> bool:
+    try:
+        os.kill(pid, 0)   # signal 0 = existence check, no signal sent
+        return True
+    except (ProcessLookupError, PermissionError):
+        return False
+
+
+def _signal_pid(pid: int, sig: int) -> None:
+    """Send `sig` to the process group, then the PID directly as a fallback."""
+    try:
+        os.killpg(os.getpgid(pid), sig)
+        return
+    except (ProcessLookupError, PermissionError):
+        pass
+    try:
+        os.kill(pid, sig)
+    except (ProcessLookupError, PermissionError):
+        pass
+
+
 def _kill_pid(pid: int) -> None:
-    """Kill a process by PID using SIGTERM then immediate SIGKILL fallback.
+    """Kill a process by PID: SIGTERM, wait briefly for exit, then escalate to
+    SIGKILL if it is still alive (a process ignoring SIGTERM must still die).
     Tries the whole process group first, then the PID directly."""
-    for sig in (signal.SIGTERM, signal.SIGKILL):
-        try:
-            os.killpg(os.getpgid(pid), sig)
+    _signal_pid(pid, signal.SIGTERM)
+
+    # Give the process a moment to exit cleanly before escalating.
+    import time
+    for _ in range(20):  # up to ~2s
+        if not _pid_alive(pid):
             return
-        except (ProcessLookupError, PermissionError):
-            pass
-        try:
-            os.kill(pid, sig)
-            return
-        except (ProcessLookupError, PermissionError):
-            pass
+        time.sleep(0.1)
+
+    if _pid_alive(pid):
+        _signal_pid(pid, signal.SIGKILL)
 
 
 def _kill_proc(proc: subprocess.Popen) -> None:
@@ -634,6 +657,14 @@ async def _handle_line(
         })
 
 
+def _mentions_step(line: str, step: str) -> bool:
+    """True if `line` references "Step <step>" as a whole token, so that
+    "Step 3" does NOT match "Step 3.5" (and vice-versa). The step number must
+    be followed by a non-digit, non-dot boundary (e.g. space, ':', '/') or the
+    end of the string."""
+    return re.search(rf"Step {re.escape(step)}(?![\d.])", line, re.IGNORECASE) is not None
+
+
 def _advance_step(
     run_id: str,
     line: str,
@@ -650,7 +681,7 @@ def _advance_step(
     # cli/compare.py uses "STEP N/4" labels instead of "Step 7" etc.
     join_label = _JOIN_STEP_LABEL.get(cur_step)
 
-    is_completion = f"Step {cur_step}" in line and "completed" in line.lower()
+    is_completion = _mentions_step(line, cur_step) and "completed" in line.lower()
 
     # Detect the *next* join step starting (which means the current one finished).
     next_join_started = False
@@ -672,8 +703,7 @@ def _advance_step(
     # Only transition to "running" if this line is NOT also a completion line,
     # so that started_at and finished_at are never set to the same timestamp.
     if not is_completion and (
-        f"Step {cur_step}" in line
-        or f"STEP {cur_step}" in line
+        _mentions_step(line, cur_step)
         or (join_label and f"STEP {join_label}" in line)
         or "LAUNCHING AGENT" in line
     ):

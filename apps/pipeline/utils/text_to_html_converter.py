@@ -5,9 +5,24 @@ This utility converts plain text optimization reports into beautiful, styled HTM
 without adding or removing any content from the original reports.
 """
 
+import json
 import re
 from pathlib import Path
 from datetime import datetime
+
+
+def safe_json_for_html(obj) -> str:
+    """Serialize ``obj`` to JSON safe for embedding inside an inline <script> tag.
+
+    A naive ``json.dumps`` can emit a literal ``</script>`` (or ``<!--``) sequence
+    when a string value contains it, which prematurely terminates the surrounding
+    <script> block and breaks the generated HTML. Escaping ``<`` and ``/`` with a
+    backslash keeps the output valid JSON/JS while preventing the parser from ever
+    seeing a closing tag.
+    """
+    # Escaping every '<' as the JSON unicode escape < guarantees no '</script>'
+    # (or '<!--') token can appear, while still parsing back to the identical value.
+    return json.dumps(obj).replace("<", "\\u003c")
 
 
 def convert_text_to_html(text_content: str, title: str = "Optimization Report", source_document: str = None) -> str:

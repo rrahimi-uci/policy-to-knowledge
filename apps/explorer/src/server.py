@@ -90,6 +90,27 @@ load_dotenv()
 # when running assistant directly on the host (./start.sh).
 APP_ROOT = Path(os.environ.get("CA_APP_ROOT", "/app")).resolve()
 
+# Safe charset for pipeline-output path segments (provider / source_name).
+# Rejects path-traversal ('..'), slashes and anything outside this set.
+_SAFE_SEGMENT_RE = re.compile(r"^[A-Za-z0-9._-]+$")
+
+
+def _safe_pipeline_base(provider: str, source_name: str) -> Path:
+    """Resolve ``pipeline-output/<provider>/<source_name>`` safely.
+
+    Validates each segment against a strict charset and verifies the resolved
+    path stays contained under ``APP_ROOT/pipeline-output``. Raises
+    ``ValueError`` on any invalid / traversal input.
+    """
+    for label, value in (("provider", provider), ("source_name", source_name)):
+        if not value or not _SAFE_SEGMENT_RE.match(value) or value in (".", ".."):
+            raise ValueError(f"Invalid {label}: must match [A-Za-z0-9._-] with no path separators")
+    root = (APP_ROOT / "pipeline-output").resolve()
+    base = (root / provider / source_name).resolve()
+    if base != root and root not in base.parents:
+        raise ValueError("Resolved path escapes pipeline-output")
+    return base
+
 app = Flask(__name__, static_folder="../ui", static_url_path="")
 CORS(app, origins=["http://localhost:3000", "http://localhost:5173", "http://localhost:4000"])
 
@@ -1159,7 +1180,10 @@ def publish_graph():
             provider = data.get("provider", "openai").strip()
             display_name = data.get("display_name", "").strip()
             callback_url = data.get("callback_url")
-            base = APP_ROOT / "pipeline-output" / provider / source_name
+            try:
+                base = _safe_pipeline_base(provider, source_name)
+            except ValueError as exc:
+                return jsonify({"error": str(exc)}), 400
 
         if not source_name:
             return jsonify({"error": "source_name is required"}), 400
@@ -5636,9 +5660,15 @@ def admin_force_reset():
             report["steps"].append("All knowledge graphs reloaded from KG files")
 
         if scope in ("all", "embeddings", "graphs"):
-            _engine.delete_index()
-            _engine.index_all_graph_embeddings()
-            report["steps"].append("Embedding index rebuilt")
+            if _engine is None:
+                report["steps"].append(
+                    "Embedding index skipped — semantic search unavailable "
+                    "(optional dependency 'sentence-transformers' not installed)"
+                )
+            else:
+                _engine.delete_index()
+                _engine.index_all_graph_embeddings()
+                report["steps"].append("Embedding index rebuilt")
 
         # Re-resolve tasks after data reload
         try:
@@ -5688,6 +5718,9 @@ def admin_rebuild_embeddings():
     """
     data = request.get_json(silent=True) or {}
     graph_name = data.get("graph_name")
+    if _engine is None:
+        return jsonify({"error": "Semantic search is unavailable on this server "
+                                 "(optional dependency 'sentence-transformers' not installed)."}), 503
     try:
         if graph_name:
             count = _engine.index_graph_embeddings(graph_name)
@@ -5756,8 +5789,17 @@ def _run_consistency_checks() -> dict:
 
     # ── 2. Embedding counts vs vertex counts ─────────────────────
     for ts, g_info in report["graphs"].items():
-        emb_count = _engine.embedding_count(ts)
         v_count = g_info.get("vertices", 0)
+        if _engine is None:
+            # Semantic search disabled (optional 'sentence-transformers' absent) —
+            # skip embedding counts instead of crashing on a None engine.
+            report["embeddings"][ts] = {
+                "indexed": 0,
+                "expected": v_count,
+                "status": "unavailable",
+            }
+            continue
+        emb_count = _engine.embedding_count(ts)
         status = "ok"
         if emb_count == 0 and v_count > 0:
             status = "missing"
@@ -5772,6 +5814,8 @@ def _run_consistency_checks() -> dict:
             "expected": v_count,
             "status": status,
         }
+    if _engine is None:
+        report["issues"].append("Semantic search unavailable — embedding counts skipped")
 
     # ── 3. Task resolution ───────────────────────────────────────
     resolved = sum(1 for t in _TASKS if t.get("node_id"))

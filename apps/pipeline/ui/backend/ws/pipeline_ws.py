@@ -21,7 +21,8 @@ async def broadcast(run_id: str, payload: dict):
             await ws.send_text(json.dumps(payload))
         except Exception:
             dead.add(ws)
-    _subscribers[run_id] -= dead
+    if dead and run_id in _subscribers:
+        _subscribers[run_id] -= dead
 
 
 async def ws_pipeline(websocket: WebSocket, run_id: str):
