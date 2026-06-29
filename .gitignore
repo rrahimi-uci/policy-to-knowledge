@@ -103,3 +103,6 @@ Thumbs.db
 .idea/
 .vscode/
 *.swp
+
+# Runtime symlink created by start.sh -> apps/pipeline/pipeline-output (machine-specific)
+apps/explorer/pipeline-output
