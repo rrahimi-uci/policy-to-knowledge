@@ -5,10 +5,10 @@ import { defineConfig, devices } from "@playwright/test";
  *
  * The tests assume the Flask server is already running on :5001.
  * Start it before running tests:
- *   cd .. && PYTHONPATH=. SERVER_PORT=5001 .venv/bin/python src/server.py
+ *   cd ../.. && PYTHONPATH=. SERVER_PORT=5001 .venv/bin/python src/server.py
  */
 export default defineConfig({
-  testDir: "./tests",
+  testDir: ".",
   fullyParallel: false,          // tests share server state; run sequentially
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,

@@ -260,7 +260,7 @@ One of the most dangerous compliance challenges is **conflicting rules** across:
 | **Accuracy** | 5-factor confidence scoring, validation agent | `agent_3_5_rule_validator.py` with quality metrics |
 | **Consistency** | 10-category rule taxonomy, domain templates | `prompts/business_rules_extraction.txt` (343 lines) |
 | **Visibility** | Interactive HTML visualizations | `agent_6_visualization_and_report.py` with vis.js |
-| **Comparability** | Joins pipeline for cross-document analysis | `join_graphs.py` with semantic matching |
+| **Comparability** | Joins pipeline for cross-document analysis | `cli/compare.py` with semantic matching |
 | **Extensibility** | Multi-domain support | `prompts/` directory with domain-specific prompts |
 
 ---
@@ -751,10 +751,10 @@ pipeline-output/openai/SAMPLE_GUIDELINES/
 **Policy to Knowledge Workflow**:
 ```bash
 # Step 1: Process new document version
-python knowledge_graph_generation.py --source-file compliance-files/SAMPLE_GUIDELINES-2026-Q1.pdf --provider openai
+python cli/extract.py --source-file compliance-files/SAMPLE_GUIDELINES-2026-Q1.pdf --provider openai
 
 # Step 2: Compare with previous version
-python join_graphs.py --g1 SAMPLE_GUIDELINES --g2 SAMPLE_GUIDELINES-2026-Q1 --workers 15
+python cli/compare.py --g1 SAMPLE_GUIDELINES --g2 SAMPLE_GUIDELINES-2026-Q1 --workers 15
 ```
 
 **Output Analysis**:
@@ -791,7 +791,7 @@ python join_graphs.py --g1 SAMPLE_GUIDELINES --g2 SAMPLE_GUIDELINES-2026-Q1 --wo
 
 **Command**:
 ```bash
-python join_graphs.py --g1 SAMPLE_GUIDELINES --g2 Policy-Overlay --workers 15
+python cli/compare.py --g1 SAMPLE_GUIDELINES --g2 Policy-Overlay --workers 15
 ```
 
 **Output**:

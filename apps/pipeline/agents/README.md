@@ -52,7 +52,7 @@ PDF → [1] → [2] → [3] → [3.5] → [4] → [5] → [6] → Knowledge Grap
 }
 ```
 
-**Run**: `python knowledge_graph_generation.py --step 1`
+**Run**: `python cli/extract.py --step 1`
 
 ---
 
@@ -91,7 +91,7 @@ PDF → [1] → [2] → [3] → [3.5] → [4] → [5] → [6] → Knowledge Grap
 }
 ```
 
-**Run**: `python knowledge_graph_generation.py --step 2`
+**Run**: `python cli/extract.py --step 2`
 
 ---
 
@@ -125,7 +125,7 @@ PDF → [1] → [2] → [3] → [3.5] → [4] → [5] → [6] → Knowledge Grap
 }
 ```
 
-**Run**: `python knowledge_graph_generation.py --step 3`
+**Run**: `python cli/extract.py --step 3`
 
 ---
 
@@ -149,7 +149,7 @@ PDF → [1] → [2] → [3] → [3.5] → [4] → [5] → [6] → Knowledge Grap
 - Confidence score analysis
 - Generates recommendations
 
-**Run**: `python knowledge_graph_generation.py --step 3` (runs automatically after Agent 3)
+**Run**: `python cli/extract.py --step 3` (runs automatically after Agent 3)
 
 ---
 
@@ -171,7 +171,7 @@ PDF → [1] → [2] → [3] → [3.5] → [4] → [5] → [6] → Knowledge Grap
 - Creates unified knowledge graph structure
 - Exports to JSON and CSV (18 columns)
 
-**Run**: `python knowledge_graph_generation.py --step 4`
+**Run**: `python cli/extract.py --step 4`
 
 ---
 
@@ -204,7 +204,7 @@ PDF → [1] → [2] → [3] → [3.5] → [4] → [5] → [6] → Knowledge Grap
 | `override` | Rule B supersedes Rule A |
 | `validation` | Rule B validates Rule A's outcome |
 
-**Run**: `python knowledge_graph_generation.py --step 5`
+**Run**: `python cli/extract.py --step 5`
 
 ---
 
@@ -228,7 +228,7 @@ PDF → [1] → [2] → [3] → [3.5] → [4] → [5] → [6] → Knowledge Grap
 - Self-contained HTML (no external dependencies)
 - Statistics dashboard
 
-**Run**: `python knowledge_graph_generation.py --step 6`
+**Run**: `python cli/extract.py --step 6`
 
 ---
 
@@ -259,7 +259,7 @@ PDF → [1] → [2] → [3] → [3.5] → [4] → [5] → [6] → Knowledge Grap
 
 **10 Rule Domains**: borrower, income, property, loan, appraisal, underwriting, documentation, closing, servicing, compliance
 
-**Run**: `python join_graphs.py --g1 graphA --g2 graphB`
+**Run**: `python cli/compare.py --g1 graphA --g2 graphB`
 
 ---
 
@@ -292,7 +292,7 @@ PDF → [1] → [2] → [3] → [3.5] → [4] → [5] → [6] → Knowledge Grap
 - Confidence scores for each match
 - Thread-safe progress tracking
 
-**Run**: `python join_graphs.py --g1 graphA --g2 graphB --workers 15 --batch-size 10`
+**Run**: `python cli/compare.py --g1 graphA --g2 graphB --workers 15 --batch-size 10`
 
 ---
 
@@ -318,7 +318,7 @@ PDF → [1] → [2] → [3] → [3.5] → [4] → [5] → [6] → Knowledge Grap
 | Union | G1 ∪ G2 | All unique rules | `union.json` |
 | Contradictions | G1 ⊕ G2 | Conflicting pairs | `contradictions.json` |
 
-**Run**: `python join_graphs.py --g1 graphA --g2 graphB`
+**Run**: `python cli/compare.py --g1 graphA --g2 graphB`
 
 ---
 
@@ -350,7 +350,7 @@ PDF → [1] → [2] → [3] → [3.5] → [4] → [5] → [6] → Knowledge Grap
 - **RECTANGLE**: G1-only rules
 - **CIRCLE**: G2-only rules
 
-**Run**: `python join_graphs.py --g1 graphA --g2 graphB`
+**Run**: `python cli/compare.py --g1 graphA --g2 graphB`
 
 ---
 
@@ -378,15 +378,15 @@ PDF → [1] → [2] → [3] → [3.5] → [4] → [5] → [6] → Knowledge Grap
 
 ```bash
 # Phase 1: Single document extraction
-python knowledge_graph_generation.py                              # Full pipeline (interactive)
-python knowledge_graph_generation.py --provider openai            # Use OpenAI
-python knowledge_graph_generation.py --step 3                     # Run specific step
-python knowledge_graph_generation.py --batch                      # Process all subdirectories
+python cli/extract.py                              # Full pipeline (interactive)
+python cli/extract.py --provider openai            # Use OpenAI
+python cli/extract.py --step 3                     # Run specific step
+python cli/extract.py --batch                      # Process all subdirectories
 
 # Phase 2: Knowledge graph comparison
-python join_graphs.py --list             # List available graphs
-python join_graphs.py --g1 graphA --g2 graphB
-python join_graphs.py --g1 FM --g2 graphA --workers 20 --batch-size 15
+python cli/compare.py --list             # List available graphs
+python cli/compare.py --g1 graphA --g2 graphB
+python cli/compare.py --g1 FM --g2 graphA --workers 20 --batch-size 15
 ```
 
 ### Configuration

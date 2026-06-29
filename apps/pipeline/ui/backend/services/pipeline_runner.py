@@ -49,7 +49,7 @@ STEP_LABELS = {
     "6":   "Graph Visualization & Export",
 }
 
-# join_graphs.py prints "STEP 1/4", "STEP 2/4", … but pipeline_runner
+# cli/compare.py prints "STEP 1/4", "STEP 2/4", … but pipeline_runner
 # tracks them as steps 7-10.  Map step-id → join-script label.
 _JOIN_STEP_LABEL = {"7": "1/4", "8": "2/4", "9": "3/4", "10": "4/4"}
 
@@ -175,7 +175,7 @@ async def start_extraction(
     # Build command
     cmd = [
         sys.executable,
-        str(PROJECT_ROOT / "knowledge_graph_generation.py"),
+        str(PROJECT_ROOT / "cli" / "extract.py"),
         "--provider", provider,
         "--domain", domain,
     ]
@@ -246,7 +246,7 @@ async def start_comparison(
 
     cmd = [
         sys.executable,
-        str(PROJECT_ROOT / "join_graphs.py"),
+        str(PROJECT_ROOT / "cli" / "compare.py"),
         "--g1", g1, "--g2", g2, "--provider", provider,
     ]
     if workers:
@@ -466,7 +466,7 @@ def _orphan_succeeded(
             content = Path(log_file).read_text(errors="replace")
             if f"Step {final_step}" in content and "completed" in content.lower():
                 return True
-            # join_graphs.py doesn't emit "Step 10 completed"; instead it
+            # cli/compare.py doesn't emit "Step 10 completed"; instead it
             # prints "JOINS COMPLETE!" when the comparison pipeline finishes.
             if run_type == "comparison" and "JOINS COMPLETE" in content:
                 return True
@@ -647,7 +647,7 @@ def _advance_step(
     cur_step = steps[current_step_idx]
     step_label = STEP_LABELS.get(cur_step, f"Step {cur_step}")
 
-    # join_graphs.py uses "STEP N/4" labels instead of "Step 7" etc.
+    # cli/compare.py uses "STEP N/4" labels instead of "Step 7" etc.
     join_label = _JOIN_STEP_LABEL.get(cur_step)
 
     is_completion = f"Step {cur_step}" in line and "completed" in line.lower()
@@ -693,7 +693,7 @@ def _advance_step(
 
 def _kill_orphan_pipeline_processes() -> None:
     """Find and SIGTERM any orphaned pipeline script processes."""
-    for script in ("knowledge_graph_generation.py", "join_graphs.py"):
+    for script in ("cli/extract.py", "cli/compare.py"):
         try:
             result = subprocess.run(
                 ["pgrep", "-f", script],

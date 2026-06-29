@@ -30,6 +30,9 @@ suite.
 └── .github/workflows/  # CI (pytest + vitest + builds)
 ```
 
+See **[docs/STRUCTURE.md](docs/STRUCTURE.md)** for the full layout, per-app
+breakdown, and the test-directory conventions (`tests/`, `tests/integration/`, `tests/e2e/`).
+
 ## Quick Start
 
 1. Copy the local config templates:
@@ -79,9 +82,9 @@ run; the Python virtualenvs must already exist.
 - Full suite: `./start.sh`
 - Pipeline only: `cd apps/pipeline && ./start.sh`
 - Explorer only: `cd apps/explorer && ./start.sh`
-- Extract one document: `cd apps/pipeline && .venv/bin/python knowledge_graph_generation.py --file compliance-files/<batch>/<file>.pdf --provider openai`
-- Run batch extraction: `cd apps/pipeline && .venv/bin/python knowledge_graph_generation.py --batch --provider openai`
-- Compare two graphs: `cd apps/pipeline && .venv/bin/python join_graphs.py --g1 graphA --g2 graphB --workers 15`
+- Extract one document: `cd apps/pipeline && .venv/bin/python cli/extract.py --file compliance-files/<batch>/<file>.pdf --provider openai`
+- Run batch extraction: `cd apps/pipeline && .venv/bin/python cli/extract.py --batch --provider openai`
+- Compare two graphs: `cd apps/pipeline && .venv/bin/python cli/compare.py --g1 graphA --g2 graphB --workers 15`
 - Incremental graph load without a full restart: `cd apps/explorer && .venv/bin/python -m src.main setup-if-empty`
 
 ## Key Files

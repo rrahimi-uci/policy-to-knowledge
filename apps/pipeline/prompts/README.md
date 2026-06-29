@@ -232,7 +232,7 @@ prompt = pm.get_prompt("business_rules_extraction")
 
 4. **Run the pipeline with the new domain**:
    ```bash
-   python3 knowledge_graph_generation.py --provider openai
+   python3 cli/extract.py --provider openai
    ```
    The `PromptManager` will automatically load prompts from the new domain directory.
 

@@ -25,8 +25,10 @@ from datetime import datetime
 from typing import Dict, List
 import subprocess
 
-# Add project root to path for imports
-sys.path.insert(0, str(Path(__file__).parent))
+# Add the pipeline app root (parent of cli/) to path so `agents`/`utils`
+# resolve whether this is run as `python cli/extract.py` or `python -m cli.extract`.
+_ROOT = Path(__file__).resolve().parent.parent  # apps/pipeline
+sys.path.insert(0, str(_ROOT))
 
 from utils.config import get_config, reload_config
 
@@ -50,12 +52,12 @@ def sync_knowledge_graph_to_catalog(provider: str = "openai", source_file_name: 
     
     try:
         # Define source and destination paths
-        project_root = Path(__file__).parent.parent
+        project_root = _ROOT.parent
         if source_file_name:
-            source_dir = Path(__file__).parent / "pipeline-output" / source_file_name / "agent-5-optimized"
+            source_dir = _ROOT / "pipeline-output" / source_file_name / "agent-5-optimized"
             dest_dir = project_root / "knowledge-catalog" / "data" / "catalogs" / "knowledge-graph" / source_file_name
         else:
-            source_dir = Path(__file__).parent / "pipeline-output" / "agent-5-optimized"
+            source_dir = _ROOT / "pipeline-output" / "agent-5-optimized"
             dest_dir = project_root / "knowledge-catalog" / "data" / "catalogs" / "knowledge-graph"
         
         # Validate source directory exists
@@ -423,7 +425,7 @@ class KnowledgeExtractionPipeline:
         print(f"\n📂 Output will be organized in: {self.organized_dir}")
         print(f"{'=' * 80}\n")
         
-        script_dir = Path(__file__).parent / "agents"
+        script_dir = _ROOT / "agents"
         print(f"\n🤖 LAUNCHING AGENT: agent_1_document_organizer.py")
         agent_cmd = [
             sys.executable,
@@ -501,7 +503,7 @@ class KnowledgeExtractionPipeline:
         print(f"📤 Output will be saved to: {self.config.get_entity_relationship_dir()}")
         print(f"{'=' * 80}\n")
         
-        script_dir = Path(__file__).parent / "agents"
+        script_dir = _ROOT / "agents"
         print(f"\n🤖 LAUNCHING AGENT: agent_2_entity_extractor.py")
         result = self._run_agent(
             agent_name="Entity-Relationship Extractor",
@@ -570,7 +572,7 @@ class KnowledgeExtractionPipeline:
         print(f"📤 Output will be saved to: {self.config.get_rules_extracted_dir()}")
         print(f"{'=' * 80}\n")
         
-        script_dir = Path(__file__).parent / "agents"
+        script_dir = _ROOT / "agents"
         print(f"\n🤖 LAUNCHING AGENT: agent_3_rules_extractor.py")
         result = self._run_agent(
             agent_name="Business Rules Extractor",
@@ -618,7 +620,7 @@ class KnowledgeExtractionPipeline:
         print("📌 STEP 3.5 PRE-CHECK: Rule Validation")
         print("=" * 80)
         
-        script_dir = Path(__file__).parent / "agents"
+        script_dir = _ROOT / "agents"
         rules_file = self.config.get_rules_extracted_dir() / "compliance_rules_with_entities.json"
         validation_dir = self.config.get_rules_extracted_dir() / ".." / "agent-3-5-validation"
         
@@ -692,7 +694,7 @@ class KnowledgeExtractionPipeline:
         print(f"\n📤 Merged output will be saved to: {self.config.get_rules_with_entities_dir()}")
         print(f"{'=' * 80}\n")
         
-        script_dir = Path(__file__).parent / "agents"
+        script_dir = _ROOT / "agents"
         print(f"\n🤖 LAUNCHING AGENT: agent_4_rules_with_entities_merger.py")
         result = self._run_agent(
             agent_name="Rules with Entities Merger",
@@ -772,7 +774,7 @@ class KnowledgeExtractionPipeline:
         
         try:
             # Get paths
-            knowledge_graph_optimizer = Path(__file__).parent / "agents" / "agent_5_knowledge_graph_optimizer.py"
+            knowledge_graph_optimizer = _ROOT / "agents" / "agent_5_knowledge_graph_optimizer.py"
             
             if not knowledge_graph_optimizer.exists():
                 raise FileNotFoundError(f"Optimizer script not found: {knowledge_graph_optimizer}")
@@ -808,7 +810,7 @@ class KnowledgeExtractionPipeline:
             
             result = subprocess.run(
                 cmd,
-                cwd=Path(__file__).parent,
+                cwd=_ROOT,
                 capture_output=True,
                 text=True,
                 env=env
@@ -962,7 +964,7 @@ class KnowledgeExtractionPipeline:
         
         try:
             # Get paths
-            visualizer_script = Path(__file__).parent / "agents" / "agent_6_visualization_and_report.py"
+            visualizer_script = _ROOT / "agents" / "agent_6_visualization_and_report.py"
             
             if not visualizer_script.exists():
                 raise FileNotFoundError(f"Visualizer script not found: {visualizer_script}")
@@ -998,7 +1000,7 @@ class KnowledgeExtractionPipeline:
             
             result = subprocess.run(
                 cmd,
-                cwd=Path(__file__).parent,
+                cwd=_ROOT,
                 capture_output=True,
                 text=True,
                 env=env
@@ -1083,7 +1085,7 @@ class KnowledgeExtractionPipeline:
         total_steps = 7  # 6 main steps + validation (step 3.5)
         
         # Define agent scripts for reference
-        script_dir = Path(__file__).parent / "agents"
+        script_dir = _ROOT / "agents"
         agent_scripts = {
             1: ("agent_1_document_organizer.py", "Document Organizer", "Chunks docs with size normalization"),
             2: ("agent_2_entity_extractor.py", "Entity Extractor", "Extracts entities & relationships"),
@@ -1613,16 +1615,16 @@ def run_merge_phase(provider: str, strategy: str = "provenance") -> bool:
     print(f"ℹ️  The joins phase computes set operations using the joins pipeline.")
     print(f"   Operations: ∩ Intersection, G1-G2, G2-G1, ∪ Union, Contradictions")
     print()
-    print(f"   Use join_graphs.py directly for more control:")
-    print(f"     python join_graphs.py --list            # List available graphs")
-    print(f"     python join_graphs.py --g1 X --g2 Y     # Compare two graphs")
-    print(f"     python join_graphs.py --workers 15      # Set parallel workers")
+    print(f"   Use cli/compare.py directly for more control:")
+    print(f"     python cli/compare.py --list            # List available graphs")
+    print(f"     python cli/compare.py --g1 X --g2 Y     # Compare two graphs")
+    print(f"     python cli/compare.py --workers 15      # Set parallel workers")
     print()
-    
-    # Check if join_graphs.py exists
-    joins_script = Path(__file__).parent / "join_graphs.py"
+
+    # Check if the compare CLI exists (sibling module in cli/)
+    joins_script = _ROOT / "cli" / "compare.py"
     if not joins_script.exists():
-        print(f"❌ join_graphs.py not found: {joins_script}")
+        print(f"❌ cli/compare.py not found: {joins_script}")
         return False
     
     # List available graphs first
@@ -1632,7 +1634,7 @@ def run_merge_phase(provider: str, strategy: str = "provenance") -> bool:
     try:
         result = subprocess.run(
             [sys.executable, str(joins_script), "--list"],
-            cwd=Path(__file__).parent,
+            cwd=_ROOT,
             capture_output=True,
             text=True,
             env=env
@@ -1648,11 +1650,11 @@ def run_merge_phase(provider: str, strategy: str = "provenance") -> bool:
     
     # Prompt user to select graphs
     print()
-    print("To run set operations, use join_graphs.py with your chosen graphs:")
-    print("  python join_graphs.py --g1 GRAPH1 --g2 GRAPH2 --workers 15")
+    print("To run set operations, use cli/compare.py with your chosen graphs:")
+    print("  python cli/compare.py --g1 GRAPH1 --g2 GRAPH2 --workers 15")
     print()
     print("Example:")
-    print("  python join_graphs.py --g1 graphA --g2 FM --workers 15")
+    print("  python cli/compare.py --g1 graphA --g2 FM --workers 15")
     print()
     
     return True
@@ -1673,25 +1675,25 @@ def main():
         epilog="""
 Examples:
   # Run complete flow for all files in compliance-files folder
-  python knowledge_graph_generation.py
+  python cli/extract.py
   
   # Run for a single specific file
-  python knowledge_graph_generation.py --file compliance-files/my-document.pdf
+  python cli/extract.py --file compliance-files/my-document.pdf
   
   # Run with explicit provider validation
-  python knowledge_graph_generation.py --provider openai
+  python cli/extract.py --provider openai
   
   # Run with custom directories and target rules
-  python knowledge_graph_generation.py --source knowledge-files --output my-kg --target-rules 150
+  python cli/extract.py --source knowledge-files --output my-kg --target-rules 150
   
   # Run single step only
-  python knowledge_graph_generation.py --step 1  # Knowledge organization only
-  python knowledge_graph_generation.py --step 3  # Business rules extraction only
+  python cli/extract.py --step 1  # Knowledge organization only
+  python cli/extract.py --step 3  # Business rules extraction only
   
   # Run with provider validation and specific step
   
   # Custom configuration
-  python knowledge_graph_generation.py \
+  python cli/extract.py \
     --provider openai \
     --source my-documents \
     --organized my-documents-organized \
@@ -1699,9 +1701,9 @@ Examples:
     --target-rules 200
     
   # Batch mode: process all files in subdirectories together
-  python knowledge_graph_generation.py --batch
-  python knowledge_graph_generation.py --batch --provider openai
-  python knowledge_graph_generation.py --batch --provider openai --workers 40
+  python cli/extract.py --batch
+  python cli/extract.py --batch --provider openai
+  python cli/extract.py --batch --provider openai --workers 40
         """
     )
     

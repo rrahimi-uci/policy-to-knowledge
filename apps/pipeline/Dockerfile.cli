@@ -1,4 +1,5 @@
-# Multi-stage build for Policy to Knowledge
+# Multi-stage build for the Policy to Knowledge CLI (batch extraction).
+# Entry point: cli/extract.py. For the API/UI image see Dockerfile.api.
 
 # Stage 1: Builder
 FROM python:3.11-slim as builder
@@ -47,7 +48,7 @@ COPY --from=builder /root/.local /home/appuser/.local
 COPY --chown=appuser:appuser agents/ ./agents/
 COPY --chown=appuser:appuser prompts/ ./prompts/
 COPY --chown=appuser:appuser utils/ ./utils/
-COPY --chown=appuser:appuser knowledge_graph_generation.py .
+COPY --chown=appuser:appuser cli/ ./cli/
 # Seed config.json from the committed example (config.json is gitignored and not
 # in the build context). Runtime env vars are substituted by the app at load time.
 COPY --chown=appuser:appuser config.example.json config.json
@@ -67,5 +68,5 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
     CMD python -c "import sys; sys.path.insert(0, 'agents'); from agent_1_document_organizer import *" || exit 1
 
 # Default command
-ENTRYPOINT ["python", "knowledge_graph_generation.py"]
+ENTRYPOINT ["python", "cli/extract.py"]
 CMD []

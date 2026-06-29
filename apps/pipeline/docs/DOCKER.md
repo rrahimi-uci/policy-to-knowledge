@@ -114,7 +114,7 @@ p2k:latest
 │   ├── agents/ (7 agents)
 │   ├── prompts/ (production prompts)
 │   ├── utils/ (utilities)
-│   └── knowledge_graph_generation.py (orchestrator)
+│   └── cli/extract.py (orchestrator)
 ├── Dependencies (from requirements.txt)
 └── Non-root user (appuser)
 ```
@@ -134,7 +134,7 @@ p2k:latest
 
 | Service | Purpose | Port |
 |---------|---------|------|
-| `p2k` | Batch extraction runner (`knowledge_graph_generation.py`) | none |
+| `p2k` | Batch extraction runner (`cli/extract.py`) | none |
 | `p2k-ui` | FastAPI backend + built React frontend | `8000` |
 
 ---
@@ -243,7 +243,7 @@ Mount source code as volume for development:
 volumes:
   - ./agents:/app/agents:rw
   - ./utils:/app/utils:rw
-  - ./knowledge_graph_generation.py:/app/knowledge_graph_generation.py:rw
+  - ./cli/extract.py:/app/cli/extract.py:rw
 ```
 
 ---

@@ -304,7 +304,7 @@ class TestNoHardcodedValues:
 
     @pytest.fixture
     def pipeline_source(self):
-        path = Path(__file__).parent.parent / "knowledge_graph_generation.py"
+        path = Path(__file__).parent.parent / "cli" / "extract.py"
         return path.read_text()
 
     def test_pipeline_no_hardcoded_extensions(self, pipeline_source):

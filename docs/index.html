@@ -1577,7 +1577,7 @@ REDIS_PORT=6379</code></pre>
   <h3>Extraction Pipeline</h3>
 
   <details>
-    <summary>knowledge_graph_generation.py — Document-to-KG Extraction</summary>
+    <summary>cli/extract.py — Document-to-KG Extraction</summary>
     <div>
       <div class="cli-block">
         <div class="cli-header">
@@ -1585,30 +1585,30 @@ REDIS_PORT=6379</code></pre>
           apps/pipeline/
         </div>
         <pre><code><span class="comment"># Process all files with OpenAI</span>
-<span class="cmd">python3</span> knowledge_graph_generation.py <span class="flag">--provider</span> <span class="arg">openai</span>
+<span class="cmd">python3</span> cli/extract.py <span class="flag">--provider</span> <span class="arg">openai</span>
 
 <span class="comment"># Process a single document</span>
-<span class="cmd">python3</span> knowledge_graph_generation.py <span class="flag">--provider</span> <span class="arg">openai</span> <span class="flag">--file</span> <span class="arg">compliance-files/graphA.pdf</span>
+<span class="cmd">python3</span> cli/extract.py <span class="flag">--provider</span> <span class="arg">openai</span> <span class="flag">--file</span> <span class="arg">compliance-files/graphA.pdf</span>
 
 <span class="comment"># Run a specific agent step (1-6)</span>
-<span class="cmd">python3</span> knowledge_graph_generation.py <span class="flag">--step</span> <span class="arg">1</span>   <span class="comment"># Document organizer only</span>
-<span class="cmd">python3</span> knowledge_graph_generation.py <span class="flag">--step</span> <span class="arg">6</span>   <span class="comment"># Visualization only</span>
+<span class="cmd">python3</span> cli/extract.py <span class="flag">--step</span> <span class="arg">1</span>   <span class="comment"># Document organizer only</span>
+<span class="cmd">python3</span> cli/extract.py <span class="flag">--step</span> <span class="arg">6</span>   <span class="comment"># Visualization only</span>
 
 <span class="comment"># Process in batches by subdirectory</span>
-<span class="cmd">python3</span> knowledge_graph_generation.py <span class="flag">--batch</span>
+<span class="cmd">python3</span> cli/extract.py <span class="flag">--batch</span>
 
 <span class="comment"># Process a specific domain subdirectory</span>
-<span class="cmd">python3</span> knowledge_graph_generation.py <span class="flag">--batch-dir</span> <span class="arg">healthcare</span>
+<span class="cmd">python3</span> cli/extract.py <span class="flag">--batch-dir</span> <span class="arg">healthcare</span>
 
 <span class="comment"># Run merge phase with existing KGs</span>
-<span class="cmd">python3</span> knowledge_graph_generation.py <span class="flag">--merge</span>
-<span class="cmd">python3</span> knowledge_graph_generation.py <span class="flag">--merge-only</span> <span class="flag">--merge-strategy</span> <span class="arg">provenance</span></code></pre>
+<span class="cmd">python3</span> cli/extract.py <span class="flag">--merge</span>
+<span class="cmd">python3</span> cli/extract.py <span class="flag">--merge-only</span> <span class="flag">--merge-strategy</span> <span class="arg">provenance</span></code></pre>
       </div>
     </div>
   </details>
 
   <details>
-    <summary>join_graphs.py — Knowledge Graph Merging</summary>
+    <summary>cli/compare.py — Knowledge Graph Merging</summary>
     <div>
       <div class="cli-block">
         <div class="cli-header">
@@ -1616,13 +1616,13 @@ REDIS_PORT=6379</code></pre>
           apps/pipeline/
         </div>
         <pre><code><span class="comment"># List available knowledge graphs</span>
-<span class="cmd">python3</span> join_graphs.py <span class="flag">--list</span>
+<span class="cmd">python3</span> cli/compare.py <span class="flag">--list</span>
 
 <span class="comment"># Merge two graphs (computes all set operations)</span>
-<span class="cmd">python3</span> join_graphs.py <span class="flag">--g1</span> <span class="arg">graphA</span> <span class="flag">--g2</span> <span class="arg">graphB</span> <span class="flag">--workers</span> <span class="arg">15</span>
+<span class="cmd">python3</span> cli/compare.py <span class="flag">--g1</span> <span class="arg">graphA</span> <span class="flag">--g2</span> <span class="arg">graphB</span> <span class="flag">--workers</span> <span class="arg">15</span>
 
 <span class="comment"># Merge with custom batch size</span>
-<span class="cmd">python3</span> join_graphs.py <span class="flag">--g1</span> <span class="arg">FM</span> <span class="flag">--g2</span> <span class="arg">graphA</span> <span class="flag">--workers</span> <span class="arg">20</span> <span class="flag">--batch-size</span> <span class="arg">15</span></code></pre>
+<span class="cmd">python3</span> cli/compare.py <span class="flag">--g1</span> <span class="arg">FM</span> <span class="flag">--g2</span> <span class="arg">graphA</span> <span class="flag">--workers</span> <span class="arg">20</span> <span class="flag">--batch-size</span> <span class="arg">15</span></code></pre>
       </div>
     </div>
   </details>

@@ -41,8 +41,7 @@ COPY domain-prompts/ domain-prompts/
 COPY utils/ utils/
 COPY ui/backend/ ui/backend/
 COPY --from=frontend-builder /frontend/dist ui/frontend/dist/
-COPY knowledge_graph_generation.py .
-COPY join_graphs.py .
+COPY cli/ cli/
 COPY config.example.json config.json
 COPY logo.svg .
 
