@@ -157,10 +157,10 @@ def index():
     return send_from_directory(app.static_folder, "index.html")
 
 
-@app.route("/logo.svg")
+@app.route("/logo.png")
 def logo():
     root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    return send_from_directory(root_dir, "logo.svg")
+    return send_from_directory(root_dir, "logo.png")
 
 
 @app.route("/api/")
@@ -2088,7 +2088,8 @@ def suggest_connections():
 
     try:
         # ── Signal 1: Semantic similarity (50% weight) ──
-        semantic_results = _engine.search(content, top_k=top_k * 3, graph_name=graph_name)
+        # Degrades gracefully to structural signals when semantic search is off.
+        semantic_results = _engine.search(content, top_k=top_k * 3, graph_name=graph_name) if _engine is not None else []
 
         # ── Signal 2 & 3: Structural proximity + rule-type affinity ──
         suggestions = []
@@ -3139,7 +3140,7 @@ def _build_reference_html(
 <div class="ref-header">
   <div class="ref-header-inner">
     <div class="header-top">
-      <img class="header-logo" src="{URL_PREFIX}/logo.svg" alt="Explorer"/>
+      <img class="header-logo" src="{URL_PREFIX}/logo.png" alt="Explorer"/>
       <span class="header-brand">Explorer</span>
       <span class="graph-badge">{_html_escape(graph_name)}</span>
     </div>
@@ -3945,6 +3946,13 @@ Remember: Begin with |||ANSWER_START||| then output ONLY the clean, formatted an
 def _execute_chat_tool(function_name, function_args):
     """Execute a chat tool. Returns (llm_result, frontend_event)."""
     if function_name == "semantic_search":
+        if _engine is None:
+            return ({
+                "unavailable": True,
+                "message": "Semantic search is unavailable on this server "
+                           "(optional dependency not installed). Use the text_search tool instead.",
+                "results": [],
+            }, None)
         search_graph = function_args.get("graph_name") or get_default_traversal_source()
         results = _engine.search(
             function_args["query"],
@@ -5025,6 +5033,8 @@ def _execute_get_review_status(function_args):
 def _cross_graph_semantic(query: str, top_k: int, available_graphs: list, graph_configs: dict) -> list:
     """Run semantic search across all graphs and return enriched results."""
     results = []
+    if _engine is None:
+        return results
     for gname in available_graphs:
         display_name = graph_configs.get(gname, {}).get("name", gname)
         try:
