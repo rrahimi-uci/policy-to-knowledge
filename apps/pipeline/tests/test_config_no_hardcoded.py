@@ -122,7 +122,7 @@ class TestConfigGetters:
 
     def test_get_max_workers(self):
         config = get_config()
-        assert config.get_max_workers() == 20
+        assert config.get_max_workers() == 30
 
     def test_get_max_workers_env_override(self):
         config = get_config()
@@ -240,7 +240,7 @@ class TestMatcherAndJoinGetters:
     """Verify semantic matcher and join graphs config getters."""
 
     def test_get_matcher_max_workers(self):
-        assert get_config().get_matcher_max_workers() == 20
+        assert get_config().get_matcher_max_workers() == 30
 
     def test_get_matcher_batch_size(self):
         assert get_config().get_matcher_batch_size() == 10
@@ -249,7 +249,7 @@ class TestMatcherAndJoinGetters:
         assert get_config().get_matcher_max_tokens() == 8000
 
     def test_get_join_max_workers(self):
-        assert get_config().get_join_max_workers() == 15
+        assert get_config().get_join_max_workers() == 31
 
     def test_get_join_batch_size(self):
         assert get_config().get_join_batch_size() == 10
@@ -267,13 +267,13 @@ class TestFallbackDefaults:
 
     def test_chunk_size_target_matches_config_json(self):
         config = get_config()
-        # config.json says 1000, fallback should also be 1000
-        assert config.get_chunk_size_target() == 1000
+        # config.json says 2000, fallback should also be 2000
+        assert config.get_chunk_size_target() == 2000
 
     def test_max_chunk_size_matches_config_json(self):
         config = get_config()
-        # config.json says 2000, fallback should also be 2000
-        assert config.get_max_chunk_size() == 2000
+        # config.json says 3000, fallback should also be 3000
+        assert config.get_max_chunk_size() == 3000
 
 
 # ── 4. No hardcoded values in source files ──

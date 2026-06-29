@@ -324,11 +324,11 @@ class Config:
     
     def get_chunk_size_target(self) -> int:
         """Get target chunk size for document organization."""
-        return self.get('document_organizer.chunk_size_target', 1000)
+        return self.get('document_organizer.chunk_size_target', 2000)
     
     def get_max_chunk_size(self) -> int:
         """Get maximum chunk size for document organization."""
-        return self.get('document_organizer.max_chunk_size', 2000)
+        return self.get('document_organizer.max_chunk_size', 3000)
     
     def get_min_chunk_size(self) -> int:
         """Get minimum chunk size for document organization."""
@@ -407,7 +407,7 @@ class Config:
         env_val = os.getenv('MAX_WORKERS')
         if env_val:
             return int(env_val)
-        return self.get('pipeline.max_workers', 20)
+        return self.get('pipeline.max_workers', 30)
 
     def get_supported_extensions(self) -> list:
         """Get list of supported file extensions for the pipeline."""
@@ -535,7 +535,7 @@ class Config:
 
     def get_matcher_max_workers(self) -> int:
         """Get max workers for semantic rule matcher."""
-        return self.get('semantic_matcher.max_workers', 20)
+        return self.get('semantic_matcher.max_workers', 30)
 
     def get_matcher_batch_size(self) -> int:
         """Get batch size for semantic rule matcher."""
@@ -549,7 +549,7 @@ class Config:
 
     def get_join_max_workers(self) -> int:
         """Get max workers for join graphs pipeline."""
-        return self.get('join_graphs.max_workers', 15)
+        return self.get('join_graphs.max_workers', 31)
 
     def get_join_batch_size(self) -> int:
         """Get batch size for join graphs pipeline."""
