@@ -44,8 +44,8 @@ flowchart TB
     end
 
     subgraph Orchestration["🎯 Orchestration Layer"]
-        MAIN[knowledge_graph_generation.py<br/>Extraction]
-        JOINS[join_graphs.py<br/>Set Operations]
+        MAIN[cli/extract.py<br/>Extraction]
+        JOINS[cli/compare.py<br/>Set Operations]
     end
 
     subgraph Agents["🤖 Agent Layer"]
@@ -76,7 +76,7 @@ flowchart TB
 | Layer | Components | Responsibility |
 |-------|------------|----------------|
 | **Presentation** | HTML Reports | User-facing outputs and visualization |
-| **Orchestration** | knowledge_graph_generation.py, join_graphs.py | Pipeline execution coordination |
+| **Orchestration** | cli/extract.py, cli/compare.py | Pipeline execution coordination |
 | **Agent** | 10 specialized agents | Domain-specific processing logic |
 | **Services** | Utils modules | Shared infrastructure (LLM, prompts, config) |
 | **Infrastructure** | Docker, File I/O | Deployment and data persistence |
@@ -399,10 +399,10 @@ flowchart TB
 docker-compose up -d
 
 # Run extraction pipeline
-docker-compose exec pipeline python knowledge_graph_generation.py --provider openai --document FM
+docker-compose exec pipeline python cli/extract.py --provider openai --document FM
 
 # Run joins pipeline
-docker-compose exec pipeline python join_graphs.py --g1 SAMPLE_GUIDELINES --g2 Policy-Overlay
+docker-compose exec pipeline python cli/compare.py --g1 SAMPLE_GUIDELINES --g2 Policy-Overlay
 
 # View reports directly
 open pipeline-output/openai/SAMPLE_GUIDELINES/agent-6-visualization-and-report/SAMPLE_GUIDELINES_knowledge_graph.html
@@ -419,7 +419,7 @@ flowchart TB
     subgraph NewAgent["Adding Agent N"]
         CREATE["1. Create<br/>agents/agent_N_name.py"]
         INTERFACE["2. Define Interface<br/>Input - Process - Output"]
-        REGISTER["3. Register in<br/>knowledge_graph_generation.py or join_graphs.py"]
+        REGISTER["3. Register in<br/>cli/extract.py or cli/compare.py"]
         PROMPT["4. Create prompt<br/>if LLM-dependent"]
     end
 

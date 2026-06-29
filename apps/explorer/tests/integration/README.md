@@ -13,25 +13,26 @@ server + JanusGraph** instance and exercise every public endpoint.
 
 ## Setup
 
+Run from the **explorer app root** (`apps/explorer`) so `src` is importable.
+
 ```bash
-cd e2etests
-../.venv/bin/pip install -r requirements.txt
+.venv/bin/pip install -r tests/integration/requirements.txt
 ```
 
 ## Running
 
 ```bash
 # All tests (server must be running on localhost:5001)
-../.venv/bin/pytest -v
+PYTHONPATH=. .venv/bin/pytest tests/integration -v
 
 # Specific test file
-../.venv/bin/pytest -v test_graph_api.py
+PYTHONPATH=. .venv/bin/pytest tests/integration/test_graph_api.py -v
 
 # With BASE_URL override
-BASE_URL=http://localhost:5001 ../.venv/bin/pytest -v
+BASE_URL=http://localhost:5001 PYTHONPATH=. .venv/bin/pytest tests/integration -v
 
 # Stop on first failure
-../.venv/bin/pytest -v -x
+PYTHONPATH=. .venv/bin/pytest tests/integration -v -x
 ```
 
 ## Test files

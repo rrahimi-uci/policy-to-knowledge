@@ -2,7 +2,7 @@ services:
   p2k:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.cli
     image: p2k:latest
     container_name: p2k-builder
     
