@@ -185,12 +185,18 @@ def _lighten_color(hex_color):
 
 
 def _get_logo_base64() -> str:
-    """Load logo.svg as a base64-encoded data URI."""
-    logo_path = Path(__file__).parent.parent / 'logo.svg'
-    if logo_path.exists():
-        with open(logo_path, 'rb') as f:
-            encoded = base64.b64encode(f.read()).decode('utf-8')
-        return f'data:image/png;base64,{encoded}'
+    """Load the brand logo as a base64 data URI.
+
+    Prefers logo.png, falls back to logo.svg, and emits the correct MIME type
+    for the file found (a previous version always claimed image/png, which made
+    the embedded SVG fail to render).
+    """
+    base = Path(__file__).parent.parent
+    for name, mime in (("logo.png", "image/png"), ("logo.svg", "image/svg+xml")):
+        path = base / name
+        if path.exists():
+            encoded = base64.b64encode(path.read_bytes()).decode("utf-8")
+            return f"data:{mime};base64,{encoded}"
     return ''
 
 
@@ -587,9 +593,14 @@ def generate_html_content(data, rules, entity_types, entity_definitions):
         for rt in config.get_domain_priority_filter_types()
     )
 
-    # Load logo
+    # Load logo (omit the <img> entirely when no logo is bundled, so we never
+    # render a broken image from an empty src).
     logo_data_uri = _get_logo_base64()
-    
+    logo_img = (
+        f'<img src="{logo_data_uri}" alt="Policy to Knowledge" style="height: 80px; width: auto;" />'
+        if logo_data_uri else ''
+    )
+
     # Build page title with source document info
     page_title = "Knowledge Graph Visualization"
     if source_file:
@@ -1304,7 +1315,7 @@ def generate_html_content(data, rules, entity_types, entity_definitions):
         <header>
             <div class="logo-container">
                 <div class="source-logo">
-                    <img src="{logo_data_uri}" alt="Policy to Knowledge" style="height: 80px; width: auto;" />
+                    {logo_img}
                     <div style="display: flex; flex-direction: column; align-items: flex-start;">
                         <span class="logo-text">{source_file if source_file else 'Policy to Knowledge'}</span>
                         <span style="font-size: 0.8rem; color: #666; font-weight: normal;">Compliance Knowledge Graph</span>
