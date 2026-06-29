@@ -46,11 +46,12 @@ No sample graph data ships with this repo. You must supply your own:
 - `kbs/<graph>/` — source document chunks used for reference resolution
 - a matching entry per graph in `conf/graphs.yaml`
 
-The checked-in manifest (`conf/graphs.yaml`) defines several graph slots —
-`sample_guidelines`, `example_policies`, `comercial_lending`, `fannie_mae`,
-`freddie_mac`, and `healthcare`. Only the graphs whose `kg_file` actually exists on
-disk are loaded and exposed in the UI, chat tool enums, and statistics; the rest stay
-inert until you drop in their KG JSON.
+The checked-in manifest (`conf/graphs.yaml`) ships two example graph slots —
+`sample_guidelines` and `example_policies` — and you can register more by adding
+an entry per graph (the helper `scripts/generate_graph_config.py` regenerates the
+JanusGraph configs). Only the graphs whose `kg_file` actually exists on disk are
+loaded and exposed in the UI, chat tool enums, and statistics; the rest stay inert
+until you drop in their KG JSON.
 
 ## Local setup
 

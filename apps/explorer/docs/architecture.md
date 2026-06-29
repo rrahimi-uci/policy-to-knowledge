@@ -280,12 +280,9 @@ Cassandra keyspace, OpenSearch index, KG JSON file, and source-document folder:
 | --- | --- | --- | --- | --- |
 | Sample Guidelines | `sample_guidelines_g` | `janusgraph_sample_guidelines` | `sample_guidelines_search` | `kgs/sample-guidelines-kg.json` |
 | Example Policies | `example_policies_g` | `janusgraph_example_policies` | `example_policies_search` | `kgs/example-policies-kg.json` |
-| Comercial Lending | `comercial_lending_g` | `janusgraph_comercial_lending` | `comercial_lending_search` | `kgs/comercial_lending-kg.json` |
-| Fannie Mae | `fannie_mae_g` | `janusgraph_fannie_mae` | `fannie_mae_search` | `kgs/fannie_mae-kg.json` |
-| Freddie Mac | `freddie_mac_g` | `janusgraph_freddie_mac` | `freddie_mac_search` | `kgs/freddie_mac-kg.json` |
-| Healthcare | `healthcare_g` | `janusgraph_healthcare` | `healthcare_search` | `kgs/healthcare-kg.json` |
 
-The manifest configures every graph slot, but only graphs whose `kg_file` exists on disk
+The shipped manifest defines these two example graph slots; register additional
+graphs by adding an entry per graph (see below). Only graphs whose `kg_file` exists on disk
 are treated as **loaded** — `conf/graph_manifest.py` (`get_loaded_traversal_sources`)
 filters the rest out of the chat tool enums, default-graph selection, and statistics, so
 configured-but-empty slots stay inert until you supply their KG JSON.
