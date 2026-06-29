@@ -9,9 +9,53 @@ for both standard chat models (gpt-4o, gpt-4o-mini, …) and reasoning models
 import json
 import re
 import sys
+import threading
 from typing import Dict, Any, List, Optional
 
 from openai import OpenAI
+
+
+def _build_keepalive_http_client(timeout):
+    """Build an httpx client with TCP keep-alive enabled.
+
+    Without keep-alive, a connection that dies silently — the machine sleeps,
+    a NAT/router drops the flow, the peer vanishes — leaves a blocking socket
+    read parked in ``poll()`` indefinitely, well past the SDK's own timeout.
+    With keep-alive the OS probes the idle connection and surfaces the dead
+    peer (here within ~2 min: idle 60s, then 4 probes 15s apart), so the read
+    fails fast and the SDK can retry or error instead of hanging forever.
+
+    Returns ``None`` (so the SDK uses its default client) if httpx or the
+    needed socket options aren't available — keeping this strictly best-effort.
+    """
+    try:
+        import socket
+        import httpx
+    except Exception:
+        return None
+
+    opts = [(socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1)]
+    # macOS uses TCP_KEEPALIVE for the idle time; Linux uses TCP_KEEPIDLE.
+    # Whichever exists is applied; absent constants are simply skipped.
+    for const, value in (
+        ("TCP_KEEPALIVE", 60),
+        ("TCP_KEEPIDLE", 60),
+        ("TCP_KEEPINTVL", 15),
+        ("TCP_KEEPCNT", 4),
+    ):
+        num = getattr(socket, const, None)
+        if num is not None:
+            opts.append((socket.IPPROTO_TCP, num, value))
+
+    try:
+        connect = min(30, timeout) if timeout else 30
+        return httpx.Client(
+            timeout=httpx.Timeout(timeout, connect=connect),
+            transport=httpx.HTTPTransport(retries=0, socket_options=opts),
+        )
+    except Exception:
+        # Older httpx without socket_options support, etc. — fall back cleanly.
+        return None
 
 
 # Approximate OpenAI pricing in USD per 1M tokens (input, output). Used only to
@@ -81,6 +125,11 @@ class LLMClient:
         self.timeout = timeout if timeout is not None else _get_config_value('get_timeout', 300)
         self.max_retries = max_retries if max_retries is not None else _get_config_value('get_max_retries', 3)
 
+        # Hard watchdog margin (seconds) added on top of the SDK's own worst-case
+        # (timeout × attempts). The watchdog only ever fires when the socket-level
+        # timeout fails to — e.g. a connection killed mid-flight by a machine sleep.
+        self.watchdog_margin = 60
+
         self._api_key = api_key
         self._client: Optional[OpenAI] = None
 
@@ -94,12 +143,52 @@ class LLMClient:
             api_key = self._api_key or _get_config_value('get_openai_api_key', None)
             # The SDK falls back to OPENAI_API_KEY in the env when api_key is None;
             # pass it explicitly when we have it (without mutating the environment).
-            self._client = OpenAI(
+            client_kwargs: Dict[str, Any] = dict(
                 api_key=api_key,
                 timeout=self.timeout,
                 max_retries=self.max_retries,
             )
+            http_client = _build_keepalive_http_client(self.timeout)
+            if http_client is not None:
+                client_kwargs["http_client"] = http_client
+            self._client = OpenAI(**client_kwargs)
         return self._client
+
+    def _create_with_watchdog(self, params: Dict[str, Any]) -> Any:
+        """Run the SDK call under a hard wall-clock deadline.
+
+        The OpenAI SDK's per-request timeout normally bounds a call, but a
+        connection that dies silently can leave the underlying blocking socket
+        read parked indefinitely past that timeout (observed: a call hung for
+        hours after the machine slept). This backstop runs the request on a
+        daemon thread and refuses to wait past ``timeout × attempts + margin``,
+        so control always returns in finite time. A stranded thread (still
+        blocked on the dead socket) is a daemon and never blocks process exit;
+        TCP keep-alive tears its socket down shortly after.
+        """
+        client = self._get_client()
+        box: Dict[str, Any] = {}
+
+        def _call():
+            try:
+                box["resp"] = client.chat.completions.create(**params)
+            except BaseException as e:  # propagate any failure to the caller
+                box["err"] = e
+
+        worker = threading.Thread(target=_call, name="llm-call", daemon=True)
+        worker.start()
+        deadline = self.timeout * (self.max_retries + 1) + self.watchdog_margin
+        worker.join(deadline)
+
+        if worker.is_alive():
+            raise TimeoutError(
+                f"LLM call exceeded the hard watchdog deadline ({deadline:.0f}s) — "
+                f"the connection is likely stalled or dead; aborting so the pipeline "
+                f"fails fast instead of hanging indefinitely."
+            )
+        if "err" in box:
+            raise box["err"]
+        return box["resp"]
 
     @staticmethod
     def is_reasoning_model(model: str) -> bool:
@@ -167,7 +256,7 @@ class LLMClient:
         params.update(kwargs)
 
         try:
-            response = self._get_client().chat.completions.create(**params)
+            response = self._create_with_watchdog(params)
         except Exception as e:
             raise Exception(f"LLM completion failed: {str(e)}")
 
