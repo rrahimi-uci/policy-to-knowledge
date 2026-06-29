@@ -537,7 +537,6 @@ function _getNodeColor(nodeId) {
 /**
  * Resolve a reference string and open the matching chunk document in a new tab.
  * Called from onclick in the detail panel's reference property link.
- * If the current node maps to a task with highlight_terms, those terms are passed along.
  * Word positions (start_word_position / end_word_position) and source_text from
  * the source_reference are passed for precise reference highlighting.
  */
@@ -550,17 +549,6 @@ function openReference(encodedRef, encodedGraph, encodedSourceRef) {
     let srcRefObj = null;
     if (srcRefStr) {
         try { srcRefObj = JSON.parse(srcRefStr); } catch(e) { /* ignore */ }
-    }
-
-    // Try to find highlight terms from matching task data
-    let highlightTerms = [];
-    if (typeof _taskData !== 'undefined' && selectedNodeId) {
-        const matchingTask = _taskData.find(t =>
-            String(t.node_id) === String(selectedNodeId) && t.highlight_terms
-        );
-        if (matchingTask) {
-            highlightTerms = matchingTask.highlight_terms;
-        }
     }
 
     // Build resolve URL with source_reference for better matching
@@ -579,9 +567,6 @@ function openReference(encodedRef, encodedGraph, encodedSourceRef) {
                 let url = best.url;
                 const sep = url.includes('?') ? '&' : '?';
                 url += sep + 'theme=' + theme;
-                if (highlightTerms.length) {
-                    url += '&highlight=' + encodeURIComponent(highlightTerms.join(','));
-                }
                 // Pass word positions from source_reference for precise highlighting
                 const startWord = best.start_word_position ?? (srcRefObj && srcRefObj.start_word_position);
                 const endWord = best.end_word_position ?? (srcRefObj && srcRefObj.end_word_position);
