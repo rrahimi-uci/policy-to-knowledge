@@ -188,23 +188,3 @@ export const TOAST = {
   container: "#toastContainer",
   toast: ".toast",
 } as const;
-
-/* ── Task box ─────────────────────────────────────────────────── */
-
-export const TASKS = {
-  toggleBtn: "#taskToggleBtn",
-  panel: "#taskPanel",
-  overlay: "#taskOverlay",
-  closeBtn: ".task-panel-close",
-  list: "#taskList",
-  card: ".task-card",
-  filterAll: '.task-filter-btn[data-filter="all"]',
-  filterReview: '.task-filter-btn[data-filter="review"]',
-  filterApproval: '.task-filter-btn[data-filter="approval"]',
-  summary: "#taskSummary",
-  badgeCount: "#taskBadgeCount",
-  reviewCard: '.task-card[data-type="review"]',
-  approvalCard: '.task-card[data-type="approval"]',
-  nodeName: ".task-node-name",
-  typeBadge: ".task-badge-review, .task-badge-approval",
-} as const;
