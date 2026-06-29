@@ -26,8 +26,13 @@
     "default_model": "gpt-4o"
   },
   "pipeline": {
-    "max_workers": 20,
-    "supported_extensions": [".pdf", ".txt", ".md", ".docx"]
+    "max_workers": 30,
+    "supported_extensions": [
+      ".pdf",
+      ".txt",
+      ".md",
+      ".docx"
+    ]
   },
   "directories": {
     "source": "compliance-files",
@@ -40,18 +45,23 @@
     "output": "pipeline-output/agent-6-visualization-and-report"
   },
   "document_organizer": {
-    "chunk_size_target": 1000,
-    "max_chunk_size": 2000,
+    "chunk_size_target": 2000,
+    "max_chunk_size": 3000,
     "min_chunk_size": 500,
     "chunk_overlap": 200,
     "csv_rows_per_chunk": 50,
     "max_content_for_analysis": 12000,
     "simple_chunk_size": 3000,
     "docx_fallback_chunk_size": 2000,
-    "supported_formats": [".pdf", ".txt", ".docx", ".md"]
+    "supported_formats": [
+      ".pdf",
+      ".txt",
+      ".docx",
+      ".md"
+    ]
   },
   "entity_extractor": {
-    "n_iterations": 2,
+    "n_iterations": 3,
     "temperature": 0.7,
     "max_tokens": 8192,
     "scoring_weights": {
@@ -75,11 +85,11 @@
     "low_confidence_threshold": 70,
     "default_confidence_score": 75,
     "confidence_weights": {
-      "extraction_clarity": 0.30,
+      "extraction_clarity": 0.3,
       "numeric_precision": 0.25,
-      "context_completeness": 0.20,
+      "context_completeness": 0.2,
       "source_authority": 0.15,
-      "logical_consistency": 0.10
+      "logical_consistency": 0.1
     },
     "rule_categories": [
       "Eligibility",
@@ -109,21 +119,29 @@
     "cross_batch_max_tokens": 8192
   },
   "semantic_matcher": {
-    "max_workers": 20,
+    "max_workers": 30,
     "batch_size": 10,
     "max_tokens": 8000
   },
   "join_graphs": {
-    "max_workers": 15,
+    "max_workers": 31,
     "batch_size": 10
   },
   "domain": {
     "active": "mortgage",
     "prompts_base_dir": "domain-prompts",
-    "available": ["mortgage", "aml", "healthcare", "commercial_lending"]
+    "available": [
+      "mortgage",
+      "aml",
+      "healthcare",
+      "commercial_lending"
+    ]
   },
   "output": {
-    "formats": ["json", "csv"],
+    "formats": [
+      "json",
+      "csv"
+    ],
     "include_metadata": true,
     "pretty_print": true
   }
