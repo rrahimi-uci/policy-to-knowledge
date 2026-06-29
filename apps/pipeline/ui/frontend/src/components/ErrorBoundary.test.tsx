@@ -40,4 +40,26 @@ describe('ErrorBoundary', () => {
     fireEvent.click(screen.getByRole('button', { name: /try again/i }));
     expect(screen.getByRole('alert')).toBeInTheDocument();
   });
+
+  it('"Try again" remounts the subtree and recovers once the condition clears', () => {
+    // Regression: reset() previously only cleared the error without bumping a
+    // remount key, so a child that throws on its first render would immediately
+    // re-throw on reset and "Try again" was a no-op.
+    let shouldThrow = true;
+    function Flaky() {
+      if (shouldThrow) throw new Error('transient');
+      return <div>recovered</div>;
+    }
+    render(
+      <ErrorBoundary>
+        <Flaky />
+      </ErrorBoundary>,
+    );
+    expect(screen.getByRole('alert')).toBeInTheDocument();
+    // Underlying condition clears, then the user clicks Try again.
+    shouldThrow = false;
+    fireEvent.click(screen.getByRole('button', { name: /try again/i }));
+    expect(screen.getByText('recovered')).toBeInTheDocument();
+    expect(screen.queryByRole('alert')).toBeNull();
+  });
 });

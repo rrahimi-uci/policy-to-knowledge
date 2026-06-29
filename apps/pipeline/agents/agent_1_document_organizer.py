@@ -2058,6 +2058,19 @@ If no TOC is found, return {{"has_toc": false, "toc_entries": []}}
         return results
 
 
+def resolve_output_folder(argv, default="knowledge-files-organized"):
+    """Resolve the optional positional output folder from argv.
+
+    The CLI accepts ``python agent_1.py <input> [<output>] [--files a.pdf ...]``.
+    A second positional that actually starts an option (e.g. ``--files``) must NOT
+    be treated as the output folder, otherwise output_folder would become
+    ``"--files"``. Return the default when argv[2] is missing or option-like.
+    """
+    if len(argv) > 2 and not argv[2].startswith("--"):
+        return argv[2]
+    return default
+
+
 def main():
     """
     Main execution function.
@@ -2086,8 +2099,9 @@ def main():
         print(f"Using default input folder: {input_folder}")
         print(f"To specify a different folder, run: python {sys.argv[0]} <folder_path>\n")
     
-    # Get output folder name (optional)
-    output_folder = sys.argv[2] if len(sys.argv) > 2 else "knowledge-files-organized"
+    # Get output folder name (optional). Ignore an option-like argv[2]
+    # (e.g. "--files") so it is not mistaken for the output folder.
+    output_folder = resolve_output_folder(sys.argv)
     
     # Parse --files argument if present (remaining args after first two positional)
     only_files = None

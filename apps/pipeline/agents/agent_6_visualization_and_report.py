@@ -198,6 +198,7 @@ def generate_html_content(data, rules, entity_types, entity_definitions):
     """Generate the actual HTML content (legacy function maintained for compatibility)."""
     import re as _re
     from utils.config import get_config
+    from utils.text_to_html_converter import safe_json_for_html
 
     config = get_config()
     source_file = config.get_source_file_name() or config.get_batch_name()
@@ -1465,11 +1466,11 @@ def generate_html_content(data, rules, entity_types, entity_definitions):
     
     <script>
         // Data
-        const rulesData = {json.dumps(rules, indent=2)};
-        
-        const nodesData = {json.dumps(nodes, indent=2)};
-        
-        const edgesData = {json.dumps(edges, indent=2)};
+        const rulesData = {safe_json_for_html(rules)};
+
+        const nodesData = {safe_json_for_html(nodes)};
+
+        const edgesData = {safe_json_for_html(edges)};
         
         // Wait for DOM and vis.js to be ready
         document.addEventListener('DOMContentLoaded', function() {{

@@ -302,14 +302,14 @@ export default function Obligations() {
         {selectedGraph && obligations.length > 0 && (
           <div className="flex gap-2">
             <a
-              href={`/api/kg/obligations/${selectedGraph}/export/csv?provider=openai`}
+              href={apiUrl(`kg/obligations/${selectedGraph}/export/csv?provider=openai`)}
               className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-gray-800 text-xs text-gray-400 hover:text-white transition-colors"
               title="Export CSV (GRC-compatible)"
             >
               <Download className="h-3.5 w-3.5" /> CSV
             </a>
             <a
-              href={`/api/kg/obligations/${selectedGraph}/export/json?provider=openai`}
+              href={apiUrl(`kg/obligations/${selectedGraph}/export/json?provider=openai`)}
               className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-gray-800 text-xs text-gray-400 hover:text-white transition-colors"
               title="Export JSON"
             >
