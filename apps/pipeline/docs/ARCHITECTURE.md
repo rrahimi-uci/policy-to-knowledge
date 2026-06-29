@@ -430,8 +430,8 @@ The batch CLI image (`Dockerfile.cli`) runs `cli/extract.py` as its entrypoint. 
 # Run extraction pipeline (Agents 1–6)
 docker compose run --rm p2k --provider openai
 
-# Run comparison pipeline (Agents 7–10)
-docker compose run --rm --entrypoint python p2k cli/compare.py --g1 mortgage --g2 commercial_lending
+# Run comparison pipeline (Agents 7–10) — graph names come from `--list`
+docker compose run --rm --entrypoint python p2k cli/compare.py --g1 <graphA> --g2 <graphB>
 
 # View reports directly
 open pipeline-output/*/agent-6-visualization-and-report/*_knowledge_graph.html

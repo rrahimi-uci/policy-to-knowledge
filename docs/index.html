@@ -647,7 +647,6 @@
 
   <div class="nav-section">User Guide</div>
   <a href="#walkthrough" class="nav-link"><span class="icon">📖</span> Step-by-Step Usage</a>
-  <a href="#screenshots" class="nav-link"><span class="icon">📸</span> Screenshots</a>
 
   <div class="nav-section">Developer</div>
   <a href="#installation" class="nav-link"><span class="icon">⬇️</span> Installation Guide</a>
@@ -697,7 +696,7 @@
 <section id="goal">
   <h2><span class="sec-icon">🎯</span> Goal &amp; Use Case</h2>
 
-  <p>Policy to Knowledge is an enterprise compliance automation platform built by <strong>Policy to Knowledge</strong>. It addresses the challenge of navigating complex, interconnected regulatory rule sets where relationships between rules are as critical as the rules themselves.</p>
+  <p><strong>Policy to Knowledge</strong> is a compliance knowledge-extraction suite. It addresses the challenge of navigating complex, interconnected regulatory rule sets where the relationships between rules are as critical as the rules themselves.</p>
 
   <div class="stat-grid">
     <div class="stat-card">
@@ -705,16 +704,16 @@
       <div class="stat-label">AI Agents in Pipeline</div>
     </div>
     <div class="stat-card">
-      <div class="stat-value" style="color:var(--green)">2,000+</div>
-      <div class="stat-label">Rules Extracted</div>
-    </div>
-    <div class="stat-card">
       <div class="stat-value" style="color:var(--purple)">4</div>
-      <div class="stat-label">Compliance Domains</div>
+      <div class="stat-label">Built-in Compliance Domains</div>
     </div>
     <div class="stat-card">
-      <div class="stat-value" style="color:var(--orange)">88.6%</div>
-      <div class="stat-label">Avg. Confidence Score</div>
+      <div class="stat-value" style="color:var(--green)">2</div>
+      <div class="stat-label">Pipeline Phases (extract · compare)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" style="color:var(--orange)">5</div>
+      <div class="stat-label">Graph Set Operations</div>
     </div>
   </div>
 
@@ -763,7 +762,7 @@
     <div class="feature-card">
       <div class="f-icon">💬</div>
       <h4>AI Chat Assistant</h4>
-      <p>GPT-4o powered conversational agent with 12 tool calls for graph traversal, semantic search, and analysis.</p>
+      <p>GPT-4o powered conversational agent with 13 tools for graph traversal, semantic search, and analysis.</p>
     </div>
     <div class="feature-card">
       <div class="f-icon">🕸️</div>
@@ -925,7 +924,7 @@ sequenceDiagram
 <section id="pipeline-arch">
   <h2><span class="sec-icon">🤖</span> AI Pipeline Architecture</h2>
 
-  <p>Policy to Knowledge (<strong>CO</strong>mpliance <strong>R</strong>ules <strong>T</strong>ransformation &amp; <strong>EX</strong>traction) uses a 10-agent pipeline divided into two phases: extraction and merging.</p>
+  <p>Policy to Knowledge uses a 10-agent pipeline divided into two phases: extraction and merging.</p>
 
   <h3>Pipeline Flow</h3>
   <div class="mermaid-wrap">
@@ -1286,7 +1285,7 @@ erDiagram
       <tbody>
         <tr><td><code>rule_id</code></td><td>String</td><td>Core</td><td>Unique rule identifier</td></tr>
         <tr><td><code>rule_name</code></td><td>String</td><td>Core</td><td>Human-readable rule name</td></tr>
-        <tr><td><code>rule_type</code></td><td>String</td><td>Core</td><td>Taxonomy: eligibility, calculation, validation, threshold, prohibition, timing, method, mandate, classification, reporting</td></tr>
+        <tr><td><code>rule_type</code></td><td>String</td><td>Core</td><td>Taxonomy (10 types): eligibility, constraint, calculation, validation, process, compliance, documentation, prohibition, definition, exception</td></tr>
         <tr><td><code>description</code></td><td>String</td><td>Core</td><td>Full rule description text</td></tr>
         <tr><td><code>conditions</code></td><td>String</td><td>Core</td><td>When-conditions triggering the rule</td></tr>
         <tr><td><code>consequences</code></td><td>String</td><td>Core</td><td>Then-outcomes when rule fires</td></tr>

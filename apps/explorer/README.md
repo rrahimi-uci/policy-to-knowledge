@@ -46,8 +46,11 @@ No sample graph data ships with this repo. You must supply your own:
 - `kbs/<graph>/` — source document chunks used for reference resolution
 - a matching entry per graph in `conf/graphs.yaml`
 
-The checked-in manifest defines two example graph slots: `sample_guidelines` and
-`example_policies`.
+The checked-in manifest (`conf/graphs.yaml`) defines several graph slots —
+`sample_guidelines`, `example_policies`, `comercial_lending`, `fannie_mae`,
+`freddie_mac`, and `healthcare`. Only the graphs whose `kg_file` actually exists on
+disk are loaded and exposed in the UI, chat tool enums, and statistics; the rest stay
+inert until you drop in their KG JSON.
 
 ## Local setup
 
@@ -104,9 +107,12 @@ Direct CLI entrypoints:
 Load graph data directly:
 
 ```bash
-.venv/bin/python -m src.data_loader all       # load every graph in the manifest
-.venv/bin/python -m src.data_loader sample_guidelines   # load one graph
+.venv/bin/python -m src.data_loader all                 # load every graph in the manifest
+.venv/bin/python -m src.data_loader sample_guidelines_g # load one graph (by traversal source)
 ```
+
+The single-graph argument is the graph's **traversal source** (the `traversal_source`
+value in `conf/graphs.yaml`, e.g. `sample_guidelines_g`), not the bare manifest key.
 
 ## Key runtime settings
 
@@ -134,15 +140,20 @@ Unit tests (offline, run in CI):
 
 `pytest.ini` ignores `tests/integration` and `tests/e2e`, so CI stays unit-only.
 
-Live suites require the Docker stack running and at least one loaded graph:
+Live suites require the Docker stack running, a server running, and at least one loaded
+graph. Both suites default to port `5001`; set `BASE_URL` to match the port and URL
+prefix your server is actually on.
 
 ```bash
-# Backend API tests (server must be running)
-PYTHONPATH=. .venv/bin/pytest tests/integration -v
+# Backend API tests — point BASE_URL at the running server (include /app if used)
+BASE_URL=http://localhost:5001/app PYTHONPATH=. .venv/bin/pytest tests/integration -v
 
-# Playwright UI tests
-cd tests/e2e && npm install && BASE_URL=http://localhost:5050/app npx playwright test
+# Playwright UI tests (defaults to http://localhost:5001/app)
+cd tests/e2e && npm install && npx playwright test
 ```
+
+See [tests/integration/README.md](tests/integration/README.md) and
+[tests/e2e/README.md](tests/e2e/README.md) for full setup and `BASE_URL` details.
 
 ## Related docs
 
