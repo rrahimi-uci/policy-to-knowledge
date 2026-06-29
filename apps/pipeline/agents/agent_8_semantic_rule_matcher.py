@@ -103,7 +103,7 @@ class SemanticRuleMatcher:
             model = global_config.get_reasoning_model()
             
             self._thread_local.client = create_llm_client(
-                api_key=self.config.get('openai_api_key'),
+                api_key=self.config.get_openai_api_key(),
                 model=model
             )
         return self._thread_local.client

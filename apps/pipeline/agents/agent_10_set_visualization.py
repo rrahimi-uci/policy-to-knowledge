@@ -32,6 +32,7 @@ from typing import Dict, List
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from utils.config import get_config
+from utils.text_to_html_converter import safe_json_for_html
 
 
 # Rule type colours — combined across all supported domains.
@@ -655,10 +656,10 @@ class SetOperationsVisualizer:
                     })
                     dependency_count += 1
         
-        nodes_json = json.dumps(nodes)
-        edges_json = json.dumps(edges)
-        rules_json = json.dumps(rules)
-        
+        nodes_json = safe_json_for_html(nodes)
+        edges_json = safe_json_for_html(edges)
+        rules_json = safe_json_for_html(rules)
+
         return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1089,8 +1090,8 @@ class SetOperationsVisualizer:
         const edgesData = {edges_json};
         const g1Name = "{g1_name}";
         const g2Name = "{g2_name}";
-        const contradictionIds = {json.dumps(list(contradiction_rule_ids))};
-        const contradictionDetails = {json.dumps(contradiction_details)};
+        const contradictionIds = {safe_json_for_html(list(contradiction_rule_ids))};
+        const contradictionDetails = {safe_json_for_html(contradiction_details)};
         
         // Merge contradiction details into rules
         rulesData.forEach(rule => {{
@@ -1488,8 +1489,8 @@ class SetOperationsVisualizer:
                 'group': rule.get('rule_type', 'unknown')
             })
         
-        nodes_json = json.dumps(nodes)
-        rules_json = json.dumps(enriched_rules)
+        nodes_json = safe_json_for_html(nodes)
+        rules_json = safe_json_for_html(enriched_rules)
         
         return f'''<!DOCTYPE html>
 <html lang="en">
@@ -1686,9 +1687,9 @@ class SetOperationsVisualizer:
                         'title': f"{dep_type.upper()}: {dep.get('rationale', '')[:100]}"
                     })
         
-        nodes_json = json.dumps(nodes)
-        edges_json = json.dumps(edges)
-        rules_json = json.dumps(rules)
+        nodes_json = safe_json_for_html(nodes)
+        edges_json = safe_json_for_html(edges)
+        rules_json = safe_json_for_html(rules)
         type_stats_json = json.dumps({k: len(v) for k, v in rules_by_type.items()})
         
         # Count dependencies
@@ -1862,9 +1863,9 @@ class SetOperationsVisualizer:
                 'title': conflict_tooltip
             })
         
-        nodes_json = json.dumps(nodes)
-        edges_json = json.dumps(edges)
-        contradictions_json = json.dumps(contradictions)
+        nodes_json = safe_json_for_html(nodes)
+        edges_json = safe_json_for_html(edges)
+        contradictions_json = safe_json_for_html(contradictions)
         
         return f'''<!DOCTYPE html>
 <html lang="en">
@@ -2024,21 +2025,37 @@ class SetOperationsVisualizer:
 </html>'''
     
     def generate_summary_html(self, all_results: dict) -> str:
-        """Generate a summary page with Venn diagram."""
-        union = all_results['union']
-        intersection = all_results['intersection']
-        g1_minus_g2 = all_results['g1_minus_g2']
-        g2_minus_g1 = all_results['g2_minus_g1']
-        contradictions = all_results['contradictions']
-        
-        g1_name = union['metadata']['g1_name']
-        g2_name = union['metadata']['g2_name']
-        
-        # Calculate values for Venn diagram
-        g1_only = g1_minus_g2['stats']['total_rules']
-        g2_only = g2_minus_g1['stats']['total_rules']
-        both = intersection['stats']['total_rules']
-        conflicts = contradictions['stats']['total_contradictions']
+        """Generate a summary page with Venn diagram.
+
+        ``run()`` loads each set operation with try/except-continue, so
+        ``all_results`` may be partial (missing keys). Resolve every value
+        defensively so a missing operation renders zeros / "n/a" instead of
+        crashing the index page with a KeyError.
+        """
+        all_results = all_results or {}
+        union = all_results.get('union') or {}
+        intersection = all_results.get('intersection') or {}
+        g1_minus_g2 = all_results.get('g1_minus_g2') or {}
+        g2_minus_g1 = all_results.get('g2_minus_g1') or {}
+        contradictions = all_results.get('contradictions') or {}
+
+        # Graph names may live in any operation's metadata; fall back to G1/G2.
+        def _meta_name(key, default):
+            for op in (union, intersection, g1_minus_g2, g2_minus_g1, contradictions):
+                name = (op.get('metadata') or {}).get(key)
+                if name:
+                    return name
+            return default
+
+        g1_name = _meta_name('g1_name', 'G1')
+        g2_name = _meta_name('g2_name', 'G2')
+
+        # Calculate values for Venn diagram (default to 0 when op is absent).
+        union_total = (union.get('stats') or {}).get('total_rules', 0)
+        g1_only = (g1_minus_g2.get('stats') or {}).get('total_rules', 0)
+        g2_only = (g2_minus_g1.get('stats') or {}).get('total_rules', 0)
+        both = (intersection.get('stats') or {}).get('total_rules', 0)
+        conflicts = (contradictions.get('stats') or {}).get('total_contradictions', 0)
         
         return f'''<!DOCTYPE html>
 <html lang="en">
@@ -2105,7 +2122,7 @@ class SetOperationsVisualizer:
     
     <div class="stats-grid">
         <div class="stat-card">
-            <div class="stat-value">{union['stats']['total_rules']}</div>
+            <div class="stat-value">{union_total}</div>
             <div class="stat-label">Union (All Unique)</div>
         </div>
         <div class="stat-card">
@@ -2172,7 +2189,7 @@ class SetOperationsVisualizer:
     <div class="nav-grid">
         <a href="union.html" class="nav-card">
             <h3>∪ Union</h3>
-            <p>All {union['stats']['total_rules']} unique rules from both graphs</p>
+            <p>All {union_total} unique rules from both graphs</p>
         </a>
         <a href="intersection.html" class="nav-card">
             <h3>∩ Intersection</h3>

@@ -239,9 +239,15 @@ class ComplianceEntityRelationshipAgent:
         print(f"Optimizer Model: {self.optimizer_model}")
         print(f"{'='*70}\n")
         
+        if n_iterations < 1:
+            raise ValueError(
+                f"n_iterations must be >= 1, got {n_iterations}. "
+                "At least one extraction iteration is required to produce findings."
+            )
+
         findings = None
         quality_analysis = None
-        
+
         for iteration in range(1, n_iterations + 1):
             print(f"\n{'─'*70}")
             print(f"ITERATION {iteration}/{n_iterations}")

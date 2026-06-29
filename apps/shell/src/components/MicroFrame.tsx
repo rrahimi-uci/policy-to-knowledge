@@ -74,6 +74,16 @@ export default function MicroFrame({ src, title }: MicroFrameProps) {
     setError(true);
   };
 
+  // Force the iframe to reload. Reassigning `src` works cross-origin (dev points
+  // at separate origins), unlike contentWindow.location.reload() which throws a
+  // SecurityError on a cross-origin frame and would leave us stuck loading.
+  const retry = () => {
+    setLoading(true);
+    setError(false);
+    armWatchdog();
+    if (ref.current) ref.current.src = src;
+  };
+
   return (
     <div className="relative w-full h-full">
       {loading && (
@@ -90,7 +100,7 @@ export default function MicroFrame({ src, title }: MicroFrameProps) {
           </p>
           <button
             type="button"
-            onClick={() => { setLoading(true); setError(false); ref.current?.contentWindow?.location.reload(); }}
+            onClick={retry}
             className="px-4 py-1.5 text-xs rounded-lg bg-blue-600 hover:bg-blue-500 text-white transition-colors"
           >
             Retry
