@@ -41,6 +41,7 @@ secrets.json
 config.json
 .suite.pids
 .server.pids
+.server.pid
 
 # ─────────────────────────────────────────────────────────────────
 # Local databases (generated at runtime)
