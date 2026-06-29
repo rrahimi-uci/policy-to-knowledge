@@ -45,16 +45,26 @@ const _urlPrefix = (() => {
     return '';
 })();
 
-const _originalFetch = window.fetch;
-window.fetch = function (resource, init) {
+// Resolve a root-relative path (e.g. '/api/reference/chunk?...') to the URL the
+// backend actually lives at, mirroring exactly how fetch() below is rewritten.
+// Use this for navigations that DON'T go through fetch — window.open(), anchor
+// hrefs, downloads — so they hit the same backend instead of the page's own
+// origin (which breaks when the UI is embedded or served cross-origin).
+function resolveApiUrl(resource) {
     if (typeof resource === 'string' && resource.startsWith('/')) {
         if (_apiBaseUrl && (resource.startsWith('/api/') || resource === '/api/' || resource.startsWith('/logo.svg'))) {
-            resource = _apiBaseUrl + resource;
+            return _apiBaseUrl + resource;
         } else if (_urlPrefix) {
-            resource = _urlPrefix + resource;
+            return _urlPrefix + resource;
         }
     }
-    return _originalFetch.call(this, resource, init);
+    return resource;
+}
+window.resolveApiUrl = resolveApiUrl;
+
+const _originalFetch = window.fetch;
+window.fetch = function (resource, init) {
+    return _originalFetch.call(this, resolveApiUrl(resource), init);
 };
 
 let conversationHistory = [];
