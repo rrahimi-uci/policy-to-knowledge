@@ -80,7 +80,7 @@ export default function Sidebar() {
       {/* Logo / Brand */}
       <div className="px-5 py-6 border-b border-gray-800">
         <div className="flex flex-col items-center gap-3 text-center">
-          <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="Policy to Knowledge" className="h-14 w-14 rounded-xl object-cover ring-2 ring-blue-500/20 shadow-lg shadow-blue-500/10" />
+          <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Policy to Knowledge" className="h-16 w-16 rounded-xl object-contain ring-2 ring-blue-500/20 shadow-lg shadow-blue-500/10" />
           <div>
             <h1 className="text-xl font-bold text-white tracking-wide">Policy to Knowledge</h1>
             <p className="text-[11px] text-gray-400 leading-snug mt-1">Compliance Knowledge Extraction,<br />Exploration, Editing &amp; Versioning</p>
