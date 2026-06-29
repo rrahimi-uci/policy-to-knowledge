@@ -150,7 +150,7 @@ function createStreamingMessage() {
 
     const avatar = document.createElement('div');
     avatar.className = 'msg-avatar';
-    avatar.innerHTML = `<img src="${_urlPrefix}/logo.svg" alt="CA" onerror="this.outerHTML='<span style=&quot;font-size:0.75rem;font-weight:700;color:var(--accent-light)&quot;>CA</span>'">`;
+    avatar.innerHTML = `<img src="${_urlPrefix}/logo.png" alt="CA" onerror="this.outerHTML='<span style=&quot;font-size:0.75rem;font-weight:700;color:var(--accent-light)&quot;>CA</span>'">`;
 
     const body = document.createElement('div');
     body.className = 'msg-body';
@@ -188,7 +188,7 @@ function addMessage(role, content) {
     const avatar = document.createElement('div');
     avatar.className = 'msg-avatar';
     if (role === 'assistant') {
-        avatar.innerHTML = `<img src="${_urlPrefix}/logo.svg" alt="CA" onerror="this.outerHTML='<span style=&quot;font-size:0.75rem;font-weight:700;color:var(--accent-light)&quot;>CA</span>'">`;
+        avatar.innerHTML = `<img src="${_urlPrefix}/logo.png" alt="CA" onerror="this.outerHTML='<span style=&quot;font-size:0.75rem;font-weight:700;color:var(--accent-light)&quot;>CA</span>'">`;
     } else {
         avatar.textContent = 'You';
     }

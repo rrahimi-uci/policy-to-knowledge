@@ -48,7 +48,7 @@ const _urlPrefix = (() => {
 const _originalFetch = window.fetch;
 window.fetch = function (resource, init) {
     if (typeof resource === 'string' && resource.startsWith('/')) {
-        if (_apiBaseUrl && (resource.startsWith('/api/') || resource === '/api/' || resource.startsWith('/logo.svg'))) {
+        if (_apiBaseUrl && (resource.startsWith('/api/') || resource === '/api/' || resource.startsWith('/logo.png'))) {
             resource = _apiBaseUrl + resource;
         } else if (_urlPrefix) {
             resource = _urlPrefix + resource;

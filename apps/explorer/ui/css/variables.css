@@ -61,6 +61,13 @@
     --bg-card: var(--bg-tertiary);
 }
 
+/* Scale the whole UI's typography down 15%. The interface is rem-based, so
+   reducing the root font-size shrinks every rem font/size proportionally
+   (16px browser default × 0.85 = 13.6px). */
+html {
+    font-size: 85%;
+}
+
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--bg-primary);
