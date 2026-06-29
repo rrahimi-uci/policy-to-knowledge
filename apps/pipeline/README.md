@@ -9,8 +9,8 @@ generated outputs.
 
 | Path | Purpose |
 | --- | --- |
-| `knowledge_graph_generation.py` | Agents 1-6 extraction orchestrator |
-| `join_graphs.py` | Agents 7-10 comparison and merge orchestrator |
+| `cli/extract.py` | Agents 1-6 extraction orchestrator (CLI) |
+| `cli/compare.py` | Agents 7-10 comparison and merge orchestrator (CLI) |
 | `agents/` | Agent implementations |
 | `ui/backend/` | FastAPI API and WebSocket endpoints |
 | `ui/frontend/` | React UI |
@@ -60,13 +60,13 @@ This starts the API on `http://localhost:8000` and the frontend on
 CLI workflows:
 
 ```bash
-.venv/bin/python knowledge_graph_generation.py --provider openai
-.venv/bin/python knowledge_graph_generation.py --file compliance-files/<batch>/<file>.pdf --provider openai
-.venv/bin/python knowledge_graph_generation.py --batch --provider openai
-.venv/bin/python knowledge_graph_generation.py --step 3 --provider openai
-.venv/bin/python knowledge_graph_generation.py --domain aml --provider openai
-.venv/bin/python join_graphs.py --list
-.venv/bin/python join_graphs.py --g1 graphA --g2 graphB --workers 15
+.venv/bin/python cli/extract.py --provider openai
+.venv/bin/python cli/extract.py --file compliance-files/<batch>/<file>.pdf --provider openai
+.venv/bin/python cli/extract.py --batch --provider openai
+.venv/bin/python cli/extract.py --step 3 --provider openai
+.venv/bin/python cli/extract.py --domain aml --provider openai
+.venv/bin/python cli/compare.py --list
+.venv/bin/python cli/compare.py --g1 graphA --g2 graphB --workers 15
 ```
 
 Docker workflows:

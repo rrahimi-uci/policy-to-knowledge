@@ -1,5 +1,5 @@
 """
-Tests for the --workers CLI option in knowledge_graph_generation.py.
+Tests for the --workers CLI option in cli/extract.py.
 
 Validates that:
 1. The --workers argument is parsed correctly from CLI
@@ -45,7 +45,7 @@ def mock_config():
 @pytest.fixture
 def pipeline_cls():
     """Import and return the KnowledgeExtractionPipeline class."""
-    from knowledge_graph_generation import KnowledgeExtractionPipeline
+    from cli.extract import KnowledgeExtractionPipeline
     return KnowledgeExtractionPipeline
 
 
@@ -112,28 +112,28 @@ class TestCLIArgumentParsing:
 class TestPipelineMaxWorkers:
     """Test that KnowledgeExtractionPipeline stores max_workers."""
 
-    @patch("knowledge_graph_generation.get_config")
+    @patch("cli.extract.get_config")
     def test_max_workers_stored_when_provided(self, mock_get_config, mock_config, pipeline_cls):
         """max_workers should be stored on the pipeline instance."""
         mock_get_config.return_value = mock_config
         pipeline = pipeline_cls(provider="openai", max_workers=40)
         assert pipeline.max_workers == 40
 
-    @patch("knowledge_graph_generation.get_config")
+    @patch("cli.extract.get_config")
     def test_max_workers_none_when_not_provided(self, mock_get_config, mock_config, pipeline_cls):
         """max_workers should be None when not specified."""
         mock_get_config.return_value = mock_config
         pipeline = pipeline_cls(provider="openai")
         assert pipeline.max_workers is None
 
-    @patch("knowledge_graph_generation.get_config")
+    @patch("cli.extract.get_config")
     def test_max_workers_zero_is_stored(self, mock_get_config, mock_config, pipeline_cls):
         """max_workers=0 should be stored (even though falsy)."""
         mock_get_config.return_value = mock_config
         pipeline = pipeline_cls(provider="openai", max_workers=0)
         assert pipeline.max_workers == 0
 
-    @patch("knowledge_graph_generation.get_config")
+    @patch("cli.extract.get_config")
     def test_max_workers_with_batch_mode(self, mock_get_config, mock_config, pipeline_cls):
         """max_workers should work with batch mode."""
         mock_get_config.return_value = mock_config
@@ -162,7 +162,7 @@ class TestPipelineMaxWorkers:
 class TestRunAgentMaxWorkersEnv:
     """Test that _run_agent sets MAX_WORKERS in the subprocess environment."""
 
-    @patch("knowledge_graph_generation.get_config")
+    @patch("cli.extract.get_config")
     def test_run_agent_sets_max_workers_env(self, mock_get_config, mock_config, pipeline_cls):
         """When max_workers is set, _run_agent should pass MAX_WORKERS env var."""
         mock_get_config.return_value = mock_config
@@ -190,7 +190,7 @@ class TestRunAgentMaxWorkersEnv:
         assert "MAX_WORKERS" in captured_env
         assert captured_env["MAX_WORKERS"] == "40"
 
-    @patch("knowledge_graph_generation.get_config")
+    @patch("cli.extract.get_config")
     def test_run_agent_no_max_workers_env_when_none(self, mock_get_config, mock_config, pipeline_cls):
         """When max_workers is None, MAX_WORKERS should NOT be in the env (unless inherited)."""
         mock_get_config.return_value = mock_config
@@ -223,7 +223,7 @@ class TestRunAgentMaxWorkersEnv:
             if original_env is not None:
                 os.environ["MAX_WORKERS"] = original_env
 
-    @patch("knowledge_graph_generation.get_config")
+    @patch("cli.extract.get_config")
     def test_run_agent_max_workers_is_string(self, mock_get_config, mock_config, pipeline_cls):
         """MAX_WORKERS env var must be a string (env vars are always strings)."""
         mock_get_config.return_value = mock_config
@@ -249,7 +249,7 @@ class TestRunAgentMaxWorkersEnv:
         assert isinstance(captured_env["MAX_WORKERS"], str)
         assert captured_env["MAX_WORKERS"] == "42"
 
-    @patch("knowledge_graph_generation.get_config")
+    @patch("cli.extract.get_config")
     def test_run_agent_preserves_other_env_vars(self, mock_get_config, mock_config, pipeline_cls):
         """MAX_WORKERS should not clobber other env vars like KG_PROVIDER."""
         mock_get_config.return_value = mock_config
@@ -314,7 +314,7 @@ class TestAgent3MaxWorkersEnvReading:
 class TestEndToEndWorkersFlow:
     """Integration-style test: CLI arg -> pipeline -> subprocess env."""
 
-    @patch("knowledge_graph_generation.get_config")
+    @patch("cli.extract.get_config")
     def test_workers_40_flows_to_subprocess(self, mock_get_config, mock_config, pipeline_cls):
         """--workers 40 should result in MAX_WORKERS=40 in subprocess env."""
         mock_get_config.return_value = mock_config
@@ -341,7 +341,7 @@ class TestEndToEndWorkersFlow:
 
         assert captured_env["MAX_WORKERS"] == "40"
 
-    @patch("knowledge_graph_generation.get_config")
+    @patch("cli.extract.get_config")
     def test_workers_1_flows_to_subprocess(self, mock_get_config, mock_config, pipeline_cls):
         """--workers 1 (serial) should result in MAX_WORKERS=1 in subprocess env."""
         mock_get_config.return_value = mock_config

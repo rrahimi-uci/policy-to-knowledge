@@ -12,7 +12,7 @@ Covers:
 - Agent 7  LEGACY_TYPE_TO_BEHAVIOR AML entries
 - Agent 8  _extract_thresholds() AML patterns
 - domain-prompts/{mortgage,aml}/ file existence and non-emptiness
-- --domain CLI arg parsing in knowledge_graph_generation
+- --domain CLI arg parsing in cli/extract.py
 - KG_DOMAIN propagation to subprocess env
 """
 
@@ -896,7 +896,7 @@ class TestAgent8ExtractThresholds:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 16. knowledge_graph_generation — --domain CLI arg parsing
+# 16. cli/extract.py — --domain CLI arg parsing
 # ─────────────────────────────────────────────────────────────────────────────
 
 def _build_kg_parser():
@@ -949,14 +949,14 @@ class TestDomainCLIArgParsing:
         assert args.workers == 10
 
     def test_domain_registered_in_real_parser(self):
-        """The knowledge_graph_generation module's actual parser must register --domain."""
+        """The cli.extract module's actual parser must register --domain."""
         import subprocess
         result = subprocess.run(
-            [sys.executable, str(PROJECT_ROOT / "knowledge_graph_generation.py"), "--help"],
+            [sys.executable, str(PROJECT_ROOT / "cli" / "extract.py"), "--help"],
             capture_output=True, text=True, cwd=str(PROJECT_ROOT)
         )
         assert "--domain" in result.stdout, \
-            "--domain not found in knowledge_graph_generation.py --help output"
+            "--domain not found in cli/extract.py --help output"
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -983,10 +983,10 @@ class TestKGDomainEnvPropagation:
         config.get_domain.return_value = "aml"
         return config
 
-    @patch("knowledge_graph_generation.get_config")
+    @patch("cli.extract.get_config")
     def test_run_agent_propagates_kg_domain(self, mock_get_config, mock_config_obj):
         mock_get_config.return_value = mock_config_obj
-        from knowledge_graph_generation import KnowledgeExtractionPipeline
+        from cli.extract import KnowledgeExtractionPipeline
         pipeline = KnowledgeExtractionPipeline(provider="openai", domain="aml")
 
         captured_env = {}
@@ -1009,10 +1009,10 @@ class TestKGDomainEnvPropagation:
         assert "KG_DOMAIN" in captured_env
         assert captured_env["KG_DOMAIN"] == "aml"
 
-    @patch("knowledge_graph_generation.get_config")
+    @patch("cli.extract.get_config")
     def test_run_agent_kg_domain_is_string(self, mock_get_config, mock_config_obj):
         mock_get_config.return_value = mock_config_obj
-        from knowledge_graph_generation import KnowledgeExtractionPipeline
+        from cli.extract import KnowledgeExtractionPipeline
         pipeline = KnowledgeExtractionPipeline(provider="openai", domain="aml")
 
         captured_env = {}
@@ -1034,16 +1034,16 @@ class TestKGDomainEnvPropagation:
 
         assert isinstance(captured_env["KG_DOMAIN"], str)
 
-    @patch("knowledge_graph_generation.get_config")
+    @patch("cli.extract.get_config")
     def test_pipeline_stores_domain(self, mock_get_config, mock_config_obj):
         mock_get_config.return_value = mock_config_obj
-        from knowledge_graph_generation import KnowledgeExtractionPipeline
+        from cli.extract import KnowledgeExtractionPipeline
         pipeline = KnowledgeExtractionPipeline(provider="openai", domain="aml")
         assert pipeline.domain == "aml"
 
-    @patch("knowledge_graph_generation.get_config")
+    @patch("cli.extract.get_config")
     def test_pipeline_domain_none_when_not_provided(self, mock_get_config, mock_config_obj):
         mock_get_config.return_value = mock_config_obj
-        from knowledge_graph_generation import KnowledgeExtractionPipeline
+        from cli.extract import KnowledgeExtractionPipeline
         pipeline = KnowledgeExtractionPipeline(provider="openai")
         assert pipeline.domain is None
