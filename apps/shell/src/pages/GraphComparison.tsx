@@ -781,6 +781,10 @@ export default function GraphComparison() {
   const [graphALoaded, setGraphALoaded] = useState(false);
   const [graphBLoaded, setGraphBLoaded] = useState(false);
   const wsRef = useRef<WebSocket | null>(null);
+  // Mirror justFinished into a ref so the long-lived ws.onclose handler reads
+  // the current value instead of the stale one captured when connectWs ran.
+  const justFinishedRef = useRef(false);
+  useEffect(() => { justFinishedRef.current = justFinished; }, [justFinished]);
 
   useEffect(() => {
     fetch(apiUrl('kg/graphs')).then(r => r.json()).then(d => setGraphs(d.graphs ?? [])).catch(() => {});
@@ -862,7 +866,10 @@ export default function GraphComparison() {
             COMPARE_STEPS.forEach(s => { next[s.id] = { status: 'completed' }; });
             return next;
           });
-          // Brief "loading results" transition
+          // Brief "loading results" transition. Set the ref synchronously too,
+          // so a server-initiated close arriving in the same tick (before the
+          // state-sync effect flushes) still sees that we just finished.
+          justFinishedRef.current = true;
           setJustFinished(true);
           setTimeout(() => {
             setRunning(false);
@@ -876,7 +883,7 @@ export default function GraphComparison() {
       } catch { /* ignore */ }
     };
     ws.onclose = () => {
-      if (!justFinished) setRunning(false);
+      if (!justFinishedRef.current) setRunning(false);
       fetchComparisons();
     };
   }, [fetchComparisons]);

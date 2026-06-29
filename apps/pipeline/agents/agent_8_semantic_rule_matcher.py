@@ -230,25 +230,39 @@ class SemanticRuleMatcher:
             # Parse JSON array response
             response_text = response.strip()
             
-            # Extract JSON array from response
-            json_match = re.search(r'\[[\s\S]*\]', response_text)
-            if json_match:
-                results = json.loads(json_match.group())
-                # Ensure we have results for all pairs
-                if len(results) >= len(batch):
-                    return results[:len(batch)]
-            
-            # Fallback: return UNRELATED for all pairs
-            return [
-                {
+            def _unrelated(idx, reason):
+                return {
                     'pair_id': idx,
                     'relationship': 'UNRELATED',
                     'confidence': 0.5,
                     'similarity_score': 50,
-                    'reasoning': 'Failed to parse batch LLM response'
+                    'reasoning': reason,
                 }
-                for idx in range(len(batch))
-            ]
+
+            # Extract JSON array from response
+            json_match = re.search(r'\[[\s\S]*\]', response_text)
+            if json_match:
+                results = json.loads(json_match.group())
+                if isinstance(results, list):
+                    # Align verdicts to pairs by pair_id rather than by array
+                    # position: the model can reorder or drop entries, and a
+                    # short (truncated) array must NOT discard the verdicts it
+                    # did return. Build exactly len(batch) entries, keyed by the
+                    # pair_id we assigned, filling UNRELATED only for the gaps.
+                    by_pair_id = {}
+                    for pos, r in enumerate(results):
+                        if not isinstance(r, dict):
+                            continue
+                        pid = r.get('pair_id', pos)
+                        if isinstance(pid, int) and 0 <= pid < len(batch):
+                            by_pair_id.setdefault(pid, r)
+                    return [
+                        by_pair_id.get(idx, _unrelated(idx, 'Missing from batch LLM response'))
+                        for idx in range(len(batch))
+                    ]
+
+            # Fallback: return UNRELATED for all pairs
+            return [_unrelated(idx, 'Failed to parse batch LLM response') for idx in range(len(batch))]
             
         except Exception as e:
             print(f"      ⚠ Batch LLM error: {str(e)[:50]}")

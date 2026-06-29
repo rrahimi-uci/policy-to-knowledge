@@ -247,6 +247,7 @@ function clearEdits(nodeId, nodeName) {
 function setReviewStatus(nodeId, nodeName, status) {
     const data = getNodeData(nodeId);
     const oldStatus = data.reviewed;
+    if (!data.reviewHistory) data.reviewHistory = [];
     data.reviewed = status;
     data.reviewHistory.push({ status, time: new Date().toLocaleString() });
 
