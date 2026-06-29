@@ -9,8 +9,8 @@
 #   ./run-tests.sh <spec>       Run a specific spec file
 #
 # Examples:
-#   ./run-tests.sh tests/01-graph-discovery.spec.ts
-#   ./run-tests.sh --headed tests/05-node-deletion.spec.ts
+#   ./run-tests.sh 01-graph-discovery.spec.ts
+#   ./run-tests.sh --headed 05-node-deletion.spec.ts
 # ──────────────────────────────────────────────────────────────
 set -euo pipefail
 
@@ -33,7 +33,7 @@ fi
 BASE_URL="${BASE_URL:-http://localhost:5001}"
 if ! curl -s -o /dev/null -w '' --connect-timeout 3 "$BASE_URL" 2>/dev/null; then
   echo "⚠️  Server not reachable at $BASE_URL"
-  echo "   Start it first:  cd .. && PYTHONPATH=. SERVER_PORT=5001 .venv/bin/python src/server.py"
+  echo "   Start it first:  cd ../.. && PYTHONPATH=. SERVER_PORT=5001 .venv/bin/python src/server.py"
   exit 1
 fi
 

@@ -16,8 +16,8 @@ Set Operations:
     • Contradictions: Conflicting rule pairs
 
 Usage:
-    python joins_pipeline.py --g1 <graph1> --g2 <graph2>
-    python joins_pipeline.py --list  # List available graphs
+    python cli/compare.py --g1 <graph1> --g2 <graph2>
+    python cli/compare.py --list  # List available graphs
 """
 
 import sys
@@ -25,8 +25,8 @@ import os
 import argparse
 from pathlib import Path
 
-# Add project root to Python path
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# Add the pipeline app root (parent of cli/) to path so `agents`/`utils` resolve.
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from agents.agent_7_rule_type_clusterer import RuleBehaviorClusterer
 from agents.agent_8_semantic_rule_matcher import SemanticRuleMatcher
@@ -55,7 +55,7 @@ def list_available_graphs(provider: str = "openai"):
             print(f"\n   📊 {name}")
             print(f"      (Error loading: {e})")
     
-    print("\n💡 Usage: python joins_pipeline.py --g1 <name> --g2 <name>")
+    print("\n💡 Usage: python cli/compare.py --g1 <name> --g2 <name>")
 
 
 def run_joins_pipeline(g1_name: str, g2_name: str, provider: str = "openai", workers: int = None, batch_size: int = None):
@@ -112,7 +112,7 @@ def run_joins_pipeline(g1_name: str, g2_name: str, provider: str = "openai", wor
     visualizer.run()
     
     # Summary - use the dynamic joins_subfolder path
-    output_dir = Path(__file__).parent / "pipeline-output" / "_joined" / joins_subfolder / "agent-10-visualizations"
+    output_dir = Path(__file__).resolve().parent.parent / "pipeline-output" / "_joined" / joins_subfolder / "agent-10-visualizations"
     
     print(f"""
 ╔══════════════════════════════════════════════════════════════════════╗
@@ -148,14 +148,14 @@ def main():
         epilog="""
 Examples:
     # List available graphs
-    python joins_pipeline.py --list
+    python cli/compare.py --list
     
     # Join two graphs (computes all set operations)
-    python joins_pipeline.py --g1 optimized --g2 agent-4-rules
+    python cli/compare.py --g1 optimized --g2 agent-4-rules
     
     
     # Use 20 parallel workers
-    python joins_pipeline.py --g1 graphA --g2 FM --workers 20
+    python cli/compare.py --g1 graphA --g2 FM --workers 20
 
 Set Operations Computed:
     ∩ Intersection (G1 ∩ G2)  - Rules in both graphs
