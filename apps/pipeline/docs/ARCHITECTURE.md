@@ -424,6 +424,8 @@ flowchart TB
 
 The batch CLI image (`Dockerfile.cli`) runs `cli/extract.py` as its entrypoint. The API image (`Dockerfile.api`) builds the React frontend and serves it from FastAPI on port `8000`. See [DOCKER.md](DOCKER.md) for full details.
 
+The React frontend build is **code-split**: routes are lazy-loaded (`React.lazy` + `Suspense`) and `vite.config.ts` `manualChunks` isolates the framework and the Markdown/syntax-highlighting stack into separate, cache-friendly chunks, so the landing Dashboard loads neither the per-page bundles nor the Markdown libraries up front. See [../ui/README.md](../ui/README.md#performance).
+
 ### Running with Docker
 
 ```bash
