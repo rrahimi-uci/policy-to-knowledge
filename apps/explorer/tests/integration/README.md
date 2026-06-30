@@ -14,8 +14,11 @@ top-level `pytest.ini` deliberately ignores this directory.
 | JanusGraph | port 8182 | Graph database |
 | Python | ≥ 3.10 | Test runtime |
 
-The server's base URL defaults to `http://localhost:5001` and can be overridden with
-the `BASE_URL` environment variable. At least one loaded graph must contain data.
+The `base_url` and `api` fixtures call paths like `/api/graph` directly, so `BASE_URL`
+**must already include the server's URL prefix**. It defaults to `http://localhost:5001`
+(see `conftest.py`), which assumes a server started **without** a prefix
+(`URL_PREFIX=/`). If you run the server under the default `/app` prefix instead, point
+`BASE_URL` at `http://localhost:5001/app`. At least one loaded graph must contain data.
 
 ## Setup
 
@@ -25,28 +28,39 @@ Run everything from the **explorer app root** (`apps/explorer`) so `src` is impo
 .venv/bin/pip install -r tests/integration/requirements.txt
 ```
 
-Start the data stack and a server on the expected port in separate terminals:
+Start the data stack and a server on the expected port in separate terminals. The
+simplest setup matches the default `BASE_URL` by serving the API at the root (no prefix):
 
 ```bash
 docker compose up -d
-SERVER_PORT=5001 URL_PREFIX=/app .venv/bin/python -m src.server
+SERVER_PORT=5001 URL_PREFIX=/ .venv/bin/python -m src.server
+```
+
+Alternatively, run under the default `/app` prefix and point the tests at it:
+
+```bash
+SERVER_PORT=5001 URL_PREFIX=/app .venv/bin/python -m src.server   # terminal 1
+BASE_URL=http://localhost:5001/app PYTHONPATH=. .venv/bin/pytest tests/integration -v
 ```
 
 ## Running
 
 ```bash
-# All tests
+# All tests (uses the default BASE_URL: http://localhost:5001)
 PYTHONPATH=. .venv/bin/pytest tests/integration -v
 
 # A single file
 PYTHONPATH=. .venv/bin/pytest tests/integration/test_graph_api.py -v
 
-# Point at a different server
-BASE_URL=http://localhost:5050 PYTHONPATH=. .venv/bin/pytest tests/integration -v
+# Point at a server running under the /app prefix
+BASE_URL=http://localhost:5001/app PYTHONPATH=. .venv/bin/pytest tests/integration -v
 
 # Stop on first failure
 PYTHONPATH=. .venv/bin/pytest tests/integration -v -x
 ```
+
+> The `BASE_URL` must match both the port **and** the URL prefix the server was started
+> on (include `/app` when the server runs under the default prefix).
 
 ## Test files
 

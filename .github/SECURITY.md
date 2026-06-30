@@ -26,7 +26,8 @@ We aim to acknowledge reports within a few business days.
 ## Scope and hardening notes
 
 This project integrates several backends (JanusGraph/Cassandra/OpenSearch,
-PostgreSQL, Redis) and calls third-party LLM APIs. When self-hosting:
+Redis, and a local SQLite app database) and calls the OpenAI API. When
+self-hosting:
 
 - The Explorer's raw Gremlin endpoint is **read-only by default**. Write
   queries require `GREMLIN_ALLOW_MUTATIONS=true` and should sit behind

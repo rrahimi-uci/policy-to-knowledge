@@ -212,8 +212,8 @@ Run via `cli/extract.py`. Each stage consumes the previous stage's output.
 | **1. Organize** | Document organizer | Document → hierarchical text chunks (`agent-1-organized-documents/`) |
 | **2. Entities** | Entity extractor | Chunks → `entity_types_and_relationships.json`; an iterative meta-agent scores its own output across 5 dimensions (completeness, relationship quality, attribute coverage, clarity, consistency) and refines until it clears the configured threshold |
 | **3. Rules** | Rules extractor | Chunks + entities → `compliance_rules_with_entities.json`; parallel batch extraction with the 10-category taxonomy and 5-factor confidence scoring |
-| **3.5. Validate** | Rule validator | Rules → `validation_report.json`; source verification, numeric consistency, and contradiction checks. Non-blocking — the pipeline continues even when issues are flagged |
-| **4. Merge** | Rules + entities merger | Rules + entities → `compliance_knowledge_graph.json`, `business_rules_complete.csv`; enriches rules with entity definitions and preserves referential integrity |
+| **3.5. Validate** | Rule validator | Rules → `validation_summary.txt`; source verification, numeric consistency, and contradiction checks. Non-blocking — the pipeline continues even when issues are flagged |
+| **4. Merge** | Rules + entities merger | Rules + entities → `compliance_knowledge_graph.json`; enriches rules with entity definitions and preserves referential integrity |
 | **5. Optimize** | KG optimizer | Graph → `optimized_compliance_knowledge_graph.json`; conservative LLM-based deduplication plus 7-type dependency analysis with strength ratings |
 | **6. Visualize** | Visualization & report | Optimized graph → `{source_name}_knowledge_graph.html`; self-contained interactive network graph |
 
@@ -224,7 +224,7 @@ Run via `cli/compare.py` against two existing knowledge graphs.
 | Stage | Agent | Input → Output |
 | --- | --- | --- |
 | **7. Cluster** | Rule-type clusterer | Two graphs → `rule_clusters.json`; groups rules by behavior type so comparison stays within comparable clusters |
-| **8. Match** | Semantic rule matcher | Clustered rules → `match_results.json`; LLM-powered pairwise comparison classified as IDENTICAL, EQUIVALENT, SIMILAR, DIFFERENT, or CONTRADICTORY |
+| **8. Match** | Semantic rule matcher | Clustered rules → `match_results.json`; LLM-powered pairwise comparison classified as IDENTICAL, EQUIVALENT, CONTRADICTORY, or UNRELATED |
 | **9. Set operations** | Set operations | Match results → `intersection.json`, `union.json`, `g1_minus_g2.json`, `g2_minus_g1.json`, `contradictions.json` |
 | **10. Visualize** | Set visualization | Set results → `index.html` plus a report per operation |
 
@@ -264,7 +264,7 @@ Models are defined in `config.json` and can be changed from the Settings UI.
   "openai": {
     "models": {
       "reasoning": "gpt-5.2",
-      "reasoning_effort": "high",
+      "reasoning_effort": "medium",
       "optimizer": "gpt-5.2",
       "embeddings": "text-embedding-ada-002"
     }
@@ -378,9 +378,8 @@ Agent 8 classifies each candidate rule pair into a match type:
 | --- | --- |
 | **IDENTICAL** | Same rule, same thresholds |
 | **EQUIVALENT** | Same practical effect, different wording |
-| **SIMILAR** | Related but distinct requirements |
-| **DIFFERENT** | No meaningful relationship |
 | **CONTRADICTORY** | Same topic, conflicting requirements |
+| **UNRELATED** | No meaningful connection |
 
 ---
 
@@ -391,18 +390,22 @@ Agent 8 classifies each candidate rule pair into a match type:
 Extract a structured knowledge graph from a mortgage selling guide.
 
 ```bash
-python cli/extract.py --source-file compliance-files/selling-guide.pdf --provider openai
+python cli/extract.py --file compliance-files/selling-guide.pdf --provider openai
 ```
 
 Output layout:
 
 ```text
-pipeline-output/openai/selling-guide/
+pipeline-output/selling-guide/
 ├── agent-1-organized-documents/        # hierarchical text chunks
 ├── agent-2-entities/
 │   └── entity_types_and_relationships.json
 ├── agent-3-rules/
 │   └── compliance_rules_with_entities.json
+├── agent-3-5-validation/
+│   └── validation_summary.txt
+├── agent-4-rules-with-entities/
+│   └── compliance_knowledge_graph.json
 ├── agent-5-optimized/
 │   └── optimized_compliance_knowledge_graph.json
 └── agent-6-visualization-and-report/
@@ -436,7 +439,7 @@ to see what changed.
 
 ```bash
 # Extract the new version
-python cli/extract.py --source-file compliance-files/selling-guide-2026-q1.pdf --provider openai
+python cli/extract.py --file compliance-files/selling-guide-2026-q1.pdf --provider openai
 
 # Compare against the previous version
 python cli/compare.py --g1 selling-guide --g2 selling-guide-2026-q1 --workers 15
@@ -488,9 +491,9 @@ restricting it to 75% — so they can be reconciled before they reach production
 | Artifact | Format | Description | Use |
 | --- | --- | --- | --- |
 | `optimized_compliance_knowledge_graph.json` | JSON | Final per-document knowledge graph | Integration with rule engines |
-| `business_rules_complete.csv` | CSV | All rules in spreadsheet form | Manual review |
+| `compliance_rules_with_entities.json` | JSON | Extracted rules (Agent 3) | Programmatic access, review |
 | `{source_name}_knowledge_graph.html` | HTML | Self-contained interactive visualization | Stakeholder review |
-| `validation_report.json` | JSON | Quality metrics from Agent 3.5 | Quality assurance |
+| `validation_summary.txt` | Text | Quality assessment from Agent 3.5 | Quality assurance |
 | `intersection.json` / `union.json` / `g1_minus_g2.json` / `g2_minus_g1.json` / `contradictions.json` | JSON | Comparison set operations | Cross-document analysis |
 
 ### 8.2 Knowledge Graph Schema
@@ -547,23 +550,22 @@ restricting it to 75% — so they can be reconciled before they reach production
 
 ```text
 pipeline-output/
-└── openai/                              # provider
-    ├── <document-1>/
-    │   ├── agent-1-organized-documents/
-    │   ├── agent-2-entities/
-    │   ├── agent-3-rules/
-    │   ├── agent-3-5-validation/
-    │   ├── agent-4-rules-with-entities/
-    │   ├── agent-5-optimized/
-    │   └── agent-6-visualization-and-report/
-    ├── <document-2>/
-    │   └── ...                          # same structure
-    └── _merged/                         # comparison outputs (agents 7-10)
-        └── <document-1>_<document-2>/
-            ├── agent-7-rule-clusters/
-            ├── agent-8-rule-matches/
-            ├── agent-9-set-operations/
-            └── agent-10-visualizations/
+├── <document-1>/                       # one folder per source document / batch
+│   ├── agent-1-organized-documents/
+│   ├── agent-2-entities/
+│   ├── agent-3-rules/
+│   ├── agent-3-5-validation/
+│   ├── agent-4-rules-with-entities/
+│   ├── agent-5-optimized/
+│   └── agent-6-visualization-and-report/
+├── <document-2>/
+│   └── ...                             # same structure
+└── _merged/                            # comparison outputs (agents 7-10)
+    └── <document-1>_<document-2>/
+        ├── agent-7-rule-clusters/
+        ├── agent-8-rule-matches/
+        ├── agent-9-set-operations/
+        └── agent-10-visualizations/
 ```
 
 ---
@@ -592,13 +594,13 @@ python3 -m venv .venv
 cp your-document.pdf compliance-files/
 
 # 3. Run the extraction pipeline (agents 1-6)
-python cli/extract.py --source-file compliance-files/your-document.pdf --provider openai
+python cli/extract.py --file compliance-files/your-document.pdf --provider openai
 
 # 4. Compare two graphs (agents 7-10)
 python cli/compare.py --g1 graph-a --g2 graph-b --workers 15
 
 # 5. Open the visualization
-open pipeline-output/openai/*/agent-6-visualization-and-report/*_knowledge_graph.html
+open pipeline-output/*/agent-6-visualization-and-report/*_knowledge_graph.html
 ```
 
 `cli/compare.py --list` prints the knowledge graphs available for comparison.

@@ -150,11 +150,11 @@ docker compose run --rm p2k --step 6
 ### Compare two graphs (Agents 7–10)
 
 ```bash
-# List available graphs
+# List available graphs (extracted document/batch folder names)
 docker compose run --rm --entrypoint python p2k cli/compare.py --list
 
-# Compare two extracted graphs
-docker compose run --rm --entrypoint python p2k cli/compare.py --g1 mortgage --g2 commercial_lending
+# Compare two extracted graphs by name
+docker compose run --rm --entrypoint python p2k cli/compare.py --g1 <graphA> --g2 <graphB>
 ```
 
 > The `p2k` entrypoint is `cli/extract.py`. To run `cli/compare.py`, override the entrypoint as shown above.
