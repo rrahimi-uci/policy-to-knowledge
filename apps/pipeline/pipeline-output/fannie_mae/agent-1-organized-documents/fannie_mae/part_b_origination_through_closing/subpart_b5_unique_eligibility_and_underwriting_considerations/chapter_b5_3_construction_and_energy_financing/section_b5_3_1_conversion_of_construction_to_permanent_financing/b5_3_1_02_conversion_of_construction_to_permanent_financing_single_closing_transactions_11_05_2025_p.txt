@@ -1,0 +1,43 @@
+# B5-3.1-02, Conversion of Construction-to-Permanent Financing: Single-Closing Transactions (11/05/2025) (part 4/4)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_326_sub_004
+**Pages:** 735-740
+**Section Path:** Part B, Origination Through Closing > Subpart B5, Unique Eligibility and Underwriting Considerations > Chapter B5-3, Construction and Energy Financing > Section B5-3.1, Conversion of Construction-to-Permanent Financing > B5-3.1-02, Conversion of Construction-to-Permanent Financing: Single-Closing Transactions (11/05/2025)
+
+---
+
+Published March 4, 2026
+722Impact on Validation through the DU Validation Service
+If updated credit documents are required to be obtained after the original closing of the construction loan, any
+validation of income, employment, or assets is no longer applicable. Updated validation reports must be
+obtained, and the loan caseﬁle resubmitted to DU, and the loan must convert to permanent ﬁnancing by the
+Close By Date stated in the DU validation message in order for validation and the associated waiver of
+enforcement relief of representations and warranties to apply.
+See  B1-1-03, Allowable Age of Credit Documents and Federal Income Tax Returns  for additional information.
+Age of Appraisal Documents
+For all single-closing transactions, the eﬀective date of the appraisal must be no more than four months prior to
+the note date (that is, the closing date of the construction loan). Additionally, at the time of completion of
+construction, an Appraisal Update and/or Completion Report (  Form 1004D  ) must be completed in its entirety
+including the appraisal update and certiﬁcation of completion. If the appraiser indicates on the Form 1004d that
+the property value has declined, then the lender must obtain a new appraisal for the property and requalify the
+borrower using the updated LTV ratio per the Requaliﬁcation Requirements , below.
+See   B4-1.2-04, Appraisal Age and Use Requirements   for additional information.
+Requaliﬁcation Requirements
+Requaliﬁcation of the borrower(s) is required at the time of conversion to permanent ﬁnancing if 
+the LTV ratio increased due to a decline in property value,
+updated credit documents were obtained, or
+as otherwise required per the modiﬁed loan term in the table above.
+To be eligible for purchase by Fannie Mae, the loan must retain an Approve/Eligible recommendation after
+resubmission to DU (or be eligible per the   Eligibility Matrix   if manually underwritten).
+When requaliﬁcation is required
+the LTV ratio must be adjusted based on the updated appraisal, if applicable;
+if credit documents exceed the four (or 18) month age of documentation requirement, the updated
+income, credit, and liability information must be considered; and
+the loan data at delivery must match the data considered in the ﬁnal requaliﬁcation of the loan.
+Loan Conversion Documentation Options
+The construction loan may be converted into a permanent loan in either of the following ways:
+Option 1: A construction loan rider must be used to modify Fannie Mae’s uniform instrument that will be
+used for the permanent loan. The rider must state the construction loan terms, and the construction-
+related provisions of the rider must become null and void at the end of the construction period and before
+the permanent loan is sold to Fannie Mae. Because the permanent loan cannot be sold before it is

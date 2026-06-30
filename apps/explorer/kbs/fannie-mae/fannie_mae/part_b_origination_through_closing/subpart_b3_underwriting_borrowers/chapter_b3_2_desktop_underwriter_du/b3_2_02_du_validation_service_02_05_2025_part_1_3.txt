@@ -1,0 +1,154 @@
+# B3-2-02, DU Validation Service (02/05/2025) (part 1/3)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_116_sub_001
+**Pages:** 290-298
+**Section Path:** Part B, Origination Through Closing > Subpart B3, Underwriting Borrowers > Chapter B3-2, Desktop Underwriter (DU) > B3-2-02, DU Validation Service (02/05/2025)
+
+---
+
+Published March 4, 2026
+272The following topics describe the underwriting recommendations returned by DU:
+B3-2-05, Approve/Eligible Recommendations .
+B3-2-06, Approve/Ineligible Recommendations .
+B3-2-07, Refer with Caution Recommendations .
+B3-2-08, Out of Scope Recommendations .
+General Requirements for Lenders
+When underwriting loans with DU, the lender must:
+employ prudent underwriting judgment in assessing whether a loan caseﬁle should be approved and
+delivered to Fannie Mae;
+conﬁrm the accuracy of the data it submits, making sure that it did not fail to submit any data that might
+have aﬀected the DU recommendation had it been known;
+ensure that the loan complies with all of the veriﬁcation messages and approval conditions speciﬁed in
+the DU Underwriting Findings report;
+apply due diligence when reviewing the documentation in the loan ﬁle;
+review the credit report to conﬁrm that the data that DU evaluated with respect to the borrower’s credit
+history was accurate and complete;
+determine if there is any potentially derogatory or contradictory information that is not part of the data
+analyzed by DU; and
+take action when erroneous data in the credit report or contradictory or derogatory information in the
+loan ﬁle would justify additional investigation or would provide grounds for a decision that is diﬀerent
+from the recommendation that DU delivered.
+For example, if a foreclosure was reported in the credit report but was not detected by DU (that is, it was not
+referenced in any veriﬁcation messages), the lender must determine if the loan complies with the applicable
+guidelines (see B3-5.3-07, Signiﬁcant Derogatory Credit Events — Waiting Periods and Re-establishing Credit ).
+See the Desktop Underwriter & Desktop Originator Learning Center  for a number of helpful resources.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements and Release Notes Issue Date
+Announcement SEL-2025-05 July 02, 2025
+Announcement SEL-2021-04 May 05, 2021
+Announcement SEL-2020-07 December 16, 2020
+
+Published March 4, 2026
+273  B3-2-02, DU Validation Service (02/05/2025)
+Introduction
+This topic contains information on the DU validation service, including:
+General Information
+Authorized Vendors and Veriﬁcation Reports
+Asset Veriﬁcation Reports
+Lender Requirements
+Validation Results
+Income Validation
+Employment Validation
+Verbal Veriﬁcation of Employment Alternative for Employment Validated using an Asset Veriﬁcation
+Report
+Asset Validation
+General Information
+The DU validation service oﬀers lenders an opportunity to deliver loans with more certainty. Certain components
+of the loan ﬁle – income, employment, and assets – are eligible for validation by DU using electronic veriﬁcation  
+reports obtained from vendors. When a component of the loan is validated by DU, the loan may be eligible for  
+representation and warranty enforcement relief related to that component. Diﬀerent lender quality control and  
+documentation requirements may also apply. See the following for additional information:
+A2-2-01, Representations and Warranties Overview ,
+A2-2-04, Limited Waiver and Enforcement Relief of Representations and Warranties ,
+B1-1-03, Allowable Age of Credit Documents and Federal Income Tax Returns ,
+B3-3.1-01, General Income Information ,
+B3-3.2-01, Standards for Employment and Income Documentation ,
+B3-3.1-02, Tax Return and Transcript Documentation Requirements ,
+B3-3.1-0 4, Verbal Veriﬁcation of Employment ,
+Section B3-3.4, Other Sources of Income ,
+B3-4.2-01, Veriﬁcation of Deposits and Assets ,
+B3-4.2-02, Depository Accounts ,
+B3-4.4-02, Requirements for Certain Assets in DU ,
+D1-2-01, Lender Prefunding Quality Control Review Process , and
+D1-3-02, Lender Post-Closing Quality Control Review of Approval Conditions, Underwriting Decisions,
+Data, and Documentation .
+The DU validation service is an optional service available only for conventional loans underwritten through DU.
+Lenders are not required to participate in the DU validation service in order for a loan to be underwritten
+through DU and may not require a borrower to participate in the DU validation service.
+Authorized Vendors and Veriﬁcation Reports
+
+Published March 4, 2026
+274A lender may obtain a veriﬁcation report directly from a “report supplier” or from a “report distributor” as
+described below:
+Report suppliers have entered into an agreement with Fannie Mae to participate in the DU validation
+service. Report suppliers generate the report and send the report data electronically to the DU validation
+service. This report reﬂects the report supplier’s name and/or logo.
+Report distributors have not entered into an agreement with Fannie Mae, but have an agreement with an
+eligible report supplier. The report supplier (not the distributor) sends the report data electronically to the
+DU validation service. The veriﬁcation report reﬂects both the report distributor’s name and the name
+and/or logo of the applicable report supplier.
+The DU Validation Service Veriﬁcation Report Vendors list provides a listing of authorized report suppliers and
+report distributors and is available on Fannie Mae’s website.
+Asset Veriﬁcation Reports
+Asset veriﬁcation reports provided by third-party vendors may include:
+a 30- or 60-day report;
+data covering up to 12 months (or more) of asset account data;
+a report showing a subset of information typically found on an asset veriﬁcation report (for example,
+deposit transaction information with no corresponding amount or account balance) intended to be used
+to verify employment using direct deposit transactions (a "supplemental asset report").
+To validate income or employment using an asset veriﬁcation report, the lender must order an asset veriﬁcation
+report with a minimum of 12 months of data from an authorized vendor.
+Lender Requirements
+No special approval is required from Fannie Mae to use the DU validation service, however, lenders must “opt-
+in” to validate income and employment using an asset veriﬁcation report.
+When a lender provides the required reports, all loans that are submitted to DU will automatically be assessed
+through the DU validation service for validation of the related component.
+To participate in the DU validation service, the lender must
+have a relationship with, and have entered into a contract for the services provided by, a vendor(s) –
+either a report supplier or a report distributor – that is authorized to obtain a veriﬁcation report;
+have an agreement with a vendor(s) that
+allows for the report supplier to share the information contained within the veriﬁcation report
+(obtained by the lender) with Fannie Mae electronically for use by the DU validation service; and
+ensures the lender receives, or has access to, the same data that is shared with Fannie Mae
+electronically in accordance with  A2-4.1-01, Establishing Loan Files ; and
+establish controls to manage and monitor the vendors in accordance with its own regulatory
+requirements.
+For loans assessed by the DU validation service, the lender must
+
+Published March 4, 2026
+275obtain borrower authorization to receive the information from the vendor;
+conﬁrm that the veriﬁcation report matches the borrower;
+ensure information entered by the lender in DU is properly documented;
+investigate and resolve any conﬂicting or contradictory information;
+retain a copy of all veriﬁcation reports in the loan ﬁle (see  A2-4.1-01, Establishing Loan Files  for details),
+in addition to any other documentation required by DU; and
+ensure that the most current version of the veriﬁcation report is used by the DU validation service. If the
+lender obtains an updated veriﬁcation report, the lender must resubmit the loan to DU and receive a
+message that the component has been validated in order for the representation and warranty
+enforcement relief to apply.
+Validation Results
+When a component of the loan ﬁle is assessed by the DU validation service, three results are possible:
+validated, not validated, or unable to be validated. DU will issue a message providing the validation results.
+Validated
+DU has determined that the information provided on the veriﬁcation report supports the information entered
+into DU for the component being validated.
+The DU message(s) will indicate that the veriﬁcation report is acceptable documentation to support the
+component that has been validated.
+Not Validated
+DU has determined that the information provided on the veriﬁcation report does not fully support the
+information entered into DU for the component of the loan ﬁle eligible for validation.
+The DU message(s) will indicate what documentation, in addition to the veriﬁcation report, is required.
+Unable to Validate
+DU is unable to validate the information entered into DU for the component eligible for validation. This could be
+due to DU’s inability to access the veriﬁcation report data, or insuﬃcient data in the report.
+The DU message(s) will indicate what documentation is required.
+Note : Regardless of the validation result, DU will continue to use the information provided by the
+lender in determining the DU underwriting recommendation. The results of the validation service do
+not override, impact, or alter any information submitted by the lender.
+Income Validation
+The following table lists the income types that can be validated, and the documentation that DU will require,
+which may be diﬀerent than the standard documentation required in this Guide. For all eligible income types,
+the lender must determine the income type, amount, and source and enter this information in the applicable
+ﬁeld in DU.

@@ -1,0 +1,3098 @@
+{
+  "timestamp": "2026-06-29T14:14:11.043843",
+  "total_rules": 407,
+  "passed": [
+    {
+      "check": "contradictions",
+      "message": "No obvious contradictions detected"
+    },
+    {
+      "check": "source_verification",
+      "message": "Verified 10/10 sampled rules have valid references"
+    }
+  ],
+  "warnings": [
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REPORTING_24_004",
+      "check": "confidence_score",
+      "severity": "high",
+      "issue": "Low confidence score: 69.5/100",
+      "recommendation": "Requires human review and validation"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_REGULATORY_22_006",
+      "check": "confidence_score",
+      "severity": "high",
+      "issue": "Low confidence score: 67.0/100",
+      "recommendation": "Requires human review and validation"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_COMPLIANCE_34_009",
+      "check": "confidence_score",
+      "severity": "high",
+      "issue": "Low confidence score: 68.25/100",
+      "recommendation": "Requires human review and validation"
+    },
+    {
+      "check": "numeric_consistency",
+      "severity": "medium",
+      "issue": "Inconsistent thresholds for 'loan amount'",
+      "rules": [
+        "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_1_003",
+        "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_7_001",
+        "BR_REGULATED_FINANCIAL_INSTITUTION_PRICING_9_007",
+        "BR_REGULATED_FINANCIAL_INSTITUTION_PRICING_9_008",
+        "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_10_010",
+        "BR_REGULATED_FINANCIAL_INSTITUTION_PRICING_16_001",
+        "BR_CRE_LOAN_REGULATORY_1_001",
+        "BR_CRE_LOAN_PRICING_1_004",
+        "BR_CRE_LOAN_COLLATERAL_3_001",
+        "BR_CRE_LOAN_COLLATERAL_3_005",
+        "BR_CRE_LOAN_PRICING_6_005",
+        "BR_CRE_LOAN_COLLATERAL_11_001",
+        "BR_CRE_LOAN_COLLATERAL_14_002",
+        "BR_CRE_LOAN_REGULATORY_14_010",
+        "BR_CRE_LOAN_REGULATORY_21_004",
+        "BR_CRE_LOAN_DOCUMENTATION_23_009",
+        "BR_CRE_LOAN_COLLATERAL_24_009",
+        "BR_CRE_LOAN_COVENANT_36_010",
+        "BR_CREDIT_UNDERWRITING_STANDARD_pricing_4_005",
+        "BR_CREDIT_UNDERWRITING_STANDARD_regulatory_4_008",
+        "BR_CREDIT_UNDERWRITING_STANDARD_UNDERWRITING_11_009",
+        "BR_CREDIT_UNDERWRITING_STANDARD_COLLATERAL_29_001",
+        "BR_REAL_ESTATE_LENDING_POLICY_REGULATORY_15_002",
+        "BR_REAL_ESTATE_LENDING_POLICY_PRICING_17_008",
+        "BR_REAL_ESTATE_LENDING_POLICY_COLLATERAL_29_010"
+      ],
+      "thresholds": [
+        "120.214",
+        "12",
+        "000.",
+        "0.25",
+        "00",
+        "500",
+        "159",
+        "85",
+        "159.",
+        "700",
+        "3.75",
+        "6.0",
+        "25",
+        "3",
+        "3.0",
+        "7",
+        "1",
+        "6.5",
+        "001",
+        "01.",
+        "50",
+        "33",
+        "34",
+        "004",
+        "000",
+        "1.5",
+        "125",
+        "18",
+        "75",
+        "120.221",
+        "005",
+        "5",
+        "36",
+        "750",
+        "504",
+        "250",
+        "3.5",
+        "90",
+        "20",
+        "350",
+        "80",
+        "13",
+        "10",
+        "30",
+        "150",
+        "1.25",
+        "100",
+        "4.5",
+        "4",
+        "2"
+      ],
+      "recommendation": "Review rules for correct thresholds or contextual differences"
+    },
+    {
+      "check": "numeric_consistency",
+      "severity": "medium",
+      "issue": "Inconsistent thresholds for 'credit score'",
+      "rules": [
+        "BR_REGULATED_FINANCIAL_INSTITUTION_DOCUMENTATION_32_007",
+        "BR_CREDIT_UNDERWRITING_STANDARD_REGULATORY_17_006"
+      ],
+      "thresholds": [
+        "120",
+        "24",
+        "20"
+      ],
+      "recommendation": "Review rules for correct thresholds or contextual differences"
+    },
+    {
+      "check": "numeric_consistency",
+      "severity": "medium",
+      "issue": "Inconsistent thresholds for 'ltv'",
+      "rules": [
+        "BR_CRE_LOAN_COLLATERAL_8_001",
+        "BR_CRE_LOAN_COLLATERAL_8_002",
+        "BR_CRE_LOAN_COLLATERAL_8_003",
+        "BR_CRE_LOAN_COLLATERAL_35_009"
+      ],
+      "thresholds": [
+        "80",
+        "504",
+        "85",
+        "65",
+        "90"
+      ],
+      "recommendation": "Review rules for correct thresholds or contextual differences"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_1_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_1_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_1_003",
+      "check": "enum_validation",
+      "severity": "medium",
+      "issue": "Invalid audit_frequency 'at_renewal'. Expected one of: annually, at_origination, monthly, on_change, quarterly",
+      "recommendation": "Use a valid audit_frequency value"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_1_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_1_004",
+      "check": "enum_validation",
+      "severity": "medium",
+      "issue": "Invalid audit_frequency 'at_renewal'. Expected one of: annually, at_origination, monthly, on_change, quarterly",
+      "recommendation": "Use a valid audit_frequency value"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_1_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REPORTING_1_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_reporting_4_011",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_DOCUMENTATION_6_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_7_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_7_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_7_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_DOCUMENTATION_8_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_PRICING_9_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_PRICING_9_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_PRICING_9_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_10_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REPORTING_12_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_DOCUMENTATION_12_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_DOCUMENTATION_12_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_DOCUMENTATION_12_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_12_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_14_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REPORTING_15_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_15_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_PRICING_16_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_COMPLIANCE_17_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_17_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_18_011",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_19_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_19_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_20_011",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_21_011",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_22_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_22_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REPORTING_22_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_22_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_22_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REPORTING_24_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_24_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_24_003",
+      "check": "enum_validation",
+      "severity": "medium",
+      "issue": "Invalid audit_frequency 'at_renewal'. Expected one of: annually, at_origination, monthly, on_change, quarterly",
+      "recommendation": "Use a valid audit_frequency value"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_24_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REPORTING_24_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_DOCUMENTATION_24_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_24_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_25_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_25_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_25_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_DOCUMENTATION_25_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_DOCUMENTATION_25_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_DOCUMENTATION_25_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_UNDERWRITING_25_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_26_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_26_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_COMPLIANCE_26_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_DOCUMENTATION_26_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_26_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_DOCUMENTATION_26_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_27_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_28_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_28_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_DOCUMENTATION_30_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REPORTING_30_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_30_011",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REPORTING_32_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_DOCUMENTATION_32_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_DOCUMENTATION_32_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_32_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_32_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_reporting_33_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_reporting_33_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_reporting_33_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_reporting_33_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REPORTING_34_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REPORTING_34_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REPORTING_34_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_34_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_34_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_35_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_35_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REPORTING_36_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_36_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_36_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REPORTING_36_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_regulatory_37_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_reporting_37_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_regulatory_37_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_regulatory_37_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_reporting_37_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_38_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REPORTING_38_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_39_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_39_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_39_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_39_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REPORTING_39_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REPORTING_39_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REPORTING_39_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_40_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_40_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_40_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_1_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_DOCUMENTATION_1_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_1_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_PRICING_1_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_PRICING_2_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_2_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_2_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_2_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_DOCUMENTATION_2_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_2_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_DOCUMENTATION_2_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_2_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_2_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_3_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_3_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_3_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_DOCUMENTATION_3_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_3_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_3_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_3_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_3_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_PRICING_3_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COVENANT_3_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_regulatory_4_001",
+      "check": "enum_validation",
+      "severity": "medium",
+      "issue": "Invalid audit_frequency 'at_renewal'. Expected one of: annually, at_origination, monthly, on_change, quarterly",
+      "recommendation": "Use a valid audit_frequency value"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_regulatory_4_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_regulatory_4_002",
+      "check": "enum_validation",
+      "severity": "medium",
+      "issue": "Invalid audit_frequency 'at_renewal'. Expected one of: annually, at_origination, monthly, on_change, quarterly",
+      "recommendation": "Use a valid audit_frequency value"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_regulatory_4_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_regulatory_4_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_regulatory_4_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_5_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_DOCUMENTATION_5_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_5_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_5_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_5_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_5_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_DOCUMENTATION_5_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_5_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REPORTING_5_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_DOCUMENTATION_5_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_UNDERWRITING_5_011",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_CREDITPOLICY_6_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_CREDITPOLICY_6_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_CREDITPOLICY_6_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_CREDITPOLICY_6_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_PRICING_6_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_PRICING_6_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_6_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_DOCUMENTATION_6_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_CREDITPOLICY_6_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_7_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_7_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_PRICING_7_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_PRICING_7_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_8_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_8_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_8_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_8_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_8_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_8_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_8_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_CREDIT_POLICY_8_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_9_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_9_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_CREDIT_POLICY_9_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_9_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_CREDIT_POLICY_9_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_9_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_UNDERWRITING_10_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_DOCUMENTATION_10_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_CREDITPOLICY_10_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_CREDITPOLICY_10_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_CREDITPOLICY_10_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_DOCUMENTATION_10_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_10_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_10_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_10_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_11_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_11_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_11_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_DOCUMENTATION_11_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_DOCUMENTATION_11_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_DOCUMENTATION_11_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_11_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_12_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_12_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_12_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_13_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_13_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_DOCUMENTATION_13_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_DOCUMENTATION_13_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_13_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_13_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_13_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_13_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_14_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_14_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_14_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_14_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_14_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COMPLIANCE_14_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_14_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_14_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_14_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_14_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_15_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_15_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_16_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_16_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_DOCUMENTATION_16_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_CREDIT_POLICY_16_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COMPLIANCE_17_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_DOCUMENTATION_17_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_DOCUMENTATION_17_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_18_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_18_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_DOCUMENTATION_18_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_UNDERWRITING_18_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_DOCUMENTATION_18_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_DOCUMENTATION_18_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_UNDERWRITING_18_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_RISK_ASSESSMENT_18_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_19_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_CREDIT_POLICY_19_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_20_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_20_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_21_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_CREDITPOLICY_21_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_CREDITPOLICY_21_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_21_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_21_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_23_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_DOCUMENTATION_23_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_23_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_24_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_24_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_DOCUMENTATION_24_011",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REPORTING_26_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REPORTING_26_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_CREDITPOLICY_30_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_CREDITPOLICY_30_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_CREDITPOLICY_30_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_CREDITPOLICY_30_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_CREDITPOLICY_30_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_30_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_DOCUMENTATION_30_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_DOCUMENTATION_30_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_31_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_31_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_31_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_reporting_33_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_reporting_33_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_collateral_33_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_35_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_35_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COVENANT_36_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_CREDIT_POLICY_38_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_CREDIT_POLICY_38_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_38_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_38_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_DOCUMENTATION_40_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_DOCUMENTATION_40_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_40_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_40_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_40_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_COLLATERAL_40_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_LOAN_REGULATORY_40_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_BORROWER_EXPOSURE_AGGREGATION_REGULATORY_1_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_BORROWER_EXPOSURE_AGGREGATION_REGULATORY_21_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_pricing_4_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_underwriting_4_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_regulatory_4_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_regulatory_4_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_documentation_4_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_pricing_4_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_UNDERWRITING_7_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_CREDIT_POLICY_7_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_UNDERWRITING_8_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_DOCUMENTATION_9_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_UNDERWRITING_11_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_UNDERWRITING_11_009",
+      "check": "enum_validation",
+      "severity": "medium",
+      "issue": "Invalid audit_frequency 'at_renewal'. Expected one of: annually, at_origination, monthly, on_change, quarterly",
+      "recommendation": "Use a valid audit_frequency value"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_UNDERWRITING_11_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_REGULATORY_11_011",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_REGULATORY_11_012",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_UNDERWRITING_12_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_CREDITPOLICY_12_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_DOCUMENTATION_13_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_COLLATERAL_15_011",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_REGULATORY_16_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_REGULATORY_16_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_COLLATERAL_16_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_COLLATERAL_16_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_COLLATERAL_16_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_DOCUMENTATION_17_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_REGULATORY_17_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_REGULATORY_17_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_REGULATORY_18_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_CREDIT_POLICY_18_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_UNDERWRITING_19_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_REGULATORY_19_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_UNDERWRITING_19_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_CREDIT_POLICY_19_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_REGULATORY_19_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_REGULATORY_19_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_COLLATERAL_20_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_COLLATERAL_20_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_COLLATERAL_20_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_COLLATERAL_20_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_COLLATERAL_20_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_UNDERWRITING_20_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_CREDITPOLICY_21_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_CREDITPOLICY_21_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_CREDITPOLICY_21_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_DOCUMENTATION_21_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_COLLATERAL_22_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_COLLATERAL_22_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_DOCUMENTATION_22_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_COVENANT_22_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_UNDERWRITING_23_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_REPORTING_23_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_UNDERWRITING_23_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_UNDERWRITING_24_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_UNDERWRITING_24_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_CREDITPOLICY_27_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_UNDERWRITING_27_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_UNDERWRITING_27_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_UNDERWRITING_27_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_DOCUMENTATION_27_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_DOCUMENTATION_27_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_DOCUMENTATION_27_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_CREDITPOLICY_27_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_UNDERWRITING_28_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_COLLATERAL_28_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_COLLATERAL_29_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_COLLATERAL_29_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_COLLATERAL_29_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_COLLATERAL_29_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_COLLATERAL_29_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_DOCUMENTATION_29_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_COLLATERAL_29_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_COLLATERAL_29_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_COLLATERAL_29_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_DOCUMENTATION_31_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_CREDIT_POLICY_32_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_CREDIT_POLICY_32_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_UNDERWRITING_32_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_CREDIT_POLICY_32_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_UNDERWRITING_32_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_credit_policy_33_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_COLLATERAL_34_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_COLLATERAL_35_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_COLLATERAL_35_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_UNDERWRITING_36_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_COLLATERAL_36_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_REGULATORY_38_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_REGULATORY_38_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_REGULATORY_38_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CREDIT_UNDERWRITING_STANDARD_REGULATORY_38_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REAL_ESTATE_LENDING_POLICY_COMPLIANCE_13_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REAL_ESTATE_LENDING_POLICY_REGULATORY_15_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REAL_ESTATE_LENDING_POLICY_REGULATORY_15_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REAL_ESTATE_LENDING_POLICY_REGULATORY_15_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REAL_ESTATE_LENDING_POLICY_PRICING_17_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REAL_ESTATE_LENDING_POLICY_DOCUMENTATION_17_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REAL_ESTATE_LENDING_POLICY_DOCUMENTATION_20_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REAL_ESTATE_LENDING_POLICY_REGULATORY_20_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REAL_ESTATE_LENDING_POLICY_COLLATERAL_29_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REAL_ESTATE_LENDING_POLICY_COLLATERAL_31_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REAL_ESTATE_LENDING_POLICY_COLLATERAL_31_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REAL_ESTATE_LENDING_POLICY_COLLATERAL_31_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_REAL_ESTATE_LENDING_POLICY_CREDITPOLICY_36_011",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_SENIOR_MANAGEMENT_REGULATORY_15_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_SENIOR_MANAGEMENT_REGULATORY_15_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_SENIOR_MANAGEMENT_CREDIT_POLICY_35_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_SENIOR_MANAGEMENT_CREDIT_POLICY_35_011",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_SENIOR_MANAGEMENT_REGULATORY_36_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_SENIOR_MANAGEMENT_REGULATORY_36_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_SENIOR_MANAGEMENT_REGULATORY_36_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_BOARD_OF_DIRECTORS_DOCUMENTATION_15_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_SECONDARY_MARKET_STRATEGY_DOCUMENTATION_20_012",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_REGULATORY_22_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_REPORTING_23_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_REPORTING_23_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_REPORTING_25_001",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_REPORTING_25_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_REPORTING_25_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_REPORTING_26_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_REPORTING_27_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_REPORTING_28_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_REPORTING_28_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_REPORTING_28_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_REPORTING_28_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_REPORTING_28_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_REPORTING_28_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_REGULATORY_31_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_DOCUMENTATION_31_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_REPORTING_31_010",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_compliance_33_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_compliance_33_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_REPORTING_34_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_REPORTING_34_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_REPORTING_34_008",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_COMPLIANCE_34_009",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_REGULATORY_35_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_REGULATORY_35_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_REPORTING_35_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_documentation_37_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_DOCUMENTATION_39_005",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_COMPLIANCE_39_006",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_COMPLIANCE_39_007",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_CONCENTRATION_REPORT_RISK_ASSESSMENT_23_002",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_CRE_CONCENTRATION_REPORT_REPORTING_23_003",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    },
+    {
+      "rule_id": "BR_POLICY_EXCEPTION_DOCUMENTATION_26_004",
+      "check": "scope_validation",
+      "severity": "medium",
+      "issue": "applicability_scope missing or invalid 'occupancy_types' array",
+      "recommendation": "Ensure applicability_scope.occupancy_types is a non-empty array"
+    }
+  ],
+  "failures": [
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_reporting_33_004",
+      "check": "completeness",
+      "severity": "high",
+      "issue": "Missing required fields: mandatory",
+      "recommendation": "Ensure extraction prompt requires all mandatory fields"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REPORTING_34_002",
+      "check": "completeness",
+      "severity": "high",
+      "issue": "Missing required fields: mandatory",
+      "recommendation": "Ensure extraction prompt requires all mandatory fields"
+    },
+    {
+      "rule_id": "BR_REGULATED_FINANCIAL_INSTITUTION_REGULATORY_34_005",
+      "check": "completeness",
+      "severity": "high",
+      "issue": "Missing required fields: mandatory",
+      "recommendation": "Ensure extraction prompt requires all mandatory fields"
+    },
+    {
+      "rule_id": "BR_SENIOR_MANAGEMENT_REGULATORY_36_003",
+      "check": "completeness",
+      "severity": "high",
+      "issue": "Missing required fields: mandatory",
+      "recommendation": "Ensure extraction prompt requires all mandatory fields"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_REPORTING_25_001",
+      "check": "completeness",
+      "severity": "high",
+      "issue": "Missing required fields: mandatory",
+      "recommendation": "Ensure extraction prompt requires all mandatory fields"
+    },
+    {
+      "rule_id": "BR_MANAGEMENT_INFORMATION_SYSTEM_DOCUMENTATION_39_005",
+      "check": "completeness",
+      "severity": "high",
+      "issue": "Missing required fields: mandatory",
+      "recommendation": "Ensure extraction prompt requires all mandatory fields"
+    }
+  ],
+  "corrections": [],
+  "statistics": {
+    "passed_count": 2,
+    "warning_count": 419,
+    "failure_count": 6,
+    "avg_confidence": 87.90282555282555
+  }
+}

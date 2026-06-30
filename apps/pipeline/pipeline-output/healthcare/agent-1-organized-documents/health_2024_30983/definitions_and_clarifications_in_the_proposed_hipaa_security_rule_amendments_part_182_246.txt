@@ -1,0 +1,29 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 182/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_182
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+889This joint guidance, 
+developed by NIST, CISA, and NSA, encourages ‘‘the early planning for migration to post-quantum cryptographic standards by developing a Quantum-Readiness Road map.’’
+890It 
+also recommends that organizations prepare a cryptographic inventory, discuss post-quantum roadmaps with technology vendors, consider their supply chain’s readiness for quantum computing, and consider the responsibilities of their technology vendors with respect to preparing for 
+quantum readiness.
+891 
+The Department encourages regulated 
+entities to incorporate these activities as part of their ongoing risk management programs. For example, the steps presented in the joint guidance— surveying the environment for potential risks and vulnerabilities that endanger ePHI, identifying workforce members with responsibility for addressing them, inventorying quantum-vulnerable systems, including that inventory in its risk analysis and risk management, and working with technology vendors to ensure their readiness—are all activities that already are required by the administrative safeguards of the Security Rule. 
+We believe these obligations would be 
+clarified by the proposals in this NPRM. For example, the Department proposes to require that a regulated entity not only conduct an accurate assessment of potential risks and vulnerabilities to the confidentiality, integrity, and availability of the ePHI it creates, receives, maintains, or transmits, but would add an express requirement that the assessment be comprehensive and in writing. We also propose to specify that the required assessment include, among other things, identification of all reasonably anticipated threats and potential vulnerabilities and predisposing conditions, making a reasonable determination and documentation of the likelihood that each identified threat will exploit the identified vulnerabilities, and performing a written assessment of the risk level for each identified threat and vulnerability. Under the NPRM, a regulated entity would be expected to, as part of the risk analysis, consider whether quantum computing poses a reasonably anticipated threat to the confidentiality, integrity, or availability of its ePHI and whether there is a vulnerability or predisposing condition that corresponds to that threat, and to document those considerations; make a reasonable determination and document the likelihood that the threat will exploit the identified vulnerabilities; and assign a risk level to the identified threat and vulnerability. 
+2. Artificial Intelligence (AI) 
+Section 238(g) of the John S. McCain 
+National Defense Authorization Act for 
+Fiscal Year 2019 defined AI to include the following:
+892 
+•Any artificial system that performs 
+tasks under varying and unpredictable circumstances without significant human oversight, or that can learn from experience and improve performance when exposed to data sets. 
+•An artificial system developed in 
+computer software, physical hardware, or other context that solves tasks requiring human-like perception, 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00093 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

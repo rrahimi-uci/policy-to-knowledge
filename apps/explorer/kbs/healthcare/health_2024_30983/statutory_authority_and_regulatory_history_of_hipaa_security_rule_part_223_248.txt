@@ -1,0 +1,47 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 223/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_223
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+1009 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+102578 FR 5566, 5686 (Jan. 25, 2013). 
+102642 U.S.C. 1320d–7. 
+1027Sec. 13421(a) of the HITECH Act; see also 45 
+CFR part 160, subpart B. 
+1028See ‘‘MAKING SUPPLEMENTAL 
+APPROPRIATIONS FOR JOB PRESERVATION 
+AND CREATION, INFRASTRUCTURE INVESTMENT, ENERGY EFFICIENCY AND SCIENCE, ASSISTANCE TO THE UNEMPLOYED, AND STATE AND LOCAL FISCAL STABILIZATION, FOR THE FISCAL YEAR ENDING SEPTEMBER 30, 2009, AND FOR OTHER PURPOSES,’’ Conf. Report to Accompany H.R. 1, p. 502 (Feb. 12, 2009). 
+102942 U.S.C. 1320d–7(a); 45 CFR 160.203. 
+1030See 45 CFR 160.202 (definition of 
+‘‘Contrary’’). Preemption also applies if the provision of State law stands as an obstacle to the accomplishment and execution of the full purposes and objectives and purposes of sec. 264 of HIPAA. Sec. 264 of HIPAA contains the provisions pertaining to the privacy of individually identifiable health information. 
+1031Public Law 105–277, 112 Stat. 2681–528 (Oct. 
+21, 1998) (codified at 5 U.S.C. 601 note). 1032Public Law 104–13, 109 Stat. 163 (May 22, 
+1995) (codified at 44 U.S.C. 101 note). 
+1033‘‘View ICR,’’ supra note 940. 25, 2013.1025Regarding preemption, 
+HIPAA dictates the relationship 
+between State law and HIPAA regulatory requirements.
+1026The Health 
+Information Technology for Economic and Clinical Health Act of 2009 (HITECH Act) provides that the HIPAA preemption provisions shall apply to the HITECH Act provisions and requirements.
+1027As explained by the 
+House report that accompanied the American Recovery and Reinvestment Act of 2009, the HITECH Act would not only apply HIPAA’s preemption provisions to the HITECH Act requirements, but it would also ‘‘preserve the HIPAA privacy and security standards to the extent that they are consistent with’’ the HITECH Act.
+1028 
+A requirement, standard, or 
+implementation specification adopted in accordance with HIPAA and the HIPAA Rules supersedes any contrary provision of State law, subject to certain exceptions.
+1029Specifically, State law 
+would be preempted under the Security Rule only when (1) a regulated entity finds it impossible to comply with both State and Federal requirements; or (2) the provision of State law stands as an obstacle to accomplishing and executing the purposes and objectives of the Administrative Simplification provisions or the HITECH Act.
+1030 
+Although a few States (e.g., California 
+and New York) have promulgated or are in the process of promulgating regulations pertaining to cybersecurity in health care that may be more stringent than the Security Rule, the Department believes that a regulated entity could comply with both sets of requirements by adhering to the more stringent standard. Thus, in such cases, the State law would not be an obstacle to the accomplishment and execution of HIPAA or the HITECH Act. The proposed modifications to the 
+Security Rule would further the 
+Congressional intent to improve the Medicare and Medicaid programs by the development of health information systems that are private and secure. The Department’s proposals promote the safety, efficiency, and effectiveness of the health care system by refining the security standards established by Congress and implemented in the 2003 and 2013 Final Rules. The statute contemplated that the security measures adopted by all regulated entities, including State and local governments, would evolve over time in accordance with the security risks they face, and the NPRM proposals are in the nature of enhancing these existing requirements. Thus, the Department does not believe 
+that the rule would impose substantial direct compliance costs on State and local governments that are not required by statute. 
+The Department anticipates that the 
+most significant direct costs on State and local governments would be for conducting a Security Rule compliance audit; notifying covered entities or business associates, as applicable, upon activation of a contingency plan; notifying covered entities of changes or termination of workforce members’ access to ePHI; deploying MFA; removing extraneous software; and penetration testing; providing or obtaining verification of business associates’ compliance with technical safeguards; updating health plan documents; updating policies and procedures; and updating workforce training. However, the costs involved can be attributed to the statutory requirements of the Administrative Simplification provisions of HIPAA and would be similar in kind to those borne by non-government-operated regulated entities, which the proposed RIA above addresses in detail. 
+In considering the principles in and 
+requirements of E.O. 13132, the Department believes that these proposed modifications to the Security Rule would not significantly affect the rights, roles, and responsibilities of the States and requests comment on this analysis. 
+E. Assessment of Federal Regulation 
+and Policies on Families

@@ -1,0 +1,49 @@
+# Re-identification based on personal knowledge. The NPRM also noted the potential for re-identification based on personal knowledge. Location, as well as demographic and industry information, might well be known to an adversary familiar with an applica...
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_668
+**Pages:** 668-668
+**Section Path:** VIII. Public Disclosure of Data > B. Preliminary Privacy Assessment > 4. Privacy Risk > i. Re-Identification Risk > Proposed Approach > Re-identification based on personal knowledge. The NPRM also noted the potential for re-identification based on personal knowledge. Location, as well as demographic and industry information, might well be known to an adversary familiar with an applica...
+
+---
+
+668 matched to the data. For example, data brokers collect information about small businesses from a 
+wide range of sources and sell it for a variety of purposes, including marketing, identity 
+verification, and fraud detection.874 These datasets typically include data collected from 
+commercial, government, and other publicly available sources and could  contain data such as 
+NAICS code, location, and estimates of gross annual income, number of workers, and 
+information about related natural persons, including the ethnicity and race of principal owners.  
+In addition to considering the steps an adversary would need to take  to re-identify 
+applicants and the various data sources that may be required to accomplish re -identification, 
+including their limitations, the Bureau considered the capacity, incentives, and characteristics of 
+potential adversaries, including those that might  attempt re -identification  for harm. In particular, 
+a competitor  or potential competitor  might  seek information about a business ’s expansion 
+strategy or financial condition, including whether it was able to obtain credit approval . As the 
+Bureau explained, some adversaries could possess the resources to use private datasets in addition to publicly available records . However, the Bureau noted the extent to which much of 
+the commercial benefit to be obtained by re -identifying the data would be more readily available 
+from private datasets to which these potential adversaries already have access without the need for recourse to the data. In many cases, information from other datasets could be timelier than 
+that found in the data. Furthermore, some of these potential adversaries might refrain from re -
+identifying the small business applicant for reputational reasons or because they have agreed to 
+restrictions on using data for these purposes.  
+Additionally, the Bureau stated that some academics,  researchers, and journalists may be  
+interested  in re-identifying published data for research purposes.  As noted above, however, some 
+private datasets have contractual terms prohibiting their use for re -identification purposes and 
+therefore these persons might be  restricted from actually using the data to re -identify applicants. 
+Further, some academics or journalists may be affiliated with organizations that have 
+reputational or institutional interests adverse to re-identification efforts.  
+The Bureau considered whether parties intending to commit identity theft or financial 
+fraud may have the incentive and capacity to re -identify applicants, but it assessed that the data 
+would be of minimal use for these purposes. In addition, such adversari es are not law abiding 
+and may have easier, albeit illegal, ways to secure data for these purposes than attempting to re-
+identify application -level data.  
+Re-identification based on personal knowledge. The NPRM also noted the potential for 
+re-identificatio n based on personal knowledge . Location, as well as demographic and industry 
+information, m ight well be known to a n adversary familiar with a n applicant , meaning that they 
+might be able to re -identify a n applicant without match ing a record to another data set. The 
+Bureau explained that the personal knowledge possessed by such a n adversary would be limited 
+to information about a subset of applicants and related natural persons. Thus, any such re-identification would impact a more limited number of applicants or natural persons  than might 
+ 
+874 See generally Fed. Trade Comm ’n, Data Brokers: A Call for Transparency and Accountability  (May 2014), 
+https://www.ftc.gov/system/files/documents/reports/data -brokers -call-transparency -accountability -report -federal -
+trade -commission -may-2014/140527databrokerreport.pdf  ( describing the types of products offered and the data 
+sources used by data b rokers).

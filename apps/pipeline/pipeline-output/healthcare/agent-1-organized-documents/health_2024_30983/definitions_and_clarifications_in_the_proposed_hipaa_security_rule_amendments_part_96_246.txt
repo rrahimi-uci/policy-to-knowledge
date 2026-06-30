@@ -1,0 +1,31 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 96/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_096
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+•How often will review results be 
+analyzed? 
+•Where will audit information reside 
+(e.g., separate server)? Will it be stored 
+external to the organization (e.g., cloud 
+service provider)? 
+Compliance challenges observed 
+through OCR’s enforcement activities suggest that regulated entities would benefit from an expanded standard to provide more details on compliance expectations. Investigations of reported breaches of unsecured PHI discussed above as examples of risk analysis failures also identified a potential failure by the regulated entities to conduct appropriate information system activity review.
+536In an investigation involving a large health care provider, 
+the ePHI of more than 12,000 patients was sold to an identity theft ring by employees who, for six months, inappropriately accessed patient account information.
+537Compliance 
+with the requirement to implement procedures to regularly review records of activity in relevant electronic information systems, such as audit logs, access reports, and security incident tracking, could have identified and mitigated these disclosures.
+538 
+Similarly, a business associate 
+experienced an intrusion into its systems that it failed to notice for over 20 months. Eventually, the ePHI of more than 200,000 individuals associated with several covered entities was encrypted in a ransomware cyberattack.
+539Among other factors, 
+OCR’s investigation indicated that the business associate potentially failed to implement procedures for regularly reviewing records of activity in its relevant electronic information system, such as audit logs, access reports, and security incident tracking reports.
+540 
+Consistent with previously issued 
+guidance and based on OCR’s enforcement experience, the Department proposes to elevate the existing implementation specification for information system activity review to a standard and to redesignate it as proposed 45 CFR 164.308(a)(7)(i). The purpose of the proposal is to impose specific requirements on a regulated entity to review the activity occurring in its relevant electronic information systems, including the activity occurring in the components of such 
+systems. By virtue of these proposed requirements, we would specify actions that a regulated entity is required to take to ensure that only appropriate users access ePHI and that it responds quickly to any suspicious activity in its relevant electronic information systems, including in components thereof, such as workstations that connect to or otherwise access its relevant electronic information systems. We also propose to revise the language to provide regulated entities with additional direction regarding their review of suspicious activities. The proposed standard, if adopted, would require a regulated entity to implement written policies and procedures for regularly reviewing 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00050 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

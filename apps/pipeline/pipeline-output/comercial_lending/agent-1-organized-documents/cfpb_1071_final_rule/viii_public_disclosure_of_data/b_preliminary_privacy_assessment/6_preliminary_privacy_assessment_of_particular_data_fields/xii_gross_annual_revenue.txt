@@ -1,0 +1,46 @@
+# xii. Gross Annual Revenue
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_711
+**Pages:** 703-703
+**Section Path:** VIII. Public Disclosure of Data > B. Preliminary Privacy Assessment > 6. Preliminary Privacy Assessment of Particular Data Fields > xii. Gross Annual Revenue
+
+---
+
+703 Considering this privacy risk, t he Bureau ’s preliminary assessment is that some 
+modification techniques may be appropriate. Application -level census tract would likely disclose 
+minimal, if any, information about an applicant or related natural person that would be harmful 
+or sensitive if such person were re -identified. In addition, th e Bureau does not discern evidence 
+of a compelling privacy risks for financial institutions. However, the Bureau appreciates the 
+potential re -identification risks to applicants or related natural persons posed by the combination 
+of census tract data and other data fields such as NAICS code, and recognizes that there may be 
+significant geographic variation in the likelihood of re -identification risk from census tract alone.  
+The Bureau is mindful that modifying census tract data, like disclosing a broader loc ation 
+category such as county or State, while reducing re -identification risk to applicants and related 
+natural persons, could also reduce the utility of the 1071 dataset.  
+xii. Gross Annual Revenue  
+Proposed § 1002.107(a)(14) would have required financial institutions to collect and 
+report to the Bureau the gross annual revenue of the applicant for the  preceding full fiscal year 
+prior to when the information is collected.  As discussed in the section -by-section analysis of 
+§ 1002.107(a)(14), the Bureau is finalizing this data point substantively as proposed.  
+The NPRM stated that d isclosing gross annual revenue in unmodified form would likely 
+disclose information about an applicant or related natural person that may be harmful or sensitive 
+if such person were  re-identified. The data field could reflect the financial condition of a small 
+business or  its ownership. The Bureau stated that c ompetitors of the small business, other 
+commercial entities, creditors , researchers, or persons with criminal intent all may have an 
+interest in using these data to monitor the size or performance of an applicant that may be a rival, partner, or target of inquiry, investigation, or illegal activity. With respect to the risk of harm or 
+sensitivity to financial institutions, the N PRM acknowledged that other creditors  might use gross 
+annual revenue data to learn more about the types of small businesses with which their 
+competitors do business. However, the Bureau did  not identify evidence that disclosure would 
+permit reverse -engineering of proprietary lending models.  
+The Bureau  also noted that publicly available datasets include data fields an adversary 
+could directly match to th is data field in unmodified form . This availability is not widespread. 
+Gross annual revenue data are available from private databases. They are also available for New York State ’s women - and minority-owned business certification program, but those data are 
+recoded into bins. The Bureau stated that if it determined that gross annual revenue data should be modified, it may consider recoding this data into bins, for example in ranges of $25,000, or 
+top-coding the data to mask particularly high values, thereby reducing the identifiability of 
+application data from small businesses with especially high gross annual revenue.  
+Commenters did not provide additional evidence related to re -identification risk. 
+However, community groups and trade associations commented on modifying this field prior to publication. Several community groups and a CDFI lender generally favored the Bureau publishing unmodified gross annual revenue data to maintain its utility. One such commenter 
+opposed modification here, stating that aggregation of data by revenue size would limit the 
+usefulness of the data to all stakeholders, including te chnical assistance providers who can help 
+small businesses apply for loans, as well as parties seeking to identify and respond to

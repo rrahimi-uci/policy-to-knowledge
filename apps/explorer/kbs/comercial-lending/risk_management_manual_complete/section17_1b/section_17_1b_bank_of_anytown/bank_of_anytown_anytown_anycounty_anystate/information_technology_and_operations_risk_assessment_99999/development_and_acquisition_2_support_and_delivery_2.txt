@@ -1,0 +1,81 @@
+# Development and Acquisition - 2 + Support and Delivery - 2
+
+**Source:** risk_management_manual_complete.pdf
+**Chunk ID:** risk_management_manual_complete_1796
+**Pages:** 680-681
+**Section Path:** section17-1b > Section 17.1b - Bank of Anytown > BANK OF ANYTOWN ANYTOWN ANYCOUNTY ANYSTATE > Information Technology and Operations Risk Assessment 99999 > Development and Acquisition - 2
+
+---
+
+21  
+ 
+monitored and to improve the effectiveness of management’s monitoring activities, management shoul d formally 
+document all required reviews. 
+ 
+President Lincoln indicated the missing reviews were an oversight and stated that a tickler system would be 
+developed to remind the vendor - review officer of upcoming vendor reviews.  
+ 
+Conformance with Information Security Standards  
+Management is in general conformance with Appendix B to Part 364 - Interagency Guidelines Establishing 
+Information Security Standards of the FDIC Rules and Regulations. Management identified the location of all 
+non-public personal information, both electronic and hard copy. Threats to each type of information were identified, adequate controls are in place, and an annual report of the program is presented to the Board. While 
+the overall program is adequate, management did not conduct cont rol assessments on all third -party providers that 
+obtain, use, or process non-public personal information. Management should expand the scope of the control 
+assessments to include all applicable third -party providers. Including all applicable third parties in the 
+assessments will help ensure the providers are appropriately identified and risk rated, and will help confirm third parties have adequate internal controls to protect non-public information. 
+President Lincoln stated that the vendor management program would be updated to identify all vendors with 
+access to non -public personal information and that control assessments would be conducted on all identified 
+vendors before March 31, 20x7. 
+ 
+Cybersecurity Preparedness  
+Management’s assessment of the bank’s cybersecurity risk exposure appropriately identifies inherent risks; 
+however, cybersecurity preparedness could be strengthened by determining whether cyber- related controls are 
+sufficient. By identifying cyber -related controls and determining whether they mitigate the identified inherent 
+risks to an acceptable level, management will be better able to identify cybersecurity weaknesses and implement 
+appropriate controls.  
+President Lincoln indicated that the assessment process would be expanded to include target ed maturity levels  
+by June 30, 20x7. 
+ 
+ 
+Development and Acquisition - 2 
+Development and acquisition practices, which include hardware and software implementation and change- 
+management practices, are appropriate for the institution’s size and complexity. Overall, project management processes are adequate and provide sufficient guidance to manage projects. Currently, any project exceeding 
+$20M is rated as a major project and requires specific project documentation. However, not all project 
+documentation complies with the internal bank guidelines. For example, the documentation of three recent projects did not include reviews of alternative project solutions or explanations of why the solutions recommended in the project proposals were the most appropriate solutions. Management should comply with internal bank guidelines to ensure project requirements are met and consistent project documentation is in place. 
+President Lincoln indicated the project management program was relatively new and that project requiremen ts 
+were being introduced in a phased approach to not overwhelm employees. However, she agreed to follow 
+internal project guidelines on future projects.  
+Information Technology and Operations Risk Assessment (Continued)  
+ 99999
+
+Information Technology and Operations Risk Assessment (Continued)  
+ 99999 
+22  
+Support and Delivery - 2 
+Overall computer operations and information security practices are adequate, and management has improved its 
+business continuity and disaster recovery plans. Management established an information security group to set 
+standards, monitor trends, and review system logs and alerts. Although overall operations are adequate, 
+examiners identified areas that require management’s attention such as system -log monitoring, vulnerability 
+assessments, patch management, and business continuity planning. 
+Logging and Monitoring 
+Management uses different logging platforms for firewalls, internal servers, and routers, and data are not shared 
+or correlated among the logging systems. While servers and base operating systems are logged, logging is not enabled for virtual operating system environments. Management should review its current logging program to ensure all critical systems are included and that there is sufficient data correlation between the systems.  
+Improving the logging program will help ensure all necessary information is obtained and provide the information 
+security group with data in a more effective, centralized format.  
+Vulnerability Assessments  
+Management contracts an outside third party to conduct annual, internal vulnerability assessments as part of an 
+overall security review. The scope of the vulnerability assessment is adequate; however, having only one assessment per year could result in vulnerabilities not being promptly identified. Management should review the frequency of its vulnerability assessment to ensure the frequency of the assessments is based on appropriate risk analysis.  
+President Lincoln committed to revisiting the logging and monitoring program to ensure that all needed information is logged and, to the extent possible, centralized. Additionally, she stated that management would 
+review the frequency of the vulnerability assessments and conduct more frequent assessments based on 
+appropriate risk analysis. President Lincoln stated the reviews would be completed by the end of 20x6, and appropriate corrective actions would be implemented by March 31, 20x7. 
+Business Continuity Planning (BCP) 
+Management changed the structure of its BCP this year. Most elements of the new program are adequate, but 
+some should be improved. The areas of business impact analysis (BIA) and disaster recovery (DR) testing require further refinement.  
+The BIA and risk assessments are out -of-date, but are being updated to include new recovery time objectives 
+(RTO) and to identify reasonably foreseeable threats, including cybersecurity threats. Currently, the shortest RTO is 24 hours. The 24-hour RTO may be too extended for the application, and there are several systems that may benefit from RTOs of four hours or less. The current extended RTOs may significantly affect multiple business lines and the institution’s ability to restore critical systems after a  disaster. Management should ensure 
+RTOs are appropriate so that critical operations can be restored promptly after a disaster or business interruption. While some disaster recovery (DR) testing has occurred, management has not sufficiently tested a few cr itical 
+systems. Management should review its testing universe and implement a risk -based testing approach to ensure 
+all necessary testing is completed in a timely manner. Failure to conduct appropriate tests could result in  material 
+delays in restoring critical systems if a disaster  occurs. 
+ 
+President Lincoln agreed to conduct the BIA and risk assessments, review RTOs, and implement risk-based DR testing by March 31, 20x7.

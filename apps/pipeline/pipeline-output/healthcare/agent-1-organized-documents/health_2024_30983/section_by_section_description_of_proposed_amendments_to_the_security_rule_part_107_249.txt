@@ -1,0 +1,29 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 107/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_107
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+access the information for their own reasons. Existing HHS guidance explains that restricting access to only those persons and entities with a need for access is a basic tenet of security.
+566 
+By implementing this standard, the risk of inappropriate disclosure, alteration, or destruction of ePHI is minimized. A regulated entity must determine those persons and technology assets that need access to ePHI within its environment. The implementation specifications associated with the standard on information access management are closely related to those associated with the standard for workforce security.
+567 
+Compliance with the proposed and existing standards for information access management should support a regulated entity’s compliance with the Privacy Rule’s minimum necessary requirements, which requires a regulated entity to evaluate its practices and enhance safeguards as needed to limit unnecessary or inappropriate access to and disclosure of PHI.
+568 
+OCR’s enforcement experience 
+demonstrates that many regulated entities have not adequately implemented this standard. Thus, we believe it is necessary to consider strengthening the requirement. For example, on one occasion, a large covered entity’s failure to implement its written policies and procedures to ensure that employees only had access to ePHI that they had proper authorization or authority to access enabled an employee to access the ePHI of more than 24,000 individuals.
+569This 
+failure also enabled other employees to inappropriately access the ePHI of a celebrity.
+570 
+To ensure that regulated entities 
+implement recommendations and best practices for securing ePHI, we propose to require in the standard for information access management and associated implementation specifications that a regulated entity must establish and implement written policies and procedures for authorizing access to ePHI and relevant electronic information systems that are consistent with the Privacy Rule. The Department also proposes to redesignate the standard at 45 CFR 164.308(a)(4)(i) as proposed 45 CFR 164.308(a)(10)(i) and to add a paragraph heading to clarify the organization of the regulatory text. Additionally, the Department proposes to modify three of the associated existing implementation specifications and to add three new implementation specifications as follows. 
+Specifically, the Department proposes 
+to redesignate the implementation specification for isolating health care clearinghouse functions as proposed 45 CFR 164.308(a)(10)(ii)(A) and to modify it to require a health care clearinghouse that is part of a larger organization to establish and implement written policies and procedures that protect the ePHI and relevant electronic information systems of the clearinghouse from unauthorized access by the larger organization. 
+The existing implementation 
+specification for isolating health care clearinghouse functions only applies in the situation where a health care clearinghouse is part of a larger organization. This would remain true under the proposal to revise this implementation specification, if adopted. In these situations, the health care clearinghouse is responsible for protecting the ePHI that it is creating, receiving, maintaining, and transmitting. As discussed in NIST guidance, if a health care clearinghouse is part of a larger organization, the clearinghouse must implement policies and procedures that protect the ePHI of the clearinghouse from unauthorized access by the larger organization.
+571 
+This necessarily includes its relevant electronic information systems. First, the regulated entity must determine 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00054 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

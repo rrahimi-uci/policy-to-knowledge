@@ -1,0 +1,112 @@
+# B4-1.2-03, Hybrid Appraisals (12/10/2025)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_264
+**Pages:** 556-558
+**Section Path:** Part B, Origination Through Closing > Subpart B4, Underwriting Property > Chapter B4-1, Property Assessment and Valuation > Section B4-1.2, Documentation Standards > B4-1.2-03, Hybrid Appraisals (12/10/2025)
+
+---
+
+Published March 4, 2026
+538B4-1.2-03, Hybrid Appraisals (12/10/2025)
+Introduction
+This topic contains information on hybrid appraisals, including:
+Overview
+Completing the Hybrid Appraisal
+Eligible Transactions
+Ineligible Transactions
+Exercising Hybrid Appraisals
+Representations and Warranties
+Uniform Appraisal Dataset (UAD) 3.6 Policy
+Overview
+For certain loan caseﬁles, DU oﬀers hybrid appraisals - an appraisal option requiring a property data collection.
+A hybrid appraisal reported on the Uniform Residential Appraisal Report (Hybrid)  (Form 1004 Hybrid ) or
+Individual  Condominium Unit Appraisal Report (Hybrid)  (Form 1073 Hybrid ) must conform to  B4-1.1-04,
+Unacceptable Appraisal Practices . The minimum scope of work for hybrid appraisals includes consideration by
+the appraiser of interior and exterior property data collection by a trained and vetted third party (such as a real
+estate agent, insurance inspector, appraiser, etc.). The appraiser relies on the data collected (and other sources
+if needed) to identify property characteristics including condition. The property data collection must comply with
+the Uniform Property Dataset and be delivered to the Fannie Mae Property Data API.
+Completing the Hybrid Appraisal
+Property data collection and the appraisal report are separate assignments and may be performed by diﬀerent
+people. If the appraiser does not perform the data collection, the lender must share the property data collection
+with the appraiser at the time of engagement. The appraiser will use the data along with other third-party
+sources to develop the appraisal. The eﬀective date of the hybrid appraisal is the date that the appraiser arrives
+at their opinion of value.
+Note:  If the appraiser is engaged as a property data collector and at a later date engaged as an
+appraiser, this is still considered a hybrid appraisal.
+The lender remains responsible for verifying the accuracy of the property description and the completeness of
+the data including the condition and quality ratings as determined by the appraiser. The lender is also
+responsible for ensuring the property meets the property eligibility requirements in this Selling Guide . Lastly,
+the lender remains responsible for any life-of-loan representations and warranties that may apply to the
+property or the appraisal.
+Exhibits:  Form 1004 Hybrid and Form 1073 Hybrid require the same exhibits as traditional appraisals with the
+inclusion of a ﬂoor plan conforming to the ANSI standard. See  B4-1.2-01, Appraisal Report Forms and Exhibits  for
+additional information on exhibits and  B4-1.3-05, Improvements Section of the Appraisal Report  for additional
+
+Published March 4, 2026
+539information on the ANSI standard.
+Entry of Appraisal Assignment Type:  The appraiser must provide the Appraisal Assignment Type and
+supporting details (located in the Additional Comments section of the appraisal report) as shown in the following
+table.
+Field Labels Required Entry
+Appraisal Assignment Type "Hybrid"
+Subject Property Data Collection Method "Physical"
+Subject Property Data Collection Date "YYYY-MM-DD"
+Subject Property Data Workforce"Appraiser"
+"AppraiserTrainee"
+"RealEstateAgent"
+"HomeInspector"
+"InsInspector" (*Insurance Inspector)
+"Other"
+Note:  For the Subject Property Data Collection Date, the appraiser must enter the date that the
+property data collection was performed. For the Subject Property Data Workforce, the appraiser must
+enter the Workforce indicated in the property data that is one of the six Required Entry enumerations
+listed above.
+DU Messaging:  For loan caseﬁles that are eligible for a hybrid appraisal option, DU will issue a message
+informing the lender they can obtain an appraisal reported on Form 1004 Hybrid or Form 1073 Hybrid. DU will
+also issue messages for other appraisal options. The lender may select from any of the options presented, which
+may include a hybrid appraisal, desktop appraisal, or traditional appraisal.
+Eligible Transactions
+The following are eligible for a hybrid appraisal:
+existing one-unit properties, including a condo or unit in a PUD;
+principal residence, second home, or investment properties;
+under construction properties;
+existing properties with incomplete construction or renovation project;
+community land trusts, or other properties with resale price restrictions, which include loan caseﬁles
+using the Aﬀordable LTV feature; and
+Texas 50(a)(6) loans.
+The transaction must be a purchase, limited cash-out reﬁnance, or cash-out reﬁnance.
+
+Published March 4, 2026
+540Ineligible Transactions
+The following transactions are not eligible for a hybrid appraisal:
+two- to four-unit properties;
+co-op units;
+manufactured homes;
+proposed construction;
+construction-to-permanent loans (single-close and two-close);
+HomeStyle Renovation and HomeStyle Refresh loans;
+DU loan caseﬁles that receive an Ineligible recommendation; and
+manually underwritten loans.
+Exercising Hybrid Appraisals
+When exercising a hybrid appraisal, the lender must complete all of the following:
+obtain a property data collection and successfully submit to the Fannie Mae Property Data API.
+provide the property data collection to an appraiser for the completion of a hybrid appraisal based on
+property type using either Form 1004 Hybrid or Form 1073 Hybrid.
+submit the hybrid appraisal to the Uniform Collateral Data Portal (UCDP).
+perform an appraisal review in accordance with this Guide.
+deliver the loan with the hybrid appraisal to Fannie Mae.
+Note:  A lender may obtain a hybrid appraisal if a loan loses value acceptance + property data
+eligibility after submitting the property data collection to the Property Data API. See  B4-1.4-11, Value
+Acceptance + Property Data  B4-1.4-11, Value Acceptance + Property Data for speciﬁc requirements. 
+Representations and Warranties
+When a hybrid appraisal is reported on Form 1004 Hybrid or Form 1073 Hybrid and submitted through the
+UCDP, the appraisal will be scored by Collateral Underwriter (CU). All eligible loans with a hybrid appraisal
+receiving a CU risk score of 2.5 or less are eligible for enforcement relief of certain representations and
+warranties related to the appraisal value of the subject property (see  A2-2-06, Representations and Warranties
+on Property Value  for complete requirements and additional information).
+Uniform Appraisal Dataset (UAD) 3.6 Policy
+Lenders using UAD 3.6 must follow the requirements in the  UAD 3.6 Policy Supplement  .
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.

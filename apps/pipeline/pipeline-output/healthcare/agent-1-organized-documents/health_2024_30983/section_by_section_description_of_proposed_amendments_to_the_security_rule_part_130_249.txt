@@ -1,0 +1,52 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 130/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_130
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+962 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+655‘‘Guidance on Disposing of Electronic Devices 
+and Media,’’ Office for Civil Rights, U.S. 
+Department of Health and Human Services, p. 1 (July 2018), https://www.hhs.gov/sites/default/files/ cybersecurity-newsletter-july-2018-Disposal.pdf. 
+656Id. at 2. 
+657Id. 
+658Id. 659‘‘Security Standards: Technical Safeguards,’’ 
+supra note 343, p. 4. 
+660A superuser is ‘‘a user that is authorized (and 
+therefore, trusted) to perform security-relevant 
+functions that ordinary users are not authorized to perform.’’ NIST definition of ‘‘superuser,’’ Glossary, Computer Security Resource Center, National Institute of Standards and Technology, U.S. Department of Commerce, https://csrc.nist.gov/ glossary/term/superuser. 
+661See 45 CFR 164.306(d) for an explanation of 
+‘‘required’’ and ‘‘addressable’’ implementation specifications. 
+66245 CFR 164.312(a)(2)(i). 
+66345 CFR 164.312(a)(2)(ii). 
+66445 CFR 164.312(a)(2)(iii). 
+66545 CFR 164.312(a)(2)(iv). •The removal of all ePHI from 
+reusable media before the media are 
+reused.655 
+Our guidance describes these 
+considerations in greater detail. For example, regulated entities should consider how to address the replacement of technology assets, including devices and media.
+656 
+Technology assets that need to be replaced should be decommissioned, meaning that they are taken out of service before the final disposition of such assets.
+657Steps a regulated entity 
+should consider as part of its decommissioning process include: ensuring technology assets are securely erased and then either securely destroyed or recycled; ensuring that the regulated entity’s technology asset inventory is updated to accurately reflect the status of decommissioned technology assets or technology assets slated to be decommissioned; and ensuring that privacy is protected through proper migration to another electronic information system or total destruction of the ePHI.
+658 
+The Department proposes to remove 
+the implementation specifications for accountability and data backup and storage at 45 CFR 164.310(d)(2)(iii) and (iv). We believe that the accountability provisions would be subsumed and replaced by the proposed standard for technology asset inventory at proposed 45 CFR 164.308(a)(1)(i). Thus, when the proposed new standard and implementation specifications are read together, the written policies and procedures that govern the receipt and removal of technology assets that maintain ePHI into and out of a facility, and the movement of these assets within 
+the facility, should include tracking relevant information in the technology asset inventory. Similarly, we are proposing to delete the specification for data backup and storage because it is redundant to the administrative safeguard on data backups at proposed 45 CFR 164.308(a)(13)(ii)(B). 
+As referenced above, in place of the 
+implementation specifications we are proposing to delete, the Department proposes a new implementation specification at proposed 45 CFR 164.310(d)(2)(iii) that would require a regulated entity to review and test the written policies and procedures related to the implementation specifications for technology assets at least once every 12 
+months or in response to environmental or operational changes, whichever is more frequent, and modify as reasonable and appropriate. Such environmental or operational changes may range from new and emerging threats to the confidentiality, integrity, or availability of ePHI (e.g., a new virus) to the 
+adoption of new technology assets by the regulated entity (e.g., a new 
+operating system, new types of workstations). Given the constant evolution of IT and methods for restoring data that has been disposed of or was on electronic media that has been sanitized, the Department believes that it is essential for a regulated entity to at least consider the reasonableness and appropriateness of its policies and procedures for disposal and electronic media sanitation, not only annually, but also in the face of any environmental or operational changes. We expect that pursuant to our proposals to strengthen the standard for risk analysis, a regulated entity would be able to identify such environmental and operational changes before they occur. 
+4. Request for Comment 
+The Department requests comment on 
+the foregoing proposals, including any 
+benefits, drawbacks, or unintended consequences. We also request comment on the following considerations in particular: 
+a. Whether every 12 months is an 
+appropriate frequency for review of a regulated entity’s written policies and procedures for physical safeguards. If not, please explain. 
+b. Whether the written policies and 
+procedures for physical safeguards should be reviewed at different intervals, based on the specific standard or implementation specification. If so, please explain. 
+c. Whether the Department should

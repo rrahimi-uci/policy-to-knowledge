@@ -1,0 +1,83 @@
+# 107(a)(1) Unique identifier. + 107(a)(2) Application date.
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_857
+**Pages:** 832-833
+**Section Path:** SUBPART B—SMALL BUSINESS LENDING DATA COLLECTION > Supplement I to Part 1002—Official Interpretations > Section 1002.107—Compilation of Reportable Data > 107(a)(1) Unique identifier.
+
+---
+
+832 i. A covered financial institution reports these data even if the credit originated pursuant 
+to the reported application was subsequently sold by the institution.  
+ii. A covered financial  institution annually reports data for covered applications for which 
+final action was taken in the previous calendar year.  
+iii. A covered  financial institution reports data for a covered application on its small 
+business lending application register for t he calendar year during which final action was taken on 
+the application, even if the institution received the application in a previous calendar year.  
+2. Free -form text fields . A covered financial institution may use technology such as 
+autocorrect and pred ictive text when requesting applicant-provided data under subpart B of this 
+part that the financial institution reports via  free-form text fields, provided that such technology 
+does not restrict the applicant ’s ability to write in its own response instead of using text 
+suggested by the technology.   
+3. Filing Instructions Guide . Additional details and procedures for compiling data 
+pursuant to § 1002.107 are included in the  Filing Instructions  Guide , which is available at 
+https://www.consumerfinance.gov/data -research/small -business-lending/filing -instructions -
+guide/ .  
+4. Additional data point response options . The Bureau may add additional response 
+options to the lists of responses contained in the commentary that follows for certain of the data 
+points set for th in § 1002.107(a), via the Filing Instructions Guide. Refer to the Filing 
+Instructions Guide for any updates for each reporting year.   
+107(a)(1) Unique identifier.  
+1. Unique within the financial institution.  A financial institution complies with 
+§ 1002.107(a)(1) by compiling and reporting an alphanumeric application or loan identifier 
+unique within the financial institution to the specific  application. The identifier must not exceed 
+45 characters, and must begin with the financial institution ’s Lega l Entity Identifier (LEI), as 
+defined in comment 109(b)(6) -1. Separate applications for the same applicant must have separate 
+identifiers. The identifier may only include standard numerical and/or upper -case alphabetical  
+characters and cannot include dashes, other special characters, or characters with diacritics. The 
+financial institution may assign the unique identifier at any time prior to reporting the 
+application.  Refinancings or applications for refinancing must be assigned a different identifier 
+than the transaction that is being refinanced. A financial institution with multiple branches must 
+ensure that its branches do not use the same identifiers to refer to multiple applications.  
+2. Does not include directly identifying information . The unique identifier must not 
+include any directly identifying information, such as a whole or partial Social Security number or employer identification number, about the applicant or persons (natural or legal) associated with 
+the applicant. See also § 1002.111(c) and r elated  commentary.
+
+833 107(a)(2) Application date.  
+1. Consistency.  Section 1002.107(a)(2) requires that, in reporting the date of covered 
+application, a financial institution shall report the date the covered application was received or 
+the date shown on a paper or electronic application form. Although a financial institution need 
+not choose the same approach for its entire small business lending application register, it should 
+generally be consistent in its approach by, for example, establishing procedures for  how to report 
+this date within particular scenarios, products, or divisions. If the financial institution chooses to 
+report the date shown on an application form and the institution retains multiple versions of the 
+application form, the institution reports the date shown on the first application form satisfying 
+the definition of covered application pursuant to §  1002.103.  
+2. Application received . For an application submitted directly to the financial institution 
+or its affiliate (as described in §  1002.107(a)(4)), the financial institution shall report the date it 
+received the covered application, as defined under §  1002.103, or the date shown on a paper or 
+electronic application form. For an application initially submitted to a third party, see comment 
+107(a)(2)-3.  
+3. Indirect applications.  For an application that was not submitted directly to the financial 
+institution or its affiliate (as described in §  1002.107(a)(4)), the financial institution  shall report 
+the date the application was received by the par ty that initially received the application, the date 
+the application was received by the financial institution, or the date shown on the application 
+form. Although a financial institution need not choose the same approach for its entire small 
+business lending application register, it should generally be consistent in its approach by, for 
+example, establishing procedures for how to report this date within particular scenarios, 
+products, or divisions.  
+4. Safe harbor . Pursuant to § 1002.112(c)(1), a financial institution that reports on its 
+small business lending application register an application date that is within three business days 
+of the actual application date pursuant to §  1002.107(a)(2) does not violate the Act or subpart  B 
+of this part. For purposes of this paragraph, a business day means  any day the financial 
+institution is open for business.  
+107(a)(3) Application method.  
+1. General.  A financial institution complies with §  1002.107(a)(3) by reporting the means 
+by which the applicant submitte d the application from one of the following options: in-person, 
+telephone, online, or mail. If the financial institution retains multiple versions of the application 
+form, the institution reports the means by which the first application form satisfying the  
+definition of covered application pursuant to §  1002.103 was submitted.  
+i. In-person.  A financial institution reports the application method as “ in-person” if the 
+applicant submitted the application to the financial institution, or to another party actin g on the 
+financial institution ’s behalf, in person. The in-person application method  applies, for example, 
+to applications submitted at a branch office (including applications hand delivered by the applicant),  at the applicant ’s place of business, or via e lectronic media with a video component).

@@ -1,0 +1,161 @@
+# c. Allocation to intangible assets (10/17/24) (part 164/288)
+
+**Source:** freddies_mac.pdf
+**Chunk ID:** freddies_mac_3094_sub_164
+**Pages:** 279-1254
+**Section Path:** 10 - Mtg, Orig, UW Fundamentals GB-02-24-26.pdf > 10.18 Permitted Mortgage amount – Acquisition financing and certain refinances (12/16/25) > c. Allocation to intangible assets (10/17/24)
+
+---
+
+Guide Bulletin Update 02/24/26 Chapter 43 – Page 49 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the 
+AllRegs web site of ICE Mortgage Technology  (with a paid subscription).  
+Guide Chapter 43 – Specific Servicing Responsibilities  
+e. Non-residential leases the Servicer is permitted to approve for an SBL Mortgage
+(02/24/26)
+If a Servicer Delegation Requirement  has been satisfied , the Servicer is delegated authority to
+approve a non-residential lease , provided  all of the following  conditions are satisfied :
+•If the SBL Mortgage is in a Securitization where Freddie Mac is the named master servicer,
+Freddie Mac must also be the Directing Certificateholder (or Directing Party).
+•The tenant under the non-residential lease is not an Affiliate of the Borrower or an affiliate of
+any Guarantor
+•The terms of the non-residential lease are at least as favorable to the Borrower as those
+customary in the applicable market at the time the Borrower enters into the non-residential
+lease
+•The rents paid to the Borrower pursuant to the non-residential lease are not less than 90
+percent of the rents paid to the Borrower pursuant to the non-residential lease, if any, for that
+portion of the Property that was in effect prior to the non-residential lease
+•The term of the non-residential lease, including any option to extend, is 10 years or less
+•The intended use of the space that is the subject of the non-residential lease may not allow
+the leased premises to be used or operated, in whole or in part, for any illegal activity or any
+Restricted Non -Residential Use
+•The aggregate of the income derived from the space leased pursuant to the Nonresidential
+Lease accounts for less than 20 percent of the gross income of the Property on the date that
+the Borrower enters into the Nonresidential Lease
+For any non -residential lease that does not require Freddie Mac approval, the Servicer must 
+notify Freddie Mac of any actions taken under the delegated approval within 30 days of the 
+effective date of the approval by taking the following actions:  
+1.Creating a record in CRT  indicating the specific Servicer Delegation Requirement that has
+been satisfied.
+2.Electronically delivering to Freddie Mac  via DMS  a completed General Servicing Request ,
+along with any supporting documentation.
+43.25  Product -specific general Servicing requirements (09/18/14)  
+For additional general Servicing requirements for the Freddie Mac Multifamily Seniors Housing 
+Product, see Section 21.19.  
+For additional general Servicing requirements for Multifamily Housing Bond Credit Enhancements, 
+see Sections 28.8, 28.9, 28.12 and 28.18.
+
+Guide Bulletin Update 02/24/26 Chapter 43 – Page 50 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the 
+AllRegs web site of ICE Mortgage Technology  (with a paid subscription).  
+Guide Chapter 43 – Specific Servicing Responsibilities  
+43.26  Radon and what to report to Freddie Mac ( 05/22/25 ) 
+A Property secured by an SBL Mortgage is not required to be tested for the presence of radon.  
+ 
+For a Property securing a non -SBL Mortgage  for which the environmental consultant determined that 
+radon testing was warranted , the following table lists the appropriate and timely steps required to 
+notify Freddie Mac for any follow -up radon testing described in Section 61. 14.  
+ 
+The Servicer must follow this protocol.  The Borrower’s certificate is not sufficient evidence to satisfy 
+radon requirements set forth in the loan documents.  
+ 
+Radon Follow -Up 
+Test Result s - 
+Environmental 
+Consultant 
+Determination  Required Action  
+If the environmental 
+consultant determines 
+based on the follow -
+up test results  that no 
+further action is 
+necessary  Servicer must upload the follow -up test results to PRS, naming the file as 
+Radon  Test Results  Follow -Up, by the Completion Date  for Follow -Up 
+Radon Testing  (as defined in the Loan  Documents) . 
+ 
+ 
+If the environmental 
+consultant determines 
+based on the follow -
+up test results  that 
+remediation is 
+necessary  Remediation will be required along with the following steps:  
+ 
+Step 1 .  Servicer uploads test results to PRS, naming the file as Radon 
+Test Results  Follow -Up, by the Completion Date  for Follow -Up Radon 
+Testing . 
+ 
+Step 2.   Servicer must provide Borrower with a Radon Remediation 
+Notice (as defined in the Loan Documents) within two Business Days.  
+ 
+Step 3.   Servicer must upload copy of the Radon Remediation Notice to 
+PRS, naming the file as Radon Remediation Notice.  
+ 
+Note :  Borrower will have 30 days after  the date of the Radon 
+Remediation  Notice to provide Servicer with a signed, binding fixed price 
+radon remediation contract with a qualified service provider.  Borrower 
+will have 90 days to complete remediation  after the date of the Radon 
+Remediation Notice . 
+ 
+Step 4.   After completion of radon remediation, Servicer must upload to 
+PRS written certification from a qualified environmental consultant  
+stating the remediation methods that were used , that remediation has 
+been satisfactorily completed , that post -remediation testing has been 
+conducted and that the units with completed  radon remediation now 
+demonstrate  radon levels below 4 pCi/L.   Servicer must name the file as 
+Post-Mitigation Test Results.
+
+Guide Bulletin Update 02/24/26 Chapter 43 – Page 51 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the 
+AllRegs web site of ICE Mortgage Technology  (with a paid subscription).  
+Guide Chapter 43 – Specific Servicing Responsibilities  
+ 
+43.27  Delivery of written notice of incomplete application or confirmation of withdrawn 
+application (11/30/12)  
+If an application for a modification to the Mortgage that would result in a change in the collateral or a 
+change in a Borrower Principal or Guarantor, or any other credit extension is incomplete, the Servicer 
+must provide the Borrower with a written request on behalf of Freddie Mac for any missing items in 
+compliance with the Equal Credit Opportunity Act.   
+ 
+If the Borrower withdraws the application either orally or in writing, the Servicer must send on behalf of 
+Freddie Mac written confirmation to the Borrower (letter or email) confirming the Borrower’s 
+withdrawal of the application for a modification.  The S ervicer must maintain a copy of the Borrower’s 
+written notice of withdrawal or its confirmation of the oral withdrawal.  
+ 
+The Servicer must maintain a record of all written notices sent on behalf of Freddie Mac and maintain 
+copies of each such notice in the Mortgage file in accordance with the requirements of Chapter 34.  
+ 
+43.28  Ongoing Screening of Restricted Party Lists  (08/26/25) 
+The Servicer must periodically and at least monthly  screen Borrowers, Borrower Principals , 
+Guarantors , Non-U.S. Equity Holders , and any applicable property management company  related to 
+Mortgages that the Servicer services for Freddie Mac against the Restricted Party Lists  (as defined in 
+Section 7.1) . 
+ 
+A Servicer that identifies a valid match against any Restricted Party  List must notify Freddie Mac via 
+an email to the Multifamily Fraud Investigation Unit  within one Business Day of a valid Borrower, 
+Borrower Principal , Guarantor,  Non-U.S. Equity Holder , or property management company  match.  
+Such email notification must also provide the following information:  
+ 
+• Freddie Mac loan number  
+ 
+• Borrower, Borrower Principal , Guarantor , any Non -U.S. Equity Holder , and any property 
+management company  identifying information  
+ 
+• Name, title, email address, and telephone number for the point of contact at the Servicer who will 
+be able to discuss the Restricted Party  List match  
+ 
+If a Servicer identifies a valid match in a screening conducted in connection with a Borrower request 
+for lender consent to a transaction, then in addition to following the procedure to notify Freddie Mac 
+set forth above, the Servicer must not approve, or request approval from Freddie Mac for, such 
+transaction until it receives further instruction from Freddie Mac.  
+ 
+Upon receipt of the email notification, a representative from Freddie Mac will contact the Servicer to 
+discuss the Restricted Party List  match and any potential next steps.   Freddie Mac may also require 
+the Servicer to provide documentation or additional information regarding the Restricted Party List  
+match.  
+ 
+With respect to any  confirmed match against the OFAC SDN List or Consolidated Sanctions List , 
+notifying Freddie Mac  does not absolve the Servicer from its responsibility to file any reports with 
+OFAC, as required by OFAC Regulations.

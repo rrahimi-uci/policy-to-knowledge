@@ -1,0 +1,48 @@
+# vii. Amount Approved or Originated
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_706
+**Pages:** 694-694
+**Section Path:** VIII. Public Disclosure of Data > B. Preliminary Privacy Assessment > 6. Preliminary Privacy Assessment of Particular Data Fields > vii. Amount Approved or Originated
+
+---
+
+694 not included in other  publicly  available  data,  so it would likely  not be useful  to adversaries  
+seeking  to match  1071 data with other  publicly  available  data.  However,  the Bureau believe d that 
+amount  applied for would  be useful  to an adversary  in other  ways. For example,  a significant 
+shortfall between  the amount  applied  for and the amount  approved could be used  either  by an 
+applicant ’s competitor  or by a consumer  to infer  that the business  has a relatively  weak  financial  
+position.  With  information  on whether  or not a business  is granted  a loan,  an adversary  might  
+gain insight into the scale of a business ’s objectives  based  on the amount  applied  for or 
+approved.  The Bureau also noted  that t he relative  scarcity of this information  at present  would  
+also increase its value  to adversaries . As an additional consideration , the Bureau saw no reason  
+that disclosure would permit the reverse -engineering of proprietary lending models.  
+The Bureau received comments from several industry commenters and a community 
+group. A group of trade associations stated that if a small business applicant is re -identified, 
+disclosing the amount applied for could reveal information about the financial status of that small 
+business that could harm its prospects for credit. Several industry commenters expressed concern that data about the amount applied for would create privacy risks for small business applicants 
+by revealing confidential information, such as plans for business acquisitions or expansions. 
+Another commenter stated that disclosing the amount applied for can create privacy risks for financial institutions. This  commenter noted that the amounts applicants apply for can be 
+arbitrary and, therefore, comparing these amounts to any amounts approved could be misleading 
+and not a reliable metric for whether credit demand is met.  
+The Bureau stated that if it determined  that the amount applied for should be modified, it 
+may consider recoding the data into bins. For example, the Bureau could recode the amount 
+applied for into bins of $25,000. In response, a community group stated that the Bureau could recode the amount app lied for into bins that use the mid -point of $10,000 intervals. As noted by 
+the commenter, HMDA utilizes this technique, and, according to the commenter, it would be 
+sufficient for privacy purposes while producing more accurate data.  
+After  reviewing  these  comments,  the Bureau assesses that disclosing  this data field  may 
+create some  privacy  risk where small  business  applicants  and related  natural  persons  face re-
+identification  risk that could reveal  non-public  commercial  information,  such as an application  
+for credit  or business  acquisition  or expansion plans.  Further, to the extent  that this data point , 
+combined with the amount  approved or originated  data point , indicates  business  difficulties,  this 
+could impact  the reputational  interests  of small busines ses and their owners.  The Bureau also 
+assesses that in some  circumstances  disclosing  amount  applied  for could  disclose  personal  
+information  about  an applicant  or related  natural  person  that would be harmful or sensitive  if 
+such  person were re-identified.  Comments  asserting  privacy  risks  for financial  institutions,  
+however,  provided  no compelling  evidence  of privacy  risk to alter the NPRM  analysis  on point.   
+vii. Amount Approved or Originated 
+Proposed § 1002.107( a)(8) would have  required financial institutions to collect and report 
+to the Bureau: ( i) for an application for a closed -end credit transaction that is approved but not 
+accepted, the amount approved by the financial institution; or (ii)  for a closed -end credit 
+transaction that is  originated, the amount of credit originated; or (iii)  for an application for an 
+open-end credit transaction that is originated or approved but not accepted, the amount of the

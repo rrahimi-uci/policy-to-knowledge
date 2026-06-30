@@ -1,0 +1,50 @@
+# 107(a)(13) Census Tract
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_404
+**Pages:** 362-362
+**Section Path:** V. Section-by-Section Analysis > Section 1002.107 Compilation of Reportable Data > 107(a)(13) Census Tract
+
+---
+
+362 market transparency and new product development opportunities. The Bureau is not convinced 
+by commenters ’ assertions that the data will not be valuable nor that it should require reporting 
+of additional da ta related to prepayment penalties. The Bureau believes the type of data required 
+to be reported pursuant to final §  1002.107(a)(12)(vi) strikes the right balance between collecting 
+information helpful to analyze for the purposes mentioned above and not re quiring financial 
+institutions to provide information regarding prepayment penalties.  
+107(a)(13) Census Tract  
+Proposed Rule  
+Section 1071 requires financial institutions to collect and report “ the census tract in 
+which is located the principal place of business of the  . . . applicant.”654 This provision is similar 
+to Regulation  C, which requires reporting of the census tract in certain circumstances if the 
+property securing the loan (or proposed to secure the loan, if the transaction was not originated) 
+is in a county with a population of more than 30,000.655 Under Regulation  C, the financial 
+institution generally finds the census  tract by geocoding using the address of the property. 
+Geocoding is the process of using a particular property address to locate its geographical 
+coordinates , and from those coordinates one can identify the corresponding census tract.  
+CRA reporting of busi ness loans by depository institutions also requires reporting of 
+census tract. The Bureau understands that CRA allows reporting of a census tract based on the 
+address or location where the proceeds of the credit will be principally applied.656  
+The Bureau p ropos ed § 1002.107(a)(13) to require financial institutions to collect and 
+report the census tract data point using a “ waterfall” approach. The proposed rule would have 
+require d a financial institution to collect and report the census tract in which is loc ated: (i)  The 
+address or location where the proceeds of the credit applied for or originated will be or would 
+have been principally applied; or (ii)  If the information in (i) is unknown, the address or location 
+of the main office or headquarters of the app licant; or (iii)  If the information in both (i) and (ii) is 
+unknown, another address or location associated with the applicant. In addition, the proposed 
+rule would have require d that the financial institution also indicate which one of the three types 
+of addresses or locations listed in (i), (ii), or (iii) the census tract is based on. Although the 
+proposed rule did  not specifically require it, the Bureau assume d that financial institutions or 
+their vendors would generally use a geocoding tool to analyze the appropriate address to identify 
+a census tract number.  
+The proposed approach would have require d a financial institution to report the census 
+tract of the proceeds address if it was available but would not  have  require d a financial institution 
+to ask ab out it specifically. Financial institutions would  have  been able to apply the waterfall 
+approach to the addresses they were  currently collecting; they would not have been required to 
+specifically ask for the proceeds or headquarters addresses. In addition,  the proposed method 
+ 
+654 ECOA section 704B(e)(2)(E).  
+655 Regula tion  C § 1003.4(a)(9)(ii)(C). Regulatio n C a lso requires reporting of the property a ddress for a ll 
+a pplications.  
+656 See 2015 FFIEC CRA Guide at 16.

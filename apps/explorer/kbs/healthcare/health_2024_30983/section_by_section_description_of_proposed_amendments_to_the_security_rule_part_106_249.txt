@@ -1,0 +1,45 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 106/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_106
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+950 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+564See proposed 45 CFR 164.308(a)(9)(ii)(E). 
+565‘‘Cybersecurity Performance Goals,’’ supra 
+note 18. 566See ‘‘Security Standards: Administrative 
+Safeguards,’’ supra note 517, p.11. 
+567See, e.g., Resolution Agreement, ‘‘Banner 
+Health,’’ Office for Civil Rights, U.S. Department of 
+Health and Human Services (Dec. 20, 2022), https:// 
+www.hhs.gov/hipaa/for-professionals/compliance- 
+enforcement/agreements/banner-health-ra-cap/ 
+index.html; ‘‘Montefiore Medical Center,’’ supra 
+note 248. 
+568See 45 CFR 164.502(b) and 164.514(d). 
+569See Press Release, ‘‘OCR Imposes a $2.15 
+Million Civil Money Penalty against Jackson Health System for HIPAA Violation,’’ U.S. Department of Health and Human Services (Oct. 19, 2019), https:// 
+public3.pagefreezer.com/browse/HHS.gov/31-12- 
+2020T08:51/https://www.hhs.gov/about/news/2019/ 10/23/ocr-imposes-a-2.15-million-civil-money- penalty-against-jhs-for-hipaa-violations.html; see also Notice of Proposed Determination, ‘‘Jackson 
+Health System,’’ Office for Civil Rights, U.S. Department of Health and Human Services (July 22, 2019), https://public3.pagefreezer.com/browse/ 
+HHS.gov/31-12-2020T08:51/https://www.hhs.gov/ sites/default/files/jackson-health-system-notice-of- final-determination_ 508.pdf; Notice of Final 
+Determination, ‘‘Jackson Health System,’’ Office for Civil Rights, U.S. Department of Health and Human Services (Oct. 15, 2019), https://public3.pagefreezer.com/browse/HHS.gov/31-12- 2020T08:51/https://www.hhs.gov/sites/default/files/ jackson-health-system-notice-of-final- determination_ 508.pdf. 
+570See Press Release, ‘‘HHS Office for Civil Rights 
+Settles HIPAA Investigation with Arizona Hospital System Following Cybersecurity Hacking,’’ U.S. Department of Health and Human Services (Feb. 2, 2023), https://www.hhs.gov/about/news/2023/02/ 
+02/hhs-office-for-civil-rights-settles-hipaa- investigation-with-arizona-hospital-system.html. 
+571See ‘‘Implementing the Health Insurance 
+Portability and Accountability Act (HIPAA) 
+Security Rule: A Cybersecurity Resource Guide,’’ supra note 461. and to locations where ePHI or relevant 
+electronic information systems might be accessed. Proposed paragraph (a)(9)(ii)(C)(2) would require that the workforce member’s access be terminated as soon as possible, but no later than one hour after the workforce member’s employment or other arrangement ends. A proposed implementation specification for notification at proposed 45 CFR 164.308(a)(9)(ii)(D) would require a regulated entity to establish and implement written procedures for notifying another regulated entity of a change in, or termination of, a workforce member’s authorization to access ePHI or relevant electronic information systems. Proposed paragraph (a)(9)(ii)(D)(1) would require the regulated entity to establish and implement written procedures for notifying another regulated entity after a change in or termination of a workforce member’s authorization to access ePHI or relevant electronic information 
+systems that are maintained by such other regulated entity where the workforce member is or was authorized to access such ePHI or relevant electronic information systems by the regulated entity making the notification. Proposed paragraph (a)(9)(ii)(D)(2) would require the notice to be provided as soon as possible, but no later than 24 hours after the workforce member’s authorization to access ePHI or relevant electronic information systems is changed or terminated. Finally, a proposed new implementation specification for maintenance at proposed 45 CFR 164.308(a)(9)(ii)(E) would require a regulated entity to review and test its written workforce security policies and procedures at least once every 12 months and to modify them as reasonable and appropriate.
+564 
+The proposed implementation specifications for termination procedures and notification implementation align with the Department’s essential CPG for Revoke Credentials for Departing Workforce Members, Including Employees, Contractors, Affiliates, and Volunteers by requiring a regulated entity to promptly remove access following a change in or termination of a user’s authorization to access ePHI.
+565 
+l. Section 164.308(a)(10)(i)—Standard: Information Access Management 
+The purpose of the standard for 
+information access management is to protect ePHI by reducing the risk that other persons or technology assets may 
+access the information for their own reasons. Existing HHS guidance explains that restricting access to only those persons and entities with a need for access is a basic tenet of security.
+566

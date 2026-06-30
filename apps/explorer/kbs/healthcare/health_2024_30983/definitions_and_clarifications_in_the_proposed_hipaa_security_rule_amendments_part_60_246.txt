@@ -1,0 +1,34 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 60/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_060
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+b. Proposal 
+The Department proposes to modify 
+the definition of ‘‘security or security 
+measures’’ to clarify that security or security measures may not only exist in information systems but may also be applied to information systems.
+386This 
+clarification would better reflect the multi-layered approach to cybersecurity recommended by experts to address the concerns facing regulated entities today. For example, a regulated entity may determine that it is necessary to apply access controls and encryption mechanisms through an external mechanism, such as added firewall technology,
+387that is applied to the system, rather than technical controls 
+that are embedded within the system or components of the system. The Department believes that the proposed definition would provide a more complete instruction. 
+The Department proposes to 
+reorganize the definition of ‘‘security incident’’ into two numbered paragraphs to delineate the two separate categories of security incidents. We also propose to clarify that in both instances, the definition applies when the described action affects an information system and regardless of whether an attempt to affect the information in the system or interfere with system operations is successful or not. 
+16. Adding Definitions of ‘‘Technical 
+Controls’’ 
+a. Issues To Address 
+Throughout the technical safeguards 
+provisions in 45 CFR 164.312, the 
+Department directs regulated entities to implement technical policies and procedures. The court in M.D. Anderson interpreted technical policies and procedures as written policies and procedures on technical matters.
+388This 
+interpretation does not reflect the Department’s intent for technical safeguards to include policies and procedures that rely on technology or technological solutions for implementation.
+389We believe that the 
+court’s interpretation could have significant consequences for the confidentiality, integrity, and availability of ePHI. 
+b. Proposal 
+The Department proposes to add and 
+define the term ‘‘technical controls’’ to 
+help regulated entities better understand what we mean by technical safeguards for purposes of complying with the Security Rule. We propose to define technical controls as technical mechanisms contained in the hardware, software, or firmware components of an electronic information system that are primarily implemented and executed by the electronic information system to protect it and the data within the electronic information system. The Department believes that adding this term would better convey the expectation that a regulated entity is 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00032 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

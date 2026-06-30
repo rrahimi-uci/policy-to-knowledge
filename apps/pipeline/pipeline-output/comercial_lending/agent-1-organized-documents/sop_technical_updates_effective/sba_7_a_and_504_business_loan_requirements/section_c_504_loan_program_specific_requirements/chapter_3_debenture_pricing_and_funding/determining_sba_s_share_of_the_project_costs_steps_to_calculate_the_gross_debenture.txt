@@ -1,0 +1,57 @@
+# Determining SBA’s Share of the Project Costs + Steps to Calculate the Gross Debenture
+
+**Source:** sop_technical_updates_effective.docx
+**Chunk ID:** sop_technical_updates_effective_192
+**Section Path:** SBA 7(a) and 504 Business Loan Requirements > Section C. 504 Loan Program Specific Requirements > Chapter 3: Debenture Pricing and Funding > Determining SBA’s Share of the Project Costs
+
+---
+
+#### Determining SBA’s Share of the Project Costs
+
+To price a debenture, you must determine SBA’s share of a project’s total cost. The following hypothetical project for a new business or for a Limited or Special Purpose Property will identify the amount of funds required to fund both the eligible project costs (Net Debenture) plus the administrative costs totals the Gross Debenture amount.
+
+To illustrate, assume that total project costs (land, building and machinery and equipment and eligible soft costs) are $1,000,000. Assuming SBA will finance 35% of the project costs for 20 or 25 years, participation in project financing would be as follows:
+
+
+| % | Participation | Amount |
+| --- | --- | --- |
+| 50% | Third-Party Lender | $500,000 |
+| 35% | 504 Net Debenture | $350,000 |
+| 15% | Small Business Injection | $150,000 |
+| 100% | Total Project Costs | $1,000,000 |
+
+#### Steps to Calculate the Gross Debenture
+
+Use the following step by step pricing model procedures to determine the administrative costs and the Gross Debenture amount. Except for the underwriting fee and closing costs, each administrative cost is based on the amount of the Net Debenture.
+
+For more information, see Ch. 1, Para. C.12 of this Section, Eligible Administrative Costs. Also see Section A, Ch. 4, Para. E., 504 Loan Program Fees and Use of Agents.
+
+
+| 1 | Net Debenture | Determine the Net Debenture: | $350,000 |
+| --- | --- | --- | --- |
+| 2 | SBA Guaranty Fee (.5%) | multiply $350,000 by 0.005 = | $1,750 |
+| 3 | Funding Fee (.25%) | multiply $350,000 by .0025 = | $875 |
+| 4 | CDC Processing Fee (1.5%) | multiply $350,000 by .015 = | $5,250 |
+| 5 | Eligible Closing Costs* | = | $2,500 |
+| 6 | Gross Debenture Amount | To calculate the Gross Debenture, add items 1 through 5 above and divide the total by 0.996 for 20 or 25-year debentures (for 10-year debentures, this number would be 0.99625). This step adds the Underwriter’s Fee to the total debenture. Round this number up to the next even thousand. | To calculate the Gross Debenture, add items 1 through 5 above and divide the total by 0.996 for 20 or 25-year debentures (for 10-year debentures, this number would be 0.99625). This step adds the Underwriter’s Fee to the total debenture. Round this number up to the next even thousand. |
+|  |  | Net Debenture Proceeds | $350,000 |
+|  |  | SBA Guaranty Fee | $1,750 |
+|  |  | Funding Fee | $875 |
+|  |  | CDC Processing Fee | $5,250 |
+|  |  | Closing Costs | $2,500 |
+|  |  | Total | $360,375 |
+|  |  | Divide by 0.99600
+(0.99625 for 10-Year Debenture) | $360,065 |
+|  |  | Round up to the next even thousand | $362,000 |
+|  | The Gross Debenture in this example is $ 362,000. | The Gross Debenture in this example is $ 362,000. | The Gross Debenture in this example is $ 362,000. |
+|  | Note: The Gross Debenture is calculated first because the Underwriter’s Fee is based on the Gross Debenture, not the Net Debenture. | Note: The Gross Debenture is calculated first because the Underwriter’s Fee is based on the Gross Debenture, not the Net Debenture. | Note: The Gross Debenture is calculated first because the Underwriter’s Fee is based on the Gross Debenture, not the Net Debenture. |
+| 7 | Underwriter’s Fee | To determine the exact amount of the underwriter’s fee, multiply the 20 or 25-year Gross Debenture by .004 (for 10-year debentures, this number would be .00375). | To determine the exact amount of the underwriter’s fee, multiply the 20 or 25-year Gross Debenture by .004 (for 10-year debentures, this number would be .00375). |
+|  |  | Multiply $362,000 by .004 = | $1,448 |
+| 8 | Balance to Borrower.
+The difference between the Gross Debenture amount ($362,000.00) and the sum of Net Debenture proceeds ($350,000.00), processing and closing fees ($8,625.00), and Underwriter’s fee ($1,448.00) goes to the Borrower. | Balance to Borrower.
+The difference between the Gross Debenture amount ($362,000.00) and the sum of Net Debenture proceeds ($350,000.00), processing and closing fees ($8,625.00), and Underwriter’s fee ($1,448.00) goes to the Borrower. | Balance to Borrower.
+The difference between the Gross Debenture amount ($362,000.00) and the sum of Net Debenture proceeds ($350,000.00), processing and closing fees ($8,625.00), and Underwriter’s fee ($1,448.00) goes to the Borrower. |
+|  | In this example, the Balance to Borrower is:
+$362,000 – ($350,000 + $10,375 + $1,448) = $931. | In this example, the Balance to Borrower is:
+$362,000 – ($350,000 + $10,375 + $1,448) = $931. | In this example, the Balance to Borrower is:
+$362,000 – ($350,000 + $10,375 + $1,448) = $931. |

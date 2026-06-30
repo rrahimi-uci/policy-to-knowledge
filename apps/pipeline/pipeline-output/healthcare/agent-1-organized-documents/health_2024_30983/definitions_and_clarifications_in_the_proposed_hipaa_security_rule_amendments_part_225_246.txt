@@ -1,0 +1,73 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 225/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_225
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+1011 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+removable media, magnetic tape, optical 
+disk, and any other form of digital memory or storage. 
+(2) Transmission media used to 
+exchange information already in electronic storage material. Transmission media includes, but is not limited to, the internet, extranet or intranet, leased lines, dial-up lines, private and public networks, and the physical movement of removable/ transportable electronic storage material. 
+* * * * * 
+PART 164—SECURITY AND PRIVACY 
+■1. The authority citation for part 164 
+continues to read as follows: 
+Authority: 42 U.S.C. 1302(a); 42 U.S.C. 
+1320d–1320d–9; sec. 264, Pub. L. 104–191, 
+110 Stat. 2033–2034 (42 U.S.C. 1320d– 2(note)); and secs. 13400–13424, Pub. L. 111– 5, 123 Stat. 258–279. 
+■2. Revise and republish subpart C to 
+read as follows: 
+Subpart C—Security Standards for the 
+Protection of Electronic Protected Health Information 
+Sec. 
+164.302 Applicability. 164.304 Definitions. 164.306 Security standards: General rules. 164.308 Administrative safeguards. 164.310 Physical safeguards. 
+164.312 Technical safeguards. 164.314 Organizational requirements. 164.316 Documentation requirements. 164.318 Transition provisions. 164.320 Severability. Appendix A to Subpart C of Part 164— 
+Security Standards: Matrix 
+Authority: 42 U.S.C. 1320d–2 and 1320d– 
+4; 42 U.S.C. 17931. 
+§ 164.302 Applicability. 
+A covered entity or business associate 
+must comply with the applicable 
+standards, implementation specifications, and requirements of this subpart with respect to electronic protected health information of a covered entity. 
+§ 164.304 Definitions. 
+As used in this subpart, the following 
+terms have the following meanings: 
+Access means the ability or the means 
+necessary to read, write, modify, delete, transmit, or communicate data/ information or otherwise use any component of an information system. (This definition applies to ‘‘access’’ as used in this subpart, not as used in subpart D or E of this part.) 
+Administrative safeguards are 
+administrative actions and related policies and procedures to manage the selection, development, implementation, and maintenance (including updating and modifying) of security measures to protect electronic protected health information, and to manage the conduct of the covered entity’s or business associate’s workforce in relation to the protection of that information. 
+Authentication means the 
+corroboration that a person or technology asset is the one they are claiming to be. 
+Availability means the property that 
+data or information is accessible and useable upon demand by an authorized person or technology asset. 
+Confidentiality means the property 
+that data or information is not made available or disclosed to unauthorized persons, technology assets, or processes. 
+Deploy means to configure technology 
+for use and implement such technology. 
+Electronic information system means 
+interconnected set of electronic information resources under the same direct management control that shares common functionality. An electronic information system generally includes technology assets, such as hardware, software, electronic media, information, and data. 
+Encryption means the use of an 
+algorithmic process to transform data into a form in which there is a low probability of assigning meaning without use of a confidential process or key. 
+Facility means the physical premises 
+and the interior and exterior of a building(s). 
+Implement means to put into effect 
+and be in use, operational, and function as expected throughout the covered entity or business associate. 
+Information system means an 
+interconnected set of information resources under the same direct management control that shares common functionality. An information system generally includes hardware, software, information, data, communications, and people. 
+Integrity means the property that data 
+or information have not been altered or destroyed in an unauthorized manner. 
+Malicious software means software or 
+firmware intended to perform an unauthorized action or activity that will have adverse impact on an electronic information system and/or the confidentiality, integrity, or availability of electronic protected health information. Examples include but are not limited to viruses, worms, Trojan horses, spyware, and some forms of adware. 
+Multi-factor authentication means 
+authentication of the user’s identity through verification of at least two of the following three categories: 
+(1) Information known by the user, 
+including but not limited to a password or personal identification number (PIN). 
+(2) Item possessed by the user, 
+including but not limited to a token or a smart identification card. 
+(3) Personal characteristic of the user, 
+including but not limited to fingerprint, facial recognition, gait, typing cadence, or other biometric or behavioral characteristics. 
+Password means confidential

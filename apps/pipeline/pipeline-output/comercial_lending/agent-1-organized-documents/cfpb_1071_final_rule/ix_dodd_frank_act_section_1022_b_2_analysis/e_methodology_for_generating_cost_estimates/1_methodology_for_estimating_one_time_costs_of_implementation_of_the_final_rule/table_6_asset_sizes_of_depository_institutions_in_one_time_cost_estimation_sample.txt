@@ -1,0 +1,122 @@
+# Table 6: Asset sizes of depository institutions in one-time cost estimation sample
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_739
+**Pages:** 734-736
+**Section Path:** IX. Dodd-Frank Act Section 1022(b)(2) Analysis > E. Methodology for Generating Cost Estimates > 1. Methodology for Estimating One-time Costs of Implementation of the Final Rule > Table 6: Asset sizes of depository institutions in one-time cost estimation sample
+
+---
+
+734 Table 6: Asset sizes of depository institutions in one -time cost estimation sample  
+Asset Category  Count  Percent of Sample 
+Less than $250 million 9 21.43 
+$250 million to $500 million 9 21.43 
+$500 million to $1 billion 7 16.67 
+$1 billion to $10 billion  8 19.05 
+$10 billion to $500 billion 9 21.43 
+ 
+For the purposes of estimating one -time costs, the Bureau distinguishes between 
+depository institutions and nondepository institutions. The majority of nondepository institutions 
+are not currently subject to any similar data reporting requirements, with the notable exception of 
+nondepository CDFIs. The Bureau anticipates that covered financial institutions that are not 
+currently subject to data reporting requirements will need to make more  changes to their existing 
+business operations in order to comply with the requirements of the final rule. This expectation is confirmed by the higher estimated one -time costs for nondepository institutions relative to 
+depository institutions from the survey and discussed in part IX.F.3.i.  
+The Bureau categorizes depository institution respondents in the cost estimation sample 
+into four groups according to the respondents ’ self-reported total originations. The first group 
+contains the two depository institutions that reported fewer than 25 originations; the Bureau 
+assumes these institutions would not report under the final rule. The second group contains ten 
+depository institutions that reported between 25 and 149 originations.
+935 The Bureau categorizes 
+these as Type A DIs (that is, a DI that is a Type A FI as defined above.) The third group contains 
+the 19 depository institutions that reported between 150 and 999 originations. The Bureau categorizes these as Type B DIs. The final group contains the 11 depository institutions that 
+reported 1,000 or more originations. The Bureau categorizes these as Type C DIs.  
+There are not enough nondepository institutions in the cost estimation sample to separate 
+nondepository institutions into Types A, B, and C and obtain meaningful estimates. Instead, the 
+Bureau is relying on the assumption that nondepository institutions (referred to as Non-DIs for 
+purposes of this analysis) will incur the same one -time costs regardless of the complexity of 
+existing business operations, CDFI status, or coverage by State commercial financing laws .  
+The Bureau estimated the one-time costs for each of the four categories of financial 
+institutions (Type A DI, Type B DI, Type C DI, and Non-DI) using the following met hodology.  
+ 
+935 The Bureau acknowledges that it  uses infor mation collected from institutions that will not be covered by the final 
+rule to estimate the costs of implementing the rule. The Bureau uses these observations to maintain a large enough 
+sample size.
+
+735 For each of the  first eight categories of one -time costs, the Bureau asked financial 
+institutions to estimate and report the total number of hours that junior, mid-level, and senior 
+staff would spend on each task, along with any additional non -salary expenses. If a respondent 
+did not provide estimates for any component ( i.e., staff hours or non -salary expenses) of any 
+category, it is not counted as part of the cost estimation sample. If a respondent provided estimates for some components but did not provide an estimate for a particular component ( e.g., 
+non-salary expenses for preparation/planning) then the Bureau assumed that the respondent 
+estimated zero for that component.  
+The Bureau asked survey respondents to report the average hourly wage fo r junior, mid -
+level, and senior/executive staff involved in the one -time cost categories. However, for the 
+purposes of estimating one -time costs, the Bureau assumes a constant wage across financial 
+institutions for each level of staff. The Bureau has updat ed the wages for the final rule from the 
+wages used in the NPRM. For junior staff, the Bureau uses $15.64 , the 10th percentile hourly 
+wage estimate for “ loan officers” according to the 202 1 Occupational Employment Statistics 
+compiled by the Bureau of Labor  Statistics.
+936 For mid -level staff, the Bureau uses $38.74 , the 
+estimated mean hourly wage estimate for “ loan officers.” For senior staff, the Bureau used 
+$66.50, the 90th  percentile hourly wage estimate for “ loan officers.” To account for non -
+monetary compensation, the Bureau also scaled these hourly wages up by 43 percent.937 The 
+Bureau assumes a total hourly compensation of $22.37  for junior staff, as compared to $28.76, 
+the mean of the junior wages reported by respondents to the survey. The Bureau assume s a total 
+hourly compensation of $55.40  for mid -level staff, as compared to $48.94, the mean of the mid -
+level wages reported by respondents. The Bureau assumes a total hourly compensation of 
+$95.10, as compared to $90.19, the mean of the senior/executive wages reported by respondents.  
+For each respondent in the cost estimation sample, the Bureau calculates the cost of each 
+one-time cost category as the sum of the junior wage multiplied by the reported junior hours, the 
+mid-level wage multiplied by the reported mid -level hours, and the senior wag e multiplied by the 
+reported senior -level hours and the reported non -salary expenses. The total cost of the first eight 
+categories that the Bureau calculates for each respondent is the sum of the costs across all eight 
+categories.  
+After calculating the total costs  of the first eight categories  for each respondent, the 
+Bureau identifie s outliers within the four groups of financial institutions (Type A DI, Type B DI, 
+Type C DI, and Non-DI) using the interquartile range method, a standard outlier identification method. For each group of financial institutions, an observation is considered an outlier if the estimated total cost is greater than 1.5*(P
+75 – P 25) + P 75 or less than P 25 – 1.5*(P 75 – P 25) where 
+P75 and P 25 are the 75th and 25th percentiles, respectively, of total costs within that group. Using 
+ 
+936 See U.S. Bureau of Labor Stat., U.S. Dep ’t of Labor, Occupational Employment and Wage Statistics  (May 2021) , 
+https://www.bls.gov/oes/current/oes132072.htm .  
+937 The June 2022 Employer Costs for Employee Compensation from the Bureau of Labor Sta tistics documents that 
+wages and salaries are, on average, about 70  percent of employee compensation for private industry workers. The 
+Bureau inflates the hourly wage to ac count for 100 percent of employee compensation ((100 / 70) – 1) * 100 = 
+43 percent). See U.S. Bureau of Labor Stat., U.S. Dep ’t of La bor, Employer Costs for Employee Compensation  (June 
+2022), https://www.bls.gov/news.release/archives/eci_07292022.pdf .
+
+736 this method, the Bureau identified one outlier in each Type A DI, Type B DI, and Type C DI 
+group and no outliers in the Non-DI group.  
+In addition to the total estimated one -time costs, the Bureau is interested in the hours, 
+non-salary expenses, and total costs associated with each of the different one -time cost 
+categories. For each group, the Bureau estimates each component of one-time costs by taking the mean of the estimated component within the group, after ex cluding outliers. For example, the 
+estimated number of junior hours required by Type A DIs to update computer systems is the 
+mean number of junior hours reported by the nine Type A DIs that were in the cost estimation 
+sample, excluding one outlier. The Bur eau estimated the cost associated with each category as 
+the sum of the junior wage multiplied by the estimated junior hours, the mid-level wage multiplied by the estimated mid -level hours, and the senior -level wage multiplied by the 
+estimated senior hours,  and the estimated non -salary expenses.  
+The Bureau did not include one -time hiring costs in the estimates for the NPRM. In 
+response to comments, the Bureau estimates hiring costs for the final rule estimates. To estimate hiring costs, the Bureau assumes that, prior to implementing the final rule, current staff at a 
+covered financial institution will not have extra capacity to take on new tasks. This assumption 
+implies that each institution will need to hire at least one new employee. The Bureau anticipates that institutions will rearrange tasks across new and existing employees so that the new employees alone will not conduct all work associated with the final rule.  
+The Bureau assumes that a covered financial institution will need to hire enough full -time 
+equivalent workers (FTEs) to cover the estimated number of staff hours necessary to comply 
+with the final rule on an annual, ongoing basis. In part IX.E.2 below, the Bureau describes how it estimates the ongoing costs to comply with the rule, including the number of hours of staff time 
+an institution needs per application. The Bureau assumes that an FTE will work about 2,080 
+hours each year (40 hours per week x 52 weeks = 2,080). The Bureau calculates that the total number of FTEs that a covered financial institution will need to hire as the number of hours per application multiplied by the estimated number of applications received per year divided by 
+2,080, rounded up to the next full FTE. For example, if an institution receives 500 applications 
+per year and  spends one hour on each application, it will need to hire one FTE ((1 * 500) / 2080 
+= 0.24, which is round up to the next full FTE, i.e. , 1). In part IX.F.3.i , the Bureau also confirms 
+that the estimated additional staff can cover the estimated staff hours required for implementing 
+other one -time changes.  
+The Bureau calculates the hiring costs using the estimated cost -per-hire of $4,425, 
+estimated by the Society for Human Resource Management.
+938 This estimated cost includes 
+advertising fees, recruiter pay and benefits, and employee referrals, among other categories. For each covered financial institution, the estimated hiring cost is $4,425 multiplied by the estimated 
+new FTEs. The estimated total one -time costs are the sum of the estimated hiring costs and the 
+other one -time costs for that institution discussed above.  
+ 
+938 See Soc’y for Hum. Res. Mgmt., SHRM Customized Talent Acquisition Benchmarking Report , at 11 (2017), 
+https://www.shrm.org/ResourcesAndTools/business -solutions/Documents/Talent -Acquisition -Report -All-Industries -
+All-FTEs.pdf .

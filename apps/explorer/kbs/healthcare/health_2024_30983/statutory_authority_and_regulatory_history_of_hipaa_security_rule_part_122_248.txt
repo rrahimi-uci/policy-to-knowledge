@@ -1,0 +1,25 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 122/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_122
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+634Section 
+164.310(a)(2)(ii) contains the specification for a facility security plan and addresses the implementation of policies and procedures to safeguard facilities and equipment in such facilities from unauthorized physical access, tampering, and theft. The implementation of procedures for role- based access control, including for visitors and for access to software programs for testing and revision is addressed in 45 CFR 164.310(a)(2)(iii), while 45 CFR 164.310(a)(2)(iv) addresses the implementation of policies and procedures for the documentation of repairs and modifications to physical security components of a facility, such as hardware, walls, doors, and locks. 
+Section 164.310(b) requires a 
+regulated entity to implement policies and procedures specifying proper workstation functions, the manner in which those functions are to be performed, and the physical attributes of the environment for where specific workstations or classes of workstation used for accessing ePHI.
+635This 
+standard is not accompanied by 
+standalone implementation specifications, compared to the standards for facility access controls at 45 CFR 164.310(a) and device and media controls at 45 CFR 164.310(d). Section 164.310(c), the standard for workstation security, also is not accompanied by standalone addressable or required implementation specifications, but it does require a regulated entity to implement physical safeguards that restrict all workstations, such as a laptop or desktop computer or any other device that performs similar functions, that access ePHI to authorized users.
+636 
+Device and media controls can help 
+regulated entities respond to and 
+recover from security incidents and breaches.
+637Proper understanding of 
+and implementation of such controls may enable regulated entities to quickly determine which devices and electronic media may be implicated in an actual or suspected security incident, or breach, and respond accordingly.
+638For 
+example, if cybercriminals gained access to an organization’s network by exploiting a vulnerability present in a particular electronic device, a robust and accurate inventory and tracking process could identify how many devices are affected and where they are located. With this information, a regulated entity should be able to make more effective use of its resources and respond more effectively to an actual or suspected security incident or breach involving such devices. Thus, it is important for regulated entities to implement the device and media controls required under 45 CFR 164.310(d). Accordingly, the standard for device and media controls at 45 CFR 164.310(d), requires a regulated entity to implement policies and procedures to govern how hardware and electronic media containing ePHI are received or removed from a facility and within a facility. Section 164.310(d)(2) includes two required and two addressable implementation specifications. Paragraphs (d)(2)(i) and (ii) on disposal and media re-use, respectively require a regulated entity to implement policies and procedures that address the final disposition of ePHI and the hardware or electronic media on which it is stored, and the removal of ePHI before the electronic media is re-used. Section 164.308(d)(2)(iii) addresses the 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00062 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

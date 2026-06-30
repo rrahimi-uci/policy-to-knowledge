@@ -1,0 +1,148 @@
+# C3-5-01, Creating Weighted-Average ARM MBS (08/26/2014) + C3-5-02, Calculating the Weighted-Average 
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_485
+**Pages:** 1012-1016
+**Section Path:** Part C, Selling, Securitizing, and Delivering Loans > Subpart C3, Mortgage-Backed Securities (MBS) > Chapter C3-5, Pooling Loans into ARM MBS > C3-5-01, Creating Weighted-Average ARM MBS (08/26/2014)
+
+---
+
+Published March 4, 2026
+994Fannie Mae issues and specially designates securities that are backed by conventional loans that have loan
+terms that do not extend for more than 10 years after the origination of the loan. Such securities will have a
+maturity date no greater than 10 years from their issue date, which represents the date by which all loans
+backing the pool will have been liquidated from the pool and the securities will have been retired.
+The loans must:
+have original terms of no less than 85 months and no more than 120 months for both single-issuer pools
+and Fannie Majors, and
+provide for the reduction of the principal amount of the loan to zero no more than 10 years after the issue
+date of the related securities.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2019-04 May 01, 2019
+ 
+Chapter C3-5, Pooling Loans into ARM MBS
+Introduction
+There are two primary types of ARM MBS pools with weighted-average coupons, also called ARM Flex pools.
+Accrual rates for ARM Flex pools may be based on a weighted-average or a ﬁxed MBS margin. This chapter
+provides information on pooling loans into ARM MBS, including:
+C3-5-01, Creating Weighted-Average ARM MBS (08/26/2014)
+Introduction
+This topic contains information on creating weighted-average ARM MBS (ARM Flex), including
+General Information on Weighted-Average ARM MBS (ARM Flex)
+ARM Flex Pool Accrual Rate Calculation Options
+General Information on Weighted-Average ARM MBS (ARM Flex)
+
+Published March 4, 2026
+995ARM Flex pools provide interest accruals at a weighted-average pool accrual rate to the holders of securities
+backed by the ARMs in the pool. These pools may be delivered only as single pool transactions and diﬀerent
+standard ARM plans may not be commingled in the same pool.
+The original term of an ARM included in a weighted-average ARM MBS pool must be no more than 30 years.
+Each mortgage must accrue interest in arrears and have a payment due date of the ﬁrst day of the month.
+There is no restriction on the range of ﬁrst payment due dates, interest rate change dates, and payment change
+dates.
+To limit the eﬀect that prepayments have on the weighted-average pool accrual rate of an ARM Flex, lenders
+should consider limiting to 1% (100 basis points) the range between the lowest and highest mortgage margins
+and the lowest and highest mortgage interest rate ceilings of all the mortgages in the pool.
+ARM Flex Pool Accrual Rate Calculation Options
+Under the ARM Flex pooling structure, lenders may create a weighted-average ARM MBS using either the
+ﬁxed MBS margin or
+weighted-average MBS margin.
+The diﬀerence between the two margin types is the method used to determine the interest rate that accrues on
+the pool and the retained servicing fee. The ﬁxed MBS margin option is based on a pool-level MBS margin and a
+loan-level servicing fee. This means that when the pooled mortgages have diﬀerent mortgage margins, the
+servicing fees for the mortgages vary in order to equalize the diﬀerences in the mortgage margins. While the
+guaranty fee remains the same, the servicing spread (the sum of the servicing fee and the guaranty fee and, if
+applicable the periodic renewal premium for lender-purchased mortgage insurance) diﬀers from mortgage to
+mortgage.
+The ﬁxed MBS margin applies to each mortgage in the weighted-average ARM MBS; therefore, the lowest
+mortgage margin in the pool must be able to, at least, support the sum of the MBS margin, the guaranty fee,
+and the minimum allowable servicing fee. The periodic renewal premium for lender-purchased mortgage
+insurance must also be included, if applicable.
+The weighted-average MBS margin option is based on a pool-level servicing fee and a loan-level MBS margin,
+which means that when the mortgages in the pool have diﬀerent mortgage margins, the servicing spread will be
+equal for all the mortgages, but the MBS margin will vary from mortgage to mortgage.
+Recent Related Announcements
+There are no recently issued Announcements related to this topic.
+C3-5-02, Calculating the Weighted-Average Pool Accrual Rates for
+
+Published March 4, 2026
+996ARM Flex Pools Using a Fixed MBS Margin (04/01/2009)
+Introduction
+This topic contains information on calculating the weighted-average pool accrual rates for ARM Flex pools using
+a ﬁxed MBS margin.
+How to Determine the Weighted-Average Pool Accrual Rate(s) for ARM Flex Pools Using a Fixed MBS
+Margin (based on Pool-Level MBS Margin and Loan-Level Servicing Fee)
+Step One:
+Step Two:
+Step Three:
+Step Four:
+Step Five:
+Step Six:
+How to Determine the Weighted-Average Pool Accrual Rate(s) for ARM Flex
+Pools Using a Fixed MBS Margin (based on Pool-Level MBS Margin and Loan-
+Level Servicing Fee)
+In the following example, assume that the lender wants to place the following three ARM Plan 57 ARMs into a
+weighted-average ARM Flex MBS pool with a standard remittance cycle. All of the mortgages in the pool will be
+serviced under the special servicing option and will have a guaranty fee of 0.35%. All of the mortgages have
+borrower-purchased mortgage insurance.
+Category Loan A Loan B Loan C
+Mortgage Interest Rate 9.00% 9.50% 10.00%
+Mortgage Margin 2.25% 2.50% 2.50%
+Mortgage Ceiling 15.00% 15.50% 16.00%
+UPB $70,000 $50,000 $60,000
+Interest Rate Change Date 1–Jun 1–Jul 1–Aug
+To develop a ﬁxed MBS margin, the lender must ﬁrst derive a loan-level servicing fee by reducing the mortgage
+margin for each mortgage to be included in the pool by the desired ﬁxed MBS margin and then by the applicable
+guaranty fee percentage and, if applicable, by the periodic renewal premium for lender-purchased mortgage
+insurance. The diﬀerences in the servicing fees for the mortgages in the pool will be exactly equal to the
+diﬀerences in their mortgage margins. The weighted-average pool accrual rate is then determined by ﬁrst
+reducing each individual mortgage interest rate by the servicing spread for the mortgage (the sum of the
+
+Published March 4, 2026
+997guaranty fee and the calculated loan-level servicing fee and, if applicable, the periodic renewal premium for
+lender-purchased mortgage insurance) and then developing a weighted-average of the net mortgage interest
+rates. This same procedure also is used to establish the maximum weighted-average pool accrual rate (and any
+applicable minimum weighted-average pool accrual rate), using the weighted-average of the net mortgage
+interest rate ceilings (or ﬂoors) of the mortgages in the pool.
+Step One:
+Determine the loan-level servicing fee, using a 1.50% pool-level MBS margin.
+Category Loan A Loan B Loan C
+Mortgage Margin 2.25% 2.50% 2.75%
+MBS Margin 1.50% 1.50% 1.50%
+Guaranty Fee 0.35% 0.35% 0.35%
+Servicing Fee 0.40% 0.65% 0.90%
+Step Two:
+Determine the net mortgage interest rate.
+Category Loan A Loan B Loan C
+Mortgage Interest Rate 9.00% 9.50% 10.00%
+Guaranty Fee 0.35% 0.35% 0.35%
+Servicing Fee 0.40% 0.65% 0.90%
+Net Mortgage Interest Rate 8.25% 8.50% 8.75%
+Step Three:
+Determine the weighted-average pool accrual rate.
+
+Published March 4, 2026
+998Loan ID Net Mortgage
+Interest RateUPB Product
+Loan A 8.25% $70,000 5,775.00
+Loan B 8.50% $50,000 4,250.00
+Loan C 8.75% $60,000 5,250.00
+  $180,000 15,275.00
+15,275/180,000 = 8.486%, rounded to three decimal places.
+Step Four:
+Determine the net mortgage interest rate ceiling.
+Category Loan A Loan B Loan C
+Mortgage Interest Rate
+Ceiling15.00% 15.50% 16.00%
+Guaranty Fee 0.35% 0.35% 0.35%
+Servicing Fee 0.40% 0.65% 0.90%
+Net Mortgage Interest Rate
+Ceiling14.25% 14.50% 14.75%
+Step Five:
+Determine the maximum weighted-average pool accrual rate.
+Loan ID Net Mortgage
+Interest RateUPB Product
+Loan A 14.25% $70,000 9,975.00
+Loan B 14.50% $50,000 7,250.00

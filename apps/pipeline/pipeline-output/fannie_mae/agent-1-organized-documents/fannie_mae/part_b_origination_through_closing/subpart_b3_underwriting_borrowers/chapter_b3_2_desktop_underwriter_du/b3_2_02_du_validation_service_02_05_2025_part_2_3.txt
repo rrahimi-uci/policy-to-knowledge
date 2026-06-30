@@ -1,0 +1,160 @@
+# B3-2-02, DU Validation Service (02/05/2025) (part 2/3)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_116_sub_002
+**Pages:** 290-298
+**Section Path:** Part B, Origination Through Closing > Subpart B3, Underwriting Borrowers > Chapter B3-2, Desktop Underwriter (DU) > B3-2-02, DU Validation Service (02/05/2025)
+
+---
+
+Published March 4, 2026
+276Note: Income types not listed below are not eligible for income validation by DU.
+Eligible Income Types Eligible Veriﬁcation Report
+Base (non-self-employed)
+ 
+Asset Veriﬁcation Report
+ 
+Employment and Income Veriﬁcation ReportBonus
+Overtime
+Commission
+Alimony Asset Veriﬁcation Report
+Child Support Asset Veriﬁcation Report
+Military Income Asset Veriﬁcation Report
+Retirement (pension)Asset Veriﬁcation Report
+Tax Return Transcript (Taxpayer Tax Return
+Summary Report)
+Social Security (retirement, disability,
+supplemental, survivor beneﬁts)Asset Veriﬁcation Report
+Tax Return Transcript (Taxpayer Tax Return
+Summary Report)
+Self-employed (IRS Form 1040 Schedules C or C-
+EZ for sole proprietorships only)Tax Return Transcript (Taxpayer Tax Return
+Summary Report)
+VA Beneﬁts (Non-educational) Asset Veriﬁcation Report
+ 
+Note : Additional supporting documentation may be required for some income types (such as child
+support or alimony).
+Income—Additional Information
+The following additional information applies to income validated by DU:
+If an employment and income veriﬁcation report is used, the vendor must obtain income information
+
+Published March 4, 2026
+277using data obtained from the report supplier’s existing database of employer-provided information.
+All income or direct deposit amounts shown on the income or asset veriﬁcation report must be reﬂected
+in U.S. dollars.
+When DU validates income, the lender
+is not required to determine if the borrower is employed by a family member or interested parties
+to the property sale or purchase.
+must continue to obtain employment veriﬁcation as described in  B3-3.1-07, Verbal Veriﬁcation of
+Employment .
+The veriﬁcation report may contain suﬃcient information to satisfy this requirement. See
+Employment—Additional Information below.
+must review the veriﬁcation report relied upon by DU for validation and
+investigate and resolve any conﬂicting or contradictory information, and
+when an asset veriﬁcation report is used to validate income, the lender must conﬁrm that
+the borrower is listed as an owner of the asset account and that the report reﬂects the
+borrower's name as account holder. The lender need only review the report the covering the
+period of time (30- or 60- days) required for asset veriﬁcation for the transaction type, or if
+no asset veriﬁcation is required for the transaction, the account activity covering the most
+recent 30-day period, for these purposes.
+Age of Income Document Requirements
+Asset Veriﬁcation Reports and Employment and Income Veriﬁcation Reports:  The date of the report
+must comply with Fannie Mae’s standard age of credit document requirements as outlined in B1-1-03, Allowable
+Age of Credit Documents and Federal Income Tax Returns .
+Tax Return Transcripts: To ensure that the income validation is completed using the most recent tax
+transcripts, the following will be used to determine if the transcript contains the most recent tax return
+information. Lenders are not required to comply with the age of credit documents as outlined in B1-1-03,
+Allowable Age of Credit Documents and Federal Income Tax Returns , when DU issues the message that income
+has been validated.
+For loan caseﬁles created on or before April 30, the most recent tax transcript must be provided. The
+most recent tax transcript would be for the prior year (current year minus 1). If the prior year tax return
+has not yet been ﬁled or the transcript is not yet available, the most recent tax transcript will be the
+current year minus 2.
+For loan caseﬁles created after April 30, the most recent year tax transcript must be provided for
+validation to be completed. The most recent tax transcript will be for the prior year (current year minus
+1).
+Employment Validation
+The following table describes the employment that can be validated and the documentation that DU will require,
+which may be diﬀerent than the standard documentation required in this Guide.
+
+Published March 4, 2026
+278Eligible Employment Eligible Veriﬁcation Report
+Employment related to the following income
+types:
+• Base
+• Bonus
+• Overtime
+• Commission Asset Veriﬁcation Report
+Supplemental Asset Report
+Employment and Income Veriﬁcation Report or
+Employment Veriﬁcation Report
+Military Employment Asset Veriﬁcation Report
+Employment—Additional Information
+The following additional information applies to employment validated by DU:
+If an employment and income veriﬁcation report is used, the vendor must obtain employment information
+using data obtained from the report supplier's existing database of employer-provided information.
+Income and employment are assessed independently; however, the results of the employment validation
+may impact income validation.
+When employment is validated by DU, the validation satisﬁes the requirement for verbal veriﬁcation of
+employment described in  B3-3.1-07, Verbal Veriﬁcation of Employment . Lenders must comply with all DU
+messages, including ensuring the loan closes by the “Close by Date” stated in the DU employment
+validation message.
+The lender must review the veriﬁcation report relied upon by DU, including any Employer Disclaimer
+information, if applicable, and:
+investigate and resolve any conﬂicting or contradictory information, and
+when an asset veriﬁcation report is used to validate employment, the lender must conﬁrm that the
+borrower is listed as an owner of the asset account and that the report reﬂects the borrower's
+name as account holder. The lender need only review the report covering the period of time (30 or
+60 days) required for asset veriﬁcation for the transaction type, or if no asset veriﬁcation is
+required for the transaction, the account activity covering the most recent 30-day period, for these
+purposes.
+Verbal Veriﬁcation of Employment Alternative for Employment Validated using
+an Asset Veriﬁcation Report
+When employment is initially validated using an asset veriﬁcation report and the loan will not close by the
+"Close by Date" stated in the DU employment validation message, the lender may obtain a supplemental asset
+report from an asset veriﬁcation report vendor and either submit it to DU or perform a manual review of the
+report to satisfy the verbal veriﬁcation of employment described in  B3-3.1-07, Verbal Veriﬁcation of
+Employment .
+When used to reverify employment (whether through an automated or a manual review), the supplemental
+asset report must contain
+the account numbers and the account holder name for each account included in the report,
+
+Published March 4, 2026
+279the date of the report, and
+the date and deposit details of the deposits reﬂected on the report.
+The lender must review the report to conﬁrm the borrower is listed as an account holder. The lender must not
+have any information indicating the borrower may no longer be employed and must investigate and resolve any
+contradictory or conﬂicting information.
+When a manual review is performed, the lender must obtain the report within the same timeframe required for
+a verbal veriﬁcation of employment and additionally, review the report to conﬁrm
+the deposit details of the direct deposits that are being used to reverify employment
+match the ACH details identiﬁed in the DU ﬁndings messages for the direct deposit streams used
+by DU to validate employment, and
+are consistent with the income source provided in DU;
+the pattern of receipt of the identiﬁed direct deposits used to reverify employment does not reﬂect
+missed payments, and the latest expected payment prior to the date of the report is present.
+Note : When a lender performs a manual review of the supplemental asset report to reverify
+employment, the enforcement relief from representations and warranties related to the employment
+validation through the DU validation service described in ,A2-2-04, Limited Waiver and Enforcement
+Relief of Representations and Warranties  does not apply.
+All supplemental asset reports must be retained in the loan ﬁle.
+Asset Validation
+The following table lists the asset types that can be validated and the documentation that DU will require, which
+may be diﬀerent than the standard documentation required in this Guide.
+Eligible Asset Types Eligible Veriﬁcation Report
+Assets held in the following accounts:
+Checking
+Savings
+Certiﬁcates of Deposit
+Stocks
+Money Market
+Mutual funds
+RetirementAsset Veriﬁcation Report
+Note: Additional documentation may be required
+depending on the type of asset account and the
+assessment conducted by DU for validation purposes.
+Asset—Additional Information
+The following additional information applies to asset validation:
+All assets shown on the asset veriﬁcation report must be in U.S. dollars and held in a U.S. or state
+regulated ﬁnancial institution.
+The account statements obtained from the vendor must cover the most recent:

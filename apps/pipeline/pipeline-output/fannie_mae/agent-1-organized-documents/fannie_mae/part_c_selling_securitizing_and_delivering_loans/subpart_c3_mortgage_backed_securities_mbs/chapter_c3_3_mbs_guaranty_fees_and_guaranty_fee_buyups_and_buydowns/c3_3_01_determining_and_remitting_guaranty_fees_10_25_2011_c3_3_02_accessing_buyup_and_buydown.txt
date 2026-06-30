@@ -1,0 +1,131 @@
+# C3-3-01, Determining and Remitting Guaranty Fees (10/25/2011) + C3-3-02, Accessing Buyup and Buydown
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_479
+**Pages:** 1005-1008
+**Section Path:** Part C, Selling, Securitizing, and Delivering Loans > Subpart C3, Mortgage-Backed Securities (MBS) > Chapter C3-3, MBS Guaranty Fees and Guaranty Fee Buyups and Buydowns > C3-3-01, Determining and Remitting Guaranty Fees (10/25/2011)
+
+---
+
+Published March 4, 2026
+987Fannie Mae may pair-oﬀ the outstanding balance of a commitment on a lender’s behalf if the lender fails to pair-
+oﬀ or roll the outstanding balance into the following issue month by last business day of the issue month of the
+related commitment.
+Recent Related Announcements
+There are no recently issued Announcements related to this topic.
+Chapter C3-3, MBS Guaranty Fees and Guaranty Fee Buyups
+and Buydowns
+Introduction
+Lenders must pay Fannie Mae a guaranty fee remittance each month as compensation for the lender’s right to
+participate in the MBS program. This chapter provides information on guaranty fees and the requirements
+associated with buying the fee up or down.
+C3-3-01, Determining and Remitting Guaranty Fees (10/25/2011)
+Introduction
+This topic provides information on the factors used to determine the amount of a lender’s guaranty fee,
+including:
+Guaranty Fee Overview
+Determining the Annualized Weighted-Average Guaranty Fee Factor for a Pool
+Determining the Monthly Guaranty Fee Remittance for the Pool
+Remitting Guaranty Fees to Fannie Mae
+Guaranty Fee Overview
+The guaranty fee for individual loans included in an MBS pool depends upon the credit risk associated with the
+loan and the lender’s choice of servicing option and remittance cycle. The guaranty fee remittance for MBS
+pools is based upon a weighted-average guaranty factor. See below for a description of how to calculate the
+annualized weighted-guaranty factor and the pool guaranty fee.
+Determining the Annualized Weighted-Average Guaranty Fee Factor for a Pool
+The annualized weighted-average guaranty fee factor for a pool (expressed in basis points) is determined by
+multiplying the issue date principal balance of each mortgage loan in the pool (or, in subsequent months, the
+
+Published March 4, 2026
+988“scheduled” balance of each mortgage loan) by the applicable guaranty fee rate for the mortgage loan
+expressed in basis points (adjusted for any remittance cycle adjustments, buyup, or buydown, if applicable),
+then:
+summing the products of all the mortgage loans in the pool,
+dividing that sum by the aggregate issue date principal balance for the pool (or, in subsequent months,
+by the “scheduled” security balance for the pool), and
+rounding the result to the nearest hundredth of a basis point.
+The result is the annualized weighted-average guaranty fee factor for a pool.
+Determining the Monthly Guaranty Fee Remittance for the Pool
+The annualized weighted-average guaranty fee factor is then
+multiplied by the aggregate issue date principal balance of the pool (or, in subsequent months, the
+“scheduled” security balance for the pool),
+divided by 120,000, and
+rounded to two decimal places.
+The result is monthly guaranty fee remittance for the pool.
+Remitting Guaranty Fees to Fannie Mae
+On the 7th day of each month (or, if the 7th is a holiday or weekend, on the preceding business day), Fannie
+Mae will draft guaranty fee remittances from the custodial bank account the lender designates as its draft
+account.
+If the guaranty fee remittance is to be drafted from the lender’s P&I custodial account for MBS pools, then the
+lender must make sure that it does not withdraw the guaranty fee remittance when it takes its monthly
+servicing fee from the account.
+For more information about designating bank accounts for drafting purposes and conﬁrming guaranty fee
+remittances, see the Servicing Guide .
+Recent Related Announcements
+There are no recently issued Announcements related to this topic.
+
+Published March 4, 2026
+989C3-3-02, Accessing Buyup and Buydown Ratios and Calculating
+Payments or Charges (12/04/2019)
+Introduction
+This topic provides information lenders need in order to buy up or buy down their guaranty fee, including:
+General Information on Buyups
+General Information on Buydowns
+Accessing Buyup and Buydown Ratios
+Calculating Buyup Payments and Buydown Charges
+Buyup Payment Recapture
+General Information on Buyups
+Loan level guaranty fee buyups and buydowns allow lenders to pool a wider range of note rates under one MBS
+coupon. Lenders can buy up guaranty fees, meaning they agree to remit a guaranty fee higher than the
+contractual fee applicable for the particular servicing option and remittance cycle in return for a one-time
+payment from Fannie Mae.
+Fannie Mae disburses payment for buyups to lenders once a month in a single cash transfer covering all of the
+lender’s mortgages with buyups that were in pools for which securities were issued in the previous month.
+General Information on Buydowns
+Lenders can buy down or agree to remit a lower guaranty fee than the applicable contract fee in exchange for a
+one-time, upfront payment to Fannie Mae.
+When Fannie Mae drafts the lender’s monthly guaranty fee remittances, it also will draft charges for buydowns
+on pooled loans for which securities were issued in the previous month. Generally, lenders must place buydown
+funds into a T&I escrow account. If buydown funds (or subsidy payments or other advance payments made by
+the borrower) are directed for immediate application under the mortgage documents, the lender may deposit
+these amounts directly into the P&I custodial account.
+If a lender holds MBS certiﬁcates and the buydown account and its attorneys believe there are tax
+complications, the lender may deposit the funds in a special account with another institution that meets Fannie
+Mae’s requirements for custodial depositories. For more information, see Fannie Mae’s Servicing Guide .
+If a lender buys down a guaranty fee but does not service the associated mortgage, Fannie Mae establishes a
+receivable in the lender’s name. The lender must deposit the funds into a designated account in time for Fannie
+Mae to draft the funds on the seventh calendar day of the month (or the preceding business day if the seventh
+is a holiday or weekend) following the issue date of the related MBS pool.
+Accessing Buyup and Buydown Ratios
+
+Published March 4, 2026
+990Fannie Mae posts guaranty fee buyup/buydown ratios for nearly all mortgage products in a matrix format that
+enables a lender to ﬁnd the applicable buyup or buydown ratio for any individual mortgage that it plans to
+include in an MBS pool by using the gross note rate and remaining term (in months) of the mortgage.
+Information concerning guaranty fee buyup or buydown ratios can come from several diﬀerent sources. For
+example,
+registered users of PE-MBS can obtain them on the day they are posted by accessing PE-MBS, and
+lenders may request a copy of the posted ratios from their Fannie Mae customer account team.
+Refer to Fannie Mae’s website  for information about the buyup and buydown grids.
+Calculating Buyup Payments and Buydown Charges
+The total buyup disbursement or buydown charge is calculated as follows:
+multiply the number of basis points by which each mortgage in a given pool was bought up/down (the
+diﬀerence between the “guaranty fee rate before the buyup or buydown” and the “guaranty fee rate
+after the buyup/buydown”) by the “buyup/buydown per basis point” (rounding to three decimal places),
+multiply the rounded product by 0.0001 to convert the basis points to a decimal equivalent, and
+multiply the decimal equivalent by the delivered unpaid principal balance with a guaranty fee rate
+buyup/buydown.
+Do this for all pools that include mortgages with guaranty fee rate buyups/buydowns and settled in the month.
+The total of the buyups or buydowns for all of the pools will be the amount Fannie Mae collects, disburses, or
+nets.
+Buyup Payment Recapture
+With respect to any mortgage loan that pays oﬀ within 120 days from the MBS issue date that involved a
+guaranty fee buyup, Fannie Mae reserves the right to request reimbursement of any or all buyup proceeds paid
+by Fannie Mae.
+For mortgage loans repurchased by a lender, Fannie Mae in its sole discretion may require reimbursement by
+the lender of any buyup proceeds paid by Fannie Mae in connection with the purchase of the related
+repurchased mortgage loan without regard to the 120–day limitation.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2019-09 December 04, 2019

@@ -1,0 +1,58 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 161/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_161
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+978 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+802‘‘Defending Against Common Cyber-Attacks,’’ 
+supra note 396. 
+803Id. 
+804This study is not specific to health care. 
+‘‘Costs and Consequences of Gaps in Vulnerability 
+Response,’’ ServiceNow and Ponemon Institute, p. 3 (2019), https://www.servicenow.com/content/ dam/servicenow-assets/public/en-us/doc-type/ resource-center/analyst-report/ponemon-state-of- vulnerability-response.pdf. 
+805See proposed 45 CFR 164.308(a)(4). 806‘‘National Vulnerability Database,’’ supra note 
+398. 
+807‘‘Known Exploited Vulnerabilities Catalog,’’ 
+supra note 399. 
+808‘‘Glossary of Key Information Security Terms,’’ 
+supra note 745. 
+809‘‘Defending Against Common Cyber-Attacks,’’ 
+supra note 396. 
+810See proposed 45 CFR 164.308(a)(2). 811See proposed 45 CFR 164.308(a)(5). 
+812‘‘Defending Against Common Cyber-Attacks,’’ 
+supra note 396. 
+813See ‘‘Securing Your Legacy [System 
+Security],’’ supra note 494. 
+814See proposed 45 CFR 164.308(a)(5) and 
+164.312(h)(1). and missing patches.802Once identified, 
+assessed, and prioritized, appropriate 
+measures need to be implemented to mitigate these vulnerabilities (e.g., apply 
+patches, harden systems, retire equipment).
+803Under the proposal, the 
+scans would be required to be conducted in accordance with the regulated entity’s risk analysis under proposed 45 CFR 164.308(a)(2) and no less frequently than once every six months. 
+Relatedly, proposed 45 CFR 
+164.312(h)(2)(i)(B) would add an implementation specification for maintenance of the technology assets that conduct the required automated vulnerability scans. Under this proposal, a regulated entity would be expressly required to review and test the effectiveness of the technology asset(s) that conducts the automated vulnerability scans that would be required by the proposed implementation specification at proposed 45 CFR 164.312(h)(2)(i)(A) at least once every 12 months or in response to environmental or operational changes, whichever is more frequent, and modify as reasonable and appropriate. 
+Identification of a known 
+vulnerability in a relevant electronic information system or a component thereof is a necessary precursor for a regulated entity to take action to mitigate the vulnerability. A 2019 study on vulnerability and patch management found that 48 percent of respondents reported that their organizations had at least one breach in the preceding two years. Of those, 60 percent said that the breaches could have occurred because an available patch for a known vulnerability had not been applied.
+804 
+Accordingly, the Department also 
+proposes a new implementation specification for monitoring at proposed 45 CFR 164.312(h)(2)(ii) to require that a regulated entity monitor authoritative sources for known vulnerabilities on an ongoing basis and take action to remediate identified vulnerabilities in accordance with the regulated entity’s patch management program.
+805The 
+Department expects such monitoring to be conducted on an ongoing basis and is not proposing to specify a minimum time interval for reviewing sources. We 
+are also not proposing to prescribe the specific sources of known vulnerabilities because such sources may change over time and the vulnerabilities for which regulated entities may be monitoring may vary greatly among regulated entities. We propose to require that the sources used must be authoritative. Examples of authoritative sources of known vulnerabilities would include NIST’s National Vulnerability Database
+806and 
+CISA’s Known Exploited Vulnerabilities Catalog.
+807 
+The proposed implementation 
+specification for penetration testing at 45 CFR 164.312(h)(2)(iii) would require a regulated entity to conduct periodic testing of the regulated entity’s relevant electronic information systems for vulnerabilities, commonly referred to as penetration testing. Penetration tests identify vulnerabilities in the security features of an application, system, or network by mimicking real-world attacks
+808and are an effective way to 
+identify weaknesses that could be exploited by an attacker.
+809The 
+proposal would require such testing to be conducted by qualified person(s). We propose to describe a qualified person as a person with appropriate knowledge of and experience with generally accepted cybersecurity principles and methods for ensuring the confidentiality, integrity, and availability of ePHI. We believe that within the cybersecurity industry, it is understood that a person who is qualified to conduct such penetration 
+testing is an individual who has a combination of one or more qualifying credentials, skills, or experiences to perform ‘‘ethical hacking’’ or ‘‘offensive security’’ of information systems. The proposal would require a regulated entity to conduct such testing at least once every 12 months, or in accordance with the regulated entity’s risk analysis,
+810whichever is more frequent. 
+Lastly, we are proposing a new

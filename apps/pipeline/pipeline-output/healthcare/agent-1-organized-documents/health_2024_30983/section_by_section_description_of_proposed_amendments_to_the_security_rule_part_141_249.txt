@@ -1,0 +1,40 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 141/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_141
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+715 
+The proposed implementation 
+specification for data controls at proposed 45 CFR 164.312(a)(2)(vii) would require a regulated entity to deploy technical controls to allow access to ePHI based on the regulated entity’s policies and procedures for granting users and technology assets access relevant electronic information systems as specified in proposed 45 CFR 164.308(a)(10). This implementation specification would require a regulated entity to have in place technical controls that distinguish between users and technology assets, that are permitted to access the regulated entity’s relevant electronic information systems and those that are not permitted to do so and would require that the controls permit or disallow access accordingly. 
+Properly deployed network-based 
+solutions can limit the ability of a hacker to gain access to an organization’s network or impede the ability of a hacker already in the network from accessing other electronic information systems—especially systems containing sensitive data.
+716 
+Access controls could include role- based access, user-based access, or any other access control mechanisms the organization deems appropriate.
+717 
+Access controls need not be limited to 
+computer systems—firewalls, network segmentation, and network access control solutions are effective means of limiting access to relevant electronic information systems.
+718 
+Additionally, we propose to add an 
+implementation specification for maintenance at proposed 45 CFR 
+164.312(a)(2)(viii). Under this proposal, a regulated entity would be expressly required to review and test the effectiveness of the procedures and technical controls required by the implementation specifications associated with the standard for access control at least once every 12 months or in response to environmental or operational changes, whichever is more frequent, and modify as reasonable and appropriate. 
+c. Section 164.312(b)(1)—Standard: 
+Encryption and Decryption 
+Encryption can reduce the risks and 
+costs of unauthorized access to ePHI.
+719 
+For example, if a hacker gains access to unsecured ePHI on a network server or if a device containing unsecured ePHI is stolen, a breach of PHI will be presumed and reportable under the Breach Notification Rule.
+720The Breach 
+Notification Rule applies to unsecured PHI, which is PHI that is not rendered unusable, unreadable, or indecipherable to unauthorized persons through the use of a technology or methodology specified by the Secretary in guidance issued under the HITECH Act.
+721The 
+Department’s guidance on rendering unsecured PHI unusable, unreadable, or indecipherable to persons who are not authorized to access such PHI states that ePHI at rest (i.e., stored in an 
+information system or electronic media) is considered secured if it is encrypted in a manner consistent with NIST Special Publication 800–111
+722(‘‘SP 
+800–111’’). The ePHI encrypted in a manner consistent with SP 800–111 is not considered unsecured PHI and therefore qualifies for what is commonly 
+known as the Breach Notification safe harbor, meaning that it is not subject to the requirements of the Breach Notification Rule.
+723Thus, by 
+encrypting ePHI in a manner consistent with the Secretary’s guidance, a regulated entity may not only fulfill its encryption obligation under the Security Rule, but also make use of the 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00071 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

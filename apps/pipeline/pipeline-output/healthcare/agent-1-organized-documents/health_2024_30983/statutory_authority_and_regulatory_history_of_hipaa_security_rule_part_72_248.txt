@@ -1,0 +1,25 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 72/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_072
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+The Department proposes this new 
+requirement to better enable regulated entities to ensure the confidentiality, integrity, and availability of all ePHI that they create, receive, maintain, or transmit. The general rules require regulated entities to not only prevent threats and hazards to the confidentiality and integrity of ePHI, but also to ensure the availability of ePHI, even during a security incident that has the potential to severely hinder the ability of a regulated entity to provide health care or to bring it to a standstill. This new factor would require a regulated entity to consider whether a particular approach to complying with a standard and the associated implementation specifications can help it recover from an emergency or other occurrence, in addition to maintaining operations throughout the event. The Department proposes this factor to complement its proposals to strengthen the standards for security incident procedures
+428and contingency 
+planning429and proposals for new standards for patch management430and 
+vulnerability management,431discussed 
+in detail below. If finalized, these proposals would help to ensure that regulated entities put in place the necessary measures to implement these standards. 
+The factors contemplate that regulated 
+entities will regularly evaluate the security measures they have applied to comply with the standards and implementation specifications based on the technology available and known risks and vulnerabilities at the time of the evaluation. The Department expects that when the existing factors are considered with the factor proposed in this NPRM, a regulated entity would be required to consider whether a specific technical control has become sufficiently ubiquitous such that choosing not to adopt it would be unreasonable. 
+c. Section 164.306(c)—Standards and 
+Implementation Specifications 
+To address the Department’s concerns 
+regarding the apparent misunderstanding by regulated entities of ‘‘addressable,’’ we propose to modify 45 CFR 164.306(c) and (d) by collapsing the separate paragraphs into one paragraph (c) to address both standards and implementation specifications and to remove the distinction between ‘‘addressable’’ and ‘‘required’’ implementation specifications. Instead, proposed paragraph (c), if adopted, would require regulated entities to comply with both the standards and implementation specifications. The Department believes that eliminating the distinction would make clear to regulated entities what has always been a requirement—that the Security Rule sets a floor for cybersecurity protections and that its flexibility is in allowing them to choose the manner in which they meet the standards and implementation specifications, not whether they meet them. The proposed change also would be consistent with NCVHS’ recommendation to require regulated entities to meet certain minimum cybersecurity hygiene requirements.
+432 
+The Department acknowledges that 
+proposing to remove the addressability distinction is a change from the approach adopted in the 2003 Final Rule. At that time, we explained that the decision to include addressable implementation specifications was made to provide additional flexibility to 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00037 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

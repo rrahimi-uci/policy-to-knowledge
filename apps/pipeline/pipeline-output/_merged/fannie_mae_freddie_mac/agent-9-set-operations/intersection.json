@@ -1,0 +1,1522 @@
+{
+  "metadata": {
+    "operation": "INTERSECTION",
+    "description": "Rules present in both fannie_mae and freddie_mac",
+    "g1_name": "fannie_mae",
+    "g2_name": "freddie_mac",
+    "generated_at": "2026-06-29T15:46:17.892724"
+  },
+  "business_rules": [
+    {
+      "rule_id": "MERGED_BR_MORTGAGE_LOAN_CONSTRAINT_005_001",
+      "rule_name": "Title Insurance Coverage Minimum 100% of Loan Amount",
+      "rule_type": "constraint",
+      "description": "The lender must obtain title insurance coverage with an amount of coverage that is at least equal to the loan\u2019s original principal amount (i.e., coverage amount must be >= original principal balance at origination).",
+      "conditions": "Applies when a title insurance policy is required for the mortgage loan.",
+      "consequences": "If met: title coverage satisfies minimum amount. If violated: loan not eligible for delivery until corrected.",
+      "exceptions": "None stated.",
+      "source_reference": {
+        "chunk_path": "fannie_mae/part_b_origination_through_closing/subpart_b7_insurance/chapter_b7_2_title_insurance/b7_2_04_special_title_insurance_coverage_considerations_05_03_2023.txt",
+        "section_id": "B7-2-04, Amount of Coverage",
+        "start_word_position": 45,
+        "end_word_position": 104,
+        "source_text": "Amount of Coverage The amount of title insurance coverage must at least equal the original principal amount of the loan. Other Requirements If a mortgage is registered with MERS and is originated naming MERS as original mortgagee of record, solely as nominee for the lender named in the security instrument and the note, and the lender's successors and assigns,",
+        "text_match_score": 0.983
+      },
+      "mandatory": true,
+      "examples": [
+        "Original loan amount is $350,000; title policy coverage must be at least $350,000.",
+        "Original loan amount is $726,200; title policy coverage of $700,000 fails and must be increased before delivery.",
+        "Original loan amount is $500,000; coverage of $500,000 passes even if current UPB later declines."
+      ],
+      "confidence_score": 95.65,
+      "confidence_breakdown": {
+        "extraction_clarity": 98,
+        "numeric_precision": 95,
+        "context_completeness": 90,
+        "source_authority": 100,
+        "logical_consistency": 95
+      },
+      "effective_date": "2023-05-03",
+      "expiration_date": null,
+      "superseded_by": null,
+      "jurisdiction": "agency:FANNIE_MAE",
+      "risk_level": "high",
+      "related_rules": [
+        "BR_IS_SECURED_BY_DOCUMENTATION_005_004"
+      ],
+      "enforcement_action": "Loan delivery rejection / corrective title policy endorsement required",
+      "applicability_scope": {
+        "loan_types": [
+          "conventional"
+        ],
+        "occupancy_types": [
+          "primary_residence",
+          "second_home",
+          "investment"
+        ],
+        "transaction_types": [
+          "purchase",
+          "rate_term_refinance",
+          "cash_out_refinance"
+        ]
+      },
+      "data_points_required": [
+        "loan_amount",
+        "mortgage_file_id",
+        "closing_document_set_status"
+      ],
+      "audit_frequency": "at_origination",
+      "reference_verified": true,
+      "reference_verification_note": "ok_recovered_position",
+      "entity_or_relationship": "MORTGAGE_LOAN",
+      "entity_type": "entity",
+      "entity_definition": {
+        "description": "",
+        "key_attributes": [],
+        "examples": [
+          "30-year fixed-rate purchase mortgage delivered to Fannie Mae",
+          "Adjustable-rate mortgage with initial fixed period and subsequent adjustments",
+          "Refinance mortgage loan requiring appraisal and eligibility checks"
+        ]
+      },
+      "dependencies": [
+        {
+          "depends_on_rule": "BR_SUBJECT_PROPERTY_PROHIBITION_026_010",
+          "dependency_type": "prerequisite",
+          "rationale": "BR_SUBJECT_PROPERTY_PROHIBITION_026_010 defines when possession rights create an unacceptable title condition that must be cleared. A title policy that meets the dollar-amount requirement (BR_MORTGAGE_LOAN_CONSTRAINT_005_001) does not resolve an unacceptable underlying title condition; therefore, curing the title defect is a prerequisite to a deliverable title insurance posture.",
+          "impact_if_fails": "If possession-right issues are not resolved, the lender may be unable to deliver an insurable, acceptable title condition to Fannie Mae, blocking delivery or requiring negotiated sale/curative actions.",
+          "strength": 4
+        }
+      ],
+      "dependent_rules": [
+        {
+          "dependent_rule": "BR_MORTGAGE_LOAN_DOCUMENTATION_005_002",
+          "dependency_type": "sequential"
+        },
+        {
+          "dependent_rule": "BR_MORTGAGE_LOAN_PROHIBITION_005_003",
+          "dependency_type": "sequential"
+        },
+        {
+          "dependent_rule": "BR_MORTGAGE_LOAN_DOCUMENTATION_005_005",
+          "dependency_type": "conditional"
+        },
+        {
+          "dependent_rule": "BR_MORTGAGE_LOAN_DOCUMENTATION_005_006",
+          "dependency_type": "conditional"
+        },
+        {
+          "dependent_rule": "BR_SUBJECT_PROPERTY_PROHIBITION_035_008",
+          "dependency_type": "sequential"
+        },
+        {
+          "dependent_rule": "BR_SUBJECT_PROPERTY_DOCUMENTATION_010_005",
+          "dependency_type": "sequential"
+        }
+      ],
+      "provenance": {
+        "operation": "MERGED",
+        "match_type": "IDENTICAL",
+        "confidence": 0.96,
+        "similarity_score": 99,
+        "sources": [
+          "fannie_mae",
+          "freddie_mac"
+        ],
+        "original_ids": {
+          "fannie_mae": "BR_MORTGAGE_LOAN_CONSTRAINT_005_001",
+          "freddie_mac": "BR_TITLE_INSURANCE_POLICY_CONSTRAINT_009_010"
+        },
+        "reasoning": "Both require the title insurance policy amount/coverage to be at least the mortgage\u2019s original principal balance (original principal amount). Same threshold, same compliance intent, and same delivery/acceptance consequence.",
+        "g1_rule": {
+          "rule_id": "BR_MORTGAGE_LOAN_CONSTRAINT_005_001",
+          "rule_name": "Title Insurance Coverage Minimum 100% of Loan Amount",
+          "description": "The lender must obtain title insurance coverage with an amount of coverage that is at least equal to the loan\u2019s original principal amount (i.e., coverage amount must be >= original principal balance at origination)."
+        },
+        "g2_rule": {
+          "rule_id": "BR_TITLE_INSURANCE_POLICY_CONSTRAINT_009_010",
+          "rule_name": "Title Policy Amount Must Be at Least Original Principal Balance",
+          "description": "The title insurance policy must insure the mortgagee for an amount that is no less than the original principal balance of the insured Mortgage. This establishes the minimum policy amount requirement for Freddie Mac delivery/acceptance purposes."
+        }
+      }
+    },
+    {
+      "rule_id": "MERGED_BR_SUBJECT_PROPERTY_ELIGIBILITY_004_002",
+      "rule_name": "SFHA property in non-NFIP community is ineligible",
+      "rule_type": "eligibility",
+      "description": "If a principal or residential detached structure is located in an SFHA and the community does not participate in the National Flood Insurance Program (NFIP), the loan secured by the property is not eligible for purchase by Fannie Mae. If the property is in a non-participating community and also in a CBRS/OPA, it is only eligible if it is not located in an SFHA.",
+      "conditions": "Property has principal/residential structure in SFHA; community is non-NFIP",
+      "consequences": "Meets: eligible only if not in SFHA (CBRS/OPA case); Violated: ineligible",
+      "exceptions": "CBRS/OPA non-participating: eligible only when not in SFHA",
+      "source_reference": {
+        "chunk_path": "fannie_mae/part_b_origination_through_closing/subpart_b7_insurance/chapter_b7_3_property_and_flood_insurance/b7_3_06_flood_insurance_requirements_for_all_property_types_02_07_2024.txt",
+        "section_id": "B7-3-06, Community Eligibility",
+        "start_word_position": 454,
+        "end_word_position": 528,
+        "source_text": "Community Eligibility If the lender or servicer determines that a principal or residential detached structure is located in an SFHA, but the community does not participate in the National Flood Insurance Program (NFIP), the loan is not eligible for purchase by Fannie Mae. If the property is in a non-participating community and a CBRS or an OPA, it is only eligible for purchase by Fannie Mae if it is not located in an SFHA.",
+        "text_match_score": 0.98
+      },
+      "mandatory": true,
+      "examples": [
+        "SFR in Zone AE; town does not participate in NFIP \u2192 loan ineligible for delivery.",
+        "Property in CBRS and community is non-NFIP; FEMA zone is X (not SFHA) \u2192 eligible if other requirements met.",
+        "Property in CBRS and Zone VE (SFHA) in non-NFIP community \u2192 ineligible."
+      ],
+      "confidence_score": 72.9,
+      "confidence_breakdown": {
+        "extraction_clarity": 98,
+        "numeric_precision": 0,
+        "context_completeness": 95,
+        "source_authority": 100,
+        "logical_consistency": 95
+      },
+      "extraction_notes": "Direct ineligibility statement tied to NFIP participation and SFHA status.",
+      "effective_date": "2024-02-07",
+      "expiration_date": null,
+      "superseded_by": null,
+      "jurisdiction": "agency:EXAMPLE_POLICIES",
+      "risk_level": "critical",
+      "related_rules": [
+        "BR_IS_SECURED_BY_ELIGIBILITY_004_001",
+        "BR_MORTGAGE_LOAN_CONSTRAINT_004_003"
+      ],
+      "enforcement_action": "Loan ineligible for delivery; potential repurchase if delivered",
+      "applicability_scope": {
+        "loan_types": [
+          "conventional"
+        ],
+        "occupancy_types": [
+          "primary_residence",
+          "second_home",
+          "investment"
+        ],
+        "transaction_types": [
+          "purchase",
+          "rate_term_refinance",
+          "cash_out_refinance"
+        ]
+      },
+      "data_points_required": [
+        "property_address",
+        "flood_zone",
+        "nfip_community_participation_indicator",
+        "disaster_impact_indicator"
+      ],
+      "audit_frequency": "at_origination",
+      "reference_verified": true,
+      "reference_verification_note": "ok_recovered_position",
+      "entity_or_relationship": "SUBJECT_PROPERTY",
+      "entity_type": "entity",
+      "entity_definition": {
+        "description": "",
+        "key_attributes": [],
+        "examples": [
+          "One-unit single-family detached primary residence",
+          "Condominium unit in an eligible project",
+          "Property affected by a declared disaster requiring additional review"
+        ]
+      },
+      "dependent_rules": [
+        {
+          "dependent_rule": "BR_SELLER_SERVICER_PROCESS_031_006",
+          "dependency_type": "prerequisite"
+        }
+      ],
+      "provenance": {
+        "operation": "MERGED",
+        "match_type": "EQUIVALENT",
+        "confidence": 0.86,
+        "similarity_score": 88,
+        "sources": [
+          "fannie_mae",
+          "freddie_mac"
+        ],
+        "original_ids": {
+          "fannie_mae": "BR_SUBJECT_PROPERTY_ELIGIBILITY_004_002",
+          "freddie_mac": "BR_MORTGAGE_ELIGIBILITY_007_005"
+        },
+        "reasoning": "Both make the mortgage ineligible when the property is in an SFHA and the community does not participate in NFIP. Freddie adds an additional ineligibility path (no required flood insurance), so not identical but same core effect on NFIP-nonparticipation.",
+        "g1_rule": {
+          "rule_id": "BR_SUBJECT_PROPERTY_ELIGIBILITY_004_002",
+          "rule_name": "SFHA property in non-NFIP community is ineligible",
+          "description": "If a principal or residential detached structure is located in an SFHA and the community does not participate in the National Flood Insurance Program (NFIP), the loan secured by the property is not eligible for purchase by Fannie Mae. If the property is in a non-participating community and also in a CBRS/OPA, it is only eligible if it is not located in an SFHA."
+        },
+        "g2_rule": {
+          "rule_id": "BR_MORTGAGE_ELIGIBILITY_007_005",
+          "rule_name": "Ineligible in SFHA if NFIP nonparticipation or no flood policy",
+          "description": "A Mortgage is ineligible for sale to Freddie Mac if the securing Property is in a FEMA-designated Special Flood Hazard Area (SFHA) and either: (i) the community does not participate in the National Flood Insurance Program (NFIP) regardless of private flood insurance availability, or (ii) the Borrower has not obtained the required flood insurance coverage."
+        }
+      }
+    },
+    {
+      "rule_id": "MERGED_BR_IS_SECURED_BY_CONSTRAINT_034_010",
+      "rule_name": "Postponed Improvements: 180 Days and 120% Escrow",
+      "rule_type": "constraint",
+      "description": "Loans secured by new or proposed construction may be sold before postponed items are complete only if: postponed improvements are completed within 180 days of the note date; the cost of completing improvements is not more than 10% of the \u201cas completed\u201d appraised value; and the lender establishes a completion escrow by withholding from purchase proceeds funds equal to 120% of estimated cost (or full contract price if a guaranteed fixed-price contract is provided). Completion must be confirmed using Form 1004D or an acceptable completion alternative, and documentation must be retained in the loan file.",
+      "conditions": "New/proposed construction has postponed items not complete at sale to Fannie Mae",
+      "consequences": "If all thresholds/escrow met, loan may be sold; if not, lender must not sell until complete/verified",
+      "exceptions": "Escrow equals contract price (not 120%) if fixed-price contract provided",
+      "source_reference": {
+        "chunk_path": "fannie_mae/part_b_origination_through_closing/subpart_b4_underwriting_property/chapter_b4_1_property_assessment_and_valuation/section_b4_1_2_documentation_standards/b4_1_2_05_requirements_for_verifying_completion_and_postponed_improvements_12_10_2025_part_3_4.txt",
+        "section_id": "B4-1.2-05 (Requirements for New or Proposed Construction)",
+        "start_word_position": 533,
+        "end_word_position": 661,
+        "source_text": "Loans may be sold before postponed items are complete; however, the postponed improvements must be completed within 180 days of the note date. Completion must be con\ufb01rmed using Form 1004D or an acceptable completion alternative as described above.  All documentation must be retained in the loan \ufb01le. The cost of completing improvements must not represent more than 10% of the \u201cas completed\u201d appraised value of the property. Lenders must establish a completion escrow for the postponed improvements, by withholding from the purchase proceeds funds equal to 120% of the estimated cost for completing the improvements. However, if the contractor or builder o\ufb00ers a guaranteed \ufb01xed-price contract for completion of the improvements, the funds in the completion escrow only need to equal the full amount of the contract price.",
+        "text_match_score": 0.632
+      },
+      "mandatory": true,
+      "examples": [
+        "New construction: landscaping postponed due to weather; estimated cost $8,000, as-completed value $300,000 (2.67%); lender escrows $9,600 (120%) and may sell prior to completion.",
+        "Proposed construction: postponed improvements estimated at $40,000 on as-completed value $350,000 (11.43%); exceeds 10% cap, so loan may not be sold until items are complete/verified.",
+        "Builder provides guaranteed fixed-price contract for $12,000; lender escrows $12,000 (not $14,400) and uses Form 1004D to confirm completion within 180 days."
+      ],
+      "effective_date": "2025-12-10",
+      "expiration_date": null,
+      "superseded_by": null,
+      "jurisdiction": "agency:EXAMPLE_POLICIES",
+      "risk_level": "critical",
+      "related_rules": [],
+      "enforcement_action": "Loan ineligible for purchase / potential repurchase demand",
+      "applicability_scope": {
+        "loan_types": [
+          "conventional"
+        ],
+        "occupancy_types": [
+          "primary_residence",
+          "second_home",
+          "investment"
+        ],
+        "transaction_types": [
+          "purchase",
+          "rate_term_refinance",
+          "cash_out_refinance"
+        ]
+      },
+      "data_points_required": [
+        "construction_type",
+        "postponed_items_indicator",
+        "note_date",
+        "as_completed_appraised_value",
+        "estimated_cost_to_complete",
+        "completion_escrow_amount",
+        "fixed_price_contract_indicator",
+        "fixed_price_contract_amount",
+        "form_1004d_obtained_indicator",
+        "completion_confirmation_date"
+      ],
+      "audit_frequency": "at_origination",
+      "confidence_score": 98.6,
+      "confidence_breakdown": {
+        "extraction_clarity": 99,
+        "numeric_precision": 100,
+        "context_completeness": 97,
+        "source_authority": 100,
+        "logical_consistency": 95
+      },
+      "requires_review": false,
+      "reference_verified": true,
+      "reference_verification_note": "ok_recovered_position",
+      "entity_or_relationship": "IS_SECURED_BY",
+      "entity_type": "relationship",
+      "relationship_definition": {
+        "description": "",
+        "source_entity": "MORTGAGE_LOAN",
+        "target_entity": "SUBJECT_PROPERTY",
+        "directionality": "",
+        "examples": [
+          "Purchase loan secured by a one-unit primary residence.",
+          "Refinance loan secured by a property in a disaster-affected area requiring additional review."
+        ]
+      },
+      "dependencies": [
+        {
+          "depends_on_rule": "BR_PRODUCES_APPRAISAL_REPORT_CONSTRAINT_009_001",
+          "dependency_type": "validation",
+          "rationale": "BR_IS_SECURED_BY_CONSTRAINT_034_010 includes thresholds tied to the \u201cas completed\u201d appraised value (e.g., postponed improvements cost not more than 10% of as-completed value; escrow set to 120% of estimated cost). If the appraisal supporting the as-completed value is deficient under BR_PRODUCES_APPRAISAL_REPORT_CONSTRAINT_009_001, the as-completed value may not be acceptable for determining whether the 10%/escrow thresholds are met.",
+          "impact_if_fails": "If the appraisal is not acceptable, the lender may be unable to validate the postponed-items exception and must either cure the appraisal or delay sale until completion, affecting delivery timing and warehouse line utilization.",
+          "strength": 4
+        },
+        {
+          "depends_on_rule": "BR_PRODUCES_APPRAISAL_REPORT_CONSTRAINT_009_003",
+          "dependency_type": "validation",
+          "rationale": "If the construction/postponed-items loan involves a unit in a new or recently converted project, the appraisal must include the required inside/outside project comp mix. This supports a reliable value conclusion, which is then used in BR_IS_SECURED_BY_CONSTRAINT_034_010\u2019s 10% cap and escrow analysis.",
+          "impact_if_fails": "A missing comp mix can force appraisal revision, delaying the ability to determine whether postponed items can be permitted at sale, potentially pushing delivery beyond internal or investor timelines.",
+          "strength": 3
+        }
+      ],
+      "provenance": {
+        "operation": "MERGED",
+        "match_type": "EQUIVALENT",
+        "confidence": 0.74,
+        "similarity_score": 82,
+        "sources": [
+          "fannie_mae",
+          "freddie_mac"
+        ],
+        "original_ids": {
+          "fannie_mae": "BR_IS_SECURED_BY_CONSTRAINT_034_010",
+          "freddie_mac": "BR_MULTIFAMILY_PROPERTY_ELIGIBILITY_028_001"
+        },
+        "reasoning": "Both address acceptability when property improvements/construction are not fully complete by delivery/sale, and both require a holdback/reserve-type mechanism to ensure completion. Freddie is broader (no 180-day/10%/120% specifics), but the practical control is similar.",
+        "g1_rule": {
+          "rule_id": "BR_IS_SECURED_BY_CONSTRAINT_034_010",
+          "rule_name": "Postponed Improvements: 180 Days and 120% Escrow",
+          "description": "Loans secured by new or proposed construction may be sold before postponed items are complete only if: postponed improvements are completed within 180 days of the note date; the cost of completing improvements is not more than 10% of the \u201cas completed\u201d appraised value; and the lender establishes a completion escrow by withholding from purchase proceeds funds equal to 120% of estimated cost (or full contract price if a guaranteed fixed-price contract is provided). Completion must be confirmed using Form 1004D or an acceptable completion alternative, and documentation must be retained in the loan file."
+        },
+        "g2_rule": {
+          "rule_id": "BR_MULTIFAMILY_PROPERTY_ELIGIBILITY_028_001",
+          "rule_name": "Property Must Have 5+ Units and Completed Construction",
+          "description": "To be eligible, the Property must (i) contain five or more dwelling units, (ii) be designed in whole or in part for residential use, (iii) have completed construction (including subsurface utilities and off-site improvements) as of the Delivery Date, and (iv) have each residential unit include kitchen and bathroom facilities. The Property must be served by public water and sanitary sewer systems. If improvements cannot be completed for valid reasons (e.g., inclement weather), an adequate Reserve for incomplete items must be established, and a satisfactory completion certificate with color photographs must be submitted to Freddie Mac."
+        }
+      }
+    },
+    {
+      "rule_id": "MERGED_BR_MORTGAGE_LOAN_PROHIBITION_009_008",
+      "rule_name": "Payment Abatements Ineligible and HOA Over 12 Months",
+      "rule_type": "prohibition",
+      "description": "Loans with any type of payment abatement are not eligible for sale to Fannie Mae, even if disclosed on the settlement statement. This prohibition applies when an interested party funds the abatement directly and/or through another entity. Payment of HOA fees is not considered an abatement unless the HOA fee payment extends for more than 12 months; HOA payments for 12 months or less are treated as IPCs.",
+      "conditions": "Purchase loans where an interested party pays borrower payments/HOA fees",
+      "consequences": "If abatement exists, loan is not eligible for sale to Fannie Mae",
+      "exceptions": "HOA fee payments for 12 months or less are permitted as IPCs",
+      "source_reference": {
+        "chunk_path": "fannie_mae/part_b_origination_through_closing/subpart_b3_underwriting_borrowers/chapter_b3_4_asset_assessment/section_b3_4_1_general_asset_requirements/b3_4_1_02_interested_party_contributions_ipcs_05_07_2025.txt",
+        "section_id": "B3-4.1-02, Payment Abatements",
+        "start_word_position": 1105,
+        "end_word_position": 1190,
+        "source_text": "Loans with any type of payment abatement are not eligible for sale to Fannie Mae, even if they are disclosed on the settlement statement. This prohibition applies when an interested party funds the abatement directly and/or through another entity, such as a nonpro\ufb01t down payment assistance program. Note : The payment of HOA fees is not considered an abatement unless the payment of the fee extends for more than 12 months. Paying HOA fees for 12 months or less is considered an interested party contribution.",
+        "text_match_score": 0.975
+      },
+      "mandatory": true,
+      "examples": [
+        "Builder pays 6 months of the borrower\u2019s mortgage payments after closing; the loan is ineligible for sale to Fannie Mae.",
+        "Seller pays HOA dues for 18 months; treated as a payment abatement and the loan is ineligible.",
+        "Seller pays HOA dues for 12 months; treated as an IPC (still subject to IPC limits) and not a payment abatement."
+      ],
+      "confidence_score": 92.25,
+      "confidence_breakdown": {
+        "extraction_clarity": 95,
+        "numeric_precision": 90,
+        "context_completeness": 90,
+        "source_authority": 95,
+        "logical_consistency": 90
+      },
+      "extraction_notes": "Clear ineligibility rule with explicit 12-month HOA boundary for exception.",
+      "requires_review": false,
+      "effective_date": "2025-05-07",
+      "expiration_date": null,
+      "superseded_by": null,
+      "jurisdiction": "agency:EXAMPLE_POLICIES",
+      "risk_level": "critical",
+      "related_rules": [
+        "BR_MORTGAGE_LOAN_CONSTRAINT_009_006"
+      ],
+      "enforcement_action": "Loan delivery ineligibility",
+      "applicability_scope": {
+        "loan_types": [
+          "conventional"
+        ],
+        "occupancy_types": [
+          "primary_residence",
+          "second_home",
+          "investment"
+        ],
+        "transaction_types": [
+          "purchase"
+        ]
+      },
+      "data_points_required": [
+        "payment_abatement_indicator",
+        "abatement_funding_party_type",
+        "hoa_fees_paid_months",
+        "settlement_statement_disclosure_indicator"
+      ],
+      "audit_frequency": "at_origination",
+      "reference_verified": true,
+      "reference_verification_note": "ok_recovered_position",
+      "entity_or_relationship": "MORTGAGE_LOAN",
+      "entity_type": "entity",
+      "entity_definition": {
+        "description": "",
+        "key_attributes": [],
+        "examples": [
+          "30-year fixed-rate purchase mortgage delivered to Fannie Mae",
+          "Adjustable-rate mortgage with initial fixed period and subsequent adjustments",
+          "Refinance mortgage loan requiring appraisal and eligibility checks"
+        ]
+      },
+      "dependencies": [
+        {
+          "depends_on_rule": "BR_SELLER_SERVICER_COMPLIANCE_005_010",
+          "dependency_type": "prerequisite",
+          "rationale": "Both rules can independently stop delivery, but 005_010 is a sanctions-based prohibition that must be cleared before continuing any delivery eligibility screening such as the payment abatement prohibition in 009_008.",
+          "impact_if_fails": "If 005_010 fails, the lender must not deliver the loan regardless of whether the transaction has an abatement; proceeding risks sanctions violations and Fannie Mae enforcement.",
+          "strength": 5
+        }
+      ],
+      "dependent_rules": [
+        {
+          "dependent_rule": "BR_MORTGAGE_LOAN_CONSTRAINT_009_006",
+          "dependency_type": "conditional"
+        },
+        {
+          "dependent_rule": "BR_MORTGAGE_LOAN_CALCULATION_009_007",
+          "dependency_type": "conditional"
+        },
+        {
+          "dependent_rule": "BR_MORTGAGE_LOAN_CONSTRAINT_009_006",
+          "dependency_type": "override"
+        },
+        {
+          "dependent_rule": "BR_LENDER_CONTRACT_CONSTRAINT_002_007",
+          "dependency_type": "prerequisite"
+        }
+      ],
+      "provenance": {
+        "operation": "MERGED",
+        "match_type": "EQUIVALENT",
+        "confidence": 0.66,
+        "similarity_score": 83,
+        "sources": [
+          "fannie_mae",
+          "freddie_mac"
+        ],
+        "original_ids": {
+          "fannie_mae": "BR_MORTGAGE_LOAN_PROHIBITION_009_008",
+          "freddie_mac": "BR_MORTGAGE_PROHIBITION_001_003"
+        },
+        "reasoning": "Both aim to prevent loan delivery/purchase when borrower payments are advanced/covered by another party, masking true payment performance. Fannie broadly bans any payment abatement (with an HOA >12 months nuance); Freddie bans outstanding borrower payment advances within 3 months of delivery.",
+        "g1_rule": {
+          "rule_id": "BR_MORTGAGE_LOAN_PROHIBITION_009_008",
+          "rule_name": "Payment Abatements Ineligible and HOA Over 12 Months",
+          "description": "Loans with any type of payment abatement are not eligible for sale to Fannie Mae, even if disclosed on the settlement statement. This prohibition applies when an interested party funds the abatement directly and/or through another entity. Payment of HOA fees is not considered an abatement unless the HOA fee payment extends for more than 12 months; HOA payments for 12 months or less are treated as IPCs."
+        },
+        "g2_rule": {
+          "rule_id": "BR_MORTGAGE_PROHIBITION_001_003",
+          "rule_name": "No Borrower Payment Advances Within 3 Months of Delivery",
+          "description": "Within the three-month period before the Delivery Date, there must not have been any outstanding advance of funds made to or on behalf of the Borrower (by the Seller, a prior holder, or another at the Seller\u2019s request) that the Borrower used to pay any monthly installment, principal, interest, or other Mortgage charges. This is a delivery eligibility condition supporting the requirement that the Mortgage is not in default."
+        }
+      }
+    },
+    {
+      "rule_id": "MERGED_BR_SELLER_SERVICER_PROCESS_008_007",
+      "rule_name": "Seller must deliver records within Fannie Mae deadline",
+      "rule_type": "process",
+      "description": "When Fannie Mae issues a written request to examine mortgage records, the seller/servicer must deliver all requested records to Fannie Mae (or its designee) within the timeframe specified by Fannie Mae. If records are maintained in a non-paper format, the seller/servicer must reproduce them at its own expense. If unable to respond timely, the seller/servicer must provide a reasonable explanation and, if appropriate, evidence that the relevant requirement was satisfied. The seller/servicer is responsible for Fannie Mae losses incurred to enforce record access unless Fannie Mae had no legal right of access.",
+      "conditions": "Applies upon Fannie Mae written request to examine mortgage records",
+      "consequences": "Timely delivery satisfies audit; failure may trigger loss liability/enforcement",
+      "exceptions": "Loss liability exception if Fannie Mae had no legal right of access",
+      "source_reference": {
+        "chunk_path": "fannie_mae/part_a_doing_business_with_fannie_mae/subpart_a2_lender_contract/chapter_a2_4_loan_files_and_records/section_a2_4_1_establishment_ownership_and_retention_of_loan_files_and_records/a2_4_1_02_ownership_and_retention_of_loan_files_and_records_12_19_2017.txt",
+        "section_id": "A2-4.1-02, General Requirements for Audits of Records",
+        "start_word_position": 649,
+        "end_word_position": 729,
+        "source_text": "When Fannie Mae sends a written request to a seller/servicer to examine mortgage records, the seller/servicer must deliver all records to Fannie Mae or to whomever Fannie Mae designates within the time frame specified by Fannie Mae. Fannie Mae will not execute any trust receipts for documents it requests and will not pay for their delivery. If the seller/servicer is retaining any of the records in a format other than paper, the seller/servicer must reproduce them at its own expense.",
+        "text_match_score": 0.972
+      },
+      "mandatory": true,
+      "examples": [
+        "Fannie Mae requests a post-purchase file; lender ships imaged documents by the stated due date and satisfies the request.",
+        "Lender stores records electronically; when requested, lender prints/exports and provides them at its own expense within the deadline.",
+        "Lender cannot meet the deadline due to a system outage; lender provides a written explanation and supporting evidence of compliance for the items under review."
+      ],
+      "effective_date": null,
+      "expiration_date": null,
+      "superseded_by": null,
+      "jurisdiction": "agency:EXAMPLE_POLICIES",
+      "risk_level": "high",
+      "related_rules": [],
+      "enforcement_action": "Indemnification for Fannie Mae losses enforcing record access",
+      "applicability_scope": {
+        "loan_types": [
+          "conventional"
+        ],
+        "occupancy_types": [
+          "primary_residence",
+          "second_home",
+          "investment"
+        ],
+        "transaction_types": [
+          "purchase",
+          "rate_term_refinance",
+          "cash_out_refinance"
+        ]
+      },
+      "data_points_required": [
+        "seller_servicer_id",
+        "mortgage_file_id",
+        "file_location",
+        "record_format",
+        "fannie_mae_request_date",
+        "fannie_mae_due_date",
+        "delivery_date"
+      ],
+      "audit_frequency": "on_change",
+      "confidence_score": 87.65,
+      "confidence_breakdown": {
+        "extraction_clarity": 95,
+        "numeric_precision": 70,
+        "context_completeness": 92,
+        "source_authority": 95,
+        "logical_consistency": 90
+      },
+      "requires_review": false,
+      "reference_verified": true,
+      "reference_verification_note": "ok_recovered_position",
+      "entity_or_relationship": "SELLER_SERVICER",
+      "entity_type": "entity",
+      "entity_definition": {
+        "description": "",
+        "key_attributes": [],
+        "examples": [
+          "Fannie Mae-approved Seller/Servicer with active approval",
+          "Seller/Servicer under probationary status",
+          "Seller/Servicer terminated for breach of obligations"
+        ]
+      },
+      "dependencies": [
+        {
+          "depends_on_rule": "BR_SELLER_SERVICER_DOCUMENTATION_011_009",
+          "dependency_type": "prerequisite",
+          "rationale": "BR_SELLER_SERVICER_PROCESS_008_007 requires delivering all requested mortgage records within the specified timeframe and reproducing non-paper records. BR_SELLER_SERVICER_DOCUMENTATION_011_009 requires maintaining a complete loan file and providing electronic copies upon request\u2014this is foundational to meeting record examination requests.",
+          "impact_if_fails": "If complete loan files are not maintained or cannot be produced in required formats, the seller/servicer may miss the examination deadline, leading to enforcement and potential loss liability.",
+          "strength": 4
+        }
+      ],
+      "provenance": {
+        "operation": "MERGED",
+        "match_type": "EQUIVALENT",
+        "confidence": 0.86,
+        "similarity_score": 84,
+        "sources": [
+          "fannie_mae",
+          "freddie_mac"
+        ],
+        "original_ids": {
+          "fannie_mae": "BR_SELLER_SERVICER_PROCESS_008_007",
+          "freddie_mac": "BR_RETAINS_RECORDS_UNDER_PROCESS_017_003"
+        },
+        "reasoning": "Both require producing paper copies of loan file/records when maintained in non-paper formats upon the GSE\u2019s written request. Freddie is specific to paper production/transfer; Fannie includes broader delivery timing and explanation duties.",
+        "g1_rule": {
+          "rule_id": "BR_SELLER_SERVICER_PROCESS_008_007",
+          "rule_name": "Seller must deliver records within Fannie Mae deadline",
+          "description": "When Fannie Mae issues a written request to examine mortgage records, the seller/servicer must deliver all requested records to Fannie Mae (or its designee) within the timeframe specified by Fannie Mae. If records are maintained in a non-paper format, the seller/servicer must reproduce them at its own expense. If unable to respond timely, the seller/servicer must provide a reasonable explanation and, if appropriate, evidence that the relevant requirement was satisfied. The seller/servicer is responsible for Fannie Mae losses incurred to enforce record access unless Fannie Mae had no legal right of access."
+        },
+        "g2_rule": {
+          "rule_id": "BR_RETAINS_RECORDS_UNDER_PROCESS_017_003",
+          "rule_name": "Non-Paper Records Must Be Produced as Paper on Request",
+          "description": "If the Servicer maintains copies of documents/loan files in any media other than paper, the Servicer must produce a paper copy at Freddie Mac\u2019s prior written request. If Freddie Mac requests transfer of any documents, the Servicer must transfer those documents as paper copies unless otherwise agreed by Freddie Mac."
+        }
+      }
+    },
+    {
+      "rule_id": "MERGED_BR_GOVERNS_RELATIONSHIP_WITH_PROCESS_003_003",
+      "rule_name": "Forward borrower funds within 1 business day after receipt",
+      "rule_type": "process",
+      "description": "Within one (1) Business Day of receipt, Seller must transfer and forward to Servicer (via wire transfer or overnight delivery service) all funds received from the mortgagor after the Purchase Date.",
+      "conditions": "When Seller receives mortgagor funds after the Purchase Date under the agreement",
+      "consequences": "Timely forwarding meets contractual duty; late forwarding may constitute breach and trigger disputes",
+      "exceptions": "None stated",
+      "source_reference": {
+        "chunk_path": "fannie_mae/part_e_quick_reference_materials/chapter_e_2_exhibits/e_2_05_servicing_marketplace_mortgage_loan_servicing_purchase_and_sale_agreement_12_15_2021_part_4_7.txt",
+        "section_id": "6.2 After Receipt",
+        "start_word_position": 236,
+        "end_word_position": 270,
+        "source_text": "6.2 After Receipt. Within one (1) Business Day of receipt, Seller shall transfer and forward to Servicer via wire transfer or overnight delivery service all funds received from the mortgagor after the Purchase Date.",
+        "text_match_score": 0.341
+      },
+      "mandatory": true,
+      "examples": [
+        "Seller receives a borrower\u2019s payment on Tuesday after Purchase Date; Seller must wire/overnight forward it by Wednesday (1 Business Day).",
+        "Seller receives funds on Friday; forwarding by Monday is timely if Monday is the next Business Day.",
+        "Seller holds funds for 3 Business Days to batch transfers; this violates the 1 Business Day requirement."
+      ],
+      "confidence_score": 96.45,
+      "confidence_breakdown": {
+        "extraction_clarity": 98,
+        "numeric_precision": 100,
+        "context_completeness": 90,
+        "source_authority": 95,
+        "logical_consistency": 98
+      },
+      "effective_date": "2026-03-04",
+      "expiration_date": null,
+      "superseded_by": null,
+      "jurisdiction": "agency:EXAMPLE_POLICIES",
+      "risk_level": "high",
+      "related_rules": [
+        "BR_GOVERNS_RELATIONSHIP_WITH_CONSTRAINT_003_002"
+      ],
+      "enforcement_action": "Contract breach remedies",
+      "applicability_scope": {
+        "loan_types": [
+          "conventional"
+        ],
+        "occupancy_types": [
+          "primary_residence",
+          "second_home",
+          "investment"
+        ],
+        "transaction_types": [
+          "purchase"
+        ]
+      },
+      "data_points_required": [
+        "purchase_date",
+        "mortgagor_funds_receipt_date",
+        "funds_forwarded_date",
+        "forwarding_method"
+      ],
+      "audit_frequency": "on_change",
+      "reference_verified": true,
+      "reference_verification_note": "ok",
+      "entity_or_relationship": "GOVERNS_RELATIONSHIP_WITH",
+      "entity_type": "relationship",
+      "relationship_definition": {
+        "description": "",
+        "source_entity": "LENDER_CONTRACT",
+        "target_entity": "SELLER_SERVICER",
+        "directionality": "",
+        "examples": [
+          "Contract requires record retention and examination of mortgage files for all delivered loans.",
+          "Contract defines remedies available to Fannie Mae for material defects."
+        ]
+      },
+      "dependent_rules": [
+        {
+          "dependent_rule": "BR_GOVERNS_RELATIONSHIP_WITH_CONSTRAINT_003_002",
+          "dependency_type": "sequential"
+        }
+      ],
+      "provenance": {
+        "operation": "MERGED",
+        "match_type": "EQUIVALENT",
+        "confidence": 0.84,
+        "similarity_score": 88,
+        "sources": [
+          "fannie_mae",
+          "freddie_mac"
+        ],
+        "original_ids": {
+          "fannie_mae": "BR_GOVERNS_RELATIONSHIP_WITH_PROCESS_003_003",
+          "freddie_mac": "BR_SERVICER_PROCESS_037_008"
+        },
+        "reasoning": "Both require promptly forwarding funds received after a transfer event to the proper counterparty within about one day. Rule A: Seller forwards mortgagor funds post-Purchase Date within 1 business day to Servicer. Rule B: transferor delivers post-transfer funds to transferee within one day.",
+        "g1_rule": {
+          "rule_id": "BR_GOVERNS_RELATIONSHIP_WITH_PROCESS_003_003",
+          "rule_name": "Forward borrower funds within 1 business day after receipt",
+          "description": "Within one (1) Business Day of receipt, Seller must transfer and forward to Servicer (via wire transfer or overnight delivery service) all funds received from the mortgagor after the Purchase Date."
+        },
+        "g2_rule": {
+          "rule_id": "BR_SERVICER_PROCESS_037_008",
+          "rule_name": "Post-Transfer Funds Must Be Sent to Transferee in 1 Day",
+          "description": "After a transfer of servicing becomes effective, any funds for, or correspondence regarding, transferred mortgages that the transferor receives on or after the effective date must be delivered to the transferee within one day of receipt."
+        }
+      }
+    },
+    {
+      "rule_id": "MERGED_BR_ORIGINATES_MORTGAGE_LOAN_PROCESS_034_008",
+      "rule_name": "Late Delivery Data Delays Funding to Next Business Day",
+      "rule_type": "process",
+      "description": "If the required delivery data and documentation are not received by the applicable cutoff time, Fannie Mae will disburse whole loan purchase proceeds on the business day following the date it receives the required materials, assuming the materials are in order and the mortgage is eligible for purchase.",
+      "conditions": "Required delivery data/docs missed the cutoff time for whole loan funding",
+      "consequences": "Funding shifts to the next business day after receipt; unresolved issues can further delay purchase",
+      "exceptions": "None stated",
+      "source_reference": {
+        "chunk_path": "fannie_mae/part_c_selling_securitizing_and_delivering_loans/subpart_c2_whole_loan_transactions/chapter_c2_2_whole_loan_deliveries_to_and_purchasing_by_fannie_mae/c2_2_04_timing_of_distribution_of_whole_loan_purchase_proceeds_05_04_2022_c2_2_05_whole_loan_p.txt",
+        "section_id": "C2-2-04 (Impact of Late Submissions of Required Data and Documentation)",
+        "start_word_position": 233,
+        "end_word_position": 278,
+        "source_text": "If the required delivery data and documentation are not received by the applicable cuto\ufb00 time, Fannie Mae will disburse the purchase proceeds on the business day following the date it receives these materials, assuming they are in order and the mortgage is eligible for purchase.",
+        "text_match_score": 0.957
+      },
+      "mandatory": true,
+      "examples": [
+        "Custodian package arrives one day late; Fannie Mae disburses proceeds the business day after receiving the complete, in-order package.",
+        "Data arrives after cutoff and contains errors; disbursement does not occur until corrected materials are received and in order.",
+        "Delivery materials arrive on Friday after cutoff; disbursement occurs Monday (next business day) if eligible and in order."
+      ],
+      "effective_date": "2022-05-04",
+      "expiration_date": null,
+      "superseded_by": null,
+      "jurisdiction": "agency:EXAMPLE_POLICIES",
+      "risk_level": "medium",
+      "related_rules": [],
+      "enforcement_action": "Funding delay / purchase processing delay",
+      "applicability_scope": {
+        "loan_types": [
+          "conventional",
+          "FHA",
+          "VA",
+          "USDA"
+        ],
+        "occupancy_types": [
+          "primary_residence",
+          "second_home",
+          "investment"
+        ],
+        "transaction_types": [
+          "purchase",
+          "rate_term_refinance",
+          "cash_out_refinance"
+        ]
+      },
+      "data_points_required": [
+        "delivery_data_submission_timestamp_et",
+        "required_docs_received_date",
+        "cutoff_time_met_indicator",
+        "eligibility_status",
+        "documentation_in_order_indicator"
+      ],
+      "audit_frequency": "at_origination",
+      "confidence_score": 89.5,
+      "confidence_breakdown": {
+        "extraction_clarity": 97,
+        "numeric_precision": 70,
+        "context_completeness": 92,
+        "source_authority": 100,
+        "logical_consistency": 95
+      },
+      "requires_review": false,
+      "reference_verified": true,
+      "reference_verification_note": "ok_recovered_position",
+      "entity_or_relationship": "ORIGINATES_MORTGAGE_LOAN",
+      "entity_type": "relationship",
+      "relationship_definition": {
+        "description": "",
+        "source_entity": "SELLER_SERVICER",
+        "target_entity": "MORTGAGE_LOAN",
+        "directionality": "",
+        "examples": [
+          "Approved Seller/Servicer originates a fixed-rate purchase loan intended for delivery.",
+          "Seller/Servicer originates an ARM subject to ARM policy requirements."
+        ]
+      },
+      "dependencies": [
+        {
+          "depends_on_rule": "BR_ORIGINATES_MORTGAGE_LOAN_PROCESS_034_007",
+          "dependency_type": "conditional",
+          "rationale": "BR_034_008 only applies if required delivery data/documentation are not received by the cutoff described in BR_034_007. Therefore, the evaluation of BR_034_008 depends on the timing outcome relative to BR_034_007 conditions.",
+          "impact_if_fails": "If BR_034_007 cutoff is missed, funding shifts to the next business day after receipt; operational timelines and settlement expectations change.",
+          "strength": 3
+        }
+      ],
+      "provenance": {
+        "operation": "MERGED",
+        "match_type": "EQUIVALENT",
+        "confidence": 0.74,
+        "similarity_score": 83,
+        "sources": [
+          "fannie_mae",
+          "freddie_mac"
+        ],
+        "original_ids": {
+          "fannie_mae": "BR_ORIGINATES_MORTGAGE_LOAN_PROCESS_034_008",
+          "freddie_mac": "BR_DELIVERS_LOAN_PROCESS_020_006"
+        },
+        "reasoning": "Both impose a delivery cutoff time for required loan delivery materials and define that missing the cutoff constitutes/permits treatment as late, affecting downstream processing (funding timing vs late delivery handling). Different programs and consequences, but similar compliance concept.",
+        "g1_rule": {
+          "rule_id": "BR_ORIGINATES_MORTGAGE_LOAN_PROCESS_034_008",
+          "rule_name": "Late Delivery Data Delays Funding to Next Business Day",
+          "description": "If the required delivery data and documentation are not received by the applicable cutoff time, Fannie Mae will disburse whole loan purchase proceeds on the business day following the date it receives the required materials, assuming the materials are in order and the mortgage is eligible for purchase."
+        },
+        "g2_rule": {
+          "rule_id": "BR_DELIVERS_LOAN_PROCESS_020_006",
+          "rule_name": "SBL final delivery due by noon ET on Mandatory Delivery Date with email notice",
+          "description": "For SBL Mortgages under the standard delivery option, the Seller/Servicer must deliver all documents listed in the Final Delivery Table of Contents \u2013 SBL at or before noon Eastern time on the Mandatory Delivery Date. Freddie Mac may treat as a late delivery if the Seller/Servicer fails to deliver the Final Delivery Package, including sending an email to mf_purchase_boarding_mgrs@freddiemac.com notifying Multifamily Purchase of the delivery of the Electronic Delivery Package, at or before noon Eastern time on the Mandatory Delivery Date."
+        }
+      }
+    },
+    {
+      "rule_id": "MERGED_BR_LENDER_CONTRACT_PROCESS_018_010",
+      "rule_name": "PMI lapse requires reinstate or repurchase within 30 days; reimburse in 15 days",
+      "rule_type": "process",
+      "description": "If failure of a Private Mortgage Insurance policy to be in force on or after the Purchase Date is due to Seller negligence, Seller must, no later than 30 days after receiving notification, either take actions necessary to cause the policy to be in force/reinstated or repurchase the related Servicing Rights at the Servicing Rights Repurchase Price. If Seller fails to comply, Servicer must notify Fannie Mae to initiate the repurchase process. If a rescission is notified and the policy cannot be reinstated, Seller must reimburse Servicer within 15 business days of Servicer\u2019s reimbursement request.",
+      "conditions": "PMI policy not in force/rescinded post-Purchase Date due to Seller negligence",
+      "consequences": "If cured timely, servicing continues; if not, repurchase process is initiated",
+      "exceptions": "Servicer not required to advance funds to reinstate PMI",
+      "source_reference": {
+        "chunk_path": "fannie_mae/part_e_quick_reference_materials/chapter_e_2_exhibits/e_2_05_servicing_marketplace_mortgage_loan_servicing_purchase_and_sale_agreement_12_15_2021_part_5_7.txt",
+        "section_id": "E-2-05 (Agreement excerpt near Section 7.4/7.5)",
+        "start_word_position": 0,
+        "end_word_position": 116,
+        "source_text": "Seller shall, no later than thirty (30) days after Seller\u2019s receipt of noti\ufb01cation thereof, either (a) take all such actions as are necessary to cause such policy to be in force or to be reinstated by the applicable insurer, or (b) repurchase the related Servicing Rights from Servicer at the Servicing Rights Repurchase Price. If Seller fails to comply with the preceding sentence with respect to a Mortgage Loan, Servicer shall notify Fannie Mae, to initiate the repurchase process with respect to such Mortgage Loan. At no time shall Servicer be made to advance funds to reinstate any Private Mortgage Insurance Policy... Seller shall reimburse Servicer for any amounts due within \ufb01fteen (15) Business Days",
+        "text_match_score": 0.317
+      },
+      "mandatory": true,
+      "examples": [
+        "Seller receives notice on May 1 that PMI lapsed due to Seller error \u2192 by May 31 Seller must reinstate PMI or repurchase servicing rights.",
+        "Seller does not act within 30 days \u2192 Servicer notifies Fannie Mae to initiate repurchase process for the affected mortgage loan.",
+        "PMI policy is rescinded and cannot be reinstated; Servicer requests reimbursement on June 10 \u2192 Seller must reimburse by 15 business days after June 10."
+      ],
+      "effective_date": "2021-12-15",
+      "expiration_date": null,
+      "superseded_by": null,
+      "jurisdiction": "agency:SAMPLE_GUIDELINES",
+      "risk_level": "critical",
+      "related_rules": [],
+      "enforcement_action": "Initiate repurchase process / servicing rights repurchase",
+      "applicability_scope": {
+        "loan_types": [
+          "conventional"
+        ],
+        "occupancy_types": [
+          "primary_residence",
+          "second_home",
+          "investment"
+        ],
+        "transaction_types": [
+          "purchase",
+          "rate_term_refinance",
+          "cash_out_refinance"
+        ]
+      },
+      "data_points_required": [
+        "purchase_date",
+        "pmi_policy_in_force_indicator",
+        "seller_negligence_indicator",
+        "notification_received_date",
+        "policy_reinstatement_date",
+        "reimbursement_request_date",
+        "reimbursement_paid_date"
+      ],
+      "audit_frequency": "on_change",
+      "reference_verified": true,
+      "reference_verification_note": "ok",
+      "confidence_score": 75,
+      "entity_or_relationship": "LENDER_CONTRACT",
+      "entity_type": "entity",
+      "entity_definition": {
+        "description": "",
+        "key_attributes": [],
+        "examples": [
+          "Seller/Servicer contract with representations and warranties for delivered mortgages",
+          "Contractual record retention and examination provisions for mortgage files",
+          "Contract remedy section enabling repurchase or make-whole payments"
+        ]
+      },
+      "dependencies": [
+        {
+          "depends_on_rule": "BR_MORTGAGE_LOAN_CONSTRAINT_039_001",
+          "dependency_type": "conditional",
+          "rationale": "BR_018_010 is a post-purchase cure/repurchase pathway when a PMI policy is not in force due to seller negligence. BR_039_001 establishes when MI coverage is required by LTV/loan attributes, making PMI existence and continuity a compliance-critical element. Thus, MI coverage requirements conditionally trigger the operational risk controlled by BR_018_010.",
+          "impact_if_fails": "If BR_039_001-required MI is not properly maintained and then lapses post-purchase, BR_018_010 escalates into cure within 30 days or repurchase/servicing-rights repurchase. Failure increases repurchase exposure and servicing disruption.",
+          "strength": 3
+        }
+      ],
+      "provenance": {
+        "operation": "MERGED",
+        "match_type": "EQUIVALENT",
+        "confidence": 0.66,
+        "similarity_score": 82,
+        "sources": [
+          "fannie_mae",
+          "freddie_mac"
+        ],
+        "original_ids": {
+          "fannie_mae": "BR_LENDER_CONTRACT_PROCESS_018_010",
+          "freddie_mac": "BR_SELLER_SERVICER_PROCESS_016_010"
+        },
+        "reasoning": "Both impose a mandatory repurchase-related response within 30 days after receiving notice/request. However, Rule A is specific to PMI lapse due to seller negligence and allows cure (reinstate) instead of repurchase; Rule B is a general repurchase/indemnify demand with appeal/15-day post-denial timing.",
+        "g1_rule": {
+          "rule_id": "BR_LENDER_CONTRACT_PROCESS_018_010",
+          "rule_name": "PMI lapse requires reinstate or repurchase within 30 days; reimburse in 15 days",
+          "description": "If failure of a Private Mortgage Insurance policy to be in force on or after the Purchase Date is due to Seller negligence, Seller must, no later than 30 days after receiving notification, either take actions necessary to cause the policy to be in force/reinstated or repurchase the related Servicing Rights at the Servicing Rights Repurchase Price. If Seller fails to comply, Servicer must notify Fannie Mae to initiate the repurchase process. If a rescission is notified and the policy cannot be reinstated, Seller must reimburse Servicer within 15 business days of Servicer\u2019s reimbursement request."
+        },
+        "g2_rule": {
+          "rule_id": "BR_SELLER_SERVICER_PROCESS_016_010",
+          "rule_name": "Repurchase or indemnify within 30 days; appeal within 30 days; 15 days after denial",
+          "description": "When Freddie Mac requires repurchase or indemnification, the Seller or Servicer must repurchase Freddie Mac\u2019s interest or indemnify Freddie Mac within 30 days of Freddie Mac\u2019s request. The Seller/Servicer may file one written appeal within 30 days from the date of Freddie Mac\u2019s letter; if the appeal is denied, repurchase/indemnification must be completed within 15 days from the date of the denial letter. Failure to comply may result in suspension or termination of selling and/or servicing privileges or termination of servicing."
+        }
+      }
+    },
+    {
+      "rule_id": "MERGED_BR_CLASSIFIES_AS_PUD_UNIT_VALIDATION_011_008",
+      "rule_name": "Inspection Reports Within 3 Years Must Show No Critical Repairs or Evacuation Orders",
+      "rule_type": "validation",
+      "description": "If a structural and/or mechanical inspection was completed within 3 years of the lender's project review date, the lender must obtain and review the inspection report. The report cannot indicate that any critical repairs are needed, no evacuation orders are in effect, and no regulatory actions are required. If the report indicates unaddressed critical repairs, the project is ineligible until repairs are completed and documented; the lender must review an engineer\u2019s report (or substantially similar document) to confirm repairs resolved safety/soundness/structural integrity/habitability concerns.",
+      "conditions": "Project review performed and an inspection exists dated within prior 3 years",
+      "consequences": "If report clean, proceed; if critical repairs noted, project ineligible until cured",
+      "exceptions": "None stated in excerpt",
+      "source_reference": {
+        "chunk_path": "fannie_mae/part_b_origination_through_closing/subpart_b4_underwriting_property/chapter_b4_2_project_standards/section_b4_2_1_general_project_standards/b4_2_1_03_ineligible_projects_08_06_2025_part_4_4.txt",
+        "section_id": "B4-2.1-03, Inspection Reports",
+        "start_word_position": 1062,
+        "end_word_position": 1164,
+        "source_text": "If a structural and/or mechanical inspection was completed within 3 years of the lender's project review date, the lender must obtain and review the inspection report. The report cannot indicate that any critical repairs are needed, no evacuation orders are in e\ufb00ect, and no regulatory actions are required. If the inspection report indicates there are unaddressed critical repairs, the project is ineligible until the required repairs have been completed and documented accordingly. The lender must review an engineer's report or substantially similar document to determine if the repairs completed have resolved the safety, soundness, structural integrity, or habitability concerns of the project.",
+        "text_match_score": 0.988
+      },
+      "mandatory": true,
+      "examples": [
+        "Compliant: Inspection dated 18 months before review shows no critical repairs and no evacuation orders \u2192 lender retains and relies on report.",
+        "Ineligible: Inspection dated 2 years before review cites structural spalling requiring immediate repair; repairs not done \u2192 project ineligible.",
+        "Cure: Repairs completed; lender obtains engineer report confirming structural integrity restored \u2192 project may become eligible."
+      ],
+      "confidence_score": 96.15,
+      "confidence_breakdown": {
+        "extraction_clarity": 98,
+        "numeric_precision": 100,
+        "context_completeness": 90,
+        "source_authority": 95,
+        "logical_consistency": 95
+      },
+      "effective_date": "2025-08-06",
+      "expiration_date": null,
+      "superseded_by": null,
+      "jurisdiction": "agency:EXAMPLE_POLICIES",
+      "risk_level": "critical",
+      "related_rules": [
+        "BR_CLASSIFIES_AS_PUD_UNIT_CONSTRAINT_011_007"
+      ],
+      "enforcement_action": "Loan delivery rejection",
+      "applicability_scope": {
+        "loan_types": [
+          "conventional"
+        ],
+        "occupancy_types": [
+          "primary_residence",
+          "second_home",
+          "investment"
+        ],
+        "transaction_types": [
+          "purchase",
+          "rate_term_refinance",
+          "cash_out_refinance"
+        ]
+      },
+      "data_points_required": [
+        "project_review_date",
+        "inspection_report_date",
+        "inspection_report_findings",
+        "evacuation_order_indicator",
+        "regulatory_action_required_indicator"
+      ],
+      "audit_frequency": "at_origination",
+      "reference_verified": true,
+      "reference_verification_note": "ok_recovered_position",
+      "entity_or_relationship": "CLASSIFIES_AS_PUD_UNIT",
+      "entity_type": "relationship",
+      "relationship_definition": {
+        "description": "",
+        "source_entity": "SUBJECT_PROPERTY",
+        "target_entity": "PUD_UNIT",
+        "directionality": "",
+        "examples": [
+          "Subject property identified as a detached PUD unit with HOA dues.",
+          "Subject property identified as an attached PUD unit in a planned development."
+        ]
+      },
+      "dependencies": [
+        {
+          "depends_on_rule": "BR_CLASSIFIES_AS_PUD_UNIT_CONSTRAINT_011_007",
+          "dependency_type": "prerequisite",
+          "rationale": "BR_011_008 requires the lender to review an inspection report and confirm it cannot indicate that any critical repairs are needed; if unaddressed critical repairs exist, the project is ineligible until cured. BR_011_007 defines a project in need of critical repairs (unfunded repairs > $10,000 per unit within 12 months with stated exclusions). The lender cannot consistently interpret BR_011_008 outcomes without BR_011_007\u2019s definition.",
+          "impact_if_fails": "Misclassification can lead to approving an ineligible project (delivery defect) or unnecessarily declining an eligible project (lost production).",
+          "strength": 4
+        }
+      ],
+      "dependent_rules": [
+        {
+          "dependent_rule": "BR_SELLER_SERVICER_PROCESS_005_008",
+          "dependency_type": "conditional"
+        }
+      ],
+      "provenance": {
+        "operation": "MERGED",
+        "match_type": "EQUIVALENT",
+        "confidence": 0.83,
+        "similarity_score": 86,
+        "sources": [
+          "fannie_mae",
+          "freddie_mac"
+        ],
+        "original_ids": {
+          "fannie_mae": "BR_CLASSIFIES_AS_PUD_UNIT_VALIDATION_011_008",
+          "freddie_mac": "BR_DELIVERS_LOAN_VALIDATION_023_008"
+        },
+        "reasoning": "Both impose a hard stop when critical repairs are identified: the transaction cannot proceed (project eligibility/underwriting package submission) until repairs are completed and documented/evidenced. Fannie ties trigger to an inspection within 3 years and adds evacuation/regulatory checks; Freddie ties trigger to SBL risk report.",
+        "g1_rule": {
+          "rule_id": "BR_CLASSIFIES_AS_PUD_UNIT_VALIDATION_011_008",
+          "rule_name": "Inspection Reports Within 3 Years Must Show No Critical Repairs or Evacuation Orders",
+          "description": "If a structural and/or mechanical inspection was completed within 3 years of the lender's project review date, the lender must obtain and review the inspection report. The report cannot indicate that any critical repairs are needed, no evacuation orders are in effect, and no regulatory actions are required. If the report indicates unaddressed critical repairs, the project is ineligible until repairs are completed and documented; the lender must review an engineer\u2019s report (or substantially similar document) to confirm repairs resolved safety/soundness/structural integrity/habitability concerns."
+        },
+        "g2_rule": {
+          "rule_id": "BR_DELIVERS_LOAN_VALIDATION_023_008",
+          "rule_name": "Critical repairs must be completed before full underwriting package submission",
+          "description": "The Seller must verify that all Critical Repairs have been addressed and must provide evidence of completion to Freddie Mac prior to submission of the full underwriting package to Freddie Mac."
+        }
+      }
+    },
+    {
+      "rule_id": "MERGED_BR_ENGAGES_APPRAISER_VALIDATION_031_003",
+      "rule_name": "B4-1.1-05 Disclose Buydowns and Subordinate Financing",
+      "rule_type": "validation",
+      "description": "On purchase transactions, if applicable, the lender must disclose to the appraiser specific financial information items impacting value, including settlement charges, loan fees/charges, discounts to sales price, interest rate buydowns, below-market-rate financing, terms of subordinate financing provided by interested parties, credits/refunds of borrower expenses, absorption of monthly payments, assignment of rent payments, and any other information that impacts property value.",
+      "conditions": "Purchase transactions with applicable financing terms/concessions/credits affecting value",
+      "consequences": "If met: appraiser considers value impacts; if violated: value opinion may be flawed",
+      "exceptions": "Only items that are applicable to the transaction must be disclosed",
+      "source_reference": {
+        "chunk_path": "fannie_mae/part_b_origination_through_closing/subpart_b4_underwriting_property/chapter_b4_1_property_assessment_and_valuation/section_b4_1_1_general_appraisal_requirements/b4_1_1_05_disclosure_of_information_to_appraisers_06_04_2025_b4_1_1_06_uniform_appraisal_datas.txt",
+        "section_id": "B4-1.1-05 (06/04/2025), Financial Information",
+        "start_word_position": 236,
+        "end_word_position": 303,
+        "source_text": "The list below includes items that must be disclosed to the appraiser on purchase transactions, if applicable: settlement charges, loan fees or charges, discounts to the sales price, interest rate buydowns, below-market-rate \ufb01nancing, terms of any subordinate \ufb01nancing provided by interested parties, credits or refunds of borrower expenses, absorption of monthly payments, assignment of rent payments, and any other information not listed above that impacts property value.",
+        "text_match_score": 0.98
+      },
+      "mandatory": true,
+      "examples": [
+        "Seller provides a 2-1 temporary buydown and pays $8,000 closing costs; lender discloses to appraiser for value/market reaction.",
+        "Interested party provides subordinate financing at below-market terms; lender discloses terms to appraiser.",
+        "Rent assignment is part of transaction structure; lender discloses to appraiser because it may affect value opinion."
+      ],
+      "effective_date": "2025-06-04",
+      "expiration_date": null,
+      "superseded_by": null,
+      "jurisdiction": "agency:EXAMPLE_POLICIES",
+      "risk_level": "high",
+      "related_rules": [],
+      "enforcement_action": "Post-purchase remedy exposure if value impacted by undisclosed terms",
+      "applicability_scope": {
+        "loan_types": [
+          "conventional"
+        ],
+        "occupancy_types": [
+          "primary_residence",
+          "second_home",
+          "investment"
+        ],
+        "transaction_types": [
+          "purchase"
+        ]
+      },
+      "data_points_required": [
+        "transaction_type",
+        "seller_concessions_amount",
+        "interest_rate_buydown_indicator",
+        "subordinate_financing_terms",
+        "borrower_expense_credits_amount",
+        "rent_assignment_indicator"
+      ],
+      "audit_frequency": "at_origination",
+      "confidence_score": 85.35,
+      "confidence_breakdown": {
+        "extraction_clarity": 97,
+        "numeric_precision": 55,
+        "context_completeness": 90,
+        "source_authority": 100,
+        "logical_consistency": 95
+      },
+      "requires_review": false,
+      "reference_verified": true,
+      "reference_verification_note": "ok_recovered_position",
+      "entity_or_relationship": "ENGAGES_APPRAISER",
+      "entity_type": "relationship",
+      "relationship_definition": {
+        "description": "",
+        "source_entity": "SELLER_SERVICER",
+        "target_entity": "APPRAISER",
+        "directionality": "",
+        "examples": [
+          "Lender selects an appraiser from an approved panel meeting independence standards.",
+          "Lender reassigns an appraiser due to credential or independence concerns."
+        ]
+      },
+      "dependent_rules": [
+        {
+          "dependent_rule": "BR_PRODUCES_APPRAISAL_REPORT_PROHIBITION_009_005",
+          "dependency_type": "prerequisite"
+        }
+      ],
+      "provenance": {
+        "operation": "MERGED",
+        "match_type": "EQUIVALENT",
+        "confidence": 0.78,
+        "similarity_score": 82,
+        "sources": [
+          "fannie_mae",
+          "freddie_mac"
+        ],
+        "original_ids": {
+          "fannie_mae": "BR_ENGAGES_APPRAISER_VALIDATION_031_003",
+          "freddie_mac": "BR_REQUIRES_APPRAISAL_VALIDATION_022_009"
+        },
+        "reasoning": "Both require the lender/seller/servicer to provide the appraiser with information that could materially affect value so it can be reflected in the appraisal. Rule A focuses on financial concessions; Rule B focuses on property condition report issues.",
+        "g1_rule": {
+          "rule_id": "BR_ENGAGES_APPRAISER_VALIDATION_031_003",
+          "rule_name": "B4-1.1-05 Disclose Buydowns and Subordinate Financing",
+          "description": "On purchase transactions, if applicable, the lender must disclose to the appraiser specific financial information items impacting value, including settlement charges, loan fees/charges, discounts to sales price, interest rate buydowns, below-market-rate financing, terms of subordinate financing provided by interested parties, credits/refunds of borrower expenses, absorption of monthly payments, assignment of rent payments, and any other information that impacts property value."
+        },
+        "g2_rule": {
+          "rule_id": "BR_REQUIRES_APPRAISAL_VALIDATION_022_009",
+          "rule_name": "2-Step Draft-to-Final Property Condition Update 10/14/16",
+          "description": "If consultant-identified issues in the property condition report could materially affect value, then before the Seller/Servicer transmits the Appraisal to Freddie Mac, the Seller/Servicer must provide the appraiser with the property condition report ordered by the Seller/Servicer. The report may be provided in draft form if the appraiser notes it was provided with a draft property condition report. If the final version is materially different from the draft, the appraiser must be given the final version and the valuation must be amended to reflect the new information. If Seller/Servicer and Freddie Mac disagree on materiality, Freddie Mac makes the final decision case-by-case."
+        }
+      }
+    },
+    {
+      "rule_id": "MERGED_BR_MORTGAGE_FILE_DOCUMENTATION_039_008",
+      "rule_name": "Allonge must be permanently affixed and identify borrower, date, amount, and property address",
+      "rule_type": "documentation",
+      "description": "If an allonge is used for endorsement, the endorsement must appear on the note and the allonge must comply with law, be permanently affixed to the note, clearly identify the note by referencing at least borrower name(s), note date, note amount, and security property address, and the note must clearly reference the attached allonge. The lender must indemnify Fannie Mae for losses incurred as a result of using an allonge for note endorsement(s).",
+      "conditions": "Allonge used to endorse note delivered to Fannie Mae; enforceability must be preserved",
+      "consequences": "If allonge not compliant/affixed/referenced: endorsement defect; indemnification for losses applies",
+      "exceptions": "Subsequent endorsements may be placed on allonge but are not required",
+      "source_reference": {
+        "chunk_path": "fannie_mae/part_b_origination_through_closing/subpart_b8_closing_legal_documents/chapter_b8_3_notes/b8_3_04_note_endorsement_10_02_2019.txt",
+        "section_id": "B8-3-04, Using an Allonge for the Endorsement",
+        "start_word_position": 473,
+        "end_word_position": 565,
+        "source_text": "An allonge may be used for the endorsement as long as the following requirements are met: The allonge must be permanently a\ufb03xed to the related note and must clearly identify the note by referencing at least the name of the borrower(s), the date of the note, the amount of the note, and the address of the security property. The note must clearly reference the attached allonge... The lender must indemnify Fannie Mae... for any losses incurred by Fannie Mae as a result of the use of an allonge for the note endorsement(s).",
+        "text_match_score": 0.603
+      },
+      "mandatory": true,
+      "examples": [
+        "Allonge is stapled/glued to the note and references borrower names, note date, note amount, and property address: acceptable.",
+        "Allonge is loose in the file and note does not reference it: fails permanent affix/reference requirements and creates enforceability risk.",
+        "Allonge used and later causes loss due to improper endorsement: lender must indemnify Fannie Mae for losses tied to allonge use."
+      ],
+      "confidence_score": 75.65,
+      "confidence_breakdown": {
+        "extraction_clarity": 95,
+        "numeric_precision": 20,
+        "context_completeness": 92,
+        "source_authority": 95,
+        "logical_consistency": 95
+      },
+      "effective_date": "2019-10-02",
+      "expiration_date": null,
+      "superseded_by": null,
+      "jurisdiction": "agency:EXAMPLE_POLICIES",
+      "risk_level": "critical",
+      "related_rules": [
+        "BR_MORTGAGE_FILE_DOCUMENTATION_039_007"
+      ],
+      "enforcement_action": "Indemnification",
+      "applicability_scope": {
+        "loan_types": [
+          "conventional"
+        ],
+        "occupancy_types": [
+          "primary_residence",
+          "second_home",
+          "investment"
+        ],
+        "transaction_types": [
+          "purchase",
+          "rate_term_refinance",
+          "cash_out_refinance"
+        ]
+      },
+      "data_points_required": [
+        "allonge_used_indicator",
+        "allonge_affixed_indicator",
+        "allonge_borrower_name_present",
+        "allonge_note_date_present",
+        "allonge_note_amount_present",
+        "allonge_property_address_present",
+        "note_references_allonge_indicator"
+      ],
+      "audit_frequency": "at_origination",
+      "reference_verified": true,
+      "reference_verification_note": "ok_recovered_position",
+      "entity_or_relationship": "MORTGAGE_FILE",
+      "entity_type": "entity",
+      "entity_definition": {
+        "description": "",
+        "key_attributes": [],
+        "examples": [
+          "Mortgage file retained with appraisal, DU findings, and closing package",
+          "Mortgage file requested for examination during Fannie Mae review",
+          "Mortgage file missing required exhibit leading to defect findings"
+        ]
+      },
+      "dependencies": [
+        {
+          "depends_on_rule": "BR_MORTGAGE_FILE_DOCUMENTATION_039_007",
+          "dependency_type": "conditional",
+          "rationale": "BR_039_008 is an allonge-specific rule that only matters when the note endorsement(s) required by BR_039_007 are placed on an allonge. Therefore BR_039_007\u2019s endorsement requirement is the trigger/context that makes BR_039_008 applicable.",
+          "impact_if_fails": "If BR_039_007 endorsements are implemented through an allonge but BR_039_008 requirements are not met (not affixed, not referenced, incomplete identification), the endorsement chain is defective and the note may be rejected by custodian/Fannie Mae; indemnification exposure may apply.",
+          "strength": 4
+        }
+      ],
+      "dependent_rules": [
+        {
+          "dependent_rule": "BR_MORTGAGE_FILE_DOCUMENTATION_030_008",
+          "dependency_type": "prerequisite"
+        },
+        {
+          "dependent_rule": "BR_LENDER_CONTRACT_CONSTRAINT_002_007",
+          "dependency_type": "prerequisite"
+        }
+      ],
+      "provenance": {
+        "operation": "MERGED",
+        "match_type": "EQUIVALENT",
+        "confidence": 0.74,
+        "similarity_score": 84,
+        "sources": [
+          "fannie_mae",
+          "freddie_mac"
+        ],
+        "original_ids": {
+          "fannie_mae": "BR_MORTGAGE_FILE_DOCUMENTATION_039_008",
+          "freddie_mac": "BR_PROMISSORY_NOTE_DOCUMENTATION_005_005"
+        },
+        "reasoning": "Both regulate acceptable Note endorsement to the GSE, allowing an attached allonge and aiming to preserve enforceability/complete endorsement chain. Freddie adds specific endorsement wording, loan number on allonge, and 'must not be dated'; Fannie adds detailed note-identification elements and indemnification.",
+        "g1_rule": {
+          "rule_id": "BR_MORTGAGE_FILE_DOCUMENTATION_039_008",
+          "rule_name": "Allonge must be permanently affixed and identify borrower, date, amount, and property address",
+          "description": "If an allonge is used for endorsement, the endorsement must appear on the note and the allonge must comply with law, be permanently affixed to the note, clearly identify the note by referencing at least borrower name(s), note date, note amount, and security property address, and the note must clearly reference the attached allonge. The lender must indemnify Fannie Mae for losses incurred as a result of using an allonge for note endorsement(s)."
+        },
+        "g2_rule": {
+          "rule_id": "BR_PROMISSORY_NOTE_DOCUMENTATION_005_005",
+          "rule_name": "Note endorsement must use Freddie Mac form and must not be dated",
+          "description": "The Note must bear an endorsement to Freddie Mac in the specified \u2018PAY TO THE ORDER OF THE FEDERAL HOME LOAN MORTGAGE CORPORATION WITHOUT RECOURSE\u2019 form, signed by a duly authorized officer (with typed name and title). The endorsement must not be dated. The endorsement may be on an allonge if the Freddie Mac loan number appears on the allonge and the allonge is attached to the Note. Any chain of endorsements must be complete from the original lender shown on the Note to Freddie Mac."
+        }
+      }
+    },
+    {
+      "rule_id": "MERGED_BR_CLASSIFIES_AS_COOP_UNIT_DOCUMENTATION_006_004",
+      "rule_name": "Co-op share loan must include lease assignment, stock power, and UCC filings",
+      "rule_type": "documentation",
+      "description": "For all co-op share loans delivered to Fannie Mae, the lender must receive an assignment of the proprietary lease/occupancy agreement (or similar evidence of occupancy rights), obtain a stock power/assignment authorizing transfer upon default, and execute/file valid UCC financing statements (and assignments, if needed) to perfect the security interest. The lender must obtain information searches/equivalent evidence showing the Fannie Mae co-op share loan is in first-lien position; if co-op units are real property in the state, lien perfection must follow applicable real estate law.",
+      "conditions": "Applies to delivery of any co-op share loan secured by shares and leasehold rights.",
+      "consequences": "Missing documents or unperfected/other-than-first-lien status makes loan ineligible or subject to repurchase.",
+      "exceptions": "If state treats co-op units as real property, perfection follows state real estate lien law.",
+      "source_reference": {
+        "chunk_path": "fannie_mae/part_b_origination_through_closing/subpart_b4_underwriting_property/chapter_b4_2_project_standards/section_b4_2_3_pud_and_co_op_eligibility_requirements/b4_2_3_03_legal_requirements_for_co_op_projects_11_06_2024.txt",
+        "section_id": "B4-2.3-03, Lien Position for Co-op Share Loans",
+        "start_word_position": 428,
+        "end_word_position": 560,
+        "source_text": "The lender that is \ufb01nancing the share loan must receive an assignment of the proprietary lease, occupancy\nagreement, or other similar evidence of the right to occupy the unit for all share loans that it delivers to Fannie\nMae. The lender must also obtain a stock power, assignment, or other similar document that authorizes the\nlender to transfer ownership interest in the event of a default. Valid \ufb01nancing statements and assignments of\n\ufb01nancing statements must be executed and \ufb01led, if necessary to perfect Fannie Mae\u2019s security interest under\nthe Uniform Commercial Code of the state in which the property is located. Information searches or equivalent\nevidence of \ufb01ling \ufb01nancing statements and assignments of \ufb01nancing statements must be obtained and must\nshow that the Fannie Mae co-op share loan is in \ufb01rst-lien position.",
+        "text_match_score": 0.979
+      },
+      "mandatory": true,
+      "examples": [
+        "Lender delivers co-op share loan with executed proprietary lease assignment and filed UCC-1 showing first-lien position: meets documentation requirements.",
+        "UCC filing was never recorded and lien priority cannot be confirmed via search: loan is not deliverable until cured; may be subject to remedies if delivered.",
+        "State treats co-op as real property; lender records appropriate lien instrument per state real estate law instead of (or in addition to) UCC filing: acceptable if it perfects first lien."
+      ],
+      "confidence_score": 84.8,
+      "confidence_breakdown": {
+        "extraction_clarity": 98,
+        "numeric_precision": 50,
+        "context_completeness": 92,
+        "source_authority": 100,
+        "logical_consistency": 95
+      },
+      "extraction_notes": "Multiple explicit 'must' documentation steps; primary eligibility impact though few numerics.",
+      "requires_review": false,
+      "effective_date": "2024-11-06",
+      "expiration_date": null,
+      "superseded_by": null,
+      "jurisdiction": "agency:SAMPLE_GUIDELINES",
+      "risk_level": "critical",
+      "related_rules": [
+        "BR_CLASSIFIES_AS_COOP_UNIT_EXCEPTION_006_003"
+      ],
+      "enforcement_action": "Loan ineligible for delivery",
+      "applicability_scope": {
+        "loan_types": [
+          "conventional"
+        ],
+        "occupancy_types": [
+          "primary_residence",
+          "second_home",
+          "investment"
+        ],
+        "transaction_types": [
+          "purchase",
+          "rate_term_refinance",
+          "cash_out_refinance"
+        ]
+      },
+      "data_points_required": [
+        "proprietary_lease_assignment_received_indicator",
+        "stock_power_received_indicator",
+        "ucc_filing_recorded_indicator",
+        "ucc_lien_search_results",
+        "lien_position"
+      ],
+      "audit_frequency": "at_origination",
+      "reference_verified": true,
+      "reference_verification_note": "ok_recovered_position",
+      "entity_or_relationship": "CLASSIFIES_AS_COOP_UNIT",
+      "entity_type": "relationship",
+      "relationship_definition": {
+        "description": "",
+        "source_entity": "SUBJECT_PROPERTY",
+        "target_entity": "COOP_UNIT",
+        "directionality": "",
+        "examples": [
+          "Subject property identified as a cooperative unit requiring project legal review.",
+          "Loan structured as a co-op share loan with proprietary lease documentation."
+        ]
+      },
+      "dependencies": [
+        {
+          "depends_on_rule": "BR_CLASSIFIES_AS_COOP_UNIT_EXCEPTION_006_003",
+          "dependency_type": "validation",
+          "rationale": "BR_CLASSIFIES_AS_COOP_UNIT_EXCEPTION_006_003 sets the eligibility requirement that a co-op share loan must be first-lien, with limited permitted subordination to the co-op corporation\u2019s lien for specified unpaid assessments. BR_CLASSIFIES_AS_COOP_UNIT_DOCUMENTATION_006_004 requires UCC filings and information searches/evidence showing the co-op share loan is in first-lien position, operationalizing and evidencing compliance with the lien-position eligibility requirement.",
+          "impact_if_fails": "If lien-position evidence and perfection documents are missing, the lender cannot demonstrate compliance with the first-lien requirement; the loan may be deemed ineligible or subject to repurchase for a documentation/perfection defect.",
+          "strength": 4
+        }
+      ],
+      "dependent_rules": [
+        {
+          "dependent_rule": "BR_CLASSIFIES_AS_COOP_UNIT_VALIDATION_006_005",
+          "dependency_type": "complementary"
+        }
+      ],
+      "provenance": {
+        "operation": "MERGED",
+        "match_type": "EQUIVALENT",
+        "confidence": 0.72,
+        "similarity_score": 84,
+        "sources": [
+          "fannie_mae",
+          "freddie_mac"
+        ],
+        "original_ids": {
+          "fannie_mae": "BR_CLASSIFIES_AS_COOP_UNIT_DOCUMENTATION_006_004",
+          "freddie_mac": "BR_DELIVERS_LOAN_DOCUMENTATION_025_004"
+        },
+        "reasoning": "Both address ensuring/perfecting a first-lien security interest in UCC collateral and obtaining search evidence to confirm lien position. Freddie specifies comprehensive UCC searches and certification; Fannie also requires UCC filings plus co-op-specific documents (lease assignment/stock power).",
+        "g1_rule": {
+          "rule_id": "BR_CLASSIFIES_AS_COOP_UNIT_DOCUMENTATION_006_004",
+          "rule_name": "Co-op share loan must include lease assignment, stock power, and UCC filings",
+          "description": "For all co-op share loans delivered to Fannie Mae, the lender must receive an assignment of the proprietary lease/occupancy agreement (or similar evidence of occupancy rights), obtain a stock power/assignment authorizing transfer upon default, and execute/file valid UCC financing statements (and assignments, if needed) to perfect the security interest. The lender must obtain information searches/equivalent evidence showing the Fannie Mae co-op share loan is in first-lien position; if co-op units are real property in the state, lien perfection must follow applicable real estate law."
+        },
+        "g2_rule": {
+          "rule_id": "BR_DELIVERS_LOAN_DOCUMENTATION_025_004",
+          "rule_name": "UCC searches must include all filing offices and be certified at final delivery",
+          "description": "To ensure a first-lien perfected security interest in UCC collateral, the Seller/Servicer must perform public record searches including UCC searches. Each UCC search must include every office where a financing statement would be filed under Revised Article 9. Prior to the Origination Date, any financing statements found (other than those filed by the current lender to be released at origination) must be explained to the applicable Multifamily Attorney (via amended Legal Issues Analysis for non-SBL or written analysis for SBL). Final delivery must include counsel certification that UCC searches reveal only financing statements that have been/will be terminated at origination or have been approved by Freddie Mac."
+        }
+      }
+    },
+    {
+      "rule_id": "MERGED_BR_MAINTAINS_QC_PROGRAM_DOCUMENTATION_021_010",
+      "rule_name": "QC Reverification Records Must Be Retained for 3 Years",
+      "rule_type": "documentation",
+      "description": "All post-closing QC reverification documentation must be retained for at least three years in the loan file or lender QC records. If a vendor performs reverification services, the lender must be provided or have access to written results and documentation for at least three years. The lender must provide reverification documentation to Fannie Mae upon request.",
+      "conditions": "Loans subject to post-closing QC reverification and documentation is obtained",
+      "consequences": "If retained, lender can evidence compliance; if not, QC defect and enforcement risk",
+      "exceptions": "None stated",
+      "source_reference": {
+        "chunk_path": "fannie_mae/part_d_ensuring_quality_control_qc/subpart_d1_lender_qc_process/chapter_d1_3_lender_post_closing_qc_mortgage_review/d1_3_03_lender_post_closing_quality_control_reverifications_11_05_2025.txt",
+        "section_id": "Requirements for Reverifications",
+        "start_word_position": 140,
+        "end_word_position": 215,
+        "source_text": "All reverification documentation must be retained for at least three years in either the loan file or in the lender's QC records. If the lender uses a vendor to perform reverification services, the lender must be provided, or have access to, the written results and documentation, for at least three years. The lender must provide reverification documentation to Fannie Mae upon request.",
+        "text_match_score": 0.019
+      },
+      "mandatory": true,
+      "examples": [
+        "QC vendor performs VOE and transcript checks; lender stores vendor results in QC system for 3+ years and can retrieve on demand.",
+        "Lender deletes QC reverification results after 18 months; upon Fannie request, lender cannot produce them\u2014noncompliant.",
+        "QC documentation is stored in the loan file rather than QC records; retention still satisfies the rule if kept 3+ years."
+      ],
+      "confidence_score": 95.15,
+      "confidence_breakdown": {
+        "extraction_clarity": 95,
+        "numeric_precision": 100,
+        "context_completeness": 92,
+        "source_authority": 95,
+        "logical_consistency": 90
+      },
+      "effective_date": "2025-11-05",
+      "expiration_date": null,
+      "superseded_by": null,
+      "jurisdiction": "agency:SAMPLE_GUIDELINES",
+      "risk_level": "critical",
+      "related_rules": [],
+      "enforcement_action": "Potential repurchase/indemnification exposure; QC finding escalation",
+      "applicability_scope": {
+        "loan_types": [
+          "conventional"
+        ],
+        "occupancy_types": [
+          "primary_residence",
+          "second_home",
+          "investment"
+        ],
+        "transaction_types": [
+          "purchase",
+          "rate_term_refinance",
+          "cash_out_refinance"
+        ]
+      },
+      "data_points_required": [
+        "qc_program_id",
+        "qc_review_id",
+        "reverification_documentation_location",
+        "reverification_documentation_retention_end_date",
+        "vendor_reverification_indicator",
+        "fannie_request_date"
+      ],
+      "audit_frequency": "annually",
+      "reference_verified": false,
+      "reference_verification_note": "text_mismatch:ratio=0.02",
+      "entity_or_relationship": "MAINTAINS_QC_PROGRAM",
+      "entity_type": "relationship",
+      "relationship_definition": {
+        "description": "",
+        "source_entity": "SELLER_SERVICER",
+        "target_entity": "QUALITY_CONTROL_PROGRAM",
+        "directionality": "",
+        "examples": [
+          "Seller/Servicer maintains a QC program with post-closing sampling and defect tracking.",
+          "Seller/Servicer updates QC procedures following policy changes in appraisal requirements."
+        ]
+      },
+      "dependencies": [
+        {
+          "depends_on_rule": "BR_MAINTAINS_QC_PROGRAM_VALIDATION_037_010",
+          "dependency_type": "sequential",
+          "rationale": "BR_037_010 requires obtaining a new tri-merge credit report for QC reverification (when traditional credit used). BR_021_010 requires retaining post-closing QC reverification documentation for at least three years and providing it to Fannie Mae upon request. The retention obligation is triggered by the reverification activity and its outputs.",
+          "impact_if_fails": "If retention fails, lender cannot evidence QC compliance during audits/reviews, increasing enforcement and remedies risk.",
+          "strength": 3
+        }
+      ],
+      "dependent_rules": [
+        {
+          "dependent_rule": "BR_CONDUCTS_QC_REVIEW_PROCESS_031_009",
+          "dependency_type": "prerequisite"
+        }
+      ],
+      "provenance": {
+        "operation": "MERGED",
+        "match_type": "EQUIVALENT",
+        "confidence": 0.72,
+        "similarity_score": 82,
+        "sources": [
+          "fannie_mae",
+          "freddie_mac"
+        ],
+        "original_ids": {
+          "fannie_mae": "BR_MAINTAINS_QC_PROGRAM_DOCUMENTATION_021_010",
+          "freddie_mac": "BR_RETAINS_RECORDS_UNDER_DOCUMENTATION_017_001"
+        },
+        "reasoning": "Both are record-retention requirements tied to mortgage/loan files and include a 3-year minimum. However, Rule A is limited to QC reverification documentation, while Rule B requires maintaining the entire Mortgage File for the ownership period plus 3 years after payoff (broader/longer scope).",
+        "g1_rule": {
+          "rule_id": "BR_MAINTAINS_QC_PROGRAM_DOCUMENTATION_021_010",
+          "rule_name": "QC Reverification Records Must Be Retained for 3 Years",
+          "description": "All post-closing QC reverification documentation must be retained for at least three years in the loan file or lender QC records. If a vendor performs reverification services, the lender must be provided or have access to written results and documentation for at least three years. The lender must provide reverification documentation to Fannie Mae upon request."
+        },
+        "g2_rule": {
+          "rule_id": "BR_RETAINS_RECORDS_UNDER_DOCUMENTATION_017_001",
+          "rule_name": "Mortgage File Retention During Ownership plus 3 Years",
+          "description": "The Servicer must maintain the entire Mortgage File for (1) the full period Freddie Mac owns the Mortgage and (2) at least three years from the date the Mortgage is fully paid."
+        }
+      }
+    }
+  ],
+  "entities": [],
+  "stats": {
+    "total_rules": 13,
+    "by_match_type": {
+      "IDENTICAL": 1,
+      "EQUIVALENT": 12
+    }
+  }
+}

@@ -1,0 +1,59 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 248/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_248
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+1022 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+Standards Sections Implementation specifications 
+Technical Safeguards 
+Access control ........................................................................... 164.312(a) Unique identification. 
+Administrative and increased access privileges. 
+Emergency access procedure. 
+Automatic logoff. 
+Log-in attempts. 
+Network segmentation. 
+Data controls. 
+Maintenance. 
+Encryption and decryption ......................................................... 164.312(b) Implementation specification. 
+Exceptions. 
+Alternative measures. 
+Compensating controls. 
+Maintenance. 
+Configuration management ....................................................... 164.312(c) Anti-malware protection. 
+Software removal. 
+Configuration. 
+Network ports. 
+Maintenance. 
+Audit trail and system log controls ............................................ 164.312(d) Monitor and identify. 
+Record. 
+Retain. 
+Scope. 
+Maintenance. 
+Integrity ...................................................................................... 164.312(e) 
+Authentication ............................................................................ 164.312(f) Information access management policies. 
+Multi-factor authentication. 
+Exceptions. 
+Alternative measures. 
+Compensating controls. 
+Maintenance. 
+Transmission security ................................................................ 164.312(g) 
+Vulnerability management ......................................................... 164.312(h) Vulnerability scanning. 
+Monitoring. 
+Penetration testing. 
+Patch and update installation. 
+Data backup and recovery ........................................................ 164.312(i) Data backup 
+Monitor and identify. 
+Record. 
+Testing. 
+Information systems backup and recovery ................................ 164.312(j) 
+Dated: December 20, 2024. 
+Xavier Becerra, 
+Secretary, Department of Health and Human 
+Services. 
+[FR Doc. 2024–30983 Filed 12–27–24; 4:15 pm] 
+BILLING CODE 4153–01–P 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00126 Fmt 4701 Sfmt 9990 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

@@ -1,0 +1,516 @@
+{
+  "source_file": "bulletin_2013_9a.pdf",
+  "total_chunks": 25,
+  "chunk_methods": [
+    "ai_reasoning"
+  ],
+  "structure": [
+    {
+      "chunk_id": "bulletin_2013_9a_001",
+      "title": "Reg P Privacy Disclosures — Annual Notice and Revised Notice Triggers (12 CFR 1016.5(a), 1016.8)",
+      "path": "bulletin_2013_9a/reg_p_privacy_disclosures_annual_notice_and_revised_notice_triggers_12_cfr_1016_5_a_1016_8.txt",
+      "section_path": [
+        "Reg P Privacy Disclosures — Annual Notice and Revised Notice Triggers (12 CFR 1016.5(a), 1016.8)"
+      ],
+      "metadata": {
+        "source_file": "bulletin_2013_9a.pdf",
+        "section_level": 0,
+        "summary": "Defines the annual privacy notice requirement for national banks and Federal savings associations and the obligation to provide a revised privacy notice (and new opt-out notice) when information-sharing practices change in a way inconsistent with prior notices. Key entities include institution types (national bank, Federal savings association), customers/consumers, and privacy policy disclosures.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "occ_guidance",
+        "word_count": 110
+      }
+    },
+    {
+      "chunk_id": "bulletin_2013_9a_002_sub_001",
+      "title": "Reg P Opt-Out Notice Content and Permitted Opt-Out Methods (12 CFR 1016.7(a), cross-ref 1016.10(a)) (part 1/11)",
+      "path": "bulletin_2013_9a/reg_p_opt_out_notice_content_and_permitted_opt_out_methods_12_cfr_1016_7_a_cross_ref_1016_10_a_part.txt",
+      "section_path": [
+        "Reg P Opt-Out Notice Content and Permitted Opt-Out Methods (12 CFR 1016.7(a), cross-ref 1016.10(a))"
+      ],
+      "metadata": {
+        "source_file": "bulletin_2013_9a.pdf",
+        "section_level": 0,
+        "summary": "Specifies what an opt-out notice must disclose: that the institution discloses (or reserves the right to disclose) nonpublic personal information to nonaffiliated third parties, that the consumer has the right to opt out, and the reasonable means to exercise that right. Enumerates acceptable opt-out mechanisms (check-off boxes, reply form, electronic opt-out, toll-free number).",
+        "chunk_method": "ai_reasoning",
+        "document_type": "occ_guidance",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "bulletin_2013_9a_002",
+        "sub_chunk_index": 1,
+        "total_sub_chunks": 11,
+        "parent_word_count": 11368,
+        "word_count": 866
+      }
+    },
+    {
+      "chunk_id": "bulletin_2013_9a_002_sub_002",
+      "title": "Reg P Opt-Out Notice Content and Permitted Opt-Out Methods (12 CFR 1016.7(a), cross-ref 1016.10(a)) (part 2/11)",
+      "path": "bulletin_2013_9a/reg_p_opt_out_notice_content_and_permitted_opt_out_methods_12_cfr_1016_7_a_cross_ref_1016_10_a_part.txt",
+      "section_path": [
+        "Reg P Opt-Out Notice Content and Permitted Opt-Out Methods (12 CFR 1016.7(a), cross-ref 1016.10(a))"
+      ],
+      "metadata": {
+        "source_file": "bulletin_2013_9a.pdf",
+        "section_level": 0,
+        "summary": "Specifies what an opt-out notice must disclose: that the institution discloses (or reserves the right to disclose) nonpublic personal information to nonaffiliated third parties, that the consumer has the right to opt out, and the reasonable means to exercise that right. Enumerates acceptable opt-out mechanisms (check-off boxes, reply form, electronic opt-out, toll-free number).",
+        "chunk_method": "ai_reasoning",
+        "document_type": "occ_guidance",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "bulletin_2013_9a_002",
+        "sub_chunk_index": 2,
+        "total_sub_chunks": 11,
+        "parent_word_count": 11368,
+        "word_count": 1062
+      }
+    },
+    {
+      "chunk_id": "bulletin_2013_9a_002_sub_003",
+      "title": "Reg P Opt-Out Notice Content and Permitted Opt-Out Methods (12 CFR 1016.7(a), cross-ref 1016.10(a)) (part 3/11)",
+      "path": "bulletin_2013_9a/reg_p_opt_out_notice_content_and_permitted_opt_out_methods_12_cfr_1016_7_a_cross_ref_1016_10_a_part.txt",
+      "section_path": [
+        "Reg P Opt-Out Notice Content and Permitted Opt-Out Methods (12 CFR 1016.7(a), cross-ref 1016.10(a))"
+      ],
+      "metadata": {
+        "source_file": "bulletin_2013_9a.pdf",
+        "section_level": 0,
+        "summary": "Specifies what an opt-out notice must disclose: that the institution discloses (or reserves the right to disclose) nonpublic personal information to nonaffiliated third parties, that the consumer has the right to opt out, and the reasonable means to exercise that right. Enumerates acceptable opt-out mechanisms (check-off boxes, reply form, electronic opt-out, toll-free number).",
+        "chunk_method": "ai_reasoning",
+        "document_type": "occ_guidance",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "bulletin_2013_9a_002",
+        "sub_chunk_index": 3,
+        "total_sub_chunks": 11,
+        "parent_word_count": 11368,
+        "word_count": 1095
+      }
+    },
+    {
+      "chunk_id": "bulletin_2013_9a_002_sub_004",
+      "title": "Reg P Opt-Out Notice Content and Permitted Opt-Out Methods (12 CFR 1016.7(a), cross-ref 1016.10(a)) (part 4/11)",
+      "path": "bulletin_2013_9a/reg_p_opt_out_notice_content_and_permitted_opt_out_methods_12_cfr_1016_7_a_cross_ref_1016_10_a_part.txt",
+      "section_path": [
+        "Reg P Opt-Out Notice Content and Permitted Opt-Out Methods (12 CFR 1016.7(a), cross-ref 1016.10(a))"
+      ],
+      "metadata": {
+        "source_file": "bulletin_2013_9a.pdf",
+        "section_level": 0,
+        "summary": "Specifies what an opt-out notice must disclose: that the institution discloses (or reserves the right to disclose) nonpublic personal information to nonaffiliated third parties, that the consumer has the right to opt out, and the reasonable means to exercise that right. Enumerates acceptable opt-out mechanisms (check-off boxes, reply form, electronic opt-out, toll-free number).",
+        "chunk_method": "ai_reasoning",
+        "document_type": "occ_guidance",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "bulletin_2013_9a_002",
+        "sub_chunk_index": 4,
+        "total_sub_chunks": 11,
+        "parent_word_count": 11368,
+        "word_count": 1082
+      }
+    },
+    {
+      "chunk_id": "bulletin_2013_9a_002_sub_005",
+      "title": "Reg P Opt-Out Notice Content and Permitted Opt-Out Methods (12 CFR 1016.7(a), cross-ref 1016.10(a)) (part 5/11)",
+      "path": "bulletin_2013_9a/reg_p_opt_out_notice_content_and_permitted_opt_out_methods_12_cfr_1016_7_a_cross_ref_1016_10_a_part.txt",
+      "section_path": [
+        "Reg P Opt-Out Notice Content and Permitted Opt-Out Methods (12 CFR 1016.7(a), cross-ref 1016.10(a))"
+      ],
+      "metadata": {
+        "source_file": "bulletin_2013_9a.pdf",
+        "section_level": 0,
+        "summary": "Specifies what an opt-out notice must disclose: that the institution discloses (or reserves the right to disclose) nonpublic personal information to nonaffiliated third parties, that the consumer has the right to opt out, and the reasonable means to exercise that right. Enumerates acceptable opt-out mechanisms (check-off boxes, reply form, electronic opt-out, toll-free number).",
+        "chunk_method": "ai_reasoning",
+        "document_type": "occ_guidance",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "bulletin_2013_9a_002",
+        "sub_chunk_index": 5,
+        "total_sub_chunks": 11,
+        "parent_word_count": 11368,
+        "word_count": 1086
+      }
+    },
+    {
+      "chunk_id": "bulletin_2013_9a_002_sub_006",
+      "title": "Reg P Opt-Out Notice Content and Permitted Opt-Out Methods (12 CFR 1016.7(a), cross-ref 1016.10(a)) (part 6/11)",
+      "path": "bulletin_2013_9a/reg_p_opt_out_notice_content_and_permitted_opt_out_methods_12_cfr_1016_7_a_cross_ref_1016_10_a_part.txt",
+      "section_path": [
+        "Reg P Opt-Out Notice Content and Permitted Opt-Out Methods (12 CFR 1016.7(a), cross-ref 1016.10(a))"
+      ],
+      "metadata": {
+        "source_file": "bulletin_2013_9a.pdf",
+        "section_level": 0,
+        "summary": "Specifies what an opt-out notice must disclose: that the institution discloses (or reserves the right to disclose) nonpublic personal information to nonaffiliated third parties, that the consumer has the right to opt out, and the reasonable means to exercise that right. Enumerates acceptable opt-out mechanisms (check-off boxes, reply form, electronic opt-out, toll-free number).",
+        "chunk_method": "ai_reasoning",
+        "document_type": "occ_guidance",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "bulletin_2013_9a_002",
+        "sub_chunk_index": 6,
+        "total_sub_chunks": 11,
+        "parent_word_count": 11368,
+        "word_count": 1039
+      }
+    },
+    {
+      "chunk_id": "bulletin_2013_9a_002_sub_007",
+      "title": "Reg P Opt-Out Notice Content and Permitted Opt-Out Methods (12 CFR 1016.7(a), cross-ref 1016.10(a)) (part 7/11)",
+      "path": "bulletin_2013_9a/reg_p_opt_out_notice_content_and_permitted_opt_out_methods_12_cfr_1016_7_a_cross_ref_1016_10_a_part.txt",
+      "section_path": [
+        "Reg P Opt-Out Notice Content and Permitted Opt-Out Methods (12 CFR 1016.7(a), cross-ref 1016.10(a))"
+      ],
+      "metadata": {
+        "source_file": "bulletin_2013_9a.pdf",
+        "section_level": 0,
+        "summary": "Specifies what an opt-out notice must disclose: that the institution discloses (or reserves the right to disclose) nonpublic personal information to nonaffiliated third parties, that the consumer has the right to opt out, and the reasonable means to exercise that right. Enumerates acceptable opt-out mechanisms (check-off boxes, reply form, electronic opt-out, toll-free number).",
+        "chunk_method": "ai_reasoning",
+        "document_type": "occ_guidance",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "bulletin_2013_9a_002",
+        "sub_chunk_index": 7,
+        "total_sub_chunks": 11,
+        "parent_word_count": 11368,
+        "word_count": 1051
+      }
+    },
+    {
+      "chunk_id": "bulletin_2013_9a_002_sub_008",
+      "title": "Reg P Opt-Out Notice Content and Permitted Opt-Out Methods (12 CFR 1016.7(a), cross-ref 1016.10(a)) (part 8/11)",
+      "path": "bulletin_2013_9a/reg_p_opt_out_notice_content_and_permitted_opt_out_methods_12_cfr_1016_7_a_cross_ref_1016_10_a_part.txt",
+      "section_path": [
+        "Reg P Opt-Out Notice Content and Permitted Opt-Out Methods (12 CFR 1016.7(a), cross-ref 1016.10(a))"
+      ],
+      "metadata": {
+        "source_file": "bulletin_2013_9a.pdf",
+        "section_level": 0,
+        "summary": "Specifies what an opt-out notice must disclose: that the institution discloses (or reserves the right to disclose) nonpublic personal information to nonaffiliated third parties, that the consumer has the right to opt out, and the reasonable means to exercise that right. Enumerates acceptable opt-out mechanisms (check-off boxes, reply form, electronic opt-out, toll-free number).",
+        "chunk_method": "ai_reasoning",
+        "document_type": "occ_guidance",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "bulletin_2013_9a_002",
+        "sub_chunk_index": 8,
+        "total_sub_chunks": 11,
+        "parent_word_count": 11368,
+        "word_count": 1062
+      }
+    },
+    {
+      "chunk_id": "bulletin_2013_9a_002_sub_009",
+      "title": "Reg P Opt-Out Notice Content and Permitted Opt-Out Methods (12 CFR 1016.7(a), cross-ref 1016.10(a)) (part 9/11)",
+      "path": "bulletin_2013_9a/reg_p_opt_out_notice_content_and_permitted_opt_out_methods_12_cfr_1016_7_a_cross_ref_1016_10_a_part.txt",
+      "section_path": [
+        "Reg P Opt-Out Notice Content and Permitted Opt-Out Methods (12 CFR 1016.7(a), cross-ref 1016.10(a))"
+      ],
+      "metadata": {
+        "source_file": "bulletin_2013_9a.pdf",
+        "section_level": 0,
+        "summary": "Specifies what an opt-out notice must disclose: that the institution discloses (or reserves the right to disclose) nonpublic personal information to nonaffiliated third parties, that the consumer has the right to opt out, and the reasonable means to exercise that right. Enumerates acceptable opt-out mechanisms (check-off boxes, reply form, electronic opt-out, toll-free number).",
+        "chunk_method": "ai_reasoning",
+        "document_type": "occ_guidance",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "bulletin_2013_9a_002",
+        "sub_chunk_index": 9,
+        "total_sub_chunks": 11,
+        "parent_word_count": 11368,
+        "word_count": 1019
+      }
+    },
+    {
+      "chunk_id": "bulletin_2013_9a_002_sub_010",
+      "title": "Reg P Opt-Out Notice Content and Permitted Opt-Out Methods (12 CFR 1016.7(a), cross-ref 1016.10(a)) (part 10/11)",
+      "path": "bulletin_2013_9a/reg_p_opt_out_notice_content_and_permitted_opt_out_methods_12_cfr_1016_7_a_cross_ref_1016_10_a_part.txt",
+      "section_path": [
+        "Reg P Opt-Out Notice Content and Permitted Opt-Out Methods (12 CFR 1016.7(a), cross-ref 1016.10(a))"
+      ],
+      "metadata": {
+        "source_file": "bulletin_2013_9a.pdf",
+        "section_level": 0,
+        "summary": "Specifies what an opt-out notice must disclose: that the institution discloses (or reserves the right to disclose) nonpublic personal information to nonaffiliated third parties, that the consumer has the right to opt out, and the reasonable means to exercise that right. Enumerates acceptable opt-out mechanisms (check-off boxes, reply form, electronic opt-out, toll-free number).",
+        "chunk_method": "ai_reasoning",
+        "document_type": "occ_guidance",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "bulletin_2013_9a_002",
+        "sub_chunk_index": 10,
+        "total_sub_chunks": 11,
+        "parent_word_count": 11368,
+        "word_count": 1025
+      }
+    },
+    {
+      "chunk_id": "bulletin_2013_9a_002_sub_011",
+      "title": "Reg P Opt-Out Notice Content and Permitted Opt-Out Methods (12 CFR 1016.7(a), cross-ref 1016.10(a)) (part 11/11)",
+      "path": "bulletin_2013_9a/reg_p_opt_out_notice_content_and_permitted_opt_out_methods_12_cfr_1016_7_a_cross_ref_1016_10_a_part.txt",
+      "section_path": [
+        "Reg P Opt-Out Notice Content and Permitted Opt-Out Methods (12 CFR 1016.7(a), cross-ref 1016.10(a))"
+      ],
+      "metadata": {
+        "source_file": "bulletin_2013_9a.pdf",
+        "section_level": 0,
+        "summary": "Specifies what an opt-out notice must disclose: that the institution discloses (or reserves the right to disclose) nonpublic personal information to nonaffiliated third parties, that the consumer has the right to opt out, and the reasonable means to exercise that right. Enumerates acceptable opt-out mechanisms (check-off boxes, reply form, electronic opt-out, toll-free number).",
+        "chunk_method": "ai_reasoning",
+        "document_type": "occ_guidance",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "bulletin_2013_9a_002",
+        "sub_chunk_index": 11,
+        "total_sub_chunks": 11,
+        "parent_word_count": 11368,
+        "word_count": 981
+      }
+    },
+    {
+      "chunk_id": "bulletin_2013_9a_003",
+      "title": "Reg P Consumer Opt-Out Mechanics — Affirmative Action, Partial Opt-Out, Duration/Revocation, Post-Te",
+      "path": "bulletin_2013_9a/reg_p_consumer_opt_out_mechanics_affirmative_action_partial_opt_out_duration_revocation_post_te.txt",
+      "section_path": [
+        "Reg P Consumer Opt-Out Mechanics — Affirmative Action, Partial Opt-Out, Duration/Revocation, Post-Termination Effect (12 CFR 1016.10(a)(2), 1016.13–1016.15, 1016.7(h), 1016(i))"
+      ],
+      "metadata": {
+        "source_file": "bulletin_2013_9a.pdf",
+        "section_level": 0,
+        "summary": "Explains that consumers must affirmatively exercise opt-out rights to prevent disclosure of nonpublic personal information to nonaffiliated third parties, subject to exceptions in §§ 1016.13–1016.15. Covers partial opt-out options, the consumer’s continuing right to opt out at any time, revocation requirements, and the continuation of an opt-out after the customer relationship ends.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "occ_guidance",
+        "merged_with": "bulletin_2013_9a_004",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 377
+      }
+    },
+    {
+      "chunk_id": "bulletin_2013_9a_005",
+      "title": "Interagency Final Guidance on Leveraged Lending — Agencies, Scope, Effective/Compliance Dates, and Contacts",
+      "path": "bulletin_2013_9a/interagency_final_guidance_on_leveraged_lending_agencies_scope_effective_compliance_dates_and_contac.txt",
+      "section_path": [
+        "Interagency Final Guidance on Leveraged Lending — Agencies, Scope, Effective/Compliance Dates, and Contacts"
+      ],
+      "metadata": {
+        "source_file": "bulletin_2013_9a.pdf",
+        "section_level": 0,
+        "summary": "Introduces the OCC/Board/FDIC interagency Final Guidance on Leveraged Lending, stating it applies to all agency-supervised institutions engaged in leveraged lending. Summarizes high-level principles (underwriting considerations, enterprise value assessment, risk management for distribution pipelines, stress testing, and exposures held) and provides effective date (March 22, 2013) and compliance date (May 21, 2013) plus agency contacts.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "occ_guidance",
+        "word_count": 1224
+      }
+    },
+    {
+      "chunk_id": "bulletin_2013_9a_006",
+      "title": "Leveraged Lending Guidance — Background, Supervisory Rationale, Underwriting Expectations, Enterprise Value Sensitivity, and Stress-Testing References",
+      "path": "bulletin_2013_9a/leveraged_lending_guidance_background_supervisory_rationale_underwriting_expectations_enterprise_val.txt",
+      "section_path": [
+        "Leveraged Lending Guidance — Background, Supervisory Rationale, Underwriting Expectations, Enterprise Value Sensitivity, and Stress-Testing References"
+      ],
+      "metadata": {
+        "source_file": "bulletin_2013_9a.pdf",
+        "section_level": 0,
+        "summary": "Explains the history from proposed guidance to final guidance and the agencies’ supervisory objectives: evaluate and monitor underwritten credit risks, understand enterprise value impacts on portfolio quality, ensure repayment ability and sustainable capital structures through cycles, and incorporate stress testing into leveraged loan portfolio and pipeline management. Includes definitional footnote context for “financial institution/institution” and cites related interagency stress-testing guidance.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "occ_guidance",
+        "word_count": 275
+      }
+    },
+    {
+      "chunk_id": "bulletin_2013_9a_007_sub_001",
+      "title": "Leveraged Lending Guidance — Public Comment Themes and Requested Clarifications (Definitions, Exclusions, Structures, Enterprise Value, MIS Burden, Fiduciary Issues) (part 1/10)",
+      "path": "bulletin_2013_9a/leveraged_lending_guidance_public_comment_themes_and_requested_clarifications_definitions_exclusions.txt",
+      "section_path": [
+        "Leveraged Lending Guidance — Public Comment Themes and Requested Clarifications (Definitions, Exclusions, Structures, Enterprise Value, MIS Burden, Fiduciary Issues)"
+      ],
+      "metadata": {
+        "source_file": "bulletin_2013_9a.pdf",
+        "section_level": 0,
+        "summary": "Summarizes the volume and sources of comment letters and lists the principal issues raised: impact on community/mid-sized institutions, definition of leveraged lending, exclusions (fallen angels, asset-based loans, investment grade borrowers), sponsor reporting, alternatives to de-levering expectations, covenant-lite/PIK-toggle structures, enterprise value methods, MIS burden, and fiduciary responsibility concerns related to originated/distributed loans.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "occ_guidance",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "bulletin_2013_9a_007",
+        "sub_chunk_index": 1,
+        "total_sub_chunks": 10,
+        "parent_word_count": 9991,
+        "word_count": 551
+      }
+    },
+    {
+      "chunk_id": "bulletin_2013_9a_007_sub_002",
+      "title": "Leveraged Lending Guidance — Public Comment Themes and Requested Clarifications (Definitions, Exclusions, Structures, Enterprise Value, MIS Burden, Fiduciary Issues) (part 2/10)",
+      "path": "bulletin_2013_9a/leveraged_lending_guidance_public_comment_themes_and_requested_clarifications_definitions_exclusions.txt",
+      "section_path": [
+        "Leveraged Lending Guidance — Public Comment Themes and Requested Clarifications (Definitions, Exclusions, Structures, Enterprise Value, MIS Burden, Fiduciary Issues)"
+      ],
+      "metadata": {
+        "source_file": "bulletin_2013_9a.pdf",
+        "section_level": 0,
+        "summary": "Summarizes the volume and sources of comment letters and lists the principal issues raised: impact on community/mid-sized institutions, definition of leveraged lending, exclusions (fallen angels, asset-based loans, investment grade borrowers), sponsor reporting, alternatives to de-levering expectations, covenant-lite/PIK-toggle structures, enterprise value methods, MIS burden, and fiduciary responsibility concerns related to originated/distributed loans.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "occ_guidance",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "bulletin_2013_9a_007",
+        "sub_chunk_index": 2,
+        "total_sub_chunks": 10,
+        "parent_word_count": 9991,
+        "word_count": 1095
+      }
+    },
+    {
+      "chunk_id": "bulletin_2013_9a_007_sub_003",
+      "title": "Leveraged Lending Guidance — Public Comment Themes and Requested Clarifications (Definitions, Exclusions, Structures, Enterprise Value, MIS Burden, Fiduciary Issues) (part 3/10)",
+      "path": "bulletin_2013_9a/leveraged_lending_guidance_public_comment_themes_and_requested_clarifications_definitions_exclusions.txt",
+      "section_path": [
+        "Leveraged Lending Guidance — Public Comment Themes and Requested Clarifications (Definitions, Exclusions, Structures, Enterprise Value, MIS Burden, Fiduciary Issues)"
+      ],
+      "metadata": {
+        "source_file": "bulletin_2013_9a.pdf",
+        "section_level": 0,
+        "summary": "Summarizes the volume and sources of comment letters and lists the principal issues raised: impact on community/mid-sized institutions, definition of leveraged lending, exclusions (fallen angels, asset-based loans, investment grade borrowers), sponsor reporting, alternatives to de-levering expectations, covenant-lite/PIK-toggle structures, enterprise value methods, MIS burden, and fiduciary responsibility concerns related to originated/distributed loans.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "occ_guidance",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "bulletin_2013_9a_007",
+        "sub_chunk_index": 3,
+        "total_sub_chunks": 10,
+        "parent_word_count": 9991,
+        "word_count": 1082
+      }
+    },
+    {
+      "chunk_id": "bulletin_2013_9a_007_sub_004",
+      "title": "Leveraged Lending Guidance — Public Comment Themes and Requested Clarifications (Definitions, Exclusions, Structures, Enterprise Value, MIS Burden, Fiduciary Issues) (part 4/10)",
+      "path": "bulletin_2013_9a/leveraged_lending_guidance_public_comment_themes_and_requested_clarifications_definitions_exclusions.txt",
+      "section_path": [
+        "Leveraged Lending Guidance — Public Comment Themes and Requested Clarifications (Definitions, Exclusions, Structures, Enterprise Value, MIS Burden, Fiduciary Issues)"
+      ],
+      "metadata": {
+        "source_file": "bulletin_2013_9a.pdf",
+        "section_level": 0,
+        "summary": "Summarizes the volume and sources of comment letters and lists the principal issues raised: impact on community/mid-sized institutions, definition of leveraged lending, exclusions (fallen angels, asset-based loans, investment grade borrowers), sponsor reporting, alternatives to de-levering expectations, covenant-lite/PIK-toggle structures, enterprise value methods, MIS burden, and fiduciary responsibility concerns related to originated/distributed loans.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "occ_guidance",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "bulletin_2013_9a_007",
+        "sub_chunk_index": 4,
+        "total_sub_chunks": 10,
+        "parent_word_count": 9991,
+        "word_count": 1086
+      }
+    },
+    {
+      "chunk_id": "bulletin_2013_9a_007_sub_005",
+      "title": "Leveraged Lending Guidance — Public Comment Themes and Requested Clarifications (Definitions, Exclusions, Structures, Enterprise Value, MIS Burden, Fiduciary Issues) (part 5/10)",
+      "path": "bulletin_2013_9a/leveraged_lending_guidance_public_comment_themes_and_requested_clarifications_definitions_exclusions.txt",
+      "section_path": [
+        "Leveraged Lending Guidance — Public Comment Themes and Requested Clarifications (Definitions, Exclusions, Structures, Enterprise Value, MIS Burden, Fiduciary Issues)"
+      ],
+      "metadata": {
+        "source_file": "bulletin_2013_9a.pdf",
+        "section_level": 0,
+        "summary": "Summarizes the volume and sources of comment letters and lists the principal issues raised: impact on community/mid-sized institutions, definition of leveraged lending, exclusions (fallen angels, asset-based loans, investment grade borrowers), sponsor reporting, alternatives to de-levering expectations, covenant-lite/PIK-toggle structures, enterprise value methods, MIS burden, and fiduciary responsibility concerns related to originated/distributed loans.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "occ_guidance",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "bulletin_2013_9a_007",
+        "sub_chunk_index": 5,
+        "total_sub_chunks": 10,
+        "parent_word_count": 9991,
+        "word_count": 1039
+      }
+    },
+    {
+      "chunk_id": "bulletin_2013_9a_007_sub_006",
+      "title": "Leveraged Lending Guidance — Public Comment Themes and Requested Clarifications (Definitions, Exclusions, Structures, Enterprise Value, MIS Burden, Fiduciary Issues) (part 6/10)",
+      "path": "bulletin_2013_9a/leveraged_lending_guidance_public_comment_themes_and_requested_clarifications_definitions_exclusions.txt",
+      "section_path": [
+        "Leveraged Lending Guidance — Public Comment Themes and Requested Clarifications (Definitions, Exclusions, Structures, Enterprise Value, MIS Burden, Fiduciary Issues)"
+      ],
+      "metadata": {
+        "source_file": "bulletin_2013_9a.pdf",
+        "section_level": 0,
+        "summary": "Summarizes the volume and sources of comment letters and lists the principal issues raised: impact on community/mid-sized institutions, definition of leveraged lending, exclusions (fallen angels, asset-based loans, investment grade borrowers), sponsor reporting, alternatives to de-levering expectations, covenant-lite/PIK-toggle structures, enterprise value methods, MIS burden, and fiduciary responsibility concerns related to originated/distributed loans.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "occ_guidance",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "bulletin_2013_9a_007",
+        "sub_chunk_index": 6,
+        "total_sub_chunks": 10,
+        "parent_word_count": 9991,
+        "word_count": 1051
+      }
+    },
+    {
+      "chunk_id": "bulletin_2013_9a_007_sub_007",
+      "title": "Leveraged Lending Guidance — Public Comment Themes and Requested Clarifications (Definitions, Exclusions, Structures, Enterprise Value, MIS Burden, Fiduciary Issues) (part 7/10)",
+      "path": "bulletin_2013_9a/leveraged_lending_guidance_public_comment_themes_and_requested_clarifications_definitions_exclusions.txt",
+      "section_path": [
+        "Leveraged Lending Guidance — Public Comment Themes and Requested Clarifications (Definitions, Exclusions, Structures, Enterprise Value, MIS Burden, Fiduciary Issues)"
+      ],
+      "metadata": {
+        "source_file": "bulletin_2013_9a.pdf",
+        "section_level": 0,
+        "summary": "Summarizes the volume and sources of comment letters and lists the principal issues raised: impact on community/mid-sized institutions, definition of leveraged lending, exclusions (fallen angels, asset-based loans, investment grade borrowers), sponsor reporting, alternatives to de-levering expectations, covenant-lite/PIK-toggle structures, enterprise value methods, MIS burden, and fiduciary responsibility concerns related to originated/distributed loans.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "occ_guidance",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "bulletin_2013_9a_007",
+        "sub_chunk_index": 7,
+        "total_sub_chunks": 10,
+        "parent_word_count": 9991,
+        "word_count": 1062
+      }
+    },
+    {
+      "chunk_id": "bulletin_2013_9a_007_sub_008",
+      "title": "Leveraged Lending Guidance — Public Comment Themes and Requested Clarifications (Definitions, Exclusions, Structures, Enterprise Value, MIS Burden, Fiduciary Issues) (part 8/10)",
+      "path": "bulletin_2013_9a/leveraged_lending_guidance_public_comment_themes_and_requested_clarifications_definitions_exclusions.txt",
+      "section_path": [
+        "Leveraged Lending Guidance — Public Comment Themes and Requested Clarifications (Definitions, Exclusions, Structures, Enterprise Value, MIS Burden, Fiduciary Issues)"
+      ],
+      "metadata": {
+        "source_file": "bulletin_2013_9a.pdf",
+        "section_level": 0,
+        "summary": "Summarizes the volume and sources of comment letters and lists the principal issues raised: impact on community/mid-sized institutions, definition of leveraged lending, exclusions (fallen angels, asset-based loans, investment grade borrowers), sponsor reporting, alternatives to de-levering expectations, covenant-lite/PIK-toggle structures, enterprise value methods, MIS burden, and fiduciary responsibility concerns related to originated/distributed loans.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "occ_guidance",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "bulletin_2013_9a_007",
+        "sub_chunk_index": 8,
+        "total_sub_chunks": 10,
+        "parent_word_count": 9991,
+        "word_count": 1019
+      }
+    },
+    {
+      "chunk_id": "bulletin_2013_9a_007_sub_009",
+      "title": "Leveraged Lending Guidance — Public Comment Themes and Requested Clarifications (Definitions, Exclusions, Structures, Enterprise Value, MIS Burden, Fiduciary Issues) (part 9/10)",
+      "path": "bulletin_2013_9a/leveraged_lending_guidance_public_comment_themes_and_requested_clarifications_definitions_exclusions.txt",
+      "section_path": [
+        "Leveraged Lending Guidance — Public Comment Themes and Requested Clarifications (Definitions, Exclusions, Structures, Enterprise Value, MIS Burden, Fiduciary Issues)"
+      ],
+      "metadata": {
+        "source_file": "bulletin_2013_9a.pdf",
+        "section_level": 0,
+        "summary": "Summarizes the volume and sources of comment letters and lists the principal issues raised: impact on community/mid-sized institutions, definition of leveraged lending, exclusions (fallen angels, asset-based loans, investment grade borrowers), sponsor reporting, alternatives to de-levering expectations, covenant-lite/PIK-toggle structures, enterprise value methods, MIS burden, and fiduciary responsibility concerns related to originated/distributed loans.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "occ_guidance",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "bulletin_2013_9a_007",
+        "sub_chunk_index": 9,
+        "total_sub_chunks": 10,
+        "parent_word_count": 9991,
+        "word_count": 1025
+      }
+    },
+    {
+      "chunk_id": "bulletin_2013_9a_007_sub_010",
+      "title": "Leveraged Lending Guidance — Public Comment Themes and Requested Clarifications (Definitions, Exclusions, Structures, Enterprise Value, MIS Burden, Fiduciary Issues) (part 10/10)",
+      "path": "bulletin_2013_9a/leveraged_lending_guidance_public_comment_themes_and_requested_clarifications_definitions_exclusions.txt",
+      "section_path": [
+        "Leveraged Lending Guidance — Public Comment Themes and Requested Clarifications (Definitions, Exclusions, Structures, Enterprise Value, MIS Burden, Fiduciary Issues)"
+      ],
+      "metadata": {
+        "source_file": "bulletin_2013_9a.pdf",
+        "section_level": 0,
+        "summary": "Summarizes the volume and sources of comment letters and lists the principal issues raised: impact on community/mid-sized institutions, definition of leveraged lending, exclusions (fallen angels, asset-based loans, investment grade borrowers), sponsor reporting, alternatives to de-levering expectations, covenant-lite/PIK-toggle structures, enterprise value methods, MIS burden, and fiduciary responsibility concerns related to originated/distributed loans.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "occ_guidance",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "bulletin_2013_9a_007",
+        "sub_chunk_index": 10,
+        "total_sub_chunks": 10,
+        "parent_word_count": 9991,
+        "word_count": 981
+      }
+    }
+  ]
+}

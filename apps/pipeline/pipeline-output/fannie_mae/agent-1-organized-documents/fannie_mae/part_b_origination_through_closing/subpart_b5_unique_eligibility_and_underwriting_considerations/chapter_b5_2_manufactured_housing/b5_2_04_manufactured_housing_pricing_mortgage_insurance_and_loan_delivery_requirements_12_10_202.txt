@@ -1,0 +1,256 @@
+# B5-2-04, Manufactured Housing Pricing, Mortgage Insurance, and Loan Delivery Requirements (12/10/202
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_321
+**Pages:** 726-732
+**Section Path:** Part B, Origination Through Closing > Subpart B5, Unique Eligibility and Underwriting Considerations > Chapter B5-2, Manufactured Housing > B5-2-04, Manufactured Housing Pricing, Mortgage Insurance, and Loan Delivery Requirements (12/10/2025)
+
+---
+
+Published March 4, 2026
+708Announcements Issue Date
+Announcement SEL-2022-06 July 06, 2022
+Announcement SEL-2020-07 December 16, 2020
+Announcement SEL-2019-07 August 07, 2019
+ 
+B5-2-04, Manufactured Housing Pricing, Mortgage Insurance, and
+Loan Delivery Requirements (12/10/2025)
+Introduction
+This topic contains information about manufactured housing, including:
+Loan-Level Price Adjustments
+Mortgage Insurance
+Loan Delivery Requirements
+Uniform Appraisal Dataset (UAD) 3.6 Policy
+Loan-Level Price Adjustments
+An LLPA applies to all mortgages secured by manufactured homes that do not meet the MH Advantage
+requirements, whether delivered to Fannie Mae for whole loan purchase or MBS issuance. These LLPAs are in
+addition to any other price adjustments that are otherwise applicable to the particular transaction. For the
+current LLPAs, see the Loan-Level Price Adjustment (LLPA) Matrix  .
+Mortgage Insurance
+For mortgage insurance coverage requirements, see B7-1-02, Mortgage Insurance Coverage Requirements .
+Loan Delivery Requirements
+The following table describes the requirements for delivery of certain data elements that are applicable to
+manufactured homes.
+
+Published March 4, 2026
+709Manufactured
+Home TypeConstruction
+Method Type
+(Sort ID 51)Manufactured
+Home Width
+Type (Sort ID 33)Special Feature Code(s)
+Single-width
+ManufacturedSingleWide 235 and 791
+Multi-width MultiWide 235
+MH Advantage MultiWide 235 and 859
+MH Advantage SingleWide 235, 791, and 859
+Note:  These special feature codes are in addition to any other special feature codes that may apply.
+Uniform Appraisal Dataset (UAD) 3.6 Policy
+Lenders using UAD 3.6 must follow the requirements in the  UAD 3.6 Policy Supplement  .
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2025-10 December 10, 2025
+Announcement SEL-2025-07 September 03, 2025
+Announcement SEL-2020-07 December 16, 2020
+ 
+B5-2-05, Manufactured Housing Legal Considerations (12/10/2025)
+Introduction
+This topic contains information on manufactured housing legal considerations, including:
+Closing Instructions
+
+Published March 4, 2026
+710Post Closing Items and Conversion to Real Property
+Certiﬁcate of Title
+Title Issues and Lien Requirements
+Title Insurance
+Loan Documents
+The Security Instrument
+Aﬃdavit of Aﬃxture
+Background Information Regarding Titling for Manufactured Homes
+Background Information on States where Surrender of a Certiﬁcate of Title is not Permitted
+Uniform Appraisal Dataset (UAD) 3.6 Policy
+Closing Instructions
+Closing instructions must advise closing agents to obtain the required documentation necessary to ensure that
+the manufactured home is attached to a permanent foundation system on the land, thus becoming part of the
+real property.
+If a closing agent is not available to perform this action, the lender can rely on the certiﬁcation of completion
+completed by the appraiser.
+In addition, where state law provides that a manufactured home may be exempt from certiﬁcate of title
+requirements (for instance, where a home is attached initially to a permanent foundation system), such closing
+instructions must instruct the closing agent to ensure that the manufactured home qualiﬁes for exemption from
+certiﬁcate of title requirements, including monitoring of property installation procedures and the related
+documentation, and to provide the lender with documentary evidence of that for retention in the loan ﬁle.
+Where state law allows for the elimination of the certiﬁcate of title, the closing instructions must instruct the
+closing agent to perform all necessary procedures to:
+assure that the certiﬁcate of title to the manufactured home is properly retired, and
+provide the lender with documentary evidence for retention in the loan ﬁle.
+Post Closing Items and Conversion to Real Property
+If there are post closing items related to conversion of the manufactured home from personal property to real
+property, the lender should consider use of a properly circumscribed power of attorney from the borrower that
+may be used to complete the post closing items. All post closing items must be documented in the loan ﬁle and,
+any relevant documents received after closing must be included in the loan ﬁle.
+Certiﬁcate of Title
+The table below provides conditional requirements pertaining to the manufactured home certiﬁcate of title.
+
+Published March 4, 2026
+711If … Then …
+state law permits the manufactured home to
+become real property when it is immediately
+aﬃxed to the permanent foundation system,
+without issuance of a certiﬁcate of title,the lender must if the transaction involves the
+purchase of a new manufactured home obtain, and
+retain as part of the loan ﬁle, evidence that no
+certiﬁcate of title was issued.
+For example, if the lender obtains the
+manufacturer’s certiﬁcate of origin, this would be
+evidence, in most states, that no certiﬁcate of title
+could have been issued.
+a certiﬁcate of title has been issued, but state law
+provides for or permits surrender of the certiﬁcate
+of title,the lender must obtain, and retain as part of the
+loan ﬁle, evidence that the certiﬁcate has been
+surrendered.
+Such evidence includes:
+• the conﬁrmation required to be provided by the
+authority to which the certiﬁcate was surrendered,
+or
+• if no such conﬁrmation is obtainable:
+    ⚬ a copy of the documents submitted in
+connection with the surrender, and
+    ⚬ evidence that such documents were delivered
+to the appropriate authority.
+a certiﬁcate of title has been issued, but state law
+does not permit the manufactured home to
+become real property without issuance of a
+certiﬁcate of title and does not provide for
+surrender of the certiﬁcate of title,the lender must adhere to the following
+requirements:
+• The lien must be indicated on the certiﬁcate of
+title.
+• The certiﬁcate of title must be retained in the
+loan ﬁle.
+• The lender must assure that no other lien is
+indicated on the certiﬁcate of title.
+• Ownership of the manufactured home as shown
+on the certiﬁcate of title and ownership of the land
+(or of the leasehold estate, if applicable) as shown
+on the mortgage, deed of trust, or security deed
+must be identical (that is, the same individuals
+must sign both, each using the exact same name
+on both documents).
+Note : Given certain provisions of Mississippi law and the practice in the state, the requirements in the
+
+Published March 4, 2026
+712last row of the above table apply to manufactured homes in Mississippi. (The other two options in this
+table do not apply.)
+Title Issues and Lien Requirements
+To be eligible for purchase by Fannie Mae:
+A manufactured home loan must be secured by a perfected lien (or liens) on real property consisting of
+the manufactured home and the borrower's interest in the land.
+The manufactured home must be legally classiﬁed as real property under applicable state law, including
+relevant statutes, regulations, and judicial decisions.
+To assist lenders in originating manufactured home loans in various states, Fannie Mae publishes information on
+titling manufactured homes as real property. Note, this information does not constitute legal advice; lenders
+must consult their own legal counsel. See Titling Manufactured Housing.
+The following requirements are also applicable:
+The owner of the manufactured home must own the land on which the home is situated unless the
+manufactured home is located in a condo or PUD project subject to a ground lease approved by Fannie
+Mae's Project Review Eligibility Service (PERS).
+The manufactured home must be attached to a permanent foundation on the land and comply with state
+and jurisdictional requirements for permanent aﬃxation.
+A mortgage, deed of trust, or security deed must be recorded in the land records and must identify the
+encumbered property as including both the home and the borrower's interest in the land.
+If applicable state law so permits, any certiﬁcate of title to the manufactured home must be surrendered
+to the appropriate state government authority.
+If the certiﬁcate of title cannot be surrendered, the lender must indicate its lien on the certiﬁcate.
+Fannie Mae prefers that a loan on the manufactured home and the land on which it is situated be secured by a
+single lien.
+However, it is recognized that some state laws do not provide for a single lien on both the manufactured home
+and the land. Therefore, a loan documented by a lien on the borrower's interest in the land evidenced by a
+mortgage, deed of trust or security deed and by a real property lien on the manufactured home evidenced on
+the certiﬁcate of title or other document is acceptable.
+Note : Loans in which there is a chattel lien on the home plus a real property lien on the land are
+unacceptable.
+Title Insurance
+The mortgage must be covered under a standard real property title insurance policy that insures that the
+manufactured home is part of the real property that secures the loan.
+American Land Title Association® (ALTA®) Endorsement 7, 7.1, or 7.2 or any other endorsement required in the
+applicable jurisdiction for manufactured homes to be treated as real property must be included in the ﬁle.
+
+Published March 4, 2026
+713Loan Documents
+Fannie Mae prefers lenders to use the standard Fannie Mae Uniform Instruments (see Security Instruments ).
+If the Uniform Instruments are not used, then the lender must adhere to the following requirements:
+A single note must be used evidencing all the debt related to the land and the home, and a mortgage,
+deed of trust, or Georgia security deed securing such indebtedness (plus the certiﬁcate of title if state law
+so requires).
+The note used must provide the nonstandard document warranties that are referenced in  A2-2-03,
+Document Warranties .
+Loan documents are not acceptable if they:
+state that the home is personal property or contain other words to that eﬀect;
+state that the parties do not intend to attach the home to a permanent foundation system on the land, or
+contain statements inconsistent with that intention;
+unless required by law, provide that rights of holders in due course are waived, or with other words
+provide that an assignee note holder may be held liable for claims the borrower may have against other
+parties; or
+include consumer ﬁnance paper which combines the note and security instrument in a single document
+or a retail installment sales contract.
+The Security Instrument
+The security instrument must:
+state that the manufactured home is an improvement to the land and an immovable ﬁxture, or include
+similar language as may be required by applicable law to assure, to the greatest extent possible, that the
+manufactured home will be treated as real property under applicable state law. If applicable law provides
+speciﬁc obligatory wording, such wording must be used; and
+include a comprehensive description of the manufactured home and the land in the property description
+section.
+The description must include the serial or VIN number (or the serial number or VIN for each unit if the
+home is multi-width), make, model, size, and any other information that may be required by applicable
+law to deﬁnitively identify the home.
+Note : The serial number is located on the HUD Data Plate located on the interior of the home,
+usually near the electrical box. In addition, the serial number is generally cold-stamped on the
+frame front cross member of each transportable section.
+Some jurisdictions may not allow any information in the property description section of the security
+instrument other than what is customary for other real property transactions. If this is the case, then an
+addendum may be used, which must be attached to the security instrument and included in the loan ﬁle.
+Aﬃdavit of Aﬃxture
+
+Published March 4, 2026
+714The borrower(s) must sign an Aﬃdavit of Aﬃxture (which must be in the form prescribed by applicable law, if
+any) that acknowledges their intent for the manufactured home to be permanently part of the real property that
+secures the mortgage free of any personal property security interest. If the manufactured home was previously
+converted from personal property to real property in accordance with applicable law, the Aﬃdavit is not
+required by Fannie Mae unless applicable law requires a new Aﬃdavit. Where applicable law does not require an
+Aﬃdavit to be recorded, it is preferable that an Aﬃdavit be recorded.
+Note : If state law requires a Uniform Commercial Code (UCC) ﬁling in order to perfect a security interest in a
+manufactured home, the lender must make such ﬁling in any and all appropriate locations.
+Background Information Regarding Titling for Manufactured Homes
+Titling is complex and further complicated by the lack of a federal standard. Consequently, all states devise
+their own laws resulting in diverse approaches to manufactured home titling and lien perfection. The variety of
+approaches is particularly challenging for lenders originating manufactured home loans in more than one state.
+Laws of some states do not clearly provide for a single lien on the manufactured home, together with the land
+on which it is situated, but instead, for example, require that the lien on the manufactured home be evidenced
+by notation on the certiﬁcate of title.
+While the laws of some states establish a procedure for surrender of the certiﬁcate of title when the
+manufactured home has become so permanently aﬃxed to the land that it has become real property, the laws
+of other states do not allow for the elimination of the certiﬁcate of title to a manufactured home regardless of
+the degree of aﬃxation of the home to the land. In these states, the lien on the land (evidenced by the
+mortgage, deed of trust or security deed) may be legally distinct from the lien on the manufactured home
+(evidenced on the certiﬁcate of title), though both are liens on real property. In this instance, the manufactured
+home is often treated as an “immovable ﬁxture” (personal property that has become so permanently attached
+to the land that it has become real property).
+Research on state laws aﬀecting manufactured housing liens indicates, more speciﬁcally, that in order to
+document a lien on a manufactured home that is real property, state laws take several approaches:
+surrendering the certiﬁcate of title when the manufactured home is permanently aﬃxed to the land;
+statutory, regulatory, or judicial authority for recognizing a manufactured home as part of the real
+property, without surrender of the certiﬁcate of title. A few states also require UCC ﬁlings; or
+recognizing the manufactured home as real property without issuing a certiﬁcate of title when the unit is
+aﬃxed to the land.
+Most states permitting manufactured homes to be treated as real property without ﬁrst being titled as personal
+property also have procedures for issuing a certiﬁcate of title and then surrendering it.
+Background Information on States where Surrender of a Certiﬁcate of Title is not
+Permitted
+State law that does not provide for surrender of the certiﬁcate of title may pose some additional risk to the
+lender and Fannie Mae.
+Under the UCC, as adopted in almost every state, a lien evidenced on any outstanding certiﬁcate of title will
+have priority over a lien on real property to which the manufactured home is aﬃxed, which is evidenced by a

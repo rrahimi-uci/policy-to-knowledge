@@ -1,0 +1,74 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 9/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_009
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+902 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+28Public Law 104–191, 110 Stat. 1936 (Aug. 21, 
+1996) (codified at 42 U.S.C. 201 note). 
+29See H.R. Rep. No. 104–496, at 66–67 (1996). 
+30Public Law 104–191, 110 Stat. 1936 (Aug. 21, 
+1996). 
+31Sec. 262(a) of Public Law 104–191, 110 Stat. 
+2021 (Aug. 21, 1996) (codified at 42 U.S.C. 1320d). 
+32Sec. 261 of Public Law 104–191, 110 Stat. 2021 
+(Aug. 21, 1996), as amended by sec. 1104(a) of 
+Public Law 111–148, 124 Stat. 146 (Mar. 23, 2010) (codified at 42 U.S.C. 1320d note). 33On a resolution waiving points of order against 
+the Conference Report to H.R. 3103, members 
+debated an ‘‘erosion of privacy’’ balanced against the administrative simplification provisions. Thus, from HIPAA’s inception, privacy has been a central concern to be addressed as legislative changes eased disclosures of PHI. See 142 Cong. Rec. H9777 and 
+H9780. 
+34142 Cong. Rec. S9515–16 (daily ed. Aug. 2, 
+1996) (statement of Sen. Simon). 
+35See H.R. Rep. No. 104–496 Part 1, at 99–100 
+(Mar. 25, 1996). 36See sec. 262(a) of Public Law 104–191, 110 
+Stat. 2021, adding section 1172 to the SSA (codified at 42 U.S.C. 1320d–1); see also section 13404 of the American Recovery and Reinvestment Act (ARRA) of 2009, Public Law 111–5, 123 Stat. 115 (Feb. 17, 2009) (codified at 42 U.S.C. 17934) (applying privacy provisions and penalties to business associates of covered entities). The Department codified the term ‘‘covered entity’’ and defined it using these three categories of persons. 45 CFR 164.103. 
+3742 U.S.C. 1320d–2(d)(2). 
+3842 U.S.C. 1320d–2(d)(2)(A). 
+3942 U.S.C. 1320d–2(d)(2)(B). 
+4042 U.S.C. 1320d–2(d)(2)(C). 
+41Sec. 262(a) of Public Law 104–191, 110 Stat. 
+2024, adding sec. 1173(a) (codified at 42 U.S.C. 1320d–2(a)(1)). 
+42Sec. 262(a) of Public Law 104–191, 110 Stat. 
+2025, adding sec. 1173(d) (codified at 42 U.S.C. 1320d–2(d)). Term Meaning 
+HIPAA ............................................. Health Insurance Portability and Accountability Act of 1996. 
+HITECH Act .................................... Health Information Technology for Economic and Clinical Health Act of 2009. 
+ICR .................................................. Information Collection Request. 
+IIHI ................................................... Individually Identifiable Health Information. 
+IT ..................................................... Information Technology. 
+MFA ................................................. Multi-factor Authentication. 
+NAICS ............................................. North American Industry Classification System. 
+NCVHS ............................................ National Committee on Vital and Health Statistics. 
+NIST ................................................ National Institute of Standards and Technology. 
+NPRM .............................................. Notice of Proposed Rulemaking. 
+OCR ................................................ Office for Civil Rights. 
+OMB ................................................ Office of Management and Budget. 
+ONC ................................................ Office of the National Coordinator for Health Information Technology. 
+PHI .................................................. Protected Health Information. 
+PRA ................................................. Paperwork Reduction Act of 1995. 
+PSAO .............................................. Pharmacy Services Administration Organizations. 
+RFA ................................................. Regulatory Flexibility Act. 
+RIA .................................................. Regulatory Impact Analysis. 
+SBA ................................................. Small Business Administration. 
+SRMA .............................................. Sector Risk Management Agency. 
+SSA ................................................. Social Security Act of 1935. 
+UMRA .............................................. Unfunded Mandates Reform Act of 1995. 
+VR ................................................... Virtual Reality. 
+II. Statutory Authority and Regulatory 
+History 
+A. Statutory Authority and History 1. Health Insurance Portability and 
+Accountability Act of 1996 (HIPAA) 
+In 1996, Congress enacted HIPAA
+28 
+to reform the health care delivery system to ‘‘improve portability and continuity of health insurance coverage in the group and individual markets’’
+29 
+and ‘‘to simplify the administration of health insurance.’’
+30Through subtitle F 
+of HIPAA, Congress amended title XI of the Social Security Act of 1935 (SSA) by adding part C, entitled ‘‘Administrative Simplification.’’
+31A primary purpose of 
+part C is to improve the Medicare and Medicaid programs and ‘‘the efficiency and effectiveness of the health care system, by encouraging the development of a health information system through the establishment of uniform standards and requirements for the electronic transmission of certain health information.’’
+32 
+Congress recognized that the

@@ -1,0 +1,26 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 115/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_115
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+or known to the regulated entity. We would expect eradication to include the removal of malicious software, inappropriate materials, and any other components of the incident from the regulated entity’s relevant electronic information systems.
+604Finally, 
+proposed 45 CFR 164.308(a)(12)(ii)(B)(5) would require a regulated entity to develop and maintain documentation of investigations, analyses, mitigation, and remediation for security incidents that are suspected or known. For example, verbal reports of a suspected or known security incident would be required to be documented in writing. Under proposed 45 CFR 164.316(b)(1), if finalized, a regulated entity would be required to maintain such documentation for six years from the date of its creation or the date when it last was in effect, whichever is later. These proposals are consistent with existing guidance described above and with other proposals or existing regulatory standards to secure health information.
+605 o. Section 164.308(a)(13)(i)—Standard: 
+Contingency Plan 
+The purpose of any contingency plan 
+is to allow an organization to return to its daily operations as quickly as possible after an unforeseen event.
+606 
+The contingency plan protects resources, minimizes customer inconvenience, and identifies key staff, assigning specific responsibilities in the context of the recovery. Contingency plans are critical to protecting the availability, integrity, and security of data during unexpected adverse events. Contingency plans should consider not only how to respond to disasters such as fires and floods, but also how to respond to cyberattacks. Cyberattacks using malicious software, such as ransomware, may render an organization’s data unreadable or unusable. In the event data is compromised by a cyberattack, restoring the data from backups may be the only option for recovering the data and restoring normal business operations. For example, the faulty software update by CrowdStrike made it impossible for health care systems worldwide to use their Windows-based systems.
+607There 
+were many instances where surgical procedures and health care appointments were cancelled, schedules upended, and pharmacies were unable to fill prescriptions. Regulated entities need to make and implement contingency plans they would use when such events occur to enable themselves to get back to their core functions of providing or paying for health care. 
+The Department and NIST have 
+issued extensive guidance on 
+contingency planning, including detailed descriptions of key activities, sample questions for regulated entities to consider when standing up a contingency plan, and information on how the results of the risk analysis feed into contingency plans.
+608 
+Unfortunately, many regulated entities have not implemented the required 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00058 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

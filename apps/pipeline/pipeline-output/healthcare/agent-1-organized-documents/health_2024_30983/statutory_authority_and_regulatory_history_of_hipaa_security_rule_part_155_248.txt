@@ -1,0 +1,35 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 155/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_155
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+975 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+779See proposed 45 CFR 164.312(f)(2)(iii)(B). 
+780See proposed 45 CFR 164.308(a)(13). 781See proposed 45 CFR 164.312(a)(2)(iii). 
+782See ‘‘Next Steps Toward Managing Legacy 
+Medical Device Cybersecurity Risks,’’ supra note 
+742; ‘‘Principles and Practices for the Cybersecurity 
+of Legacy Medical Devices,’’ supra note 742, p. 8. 
+783‘‘Cybersecurity,’’ supra note 743. 784See sec. 3305 of Public Law 117–328, 126 Stat. 
+5832 (Dec. 29, 2022) (codified at 21 U.S.C. 360n– 
+2); see also ‘‘Cybersecurity in Medical Devices 
+Frequently Asked Questions (FAQs),’’ supra note 
+744. 
+785Proposed 45 CFR 164.312(f)(2)(iv)(A). deploy MFA for changed privileges in 
+both types of systems. 
+Similar to the proposed standard for 
+encryption, the Department proposes three exceptions at proposed 45 CFR 164.312(f)(2)(iii) to the proposed specific requirement to implement MFA. The first proposed exception at proposed 45 CFR 164.312(f)(2)(iii)(A) would be for a technology asset that does not support MFA but is currently in use by a regulated entity. Because the requirements for authentication under the existing Security Rule today do not expressly refer to MFA, a regulated entity that is not using MFA to meet the requirement to authenticate user identities may argue that it is in compliance with the authentication standard without using MFA. The Department recognizes that it may take some time for a regulated entity to adopt compliant software or hardware, and thus we propose an exception where such software or hardware does not support MFA. To meet this exception, a regulated entity would be required to establish a written plan to migrate ePHI to technology assets that supports MFA and to actually migrate the ePHI to such technology assets in accordance with the written plan. Accordingly, a regulated entity would be required to establish the plan, implement the plan, and actually migrate ePHI to technology assets that supports MFA within a reasonable and appropriate period of time. For example, it would not be reasonable and appropriate for a regulated entity to establish a plan to migrate to a new practice management system that supports MFA and fail to take any steps to perform the migration for an entire year. Applying the standard flexibly and at scale, a reasonable and appropriate timeframe for a system with 5,000 users may be different than one for a solo practitioner; however, both entities would be expected to progress to completion. 
+We recognize that emergencies or 
+other occurrences may render it infeasible for a regulated entity to use MFA, so we propose a second exception for when MFA is infeasible during an emergency or other occurrence that adversely affects the regulated entity’s relevant electronic information systems or the confidentiality, integrity, or availability of ePHI.
+779For the proposed 
+exception to apply, a regulated entity would be required to implement reasonable and appropriate compensating controls in accordance with its contingency plan
+780and emergency access procedures.781For 
+example, if an optical scanner used by a regulated entity as one of the required factors for MFA is rendered inoperable (e.g., is temporarily broken or adversely 
+affected by a cyberattack), a compensating control may be to temporarily allow users to log in with their user name and a unique password, rather than with a PIN and retinal scan. The Department would make this proposed exception applicable only for the limited period of time in which MFA is infeasible for the regulated entity during the emergency or other occurrence, regardless of whether the emergency or other occurrence continues. 
+At proposed 45 CFR 
+164.312(f)(2)(iii)(C), we propose three exceptions that would be for a technology asset in use that is a device within the meaning of section 201(h) of the Food, Drug, and Cosmetic Act that has been authorized for marketing by the FDA. The first would be for a device authorized by the FDA for marketing pursuant to a submission received before March 29, 2023, while the second would be for a device authorized by the FDA for marketing pursuant to a submission received on or after March 29, 2023, that is no longer supported by its manufacturer. In both cases, the exception would only apply where, the regulated entity has deployed any updates or patches required or recommended by the manufacturer of the device. Similar to our proposal for exceptions to encryption at proposed 45 CFR 164.312(b)(3)(iv)(A) and (B), we recognize that some regulated entities may incur costs of replacing legacy devices because of the limitations on the proposed exception to MFA where a device was submitted to the FDA for authorization before March 29, 2023 or a device submitted for authorization on or after that date that is no longer supported by its manufacturer.
+782

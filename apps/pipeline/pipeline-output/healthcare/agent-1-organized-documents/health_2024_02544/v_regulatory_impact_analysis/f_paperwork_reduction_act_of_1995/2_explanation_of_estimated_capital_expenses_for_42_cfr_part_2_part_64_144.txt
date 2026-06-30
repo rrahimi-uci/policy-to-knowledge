@@ -1,0 +1,67 @@
+# 2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 64/144)
+
+**Source:** health_2024_02544.pdf
+**Chunk ID:** health_2024_02544_028_sub_064
+**Pages:** 1-160
+**Section Path:** V. Regulatory Impact Analysis > F. Paperwork Reduction Act of 1995 > 2. Explanation of Estimated Capital Expenses for 42 CFR Part 2
+
+---
+
+12535 Federal Register / Vol. 89, No. 33 / Friday, February 16, 2024 / Rules and Regulations 
+22842 CFR 2.13(d) (specifying List of Disclosures 
+requirement applicable to intermediaries). 
+229OCR published an NPRM to implement this 
+HITECH Act provision in 2011 but did not finalize 
+it because of concerns raised by public comments. See 76 FR 31426 (May 31, 2011). OCR announced 
+its intention to withdraw the 2011 NPRM and requested public input on new questions to help OCR implement the HITECH Act requirement as part of the 2018 HIPAA Rules Request for Information (RFI). See 83 FR 64302, 64307 (Dec. 14, 
+2018). A final HIPAA regulation on the accounting of disclosures that would apply to TPO disclosures by covered entities has not been issued. 230See also sec. 13405(c) of the HITECH Act 
+(codified at 42 U.S.C. 17935(c). Since the HITECH Act requirement for accounting of disclosures was enacted in 2009, the Department published a RFI at 75 FR 23214 (May 3, 2010) and an NPRM at 76 FR 31426 (May 31, 2011). Based in part on public comment on the RFI, the Department proposed to provide individuals with an ‘‘access report’’ as a means of fulfilling the requirement. Based on feedback on the NPRM in which commenters overwhelmingly opposed the report as ‘‘unworkable,’’ the Department, in a follow up RFI published at 83 FR 64302, explained its intent to withdraw the proposal of the 2011 NPRM. The Department received additional public comment about implementing sec. 13405(c) and will publish in a future Regulatory Unified Agenda notice about any future actions. Final Rule 
+We are finalizing in this section, 
+redesignated as § 2.24, that an 
+intermediary must provide to patients who have consented to the disclosure of their records using a general designation pursuant to § 2.31(a)(4)(ii)(B), a list of persons to whom their records have been disclosed pursuant to the general designation. 
+Section 2.25—Accounting of 
+Disclosures 
+Proposed Rule 
+The Department noted in the NPRM 
+that except for disclosures made by 
+intermediaries, the current part 2 regulation did not have provisions that included a right for patients to obtain an accounting of disclosures of part 2 records.
+228Section 290dd–2(b)(1)(B) of 
+42 U.S.C., as amended by section 3221(b) of the CARES Act, applies section 13405(c) of the HITECH Act, 42 U.S.C. 17935(c) (Accounting of Certain Protected Health Information Disclosures Required if Covered Entity Uses Electronic Health Record), to part 2 disclosures for TPO with prior written consent. Therefore, the Department proposed to add a new § 2.25 (Accounting of disclosures) to establish the patient’s right to receive, upon request, an accounting of disclosures of part 2 records made with written consent for up to three years prior to the date the accounting is requested. 
+This proposal was intended to apply 
+the individual right to an accounting of disclosures in the HITECH Act to disclosure of part 2 records.
+229The 
+Department proposed at § 2.25(a) that paragraph (a) would generally require an accounting of disclosures made with patient consent for a period of 6 years prior to the request, and paragraph (b) would limit the requirement with respect to disclosures made with TPO consent, which would only be required for disclosures made from an EHR system for a period of 3 years prior to the request. In both instances, the proposed changes would be contingent on the promulgation of HITECH Act modifications to the accounting of disclosures standard in the HIPAA 
+Privacy Rule at 45 CFR 164.528.
+230 
+The Department stated in the NPRM 
+preamble that this proposed accounting requirement is consistent with section 3221(b) of the CARES Act, 42 U.S.C. 290dd–2(b)(1)(B), as amended. The Department noted that the CARES Act applied the HITECH Act ‘‘look back’’ time period for accounting of disclosures to ‘‘all disclosures’’ of part 2 records with consent and not just those disclosures contained in an EHR. From a policy perspective, the Department therefore proposed to apply the 3-year ‘‘look back’’ to all accountings of disclosures with consent and not just for accountings of disclosures of records contained in an EHR. 
+Because the Department has not yet 
+finalized the HITECH Act accounting of disclosures modifications within the HIPAA Privacy Rule, the Department did not propose to require compliance with § 2.25 before finalizing the HIPAA Privacy Rule provision in 45 CFR 164.528. The comments and the Department’s responses regarding § 2.25 are set forth below. 
+Accounting of Disclosures for TPO 
+Comment 
+A few commenters expressed 
+opposition to the accounting of 
+disclosures for TPO because: (1) the proposal does not align with the HIPAA Privacy Rule, including the exclusion pursuant to an authorization; (2) it would increase administrative burden; and (3) the existing and established technology lacks the capability, including manual collection of data from multiple systems (e.g., EHR and 
+practice management system for 
+payment and health care operations). Other commenters remarked that unless technical capabilities are developed within certified EHR technology to capture why someone has opened a patient record, providing a full accounting would be impossible and requiring providers to mark and maintain a full accounting would incentivize providers to forego going into a patient’s record, even when it may be better for treatment coordination. 
+Response 
+We appreciate the comments. 
+However, the proposed change is 
+required by section 290dd–2(b)(1)(B) of 42 U.S.C., as amended by section 3221(b) of the CARES Act, that applies section 13405(c) of the HITECH Act, 42 U.S.C. 17935(c), to part 2 disclosures for TPO with prior written consent. The final rule attempts to balance the potential compliance burden by tolling the effective and compliance dates for the HITECH accounting of disclosures requirement until it is finalized within the HIPAA Privacy Rule. 
+Comment 
+A health system and a health IT 
+vendor commented on the timeframes 
+covered in accountings of disclosure and suggested that the period for which accountings can be requested be limited to those after the rule is effective because of different applicable privacy standards prior to rule finalization. For example, if the Department finalizes the accounting of disclosures provision to include data for six years prior to the request date, the first day for which part 2 programs would need to provide accountings would be the effective date of the rule. 
+Response 
+We appreciate the comments. We 
+clarify that the period for which an 
+accounting can ‘‘look back’’ is limited to those disclosures occurring after the first day of the compliance date. 
+Comment 
+An HIE association requested the 
+Department provide a specific 
+maximum allowable cost to a patient for fulfilling a requested accounting of disclosures for their PHI in the final rule. According to the commenter, the Department provides guidance in other resources on the maximum allowable cost that a patient can incur when requesting an accounting of disclosures but the NPRM did not provide a clear and concise regulatory specification. 
+Response 
+We appreciate the comment and 
+decline at this time to state a maximum 
+patient cost; however, we will further consider the comment in drafting the HIPAA accounting of disclosures final rule to implement section 13405(c) of the HITECH Act, 42 U.S.C. 17935(c). We are not aware of resources that discuss 
+VerDate Sep<11>2014 18:41 Feb 15, 2024 Jkt 262001 PO 00000 Frm 00065 Fmt 4701 Sfmt 4700 E:\FR\FM\16FER2.SGM 16FER2lotter on DSK11XQN23PROD with RULES2

@@ -1,0 +1,156 @@
+# B5-6-01, HomeReady Mortgage Loan and Borrower Eligibility (06/04/2025)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_363
+**Pages:** 807-811
+**Section Path:** Part B, Origination Through Closing > Subpart B5, Unique Eligibility and Underwriting Considerations > Chapter B5-6, HomeReady Mortgage > B5-6-01, HomeReady Mortgage Loan and Borrower Eligibility (06/04/2025)
+
+---
+
+Published March 4, 2026
+789The Massachusetts Housing Finance Agency requires the use of an Aﬀordable Housing Restriction  document in
+connection with loans secured by properties in Massachusetts that are subject to resale restrictions that survive
+foreclosure or deed-in-lieu of foreclosure in which it will serve as lender or project administrator.
+Legal Considerations
+The Aﬀordable Housing Restriction document provides for third-party modiﬁcation by the foreclosing servicer
+and provides for a 120-day time period between notiﬁcation of foreclosure to the municipality by the foreclosing
+servicer and the completion of the repurchase of the property by the municipality.
+While Fannie Mae's standard guidelines require a 90-day time period for notiﬁcation, use of this instrument for
+loans subject to a resale restriction secured by property in Massachusetts is acceptable without further approval
+from Fannie Mae.
+All other applicable requirements for resale restrictions continue to apply.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2023-04 May 03, 2023
+ 
+Chapter B5-6, HomeReady Mortgage
+Introduction
+This chapter describes product policies and requirements for HomeReady mortgage loans.
+B5-6-01, HomeReady Mortgage Loan and Borrower Eligibility
+(06/04/2025)
+Introduction
+This topic contains information on HomeReady mortgage loan and borrower eligibility, including:
+Overview
+General Loan Eligibility
+Maximum LTV, CLTV, and HCLTV Ratios
+
+Published March 4, 2026
+790Requirements for HomeReady Transactions with LTV, CLTV, or HCLTV Ratios of 95.01 – 97%
+Subordinate Financing
+Eligible Loan Types
+Temporary Buydowns
+Borrower Income Limits and Calculations
+Homeownership Education and Housing Counseling
+Overview
+The HomeReady mortgage is a conventional community lending mortgage that oﬀers underwriting ﬂexibilities
+to qualiﬁed borrowers who meet speciﬁc income criteria. The HomeReady mortgage is a standard product
+oﬀering available to all Fannie Mae lenders. No special approvals are required.
+General Loan Eligibility
+A HomeReady mortgage is a ﬁrst mortgage, purchase money, or limited cash-out reﬁnance transaction for one-
+to four-unit properties used as the borrower’s principal residence.
+Eligible properties include:
+one-unit properties, including manufactured housing, and units in condos and PUDs;
+units in co-ops, provided the unit conforms to Fannie Mae's requirements, and the lender has received
+speciﬁc authority to deliver mortgages on co-ops to Fannie Mae;
+existing structures and new construction; and
+two-, three-, and four-unit properties.
+Additional restrictions apply to transactions with LTV, CLTV, or HCLTV ratios of 95.01 — 97%. See below for
+additional requirements for HomeReady mortgage transactions.
+Maximum LTV, CLTV, and HCLTV Ratios
+Refer to the Eligibility Matrix  for maximum allowable LTV, CLTV, and HCLTV ratios for HomeReady mortgage
+loans. HomeReady loans that are originated in connection with manufactured homes must follow the more
+restrictive LTV, CLTV, and HCLTV ratios that apply. For example, the maximum LTV, CLTV, and HCLTV ratio for a
+one-unit HomeReady manufactured home that does not meet the MH Advantage requirements is 95%.
+Requirements for HomeReady Transactions with LTV, CLTV, or HCLTV Ratios of
+95.01 – 97%
+If the LTV, CLTV, or HCLTV ratio exceeds 95% for a HomeReady transaction, the following requirements apply.
+
+Published March 4, 2026
+791Criteria Requirements
+LTV, CLTV, or HCLTV Ratio95.01 to 97%
+Note : The CLTV ratio can be up to 105% if the subordinate lien is a
+Community Seconds loan.
+Loan Purpose Purchase transactions or limited cash-out reﬁnances only.
+Existing LoanFor limited cash-out reﬁnances:
+The lender must inform DU that the existing loan is owned (or
+securitized) by Fannie Mae using the Owner of Existing Mortgage ﬁeld in
+the online loan application before submitting the loan to DU. 
+The DU message indicating the borrower's existing loan was identiﬁed
+as a Fannie Mae loan may be relied upon as conﬁrmation the loan is
+owned by Fannie Mae.
+When DU is not able to identify the borrower's existing loan is owned (or
+securitized) by Fannie Mae, the lender must provide documentation.
+Documentation may come from
+• the lender’s servicing system,
+• the current servicer (if the lender is not the servicer),
+• Fannie Mae’s Loan Lookup tool, or
+• any other source as conﬁrmed by the lender.
+Note : This requirement does not apply if the CLTV exceeds 95% only
+due to a Community Seconds loan.
+Loan TypeFixed-rate loans with terms up to 30 years.
+Note : High-balance and ARM loans are not permitted.
+Property and OccupancyOne-unit principal residence. Manufactured housing is not permitted,
+unless the property meets the MH Advantage requirements.
+All borrowers must occupy the property unless there is a Community
+Seconds subordinate lien.
+Underwriting Method DU only
+Reserves Reserves requirements will be determined by DU.
+OtherAll other standard purchase and limited cash-out reﬁnance and
+HomeReady requirements apply.
+
+Published March 4, 2026
+792Subordinate Financing
+Subordinate ﬁnancing must comply with:
+the terms for the Community Seconds option, which allow, among other provisions, a maximum
+combined loan-to-value of 105% (see B5-5.1-01, Community Seconds Loans  through B5-5.1-03,
+Community Seconds: Shared Appreciation Transactions ); or
+subordinate ﬁnancing permitted in accordance with  B2-1.2-04, Subordinate Financing .
+Subordinate ﬁnancing from a seller-held mortgage is not permitted with HomeReady mortgages.
+Eligible Loan Types
+HomeReady mortgage transactions can be secured by ﬁxed-rate or ARM loans.
+The following table identiﬁes the ARM plans that are available for HomeReady mortgage loans.
+ARM Plans Eligible for HomeReady Mortgages
+30-yearFive-Year ARM 4927
+Seven-Year ARM 4928
+Ten-Year ARM 4929
+Temporary Buydowns
+The following requirements apply to temporary interest rate buydowns on HomeReady mortgages:
+Loans must be purchase transactions.
+Loans must be ﬁxed-rate or seven- or ten-year ARMs.
+All other standard buydown policies apply.
+See  B2-1.4-04, Temporary Interest Rate Buydowns , for additional information.
+Borrower Income Limits and Calculations
+In determining whether a mortgage is eligible under the borrower income limits, the lender must count the
+income from all borrowers who will sign the note, to the extent that the income is considered in evaluating
+creditworthiness for the loan.
+The lender must use the same methodology in determining income eligibility for a HomeReady mortgage as the
+lender uses in reporting “Monthly Income” in data delivery. Eligibility for a HomeReady mortgage loan compares
+
+Published March 4, 2026
+793the borrower’s income to the applicable area median income (AMI) for the property’s location. For determining
+Fannie Mae loan eligibility, lenders must refer to the AMIs that Fannie Mae uses in Desktop Underwriter or on
+Fannie Mae’s website  and may not rely on other published versions (such as AMIs posted on huduser.org).
+To be eligible as a HomeReady mortgage, the total annual qualifying income may not exceed 80% of the AMI for
+the property’s location. If the property has resale restrictions, see B5-5.2-02, Loans with Resale Restrictions:
+Eligibility, Collateral and Delivery Requirements , for additional requirements.
+Note : For loan caseﬁles that are not underwritten as a HomeReady mortgage loan, DU will issue a
+message indicating that the loan may be eligible as a HomeReady loan if the total qualifying income
+entered in DU appears to be within the applicable AMI limit for the property’s location. See  B5-6-02,
+HomeReady Mortgage Underwriting Methods and Requirements , for additional information.
+Homeownership Education and Housing Counseling
+Homeownership education is required for HomeReady purchase loans when all occupying borrowers are ﬁrst-
+time homebuyers. Borrowers who complete housing counseling within 12 months prior to loan closing may be
+eligible for a loan-level price adjustment credit. Refer to B2-2-06, Homeownership Education and Housing
+Counseling , for options for meeting these requirements.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2025-04 June 04, 2025
+Announcement SEL-2025-02 April 02, 2025
+Announcement SEL-2024-04 June 05, 2024
+Announcement SEL-2022-03 April 06, 2022
+Announcement SEL-2020-07 December 16, 2020
+Announcement SEL-2020-06 October 07, 2020
+Announcement SEL-2020-02 April 01, 2020
+Announcement SEL-2020-01 February 05, 2020

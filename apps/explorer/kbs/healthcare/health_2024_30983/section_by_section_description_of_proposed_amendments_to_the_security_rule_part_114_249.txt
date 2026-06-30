@@ -1,0 +1,46 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 114/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_114
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+954 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+Organizations,’’ NIST Special Publication 800–53, 
+Revision 5, National Institute of Standards and Technology, U.S. Department of Commerce, p. 157 (Sept. 2020), https://nvlpubs.nist.gov/nistpubs/ SpecialPublications/NIST.SP.800-53r5.pdf. 
+601‘‘Cybersecurity Performance Goals,’’ supra 
+note 18; see also proposed 45 CFR 
+164.314(a)(2)(i)(C). 
+602‘‘Cybersecurity Performance Goals,’’ supra 
+note 18. 603Id. 
+604See ‘‘Computer Security Incident Handling 
+Guide: Recommendations of the National Institute of Standards and Technology,’’ supra note 597. 
+605See, e.g., ‘‘New York State Register,’’ supra 
+note 14; ‘‘Invitation for Preliminary Comments on Proposed Rulemaking: Cybersecurity Audits, Risk Assessments, and Automated Decisionmaking,’’ supra note 14; see also Cal. Civ. Code Section 
+1798.185. 606See ‘‘Plan A. . .B. . .Contingency Plan!’’ 
+Cybersecurity Newsletter, Office for Civil Rights, U.S. Department of Health and Human Services (Mar. 2018), https://www.hhs.gov/sites/default/ files/march-2018-ocr-cyber-newsletter-contingency- planning.pdf. 
+607See Kate Conger, et al., ‘‘What Is 
+Crowdstrike?,’’ New York Times (July 19, 2024), https://www.nytimes.com/2024/07/19/business/ what-is-crowdstrike.html?searchResultPosition=2; see also ‘‘Remediation and Guidance Hub: Falcon Content Update for Windows Hosts,’’ (July 31, 2024), https://www.crowdstrike.com/falcon-content- 
+update-remediation-and-guidance-hub/. 
+608See ‘‘Implementing the Health Insurance 
+Portability and Accountability Act (HIPAA) Security Rule: A Cybersecurity Resource Guide,’’ supra note 461; see also ‘‘Security Standards: 
+Administrative Safeguards,’’ supra note 517, p. 19– 
+22. reporting of suspected or known 
+security incidents may address to whom, when, and how such incidents are to be reported. The recipient(s) and the content of such reports, according to such plans and procedures, may vary based on the type of incident and the role of the workforce member making the report. We do not propose to dictate the form, format, or content of such report. Rather, we believe that regulated entities would be best situated to identify the point(s) of contact for their organization (e.g., Chief Information 
+Security Officer, IT security team, business associate engaged to support incident response activities for the regulated entity) for such reports and the type of information they need to determine how to respond to the suspected or known security incident. 
+The proposal to require a regulated 
+entity to establish written security incident response plans and procedures for how it will respond to suspected or known security incidents would align with the enhanced CPG for Third Party Incident Reporting because it would address the procedures for how and when a business associate would report to a covered entity or another business associate known or suspected security incidents, as required by proposed 45 CFR 164.314(a)(2)(i)(C).
+601 
+Under proposed 45 CFR 
+164.308(a)(12)(ii)(A)(2) and (3), the 
+regulated entity would be required to implement written procedures for testing and revising the security incident response plan(s) and then, using those written procedures, review and test its security incident response plans at least once every 12 months and document the results of such tests. The regulated entity would also be required to modify the plan(s) and procedures as reasonable and appropriate, based on the results of such tests and the regulated entity’s circumstances. 
+This proposal, if finalized, would 
+include requirements that align with the Department’s essential CPG for Basic Incident Planning and Preparedness to have effective responses to and recovery from security incidents.
+602It also aligns 
+with the Department’s enhanced CPG for Centralized Incident Planning and Preparedness by requiring a regulated entity to maintain, revise, and test 
+security incident response plans.
+603 
+Additionally, the Department 
+proposes to redesignate the implementation specification for response and reporting at 45 CFR 164.308(a)(6)(ii) as 45 CFR 164.308(a)(12)(ii)(B) and to rename it ‘‘Response.’’ We also propose to modify the existing implementation specification by separating it into two paragraphs: one at paragraph (a)(12)(ii)(B)(1) for identifying and responding to suspected or known security incidents, and the other at paragraph (a)(12)(ii)(B)(2) for mitigating, to the extent practicable, the harmful effects of suspected or known security incidents. The Department also proposes to add three additional paragraphs to this implementation specification. Proposed 45 CFR 164.308(a)(12)(ii)(B)(3) would require a regulated entity to identify and remediate, to the extent practicable, the root cause(s) of suspected or known security incidents, while proposed 45 CFR 164.308(a)(12)(ii)(B)(4) would require the regulated entity to eradicate the security incidents that are suspected

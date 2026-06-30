@@ -1,0 +1,72 @@
+# B2-2-01, General Borrower Eligibility Requirements (09/03/2025)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_098
+**Pages:** 241-242
+**Section Path:** Part B, Origination Through Closing > Subpart B2, Eligibility > Chapter B2-2, Borrower Eligibility > B2-2-01, General Borrower Eligibility Requirements (09/03/2025)
+
+---
+
+Published March 4, 2026
+223Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2024-07 November 06, 2024
+Announcement SEL-2021-10 November 03, 2021
+ 
+Chapter B2-2, Borrower Eligibility
+Introduction
+This chapter explains the requirements related to borrower eligibility.
+B2-2-01, General Borrower Eligibility Requirements (09/03/2025)
+Introduction
+This topic contains information on general borrower eligibility requirements, including:
+General Borrower Eligibility Requirements
+General Borrower Identity Criteria
+Tax Identiﬁcation Numbers
+Establishing Borrower Ownership Interest
+General Borrower Eligibility Requirements
+Fannie Mae purchases or securitizes mortgages made to borrowers who are natural persons and have reached
+the age at which the mortgage note can be enforced in the jurisdiction where the property is located. There is
+no maximum age limit for a borrower.
+Exceptions to the requirement that borrowers be natural persons are:
+inter vivos  revocable trusts,
+HomeStyle Renovation mortgages, and
+
+Published March 4, 2026
+224land trusts in those states where the beneﬁciary is an individual. (Note: Fannie Mae permits land trusts on
+a negotiated basis for states where land trusts are widely accepted.)
+See the following for additional information:
+B2-1.3-04, Prohibited Reﬁnancing Practices ,
+B2-2-04, Guarantors, Co-Signers, or Non-Occupant Borrowers on the Subject Transaction
+B2-2-05, Inter Vivos Revocable Trusts ,
+B5-3.2-02, HomeStyle Renovation Mortgages: Loan and Borrower Eligibility , and
+Community Land Trusts  in B5-5.3-01, Shared Equity Overview .
+General Borrower Identity Criteria
+A borrower is any applicant (e.g., individually or jointly) whose credit is used for qualifying purposes to
+determine ability to meet Fannie Mae’s underwriting and eligibility standards. “Co-borrower” is a term used to
+describe any borrower other than the borrower whose name appears ﬁrst on the note.
+Lenders must conﬁrm each borrower’s identity prior to the extension of credit. Fannie Mae’s requirements for
+borrower identity veriﬁcation are intended to align with lenders’ existing federal obligations under laws requiring
+information and document veriﬁcation, including the Department of Treasury's Oﬃce of Foreign Assets Control
+(OFAC) regulations and the U.S. Patriot Act. See  A3-2-01, Compliance With Laws , for additional information
+concerning borrower identity veriﬁcation.
+Tax Identiﬁcation Numbers
+Fannie Mae requires that each borrower have a valid Social Security number or Individual Taxpayer
+Identiﬁcation Number (ITIN), in addition to meeting existing legal residency and documentation requirements.
+(For additional information, see B2-2-02, Non–U.S. Citizen Borrower Eligibility Requirements .)
+DU and Loan Delivery may identify data integrity issues pertaining to the borrower’s Social Security number.
+Lenders must take steps to resolve any issues, including invalid format, numbers not issued, borrower age/issue
+date discrepancies, or Social Security numbers associated with deceased individuals. If a lender cannot resolve
+any Social Security number inconsistencies, the lender must validate the Social Security number directly with
+the Social Security Administration (SSA). The following requirements apply:
+The lender may use one of the two methods listed below to validate a borrower's Social Security number:
+Form SSA–89 (Authorization for the Social Security Administration to Release Social Security
+Number Veriﬁcation), or
+Electronic Consent Based Social Security Number Veriﬁcation (eCBSV) Service.
+If using a third-party vendor, the lender must ensure that the vendor goes directly to the SSA to validate
+the Social Security number using one of the two methods listed above.
+The lender must retain documentation in the loan ﬁle that evidences the validation of the Social Security
+number.
+The lender must deliver the loan with SFC 162 if the Social Security number was validated through the
+SSA but there is a discrepancy identiﬁed with the Social Security number in the credit report, DU, or Loan
+Delivery edits.

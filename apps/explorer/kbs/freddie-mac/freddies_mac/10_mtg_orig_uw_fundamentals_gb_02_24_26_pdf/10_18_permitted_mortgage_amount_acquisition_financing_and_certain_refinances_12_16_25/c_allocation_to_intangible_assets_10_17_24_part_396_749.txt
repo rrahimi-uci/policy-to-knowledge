@@ -1,0 +1,54 @@
+# c. Allocation to intangible assets (10/17/24) (part 396/749)
+
+**Source:** freddies_mac.pdf
+**Chunk ID:** freddies_mac_3094_sub_396
+**Pages:** 279-1254
+**Section Path:** 10 - Mtg, Orig, UW Fundamentals GB-02-24-26.pdf > 10.18 Permitted Mortgage amount – Acquisition financing and certain refinances (12/16/25) > c. Allocation to intangible assets (10/17/24)
+
+---
+
+Guide Bulletin Update 02/24/26 Chapter 43 – Page 8 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the 
+AllRegs web site of ICE Mortgage Technology  (with a paid subscription).  
+Guide Chapter 43 – Specific Servicing Responsibilities  
+1099 -C).  The Servicer must furnish the Borrower with a copy of any Forms 1099 -A and 1099 -C 
+filed with the IRS on or before January 31 of the calendar year the form is filed with the IRS.  
+ 
+IRS requirements for filing electronically are set forth in IRS Publication 1220, Specifications for 
+Electronic Filing of Forms 1097, 1098, 1099, 3921, 3922, 5498 and W2 -G.  A Servicer may 
+obtain this publication by downloading it from the IRS website at w ww.irs.gov or by calling the 
+IRS at 1 -800-TAX-FORM (1 -800-829-3676).  Instructions for completing IRS Forms 1099 -A and 
+1099 -C are set forth in Freddie Mac Form 1065M . 
+ 
+The Servicer must insert appropriate header information on the electronic report it files with the 
+IRS in accordance with the record descriptions in the following table:  
+ 
+Field Name  Data Description  
+Payer “A” Record  
+Payer’s TIN  For non -securitized loans, use 520904874  
+and for securitized loans, use the trust’s TIN  
+First Payer Name Line  Federal Home Loan Mortgage Corporation   
+Payer Shipping Address  8200 Jones Branch Drive  
+Payer City  McLean  
+Payer State  VA 
+Payer ZIP Code  22102  
+Payer’s Telephone Number & Extension  Servicer’s telephone number  
+"B" Record  
+Payee’s TIN  Borrower’s TIN  
+Payer’s Account Number for Payee  The nine -digit Freddie Mac loan number 
+followed by one space and the six -digit 
+Seller/Servicer number  
+First Payee Name Line  First Borrower’s name  
+Second Payee Name Line  Second Borrower’s Name, if appropriate  
+Payee Mailing Address  Most recent address for Borrower  
+Payee City  Most recent address for Borrower  
+Payee State  Most recent address for Borrower  
+Payee Zip Code  Most recent address for Borrower  
+ 
+The Borrower’s TIN is required to complete Forms 1099 -A and 1099 -C.  If the Servicer does not 
+have the Borrower’s TIN, the Servicer must make a reasonable effort to obtain the TIN.  Such 
+request must clearly notify the Borrower that the IRS requires the Borrower to provide its TIN 
+and that failure to do so subjects the Borrower to a $50 penalty imposed by the IRS.  To request 
+the TIN, the Servicer must use IRS Form W -9, Request for Ta xpayer Identification Number and 
+Certification.  However, the Borrower is not required to certify the TIN under penalties of perjury.

@@ -1,0 +1,93 @@
+{
+  "total_files": 10,
+  "processed": 10,
+  "failed": 0,
+  "total_chunks": 3405,
+  "chunker_tools_used": {
+    "PDFChunker (TOC)": 7,
+    "DocxChunker (python-docx)": 1,
+    "PDFChunker (AI)": 2
+  },
+  "sub_chunks_created": 35,
+  "merges_performed": 284,
+  "files": [
+    {
+      "file": "pub_ch_commercial_loans.pdf",
+      "status": "success",
+      "chunks": 18,
+      "method": "toc_based",
+      "chunker_tool": "PDFChunker (TOC)"
+    },
+    {
+      "file": "sop_technical_updates_effective.docx",
+      "status": "success",
+      "chunks": 178,
+      "method": "docx_headings",
+      "chunker_tool": "DocxChunker (python-docx)"
+    },
+    {
+      "file": "2020_june_24_fairlending.pdf",
+      "status": "success",
+      "chunks": 38,
+      "method": "toc_based",
+      "chunker_tool": "PDFChunker (TOC)"
+    },
+    {
+      "file": "sr0701a2.pdf",
+      "status": "success",
+      "chunks": 5,
+      "method": "ai_reasoning",
+      "chunker_tool": "PDFChunker (AI)"
+    },
+    {
+      "file": "cfpb_1071_final_rule.pdf",
+      "status": "success",
+      "chunks": 862,
+      "method": "toc_based",
+      "chunker_tool": "PDFChunker (TOC)"
+    },
+    {
+      "file": "risk_management_manual_complete.pdf",
+      "status": "success",
+      "chunks": 1964,
+      "method": "toc_based",
+      "chunker_tool": "PDFChunker (TOC)"
+    },
+    {
+      "file": "sop_technical_updates_effective.pdf",
+      "status": "success",
+      "chunks": 190,
+      "method": "toc_based",
+      "chunker_tool": "PDFChunker (TOC)"
+    },
+    {
+      "file": "fil10082a.pdf",
+      "status": "success",
+      "chunks": 27,
+      "method": "toc_based",
+      "chunker_tool": "PDFChunker (TOC)"
+    },
+    {
+      "file": "pub_ch_commercial_real_estate.pdf",
+      "status": "success",
+      "chunks": 98,
+      "method": "toc_based",
+      "chunker_tool": "PDFChunker (TOC)"
+    },
+    {
+      "file": "bulletin_2013_9a.pdf",
+      "status": "success",
+      "chunks": 25,
+      "method": "ai_reasoning",
+      "chunker_tool": "PDFChunker (AI)"
+    }
+  ],
+  "chunk_size_stats": {
+    "min_words": 4,
+    "max_words": 2983,
+    "avg_words": 781,
+    "median_words": 737,
+    "sub_chunks_created": 35,
+    "merges_performed": 284
+  }
+}

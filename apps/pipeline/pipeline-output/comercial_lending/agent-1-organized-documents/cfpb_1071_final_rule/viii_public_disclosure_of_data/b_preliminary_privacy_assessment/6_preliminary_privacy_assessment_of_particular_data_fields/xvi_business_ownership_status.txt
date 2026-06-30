@@ -1,0 +1,85 @@
+# xvi. Business Ownership Status
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_715
+**Pages:** 707-708
+**Section Path:** VIII. Public Disclosure of Data > B. Preliminary Privacy Assessment > 6. Preliminary Privacy Assessment of Particular Data Fields > xvi. Business Ownership Status
+
+---
+
+707 has been in existence for less or more than two years. This change responds to commenter 
+concerns about complexity in collecting this data.  
+The NPRM explained that disclosing time in bu siness in unmodified form would likely 
+disclose minimal, if any, information about an applicant or related natural person that may be 
+harmful or sensitive if such person were re -identified, or that may be harmful or sensitive to an 
+identified financial ins titution. The Bureau did not see evidence that disclosure would permit the 
+reverse -engineering of proprietary lending models. In addition, i nformation about time in 
+business was likely to be publicly available for many businesses  in public registration filings  and 
+other sources, decreas ing any potential harm or sensit ivity from publishing this data. The Bureau 
+noted that these same data sources could enable an adversary to directly match the time in 
+business data field in unmodified form , particularly when combined with other fields.   
+The Bureau stated that if it were to modify  the time in business data field, it may consider 
+recoding time in business into bins —for example, using two - or five -year intervals . It would also 
+consider top-coding time in business at a value such as 25 years, given that larger values are 
+more likely to be unique. The Bureau specifically s ought  comment on what intervals the Bureau 
+should use if it were to recode time in business into bins and what value the Bureau should use if 
+it were to top -code this data field.  
+Several community group commenters and a group of State banking regulators  supported  
+unmodified disclosure of time in business in the dataset to facilitate  the fair lending purpose of 
+the statute . A few industry commenters expressed concern that publication of time in business 
+data could create re-identification  risks  for small business applicants and reputational harm for 
+financial institutions. In particular, one commenter agreed that time in business data could be combined with other data points to re -identify small business applicants.  With respect to 
+potential modification options, a trade association and a community group expressed support for either binning or top-coding.  The community group noted, howe ver, that a bin that ranged from 
+two to five years may be too long. The commenter also stated that a top-code of 25 years may be reasonable but urged the Bureau to conduct further analysis after it received the first year ’s data.  
+As discussed in part VIII. B.3, the Bureau views disclosure of time in business as having 
+significant benefits.  The Bureau also preliminary assesses that the availability of this data in 
+existing datasets decreases potential harm or sensit ivity of disclos ure if re-identification occurs, 
+but also increases the risk of re -identification risk. The Bureau will consider whether binning, 
+top-coding, or other modification techniques may be appropriate when it analyzes application -
+level data and conducts its full privacy analysis. Commenters did not explain how the disclosure 
+of the applicant ’s time in business could lead to reputational harms to financial institutions.  
+xvi. Business Ownership S tatus  
+Proposed § 1002.107(a)(18) and (19) would have require d financial institutions to collect 
+and report to the Bureau whether the applicant is a minority-owned business or a women -owned 
+business and whether minority-owned business status or women -owned business status is being 
+reported based on previously collected data pursuant  to proposed §  1002.107(c)(2).  As discussed 
+in the section -by-section analysis of §  1002.107(a)(18), the Bureau is finalizing the se data point s 
+with modifications. Specifically, it is finalizing  proposed § 1002.107(a)(18) and (19) as final
+
+708 § 1002.107(a)(18 ). In addition to the minority -owned and women -owned business statuses, the 
+final rule requires financial institutions to collect and report LGBTQI+ -owned business status.   
+The NPRM stated that publishing  demographic ownership status in unmodified form 
+would have  likely disclose d minimal, if any, information about an applicant or related natural 
+person that may be harmful or sensitive if such person were re -identified, or that may be harmful 
+or sensitive to an identified financial institution. While some applicants or related natural persons 
+may regard this information as harmful or sensitive, the Bureau believe d this information 
+generally would present low risk of harm or sensitivity. The Bureau also believe d that this 
+information already may be available t o the general public and would have relatively limited 
+utility for adversaries if an applicant or related natural person were re -identified.  
+However, the Bureau noted that in many cases  an adversary could have used women -
+owned or minority-owned business s tatus, in combination with other data, to match a section 
+1071 record to an identified publicly available record. The Bureau identified several sources that could have been used for such matching. W omen - and minority -ownership is likely to be 
+publicly available for many businesses  that publicly register or certify with the SBA or State or 
+local authorities as  women - or minority -owned . Businesses ’ websites may also provide this 
+information , and p rivate commercial databases also inc lude or estimate  this information .  
+The Bureau did not receive any comments on this aspect of its privacy analysis. This lack 
+of engagement suggests that the NPRM generally correctly assessed the privacy impacts that 
+disclosing women -owned and minority-owned business statuses  in the data in unmodified form 
+would have for  an applicant or related natural person if such person were re-identified . It also 
+suggests the Bureau generally correctly surmised there would be minimal, if any, harms or 
+sensitivities to financial institution s.  
+However, the Bureau received comments from several industry and individual 
+commenters on the Bureau ’s request for comment in proposed § 1002.107(a)(20) about whether 
+the Bureau should require financial institutions to ask separate questions regarding the sex, sexual orientation, and gender identity, of principal owners. As discussed below in part 
+VIII.B.6.xvii, a few commenters  urged the Bureau to not  collect or publish data on sexual 
+orientation and gender identity of principal own ers. T he commenters noted the significant risk of 
+harm to small business applicants  and related natural persons , due to the particularly sensitive 
+nature of this information if re-identification occurred.  
+The Bureau acknowledges that an individual ’s LGBTQI+ status likely is sensitive 
+personal information that could pose personal privacy risks as well as non-personal commercial 
+privacy risks. If re -identification occurred, its disclosure could pose risks to privacy interests of 
+small business owners. Accord ingly, while the Bureau views disclosure of business ownership 
+status as having significant disclosure benefits, the Bureau preliminarily assesses that disclosing this data may present significant privacy risks  if re-identification occurred. That is partic ularly so 
+as to LGBTQI+ -owned business status; in contrast, women -owned and minority-owned business 
+status information would present relatively limited privacy risk. The Bureau does not see 
+evidence that LGBTQI+ -owned status poses compelling privacy risks to financial institutions.

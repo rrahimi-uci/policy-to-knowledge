@@ -1,0 +1,230 @@
+# A3-3-02, Concurrent Servicing Transfers (05/01/2024)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_046
+**Pages:** 125-130
+**Section Path:** Part A, Doing Business with Fannie Mae > Subpart A3, Getting Started With Fannie Mae > Chapter A3-3, Third-Party Lending Functions and Servicing Arrangements > A3-3-02, Concurrent Servicing Transfers (05/01/2024)
+
+---
+
+Published March 4, 2026
+107Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2024-01 February 07, 2024
+ 
+A3-3-02, Concurrent Servicing Transfers (05/01/2024)
+Introduction
+This topic contains information on concurrent servicing transfers, including:
+Concurrent Servicing Transfers
+Servicer Eligibility Criteria
+Servicing Assignment Contract
+Notiﬁcation of Concurrent Servicing Transfers
+Termination of Concurrent Servicing Transfers
+Servicing Marketplace
+Servicer Eligibility Criteria for Servicing Marketplace
+Seller Eligibility Criteria for Servicing Marketplace
+Servicing Marketplace (SMP) Bifurcation Terms and Conditions
+Concurrent Servicing Transfers
+A concurrent servicing transfer (also known as a transfer of servicing concurrent with delivery) occurs when a
+selling lender transfers the servicing rights for a loan to a Fannie Mae–approved servicer at the same time it
+sells the loan to Fannie Mae. This is an “automatic” transfer because Fannie Mae’s prior approval of the
+transaction is not required.
+If the selling lender is servicing the loans prior to delivery and will not be servicing the loans after delivery, the
+selling lender may automatically transfer servicing to a lender that is eligible to service them for Fannie Mae,
+and has agreed to do so, eﬀective concurrently with delivery of the loans to Fannie Mae. The lender must notify
+Fannie Mae at the time of loan delivery that servicing has been transferred.
+Additionally, the selling lender may designate the servicing lender as Fannie Mae’s servicer for the loans by
+notifying Fannie Mae at the time of delivery if:
+the selling lender is not servicing the loans prior to delivery because it has contracted with another lender
+(the “servicing lender”) to service the loans for the selling lender;
+
+Published March 4, 2026
+108the selling lender will not be servicing the loans after delivery;
+the servicing lender is eligible to service the loans for Fannie Mae; and
+the servicing lender agrees to service the loans for Fannie Mae, which requires the contractual servicing
+relationship be with Fannie Mae instead of with the seller.
+If the servicing lender wants the contractual servicing relationship to be with the selling lender instead of with
+Fannie Mae, even after delivery of the loans to Fannie Mae, the selling lender must become Fannie Mae’s
+servicer (as “master servicer”), and the servicing lender must become a “subservicer.” (See A3-3-03, Other
+Servicing Arrangements , and the Servicing Guide.)
+A transfer of servicing that becomes eﬀective concurrent with delivery of the loans to Fannie Mae must be
+implemented in accordance with the requirements in the Servicing Guide .
+After Fannie Mae has purchased or securitized a loan, Fannie Mae must approve all subsequent assignments of
+servicing related to that loan before the servicing can be transferred. See the Servicing Guide  for additional
+requirements.
+Servicer Eligibility Criteria
+The transferee servicer must meet Fannie Mae’s eligibility criteria that apply to a lender that becomes Fannie
+Mae’s servicer in a post-delivery transfer of servicing as described in the Servicing Guide .
+Servicing Assignment Contract
+The servicing transfer agreement between the lender and the transferee servicer must provide (among other
+requirements) that:
+the eﬀective date for transfer of the servicing of the loans will be no later than the date Fannie Mae funds
+the whole loan delivery or issues the MBS;
+Fannie Mae may request and obtain (at any time) a copy of such agreement; and
+the agreement must provide, for the stated beneﬁt of Fannie Mae, that the transferee servicer, as of the
+eﬀective date:
+accepts the servicing portfolio and agrees to service the loans in accordance with all Fannie Mae
+requirements;
+assumes responsibility for all of the lender’s contractual obligations related to all servicing duties,
+obligations and responsibilities related to the loans that arose prior to the delivery of the loans to
+Fannie Mae;
+has performed due diligence review(s) of the servicing portfolio to its satisfaction, which includes
+examination of the books, records, and custodial accounts of the lender with respect to the
+servicing portfolio;
+assumes full responsibility to Fannie Mae for the correctness of such books and records; and
+represents and warrants that the provisions of any agreement between the servicer and any other
+party providing for servicing the loans will not continue after the date on which Fannie Mae funds
+
+Published March 4, 2026
+109the whole loan delivery or issues the MBS.
+By accepting a transfer of servicing, the transferee servicer agrees to the above matters and represents and
+warrants that they are correct (as applicable), even in those cases in which the contractual relationship between
+the lender and the transferee servicer is such that no agreement to assign the servicing is legally necessary at
+the time the loans are delivered to Fannie Mae.
+Further, by designating another lender as servicer of the loans on the applicable loan schedule, the lender
+represents and warrants that with respect to such loans:
+the servicer has agreed to the above matters and represents and warrants that they are correct (as
+applicable), and
+the provisions of any agreement between the lender and any other party providing for servicing of
+the loans will not continue after the date on which Fannie Mae funds the whole loan delivery or issues the
+MBS.
+However, the lender is not released from any liabilities to Fannie Mae with respect to the loans or the servicing
+of them prior to the delivery of the loans to Fannie Mae. The lender and the servicer will be jointly and severally
+liable to Fannie Mae for the obligations and liabilities related to the loans or the servicing of them that arise
+before delivery of the loans to Fannie Mae.
+In addition to the requirements of this section, a transfer of servicing that becomes eﬀective concurrent with
+delivery of the loans to Fannie Mae must be implemented in accordance with Fannie Mae’s requirements in the
+Servicing Guide .
+After Fannie Mae has purchased or securitized a loan, Fannie Mae must approve all subsequent assignments of
+servicing related to that loan before the servicing can be transferred.
+Notiﬁcation of Concurrent Servicing Transfers
+The lender must notify Fannie Mae of the transferee servicer by entering the transferee servicer's nine-digit
+Fannie Mae seller/servicer number into the Loan Delivery application.
+Termination of Concurrent Servicing Transfers
+If a concurrent servicing transfer does not meet Fannie Mae’s eligibility standards as stated in this Guide and in
+the Servicing Guide , Fannie Mae is entitled to terminate the transferee’s servicing with respect to the aﬀected
+loans in order to transfer servicing of the loans to another servicer, pursuant to Fannie Mae's rights under the
+MSSC. The lender is obligated for all losses incurred by Fannie Mae resulting from the lender’s designation of an
+ineligible servicer.
+For additional information about concurrent servicing transfers, see the Servicing Guide .
+Servicing Marketplace
+The Servicing Marketplace is a committing platform that provides a standardized process for sellers and
+
+Published March 4, 2026
+110servicers who engage in concurrent servicing transfer transactions. Seller and servicer obligations for loans sold
+and servicing acquired via the Servicing Marketplace will be bifurcated under the terms and conditions below.
+Servicer Eligibility Criteria for Servicing Marketplace
+The transferee servicer must:
+meet Fannie Mae’s eligibility criteria that apply to a lender that becomes Fannie Mae’s servicer in a post-
+delivery transfer of servicing as described in the Servicing Guide,  and
+obtain Fannie Mae's approval to participate in Servicing Marketplace. 
+See  A2-1-01, Contractual Obligations for Sellers/Servicers   for additional information.
+Seller Eligibility Criteria for Servicing Marketplace
+In order to be eligible as a seller for Servicing Marketplace, at a minimum, sellers must meet and maintain an
+Adjusted Net Worth, calculated in accordance with  A4-1-01, Maintaining Seller/Servicer Eligibility , of at least
+$2.5 million, plus an amount equal to the greater of:
+the sum of the following:
+0.25% of the Residential First Lien Mortgage Servicing UPB serviced for Fannie Mae and Freddie
+Mac, plus
+0.35% of the Residential First Lien Mortgage Servicing UPB serviced for Ginnie Mae, plus
+0.25% of the Other Servicing UPB, or
+0.25% of the UPB of whole loans purchased by Fannie Mae that were committed in the preceding 36
+months via Servicing Marketplace.
+The minimum Adjusted Net Worth does not include loans serviced under a subservicing arrangement - that is,
+for which the seller/servicer is contractually obligated to service for another servicer.
+If these minimum requirements are met, Fannie Mae may, but is not required to, approve and activate the seller
+for Servicing Marketplace. A seller may view whether it has seller access to Servicing Marketplace by logging
+into the Fannie Mae whole loan committing application. Fannie Mae, in its discretion at any time, may terminate
+a seller’s participation in Servicing Marketplace, which will be eﬀective immediately.
+Servicing Marketplace (SMP) Bifurcation Terms and Conditions
+Using SMP in Fannie Mae’s whole loan committing application, lenders may arrange for a concurrent sale of
+servicing to an approved Fannie Mae servicer. See C2-1.3-01, Servicing Marketplace , for additional information.
+A lender approved as a seller for SMP transactions is directly liable to Fannie Mae for the obligations and
+liabilities related to the SMP loans, including all selling representations and warranties required to be made by a
+seller, and for obligations and liabilities related to servicing of the SMP loans that arise before delivery of the
+loans to Fannie Mae. The servicer retained by the lender concurrent with Fannie Mae’s acquisition of the loan
+(and any transferee servicer to whom servicing rights and obligations with respect to an SMP loan have been
+transferred by the servicer with approval from Fannie Mae) is responsible for the servicing duties, obligations
+and responsibilities related to the loan that arise both prior to Fannie Mae’s acquisition of the loan and
+
+Published March 4, 2026
+111thereafter, but otherwise the servicer (and any transferee servicer as previously described in this paragraph)
+has no liability and is not responsible for breaches of any of the selling lender’s selling representations,
+warranties, obligations or liabilities related to the SMP loans. 
+The lender’s sale of SMP loans to Fannie Mae is subject to the following requirements:
+Upon the sale of a SMP loan to Fannie Mae, the lender makes all representations and warranties required
+to be made by a seller under this Selling Guide.
+The lender acknowledges and agrees that:
+Fannie Mae is entitled to enforce directly against the lender, and the lender is liable for, any and all
+remedies (including, without limitation, repurchase) for a breach of the lender’s obligations and
+liabilities related to the SMP loans. Fannie Mae is under no obligation to enforce or attempt to
+enforce any such remedies against the servicer.
+Without limiting the provisions of the Guides, the lender must resolve repurchase requests with
+respect to SMP loans within the time and manner required by the Servicing Guide . Failure to do so
+may result in termination of the lender’s approval to participate in SMP, as well as any other
+remedies Fannie Mae may elect to pursue.
+Notwithstanding anything to the contrary in the Lender Contract or any other agreement between the
+lender and Fannie Mae, by its sale of SMP loans to Fannie Mae, the lender:
+authorizes Fannie Mae to disclose from time to time to the applicable servicer any information (and
+any related assessments and analyses developed by Fannie Mae) that Fannie Mae may have
+concerning the lender (including, for example, information related to the lender’s ﬁnancial
+condition and relationship with Fannie Mae), the SMP loans, the servicing of SMP loans and related
+quality control reports, and waives any requirement that Fannie Mae maintain the conﬁdentiality of
+such information to the extent such requirement would otherwise prohibit such disclosure; and
+shall have no rights or claims against Fannie Mae in connection with such disclosure or transfer of
+information, and waives any and all claims arising out of or based upon the conﬁdential nature of
+such information.
+The lender acknowledges that Fannie Mae may, at its sole discretion:
+from time to time, amend or supplement Fannie Mae’s procedures and requirements for the
+purchase of SMP loans, by publishing such amendments or supplementary material in the Selling
+Guide  or in other written communications; and
+terminate the lender’s approval to participate in SMP by delivering notice to the lender at any time.
+The servicer of SMP loans sold to Fannie Mae is subject to the following requirements:
+The servicer must service all SMP loans in accordance with the requirements of the Servicing Guide .
+The servicer waives all rights of recourse against Fannie Mae regarding any sale, transfer or acceptance
+of SMP loan servicing.
+If the servicer desires to transfer servicing of any SMP loan, it must comply with the terms of the
+Servicing Guide  and clearly identify all such loans in its request for Fannie Mae's approval of a transfer of
+servicing.
+Fannie Mae is authorized to disclose from time to time to the applicable seller any information provided
+by the servicer concerning SMP loans, including any SMP loan servicing and quality control reports. The
+servicer waives any requirement that Fannie Mae maintain the conﬁdentiality of such information to the
+extent such requirement would otherwise prohibit such disclosure. In addition, the servicer agrees that it
+
+Published March 4, 2026
+112has no rights or claims against Fannie Mae in connection with such disclosure or transfer of information
+and waives all claims arising out of or based upon the conﬁdential nature of any such information.
+The servicer may be asked to provide to the applicable seller certain performance data relating to SMP
+loans which have experienced delinquency and for which there is an increased risk that Fannie Mae or a
+third party may seek repurchase or other remedies (At Risk loans).
+The servicer agrees that, in connection with any disclosure of performance data for At Risk loans it elects
+to provide to a seller:
+The servicer is solely responsible for performing (and has performed) its own analysis of, and
+determination that any disclosures of performance data are in compliance with the Gramm-Leach-
+Bliley Act privacy rules and other applicable legal requirements.
+In making disclosures of performance data, the servicer has not relied upon any representations or
+legal advice of Fannie Mae, whether oral or written, regarding compliance with privacy laws.
+The servicer may limit the seller's use of such data to improve its origination processes to prevent
+future fraud, risk control/estimation of potential repurchase, make whole or indemniﬁcation
+obligations in connection with such At Risk loans or such other purpose as the servicer deems
+appropriate.
+Fannie Mae, at its sole discretion, may:
+from time to time, amend or supplement Fannie Mae's procedures and requirements for the
+purchase of SMP loans, by publishing such amendments or supplementary material in this Guide or
+in other written communications; and
+terminate the servicer's approval to participate in SMP by delivering notice to the servicer at any
+time. The provisions of the Guides relating to SMP loans (including that the servicer has no liability
+and is not responsible for breaches of any of the selling lender's selling representations,
+warranties, obligations or liabilities related to the SMP loans) will survive termination of the
+servicer's participation in SMP but only as to SMP loans for which the servicer acquired the related
+loan servicing prior to the termination of its participation in SMP.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2024-03 May 01, 2024
+Announcement SEL-2023-07 August 02, 2023
+Announcement SEL-2023-02 March 01, 2023
+Announcement SEL- 2022-04 May 04, 2022
+Announcement SEL-2021-10 November 03, 2021
+Announcement SEL-2021-02 March 03, 2021

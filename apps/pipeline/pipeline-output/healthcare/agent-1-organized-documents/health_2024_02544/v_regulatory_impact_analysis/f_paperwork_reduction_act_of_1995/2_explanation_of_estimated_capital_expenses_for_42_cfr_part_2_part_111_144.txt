@@ -1,0 +1,46 @@
+# 2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 111/144)
+
+**Source:** health_2024_02544.pdf
+**Chunk ID:** health_2024_02544_028_sub_111
+**Pages:** 1-160
+**Section Path:** V. Regulatory Impact Analysis > F. Paperwork Reduction Act of 1995 > 2. Explanation of Estimated Capital Expenses for 42 CFR Part 2
+
+---
+
+12582 Federal Register / Vol. 89, No. 33 / Friday, February 16, 2024 / Rules and Regulations 
+324For example, a clinic that provides general 
+medical services, and has a unit specializing in 
+SUD treatment that is a part 2 program, would need to segregate its SUD records from other medical records, even for the same patient, to ensure that the SUD records are used and disclosed only as permitted by part 2. 
+325See 42 CFR 2.12(d)(2)(i)(C). 
+326See definition of ‘‘Patient identifying 
+information’’ in 42 CFR 2.11. See also definition of ‘‘Disclose’’ in 42 CFR 2.11. 
+327See 42 CFR 2.12(d)(2)(ii). 
+328Dennis McCarty, Traci Rieckmann, Robin L. 
+Baker, et al., ‘‘The Perceived Impact of 42 CFR part 2 on Coordination and Integration of Care: A Qualitative Analysis,’’ Psychiatric Services (Nov. 2016), https://doi.org/10.1176/appi.ps.201600138 . 
+329For example, the Ohio Behavioral Health 
+Providers Network (Network) in an August 21, 2020, letter to SAMHSA, and the Partnership to Amend Part 2 in a similar January 8, 2021, letter to the U.S. Department of Health and Human Services (HHS), both urge that there should be no requirement for data segmentation or segregation after written consent is obtained and part 2 records are transmitted to a health information exchange or care management entity that is a business associate of a covered entity covered by the new CARES Act consent language. In the letter, the Network states that such requirements are difficult to implement in 
+health centers and other integrated settings in which SUD treatment may be provided. See also public comments expressed and summarized in 85 FR 42986 (July 15, 2020); and see Letter from The Partnership to Amend 42 CFR part 2 to HHS Secretary Becerra (Jan. 8, 2021), https://aahd.us/wp- content/uploads/2021/01/ PartnershipRecommendationsforNextPart2-uleLtrtoNomineeBecerra_ 01082021.pdf. HIPAA Privacy Rule contribute to 
+ongoing operational compliance challenges. For example, under the previous rule, entities subject to part 2 must obtain prior written consent for most uses and disclosures of part 2 records, including for TPO, while the HIPAA Privacy Rule permits many uses and disclosures of PHI without authorization. Therefore, to comply with both sets of regulations, HIPAA covered entities subject to part 2 must track and segregate part 2 records from other health records (e.g., records that 
+are protected under the HIPAA regulations but not part 2).
+324 
+In addition, once PHI is disclosed to 
+an entity not covered by HIPAA, it is no longer protected by the HIPAA regulations. In contrast, part 2 strictly limits redisclosures of part 2 records by individuals or entities that receive a record directly from a part 2 program or other ‘‘lawful holder’’ of patient identifying information, absent written patient consent.
+325 326 Therefore, any 
+part 2 records received from a part 2 program or other lawful holder must be segregated or segmented from non-part 2 records.
+327The need to segment part 
+2 records from other health records created data ‘‘silos’’ that hamper the integration of SUD treatment records into entities’ electronic record systems 
+and billing processes, which in turn may impact the ability to integrate treatment for behavioral health conditions and other health conditions.
+328Many stakeholders, 
+including public commenters on the NPRM, have urged the Department to take action to eliminate the need for such data segmentation,
+329and the Department believes this final rule will reduce the need for data segmentation or tracking. Where segmentation may be necessary, we encourage the use of data standards adopted by ONC on behalf of HHS in 45 CFR part 170, subpart B, and referenced in the ONC Health IT Certification Program certification criteria for security labels and segmentation of sensitive health data. 
+Response to Public Comment 
+The Department requested public 
+comment on all aspects of the proposed 
+amendments to the regulations at 42 CFR part 2, Confidentiality of Substance Use Disorder Patient Records. Seventy- two commenters, both individuals and organizations, offered views on various aspects related to the Regulatory Impact Analysis (RIA). 
+Comments from organizations who 
+expressed support for specific issues in the NPRM pointed to a decrease in the administrative burden and cost on providers, an increase in access to care, a decrease in costs for patients, and a general improvement in communication within the industry. One organization suggested that the changes in the rule will allow for streamlining care by decreasing the number of times the provider must ask for consent from the patient. Another organization asserted that the proposed rule changes could help minimize the stigma surrounding SUD treatment and help decrease the technical burdens that the previous rules have caused. 
+Organizations and government 
+entities who expressed opposition to specific issues in the NPRM asserted that the changes would increase costs and legal liability for both patients and providers, decrease the quality of care, create additional administrative and technical burdens, and be overly time consuming to follow. A government organization asserted that most current electronic health care record systems do not have the ability to give accountings of TPO disclosures, which would force the entities using these systems to manually process the information. This is a burdensome and time-consuming task, according to the organization, as the entities may have to account for disclosures for the previous six years. An organization argued that due to differences in Patient Notice requirements for part 2 and HIPAA, there may be different language for each privacy notice. Multiple organizations asserted that changing the language of the privacy notices is expensive, especially for larger organizations. One organization suggested that the expanded requirement to provide TPO accounting will lead to changes in the health care system and increased costs for patients. Another organization argued that the separation of part 2 data will lead to delays in care and threats to patient health as providers may not be able to see a patient’s full medical history, which is necessary to give adequate care. One commenter argued that the proposed change could weaken patient privacy and lead to the information being misused in criminal investigations and court proceedings. This change also may put an additional burden on providers to counsel patients on the ethical and constitutional considerations that will go into signing the form. 
+Organizations and government 
+entities who expressed mixed views on the issues discussed in the excerpts change agreed with the need for the rule change and the general change itself but provided additional comments on concerns related to specific topics such as TPO disclosures and notices of privacy protections. One organization argued that HHS should take into consideration the time and costs associated with updating changes to the accounting of disclosures requirement and the timeframe to implement these changes. Another organization requested that accounting for TPO disclosures be delayed until regulations pursuant to the HITECH Act are enacted. This commenter asserted that applying the accounting requirement only to TPO disclosures made through an electronic health care record creates a disincentive to adopt electronic health care records, especially for small and rural providers and those serving patients of color and other historically underserved communities. Multiple organizations argued that if discrepancies exist between part 2 and HIPAA, there may be administrative burdens surrounding data segregation. Due to this part 2 and HIPAA need to be aligned as much as possible to minimize impediments to critical care. One organization believed that it is unnecessary for part 2 to include providing a copy of a patient’s consent and imposing retention periods on maintaining those consents since other laws, such as HIPAA, CMS regulations, and state licensing requirements already cover these requirements. 
+VerDate Sep<11>2014 18:41 Feb 15, 2024 Jkt 262001 PO 00000 Frm 00112 Fmt 4701 Sfmt 4700 E:\FR\FM\16FER2.SGM 16FER2lotter on DSK11XQN23PROD with RULES2

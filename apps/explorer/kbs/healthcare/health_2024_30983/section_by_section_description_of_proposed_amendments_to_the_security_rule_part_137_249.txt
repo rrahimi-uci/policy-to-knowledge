@@ -1,0 +1,22 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 137/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_137
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+696 
+The Security Rule does not identify a specific type of access control method or technology to deploy, nor are we proposing to do so in this rule.
+697As 
+discussed above, access rights should be role-based and the technical controls should assist the regulated entity in implementing such policies and procedures. For example, workforce members responsible for monitoring and administering a regulated entity’s relevant electronic information systems, such as someone responsible for cybersecurity or providing technical support to users, must only have access to ePHI and to the regulated entity’s relevant electronic information systems as appropriate for their role and job function. 
+We also propose at 45 CFR 
+164.312(a)(1) to add a paragraph heading to clarify the organization of the regulatory text. 
+The Department proposes to modify 
+the existing implementation specifications under the standard for access control and to add five new implementation specifications. Additionally, we propose to redesignate the implementation specification for encryption and decryption as a standard. 
+We propose to modify the 
+implementation specification for unique user identification at 45 CFR 164.312(a)(2)(i) by renaming the implementation specification as ‘‘Unique identification’’ and adding a requirement to assign a unique identifier for tracking each technology asset. These proposed modifications would clarify for regulated entities that the purpose of this requirement is to enable a regulated entity to identify and track unauthorized activity in its relevant electronic information systems. Such unauthorized activity may include activity by unauthorized persons or technology assets. It may also include activity by persons who are authorized to access the regulated entity’s relevant information systems but who access ePHI that they do not need to access for their job or function. 
+The Department also proposes to 
+expand the types of identifiers a regulated entity may assign to users and technology assets beyond names to include numbers and/or other identifiers and to clarify that a unique identifier must be assigned to each user and technology asset in the regulated entity’s relevant electronic information systems. This proposed modification would better meet the goals of this implementation specification by requiring a regulated entity to be able to discern and track activities among all users and technology assets, regardless of whether that user or technology asset is a person, hardware, software program, or device. The proposed implementation specification for unique identification aligns with the Department’s essential CPG for Unique Credentials, which calls for regulated entities to use unique credentials to 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00069 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

@@ -1,0 +1,36 @@
+# Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 161/289)
+
+**Source:** health_2024_02544.pdf
+**Chunk ID:** health_2024_02544_028_sub_161
+**Pages:** 1-160
+**Section Path:** Regulatory Impact Analysis > Paperwork Reduction Act of 1995 > Explanation of Estimated Capital Expenses for 42 CFR Part 2
+
+---
+
+12552 Federal Register / Vol. 89, No. 33 / Friday, February 16, 2024 / Rules and Regulations 
+Response 
+We appreciate the comments and 
+information provided about the consent 
+revocation process, particularly when it occurs in an HIE environment. We reaffirm the statement in the NPRM preamble that revocation does not require pulling back records that have been disclosed and do not believe it is necessary to so state in regulatory text. 
+Comment 
+Several commenters recommended 
+that HIEs be informed when a patient 
+revokes consent, including an HIE association, health IT vendors, and a state government agency. One health IT vendor explained that consent revocation mechanisms may be implemented through the Trusted Exchange Framework when made by HIEs and HINs. The vendor asserted that most HIEs already receive notice of revocation when they use a model of exchange in which a potential recipient seeks medical records from another exchange participant and the current status of a patient’s consent permission to have their records exchanged is known, including whether a patient has revoked consent. A health plan requested that recipients should be notified so they can stop redisclosing information they already received based on consent. 
+One commenter asserted that the 
+existing pathways for complying with a more granular consent (e.g., that is 
+specific to a certain recipient or purpose) should remain available and that HIEs should be informed about changes to consent for disclosures made through the HIE. This commenter recommended that the Department explore further how HIEs learn of the consent status, whether it means that the HIE must directly record the status of a revocation or if the HIE relies on some kind of electronic ‘‘polling’’ of the part 2 program to ascertain if a valid consent remains or has been revoked. 
+In contrast, a behavioral health 
+network/HIE opposed requiring notice of revocation to an HIE, opining that it is not necessary because—under the CARES Act—once part 2 records are disclosed to a covered entity or business associate they are no longer part 2 records. As such, the commenter stated, the records can be redisclosed without limitation under part 2 even after a part 2 consent to disclose has been revoked. 
+Response 
+We appreciate these comments, which 
+provided perspectives on how consent 
+and revocation are communicated through an electronic health exchange. We disagree with the view that once 
+records are disclosed they are no longer part 2 records. Once received by a covered entity or business associate, the part 2 records are also PHI but, under this final rule, do not have to be segregated or segmented from other PHI. However, the records remain subject to the part 2 prohibitions against uses and disclosures for certain proceedings against a patient without written consent or a court order under this part. We agree that programs should convey to recipients when a consent is provided and, where feasible, when it has been revoked. This effort should include using whatever tools are at the disposal of the program to ensure that only consented information is exchanged. 
+While we appreciate the comments 
+stating that HIEs are able to operationalize a requirement to provide notice of revocation, we are concerned about the burdens that would apply to all programs if we imposed a requirement that programs ‘‘must’’ notify recipients upon consent revocation. Thus, while we are finalizing additional requirements for a copy of consent to travel with each disclosure of records for which consent is required, we decline to adopt a requirement for programs to notify recipients of records of each revocation. The new requirement to attach a copy of consent is discussed under § 2.32 (Notice and copy of consent to accompany disclosure). Regarding revocation, we intend for programs to convey to recipients when a patient has provided written revocation where feasible. When the records have been disclosed through an HIE, the mechanism for informing recipients of a revocation would likely depend on the consent model used by the HIE. But our 
+expectation is that all programs make efforts to initiate actions needed to accomplish the notification and to give full effect to the patient right to revoke consent as stated in the Patient Notice. 
+Consistent with the recommendation 
+of one commenter to explore further how HIEs learn of the consent status, we intend to monitor how provision of notice of revocation could work across all types of entities, including in a fully electronic environment such as an HIE, but also for stand-alone systems and paper-based exchanges. 
+Comment 
+A health information association 
+recommended requiring programs to

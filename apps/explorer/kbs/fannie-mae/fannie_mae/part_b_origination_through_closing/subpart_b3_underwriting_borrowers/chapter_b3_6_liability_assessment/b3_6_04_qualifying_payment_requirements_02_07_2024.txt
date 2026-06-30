@@ -1,0 +1,74 @@
+# B3-6-04, Qualifying Payment Requirements (02/07/2024)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_247
+**Pages:** 520-521
+**Section Path:** Part B, Origination Through Closing > Subpart B3, Underwriting Borrowers > Chapter B3-6, Liability Assessment > B3-6-04, Qualifying Payment Requirements (02/07/2024)
+
+---
+
+Published March 4, 2026
+502Announcements Issue Date
+Announcement SEL-2020-02 April 01, 2020
+Announcement SEL-2020-01 February 05, 2020
+Announcement SEL-2019-09 December 04, 2019
+ 
+B3-6-04, Qualifying Payment Requirements (02/07/2024)
+Introduction
+This topic contains information on determining the borrower’s monthly PITIA used for qualifying purposes,
+including:
+Qualifying Payment Amount
+Additional Information About ARM Qualifying for DU Loan Caseﬁles
+Qualifying Payment Amount
+The calculation of the qualifying payment amount for the subject property will diﬀer based on the transaction
+type (as shown in the following table). For all loans, the qualifying rate is based on the original loan amount and
+the loan amortization term.
+These policies apply to both manually underwritten loans and DU loan caseﬁles. In all cases, qualiﬁcation must
+consider the borrower's current obligations and other mortgage-related obligations, e.g. PITIA.
+Loans subject to temporary interest rate buydowns must be qualiﬁed without consideration of the bought-down
+rate, based on the transaction type below.
+Qualifying Interest Rate Requirements
+Transaction Type DU and Manual Underwriting
+Fixed-rate mortgages Note rate
+
+Published March 4, 2026
+503Qualifying Interest Rate Requirements
+Transaction Type DU and Manual Underwriting
+ARMs with initial ﬁxed-rate period of three years
+or lessThe maximum interest rate that could apply during
+the ﬁrst ﬁve years after the ﬁrst payment is due.
+ARMs with initial ﬁxed-rate period of ﬁve yearsGreater of
+• the maximum rate that could apply during the ﬁrst
+ﬁve years after the ﬁrst payment date (note rate
+plus ﬁrst rate change cap), or
+• the fully indexed rate
+ARMs with an initial ﬁxed-rate period of greater
+than ﬁve years• No less than note rate
+Exception: Greater of the note rate or the fully
+indexed rate for loans that are higher-priced
+mortgage loans or higher-priced covered
+transactions under Regulation Z. If the fully indexed
+rate is higher, the loan must be manually
+underwritten.
+Additional Information About ARM Qualifying for DU Loan Caseﬁles
+For DU loan caseﬁles, the fully indexed rate is deﬁned as the index plus the margin as entered in the online loan
+application. The index and margin are required for all ARM loans submitted to DU.
+The following table describes how DU applies the qualifying interest rate requirements based on the DU ARM
+Plan that is submitted in the online loan application.
+ARM Type (Initial Adjustment Period) DU ARM Plan Standard Index Type DU Qualifying Rate
+1-Year ARMs (12 months) FM GENERIC, 1 YR, 1% ANNUAL Cap NA Note rate plus 5%
+1-Year ARMs (12 months) FM GENERIC, 1 YR, 2% ANNUAL Cap NA Note rate plus 6%
+3-Year ARMs (36 months) FM GENERIC, 3 YR 3 year SOFR (2/1/5) Note rate plus 5%
+5-Year ARMs (60 months) FM GENERIC, 5 YR 5 year SOFR (2/1/5) Greater of fully indexed rate or note rate plus 2%
+7 and 10-Year ARMs (84 and 120 months respectively)FM GENERIC, 7 YR
+FM GENERIC, 10 YR7 year SOFR (5/1/5)
+10 year SOFR (5/1/5)Note rate
+AnySubmission of an ARM plan number
+that is not recognized by DU
+(referred to as "Lender ARM Plan")NA• Qualifying rate entered in the ARM Qualifying Rate ﬁeld in DU
+• For ARMs with an initial ﬁxed rate period greater than ﬁve years, if the lender wants to use an interest rate higher than the note rate to qualify the
+borrower, the higher rate must be entered in the ARM Qualifying Rate ﬁeld in DU and the Lender ARM Plan must be used. 
+• If the ARM Qualifying Rate ﬁeld is not entered, DU will use the note rate plus 5%
+ 
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.

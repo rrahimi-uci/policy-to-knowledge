@@ -1,0 +1,2480 @@
+{
+  "metadata": {
+    "operation": "CONTRADICTIONS",
+    "description": "Conflicting rules between fannie_mae and freddie_mac",
+    "g1_name": "fannie_mae",
+    "g2_name": "freddie_mac",
+    "generated_at": "2026-06-29T15:46:17.910095"
+  },
+  "contradictions": [
+    {
+      "contradiction_id": "CONFLICT_BR_SUBJECT_PROPERTY_ELIGIBILITY_010_003_BR_MULTIFAMILY_PROPERTY_ELIGIBILITY_011_002",
+      "conflict_type": "UNKNOWN",
+      "confidence": 0.74,
+      "reasoning": "Both address zoning/building code compliance, but Fannie permits legal nonconforming (grandfathered) use if appraisal analyzes impacts, whereas Freddie requires the property to conform to all applicable zoning/use laws and codes\u2014potentially disallowing legal nonconforming cases.",
+      "conflict_detail": {},
+      "g1_rule": {
+        "source": "fannie_mae",
+        "rule": {
+          "rule_id": "BR_SUBJECT_PROPERTY_ELIGIBILITY_010_003",
+          "rule_name": "Improvements must be legal conforming use with 0 illegal use",
+          "rule_type": "eligibility",
+          "description": "Fannie Mae will only purchase or securitize loans if the property improvements constitute a legal conforming use of the land. A property that is a legal nonconforming (grandfathered) use may be eligible only if the appraisal analysis reflects any adverse effect the nonconforming use has on the value and marketability of the property. This applies to all property types.",
+          "conditions": "Applies when appraisal identifies zoning use as conforming or nonconforming.",
+          "consequences": "Meets: property eligible; Violated: loan ineligible for purchase/securitization.",
+          "exceptions": "Legal nonconforming use permitted if appraisal reflects adverse effect on value/marketability.",
+          "source_reference": {
+            "chunk_path": "fannie_mae/part_b_origination_through_closing/subpart_b4_underwriting_property/chapter_b4_1_property_assessment_and_valuation/section_b4_1_3_appraisal_report_assessment/b4_1_3_04_site_section_of_the_appraisal_report_06_04_2025.txt",
+            "section_id": "B4-1.3-04, Subject Property Zoning",
+            "start_word_position": 371,
+            "end_word_position": 442,
+            "source_text": "Fannie Mae only purchases or securitizes loans on properties if the improvements constitute a legal conforming use of the land. However, Fannie Mae will purchase or securitizes a loan for a property that constitutes a legal, nonconforming use of the land provided that the appraisal analysis reflects any adverse effect that the nonconforming use has on the value and the marketability of the property. This requirement applies to all property types.",
+            "text_match_score": 0.893
+          },
+          "mandatory": true,
+          "examples": [
+            "Home is legal conforming use under R-1 zoning\u2014eligible assuming other requirements met.",
+            "Home is legal nonconforming due to updated zoning; appraisal analyzes marketability/value impact\u2014eligible if adverse effects are reflected.",
+            "Home is an illegal use under zoning\u2014fails legal conforming requirement; loan ineligible."
+          ],
+          "effective_date": "2025-06-04",
+          "expiration_date": null,
+          "superseded_by": null,
+          "jurisdiction": "agency:EXAMPLE_POLICIES",
+          "risk_level": "critical",
+          "related_rules": [],
+          "enforcement_action": "Loan ineligible for purchase/securitization",
+          "applicability_scope": {
+            "loan_types": [
+              "conventional"
+            ],
+            "occupancy_types": [
+              "primary_residence",
+              "second_home",
+              "investment"
+            ],
+            "transaction_types": [
+              "purchase",
+              "rate_term_refinance",
+              "cash_out_refinance"
+            ]
+          },
+          "data_points_required": [
+            "property_address",
+            "zoning_class",
+            "zoning_use_status",
+            "appraisal_comments_zoning",
+            "marketability_impact_analysis_indicator"
+          ],
+          "audit_frequency": "at_origination",
+          "confidence_score": 82.9,
+          "confidence_breakdown": {
+            "extraction_clarity": 98,
+            "numeric_precision": 40,
+            "context_completeness": 95,
+            "source_authority": 100,
+            "logical_consistency": 95
+          },
+          "extraction_notes": "Clear purchase eligibility standard; numeric precision limited because rule is categorical.",
+          "reference_verified": true,
+          "reference_verification_note": "ok_recovered_position",
+          "entity_or_relationship": "SUBJECT_PROPERTY",
+          "entity_type": "entity",
+          "entity_definition": {
+            "description": "",
+            "key_attributes": [],
+            "examples": [
+              "One-unit single-family detached primary residence",
+              "Condominium unit in an eligible project",
+              "Property affected by a declared disaster requiring additional review"
+            ]
+          },
+          "dependencies": [
+            {
+              "depends_on_rule": "BR_SUBJECT_PROPERTY_PROHIBITION_010_004",
+              "dependency_type": "override",
+              "rationale": "A property may be a legal conforming or legal nonconforming use (and otherwise eligible under BR_SUBJECT_PROPERTY_ELIGIBILITY_010_003), yet still be prohibited if land-use regulations prevent reconstruction/maintenance after damage. In that trigger condition, the prohibition controls the final eligibility decision.",
+              "impact_if_fails": "If the prohibition is not applied, the lender may deliver a loan on collateral Fannie Mae will not purchase, resulting in a hard eligibility failure and potential repurchase exposure.",
+              "strength": 4
+            }
+          ],
+          "dependent_rules": [
+            {
+              "dependent_rule": "BR_LENDER_CONTRACT_CONSTRAINT_002_007",
+              "dependency_type": "prerequisite"
+            }
+          ],
+          "provenance": {
+            "operation": "CONTRADICTION",
+            "sources": [
+              "fannie_mae"
+            ],
+            "original_ids": {
+              "fannie_mae": "BR_SUBJECT_PROPERTY_ELIGIBILITY_010_003"
+            }
+          }
+        }
+      },
+      "g2_rule": {
+        "source": "freddie_mac",
+        "rule": {
+          "rule_id": "BR_MULTIFAMILY_PROPERTY_ELIGIBILITY_011_002",
+          "rule_name": "Zoning and Building Code Conformity Required",
+          "rule_type": "eligibility",
+          "description": "For a Mortgage to be eligible for purchase by Freddie Mac, the Property securing it must conform to all applicable zoning, subdivision and use laws, ordinances or codes and local building and housing codes.",
+          "conditions": "Applies to any Property securing a Mortgage delivered for purchase",
+          "consequences": "If conforming, property is eligible; if not conforming, loan may be ineligible",
+          "exceptions": "None stated in this subsection",
+          "source_reference": {
+            "chunk_path": "freddies_mac/property_borrower_and_credit_underwriting_chs_8_11/08_prop_fundamentals_gb_04_21_26/8_4_occupancy_02_07_05_8_5_zoning_and_building_code_conformity_04_15_21.txt",
+            "section_id": "8.5(a)",
+            "start_word_position": 307,
+            "end_word_position": 350,
+            "source_text": "8.5 Zoning and building code conformity ( 04/15/21) a. For a Mortgage to be eligible for purchase by Freddie Mac, the Property securing it must conform to all applicable zoning, subdivision and use laws, ordinances or codes and local building and housing codes.",
+            "text_match_score": 0.968
+          },
+          "mandatory": true,
+          "examples": [
+            "Property has a current certificate of occupancy and no zoning/building violations on record; meets conformity requirement.",
+            "Municipal records show an open building code violation for illegal unit conversions; property does not conform and loan may be ineligible until cured.",
+            "Property use is not permitted under current zoning (no legal nonconforming status documented); fails eligibility."
+          ],
+          "confidence_score": 70.25,
+          "confidence_breakdown": {
+            "extraction_clarity": 95,
+            "numeric_precision": 0,
+            "context_completeness": 90,
+            "source_authority": 95,
+            "logical_consistency": 95
+          },
+          "requires_review": false,
+          "effective_date": "2021-04-15",
+          "expiration_date": null,
+          "superseded_by": null,
+          "jurisdiction": "agency:EXAMPLE_POLICIES",
+          "risk_level": "critical",
+          "related_rules": [
+            "BR_MULTIFAMILY_PROPERTY_DOCUMENTATION_011_003"
+          ],
+          "enforcement_action": "Purchase ineligibility",
+          "applicability_scope": {
+            "loan_types": [
+              "conventional"
+            ],
+            "occupancy_types": [
+              "investment"
+            ],
+            "transaction_types": [
+              "purchase",
+              "rate_term_refinance",
+              "cash_out_refinance"
+            ]
+          },
+          "data_points_required": [
+            "property_zoning_compliance_indicator",
+            "building_code_compliance_indicator",
+            "open_violations_count",
+            "certificate_of_occupancy_status"
+          ],
+          "audit_frequency": "at_origination",
+          "reference_verified": true,
+          "reference_verification_note": "ok_recovered_position",
+          "entity_or_relationship": "MULTIFAMILY_PROPERTY",
+          "entity_type": "entity",
+          "entity_definition": {
+            "description": "",
+            "key_attributes": [],
+            "examples": [
+              "200-unit garden-style apartment community in Texas",
+              "Mixed-use property with residential units above retail space",
+              "Affordable housing property with regulatory restrictions"
+            ]
+          },
+          "provenance": {
+            "operation": "CONTRADICTION",
+            "sources": [
+              "freddie_mac"
+            ],
+            "original_ids": {
+              "freddie_mac": "BR_MULTIFAMILY_PROPERTY_ELIGIBILITY_011_002"
+            }
+          }
+        }
+      },
+      "rule_behavior": "threshold"
+    },
+    {
+      "contradiction_id": "CONFLICT_BR_SUBJECT_PROPERTY_CONSTRAINT_023_001_BR_HAZARD_INSURANCE_POLICY_CONSTRAINT_014_010",
+      "conflict_type": "UNKNOWN",
+      "confidence": 0.78,
+      "reasoning": "Both limit deductibles when insurance is required. Rule A caps deductibles at 5% of coverage amount. Rule B allows earthquake deductibles up to 7.5% of TIV (and various dollar caps). The percentage caps conflict (5% vs 7.5%).",
+      "conflict_detail": {},
+      "g1_rule": {
+        "source": "fannie_mae",
+        "rule": {
+          "rule_id": "BR_SUBJECT_PROPERTY_CONSTRAINT_023_001",
+          "rule_name": "Property Insurance Deductible Maximum 5% Limit",
+          "rule_type": "constraint",
+          "description": "For required property insurance perils, the maximum allowable deductible is 5% of the property insurance coverage amount. If a policy has multiple deductibles (e.g., separate windstorm deductible and separate roof deductible), the total deductible amount applicable to a single occurrence must not exceed 5% of the property insurance coverage amount.",
+          "conditions": "When evaluating required property insurance deductibles for the subject property",
+          "consequences": "Meets: deductible acceptable; Violates: coverage unacceptable; obtain compliant policy or risk ineligibility",
+          "exceptions": "None stated",
+          "source_reference": {
+            "chunk_path": "fannie_mae/part_b_origination_through_closing/subpart_b7_insurance/chapter_b7_3_property_and_flood_insurance/b7_3_03_master_property_insurance_requirements_for_project_developments_02_07_2024.txt",
+            "section_id": "B7-3-03, Deductible Requirements",
+            "start_word_position": 78,
+            "end_word_position": 128,
+            "source_text": "The maximum allowable deductible for all required property insurance perils for one-to four-unit properties is 5% of the property insurance coverage amount. When a property insurance policy includes multiple deductibles, such as a separate deductible that applies to windstorms, or a separate deductible that applies to a speci\ufb01c property element such as the roof, the total amount for such deductibles applicable to a single occurrence must be no greater than 5% of the property insurance coverage amount.",
+            "text_match_score": 0.322
+          },
+          "mandatory": true,
+          "examples": [
+            "Coverage amount $400,000: max deductible per occurrence is $20,000 (5%); a $25,000 wind deductible is not acceptable.",
+            "Policy has $10,000 wind deductible and $12,000 roof deductible; if both can apply to one storm, total $22,000 must be \u2264 5% of coverage.",
+            "Coverage $250,000: a single $12,500 deductible (5%) is acceptable if all required perils are otherwise covered."
+          ],
+          "effective_date": null,
+          "expiration_date": null,
+          "superseded_by": null,
+          "jurisdiction": "agency:SAMPLE_GUIDELINES",
+          "risk_level": "high",
+          "related_rules": [],
+          "enforcement_action": "Loan ineligible for delivery / potential repurchase demand",
+          "applicability_scope": {
+            "loan_types": [
+              "conventional"
+            ],
+            "occupancy_types": [
+              "primary_residence",
+              "second_home",
+              "investment"
+            ],
+            "transaction_types": [
+              "purchase",
+              "rate_term_refinance",
+              "cash_out_refinance"
+            ]
+          },
+          "data_points_required": [
+            "property_type",
+            "project_type",
+            "property_insurance_coverage_amount",
+            "policy_deductible_amounts"
+          ],
+          "audit_frequency": "at_origination",
+          "confidence_score": 95.75,
+          "confidence_breakdown": {
+            "extraction_clarity": 98,
+            "numeric_precision": 100,
+            "context_completeness": 88,
+            "source_authority": 95,
+            "logical_consistency": 95
+          },
+          "reference_verified": true,
+          "reference_verification_note": "ok",
+          "entity_or_relationship": "SUBJECT_PROPERTY",
+          "entity_type": "entity",
+          "entity_definition": {
+            "description": "",
+            "key_attributes": [],
+            "examples": [
+              "One-unit single-family detached primary residence",
+              "Condominium unit in an eligible project",
+              "Property affected by a declared disaster requiring additional review"
+            ]
+          },
+          "provenance": {
+            "operation": "CONTRADICTION",
+            "sources": [
+              "fannie_mae"
+            ],
+            "original_ids": {
+              "fannie_mae": "BR_SUBJECT_PROPERTY_CONSTRAINT_023_001"
+            }
+          }
+        }
+      },
+      "g2_rule": {
+        "source": "freddie_mac",
+        "rule": {
+          "rule_id": "BR_HAZARD_INSURANCE_POLICY_CONSTRAINT_014_010",
+          "rule_name": "Earthquake Deductibles Capped at $50k, $100k, or 7.5% of TIV",
+          "rule_type": "constraint",
+          "description": "When earthquake insurance is required, the maximum allowable deductible depends on limit type and expression. For Specific Insurance Limits: if the Insurable Value (IV) is less than $10 million, maximum deductible is $50,000; if IV is at least $10 million, maximum deductible is $100,000. If expressed as a percentage, the deductible is 7.5% of the subject property\u2019s Total Insurable Value (TIV), with a stated minimum not to exceed $100,000. For Blanket Insurance Limits: if expressed as a dollar amount, deductible is $250,000; if expressed as a percentage, deductible is 7.5% of TIV with a stated minimum not to exceed $250,000.",
+          "conditions": "Applies when Freddie Mac requires earthquake insurance under Chapter 31.9",
+          "consequences": "If deductible within caps, policy is compliant; if above caps, insurance is noncompliant",
+          "exceptions": "None stated",
+          "source_reference": {
+            "chunk_path": "freddies_mac/title_insurance_final_delivery_warehousing_and_file_retention_chs_29_35/31_insurance_reqs_gb_12_16_25/31_9_earthquake_insurance_12_16_25/a_earthquake_terms_used_in_this_chapter_12_15_22_b_earthquake_insurance_requirements_12_16_25.txt",
+            "section_id": "31.9(b)(2) Earthquake deductibles (12/16/25)",
+            "start_word_position": 1141,
+            "end_word_position": 1208,
+            "source_text": "For Specific Insurance Limits: When expressed as a dollar amount: IV of the Property Maximum deductible < $10 million $50,000 \u2265 $10 million $100,000 When expressed as a percentage, 7.5 percent of the subject property\u2019s TIV, with a stated minimum not to exceed $100,000 For Blanket Insurance Limits: When expressed as a dollar amount, $250,000 When expressed as a percentage, 7.5 percent of the subject property\u2019s TIV, with a stated minimum not to exceed $250,000",
+            "text_match_score": 0.901
+          },
+          "mandatory": true,
+          "examples": [
+            "Specific limit policy on a building with IV of $9,500,000 uses a $60,000 deductible: noncompliant because max is $50,000.",
+            "Specific limit policy with IV of $12,000,000 uses a $100,000 deductible: compliant (does not exceed $100,000 cap).",
+            "Blanket policy uses 7.5% of TIV with a stated minimum of $300,000: noncompliant because the stated minimum may not exceed $250,000."
+          ],
+          "confidence_score": 95.65,
+          "confidence_breakdown": {
+            "extraction_clarity": 95,
+            "numeric_precision": 100,
+            "context_completeness": 92,
+            "source_authority": 95,
+            "logical_consistency": 95
+          },
+          "effective_date": "2025-12-16",
+          "expiration_date": null,
+          "superseded_by": null,
+          "jurisdiction": "agency:EXAMPLE_POLICIES",
+          "risk_level": "high",
+          "related_rules": [
+            "BR_MULTIFAMILY_PROPERTY_ELIGIBILITY_014_009"
+          ],
+          "enforcement_action": "N/A",
+          "applicability_scope": {
+            "loan_types": [
+              "conventional"
+            ],
+            "occupancy_types": [
+              "investment"
+            ],
+            "transaction_types": [
+              "purchase",
+              "rate_term_refinance"
+            ]
+          },
+          "data_points_required": [
+            "earthquake_policy_limit_type",
+            "insurable_value_amount",
+            "total_insurable_value_amount",
+            "deductible_amount",
+            "deductible_percent",
+            "stated_minimum_deductible_amount"
+          ],
+          "audit_frequency": "at_origination",
+          "reference_verified": true,
+          "reference_verification_note": "ok_recovered_position",
+          "entity_or_relationship": "HAZARD_INSURANCE_POLICY",
+          "entity_type": "entity",
+          "entity_definition": {
+            "description": "",
+            "key_attributes": [],
+            "examples": [
+              "Property hazard policy with Freddie Mac named as mortgagee/loss payee",
+              "Insurance renewal evidence provided prior to policy expiration",
+              "Policy change increasing deductible beyond permitted limits"
+            ]
+          },
+          "provenance": {
+            "operation": "CONTRADICTION",
+            "sources": [
+              "freddie_mac"
+            ],
+            "original_ids": {
+              "freddie_mac": "BR_HAZARD_INSURANCE_POLICY_CONSTRAINT_014_010"
+            }
+          }
+        }
+      },
+      "rule_behavior": "threshold"
+    },
+    {
+      "contradiction_id": "CONFLICT_BR_SUBJECT_PROPERTY_CONSTRAINT_023_001_BR_HAZARD_INSURANCE_POLICY_CONSTRAINT_020_003",
+      "conflict_type": "UNKNOWN",
+      "confidence": 0.7,
+      "reasoning": "Both impose maximum per-occurrence deductibles for property damage (All-Risk). Rule A uses a 5% of coverage cap; Rule B uses fixed dollar caps ($50k/$100k/$250k). These different caps can produce different pass/fail outcomes.",
+      "conflict_detail": {},
+      "g1_rule": {
+        "source": "fannie_mae",
+        "rule": {
+          "rule_id": "BR_SUBJECT_PROPERTY_CONSTRAINT_023_001",
+          "rule_name": "Property Insurance Deductible Maximum 5% Limit",
+          "rule_type": "constraint",
+          "description": "For required property insurance perils, the maximum allowable deductible is 5% of the property insurance coverage amount. If a policy has multiple deductibles (e.g., separate windstorm deductible and separate roof deductible), the total deductible amount applicable to a single occurrence must not exceed 5% of the property insurance coverage amount.",
+          "conditions": "When evaluating required property insurance deductibles for the subject property",
+          "consequences": "Meets: deductible acceptable; Violates: coverage unacceptable; obtain compliant policy or risk ineligibility",
+          "exceptions": "None stated",
+          "source_reference": {
+            "chunk_path": "fannie_mae/part_b_origination_through_closing/subpart_b7_insurance/chapter_b7_3_property_and_flood_insurance/b7_3_03_master_property_insurance_requirements_for_project_developments_02_07_2024.txt",
+            "section_id": "B7-3-03, Deductible Requirements",
+            "start_word_position": 78,
+            "end_word_position": 128,
+            "source_text": "The maximum allowable deductible for all required property insurance perils for one-to four-unit properties is 5% of the property insurance coverage amount. When a property insurance policy includes multiple deductibles, such as a separate deductible that applies to windstorms, or a separate deductible that applies to a speci\ufb01c property element such as the roof, the total amount for such deductibles applicable to a single occurrence must be no greater than 5% of the property insurance coverage amount.",
+            "text_match_score": 0.322
+          },
+          "mandatory": true,
+          "examples": [
+            "Coverage amount $400,000: max deductible per occurrence is $20,000 (5%); a $25,000 wind deductible is not acceptable.",
+            "Policy has $10,000 wind deductible and $12,000 roof deductible; if both can apply to one storm, total $22,000 must be \u2264 5% of coverage.",
+            "Coverage $250,000: a single $12,500 deductible (5%) is acceptable if all required perils are otherwise covered."
+          ],
+          "effective_date": null,
+          "expiration_date": null,
+          "superseded_by": null,
+          "jurisdiction": "agency:SAMPLE_GUIDELINES",
+          "risk_level": "high",
+          "related_rules": [],
+          "enforcement_action": "Loan ineligible for delivery / potential repurchase demand",
+          "applicability_scope": {
+            "loan_types": [
+              "conventional"
+            ],
+            "occupancy_types": [
+              "primary_residence",
+              "second_home",
+              "investment"
+            ],
+            "transaction_types": [
+              "purchase",
+              "rate_term_refinance",
+              "cash_out_refinance"
+            ]
+          },
+          "data_points_required": [
+            "property_type",
+            "project_type",
+            "property_insurance_coverage_amount",
+            "policy_deductible_amounts"
+          ],
+          "audit_frequency": "at_origination",
+          "confidence_score": 95.75,
+          "confidence_breakdown": {
+            "extraction_clarity": 98,
+            "numeric_precision": 100,
+            "context_completeness": 88,
+            "source_authority": 95,
+            "logical_consistency": 95
+          },
+          "reference_verified": true,
+          "reference_verification_note": "ok",
+          "entity_or_relationship": "SUBJECT_PROPERTY",
+          "entity_type": "entity",
+          "entity_definition": {
+            "description": "",
+            "key_attributes": [],
+            "examples": [
+              "One-unit single-family detached primary residence",
+              "Condominium unit in an eligible project",
+              "Property affected by a declared disaster requiring additional review"
+            ]
+          },
+          "provenance": {
+            "operation": "CONTRADICTION",
+            "sources": [
+              "fannie_mae"
+            ],
+            "original_ids": {
+              "fannie_mae": "BR_SUBJECT_PROPERTY_CONSTRAINT_023_001"
+            }
+          }
+        }
+      },
+      "g2_rule": {
+        "source": "freddie_mac",
+        "rule": {
+          "rule_id": "BR_HAZARD_INSURANCE_POLICY_CONSTRAINT_020_003",
+          "rule_name": "All-Risk deductible caps are $50k or $100k; blanket max $250k",
+          "rule_type": "constraint",
+          "description": "For property damage (All-Risk) insurance policies providing Specific Insurance Limits, the maximum deductible per occurrence is $50,000 when the Property IV is < $10 million and $100,000 when the Property IV is \u2265 $10 million. When All-Risk coverage is provided by a Blanket Insurance Limit, the maximum per occurrence deductible is $250,000.",
+          "conditions": "When evaluating All-Risk deductible for Specific Limits or Blanket Limits coverage",
+          "consequences": "If met, deductible is within cap; if exceeded, deductible is noncompliant",
+          "exceptions": "Expanded deductible waiver may apply for existing Mortgages (see related rule)",
+          "source_reference": {
+            "chunk_path": "freddies_mac/10_mtg_orig_uw_fundamentals_gb_02_24_26_pdf/10_18_permitted_mortgage_amount_acquisition_financing_and_certain_refinances_12_16_25/c_allocation_to_intangible_assets_10_17_24_part_93_288.txt",
+            "section_id": "Chapter 31.5(a) Property damage (All-Risk) deductible (12/16/25)",
+            "start_word_position": 650,
+            "end_word_position": 707,
+            "source_text": "a. Property damage (All -Risk) deductible ( 12/16/25) The maximum deductible per occurrence for property damage (All -Risk) insurance policies providing Specific Insurance Limits is: IV of the Property Maximum Deductible < $10 million $50,000 \u2265 $10 million $100,000 The maximum per occurrence deductible when All -Risk coverage is provided by a Blanket Insurance Limit is $250,000.",
+            "text_match_score": 0.979
+          },
+          "mandatory": true,
+          "examples": [
+            "Property IV $9,500,000 on specific limits policy: deductible must be \u2264 $50,000 per occurrence.",
+            "Property IV $10,000,000 on specific limits policy: deductible must be \u2264 $100,000 per occurrence.",
+            "Blanket All-Risk policy: deductible $300,000 per occurrence is noncompliant because it exceeds $250,000."
+          ],
+          "confidence_score": 97.6,
+          "confidence_breakdown": {
+            "extraction_clarity": 98,
+            "numeric_precision": 100,
+            "context_completeness": 95,
+            "source_authority": 98,
+            "logical_consistency": 95
+          },
+          "effective_date": "2025-12-16",
+          "expiration_date": null,
+          "superseded_by": null,
+          "jurisdiction": "federal",
+          "risk_level": "critical",
+          "related_rules": [
+            "BR_HAZARD_INSURANCE_POLICY_EXCEPTION_020_004"
+          ],
+          "enforcement_action": "N/A",
+          "applicability_scope": {
+            "loan_types": [
+              "freddie_mac_multifamily"
+            ],
+            "occupancy_types": [
+              "investment"
+            ],
+            "transaction_types": [
+              "purchase",
+              "rate_term_refinance",
+              "cash_out_refinance"
+            ]
+          },
+          "data_points_required": [
+            "insurable_value_amount",
+            "collateral_coverage_structure_type",
+            "deductible_amount",
+            "specific_limits_indicator",
+            "blanket_limit_indicator"
+          ],
+          "audit_frequency": "annually",
+          "reference_verified": true,
+          "reference_verification_note": "ok_recovered_position",
+          "entity_or_relationship": "HAZARD_INSURANCE_POLICY",
+          "entity_type": "entity",
+          "entity_definition": {
+            "description": "",
+            "key_attributes": [],
+            "examples": [
+              "Property hazard policy with Freddie Mac named as mortgagee/loss payee",
+              "Insurance renewal evidence provided prior to policy expiration",
+              "Policy change increasing deductible beyond permitted limits"
+            ]
+          },
+          "provenance": {
+            "operation": "CONTRADICTION",
+            "sources": [
+              "freddie_mac"
+            ],
+            "original_ids": {
+              "freddie_mac": "BR_HAZARD_INSURANCE_POLICY_CONSTRAINT_020_003"
+            }
+          }
+        }
+      },
+      "rule_behavior": "threshold"
+    },
+    {
+      "contradiction_id": "CONFLICT_BR_SUBJECT_PROPERTY_CONSTRAINT_023_001_BR_HAZARD_INSURANCE_POLICY_CONSTRAINT_032_009",
+      "conflict_type": "UNKNOWN",
+      "confidence": 0.72,
+      "reasoning": "Both address maximum allowable deductibles for a required peril. Rule A caps deductibles at 5% of coverage; Rule B allows earthquake deductibles up to 7.5% of TIV (and dollar caps). 5% vs 7.5% creates a threshold conflict.",
+      "conflict_detail": {},
+      "g1_rule": {
+        "source": "fannie_mae",
+        "rule": {
+          "rule_id": "BR_SUBJECT_PROPERTY_CONSTRAINT_023_001",
+          "rule_name": "Property Insurance Deductible Maximum 5% Limit",
+          "rule_type": "constraint",
+          "description": "For required property insurance perils, the maximum allowable deductible is 5% of the property insurance coverage amount. If a policy has multiple deductibles (e.g., separate windstorm deductible and separate roof deductible), the total deductible amount applicable to a single occurrence must not exceed 5% of the property insurance coverage amount.",
+          "conditions": "When evaluating required property insurance deductibles for the subject property",
+          "consequences": "Meets: deductible acceptable; Violates: coverage unacceptable; obtain compliant policy or risk ineligibility",
+          "exceptions": "None stated",
+          "source_reference": {
+            "chunk_path": "fannie_mae/part_b_origination_through_closing/subpart_b7_insurance/chapter_b7_3_property_and_flood_insurance/b7_3_03_master_property_insurance_requirements_for_project_developments_02_07_2024.txt",
+            "section_id": "B7-3-03, Deductible Requirements",
+            "start_word_position": 78,
+            "end_word_position": 128,
+            "source_text": "The maximum allowable deductible for all required property insurance perils for one-to four-unit properties is 5% of the property insurance coverage amount. When a property insurance policy includes multiple deductibles, such as a separate deductible that applies to windstorms, or a separate deductible that applies to a speci\ufb01c property element such as the roof, the total amount for such deductibles applicable to a single occurrence must be no greater than 5% of the property insurance coverage amount.",
+            "text_match_score": 0.322
+          },
+          "mandatory": true,
+          "examples": [
+            "Coverage amount $400,000: max deductible per occurrence is $20,000 (5%); a $25,000 wind deductible is not acceptable.",
+            "Policy has $10,000 wind deductible and $12,000 roof deductible; if both can apply to one storm, total $22,000 must be \u2264 5% of coverage.",
+            "Coverage $250,000: a single $12,500 deductible (5%) is acceptable if all required perils are otherwise covered."
+          ],
+          "effective_date": null,
+          "expiration_date": null,
+          "superseded_by": null,
+          "jurisdiction": "agency:SAMPLE_GUIDELINES",
+          "risk_level": "high",
+          "related_rules": [],
+          "enforcement_action": "Loan ineligible for delivery / potential repurchase demand",
+          "applicability_scope": {
+            "loan_types": [
+              "conventional"
+            ],
+            "occupancy_types": [
+              "primary_residence",
+              "second_home",
+              "investment"
+            ],
+            "transaction_types": [
+              "purchase",
+              "rate_term_refinance",
+              "cash_out_refinance"
+            ]
+          },
+          "data_points_required": [
+            "property_type",
+            "project_type",
+            "property_insurance_coverage_amount",
+            "policy_deductible_amounts"
+          ],
+          "audit_frequency": "at_origination",
+          "confidence_score": 95.75,
+          "confidence_breakdown": {
+            "extraction_clarity": 98,
+            "numeric_precision": 100,
+            "context_completeness": 88,
+            "source_authority": 95,
+            "logical_consistency": 95
+          },
+          "reference_verified": true,
+          "reference_verification_note": "ok",
+          "entity_or_relationship": "SUBJECT_PROPERTY",
+          "entity_type": "entity",
+          "entity_definition": {
+            "description": "",
+            "key_attributes": [],
+            "examples": [
+              "One-unit single-family detached primary residence",
+              "Condominium unit in an eligible project",
+              "Property affected by a declared disaster requiring additional review"
+            ]
+          },
+          "provenance": {
+            "operation": "CONTRADICTION",
+            "sources": [
+              "fannie_mae"
+            ],
+            "original_ids": {
+              "fannie_mae": "BR_SUBJECT_PROPERTY_CONSTRAINT_023_001"
+            }
+          }
+        }
+      },
+      "g2_rule": {
+        "source": "freddie_mac",
+        "rule": {
+          "rule_id": "BR_HAZARD_INSURANCE_POLICY_CONSTRAINT_032_009",
+          "rule_name": "Earthquake Deductible Caps $50k/$100k and 7.5% TIV",
+          "rule_type": "constraint",
+          "description": "Earthquake deductible maximums apply based on policy limit structure. For Specific Insurance Limits: if expressed as a dollar amount, maximum deductible is $50,000 when IV < $10 million and $100,000 when IV \u2265 $10 million. If expressed as a percentage, maximum is 7.5% of the subject property\u2019s TIV with a stated minimum not to exceed $100,000. For Blanket Insurance Limits: if expressed as a dollar amount, maximum is $250,000; if expressed as a percentage, maximum is 7.5% of TIV with a stated minimum not to exceed $250,000. For earthquake business income/rental value coverage, the maximum deductible is 15 days (if in days) or $100,000 (if in dollars).",
+          "conditions": "When evaluating earthquake and BI/RV deductibles on hazard insurance policies",
+          "consequences": "If deductibles within caps, policy is compliant; if above, policy must be amended/replaced",
+          "exceptions": "None stated",
+          "source_reference": {
+            "chunk_path": "freddies_mac/10_mtg_orig_uw_fundamentals_gb_02_24_26_pdf/10_18_permitted_mortgage_amount_acquisition_financing_and_certain_refinances_12_16_25/c_allocation_to_intangible_assets_10_17_24_part_96_288.txt",
+            "section_id": "Chapter 31 \u2013 Earthquake deductibles",
+            "start_word_position": 193,
+            "end_word_position": 305,
+            "source_text": "When expressed as a dollar amount: IV of the Property Maximum deductible < $10 million $50,000 \u2265 $10 million $100,000 \u2022 When expressed as a percentage, 7.5 percent of the subject property\u2019s TIV, with a stated minimum not to exceed $100,000 For Blanket Insurance Limits: \u2022 When expressed as a dollar amount, $250,000 \u2022 When expressed as a percentage, 7.5 percent of the subject property\u2019s TIV, with a stated minimum not to exceed $250,000 The maximum deductible for earthquake business income/rental value coverage is as follows: \u2022 When expressed as number of days, 15 days \u2022 When expressed as a dollar amount, $100,000",
+            "text_match_score": 0.466
+          },
+          "mandatory": true,
+          "examples": [
+            "Specific limits, IV $9.5M, deductible $50,000\u2014compliant; deductible $75,000\u2014noncompliant.",
+            "Specific limits, deductible 7.5% of TIV with minimum $125,000\u2014noncompliant (minimum must not exceed $100,000).",
+            "Blanket limits with BI/RV deductible of 20 days\u2014noncompliant (max 15 days)."
+          ],
+          "confidence_score": 98.25,
+          "confidence_breakdown": {
+            "extraction_clarity": 98,
+            "numeric_precision": 100,
+            "context_completeness": 98,
+            "source_authority": 95,
+            "logical_consistency": 100
+          },
+          "extraction_notes": "Multiple explicit caps by structure; highly testable thresholds.",
+          "effective_date": "2025-12-16",
+          "expiration_date": null,
+          "superseded_by": null,
+          "jurisdiction": "agency:EXAMPLE_POLICIES",
+          "risk_level": "high",
+          "related_rules": [
+            "BR_HAZARD_INSURANCE_POLICY_CONSTRAINT_032_008",
+            "BR_HAZARD_INSURANCE_POLICY_ELIGIBILITY_032_007"
+          ],
+          "enforcement_action": "Purchase hold or servicing insurance compliance demand",
+          "applicability_scope": {
+            "loan_types": [
+              "multifamily"
+            ],
+            "occupancy_types": [
+              "investment"
+            ],
+            "transaction_types": [
+              "purchase",
+              "servicing"
+            ]
+          },
+          "data_points_required": [
+            "insurance_limit_structure_type",
+            "insurable_value_amount",
+            "total_insurable_value_amount",
+            "earthquake_deductible_amount",
+            "earthquake_deductible_percent",
+            "earthquake_deductible_days",
+            "business_income_rental_value_deductible_amount",
+            "business_income_rental_value_deductible_days"
+          ],
+          "audit_frequency": "annually",
+          "reference_verified": true,
+          "reference_verification_note": "ok",
+          "entity_or_relationship": "HAZARD_INSURANCE_POLICY",
+          "entity_type": "entity",
+          "entity_definition": {
+            "description": "",
+            "key_attributes": [],
+            "examples": [
+              "Property hazard policy with Freddie Mac named as mortgagee/loss payee",
+              "Insurance renewal evidence provided prior to policy expiration",
+              "Policy change increasing deductible beyond permitted limits"
+            ]
+          },
+          "dependencies": [
+            {
+              "depends_on_rule": "BR_HAZARD_INSURANCE_POLICY_ELIGIBILITY_032_007",
+              "dependency_type": "conditional",
+              "rationale": "BR_032_009 governs whether a presented earthquake policy meets deductible limits. That evaluation is only actionable when BR_032_007 indicates earthquake coverage is required for purchase eligibility (or when the lender chooses to include it in response to BR_032_007 triggers).",
+              "impact_if_fails": "If BR_032_007 is not applied first, deductible compliance may be checked unnecessarily or missed entirely, causing either avoidable policy rework or purchase ineligibility due to noncompliant deductibles.",
+              "strength": 5
+            },
+            {
+              "depends_on_rule": "BR_HAZARD_INSURANCE_POLICY_CONSTRAINT_032_008",
+              "dependency_type": "complementary",
+              "rationale": "Coverage adequacy and deductible permissibility are separate but jointly necessary conditions of an acceptable earthquake policy. In an automated compliance checklist, both checks should be executed as a combined policy-compliance set.",
+              "impact_if_fails": "If BR_032_008 is satisfied but BR_032_009 fails (or vice versa), the earthquake insurance requirement is not met, leading to underwriting/closing conditions and potential purchase ineligibility.",
+              "strength": 4
+            }
+          ],
+          "provenance": {
+            "operation": "CONTRADICTION",
+            "sources": [
+              "freddie_mac"
+            ],
+            "original_ids": {
+              "freddie_mac": "BR_HAZARD_INSURANCE_POLICY_CONSTRAINT_032_009"
+            }
+          }
+        }
+      },
+      "rule_behavior": "threshold"
+    },
+    {
+      "contradiction_id": "CONFLICT_BR_SUBJECT_PROPERTY_CONSTRAINT_023_001_BR_HAZARD_INSURANCE_POLICY_CONSTRAINT_037_002",
+      "conflict_type": "UNKNOWN",
+      "confidence": 0.74,
+      "reasoning": "Rule A sets a maximum deductible (\u22645%) and allows smaller deductibles. Rule B requires the wind/hail percentage deductible to be exactly 5% of TIV (plus minimum cap). \u201cMust be 5%\u201d conflicts with \u201cmaximum 5%.\u201d",
+      "conflict_detail": {},
+      "g1_rule": {
+        "source": "fannie_mae",
+        "rule": {
+          "rule_id": "BR_SUBJECT_PROPERTY_CONSTRAINT_023_001",
+          "rule_name": "Property Insurance Deductible Maximum 5% Limit",
+          "rule_type": "constraint",
+          "description": "For required property insurance perils, the maximum allowable deductible is 5% of the property insurance coverage amount. If a policy has multiple deductibles (e.g., separate windstorm deductible and separate roof deductible), the total deductible amount applicable to a single occurrence must not exceed 5% of the property insurance coverage amount.",
+          "conditions": "When evaluating required property insurance deductibles for the subject property",
+          "consequences": "Meets: deductible acceptable; Violates: coverage unacceptable; obtain compliant policy or risk ineligibility",
+          "exceptions": "None stated",
+          "source_reference": {
+            "chunk_path": "fannie_mae/part_b_origination_through_closing/subpart_b7_insurance/chapter_b7_3_property_and_flood_insurance/b7_3_03_master_property_insurance_requirements_for_project_developments_02_07_2024.txt",
+            "section_id": "B7-3-03, Deductible Requirements",
+            "start_word_position": 78,
+            "end_word_position": 128,
+            "source_text": "The maximum allowable deductible for all required property insurance perils for one-to four-unit properties is 5% of the property insurance coverage amount. When a property insurance policy includes multiple deductibles, such as a separate deductible that applies to windstorms, or a separate deductible that applies to a speci\ufb01c property element such as the roof, the total amount for such deductibles applicable to a single occurrence must be no greater than 5% of the property insurance coverage amount.",
+            "text_match_score": 0.322
+          },
+          "mandatory": true,
+          "examples": [
+            "Coverage amount $400,000: max deductible per occurrence is $20,000 (5%); a $25,000 wind deductible is not acceptable.",
+            "Policy has $10,000 wind deductible and $12,000 roof deductible; if both can apply to one storm, total $22,000 must be \u2264 5% of coverage.",
+            "Coverage $250,000: a single $12,500 deductible (5%) is acceptable if all required perils are otherwise covered."
+          ],
+          "effective_date": null,
+          "expiration_date": null,
+          "superseded_by": null,
+          "jurisdiction": "agency:SAMPLE_GUIDELINES",
+          "risk_level": "high",
+          "related_rules": [],
+          "enforcement_action": "Loan ineligible for delivery / potential repurchase demand",
+          "applicability_scope": {
+            "loan_types": [
+              "conventional"
+            ],
+            "occupancy_types": [
+              "primary_residence",
+              "second_home",
+              "investment"
+            ],
+            "transaction_types": [
+              "purchase",
+              "rate_term_refinance",
+              "cash_out_refinance"
+            ]
+          },
+          "data_points_required": [
+            "property_type",
+            "project_type",
+            "property_insurance_coverage_amount",
+            "policy_deductible_amounts"
+          ],
+          "audit_frequency": "at_origination",
+          "confidence_score": 95.75,
+          "confidence_breakdown": {
+            "extraction_clarity": 98,
+            "numeric_precision": 100,
+            "context_completeness": 88,
+            "source_authority": 95,
+            "logical_consistency": 95
+          },
+          "reference_verified": true,
+          "reference_verification_note": "ok",
+          "entity_or_relationship": "SUBJECT_PROPERTY",
+          "entity_type": "entity",
+          "entity_definition": {
+            "description": "",
+            "key_attributes": [],
+            "examples": [
+              "One-unit single-family detached primary residence",
+              "Condominium unit in an eligible project",
+              "Property affected by a declared disaster requiring additional review"
+            ]
+          },
+          "provenance": {
+            "operation": "CONTRADICTION",
+            "sources": [
+              "fannie_mae"
+            ],
+            "original_ids": {
+              "fannie_mae": "BR_SUBJECT_PROPERTY_CONSTRAINT_023_001"
+            }
+          }
+        }
+      },
+      "g2_rule": {
+        "source": "freddie_mac",
+        "rule": {
+          "rule_id": "BR_HAZARD_INSURANCE_POLICY_CONSTRAINT_037_002",
+          "rule_name": "Wind and Hail Deductible Cap 5% TIV Max $100k",
+          "rule_type": "constraint",
+          "description": "For Wind/Hail coverage under Specific Insurance Limits where the deductible is expressed as a percentage, the deductible must be five percent (5%) of the subject property's Total Insurable Value (TIV), with a stated minimum not to exceed $100,000.",
+          "conditions": "When Wind/Hail deductible is expressed as a percentage under Specific Limits",
+          "consequences": "Meets cap: acceptable; stated minimum > $100,000: policy noncompliant",
+          "exceptions": "None stated",
+          "source_reference": {
+            "chunk_path": "freddies_mac/10_mtg_orig_uw_fundamentals_gb_02_24_26_pdf/10_18_permitted_mortgage_amount_acquisition_financing_and_certain_refinances_12_16_25/c_allocation_to_intangible_assets_10_17_24_part_94_288.txt",
+            "section_id": "Chapter 31, Section 31.7(b) Wind/Hail deductibles (12/16/25)",
+            "start_word_position": 132,
+            "end_word_position": 167,
+            "source_text": "IV of the Property Maximum deductible < $10 million $50,000 \u2265 $10 million $100,000 \u2022 When expressed as a percentage, five percent of the subject property\u2019s TIV with a stated minimum not to exceed $100,000",
+            "text_match_score": 0.958
+          },
+          "mandatory": true,
+          "examples": [
+            "TIV $3,000,000; 5% deductible = $150,000 but stated minimum must not exceed $100,000: noncompliant if the policy uses a $150,000 minimum.",
+            "TIV $8,000,000; deductible 5% with stated minimum $75,000: compliant (minimum \u2264 $100,000).",
+            "TIV $20,000,000; deductible 5% with stated minimum $125,000: noncompliant; reduce minimum to \u2264 $100,000."
+          ],
+          "effective_date": "2025-12-16",
+          "expiration_date": null,
+          "superseded_by": null,
+          "jurisdiction": "agency:EXAMPLE_POLICIES",
+          "risk_level": "high",
+          "related_rules": [
+            "BR_HAZARD_INSURANCE_POLICY_CONSTRAINT_037_001",
+            "BR_HAZARD_INSURANCE_POLICY_CONSTRAINT_037_003"
+          ],
+          "enforcement_action": "Purchase hold / delivery deficiency until corrected",
+          "applicability_scope": {
+            "loan_types": [
+              "multifamily"
+            ],
+            "occupancy_types": [
+              "investment"
+            ],
+            "transaction_types": [
+              "purchase",
+              "rate_term_refinance"
+            ]
+          },
+          "data_points_required": [
+            "coverage_type",
+            "policy_limit_type",
+            "tiv_amount",
+            "deductible_percentage",
+            "deductible_minimum_amount"
+          ],
+          "audit_frequency": "at_origination",
+          "reference_verified": true,
+          "reference_verification_note": "ok_recovered_position",
+          "confidence_score": 75,
+          "entity_or_relationship": "HAZARD_INSURANCE_POLICY",
+          "entity_type": "entity",
+          "entity_definition": {
+            "description": "",
+            "key_attributes": [],
+            "examples": [
+              "Property hazard policy with Freddie Mac named as mortgagee/loss payee",
+              "Insurance renewal evidence provided prior to policy expiration",
+              "Policy change increasing deductible beyond permitted limits"
+            ]
+          },
+          "dependent_rules": [
+            {
+              "dependent_rule": "BR_HAZARD_INSURANCE_POLICY_CONSTRAINT_037_006",
+              "dependency_type": "prerequisite"
+            }
+          ],
+          "provenance": {
+            "operation": "CONTRADICTION",
+            "sources": [
+              "freddie_mac"
+            ],
+            "original_ids": {
+              "freddie_mac": "BR_HAZARD_INSURANCE_POLICY_CONSTRAINT_037_002"
+            }
+          }
+        }
+      },
+      "rule_behavior": "threshold"
+    },
+    {
+      "contradiction_id": "CONFLICT_BR_SUBJECT_PROPERTY_CONSTRAINT_023_001_BR_HAZARD_INSURANCE_POLICY_CONSTRAINT_037_005",
+      "conflict_type": "UNKNOWN",
+      "confidence": 0.73,
+      "reasoning": "Both constrain deductibles for a specific peril (named storm). Rule A caps at 5% of coverage for required perils; Rule B permits percent deductibles at 7.5% of TIV (plus dollar caps). The percent maximums conflict.",
+      "conflict_detail": {},
+      "g1_rule": {
+        "source": "fannie_mae",
+        "rule": {
+          "rule_id": "BR_SUBJECT_PROPERTY_CONSTRAINT_023_001",
+          "rule_name": "Property Insurance Deductible Maximum 5% Limit",
+          "rule_type": "constraint",
+          "description": "For required property insurance perils, the maximum allowable deductible is 5% of the property insurance coverage amount. If a policy has multiple deductibles (e.g., separate windstorm deductible and separate roof deductible), the total deductible amount applicable to a single occurrence must not exceed 5% of the property insurance coverage amount.",
+          "conditions": "When evaluating required property insurance deductibles for the subject property",
+          "consequences": "Meets: deductible acceptable; Violates: coverage unacceptable; obtain compliant policy or risk ineligibility",
+          "exceptions": "None stated",
+          "source_reference": {
+            "chunk_path": "fannie_mae/part_b_origination_through_closing/subpart_b7_insurance/chapter_b7_3_property_and_flood_insurance/b7_3_03_master_property_insurance_requirements_for_project_developments_02_07_2024.txt",
+            "section_id": "B7-3-03, Deductible Requirements",
+            "start_word_position": 78,
+            "end_word_position": 128,
+            "source_text": "The maximum allowable deductible for all required property insurance perils for one-to four-unit properties is 5% of the property insurance coverage amount. When a property insurance policy includes multiple deductibles, such as a separate deductible that applies to windstorms, or a separate deductible that applies to a speci\ufb01c property element such as the roof, the total amount for such deductibles applicable to a single occurrence must be no greater than 5% of the property insurance coverage amount.",
+            "text_match_score": 0.322
+          },
+          "mandatory": true,
+          "examples": [
+            "Coverage amount $400,000: max deductible per occurrence is $20,000 (5%); a $25,000 wind deductible is not acceptable.",
+            "Policy has $10,000 wind deductible and $12,000 roof deductible; if both can apply to one storm, total $22,000 must be \u2264 5% of coverage.",
+            "Coverage $250,000: a single $12,500 deductible (5%) is acceptable if all required perils are otherwise covered."
+          ],
+          "effective_date": null,
+          "expiration_date": null,
+          "superseded_by": null,
+          "jurisdiction": "agency:SAMPLE_GUIDELINES",
+          "risk_level": "high",
+          "related_rules": [],
+          "enforcement_action": "Loan ineligible for delivery / potential repurchase demand",
+          "applicability_scope": {
+            "loan_types": [
+              "conventional"
+            ],
+            "occupancy_types": [
+              "primary_residence",
+              "second_home",
+              "investment"
+            ],
+            "transaction_types": [
+              "purchase",
+              "rate_term_refinance",
+              "cash_out_refinance"
+            ]
+          },
+          "data_points_required": [
+            "property_type",
+            "project_type",
+            "property_insurance_coverage_amount",
+            "policy_deductible_amounts"
+          ],
+          "audit_frequency": "at_origination",
+          "confidence_score": 95.75,
+          "confidence_breakdown": {
+            "extraction_clarity": 98,
+            "numeric_precision": 100,
+            "context_completeness": 88,
+            "source_authority": 95,
+            "logical_consistency": 95
+          },
+          "reference_verified": true,
+          "reference_verification_note": "ok",
+          "entity_or_relationship": "SUBJECT_PROPERTY",
+          "entity_type": "entity",
+          "entity_definition": {
+            "description": "",
+            "key_attributes": [],
+            "examples": [
+              "One-unit single-family detached primary residence",
+              "Condominium unit in an eligible project",
+              "Property affected by a declared disaster requiring additional review"
+            ]
+          },
+          "provenance": {
+            "operation": "CONTRADICTION",
+            "sources": [
+              "fannie_mae"
+            ],
+            "original_ids": {
+              "fannie_mae": "BR_SUBJECT_PROPERTY_CONSTRAINT_023_001"
+            }
+          }
+        }
+      },
+      "g2_rule": {
+        "source": "freddie_mac",
+        "rule": {
+          "rule_id": "BR_HAZARD_INSURANCE_POLICY_CONSTRAINT_037_005",
+          "rule_name": "Named Storm Deductible 7.5% TIV with $50k $100k Caps",
+          "rule_type": "constraint",
+          "description": "Named Storm deductible limits apply. For Specific Insurance Limits: dollar deductibles capped at $50,000 when IV < $10 million and $100,000 when IV \u2265 $10 million; percent deductibles set at 7.5% of TIV with stated minimum not to exceed $100,000. For Blanket Insurance Limits: dollar deductible $250,000; percent deductible 7.5% of TIV with stated minimum not to exceed $250,000. Named Storm business income/rental value deductible is capped at 15 days or $100,000.",
+          "conditions": "When Named Storm coverage is required and deductibles apply",
+          "consequences": "Meets caps: acceptable; exceeds caps: noncompliant deductible terms",
+          "exceptions": "None stated",
+          "source_reference": {
+            "chunk_path": "freddies_mac/10_mtg_orig_uw_fundamentals_gb_02_24_26_pdf/10_18_permitted_mortgage_amount_acquisition_financing_and_certain_refinances_12_16_25/c_allocation_to_intangible_assets_10_17_24_part_94_288.txt",
+            "section_id": "Chapter 31, Section 31.7(d) Named Storm deductibles (12/16/25)",
+            "start_word_position": 395,
+            "end_word_position": 507,
+            "source_text": "d. Named Storm deductibles ( 12/16/25) For Specific Insurance Limit s: \u2022 When expressed as a dollar amount: IV of the Property Maximum deductible < $10 million $50,000 \u2265 $10 million $100,000 \u2022 When expressed as a percentage, 7.5 percent of the subject property\u2019s TIV, with a stated minimum not to exceed $100,000 For Blanket Insurance Limit s: \u2022 When expressed as a dollar amount, $250,000 \u2022 When expressed as a percentage, 7.5 percent of the subject property\u2019s TIV, with a stated minimum not to exceed $250,000 The maximum deductible for Named Storm business income/rental value coverage is: \u2022 When expressed as number of days, 15 days \u2022 When expressed as a dollar amount, $100,000",
+            "text_match_score": 0.509
+          },
+          "mandatory": true,
+          "examples": [
+            "IV $9MM with Named Storm deductible $60,000: noncompliant (must be \u2264 $50,000 for IV < $10MM).",
+            "Blanket Named Storm deductible $250,000: compliant (dollar deductible equals the allowed max).",
+            "Named Storm BI deductible 30 days: noncompliant (must be \u2264 15 days)."
+          ],
+          "effective_date": "2025-12-16",
+          "expiration_date": null,
+          "superseded_by": null,
+          "jurisdiction": "agency:EXAMPLE_POLICIES",
+          "risk_level": "high",
+          "related_rules": [
+            "BR_HAZARD_INSURANCE_POLICY_CONSTRAINT_037_004"
+          ],
+          "enforcement_action": "Purchase hold / delivery deficiency until corrected",
+          "applicability_scope": {
+            "loan_types": [
+              "multifamily"
+            ],
+            "occupancy_types": [
+              "investment"
+            ],
+            "transaction_types": [
+              "purchase",
+              "rate_term_refinance"
+            ]
+          },
+          "data_points_required": [
+            "coverage_type",
+            "policy_limit_type",
+            "iv_amount",
+            "tiv_amount",
+            "deductible_amount",
+            "deductible_percentage",
+            "deductible_minimum_amount",
+            "bi_deductible_days",
+            "bi_deductible_amount"
+          ],
+          "audit_frequency": "at_origination",
+          "reference_verified": true,
+          "reference_verification_note": "ok",
+          "confidence_score": 75,
+          "entity_or_relationship": "HAZARD_INSURANCE_POLICY",
+          "entity_type": "entity",
+          "entity_definition": {
+            "description": "",
+            "key_attributes": [],
+            "examples": [
+              "Property hazard policy with Freddie Mac named as mortgagee/loss payee",
+              "Insurance renewal evidence provided prior to policy expiration",
+              "Policy change increasing deductible beyond permitted limits"
+            ]
+          },
+          "dependencies": [
+            {
+              "depends_on_rule": "BR_HAZARD_INSURANCE_POLICY_CONSTRAINT_037_004",
+              "dependency_type": "complementary",
+              "rationale": "These rules jointly define Named Storm acceptability: BR_037_004 ensures the blanket limit is not under-sized and reinstates after losses, while BR_037_005 ensures deductibles are within Freddie Mac caps. Together they form a cohesive Named Storm compliance set.",
+              "impact_if_fails": "If either rule fails, Named Storm insurance terms are noncompliant, risking insurance conditions, delayed delivery/purchase, or forced mid-process policy replacement.",
+              "strength": 4
+            }
+          ],
+          "provenance": {
+            "operation": "CONTRADICTION",
+            "sources": [
+              "freddie_mac"
+            ],
+            "original_ids": {
+              "freddie_mac": "BR_HAZARD_INSURANCE_POLICY_CONSTRAINT_037_005"
+            }
+          }
+        }
+      },
+      "rule_behavior": "threshold"
+    },
+    {
+      "contradiction_id": "CONFLICT_BR_LOAN_ELIGIBILITY_PROFILE_CONSTRAINT_017_008_BR_SERVICES_CONSTRAINT_028_005",
+      "conflict_type": "UNKNOWN",
+      "confidence": 0.78,
+      "reasoning": "Both address subordinate financing leverage limits, but thresholds conflict: Fannie Community Seconds allows up to 105% CLTV, while Freddie consent criteria require combined LTV \u2264 85% (and DCR \u2265 1.20x). A loan meeting 105% CLTV cannot satisfy the 85% cap.",
+      "conflict_detail": {},
+      "g1_rule": {
+        "source": "fannie_mae",
+        "rule": {
+          "rule_id": "BR_LOAN_ELIGIBILITY_PROFILE_CONSTRAINT_017_008",
+          "rule_name": "Community Seconds Maximum 105% CLTV and 5-Year ARM",
+          "rule_type": "constraint",
+          "description": "When a first mortgage is originated with Community Seconds subordinate financing, the first mortgage must be fixed-rate or an ARM with an initial fixed-rate period of at least 5 years, the maximum CLTV is 105% (unless the first mortgage has an independent CLTV cap), and the transaction must be a purchase or limited cash-out refinance. For limited cash-out refinance, the Community Seconds holder must execute a resubordination agreement and it must be recorded to ensure enforceability.",
+          "conditions": "When underwriting a first mortgage delivered to Fannie Mae with Community Seconds financing",
+          "consequences": "If constraints not met, loan is ineligible for delivery/purchase by Fannie Mae",
+          "exceptions": "105% CLTV may be limited by an independent first-mortgage CLTV cap",
+          "source_reference": {
+            "chunk_path": "fannie_mae/part_b_origination_through_closing/subpart_b5_unique_eligibility_and_underwriting_considerations/chapter_b5_5_community_seconds_loans_with_resale_restrictions_and_shared_equity_transactions/section_b5_5_1_community_seconds/b5_5_1_01_community_seconds_loans_05_03_2023_b5_5_1_02_community_seconds_loan_eligibility_05.txt",
+            "section_id": "B5-5.1-02 (05/03/2023), Additional Eligibility Requirements",
+            "start_word_position": 996,
+            "end_word_position": 1120,
+            "source_text": "First mortgage eligibilityThe \ufb01rst mortgage must be \ufb01xed-rate or an ARM with an initial \ufb01xed-rate period of \ufb01ve years or more, and otherwise comply with this Guide. Maximum LTV and CLTV ratiosThe maximum LTV is based on the \ufb01rst mortgage LTV requirement. The maximum CLTV is 105% with a Community Seconds loan, unless the \ufb01rst mortgage has an independent CLTV cap (such as the CLTV cap for manufactured housing that does not meet MH Advantage requirements). Refer to the   Eligibility Matrix  for additional information. Loan purposeThe transaction is limited to a purchase or limited cash-out re\ufb01nance. For a limited cash-out re\ufb01nance, the Community Seconds mortgage holder must acknowledge their lien position by executing a resubordination agreement. The agreement must be recorded to ensure enforceability.",
+            "text_match_score": 0.98
+          },
+          "mandatory": true,
+          "examples": [
+            "Purchase loan with Community Seconds: first mortgage is 7/6 ARM (\u22655-year initial fixed) and CLTV is 103%; loan meets this rule.",
+            "Purchase loan CLTV is 107%; even if first mortgage LTV meets matrix, CLTV violates the 105% cap and loan is ineligible.",
+            "Limited cash-out refinance with Community Seconds: resubordination agreement signed but not recorded; loan violates enforceability requirement until recorded."
+          ],
+          "confidence_score": 94.75,
+          "confidence_breakdown": {
+            "extraction_clarity": 95,
+            "numeric_precision": 100,
+            "context_completeness": 90,
+            "source_authority": 95,
+            "logical_consistency": 90
+          },
+          "effective_date": "2023-05-03",
+          "expiration_date": null,
+          "superseded_by": null,
+          "jurisdiction": "agency:EXAMPLE_POLICIES",
+          "risk_level": "critical",
+          "related_rules": [
+            "BR_LOAN_ELIGIBILITY_PROFILE_ELIGIBILITY_017_009"
+          ],
+          "enforcement_action": "N/A",
+          "applicability_scope": {
+            "loan_types": [
+              "conventional"
+            ],
+            "occupancy_types": [
+              "primary_residence"
+            ],
+            "transaction_types": [
+              "purchase",
+              "rate_term_refinance"
+            ]
+          },
+          "data_points_required": [
+            "arm_indicator",
+            "initial_fixed_period_months",
+            "cltv_ratio",
+            "transaction_type",
+            "subordinate_financing_type",
+            "resubordination_agreement_executed_indicator",
+            "resubordination_agreement_recorded_indicator"
+          ],
+          "audit_frequency": "at_origination",
+          "reference_verified": true,
+          "reference_verification_note": "ok_recovered_position",
+          "entity_or_relationship": "LOAN_ELIGIBILITY_PROFILE",
+          "entity_type": "entity",
+          "entity_definition": {
+            "description": "",
+            "key_attributes": [],
+            "examples": [
+              "Loan eligibility profile meeting baseline conforming loan limit requirements",
+              "Loan eligibility profile flagged due to ARM feature noncompliance",
+              "Loan eligibility profile requiring escrow account per policy"
+            ]
+          },
+          "dependencies": [
+            {
+              "depends_on_rule": "BR_LOAN_ELIGIBILITY_PROFILE_ELIGIBILITY_017_009",
+              "dependency_type": "prerequisite",
+              "rationale": "Before applying structural constraints on a first mortgage with Community Seconds (rate/CLTV caps/allowed transactions/resubordination requirements), the lender must first confirm the subordinate lien qualifies as Community Seconds (eligible provider and not an interested party). Otherwise, the transaction cannot be treated as Community Seconds and becomes ineligible.",
+              "impact_if_fails": "If provider eligibility is not validated first, a lender may incorrectly allow CLTV up to 105% or permit a transaction structure based on Community Seconds rules, creating a delivery ineligibility.",
+              "strength": 4
+            }
+          ],
+          "dependent_rules": [
+            {
+              "dependent_rule": "BR_LOAN_ELIGIBILITY_PROFILE_ELIGIBILITY_013_009",
+              "dependency_type": "conditional"
+            }
+          ],
+          "provenance": {
+            "operation": "CONTRADICTION",
+            "sources": [
+              "fannie_mae"
+            ],
+            "original_ids": {
+              "fannie_mae": "BR_LOAN_ELIGIBILITY_PROFILE_CONSTRAINT_017_008"
+            }
+          }
+        }
+      },
+      "g2_rule": {
+        "source": "freddie_mac",
+        "rule": {
+          "rule_id": "BR_SERVICES_CONSTRAINT_028_005",
+          "rule_name": "Subordinate Financing Requires Combined LTV \u2264 85% and DCR \u2265 1.20x",
+          "rule_type": "constraint",
+          "description": "When Freddie Mac considers consenting to Subordinate Financing (generally for non-securitized Mortgages, and specifically for non-SBL Mortgages as stated), the combined debt (first mortgage plus subordinate financing and any other applicable debt included under the Guide\u2019s combined-debt definition) must not result in an LTV Ratio exceeding 85%, and the combined debt service must not result in a DCR below 1.20x. These thresholds are necessary conditions for consent (and may be accompanied by other Guide conditions). If either threshold is not met (LTV > 85% or DCR < 1.20x), Freddie Mac may reject/deny the request.",
+          "conditions": "Applies to Servicer requests for Freddie Mac approval of subordinate financing",
+          "consequences": "If thresholds not met, Freddie Mac may reject the subordinate financing request",
+          "exceptions": "None stated",
+          "source_reference": [
+            {
+              "chunk_path": "freddies_mac/10_mtg_orig_uw_fundamentals_gb_02_24_26_pdf/10_18_permitted_mortgage_amount_acquisition_financing_and_certain_refinances_12_16_25/c_allocation_to_intangible_assets_10_17_24_part_165_288.txt",
+              "section_id": "Chapter 43, Section 43.29(a)(3) (06/30/16)",
+              "start_word_position": 300,
+              "end_word_position": 349,
+              "source_text": "Freddie Mac may reject a request for Subordinate Financing at its discretion. Freddie Mac will consider consenting to Subordinate Financing only if the request meets the following conditions (However, the fact that the Subordinate Financing meets these requirements does not mean that Freddie Mac is obligated to consider or approve the Subordinate Financing.): 3. The combined debt may not result in a Loan -to-Value (LTV) Ratio that exceeds 85 percent and the combined debt service may not result in a Debt Coverage Ratio (DCR) that is below 1.20x.",
+              "text_match_score": 0.459
+            },
+            {
+              "chunk_path": "freddies_mac/servicing_freddie_mac_loans_chs_36_49/43_specific_servicing_gb_02_24_26/43_29_subordinate_financing_for_non_sbl_mortgages_04_18_24/a_conditions_for_freddie_mac_approval_of_subordinate_financing_for_a_non_sbl_mortgage_06_30_16.txt",
+              "section_id": "Chapter 43.29(a) condition 3 (06/30/16)",
+              "start_word_position": 447,
+              "end_word_position": 482,
+              "source_text": "3. The combined debt may not result in a Loan -to-Value (LTV) Ratio that exceeds 85 percent and the combined debt service may not result in a Debt Coverage Ratio (DCR) that is below 1.20x.",
+              "text_match_score": 0.958
+            }
+          ],
+          "mandatory": true,
+          "examples": [
+            "Combined LTV = 86% \u2192 fails threshold; subordinate financing consent may be denied.",
+            "Combined DCR = 1.15x \u2192 fails threshold; subordinate financing consent may be denied."
+          ],
+          "confidence_score": 95.75,
+          "confidence_breakdown": {
+            "extraction_clarity": 95,
+            "numeric_precision": 100,
+            "context_completeness": 95,
+            "source_authority": 95,
+            "logical_consistency": 90
+          },
+          "effective_date": "2026-02-24",
+          "expiration_date": null,
+          "superseded_by": null,
+          "jurisdiction": "federal",
+          "risk_level": "critical",
+          "related_rules": [
+            "BR_MORTGAGE_PROHIBITION_028_004"
+          ],
+          "enforcement_action": "Request denial",
+          "applicability_scope": {
+            "loan_types": [
+              "multifamily"
+            ],
+            "occupancy_types": [
+              "multifamily_rental"
+            ],
+            "transaction_types": [
+              "refinance"
+            ]
+          },
+          "data_points_required": [
+            "combined_ltv_ratio",
+            "combined_dcr",
+            "property_value",
+            "senior_loan_balance",
+            "proposed_subordinate_debt_amount",
+            "net_operating_income",
+            "combined_debt_service_amount"
+          ],
+          "audit_frequency": "on_change",
+          "reference_verified": true,
+          "reference_verification_note": "ok",
+          "entity_or_relationship": "SERVICES",
+          "entity_type": "relationship",
+          "relationship_definition": {
+            "description": "",
+            "source_entity": "SERVICER",
+            "target_entity": "MORTGAGE",
+            "directionality": "",
+            "examples": [
+              "Servicer collects monthly payments and remits interest and principal per remittance rules",
+              "Servicer monitors insurance renewals and enforces coverage requirements",
+              "Servicer initiates default management after sustained delinquency"
+            ]
+          },
+          "deduplication_info": {
+            "merged_from": [
+              "BR_SERVICES_CONSTRAINT_025_006"
+            ],
+            "merge_count": 1,
+            "rationale": "Both rules define the same key quantitative consent thresholds for Freddie Mac to consider consenting to Subordinate Financing: combined debt LTV must not exceed 85% and combined debt service DCR must not fall below 1.20x. 025_006 notes 'among other conditions' while 028_005 clarifies non-SBL scope and securitized mortgage exclusion; these differences do not alter the shared core constraint and can be preserved in the merged description as clarifying language.",
+            "confidence": "medium-high",
+            "similarity_score": 88,
+            "score_breakdown": {
+              "semantic_equivalence": 35,
+              "numeric_precision": 25,
+              "contextual_alignment": 18,
+              "source_consistency": 5,
+              "consequence_alignment": 5
+            },
+            "primary_selection_reason": "BR_SERVICES_CONSTRAINT_028_005 selected as primary: more explicit context boundaries (non-SBL Mortgage; expressly excludes securitized Mortgages) with the same LTV/DCR thresholds."
+          },
+          "dependencies": [
+            {
+              "depends_on_rule": "BR_SERVICES_PROHIBITION_025_005",
+              "dependency_type": "override",
+              "rationale": "The combined LTV/DCR thresholds apply only when Freddie Mac is considering consent for non-securitized loans. The securitization prohibition is the applicability gate that routes the request to immediate denial/alternate product.",
+              "impact_if_fails": "If the prohibition gate is missed, Servicer may submit packages for loans Freddie Mac cannot consider under the stated rule, causing process churn and compliance exceptions.",
+              "strength": 4
+            },
+            {
+              "depends_on_rule": "BR_BORROWER_PROHIBITION_007_003",
+              "dependency_type": "prerequisite",
+              "rationale": "BR_028_005 is a threshold rule governing Freddie Mac consent to subordinate financing. BR_007_003 is an overarching prohibition preventing Freddie Mac purchase/approval of certain transactions when parties are confirmed sanctions/exclusion matches. Thus, BR_007_003 is an upstream gate to determine if consent consideration under BR_028_005 is even permissible.",
+              "impact_if_fails": "If BR_007_003 fails but BR_028_005 proceeds, the compliance workflow may reach an apparent 'pass' on thresholds while the transaction remains unapprovable, creating control failures and operational waste.",
+              "strength": 4
+            },
+            {
+              "depends_on_rule": "BR_PURCHASES_PROHIBITION_035_002",
+              "dependency_type": "override",
+              "rationale": "BR_SERVICES_CONSTRAINT_028_005 provides necessary conditions for Freddie Mac to consider consenting to subordinate financing. BR_PURCHASES_PROHIBITION_035_002 blocks Freddie Mac from approving servicing-related transactions when any borrower/principal/property manager is an SCP Named Party. Thus, SCP match is a decisive override.",
+              "impact_if_fails": "If BR_PURCHASES_PROHIBITION_035_002 triggers, Freddie Mac will not approve consent regardless of satisfying LTV/DCR thresholds. Automation should short-circuit the consent workflow at SCP screening to prevent false-positive approvals and reduce processing time.",
+              "strength": 5
+            }
+          ],
+          "dependent_rules": [
+            {
+              "dependent_rule": "BR_SERVICES_PROHIBITION_028_006",
+              "dependency_type": "conditional"
+            }
+          ],
+          "provenance": {
+            "operation": "CONTRADICTION",
+            "sources": [
+              "freddie_mac"
+            ],
+            "original_ids": {
+              "freddie_mac": "BR_SERVICES_CONSTRAINT_028_005"
+            }
+          }
+        }
+      },
+      "rule_behavior": "threshold"
+    },
+    {
+      "contradiction_id": "CONFLICT_BR_MORTGAGE_LOAN_CONSTRAINT_011_004_BR_MORTGAGE_CONSTRAINT_015_007",
+      "conflict_type": "UNKNOWN",
+      "confidence": 0.82,
+      "reasoning": "Both address leasehold/ground lease remaining term relative to loan maturity, but thresholds differ materially: Fannie requires maturity+5 years; Freddie requires maturity+10/20/30 years depending on structure. Same metric with conflicting numeric requirements.",
+      "conflict_detail": {},
+      "g1_rule": {
+        "source": "fannie_mae",
+        "rule": {
+          "rule_id": "BR_MORTGAGE_LOAN_CONSTRAINT_011_004",
+          "rule_name": "Lease Term Must Exceed Loan Maturity by at Least 5 Years",
+          "rule_type": "constraint",
+          "description": "For leasehold mortgage transactions, the lease must have an unexpired term that exceeds the maturity date of the loan by five (5) years or more. This requirement applies to all leases associated with the subject property, regardless of lease form (master lease, sublease, or unit lease).",
+          "conditions": "Mortgage loan is secured by leasehold estate; lease is evaluated for term",
+          "consequences": "If met, lease term is acceptable; if violated, loan is ineligible for delivery",
+          "exceptions": "None stated in excerpt",
+          "source_reference": {
+            "chunk_path": "fannie_mae/part_b_origination_through_closing/subpart_b2_eligibility/chapter_b2_3_property_eligibility/b2_3_03_special_property_eligibility_and_underwriting_considerations_leasehold_estates_06_04_2025.txt",
+            "section_id": "B2-3-03, Lease Requirements",
+            "start_word_position": 858,
+            "end_word_position": 916,
+            "source_text": "Regardless of the lessee, the lender must ensure the terms of the lease address all of the following: The lease must have an unexpired term that exceeds the maturity date of the loan by \ufb01ve (5) years or more. The lease must not preclude the borrower's membership or voting rights in the HOA or co-op corporation, as applicable.",
+            "text_match_score": 0.971
+          },
+          "mandatory": true,
+          "examples": [
+            "Compliant: 30-year loan maturity 2056-06-01; lease expires 2062-06-30 (6+ years beyond maturity).",
+            "Non-compliant: 30-year loan maturity 2056-06-01; lease expires 2058-05-31 (less than 5 years beyond maturity).",
+            "Edge case: 15-year loan maturity 2041-07-01; lease expires 2046-07-01 (exactly 5 years beyond maturity, compliant)."
+          ],
+          "confidence_score": 96.15,
+          "confidence_breakdown": {
+            "extraction_clarity": 98,
+            "numeric_precision": 100,
+            "context_completeness": 90,
+            "source_authority": 95,
+            "logical_consistency": 95
+          },
+          "effective_date": "2025-06-04",
+          "expiration_date": null,
+          "superseded_by": null,
+          "jurisdiction": "agency:EXAMPLE_POLICIES",
+          "risk_level": "critical",
+          "related_rules": [
+            "BR_MORTGAGE_LOAN_ELIGIBILITY_011_002"
+          ],
+          "enforcement_action": "Loan delivery rejection",
+          "applicability_scope": {
+            "loan_types": [
+              "conventional"
+            ],
+            "occupancy_types": [
+              "primary_residence",
+              "second_home",
+              "investment"
+            ],
+            "transaction_types": [
+              "purchase",
+              "rate_term_refinance",
+              "cash_out_refinance"
+            ]
+          },
+          "data_points_required": [
+            "amortization_term_months",
+            "note_date",
+            "lease_expiration_date",
+            "loan_maturity_date"
+          ],
+          "audit_frequency": "at_origination",
+          "reference_verified": true,
+          "reference_verification_note": "ok_recovered_position",
+          "entity_or_relationship": "MORTGAGE_LOAN",
+          "entity_type": "entity",
+          "entity_definition": {
+            "description": "",
+            "key_attributes": [],
+            "examples": [
+              "30-year fixed-rate purchase mortgage delivered to Fannie Mae",
+              "Adjustable-rate mortgage with initial fixed period and subsequent adjustments",
+              "Refinance mortgage loan requiring appraisal and eligibility checks"
+            ]
+          },
+          "dependencies": [
+            {
+              "depends_on_rule": "BR_MORTGAGE_LOAN_ELIGIBILITY_011_002",
+              "dependency_type": "conditional",
+              "rationale": "BR_011_002 defines the security requirements for a leasehold mortgage (first lien in improvements and leasehold interest). BR_011_004 imposes an additional leasehold-specific constraint on the lease term (must extend 5 years beyond loan maturity). Therefore, BR_011_002 provides the gating context for applying BR_011_004.",
+              "impact_if_fails": "If leasehold identification/security structure is missed (BR_011_002), lease term sufficiency (BR_011_004) may not be validated, risking delivery ineligibility and life-of-loan R&W breaches.",
+              "strength": 4
+            },
+            {
+              "depends_on_rule": "BR_SELLER_SERVICER_COMPLIANCE_005_010",
+              "dependency_type": "prerequisite",
+              "rationale": "Lease-term compliance (011_004) is necessary for leasehold delivery, but is only relevant after OFAC screening permits delivery. 005_010 functions as an earlier, absolute block.",
+              "impact_if_fails": "If 005_010 fails, delivery cannot occur even if the lease term exceeds maturity by 5+ years; sanctions response steps apply.",
+              "strength": 5
+            },
+            {
+              "depends_on_rule": "BR_SUBJECT_PROPERTY_ELIGIBILITY_011_001",
+              "dependency_type": "prerequisite",
+              "rationale": "BR_011_001 determines whether leasehold collateral can be eligible at all. BR_011_004 then tests a key leasehold attribute (unexpired term must exceed loan maturity by 5+ years). In a compliance workflow, BR_011_001 acts as the initial eligibility gate; BR_011_004 is a subsequent leasehold condition test.",
+              "impact_if_fails": "If BR_011_001 is not checked, lenders may waste time on term calculations for ineligible leasehold scenarios. If BR_011_004 is missed, an otherwise eligible leasehold loan may be delivered with an unacceptable lease term, creating an ineligible delivery.",
+              "strength": 4
+            },
+            {
+              "depends_on_rule": "BR_DETERMINES_LOAN_ELIGIBILITY_CONSTRAINT_002_005",
+              "dependency_type": "prerequisite",
+              "rationale": "BR_011_004 requires the lease term to exceed the loan maturity date by 5+ years. To execute that test, the system must have the loan\u2019s maturity date, which is driven by original term and first payment date conventions addressed in BR_002_005 (term limits and measurement reference). While BR_002_005 is not leasehold-specific, it provides the standardized term boundary and timing convention required for a consistent maturity-date input to the leasehold term test.",
+              "impact_if_fails": "If loan term/maturity is not correctly determined per BR_002_005 conventions, the leasehold maturity buffer test may be wrong, leading to improper acceptance/rejection of leasehold collateral.",
+              "strength": 4
+            }
+          ],
+          "provenance": {
+            "operation": "CONTRADICTION",
+            "sources": [
+              "fannie_mae"
+            ],
+            "original_ids": {
+              "fannie_mae": "BR_MORTGAGE_LOAN_CONSTRAINT_011_004"
+            }
+          }
+        }
+      },
+      "g2_rule": {
+        "source": "freddie_mac",
+        "rule": {
+          "rule_id": "BR_MORTGAGE_CONSTRAINT_015_007",
+          "rule_name": "Ground lease term must exceed maturity by 10, 20, or 30 years",
+          "rule_type": "constraint",
+          "description": "For ground lease Mortgages, the remaining ground lease term (including eligible renewal options) must extend beyond the Mortgage maturity based on amortization and whether the Ground Lessor joins: (i) fully amortizing: at least 10 years beyond maturity; (ii) partially/no amortization with subordinated ground lease: longer of (a) amortization period plus any interest-only period or (b) 20 years beyond maturity; (iii) unsubordinated ground lease: no less than 30 years beyond maturity. Renewal options at the Ground Lessor\u2019s sole discretion may not be counted toward term compliance.",
+          "conditions": "Mortgage secured by lien on leasehold estate (ground lease Mortgage)",
+          "consequences": "If remaining term test fails, Mortgage is not eligible for purchase under this chapter",
+          "exceptions": "Renewal options solely at landlord discretion cannot be counted as term",
+          "source_reference": {
+            "chunk_path": "freddies_mac/10_mtg_orig_uw_fundamentals_gb_02_24_26_pdf/10_18_permitted_mortgage_amount_acquisition_financing_and_certain_refinances_12_16_25/c_allocation_to_intangible_assets_10_17_24_part_87_288.txt",
+            "section_id": "Guide Chapter 30.2(b) (02/24/26)",
+            "start_word_position": 851,
+            "end_word_position": 962,
+            "source_text": "The remaining term of the ground lease, together with any renewal options, must meet the following requirements: \u2022 For a fully amortizing ground lease Mortgage, the remaining ground lease term must extend beyond the maturity date of the ground lease Mortgage by at least 10 years. \u2022 For a partially amortizing ground lease Mortgage or for one with no amortization... (subordinated)... the longer of: (a) the amortization period... plus any interest-only period, or (b) 20 years beyond the maturity date... (unsubordinated)... no less than 30 years beyond the maturity date... Renewal options that are at the sole discretion of the landlord... may not be considered part of the ground lease term",
+            "confidence_note": "Word positions are estimated from provided chunk excerpt.",
+            "text_match_score": 0.734
+          },
+          "mandatory": true,
+          "examples": [
+            "Fully amortizing loan matures 2035; lease expires 2043: only 8 years beyond maturity \u2192 not eligible (needs \u226510 years).",
+            "IO 3 years + amortization 30 years; subordinated ground lease; maturity 2035; lease term must be longer of (33 years) or (20 years beyond maturity = 2055).",
+            "Unsubordinated ground lease; maturity 2035; lease must run to at least 2065 (30 years beyond), and landlord-only renewal options cannot be counted."
+          ],
+          "confidence_score": 92.5,
+          "confidence_breakdown": {
+            "extraction_clarity": 95,
+            "numeric_precision": 100,
+            "context_completeness": 85,
+            "source_authority": 90,
+            "logical_consistency": 85
+          },
+          "requires_review": false,
+          "effective_date": "2026-02-24",
+          "expiration_date": null,
+          "superseded_by": null,
+          "jurisdiction": "agency:EXAMPLE_POLICIES",
+          "risk_level": "critical",
+          "related_rules": [
+            "BR_MORTGAGE_PROHIBITION_015_008"
+          ],
+          "enforcement_action": "Purchase denial / delivery rejection",
+          "applicability_scope": {
+            "loan_types": [
+              "conventional"
+            ],
+            "occupancy_types": [
+              "investment"
+            ],
+            "transaction_types": [
+              "purchase",
+              "rate_term_refinance",
+              "cash_out_refinance"
+            ]
+          },
+          "data_points_required": [
+            "ground_lease_indicator",
+            "mortgage_maturity_date",
+            "ground_lease_remaining_term_years",
+            "renewal_options_terms",
+            "renewal_options_sole_discretion_indicator",
+            "amortization_type",
+            "amortization_period_years",
+            "interest_only_period_months",
+            "ground_lessor_joins_indicator"
+          ],
+          "audit_frequency": "at_origination",
+          "reference_verified": true,
+          "reference_verification_note": "ok_recovered_position",
+          "entity_or_relationship": "MORTGAGE",
+          "entity_type": "entity",
+          "entity_definition": {
+            "description": "",
+            "key_attributes": [],
+            "examples": [
+              "Fixed-rate multifamily mortgage delivered to Freddie Mac",
+              "Floating-rate mortgage held in a warehouse line prior to delivery",
+              "Mortgage pooled into a 55-Day Multi PC securitization"
+            ]
+          },
+          "provenance": {
+            "operation": "CONTRADICTION",
+            "sources": [
+              "freddie_mac"
+            ],
+            "original_ids": {
+              "freddie_mac": "BR_MORTGAGE_CONSTRAINT_015_007"
+            }
+          }
+        }
+      },
+      "rule_behavior": "threshold"
+    },
+    {
+      "contradiction_id": "CONFLICT_BR_COOP_UNIT_CONSTRAINT_019_007_BR_MULTIFAMILY_PROPERTY_CONSTRAINT_029_007",
+      "conflict_type": "UNKNOWN",
+      "confidence": 0.76,
+      "reasoning": "Both set maximum allowable commercial/nonresidential use for eligibility, but thresholds differ (Fannie: space must not exceed 35% in condo/co-op projects; Freddie SBL: commercial space up to 40% plus income test). If applied to the same mixed-use evaluation, outcomes can conflict.",
+      "conflict_detail": {},
+      "g1_rule": {
+        "source": "fannie_mae",
+        "rule": {
+          "rule_id": "BR_COOP_UNIT_CONSTRAINT_019_007",
+          "rule_name": "Commercial or nonresidential space in project may not exceed 35%",
+          "rule_type": "constraint",
+          "description": "For condo and co-op projects, the total space used for nonresidential or commercial purposes must not exceed 35%. Exceeding 35% is an ineligible project characteristic for purchase/securitization eligibility.",
+          "conditions": "Applies when evaluating condo/co-op project mixed-use allocation for eligibility.",
+          "consequences": "If nonresidential/commercial space >35%, the project is ineligible for Fannie Mae loans.",
+          "exceptions": "None stated in excerpt.",
+          "source_reference": {
+            "chunk_path": "fannie_mae/part_b_origination_through_closing/subpart_b4_underwriting_property/chapter_b4_2_project_standards/section_b4_2_1_general_project_standards/b4_2_1_03_ineligible_projects_08_06_2025_part_1_4.txt",
+            "section_id": "B4-2.1-03 (08/06/2025), Ineligible Project Characteristics",
+            "start_word_position": 1011,
+            "end_word_position": 1036,
+            "source_text": "The total space that is used for nonresidential or commercial purposes may not exceed 35%. (See Commercial Space and Mixed-Use Allocation below for additional detail.)",
+            "text_match_score": 0.943
+          },
+          "mandatory": true,
+          "examples": [
+            "Project has 30% retail space on ground floor; meets the \u226435% requirement.",
+            "Project has 36% commercial office space; exceeds 35% and is ineligible for Fannie Mae purchase.",
+            "Mixed-use project recalculation shows 34.9% commercial; remains eligible under the 35% cap."
+          ],
+          "effective_date": "2025-08-06",
+          "expiration_date": null,
+          "superseded_by": null,
+          "jurisdiction": "agency:EXAMPLE_POLICIES",
+          "risk_level": "critical",
+          "related_rules": [
+            "BR_COOP_UNIT_PROHIBITION_019_006"
+          ],
+          "enforcement_action": "Loan ineligible for purchase/securitization",
+          "applicability_scope": {
+            "loan_types": [
+              "conventional"
+            ],
+            "occupancy_types": [
+              "primary_residence",
+              "second_home",
+              "investment"
+            ],
+            "transaction_types": [
+              "purchase",
+              "rate_term_refinance",
+              "cash_out_refinance"
+            ]
+          },
+          "data_points_required": [
+            "coop_project_id",
+            "project_type",
+            "project_legal_compliance_status",
+            "nonresidential_space_percent"
+          ],
+          "audit_frequency": "at_origination",
+          "reference_verified": true,
+          "reference_verification_note": "ok_recovered_position",
+          "confidence_score": 75,
+          "entity_or_relationship": "COOP_UNIT",
+          "entity_type": "entity",
+          "entity_definition": {
+            "description": "",
+            "key_attributes": [],
+            "examples": [
+              "Co-op share loan for an owner-occupied unit",
+              "Co-op project requiring legal compliance review",
+              "Co-op unit with maintenance fee and underlying mortgage considerations"
+            ]
+          },
+          "dependencies": [
+            {
+              "depends_on_rule": "BR_COOP_UNIT_PROHIBITION_019_006",
+              "dependency_type": "complementary",
+              "rationale": "BR_019_006 is a project eligibility prohibition based on CPM/DU findings status \"Unavailable.\" BR_019_007 is a mixed-use commercial space cap (\u226435%) for condo/co-op projects. In workflow automation, both must be checked to determine project eligibility for Fannie Mae purchase/securitization; they complement each other as parallel gating criteria.",
+              "impact_if_fails": "If either rule fails, the project is ineligible; if one rule is omitted from checks, lender may incorrectly treat an ineligible project as eligible and face delivery failures/repurchase risk.",
+              "strength": 3
+            },
+            {
+              "depends_on_rule": "BR_SUBJECT_PROPERTY_PROHIBITION_005_007",
+              "dependency_type": "prerequisite",
+              "rationale": "BR_019_007 evaluates nonresidential/commercial space percentage for condo/co-op projects. BR_005_007 disqualifies certain condo/co-op project structures outright. Therefore, BR_005_007 acts as a gating screen before assessing other condo/co-op eligibility characteristics like mixed-use limits.",
+              "impact_if_fails": "If BR_005_007 fails and is not detected: project might incorrectly appear eligible due to compliant commercial-space percentage, causing delivery defects when the prohibited structure is later discovered.",
+              "strength": 4
+            },
+            {
+              "depends_on_rule": "BR_SUBJECT_PROPERTY_ELIGIBILITY_011_001",
+              "dependency_type": "conditional",
+              "rationale": "BR_011_001 includes condo/co-op units as eligible leasehold property types (subject to market acceptance and other criteria). BR_019_007 is a condo/co-op project eligibility criterion (commercial space \u2264 35%). Therefore, when BR_011_001 is satisfied for a leasehold condo/co-op unit, BR_019_007 must also be evaluated to confirm project eligibility.",
+              "impact_if_fails": "If BR_019_007 fails (commercial space > 35%): the leasehold property type may be permissible in concept, but the specific project is ineligible, preventing delivery.",
+              "strength": 3
+            }
+          ],
+          "dependent_rules": [
+            {
+              "dependent_rule": "BR_SUBJECT_PROPERTY_CONSTRAINT_020_008",
+              "dependency_type": "complementary"
+            },
+            {
+              "dependent_rule": "BR_LENDER_CONTRACT_CONSTRAINT_002_007",
+              "dependency_type": "prerequisite"
+            }
+          ],
+          "provenance": {
+            "operation": "CONTRADICTION",
+            "sources": [
+              "fannie_mae"
+            ],
+            "original_ids": {
+              "fannie_mae": "BR_COOP_UNIT_CONSTRAINT_019_007"
+            }
+          }
+        }
+      },
+      "g2_rule": {
+        "source": "freddie_mac",
+        "rule": {
+          "rule_id": "BR_MULTIFAMILY_PROPERTY_CONSTRAINT_029_007",
+          "rule_name": "SBL mixed-use limits: commercial income \u2264 40% and space \u2264 40%",
+          "rule_type": "constraint",
+          "description": "For SBL Mortgages on mixed-use properties, purchase eligibility requires that underwritten commercial income is no more than 40% of Gross Potential Rent (GPR) and square footage devoted to commercial space is no more than 40% of the Net Leasable Space; other listed mixed-use conditions (zoning compatibility, market support) must also be satisfied.",
+          "conditions": "When SBL collateral includes any commercial (nonresidential) space or income",
+          "consequences": "Meets: SBL mixed-use eligibility satisfied; Violated: Mortgage ineligible for SBL purchase",
+          "exceptions": "None stated",
+          "source_reference": {
+            "chunk_path": "freddies_mac/10_mtg_orig_uw_fundamentals_gb_02_24_26_pdf/10_11_mortgage_not_modified_11_30_12_part_67_85.txt",
+            "section_id": "Guide Chapter 8SBL, Section 8SBL.2(b) (06/30/16)",
+            "start_word_position": 168,
+            "end_word_position": 245,
+            "source_text": "Mortgages on such Properties are eligible for purchase under Freddie Mac's SBL Purchase Product, provided that each of the following conditions is satisfied: ... Underwritten commercial income is no more than 40 percent of Gross Potential Rent (GPR) and is otherwise acceptable to Freddie Mac ... Square footage devoted to commercial space is no more than 40 percent of the Net Leasable Space and is otherwise acceptable to Freddie Mac",
+            "text_match_score": 0.018
+          },
+          "mandatory": true,
+          "examples": [
+            "GPR $1,000,000; underwritten commercial income $350,000 (35%) and commercial NLS 25%; eligible on these thresholds.",
+            "GPR $800,000; underwritten commercial income $360,000 (45%); fails commercial income limit and is ineligible.",
+            "Commercial NLS 42% even with commercial income 30%; fails space limit and is ineligible."
+          ],
+          "effective_date": "2016-06-30",
+          "expiration_date": null,
+          "superseded_by": null,
+          "jurisdiction": "agency:EXAMPLE_POLICIES",
+          "risk_level": "critical",
+          "related_rules": [],
+          "enforcement_action": "Freddie Mac purchase rejection",
+          "applicability_scope": {
+            "loan_types": [
+              "multifamily_sbl"
+            ],
+            "occupancy_types": [
+              "multifamily_rental"
+            ],
+            "transaction_types": [
+              "acquisition",
+              "refinance"
+            ]
+          },
+          "data_points_required": [
+            "gross_potential_rent_amount",
+            "underwritten_commercial_income_amount",
+            "net_leasable_space_total_sqft",
+            "commercial_space_sqft",
+            "property_mixed_use_indicator"
+          ],
+          "audit_frequency": "at_origination",
+          "confidence_score": 93.35,
+          "confidence_breakdown": {
+            "extraction_clarity": 92,
+            "numeric_precision": 100,
+            "context_completeness": 85,
+            "source_authority": 95,
+            "logical_consistency": 95
+          },
+          "reference_verified": false,
+          "reference_verification_note": "text_mismatch:ratio=0.02",
+          "entity_or_relationship": "MULTIFAMILY_PROPERTY",
+          "entity_type": "entity",
+          "entity_definition": {
+            "description": "",
+            "key_attributes": [],
+            "examples": [
+              "200-unit garden-style apartment community in Texas",
+              "Mixed-use property with residential units above retail space",
+              "Affordable housing property with regulatory restrictions"
+            ]
+          },
+          "provenance": {
+            "operation": "CONTRADICTION",
+            "sources": [
+              "freddie_mac"
+            ],
+            "original_ids": {
+              "freddie_mac": "BR_MULTIFAMILY_PROPERTY_CONSTRAINT_029_007"
+            }
+          }
+        }
+      },
+      "rule_behavior": "threshold"
+    },
+    {
+      "contradiction_id": "CONFLICT_BR_DETERMINES_LOAN_ELIGIBILITY_CONSTRAINT_002_005_BR_MORTGAGE_CONSTRAINT_003_003",
+      "conflict_type": "UNKNOWN",
+      "confidence": 0.78,
+      "reasoning": "Both regulate mortgage term eligibility but with conflicting thresholds: Fannie requires min original term 85 months and allows up to 30 years; Freddie limits floating-rate program terms to only 5/7/10 years (including 5 and 7 years that would fail Fannie\u2019s 85-month minimum).",
+      "conflict_detail": {},
+      "g1_rule": {
+        "source": "fannie_mae",
+        "rule": {
+          "rule_id": "BR_DETERMINES_LOAN_ELIGIBILITY_CONSTRAINT_002_005",
+          "rule_name": "Original loan term max 30 years and minimum 85 months (with construction exception)",
+          "rule_type": "constraint",
+          "description": "Fannie Mae purchases or securitizes loans with original terms up to 30 years. The term of a first mortgage may not extend more than 30 years beyond the date that is one month prior to the date of the first payment. The minimum original term is 85 months (subject to applicable committing and delivery requirements). Exception/clarification: for single-closing construction-to-permanent loans, the loan term must not exceed 30 years after conversion to permanent financing (per applicable guidance). If the term is outside these limits, the loan is not eligible for purchase/securitization.",
+          "conditions": "Applies to first-lien mortgage original term evaluation for eligibility and delivery.",
+          "consequences": "If term exceeds maximum or is below 85 months, loan is not eligible for purchase/securitization.",
+          "exceptions": "Single-closing construction-to-permanent: ignore construction period; still \u226430 years post-conversion.",
+          "source_reference": [
+            {
+              "chunk_path": "fannie_mae/part_b_origination_through_closing/subpart_b2_eligibility/chapter_b2_1_mortgage_eligibility/section_b2_1_5_other_loan_attributes_and_related_policies/b2_1_5_02_loan_eligibility_06_05_2024_part_1_3.txt",
+              "section_id": "B2-1.5-02 (06/05/2024), Acceptable Loan Terms",
+              "start_word_position": 955,
+              "end_word_position": 1049,
+              "source_text": "Fannie Mae purchases or securitizes loans that have original terms up to 30 years. The term of a \ufb01rst mortgage may not extend more than 30 years beyond the date that is one month prior to the date of the \ufb01rst payment. The minimum original term is 85 months, subject to applicable committing and delivery requirements for whole loans and loans in MBS. Exception: The only exception to these requirements is for single-closing construction-to-permanent loans, which must have a loan term not exceeding 30 years after conversion to permanent \ufb01nancing (disregarding the construction period).",
+              "text_match_score": 0.987
+            },
+            {
+              "chunk_path": "fannie_mae/part_b_origination_through_closing/subpart_b2_eligibility/chapter_b2_1_mortgage_eligibility/section_b2_1_5_other_loan_attributes_and_related_policies/b2_1_5_02_loan_eligibility_06_05_2024_part_3_6.txt",
+              "section_id": "B2-1.5-02, Acceptable Loan Terms",
+              "start_word_position": 120,
+              "end_word_position": 200,
+              "source_text": "Fannie Mae purchases or securitizes loans that have original terms up to 30 years. The term of a \ufb01rst mortgage may not extend more than 30 years beyond the date that is one month prior to the date of the \ufb01rst payment. The minimum original term is 85 months... Exception: The only exception to these requirements is for single-closing construction-to-permanent loans, which must have a loan term not exceeding 30 years after conversion to permanent \ufb01nancing (disregarding the construction period).",
+              "text_match_score": 0.782
+            }
+          ],
+          "mandatory": true,
+          "examples": [
+            "Standard purchase: first payment due 06/01; term cannot extend past 05/01 thirty years later \u2192 if maturity exceeds that, ineligible.",
+            "Loan with original term 60 months \u2192 below 85-month minimum \u2192 ineligible for delivery.",
+            "Single-closing construction-to-permanent: 12-month construction + 30-year permanent; permanent term is 30 years post-conversion \u2192 eligible on term under exception."
+          ],
+          "confidence_score": 93.0,
+          "confidence_breakdown": {
+            "extraction_clarity": 95,
+            "numeric_precision": 100,
+            "context_completeness": 85,
+            "source_authority": 90,
+            "logical_consistency": 90
+          },
+          "effective_date": "2024-06-05",
+          "expiration_date": null,
+          "superseded_by": null,
+          "jurisdiction": "agency:EXAMPLE_POLICIES",
+          "risk_level": "critical",
+          "related_rules": [
+            "BR_DETERMINES_LOAN_ELIGIBILITY_ELIGIBILITY_002_002"
+          ],
+          "enforcement_action": "Delivery rejection (ineligible for purchase)",
+          "applicability_scope": {
+            "loan_types": [
+              "conventional"
+            ],
+            "occupancy_types": [
+              "primary_residence",
+              "second_home",
+              "investment"
+            ],
+            "transaction_types": [
+              "purchase",
+              "rate_term_refinance",
+              "cash_out_refinance"
+            ]
+          },
+          "data_points_required": [
+            "amortization_term_months",
+            "first_payment_date",
+            "note_date",
+            "loan_type"
+          ],
+          "audit_frequency": "at_origination",
+          "reference_verified": true,
+          "reference_verification_note": "ok_recovered_position",
+          "entity_or_relationship": "DETERMINES_LOAN_ELIGIBILITY",
+          "entity_type": "relationship",
+          "relationship_definition": {
+            "description": "",
+            "source_entity": "MORTGAGE_LOAN",
+            "target_entity": "LOAN_ELIGIBILITY_PROFILE",
+            "directionality": "",
+            "examples": [
+              "Loan eligibility profile shows high-balance indicator true based on county limits.",
+              "Loan eligibility profile flags escrow required per policy and loan characteristics."
+            ]
+          },
+          "deduplication_info": {
+            "merged_from": [
+              "BR_MORTGAGE_LOAN_CONSTRAINT_039_005"
+            ],
+            "merge_count": 1,
+            "rationale": "Both rules enforce the same core loan term eligibility boundaries for Fannie Mae acquisition: original terms up to 30 years; the term may not extend more than 30 years beyond the date one month prior to the first payment date; and the minimum original term is 85 months. BR_DETERMINES_LOAN_ELIGIBILITY_CONSTRAINT_002_005 includes an additional explicit construction-to-permanent (single-close) exception clarification. Because the added exception does not change the general rule but clarifies its application to a special case, the rules are treated as duplicates with a completeness variation (semantic not scored at full 40).",
+            "confidence": "medium-high",
+            "similarity_score": 88,
+            "score_breakdown": {
+              "semantic_equivalence": 33,
+              "numeric_precision": 25,
+              "contextual_alignment": 20,
+              "source_consistency": 5,
+              "consequence_alignment": 5
+            },
+            "primary_selection_reason": "BR_DETERMINES_LOAN_ELIGIBILITY_CONSTRAINT_002_005 selected as primary because it is more complete: it includes the same maximum and minimum term constraints and adds the explicit single-closing construction-to-permanent exception details, which increases testability and reduces ambiguity."
+          },
+          "dependencies": [
+            {
+              "depends_on_rule": "BR_MORTGAGE_LOAN_PROCESS_038_009",
+              "dependency_type": "prerequisite",
+              "rationale": "BR_002_005 repeats the 30-year test relative to a date one month prior to the first payment and adds a construction-to-permanent clarification. BR_038_009 governs permissible first payment timing and defines the conversion start point for the 2\u2011month period. A compliant first payment date (and correct conversion timing) must exist before evaluating BR_002_005.",
+              "impact_if_fails": "If BR_038_009 is not satisfied, BR_002_005 eligibility may be determined incorrectly. This can create false eligibility (loan delivered but later rejected) or false ineligibility (loan unnecessarily removed from delivery pipeline).",
+              "strength": 5
+            }
+          ],
+          "dependent_rules": [
+            {
+              "dependent_rule": "BR_MORTGAGE_LOAN_CONSTRAINT_011_004",
+              "dependency_type": "prerequisite"
+            },
+            {
+              "dependent_rule": "BR_LENDER_CONTRACT_CONSTRAINT_002_007",
+              "dependency_type": "prerequisite"
+            }
+          ],
+          "provenance": {
+            "operation": "CONTRADICTION",
+            "sources": [
+              "fannie_mae"
+            ],
+            "original_ids": {
+              "fannie_mae": "BR_DETERMINES_LOAN_ELIGIBILITY_CONSTRAINT_002_005"
+            }
+          }
+        }
+      },
+      "g2_rule": {
+        "source": "freddie_mac",
+        "rule": {
+          "rule_id": "BR_MORTGAGE_CONSTRAINT_003_003",
+          "rule_name": "Floating-rate Mortgage term limited to 5, 7, or 10 years",
+          "rule_type": "constraint",
+          "description": "A Floating-Rate Mortgage submitted under the Multifamily Conventional Cash Mortgage Purchase Program may have a term only of 5 years, 7 years, or 10 years.",
+          "conditions": "Applies to Floating-Rate Mortgages under Guide Chapter 17.3(b).",
+          "consequences": "If term is not 5/7/10 years, Mortgage is ineligible for delivery/purchase.",
+          "exceptions": "None stated.",
+          "source_reference": {
+            "chunk_path": "freddies_mac/10_mtg_orig_uw_fundamentals_gb_02_24_26_pdf/10_18_permitted_mortgage_amount_acquisition_financing_and_certain_refinances_12_16_25/c_allocation_to_intangible_assets_10_17_24_part_10_288.txt",
+            "section_id": "Guide Chapter 17, Section 17.3(b) (04/15/21)",
+            "start_word_position": 318,
+            "end_word_position": 337,
+            "source_text": "b. Term ( 04/15/21 ) The term of the Floating -Rate Mortgage may be 5, 7 or 10 years.",
+            "text_match_score": 0.902
+          },
+          "mandatory": true,
+          "examples": [
+            "A 7-year floating-rate mortgage meets the term requirement.",
+            "A 3-year floating-rate mortgage is not permitted and should not be delivered to Freddie Mac.",
+            "A 10-year floating-rate mortgage meets the term requirement (subject to other program rules)."
+          ],
+          "effective_date": "2021-04-15",
+          "expiration_date": null,
+          "superseded_by": null,
+          "jurisdiction": "agency:EXAMPLE_POLICIES",
+          "risk_level": "critical",
+          "related_rules": [
+            "BR_MORTGAGE_CALCULATION_003_004"
+          ],
+          "enforcement_action": "Purchase refusal",
+          "applicability_scope": {
+            "loan_types": [
+              "conventional"
+            ],
+            "occupancy_types": [
+              "investment"
+            ],
+            "transaction_types": [
+              "purchase",
+              "rate_term_refinance",
+              "cash_out_refinance"
+            ]
+          },
+          "data_points_required": [
+            "product_type",
+            "amortization_term_months",
+            "maturity_date"
+          ],
+          "audit_frequency": "at_origination",
+          "confidence_score": 95.65,
+          "confidence_breakdown": {
+            "extraction_clarity": 95,
+            "numeric_precision": 100,
+            "context_completeness": 92,
+            "source_authority": 95,
+            "logical_consistency": 95
+          },
+          "extraction_notes": "Simple explicit allowable-term list.",
+          "reference_verified": true,
+          "reference_verification_note": "ok_recovered_position",
+          "entity_or_relationship": "MORTGAGE",
+          "entity_type": "entity",
+          "entity_definition": {
+            "description": "",
+            "key_attributes": [],
+            "examples": [
+              "Fixed-rate multifamily mortgage delivered to Freddie Mac",
+              "Floating-rate mortgage held in a warehouse line prior to delivery",
+              "Mortgage pooled into a 55-Day Multi PC securitization"
+            ]
+          },
+          "dependencies": [
+            {
+              "depends_on_rule": "BR_PURCHASES_PROHIBITION_035_002",
+              "dependency_type": "override",
+              "rationale": "Even where program eligibility requirements like permitted term under BR_MORTGAGE_CONSTRAINT_003_003 are met, BR_PURCHASES_PROHIBITION_035_002 imposes a hard stop on purchase/approval based on SCP list status.",
+              "impact_if_fails": "If SCP match: purchase denied; program-term compliance cannot cure.",
+              "strength": 5
+            }
+          ],
+          "provenance": {
+            "operation": "CONTRADICTION",
+            "sources": [
+              "freddie_mac"
+            ],
+            "original_ids": {
+              "freddie_mac": "BR_MORTGAGE_CONSTRAINT_003_003"
+            }
+          }
+        }
+      },
+      "rule_behavior": "threshold"
+    },
+    {
+      "contradiction_id": "CONFLICT_BR_DETERMINES_LOAN_ELIGIBILITY_CONSTRAINT_002_005_BR_MORTGAGE_CONSTRAINT_019_009",
+      "conflict_type": "UNKNOWN",
+      "confidence": 0.82,
+      "reasoning": "Both address maximum loan term for eligibility. Fannie sets a general max of 30 years; Freddie permits up to 35 years for LIHTC TEL loans (30 years for non-LIHTC). For LIHTC TEL scenarios, thresholds conflict (30 vs 35).",
+      "conflict_detail": {},
+      "g1_rule": {
+        "source": "fannie_mae",
+        "rule": {
+          "rule_id": "BR_DETERMINES_LOAN_ELIGIBILITY_CONSTRAINT_002_005",
+          "rule_name": "Original loan term max 30 years and minimum 85 months (with construction exception)",
+          "rule_type": "constraint",
+          "description": "Fannie Mae purchases or securitizes loans with original terms up to 30 years. The term of a first mortgage may not extend more than 30 years beyond the date that is one month prior to the date of the first payment. The minimum original term is 85 months (subject to applicable committing and delivery requirements). Exception/clarification: for single-closing construction-to-permanent loans, the loan term must not exceed 30 years after conversion to permanent financing (per applicable guidance). If the term is outside these limits, the loan is not eligible for purchase/securitization.",
+          "conditions": "Applies to first-lien mortgage original term evaluation for eligibility and delivery.",
+          "consequences": "If term exceeds maximum or is below 85 months, loan is not eligible for purchase/securitization.",
+          "exceptions": "Single-closing construction-to-permanent: ignore construction period; still \u226430 years post-conversion.",
+          "source_reference": [
+            {
+              "chunk_path": "fannie_mae/part_b_origination_through_closing/subpart_b2_eligibility/chapter_b2_1_mortgage_eligibility/section_b2_1_5_other_loan_attributes_and_related_policies/b2_1_5_02_loan_eligibility_06_05_2024_part_1_3.txt",
+              "section_id": "B2-1.5-02 (06/05/2024), Acceptable Loan Terms",
+              "start_word_position": 955,
+              "end_word_position": 1049,
+              "source_text": "Fannie Mae purchases or securitizes loans that have original terms up to 30 years. The term of a \ufb01rst mortgage may not extend more than 30 years beyond the date that is one month prior to the date of the \ufb01rst payment. The minimum original term is 85 months, subject to applicable committing and delivery requirements for whole loans and loans in MBS. Exception: The only exception to these requirements is for single-closing construction-to-permanent loans, which must have a loan term not exceeding 30 years after conversion to permanent \ufb01nancing (disregarding the construction period).",
+              "text_match_score": 0.987
+            },
+            {
+              "chunk_path": "fannie_mae/part_b_origination_through_closing/subpart_b2_eligibility/chapter_b2_1_mortgage_eligibility/section_b2_1_5_other_loan_attributes_and_related_policies/b2_1_5_02_loan_eligibility_06_05_2024_part_3_6.txt",
+              "section_id": "B2-1.5-02, Acceptable Loan Terms",
+              "start_word_position": 120,
+              "end_word_position": 200,
+              "source_text": "Fannie Mae purchases or securitizes loans that have original terms up to 30 years. The term of a \ufb01rst mortgage may not extend more than 30 years beyond the date that is one month prior to the date of the \ufb01rst payment. The minimum original term is 85 months... Exception: The only exception to these requirements is for single-closing construction-to-permanent loans, which must have a loan term not exceeding 30 years after conversion to permanent \ufb01nancing (disregarding the construction period).",
+              "text_match_score": 0.782
+            }
+          ],
+          "mandatory": true,
+          "examples": [
+            "Standard purchase: first payment due 06/01; term cannot extend past 05/01 thirty years later \u2192 if maturity exceeds that, ineligible.",
+            "Loan with original term 60 months \u2192 below 85-month minimum \u2192 ineligible for delivery.",
+            "Single-closing construction-to-permanent: 12-month construction + 30-year permanent; permanent term is 30 years post-conversion \u2192 eligible on term under exception."
+          ],
+          "confidence_score": 93.0,
+          "confidence_breakdown": {
+            "extraction_clarity": 95,
+            "numeric_precision": 100,
+            "context_completeness": 85,
+            "source_authority": 90,
+            "logical_consistency": 90
+          },
+          "effective_date": "2024-06-05",
+          "expiration_date": null,
+          "superseded_by": null,
+          "jurisdiction": "agency:EXAMPLE_POLICIES",
+          "risk_level": "critical",
+          "related_rules": [
+            "BR_DETERMINES_LOAN_ELIGIBILITY_ELIGIBILITY_002_002"
+          ],
+          "enforcement_action": "Delivery rejection (ineligible for purchase)",
+          "applicability_scope": {
+            "loan_types": [
+              "conventional"
+            ],
+            "occupancy_types": [
+              "primary_residence",
+              "second_home",
+              "investment"
+            ],
+            "transaction_types": [
+              "purchase",
+              "rate_term_refinance",
+              "cash_out_refinance"
+            ]
+          },
+          "data_points_required": [
+            "amortization_term_months",
+            "first_payment_date",
+            "note_date",
+            "loan_type"
+          ],
+          "audit_frequency": "at_origination",
+          "reference_verified": true,
+          "reference_verification_note": "ok_recovered_position",
+          "entity_or_relationship": "DETERMINES_LOAN_ELIGIBILITY",
+          "entity_type": "relationship",
+          "relationship_definition": {
+            "description": "",
+            "source_entity": "MORTGAGE_LOAN",
+            "target_entity": "LOAN_ELIGIBILITY_PROFILE",
+            "directionality": "",
+            "examples": [
+              "Loan eligibility profile shows high-balance indicator true based on county limits.",
+              "Loan eligibility profile flags escrow required per policy and loan characteristics."
+            ]
+          },
+          "deduplication_info": {
+            "merged_from": [
+              "BR_MORTGAGE_LOAN_CONSTRAINT_039_005"
+            ],
+            "merge_count": 1,
+            "rationale": "Both rules enforce the same core loan term eligibility boundaries for Fannie Mae acquisition: original terms up to 30 years; the term may not extend more than 30 years beyond the date one month prior to the first payment date; and the minimum original term is 85 months. BR_DETERMINES_LOAN_ELIGIBILITY_CONSTRAINT_002_005 includes an additional explicit construction-to-permanent (single-close) exception clarification. Because the added exception does not change the general rule but clarifies its application to a special case, the rules are treated as duplicates with a completeness variation (semantic not scored at full 40).",
+            "confidence": "medium-high",
+            "similarity_score": 88,
+            "score_breakdown": {
+              "semantic_equivalence": 33,
+              "numeric_precision": 25,
+              "contextual_alignment": 20,
+              "source_consistency": 5,
+              "consequence_alignment": 5
+            },
+            "primary_selection_reason": "BR_DETERMINES_LOAN_ELIGIBILITY_CONSTRAINT_002_005 selected as primary because it is more complete: it includes the same maximum and minimum term constraints and adds the explicit single-closing construction-to-permanent exception details, which increases testability and reduces ambiguity."
+          },
+          "dependencies": [
+            {
+              "depends_on_rule": "BR_MORTGAGE_LOAN_PROCESS_038_009",
+              "dependency_type": "prerequisite",
+              "rationale": "BR_002_005 repeats the 30-year test relative to a date one month prior to the first payment and adds a construction-to-permanent clarification. BR_038_009 governs permissible first payment timing and defines the conversion start point for the 2\u2011month period. A compliant first payment date (and correct conversion timing) must exist before evaluating BR_002_005.",
+              "impact_if_fails": "If BR_038_009 is not satisfied, BR_002_005 eligibility may be determined incorrectly. This can create false eligibility (loan delivered but later rejected) or false ineligibility (loan unnecessarily removed from delivery pipeline).",
+              "strength": 5
+            }
+          ],
+          "dependent_rules": [
+            {
+              "dependent_rule": "BR_MORTGAGE_LOAN_CONSTRAINT_011_004",
+              "dependency_type": "prerequisite"
+            },
+            {
+              "dependent_rule": "BR_LENDER_CONTRACT_CONSTRAINT_002_007",
+              "dependency_type": "prerequisite"
+            }
+          ],
+          "provenance": {
+            "operation": "CONTRADICTION",
+            "sources": [
+              "fannie_mae"
+            ],
+            "original_ids": {
+              "fannie_mae": "BR_DETERMINES_LOAN_ELIGIBILITY_CONSTRAINT_002_005"
+            }
+          }
+        }
+      },
+      "g2_rule": {
+        "source": "freddie_mac",
+        "rule": {
+          "rule_id": "BR_MORTGAGE_CONSTRAINT_019_009",
+          "rule_name": "TEL Loan Term Max 35 Years LIHTC and 30 Years Non-LIHTC",
+          "rule_type": "constraint",
+          "description": "For Targeted Affordable Housing Tax-Exempt Loan (TEL) Mortgages, the maximum term and amortization period depend on whether the property is LIHTC: LIHTC Properties have a maximum term and amortization period of 35 years; non-LIHTC Properties have a maximum term and amortization period of 30 years.",
+          "conditions": "Applies to TEL Mortgages under Guide Chapter 25; depends on LIHTC status",
+          "consequences": "If within max, loan eligible on term; if exceeds max, loan ineligible",
+          "exceptions": "None stated",
+          "source_reference": {
+            "chunk_path": "freddies_mac/10_mtg_orig_uw_fundamentals_gb_02_24_26_pdf/10_18_permitted_mortgage_amount_acquisition_financing_and_certain_refinances_12_16_25/c_allocation_to_intangible_assets_10_17_24_part_52_288.txt",
+            "section_id": "Guide Chapter 25 \u2013 Maximum term and amortization period (09/28/18)",
+            "start_word_position": 498,
+            "end_word_position": 524,
+            "source_text": "Maximum term and amortization period ( 09/28/18 )  For LIHTC Properties, the maximum term and amortization period is 35 years. For non -LIHTC Properties, the maximum term and amortization period is 30 years.",
+            "text_match_score": 0.093
+          },
+          "mandatory": true,
+          "examples": [
+            "TEL mortgage for a LIHTC property proposed at 35-year term and 35-year amortization: permitted.",
+            "TEL mortgage for a non-LIHTC property proposed at 32-year amortization: not permitted and must be reduced to 30 years or less."
+          ],
+          "effective_date": "2018-09-28",
+          "expiration_date": null,
+          "superseded_by": null,
+          "jurisdiction": "federal",
+          "risk_level": "high",
+          "related_rules": [
+            "BR_MORTGAGE_CONSTRAINT_019_010"
+          ],
+          "enforcement_action": "Loan purchase refusal",
+          "applicability_scope": {
+            "loan_types": [
+              "conventional"
+            ],
+            "occupancy_types": [
+              "investment"
+            ],
+            "transaction_types": [
+              "purchase",
+              "rate_term_refinance"
+            ]
+          },
+          "data_points_required": [
+            "product_type",
+            "amortization_term_months",
+            "maturity_date",
+            "lihtc_indicator"
+          ],
+          "audit_frequency": "at_origination",
+          "confidence_score": 96.0,
+          "confidence_breakdown": {
+            "extraction_clarity": 95,
+            "numeric_precision": 100,
+            "context_completeness": 95,
+            "source_authority": 90,
+            "logical_consistency": 100
+          },
+          "extraction_notes": "Explicit numeric maxima stated for two property categories.",
+          "reference_verified": false,
+          "reference_verification_note": "text_mismatch:ratio=0.09",
+          "entity_or_relationship": "MORTGAGE",
+          "entity_type": "entity",
+          "entity_definition": {
+            "description": "",
+            "key_attributes": [],
+            "examples": [
+              "Fixed-rate multifamily mortgage delivered to Freddie Mac",
+              "Floating-rate mortgage held in a warehouse line prior to delivery",
+              "Mortgage pooled into a 55-Day Multi PC securitization"
+            ]
+          },
+          "provenance": {
+            "operation": "CONTRADICTION",
+            "sources": [
+              "freddie_mac"
+            ],
+            "original_ids": {
+              "freddie_mac": "BR_MORTGAGE_CONSTRAINT_019_009"
+            }
+          }
+        }
+      },
+      "rule_behavior": "threshold"
+    },
+    {
+      "contradiction_id": "CONFLICT_BR_PRODUCES_APPRAISAL_REPORT_CONSTRAINT_009_001_BR_APPRAISAL_REPORT_CONSTRAINT_038_006",
+      "conflict_type": "UNKNOWN",
+      "confidence": 0.83,
+      "reasoning": "Both rules govern minimum comparable sales in the sales comparison approach, but thresholds differ: Rule A requires at least 3 closed comparable sales; Rule B requires analysis of at least 4 comparable sales (and 4 additional if subject used). Different minima create a threshold conflict.",
+      "conflict_detail": {},
+      "g1_rule": {
+        "source": "fannie_mae",
+        "rule": {
+          "rule_id": "BR_PRODUCES_APPRAISAL_REPORT_CONSTRAINT_009_001",
+          "rule_name": "Sales Comparison Approach Must Include 3 Closed Comparables",
+          "rule_type": "constraint",
+          "description": "The appraisal report sales comparison approach must report a minimum of three closed comparable sales. Additional comparable sales may be included for support. Contract offerings and current listings may be included as supporting data when appropriate, but the minimum three must be closed comparables.",
+          "conditions": "Appraisal report uses the sales comparison approach to develop value",
+          "consequences": "If fewer than 3 closed comps, lender must obtain revision/new appraisal",
+          "exceptions": "Exceptions referenced for new/converted projects; still requires settled sales",
+          "source_reference": {
+            "chunk_path": "fannie_mae/part_b_origination_through_closing/subpart_b4_underwriting_property/chapter_b4_1_property_assessment_and_valuation/section_b4_1_3_appraisal_report_assessment/b4_1_3_08_comparable_sales_06_04_2025.txt",
+            "section_id": "B4-1.3-08, Minimum Number of Comparable Sales",
+            "start_word_position": 663,
+            "end_word_position": 727,
+            "source_text": "A minimum of three closed comparables must be reported in the sales comparison approach. Additional comparable sales may be reported to support the opinion of market value provided by the appraiser. The subject property can be used as a fourth comparable sale or as supporting data if it was previously closed. Contract o\ufb00erings and current listings can be used as supporting data, if appropriate.",
+            "text_match_score": 0.976
+          },
+          "mandatory": true,
+          "examples": [
+            "Appraisal includes only two closed sales and one active listing; lender requires a revision to add a third closed comparable.",
+            "Appraisal includes three closed sales plus two active listings as support; meets the minimum requirement.",
+            "Subject property was a recent resale and is included as a fourth comparable; still must have three other closed comparable sales."
+          ],
+          "confidence_score": 93.75,
+          "confidence_breakdown": {
+            "extraction_clarity": 95,
+            "numeric_precision": 100,
+            "context_completeness": 85,
+            "source_authority": 95,
+            "logical_consistency": 90
+          },
+          "extraction_notes": "Explicit minimum count and acceptable supporting data are stated.",
+          "requires_review": false,
+          "effective_date": "2025-06-04",
+          "expiration_date": null,
+          "superseded_by": null,
+          "jurisdiction": "agency:EXAMPLE_POLICIES",
+          "risk_level": "high",
+          "related_rules": [
+            "BR_PRODUCES_APPRAISAL_REPORT_VALIDATION_009_002",
+            "BR_PRODUCES_APPRAISAL_REPORT_CONSTRAINT_009_003"
+          ],
+          "enforcement_action": "Appraisal revision request; loan delivery suspense until cured",
+          "applicability_scope": {
+            "loan_types": [
+              "conventional"
+            ],
+            "occupancy_types": [
+              "primary_residence",
+              "second_home",
+              "investment"
+            ],
+            "transaction_types": [
+              "purchase",
+              "rate_term_refinance",
+              "cash_out_refinance"
+            ]
+          },
+          "data_points_required": [
+            "comparable_sales_count",
+            "comparable_sales_closed_indicator",
+            "appraisal_type"
+          ],
+          "audit_frequency": "at_origination",
+          "reference_verified": true,
+          "reference_verification_note": "ok_recovered_position",
+          "entity_or_relationship": "PRODUCES_APPRAISAL_REPORT",
+          "entity_type": "relationship",
+          "relationship_definition": {
+            "description": "",
+            "source_entity": "APPRAISER",
+            "target_entity": "APPRAISAL_REPORT",
+            "directionality": "",
+            "examples": [
+              "Appraiser produces a UAD-compliant URAR with required exhibits.",
+              "Appraiser produces an appraisal report with comparable sales and reconciliation."
+            ]
+          },
+          "dependencies": [
+            {
+              "depends_on_rule": "BR_IS_SECURED_BY_ELIGIBILITY_036_010",
+              "dependency_type": "conditional",
+              "rationale": "BR_IS_SECURED_BY_ELIGIBILITY_036_010 sets a delivery-stage expectation to assess post-disaster property condition changes and determine if a new appraisal is needed. When that determination results in ordering a new appraisal, the appraisal report must comply with the appraisal content requirements such as BR_PRODUCES_APPRAISAL_REPORT_CONSTRAINT_009_001 (minimum three closed comps) to be acceptable for delivery decisions.",
+              "impact_if_fails": "If the lender obtains a post-disaster appraisal that does not meet minimum report standards, the disaster-condition clearance cannot be completed, delaying delivery and potentially causing rate lock extension costs and purchase deadline misses.",
+              "strength": 3
+            }
+          ],
+          "dependent_rules": [
+            {
+              "dependent_rule": "BR_DETERMINES_LOAN_ELIGIBILITY_CALCULATION_021_006",
+              "dependency_type": "validation"
+            },
+            {
+              "dependent_rule": "BR_IS_SECURED_BY_CONSTRAINT_034_010",
+              "dependency_type": "validation"
+            }
+          ],
+          "provenance": {
+            "operation": "CONTRADICTION",
+            "sources": [
+              "fannie_mae"
+            ],
+            "original_ids": {
+              "fannie_mae": "BR_PRODUCES_APPRAISAL_REPORT_CONSTRAINT_009_001"
+            }
+          }
+        }
+      },
+      "g2_rule": {
+        "source": "freddie_mac",
+        "rule": {
+          "rule_id": "BR_APPRAISAL_REPORT_CONSTRAINT_038_006",
+          "rule_name": "Sales comparison approach requires at least 4 comparable sales plus 4 if subject used",
+          "rule_type": "constraint",
+          "description": "When supporting value using the sales comparison approach, the appraiser must analyze sales of at least four comparable properties. The appraiser may use the subject property as a comparable sale only if the appraiser provides four additional comparables to the property.",
+          "conditions": "Applies when Appraisal includes a sales comparison approach value indication",
+          "consequences": "If four+ comparable sales analyzed, approach meets minimum Guide requirement; if fewer, Appraisal is deficient and may be rejected/conditioned",
+          "exceptions": "Subject property may be used only with four additional comparables",
+          "source_reference": {
+            "chunk_path": "freddies_mac/third_party_reports_chs_60_69/60_appraiser_and_appraisal_reqs_gb_12_16_25/60_14_valuation_methodology_06_24_25/a_cost_approach_07_01_14_b_sales_comparison_approach_04_18_24.txt",
+            "section_id": "Chapter 60, Section 60.14(b) Sales comparison approach (04/18/24)",
+            "start_word_position": 430,
+            "end_word_position": 470,
+            "source_text": "The appraiser must support the value indicated by the sales comparison approach by analyzing the sales of at least four comparable properties. The appraiser may use the Property as a comparable sale as long as the appraiser provides four additional comparables to the Property.",
+            "text_match_score": 0.107
+          },
+          "mandatory": true,
+          "examples": [
+            "Appraiser includes only three comparable sales: Appraisal does not meet the minimum and must be supplemented with at least one more comparable sale.",
+            "Appraiser analyzes four comparable sales and does not use the subject as a comparable: requirement is met.",
+            "Appraiser uses the subject as a comparable sale: Appraisal must include four additional comparable sales (total at least five sales analyzed with subject included)."
+          ],
+          "confidence_score": 96.85,
+          "confidence_breakdown": {
+            "extraction_clarity": 98,
+            "numeric_precision": 100,
+            "context_completeness": 92,
+            "source_authority": 95,
+            "logical_consistency": 98
+          },
+          "extraction_notes": "Explicit minimum count (four) and conditional rule when subject is used.",
+          "requires_review": false,
+          "effective_date": "2024-04-18",
+          "expiration_date": null,
+          "superseded_by": null,
+          "jurisdiction": "agency:EXAMPLE_POLICIES",
+          "risk_level": "high",
+          "related_rules": [],
+          "enforcement_action": "Purchase eligibility condition / appraisal revision required",
+          "applicability_scope": {
+            "loan_types": [
+              "multifamily"
+            ],
+            "occupancy_types": [
+              "investment"
+            ],
+            "transaction_types": [
+              "purchase",
+              "rate_term_refinance",
+              "cash_out_refinance"
+            ]
+          },
+          "data_points_required": [
+            "valuation_method",
+            "sales_comparison_included_indicator",
+            "comparable_sales_count",
+            "subject_used_as_comparable_indicator"
+          ],
+          "audit_frequency": "at_origination",
+          "reference_verified": false,
+          "reference_verification_note": "text_mismatch:ratio=0.11",
+          "entity_or_relationship": "APPRAISAL_REPORT",
+          "entity_type": "entity",
+          "entity_definition": {
+            "description": "",
+            "key_attributes": [],
+            "examples": [
+              "MAI appraisal supporting a $35M value conclusion",
+              "Update appraisal required due to aging report date at closing",
+              "Appraisal with extraordinary assumptions disclosed"
+            ]
+          },
+          "dependencies": [
+            {
+              "depends_on_rule": "BR_APPRAISAL_REPORT_VALIDATION_035_005",
+              "dependency_type": "complementary",
+              "rationale": "Underwriting typically treats appraisal completeness as a bundle of required components. BR_035_005 ensures zoning compliance support is present when a zoning report is absent; BR_038_006 ensures sales comparison methodology meets minimum comparable count. Together they form a practical appraisal QC checklist for acceptance/conditioning.",
+              "impact_if_fails": "If either requirement fails, the appraisal may be conditioned/rejected, delaying underwriting approval and potentially closing timelines.",
+              "strength": 3
+            }
+          ],
+          "provenance": {
+            "operation": "CONTRADICTION",
+            "sources": [
+              "freddie_mac"
+            ],
+            "original_ids": {
+              "freddie_mac": "BR_APPRAISAL_REPORT_CONSTRAINT_038_006"
+            }
+          }
+        }
+      },
+      "rule_behavior": "threshold"
+    }
+  ],
+  "stats": {
+    "total_contradictions": 12,
+    "by_conflict_type": {
+      "UNKNOWN": 12
+    },
+    "by_rule_behavior": {}
+  }
+}

@@ -1,0 +1,87 @@
+# c. Governance framework (07/01/26)
+
+**Source:** freddies_mac.pdf
+**Chunk ID:** freddies_mac_128
+**Pages:** 60-61
+**Section Path:** Freddie Mac and SellerServicer Relationship (Chs 1-7) > 02 - General FM Policies GB-04-21-26 > 2.30 Use of artificial intelligence and machine learning (07/01/26) > c. Governance framework (07/01/26)
+
+---
+
+Guide Bulletin Update 04/21/26 Chapter 2 – Page 47 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the AllRegs 
+web site of ICE Mortgage Technology  (with a paid subscription).  Guide Chapter  2 – General Freddie Mac Policies  
+Guide Chapter 2 – General Freddie Mac Policies  
+ o Have an owner(s) that implements, maintains and reviews the policies and 
+procedures at least annually to ensure they comply with applicable law and 
+consistently reflect industry best practices  
+ 
+• Upon request by Freddie Mac, Seller/Servicer’s prompt disclosure of the types of AI/ML 
+used, the purpose and manner for such use, safeguards to mitigate risks related to the 
+use of AI/ML, and such other information as Freddie Mac may require  
+ 
+b. Indemnification  (12/12/24 ) 
+Seller/Servicer agrees to indemnify Freddie Mac and its directors, officers, employees, 
+agents, successors and assigns, and to hold each harmless from and against any and all 
+liabilities, losses, claims, actions, damages, including, but not limited to, ind irect, incidental, 
+special or consequential damages, whether foreseeable or not, judgments, costs and 
+expenses, including reasonable attorneys' fees, arising directly or indirectly out of or relating 
+to Seller/Servicer’s  use of AI/ML.  Freddie Mac shall pr ovide the Seller/Servicer with notice of 
+any such claim after it comes to Freddie Mac's attention.  
+ 
+c. Governance framework (0 7/01/26) 
+Seller/Servicer must establish clear governance frameworks for AI/ML adoption that address 
+the following:  
+ 
+• Policies, processes, procedures and practices across the organization related to the 
+mapping, measur ement  and manag ement  of AI risks are in place, transparent and 
+implemented effectively  
+ 
+• Legal and regulatory requirements involving AI are understood, managed and 
+documented  
+ 
+• The characteristics of trustworthy AI are integrated into organizational policies, 
+processes, procedures and practices  
+ 
+• Processes, procedures and practices are in place to determine the level needed of risk 
+management activities based on the organization's risk tolerance  
+ 
+• Establish clear policies and codes of conduct to ensure the following:  
+ 
+o The characteristics of trustworthy AI are integrated into organizational policies, 
+processes, procedures and practices  
+ 
+o Processes, procedures and practices are in place to determine the level needed  of 
+risk management activities based on the organization's risk tolerance  
+ 
+o The risk management process and its outcomes are established through transparent 
+policies, procedures and other controls based on organizational risk priorities  
+ 
+• Apply segregation of duties to prevent conflicts of interest and ensure the following:
+
+Guide Bulletin Update 04/21/26 Chapter 2 – Page 48 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the AllRegs 
+web site of ICE Mortgage Technology  (with a paid subscription).  Guide Chapter  2 – General Freddie Mac Policies  
+Guide Chapter 2 – General Freddie Mac Policies  
+ o Accountability structures are in place so that the appropriate teams and individuals 
+are empowered, responsible and trained for mapping, measuring and managing AI 
+risks 
+ 
+o Roles and responsibilities and lines of communication related to mapping, measuring 
+and managing AI risks are documented and are clear to individuals and teams 
+throughout the organization  
+ 
+Seller/Servicer must perform  the following:  
+ 
+• Assess AI/ML for specific threats such as data poisoning and adversarial inputs  
+ 
+• Conduct regular internal and external audits to identify any potential vulnerabilities or 
+deviations from established policies.  Ongoing monitoring and periodic review of the risk 
+management process and its outcomes must be planned and organizational roles and 
+responsibilities clearly defined, including determining the frequency of periodic review  
+ 
+• Regularly monitor AI systems for performance, security breaches and biases  
+ 
+• Conduct audits to ensure compliance with standards like National Institutes of Standards 
+and Technology 800 -53 and International Organization for Standardization 27001

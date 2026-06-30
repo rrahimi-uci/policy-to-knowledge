@@ -1,0 +1,25 @@
+# Amendments to Existing Exceptions — Cybersecurity Donations and EHR Services (42 CFR Part 411) (part 241/384)
+
+**Source:** health_2020_26140.pdf
+**Chunk ID:** health_2020_26140_005_sub_241
+**Section Path:** Amendments to Existing Exceptions — Cybersecurity Donations and EHR Services (42 CFR Part 411)
+**Summary:** This section details the amendments made to existing exceptions, including those for cybersecurity donations and electronic health records, clarifying the compliance requirements for these areas.
+
+---
+
+77611 Federal Register / Vol. 85, No. 232 / Wednesday, December 2, 2020 / Rules and Regulations 
+1785 FR 25642 (May 1, 2020). 18For instance, a secure log-in or encrypted 
+access mechanism included with an EHR system or 
+EHR software suite would be cybersecurity features of the EHR items or services that may be protected under the existing EHR exception. control what happens to software after 
+it is donated. Several commenters recommended removing or revising the requirement in the EHR exception that a donor (or any person on a donor’s behalf) does not engage in a practice constituting information blocking, explaining that a vendor may engage in information blocking without the donor’s knowledge. Another commenter expressed concern that, if a determination of information blocking against either a donor or recipient occurs at some time after the donation, the recipient may be vulnerable to unexpected costs or loss of access to its health information technology if the arrangement suddenly ends. Another commenter asserted that the incorporation of ONC’s proposals into the exception at § 411.357(w)(3) would introduce an intent-based requirement into the strict-liability framework of the physician self-referral law. 
+A few commenters suggested that, 
+rather than including a prohibition on information blocking (as that term is defined in the Cures Act or in 45 CFR part 171) as a requirement of the EHR exception, CMS should assume that information blocking will not be tolerated and will be enforced through other authorities. One commenter explained that, when the EHR exception was first issued in 2006, interoperability was in its infancy, and there was no separate regulatory guidance on interoperability and information blocking, whereas now these concepts are separately addressed and regulated by ONC. Given these changes, the commenters maintained that incorporation of information blocking provisions into the EHR exception is duplicative and unnecessary. 
+Response: Based on the comments 
+and after assessing the final rule published by ONC, ‘‘21st Century Cures Act: Interoperability, Information Blocking, and the ONC Health IT Certification Program’’ (ONC final rule),
+17we are removing the 
+requirement at § 411.357(w)(3) in its entirety. This requirement, when originally implemented in the 2006 EHR final rule, was intended to ‘‘help ensure that donations of health information technology will further the policy goal of fully interoperable health information systems and will not be misused to steer business to the donor.’’ (71 FR 45156). The 2013 EHR final rule also explained 
+that the Department was considering other policies to improve interoperability and noted that those policy efforts are ‘‘better suited than this exception to consider and respond to evolving functionality related to the 
+interoperability of electronic health record technology’’ (78 FR 78763). At that time, the Department had few other authorities to directly address information blocking. However, there are now other enforcement authorities designed to address information blocking. For example, the Cures Act gave ONC and OIG more direct authority to address information blocking. Additionally, CMS has separate authority to address providers that information block, and OCR has authorities related to patient access. 
+The Cures Act and the ONC final rule 
+recognize that certain practices likely to interfere with, prevent, or materially discourage access, exchange, or use of electronic health information may nonetheless be reasonable and necessary. That is why the Cures Act directed the Secretary to identify exceptions to the definition of information blocking. The ONC final rule implements eight exceptions that apply to practices likely to interfere with the access, exchange, or use of electronic health information provided that the practice meets the conditions of an exception. However, § 411.357(w)(3), as implemented by the 2006 EHR final rule, required that a party not take ‘‘any action to limit or restrict the use, compatibility, or interoperability’’ of the donated electronic health records items or services. The requirement did not account for actions that may be reasonable and necessary, such as implementing privacy and security measures. 
+Recognizing the developments since

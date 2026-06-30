@@ -1,0 +1,62 @@
+# a. Information security minimum requirements (07/01/26) (part 3/6)
+
+**Source:** freddies_mac.pdf
+**Chunk ID:** freddies_mac_119_sub_003
+**Pages:** 45-52
+**Section Path:** Freddie Mac and SellerServicer Relationship (Chs 1-7) > 02 - General FM Policies GB-04-21-26 > 2.26 Information security (07/01/26) > a. Information security minimum requirements (07/01/26)
+
+---
+
+Guide Bulletin Update 04/21/26 Chapter 2 – Page 34 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the AllRegs 
+web site of ICE Mortgage Technology  (with a paid subscription).  Guide Chapter  2 – General Freddie Mac Policies  
+Guide Chapter 2 – General Freddie Mac Policies  
+ • An ongoing and updated inventory of individuals gaining access to buildings and 
+facilities containing information systems with periodic review of such access at least 
+annually  
+ 
+• Steps and controls to limit access to sensitive and restricted areas (network rooms, 
+vaults, etc.) only to authorized individuals on a n as-needed  basis following least 
+privileged access protocols  
+ 
+• Environmental controls to monitor, mitigate and protect the organization with regard to 
+a loss of connectivity, access to, or integrity of, information and damage caused by 
+natural disasters or manmade incidents such as fire, earthquake, flood, hurricane, 
+tornado or weather -related adverse conditions  
+ 
+• A clean desk policy that ensures that Freddie Mac confidential information and 
+Protected Information are stored securely  
+ 
+(iv) Communications and operations management  
+ 
+The Seller/Servicer must  implement technical security measures designed to monitor for, 
+mitigate against and prevent malicious software, block unwanted spam and traffic, and 
+protect against unauthorized use of wireless connections.  Measures must include those 
+provided in the rem ainder of this section and be consistent with industry best practices 
+(e.g., those set forth by ISO/IEC  or NIST), whichever is more stringent.    
+ 
+(v) Data transmission and data loss prevention  
+ 
+The Seller/Servicer must:  
+  
+• Maintain a data loss prevention/transmission protection mechanism or establish in 
+related written policy requirements to protect the confidentiality and integrity of 
+information exchange using technology applications or information systems, including 
+requirements f or secure data transmission across company information systems, 
+networks and external (public and third -party) networks . 
+ 
+• Ensure adequate and up -to-date data loss prevention (DLP) software is used and a 
+corresponding management process is in place to scan for sensitive information 
+stored on disk and outgoing transmissions over public communication paths as well 
+as to restrict the transfer of data to USB and other removable media devices at the 
+desktop level.   
+ 
+• Not transmit , and have measures in place to prevent  transmission,  to Freddie Mac  
+system(s) , through an application programming interface or otherwise, any Malicious 
+Code.  “Malicious Code” means software or firmware intended to perform an 
+unauthorized process that may have adverse impacts on the confidentiality, integrity, 
+or availability of an information system (including, without limitation, data in transit), 
+such as a “v irus,” “time bomb,” “worm,” “trojan horse,” or other code -based entity that 
+infects a host; ransomware, spyware and certain forms of adware are also examples 
+of Malicious Code .

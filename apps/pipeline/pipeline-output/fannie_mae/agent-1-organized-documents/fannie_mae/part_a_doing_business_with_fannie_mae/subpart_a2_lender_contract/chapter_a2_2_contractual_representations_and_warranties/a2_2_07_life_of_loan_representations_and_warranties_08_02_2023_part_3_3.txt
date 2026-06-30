@@ -1,0 +1,124 @@
+# A2-2-07, Life-of-Loan Representations and Warranties (08/02/2023) (part 3/3)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_019_sub_003
+**Pages:** 48-55
+**Section Path:** Part A, Doing Business with Fannie Mae > Subpart A2, Lender Contract > Chapter A2-2, Contractual Representations and Warranties > A2-2-07, Life-of-Loan Representations and Warranties (08/02/2023)
+
+---
+
+Published March 4, 2026
+35A data inaccuracy will be considered signiﬁcant and the lender will be required to repurchase the loan only if the
+loan receives a worse DU risk assessment from the simulator than it received (or would have received) at the
+time of delivery to Fannie Mae. Fannie Mae will also take into account any applicable variance entered into with
+the lender when determining such signiﬁcance. Fannie Mae will provide the lender with documentation
+supporting the signiﬁcance determination.
+If Fannie Mae determines that the loan would have been eligible for purchase using the accurate information
+from the loan ﬁle but under diﬀerent terms than those under which the loan was sold, Fannie Mae will not seek
+repurchase, but will instead re-price the loan, consistent with the lender’s contract at the time of loan delivery,
+to reﬂect the true risk proﬁle of the loan.
+Examples
+The following examples illustrate instances of application of this life-of-loan exclusion:
+In connection with a system upgrade, a coding error is introduced into a lender’s system such that the
+representative credit score is incorrectly calculated. The lender reports inaccurate representative credit
+scores at loan delivery for ﬁve or more loans. After the loans obtain relief, a review of the credit reports in
+the lender’s origination ﬁles shows that for these mortgages, the actual representative credit scores were
+lower than those reﬂected in the data provided at delivery. The DU simulator, using the actual
+representative credit scores, produces an “ineligible” recommendation for each loan. The lender must
+repurchase the aﬀected loans, if requested, despite the fact that the loans have obtained relief.
+For unknown reasons over a period of time, the lender’s origination system indicated that TILA-exempt
+investment property loans were principal residences. This error was reﬂected both in the DU submission
+and in the ULDD data at delivery for 30 loans. After the loans obtained relief, a review of the
+documentation in the lender’s loan ﬁles uncovers the error. The DU simulator, using the correct, revised
+data, produces an “Approve/Eligible” recommendation on 20 of the loans and a “Refer with
+Caution/Ineligible” recommendation on the other 10 loans. Fannie Mae will not require the lender to
+repurchase the 20 loans, but may assess increased loan-level price adjustments to reﬂect their actual
+risk. However, if requested, the lender must repurchase the 10 loans that received a “Refer with
+Caution/Ineligible” recommendation.
+Life-of-Loan Exclusions: Clear Title/First-Lien Enforceability
+The lender is responsible for representations and warranties for the life of the loan that pertain to clear title and
+ﬁrst-lien enforceability. A mortgage loan must
+be sold by a lender that was the sole owner and holder of the mortgage loan and had the full right and
+authority to sell and assign it, or a participation interest therein, to Fannie Mae. The lender’s right to sell
+or assign the mortgage loan cannot be subject to any other party’s interest or to an agreement with any
+other party;
+be a valid and subsisting ﬁrst lien enforceable in accordance with its terms (with no pending
+condemnation or other legal proceedings) and that otherwise meets Fannie Mae’s requirements for loan
+documents;
+have a mortgagee policy of title insurance meeting Fannie Mae’s requirements, or other title evidence
+acceptable to Fannie Mae. Lenders continue to be responsible for all warranties related to title,
+marketability, and lien position, regardless of whether included or excluded by coverage under a
+
+Published March 4, 2026
+36mortgagee policy of title insurance. Any defect shown on the title policy would not be considered to be an
+acceptable minor impediment if there was additional cost or delay involved in curing such defect;
+permit foreclosure or other enforcement of the note holder’s rights under the loan documents and
+acquisition of good and marketable title to the underlying security property without incurring any
+expenses or delays as a result of any matters aﬀecting title to the property, including legal or land use
+restrictions or other defects relating to the land or location of the improvements.
+Examples
+Examples of a breach of these clear title/ﬁrst-lien enforceability requirements include, but are not limited to, the
+following:
+Another party, such as a warehouse lender, asserts a claim to or interest in the loan.
+Fannie Mae is unable to obtain clear title to the property because it is not in ﬁrst-lien position.
+The lender fails to properly endorse the note or to adhere to requirements for the use of powers of
+attorney.
+A mortgage loan is delivered to Fannie Mae with a Property Assessed Clean Energy (PACE) loan secured
+by the same property and the mortgage loan does not meet Fannie Mae’s eligibility requirements for
+mortgages delivered with PACE loans.
+Improvements that were included in the appraised value of the property do not fall totally within the
+property’s boundaries or building restriction lines and were not otherwise permitted encroachments
+under the terms of the Selling Guide .
+A mortgage loan is delivered to Fannie Mae that is secured by a property encumbered by private transfer
+fee covenants that do not meet Fannie Mae’s requirements.
+Life-of-Loan Exclusions: Compliance with Laws and Responsible Lending
+Practices
+The lender is responsible for representations and warranties for the life of the loan that pertain to compliance
+with laws and responsible lending practices. A mortgage loan must be originated in compliance with
+applicable laws and regulations as set forth in  A3-2-01, Compliance With Laws ;
+Fannie Mae’s responsible lending policies as set forth in  A3-2-02, Responsible Lending Practices ; and
+policies adopted by Fannie Mae to implement or comply with directives or regulations issued by FHFA,
+including the following:
+Appraiser Independence Requirements ,
+Property Data Collector Independence Requirements ,
+private transfer fee requirements, and
+Ability to Repay Loan Eligibility Requirements as set forth in  B2-1.5-02, Loan Eligibility .
+Examples
+Examples of breach of compliance with laws, responsible lending practices requirements, and FHFA directives
+
+Published March 4, 2026
+37include, but are not limited to, the following:
+The appraisal for a mortgage loan does not conform to the  Appraiser Independence Requirements   (FHFA
+directive)
+The property data collection does not conform to the Property Data Collector Independence
+Requirements   (FHFA directive)
+A mortgage loan is secured by a unit in a condo project that was not created in compliance with
+applicable state law. (Compliance with Laws)
+A mortgage loan has a borrower that is an inter vivos revocable trust that was not formed in accordance
+with applicable law. (Compliance with Laws)
+A Texas Section 50(a)(6) loan was not originated in accordance with Texas law. (Compliance with Laws)
+A lender charged total points and fees for an ATR Covered loan in excess of the applicable limit on such
+points and fees in Regulation Z, 12 CFR § 1026.43(e)(3). (Compliance with Laws)
+A HOEPA loan. (Responsible Lending Practices)
+Note : Whether any loan is subject to repurchase for noncompliance with laws will depend on whether
+the conditions for repurchase in  A3-2-01, Compliance With Laws , are satisﬁed. Loans that are not
+subject to repurchase under A3-2-01 may be subject to other remedies. Loans that violate Fannie
+Mae’s Responsible Lending Practices or an FHFA directive are subject to repurchase.
+Life-of-Loan Exclusions: Unacceptable Mortgage Products
+Certain mortgage loan products are not purchased by Fannie Mae. As such, these products are not eligible for
+the enforcement relief described in A2-3.2-02, Enforcement Relief for Breaches of Certain Representations and
+Warranties Related to Underwriting and Eligibility . Note that the list below is not intended to be exhaustive; it
+should be used as a reference tool in conjunction with the requirements of the Selling Guide.
+Examples of loan products that Fannie Mae does not purchase are
+mortgages with an interest-only feature;
+graduated-payment mortgages, including growing-equity mortgages;
+mortgages originated with stated or no income and/or asset documentation (high LTV reﬁnances are not
+covered by this provision);
+mortgages subject to negative amortization;
+construction mortgages (other than construction-to-permanent);
+daily simple interest mortgages;
+mortgages with prepayment penalties;
+reverse mortgages;
+mortgages with balloon payments (with or without a reset option); and
+second liens or other junior mortgages.
+Recent Related Announcements

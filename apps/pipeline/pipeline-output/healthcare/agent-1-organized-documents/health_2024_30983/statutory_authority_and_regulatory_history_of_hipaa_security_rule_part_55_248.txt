@@ -1,0 +1,45 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 55/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_055
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+925 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+359See 45 CFR 164.310(a)(1). 
+360See 45 CFR 164.312(a)(1). 
+36145 CFR 164.304 (definition of ‘‘Physical 
+safeguards’’). 362See NIST definition of ‘‘malware,’’ Glossary, 
+Computer Security Resource Center, National 
+Institute for Standards and Technology, U.S. Department of Commerce, https://csrc.nist.gov/ glossary/term/malware. procedures. In this regard, the proposed 
+term ‘‘deploy’’ clarifies that the technology assets or technical control must be put into place, configured, and actually work (i.e., function in the 
+manner expected of the technology or technical control) throughout a regulated entity, in addition to the relevant policy and procedures being applied across a regulated entity. To implement a policy and procedure is separate from the implementation of a technology asset or technical control but in both cases, the underlying requirement is application across the enterprise. 
+7. Adding a Definition of ‘‘Electronic 
+Information System’’ 
+a. Issues To Address 
+The current Security Rule includes 
+explicit requirements for regulated 
+entities to protect electronic information systems by implementing policies and procedures to limit physical access to such systems
+359and by implementing 
+technical policies and procedures for electronic information systems that maintain ePHI to allow access to only persons or technology assets that have been granted access rights pursuant to 45 CFR 164.308(a)(4).
+360Further, the 
+physical measures, policies, and procedures that meet the definition of physical safeguards are specifically limited to those that protect regulated entities’ electronic information systems and related buildings and equipment.
+361 
+And yet, the Security Rule does not explicitly define this term. Instead, it assumes that the definition is easily understood to be a subset of information system, a broad term that is not limited by the boundaries of the Security Rule. The Department believes that regulated entities would benefit from additional clarity regarding the definition of this term, given its foundational nature. 
+b. Proposal 
+The Department proposes to add a 
+definition of ‘‘electronic information 
+system’’ to better distinguish the concept from the broader category of an information system. Accordingly, the Department would limit the definition to an interconnected set of electronic information resources under the same direct management control that shares common functionality. Under this proposal, an electronic information system generally would include technology assets, such as hardware, software, electronic media, data, and information. 
+8. Modifying the Definition of 
+‘‘Information System’’ 
+a. Current Provision and Issues To 
+Address 
+As discussed above, the Department 
+seeks to clarify the scope of an information system, as compared to an electronic information system. We believe that it would be beneficial to align the common elements of these terms and clarify the relationship between them, given their importance to compliance with requirements of the Security Rule. Additionally, the changes in the environment, such as the shift to cloud-based computing, may raise questions regarding the Department’s interpretation of ‘‘direct management control.’’ 
+b. Proposal 
+Accordingly, the Department 
+proposes to modify the definition of 
+‘‘information system,’’ to clarify that an information system ‘‘generally’’, not just ‘‘normally,’’ includes hardware, software, data, communications, and people. The Department believes this proposed modification, combined with the existing broad reference to ‘‘resources,’’ more accurately reflects the typical components of an information system and the full extent of resources that are addressed by the Security Rule. We also propose to remove ‘‘applications’’ from the list of technology assets that are generally included in an information system because applications are a type of software, making the inclusion of applications redundant. This proposed modification would not alter our interpretation that an information system includes applications. 
+We use this opportunity to affirm that

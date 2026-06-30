@@ -1,0 +1,120 @@
+# C1-2-04, Delivering eMortgages to Fannie Mae (12/13/2023)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_440
+**Pages:** 952-954
+**Section Path:** Part C, Selling, Securitizing, and Delivering Loans > Subpart C1, General Information on Execution Options and Loan Delivery > Chapter C1-2, Loan Delivery Overview > C1-2-04, Delivering eMortgages to Fannie Mae (12/13/2023)
+
+---
+
+Published March 4, 2026
+934instructions until the issue is resolved to Fannie Mae’s satisfaction and Fannie Mae receives adequate
+assurances that it will have unqualiﬁed title to the mortgages.
+Fannie Mae will not be responsible for the consequences of any delay in the delivery of the proceeds that results
+from its having to resolve an issue related to title to the mortgages.
+Fannie Mae has established procedures for resolving title issues presented by its receipt of a bailee letter. See 
+C1-2-06, Bailee Letters  for lender requirements and Fannie Mae’s Requirements for Document Custodians (RDC
+guide ) for document custodian requirements.
+These processes are intended solely to verify the accuracy of certain loan information delivered by the
+mortgage seller (and not to beneﬁt any third party). These procedures do not apply when the same corporate
+entity is both the warehouse lender claiming an interest and the document custodian because, by its execution
+of Fannie Mae’s Master Custodial Agreement, (Form 2017) , the lender releases any interest it may have in the
+mortgage notes when it takes possession of them as Fannie Mae’s document custodian.
+Recent Related Announcements
+The table below provides a reference to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2022-03 April 06, 2022
+ 
+C1-2-04, Delivering eMortgages to Fannie Mae (12/13/2023)
+Introduction
+This topic contains information about delivering eMortgages to Fannie Mae, including:
+Overview
+Delivering eMortgages to Fannie Mae Using MERS eDelivery
+Requirements to Transfer Control and Location of the eNote to Fannie Mae
+Transfer of Control and Location to the Warehouse Lender
+eNote Control Transfer and Custodial Agreement
+Certiﬁcation and Custody of eMortgages
+Loan Delivery Data
+Overview
+Lenders may deliver eMortgages for either whole loan or MBS execution. Fannie Mae accepts mixed MBS pools -
+ones that contain both paper notes and eNotes. eMortgages are delivered to Fannie Mae via the MERS eDelivery
+
+Published March 4, 2026
+935service. See MERS website  for more information on MERS eDelivery.
+Delivering eMortgages to Fannie Mae Using MERS eDelivery
+The eNote and any documents required for certiﬁcation (for example, a power of attorney, if applicable) must be
+transmitted to Fannie Mae's eVault via MERS eDelivery (or direct eDelivery for customers using Fannie Mae's
+eVault provider). Fannie Mae will return an electronic approval message once the systems have accepted the
+document. Sellers are not required to use a document custodian to maintain other related loan documents
+unless otherwise required. For more information on delivering eMortgages, refer to Fannie Mae's eMortgage
+Technical Requirements .
+Requirements to Transfer Control and Location of the eNote to Fannie Mae
+After the eNote has been successfully delivered to Fannie Mae, lenders (or their warehouse providers) should
+transmit a request to the MERS eRegistry to begin the process of transferring Control and Location (the location
+of the eNote's current Authoritative Copy) of the eNote to Fannie Mae. A "Transfer of Control and Location"
+request must be transmitted to the MERS eRegistry to initiate the transfer of ownership and to update the MERS
+eRegistry to show Fannie Mae as the Controller and Location of the Authoritative Copy of the eNote. Lenders are
+expected to monitor the status of transfer requests to ensure they have been completed successfully. The
+transfer request must include an "Eﬀective Date" of the same day as the request. The Eﬀective Date is used by
+the MERS eRegistry to denote the date that the transfer must be complete. Fannie Mae requires that the MERS
+eRegistry records, for loans transferred to Fannie Mae, contain the Servicer's MERS Org ID (or sub-servicer, if
+applicable) in the "Master Servicer" ﬁeld on the eRegistry in order to enable that party to perform certain
+transactions within the MERS eRegistry). ( Note : If the Master Servicer is changing coincident with the sale to
+Fannie Mae, the update to this ﬁeld can be completed after completing the Transfer of Control and Location to
+Fannie Mae.)
+If prior to Fannie Mae purchasing the loan, the lender requires the eNote to be returned, the lender must submit
+a Request for Transfer of Control of eNotes  (Form 2009e ) to Fannie Mae's Custodian Oversight Department (see 
+E-1-02, List of Contacts ). 
+Transfer of Control and Location to the Warehouse Lender
+Lenders may originate or purchase eMortgages using interim funding from a warehouse provider in a manner
+that establishes the warehouse provider as lienholder of each related eNote and that shows the warehouse
+provider as being in Control of each related eNote at eMortgage settlement or that reﬂects the warehouse
+provider as the "Secured Party" in the MERS eRegistry for the related eNote. In order to facilitate Fannie Mae's
+purchase or securitization of an eMortgage in which a warehouse provider has a security interest, the
+warehouse provider must perform (or cause to be performed) one of the two following actions depending on
+whether the warehouse provider is named as the Controller or as the "Secured Party" of an eNote.
+If the warehouse provider is in Control of an eNote prior to sale to Fannie Mae, the warehouse provider
+must transfer Control and Location of the related eNote to Fannie Mae, on the lender's behalf, using the
+warehouse provider's MERS Org ID for pre-purchase inspection, among other things.
+If the warehouse provider is named as the "Secured Party" in the MERS eRegistry on an eNote prior to
+sale to Fannie Mae, the warehouse provider must approve a Transfer of Control and Location to Fannie
+
+Published March 4, 2026
+936Mae that has been initiated by the lender, or the warehouse provider may itself (or through a designated
+agent) initiate a Transfer of Control and Location to Fannie Mae, on the lender's behalf. At the conclusion
+of such transaction, Fannie Mae will be named in Control and Location and there will be no named entity
+in "Secured Party".
+Lenders and its warehouse providers must use Fannie Mae's Loan Delivery application, in accordance with their
+respective agreements with Fannie Mae, to submit or validate wiring instructions for the account to which
+purchase proceeds (in the form of cash or MBS) for eMortgages covered by such interim funding agreements
+should be delivered. Lender authorizes Fannie Mae to deliver the purchase proceeds (in the form of cash or
+MBS) for eMortgages in accordance with such wiring instructions. 
+eNote Control Transfer and Custodial Agreement
+In connection with delivery of funded eMortgages to Fannie Mae, warehouse providers must enter into an eNote
+Control Transfer and Custodial Agreement with Fannie Mae in which, generally, Fannie Mae accepts control of
+delivered eNotes until such time as:
+Fannie Mae makes payment and the warehouse provider releases its security interest, or
+Control of the eNotes is returned to the eRegistry participant that was previously in Control prior to
+Fannie Mae; provided that if there was a "Secured Party" named on the eNote prior to transfer to Fannie
+Mae, Fannie Mae will ﬁrst assign the applicable MERS Org ID to the "Secured Party" ﬁeld and then initiate
+the transfer. Lender authorizes Fannie Mae to take such actions.
+If, before Fannie Mae buys any eMortgages, Fannie Mae receives written notice from a warehouse provider that
+warehouse provider has exercised its right to acquire the eMortgage because of a default, lender authorizes
+Fannie Mae to transfer Control and Location of the related eNote to warehouse provider (or its designee).
+If Fannie Mae believes a party other than lender or the applicable warehouse provider has an interest in any
+eMortgage (or the related purchase price), lender agrees that Fannie Mae may, in its sole discretion, decline to
+purchase such eMortgage and notify lender and warehouse provider of such decision.
+In return for Fannie Mae's accommodation of delivery of funded eNotes that are subject to warehouse lending
+arrangements and for Fannie Mae's performance of certain obligations under the eNote Control Transfer and
+Custodial Agreement  that are in the lender's interest, the lender hereby agrees to indemnify and hold harmless
+Fannie Mae against all Fannie Mae losses (as deﬁned in  A2-1-03, Indemniﬁcation for Losses ) arising or resulting
+from any act or omission of lender or Fannie Mae (except those arising or resulting from Fannie Mae's gross
+negligence or willful misconduct) made in connection with the terms of the eNote Control Transfer and Custodial
+Agreement .
+Certiﬁcation and Custody of eMortgages
+Fannie Mae provides in-house automated document certiﬁcation (auto-certiﬁcation) for eligible eNotes. For
+eNotes that cannot be auto-certiﬁed but are permitted to be sold to Fannie Mae, these will be routed for manual
+certiﬁcation by a document custodian. A document custodian interested in certifying eNotes on behalf of Fannie
+Mae must meet all of the eligibility requirements outlined in the Requirements for Document Custodians .
+Contact Fannie Mae's Custodian Oversight Department (see  E-1-02, List of Contacts ) for additional information
+on certifying eNotes on behalf of Fannie Mae.

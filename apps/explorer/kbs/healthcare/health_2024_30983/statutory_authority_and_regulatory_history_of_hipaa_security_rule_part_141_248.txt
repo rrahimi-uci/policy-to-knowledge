@@ -1,0 +1,51 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 141/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_141
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+968 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+72445 CFR 164.402. 
+725‘‘Controlling Access to ePHI: For Whose Eyes 
+Only?,’’ supra note 416. 
+726See 68 FR 8334, 8357 (Feb. 20, 2003). 
+727‘‘Controlling Access to ePHI: For Whose Eyes 
+Only?,’’ supra note 416. 
+728Id. 
+729See discussion of 45 CFR 164.312, infra. 
+730Letter from NCVHS Chair Jacki Monson 
+(2023), supra note 123, Appendix p. 2. 
+731The Department is also proposing to delete the 
+implementation specification for encryption at 45 
+CFR 164.312(e)(2)(ii) because we are proposing to address the substantive requirements of that implementation specification in proposed 45 CFR 164.312(b)(2). 732‘‘Cybersecurity Performance Goals,’’ supra 
+note 18; Letter from NCVHS Chair Jacki Monson (2023), supra note 123, Appendix p. 2. 
+733See 45 CFR 170.315(d)(7) and 170.210(a). 734For example, adoption of health IT that is 
+certified through the ONC Health IT Certification Program as having the technical capability to encrypt, or prevent the local storage of, electronic health information stored on end-user devices after use of the technology on those devices stops may contribute to a regulated entity’s compliance with the proposed implementation specification for encryption and decryption. See 45 CFR 
+170.315(d)(7). Additionally, the proposed implementation specification generally is consistent with the Health Data, Technology, and Interoperability: Patient Engagement, Information Sharing, and Public Health Interoperability (HTI–2) NPRM proposal to modify 45 CFR 170.315(d)(7), should it be finalized, to include requirements that authentication credentials be protected using industry-standard encryption and decryption. See 89 FR 63536–37, 63778 (Aug. 5, 2024). Breach Notification Rule’s safe-harbor 
+provision.724 
+As the use of mobile computing 
+devices (e.g., laptops, smartphones, 
+tablets) has become more pervasive, the risks to sensitive data stored on such devices also have increased.
+725And 
+while in 2003 and even in 2013, encryption might have been out of reach for many regulated entities because of cost or a similar reason,
+726today, 
+encryption solutions are generally considered to be widely accessible. The cost of such solutions has decreased significantly, as has the difficulty in implementing such solutions. In fact, many applications have encryption solutions embedded in them.
+727Once 
+enabled, a device’s encryption solution can protect stored sensitive data, including ePHI, from unauthorized access in the event the device is lost or stolen. The same is true for most software today.
+728Thus, while 
+encryption of a particular regulated entity’s ePHI might not have been reasonable and appropriate in 2003 or 2013, the Department believes encryption generally is reasonable and appropriate today.
+729 
+Because the prevalence of encryption 
+solutions has increased, as has their 
+affordability and the role they play in protecting information, including ePHI, the Department believes it is appropriate to consider requiring encryption and elevating it from an implementation specification to a standard to increase its visibility and prominence. Based on this and consistent with NCVHS’ recommendation, the Department proposes to redesignate the implementation specification for encryption and decryption at 45 CFR 164.312(a)(2)(iv) as a standard at proposed 45 CFR 164.312(b)(1).
+730The 
+proposed standard would incorporate the requirements of two implementation specifications that address encryption— the one addressed here and the one at 45 CFR 164.312(e)(2)(ii).
+731The 
+Department proposes that the new standard would require a regulated entity to configure and implement technical controls to encrypt and decrypt all ePHI in a manner that is consistent with prevailing cryptographic standards. This proposed new standard aligns with the Department’s essential CPG for Strong Encryption by calling for regulated entities to deploy encryption to protect ePHI and with the recommendation of NCVHS.
+732We also 
+note that the adoption of health IT that is certified through the ONC Health IT Certification Program as having the technical capability to encrypt and decrypt electronic health information, using an encryption algorithm that meets certain requirements, may contribute to a regulated entity’s compliance with the proposed standard for encryption and decryption, should the proposal be finalized.
+733 
+Under the proposal, a regulated entity

@@ -1,0 +1,91 @@
+# Gap Analysis
+
+**Source:** risk_management_manual_complete.pdf
+**Chunk ID:** risk_management_manual_complete_863
+**Pages:** 315-315
+**Section Path:** section7-1 > INTEREST RATE RISK MEASUREMENT METHODS > Gap Analysis
+
+---
+
+SENSITIVITY TO MARKET RISK  Section 7.1  
+Sensitivity to Market Risk ( 10/2025 ) 7.1-6 RMS Manual of Examination Policies  
+  Federal Deposit Insurance Corporation  alternative scenarios using existing models, they should use 
+other methods to estimate the risk of new products, 
+strategies, and initiatives.  All institutions should ensure that 
+the method(s) they use to evaluate new products and initiatives (running alte rnative scenarios in existing models 
+or through other means), adequately captures potential market risks.  
+ 
+Management should consider earnings and the economic 
+value of capital when evaluating IRR.  Reduced earnings or 
+losses can harm capital  and liquidity .  Risk -to-earnings 
+measurements are normally derived from simulation models that estimate potential earnings variability.  Economic value 
+of equity (EVE) measurements allow for longer -term 
+earnings and capital analysis.  The analysis  may be useful 
+for long -term planning and may also indicate a need for 
+short -term actions to mitigate IRR exposure.  Long term 
+earnings -at-risk simulations (5 to 7 years) can be a helpful 
+supplement to EVE measures, but they are not a 
+replacement for EVE measure ments . 
+ 
+← 
+INTEREST R ATE R ISK MEASUREMENT 
+METHODS  
+ 
+Institutions are encouraged to use a variety of measurement 
+methods to assess their IRR profile.  Regardless of the methods used, a bank’ s IRR measurement system should be 
+sufficient to capture all material balance sheet items  and to 
+quantify exposure s to both earnings and capital.  The most 
+common types of IRR measurement systems are:  
+ 
+• Gap Analysis , 
+• Duration Analysis , 
+• Earnings Simulation Analysis ,  
+• Earnings -at-Risk, 
+• Capital- at-Risk, and 
+• Economic Value of Equity.  
+ 
+Gap Analysis 
+ 
+Gap analysis is a simple  IRR methodology that  provides an 
+easy way to identify  repricing gaps .  It can also  be used to 
+estimate how changes in rates will affect future income.  However, gap analysis has several weaknesses and is 
+generally not sufficient as a financial institution ’s sole IRR 
+measurement method.  Gap analysis can be a first step in identifying IRR exposures and may serve as a reasonableness check for more sophisticated forms of IRR 
+measurement , particularly in less complex institutions with 
+simple balance sh eets. 
+ Gap analysis helps identify maturity and repricing 
+mismatches between assets, liabilities, and off-balance  
+sheet instruments.  Gap schedules segregate rate- sensitive assets (RSA), rate -sensitive liabilities (RSL), and off-
+balance sheet instruments according to their repricing 
+characteristics.  Then, the analysis summarizes the repricing mismatches for defined time horizons .  Additional 
+calculations can then estimate the effect the repricing 
+mismatch es may have on net interest income.   
+ A basic gap ratio is  calculated as : 
+ 
+RSA 
+minus RSL 
+Average Earning Assets  
+ Gap analysis may identify periodic, cumulative, or average mismatches, or it may  show the ratio of RSA -RSL divided 
+by average assets or total assets.  However, using those denominators does not produce a standard gap ratio.  They 
+simply provide other ways of describing the degree of 
+repri cing mismatch es. 
+ A bank has a positive gap if the amount of RSAs  repricing 
+in a given period exceeds the amount of RSLs  repricing  
+during the same period.  When a bank has a positive gap, it is said to be asset sensitive.  Should market interest rates decrease, a positive gap indicates that net interest income 
+would likely also decrease.  If rates increase, a positive gap 
+indicates that net interest income may also increase.  
+ Conversely, a bank has a negative gap when the amount of RSLs exceeds the amount of RSAs repricing during the 
+same period.  When a bank has a negative gap, it is said to be liability sensitive, and a decrease in market rates would 
+likely cause an increase in net interest income.  Should 
+interest rates increase, a negative gap indicates net interest income may decrease.  While the terms asset and liability sensitive are generally used to describe gap results, they can also be used to describe the results of other models, or even the general IRR exposure of a bank.  
+ The gap ratio can be used to calculate the potential impact on interest income for a given rate change.  This is done by multiplying the gap ratio by the assumed rate change.  The result estimates the change to the net interest margin.  
+ For example, assume a bank has a 15  percent  one-year 
+average gap.  If rates decline 2  percent , then the projected 
+impact is a 30 basis point decline in the net interest margin (15 percent  x 2 percent ).  This estimate assumes a static 
+balance sheet and an immediate, sustained interest rate shift.  
+ Gap analysis has several advantages.  Specifically, it:  
+ 
+• Identifies repricing mismatches,  
+• Does not require sophisticated technology, 
+• Is relatively simple to develop and use , and 
+• Can provide clear, easily interpreted results .

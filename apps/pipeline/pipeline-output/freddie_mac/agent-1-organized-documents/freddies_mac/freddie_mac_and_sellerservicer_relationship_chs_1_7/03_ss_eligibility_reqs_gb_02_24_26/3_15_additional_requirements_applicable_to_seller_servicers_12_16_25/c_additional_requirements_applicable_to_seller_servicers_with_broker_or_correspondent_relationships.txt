@@ -1,0 +1,168 @@
+# c. Additional requirements applicable to Seller/Servicers with broker or correspondent relationships (12/16/25)
+
+**Source:** freddies_mac.pdf
+**Chunk ID:** freddies_mac_170
+**Pages:** 83-85
+**Section Path:** Freddie Mac and SellerServicer Relationship (Chs 1-7) > 03 - SS Eligibility Reqs GB-02-24-26 > 3.15 Additional requirements applicable to Seller/Servicers (12/16/25) > c. Additional requirements applicable to Seller/Servicers with broker or correspondent relationships (12/16/25)
+
+---
+
+Guide Bulletin Update 02/24/26 Chapter 3 – Page 22 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the 
+AllRegs web site of ICE Mortgage Technology  (with a paid subscription).  
+Guide Chapter 3 – Seller/Servicer Eligibility Requirements  
+3.15 Additional requirements applicable to Seller/Servicers ( 12/16/25) 
+a. Policies and procedures  (01/01/25) 
+Seller/Servicers must  adopt, maintain and administer written minimum policies and procedures 
+that address  doing business  in compliance with Freddie Mac  requirements , in accordance with 
+Section 2.19(a) .   
+ 
+b. Additional requirements applicable to SBL Seller/Servicers ( 12/14/23) 
+Each SBL Seller/Servicer must : 
+ 
+• Have access to dedicated resources that specialize in the origination and servicing of small 
+balance loans  
+ 
+• Have a servicing portfolio consisting of small balance loans with a strong performance history  
+ 
+• Have a technology/systems platform supporting the origination, underwriting, closing and 
+servicing of a large number of small balance loans, that is capable of : 
+ 
+o Providing pricing of transactions  
+ 
+o Tracking an SBL Mortgage from the price quote and origination of the SBL Mortgage to 
+Servicing  
+ 
+o Generating reports on the servicing portfolio, with the ability to identify Freddie Mac SBL 
+Mortgages  
+ 
+o Providing access to all areas of the Seller/Servicer’s organization that are involved in loan 
+origination and Servicing  
+ 
+o Capturing and providing data required by Freddie Mac  
+ 
+• Have a technology/systems platform that is capable of accepting ACH transactions  
+ 
+c. Additional requirements applicable to Seller/Servicers  with broker or correspondent 
+relationships  (12/16/25) 
+1. Broker ; Correspondent .  The terms “broker” and “correspondent” refer to any individual 
+and/or entity who arranges or otherwise brokers the Mortgage loan financing for the 
+Property with the Seller/Servicer on behalf of the Borrower  or the Seller/Servicer , whether 
+such individual or entity is referred to as a broker, mortgage broker or a correspondent .  
+For the purposes of this chapter, the terms “broker” and “correspondent” may sometimes 
+be referred to together as “broker/correspondent .” 
+ 
+• For acquisition  financing , an investment sales team , investment sales team 
+representative or listing agent retained by the Property seller and not otherwise 
+engaged by the borrower in connection with the loan financing (for the purposes of 
+these policies, individually or collectively referred as the “investment sales team”)  will 
+not be considered a “broker/correspondent” for the purposes of this chapter.
+
+Guide Bulletin Update 02/24/26 Chapter 3 – Page 23 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the 
+AllRegs web site of ICE Mortgage Technology  (with a paid subscription).  
+Guide Chapter 3 – Seller/Servicer Eligibility Requirements  
+2. Disclosure of agreements .  When requested by Freddie Mac, e ach Seller/Servicer must 
+provide Freddie Mac with the names of the broker/correspondents with whom it directly 
+engages.  Upon request, the Seller/Servicer will also provide Freddie Mac with additional 
+information regarding such agreements.  The terms of th e broker and correspondent 
+agreements are not subject to Freddie Mac approval.  
+ 
+3. Mortgage loan requirements .  The following requirements regarding transactions with 
+brokers and correspondents must be satisfied  for each Mortgage : 
+ 
+A. Non-Small Balance Loans .  For any Mortgage  that is not a Small Balance Loan:  
+ 
+i. Broker and correspondent firms and individual names must be disclosed to 
+Production at loan submission for a Quote request in the Loan Submission 
+Template (LST).  
+ 
+ii. Quote requests involving a broker/correspondent must be accompanied by a 
+confirmation from the Borrower that the Seller/Servicer is the sole lender 
+authorized to submit the loan to Freddie Mac.    
+ 
+iii. The Optigo® Lender’s Fee Certification – Conventional & Targeted Affordable 
+Housing  form must be submitted with delivery of the underwriting package for 
+any transaction that involves a broker or correspondent.  
+ 
+iv. Sponsor Meeting requirements in Section 11.8.  
+ 
+B. Small Balance Loans .  For Small Balance Loans :  
+ 
+i. The Seller/Servicer must complete the broker information (deal contacts) tab in 
+the Pipeline Management Tool (PMT) at loan application  and provide updates if 
+the information changes  at Full Underwriting.  
+ 
+ii. The Seller/Servicer must complete the Lender Fee Certification tab in PMT at or 
+prior to submission of the full underwriting package.  
+ 
+iii. Sponsor Meeting requirements in Section 11.8.  
+ 
+C. Inspection process .  The broker/correspondent must not be involved in the 
+Property inspection process.  The Seller/Servicer must manage the inspection 
+process in accordance with the inspection requirements set forth in Chapters 8 and 
+40.  This also includes any inspections performed in connection with Freddie Mac 
+required third -party reports or appraisals.  
+ 
+D. Due diligence; chain of custody .  
+ 
+i. All source documentation , due diligence and other underwriting documentation 
+relating to the Property, the Borrower and Borrower Principals (i.e., rent rolls, 
+aged receivables, operating statements, financial statements, etc., but excluding 
+required reports  ordered by the Seller/Servicer from third parties) must be 
+delivered  directly to the Seller/Servicer by the Borrower and Borrower Principals 
+or the member, partner, director or employee of the Borrower or Borrower 
+Principal’s firm authorized to deliver such documentation on behalf of the
+
+Guide Bulletin Update 02/24/26 Chapter 3 – Page 24 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the 
+AllRegs web site of ICE Mortgage Technology  (with a paid subscription).  
+Guide Chapter 3 – Seller/Servicer Eligibility Requirements  
+Borrower or Borrower Principal , without the broker/correspondent being in the 
+chain of custody  of the documentation.  Seller/Servicers must communicate 
+directly with the Borrower and Borrower Principals or their authorize d 
+representatives with respect  to source documentation, due diligence and other 
+underwriting matters .  
+ 
+ii. For acquisition financing, Freddie Mac may provide indicative pricing to a 
+Seller/Servicer based upon financial information obtained from the Property 
+seller and provided to the Seller/Servicer by an investment sales team.   
+However, for issuance of a Quote (as provided in Section 27.3 and other 
+chapters), the source documents and due diligence must be delivered directly to 
+the Seller/Servicer by the Borrower and Borrower Principals  or the authorized 
+representatives of such parties , as provided above.  
+ 
+iii. When a broker/correspondent arranges or otherwise brokers the Mortgage loan 
+financing for the Property with the Seller/Servicer, the Seller/Servicer must 
+preserve emails or other documentation regarding the Seller/Servicer’s 
+compliance with the due diligen ce and underwriting documentation chain of 
+custody requirements set forth in this section.  
+ 
+iv. By submission of source documents, due diligence or other underwriting 
+documentation  to Freddie Mac, the Seller/Servicer will be deemed to represent 
+and warrant to Freddie Mac that it has complied with the requirements of this 
+subsection.    
+ 
+E. Index Lock . Prior to any Index Lock, for all transactions submitted to the 
+Seller/Servicer through a broker/correspondent:  
+ 
+i. The Seller/Servicer must either (a) have  conduct ed a preliminary property 
+inspection  of the Property , consisting of the elements described in Section 
+8.15(a) , or (b) for a refinance of a Freddie Mac Mortgage , have reviewed a 
+servicing inspection  of the Property completed in accordance with Chapter 40 
+and dated within 120 days from Index Lock and determined it was acceptable .  
+ii. The Seller/Servicer must have received source documentation and other due 
+diligence directly from the Borrower as noted in Section 3.15(c)2. D. above, and 
+in addition, for first -time sponsors only, financial statements for the proposed 
+Borrower Principal(s) and, when applicable, the proposed Guarantor(s).   
+iii. The Seller/Servicer must submit the Optigo Lender's Index Lock Agreement 
+Certification for Broker/Correspondent Loans . 
+ 
+4. Broker/Correspondent policies and searches .  When a Seller/Servicer engages a 
+broker/correspondent or otherwise has an agreement to compensate a 
+broker/correspondent for referring a Borrower to the Seller/Servicer in connection with the 
+financing of Freddie Mac Mortgage(s), the Seller/Servicer must  also comply with the 
+requirements below : 
+ 
+A. The Seller/Servicer must develop and implement internal policies and procedures to 
+address the broker/correspondent firm’s business, including qualifications for

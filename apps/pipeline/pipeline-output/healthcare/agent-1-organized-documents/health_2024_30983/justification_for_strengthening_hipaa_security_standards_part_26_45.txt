@@ -1,0 +1,41 @@
+# Justification for Strengthening HIPAA Security Standards (part 26/45)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_003_sub_026
+**Section Path:** Justification for Strengthening HIPAA Security Standards
+**Summary:** This section argues for the necessity of revising the Security Rule, citing the changing healthcare environment, increasing cybersecurity threats, and inconsistent compliance among regulated entities. It outlines the need for robust standards to ensure the protection of ePHI.
+
+---
+
+of Enforcement Discretion for Telehealth Remote confidentiality, integrity, and 
+availability of sensitive and confidential information, including ePHI. 
+A major distinguishing factor between 
+the content of the Security Rule and these compilations and regulations is the Security Rule’s scope. The compilations and regulations are designed to protect various types of data and information systems broadly. In 
+comparison, a defining quality of the Security Rule’s requirements is that they focus specifically on the protection of ePHI and the information systems that create, receive, maintain, or transmit ePHI. Thus, while the foundational elements of various cybersecurity compilations and State regulations and the Security Rule may be the same, the Security Rule alone addresses the application of those elements to ePHI and all of the components of information systems that create, receive, maintain, or transmit ePHI. Thus, while the standards of the Security Rule generally align with those of other cybersecurity standards, frameworks, best practices, guidelines, processes, and procedures, the specific implementation specifications of the Security Rule reflect the particular sensitivities of the health care industry, particularly small and rural health care providers, in a way that is necessary to ultimately improve the efficiency and effectiveness of the health care system and avoid imposing unreasonable compliance burdens on regulated entities. 
+B. The Health Care Environment Has 
+Changed Since the Security Rule Was Last Revised and Will Continue To Evolve 
+The health care sector has undergone 
+a dramatic transformation over the last 24 years, and particularly in the past 10 years, spurred at least in part by the Department’s implementation of HIPAA, the HITECH Act, and the Cures Act. The industry has shifted from one that generally relied upon a system of paper-based recordkeeping and siloed devices to one that depends on interconnected information systems to maintain and exchange patient records, conduct research, run health care provider facility management systems, and provide patient care.
+166This shift is 
+largely the result of HIPAA’s emphasis on the development and use of standards and the EHR incentive funds made available under the HITECH Act for health care providers.
+167Data from 
+ASTP/ONC offer clear and convincing 
+evidence of this shift. In 2008, before the enactment of the HITECH Act, less than 10 percent of non-Federal acute hospitals had implemented what was referred to at the time as a ‘‘Basic EHR’’ (i.e., an electronic health record).
+168By 
+2015, six years after the enactment of the HITECH Act, almost 84 percent had adopted a Basic EHR while 96 percent had adopted a certified EHR.
+169The 
+transformation was further enabled by the Cures Act, which encouraged the development of a trusted exchange framework for the nationwide exchange of health information and provided penalties for health care providers, health information exchanges and networks, and developers of certified health IT that engage in information blocking.
+170In 2014, 41 percent of such 
+hospitals routinely had electronic access to clinical information from outside providers or sources when treating a patient.
+171By 2023, 70 percent of non- 
+Federal acute care hospitals engaged in all domains of interoperable exchange routinely or sometimes, a significant leap forward.
+172In 2017, only 38 
+percent of hospitals enabled patients to access their health information using an application and in 2018, 57 percent enabled patient access to their clinical notes in their patient portal; by 2021, 70 percent of hospitals enabled patients to access their health information using an application and 82 percent enabled patients to view their clinical notes in their patient portal.
+173And just a year 
+later, the percentage of hospitals that supported patient access through applications increased to 86 percent.
+174 
+Based on this data, it is clear that HIPAA, coupled with the HITECH Act and the Cures Act, has successfully encouraged the development of a nationwide electronic health information system. 
+Not only is PHI increasingly 
+maintained and transmitted electronically, but treatment is also increasingly provided electronically. The coronavirus disease 2019 (COVID– 19) pandemic led to a dramatic increase in the use of telemedicine.
+175According 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00014 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

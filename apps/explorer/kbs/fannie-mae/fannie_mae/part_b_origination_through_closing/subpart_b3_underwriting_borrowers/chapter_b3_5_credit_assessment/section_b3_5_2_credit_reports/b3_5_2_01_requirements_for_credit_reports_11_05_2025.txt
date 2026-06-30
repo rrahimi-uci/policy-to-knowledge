@@ -1,0 +1,135 @@
+# B3-5.2-01, Requirements for Credit Reports (11/05/2025)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_226
+**Pages:** 476-479
+**Section Path:** Part B, Origination Through Closing > Subpart B3, Underwriting Borrowers > Chapter B3-5, Credit Assessment > Section B3-5.2, Credit Reports > B3-5.2-01, Requirements for Credit Reports (11/05/2025)
+
+---
+
+Published March 4, 2026
+458Reports .) If a credit score is provided with the foreign credit report it cannot be used to establish eligibility, or be
+delivered to Fannie Mae unless the credit score is the classic FICO, as required by B3-5.1-01, General
+Requirements for Credit Scores . 
+If the lender relies on credit reports from foreign countries to document borrower credit histories, the credit
+report must meet the requirements and standards for domestic reports and must be completed in English or
+include an English translation.
+See Section B3–5.4, Nontraditional Credit History, for requirements that apply when a loan includes a borrower
+without an acceptable credit history.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2025-09 November 05, 2025
+Announcement SEL-2022-09 October 05, 2022
+Announcement SEL-2021-08 September 01, 2021
+ 
+Section B3-5.2, Credit Reports
+B3-5.2-01, Requirements for Credit Reports (11/05/2025)
+Introduction
+This topic describes requirements for credit reports, including:
+Overview
+General Requirements
+Public Records Information
+Acceptable and Unacceptable Changes
+Required Creditor Information
+Format for Reporting Payment History
+Inquiries
+
+Published March 4, 2026
+459Unreported Debts
+Assessing Borrower Credit Management Skills
+Credit Report Requirements in Desktop Underwriter
+Credit Score Requirements
+Overview
+The lender must obtain a credit report for each borrower on the loan application who has an individual credit
+record. The credit report must be based on data provided by the national credit repositories. Acceptable credit
+report formats are described in  B3-5.2-02, Types of Credit Reports . For credit report requirements in DU see
+below.
+A nontraditional mortgage credit report or other form of alternative credit veriﬁcation may be used if the
+borrower
+does not have suﬃcient credit to enable the development of a credit score, or
+does not use the type of credit that is reported to credit repositories.
+See Section B3-5.4, Nontraditional Credit History for additional information.
+General Requirements
+Credit reports must meet the following general requirements:
+The report must include both credit and public record information for each borrower.
+The report must include all discovered credit and legal information that is not considered obsolete under
+the Fair Credit Reporting Act. Although the Fair Credit Reporting Act currently speciﬁes that credit
+information is not considered obsolete until after seven years, and bankruptcy information after ten
+years, Fannie Mae requires only a seven-year history to be reviewed for all credit and public record
+information.
+The report must be an original report, with no erasures, white-outs, or alterations. An automated credit
+report or one that is transmitted by fax is considered to be an “original” report.
+The report must include the full name, address, and telephone number of the credit reporting agency, as
+well as the names of the national repositories that the agency used to provide information for the report.
+The credit reporting agency must make responsive statements about all items on the credit
+report—indicating “unable to verify” or “employer refused to verify,” when appropriate.
+Public Records Information
+The report must include all available public records information, identify the sources of the public records
+information, and disclose whether any judgments, foreclosures, tax liens, or bankruptcies were discovered (with
+these adverse items reported in accordance with the Fair Credit Reporting Act and to the extent reported by
+consumer reporting agencies participating in the National Consumer Assistance Plan).
+
+Published March 4, 2026
+460Acceptable and Unacceptable Changes
+Collected credit report information should not be changed. However, it is permissible to delete duplicate
+information, translate codes to plain language, and make appropriate adjustments to resolve conﬂicting
+information to ensure the clarity of the report.
+The following types of changes are unacceptable:
+deleting tradelines that pertain to a borrower’s bankruptcy,
+adding a payment amount to a creditor’s tradeline when the creditor does not require a payment, or
+restricting information collection to a shorter time period than Fannie Mae requires.
+Credit repositories should only change the information called to its attention by a creditor or a party that is not
+associated with either the real estate sale or purchase transaction or the mortgage ﬁnancing.
+Required Creditor Information
+For each debt listed, the report must provide:
+the creditor’s name,
+the date the account was opened,
+the amount of the highest credit,
+the current status of the account,
+the required payment amount,
+the unpaid balance, and
+a payment history.
+The report must indicate the dates that accounts were last updated with the creditors. Each account with a
+balance must have been checked with the creditor within 90 days of the date of the credit report.
+Format for Reporting Payment History
+All data must be presented in a format that is easy to read and that is understandable without the need for code
+translations.
+The report must list the historical status of each account. This status must be presented in a “number of times
+past due” format and include the dates of the delinquencies.
+The preferred format is “0 x 30, 0 x 60, 0 x 90 days” late. The following formats are also acceptable:
+“Rl, R2, R3, …,” if it also gives historical negative ratings, such as “was R3 in 6/05.”
+a consecutive numbering sequence, such as “0001000 …,” provided the meaning is clear from the report.
+Statements such as “current,” “satisfactory,” or “as agreed” are not satisfactory by themselves.
+Inquiries
+
+Published March 4, 2026
+461The report must generate an inquiry that will appear on future credit reports and must list all inquiries that were
+made in the previous 90 days.
+Unreported Debts
+If the credit report does not include a reference for each signiﬁcant open debt on the application, the lender
+must obtain a separate written veriﬁcation for each unreported debt. The lender also needs to verify separately
+accounts listed as “will rate by mail only” or “need written authorization.”
+Assessing Borrower Credit Management Skills
+The borrower’s credit management skills can be assessed by analyzing repayment patterns, credit utilization,
+and level of experience in using credit.
+Credit Report Requirements in Desktop Underwriter
+Lenders are required to request a three in-ﬁle merged credit report from one of the credit information providers
+listed on Fannie Mae's website. The credit report used by DU in the ﬁnal loan caseﬁle submission must be
+maintained in the mortgage loan ﬁle. A DU observation message will identify all of the credit reports evaluated
+by DU during the loan submission. The version of the credit report received by DU must meet the requirements
+in this topic and be one that supports trended credit data. Trended credit data is expanded information on a
+borrower’s credit history at a tradeline level on several monthly factors, including: amount owed, minimum
+payment, and payment made.
+Note : To obtain a credit report that is compatible with DU loan caseﬁle requirements, the borrower's
+present address must be within the U.S. or U.S. territories, with the exception of an Army Post Oﬃce
+(APO), Fleet Post Oﬃce (FPO), or Diplomatic Post Oﬃce (DPO) military address. Borrowers with foreign
+credit reports must be manually underwritten. See Foreign Credit Reports and Credit Scores  in
+B3-5.1-02, Determining the Credit Score for a Mortgage Loan  for additional information.
+Credit Score Requirements
+See B3-5.1-01, General Requirements for Credit Scores , for additional information about credit report
+requirements related to credit scores.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2025-09 November 05, 2025

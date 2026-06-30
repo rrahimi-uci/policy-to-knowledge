@@ -1,0 +1,40 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 69/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_069
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+932 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+418Id. at Appendix p. 4. 
+419Id. 
+420Id at 5. 
+421See 68 FR 8334, 8336 (Feb. 20, 2003). 42268 FR 8334, 8341 (Feb. 20, 2003); see also 
+Jennifer Cawthra, et al., ‘‘Data Integrity: Identifying 
+and Protecting Assets Against Ransomware and Other Destructive Events,’’ NIST Special Publication 1800–25A, National Institute of Standards and Technology, U.S. Department of Commerce, p. 1 (Dec. 2020) (‘‘The CIA triad represents the three pillars of information security: confidentiality, integrity, and availability.’’), https://www.nccoe.nist.gov/publication/1800-25/ VolA/index.html. 
+42342 U.S.C. 1320d–2(d)(2)(A) and (C). 
+424Section 164.530(c) includes the Privacy Rule 
+standard and implementation specification for safeguarding PHI. It requires covered entities to have in place appropriate administrative, physical, and technical safeguards to protect the privacy of PHI. Additionally, it requires covered entities to reasonably safeguard PHI from intentional or unintentional uses or disclosures that violate the Privacy Rule, and to limit incidental uses or disclosures made pursuant to a permissible or required use or disclosure of PHI. continue to neglect people and process 
+measures necessary for a comprehensive security program.
+418NCVHS also 
+pointed to a continued failure of regulated entities to develop adequate incident recovery plans and to assess their vulnerability to cyberattacks grounded in social engineering.
+419 
+Finally, NCVHS opined that the current structure of the Security Rule is inadequate to protect U.S. health care infrastructure because it does not require regulated entities ‘‘to adopt the basic building blocks of good security hygiene, or a documented, reasonable alternative.’’
+420 
+We share NCVHS’ concerns and 
+believe that we must squarely confront the problem of regulated entities treating addressable implementation specifications as optional. Relatedly, we also believe that we must consider modifying the Security Rule to set an acceptable minimum level of security specifications. Circumstances have changed sufficiently since 2003 such that we now believe that good cyber hygiene requires regulated entities to implement more than the implementation specifications that we originally mandated.
+421Indeed, we 
+believe that it requires compliance with 
+all of the standards and implementation specifications we are proposing, with specific, limited exceptions. 
+We also believe that the current 
+maintenance requirement in 45 CFR 164.306(e) would benefit from increased specificity in light of the dramatic transformation of the health IT environment discussed above. For example, providing the frequency with which regulated entities must review and update their security measures would improve the security of ePHI and regulated entities’ compliance with the Security Rule. The Security Rule’s maintenance requirement would be further strengthened by requiring regulated entities to test their security measures to verify their sufficiency, and by clarifying the Department’s expectations regarding documentation. Regulated entities’ lack of documentation about how they implement security measures makes it difficult for them to know what security measures they have in fact implemented and to demonstrate compliance with the requirements of the Security Rule. Finally, the maintenance requirement in 45 CFR 164.306(e) is not included in or designated as a Security Rule standard, although it explicitly references the overarching documentation requirements in 45 CFR 164.316(b)(2)(iii). Thus, there is overlap between the two sections that may be causing confusion regarding the obligations of regulated entities to maintain security measures. 
+3. Proposals 
+a. Section 164.306(a)—General 
+Requirements 
+The Department proposes to expand 
+the introductory language to the general requirements provision at 45 CFR 164.306(a) to clarify the extent to which the general requirements apply to the obligations of regulated entities with respect to ePHI that they create, receive, maintain, or transmit. 
+Under the proposal, the Department 
+would clarify that the general requirements apply to ‘‘all’’ ePHI. Additionally, the Department proposes to move language from paragraph (a)(1) to paragraph (a) to further emphasize that regulated entities must apply the requirements of the Security Rule to protect all of the ePHI they create, receive, maintain, or transmit. We also propose to clarify that ‘‘each’’ regulated entity would be required to apply the obligations in paragraphs (a)(1) through (4) to all ePHI it creates, receives, maintains, or transmits. The Department believes that this proposal would stress to regulated entities that each and every covered entity and business associate would be responsible for ensuring it meets Security Rule requirements with respect to all ePHI. 
+The Department believes this

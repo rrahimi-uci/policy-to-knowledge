@@ -1,0 +1,140 @@
+# B8-7-01, Mortgage Electronic Registration Systems (MERS), Inc. (05/01/2024)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_428
+**Pages:** 930-933
+**Section Path:** Part B, Origination Through Closing > Subpart B8, Closing: Legal Documents > Chapter B8-7, Mortgage Electronic Registration System (MERS) > B8-7-01, Mortgage Electronic Registration Systems (MERS), Inc. (05/01/2024)
+
+---
+
+Published March 4, 2026
+912Announcements Issue Date
+Announcement SEL-2022-04 May 04, 2022
+Announcement SEL-2019-09 December 04, 2019
+ 
+Chapter B8-7, Mortgage Electronic Registration System
+(MERS)
+Introduction
+This chapter provides information related to mortgage loans registered with MERS.
+B8-7-01, Mortgage Electronic Registration Systems (MERS), Inc.
+(05/01/2024)
+Introduction
+The MERS system is an electronic system that assists in the tracking of loans, servicing rights, and security
+interests. To initiate the electronic tracking, the seller/servicer assigns a special MERS Mortgage Identiﬁcation
+Number (MIN) to the loan and registers it in MERS. This topic contains information about MERS, including:
+Naming MERS as the Nominee for the Beneﬁciary in the Security Instrument
+Requirements for the Use of MERS in Speciﬁed Geographic Areas
+MERS Registration
+Use of the MIN
+Mortgage Assignment to MERS
+Termination of MERS
+Naming MERS as the Nominee for the Beneﬁciary in the Security Instrument
+A seller/servicer that wants to register a newly originated loan with MERS may prefer to designate MERS as the
+nominee for the beneﬁciary in the security instrument. Doing so, eliminates the need for a subsequent
+assignment of the security instrument should the seller/servicer sell (or transfer servicing of) the loan to another
+seller/servicer that is a member of MERS. In such cases, the applicable security instrument must be modiﬁed to:
+
+Published March 4, 2026
+913show MERS as the nominee for the seller/servicer,
+deﬁne and name the originating seller/servicer, and
+obtain the borrower’s acknowledgment of MERS’ role in the mortgage transaction.
+If the seller/servicer encounters a situation where Fannie Mae is the owner of record for a loan because the
+original assignment of the loan to Fannie Mae was recorded in the public records, the seller/servicer must
+correct the error before it completes the MERS registration by:
+preparing an assignment of the loan from Fannie Mae to MERS,
+sending the assignment to Fannie Mae for execution, and
+recording the assignment in the public records.
+Changes that must be made to create a standard MERS security instrument for each jurisdiction may be found
+in the Instructions document for each state-speciﬁc security instrument (see Fannie Mae's Legal Documents
+ website), with the exception of loans secured by property located in certain geographic areas, as described
+below.
+The seller/servicer is responsible for the accurate and timely preparation and recordation of the security
+instrument and any MERS-related documents required to be used in speciﬁc geographic areas. Sellers/servicers
+must also take all reasonable steps to ensure that information pertaining to MERS is updated and accurate at all
+times.
+Even when MERS is named as the nominee for the beneﬁciary in the security instrument, it has no beneﬁcial
+interest in the mortgage. All actions that MERS takes with respect to a loan are based on the instructions
+initiated by the originating seller, Fannie Mae, or the servicer. The originating seller remains responsible for all
+of its Contractual Obligations and any liability that it or Fannie Mae incurs as a result of the MERS registration,
+any MERS transaction, or the failure of MERS to perform any obligation with respect to a MERS-registered loan.
+In addition, the seller/servicer is solely responsible for any failure to comply with the provisions of its MERS
+Member Agreement, Rules, and Procedures.
+Requirements for the Use of MERS in Speciﬁed Geographic Areas
+MERS Rider
+In the states listed below, sellers/servicers must use the Mortgage Electronic Registration Systems, Inc. Rider
+(MERS Rider)  (Form 3158 ) when a newly originated loan will be registered with MERS. Sellers/servicers must
+also follow the Instructions to the MERS Rider and the applicable security instruments to make changes to the
+standard security instruments for the following states:
+Montana,
+Oregon, and
+Washington.
+As the MERS Rider must be used in these speciﬁed states, post-closing assignments to MERS are prohibited.
+MERS Assignment Form - Maine
+
+Published March 4, 2026
+914In the state of Maine, sellers/servicers must use the MERS Mortgage Assignment (Form 3749)  to assign loans to
+MERS at origination or post-closing, as applicable. Loans in which the Maine security instrument has been
+modiﬁed to name MERS as the original mortgagee of record, solely as nominee for the seller/servicer, are
+ineligible for delivery to Fannie Mae.
+MERS Registration
+If a seller/servicer registers a loan on the MERS system before delivering it to Fannie Mae, the seller/servicer
+must ensure that the MIN is registered in MERS and names itself as the investor. Additionally, the seller/servicer
+must include the MIN in the delivery data. After Fannie Mae purchases or securitizes the mortgage, Fannie Mae
+notiﬁes MERS to update its records to reﬂect Fannie Mae’s ownership interest in the loan.
+Note : For loans registered in MERS iRegistration where MERS is not named as the nominee for the
+beneﬁciary in the security instrument, the MERS MIN should not be reported on the loan schedules,
+unless the loan is an eMortgage registered on MERS eRegistry.
+If a seller/servicer registers a mortgage with MERS after Fannie Mae has purchased or securitized the loan, the
+seller/servicer must name Fannie Mae as the investor during registration and notify MERS of Fannie Mae’s
+ownership interest in the loan.
+Use of the MIN
+For each MERS-registered loan delivered to a document custodian, the seller/servicer must indicate the MIN on
+the security instrument and related documents. Because the status of a MERS-registered mortgage can change,
+the seller/servicer is not required to include the MIN on the note. Additionally, the seller/servicer is still
+responsible for making sure that the document custodian has suﬃcient information to determine whether a loan
+that is included in a subsequent transfer of servicing is registered with MERS at the time of the transfer. The
+seller/servicer must have adequate controls in its processes to enable it to readily identify MERS-registered
+mortgages.
+The seller/servicer can choose from the following options:
+place the MIN on the note when the loan is registered with MERS and, if the MERS registration is
+subsequently terminated for any reason, notify the document custodian to delete the MIN from the note;
+wait to advise the custodian of the status of the MERS registration for a loan until a change in status
+actually occurs; or
+notify the custodian about the status of the MERS registration for a loan at the time of a servicing transfer
+by providing the custodian with a listing of all MERS-registered loans that are included in the transfer and
+a certiﬁcation that any and all other loans included in the transfer are not currently registered with MERS.
+(The listing may be prepared by the seller/servicer or, with the seller/servicer’s authorization, by MERS.) If
+there are more MERS-registered loans included in the transfer than there are unregistered loans, the
+listing may instead identify the unregistered loans—and, in that case, the certiﬁcation should state that
+any and all other loans included in the transfer are currently registered with MERS.
+Mortgage Assignment to MERS
+
+Published March 4, 2026
+915If the originating seller/servicer is the beneﬁciary for a loan that it registers with MERS, they must prepare an
+assignment of the mortgage to MERS. Refer to the section above, entitled Requirements for the Use of MERS in
+Speciﬁed Geographic Areas , for additional information about, and restrictions on, assignments of loans to
+MERS. 
+By delivering a MERS-registered loan to Fannie Mae, the seller/servicer:
+warrants that MERS is the mortgagee of record (either by being named as an assignee in a recorded
+assignment of the security instrument or as nominee for the beneﬁciary in the security instrument); and
+warrants that the MIN is valid and properly registered in MERS naming the seller/servicer as the investor.
+Sellers/servicers are not required to include a copy of the assignment of the loan to MERS in the delivery
+package they submit to the applicable document custodian.
+Termination of MERS
+If the seller/servicer decides to discontinue the use of MERS, they must request from MERS that the loan be
+“deactivated” in MERS. MERS will notify Fannie Mae about the deactivation of any loan in which it has an
+interest.
+If the seller/servicer’s membership in MERS is terminated, the seller/servicer must promptly notify Fannie Mae’s
+MERS Program Oﬃce (see E-1-02, List of Contacts ).
+In the event that either its membership in MERS or the MERS registration for an active loan is terminated for any
+reason while Fannie Mae has an ownership interest in the loan, the seller/servicer must perform the functions
+outlined in the following table for each MERS-registered loan that it is servicing for Fannie Mae.
+✓ The seller/servicer must...
+ Prepare an assignment of the loan from MERS to itself.
+ Have the assignment executed.
+ Record the executed assignment in the public land records.
+ Provide the impacted Fannie Mae loan numbers to Fannie Mae’s MERS Program Oﬃce.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2024-03 May 01, 2024

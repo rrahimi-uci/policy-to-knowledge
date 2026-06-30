@@ -1,0 +1,34 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 158/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_158
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+976 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+786‘‘Glossary of Key Information Security Terms,’’ 
+supra note 745. 
+787‘‘Securing Your Legacy [System Security],’’ 
+supra note 494. 788The Department does not propose that the 
+periodic review include a review that the 
+conditions of the exception continue to apply because a regulated entity would be expected to resume compliance with the implementation specification of multi-factor authentication when such exception no longer applies. Additionally, the proposal would 
+require a regulated entity to implement reasonable and appropriate compensating controls, as described at proposed paragraph (f)(2)(iv)(B). 
+The proposed requirements for 
+reasonable and appropriate compensating controls are explained under proposed 45 CFR 164.312(f)(2)(iv)(B). Compensating controls are implemented in the place of 
+MFA to protect ePHI.
+786The 
+Department does not propose to require that compensating controls be technical controls. Rather, a regulated entity should consider the nature of the exception, operating environment, and other appropriate circumstances to determine what controls are reasonable and appropriate and implement compensating controls effective for those circumstances. For example, if a software program does not support MFA, deploying a firewall or increasing the sensitivity of an existing firewall protecting that software may in some circumstances constitute a reasonable and appropriate compensating control.
+787In some instances, physical 
+safeguards may serve as reasonable and appropriate compensating controls. For example, limiting access to certain components of a relevant electronic information system to workforce members who meet certain requirements may be a reasonable and appropriate compensating control under some circumstances. In most cases, it would be reasonable and appropriate for a regulated entity to implement multiple compensating controls to ensure that the affected electronic information system is secured. 
+The Department proposes at proposed 
+45 CFR 164.312(f)(2)(iv)(B)(1) that, to comply with an exception at paragraph (f)(2)(iii)(A) or (B) or (f)(2)(iii)(C)(1) or (2), the regulated entity would be required to secure the relevant electronic information system with reasonable and appropriate compensating controls that have been reviewed, approved, and signed by the regulated entity’s Security Official. Because exceptions are a departure from the designed Security Rule framework, the Department intends to ensure appropriate review by the Security Official of controls selected by the regulated entity to compensate for the absence of MFA. Merely because a regulated entity’s Security Official has reviewed, approved, and signed off on compensating controls does not mean that those controls are effective. The 
+regulated entity would also be required to give due consideration to the circumstances surrounding the exception and implement compensating controls effective for those specific circumstances. 
+With respect to the exception at 
+proposed 45 CFR 164.312(f)(2)(iii)(C)(3), 
+the Department proposes at proposed 45 CFR 164.312(f)(2)(iv)(B)(2) to presume that a regulated entity had implemented reasonable and appropriate compensating controls where the regulated entity has implemented the security measures prescribed and as instructed by the FDA-authorized label for the device. The proposed language recognizes that while the device’s label may not specifically require deployment of an MFA solution, it may provide for a specific compensating control and the manner in which that control is to be implemented. This would include any updates, such as patches, recommended or required by the manufacturer of the device. While not required, a regulated entity would be permitted to implement additional alternative security measures and compensating controls in accordance with best practices and/or its risk analysis. 
+Additionally, the Department 
+proposes at 45 CFR 164.312(f)(2)(iv)(B)(3) that during any period in which compensating controls are in use, the regulated entity’s Security Official would be required to review the effectiveness of the compensating controls at securing its relevant electronic information systems. While regulated entities should review 
+implemented compensating controls on a routine basis, the Department intends for a regulated entity to periodically review the implementation and effectiveness of implemented compensating controls to ensure the continued protection of ePHI.
+788For

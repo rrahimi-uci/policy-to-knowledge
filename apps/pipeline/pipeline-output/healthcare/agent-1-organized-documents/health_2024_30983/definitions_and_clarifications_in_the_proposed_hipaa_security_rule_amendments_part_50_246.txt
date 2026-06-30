@@ -1,0 +1,31 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 50/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_050
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+3. Clarifying the Definition of 
+‘‘Authentication’’ 
+a. Current Provision and Issues To 
+Address 
+The Security Rule defines 
+authentication as corroboration that a person is the one claimed. By limiting the definition of authentication to persons, the current definition neglects to acknowledge the importance to the security of ePHI of authenticating technology assets that are components 
+of a regulated entity’s electronic information systems that create, receive, maintain, or transmit ePHI or that otherwise affect the confidentiality, integrity, or availability of ePHI, or that the regulated entity intends to connect to such electronic information systems.
+352Absent such authentication, 
+a bad actor could add technology assets (e.g., software) to a regulated entity’s 
+electronic information systems that enable the bad actor to compromise the security of ePHI. 
+b. Proposal 
+To modernize the definition of 
+authentication to reflect best practices 
+in cybersecurity today, the Department proposes to clarify the definition to mean corroboration that either a person or technology asset is the one they are claiming to be. The modified definition would also improve readability with minor changes in wording. The Department believes as proposed, the revised definition would more accurately reflect the role played by technology assets in electronic information systems today. For example, a covered health care provider permits individuals to access their own PHI using an application that connects to the software that runs the covered health care provider’s patient portal. Not only must the individual be authenticated as a user, but the 
+application must be authenticated such that the covered entity’s software can verify that the application is what it claims to be. In another example, a portable technology asset for retrieving and storing PHI in the cloud must be authenticated before retrieving data from cloud storage. 
+4. Clarifying the Definition of 
+‘‘Availability’’ 
+a. Current Provision and Issues To 
+Address 
+‘‘Availability’’ is defined in the 
+Security Rule as the property that data or information is accessible and usable upon demand by an authorized person. Although not intended, the current definition could be read to limit the scope of availability only to authorized persons. And yet, it is equally important to ensure that authorized technology assets, such as connected medical devices, software, and workstations, 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00027 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

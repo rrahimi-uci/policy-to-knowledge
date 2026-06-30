@@ -1,0 +1,29 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 171/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_171
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+840 
+As discussed above, the Department 
+proposes to require a regulated entity to activate its contingency plan to respond to an emergency or other occurrence that adversely affects relevant electronic information systems.
+841The Department 
+believes that regulated entities activate their contingency plans infrequently because such plans are only activated when there is an emergency or other occurrence that rises to a level beyond a security incident that is thwarted or other event that does not adversely affect the confidentiality, integrity, or availability of ePHI. Thus, the need to make the proposed notification would also arise infrequently. 
+For example, a business associate may 
+not be required to notify a covered entity within a certain time after a relevant electronic information system receives a basic internet command such as a ping,
+842which happens frequently. 
+This is because a ping in and of itself generally does not adversely affect relevant electronic information systems when it is blocked by firewall policies, and thus does not require activation of the regulated entity’s contingency plan. Instead, the business associate would be required to provide such notice in instances where internet commands received by the business associate indicate potential malicious activity, such as a denial of service attack, leading to activation of its contingency plan because of an event that adversely affects the business associate’s relevant electronic information systems that create, receive, maintain, or transmit ePHI or adversely affects the confidentiality, integrity, or availability of its ePHI. However, in both such instances, a business associate would still be required to provide notice to the covered entity of the ping as a security incident in accordance with the business associate agreement.
+843 
+The proposal itself would only 
+require that the business associate notify the covered entity of its activation of the contingency plan; it does not include 
+any specific requirements with respect to the form, content, or manner of the notice. Instead, we propose to permit the covered entity and business associate to negotiate such terms and include them in their business associate agreement if they so choose. 
+We recognize that when such an 
+emergency or other occurrence transpires, the focus of the affected regulated entity must be on activating its contingency plan and restoring access to ePHI and the affected relevant electronic information systems. Similarly, when the contingency plan activation is in response to a successful security incident,
+844it may take some 
+time to investigate and determine the cause of the security incident. Thus, this proposal would not require reporting on the cause of the contingency plan activation; it would require reporting solely on the fact that it has activated the plan. Accordingly, we believe that 24 hours would provide a business associate with sufficient time to do all of the following: determine that there is an emergency or other occurrence adversely affecting the business associate’s relevant electronic information systems; determine that it needs to activate its contingency plan; identify any covered entities that need to be notified; and notify such covered entities. 
+This proposed requirement to provide 
+notice without unreasonable delay, but no later than 24 hours after a 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00086 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

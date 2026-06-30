@@ -1,0 +1,98 @@
+# OTHER RISK FACTORS TO CONSIDER
+
+**Source:** risk_management_manual_complete.pdf
+**Chunk ID:** risk_management_manual_complete_879
+**Pages:** 324-324
+**Section Path:** section7-1 > OTHER RISK FACTORS TO CONSIDER
+
+---
+
+SENSITIVITY TO MARKET RISK  Section 7.1  
+RMS Manual of Examination Policies  7.1-15 Sensitivity to Market Risk ( 10/2025 ) 
+Federal Deposit Insurance Corporation  variances , the primary cause of identified  variances , and any 
+proposed or implemented corrective actions . 
+ 
+Variances  resulting from errors  can be broken down into 
+three major components : input, model ing, or assumption 
+errors .  When conducting variance analysis, management 
+should attempt to pinpoint the cause of all material variances .  Mathematical flaws, while relatively rare in 
+widely available purchased systems, can occur.  Other types of modeling errors  can be caused by inaccurate data input, 
+user unfamiliarity with the model, over -aggregation of 
+account types, or the use of a model with insufficient 
+capabilities . 
+ 
+Data errors can  be minimized by strong internal controls and 
+may be  identified through selective transaction testing.  
+Many models can  compare the results of historical IRR 
+simulations with actual financial results.  Significant 
+variances can help management identify, and subsequently 
+correct, identified  issues with the model setup, such as 
+inappropriate account aggregation s or the failure to include  
+key account characteristics . 
+ 
+Assumption Variance Analysis  
+ All IRR measurement systems rely heavily on a series of 
+assumptions , and assessing their  reasonableness is critical 
+to ensuring the integrity of the measurement system results.  
+Just as actual financial results can be expected to vary from forecasts, the assumptions that form the basis of that forecast can be expected to vary  from actual events .   
+ 
+Institutions should have formalized procedures for 
+periodically identifying material difference s between 
+assumed and realized values .  Formal  procedures help  
+identify the key reasons for  variances .  Even if material 
+financial variances  are absent , the model ’s significant 
+assumptions should be compared to actual performance.  
+Compensating differences may have masked important 
+variances.  For example, an institution with a large mortgage portfolio may find that actual prepayment speeds were significantly higher  than projected, but  new loan production 
+replaced the run -off.  In this case, there may only be an 
+immaterial variance in the ending loan balance, but a significant variance in projected vs. actual prepayments. 
+ Given the large number of assumptions inherent in most  
+measurement systems, a thorough review of every assumption during each measurement cycle is unrealistic.  
+However, key assumptions should be checked against actual behavior s on a regular basis.  Key assumptions include 
+those dealing with interest rate movements, driver rates, 
+non-maturity deposits, prepayment speeds, and account 
+aggregation s.  Variance analysis should be used to identify  
+the differences attributable to rate assumptions and  other factors  in order to better understand how those factors 
+influenced modeled results . 
+ Driver rate  variances occur when the expected correlation 
+between a bank rate and its driver rate does not act as predicted .  Variance analysis is used to determine the 
+significance of the difference and should address whether the difference is due to an inaccurate correlation between 
+the subject and driver rate, or due to inappropriate  spreads 
+or beta factor s.  Ideally, the relationship between subject and 
+driver rates should be documented, and the relationship should factor in historical correlations and  management ’s 
+intention s regard ing future movements.  
+ 
+Non-maturity deposit assumptions may cause significant 
+variances.  If the measurement system forecast an increasing 
+net interest margin in a rising rate environment, while the actual margin declined, the cause may involve  NMD 
+assumptions.   Many models treat NMD rates as very 
+insensitive to yield curve changes, while actual practices are  
+to manage the rates more actively.  This can lead to model measurements that show the bank as asset sensitive or neutral, when past performance show s it to be liability 
+sensitive.  Periodic variance analysis may identify this 
+discrepancy and allow management to more effectively use 
+the IRR measurement tool.  Note:  Examiners should 
+recognize that models are forward looking; therefore the 
+usefulness of historical variance analysis may be limited.  
+ Prepayment speed  variances occur when actual  
+prepayments do not mirror those projected.  Variances are 
+not uncommon as the cash flows are difficult to model and 
+predict ; however, management  should monitor prepayments  
+and revise related  assumptions if material variances occur.  
+Inappropriate account aggregation can also lead to 
+significant variances.  For example, when comparing a ctual 
+and modeled loan interest income, an institution may find 
+that the model overestimated income  in a falling rate 
+environment  because real estate loans with significantly 
+different prepayment characteristics were aggregated 
+together.  
+ 
+Many models measure static IRR, that is, what would 
+happen to the current balance sheet if only interest rates changed.  Other  model s incorporate management 
+projections about asset and liability growth and changes in product mix.  Variance analysis in the latter instance is complicated by the need to segregate variances due to 
+balance sheet changes from those caused by rate 
+movements.  
+ 
+← 
+OTHER RISK FACTORS TO CONSIDER  
+ 
+Although IRR is the principal market risk taken by most financial institutions, other activities can significantly

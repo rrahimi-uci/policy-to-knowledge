@@ -1,0 +1,75 @@
+# B5-2-03, Manufactured Housing Underwriting Requirements (10/08/2025) (part 1/4)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_320_sub_001
+**Pages:** 720-725
+**Section Path:** Part B, Origination Through Closing > Subpart B5, Unique Eligibility and Underwriting Considerations > Chapter B5-2, Manufactured Housing > B5-2-03, Manufactured Housing Underwriting Requirements (10/08/2025)
+
+---
+
+Published March 4, 2026
+702Lenders using UAD 3.6 must follow the requirements in the  UAD 3.6 Policy Supplement  .
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2025-10 December 10, 2025
+Announcement SEL-2024-07 November 06, 2024
+Announcement SEL-2023-05 June 07, 2023
+Announcement SEL-2022-10 December 14, 2022
+ 
+B5-2-03, Manufactured Housing Underwriting Requirements
+(10/08/2025)
+Introduction
+This topic contains information on manufactured housing underwriting considerations, including:
+Underwriting and DU Requirements
+Loan Amount
+Down Payment Requirements
+Trade Equity from the Borrower’s Existing Manufactured Home
+Traded Manufactured Homes
+Purchase Money Transactions
+Limited Cash-Out Reﬁnance Transactions
+Cash-Out Reﬁnance Transactions
+New Construction of a Manufactured Home
+Construction-to-Permanent Transactions
+Uniform Appraisal Dataset (UAD) 3.6 Supplement
+Underwriting and DU Requirements
+Loans secured by manufactured homes (including MH Advantage properties) must be underwritten through DU.
+
+Published March 4, 2026
+703When entering the property information into DU, the lender must correctly identify the property type as a
+manufactured home or MH Advantage, and identify whether it is in a condo, co-op, or PUD project.
+Note: DU does not distinguish between single-width and multi-width.
+DU checks the subject property addresses against manufactured home property addresses in the DU property
+database. If DU’s database indicates the property may be a manufactured home, DU will return a message
+alerting the lender. DU’s issuance of this message does not necessarily mean the property is a manufactured
+home, nor does the absence of this message indicate that Fannie Mae accepts the accuracy of the property type
+as it was submitted
+Lenders must research the subject property type. If it is determined the property is a manufactured home, the
+lender must correct the property type and resubmit the loan caseﬁle to DU. If it is NOT a manufactured home,
+the loan may be delivered with the appraisal recommendation provided by DU.
+Note:  DU will issue a message reminding the lender to ensure that the MH Advantage or single-width
+manufactured home requirements are met, in addition to all other manufactured housing
+requirements.
+Loan Amount
+The loan amount may include the following costs:
+cost of the manufactured home;
+cost of the land;
+the costs of construction, including
+bona ﬁde and documented transportation costs,
+costs for site preparation, which may include the cost to remove an existing manufactured home
+and other outbuildings,
+foundation,
+establishing utilities,
+all site improvements, and
+dwelling installation at the site.
+Any personal property items (non-realty items) purchased in conjunction with the manufactured home must be
+deducted from the sales price and cannot be ﬁnanced as part of the loan.
+Down Payment Requirements
+A minimum down payment of 5% must come from the borrower’s own funds unless:
+the LTV or CLTV ratio is less than or equal to 80%;
+the borrower is purchasing a one-unit principal residence and meets the requirements to use gifts,
+donated grant funds, or funds received from an employer to pay for some or all of the borrower's
+minimum contribution. See B3-4.3-04, Personal Gifts ; B3-4.3-06, Grants and Lender Contributions ; and 
+B3-4.3-08, Employer Assistance , for additional information; or
+the property meets the MH Advantage requirements and the loan meets the requirements for LTV ratios
+of 95.01-97%. In this case, the borrower must contribute a minimum down payment of 3%, from their

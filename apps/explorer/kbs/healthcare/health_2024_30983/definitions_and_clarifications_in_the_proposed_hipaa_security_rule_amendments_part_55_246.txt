@@ -1,0 +1,56 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 55/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_055
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+926 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+363‘‘Health Industry Cybersecurity Practices: 
+Managing Threats and Protecting Patients,’’ supra 
+note 16. 
+364Id. at 15. 
+365Id. 
+366‘‘Cybersecurity Performance Goals,’’ supra 
+note 18. 
+367Id. 
+368See ‘‘HIPAA and Cybersecurity 
+Authentication,’’ Cybersecurity Newsletter, Office for Civil Rights, U.S. Department of Health and 
+Human Services (June 2023), https://www.hhs.gov/ hipaa/for-professionals/security/guidance/ cybersecurity-newsletter-june-2023/index.html. 
+369Id. (citing ‘‘Implementing Phishing-Resistant 
+MFA,’’ Cybersecurity & Infrastructure Security Agency, U.S. Department of Homeland Security (Oct. 2022), https://www.cisa.gov/sites/default/files/ publications/fact-sheet-implementing-phishing-resistant-mfa-508c.pdf); NIST also has issued draft defined characteristics for phishing-resistant authenticators. See David Temoshok, et al., ‘‘Digital 
+Identity Guidelines,’’ NIST Special Publication 800–63–4 2pd (Second Public Draft), National Institute of Standards and Technology, U.S. Department of Commerce, p. 36 (Aug. 21, 2024), https://csrc.nist.gov/pubs/sp/800/63/4/2pd. 
+370See proposed 45 CFR 164.312(f)(2)(ii). 
+371See ‘‘HIPAA and Cybersecurity 
+Authentication,’’ supra note 368 (citing David 
+Temoshok, et al., ‘‘Digital Identity Guidelines,’’ NIST Special Publication 800–63–4 (Initial Public Draft), National Institute of Standards and Technology, U.S. Department of Commerce, p. 17 (Dec. 2022), https://nvlpubs.nist.gov/nistpubs/ SpecialPublications/NIST.SP.800-63-4.ipd.pdf). 
+372NIST defines ‘‘token’’ as ‘‘a portable, user- 
+controlled, physical device (e.g., smart card or 
+memory stick) used to store cryptographic information and possibly also perform 
+cryptographic functions.’’ See NIST definition of 
+‘‘token,’’ Glossary, Computer Security Resource Center, National Institute of Standards and Technology, U.S. Department of Commerce (citing 
+Elaine Barker, et al., ‘‘Recommendation for Key Management: Part 2—Best Practices for Key Management Organizations,’’ NIST Special Publication 800–57, Part 2, Revision 1, National Institute of Standards and Technology, U.S. Department of Commerce (May 2019)), https://csrc.nist.gov/glossary/term/token#: ∼:text=
+NIST%20SP%20800%2D63%2D3%20under%20Token,possibly%20also%20perform%20cryptographic%20functions. 
+373Letter from NCVHS Chair Jacki Monson 
+(2022), supra note 123, p. 7. 
+374See ‘‘Digital Identity Guidelines: 
+Authentication and Lifecycle Management’’, NIST Special Publication 800–63B, National Institute of Standard and Technology, section 5.3.3, Use of Biometrics, (Oct. 16, 2023), https://pages.nist.gov/800-63-3/sp800-63b.html#sec5. We recognize that 
+some of the example characteristics may not satisfy today’s standards; however, the Department anticipates that they may in the future and proposes that they be included as examples such that regulated entities will be permitted to use them when the relevant standards are updated to allow for such use. 
+37545 CFR 164.304 (definition of ‘‘Password’’). 10. Adding a Definition of ‘‘Multi-Factor 
+Authentication’’ (MFA) 
+a. Issues To Address 
+The Security Rule includes several 
+technical safeguard provisions that 
+require regulated entities to identify and authenticate persons accessing information and systems to protect ePHI. Section 164.312(a)(2)(1) includes the standard that requires a regulated entity to implement technical policies and procedures that limit access to ePHI to only those persons or software programs that have been granted access rights, while 45 CFR 164.312(d)(2), the standard for person or entity authentication, requires a regulated entity to implement procedures to verify that a person seeking access to ePHI is the one claimed. 
+Historically, regulated entities relied 
+on combinations of usernames and passwords to identify users and authenticate users to the system. We recognize that such combinations are insufficient to secure sensitive information and that more sophisticated mechanisms for doing so have been developed. As a best practice for managing cyber threats, most cybersecurity frameworks, including those discussed above, recommend that organizations adopt solutions that rely on multiple factors to identify and authenticate users. For example, the HHS 405(d) Program’s ‘‘Health Industry Cybersecurity Practices: Managing Threats and Protecting Patients’’
+363 
+recommends a layered approach to cyber defense (i.e., if a first layer is 
+breached, a second exists to prevent a complete breach).
+364It further provides 
+that MFA as a source of identity and access security control is an important means to control access to infrastructure and conduct proper change management control.
+365The Department’s CPGs366 
+identify MFA as an essential goal and a critical, additional layer of security for the protection of assets and accounts that are directly accessible from the internet.
+367The Department has also

@@ -1,0 +1,28 @@
+# Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 249/289)
+
+**Source:** health_2024_02544.pdf
+**Chunk ID:** health_2024_02544_028_sub_249
+**Pages:** 1-160
+**Section Path:** Regulatory Impact Analysis > Paperwork Reduction Act of 1995 > Explanation of Estimated Capital Expenses for 42 CFR Part 2
+
+---
+
+12606 Federal Register / Vol. 89, No. 33 / Friday, February 16, 2024 / Rules and Regulations 
+part 2 programs and other lawful 
+holders with respect to electronic part 2 records. A majority of commenters who addressed this issue recommended applying the HIPAA Security Rule to part 2 programs; however, few of these comments were from part 2 programs. Further, the CARES Act did not make the HIPAA Security Rule applicable to part 2 programs. The Department is not finalizing any additional modifications to align the HIPAA Security Rule and part 2 at this time, but will take these comments into consideration in potential future rulemaking. 
+Breach Notification Obligation for QSOs 
+The Department considered expressly 
+applying breach notification provisions 
+finalized in paragraph (b) of § 2.16 to qualified service organizations ‘‘in the same manner as those provisions apply to a business associate [. . .]’’. To the extent that QSOs handle unsecured part 2 records on behalf of part 2 programs, the same policy objectives for requiring breach notification would equally apply. Further, to align with the structure of HIPAA, which imposes breach notification obligations on both covered entities and business associates, the Department considered that finalizing a parallel provision would further align the regulations. However, in analyzing title 42, as amended by the CARES Act, Congress was silent on this issue. In comparison, in section 13402(b) of the HITECH Act, Congress expressly extended the obligation of a business associate to notify covered entity in the event of a breach of PHI. This difference leads us to conclude that the requirement for QSOs to report was not intended. However, we expect that 
+part 2 programs are likely to consider adding such requirements to QSO agreements to enable the programs to meet their breach notification obligations. 
+Section 2.26 Right To Request 
+Restrictions Based on Ability To Pay 
+Section 290dd–2 of title 42 of U.S.C., 
+as amended by the CARES Act, applied section 13405(c) of the HITECH Act, including the right of a patient to obtain restrictions on disclosures to health plans for services paid in full similar to how the right is structured in the HIPAA Privacy Rule at 45 CFR 164.522 with respect PHI. In response to public comments, the Department considered a more equitable provision that would require part 2 programs to agree to a requested restriction in the case of those who cannot afford to pay for care in full. The Department determined that the amended statute did not grant such authority. The Sense of Congress in the CARES Act, section 3221(k)(3), provides 
+that: ‘‘[c]overed entities should make every reasonable effort to the extent feasible to comply with a patient’s request for a restriction regarding a particular use or disclosure.’’ Although the Sense of Congress did not include part 2 programs in its urging, we encourage these programs to also make every reasonable effort to fulfill requested restrictions on disclosures for TPO. 
+Sections 2.31 and 2.32 Tracking 
+Consent and Revocation of Consent 
+The Department considered 
+alternatives to facilitate the new TPO consent and redisclosure permission for recipients of part 2 records and ensure such records are protected from use and disclosure in proceedings against the patient, absent consent or a court order. The Department further considered how other changes to the scope of a patient’s consent would be tracked or communicated to recipients, such as patient-requested restrictions on disclosures and revocation of consent. We received many comments offering information about current practices, technology capabilities, and different approaches to tracking consent, revocation, and restrictions, as discussed in the preamble, and considered not imposing any new requirements. However, comments that sought no requirement to track the scope of consent provided were from organizations that did not believe that the prohibition on use of records in proceedings against patients should continue to apply to records received by a covered entity or business associate under a TPO consent. We disagree with this view and further, recognize that patients may still provide a consent for disclosures that is not a TPO consent. We considered requiring a copy of consent to be attached to each disclosure without any other option; however, in consideration of the amount of the burden and the available HIE models used to exchange electronic records, we offer an option in new paragraph (b) of § 2.32 for disclosers to provide a clear explanation of the scope 
+of the consent provided. We believe this offers the flexibility needed for health IT systems to exchange needed information about the consent status of an electronic record. 
+The Department also analyzed how

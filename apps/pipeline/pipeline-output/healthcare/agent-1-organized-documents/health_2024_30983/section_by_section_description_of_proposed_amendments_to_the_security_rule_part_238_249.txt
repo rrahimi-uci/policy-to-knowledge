@@ -1,0 +1,50 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 238/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_238
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+1016 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+(14) Standard: Compliance audit. 
+Perform and document an audit at least 
+once every 12 months of the covered entity’s or business associate’s compliance with each standard and implementation specification in this subpart. 
+(b)(1) Standard: Business associate 
+contracts and other arrangements. (i)(A) A covered entity may permit a business associate to create, receive, maintain, or transmit electronic protected health information on the covered entity’s behalf only if the covered entity obtains satisfactory assurances, in accordance with § 164.314(a), that the business associate will comply with this subpart and verifies that the business associate has deployed technical safeguards in accordance with the requirements of § 164.312. 
+(B) A covered entity is not required to 
+obtain such satisfactory assurances or verification from a business associate that is a subcontractor. 
+(ii) A business associate may permit a 
+business associate that is a subcontractor to create, receive, maintain, or transmit electronic protected health information on its behalf only if the business associate obtains satisfactory assurances, in accordance with § 164.314(a), that the subcontractor will comply with the requirements of this subpart and verifies that the business associate that is a subcontractor has deployed technical safeguards in accordance with the requirements of § 164.312. 
+(2) Implementation specifications—(i) 
+Written contract or other arrangement. Document the satisfactory assurances required by paragraph (b)(1)(i) or (ii) of this section through a written contract or other arrangement with the business associate that meets the applicable requirements of § 164.314(a). 
+(ii) Written verification. Obtain 
+written verification from the business associate at least once every 12 months that the business associate has deployed the technical safeguards as required by § 164.312 through both of the following: 
+(A) A written analysis of the business 
+associate’s relevant electronic information systems by a person with appropriate knowledge of and experience with generally accepted cybersecurity principles and methods for ensuring the confidentiality, integrity, and availability of electronic protected health information to verify compliance with each standard and implementation specification in § 164.312. 
+(B) A written certification that the 
+analysis has been performed and is accurate by a person who has the authority to act on behalf of the business associate. 
+(3) Standard: Delegation to business 
+associate. (i) A covered entity or 
+business associate may permit a business associate to serve as their designated security official. 
+(ii) A covered entity or business 
+associate that delegates actions, activities, or assessments required by this subpart to a business associate remains liable for compliance with all applicable provisions of this subpart. 
+§ 164.310 Physical safeguards. 
+Each covered entity and business 
+associate must, in accordance with §§ 164.306 and 164.316, implement all of the following physical safeguards to protect the confidentiality, integrity, and availability of all electronic protected health information that it creates, receives, maintains, or transmits: 
+(a) Standard: Facility access 
+controls—(1) General. Establish and 
+implement written policies and procedures to limit physical access to all of its relevant electronic information systems and the facility or facilities in which they are housed, while ensuring that properly authorized access is allowed. 
+(2) Implementation specifications—(i) 
+Contingency operations. Establish (and implement as needed) written procedures that allow facility access in support of the covered entity’s or business associate’s contingency plan required by § 164.308(a)(13). 
+(ii) Facility security plan. Establish 
+and implement written policies and procedures to safeguard all facilities and the equipment therein from unauthorized physical access, tampering, and theft. 
+(iii) Access management and 
+validation procedures. Establish and implement written procedures to authorize and manage a person’s access to facilities based on their role or function, including visitor management. 
+(iv) Physical maintenance records. 
+Establish and implement written policies and procedures to document repairs and modifications to the physical components of a facility that are related to security, including but not limited to hardware, walls, doors, locks, and security cameras. 
+(v) Maintenance. For each facility, 
+review and test the written policies and procedures required by this paragraph (a)(2) at least once every 12 months, and modify such policies and procedures as reasonable and appropriate. 
+(b) Standard: Workstation use—(1) 
+General. Establish and implement

@@ -1,0 +1,40 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 64/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_064
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+391 
+b. Proposal 
+The Department proposes to define 
+the term ‘‘threat’’ to mean any circumstance or event with the potential to adversely affect the confidentiality, integrity, or availability of ePHI. This proposal is similar to NIST’s varying definitions of threat, edited to apply specifically to health care and the type of information addressed by the Security Rule.
+392Under this proposal, we would construe the term to apply 
+broadly to include threats caused by, or existing because of, a variety of circumstances that specifically could affect the security of ePHI. Hackers, malicious insiders, and malicious software are examples of threat sources. 
+20. Clarifying the Definition of ‘‘User’’ 
+a. Current Provision and Issues To 
+Address 
+The Department first defined the term 
+‘‘person’’ in the HIPAA Rules as part of the 2003 ‘‘Civil Money Penalties: Procedures for Investigations, Imposition of Penalties, and Hearings’’ interim final rule to distinguish a ‘‘natural person’’ who could testify in the context of administrative proceedings from an ‘‘entity’’ (defined therein as a ‘‘legal person’’) on whose behalf a person would testify.
+393 
+Although they were both published in 
+2003, the interim final rule was published two months after the Security Rule. Thus, when the Security Rule was published in 2003, it was necessary to specify that the term ‘‘user’’ included both natural persons and entities, but we believe that this is no longer the case because the current definition of ‘‘person’’ includes natural persons as well as entities.
+394 
+b. Proposal 
+The Department proposes to clarify 
+the definition of ‘‘User’’ by removing the reference to an entity.
+395Because the 
+definition of ‘‘person’’ includes an entity, including entity in the definition of ‘‘user’’ is redundant and could cause confusion. We believe that this is a technical correction because it would not change how the Department has interpreted the term. 
+21. Adding a Definition of 
+‘‘Vulnerability’’ 
+a. Issues To Address 
+The term ‘‘vulnerability’’ is currently 
+not defined in the Security Rule. 
+The Department previously explained 
+that although some cyberattacks may be 
+sophisticated and exploit previously unknown vulnerabilities (i.e., zero-day 
+attacks), most can be prevented or mitigated by addressing known vulnerabilities.
+396For example, 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00033 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

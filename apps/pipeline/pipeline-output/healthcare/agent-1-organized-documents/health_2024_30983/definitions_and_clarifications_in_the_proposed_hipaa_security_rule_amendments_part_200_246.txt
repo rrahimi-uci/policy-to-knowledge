@@ -1,0 +1,22 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 200/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_200
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+The Department estimates that, on 
+average, regulated entities would have an information security analyst spend 1.5 hours deploying MFA, as 
+specifically required under proposed 45 CFR 164.312(f)(2)(ii). This would be a one-time, first-year burden that includes an average of 30 minutes for a regulated entity to select an MFA solution that allows them to meet the requirements of the proposal without creating workflow disruptions or delays. This estimate would vary depending on how prevalent MFA is in the industry when and if the requirements of the NPRM are finalized. As a widely accepted information security practice, the Department believes that many large entities have already deployed MFA and the costs range from zero to only a few dollars per user. The low estimate would be 01 hours on average (assuming that many entities already have some form of MFA), and the high estimate would be 1.75 hours (assuming that few entities have MFA). At the loaded wage rate of an information security analyst, the total estimated cost would be $327,903,966 [= 1,822,600 regulated entities × 1.5 hours × $119.94], with a 
+low estimated total of $218,602,644 [= 1,822,600 regulated entities × 1 hour × 
+$119.94] and a high estimated total of $382,554,627 [= 1,822,600 regulated entities × 1.75 hours × $119.94]. The 
+Department applies this cost in the first year only because minimal additional labor is needed to maintain this safeguard once it has been deployed. 
+f. Costs Related to Network 
+Segmentation 
+The Department believes that most 
+large regulated entities and many medium-sized regulated entities have segmented their information networks to some degree; however, additional actions may be needed to more fully protect ePHI as required under proposed 45 CFR 164.312(a)(2)(vi). Further, small entities may not have been aware of the importance of segmenting networks or taken steps to segment their networks. The Department estimates that each regulated entity would spend an average of 4.5 hours to set up network segmentation in the first year of compliance with a final rule (with a low estimate of 4 hours and a high estimate of 5 hours) at the hourly wage of an information security analyst. The Department further assumes that in the following years, the burden to maintain the segmented network would be minimal and incorporated into the maintenance requirements. The total first year estimated cost of the network 
+segmentation requirement would be $983,711,898 [= 1,822,600 regulated entities × 4.5 hours × $119.94] with a 
+low estimated total of $874,410,576 [= 1,822,600 regulated entities × 4 hours × 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00102 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

@@ -1,0 +1,48 @@
+# B3-5.3-09, DU Credit Report Analysis (02/05/2025) (part 2/8)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_238_sub_002
+**Pages:** 495-503
+**Section Path:** Part B, Origination Through Closing > Subpart B3, Underwriting Borrowers > Chapter B3-5, Credit Assessment > Section B3-5.3, Traditional Credit History > B3-5.3-09, DU Credit Report Analysis (02/05/2025)
+
+---
+
+Published March 4, 2026
+479If the borrower is responsible for the disputed account, the lender must investigate the information,
+including determining the aspect of the tradeline that is being disputed. If the borrower is able to provide
+documentation to disprove any adverse information (such as canceled checks), the lender may deliver
+the loan as a DU loan.
+If the borrower is responsible for the disputed account and the account and tradeline information is
+accurate and complete, the loan is not eligible for delivery as a DU loan. The lender may manually
+underwrite the loan if the transaction is eligible for manual underwriting.
+The monthly payments for the disputed tradelines must be included in the debt-to-income ratio if the accounts
+belong to the borrower.
+Note : Tradelines reported as medical debt are not shown in the disputed tradeline message.
+Therefore, lenders are not required to investigate disputed medical tradelines.
+Examples
+The following scenarios are examples of when a loan receiving an Approve/Eligible recommendation with the
+disputed tradeline(s) excluded from DU's risk assessment would be eligible for delivery as a DU loan:
+A borrower’s account was referred for collection by the creditor. Subsequently, the borrower paid oﬀ the
+account, but the pay-oﬀ was not reported on the tradeline. The borrower requested that a dispute be
+placed on the tradeline. The tradeline information was accurate, but because it did not reﬂect that the
+borrower paid oﬀ the account, it may be considered incomplete. The borrower must provide
+documentation that the account was paid in full.
+A borrower and his son have the same name (Sr. and Jr.). The borrower’s credit report contains a
+tradeline that actually belongs to the son. The tradeline is reported as disputed. The borrower can
+provide conﬁrmation that they are not obligated on the account.
+The servicer of a disputed loan indicates a late payment in January of the previous year. The borrower
+can provide documentation (such as canceled checks or bank statements) that indicate that the payment
+was made on time.
+The following scenario is an example of when a loan receiving an Approve/Eligible recommendation with the
+disputed tradeline(s) excluded from DU’s risk assessment would not be eligible for delivery as a DU loan:
+The credit report indicates a disputed tradeline on the borrower’s mortgage being reﬁnanced. The
+tradeline indicates a 60–day late payment in January of the previous year. The borrower cannot provide
+any documentation to support that the payment was made on time.
+DU Debt Comparison
+DU compares the balances and payments of the debts on the credit report with the debts on the loan
+application. If material diﬀerences are found, the lender must conﬁrm that all debts from the credit report are
+included on the loan application and provide documentation to support the use of payments and balances lower
+than those on the credit report. If the debt aﬀects the debt-to-income ratio by more than the allowable
+tolerances, the lender must add the debt to the loan application and resubmit the loan. Otherwise, the lender is
+expected to provide documentation that supports the omission from the loan application. See B3-6-02, Debt-to-
+Income Ratios , and B3-2-10, Accuracy of DU Data, DU Tolerances, and Errors in the Credit Report , for additional

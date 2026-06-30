@@ -1,0 +1,67 @@
+# B3-5.1-02, Determining the Credit Score for a Mortgage Loan (11/05/2025)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_224
+**Pages:** 474-475
+**Section Path:** Part B, Origination Through Closing > Subpart B3, Underwriting Borrowers > Chapter B3-5, Credit Assessment > Section B3-5.1, Credit Scores > B3-5.1-02, Determining the Credit Score for a Mortgage Loan (11/05/2025)
+
+---
+
+Published March 4, 2026
+456Announcements Issue Date
+Announcement SEL-2022-09 October 05, 2022
+Announcement SEL-2021-08 September 01, 2021
+Announcement SEL-2020-04 August 05, 2020
+Announcement SEL-2019-07 August 07, 2019
+ 
+B3-5.1-02, Determining the Credit Score for a Mortgage Loan
+(11/05/2025)
+Introduction
+This topic contains requirements for determining the loan-level credit score, including:
+Representative Credit Score
+Average Median Credit Score - Manual Underwriting
+Foreign Credit Reports and Credit Scores
+Representative Credit Score
+The representative credit score for the loan is determined based on the credit scores of each borrower and is
+used to determine loan eligibility for manually underwritten loans with only one borrower and for pricing
+purposes (i.e., assessing LLPAs) on all loans. Follow these steps to calculate the representative credit score for a
+loan:
+Step Description
+1 Fannie Mae recommends obtaining at least two credit scores for each borrower.
+
+Published March 4, 2026
+457Step Description
+2Select a single score for each borrower.
+• When two credit scores are obtained, choose the lower score.
+• When three credit scores are obtained, choose the middle score. (If two of the three scores are
+the same, choose the middle of the three scores. For example: 700, 680, 680 = 680; 700, 700,
+680 = 700)
+3If there is only one borrower, the single score for the borrower is the representative credit score
+for the loan.
+If there are multiple borrowers, determine the applicable credit score for each individual
+borrower and select the lowest applicable score from the group as the representative credit
+score for the loan. If there is a borrower who does not have a credit score, determine the
+representative credit score for the loan based on the credit scores of the other borrowers on the
+loan.
+Average Median Credit Score - Manual Underwriting
+For certain manually underwritten transactions, the average median credit score is used in place of the
+representative credit score to determine whether the minimum credit score requirement is met.
+The following examples demonstrate how to calculate the average median credit score for eligibility purposes.
+Borrowers on the
+Loan ApplicationStep 1: Determine each
+borrower's median scoreStep 2: Average the median scores to
+determine the score for the loan
+Borrower Scores: 590, 605, 648Average: Not applicable
+Representative credit score = 605
+Borrower 1
+Borrower 2Scores: 590, 605, 648 Median = 605
+Scores: 661, 693, 693 Median = 693Average: (605+693)/2 = 649
+Representative credit score = 605
+Borrower 1
+Borrower 2Scores: 590, 605 Median = 590
+Scores: 661, 693, 693 Median = 693Average: (590+693)/2 = 642
+Representative credit score = 590
+ 
+Foreign Credit Reports and Credit Scores
+With the exception of loan caseﬁles underwritten through DU, Fannie Mae permits the lender to use a credit
+report from a foreign country to document a borrower's credit history. (See B3-5.2-01, Requirements for Credit

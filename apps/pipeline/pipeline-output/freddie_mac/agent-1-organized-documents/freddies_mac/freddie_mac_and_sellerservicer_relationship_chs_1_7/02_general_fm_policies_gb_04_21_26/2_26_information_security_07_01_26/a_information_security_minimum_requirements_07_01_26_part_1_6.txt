@@ -1,0 +1,63 @@
+# a. Information security minimum requirements (07/01/26) (part 1/6)
+
+**Source:** freddies_mac.pdf
+**Chunk ID:** freddies_mac_119_sub_001
+**Pages:** 45-52
+**Section Path:** Freddie Mac and SellerServicer Relationship (Chs 1-7) > 02 - General FM Policies GB-04-21-26 > 2.26 Information security (07/01/26) > a. Information security minimum requirements (07/01/26)
+
+---
+
+Guide Bulletin Update 04/21/26 Chapter 2 – Page 32 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the AllRegs 
+web site of ICE Mortgage Technology  (with a paid subscription).  Guide Chapter  2 – General Freddie Mac Policies  
+Guide Chapter 2 – General Freddie Mac Policies  
+ access to Freddie Mac data or systems) must implement to reduce the impact and likelihood of 
+unauthorized persons (or authorized persons with malicious or unlawful intentions) from gaining 
+access to Freddie Mac’s proprietary information, data and consumer personal non -public 
+information in:  
+   
+• Freddie Mac’s systems  
+ 
+• Seller/Servicers’ files, records, storage facilities and systems  
+ 
+• Files, records, storage facilities and systems of any third party or third -party provider that the 
+Seller/Servicer engages to provide it with technology and /or other services  
+ 
+If a Seller/Servicer’s regulator has established information security requirements that exceed 
+Freddie Mac’s minimum requirements, then the more rigorous requirements shall apply.  
+ 
+The National Institute of Standards and Technology (NIST)  and the  International Organization for 
+Standardization/International Electrotechnical Commission Standards  provide detailed guidance 
+on their public websites on the components of a successful information security program.  
+Seller/Servicers are strongly encouraged to review this guidance.  
+ 
+Seller/Servicers should be familiar with the following terms as they relate to information security 
+requirements:  
+ 
+• Authentication : The process in which a system verifies the identity of an individual usually 
+based on some form of credential(s) (e.g., password/ID, token, etc.)  
+ 
+• Encryption : The process of encoding or obfuscating messages or information in such a way 
+that only authorized parties can read it  
+ 
+• Vulnerability Management: Identification and testing of known software vulnerabilities of a 
+system and the prioritization of remediation according to likelihood of occurrence and impact of 
+exploitation  
+ 
+The Seller/Servicer must provide its information security program requirements (e.g., policies and 
+procedures), including those related to authentication, encryption and vulnerability management, 
+and the other requirements of this Section 2.26, to Freddie Mac upon request.  
+ 
+a. Information security minimum requirements ( 07/01/26) 
+(i) Information security program  
+ 
+Seller/Servicers and Material Vendors that present information security risk to Freddie 
+Mac (i.e., those that have access to Freddie Mac data or systems) must define a group 
+or identify an individual responsible for the development of information security 
+requirements, including the adoption, implementation, maintenance and administration 
+of written minimum security standards, policies and procedures that responsibly address 
+critical issues including:  
+ 
+• User responsibilities (e.g., acceptable use)  
+• Ownership of information

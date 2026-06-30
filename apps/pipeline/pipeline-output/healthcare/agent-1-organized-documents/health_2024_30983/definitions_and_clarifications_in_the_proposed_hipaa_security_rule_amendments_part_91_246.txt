@@ -1,0 +1,48 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 91/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_091
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+944 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+499‘‘Cybersecurity Performance Goals,’’ supra 
+note 18. 500See proposed 45 CFR 164.308(a)(2). 
+501‘‘Cybersecurity Performance Goals,’’ supra 
+note 18. 
+502See ‘‘6 Basics of Risk Analysis and Risk 
+Management,’’ HIPAA Security Series, Volume 2, 
+Paper 6, Centers for Medicare & Medicaid Services (June 2005, revised Mar. 2007), https://www.hhs.gov/sites/default/files/ocr/privacy/hipaa/ administrative/securityrule/ riskassessment.pdf?language=es. 
+503See ‘‘Implementing the Health Insurance 
+Portability and Accountability Act (HIPAA) Security Rule: A Cybersecurity Resource Guide,’’ supra note 461. 
+504See id. at 18. 505See id. at 25. 
+506Id. 
+507See proposed 45 CFR 164.306(d) and 
+164.316(b)(1). 
+508See ‘‘Implementing the Health Insurance 
+Portability and Accountability Act (HIPAA) Security Rule: A Cybersecurity Resource Guide,’’ supra note 461, p. 27. 
+509See id. at 31. 
+510See id. upgrade is likely to adversely affect the 
+confidentiality, integrity, or availability of ePHI. 
+In proposed paragraph (a)(4)(ii)(E), the 
+Department proposes to require a regulated entity document in real-time the existence of the applicable exception and to implement reasonable and appropriate compensating controls. Similarly, in proposed paragraph (a)(4)(ii)(F), we propose that, where an exception applies, a regulated entity would be required to implement 
+reasonable and appropriate security measures as compensating controls to address the identified risk according to the timeliness requirements in proposed 45 CFR 164.308(a)(5)(ii)(D) until such time as a patch, update, or upgrade that does not adversely affect the confidentiality, integrity, or availability of ePHI becomes available. 
+This proposed standard aligns with 
+the Department’s enhanced CPG for Cybersecurity Mitigation by quickly requiring a regulated entity to prioritize and mitigate vulnerabilities discovered by vulnerability scanning and penetration testing.
+499 
+g. Section 164.308(a)(5)(i)—Standard: Risk Management 
+The Department proposes to elevate 
+the implementation specification for risk management to a standard at proposed 45 CFR 164.308(a)(5)(i). This proposed standard would require a regulated entity to establish and implement a plan for reducing the risks identified through its risk analysis activities. Specifically, it would require a regulated entity to implement security measures sufficient to reduce risks and vulnerabilities to all ePHI to a reasonable and appropriate level. What would constitute a reasonable and appropriate level depends on the regulated entity’s specific circumstances, including but not limited to its size, needs and capabilities, risk profile, the ability of security measures to reduce or eliminate a particular identified risk or vulnerability, and the ubiquity of such security measures. We also propose four implementation specifications that would require regulated entities to engage in activities that are consistent with previously issued guidance described below. 
+Under the proposed implementation 
+specification for planning at proposed paragraph (a)(5)(ii)(A), a regulated entity would be required to establish and implement a written risk management plan for reducing risks to all ePHI, including, but not limited to, those risks 
+identified by the regulated entity’s risk analysis,
+500to a reasonable and 
+appropriate level. Proposed paragraph (a)(5)(i)(B) contains the proposed implementation specification for maintenance and would require the regulated entity to review the written risk management plan at least once every 12 months, and as reasonable and appropriate in response to changes in its risk analysis. The Department would interpret ‘‘reasonable and appropriate’’ in both paragraphs as requiring the regulated entity to take into account not only its specific circumstances, but also the criticality of the risks identified. We propose an implementation specification for priorities at proposed 45 CFR 164.308(a)(5)(ii)(C) that would require a regulated entity’s written risk management plan to prioritize the risks identified in the regulated entity’s risk analysis based on the risk levels determined by that analysis. Finally, in the proposed implementation specification for implementation at proposed 45 CFR 164.308(a)(5)(ii)(D), 
+we propose to require that a regulated entity implement security measures in a timely manner to address the risks identified in the regulated entity’s risk analysis in accordance with the priorities established under paragraph (a)(5)(ii)(C). The proposed risk management standard aligns with the Department’s essential CPG to Mitigate Known Vulnerabilities.
+501 
+The Department previously issued 
+guidance on risk management, including links to NIST resources, that is consistent with what we propose in this NPRM.
+502We encourage regulated 
+entities to refer to similar NIST guidance for descriptions of risk management activities.

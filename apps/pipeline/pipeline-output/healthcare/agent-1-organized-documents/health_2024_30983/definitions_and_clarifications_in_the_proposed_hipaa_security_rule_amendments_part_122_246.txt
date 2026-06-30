@@ -1,0 +1,30 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 122/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_122
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+641 
+Given the increased portability of 
+devices, media, workstations, and information systems, such components may often be located outside of a regulated entity’s physical location. For example, OCR has investigated several incidents involving portable electronic media and mobile workstations that were removed from the regulated entity’s physical environment and subsequently lost. As a result, the Department believes that we should more broadly construe the physical environment where ePHI is stored and accessed because it is essential that 
+regulated entities have policies and procedures in place to address the portability of components of their information systems, as well as the ability of workforce members to access such information systems offsite using portable workstations. 
+Additionally, the standard for device 
+and media controls at 45 CFR 164.310(d)(1) applies only to devices and media, rather than all technology assets that may be components of a regulated entity’s relevant electronic information systems. The Department is concerned that a regulated entity may have other types of technology assets that may either create, receive, maintain, or transmit ePHI or otherwise affect its confidentiality, integrity, or availability and that can be removed from, brought to, or moved within its facilities. The confidentiality, integrity, or availability of the regulated entity’s ePHI could be negatively affected in the absence of written policies and procedures governing the movement of such technology assets. 
+Finally, we believe that it is important 
+to address several issues in the standards and implementation specifications for the physical safeguards that are also addressed in other proposals: addressing the Department’s expectations regarding implementation specifications;
+642 
+memorializing policies and procedures in writing; documenting the implementation of the aforementioned policies and procedures; reviewing such policies and procedures on a regular cadence; modifying such policies and 
+procedures when reasonable and appropriate;
+643and clarifying the scope 
+of the electronic information systems and their components that regulated entities are expected to consider when establishing their policies and procedures.
+644 
+3. Proposals 
+The Department proposes to retain the 
+four standards that comprise the Security Rule’s physical safeguards required by 45 CFR 164.306 and codified in 45 CFR 164.310. However, we propose several modifications to 45 CFR 164.310 to address the issues identified above. 
+a. Section 164.310—Physical Safeguards 
+The Department proposes to expand 
+the introductory language at 45 CFR 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00063 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

@@ -1,0 +1,42 @@
+# A2-2-04, Limited Waiver and Enforcement Relief of Representations and Warranties (11/05/2025) (part 5/5)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_016_sub_005
+**Pages:** 38-43
+**Section Path:** Part A, Doing Business with Fannie Mae > Subpart A2, Lender Contract > Chapter A2-2, Contractual Representations and Warranties > A2-2-04, Limited Waiver and Enforcement Relief of Representations and Warranties (11/05/2025)
+
+---
+
+Published March 4, 2026
+25including any related to the DU validation service, must be satisfactorily resolved and documented
+accordingly.
+The loan must close by the "Close by Date" stated in the DU message.
+If there is information that is conﬂicting with or contradictory to the data that was submitted to DU, the lender
+must perform due diligence to investigate and ensure that accurate data is entered into DU. Enforcement relief
+will not apply, regardless of DU’s issuance of validation messages, if the lender’s investigation of conﬂicting or
+contradictory information contained in the loan ﬁle or within the veriﬁcation report would have impacted the
+information entered by the lender in DU.
+For more information on the DU validation service, see B3-2-02, DU Validation Service .
+Enforcement Relief of Representations and Warranties for Loans with Income
+Calculated by Income Calculator
+Income Calculator  is an optional tool to assist lenders in calculating certain income types. Income Calculator
+performs a complete analysis of a borrower's qualifying income (for eligible income types) and produces a
+Findings Report.  If lenders comply with the following requirements, they will receive representation and
+warranty enforcement relief for the accuracy of the income calculation, on an income-source basis, on loans
+with income calculated by Income Calculator.
+All information submitted to Income Calculator must be accurate and complete.
+A copy of the Findings Report must be kept in the loan ﬁle.
+The amount of income used for qualifying cannot be more than the amount calculated by the tool.
+Lenders must continue to comply with all other Selling Guide  requirements, including DU messages, as
+applicable.
+See B3-3.1-03, Income Calculator  for additional requirements and technology servicer provider information.
+Representations and Warranties on Property Value for Loan Caseﬁles Submitted
+to DU
+In addition to the limited waiver and enforcement relief of representations and warranties described above,
+loans may also beneﬁt from waivers or enforcement relief of certain representations and warranties related to
+the appraisal and value of the subject property. See A2-2-06, Representations and Warranties on Property
+Value , for more information.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2025-09 November 05, 2025

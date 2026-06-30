@@ -1,0 +1,168 @@
+# c. Allocation to intangible assets (10/17/24) (part 265/288)
+
+**Source:** freddies_mac.pdf
+**Chunk ID:** freddies_mac_3094_sub_265
+**Pages:** 279-1254
+**Section Path:** 10 - Mtg, Orig, UW Fundamentals GB-02-24-26.pdf > 10.18 Permitted Mortgage amount – Acquisition financing and certain refinances (12/16/25) > c. Allocation to intangible assets (10/17/24)
+
+---
+
+Guide Bulletin Update 12/15/22 Chapter 64SBL – Page 2 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the AllRegs 
+web site of ICE Mortgage Technology  (with a paid subscription).  
+Guide Chapter 64SBL  – SBL Seismic Risk 
+Assessment Requirements  
+ 
+64SBL.1  General requirements (12/15/ 22) 
+This chapter sets forth the requirements, duties and responsibilities of the Seller/Servicer and 
+the seismic risk consultant to evaluate seismic risk at the Property for Mortgages purchased 
+under the SBL Purchase Product.  For the purposes of this chapter, the seismic risk consultant 
+will be referred to as the “Consultant”, and “Elevated Seismic Hazard Region” is as defined in 
+Section 64SBL.2(a).  
+ 
+References in this chapter to ASTM Standard Guide E2026 -16a and ASTM Standard Practice 
+E2557 -16a will include any successor ASTM Standard.   A Level 1 seismic investigation (Level 1 
+SRA) as referenced in this chapter, is defined per Sections 4 and 5 of the ASTM Standard 
+Guide E2026 -16a. 
+ 
+A Level 1 SRA is required for a Property that is located in an Elevated Seismic Hazard Region, 
+as defined in Section 64SBL.2(a), and that exhibits any of the seismic risk factors identified in 
+Section 64SBL.2(c).  
+ 
+If a Level 1 SRA is required, then the Consultant must complete and submit Form 1102, Seismic 
+Risk Assessment Summary,  with each SRA.  
+ 
+The seismic risk factors in Section 64SBL.2(c) are also included in Section III of Form 1104, 
+SBL Physical Risk Report . The physical risk consultant is required to evaluate these seismic risk 
+factors when preparing the SBL Physical Risk Report, as described in Section 62SBL.4.  
+ 
+If the Property is not located in an Elevated Seismic Hazard Region, an SRA is not required.  If 
+the Property is located in an Elevated Seismic Hazard Region, and it is determined  that the 
+seismic risk factors in Section 64SBL.2(c) are not present at the Property, an SRA is not 
+required.  
+ 
+For the purposes of this chapter , the term Scenario Expected Loss -475 (SEL -475) is used 
+instead of the older term Probable Maximum Loss (PML).  The SEL -475 is defined as the SEL 
+corresponding to the mean level loss resulting from the damage experienced due to a 475 -year 
+return period ear thquake.  See Section 64SBL.8 for additional information regarding the 
+determination of the SEL -475. 
+ 
+64SBL.2  Determining whether a Level 1 SRA is required  (12/15/22 ) 
+a. Use of the Elevated Seismic Hazard Region Map ( 06/30/16)  
+The Elevated Seismic Hazard Regions are highlighted on the Elevated Seismic Hazard 
+Region Map .  After examining the map, if the Seller/Servicer conclusively determines that 
+the Property is not located in an Elevated Seismic Hazard Region no seismic risk 
+documentation is required.  
+ 
+If the Seller/Servicer determines that the Property is located in an Elevated Seismic Hazard 
+Region highlighted on the map, or if the Seller/Servicer is not sure whether the Property is 
+located in an Elevated Seismic Hazard Region highlighted on the map, t he Seller/Servicer 
+must make its determination as to whether the Property is located in an Elevated Seismic 
+Hazard Region following the procedure set forth in Section 64SBL.2(b).
+
+Guide Bulletin Update 12/15/22 Chapter 64SBL – Page 3 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the AllRegs 
+web site of ICE Mortgage Technology  (with a paid subscription).  
+Guide Chapter 64SBL  – SBL Seismic Risk 
+Assessment Requirements  
+b. Determining whether a Property is located in an Elevated Seismic Hazard Region 
+(12/15/22 ) 
+An “Elevated Seismic Hazard Region” is defined as a geographic location with a horizontal 
+Peak Ground Acceleration (PGA) equal to or greater than 0.15g.  For Properties located in 
+the continental United States, the PGA must be calculated using the United States 
+Geological Survey (USGS) website . 
+ 
+For any Property located in Hawaii, Alaska (limited to within 100 miles of the city of 
+Anchorage or the Gulf of Alaska), or one of the U.S. territories, the Seller/Servicer must 
+assume that the PGA is greater than 0.15g, and an SRA is required, pursuant to  the 
+presence of the risk factors noted in Section 64SBL.2(c).  For areas of Alaska outside the 
+delineated area, the Seller/Servicer can assume a PGA of less than 0.15g, and therefore 
+an SRA is not required.  
+ 
+For areas that require a PGA calculation, the Seller/Servicer must enter or select the input 
+values into the tool found on the USGS website as identified in the table below.  An 
+example of the use of the tool, using the address of the Freddie Mac Los Angel es office at 
+444 South Flower Street, can be found  at mf.freddiemac.com/lenders/uw .  This example 
+includes instructions on saving the data in PDF format for submission to Freddie Mac.  
+ 
+Data Element  Input  
+Edition  Dynamic: Conterminous U.S. 2014 (latest release) , Alaska, 
+Hawaii  
+Spectral Period  Peak Ground Acceleration  (PGA)  
+Location  Generate the latitude/longitude using the “choose location 
+using a map” feature to enter an address  
+Time 
+Horizon /Earthquake 
+Return Period  10% in 50 years (475 years)  
+Site Class*  • 259 m/s (site class D) for properties located in CA, NV, 
+OR, WA  
+• 760 (B/C boundary) for all other locations  
+*  The site class must be adjusted as indicated in the table above, unless the 
+Consultant justifies an alternate soil classification value and provides 
+documentation.  
+ 
+If the PGA is less than 0.15g, an SRA is not required.  
+ 
+If the PGA is equal to or greater than 0.15g, then the Property is located in an Elevated 
+Seismic Hazard Region and the Seller/Servicer must evaluate the Property for the risk 
+factors specified in Section 64SBL.2(c).  If none of the seismic risk factors are present at 
+the Property, no SRA is required.  
+ 
+If the PGA is equal to or greater than 0.15g, and any one of the risk factors listed in Section 
+64SBL. 2(c) is present at the Property, or if the Seller/Servicer cannot conclusively
+
+Guide Bulletin Update 12/15/22 Chapter 64SBL – Page 4 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the AllRegs 
+web site of ICE Mortgage Technology  (with a paid subscription).  
+Guide Chapter 64SBL  – SBL Seismic Risk 
+Assessment Requirements  
+determine that none of the risk factors are present at the Property, a Level 1 SRA is 
+required.  The Seller/Servicer must  
+ 
+• Obtain an SRA meeting the requirements of this Chapter 64SBL  
+ 
+• Upload the PDF obtained as output from the USGS website into DMS and submit the 
+Level 1 SRA and the PDF to Freddie Mac in the applicable underwriting package as the 
+required seismic risk documentation  
+ 
+c. Seismic r isk factors for Properties located in an Elevated Seismic Hazard Region 
+(12/15/22 ) 
+If the Property is located in an Elevated Seismic Hazard Region, as part of the property 
+inspection described in Section 8SBL.15, the Seller/Servicer must evaluate the Property for 
+the following seismic risk factors:  
+ 
+• Propert ies with residential units above ground floor commercial, retail or tuck -under 
+parking that has either a construction date prior to 2000  as reported in the assessor’s 
+record, or a certificate of occupancy issued prior to 2000  
+ 
+• Wood framed building s built prior to 19 60 
+ 
+• Reinforced concrete masonry (CMU) bearing wall buildings constructed prior to 2000  
+ 
+• Unreinforced masonry construction, regardless of retrofit  
+ 
+• Propert ies required to undergo a seismic retrofit by any local or State authority  
+ 
+64SBL.3  Specific Seller/Servicer duties and responsibilities (06/30/16)  
+The Seller/Servicer's responsibilities are to  
+ 
+• Retain and direct the Consultant when a Level 1 SRA is required  
+ 
+The Seller/Servicer must review and verify the Consultant’s credentials, licensing, 
+certifications, memberships and affiliations.  For new Consultants, the Seller must check at 
+least three references from lenders who have retained or employed the Consultan t to 
+sufficiently evaluate the Consultant’s capabilities and performance.  The Seller must 
+maintain a separate seismic risk consultant file for Freddie Mac’s use that includes the 
+Seller’s ongoing evaluations of each Consultant’s performance, as well as th e Consultant’s 
+current resume, required references and current certificate(s) of liability insurance in 
+accordance with the requirements of Section 11.5.  
+ 
+The Borrower must not retain or direct the Consultant, but the Borrower may be responsible 
+for paying the costs of all SRA services.  
+ 
+• Provide information identified in Section 64SBL.6 to the Consultant  
+ 
+• Obtain a Level 1 SRA for the Property, when required, and review the SRA to

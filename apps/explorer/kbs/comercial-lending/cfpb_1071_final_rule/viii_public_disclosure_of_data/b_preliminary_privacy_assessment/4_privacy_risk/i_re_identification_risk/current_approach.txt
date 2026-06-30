@@ -1,0 +1,49 @@
+# Current Approach
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_672
+**Pages:** 670-670
+**Section Path:** VIII. Public Disclosure of Data > B. Preliminary Privacy Assessment > 4. Privacy Risk > i. Re-Identification Risk > Current Approach
+
+---
+
+670 future.  Commenters also  stated  that businesses in rural areas face particular  re-identification  risk 
+because of the likelihood that those areas have  low populations  and a low number of small 
+businesses.  Several commenters also saw re -identification risk  in rural areas  as more relevant to 
+certain products, such as agricultural lending, that are concentrated  in such areas. A group of 
+trade associations  said that CRA  data are not published at the application-level , in part  because 
+geography can contribute to the increased risk of re -identific ation .  
+In contrast, some commenters, primarily consisting of community groups, asserted that 
+re-identification risk, either through matching or because of personal knowledge, is low. Two 
+commenters stated  that the risk is low because much of the informati on that would be included in 
+the 1071 data set is already publicly available, either in commercial data sources  or as a result of 
+data breaches . Some commenters also stated that there have been n o reported incidents of  
+HMDA data , which is similar to 1071 da ta, being  used to re -identify individuals. One said that 
+the effectiveness of modifications and deletion techniques for HMDA data suggest that similar 
+modifications and deletions will nullify the re -identification risk for 1071 data. The Bureau did 
+not rec eive comments about its assumption that data on applications that do not result in 
+originations pose lower re -identification risk than data on originated applications.  
+Current Approach  
+In the Bureau ’s preliminary assessment, re -identification  risk of smal l business applicants 
+and their owners is the core privacy risk associated with data publication.  While the primary 
+focus of the Bureau’s intended privacy analysis is the impact of re -identification risk on personal 
+privacy interests, controlling reidentif ication risk will naturally mitigate  other privacy risks  and 
+harms, including commercial  privacy risks for small businesses. The prevailing view of 
+commenters was that unmodified application -level data poses re-identification risks that the 
+Bureau should c onsider when making modification and deletion decisions. The Bureau also 
+agrees with commenters that data point combinations, particularly the combination of NAICS 
+and census tract, pose particular re-identification risks, and it intends to take this into account in 
+making modifications and deletions.  
+The Bureau agrees that small businesses in small or rural areas may face heightened re-
+identification risk. However, overall re -identification risk depends on multiple factors. For 
+example, while the overall transaction volume in a rural area may be lower than in an urban area, concentration of certain credit products in rural areas may change how much of an impact low 
+transaction volume has on re -identification risk. Thus, the Bureau does not intend t o rely on a 
+categorical determination that geographical area types or particular census tracts will contribute 
+to the risk of re -identification in every circumstance. The Bureau intends to determine whether 
+targeted modification of individual data fields s ufficiently mitigates privacy risks from 
+geographical identifiers, rather than relying on wholesale deletion of data from rural areas.  
+The Bureau agrees that it is difficult to predict how technology will evolve in the future 
+and impact re-identification r isk. This is one reason it intends to track  developments in the small 
+business lending market, continue to engage with stakeholders, and reassess its privacy approach 
+as necessary. The Bureau intends to preserve flexibility so that its privacy analysis can evolve 
+with changes to privacy risks.

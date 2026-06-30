@@ -1,0 +1,71 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 160/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_160
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+977 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+789‘‘Glossary of Key Information Security Terms,’’ 
+supra note 745. 
+790See 45 CFR 170.315(d)(9). 791‘‘Security Standards: Technical Safeguards,’’ 
+supra note 343, p. 10–11. 
+792‘‘Defending Against Common Cyber-Attacks,’’ 
+supra note 396. 
+793Id. 
+794See ‘‘Cybersecurity Alerts & Advisories,’’ 
+Cybersecurity & Infrastructure Security Agency, 
+U.S. Department of Homeland Security, https://www.cisa.gov/news-events/cybersecurity-advisories. 
+795See ‘‘Bulletins,’’ Cybersecurity & Infrastructure 
+Security Agency, U.S. Department of Homeland Security, https://www.cisa.gov/news-events/ 
+bulletins. 
+796See ‘‘Health Sector Cybersecurity 
+Coordination Center (HC3),’’ Office of the Chief Information Officer, U.S. Department of Health and Human Services, https://www.hhs.gov/about/ agencies/asa/ocio/hc3/index.html. 
+797‘‘Free Cybersecurity Services and Tools,’’ 
+supra note 313. 
+798‘‘Cyber Hygiene Services,’’ supra note 313. 799‘‘Cybersecurity Resources for High-Risk 
+Communities,’’ supra note 313. 
+800Letter from NCVHS Chair Jacki Monson 
+(2022), supra note 123, p. 8–9. 
+801‘‘Cybersecurity Performance Goals,’’ supra 
+note 18. environmental or operational changes, 
+whichever is more frequent, and modify as reasonable and appropriate. 
+h. Section 164.312(g)—Standard: 
+Transmission Security 
+Transmission security protects against 
+the interception of ePHI in the communications networks used by regulated entities to transmit ePHI.
+789 
+The Department proposes to redesignate the standard for transmission security as proposed 45 CFR 164.312(g) and to 
+modify the standard consistent with other proposals made elsewhere in this NPRM, as described below. Specifically, we propose to clarify the existing standard by requiring a regulated entity to deploy technical controls to guard against unauthorized access to ePHI in transmission over an electronic communications network. For example, adoption of health IT that is certified through the ONC Health IT Certification Program as having the technical capability to establish a trusted connection using encrypted and integrity message protection or a trusted connection for transport and deploying such capability may contribute to a regulated entity’s compliance with the proposed standard for transmission security.
+790These proposed changes are 
+consistent with the Department’s proposals to replace ‘‘implement’’ with ‘‘deploy’’ in the context of technical safeguards to differentiate between implementation of a written policy or procedure and deployment of technical controls. 
+Consistent with our proposals to 
+require that regulated entities maintain their technical controls, we also propose to require a regulated entity to review and test the effectiveness of its technical controls for guarding against unauthorized access to ePHI that is being transmitted over an electronic communications network. We propose that such review and testing occur at least once every 12 months or in response to environmental or operational changes, whichever is more frequent, and modify such technical controls as reasonable and appropriate. 
+The Department also proposes to 
+remove the implementation specification for integrity controls at 45 CFR 164.312(e)(2)(i) because these requirements are incorporated in the standard for integrity at proposed 45 CFR 164.312(e), discussed above. A regulated entity would continue to be required to review the current methods used to transmit ePHI and then deploy appropriate solutions to protect ePHI from improper alteration or destruction.
+791 
+i. Section 164.312(h)(1)—Standard: Vulnerability Management 
+Hackers can penetrate a regulated 
+entity’s network and gain access to ePHI by exploiting publicly known vulnerabilities.
+792Exploitable 
+vulnerabilities can exist in many parts of the technology infrastructure of a regulated entity’s relevant electronic information systems (e.g., server, 
+desktop, and mobile device operating systems; application, database, and web software; router, firewall, and other device firmware).
+793A regulated entity 
+can identify technical vulnerabilities in multiple, complementary ways, including: 
+•Subscribing to CISA alerts
+794and 
+bulletins.795 
+•Subscribing to alerts from the HHS 
+Health Sector Cybersecurity Coordination Center.
+796 
+•Participating in an information 
+sharing and analysis center (ISAC) or information sharing and analysis organization (ISAO). 
+•Implementing a vulnerability 
+management program that includes using a vulnerability scanner to detect vulnerabilities such as obsolete software and missing patches. 
+•Periodically conducting penetration 
+tests to identify weaknesses that could be exploited by an attacker. 
+Additionally, CISA has compiled a 
+database of free cybersecurity services and tools, some provided directly by CISA and others provided by private and public sector organizations.
+797For

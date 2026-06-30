@@ -1,0 +1,130 @@
+# Proposed Approach
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_674
+**Pages:** 671-673
+**Section Path:** VIII. Public Disclosure of Data > B. Preliminary Privacy Assessment > 4. Privacy Risk > ii. Risk of Harm or Sensitivity > Proposed Approach
+
+---
+
+671 The Bureau assesses that modification and deletion techniques can effectively limit re-
+identification risk and therefore concludes that completely withholding data —which would be 
+contrary to section 1071 ’s statutory purposes and express disclosure provisions —is not necessary 
+to manage re-identification risk. As noted by commenters, modification and deletion techniques 
+have effectively reduced re-identification risk from HMDA data, and the Bureau anticipates the 
+same r esult with this data. The existence of some data that matches with existing data sets is not 
+grounds to forego the full privacy analysis of collected data that will allow it to make targeted 
+modification and deletion decisions to protect privacy interests.   
+For the reasons given above and as discussed in part VIII.B.4.ii below, the Bureau 
+preliminarily views re -identification risk as the most significant privacy risk associated with 
+publishing application-level data —and thus the most important privacy risk to consider in 
+making modification and deletion decisions. Re -identification is a prerequisite to any potential 
+harms or sensitivities that small business applicants or related natural persons may experience 
+from publishing such data.  As the risk of re -identification is reduced, the risk of harm caused by 
+disclosing harmful or sensitive information also will be reduced.  Further, as discussed below, 
+because almost all the harms and sensitivities to financial institutions result from concerns about small business applicant or related natural person re-identification, preventing such re -
+identification will also prevent the most serious harms and sensitivities for financial institutions.  
+ii. Risk of Harm or Sensitivity  
+Proposed Approach  
+The NPRM considered whe ther a re-identified application -level record would disclose 
+information about an applicant, related natural person, or financial institution that is  not 
+otherwise public and may be harmful or sensitive. Specifically, the Bureau evaluated whether 
+such data could be used for harmful purposes such as fraud or identity theft or the targeted 
+marketing of products and services that may pose other risks . The NPRM evaluated whether the 
+data could cause competitive harm to small business applicants or to financial institutions. It also 
+evaluated whether certain data fields m ight be viewed as sensitive if associated with a particular 
+applicant, related natural person, or financial institution. In evaluating the potential sensitivity of 
+a data field, the Bureau consid ered whether disclosure of the data field could cause dignitary or 
+reputational harm to small business applicants , related natural persons , and financial institutions.  
+The NPRM explained that  some identifiable information about small business lending is 
+already publicly available . Such information is both in public records and in private datasets with 
+varying barriers to access and restrictions on use. The Bureau ’s analysis accordingly considered 
+the degree to which disclosure would increase this risk relat ive to the risk that already exists . In 
+general, where a data field was already publicly available, the NPRM saw a reduced  risk of harm 
+or sensitivity from its further disclosure .
+877 
+ 
+877 However, where a data field wa s a lready publicly a vaila ble, disclosing that da ta field in the data may have 
+enabled the matching of data to other datasets that may not have been controlled by the Bureau, which could have 
+substantially facilitated re -identification or the disclosure of harmful or sensitive infor mation.
+
+672 The Bureau considered whether the data could be used for harmful purposes such as 
+fraud or identity theft or the targeted marketing of products and services that may pose other 
+risks. The Bureau ’s initial view was that unmodified application -level data would be of minimal 
+use for perpetrating identity theft or financial fraud against applicants or related natural persons. 
+As proposed, application-level  data would not include information typically required to open 
+new accounts in the name of a small business ’s principal owner, such as Social Security number, 
+date of birth, place of birth, passport number, or driver ’s license number. Additionally, the data 
+would not include information useful to perpetrate existing account fraud, such as account 
+numbers or passwords.  The Bureau acknowledged, however, that almost any information relating 
+to a small business could, in theory, be used for these purposes. For example, unmodified data could potentially be used in a phishing attack against an applicant , or for knowledge -based 
+authentication. Some such data, however, may already be available from public and private 
+sources. The Bureau also note d, on the basis of it s expertise and analysis , that the publication of 
+HMDA data —which contain many data fields that are sim ilar to data fields that would be 
+disclosed under the proposal —has not resulted in any measurable increase in fraud or identity 
+theft against mortgage applicants.  
+The Bureau also considered potential impacts on targeted marketing of products and 
+services . The Bureau explained that a lthough the data could be used to market products and 
+services that would have been beneficial for small businesses —perhaps increasing competition 
+among creditors  that could help small businesses receive better terms —they could a lso be used 
+to target potentially vulnerable small businesses with marketing for products and services that may have  pose d risks that we re not apparent. For example, users might perceive certain data to 
+reveal negative information about an applicant ’s fina ncial condition or vulnerability to scams 
+relating to debt relief or credit repair. Information about a loan might also be used for a practice known as “ stacking,” in which creditors may obtain lead lists based on publicly available 
+information and offer f ollow -on loans or advances that add to the debt burden carried by small 
+businesses. Some creditors  might also use the data for deceptive marketing practices.
+ However, 
+the Bureau noted that  the utility of the data for predatory marketing practices may be limited by 
+delay between action taken on a loan and data publication . 
+The Bureau considered whether unmodified data would result in competitive harm to 
+small business applicants or related natural persons  by disclos ing general information about a 
+small business ’s use of credit that wa s not currently available to the general public. T he Bureau 
+acknowledge d that certain data points in unmodified form could reflect negatively on the 
+financial condition of a business or its  owners.  The Bureau also considered the potential for 
+competitive harm to financial institutions. As discussed below with respect to the financial 
+institution identifying information that would be reported pursuant to proposed §  1002.109(b), 
+the Bureau pro posed  to identify the financial institution in the public application -level data. 
+Therefore, the data could reveal general information about a financial institution ’s lending 
+practices that is not widely available to the general public. As the Bureau explained, data fields such as census tract, NAICS code, credit type, and pricing could disclose information about 
+where a financial institution is doing business, what industries it is doing business with, what kinds of products it is offering, and what kinds of prices it is charging, respectively. 
+Additionally, if a small business applicant were re -identified, a financial institution ’s competitors 
+could identify the small businesses to which the financial institution is offering or providing credit.  A financia l institution could then potentially offer credit to a particular small business at a
+
+673 lower price than they currently received . However, the Bureau  did not assess that unmodified 
+application -level data would include key inputs for , or be detailed enough,  to substantially 
+facilitate reverse-engineering of proprietary lending models. For example, it would not have 
+include d information about an applicant ’s credit history. The NPRM also noted stakeholder 
+concern that data could harm financial institutions by in creasing the amount of litigation against 
+them. The Bureau  sought comment on this risk.  
+With respect to feedback that disclosing information about applicants in rural areas could 
+lead them to seek financing elsewhere, the Bureau noted that would not neces sarily reduce the 
+risk that someone in the small business ’s community may ultimately re -identify them because 
+the data would be reported with respect to the location of the business, as discussed in the 
+section -by-section analysis of §  1002.107(a)(13) .  
+In addition to considering whether the disclosure of a data field could lead to financial or 
+other more tangible harms, the Bureau also considered whether the data might be viewed as 
+sensitive . In assessing whether a data field creates  a risk of sensitivity, the Bureau evaluated 
+whether its disclosure could lead to dignitary or reputational harm to small business applicants or 
+related natural persons. For example, if re-identified, the data could reveal information that casts 
+a negative light on a small bus iness ’s financial condition, such as the fact that a loan was denied 
+due to a business ’s credit characteristics or cashflow.  
+The Bureau also evaluated whether the disclosure of a data field could cause reputational 
+harm to financial institutions. The Bure au discussed stakeholder concerns that  the data could lead 
+users to draw unfounded inferences about discrimination. The Bureau note d that several of the 
+data fields, if disclosed in unmodified form, would help address this concern by serving as control var iables. For example, many financial institutions consider a small business ’s revenue 
+when assessing the risk of extending credit. As a result, disclosing gross annual revenue data would help ensure that data users who are evaluating potential disparities in underwriting or 
+pricing can compare small businesses with similar revenues, thereby controlling for a factor that 
+might provide a reason  for some disparities. The Bureau also note d that it does not expect that 
+data alone could generally be used to determine whether a lender is complying with fair lending laws. The Bureau expect ed that, when regulators conduct fair lending examinations, they would 
+analyze additional information before reaching compliance  determination s.
+  
+The Bureau also considered general expectations with respect to what information is 
+available to the general p ublic. For example, the Bureau explained that  disclosing gross annual 
+revenue in unmodified form could disclose sensitive information because it could reflect the 
+financial condition of a small business or, where a small business is a sole proprietorship, a  
+particular individual. This type of information is typically not available to the general public.  The 
+Bureau also acknowledge d concerns  that some small businesses and their owners would consider 
+seeking credit sensitive, or would consider the disclosure of a banking relationship sensitive 
+because others may draw adverse inferences about the small business ’s financial condition. 
+These are concerns about sensitivity that would result from the re -identification of the applicant, 
+rather than from the disclosu re of particular data fields. The Bureau s ought  to address these 
+concerns by mitigating the risk of re -identification.

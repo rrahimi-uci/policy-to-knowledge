@@ -1,0 +1,114 @@
+# 50.8     Definitions for accounting and reporting (02/14/22) + 50.9     Monthly reporting and except
+
+**Source:** freddies_mac.pdf
+**Chunk ID:** freddies_mac_2147
+**Pages:** 882-883
+**Section Path:** Accounting and Reporting (Chs 50-54) > 50 - General Accounting and Reporting GB-04-18-24 > 50.8     Definitions for accounting and reporting (02/14/22)
+
+---
+
+Guide Bulletin Update 04/18/24 Chapter 50 – Page 7 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the 
+AllRegs web site of ICE Mortgage Technology  (with a paid subscription).  
+Guide Chapter 50 – General Accounting and Reporting Requirements  
+50.7     Summary of remittance requirements and transfer method ( 10/19 /23) 
+The timing for remittance differs depending upon whether the Mortgage is a Gold PC® Securitized 
+Mortgage, 55-Day Multi PC Securitized Mortgage, Tax Exempt Bond Credit Enhancement Mortgage or 
+other Mortgage.  
+ 
+The Servicer must remit the following Mortgage collections and fees to Freddie Mac via Freddie Mac’s 
+myOptigo ® Servicer  Remittance  system (see Section 53.7):  
+ 
+1. Monthly principal and interest collections  
+ 
+2. Curtailments, including any applicable prepayment premiums  
+ 
+3. Proceeds from Mortgages paid in full including any applicable prepayment premium  
+ 
+4. Tax Exempt Bond Credit Enhancement fees  
+ 
+5. Default interest  
+ 
+6. Late fees  
+ 
+7. Interest reimbursement fees and noncompliance fees assessed by Freddie Mac  
+  
+The Servicer must remit proceeds of miscellaneous transactions not included above by wire transfer to 
+Multifamily Cash Management . 
+ 
+The Servicer must remit proceeds of multifamily Real Estate Owned (REO) sales and miscellaneous 
+transactions not included above in accordance with Section 53.9.  
+ 
+Freddie Mac will use effective date of receipt to determine if the remittance has been made in 
+compliance with the interim and monthly remittance requirements as set forth in Sections 53.9 and 
+53.10, respectively.  
+ 
+Failure of the Servicer to comply with the remittance and transfer requirements may result in an 
+interest reimbursement fee as set forth in Section 53.11.  
+ 
+50.8     Definitions for accounting and reporting ( 02/14/22) 
+As used in this chapter, these terms are defined as follows:  
+ 
+1. Accounting cutoff date .  The close of business on the 15th of a month .  (If the 15th is not a 
+Business Day, the accounting cutoff date is the close of business on the Business Day preceding 
+the 15th of the month.)  
+ 
+2. Accounting cycle .  The 16th of one month through the 15th of the following month . 
+ 
+3. Exception activity .  Activity resulting in the unpaid principal balance (UPB) of a Mortgage being 
+reduced to zero . 
+ 
+The following transactions are exception activities:
+
+Guide Bulletin Update 04/18/24 Chapter 50 – Page 8 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the 
+AllRegs web site of ICE Mortgage Technology  (with a paid subscription).  
+Guide Chapter 50 – General Accounting and Reporting Requirements  
+ 
+• Mortgages paid in full or repurchased (Sections 54.3 and 54.4)  
+ 
+• Mortgages liquidated by third -party foreclosure sale (Section 54.5)  
+ 
+• Mortgages transferred to REO (Section 54.6)  
+ 
+• Mortgages sold into a Securitization  
+ 
+4. Loan -level reporting information  
+ 
+Information about loan activity and status of a Mortgage reported on an individual loan basis . 
+ 
+5. 55-Day Multi PC determination date  
+ 
+55 Day Multi PC replaces traditional “Accounting Cutoff” language with the introduction of the 
+“Determination Date” .  For each month, the close of business on the date indicated on the yearly 
+Due Date Calendar for Monthly Reporting and Remitting . 
+ 
+6. 55-Day Multi PC interest accrual period  
+ 
+The calendar month preceding the 55 -Day Multi PC determination date.  
+  
+50.9     Monthly reporting and exception activity ( 04/15/21 ) 
+Every month, each Servicer must report to Freddie Mac, via myOptigoSM for Investor Reporting , all 
+transactions affecting the Mortgages serviced (see Section 50.9 (b)).  The monthly automated reports 
+must include all loans with an unpaid principal balance as of the beginning of that accounting cycle.  
+ 
+The entries that a Servicer must transmit include monthly principal reductions, net yield interest and 
+unscheduled principal reductions since the previous month's accounting cutoff date.  Freddie Mac 
+relies on the Servicer's accuracy in reporting principal reductions to determine the amounts Freddie 
+Mac will pay to its security investors and report to its stockholders.  
+ 
+If an exception activity occurs with respect to a Mortgage serviced, then the exception activity must be 
+reported via myOptigo for Investor Reporting . 
+ 
+a. Report due dates (12/07/05)  
+See Section 50.10 for information on due dates for loan -level transactions.  
+ 
+b. Reporting requirements for myOptigo for Investor Reporting  (04/15/21 ) 
+Automated transmission of accounting transactions via myOptigo for Investor Reporting  is 
+mandatory for all Freddie Mac Multifamily Mortgages.  Transmissions must be usable, accurate 
+and timely.  Failure to comply with these requirements will result in the assessment of the 
+accounting reporting noncompliance fees set forth in Section 54.9.  For further information on 
+reporting requirements for myOptigo for Investor Reporting , contact Freddie Mac Multifamily Loan 
+Accounting .

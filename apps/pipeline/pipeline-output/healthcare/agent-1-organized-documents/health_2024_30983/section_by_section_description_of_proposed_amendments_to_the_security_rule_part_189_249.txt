@@ -1,0 +1,40 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 189/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_189
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+916Specifically, the 
+regulations require such health IT developers to provide greater transparency about the design, development, training, evaluation, and use of such predictive DSIs.
+917This 
+approach promotes responsible AI and makes it possible for covered entities to access a consistent, baseline set of information about the algorithms they use to support their decision making and to assess such algorithms for fairness, appropriateness, validity, effectiveness, and safety.
+918 
+Additionally, the Department 
+proposes to require that regulated entities monitor authoritative sources for known vulnerabilities and to remediate such vulnerabilities in accordance with their patch management program. We also propose to require that patches, updates, and upgrades that address critical and high risks be applied promptly. Together, these proposals would support the rapid response to vulnerabilities that will be necessary as AI becomes more prevalent. Thus, the Department believes that the adoption of the cybersecurity best practices proposed in this NPRM is an important first step to ensuring that AI tools are deployed by regulated entities in a manner that protects the confidentiality, integrity, and availability of ePHI. 
+3. Virtual and Augmented Reality (VR 
+and AR) 
+Research on VR and AR technologies 
+is widespread and has produced numerous applications in the health care fields. Such technologies are being used in medical education and patient care, including AR-assisted surgeries, VR-based pain management therapies, and immersive patient education tools.
+919Additionally, innovators are working on ways to incorporate AI with 
+VR and AR for improved diagnostics and treatment planning.
+920 
+However, as with quantum computing 
+and AI, VR and AR technologies raise new privacy and security concerns. VR and AR involve the use of diverse technologies and the collection of a wide array of sensitive information, including comprehensive biometric data.
+921According to experts, ‘‘[. . .] 
+VR and AR present distinct security challenges, encompassing typical vulnerabilities associated with electronic devices, as well as potential risks of physical harm and leakage of highly sensitive data.’’
+922VR, like any 
+connected computing device, ‘‘is susceptible to standard cybersecurity concerns and various types of cyberthreats, necessitating proactive anticipation.’’
+923 
+These cybersecurity risks, such as 
+hacking, social engineering, malicious software, and ransomware, can be mitigated through holistic risk analysis and risk management, consistent with the Security Rule administrative standards in 45 CFR 164.308. In addition, patch management,
+924access 
+control,925authentication,926and 
+appropriate business associate agreements
+927are examples of some of 
+the required safeguards that would apply to VR and AR systems. 
+We believe the proposals in this 
+NPRM to clarify these safeguards would substantially improve the ability of regulated entities to address these cybersecurity risks. For example, the Department proposes to require that a regulated entity obtains from a business associate written verification that the business associate has deployed the technical safeguards required by the Security Rule, including a written analysis of the business associate’s information systems from a person with 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00095 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

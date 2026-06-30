@@ -1,0 +1,58 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 115/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_115
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+956 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+sites/dolgov/files/ebsa/pdf_ files/best-practices.pdf; 
+‘‘Cybersecurity Guidance Update,’’ Employee 
+Benefits Security Administration, U.S. Department of Labor (Sept. 6, 2024), https://www.dol.gov/ 
+agencies/ebsa/key-topics/retirement-benefits/ cybersecurity/compliance-assistance-release-2024- 01. 
+615See ‘‘Implementing the Health Insurance 
+Portability and Accountability Act (HIPAA) Security Rule: A Cybersecurity Resource Guide,’’ supra note 461. 
+616Id. at 54. 
+617Id. 
+618See 45 CFR 164.306(a)(1). 
+619See 45 CFR 164.308(b). 620See proposed 45 CFR 164.308(b)(1)(i) and (ii). 
+621Id. 
+622See proposed 45 CFR 164.308(b)(2)(ii). 
+623Id. 
+624Proposed 45 CFR 164.308(b)(2)(ii)(A). 
+625Id. 626Proposed 45 CFR 164.308(b)(2)(ii)(B). 
+627‘‘Cybersecurity Performance Goals,’’ supra 
+note 18; see also proposed 45 CFR 164.308(b)(2)(i). 
+628‘‘Cybersecurity Performance Goals,’’ supra 
+note 18. 
+629Proposed 45 CFR 164.308(b)(3)(i). 
+630Proposed 45 CFR 164.308(b)(3)(ii). q. Section 164.308(b)(1) and (2)— 
+Standard: Business Associate Contracts and Other Arrangements 
+Vendor management and 
+identification of risks in a supply chain are essential to controlling the introduction of new threats and risks to a regulated entity.
+615NIST guidance 
+explains that regulated entities, are permitted to include more stringent cybersecurity measures in business associate agreements than those required by the Security Rule.
+616Such 
+requirements would need to be agreed upon by both parties to the business associate agreement.
+617The guidance 
+also recommends establishing a process for measuring contract performance and terminating the contract if security requirements are not being met. Important considerations include: Is there a process for reporting security incidents related to the agreement? Are additional assurances of protections for ePHI from the business associate necessary? If so, where would such additional assurances be documented (e.g., in the business associate 
+agreement, service-level agreement, or other documentation) and how would they be met (e.g., providing 
+documentation of implemented safeguards, audits, certifications)? 
+The Security Rule requires a regulated 
+entity to protect the confidentiality, integrity, and availability of all ePHI that it creates, receives, maintains, or transmits.
+618It also requires a regulated 
+entity to obtain written satisfactory assurances that its business associate will appropriately safeguard ePHI before allowing the business associate to create, receive, maintain, or transmit ePHI on its behalf.
+619However, the 
+Security Rule does not require a regulated entity to verify that entities that create, receive, maintain, or transmit ePHI on its behalf are in fact taking the necessary steps to protect such ePHI. The lack of such a requirement may leave a gap in protections from risks to ePHI related to regulated entities’ vendors and supply chains. Accordingly, the Department proposes several modifications to the Security Rule to provide greater assurance that business associates and their subcontractors are protecting ePHI because a subcontractor to a business associate is also a business associate. The Department proposes to redesignate 45 CFR 164.308(b)(1) and (2) as proposed 45 CFR 164.308(b)(1)(i) and (ii), respectively. Additionally, we propose to make a technical correction to the standard for business associate contracts and other arrangements for organizational clarity, separating proposed paragraph (b)(1)(i) into paragraphs (b)(1)(i)(A) and (B). We believe this is a non-substantive change that would have no effects on any regulatory, recordkeeping, or reporting requirement, nor would it change the Department’s interpretation of any regulation. We also propose to modify both to require a regulated entity to verify that the business associate has deployed the technical safeguards required by 45 CFR 164.312
+620in 
+addition to obtaining satisfactory 
+assurances that its business associate would comply with the Security Rule.
+621To assist regulated entities in 
+complying with the new standard, we propose to redesignate the implementation specifications at 45 CFR 164.308(b)(3) as 45 CFR 164.308(b)(2) and propose to add an implementation specification for written verification at proposed 45 CFR 164.308(b)(2)(ii) that would require the regulated entity to obtain written verification from the business associate that the business associate has deployed the required technical safeguards.
+622The Department 
+proposes to require that the regulated entity obtain this written verification documenting the business associate’s deployment of the required technical safeguards at least once every 12 months.
+623Additionally, we propose 
+that the verification include a written analysis of the business associate’s relevant electronic information systems.
+624The written analysis would

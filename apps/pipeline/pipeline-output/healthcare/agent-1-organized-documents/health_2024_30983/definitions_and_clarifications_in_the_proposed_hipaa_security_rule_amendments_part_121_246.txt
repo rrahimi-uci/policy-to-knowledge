@@ -1,0 +1,39 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 121/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_121
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+959 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+639See University of Texas M.D. Anderson Cancer 
+Center, supra note 258, p. 479. 640Resolution Agreement, ‘‘Advocate Health Care 
+Network Medical Group,’’ Office for Civil Rights, 
+U.S. Department of Health and Human Services (July 8, 2016). 
+641Resolution Agreement, ‘‘University of 
+Rochester Medical Center,’’ Office for Civil Rights, U.S. Department of Health and Human Services (Oct. 30, 2019) (describing a violation of the standard for device and media controls). 642See discussion of 45 CFR 164.306. 
+643See University of Texas M.D. Anderson Cancer 
+Center, supra note 258. 
+644See 45 CFR 164.304 (proposed definitions of 
+‘‘Relevant electronic information systems’’ and ‘‘Technology assets’’). maintenance of a record of the 
+movement of hardware and electronic media and any person responsible for such hardware or electronic media, while the provision on data backup and storage at 45 CFR 164.310(d)(2)(iv) addresses the creation of a retrievable, exact copy of ePHI before moving the equipment. 
+2. Issues To Address 
+The Department has concerns 
+regarding the effectiveness of the 
+language used in the physical safeguards in 45 CFR 164.310 for the same reasons discussed in the context of 45 CFR 164.306 and 164.316. For example, while 45 CFR 164.310 contemplates that a regulated entity must implement the standards and implementation specifications required under 45 CFR 164.310 in accordance with the general documentation and maintenance requirements found in 45 CFR 164.306 and 164.316, at least one court has stated that compliance obligations are limited to the plain words of regulatory text and that a requirement to ‘‘implement’’ does not mean that a requirement must be in place throughout the regulated entity’s 
+enterprise.
+639Additionally, the 
+standards for facility access controls, workstation use, and device and media controls all require a regulated entity to implement policies and procedures, while the standard for workstation security requires regulated entities to implement physical safeguards. The differences in regulatory text among these provisions could be interpreted to mean that a regulated entity’s obligations differ depending on whether a provision requires it to implement only policies and procedures or whether the provision requires the implementation of something more. This may confuse regulated entities and lead some to believe that less comprehensive protection is needed for ePHI subject only to policies and procedures. 
+The Department believes that the 
+current Security Rule provides a clear path for regulated entities to protect the confidentiality, integrity, and availability of ePHI. However, as discussed above, we also believe recent caselaw has created confusion about the steps regulated entities must take to adequately protect the confidentiality, integrity, and availability of ePHI, as required by the statute. Further, the conditions highlighted by caselaw may also cause regulated entities to misinterpret the regulatory text that connects the current maintenance requirement at 45 CFR 164.306(e), the documentation requirement at 45 CFR 164.316, and the requirement to implement physical safeguards. For example, regulated entities may be confused about how 45 CFR 164.316 requires a regulated entity to document the policies and procedures for specific physical safeguard in 45 CFR 164.310 (or across any other safeguard). In this case, the regulated entity also might not apply the implementation specifications to retain, make available, and review documentation of how it has operationalized the physical safeguard. Failing to connect these provisions would lead to inadequate protection of ePHI and/or an inability to demonstrate compliance with the Security Rule. 
+Our experience enforcing the Security 
+Rule provides examples of the types of breaches that can occur because of absent or insufficient physical safeguards: 
+•An investigation of a large health 
+system indicated potential failures to implement policies and procedures and facility access controls to limit physical access to the electronic information systems housed within a large data support center. While the health system did have video surveillance, the investigation found indications that laptops were stored in an interior room that was unlocked and the facility did not have an alarm system.
+640 
+•A large university hospital 
+experienced a breach of unsecured PHI when it lost an unencrypted flash drive and unencrypted laptop. The Department’s investigation found that the covered entity may have failed to use device and media controls, which might have prevented the loss of these devices.
+641 
+Given the increased portability of

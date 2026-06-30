@@ -1,0 +1,47 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 56/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_056
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+identify MFA as an essential goal and a critical, additional layer of security for the protection of assets and accounts that are directly accessible from the internet.
+367The Department has also 
+explained in guidance that weak authentication processes leave organizations vulnerable to intrusion, while effective authentication ensures that only authorized entities may access information systems and data.
+368 Additionally, CISA has issued recommendations for implementing MFA, specifically MFA solutions that are phishing resistant to protect against disclosures of authentication data to a bad actor.
+369 
+b. Proposal 
+The Department proposes to define 
+the term ‘‘Multi-factor authentication’’ to provide regulated entities with a specific level of authentication for accessing relevant electronic information systems.
+370Regulated 
+entities would be required to apply this proposed definition when implementing the proposed rule’s specific requirements for authenticating users’ identities through verification of at least two of three categories of factors of information about the user. The proposed categories would be: 
+•Information known by the user, 
+including but not limited to a password or personal identification number (PIN). 
+•Item possessed by the user, 
+including but not limited to a token or a smart identification card. 
+•Personal characteristic of the user, 
+including but not limited to fingerprint, facial recognition, gait, typing cadence, or other biometric or behavioral characteristics. 
+MFA relies on the user presenting at 
+least two factors. Authentication that relies on multiple instances of the same factor, such as requiring a password and PIN, is not MFA because both factors are ‘‘something you know.’’
+371For 
+example, where MFA is deployed, users could seek access by entering a password. However, without the entry of at least a second factor such as a token
+372or smart identification card, the user is not granted access and the 
+password is useless by itself. Cybercriminals seeking access to MFA- protected information systems require significantly more resources to launch the attack because there are multiple data points required to succeed.
+373 
+The Department proposes that the 
+personal characteristics that could be used as factors would include both physical characteristics, such as fingerprints or facial identifiers, and behavioral characteristics, such as a user’s gait or typing cadence.
+374 
+11. Clarifying the Definition of ‘‘Password’’ 
+a. Current Provision and Issues To 
+Address 
+The Security Rule currently defines 
+‘‘password’’ as confidential authentication information composed of a string of characters.
+375The definition 
+provides no further regulatory instruction on what constitutes a ‘‘character’’ for purpose of compliance. 
+b. Proposal 
+The Department proposes to add 
+examples to the definition to further 
+clarify what constitutes a character, and adds ‘‘such as letters, numbers, spaces, and other symbols’’ to the existing definition. The Department believes that regulatory examples would provide necessary context for regulated entities that deploy safeguards involving passwords. 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00030 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

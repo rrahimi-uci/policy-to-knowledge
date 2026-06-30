@@ -1,0 +1,94 @@
+# System Documentation
+
+**Source:** risk_management_manual_complete.pdf
+**Chunk ID:** risk_management_manual_complete_870
+**Pages:** 320-320
+**Section Path:** section7-1 > INTEREST RATE RISK MEASUREMENT SYSTEMS > System Documentation
+
+---
+
+SENSITIVITY TO MARKET RISK  Section 7.1  
+RMS Manual of Examination Policies  7.1-11 Sensitivity to Market Risk ( 10/2025 ) 
+Federal Deposit Insurance Corporation   
+System Documentation  
+ 
+Both purchased and internally developed systems should be 
+supported by adequate documentation.  System 
+documentation should provide complete information regarding the factors discussed above.  Management should 
+be familiar with and retain all pertinent system 
+documentation.  Management should also review and 
+maintain documentation of changes  or upgrades to the 
+model.  
+ 
+Adequacy of Measurement System Inputs  
+ 
+A model ’s accuracy depends on the assumptions and data 
+used.  Like any model, inaccurate data or unreasonable 
+assumptions will render inaccurate results.  
+ 
+System data should accurately reflect the bank’ s current 
+condition.  When evaluating the adequacy of a model, management  should consider the e xtent  to which  the model 
+uses automated versus manual processes ; whether the model 
+has automated interfaces with the bank ’s core systems ; and 
+the funds , hardware, staff, and expertise needed to run and 
+maintain the model.  
+ Examination of the system ’s input process should focus on 
+the procedures for inputting and reconciling system data, 
+categorizing and aggregating account data, ensuring the completeness of account data, and assessing the effectiveness of internal controls and independent review s. 
+ The internal control process must be comprehensive enough 
+to ensure that data inputs are accurate and complete prior to 
+running the system and generating reports.  The bank may input data manually, through data-extract programs, or a 
+combination of both techniques .  Internal control 
+procedures should be established to ensure that input data, such as general ledger balances and contractual terms, are 
+accurately captured.  Institutions should verify system 
+inputs by having experienced personnel reconcile the 
+balances to the general ledger.  This is often done using automated software that can identify and report exception items.  
+ In addition to capturing account balances, institutions with complex balance sheets should use measurement systems 
+that adequately capture  the embedded market risk of all 
+material on - and off-balance sheet activity.  Most 
+measurement systems allow for the input of the following 
+contractual terms:  
+ 
+• Current balance, 
+• Contractual maturities,  
+• Principal and interest payment s and frequencies , • Coupon rates and  repricing frequenc ies,  
+• Contractual caps and floors , and  
+• Contractual optionality (such as securit y or borrowing 
+calls).  
+ 
+Account Aggregation  
+ 
+Account aggregation is the process of grouping together 
+accounts of similar types and cash flow characteristics.  This 
+is an important component of the data input process  as 
+account aggregation improves the measurement system ’s 
+efficiencies.  Typically, loans of similar rate, maturity, and 
+type (e.g., 6 percent , 30  year, residential loans) are 
+aggregated.  Grouping 6 percent , 30 year residential loans 
+together may be appropriate, but grouping together 6  
+percent  fixed -rate loans with 6  percent  adjustable -rate loans 
+is not.   The degree of account aggregation will vary from one institution to another.  I nstitutions should ensure the model 
+allows for a sufficient separation  of accounts with 
+significantly different cash flow patterns.  For example, 
+models that aggregate information based on Call Report 
+data may not provide the granularity necessary for 
+institutions with significant levels of embedded options .  
+When applicable, i nstitutions should ensure the ir system s 
+have  the a bility  to model highly structured instruments and  
+bank- specific products.  
+ Both contractual and behavioral characteristics should be 
+considered when determining the cash flow patterns  of 
+account s to aggregat e.  The process of determining which 
+accounts are combined should be transparent, documented, 
+and periodically reviewed.  Furthermore, requests for changes to existing groups or new account aggregations should be formalized and documented.  Institutions should maintain documentation  disclosing the characteristics of 
+aggregated asset s and  liabilit ies (including all derivative 
+instruments) , and off -balance sheet items .  
+ 
+Assumptions  
+ Assessing the reasonableness of assumptions is a critical part of reviewing an IRR measurement system.  It is 
+important that assumptions accurately reflect management ’s expectations regarding interest rates, 
+customer behaviors, and local and macro -economic factors.  
+Assumptions are typically derived using a combination of internal analysis and external sources.  All material assumptions should be regularly updated and supported 
+with thorough analysis and documentation.   
+ IRR measurement systems rely on a ssumptions  regarding 
+key parameters , such as:

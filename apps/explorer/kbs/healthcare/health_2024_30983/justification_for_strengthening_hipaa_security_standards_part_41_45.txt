@@ -1,0 +1,37 @@
+# Justification for Strengthening HIPAA Security Standards (part 41/45)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_003_sub_041
+**Section Path:** Justification for Strengthening HIPAA Security Standards
+**Summary:** This section argues for the necessity of revising the Security Rule, citing the changing healthcare environment, increasing cybersecurity threats, and inconsistent compliance among regulated entities. It outlines the need for robust standards to ensure the protection of ePHI.
+
+---
+
+275 
+•Include specific minimum 
+cybersecurity hygiene requirements that are reflective of modern industry best practices, including designation of a qualified information security official, elimination of default passwords, adoption of MFA, institution of offline backups, installation of critical patches within a reasonable time, and transparency of impact and vulnerability disclosures.
+276 
+•Require that regulated entities 
+implement a security program and that they implement standard minimum security controls.
+277 
+•Require that regulated entities 
+adopt a risk-based approach in their security program.
+278 
+•Require that regulated entities 
+perform a risk analysis in a manner that conforms with guidance from NIST and CISA.
+279 
+•Define compensating controls more 
+specifically and provide a wider range of examples that apply to a greater variety of types of entities.
+280 
+•Reinforce the need for regulated 
+entities to account for AI systems and data within their risk analysis for all and any new technology.
+281 
+•Establish a consistent floor for cyber 
+incident reporting and harmonize such requirements with incident reporting provisions applicable to health care critical infrastructure actors and health 
+care Federal contractors.
+282 
+The Department, in drafting this 
+NPRM, relied on the recommendations of NCVHS, OCR’s enforcement experience, news reports, and our assessment of the environment. Consistent with NCVHS’ recommendation to revisit the Security Rule’s classification of some implementation specifications as ‘‘addressable,’’ the Department also believes that it is appropriate to revisit our decision regarding the amount of flexibility regulated entities have in determining reasonable and appropriate safeguards, as described above. Based on OCR’s experience in investigations and audits, we believe that regulated entities would benefit from greater specificity in the Security Rule. The Department has provided extensive guidance on questions to consider when adopting and implementing security measures and ways to comply with the Security Rule,
+283as directed by the 
+HITECH Act. And yet, despite this proliferation of guidance, regulated entities continue not to comply. For example, despite the explanation in 45 CFR 164.306(d) about addressable implementation specifications and the notable changes in the environment in which health care is provided, we are concerned that some regulated entities proceed as if compliance with an addressable implementation specification is optional—and that where there is an addressable implementation specification, that compliance with the relevant standard is also optional. That interpretation is incorrect and weakens the cybersecurity posture of regulated entities. We believe that compliance with the implementation specifications currently designated as addressable is not—and should not be—optional, particularly in light of the shift to an interconnected and cloud-based environment and a significant increase in the number of breaches of unsecured PHI from both internal and external actors, regardless of the regulated entity’s specific circumstances. Thus, we believe that it is necessary to strengthen the Security Rule to reflect the changes in the health care environment and the evolution of 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00021 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

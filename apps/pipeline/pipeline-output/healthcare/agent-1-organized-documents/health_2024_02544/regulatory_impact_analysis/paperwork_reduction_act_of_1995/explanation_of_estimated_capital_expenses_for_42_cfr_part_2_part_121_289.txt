@@ -1,0 +1,33 @@
+# Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 121/289)
+
+**Source:** health_2024_02544.pdf
+**Chunk ID:** health_2024_02544_028_sub_121
+**Pages:** 1-160
+**Section Path:** Regulatory Impact Analysis > Paperwork Reduction Act of 1995 > Explanation of Estimated Capital Expenses for 42 CFR Part 2
+
+---
+
+12532 Federal Register / Vol. 89, No. 33 / Friday, February 16, 2024 / Rules and Regulations 
+223See U.S. Dep’t of Health and Human Servs., 
+‘‘Disclosure of Substance Use Disorder Patient 
+Records: How Do I Exchange Part 2 Data?’’ https:// 
+www.samhsa.gov/sites/default/files/how-do-i- 
+exchange-part2.pdf. were a holdover from before the CARES 
+Act and were inconsistent with its alignment of part 2 and HIPAA, especially with regard to the new provision to allow a single consent for all future TPO. Some commenters suggested that the CARES Act may require the Department to remove the intermediary provisions. Other commenters believed that these provisions did not support care coordination or were inconsistent with allowing a single consent for TPO. 
+Commenters asked that we revise the 
+HIPAA definition of ‘‘covered entity’’ to include examples of the intermediaries and remove the part 2 definition of ‘‘intermediary’’; exclude business associates, health IT vendors, or health plans from the part 2 definition of intermediary; expressly allow intermediaries to disclose for TPO; expressly allow HIEs and HIE participants to be listed in a general designation in the consent for disclosures for TPO; and clarify what types of HIEs or health IT vendors are included in the definition (because some HIE technology or EHR software does not maintain data or have access to it when exchanging data between systems). 
+One commenter asserted that the 
+CARES Act does not define nor use the term ‘‘intermediary’’ and the Department should instead rely upon established terms of ‘‘covered entity,’’ ‘‘business associate,’’ and part 2 ‘‘programs.’’ Another commenter believed the NPRM created a ‘‘two- tiered’’ system that perpetuates discrimination because patients with SUD cannot reap the benefits of integrated care that is facilitated by shared electronic records. A health plan said that there would not be sufficient oversight of intermediaries under the proposed definition because they include entities that are not subject to HIPAA. 
+One commenter, a health plan 
+association, asserted that business associates should be carved out from the definition of ‘‘intermediary’’ as most already defined as covered entities or business associates under HIPAA. Others agreed that the role of intermediaries such as HIEs/HINs or ACOs should be carved out from this definition. A few HIE commenters 
+viewed requirements for intermediaries as based on 2017 rule changes, in which the Department attempted to limit those instances when a general designation consent could be used without specifically naming the persons entitled to receive the part 2 record. Additionally, the 2017 rule changes layered on additional accounting and consent requirements that—together 
+with the operational challenge of determining when and whether a downstream entity has a ‘‘treating provider relationship’’ with the patient—resulted in low adoption due to the technical and administrative challenges in implementing these requirements and limitations. A county department argued that there is no analog to intermediary within HIPAA, thus these changes are inconsistent with the CARES Act effort to foster closer alignment between HIPAA and part 2. 
+Response 
+We appreciate input from commenters 
+and have made changes in response to 
+their expressed concerns. Our final definition of ‘‘intermediary’’ in § 2.11 includes ‘‘a person, other than a program, covered entity, or business associate, who has received records under a general designation in a written patient consent to be disclosed to one or more of its member participant(s) who has a treating provider relationship with the patient.’’ We also are finalizing provisions that an intermediary must provide to patients who have consented to the disclosure of their records using a general designation, pursuant to § 2.31(a)(4)(ii)(B), a list of persons to whom their records have been disclosed pursuant to the general designation. These changes will implement the CARES Act consent provisions by permitting HIEs that are business associates to receive part 2 records under a broad TPO consent and redisclose them consistent with the HIPAA regulations. These changes also will encourage HIEs to accept part 2 records and include part 2 programs as participants, facilitate integration of behavioral health information with other medical records, and reduce burdens on business associates that serve as HIEs. Our final rule also is consistent with previous SAMHSA guidance to ensure part 2 data exchanged by HIEs remains subject to protection under this final rule.
+223 
+Comment 
+According to one commenter, if a 
+patient signed a consent form designating ‘‘my health plan’’ as the recipient, the part 2 program would be permitted to disclose such information directly to the health plan but would be prohibited from disclosing that 
+information to the very same health plan if the disclosure was made via an intermediary without specifically

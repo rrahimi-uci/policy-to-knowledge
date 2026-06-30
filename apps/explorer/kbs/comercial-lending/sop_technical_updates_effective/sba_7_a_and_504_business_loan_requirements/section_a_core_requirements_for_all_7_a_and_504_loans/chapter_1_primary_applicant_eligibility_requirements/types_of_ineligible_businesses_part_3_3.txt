@@ -1,0 +1,81 @@
+# Types of Ineligible Businesses (part 3/3)
+
+**Source:** sop_technical_updates_effective.docx
+**Chunk ID:** sop_technical_updates_effective_014_sub_003
+**Section Path:** SBA 7(a) and 504 Business Loan Requirements > Section A. Core Requirements for all 7(a) and 504 Loans > Chapter 1: Primary Applicant Eligibility Requirements > Types of Ineligible Businesses
+
+---
+
+CAIVRS allows the SBA Lender to enter multiple tax identification numbers (either SSN or EIN) to conduct a search in connection with a loan application.
+
+SBA Lenders may access CAIVRS at https://entp.hud.gov/caivrs/public/home.html.
+
+If a Prior Loss to the Government is fully satisfied, the application can be processed, including under an SBA Lender’s delegated authority. The SBA Lender must document its file as to how the loss has been fully satisfied.
+
+All SBA Lenders must inform the Applicant that if the small business defaults on the SBA-guaranteed loan and SBA suffers a loss, the names of the small business, the guarantors of the SBA-guaranteed loan, and any Associate(s) that control the Applicant, will be referred for listing in the CAIVRS database, which may affect the eligibility of a business owned or controlled by any such individual(s) or entity(ies) for future financial assistance from SBA or other Federal agencies or departments.
+
+Delinquent Federal Debt
+
+31 CFR § 285.13
+
+An Applicant is not eligible for a 7(a) or 504 loan if the Applicant or any guarantor (except a Supplemental Guarantor) owes an outstanding nontax debt to the Federal Government, or any agency thereof, that is in delinquent status (hereafter referred to as “Delinquent Federal Debt”).
+
+A nontax debt owed to the Federal Government includes any amount of money, funds, or property that has been determined by an appropriate official of the Federal Government to be owed to the United States, or an agency thereof, by a person (including an individual, corporation, partnership or other type of entity), including debt administered by a third party as an Agent for the Federal Government.
+
+A debt is in “delinquent status” when the debt has not been paid within 90 days of the payment due date. The payment due date is specified in the creditor agency’s initial written demand for payment or other applicable agreement. A debt is considered “delinquent” even if the creditor agency has suspended or terminated collection activity with respect to such debt.
+
+A debt is not considered “delinquent” if:
+
+The creditor agency has released the obligor from paying the debt or has agreed to accept a compromise amount in lieu of payment in full, or the obligor has cured the delinquency under terms acceptable to the creditor agency;
+
+The obligor is subject to, or has been discharged from, the debt in a bankruptcy proceeding and, if applicable, the obligor is current on any court authorized repayment plan;
+
+The obligor has entered into a satisfactory written repayment agreement with the creditor agency to pay the debt, in whole or in part, under terms and conditions acceptable to the creditor agency, and the obligor is paying as agreed; or
+
+The debt is in an administrative or judicial appeal process.
+
+NOTE: If there was a Loss (as defined in Paragraph 15.b. above) associated with any of these debts, however, the Applicant remains subject to the Prior Loss rule.
+
+SBA Lenders must check the Credit Alert Verification Reporting System (CAIVRS), to determine if the Applicant is ineligible for a 7(a) or 504 Loan because the Applicant, or any guarantor or Associate of the Applicant, has any Delinquent Federal Debt. CAIVRS allows the SBA Lender to enter multiple tax identification numbers (either SSN or EIN) to conduct a search in connection with a loan application. SBA Lenders may access CAIVRS at https://entp.hud.gov/caivrs/public/home.html. SBA Lenders must retain documentation of the CAIVRS check in the loan file.
+
+If a Delinquent Federal Debt is fully satisfied, the application can be processed, including under an SBA Lender’s delegated authority. The SBA Lender must document its file as to how the debt has been fully satisfied.
+
+All SBA Lenders must inform the Applicant small business that if the small business defaults on the SBA-guaranteed loan and the Applicant is deemed to have a Delinquent Federal Debt, the names of the small business, the guarantors of the SBA-guaranteed loan, and the Associates of the small business, will be referred for listing in the CAIVRS database, which may affect their eligibility for further financial assistance from SBA or other Federal agencies or departments.
+
+Businesses primarily engaged in political or lobbying activities are not eligible. 13 CFR § 120.110 (r) An Applicant that derives over 50% of its gross annual revenue from political or lobbying activities is not eligible.
+
+Speculation 13 CFR § 120.110 (s)
+
+Speculative businesses are not eligible. This prohibits loans to an Applicant for:
+
+The sole purpose of purchasing and holding an item until the market price increases; or
+
+Engaging in a risky business for the chance of an unusually large profit.
+
+Speculative businesses include:
+
+Wildcatting in oil;
+
+Dealing in stocks, bonds, commodity futures, and other financial instruments;
+
+Mining gold or silver in other than established fields;
+
+Research and Development; and
+
+Building homes for future sale (except under the 7(a) Builders CAPLines program). Note: Construction of homes for future sale with no sales contract in place (spec homes) is eligible under the 7(a) Builders CAPLines program. 13 CFR § 120.391
+
+Non-speculative businesses that may be eligible include:
+
+A business, such as a grain elevator, that uses a commodity contract to lock in a price;
+
+A farmer who uses a commodity contract to lock in the sale price of his or her harvest;
+
+A business engaged in drilling for oil in established fields; and
+
+A business engaged in building a home under contract with an identified purchaser.
+
+A Small Business Lending Company (SBLC) may not make a loan to an Applicant that has received financing (or a commitment for financing) from a Small Business Investment Company (SBIC) that is an Associate of the SBLC. 13 CFR § 120.476
+
+Businesses located within the Coastal Barrier Resource System. 13 CFR § 120.175
+
+The business is ineligible if the Applicant business has an existing 7(a) or 504 loan that is not current at the time of issuance of the new 7(a) or 504 SBA loan number. “Current” means that a required payment has not remained unpaid for more than 29 days. A loan that has matured and not been paid within 29 days of the maturity date is not current and is not eligible for refinancing. Note: The SBA Lender will see a “caution” pop-up when entering the application in E-Tran if the business is delinquent on a 7(a) or 504 loan.

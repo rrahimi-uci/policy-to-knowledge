@@ -1,0 +1,192 @@
+# SBA Express Non-Financial Default Provisions: + Interest Rates
+
+**Source:** sop_technical_updates_effective.docx
+**Chunk ID:** sop_technical_updates_effective_084
+**Section Path:** SBA 7(a) and 504 Business Loan Requirements > Section B. 7(a) Loan Program Specific Requirements > Chapter 2: 7(a) Small & SBA Express > Loan Terms and Conditions > SBA Express Non-Financial Default Provisions:
+
+---
+
+##### SBA Express Non-Financial Default Provisions:
+
+Non-financial default provisions are allowed under SBA Express under the following conditions:
+
+Non-financial default provisions are loan conditions that, if violated, would cause the loan to be in default even though the Borrower has made all payments as agreed.
+
+Non-financial default provisions must be substantive and must be agreed to by the Borrower in writing at loan closing;
+
+The provisions must be consistent with those used by the Lender on its similarly-sized non-SBA guaranteed commercial loans;
+
+A lender may not request purchase of the guaranty solely based on a violation of a non-financial default provision (see 13 CFR § 120.520); and
+
+A maturity date must be established in the note. For example, a line of credit could state that it is payable upon demand under certain conditions, but in no case later than a certain date.
+
+##### Interest Rates
+
+SBA QUICK REFERENCE CHART: Maximum Interest Rates Allowed (See additional information below)
+
+
+| Product
+7(a) Small and SBA Express Loans | Interest Rate
+The maximum allowable fixed rate is available on SBA’s Wiki page. Maximum variable rates are: |
+| --- | --- |
+| Loans $50,000 or less | Cannot exceed Prime or SBA Optional Peg Rate + 6.5% |
+| Loans $50,001 up to and including $250,000 | Cannot exceed Prime or SBA Optional Peg Rate + 6.0% |
+| Loans $250,001 up to and including $350,000 | Cannot exceed Prime or SBA Optional Peg Rate + 4.5% |
+| SBA Express Loans $350,001 up to and including $500,000 | Cannot exceed Prime or SBA Optional Peg Rate + 3.0% |
+
+
+General Policy on Interest Rates (13 CFR § 120.213):
+
+A loan may have a fixed or variable interest rate. The maximum interest rate that may be established for any 7(a) loan is governed by SBA’s regulations on interest rates, which preempts any provisions of a state’s constitution or law. The Lender negotiates the interest rate with the Applicant, subject to SBA’s maximum allowable rates.
+
+SBA will periodically publish the maximum allowable fixed interest rate in the Federal Register. The maximum allowable fixed interest rate will be the Prime rate in effect on the first business day of the month, plus an allowable spread over Prime, as set forth in the most recent Federal Register Notice. For a listing of the current maximum allowable fixed interest rates, go to SBA’s Fiscal Transfer Agent (FTA) Wiki. The maximum allowable fixed rate may only be used by a Lender if such rate will be in effect for the entire term of the loan, without adjustment or reset. Otherwise, the maximum rates for variable rate loans will apply.
+
+For variable interest rate loans, the base rate in effect on the first business day of the month will determine the basis for the initial interest rate for any complete loan application received by SBA during that month. (Note: The date the “complete loan application is received by SBA” is the date the loan is approved and assigned an SBA loan number.) The initial note rate must not exceed SBA’s maximum interest rate. The spread above the base rate as identified in the Note may not be changed during the life of the loan without the written agreement of the Borrower.
+
+For loans with a variable interest rate, the following terms must be defined in E-Tran and the Note:
+
+Base Rate 13 CFR § 120.214(c):
+
+For 7(a) Small loans, there are two acceptable base rates:
+
+The Prime Rate; or
+
+The SBA Optional Peg Rate.
+
+The Prime Rate will be that rate which is in effect on the first business day of the month, as identified in a national financial newspaper or website. This rate may be found in the newspaper on the second business day of the month. If a website is used, please ensure whether it is publishing the current day’s rate or the previous day’s rate as some newspaper websites publish the previous day’s rate. The Optional Peg Rate is a weighted average of rates the Federal government pays for loans with maturities similar to the average 7(a) loan. SBA calculates and publishes the Optional Peg Rate quarterly in the Federal Register. Base Rates will be rounded to two decimal places with .004 being rounded down to .00 and .005 being rounded up to .01.
+
+For SBA Express variable rate loans, the Lender is not required to use the base rate identified above in this Paragraph and in 13 CFR § 120.214(c). It may use the same base rate of interest it uses on its similarly-sized non-SBA guaranteed commercial loans, as well as its established change intervals, payment accruals, etc. However, the interest rate throughout the term of the loan may not exceed the maximum allowable 7(a) interest rate. Only term loans may be sold on the Secondary Market. Loans may only be sold on the Secondary Market if the base rate is one of the base rates allowed in 13 CFR § 120.214(c).
+
+Frequency of change;
+
+Range of fluctuation;
+
+Ceiling and floor (if any); and
+
+Percentage spread to be added to the base rate at each adjustment date.
+
+For 7(a) Small loans and SBA Express: After approval and prior to final disbursement, Lender must either notify the LGPC of any changes to the Note terms related to the interest rate or make the change through E-Tran Servicing. After final disbursement, Lender must either notify the appropriate Commercial Loan Servicing Center of any changes to the Note terms related to the interest rate or make the change through E-Tran Servicing.
+
+The Lender may not split a loan into two loans for the purpose of charging a higher interest rate to the Applicant.
+
+Default Interest Rates:
+
+7(a) Small loans: Default interest rates are not permitted.
+
+SBA Express loans: The default interest rate is a change (increase) in the interest rate charged to the Borrower as a result of a failure to meet certain conditions specified in the loan agreement. A Lender may charge a default interest rate if it does so for its similarly-sized non-SBA guaranteed commercial loans, as long as the interest rate does not exceed the amounts permitted for SBA Express loans. The amount of interest SBA will pay to a Lender following default of an SBA Express loan is capped at the maximum interest rates for the Standard 7(a) loan program.
+
+Base Rate, Allowable Spread, and Allowable Variance (13 CFR § 120.214):
+
+A loan may have a variable interest rate.
+
+For 7(a) Small loans, the allowable spread is based on the loan amount.
+
+Loans of $50,000 and less: Base rate + 6.5%;
+
+Loans of $50,001 up to and including $250,000: Base rate + 6%;
+
+Loans of $250,001 up to and including $350,000: Base rate + 4.5%;
+
+Loans of $350,001 and higher: Base rate + 3%.
+
+For SBA Express variable rate loans that do not use one of the above Base rates, the maximum interest rate (base rate + spread) may not exceed the maximum allowable 7(a) interest rate.
+
+Policy on Variable Interest Rates
+
+Standard Policy:
+
+SBA’s maximum allowable interest rate applies only to the initial Note rate on a variable rate loan. Subsequent changes in the base rate are not subject to the maximum rate at the time of loan application; however, the maximum spread over the base cannot exceed SBA’s stated maximum.
+
+Post-Approval Changes to the Interest Rate:
+
+Pre-Disbursement Changes: After loan approval and prior to first disbursement, the Lender may change the initial Note rate, including changing the base rate, the spread over the base rate, or change from a fixed rate to a variable rate, or from a variable rate to a fixed rate, provided the new interest rate does not exceed the maximum allowable interest rate at the time of the loan application. The Lender must obtain the Borrower’s written consent to the change in the interest rate (separate and apart from executing the loan documents) and must either notify the LGPC of the change or make the change through E-Tran Servicing.
+
+For example, an SBA-guaranteed loan was approved with a variable rate. Since the loan was approved, the prime rate changed. The Borrower has asked the Lender if the loan can be switched to a fixed rate. If the loan has not been disbursed and the fixed rate selected does not exceed the maximum allowable fixed rate at the time of loan application, the Lender may make this change per the Borrower’s request.
+
+Post-Disbursement Changes: After the loan is disbursed, on a variable rate loan, the Lender may change the base rate or the spread over the base rate as long as the new base rate or spread is based on a method permitted when the loan was approved and is consistent with the interest rate regulations at the time the loan was approved. The Lender must obtain the Borrower’s written agreement and must either notify the CLSC of the change by email to FSC.Servicing@sba.gov or make the change through E-Tran Servicing. For further guidance see SOP 50 57.
+
+Frequency of Interest Rate Adjustment:
+
+For 7(a) Small loans, the first adjustment may occur on the first calendar day of the month following initial disbursement, using the base rate in effect on the first business day of the month. Lenders may delay the initial adjustment period. For example, Lenders have used periods as long as 5 years in order to provide the Borrower with an interest rate that is set for the first 5 years of the loan. After that time, the interest rate will begin to fluctuate as stated in E-Tran.
+
+SBA Express Lenders are permitted to use the same change intervals used on their similarly-sized, non-SBA guaranteed commercial loans. Lenders may delay the initial adjustment period. For example, Lenders have used periods as long as 5 years in order to provide the Borrower with an interest rate that is set for the first 5 years of the loan. After that time, the interest rate will begin to fluctuate as stated in E-Tran.
+
+The Lender must specify in the Note the frequency at which the interest rate adjustment will occur.
+
+This adjustment period as identified in the Note may not be changed without the written consent of the Borrower.
+
+All subsequent adjustments will set the interest rate on the first calendar day of the adjustment period using the base rate in effect on the first business day of the adjustment period. For 7(a) Small loans, subsequent adjustments may occur no more frequently than monthly.
+
+The rate of interest will change on the first calendar day of the adjustment period even though the rate may not be known until the second business day of that period.
+
+For example, if the first of the month is a Sunday, the base rate is the prime rate in effect on Monday. This rate will be reported in the Wall Street Journal on Tuesday, the third calendar day and second business day of the month. Many lenders use the calendar quarter as the adjustment period, especially those that sell the guaranteed portion in the Secondary Market.
+
+After the interest rate begins fluctuating, the loan can be re-amortized. Typically, loans are re-amortized every time the interest rate is adjusted to ensure full amortization by the maturity date.
+
+Interest Rate Requirements for an SBA Note:
+
+For fixed rate loans, the Lender must state the specific interest rate in the Note.
+
+For variable rate loans, the Lender must include the following information in the Note:
+
+Identification of the rate being used as the base rate;
+
+The publication in which the designated base rate appears regularly (e.g., Wall Street Journal or the Federal Register if using the SBA Optional Peg Rate);
+
+The percentage spread, including any changes to percentage spread if applicable, to be added to the base rate (e.g., in a construction loan);
+
+The initial interest rate of the loan (from disbursement to first adjustment);
+
+The date or timing of the first rate adjustment; and
+
+The frequency of rate adjustment.
+
+Interest Rate Ceilings and Floors:
+
+For 7(a) Small loans: SBA will permit a Lender to limit the upward and downward adjustments by establishing a floor and ceiling provided that both the floor and ceiling are stated in the Note, and the difference between the stated rate in the Note and the floor is equal to or greater than the difference between the stated rate in the Note and the ceiling. For example, if the Note rate is 10% and the ceiling is 12%, the floor must be 8% or lower.
+
+For SBA Express loans: SBA will permit a Lender to limit the upward and downward adjustments by establishing a floor and ceiling provided that both the floor and ceiling are stated in the Note.
+
+Accrual Method:
+
+SBA does not require a specific accrual method, unless the loan is sold in the Secondary Market. Loans sold on the Secondary Market must either use 30/360 or Actual/365 as the interest accrual method.
+
+Amortization 13 CFR § 120.214(e):
+
+Lender should use an amortization schedule that is appropriate for the type of loan. SBA does not allow balloon payments. A fixed interest rate loan must use a payment that will fully amortize the loan by the maturity date. Typically, variable rate loans are re-amortized every time the interest rate is adjusted to ensure full amortization by the maturity date. The amortization schedule may also be adjusted to meet the cash flow needs of the business.
+
+Fixed and Variable Rate Combinations:
+
+The Lender may use a fixed rate on either the guaranteed or unguaranteed portion and a variable rate on the other portion of the loan. SBA allows such combinations as long as neither rate exceeds the SBA maximum interest rate. A Lender may use this structure to make a loan that permits it to retain a variable interest rate on the unguaranteed portion and sell a fixed rate guaranteed portion on the Secondary Market. If the Lender uses a combination, the entire loan is considered to be a variable interest rate loan. The interest rate on both the guaranteed and unguaranteed portions must be based on the variable rate.
+
+Interest Rate Swap Contracts:
+
+An interest rate swap is a contract between two parties where one party pays a fee in exchange for an agreement by the other party to pay any interest in excess of an established amount. The contract may last for all or part of the term of the loan. The swap contract only relates to the payment of interest.
+
+Example: A Borrower has a prime plus 2% interest rate on a 7(a) variable rate guaranteed loan. The Borrower could purchase an interest rate swap contract that would set the interest rate at 8%. When the Note rate is lower than the rate paid by the Borrower on the swap contract (8%), the swap seller keeps the extra amount as compensation for the risk that rates will at some point exceed 8%. When the Note rate is higher than the rate paid by the Borrower on the swap contract, the Borrower would continue to pay the fixed rate of 8% and the swap seller would pay the difference above 8% to the Lender. The ability to stabilize the amount of the loan payment each month is the benefit to the Borrower of an interest rate swap contract.
+
+In order to use an interest rate swap in the 7(a) program, the interest rate swap contract must meet the following conditions:
+
+The interest rate swap contract is an agreement between the small business Borrower and the Lender or, if the swap seller is not the lender, a third party. SBA is not a party to the interest rate swap contract.
+
+The interest rate swap contract does not affect the amount of money owed by the Borrower to SBA in the event SBA purchases the guaranty. In the event of a Borrower default, interest will be calculated using the base rate and spread in the variable interest rate Note, not the swap contract.
+
+SBA will not be responsible if the swap seller defaults during the life of the contract. The Borrower will be liable for the interest as required in the Note.
+
+Loans with accompanying interest rate swap contracts may be sold on the Secondary Market. The Lender is still required under the Secondary Market contract (SBA Form 1086) to forward interest and principal pursuant to the original terms of the loan. It is the Lender’s responsibility to work with the swap seller to make sure funds are available for submission to the fiscal and transfer agent according to the time schedule in the Form 1086.
+
+The full amount of the principal and interest required under the Note must be reported by the lender on the SBA Form 1502.
+
+SBA will not review swap contracts for Borrowers or provide guidance on their use. While swap contracts should not have a significant impact on the cost of the loan, SBA will not publish any guidelines on the cost of these contracts.
+
+The Borrower must sign a statement acknowledging that interest will be calculated at the Note rate if the swap contract is terminated.
+
+The following statement must be included in the swap contract that is executed by the Borrower and the swap seller: “The Small Business Administration is not a party to this contract and does not guarantee it. In the event SBA is called upon to honor its guaranty to the Lender, the Borrower’s debt will be determined by the terms of the Note, including the variable interest rate provision.”
+
+Swap contracts may be used on new or existing loans.
+
+The swap contract does not have to last for the entire length of the loan agreement.
+
+SBA does not have a standard form for an interest rate swap contract.
+
+Any fees owed the swap counterparty as a result of the default by the Borrower will be subordinated to the SBA 7(a) loan.

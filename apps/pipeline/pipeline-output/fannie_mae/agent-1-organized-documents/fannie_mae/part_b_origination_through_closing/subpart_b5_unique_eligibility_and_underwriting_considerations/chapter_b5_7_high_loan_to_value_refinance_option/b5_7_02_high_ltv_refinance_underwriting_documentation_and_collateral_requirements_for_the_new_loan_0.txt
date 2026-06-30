@@ -1,0 +1,136 @@
+# B5-7-02, High LTV Refinance Underwriting, Documentation, and Collateral Requirements for the New Loan (09/03/2025)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_368
+**Pages:** 823-826
+**Section Path:** Part B, Origination Through Closing > Subpart B5, Unique Eligibility and Underwriting Considerations > Chapter B5-7, High Loan-to-Value Refinance Option > B5-7-02, High LTV Refinance Underwriting, Documentation, and Collateral Requirements for the New Loan (09/03/2025)
+
+---
+
+Published March 4, 2026
+805Multiple Financed Properties
+There are no limits on the number of ﬁnanced properties the borrower may own. The additional eligibility
+requirements for borrowers with multiple ﬁnanced properties in B2-2-03, Multiple Financed Properties for the
+Same Borrower  do not apply.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2025-06 August 06, 2025
+Announcement SEL-2021-08 September 01, 2021
+B5-7-02, High LTV Reﬁnance Underwriting, Documentation, and
+Collateral Requirements for the New Loan (09/03/2025)
+Introduction
+This topic contains information about underwriting requirements for the high LTV reﬁnance option, including:
+Underwriting Methods
+Underwriting Requirements
+Employment, Income, and Asset Veriﬁcation
+Valuation Requirements
+Underwriting Methods
+High LTV reﬁnance loans may be underwritten using DU or manually, with the exception of loans subject to the
+Alternative Qualiﬁcation Path (which must be manually underwritten). Loans secured by a second home or an
+investment property must be underwritten in DU and receive an Approve/Eligible recommendation, unless they
+are required to be underwritten in accordance with the Alternative Qualiﬁcation Path (see B5-7-03, High LTV
+Reﬁnance Alternative Qualiﬁcation Path ).
+Loans Underwritten in DU
+When a limited cash-out reﬁnance loan caseﬁle that meets the minimum LTV requirement for a high LTV
+reﬁnance loan is underwritten in DU, internal data will be used to determine if Fannie Mae owns the loan on the
+property, and if that loan is eligible to be reﬁnanced using the high LTV reﬁnance option.
+
+Published March 4, 2026
+806When DU ﬁnds a loan for the subject property address using either the address provided on the DU loan
+application or the standardized address, DU will then conﬁrm that the Social Security number(s) for the
+borrower(s) on the new loan caseﬁle match those on the existing loan. The result of the Social Security number
+matching will be speciﬁed in a DU message.
+When none of the borrower Social Security numbers match, the loan caseﬁle will not be underwritten as a high
+LTV reﬁnance loan. DU will issue a message informing the lender that the Social Security number(s) does not
+match and remind the lender to conﬁrm the property address.
+When there is a Social Security number match, DU will underwrite the loan caseﬁle as a high LTV reﬁnance loan.
+If the Social Security number for any of the borrowers on the loan caseﬁle do not match using all nine digits, DU
+will advise the lender.
+When a borrower Social Security number is matched using 7 or 8 digits of the 9-digit Social Security
+number, the DU message will specify that the Social Security numbers are one or two digits diﬀerent and
+will require the lender to conﬁrm the borrowers on the existing loan are the same borrowers that will be
+on the new loan.
+When there are two borrowers on the new loan and two borrowers on the existing loan, but only one
+borrower’s Social Security number matches, the DU message will specify that not all of the borrower
+Social Security numbers match and will require that the lender conﬁrm the borrowers on the existing loan
+are the same borrowers that will be on the new loan.
+When one borrower is on the new loan caseﬁle but more than one borrower is on the existing loan, the
+DU message will state that it appears that a borrower is being removed with transaction and refer the
+lender to the Selling Guide for additional requirements on removing a borrower with a high LTV reﬁnance
+transaction.
+When there is more than one borrower on the new loan caseﬁle but there is only one on the existing loan,
+the DU message will state that it appears that a borrower is being added with the high LTV reﬁnance
+transaction, and if that is the case, the high LTV reﬁnance loan is not eligible for delivery.
+Manually Underwritten Loans
+The lender must determine that all eligibility requirements are met for manually underwritten loans.
+Underwriting Requirements
+The following table provides underwriting and documentation requirements applicable to high LTV reﬁnance
+loans.
+Underwriting and Documentation Requirements
+
+Published March 4, 2026
+807Payment HistoryTo be eligible for the high LTV reﬁnance option, the
+payment history for the existing loan for the most recent
+12 months must reﬂect
+• no delinquencies in the most recent 6 months, and
+• in months 7-12, no more than one, 30-day delinquency
+and no delinquency greater than 30 days.
+DTI RatioThere are no maximum DTI ratio requirements except for
+loans underwritten under the Alternative Qualiﬁcation
+Path.
+Credit ScoreThere is no minimum credit score requirement except for
+loans underwritten under the Alternative Qualiﬁcation
+Path.
+Lenders must obtain and review a merged credit report in
+accordance with standard Selling Guide  policies for
+payment history and pricing purposes. However, lenders
+are not required to comply with the waiting period and re-
+establishment of credit requirements for signiﬁcant
+derogatory credit events or the payoﬀ or satisfaction of a
+judgment identiﬁed on the credit report. Also, lenders are
+not required to review or consider Form 1003
+Declarations in the underwriting evaluation.
+Property StatusThe lender does not need to conﬁrm the subject property
+is not currently listed for sale.
+Request for Transcript of Tax ReturnEach borrower must complete and sign a separate IRS
+Form 4506-C at or before closing. See B3-3.1-02, Tax
+Return and Transcript Documentation Requirements   , for
+additional information.
+
+Published March 4, 2026
+808Higher-Priced Loan RequirementsIf the loan is a higher-priced mortgage loan or a higher-
+priced covered transaction under Regulation Z, the loan
+must comply with the Alternative Qualiﬁcation Path
+requirements. DU is unable to determine if a loan caseﬁle
+is a higher-priced mortgage loan or a higher-priced
+covered transaction under Regulation Z. The lender must
+make this determination. Lenders are not relieved of
+complying with Regulation Z by only adhering to the
+stricter representative credit score and DTI ratio. The loan
+must comply in all respects with Regulation Z
+requirements for such loans, including the underwriting
+and consumer protection requirements.
+Employment, Income, and Asset Veriﬁcation
+The lender must obtain one of the following for the new loan:
+a verbal veriﬁcation of employment for employment or self-employment income for at least one
+borrower,
+documentation of a non-employment income source, or
+documentation of liquid ﬁnancial reserves equal to 12 months of the new monthly housing payment.
+With the exception of loans underwritten under the Alternative Qualiﬁcation Path, lenders are not required to
+assess continuity of income,
+verify income,
+verify assets, or
+calculate the DTI ratio.
+Valuation Requirements
+For certain loan caseﬁles, DU will oﬀer value acceptance or value acceptance + property data - options to sell
+the loan to Fannie Mae without an appraisal. Otherwise, an appraisal with an interior and exterior inspection is
+required. If an appraisal is obtained, it must be used for valuation even if value acceptance is oﬀered by DU.
+A lender may only exercise the high LTV reﬁnance value acceptance or value acceptance + property data oﬀer
+if
+the ﬁnal submission of the loan caseﬁle to DU resulted in an oﬀer,
+an appraisal is not obtained for the transaction, and
+the oﬀer is not more than four months old on the date of the note and the mortgage.
+Lenders exercising the high LTV reﬁnance value acceptance oﬀer must deliver Special Feature Code 807 or 774
+for value acceptance + property data.
+When the lender is required by law to obtain an appraisal, the lender must comply with such requirements, but

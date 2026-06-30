@@ -1,0 +1,60 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 63/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_063
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+930 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+Services (Mar. 2022), https://www.hhs.gov/hipaa/ 
+for-professionals/security/guidance/cybersecurity- newsletter-first-quarter-2022/index.html. 
+397Id. 
+398Id.; The National Vulnerability Database is the 
+U.S. government repository of standards-based vulnerability management data. See ‘‘National 
+Vulnerability Database,’’ National Institute of Standards and Technology, U.S. Department of Commerce, https://nvd.nist.gov. 
+399‘‘Known Exploited Vulnerabilities Catalog,’’ 
+Cybersecurity & Infrastructure Security Agency, U.S. Department of Homeland Security, https://www.cisa.gov/known-exploited-vulnerabilities- catalog. 
+400See NIST definition of ‘‘vulnerability,’’ 
+Glossary, Computer Security Resource Center, National Institute of Standards and Technology, U.S. Department of Commerce, https://csrc.nist.gov/ glossary/term/vulnerability. 
+401Proposed 45 CFR 164.308(a)(2)(ii)(A)(7). 
+402Proposed 45 CFR 164.308(a)(4)(i). 
+403Proposed 45 CFR 164.312(h)(1). 
+40445 CFR 164.304 (definition of ‘‘Workstation’’). 405See, e.g., 45 CFR 164.310(b) and (c). 406See 42 U.S.C. 1320d–2(d). 
+407See 42 U.S.C. 1320d–2(d)(2)(A). 
+408See 42 U.S.C. 1320d–2(d)(2)(B)(i). 
+409See 42 U.S.C. 1320d–2(d)(2)(B)(ii). 
+410See 42 U.S.C. 1320d–2(d)(2)(C). exploitable vulnerabilities exist across 
+many components of IT infrastructures including, but not limited to, servers, desktops, mobile device operating systems, web software, and firewalls.
+397 
+To mitigate against intrusions and hacking threats, the Department has recommended that regulated entities install vendor patches, make software updates, and monitor sources of cybersecurity alerts describing new vulnerabilities, such as the NIST National Vulnerability Database
+398and 
+CISA’s Known Exploited Vulnerabilities Catalog.
+399 
+b. Proposal 
+The Department proposes to define 
+vulnerability by adopting substantially the same definition as NIST (a ‘‘weakness in an information system, system security procedures, internal controls, or implementation that could be exploited or triggered by a threat source’’)
+400with minor changes to 
+clarify how it applies to regulated entities and ePHI. The definition, if adopted as proposed, would then form the basis for understanding key assessment and mitigation strategies proposed in this NPRM, such as risk analyses,
+401patch management,402and 
+vulnerability management and scans.403 
+22. Clarifying the Definition of ‘‘Workstation’’ 
+a. Current Provision and Issues To 
+Address 
+The Department currently defines the 
+term ‘‘workstation’’ to mean an electronic computing device and provides the examples of technology that dominated the health care environment in 2003 and 2013, such as a laptop, desktop computer, and other device that performs similar functions, and electronic media stored in its immediate environment.
+404 Workstations are essential for workforce members to perform their assigned functions, such as clinicians entering an individual’s health history and treatment plan or billing staff preparing claims. Workstations are one of the key entry points for users to access a regulated entity’s information systems. Thus, the Security Rule contains provisions requiring that regulated entities secure not only their information systems, but also individual workstations.
+405However, as discussed 
+above, the health care environment has changed. It now includes both the physical and virtual environment and is replete with mobile devices and other types of devices that may serve as multi- functional workstations. Clinicians and other workforce members often rely on 
+smart phones, smart watches, tablets, laptops, and even personal digital assistants, among other devices. These devices have proliferated, and so has their ability to perform a wide variety of functions with increasing sophistication. The Department believes that it is necessary to update the definition to reflect the evolved nature of the landscape. 
+b. Proposal 
+In recognition of this changed 
+environment, the Department proposes 
+to modify the definition of workstation to provide additional examples of what constitutes a workstation. Specifically, we propose to add the examples of a server, virtual device, and a mobile device such as a smart phone or tablet. Virtual devices could include a virtual medical device, virtual server, or virtual desktop computer. The proposed definition also would clarify that technology properly considered as a ‘‘workstation’’ is not limited to the proposed regulatory examples. 
+23. Request for Comment 
+The Department requests comment on 
+all the foregoing proposed definitions, 
+including any benefits, drawbacks, or unintended consequences. We also request comment on the following considerations in particular: 
+a. Whether any of the proposed 
+definitions would be problematic for regulated entities or result in unintended adverse consequences. If so, please explain.

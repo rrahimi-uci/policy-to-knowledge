@@ -1,0 +1,34 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 92/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_092
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+502We encourage regulated 
+entities to refer to similar NIST guidance for descriptions of risk management activities.
+503The results of 
+a risk analysis, performed in accordance with the proposed standard for risk analysis, generally provide the regulated entity with a list of applicable ‘‘threat/ vulnerability pairs’’ as well as the overall ‘‘risk rating’’ of each pair to the confidentiality, integrity, and availability of ePHI.
+504For example, 
+some threat/vulnerability pairs may result in a risk rating of moderate or 
+high level of risk to ePHI, while other pairs may result in a risk rating of low level of risk. The regulated entity would need to determine what risk rating poses an unacceptable level of risk to ePHI and address any threat/vulnerability pairs that indicate a risk rating above the organization’s risk tolerance.
+505 
+Under this proposed standard, the 
+regulated entity would be required to 
+reduce the risks to its ePHI to a level that is reasonable and appropriate for its specific circumstances. Ultimately, the regulated entity’s risk assessment processes should inform its decisions about the manner in which it will implement security measures to comply with the Security Rule’s standards and implementation specifications.
+506 
+Additionally, each regulated entity would be required to document the security controls it has implemented because it has determined them to be reasonable and appropriate, including analyses, decisions, and the rationale for decisions made to refine or adjust the security controls.
+507 
+As stated by NIST, ‘‘the 
+documentation and retention of risk assessment and risk management activities’’ is ‘‘important for future risk management efforts.’’
+508In general, risk 
+management activities ‘‘should be performed with regular frequency to examine past decisions, reevaluate risk likelihood and impact levels, and assess the effectiveness of past remediation efforts.’’
+509Risk management plans 
+should address risk appetite, risk tolerance, workforce duties, responsible parties, the frequency of risk management, and required documentation.
+510 
+h. Section 164.308(a)(6)(i)—Standard: Sanction Policy 
+Consistent with other proposals to 
+elevate certain critical implementation specifications to standards, we propose to elevate the implementation specification for sanction policy at 45 CFR 164.308(a)(ii)(C) to a standard for sanction policy at proposed 45 CFR 164.308(a)(6)(i). We propose this standard because applying appropriate sanctions against workforce members who fail to comply with security requirements, and thus imperil the 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00048 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

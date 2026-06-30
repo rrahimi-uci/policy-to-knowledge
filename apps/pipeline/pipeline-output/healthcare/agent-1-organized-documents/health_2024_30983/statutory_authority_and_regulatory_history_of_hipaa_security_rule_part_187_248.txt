@@ -1,0 +1,62 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 187/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_187
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+991 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+911‘‘Artificial Intelligence Risk Management 
+Framework, (AI RMF 1.0),’’ NIST AI 100–1, 
+National Institute of Standards and Technology, U.S. Department of Commerce (Jan. 2023), https:// 
+nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf; see 
+also ‘‘Joint Guidance on Deploying AI System 
+Securely,’’ Cybersecurity & Infrastructure Security Agency, U.S. Department of Homeland Security (Apr. 15, 2024), https://www.cisa.gov/news-events/ alerts/2024/04/15/joint-guidance-deploying-ai- systems-securely. 
+91245 CFR 164.508. 
+913See Letter from NCVHS Chair Jacki Monson 
+(2023), supra note 123, Appendix p. 8. 
+91488 FR 75191 (Nov. 1, 2023). 
+915Id. 91689 FR 1192 (Jan. 9, 2024). 
+917Id. 
+918‘‘Health Data, Technology, and 
+Interoperability: Certification Program Updates, Algorithm Transparency, and Information Sharing,’’ HTI–1 final rule, The Office of the National Coordinator for Health IT, U.S. Department of Health and Human Services (Mar. 7, 2024), https:// 
+www.healthit.gov/topic/laws-regulation-and-policy/
+health-data-technology-and-interoperability- certification-program#:∼:text=ONC%27
+s%20HTI%2D1%20final%20rule,implementation%20specifications%2C%20and%20certification%20criteria. 
+919See Tarun Kumar Vashishth, et al., ‘‘Virtual 
+Reality (VR) and Augmented Reality (AR) Transforming Medical Applications’’ (Oct. 2023), https://www.researchgate.net/publication/ 374814301_ Virtual_ Reality_ VR_and_ Augmented_
+Reality_ AR_Transforming_ Medical_ Applications. 920Id. 
+921See Evangelia Manika, et al., ‘‘AR and VR 
+devices in the healthcare business: legal and ethical 
+challenges,’’ International Bar Association (July 6, 2023), https://www.ibanet.org/AR-VR-devices-in- 
+the-healthcare-business; see also Sajin Somarajan, ‘‘Minimizing AR/VR Security And Privacy Risks,’’ Infosys Digital Experience (accessed July 23, 2024), https://blogs.infosys.com/digital-experience/mobility/minimizing-ar-vr-security-and-privacy-risks.html. 
+922See ‘‘AR and VR devices in the healthcare 
+business: legal and ethical challenges,’’ supra note 
+921; see also ‘‘Minimizing AR/VR Security And 
+Privacy Risks,’’ supra note 921. 
+923See ‘‘AR and VR devices in the healthcare 
+business: legal and ethical challenges,’’ supra note 
+921; see also ‘‘Minimizing AR/VR Security And 
+Privacy Risks,’’ supra note 921. 
+924See proposed 45 CFR 164.308(a)(4)(i). 
+92545 CFR 164.312(a)(1). 
+92645 CFR 164.312(d); see proposed 45 CFR 
+164.308(a)(10)(ii)(C) and 164.312(f)(1). 
+92745 CFR 164.308(b) and 164.314(a). understand, measure, and manage risks, 
+effects, and harms of AI.911 
+The Security Rule requires a regulated 
+entity to conduct repeated risk analyses that consider any changes to its environment or operations, such as updates or changes in technology or clinical administration, and to apply all reasonable updated protections to 
+safeguard ePHI.
+912Accordingly, as 
+technology such as AI evolves, the Department would expect a regulated entity to perform a risk analysis to consider the effects of such changes on the confidentiality, integrity, and availability of ePHI. As NCVHS observed, ‘‘[I]t is important to conduct risk analyses on AI throughout the life cycle of the system.’’
+913We believe the 
+proposals in this NPRM would clarify our expectations for when and how regulated entities need to consider, prepare for, and address such changes. For example, the Department proposes to expressly require that a regulated entity develop a written inventory of its technology assets. Under this proposal, the Department would expect that AI software used to create, receive, maintain, or transmit ePHI or that interacts with ePHI, including where ePHI is used to train the AI software, would be listed as part of its technology asset inventory, which feeds into the regulated entity’s risk analysis. Making AI safe and secure with respect to ePHI requires efforts in a variety of areas— biotechnology, cybersecurity, critical infrastructure—to address risks.
+914The 
+Federal Government seeks to ensure that the collection, use, and retention of ePHI is lawful and secure, and that it mitigates privacy and confidentiality risks. Across the administration, Federal agencies are considering potential uses for AI, as well as their benefits and risks, consistent with E.O. 11410 and its principles to advance and govern the development and use of AI.
+915These 
+principles include making AI safe and secure and protecting privacy and civil liberties. For example, the Department finalized regulations earlier this year that improve transparency by health IT developers of certified health IT, including those that are business associates, that supply a particular type of AI—predictive decision support interventions (DSIs).
+916Specifically, the 
+regulations require such health IT developers to provide greater transparency about the design, development, training, evaluation, and use of such predictive DSIs.
+917This

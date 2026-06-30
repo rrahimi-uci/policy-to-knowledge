@@ -1,0 +1,41 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 213/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_213
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+1005 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+990See ‘‘Individuals’ Right under HIPAA to 
+Access their Health Information 45 CFR 164.524,’’ 
+What is the liability of a covered entity in responding to an individual’s access request to send the individual’s PHI to a third party?, Office for Civil Rights, U.S. Department of Health and Human Services, https://www.hhs.gov/hipaa/for- 
+professionals/privacy/guidance/access/index.html. 
+99142 U.S.C. 1320d–2(d)(1)(A)(v). 992Public Law 113–283 (Dec. 18, 2014) (codified 
+at 44 U.S.C. 3551 et seq.). 
+993Id. 99445 CFR 164.304 (definition of ‘‘Information 
+system’’). 
+995‘‘Managing Information as a Strategic 
+Resource,’’ Circular No. A–130, Management of Federal Information Resources, Appendix III, Security of Federal Automated Information Resources, Office of Management and Budget, Executive Office of the President (Feb. 8, 1996), https://georgewbush-whitehouse.archives.gov/omb/ circulars/a130/a130.html. Additionally, the Department 
+considered whether to heighten the 
+existing expectation990for regulated 
+entities to inform individuals before transmitting ePHI to the individual via unencrypted email in response to a 
+request for access under 45 CFR 164.524 by this means. We considered whether to require such notification for different types of requests, such as different categories of PHI (e.g., billing, lab 
+results, etc.), determining whether the individual had already received such notice, or providing notification upon each disclosure. Instead, the Department has proposed to clarify that notification must be provided for each request made by the individual under the individual right of access at 45 CFR 164.524 for their ePHI to be transmitted via unsecure email. We believe that requiring a regulated entity to determine whether the individual had already received such notification would be more burdensome than incorporating the notification into the access request process, and instead, have proposed. We estimate that this could increase burdens for providing access via unsecure means by approximately one minute per request of this type. We lack data to estimate the number of requests for access via unsecure means. 
+Small and Rural Health Care Providers 
+Consistent with the requirement that 
+the Secretary adopt security standards 
+that take into account the needs and capabilities of small health care providers and rural health care providers,
+991the Department considered 
+excepting small and rural health care providers from the requirement to perform penetration testing at proposed 45 CFR 164.308(h)(2)(iii) to lower anticipated costs of the rule for such providers. The Department estimates that approximately 90 percent of providers are small (based on revenue). Thus, the estimated cost reduction from this exemption (as compared to the proposed requirement for all regulated entities), would be approximately $266,389,139 [822,600 × .9 × 3 hours × 
+$119.94 wage of an information security analyst] annually. While the Department is aware of the cost implications of this requirement for small and rural health care providers, we also believe that penetration testing is a critical component of managing vulnerability to 
+cyberthreats across the health care sector. Additionally, we believe that setting different requirements for cybersecurity for small and rural health care providers would lead such health care providers to believe that they can limit their investment in cybersecurity. Given that a significant amount of health care is provided by small and rural health care providers, limiting their investment in cybersecurity would create a sizable gap in security protections. Such a gap has the potential to increase such providers’ attractiveness to cybercriminals. 
+The Department also considered 
+proposing to permit small and rural health care providers to adopt alternate 
+compensating controls, in lieu of the specified implementation specifications, to meet certain standards. After careful consideration, the Department concluded that it potentially could be just as costly to identify and adopt compensating controls that are reasonable and appropriate for small and rural health care practices. Small and rural health care providers would likely need to either hire personnel or contract with cybersecurity experts to identify potential compensating controls that would meet the relevant standard and provide implementation support. Accordingly, the Department declines to put forward such proposals at this time. 
+The Federal Information Security 
+Modernization Act 
+The Department considered the 
+requirements of the Federal Information Security Modernization Act (FISMA)
+992

@@ -1,0 +1,38 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 191/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_191
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+993 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+938Also referred to as the Congressional Review 
+Act, 5 U.S.C. 801 et seq. Fairness Act of 1996,938the Office of 
+Management and Budget’s (OMB’s) 
+Office of Information and Regulatory Affairs would be likely to determine that when finalized, this rule meets the criteria set forth in 5 U.S.C. 804(2) because it is projected to have an annualized effect on the economy of more than $100,000,000. 
+The Justification for this Rulemaking 
+and Summary of Proposed Rule Provisions section at the beginning of this preamble contain a summary of this rule and describe the reasons it is needed. We present a detailed analysis below. 
+1. Summary of Costs and Benefits 
+The Department identified ten 
+categories of quantifiable costs arising 
+from these proposals that would apply to all regulated entities: (1) conducting a Security Rule compliance audit; (2) obtaining written verification from their business associates or subcontractors that the business associates or subcontractors, respectively, have conducted the required verification of compliance with technical safeguards; (3) notifying other regulated entities when workforce members’ access to ePHI is terminated; (4) completing network segmentation; (5) disabling ports and removing extraneous software; (6) deploying MFA; (7) deploying penetration testing; (8) updating policies and procedures; (9) updating workforce training programs; and (10) revising business associate agreements. Additionally, group health plans would be required to update plan documents to require health plan sponsors’ compliance with the administrative, physical, and technical safeguards according to the Security Rule and notification of group health plans when health plan sponsors activate their contingency plan. Business associates would have additional obligations to verify compliance with technical safeguards and provide it in writing to covered entities (and subcontractors to business associates) and to notify covered entities upon activation of their contingency plans. Finally, although plan sponsors are not directly subject to the HIPAA Rules, by virtue of the plan document requirements, the Department estimates that certain group health plan sponsors (e.g., employers that provide 
+group health benefits) would likely incur some quantifiable costs to improve safeguards for their electronic information systems that affect the confidentiality, integrity, or availability of ePHI and to notify group health plans upon activation of plan sponsors’ contingency plan. 
+The Department estimates that the 
+first-year costs attributable to this proposed rule total approximately $9 billion. These costs are associated with regulated entities and health plan sponsors engaging in the regulatory actions described above. For years two through five, estimated annual costs of approximately $6 billion are attributable to costs of recurring compliance activities. Table 1 reports the present value and annualized estimates of the costs of this proposed rule covering a 5- year time horizon. Using a 2 percent discount rate, the Department estimates that this proposed rule would result in annualized costs of $6.8 billion for regulated entities and health plan sponsors combined. 
+TABLE 1—A CCOUNTING TABLE, COSTS OF THE PROPOSED RULE, $ B ILLIONSa 
+Costs Primary 
+estimate Year dollars Discount rate Period 
+covered 
+Present Value ................................................. $34 2023 Undiscounted ............................................ ..... 2026–2030 
+Present Value ................................................. 32 2023 2% ....................................................... ........... 2026–2030 
+Annualized ...................................................... 7 2023 2% ...................................................... ............ 2026–2030 
+aFigures are rounded. 
+As a result of the proposed changes in 
+this NPRM, the enhanced security 
+posture of regulated entities would likely reduce the number of breaches of ePHI and mitigate the effects of breaches that nonetheless occur. The Department has partially quantified these effects and presents them in a break-even analysis. The break-even analysis estimates that if the proposed changes in the NPRM reduce the number of individuals 
+affected by breaches by 7 to 16 percent, the revised Security Rule would pay for itself. Alternatively, the same cost savings may be achieved by lowering the cost per affected individual’s ePHI by 7 percent ($35) to 16 percent ($82), 
+respectively. 
+The changes to the Security Rule 
+would likely result in important benefits and some costs that the Department is unable to fully quantify at this time. As

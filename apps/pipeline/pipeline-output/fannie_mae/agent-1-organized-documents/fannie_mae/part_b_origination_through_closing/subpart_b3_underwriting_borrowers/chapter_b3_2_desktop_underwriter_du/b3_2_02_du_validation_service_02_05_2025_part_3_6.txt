@@ -1,0 +1,75 @@
+# B3-2-02, DU Validation Service (02/05/2025) (part 3/6)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_116_sub_003
+**Pages:** 290-298
+**Section Path:** Part B, Origination Through Closing > Subpart B3, Underwriting Borrowers > Chapter B3-2, Desktop Underwriter (DU) > B3-2-02, DU Validation Service (02/05/2025)
+
+---
+
+Published March 4, 2026
+275obtain borrower authorization to receive the information from the vendor;
+conﬁrm that the veriﬁcation report matches the borrower;
+ensure information entered by the lender in DU is properly documented;
+investigate and resolve any conﬂicting or contradictory information;
+retain a copy of all veriﬁcation reports in the loan ﬁle (see  A2-4.1-01, Establishing Loan Files  for details),
+in addition to any other documentation required by DU; and
+ensure that the most current version of the veriﬁcation report is used by the DU validation service. If the
+lender obtains an updated veriﬁcation report, the lender must resubmit the loan to DU and receive a
+message that the component has been validated in order for the representation and warranty
+enforcement relief to apply.
+Validation Results
+When a component of the loan ﬁle is assessed by the DU validation service, three results are possible:
+validated, not validated, or unable to be validated. DU will issue a message providing the validation results.
+Validated
+DU has determined that the information provided on the veriﬁcation report supports the information entered
+into DU for the component being validated.
+The DU message(s) will indicate that the veriﬁcation report is acceptable documentation to support the
+component that has been validated.
+Not Validated
+DU has determined that the information provided on the veriﬁcation report does not fully support the
+information entered into DU for the component of the loan ﬁle eligible for validation.
+The DU message(s) will indicate what documentation, in addition to the veriﬁcation report, is required.
+Unable to Validate
+DU is unable to validate the information entered into DU for the component eligible for validation. This could be
+due to DU’s inability to access the veriﬁcation report data, or insuﬃcient data in the report.
+The DU message(s) will indicate what documentation is required.
+Note : Regardless of the validation result, DU will continue to use the information provided by the
+lender in determining the DU underwriting recommendation. The results of the validation service do
+not override, impact, or alter any information submitted by the lender.
+Income Validation
+The following table lists the income types that can be validated, and the documentation that DU will require,
+which may be diﬀerent than the standard documentation required in this Guide. For all eligible income types,
+the lender must determine the income type, amount, and source and enter this information in the applicable
+ﬁeld in DU.
+
+Published March 4, 2026
+276Note: Income types not listed below are not eligible for income validation by DU.
+Eligible Income Types Eligible Veriﬁcation Report
+Base (non-self-employed)
+ 
+Asset Veriﬁcation Report
+ 
+Employment and Income Veriﬁcation ReportBonus
+Overtime
+Commission
+Alimony Asset Veriﬁcation Report
+Child Support Asset Veriﬁcation Report
+Military Income Asset Veriﬁcation Report
+Retirement (pension)Asset Veriﬁcation Report
+Tax Return Transcript (Taxpayer Tax Return
+Summary Report)
+Social Security (retirement, disability,
+supplemental, survivor beneﬁts)Asset Veriﬁcation Report
+Tax Return Transcript (Taxpayer Tax Return
+Summary Report)
+Self-employed (IRS Form 1040 Schedules C or C-
+EZ for sole proprietorships only)Tax Return Transcript (Taxpayer Tax Return
+Summary Report)
+VA Beneﬁts (Non-educational) Asset Veriﬁcation Report
+ 
+Note : Additional supporting documentation may be required for some income types (such as child
+support or alimony).
+Income—Additional Information
+The following additional information applies to income validated by DU:
+If an employment and income veriﬁcation report is used, the vendor must obtain income information

@@ -1,0 +1,79 @@
+# B7-1-04, Financed Borrower-Purchased Mortgage Insurance (12/15/2021)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_384
+**Pages:** 854-855
+**Section Path:** Part B, Origination Through Closing > Subpart B7, Insurance > Chapter B7-1, Mortgage Insurance/Loan Guaranty > B7-1-04, Financed Borrower-Purchased Mortgage Insurance (12/15/2021)
+
+---
+
+Published March 4, 2026
+836B7-1-04, Financed Borrower-Purchased Mortgage Insurance
+(12/15/2021)
+Introduction
+This topic contains information on ﬁnanced borrower-purchased mortgage insurance, including:
+Financed Mortgage Insurance Requirements
+Ineligible Transactions
+Delivery Requirements
+Prepaid Mortgage Insurance Transactions
+Financed Mortgage Insurance Requirements
+Financed mortgage insurance transactions are deﬁned by all of the following characteristics:
+All or a portion of the borrower-purchased mortgage insurance premium (split and single-premium plans)
+is included in the loan amount.
+The loan amount including the ﬁnanced mortgage insurance premium cannot exceed the applicable
+maximum Fannie Mae loan limit. See B2-1.5-01, Loan Limits .
+The loan purpose is purchase, construction, or limited cash-out reﬁnance.
+The loan is secured by a one-unit property that is the borrower’s principal residence or second home.
+The mortgage insurance coverage amount can be standard coverage (which does not require an LLPA) or
+minimum coverage (with a corresponding LLPA).
+The mortgage insurance coverage amount is determined based on the base (or net) LTV ratio – the LTV
+ratio calculated without the ﬁnanced premium.
+The gross LTV ratio – the LTV ratio calculated with the ﬁnanced premium – is used to determine the
+maximum LTV ratio permitted for the transaction. The LTV ratio may never exceed the LTV ratio allowed
+per the Eligibility Matrix .
+If the loan is subject to any LLPAs, the LLPAs are based on the gross LTV ratio, except for minimum
+mortgage insurance LLPAs, which are based on the base (or net) LTV ratio.
+The lender must ensure that language related to any ﬁnanced mortgage insurance premium is included
+either directly in the applicable mortgage insurance master primary policy or in an endorsement to that
+policy, which language provides that the insurance beneﬁt paid pursuant to the “percentage option” in
+satisfaction of a claim be calculated as:
+[the claim amount minus the unamortized portion of the ﬁnanced mortgage insurance premium]
+multiplied by the applicable coverage percentage, PLUS
+the unamortized portion of the ﬁnanced mortgage insurance premium.
+Certain delivery requirements for ﬁnanced mortgage insurance transactions must be met. See Delivery
+Requirements below.
+
+Published March 4, 2026
+837Note: Fannie Mae provides two options for limited cash-out reﬁnance transactions that include
+mortgage insurance in the loan amount. A “ﬁnanced mortgage insurance transaction” requires the
+lender to identify the upfront ﬁnanced mortgage insurance amount separately and provide the
+required special feature code at delivery such that the base LTV can be determined. All of the above
+requirements must be met for the transaction to be deﬁned as a ﬁnanced mortgage insurance
+transaction. A “prepaid mortgage insurance transaction” permits the lender to include the amount of
+the upfront mortgage insurance premium and other allowable closing costs and prepaid items in the
+loan amount, and not separately identify the prepaid mortgage insurance at delivery. See Prepaid
+Mortgage Insurance Transactions below for additional information.
+Ineligible Transactions
+The following mortgage loans are not eligible for delivery to Fannie Mae if they include ﬁnanced borrower-
+purchased mortgage insurance:
+mortgage loans secured by two- to-four-unit properties,
+mortgage loans secured by investment properties, and
+cash-out reﬁnance loans.
+Note : Lender-paid mortgage insurance premiums cannot be ﬁnanced into the loan amount and
+are therefore not considered ﬁnanced mortgage insurance transactions.
+Delivery Requirements
+The following delivery requirements apply to ﬁnanced mortgage insurance transactions:
+The Financed MI Amount and MI Financed Indicator must be delivered.
+The delivery ﬁle must also contain the purchase price (for purchase transactions) and appraised value
+(for purchase and reﬁnance transactions) to allow for accurate calculation of the base LTV ratio.
+The loan must be delivered with SFC 281.
+All other mortgage insurance-related data elements must be provided (MI Company Name, Percent of MI
+Coverage, Certiﬁcate Number, and MI Source).
+For additional information, see Uniform Loan Delivery Dataset (ULDD)  on Fannie Mae's website.
+Prepaid Mortgage Insurance Transactions
+Fannie Mae’s reﬁnance guidelines permit borrowers to ﬁnance the payment of closing costs, prepaid items, and
+points in the loan amount. When the borrower includes any portion of the borrower-paid mortgage insurance
+premium or monthly escrows into the loan amount (with other closing costs or prepaid items), it is considered a
+“prepaid mortgage insurance transaction” and not a ﬁnanced mortgage insurance transaction. For a loan to be
+eligible for delivery to Fannie Mae with prepaid mortgage insurance, the loan must meet all the standard
+requirements of this Selling Guide, and the following requirements applicable to this type of loan:

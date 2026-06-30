@@ -1,0 +1,49 @@
+# i. Re-Identification Risk
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_665
+**Pages:** 666-666
+**Section Path:** VIII. Public Disclosure of Data > B. Preliminary Privacy Assessment > 4. Privacy Risk > i. Re-Identification Risk
+
+---
+
+666 i. Re-Identification Risk  
+Proposed Approach  
+The NPRM  explained that, while information that directly identifies natural persons, such 
+as name, address, date of birth, or Social Security number would not be collected, publication of 
+application -level data in an unmodified format potentially could be used to re -identify small 
+business applicants and related natural persons and  potentially harm their privacy interests. The 
+Bureau identified two re -identification scenarios. First, a third party may use common data fields 
+to match a data  record to a record in another dataset that contains the identity of the applicant or 
+related natural person. Second , a third party  may rely on pre -existing personal knowledge to 
+recognize an applicant ’s record in the unmodified data.  The Bureau use d the term “ adversary” to 
+refer to either  type of third part y.871 
+Re-identification based on matching. Under the first scenario, the Bureau explained that it 
+might  be possible to match a data  record to an identified dataset, either directly or through a 
+combination of intermediate datasets.872 However, successfully re -identifying a data  record 
+would require several steps and could  present a significant challenge. A n adversary generally 
+would have to isolate a record that is unique or rare  within the data. A record is unique  or rare  
+when the values of the data fields associated with it are shared by zero or few other records. T he 
+Bureau stated that it believe d actual data would be  needed to perform an accurate re-
+identification analysis. Thus, it did not intend to apply the balancing test until after it ha d 
+analyzed re-identification risk with a full year of re ported data.  
+The Bureau explained that a data record having unique combinations of values would not 
+automatically result in re -identification; an adversary would also have to find a record 
+corresponding to the applicant or related natural person in anothe r dataset by matching similar 
+combinations of data fields. Once a data  record ha d been matched , an adversary would possess 
+any additional fields found in the corresponding record but not found in the data  record—
+including, potentially, the applicant ’s identity. However, even after accomplishing such a match, 
+an adversary might not have accurately re-identified the true applicant to whom the data  record 
+relates. For example, if the corresponding record wa s not the only record in the other dataset to 
+share certain data fields with the unique data  record, an adversary would have to make a 
+probabilistic determination as to which corresponding record belongs to the applicant.  
+The Bureau expected that census tract and NAICS code, if published as proposed and 
+without modification, could significantly contribute to re -identification risk. Geographic and 
+industry information are publicly available in a variety of sources and in a form that directly identifies businesses or in a way that could be derived with reasonab le accuracy. This 
+information is also likely to produce unique instances in the data, both when used separately, but 
+particularly when combined. Other proposed data fields could have resulted in unique 
+ 
+871 The term does not mean that the adversary ’s motives are necessarily malicious or adverse to the interests of 
+others. See, e.g. , Nat ’l Inst. of Standards & Tech., De -Identification of Personal Information  (2015), 
+http://nvlpubs .nist.gov/nistpubs/ir/2015/NIST.IR.8053.pdf  (using the term “ adversary”).  
+872 For these purposes, an “ identified” dataset is one that directly identifies a  natural or non -natural person.

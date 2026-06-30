@@ -1,0 +1,40 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 133/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_133
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+965 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+695See 45 CFR 164.304 (proposed definitions of 
+‘‘Deploy’’ and ‘‘Implement’’). 
+696‘‘Security Standards: Technical Safeguards,’’ 
+supra note 343, p. 3. 
+697Id. at 4. how they must maintain specific 
+security measures. 
+3. Proposals 
+The Department retains the 
+requirements for technical safeguards 
+generally and proposes additions and modifications to the existing standards and implementation specifications. 
+a. Section 164.312—Technical 
+Safeguards 
+The Department proposes to expand 
+the primary provision at 45 CFR 164.312 to clarify that regulated entities as a general matter must implement and document the implementation of technical safeguards adopted for compliance with the Security Rule. This proposal would clarify that the requirement to implement and document technical safeguards would apply to all technical safeguards, including technical controls, implemented by a regulated entity to protect the confidentiality, integrity, and availability of all ePHI it creates, receives, maintains, or transmits. 
+As noted above, the current provision 
+at 45 CFR 164.312 does not reference the documentation requirements in 45 CFR 164.316. Therefore, for clarity, we 
+propose to explicitly require in 45 CFR 164.312 that documentation of technical safeguards conforms to the requirements in 45 CFR 164.316. This proposed change would clarify that a regulated entity must document the policies and procedures required to comply with this rule and how entities considered the flexibility factors in 45 CFR 164.306(b). It would also clarify that a regulated entity must document each action, activity, and assessment required by the Security Rule. The Department considers the documentation requirements and other provisions of 45 CFR 164.316 to apply to all of the safeguards, including the technical safeguards, and this proposal is intended to remove any potential uncertainty among regulated entities. Additionally, we propose to add maintenance requirements separately to the implementation specifications for particular technical safeguards in 45 CFR 164.312, as discussed below and consistent with our proposals to add similar requirements to particular administrative and physical safeguards. 
+Additionally, as discussed above, the 
+Department proposes to remove the distinction between required and addressable implementation specifications and make all implementation specifications required, with specific, limited exceptions. Also as discussed above, we propose to modify certain standards and implementation specifications to clarify that the technical safeguards apply to ensure the confidentiality, integrity, and availability of ePHI, which requires a regulated entity to implement the technical safeguards in or on all relevant electronic information systems. These proposals are discussed in greater detail below. 
+b. Section 164.312(a)(1)—Standard: 
+Access Control 
+The Department proposes to clarify 
+the standard for access control at 45 CFR 164.312(a)(1) by requiring a regulated entity to deploy technical controls in relevant electronic information systems to allow access only to those users and technology assets that have been granted access rights. This proposed modification would ensure that a regulated entity deploys technical controls, rather than solely ensuring that it implements technical policies and procedures, consistent with our proposals to define ‘‘deploy’’ and ‘‘implement.’’
+695Thus, 
+the proposal would clarify that a regulated entity is not expected to merely establish a policy and procedure, but must also put into place, ensure the operation of, and verify the continued operation of, technical controls for access to its relevant electronic information systems such that the failure to have such technical control in operation throughout its enterprise would be a violation of the new proposed standard. Additionally, the Department’s proposal would clarify that access controls would apply to persons with authorized access and to technology assets. 
+Access controls are one of the key 
+mechanisms by which a regulated entity protects ePHI. Such technical controls ensure that access to the regulated entity’s electronic information systems is limited to only users and technology assets that have been granted access rights under the policies and procedures adopted in accordance with the standard for information access management under 45 CFR 164.308.
+696 
+The Security Rule does not identify a specific type of access control method or technology to deploy, nor are we proposing to do so in this rule.
+697As

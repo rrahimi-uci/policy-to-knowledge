@@ -1,0 +1,27 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 68/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_068
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+consistency in language facilitates clear understanding and less ambiguity about how regulated entities must apply Security Rule standards. 
+Flexibility and scalability are among 
+the Security Rule’s defining characteristics, and we intend to preserve those elements to the extent possible. However, we believe that in this era of increased reliance on technology, more sophisticated cyber capabilities, and increasing cyberattacks, it is critical for regulated entities to implement and deploy strong security measures to protect ePHI and related information systems. We are concerned that regulated entities have focused their attention primarily on the cost of security measures, rather than considering the reasonableness and appropriateness of security measures in the context of all of the listed factors, including the probability and criticality of potential risks to ePHI.
+413Further, the 
+Department believes that providing additional clarity would improve the ability of regulated entities to evaluate security measures for the protection of ePHI and the ability of a security measure to facilitate a regulated entity’s recovery from emergencies and to support continued operations. With these proposed modifications, the Department seeks to ensure that regulated entities’ reliance on the Security Rule’s flexibility and scalability does not come at the expense of adequate security. The current regulation’s framework in 45 CFR 164.306(b) lacks any express factor that would require an evaluation of the effectiveness of the security measures in supporting the resiliency of the regulated entity. 
+The Department has explained in 
+regulation and guidance the difference between required and addressable implementation specifications. The meaning of ‘‘required’’ is clear. Regarding ‘‘addressable,’’ we previously explained that its purpose is to provide regulated entities flexibility with respect to implementation compliance.
+414We 
+also previously explained that a 
+regulated entity must assess whether a given addressable implementation specification is a reasonable and appropriate security measure to apply within its environment, and if it is, the regulated entity must implement the addressable implementation specification.
+415However, the 
+Department remains concerned that regulated entities believe that flexibility overrides the need for them to protect all ePHI and do not uniformly treat addressable implementation specifications as needing to be met if they are reasonable and appropriate. OCR’s enforcement experience and interaction with regulated entities causes us to believe that ‘‘addressable’’ is misunderstood to be optional, leading regulated entities to choose not to adopt the implementation specification, even when it would be reasonable and appropriate for them to do so.
+416 
+In 2022, NCVHS recommended that 
+the Department eliminate the choice to not implement a specification or alternative, and instead require that regulated entities implement the specification or adopt a documented reasonable alternative.
+417According to a 
+survey referenced by NCVHS, despite private sector and government efforts to address a changing cybersecurity landscape, the majority of health care entities have failed to maintain a comprehensive security program and 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00035 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2
