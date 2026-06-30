@@ -74,7 +74,7 @@ def run_joins_pipeline(g1_name: str, g2_name: str, provider: str = "openai", wor
 
 📊 Comparing: {g1_name} vs {g2_name}
 📁 Provider: {provider}
-📂 Output folder: _joined/{joins_subfolder}/
+📂 Output folder: _merged/{joins_subfolder}/
 👷 Workers: {workers}  |  📦 Batch size: {batch_size} pairs/call
 🧠 Reasoning Effort: {get_config().get_reasoning_effort()}
 """)
@@ -111,8 +111,11 @@ def run_joins_pipeline(g1_name: str, g2_name: str, provider: str = "openai", wor
     visualizer = SetOperationsVisualizer(provider=provider, merge_subfolder=joins_subfolder)
     visualizer.run()
     
-    # Summary - use the dynamic joins_subfolder path
-    output_dir = Path(__file__).resolve().parent.parent / "pipeline-output" / "_joined" / joins_subfolder / "agent-10-visualizations"
+    # Summary - use the dynamic joins_subfolder path. Agents 7-10 write under
+    # `_merged/<subfolder>/` (see agent_10 SetOperationsVisualizer.output_dir),
+    # so the reported location must match — `_joined/` here pointed users at a
+    # path that is never created.
+    output_dir = Path(__file__).resolve().parent.parent / "pipeline-output" / "_merged" / joins_subfolder / "agent-10-visualizations"
     
     print(f"""
 ╔══════════════════════════════════════════════════════════════════════╗

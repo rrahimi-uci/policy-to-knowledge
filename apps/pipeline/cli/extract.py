@@ -129,7 +129,9 @@ class KnowledgeExtractionPipeline:
             output_dir: Directory for final knowledge graph outputs
             target_rules: Target number of business rules to extract
             provider: AI provider to use ('openai')
-            max_workers: Maximum number of parallel workers for LLM calls (default: 20)
+            max_workers: Maximum number of parallel workers for LLM calls. When
+                omitted, each agent falls back to the configured
+                ``pipeline.max_workers`` (default 30).
             domain: Compliance domain to use for prompts (e.g., 'mortgage', 'aml')
         """
         self.max_workers = max_workers
@@ -1802,7 +1804,7 @@ Examples:
         "--workers",
         type=int,
         default=None,
-        help="Maximum number of parallel workers for LLM calls (default: 20). Higher values increase throughput but use more API quota."
+        help="Maximum number of parallel workers for LLM calls. Defaults to the configured pipeline.max_workers (30). Higher values increase throughput but use more API quota."
     )
 
     parser.add_argument(
