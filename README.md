@@ -123,6 +123,7 @@ Pipeline parameters (LLM models, reasoning effort, chunk sizes, worker counts, t
 | Doc | Covers |
 | --- | --- |
 | [docs site](https://rrahimi-uci.github.io/policy-to-knowledge/) | Visual overview, architecture, walkthrough |
+| [apps/shell/README.md](apps/shell/README.md) | Suite shell, micro-frontend embedding, routes |
 | [apps/pipeline/README.md](apps/pipeline/README.md) | Extraction & compare pipeline, API/UI |
 | [apps/explorer/README.md](apps/explorer/README.md) | Explorer runtime, manifest, graph loading |
 | [apps/pipeline/docs/ARCHITECTURE.md](apps/pipeline/docs/ARCHITECTURE.md) | Pipeline architecture |

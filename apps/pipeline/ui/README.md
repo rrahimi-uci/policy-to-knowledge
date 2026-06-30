@@ -56,3 +56,15 @@ The frontend build and Vitest checks run in the root CI workflow
 | `backend/services/` | Run storage and orchestration helpers |
 | `frontend/src/` | React application |
 | `frontend/tests/e2e/` | Playwright tests |
+
+## Performance
+
+The production build is **code-split** so the landing Dashboard stays light:
+
+- Routes are lazy-loaded (`React.lazy` + `Suspense`) — each page loads only when
+  first navigated to.
+- `manualChunks` (in `frontend/vite.config.ts`) isolates the framework
+  (`react`/`react-dom`/`react-router`) into one long-lived, cache-friendly chunk,
+  and splits the heavy Markdown + syntax-highlighting stack into its own chunk
+  that loads only on the routes that render Markdown (Documents/Prompts) — never
+  the initial paint.
