@@ -1,0 +1,121 @@
+# B3-5.3-09, DU Credit Report Analysis (02/05/2025) (part 3/3)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_238_sub_003
+**Pages:** 495-503
+**Section Path:** Part B, Origination Through Closing > Subpart B3, Underwriting Borrowers > Chapter B3-5, Credit Assessment > Section B3-5.3, Traditional Credit History > B3-5.3-09, DU Credit Report Analysis (02/05/2025)
+
+---
+
+Published March 4, 2026
+483Bankruptcy
+DU applies the following guidelines to prior bankruptcies:
+If a Chapter 13 bankruptcy was discharged within the last two years, dismissed within the last four years,
+or ﬁled but neither discharged nor dismissed within the last four years, the loan caseﬁle will receive an
+Ineligible recommendation and will be ineligible for delivery to Fannie Mae.
+If a non-Chapter 13 bankruptcy was ﬁled, discharged, or dismissed within the last four years, the loan
+caseﬁle will receive an Ineligible recommendation and will be ineligible for delivery to Fannie Mae.
+DU will not take bankruptcy information in the public record section of the credit report into account if the
+bankruptcy is dated more than seven years prior to the credit report date.
+DU will not take tradeline accounts that are reported with a bankruptcy status code or manner of
+payment (MOP) code of “7” into account if there is at least one bankruptcy reported in a public record
+within seven years of the credit report date. In this scenario, DU assumes the date ﬁled and the date
+discharged in the public record are more accurate than the dates in the tradeline; i.e., speciﬁc ﬁled and
+discharged dates do not exist in the tradeline.
+DU will use tradeline accounts that are reported with a bankruptcy status code or MOP code of “7” if
+there is not a bankruptcy reported in a public record within seven years of the credit report date. In this
+scenario, the lender will need to verify the actual ﬁled and discharged dates to determine that the
+bankruptcy meets the DU bankruptcy policy.
+DU is not able to determine if multiple ﬁlings have occurred due to the manner in which bankruptcies are
+reported to the credit report. DU will issue a message when it appears that there may have been multiple
+bankruptcy ﬁlings. This message will list each of the bankruptcies seen on the credit report, and will
+instruct lenders to ensure the loan caseﬁle meets the criteria for underwriting loan caseﬁles with multiple
+bankruptcies.
+Underwriting when the Credit Report Contains Inaccurate Bankruptcy Information
+When DU identiﬁes a bankruptcy on the credit report and the information is inaccurate, the lender may
+instruct DU to disregard the bankruptcy information on the credit report in the eligibility assessment. This
+is done by entering “Conﬁrmed CR BK Incorrect” in the online loan application and resubmitting the loan
+caseﬁle to DU. When the loan caseﬁle is resubmitted to DU, the bankruptcy information on the credit
+report will not be used.
+If the lender enters “Conﬁrmed CR BK Incorrect”, the lender must document that the Chapter 13
+bankruptcy was discharged two or more years or dismissed four or more years from the disbursement
+date of the new loan, or that the non-Chapter 13 bankruptcy was discharged or dismissed four years or
+more years from the disbursement date of the new loan
+Underwriting when a Bankruptcy Was Due to Extenuating Circumstances
+When DU identiﬁes a bankruptcy on the credit report and that bankruptcy was due to extenuating
+circumstances, the lender may instruct DU to disregard the bankruptcy information on the credit report in
+the eligibility assessment. This is done by entering “Conﬁrmed CR BK EC” in the online loan application
+and resubmitting the loan caseﬁle to DU. When the loan caseﬁle is resubmitted to DU, the bankruptcy
+information on the credit report will not be used.
+
+Published March 4, 2026
+484If the lender enters “Conﬁrmed CR BK EC”, the lender must document that the bankruptcy was due to
+extenuating circumstances, and that the Chapter 13 bankruptcy was dismissed two or more years from
+the disbursement date of the new loan, or that the non-Chapter 13 bankruptcy was discharged or
+dismissed two or more years from the disbursement date of the new loan.
+Foreclosure
+DU applies the following guidelines to prior foreclosures:
+Mortgage accounts, including ﬁrst liens, second liens, home improvement loans, HELOCs, and
+manufactured home loans, will be identiﬁed as a foreclosure if there is an MOP code of “8,” or a Remarks
+Code that indicates a foreclosure is present in the credit report data and associated to the tradeline.
+If a foreclosure was reported within the seven-year period prior to the credit report date, the loan caseﬁle
+will receive an Ineligible recommendation and will be ineligible for delivery to Fannie Mae.
+If the ﬁled date and the satisﬁed date of the foreclosure are both unknown, but it appears that the
+foreclosure occurred within the seven-year period prior to the credit report date, the lender must conﬁrm
+that the foreclosure did not occur within the most recent seven-year period.
+Foreclosure laws vary by state and the time it takes to complete the process may vary by state. DU
+assumes that the date the foreclosure was reported in the tradeline is the date of the foreclosure sale or
+liquidation. The lender must conﬁrm that all foreclosures are satisﬁed.
+Mortgage accounts that are identiﬁed as a deed-in-lieu of foreclosure or preforeclosure sale will not be
+identiﬁed as a foreclosure.
+Underwriting when Inaccurate Foreclosure Information Exists
+When DU identiﬁes a foreclosure on a credit report tradeline and the foreclosure information on that
+tradeline is inaccurate, the lender may instruct DU to disregard the foreclosure information on the credit
+report in the eligibility assessment. This is done by entering “Conﬁrmed CR FC Incorrect” in the online
+loan application and resubmitting the loan caseﬁle to DU. When the loan caseﬁle is resubmitted to DU,
+the foreclosure information on the credit report tradeline will not be used in the eligibility assessment.
+If the lender enters “Conﬁrmed CR FC Incorrect,” the lender must then document the foreclosure was
+completed seven or more years from the disbursement date of the new loan, or that the account was not
+subject to foreclosure and the loan complies with all other applicable requirements.
+Underwriting when Extenuating Circumstances Exist
+When DU identiﬁes a foreclosure on a credit report tradeline and that foreclosure was due to extenuating
+circumstances, the lender may instruct DU to disregard the foreclosure information on the credit report in
+the eligibility assessment. This is done by entering “Conﬁrmed CR FC EC” in the online loan application
+and resubmitting the loan caseﬁle to DU. When the loan caseﬁle is resubmitted to DU, the foreclosure
+information on the credit report tradeline will not be used in the eligibility assessment.
+If the lender enters “Conﬁrmed CR FC EC,” the lender must then document that the foreclosure was due
+to extenuating circumstances, the foreclosure was completed three or more years from the disbursement
+date of the new loan, and the loan complies with all other requirements speciﬁc to a foreclosure due to
+extenuating circumstances.
+
+Published March 4, 2026
+485Deed-in-Lieu of Foreclosure
+DU applies the following guidelines to prior DILs:
+DU will determine if a mortgage tradeline is a DIL by using speciﬁc Remarks Codes that are present in the
+credit report data and associated to the tradeline.
+When DU identiﬁes a DIL, the lender must document that the event was completed four or more years
+from the disbursement date of the new loan, or two or more years from the disbursement date of the new
+loan when the lender conﬁrms that the mortgage loan meets the applicable time frames and eligibility
+requirements for a deed-in-lieu of foreclosure due to extenuating circumstances.
+Preforeclosure Sales or Short Sales
+DU will determine if a mortgage tradeline is a PFS by using speciﬁc Remarks Codes that are present in
+the credit report data and associated to the tradeline.
+When DU identiﬁes a PFS, the lender must document that the event was completed four or more years
+from the disbursement date of the new loan, or two or more years from the disbursement date of the new
+loan when the lender conﬁrms that the mortgage loan meets the applicable time frames and eligibility
+requirements for a preforeclosure sale due to extenuating circumstances.
+Charge-Oﬀ of Mortgage Accounts
+Mortgage accounts, including ﬁrst liens, second liens, home improvements loans, HELOCs, and
+manufactured home loans, will be identiﬁed as a charge-oﬀ if there is an MOP code of “9” (collection or
+charge-oﬀ) and there is no information indicating the account may also be subject to a foreclosure (MOP
+code “8” or foreclosure Remarks Code), a deed-in-lieu of foreclosure (DIL Remarks Code), or a
+preforeclosure sale (PFS Remarks Code).
+When DU identiﬁes a charge-oﬀ on a mortgage tradeline, the lender must document that the event was
+completed four or more years from the disbursement date of the new loan, or two or more years from the
+disbursement date of the new loan when the lender conﬁrms that the mortgage loan meets the
+applicable time frames and eligibility requirements for a charge-oﬀ due to extenuating circumstances.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2025-01 February 05, 2025
+Announcement SEL-2023-03 April 05, 2023

@@ -1,0 +1,66 @@
+# B3-4.4-01, DU Asset Verification (12/16/2020)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_219
+**Pages:** 465-466
+**Section Path:** Part B, Origination Through Closing > Subpart B3, Underwriting Borrowers > Chapter B3-4, Asset Assessment > Section B3-4.4, DU Requirements for Asset Assessment > B3-4.4-01, DU Asset Verification (12/16/2020)
+
+---
+
+Published March 4, 2026
+447Announcements Issue Dates
+Announcement SEL-2023-03 April 05, 2023
+ 
+Section B3-4.4, DU Requirements for Asset Assessment
+B3-4.4-01, DU Asset Veriﬁcation (12/16/2020)
+Introduction
+This topic contains information on asset veriﬁcation for loans underwritten with DU, including:
+Liquid Assets
+Non-Liquid Assets
+Reserve Requirements
+Asset Values in the DU Underwriting Findings Report
+Non-Occupant Borrower Asset Requirements
+Liquid Assets
+DU analyzes the value of liquid assets entered in the loan application in its risk assessment. Assets may be
+excluded from the loan application if the borrower can qualify without them.
+DU considers the following assets liquid assets: Bonds, Bridge Loan Proceeds, Cash-on-Hand (for certain
+HomeReady loans only), Cash Value of Life Insurance, Certiﬁcate of Deposit, Checking, Gift (not deposited), Gift
+of Equity, Grant (not deposited), Individual Development Account, Money Market, Mutual Fund, Net Equity,
+Other Liquid Asset, Proceeds from Real Estate Property to be sold on or before closing, Proceeds from Sale of
+Non-Real Estate Asset, Retirement, Savings, Secured Borrowed Funds, Stocks, Stock Options (vested), and Trust
+Account.
+Note:  Some of these asset types may not be available in the lender’s loan origination system.
+Non-Liquid Assets
+DU does not consider the amount of non-liquid assets. Non-liquid assets do not have to be veriﬁed, and will not
+
+Published March 4, 2026
+448be identiﬁed in a veriﬁcation message.
+DU considers the following assets non-liquid assets: Cash Deposit on Sales, Net Worth of Business, Other Non-
+Liquid Asset, and Unsecured Borrowed Funds.
+Note:  Some of these asset types may not be available in the lender’s loan origination system.
+Reserve Requirements
+For loan caseﬁles underwritten with DU, DU will determine the reserve requirements based on the overall risk
+assessment of the loan caseﬁle and the minimum reserves that may be required for the transaction. Reserves
+may be considered a compensating factor in DU's risk analysis, and may serve to improve the underwriting
+recommendation.
+Refer to the following topics for additional requirements related to minimum reserves:
+B2-2-03, Multiple Financed Properties for the Same Borrower
+B3-4.1-01, Minimum Reserve Requirements
+Asset Values in the DU Underwriting Findings Report
+The DU Underwriting Findings report will identify the following values:
+Total Available Assets: the total of all borrower(s)’ liquid assets entered into DU;
+Funds Required to Close: includes the cash needed to complete the transaction plus any debts marked
+paid by closing on purchase or limited cash-out reﬁnance transactions, other than subject property
+mortgage(s);
+Reserves Required to be Veriﬁed: the amount of reserves that must be veriﬁed;
+Total Funds to be Veriﬁed: the sum of Funds Required to Close and Reserves Required to be Veriﬁed; and
+Excess Available Assets, not required to be veriﬁed by DU: liquid assets that DU is not requiring the
+lender to verify.
+The Excess Available Assets, not required to be veriﬁed by DU (Excess Available Assets) amount represents the
+amount of assets remaining after subtracting the Total Funds to be Veriﬁed from the Total Available Assets.
+Excess Available Assets do not generally need to be veriﬁed.
+Non-Occupant Borrower Asset Requirements
+Assets that are owned by a non-occupant borrower can be included in the 5% minimum borrower contribution
+requirement (when applicable), and those funds must be entered in the loan application. Total liquid assets for
+the occupying borrower and non-occupant borrower are included in DU’s calculation of total available assets.
+Recent Related Announcements

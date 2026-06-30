@@ -1,0 +1,45 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 133/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_133
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+964 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+68368 FR 8334, 8357 (Feb. 20, 2003). 
+684For example, the ONC Health IT Certification 
+Program requires that certified health IT certified to 
+the end-user device encryption certification criterion at 45 CFR 170.315(d)(7) must encrypt electronic health information stored on end-user devices after use of the technology on those devices stops or prevent electronic health information from being locally stored on end-user devices after use of the technology on those devices stops. See also ‘‘Security Standards: Technical Safeguards,’’ supra note 343, p. 7. 
+685‘‘How to Protect the Data that is Stored on 
+Your Devices,’’ Cybersecurity & Infrastructure Security Agency, U.S. Department of Homeland Security (access July 26, 2024), https://www.cisa.gov/resources-tools/training/how-protect- data-stored-your-devices; see also Karen Scarfone, et al., ‘‘[Information Technology Laboratory (ITL)] Bulletin: August 2020, Security Considerations for Exchanging Files Over the internet,’’ National Institute of Standards and Technology, U.S. Department of Commerce (Aug. 2020), https://csrc.nist.gov/files/pubs/shared/itlb/itlbul2020- 08.pdf. 
+68645 CFR 164.306(d). 
+687‘‘Banner Health,’’ supra note 567. 
+688Resolution Agreement, ‘‘Lifespan,’’ Office for 
+Civil Rights, U.S. Department of Health and Human Services (June 26, 2020), https://www.hhs.gov/sites/ default/files/lifespan-ra-cap-signed.pdf. 
+689Resolution Agreement, ‘‘Yakima Valley 
+Memorial Hospital,’’ Office for Civil Rights, U.S. Department of Health and Human Services (May 15, 2023), https://www.hhs.gov/hipaa/for- 
+professionals/compliance-enforcement/agreements/ yakima-ra-cap/index.html. 690Id. 
+691See ‘‘Montefiore Medical Center,’’ supra note 
+248. 
+692See, e.g., ‘‘HHS Office for Civil Rights Settles 
+HIPAA Investigation with Arizona Hospital System Following Cybersecurity Hacking,’’ supra note 570. 
+693Id. 
+694‘‘The Home Depot Reports Findings in 
+Payment Data Breach Investigation,’’ Home Depot (Nov. 6, 2014), https://ir.homedepot.com/news- releases/2014/11-06-2014-014517315. 2. Issues To Address 
+While the intention of 45 CFR 164.312 
+is for regulated entities to develop and 
+put into place technical controls, the Department is aware that regulated entities have not always achieved the degree of protection for ePHI that we intended. Absent a definition of ‘‘implement,’’ some regulated entities might interpret the term to mean something other than implementing technical controls to ensure the confidentiality, integrity, and availability of ePHI. This misinterpretation may leave ePHI partially unprotected because regulated entities may not implement safeguards throughout their enterprise. As discussed above with respect to both the administrative and physical safeguards, the Department is also concerned that regulated entities are not making the connection between the maintenance requirement at 45 CFR 164.306(d) and the requirement to implement technical safeguards, and therefore, are not reviewing or updating their policies and procedures for technical safeguards. Additionally, the Department believes that regulated entities may not be recognizing that their obligations under the Security Rule to protect ePHI are not limited to protecting electronic information systems that create, receive, maintain, or transmit ePHI, but necessarily include other electronic information systems that affect the confidentiality, integrity, or availability of ePHI. 
+While the Security Rule relies on a 
+flexible and scalable approach to compliance, the health care industry’s shift to a digital environment has substantially increased both the risk to ePHI and the prevalence of technological solutions for addressing those risks. Additionally, the cost of 
+such solutions has, in many cases, decreased over time, as is often the case with technology. For example, when the original Security Rule was published, tools to encrypt ePHI had limited availability, were more costly, and were not user-friendly, particularly for small health care providers.
+683By contrast, in 
+2024, the technical ability to encrypt data may be seamless in many applications, inexpensive, and widely available in commercial software and hardware products.
+684Where an encryption solution is not integrated into an application, software, or hardware, third-party solutions are often available.
+685Thus, we do not believe 
+that it is appropriate for such provisions to be ‘‘addressable.’’
+686 
+Based on its own investigations and 
+compliance reviews, news reports, and published studies, the Department is aware that many regulated entities have failed to implement adequate technical controls, or, in some cases, any technical controls. For example: 
+•A large health system that operates

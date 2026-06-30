@@ -1,0 +1,38 @@
+# Chapter B4-1, Property Assessment and Valuation
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_253
+**Pages:** 533-533
+**Section Path:** Part B, Origination Through Closing > Subpart B4, Underwriting Property > Chapter B4-1, Property Assessment and Valuation
+
+---
+
+Published March 4, 2026
+515appear on the credit report, such as monthly housing expenses for taxes, insurance, must be disclosed in the
+loan application prior to ﬁnal submission to DU.
+If the auto-populate liabilities option is selected BEFORE liabilities have been manually entered in the loan
+application:
+Open accounts will be automatically copied to the loan application.
+Closed accounts on the credit report are not automatically copied to the loan application. If the account
+has an outstanding balance, the lender must manually enter the liability in the loan application and
+include the monthly payment in the debt-to-income ratio.
+Collection accounts on the credit report are not automatically copied to the loan application.
+If the auto-populate liabilities option is selected AFTER liabilities have been manually entered in the loan
+application:
+DU will attempt to match existing liability accounts listed on the loan application to the credit report
+liabilities by using a combination of account name and account number.
+Open accounts from the credit report that were not manually entered on the loan application will be
+automatically copied to the loan application.
+DU will use the information on the loan application to calculate the debt-to-income ratio.
+If duplicate accounts or accounts that do not belong to the borrower were copied to the loan application and
+included in the debt-to-income ratio, they may be omitted (or deleted) from the loan application. Debts that are
+omitted will not be counted in the debt-to-income ratio.
+Recent Related Announcements
+There are no recently issued Announcements related to this topic.
+Subpart B4, Underwriting Property
+Introduction
+This subpart contains property underwriting and appraisal requirements for conventional loans.
+Chapter B4-1, Property Assessment and Valuation
+Introduction
+This chapter explains Fannie Mae’s property assessment and valuation requirements, including documentation,
+appraisal and data collection requirements.

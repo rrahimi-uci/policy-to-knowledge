@@ -1,0 +1,57 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 83/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_083
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+939 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+462See ‘‘Guidance on Risk Analysis,’’ supra note 
+460. 
+463See id. 
+464See ‘‘Security Risk Assessment Tool,’’ Office 
+for Civil Rights and Office of the National 
+Coordinator for Health Information Technology, U.S. Department of Health and Human Services (updated Sept. 5, 2023), https://www.healthit.gov/ topic/privacy-security-and-hipaa/security-risk- assessment-tool. 
+465See ‘‘HIPAA Security Rule,’’ National Institute 
+of Standards and Technology, U.S. Department of Commerce (Jan. 3, 2011, updated July 21, 2022), https://www.nist.gov/programs-projects/security- health-information-technology/hipaa-security-rule. 
+466See ‘‘HIPAA Security Rule Crosswalk to NIST 
+Cybersecurity Framework,’’ Office for Civil Rights, U.S. Department of Health and Human Services (June 2020), https://www.hhs.gov/guidance/sites/ default/files/hhs-guidance-documents//nist-csf-to- hipaa-security-rule-crosswalk-02-22-2016-final.pdf. 
+467‘‘Implementing the Health Insurance 
+Portability and Accountability Act (HIPAA) Security Rule: A Cybersecurity Resource Guide,’’ supra note 461. 
+468See id. 
+469This component of the assessment would be 
+accomplished under the NPRM, if adopted, through compliance with the proposed standard for technology asset inventory at proposed 45 CFR 164.308(a)(1)(i). Under the current Security Rule, we consider the technology asset inventory to be a component of the standard for risk analysis. 470‘‘Risk Analyses vs. Gap Analyses—What is the 
+difference?’’ Cybersecurity Newsletter, Office for Civil Rights, U.S. Department of Health and Human Services (Apr. 2018), https://www.hhs.gov/sites/ default/files/cybersecurity-newsletter-april- 2018.pdf. 
+471Joint Task Force, ‘‘Guide for Conducting Risk 
+Assessments,’’ NIST Special Publication 800–30, Revision 1, National Institute of Standards and 
+Continued •What are the risks posed by legacy 
+devices, including any risks that would 
+be posed by replacing legacy devices with new ones? 
+There are numerous methods of 
+performing a risk analysis, and there is no single method or ‘‘best practice’’ that guarantees compliance with the Security Rule.
+462The Department has 
+issued multiple guidance documents and tools for regulated entities to help them implement risk analyses,
+463and 
+several versions of its Security Risk Assessment Tool, a desktop application that walks users through the process of conducting a risk assessment.
+464NIST 
+has published numerous guides for risk assessment over the past two decades,
+465in addition to reference 
+materials it has developed in collaboration with the Department, including a toolkit and a crosswalk between the Security Rule to NIST Cybersecurity Framework,
+466and ‘‘how 
+to’’ guides on risk analysis.467In 
+February 2024, NIST released a new guide that provides resources for implementing a Security Rule risk analysis.
+468Consistent with previous 
+Department guidance, the guide describes key elements in a comprehensive risk assessment process, that include the following: 
+•Prepare for the assessment by 
+conducting a technology asset inventory.
+469Determine whether ePHI is 
+transmitted to external third parties, such as cloud service providers or others. The regulated entity can also examine how access to ePHI is controlled and whether ePHI is 
+encrypted at rest and in transit. The scope of a risk assessment should include both the physical boundaries of a regulated entity’s location and a logical boundary that includes any devices or media that contain ePHI, including electronic networks through which ePHI is transmitted, regardless of its location. 
+•Identify reasonably anticipated 
+threats. The list of threat events and threat sources should include reasonably anticipated and probable human and natural incidents that can negatively affect the regulated entity’s ability to protect ePHI. The information gathered for the technology asset inventory should be used to identify reasonably anticipated threats to ePHI. 
+•Identify potential vulnerabilities 
+and predisposing conditions. For any of the various threats identified above to result in a significant risk, each needs a vulnerability or predisposing condition that can be exploited. While it is necessary to review threats and vulnerabilities as unique elements, they are often considered at the same time. Organizations should consider a given loss scenario and evaluate both, such as what threat sources might initiate which threat events or what vulnerabilities or predisposing conditions those threat sources might exploit to cause an adverse effect. From this, the regulated entity should develop a list of vulnerabilities (i.e., flaws or 
+weaknesses) that could be exploited by potential threat sources. 
+•Determine the likelihood that a

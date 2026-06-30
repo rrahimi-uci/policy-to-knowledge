@@ -1,0 +1,70 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 197/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_197
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+997 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+958See ‘‘Medical Expenditure Panel Survey— 
+Insurance Component,’’ Tables I.A.1 and I.A.2, 
+Agency for Healthcare Research and Quality (2023), https://meps.ahrq.gov/data _stats/summ_ tables/ 
+insr/national/series _1/2023/ic23_ ia_g.pdf?_
+gl=1*16xft35*_ ga*MTE0MDI5NzI0LjE3MDk2N
+jQ0NDM.*_ ga_45NDTD15CJ*
+MTczMTEwMzQ4OS4yLjEuMTczMTEwMzUzNS
+4xNC4wLjA (showing the number of establishments 
+and percent offering health plans) and ‘‘County Business Patterns: 2021,’’ United States Census 
+Bureau (April 27, 2023), https://www.census.gov/ data/datasets/2021/econ/cbp/2021-cbp.html 
+(providing the ratio of firms to establishments). We assume one health plan sponsor per firm that offers a self-insured group health plan. 
+959See ‘‘Annual Report to Congress on Breaches 
+of Unsecured Protected Health Information for Calendar Year 2022,’’ supra note 213, p. 9 (2023). 960See Steve Alder, ‘‘December 2023 Healthcare 
+Data Breach Report,’’ The HIPAA Journal (Jan. 18, 
+2024), https://www.hipaajournal.com/december- 
+2023-healthcare-data-breach-report/. 
+961See ‘‘What We Learned: Change Healthcare 
+Cyber Attack,’’ U.S. House of Representatives 
+Committee on Energy & Commerce (May 3, 2024), https://energycommerce.house.gov/posts/what-we-learned-change-healthcare-cyber-attack. administrative, physical, and technical 
+safeguards of the Security Rule. The Department relied on data from AHRQ and the U.S. Census to estimate the number of firms offering group health plans (1.9 million),
+958and multiplied 
+that by the percentage that offer at least one self-insured plan to calculate the number of plan sponsors that would be likely to receive ePHI and be subject to the requirements of 45 CFR 164.314(b) [1,943,484 × .382 = 742,411]. We solicit 
+comments on whether group health plans or third-party administrators address any Security Rule requirements for plan sponsors, so the plan sponsors would not have an additional burden or would have a smaller burden than 
+estimated below. 
+Individuals Affected 
+The number of individuals potentially 
+affected by the proposed changes to the Security Rule includes most of the 
+United States population (approximately 337 million), specifically those who have received any health care in the past seven years and whose ePHI is likely created, received, maintained, or transmitted by a regulated entity. Statistics about the number of individuals affected by breaches of PHI provide insight into known instances where safeguards were breached, although the effects of the Security Rule extend farther than that, to all ePHI. Data from the 2022 Annual Report to Congress on Breaches of Unsecured Protected Health Information for Calendar Year 2022
+959revealed 
+nearly 42 million individuals affected by breaches of PHI in that year. Third- party sources reported approximately 133 million individuals affected by health care breaches in 2023.
+960 According to UnitedHealth Group, the 
+2024 breach of its clearinghouse subsidiary Change Healthcare may have affected approximately one-third of the U.S. population, or 112 million individuals.
+961The Department believes 
+that the range of individuals potentially 
+affected by the proposed regulatory changes would be from 42 million to 337 million. 
+HIPAA Breach Data 
+The Department has reported HIPAA/ 
+HITECH breach data annually since 
+2009. Table 5 shows the data as reported to Congress for the past five years. We relied on this data, combined with breach cost data from industry sources, to analyze the potential savings of the NPRM. 
+TABLE 5—B REACHES OF PHI 
+Year Small breaches 
+(fewer than 500 affected 
+individuals) Large breaches 
+(500+ affected 
+individuals) Total 
+Breach count Affected 
+individuals Breach count Affected 
+individuals Breach count Affected 
+individuals 
+2018 ......................................................... 63,098 296,948 302 12,196,601 63,400 12,493,549 
+2019 ......................................................... 62,771 284,812 408 38,732,966 63,179 39,017,778 
+2020 ......................................................... 66,509 312,723 656 37,641,403 67,165 37,954,126 
+2021 ......................................................... 63,571 319,215 609 37,182,558 64,180 37,501,773 
+2022 ......................................................... 63,966 257,105 626 41,747,613 64,592 42,004,718 
+3. Costs of the Proposed Rule 
+Below, the Department provides the 
+basis for its estimated quantifiable costs 
+resulting from the proposed changes to specific provisions of the Security Rule. Many of the estimates are based on assumptions formed through OCR’s experience with compliance and 
+enforcement and accounts from stakeholders. For each cost, the Department provides its main estimate, as well as additional high and low estimates for some costs to account for any uncertainty in the compliance approach of regulated entities. 
+All estimates in this section are based

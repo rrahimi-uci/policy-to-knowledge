@@ -1,0 +1,37 @@
+# Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 177/289)
+
+**Source:** health_2024_02544.pdf
+**Chunk ID:** health_2024_02544_028_sub_177
+**Pages:** 1-160
+**Section Path:** Regulatory Impact Analysis > Paperwork Reduction Act of 1995 > Explanation of Estimated Capital Expenses for 42 CFR Part 2
+
+---
+
+12560 Federal Register / Vol. 89, No. 33 / Friday, February 16, 2024 / Rules and Regulations 
+consent will be needed. Thus, we look 
+to the consent provided by the patient and the existing requirement to attach a Notice to Accompany Disclosure as solutions and are adding a new requirement in § 2.32(b) to require that a copy of the consent be attached to each disclosure for which consent is required. The attached consent may be combined with the required Notice to Accompany Disclosure in § 2.32(a). This will significantly reduce any administrative burdens associated with the new requirement. 
+We are finalizing a new requirement 
+in this section to require that each disclosure made with the patient’s written consent must be accompanied by a copy of the consent or a clear explanation of the scope of the consent provided. We believe that by putting in regulatory text that the consent must accompany the disclosure or provide a clear description of the scope of the consent, the recipient will be able to accurately use and disclose the part 2 records as the patient intended. Additionally, where feasible, part 2 programs should convey to recipients when a consent has been revoked to ensure that only consented information is exchanged. Combining a copy of the consent with the required Notice to Accompany Disclosures in § 2.32 is one way this requirement may be implemented, though it is not the only potential approach to tracking consent, redisclosure and revocation of consent. Both paragraphs (a) and (b) of this section address concerns about ensuring recipients of records understand whether or not the records are subject to part 2. 
+We acknowledge that there are 
+technical challenges associated with complying concurrently with HIPAA and part 2 and that time and resources are needed to update technical and procedural capabilities. The recommendation for recipients to assume TPO consent has been provided unless otherwise notified in writing does not address how recipients other than programs, covered entities, and business associates would learn about this assumption. Nor does this recommendation address how a program (i.e., a discloser) would know 
+in advance whether a recipient is a program, covered entity, or business associate to whom the TPO consent assumption applies. We evaluated this recommendation, but are concerned that the negative requirement (e.g., not to 
+provide consent unless it is other than for TPO) places undue burden on the disclosing program to decide when and 
+when not to attach a copy of the consent. We believe the concern that receipt of 
+notice may transfer liability for 
+improper disclosures from the part 2 program to the recipient is misplaced. However, the recipient incurs an obligation for complying with part 2 requirements that apply to them, namely, the prohibition on use or disclosure of the records for use in proceedings against the patient, absent consent or a court order under this part. 
+Comment 
+Regarding intermediaries and tracking 
+consent, an HIE association suggested 
+that part 2 providers may need to include in the consent form a place for patients to indicate whether they provide consent for disclosure to the intermediary. For additional information on how an intermediary would accept or track patient consent for data redisclosure, the commenter recommended OCR and SAMHSA 
+consult nationwide HINs, as well as ONC, to understand how current state HINs and the TEFCA could impact this landscape. 
+Response 
+We appreciate the comment and the 
+reference to TEFCA. As discussed above 
+in relation to § 2.31 (Consent requirements), a consent to disclose records via an intermediary must contain a general designation as well as additional information about the recipient(s). Thus, we believe the final rule provides for the consent form to have space for an intermediary to be named as the commenter suggests. We note, however, that we are excluding business associates from the final rule definition of ‘‘intermediary,’’ thus HIE business associates will not be subject to the intermediary consent requirements. Instead, HIEs that are business associates will fall within the requirements for a general designation for the TPO consent which does not require specifically consenting to use of an HIE. We received many informative public comments from HIEs/HINs with respect to consent (and revocation) management and will continue to consult with our partner agencies within the Department. OCR, SAMHSA, and others are collaborating to support participation by behavioral health entities in health IT and EHRs, including TEFCA. 
+Final Rule 
+This final rule adopts further 
+modifications in § 2.32 by adding a new 
+paragraph (b) providing that each disclosure made with the patient’s written consent must be accompanied by a copy of the consent or a clear explanation of the scope of the consent provided. 
+Section 2.33—Uses and Disclosures 
+Permitted With Written Consent 
+Proposed Rule

@@ -1,0 +1,37 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 149/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_149
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+973 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+the technical capability to record actions related to 
+electronic health information; restrict the ability for auditing to be disabled to a limited set of users, if the technology permits; detect whether an audit log has been altered; and not allow actions recorded related to electronic health information to be changed, overwritten, or deleted by technology. See 
+45 CFR 170.315(d)(10); see 45 CFR 170.315(d)(2); 
+see also 45 CFR 170.210(e). 
+765See, e.g., ‘‘Montefiore Medical Center,’’ supra 
+note 248. 766See proposed 45 CFR 164.308(a)(2). 
+767‘‘Security Standards: Technical Safeguards,’’ 
+supra note 343, p. 8. 
+768Id. 769Id. 
+770Id. 
+77145 CFR 170.315(d)(8). 
+772‘‘Security Standards: Technical Safeguards,’’ 
+supra note 343, p. 9. The Department proposes four 
+implementation specifications under 
+this proposed standard that are intended to improve the effectiveness of audit controls deployed by a regulated entity. The proposed implementation specification for monitoring and identifying activity at proposed 45 CFR 164.312(d)(2)(i) would require a regulated entity to deploy technology assets and/or technical controls that monitor in real-time (i.e., contemporaneously) all activity occurring in a regulated entity’s relevant electronic information systems and identify indications of unauthorized persons and unauthorized activity, as determined by the regulated entity’s risk analysis. As proposed, the technology assets and/or technical controls also would be required to alert workforce members of such indications in accordance with the regulated entity’s policies and procedures for information system activity review at proposed 45 CFR 164.308(a)(7). Unauthorized activity may include actions by technology assets or persons that have not been authorized to access the regulated entity’s ePHI or relevant electronic information systems. It may also include actions by authorized users or technology assets that are inconsistent with the regulated entity’s policies and procedures for information access management at proposed 45 CFR 164.308(a)(10). The Department proposes that monitoring be continual and conducted in real-time because asynchronous review would allow for the compromise of ePHI for the period of time between the unauthorized activity and its discovery. OCR’s enforcement experience has shown that some regulated entities are potentially failing to implement appropriate audit controls or to review information system activity in a timely manner, which may have contributed to a reportable breach.
+765 
+A regulated entity would be required, 
+under the proposed implementation specification for recording activity at proposed 45 CFR 164.312(d)(2)(ii), to deploy technology assets and/or technical controls that record in real- time all activity in the regulated entity’s relevant electronic information systems.
+766While technical assets and/ 
+or technical controls deployed in 
+accordance with proposed 45 CFR 164.312(d)(2)(i) would monitor activity in its relevant electronic information systems, recording such activity would enable a regulated entity to assess any activity to better understand the 
+activity’s effects. The proposed implementation specification at proposed 45 CFR 164.312(d)(2)(iii) would require a regulated entity to deploy technology assets and/or technical controls to retain records of all activity in its relevant electronic information systems as determined by the regulated entity’s policies and procedures for information system activity review at 45 CFR 164.308(a)(7)(ii)(A). The proposed implementation specification for scope of activity at proposed 45 CFR 164.312(d)(2)(iv) would clarify what would constitute activity to be monitored and recorded in the regulated entity’s relevant electronic information systems as required by the proposed implementation specifications at proposed 45 CFR 164.312(d)(2)(i) and (ii). Specifically, the Department proposes that such activities would include, but would not be limited to, creating, accessing, receiving, transmitting, modifying, copying, or deleting ePHI; and creating, accessing, receiving, transmitting, modifying, copying, or deleting relevant electronic information systems and the information (i.e., not only ePHI) therein. 
+We also propose to add an 
+implementation specification for maintenance at proposed 45 CFR 164.312(d)(2)(iv). Under this proposal, a regulated entity would be expressly required to review and test the effectiveness of the technology assets and/or technical controls required by the respective implementation specifications of this section at least once every 12 months or in response to environmental or operational changes, whichever is more frequent, and modify as reasonable and appropriate. 
+f. Section 164.312(e)—Standard: 
+Integrity 
+Improper alteration or destruction of

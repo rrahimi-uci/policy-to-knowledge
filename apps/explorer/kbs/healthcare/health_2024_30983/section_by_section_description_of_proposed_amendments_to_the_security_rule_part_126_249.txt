@@ -1,0 +1,32 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 126/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_126
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+960 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+645See discussion of proposals to revise 45 CFR 
+164.316. 
+646See 45 CFR 164.304 (proposed definition of 
+‘‘Implement’’). 647See proposed 45 CFR 164.308(a)(13). 164.310 to clarify that the Security Rule 
+requires that physical safeguards be applied to all ePHI in the possession of the regulated entity, that is, throughout the regulated entity’s facilities. The Department also proposes to expand this section to expressly require a regulated entity to implement physical safeguards in accordance with not only 45 CFR 164.306, but also 45 CFR 164.316 to connect the overarching documentation requirements. 
+Consistent with the proposals to 
+revise the general requirements in 45 CFR 164.306(c) and (d), the Department proposes to remove any distinction between addressable and required implementation specifications in this section such that all specifications would be required. Also consistent with changes proposed elsewhere in this NPRM, the Department proposes to modify all four physical safeguard standards to require that the requisite policies and procedures be in writing
+645 
+and implemented throughout the enterprise.
+646Under this proposal, a 
+regulated entity that could not produce a written policy describing how it will implement a required physical safeguard and demonstrate that the safeguard is in effect and operational throughout the enterprise would not be in compliance with the standard. Consistent with our proposals to require that regulated entities maintain their administrative safeguards, the Department also proposes to require a regulated entity to maintain its security measures by reviewing and testing the required security measures at least once every 12 months, and by modifying the same as reasonable and appropriate. Additionally, we propose to modify certain standards and implementation specifications to ensure that regulated entities understand their obligations to ensure the confidentiality, integrity, and availability of ePHI by implementing physical safeguards to protect their relevant electronic information systems and/or the technology assets in their relevant electronic information systems. 
+b. Section 164.310(a)(1)—Standard: 
+Facility Access Controls 
+The Department proposes to modify 
+the standard for facility access controls at 45 CFR 164.310(a)(1) to clarify that the policies and procedures required by this standard must be in writing and address physical access to all of a regulated entity’s relevant electronic information systems and the facility or facilities in which these systems are 
+housed and to add a paragraph to clarify the organization of the regulatory text. The Department also proposes to modify the implementation specifications associated with the standard for facility access controls. Specifically, we propose to modify the implementation specifications for contingency operations, facility security plan, and access control and validation procedures at 45 CFR 164.310(a)(2)(i) through (iii) to clarify that we expect a regulated entity to not only establish and implement policies and procedures, but also that we expect them to be in writing. 
+The Department’s proposal would 
+also require that the procedures for contingency operations proposed at 45 CFR 164.310(a)(2)(i) support the regulated entity’s contingency plan, instead of the current requirement specifying that the procedures support the restoration of lost data under the disaster recovery plan and emergency mode operations plan in the event of an emergency.
+647This proposal would 
+align the implementation specification for contingency operations with the standard for contingency planning at proposed 45 CFR 164.308(a)(13)(i) by specifically ensuring that the written policies and procedures support the required contingency plan. It also would avoid duplicating the implementation specification for disaster recovery planning at proposed 45 CFR 164.308(a)(13)(ii)(D), which would require a regulated entity to address the restoration of lost data and systems in the disaster recovery plan component of its contingency plan. We propose to modify 45 CFR 164.310(a)(2)(ii) to clarify that the written policies and procedures that constitute the facility security plan must apply to all of the regulated entity’s facilities and equipment contained within those facilities. The Department proposes to retitle the implementation specification for access control and validation procedures at 45 CFR 164.310(a)(2)(iii) as ‘‘Access management and validation procedures’’ and to require regulated entities to establish and implement written procedures to both authorize and manage a person’s role-based access to facilities. 
+In the implementation specification 
+for maintenance records, the Department proposes at 45 CFR

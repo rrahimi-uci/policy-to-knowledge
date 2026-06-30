@@ -1,0 +1,50 @@
+# 2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 84/144)
+
+**Source:** health_2024_02544.pdf
+**Chunk ID:** health_2024_02544_028_sub_084
+**Pages:** 1-160
+**Section Path:** V. Regulatory Impact Analysis > F. Paperwork Reduction Act of 1995 > 2. Explanation of Estimated Capital Expenses for 42 CFR Part 2
+
+---
+
+12555 Federal Register / Vol. 89, No. 33 / Friday, February 16, 2024 / Rules and Regulations 
+278See U.S. Dep’t of Health and Human Servs., 
+‘‘Court Orders and Subpoenas’’ (Nov. 2, 2020), 
+https://www.hhs.gov/hipaa/for-individuals/court- orders-subpoenas/index.html. used in legal proceedings absent patient 
+consent or a court order. We believe that the notice remains applicable to redisclosures by part 2 programs, covered entities, and business associates to operationalize the continuing prohibition on use and disclosure of part 2 records in proceedings against the patient, which applies to redisclosures by recipients under § 2.12(d). 
+Also, consistent with 42 U.S.C. 
+290dd–2 and previous part 2 final rules, this final rule states in § 2.33 that ‘‘[w]hen disclosed for treatment, payment, and health care operations activities [. . .] to a covered entity or business associate, the recipient may further use or disclose those records as permitted by 45 CFR part 164, except for uses and disclosures for civil, criminal, administrative, and legislative proceedings against the patient.’’ 
+Simply citing 42 U.S.C. 290dd–2(c) in 
+contractual agreements between the program, covered entities, and business associates rather than providing a notice to accompany each disclosure also is insufficient because this approach would fail to convey to the recipient of part 2 records essential information provided in the Notice to Accompany Disclosure under § 2.32 as finalized in this rule. However, business associate or other contractual agreements may refer to these provisions. Additionally, part 2 programs do not necessarily have contractual agreements with every recipient of records for uses and disclosures for TPO. 
+The text of 42 U.S.C. 290dd–2, as 
+amended by the CARES Act, continues to emphasize limitations on use of part 2 records in civil, criminal, administrative, and legislative proceedings absent patient consent or a court order. Consistent with the statute and congressional intent reflected in the CARES Act, limitations on sharing 
+information in proceedings within part 2 as finalized also remain distinct and more restrictive than analogous provisions within the HIPAA Privacy Rule.
+278 
+Comment 
+A commenter opined that the notice 
+prohibiting redisclosure, which accompanies records disclosed with patient consent, should clearly identify whether the records are subject to the new redisclosure permissions or still protected by part 2. Response 
+We believe this comment assumes a 
+false dichotomy—that records are either subject to redisclosure or protected by part 2. Records that may be redisclosed according to the HIPAA standards— those for which a TPO consent was obtained—are still protected by the part 2 prohibition on use and disclosure in proceedings against the patient, absent consent or a court order under this part. However, assuming that the commenter is questioning how the recipient would identify records that are disclosed under a single consent for all TPO versus those that are disclosed under a more limited consent, we are finalizing an additional modification in § 2.32(b) to require that ‘‘[e]ach disclosure made with the patient’s written consent must be accompanied by a copy of the consent or a clear explanation of the scope of the consent provided.’’ We believe this will provide the information recipients of records need to understand the redisclosure permissions that may be available. 
+Comment 
+A few medical professionals’ 
+associations and other commenters said 
+that retaining the Notice to Accompany Disclosure requirement means that the need to identify, segment, and segregate the data will persist to append the notice with each disclosure. One association requested that the Department exclude covered entities from this requirement. 
+Response 
+We do not believe that the notice 
+requirement in § 2.32 is what may 
+prompt segmentation of records or segregation of part 2 data. The continuing prohibition in § 2.12(d) on a recipient’s use or disclosure of records in legal proceedings must be effectively operationalized, and it is unclear how that can be accomplished unless the recipient is aware that the records are subject to the prohibition. We believe this can be accomplished within an electronic health exchange environment, and we are finalizing additional modifications to § 2.12(d)(2)(i)(C) to expressly state that ‘‘[a] part 2 program, covered entity, or business associate that receives records based on a single consent for all treatment, payment, and health care operations is not required to segregate or segment such records.’’ We believe health IT vendors are capable of updating or creating systems that manage consent, revocation, and other limitations on disclosure and redisclosure so long as the users of the system have current knowledge of the 
+type of data and the limitations on its use and disclosure. The final rule neither requires nor prohibits segregation of records or segmentation of data to accomplish these tasks. The short form of the notice has not changed and was created for use in an electronic health information exchange environment. We further recognize that the notice is required only for disclosures made with consent, and thus the notice would not be required 
+for redisclosures as permitted by HIPAA for TPO or other permitted purposes when the initial disclosure was based on a TPO consent. 
+Comment 
+Some commenters supported 
+proposed changes in whole or part and 
+other commenters opposed or expressed mixed views of proposed changes. 
+A health care provider supported the 
+proposed heading clarification, and further clarification of redisclosure rights for TPO by covered entities, business associates and part 2 programs as allowed by the HIPAA Privacy Rule. A health insurer supported aligning notices to accompany disclosures with the HIPAA Privacy Rule, particularly adding exceptions for the prohibition on use or disclosure of part 2 records for TPO. A few health information associations supported the Department’s proposal to include a Notice to Accompany Disclosure of records to instruct an organization of their ability to redisclose this information at the direction of the patient. A health system commenter said that it includes a disclosure statement on all records it releases. Therefore, it supported a Notice to Accompany Disclosure of part 2 records. However, the commenter recommended that the disclosure statement apply to all disclosures, including for TPO, stating that this would minimize time and operational burden of determining which records would require the disclosure statement. 
+Response 
+We appreciate the comments. 
+Comment 
+A health plan and at least a few 
+associations recommended that the 
+Notice to Accompany Disclosures be eliminated. A couple of commenters stated that retaining the notice to accompany the disclosure requirement will ensure that certain protections for part 2 records continue to ‘‘follow the record,’’ as compared to HIPAA, whereby protections are limited to PHI held by a covered entity or business associate. A few commenters stated that 
+VerDate Sep<11>2014 18:41 Feb 15, 2024 Jkt 262001 PO 00000 Frm 00085 Fmt 4701 Sfmt 4700 E:\FR\FM\16FER2.SGM 16FER2lotter on DSK11XQN23PROD with RULES2

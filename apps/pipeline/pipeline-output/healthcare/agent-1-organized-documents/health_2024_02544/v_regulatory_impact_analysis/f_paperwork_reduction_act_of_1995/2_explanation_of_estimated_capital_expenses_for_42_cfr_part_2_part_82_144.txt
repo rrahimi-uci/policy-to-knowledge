@@ -1,0 +1,52 @@
+# 2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 82/144)
+
+**Source:** health_2024_02544.pdf
+**Chunk ID:** health_2024_02544_028_sub_082
+**Pages:** 1-160
+**Section Path:** V. Regulatory Impact Analysis > F. Paperwork Reduction Act of 1995 > 2. Explanation of Estimated Capital Expenses for 42 CFR Part 2
+
+---
+
+12553 Federal Register / Vol. 89, No. 33 / Friday, February 16, 2024 / Rules and Regulations 
+information it retains once it learns of 
+a revocation of consent or HIPAA authorization. These commenters also urged express clarification that revocation of consent only applies going forward. Commenters that supported the ability to continue making redisclosures of information retained by the recipient requested clarification to reduce concerns by part 2 programs that they could be liable for redisclosures made by recipients after consent has been revoked. As described in the discussion of § 2.13 above, a few HIE/HINs proposed addressing revocation in § 2.13 and limiting it to new information received after the revocation and to allow continued use and disclosure of part 2 records the recipient has receiving prior to the revocation. 
+Response 
+As stated in the NPRM, the 
+Department does not expect a part 2 
+program to ‘‘pull back’’ records that it has disclosed under a valid consent based on a patient’s revocation of consent. At a minimum we intend that a written revocation serves to prohibit a part 2 program from making further uses and disclosures of a patient’s record according to the scope of the revocation. Based on the public comments received, we also intend that when records have been transmitted through an HIE, the HIE should cease making further disclosures of the patient’s record to other member participants. As stated in the NPRM, to fully accomplish the aims of the right to revoke consent, we expect that part 2 programs will work to ensure that any ongoing or automatic disclosure mechanisms are halted upon receipt of a request for revocation. 
+Certain recipients under a consent for 
+TPO (part 2 programs, covered entities, and business associates) are permitted to redisclose records according to the HIPAA regulations. Under 45 CFR 164.508(b)(5) a covered entity or business associate is required to cease making further uses and disclosures of PHI received once they are informed of an authorization revocation, except to the extent they have already taken action in reliance on the authorization or if it was obtained as a condition of 
+obtaining insurance coverage and other law provides the insurer with the right to contest a claim. We believe this requirement applies equally to revocation of a part 2 consent. This interpretation is revised from the NPRM preamble discussion that proposed a revocation would only be effective to prohibit further disclosures by a program and would not prevent a recipient part 2 program, covered entity, or business associate from using the record for TPO, or redisclosing the 
+record as permitted by the HIPAA Privacy Rule. 
+Taking into account covered entities’ 
+obligations under HIPAA once they are informed of a revocation, we believe they are also obligated to comply with a revoked consent about which they are aware. We do not see a reason for a recipient covered entity to treat a patient’s revocation of part 2 consent differently that a revoked HIPAA authorization. For example, if a part 2 program disclosed part 2 records under a TPO consent to a health plan and the patient later revoked said consent, the health plan that is processing a claim may complete the transaction but may not process new part 2 claims for that patient/plan member. In another example, a covered entity health care provider who is currently treating a patient and has received a patient’s part 2 records will necessarily need to continue relying on the records it received to continue treating the patient (e.g., the provider cannot ‘‘unlearn’’ the 
+patient’s history); however, it is prohibited from redisclosing the records once the patient revokes consent in writing. Handling revoked authorizations is not a new process for covered entities and they should therefore be capable of handling 
+revoked consents in the same manner. 
+Comment 
+An academic medical center 
+expressed concern about scenarios in 
+which the part 2 program relied on the original consent for a specific use or disclosure, but such use or disclosure may need to occur after such revocation has occurred. Examples include when a patient signs a consent to permit the part 2 program to disclose records for payment purposes, to ensure the program receives appropriate reimbursement for its services but then revokes his or her consent prior to the part 2 program submitting the bill to the patient’s payor. According to this commenter, the NPRM seems to suggest that the part 2 program would no longer be permitted to make such a disclosure, despite the fact that the part 2 program agreed to treat the patient on the condition of receiving reimbursement from the patient’s payor. 
+Response 
+If a disclosure cannot practically or 
+feasibly be stopped after revocation 
+because it is already in process or due to technological limitations, this would constitute such reliance. For example, such reliance could occur in research or if the patient is being treated for co- occurring disorders for which close consultation among specialists is paramount. Revocation of consent raises some of the same issues as withholding consent and conditioning treatment on consent for necessary disclosures. Thus, a program would need to explain to the patient when it is not feasible to stop or prevent a disclosure from occurring and discuss with a patient the consequences of revoking their consent in some circumstances. It is reasonable that a patient who seeks to revoke consent for disclosure to their health plan would be expected to make another arrangement to ensure payment which may include paying out of pocket for services. 
+Comment 
+Some commenters specifically 
+addressed whether oral revocation of 
+consent should be permitted and were nearly even in opposition and support. The several organizations favoring oral revocation expressed very strong support for recognizing this as a valid expression of patient choice. The rationales offered by commenters that did not support the proposed changes were the following: 
+•HIPAA requires written revocation. 
+•The CARES Act requires written 
+revocation. 
+•Equating oral revocation with oral 
+consent because part 2 programs are most likely to document oral consent in the part 2 record. 
+•Concern about how oral revocation 
+would be documented and communicated to all entities that receive part 2 records. 
+Response 
+The statute, 42 U.S.C. 290dd–2(b)(C), 
+states that revocation of a TPO consent 
+must be in writing. At the same time, consideration should be given to other civil rights implicated in this interaction and the entity’s obligation under the relevant civil rights laws to provide assistance as needed to ensure meaningful access by enabling patients to effectuate a revocation. 
+Final Rule 
+The final rule adopts the proposed 
+changes to the consent requirements in 
+paragraph (a) with further modifications to paragraph (a)(4)(iii) to replace ‘‘HIPAA Privacy Rule’’ with ‘‘HIPAA regulations’’ and remove part 2 program from the statement about redisclosure according to the HIPAA regulations and to paragraph (a)(5)(iii) to require an opportunity to opt out of fundraising communications rather than requiring patient consent. The final rule adopts the proposed changes to the existing paragraph (b) of § 2.31 (Expired, deficient, or false consent) and 
+VerDate Sep<11>2014 18:41 Feb 15, 2024 Jkt 262001 PO 00000 Frm 00083 Fmt 4701 Sfmt 4700 E:\FR\FM\16FER2.SGM 16FER2lotter on DSK11XQN23PROD with RULES2

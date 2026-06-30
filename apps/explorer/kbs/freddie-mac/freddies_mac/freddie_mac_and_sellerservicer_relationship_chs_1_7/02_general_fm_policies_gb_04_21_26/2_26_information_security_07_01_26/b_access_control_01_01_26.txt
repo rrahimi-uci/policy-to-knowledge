@@ -1,0 +1,111 @@
+# b.  Access control (01/01/26)
+
+**Source:** freddies_mac.pdf
+**Chunk ID:** freddies_mac_120
+**Pages:** 53-54
+**Section Path:** Freddie Mac and SellerServicer Relationship (Chs 1-7) > 02 - General FM Policies GB-04-21-26 > 2.26 Information security (07/01/26) > b.  Access control (01/01/26)
+
+---
+
+Guide Bulletin Update 04/21/26 Chapter 2 – Page 40 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the AllRegs 
+web site of ICE Mortgage Technology  (with a paid subscription).  Guide Chapter  2 – General Freddie Mac Policies  
+Guide Chapter 2 – General Freddie Mac Policies  
+  
+b.  Access control ( 01/01/26) 
+(i) Access management policy  
+ 
+As part of its information security program, a Seller/Servicer must:  
+ 
+• Establish an access management policy that includes a process for granting and 
+removing system access, requirements for Authentication and rules of behavior  
+ 
+• Define remote access requirements including acceptable use, approvals and 
+recertification processes  
+ 
+• Develop and apply an account lock -out threshold that determines the number of failed 
+login attempts that will cause an account to be locked out until it is reset and/or a 
+number of specified minutes has passed in conjunction with an account lock -out 
+durati on setting  
+ 
+• Define access and Authentication requirements for system administrators, including:  
+ 
+o Enforce access control methods that limit access to systems, physical or virtual 
+resources and grant access to users , including third parties,  on a need to know 
+basis.  Access to potentially sensitive personal information must be limited to only 
+those that must use it to perform their work.   
+ 
+o Define and enforce requirements for multi -factor authentication where applicable 
+(privileged sessions, remote connectivity, applications housing personal 
+information , etc.) . 
+ 
+o Manage Seller/Servicer user accounts for Freddie Mac systems in accordance 
+with the Guide and its applicable Purchase and Servicing Documents.  
+Seller/Servicers must monitor for users who transfer roles or are terminated and 
+no longer need access to their accounts as required in Section 2.13.  
+   
+(ii) Granting, removing and reviewing access  
+ 
+Seller /Servicers must maintain written procedures for its systems for:  
+ 
+• Approval of access requests  
+ 
+• Removal of access upon employee/contractor terminations and transfers  
+ 
+• Analysis of account user access, inactivity and subsequent removal of access that is 
+no longer needed for employees/contractors   
+ 
+• Periodic review of all user access privileges and certify access according to the 
+principle of least privilege
+
+Guide Bulletin Update 04/21/26 Chapter 2 – Page 41 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the AllRegs 
+web site of ICE Mortgage Technology  (with a paid subscription).  Guide Chapter  2 – General Freddie Mac Policies  
+Guide Chapter 2 – General Freddie Mac Policies  
+ • Prohibit or prevent using the same service account identifiers and passwords in both 
+production and non -production environments  
+ 
+Seller/Servicers must designate one or more individuals on its staff to serve as the 
+system administrator(s) to manage access to Freddie Mac systems in accordance with 
+the requirements of Section 2.13.  
+ 
+(iii)  Authentication requirements and guidelines  
+ 
+Seller/Servicers must require employees to authenticate or prove their identity to the 
+system  with a multifactor authentication method  or process which includes :  
+• User identification codes  
+• Passwords  
+• Personal identification numbers  
+• A smart card and/or a token device  
+ 
+Ensure that this process is fatigue resistant.  Ensure that all access to Freddie Mac data 
+requires multifactor authentication.  
+ 
+If passwords are used, the authentication policy  must mandate minimum guidelines for 
+password complexity, reuse timelines and pas sword change  timelines, and storage of 
+passwords outside of secured password safes.    
+ 
+Seller/Servicers must utilize password vaults with multifactor authentication and ensure 
+that no passwords are stored in unsecured files.  
+ 
+(iv) Asset management  
+ 
+Seller/Servicers must maintain an inventory management system to track physical and 
+software assets, such as end -user technology, servers, network devices, and 
+corresponding asset ownership.  The inventory management system must be reconciled 
+to actual inventory on a periodic basis to veri fy all assets are included.   
+ 
+Documented procedures must be in place detailing guidelines and requirements for 
+tracking the removal of assets from a facility.  
+ 
+Seller/Servicers must develop procedures for continuous monitoring of access and usage 
+of Freddie Mac confidential information and potentially sensitive personal information to 
+detect and respond to any unauthorized access or anomalies.  
+ 
+(v) Cloud computing  
+When a Seller/Servicer consumes or provides cloud services that store, process, access 
+or transmit Freddie Mac confidential information or any potentially sensitive personal 
+information or connect to any system, the Seller/Servicer must maintain a formal cloud 
+computing policy.

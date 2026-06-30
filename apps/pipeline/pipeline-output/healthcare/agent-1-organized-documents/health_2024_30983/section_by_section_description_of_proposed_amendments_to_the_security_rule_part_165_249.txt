@@ -1,0 +1,22 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 165/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_165
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+These activities are included in NIST 
+guidance for Security Rule compliance,
+816which directs regulated 
+entities to consider the following questions: Is the frequency of backups appropriate for the environment? Are backup logs reviewed and data restoration tests conducted to ensure the integrity of data backups? Is at least one copy of the data backup stored offline to protect against corruption due to ransomware or other similar attacks? The potential need for these requirements also has been indicated through the rising number of ransomware attacks and the high number of individuals affected in such incidents. The Department believes these new implementation 
+specifications, if finalized, would provide additional instruction for regulated entities about conducting data backups and enhance the ability of regulated entities to avoid costly work stoppages and interruptions in the delivery of health care when data becomes unavailable because of a disaster, security incident, or other emergency. We believe enhanced measures for data backup would reduce the need to pay ransom to hackers to recover compromised data. 
+k. Section 164.312(j)—Standard: 
+Information Systems Backup and Recovery 
+The Department also proposes to add 
+a new standard for backup and recovery of relevant electronic information systems at proposed 45 CFR 164.312(j). This proposed standard would require a regulated entity to deploy technical controls to create and maintain backups of relevant electronic information systems. It would also require a regulated entity to review and test the effectiveness of such technical controls at least once every six months or in response to environmental or operational changes, whichever is more frequent, and modify them as reasonable and appropriate. The Department would not require a regulated entity to test every relevant electronic information system; rather, the requirement to test the effectiveness of the controls would permit a regulated entity to review the relevant log files and to test a representative sample of the backup of its relevant electronic information systems. 
+This proposed standard would reduce 
+potential gaps in the data that needs to be backed up and recovered, to ensure that regulated entities address compliance across relevant electronic information systems. It is crucial to a regulated entity’s recovery from an emergency or other occurrence, including a security incident, that adversely affects its relevant electronic information systems to create and maintain backups of such information systems that comprise the infrastructure that maintains and supports the 
+confidentiality, integrity, and availability of ePHI. The Department would expect that the extent of this activity would be affected by the size and complexity of the relevant electronic information systems used by a regulated entity. It is also consistent with NIST guidance, which directs regulated entities to consider whether backups or images of operating systems, devices, software, and configuration files necessary to support the 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00083 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

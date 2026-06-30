@@ -1,0 +1,152 @@
+# 10.11 Mortgage not modified (11/30/12) (part 17/85)
+
+**Source:** freddies_mac.pdf
+**Chunk ID:** freddies_mac_3082_sub_017
+**Pages:** 1-277
+**Section Path:** 10 - Mtg, Orig, UW Fundamentals GB-02-24-26.pdf > 10.11 Mortgage not modified (11/30/12)
+
+---
+
+Guide Bulletin Update 04/21/26 Chapter 2 – Page 42 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the AllRegs 
+web site of ICE Mortgage Technology  (with a paid subscription).  Guide Chapter  2 – General Freddie Mac Policies  
+Guide Chapter 2 – General Freddie Mac Policies  
+ The policy must  address:  
+• Due diligence : Specify appropriate due diligence responsibilities and ongoing 
+oversight and monitoring of the cloud service providers’ security  and understand 
+concentration risk dependencies when using cloud computing  
+• System vulnerabilities : Articulate processes and responsibilities to securely 
+configure cloud systems, provision access, and log and monitor the F reddie Mac  
+information assets residing in or being processed in the cloud environment  
+• Identity and access management : Define roles for cloud access management, 
+limiting account privileges, implementing multifactor authentication, frequently 
+updating and reviewing account access, monitoring activity, and requiring privileged 
+users to have separate usernames and passwords  
+• Security controls for sensitive data : Define responsibilities for implementing 
+controls to safeguard sensitive data , including sensitive personal information, and  limit 
+a malicious actor’s ability to exploit data during a breach    
+ 
+(vi) Vendor  risk management  
+ 
+As required in Section 2.27, Seller/Servicers must implement a vendor risk management 
+program and have formal written requirements in place for vendor risk management .   
+ 
+c. Compliance with Freddie Mac Security Incident requirements ( 01/01/26) 
+The requirements of this Section 2.26(c) apply  when : 
+ 
+• The Seller/Servicer knows or reasonably believes that there has been any unauthorized 
+access to, or acquisition of, data or computing resources to Freddie Mac systems, 
+Seller/Servicer systems, including any parent or subsidiary company’s system, or the 
+systems of vendors that may compromise the security, confidentiality, availability, 
+integrity or privacy of Freddie Mac information (examples include a phishing email or 
+malware attack, etc.)  [(“Security Incident”) ], or  
+• From the circumstances and available information, a reasonable information security 
+professional could conclude that there has been a Security Incident  
+ 
+1. Notification to Freddie Mac  
+ 
+Immediately, and in no event later than 36 hours after the Security Incident is discovered, 
+the Seller/Servicer must notify Freddie Mac of the Security Incident by completing the 
+Freddie Mac  Incident Intake  Form. 
+ 
+If the Seller/Servicer is unable to access the form, notification may be done via email at 
+Information_Security@freddiemac.com , 
+Privacy_Incident_Management@freddiemac.com  and 
+MF_Data_Security_and_Privacy@freddiemac.com  (ensure to include all email 
+addresses)  or by  calling (571) 382-3333.
+
+Guide Bulletin Update 04/21/26 Chapter 2 – Page 43 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the AllRegs 
+web site of ICE Mortgage Technology  (with a paid subscription).  Guide Chapter  2 – General Freddie Mac Policies  
+Guide Chapter 2 – General Freddie Mac Policies  
+ 2. Obligation to investigate and remediate  
+The Seller/Servicer must promptly investigate, mitigate and remediate the Security 
+Incident at the Seller/Servicer’s expense, including identifying all Freddie Mac confidential 
+information or any potentially sensitive personal information affected by the  Security  
+Incident and preventing the continuation and recurrence of the Security Incident.  
+3. Information to be provided to Freddie Mac  
+After notifying Freddie Mac and providing initial information about the Security Incident, 
+the Seller/Servicer must continue to update Freddie Mac as the investigation progresses, 
+and as Freddie Mac may reasonably request, with interim status updates, including new 
+details learned and progress made since the last update, until Freddie Mac is satisfied 
+that there has been compliance with applicable laws and the event giving rise to the 
+Security Incident is fully resolved , remediated and closed.  
+All information should be sent to the location designated by Freddie Mac.  
+The information to be provided by the Seller/Servicer includes:  
+(i) Technical information  
+ 
+a. Related internal and external investigations  
+ 
+b. Risk factors  
+ 
+c. Causation factors  
+ 
+d. Technical indicators of compromise (email addresses, hash values, IP addresses, 
+malware code, vector of compromise, etc.)  
+ 
+e. Tactics, techniques, and procedures associated with the Security Incident  
+ 
+f. Details surrounding the attack methodology  
+ 
+g. Timing of the  Security  Incident  
+ 
+h. Technical and forensic reports, if available  
+ 
+i. Other information that Freddie Mac may reasonably request to assist Freddie Mac 
+in evaluating the potential or actual effect of the Security Incident on Freddie 
+Mac’s infrastructure and impacted Borrowers or employees  
+ 
+j. Actions that are being taken to remediate the Security Incident and its cause, and 
+to protect individuals, business assets, and Freddie Mac confidential information 
+and any potentially sensitive personal information
+
+Guide Bulletin Update 04/21/26 Chapter 2 – Page 44 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the AllRegs 
+web site of ICE Mortgage Technology  (with a paid subscription).  Guide Chapter  2 – General Freddie Mac Policies  
+Guide Chapter 2 – General Freddie Mac Policies  
+ k. Remediation actions or workarounds or corrections that resolved the Security 
+Incident and restored service to its best quality  
+ 
+l. Eradication and recovery steps taken  
+ 
+m. Postmortem and similar after -action reports generated  
+ 
+n. Other details and information concerning the Security Incident  
+ 
+o. Final incident closure report  
+(ii) Freddie Mac and any potentially sensitive personal i nformation  
+ 
+a. Whether, and if so the extent to which, Freddie Mac  information or any potentially 
+sensitive personal information was accessed, taken, or exposed  
+ 
+b. The nature and details of the information accessed, taken, or exposed  
+ 
+c. All facts relevant to actual or potential misuse of the information, including the 
+likelihood of misuse and, if applicable, how the information was misused  
+ 
+d. Whether there is any cyber or other insurance coverage for expenses related to 
+the Security Incident  
+ 
+e. Potential damage estimates associated with the Security Incident  
+(iii)  Compliance information  
+a. Actions that are being taken to comply with applicable laws 
+ 
+b. If requested by Freddie Mac, a  Certificate of Compliance (in form and substance 
+requested by Freddie Mac evidencing, among other things, that the 
+Seller/Servicer has, with respect to the Security I ncident, complied with applicable 
+federal, State, and local data breach notification laws and regulations and all 
+Purchase and Servicing Documents, including the Guide)  
+ 
+c. Copies of any communications to any impacted individuals , State and federal 
+agencies and offices, regulators, credit reporting agencies or others  
+ 
+4.  Compliance with laws 
+The Seller/Servicer must comply in a timely manner with applicable laws.  Where a  
+Security  Incident creates an obligation to notify impacted individuals , the Seller/Servicer 
+will first give Freddie Mac the opportunity to review and comment on any notification that 
+in any way refers to or identifies Freddie Mac directly or indirectly.   
+The Seller/Servicer must comply with applicable laws that require notification to federal 
+or State authorities.  Promptly following a request by Freddie Mac, the Seller/Servicer

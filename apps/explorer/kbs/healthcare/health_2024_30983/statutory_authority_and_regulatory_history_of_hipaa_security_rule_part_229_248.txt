@@ -1,0 +1,66 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 229/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_229
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+1012 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+limited to hardware, software, electronic 
+media, information, and data. 
+Threat means any circumstance or 
+event with the potential to adversely affect the confidentiality, integrity, or availability of electronic protected health information. 
+User means a person with authorized 
+access. 
+Vulnerability means a flaw or 
+weakness in an information system, information system security procedures, design, implementation, or technical controls that could be intentionally exploited or accidentally triggered by a threat. 
+Workstation means an electronic 
+computing device and electronic media stored in its immediate environment. Workstation includes but is not limited to the following types of devices: a server, desktop computer, laptop computer, virtual device, and mobile device such as a smart phone or tablet. 
+§ 164.306 Security standards: General 
+rules. 
+(a) General requirements. Each 
+covered entity and business associate 
+must do the following with respect to all electronic protected health information it creates, receives, maintains, or transmits: 
+(1) Ensure the confidentiality, 
+integrity, and availability of the electronic protected health information. 
+(2) Protect against any reasonably 
+anticipated threats or hazards to the confidentiality, integrity, or availability of the electronic protected health information. 
+(3) Protect against any reasonably 
+anticipated uses or disclosures of the electronic protected health information that are not permitted or required under subpart E of this part. 
+(4) Ensure compliance by its 
+workforce with this subpart and all administrative, physical, and technical safeguards implemented in accordance with this subpart. 
+(b) Flexibility of approach. (1) 
+Covered entities and business associates may use any reasonable and appropriate security measures that allow the covered entity or business associate to implement the standards and 
+implementation specifications as specified in this subpart. 
+(2) In deciding which security 
+measures to use, a covered entity or business associate must take into account all of the following factors: 
+(i) The size, complexity, and 
+capabilities of the covered entity or business associate. 
+(ii) The covered entity’s or the 
+business associate’s technical infrastructure, hardware, and software security capabilities. (iii) The costs of security measures. 
+(iv) The probability and criticality of 
+potential risks to electronic protected 
+health information. 
+(v) The effectiveness of the security 
+measure in supporting the resiliency of the covered entity or business associate. 
+(c) Standards and implementation 
+specifications. A covered entity or 
+business associate must comply with the applicable standards, including their implementation specifications, as provided in this subpart. 
+§ 164.308 Administrative safeguards. 
+(a) A covered entity or business 
+associate must, in accordance with §§ 164.306 and 164.316, implement all of the following administrative safeguards to protect the confidentiality, integrity, and availability of all electronic protected health information that it creates, receives, maintains, or transmits: 
+(1) Standard: Technology asset 
+inventory—(i) General. Conduct and 
+maintain an accurate and thorough written inventory and a network map of the covered entity’s or business associate’s electronic information systems and all technology assets that may affect the confidentiality, integrity, or availability of electronic protected health information. 
+(ii) Implementation specifications— 
+(A) Inventory. Develop a written 
+inventory of the covered entity’s or business associate’s technology assets that contains the identification, version, person accountable, and location of each technology asset. 
+(B) Network map. Develop a network 
+map that illustrates the movement of electronic protected health information throughout the covered entity’s or business associate’s electronic information systems, including but not limited to how electronic protected health information enters and exits such information systems, and is accessed from outside of such information systems. 
+(C) Maintenance. Review and update 
+the written inventory of technology assets required by paragraph (a)(1)(ii)(A) of this section and the network map required by paragraph (a)(1)(ii)(B) of this section in the following circumstances: 
+(1) On an ongoing basis, but at least 
+once every 12 months. 
+(2) When there is a change in the

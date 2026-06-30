@@ -1,0 +1,56 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 137/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_137
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+966 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+698‘‘Cybersecurity Performance Goals,’’ supra 
+note 18. 
+699Id. at 3–4. 
+700See 45 CFR 164.308(a)(4) and proposed 45 
+CFR 164.308(a)(10). 
+701See ‘‘Controlling Access to ePHI: For Whose 
+Eyes Only?,’’ supra note 416. 
+702‘‘Defending Against Common Cyber-Attacks,’’ 
+supra note 396. 
+703See 45 CFR 170.315(d)(1). 704‘‘Cybersecurity Performance Goals,’’ supra 
+note 18. 
+705See 45 CFR 170.315(d)(6). 
+706‘‘Controlling Access to ePHI: For Whose Eyes 
+Only?,’’ supra note 416. 
+707Id. 708For example, Windows 10 operating system 
+allows users to customize security options to 
+automatically logout a user after a specified period of inactivity. 
+709See 45 CFR 170.315(d)(5). 
+710‘‘Brute Force Attacks Conducted by Cyber 
+Actors,’’ Cybersecurity & Infrastructure Security Agency, U.S. Department of Homeland Security (May. 6, 2020), https://www.cisa.gov/news-events/ alerts/2018/03/27/brute-force-attacks-conducted- cyber-actors. 
+711‘‘Security and Privacy Controls for Information 
+Systems and Organizations,’’ supra note 600, p. 39. help detect and track anomalous 
+activities.698 
+Additionally, we propose to add an 
+implementation specification at proposed 45 CFR 164.312(a)(2)(ii) for administrative and increased access privileges. Access controls should enable an authorized user to access the minimum necessary information needed to perform their job functions.
+699Rights 
+and/or privileges should be granted to authorized users based on the policies and procedures required under the administrative safeguard for information access management.
+700For example, a 
+workforce member who has certain role- based administrative access privileges should have separate user identities for non-administrative access privileges and administrative access privileges. Separating a single workforce member’s user identities based on access privilege substantially limits the risk that an intruder will be able to access ePHI through a workforce member’s user identity when they are using the administrative access privileges.
+701A 
+regulated entity may be able to improve the control and review of the use of administrative access privileges, such as through a privileged access management 
+system, to understand how privileged accounts are used within its environment and help detect and prevent the misuse of privileged accounts.
+702 
+The proposed implementation 
+specification would require a regulated entity to separate the unique user identities required by the implementation specification for unique user identification based on the type of access privileges used by a specific unique user. For example, the adoption of health IT that is certified through the ONC Health IT Certification Program as having the technical capability to establish user permissions for accessing, and performing actions with, electronic health information based on unique identifiers may contribute to a regulated entity’s compliance with the proposed new implementation specification for administrative and increased access privileges, should the proposal be finalized.
+703This proposed new 
+implementation specification aligns with the Department’s essential CPG for Separate User and Privileged Accounts by addressing the separation of privileged or administrator access rights from common user accounts.
+704 
+Additionally, the Department 
+proposes to redesignate the implementation specification for emergency access procedures at 45 CFR 164.312(a)(2)(ii) as proposed 45 CFR 164.312(a)(2)(iii) and to modify it to require a regulated entity to establish both written procedures and technical procedures for obtaining necessary ePHI during an emergency and to implement them as needed. For example, we note that the adoption of health IT that is certified through the ONC Health IT Certification Program as having the technical capability to permit an identified set of users to access electronic health information during an emergency may contribute to a regulated entity’s compliance with the proposed implementation specification for emergency access procedures, should the proposal be finalized.
+705 
+Under the Department’s proposal, the 
+implementation specification for automatic logoff at 45 CFR 164.312(a)(2)(iii) would be redesignated as proposed 45 CFR 164.312(a)(2)(iv) and modified to require a regulated entity to deploy technical controls that terminate an electronic session after a period of inactivity. Deploying a mechanism to automatically terminate an electronic session after a period of inactivity reduces the risk of unauthorized access when a user forgets or is unable to terminate their session.
+706Failure to deploy automatic 
+logoff not only increases the risk of unauthorized access and potential alteration or destruction of ePHI; it also impedes an organization’s ability to properly investigate such unauthorized access because it would appear to originate from an authorized user.
+707

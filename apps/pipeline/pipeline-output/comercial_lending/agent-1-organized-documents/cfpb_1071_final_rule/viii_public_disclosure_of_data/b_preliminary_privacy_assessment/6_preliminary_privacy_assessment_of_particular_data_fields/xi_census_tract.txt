@@ -1,0 +1,90 @@
+# xi. Census Tract
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_710
+**Pages:** 701-702
+**Section Path:** VIII. Public Disclosure of Data > B. Preliminary Privacy Assessment > 6. Preliminary Privacy Assessment of Particular Data Fields > xi. Census Tract
+
+---
+
+701 hindering fair lending analyses. Similarly, such modifications could hinder identification of 
+community development needs and opportunities.  
+xi. Census T ract 
+Proposed § 1002.107(a)(13) would have  require d financial institutions to collect and 
+report the census tract containing the address or location where the proceeds of the credit applied 
+for or originated will be or would have been principally applied; or if this information is unknown, the tract containing the address or location of the main office or headquarters of the 
+applicant; or  if this information is also unknown, the tract containing another address or location 
+associated with the applicant. In addition to reporting the census tract, the financial institution 
+would have been required to indicate which one of these thr ee types of addresses or locations the 
+census tract is based on.  As discussed above in the section -by-section analysis of 
+§ 1002.107(a)(13) , the Bureau is finalizing this data point as proposed.  
+The NPRM observed that the census tract itself would likely disclose minimal, if any, 
+information about an applicant or related natural person that may be harmful or sensitive if such 
+person were re -identified, or that may be harmful or sensitive to an identified financial 
+institution. The Bureau acknowledged that for sole proprietors, the main office is often a home address, but it noted that the applicant ’s actual street address would not be reported to the 
+Bureau. The Bureau also noted that small businesses commonly make their locations available in the normal co urse of business —for example, to reach prospective customers.  
+The Bureau stated that i f the address reflects where the proceeds of the credit will be or 
+would have been principally applied, disclosing the census tract may reveal some information 
+about an a pplicant ’s business strategy, particularly if paired with the loan purpose data field. For 
+example, the Bureau stated that  the data could indicate that a small business is pursuing or was 
+pursuing an expansion to a particular location . However, the Bureau believed  the value of this 
+information to a small business ’s competitors is likely mitigated by the time to publication. The 
+Bureau stated that d isclosure of the census tract in unmodified form may also reveal information 
+that financial institutions regard  as harmful or sensitive, such as a financial institution ’s trade 
+area. However, the Bureau did not conclude  that disclosure would permit the reverse -engineering 
+of a financial institution ’s proprietary lending models.  
+The Bureau identified publicly availa ble datasets that include data fields an adversary 
+could directly match to the census tract data field in unmodified form in the public application -
+level data with respect to an applicant or related natural person. The Bureau expected  that, in 
+most cases, the census tract that financial institutions would report to the Bureau  would be based 
+on the address or location of the main office or headquarters of the applicant, either because that 
+is where the proceeds of the credit will be applied , or because the f inancial institution does not 
+know the location or address where the proceeds of the credit will be applied but does know the 
+applicant ’s main office or headquarters address.  The Bureau also observed that, for many small 
+businesses, this address or location is likely to be publicly available from sources such as the 
+business ’s website and review websites. Information about a business ’s location is also likely 
+available from loan -level data for public loan programs as well as from private datasets, such as 
+from data brokers. Therefore, in many cases, the Bureau expected that  an adversary could use the 
+census tract data fields, combined with other fields, to match a section 1071 record to an
+
+702 identified publicly available record . The Bureau also sought comment on whether disclosing  
+county, State, or some other geographic identifier —rather than the census tract —would affect 
+the benefits of disclosure, the potential for harm or sensitivity, and the potential for re -
+identification of applicants or related natural persons . 
+A range of commenters provided feedback on the Bureau ’s analysis. Community group 
+commenters saw the publication of this data as important to both the fair lending and business 
+and community development purposes of section 1071. Some said that because there are 
+currently no comprehensive data on the capital access problems faced by marginalized 
+communities, census tract data would provide insight into small business credit challenges at the 
+intersection of race, sex, ethnicity, and geograph y. Other community groups and a business 
+advocacy group expressed support for publishing census tract data, stating that including 
+demographic and geographic data could positively impact the reduction of economic inequality 
+and generally would encourage le nding to underserved markets via specific policy making.  
+A number of lenders, along with a trade association and a community group, expressed 
+concern that publication of census tract data would pose significant re -identification risk for 
+applicants, especially in smaller or rural communities with low levels of lending. Other industry 
+commenters said that the unmodified publication of census tract data combined with other data 
+points, in particular NAICS code data, would pose significant re -identification r isk. 
+While some community groups expressly supported the unmodified disclosure of census 
+tract data, others suggested specific modification techniques. One commenter suggested that the 
+Bureau consider switching records for similarly situated applicants between nearby census tracts 
+to protect the privacy of applicants in smaller geographic areas while preserving data utility. 
+With respect to the Bureau ’s suggestion to consider disclosing a broader location category, at 
+least one trade association expressed s upport for disclosing data at the State level. Meanwhile, a 
+community group generally opposed disclosure limited to the county - or State -level, arguing that 
+it would frustrate the purposes of section 1071. But this commenter did suggest that the Bureau consider combining and aggregating adjacent census tracts  in rural areas with low levels of 
+lending.  
+As discussed above in part VIII.B.3, the Bureau views the disclosure of census tract as 
+having significant benefits. Further, disclosing census tract data on its own would present limited privacy risk. Application-level census tract by itself would likely disclose minimal, if any, 
+information about an applicant or related natural person that would be harmful or sensitive if 
+such person were re -identified. In ad dition, the Bureau does not discern evidence of compelling 
+privacy risks for financial institutions. However, the Bureau appreciates the potential re -
+identification risks to applicants or related natural persons posed by the combination of census 
+tract dat a and other data fields, such as NAICS code. With respect to privacy risks raised by 
+commenters, as discussed above, the Bureau has identified publicly available datasets that 
+include data fields an adversary could directly match to certain census tract data. Accordingly, 
+the Bureau assesses that census tract data, combined with other data fields such as NAICS code, 
+could be used to match to an identified publicly available record, particularly in rural areas, 
+thereby potentially re -identifying a small business applicant or its ownership. Re -identification 
+could in turn exacerbate privacy risks, including harm or sensitivity  risks, presented by other data 
+fields in the dataset.

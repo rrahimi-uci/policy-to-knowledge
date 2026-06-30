@@ -1,0 +1,19 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 151/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_151
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+OCR’s enforcement experience, we believe that regulated entities’ understanding of and compliance with this standard could be improved by providing more specificity. 
+Accordingly, the Department 
+proposes to redesignate the standard for audit controls at 45 CFR 164.312(b) as proposed 45 CFR 164.312(d)(1), rename it as the standard for audit trail and system log controls, and to add a paragraph heading to clarify the organization of the regulatory text. We 
+also propose to modify it to require a regulated entity to deploy either or both technology assets and technical controls that record and identify activity in the regulated entity’s relevant electronic information systems. The proposal would replace ‘‘procedural mechanisms’’ with ‘‘technical controls,’’ to match the general focus on technical controls in 45 CFR 164.312 and would recognize that a regulated entity may be able to meet the requirements of the standard by deploying either or both technology assets (e.g., software) or 
+technical controls. Under the proposal, a regulated entity would be required to collect sufficient information to understand what a specific activity in its relevant electronic information systems is, such that the regulated entity 
+would be better able to address activity that presents a risk to the confidentiality, integrity, or availability of ePHI. For example, a regulated entity should understand that a given activity in a relevant electronic information system is an attempt to access a portable workstation without authorization. The proposal also would modify the limitation on the regulated entity’s obligation to record and identify activity in its relevant electronic information systems. Thus, the proposal would require a regulated entity to record and identify any activity that could present a risk to ePHI, meaning activity in all of its relevant electronic information systems, not only in its electronic information systems that create, receive, maintain, or transmit ePHI. In so doing, the Department would also require a regulated entity to record and identify activity in its electronic information systems that may affect the confidentiality, integrity, or availability of ePHI. This redesignated standard, as proposed, aligns more closely with the Department’s enhanced CPG for Centralized Log Collection by addressing the deployment of technical controls to record and identify activity in all electronic information systems.
+763 
+Additionally, as an example, we note that adoption of health IT certified through the ONC Health IT Certification Program may contribute to a regulated entity’s compliance with the proposed standard for audit trail and system log controls where such health IT meets the criteria for auditing actions on health information and recording actions related to electronic health information and audit log status.
+764 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00076 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

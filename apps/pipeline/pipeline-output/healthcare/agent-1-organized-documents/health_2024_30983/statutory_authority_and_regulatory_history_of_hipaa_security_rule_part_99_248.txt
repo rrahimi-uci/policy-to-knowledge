@@ -1,0 +1,29 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 99/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_099
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+947 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+541See proposed 45 CFR 164.308(a)(12)(ii)(B). 542See ‘‘Security Standards: Administrative 
+Safeguards,’’ supra note 517, p. 7. 
+543See ‘‘Implementing the Health Insurance 
+Portability and Accountability Act (HIPAA) 
+Security Rule: A Cybersecurity Resource Guide,’’ 
+supra note 461. records of activity in its relevant 
+electronic information systems. 
+The Department proposes five 
+implementation specifications for the proposed standard for information system activity review. The proposed implementation specification for policies and procedures at proposed 45 CFR 164.308(a)(7)(ii)(A) would require a regulated entity to establish written policies and procedures for retaining and reviewing records of activity in the regulated entity’s relevant electronic information systems by persons and technology assets. Such written policies and procedures should require review of activity in the regulated entity’s relevant electronic information systems as a whole, as well as the system’s components, including but not limited to any workstations. They should also include information on the frequency for reviewing such records. The frequency of review may vary based on the specific type of record being reviewed and the information it contains. According to the proposed implementation specification for scope at proposed 45 CFR 164.308(a)(7)(ii)(B), records of activity in the regulated entity’s relevant electronic information systems by persons and technology assets would include, but would not be limited to, audit trails, event logs, firewall logs, system logs, data backup logs, access reports, anti-malware logs, and security incident tracking reports. The proposed implementation specification for records review at proposed 45 CFR 164.308(a)(7)(ii)(C) would require a regulated entity to review records of activity in its relevant electronic information systems by persons and technology assets as often as reasonable and appropriate for the type of report or log. They would also be required to document such review. A proposed implementation specification for record retention at proposed 45 CFR 164.308(a)(7)(ii)(D) would require a regulated entity to retain records of activity in its relevant electronic information systems by persons and technology assets. Under the proposal, the regulated entity would be required to retain such records for an amount of time that is reasonable and appropriate for the specific type of report or log. For example, it may be reasonable and appropriate to retain audit trails for a different amount of time than security incident tracking reports because of the type of information they contain and their purpose. The proposed implementation specification for response at proposed 45 CFR 164.308(a)(7)(ii)(E) would require a regulated entity to respond to a suspected or known security incident 
+identified during the review of activity in its relevant electronic information systems, including any components thereof, such as workstations, in accordance with the regulated entity’s security incident plan.
+541Finally, the 
+proposed implementation specification for maintenance at proposed 45 CFR 164.308(a)(7)(ii)(F) would require a regulated entity to review and test its written policies and procedures for reviewing activity in its relevant electronic information systems at least once every 12 months. The regulated entity would be expected to modify such policies and procedures as reasonable and appropriate, based on the results of that review. 
+Consider a large regulated entity that 
+may have thousands of workforce members accessing various networks and relevant electronic information systems, generating large amounts of log and audit data. Given the size, complexity, and capabilities of entities of such size, a reasonable and appropriate process for reviewing activity may include the adoption of an automated solution that performs rules- based enterprise log aggregation and analysis to identify anomalous or suspicious patterns of behavior in the regulated entity’s relevant electronic information systems and the components thereof, including but not limited to workstations, in real-time and sends alerts of potential security incidents to a workforce member or team for further review and action. By contrast, for a small regulated entity, it 
+might be reasonable and appropriate to have designated staff that manually review log files and audit trails multiple times per week. 
+j. Section 164.308(a)(8)—Standard: 
+Assigned Security Responsibility 
+The Department proposes to 
+redesignate the standard for assigned security responsibility at 45 CFR 164.308(a)(2) as proposed 45 CFR 164.308(a)(8). OCR’s enforcement experience demonstrates that, in practice, many regulated entities follow informal policies and procedures that are not documented, and have not documented the identification of the Security Official in writing.

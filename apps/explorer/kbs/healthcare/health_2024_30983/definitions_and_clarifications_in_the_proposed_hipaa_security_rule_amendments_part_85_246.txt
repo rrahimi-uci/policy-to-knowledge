@@ -1,0 +1,58 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 85/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_085
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+941 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+479See Letter from NCVHS Chair Jacki Monson 
+(2023), supra note 123, Appendix p. 4–6. 
+480Proposed 45 CFR 164.308(a)(2)(ii)(A). 
+481Proposed 45 CFR 164.308(a)(2)(ii)(A)(1). 
+482Proposed 45 CFR 164.308(a)(2)(ii)(A)(2). 483Proposed 45 CFR 164.308(a)(2)(ii)(A)(3). 
+484Proposed 45 CFR 164.308(a)(2)(ii)(A)(4). 
+485Proposed 45 CFR 164.308(a)(2)(ii)(A)(5). 
+486Proposed 45 CFR 164.308(a)(2)(ii)(A)(6). 
+487Proposed 45 CFR 164.308(a)(2)(ii)(A)(7). 
+488Proposed 45 CFR 164.308(a)(2)(ii)(A)(8). 489See NCVHS recommendation to test at 
+multiple points in the life cycle of a system, 
+including ‘‘at every significant change throughout the life of the system[.]’’ Letter from NCVHS Chair Jacki Monson (2023), supra note 123, Appendix p. 
+6. 200,000 individuals when the business 
+associate’s network server was infected with ransomware. It took the company more than 18 months to detect the intrusion, and they only did so when the ransomware was used by the intruder to encrypt the company’s files. Among other factors, OCR’s investigation found evidence of potential failures to conduct an accurate and thorough risk analysis and to implement procedures to regularly review records of information system activity, such as audit logs, access reports, and security incident tracking reports. 
+Given the compliance deficiencies 
+that OCR regularly sees—those cited as examples and what OCR has observed more broadly—we believe that stronger requirements coupled with greater specificity regarding the components of a risk analysis would help and encourage regulated entities to appropriately perform such activities. Accordingly, the Department proposes to elevate the requirement to conduct a risk analysis from an implementation specification at 45 CFR 164.308(a)(1)(ii)(A) to a standard at proposed 45 CFR 164.308(a)(2)(i). Under the proposal, and consistent with NCVHS’ recommendations,
+479a 
+regulated entity would be required to conduct an accurate and comprehensive written assessment of the potential risks and vulnerabilities to the confidentiality, integrity, and availability of all ePHI created, received, maintained, or transmitted by the regulated entity. 
+The Department proposes eight 
+implementation specifications for the risk analysis standard, consistent with previously issued guidance described above. The proposed implementation specification for a written assessment at proposed paragraph (a)(2)(ii)(A) would require the regulated entity, at a minimum, to perform and document all of the following:
+480 
+•Review the technology asset 
+inventory and the network map to identify where ePHI may be created, received, maintained, or transmitted within its information systems.
+481 
+•Identify all reasonably anticipated 
+threats to the confidentiality, integrity, and availability of ePHI that it creates, receives, maintains, or transmits.
+482 
+•Identify potential vulnerabilities 
+and predisposing conditions to the regulated entity’s relevant electronic information systems—that is, its electronic information systems that create, receive, maintain, or transmit ePHI or that otherwise affect the confidentiality, integrity, or availability of ePHI.
+483 
+•Create an assessment and 
+documentation of the security measures it uses to ensure that the measures protect the confidentiality, integrity, and availability of the ePHI created, received, maintained, or transmitted by the regulated entity.
+484 
+•Make a reasonable determination of 
+the likelihood that each identified threat would exploit the identified vulnerabilities.
+485For example, a 
+regulated entity located on the west coast could consult actuarial tables to reasonably determine the likelihood that an earthquake would affect access to electrical power to maintain its relevant electronic information systems. 
+•Make a reasonable determination of 
+the potential impact of each identified threat should it successfully exploit the identified vulnerabilities.
+486For 
+example, the regulated entity described above could make a reasonable determination of how and the extent to which the lack of electrical power caused by an earthquake would affect the availability and integrity of ePHI in its relevant electronic information system. 
+•Create an assessment of risk level 
+for each identified threat and vulnerability.
+487 
+•Create an assessment of risks to 
+ePHI posed by entering into or continuing a business associate agreement or other written arrangement with any prospective or current business associate, respectively, based on the written verification obtained from the prospective or current business associate.
+488 
+Under the proposed implementation

@@ -1,0 +1,102 @@
+# B2-2-04, Guarantors, Co-Signers, or Non-Occupant Borrowers on the Subject Transaction (09/02/2020)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_101
+**Pages:** 247-249
+**Section Path:** Part B, Origination Through Closing > Subpart B2, Eligibility > Chapter B2-2, Borrower Eligibility > B2-2-04, Guarantors, Co-Signers, or Non-Occupant Borrowers on the Subject Transaction (09/02/2020)
+
+---
+
+Published March 4, 2026
+229When none of the information above is provided on the online loan application, DU will use the number of
+mortgages and HELOCs disclosed on the credit report as the number of ﬁnanced properties.
+Note : In order to account for the subject property, DU will add “1” to the number of ﬁnanced
+properties on purchase and construction transactions when the REO section, number of mortgages on
+the application, or number of mortgages on the credit report are used as the number of ﬁnanced
+properties.
+After determining the number of ﬁnanced properties, DU will use that value to assess the eligibility of the loan,
+the minimum required reserves the lender must verify, and eligibility for HomeReady transactions.
+DU will issue a message informing the lender of the number of ﬁnanced properties that DU used and where that
+information was obtained (Number of Financed Properties ﬁeld, REO section, number of mortgages on
+application, or number of mortgages on credit report). If DU used the information provided in the Number of
+Financed Properties ﬁeld or in the REO section, and that information is inaccurate, the lender must update the
+data and resubmit the loan caseﬁle to DU. If DU used the number of mortgages and HELOCs on the loan
+application or credit report as the number of ﬁnanced properties, and that number is inaccurate, the lender
+must provide the correct number in the Number of Financed Properties ﬁeld, or complete the REO section of the
+loan application and resubmit the loan caseﬁle to DU.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2025-09 November 05, 2025
+Announcement SEL-2022-05 June 01, 2022
+Announcement SEL-2021-08 September 01, 2021
+Announcement SEL-2021-06 July 07, 2021
+Announcement SEL-2020-07 December 16, 2020
+Announcement SEL-2019-07 August 07, 2019
+Announcement SEL-2019-03 April 03, 2019
+
+Published March 4, 2026
+230B2-2-04, Guarantors, Co-Signers, or Non-Occupant Borrowers on the
+Subject Transaction (09/02/2020)
+Introduction
+This topic contains information on guarantors, co-signers, or non-occupant borrowers on the subject transaction,
+including:
+Deﬁnitions
+Down Payment and Qualifying Ratio Requirements for Manually Underwritten Loans
+LTV Ratio Requirements for Manually Underwritten Loans
+LTV Ratio Requirements for Loan Caseﬁles Underwritten through DU
+Deﬁnitions
+Guarantors and co-signers are credit applicants who
+do not have ownership interest in the subject property as indicated on the title;
+sign the mortgage or deed of trust note;
+have joint liability for the note with the borrower;
+do not have an interest in the property sales transaction, such as the property seller, the builder, or the
+real estate agent; and
+meet the requirements in  B2-2-01, General Borrower Eligibility Requirements , except for the provisions
+related to establishing an ownership interest in the property.
+Non-occupant borrowers are credit applicants on a principal residence transaction who
+do not occupy the subject property;
+may or may not have an ownership interest in the subject property as indicated on the title;
+sign the mortgage or deed of trust note;
+have joint liability for the note with the borrower(s);
+do not have an interest in the property sales transaction, such as the property seller, the builder, or the
+real estate agent; and
+meet the requirements in  B2-2-01, General Borrower Eligibility Requirements , except for the provisions
+related to establishing an ownership interest in the property.
+Note : Guarantors, co-signers, and non-occupant borrowers are permitted on purchase, limited cash-
+out and cash-out reﬁnance transactions.
+Down Payment and Qualifying Ratio Requirements for Manually Underwritten
+
+Published March 4, 2026
+231Loans
+For manually underwritten loans, if the income of a guarantor, co-signer, or non-occupant borrower is used for
+qualifying purposes, the occupying borrower(s) must make the ﬁrst 5% of the down payment from their own
+funds unless:
+the LTV or CLTV ratio is less than or equal to 80%; or
+the occupying borrower is purchasing a one-unit principal residence and meets the requirements to use
+gifts, donated grant funds, or funds received from an employer to pay for some or all of the borrower’s
+minimum contribution. See B3-4.3-04, Personal Gifts ; B3-4.3-06, Grants and Lender Contributions ; and
+B3-4.3-08, Employer Assistance , for additional information.
+Using only the income of the occupying borrower(s) to calculate the DTI ratio, the maximum allowable DTI ratio
+is 43%.
+Note : This policy applies even if the combined qualifying ratios for the borrower and the guarantor, co-
+signer, or non-occupant borrower are well below Fannie Mae’s standard qualifying ratio benchmark.
+Minimum credit score and reserve requirements based on the LTV ratio and combined qualifying ratios
+of all borrowers must be met per the Eligibility Matrix . See Section B3–5.4, Nontraditional Credit
+History, for additional requirements that apply when the transaction includes a borrower who does not
+have a credit score.
+For additional information, see B3-6-02, Debt-to-Income Ratios .
+LTV Ratio Requirements for Manually Underwritten Loans
+For manually underwritten loans, if the income of a guarantor, co-signer, or co-borrower is used for qualifying
+purposes, and that guarantor, co-signer, or co-borrower will not occupy the subject property, the maximum LTV,
+CLTV, and HCLTV ratio may not exceed 90% (unless a Community Seconds is part of the transaction, in which
+case the CLTV ratio may not exceed 105% where permitted in the Eligibility Matrix .
+LTV Ratio Requirements for Loan Caseﬁles Underwritten through DU
+DU analyzes the risk factors in the loan caseﬁle for all borrowers on the mortgage loan. Regardless of whether
+an individual borrower will be occupying the property as their principal residence, DU will consider the income,
+assets, liabilities, and credit of that borrower.
+For DU loan caseﬁles with a guarantor, co-signer, or co-borrower who will not occupy the subject property, the
+maximum LTV, CLTV, and HCLTV ratio may not exceed 95% (unless a Community Seconds is part of the
+transaction, in which case the CLTV ratio may not exceed 105% where permitted in the Eligibility Matrix .
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.

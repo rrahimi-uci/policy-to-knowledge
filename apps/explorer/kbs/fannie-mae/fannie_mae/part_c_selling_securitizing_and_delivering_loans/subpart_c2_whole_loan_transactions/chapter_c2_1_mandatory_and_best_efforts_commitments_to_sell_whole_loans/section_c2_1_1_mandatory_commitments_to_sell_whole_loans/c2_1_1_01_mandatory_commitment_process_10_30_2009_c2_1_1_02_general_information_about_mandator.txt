@@ -1,0 +1,109 @@
+# C2-1.1-01, Mandatory Commitment Process (10/30/2009) + C2-1.1-02, General Information about Mandator
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_448
+**Pages:** 960-962
+**Section Path:** Part C, Selling, Securitizing, and Delivering Loans > Subpart C2, Whole Loan Transactions > Chapter C2-1, Mandatory and Best Efforts Commitments to Sell Whole Loans > Section C2-1.1, Mandatory Commitments to Sell Whole Loans > C2-1.1-01, Mandatory Commitment Process (10/30/2009)
+
+---
+
+Published March 4, 2026
+942Sell Whole Loans
+Introduction
+As noted in this chapter, when a lender enters into a mandatory commitment to sell whole loans to Fannie Mae,
+the lender agrees to deliver a speciﬁed dollar amount of loans, within certain tolerances, to Fannie Mae by a
+speciﬁed future date. Fannie Mae agrees to purchase those loans at an agreed-upon price. With a best eﬀorts
+commitment, the lender agrees to deliver a speciﬁc loan to Fannie Mae by a speciﬁed date if that loan closes.
+The ﬁrst section in this chapter provides the details associated with obtaining and fulﬁlling mandatory
+commitments to sell whole loans; the second section addresses best eﬀorts commitments; and the third section
+describes the use of Servicing Marketplace in selling whole loans to Fannie Mae.
+Section C2-1.1, Mandatory Commitments to Sell Whole Loans
+C2-1.1-01, Mandatory Commitment Process (10/30/2009)
+Introduction
+This topic provides information on the process lenders use to obtain a mandatory commitment to sell whole
+loans to Fannie Mae.
+Mandatory Commitment Process
+Mandatory Commitment Process
+To obtain a mandatory commitment to sell whole loans to Fannie Mae, lenders may use Fannie Mae’s whole loan
+committing application, a free Web-based application available to subscribers, or may contact the Capital
+Markets Pricing and Sales Desk (see E-1-02, List of Contacts ). Lenders can obtain information on subscribing to
+the whole loan committing application by contacting their Fannie Mae customer account team or the Capital
+Markets Pricing and Sales Desk, or by referring to Fannie Mae’s website.
+Lenders can obtain commitments on any weekday, with the exception of bond market observed holidays as
+deﬁned by the Securities Industry and Financial Markets Association (SIFMA).
+Fannie Mae conﬁrms its acceptance of the lender’s request for a mandatory commitment by electronically
+transmitting a commitment conﬁrmation to the lender. If Fannie Mae is unable to process the electronic
+transmission, lenders are notiﬁed promptly. Should a lender have a problem receiving a commitment
+conﬁrmation, it should immediately contact the Capital Markets Pricing and Sales Desk.
+
+Published March 4, 2026
+943If the lender has obtained the commitment by contacting the Capital Markets Pricing and Sales Desk, the legally
+binding terms of the commitment are captured in a recorded telephone conversation between the lender and
+the Desk.
+Recent Related Announcements
+There are no recently issued Announcements related to this topic.
+C2-1.1-02, General Information about Mandatory Commitment
+Pricing and Fees (06/07/2023)
+Introduction
+This topic describes Fannie Mae’s pricing policies and practices, including:
+Overview
+Pass-Through Rates
+Access to Pricing
+Up-front Commitment, Extension, Overdelivery, Pair-oﬀ and Other Fees
+Additional Resources
+Overview
+As noted in  C1-1-01, Execution Options , when lenders commit to sell loans to Fannie Mae, Fannie Mae provides
+a “live” price, so named because prices move throughout the day, generally in tandem with the MBS market.
+Fannie Mae purchases regularly amortizing whole mortgages either at par (100% of the unpaid principal
+balance), at a discount, or at a premium, based on the type of mortgage being delivered and the pricing option
+speciﬁed in the whole loan commitment under which the mortgage is delivered.
+Pass-Through Rates
+For whole loans, the rate at which the lender must remit interest on the mortgages it sells to Fannie Mae via a
+mandatory commitment is the pass-through rate, deﬁned as the diﬀerence between the gross note rate and the
+servicing fee. Lenders can choose a range of ﬁve consecutive pass-through rates in increments of 0.125% under
+the same mandatory commitment. When obtaining a commitment, lenders specify the minimum pass-through
+rate. The lender does not need to know the exact interest rate of the mortgages that will be delivered in
+fulﬁllment of the commitment as long as the pass-through rates fall within the selected range. The actual
+interest payments lenders will remit for regularly amortizing mortgages will depend on the remittance option
+selected by the lender.
+Access to Pricing
+
+Published March 4, 2026
+944Lenders obtain current pricing speciﬁc to their institution by accessing Fannie Mae’s whole loan committing
+application.
+Access to both generic and lender-speciﬁc pricing information is available to approved Fannie Mae lenders and
+requires a valid user ID and password. For information on obtaining access to this information, lenders should
+contact their Fannie Mae customer account team or the Capital Markets Pricing and Sales Desk. 
+Up-front Commitment, Extension, Overdelivery, Pair-oﬀ and Other Fees
+Fannie Mae may charge up-front fees on commitments made to deliver adjustable-rate mortgages for which the
+lender has selected the scheduled/actual remittance option. See  C1-3-01, General Information on Remittance
+Types , for more information on this remittance type.
+Fannie Mae may charge lenders for lender-requested and automatic extensions for mandatory commitments
+(“extensions”), delivering more than the maximum delivery amount of their commitment (“overdelivering”),
+repurchasing all or part of a commitment (“pairing-oﬀ”), or otherwise failing to satisfy mandatory commitment
+requirements. These fees, if charged, are drafted from the lender’s designated account the business day
+following the assessment. If cash is due to the lender under a cash back pair-oﬀ, the lender’s designated
+account will be credited the business day following the pair-oﬀ. See below for account requirements.
+Extension fees are based on three factors:
+Amount to be extended, which equals the lender’s original commitment amount minus any deliveries as
+of the date of the extension, and, if the extension is a partial extension, minus any partial pair-oﬀ
+amount;
+Actual number of days by which the commitment expiration date is being extended. (Note that if the
+request is for a 20-day extension and the 20th day falls on a weekend or holiday, the contract will be
+extended to the next business day.); and
+Daily interest charge, which is based on the minimum pass-through rate posted on the original
+commitment.
+For overdelivery and pair-oﬀ fees, including cash back pair-oﬀs, whole loan prices captured at commitment and
+again at the time of the overdelivery or pair-oﬀ are used to determine if a fee will be charged or if cash back is
+due and, if so, the amount. All pair-oﬀ amounts (including cash back pair-oﬀs) are calculated from the original
+commitment amount, not the low delivery tolerance.
+A lender must designate a non-MBS P&I custodial account from which Fannie Mae can and will automatically
+draft and credit whole loan transaction and related fees that it owes, or is owed by, Fannie Mae. The bank
+instructions for the account must be established in the  Cash Remittance System (CRS) .
+Fannie Mae will draft or credit, as applicable, up-front commitment, extension, overdelivery, and pair-oﬀ fees
+from the lender’s designated account on the day following the request for the commitment, extension,
+overdelivery, or pair-oﬀ. Compensatory fees for failure to satisfy mandatory delivery requirements will be
+drafted from the designated account on the ﬁrst Friday after the expiration of the commitment period and any
+additional time allowed to eﬀect the delivery or a pair-oﬀ.
+To ensure that funds related to borrower payments are not used to satisfy a lender’s corporate responsibility for
+the payment of fees or charges due Fannie Mae, a lender must make sure that its designated account will have

@@ -1,0 +1,51 @@
+# Generally. With regard to how the Bureau stated its intention to assess privacy risks that would inform modification and deletion decisions, several community group commenters, a minority business advocacy group, and several members of Congress urged ...
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_694
+**Pages:** 683-683
+**Section Path:** VIII. Public Disclosure of Data > B. Preliminary Privacy Assessment > 5. Privacy-informed Modification and Deletion > Comments Received > Generally. With regard to how the Bureau stated its intention to assess privacy risks that would inform modification and deletion decisions, several community group commenters, a minority business advocacy group, and several members of Congress urged ...
+
+---
+
+683 remove the record from the dataset entirely. The Bureau  stated that,  in general,  suppression is a 
+more common approach for aggregate data than for application -level data.  
+The Bureau noted that one drawback to targeted suppression is that it complicates data 
+analysis for end user s. A data user would be present ed with millions of rows, but in certain rows 
+and for certain data points, values would be missing.892 Another identified  drawback is that 
+suppression would need to be done so that the remaining unmodified data do not provide a user 
+with the ability to back out the modified field, sometimes involving complementary suppression 
+or deleting values of other applications to ensure that the missing value cannot be reengineered. 
+The Bureau  sought  comment on whether targeted suppression techniques could preserve  the 
+benefits of publishing application -level data, and, if so, what the Bureau should consider as the 
+minimum cell size to implement targeted suppression.  
+The Bureau  sought  comment on other modification techniques, such as “ data swapping” 
+(sometimes call ed “switching”). Data swapping involves finding two records that are similar on 
+several dimensions and swapping the values for other data fields between the two records. In 
+effect, data swapping would require that the Bureau preserve certain data fields wh ile swapping 
+others. The Bureau stated that another set of techniques for addressing privacy risks for 
+continuous data would involve adding “ random noise” to the reported values. For example, 
+under “additive noise techniques,” a random value is added to the existing value of the data field. 
+Under “multiplicative noise techniques,” the true value is multiplied by a random value. The 
+Bureau  sought  comment on whether such techniques would preserve the benefits of public ation . 
+The Bureau explained that a drawba ck to these approaches is that data would be released with 
+values that do not match the true values of the underlying data.893 Data users would need to take 
+such modifications into account when performing any analyses.  
+Comment s Received  
+Generally.  With rega rd to how the Bureau stated its intention to assess privacy risks that 
+would inform modification and deletion decisions, several community group commenters, a minority business advocacy group, and several members of Congress urged the Bureau to apply 
+the N PRM ’s balancing test in favor of public disclosure and to make available a robust dataset. 
+According to some commenters, the fair lending and business and community development 
+purposes of s ection 1071 militate in favor of data transparency.  A number of community and 
+business advocacy group commenters stated that if  published application level data are not 
+robust, or if specific data points are not disclosed, the dataset  will not adequately reveal whether 
+these statutory purposes of s ection 1071 are being met.  Several commenters asserted that 
+society ’s interest in tackling discrimination and closing the racial wealth gap supported robust 
+disclosure. A business advocacy gr oup stated that robust 1071 data would promote financial 
+ 
+892 Da ta  users would need to understand the method behind the modifications a nd plan analyses to a ccount for the 
+fact that the suppressed data would necessarily not reflect all small business loans in a given year.  
+893 For example , with respect to the amount applied for data field, a recoding technique would release the values of 
+the data field in broad categories, for instance “$100,000- $150,000.” In such case, the broader ca tegory provides less 
+information but reflects the true v alue of the underlying data. Noise addition, by contrast, would involve the Bureau 
+ma nipula ting (in a  sta ndardized a nd documented wa y) the a ctual va lues of loan amount. An a pplication ’s loan 
+amount may be released as $85,000 in the public dataset when the true value was $78,000.

@@ -1,0 +1,82 @@
+# MATURITY DISTRIBUTION (GAP) ANALYSIS + REVALUATION AND INCOME/LOSS ANALYSIS
+
+**Source:** risk_management_manual_complete.pdf
+**Chunk ID:** risk_management_manual_complete_1595
+**Pages:** 598-599
+**Section Path:** section16-2 > REPORT OF EXAMINATION INSTRUCTIONS Section 16.2 > INTERNATIONAL WORKPAPERS > MATURITY DISTRIBUTION (GAP) ANALYSIS
+
+---
+
+REPORT OF EXAMINATION INSTRUCTIONS  Section 16. 2 
+ 
+INTERNATIONAL WORKPAPER  
+← 
+MATURITY DISTRIBUTION (GAP) ANALYSIS  
+ 
+When using this worksheet , examiners should  complete a maturity distribution for all major currencies outlined in 
+the Position Analysis - Major Currency Position s worksheet .  At the discretion of the examiner, material currency 
+positions enumerated in the Position Analysis - Other Currencies worksheet may be detailed .  Show each currency 
+on a separate form.  Question No. 2 at the bottom of this Maturity Distribution worksheet  applies to all currencies 
+listed.  
+ In arranging the maturity distribution, it is recommended that at least the first two weeks of activity subsequent to the examination start date be detailed on a daily basis.  (In active departments, a daily enumeration for the fir st 
+month following the examination start date may be appropriate).  Thereafter, semi -monthly or monthly intervals 
+may be used depending on the institution ’s method of pricing forward commitments and the volume of activity.  
+Longer -range  maturities may be grouped by years.  
+ The preparation of this schedule requires the inclusion of all currency ledger accounts.  Show ledger accounts not 
+bearing a maturity date in the first day ’s maturities .  Show spot contracts as of the date the settlement is expected to 
+occur.  The total of assets and purchases (long), liabilities and sales (short), and the net amount of these two columns should correspond to the foreign currency amounts shown in the position sheet.  Compare the net gap for each period to limits imposed by institution management.  Further, review the cumulative gap position (the addition of 
+gaps for each time interval) for conformance to policy and the incidence of excessive periods of positi ve or negative 
+gaps.  Such events may require comment if potential exposure s appear  excessive in relation to liquidity, earning s, or 
+capital .  
+ 
+It is normally unnecessary to complete a profit and loss revaluation on this worksheet (in the right three columns) 
+unless  a position results in a material profit or loss .  Refer to the example in the Revaluation and Income/Loss 
+Analysis worksheet  instructions .  Price future contracts at the given premium or discount rate.  Price spot contracts 
+and ledge r accounts at the spot  rate.  When one or more rates are used to price a position at a point in time, type 
+various  in the Spot Rate column.  All swap contracts should be removed before valuing the position since the 
+profit/loss is fixed at the time of the transaction and reflected in the return on the asset for which the swap was effected.  In any event, the schedule can be used as a workpaper to calculate the future profit/loss adjustment in the 
+Revaluation  and Income/Loss Analysis worksheet . 
+RMS Manual of Examination Policies  16.2-17 Repor t of Examination Instructions (1 /18) 
+Federal Deposit Insurance Corporation
+
+REPORT OF EXAMINATION INSTRUCTIONS  Section 16. 2 
+ 
+INTERNATIONAL WORKPAPER  
+← 
+REVALUATION AND INCOME/LOSS ANALYSIS  
+ 
+The purpose of this worksheet  is to determine the unrealized profit or loss for the institution in connection with 
+positions undertaken in foreign currency.  The computation is based on the assumption that the entire position will be liquidated (that is, all long foreign currency positions will be sold and all short positions will be covered).  
+ The primary input for this schedule comes from the Position Analysis - Other Currencies schedule .  List each 
+currency under the Monetary Unit  column .  Insert  in the Book Value column the institution ’s net position in the 
+foreign currency amount and U.S. dollar equivalent less any swap contracts included in the position.  (Refer to the following paragraph for an explanation of these transactions).  Obtain the spot exchange rate from the Wall Street Journal or similar publications containing foreign exchange rates.  Express the exchange rates in terms of the U.S. dollar cost per unit of foreign currency (for example , one Euro  sells for $ x.xxxx) with the values carried to four 
+decimal places or four -digit level of significance ( i.e., one Japanese yen equals $.004560).  Multiply the net amount 
+of foreign currency by the spot rate to arrive at the current market value of the position.  Apply the following rules when determining the spot rate profit or loss on each position:  
+ 1. Long foreig n currency position combined with long U.S. dollar equivalent : profit is excess of market value over 
+book value; loss is the excess of book over market.   
+2. Long foreign currency position combined with short U.S. dollar equivalent: p rofit is the current market value 
+plus the short U.S. dollar book value.    
+3. Short foreign currency position combined with short U.S. dollar equivalent: p rofit is the excess of book value 
+over current market value; loss is the excess of market value over book value.    
+4. Short foreign currency position combined with long U.S. dollar equivalent : loss is the current market value plus 
+the long U.S. dollar book value.  
+ Rules No. 2 and No. 4 refer to split positions discussed in  the Position Analysis - Other Currencies worksheet  
+instructions for calculating the net open position.  In  rule No. 2, the position can only result in a profit . In rule No. 4 , 
+the position can only result in  a loss.  
+ A financial swap combines  a spot purchase or sale of a foreign currency and a forward sale or purchase of the 
+currency.  Through this  arrangement , the institution effectively locks in the potential gain or loss by entering into a 
+transaction involving the temporary movement of funds into another currency and back again.  For example, the institution has an investment opportunity to lend 1,000,000 pounds sterling for three months.  The institution will purchase  necessary exchange spot for $1.8660 per pound sterling ($1,866,000) to make the loan.  Simultaneously, 
+the institution will enter into a forward exchange contract to sell 1,000,000 pounds sterling at the anticipated maturity date for $1.8690 per pound ste rling ($1,869,000).  Customarily, the institution will sell forward the 
+expected interest income as well.  Accordingly, the institution has realized a $3,000 profit on the transaction at the inception of the loan.  Customarily, the profit (or alternatively  cost) is applied to the rate of interest on the loan to 
+determine the true yield on the investment.  The profit (or loss) is accrued to income and expenses monthly.  In these circumstances, it is inappropriate to allocate the profit to the exchange function.  A review of the institution ’s 
+records will facilitate the identification of swap transactions and, as previously stated, these amounts should not be 
+included in the revaluation schedule.  
+ Adjust the spot -rate profit (loss) for discounts or premiums on forward exchange contracts, which are included in the 
+net currency position.  A discount is a rate of exchange lower than the spot rate expressed in terms of percentage per annum or points on which a dealer buys or sells foreign exchange for forward del ivery.  For example, if a dealer 
+quotes $186 and $191 (bid and asked) for spot sterling, and the discounts for six- month forward exchange contracts 
+are .0300 and .0275, the forward quotes would be modified to $183 and $1.8825.  In most cases, the discount reflects an interest rate differential in the U.S. vis -à-vis the U.K. , although in periods of downward market pressure 
+on a currency a discount may indicate market anticipation of a lower price for the currency.  A premium is a rate of exchange higher than the spot rate.  Again, interest rate trends  and upward market pressure will play a role in this 
+situation.  The premium situation works exactly opposite  to the  discount example.  That is, premium quotes are 
+added to the applicable spot rates quoted.  
+Report of Examination Instructions (1 /18) 16.2-18 RMS Manual of Examination Policies  
+  Federal Deposit Insurance Corporation

@@ -1,0 +1,48 @@
+# D1-3-03, Lender Post-Closing Quality Control Reverifications (11/05/2025) (part 2/4)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_511_sub_002
+**Pages:** 1073-1078
+**Section Path:** Part D, Ensuring Quality Control (QC) > Subpart D1, Lender QC Process > Chapter D1-3, Lender Post-Closing QC Mortgage Review > D1-3-03, Lender Post-Closing Quality Control Reverifications (11/05/2025)
+
+---
+
+Published March 4, 2026
+1057validated by the DU Validation Service, and
+the lender satisﬁed all the requirements for obtaining representation and warranty enforcement relief (as
+described in  A2-2-04, Limited Waiver and Enforcement Relief of Representations and Warranties ), and
+the loan closed by the "Close by Date" stated in the DU validation message.
+For loans with representation and warranty enforcement relief related to undisclosed non-mortgage liabilities,
+the lender is not required to re-underwrite the loan to conﬁrm its eligibility for delivery to Fannie Mae when:
+the new, post-closing QC credit report reveals non-mortgage debt that was not disclosed by the borrower
+or discovered by the lender prior to or concurrent with the day of closing,
+the lender's review of the ﬁle does not identify inconsistencies between the data or information in the
+loan ﬁle and the information submitted to DU, and
+all conditions for eligibility for relief described in A2-2-04, Limited Waiver and Enforcement Relief of
+Representations and Warranties  have been met, including the reconciliation of conﬂicting and
+contradictory information and closing by the credit report expiration date.
+Income and Employment
+The lender must obtain updated records verifying that all borrowers remain employed with the employer listed
+on the loan application through closing, and that all income of all borrowers has not changed to the point where
+the loan is ineligible for delivery to Fannie Mae. Documentation that is a replica of the initial
+income/employment veriﬁcation does not meet this requirement because it does not provide updated records to
+verify the income or employment have not changed through the note date.
+Reveriﬁcation of income and employment may include current and previous employment depending on what
+was utilized in DU for eligibility assessment.
+A verbal reveriﬁcation of employment and income is acceptable if the lender documents the conversation,
+including the date, name, title, and contact information of the person providing the details.
+Income using IRS Tax Transcripts
+The post-closing QC review must include the lender's submission for tax transcripts to the IRS (or designee)
+using the IRS Form 4506-C, or an alternative IRS form or process that authorizes the release of comparable tax
+information.
+Post-closing QC tax transcripts validate the income documentation provided by the borrower that was utilized
+during the underwriting process. Transcripts must be requested for all income types used in the underwriting
+process (personal and business, if applicable). If tax returns were required in the underwriting of the loan, the
+lender must reconcile the transcript information received from the IRS with the income documents in the loan
+ﬁle. See  B3-3.1-02, Tax Return and Transcript Documentation Requirements , for detailed information.
+The following exception applies:
+If the lender obtained the appropriate IRS transcripts during its preclosing process (processing and
+underwriting), it may use the same documents in its post-closing QC process, without ordering new transcripts.
+The lender is not required to request tax transcripts for a borrower when all the borrower's income is validated
+by the DU validation service.
+At times, the lender may encounter diﬃculties in obtaining IRS tax transcripts for post-closing QC, such as:

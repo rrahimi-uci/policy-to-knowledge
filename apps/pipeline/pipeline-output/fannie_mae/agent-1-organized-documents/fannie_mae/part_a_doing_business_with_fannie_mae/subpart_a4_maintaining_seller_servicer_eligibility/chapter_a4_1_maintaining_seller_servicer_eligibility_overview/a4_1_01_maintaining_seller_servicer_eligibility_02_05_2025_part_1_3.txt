@@ -1,0 +1,117 @@
+# A4-1-01, Maintaining Seller/Servicer Eligibility (02/05/2025) (part 1/3)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_061_sub_001
+**Pages:** 151-157
+**Section Path:** Part A, Doing Business with Fannie Mae > Subpart A4, Maintaining Seller/Servicer Eligibility > Chapter A4-1, Maintaining Seller/Servicer Eligibility: Overview > A4-1-01, Maintaining Seller/Servicer Eligibility (02/05/2025)
+
+---
+
+Published March 4, 2026
+133Subpart A4, Maintaining Seller/Servicer Eligibility
+Introduction
+This subpart contains the requirements to which sellers/servicers must adhere in order to maintain their
+eligibility to transact business with Fannie Mae. It describes the ﬁnancial statements, operational reports, and
+Lender Record information that sellers/servicers must submit to Fannie Mae, and it addresses the types of
+organizational changes and events for which sellers/servicers must notify Fannie Mae in writing.
+Chapter A4-1, Maintaining Seller/Servicer Eligibility: Overview
+Introduction
+This chapter describes the requirements a seller/servicer must satisfy to maintain or reactivate its status as a
+Fannie Mae-approved seller/servicer. Reactivated sellers/servicers may again deliver loans to Fannie Mae and/or
+service Fannie Mae loans (and subservice loans for other Fannie Mae-approved servicers). It also includes
+information on the submission of the irrevocable limited power of attorney to Fannie Mae.
+A4-1-01, Maintaining Seller/Servicer Eligibility (02/05/2025)
+Introduction
+This topic contains information on maintaining seller/servicer eligibility, including:
+Maintaining Seller/Servicer Eligibility
+Deﬁnitions
+Minimum Requirements
+Additional Financial Requirements
+Recourse Obligation
+Business Continuity Management and Disaster Recovery
+Audit and Management Control Requirements
+Written Policies and Procedures
+Management of Vendors and Other Third-party Service Providers
+Maintaining Seller/Servicer Eligibility
+To maintain eligibility, the seller/servicer must comply with the minimum requirements described in this topic. If
+a seller/servicer fails to maintain any of these requirements or fails to comply with its Lender Contract, such
+failure is a breach of the Lender Contract.
+In addition, the circumstances and qualiﬁcations that were in place for Fannie Mae’s consideration at the time of
+
+Published March 4, 2026
+134the seller/servicer’s approval generally must not adversely change after approval.
+If a seller does not meet the minimum loan sale requirement below, the seller's approval to sell loans to Fannie
+Mae will be terminated and access to all technology that is licensed only to approved sellers will be terminate
+within 60 days. If a servicer does not meet the minimum loan servicing requirement below, the servicer's
+approval to service loans for Fannie Mae will be terminated and access to all technology that is licensed only to
+approved servicers will be terminated. Once terminated as a seller or a servicer, the entity must go through the
+seller/servicer application process  to become an approved seller or servicer again and be eligible to sell or
+service loans. Fannie Mae will review the application documentation and determine whether the seller or
+servicer meets the then current eligibility requirements. Contact the Onboarding Team (see E-1-02, List of
+Contacts ) for additional information.
+Note:  Sellers/servicers are not required to purchase or own Fannie Mae stock as a condition of
+eligibility (as stated in the Mortgage Selling and Servicing Contract).
+Deﬁnitions
+The following table provides the deﬁnition of terms related to maintaining seller/servicer eligibility as described
+in the minimum requirements below.
+Term Deﬁnition
+Adjusted net worthAdjusted Net Worth is deﬁned as:
+• total equity capital as determined by Generally Accepted Accounting Principles (GAAP); minus
+• goodwill and other intangible assets (excluding mortgage servicing rights); minus
+• aﬃliated receivables; minus
+• pledged assets net of associated liabilities; minus
+• deferred tax assets net of associated deferred tax liabilities.
+Note : If the deferred tax liabilities are greater than the deferred tax assets, then the deduction from the
+Adjusted Net Worth will be zero.
+Allowable liquidityAllowable liquidity includes:
+• unrestricted cash and cash equivalents;
+• unpledged, available-for-sale or held-for-trading investment grade securities limited to the following:
+    ⚬ Fannie Mae, Freddie Mac, and Ginnie Mae MBS;
+    ⚬ obligations of GSEs;
+    ⚬ U.S. Treasury obligations; and
+• 50% of the unused portion of committed servicing advance lines of credit of one- to four-unit
+residential ﬁrst lien mortgage loans serviced for Fannie Mae, Freddie Mac, and Ginnie Mae.
+Large non-depository
+sellers/servicersAn entity servicing $50 billion or more in residential ﬁrst lien mortgage servicing UPB plus other
+servicing UPB as determined at the end of each calendar quarter.
+Long-term corporate family
+ratingA long-term rating that reﬂects the relative likelihood of a default on a corporate family's debt and debt-
+like obligations and the expected ﬁnancial loss suﬀered in the event of default from a rating agency.
+Long-term senior unsecured
+debt ratingA rating assigned to a ﬁnancial obligation with an original maturity of one year or more that reﬂects the
+likelihood of a default on contractually promised payments on senior unsecured debts and the expected
+ﬁnancial loss suﬀered in the event of default on such dents from a rating agency.
+
+Published March 4, 2026
+135Term Deﬁnition
+Other servicing UPBThe outstanding UPB of a seller/servicer's portfolio of one- to four-unit residential ﬁrst lien mortgage
+loans the seller/servicer is contractually obligated to service for all investors other than Fannie Mae,
+Freddie Mac, and Ginnie Mae, plus the following regardless of the investor:
+• second lien mortgage loans;
+• funded home equity lines of credit;
+• reverse mortgage loans; and
+• construction and land development mortgage loans
+The outstanding UPB of mortgage loans serviced by a seller/servicer under a subservicing arrangement
+is excluded.
+Rating agencyAn entity that is a "Nationally Recognized Statistical Rating Organization" as deﬁned by Section 78c(a) of
+Title 15 of the United States Code (15 U.S.C. 78c(a)).
+Residential ﬁrst lien mortgage
+servicing UPBThe outstanding UPB of a seller/servicer's portfolio of one- to four-unit residential ﬁrst lien mortgage
+loans the seller/servicer is contractually obligated to service for Fannie Mae, Freddie Mac, or Ginnie Mae,
+as applicable, excluding;
+• funded home equity lines of credit,
+• reverse mortgage loans, and
+• construction and land developments mortgage loans.
+The outstanding UPB of mortgage loans serviced by a seller/servicer under a subservicing arrangement
+is excluded.
+Servicer ratingAn evaluation of a seller/servicer for its capacity to carry out servicing business, which is diﬀerent from
+evaluations of ﬁnancial instruments or credit standing of corporations, from a rating agency. Servicer
+ratings may be conducted based upon the type of servicing actions performed, including evaluations for
+entities that act as primary servicers, special servicers or master servicers.
+ 
+Minimum Requirements
+Sellers/servicers must comply with the minimum requirements described in the following table.
+Category Description
+Loan Sales A seller must sell at least 12 loans to Fannie Mae during the prior calendar year.
+Loan ServicingA servicer must service at least one loan for Fannie Mae as of December 31 of the prior calendar
+year.

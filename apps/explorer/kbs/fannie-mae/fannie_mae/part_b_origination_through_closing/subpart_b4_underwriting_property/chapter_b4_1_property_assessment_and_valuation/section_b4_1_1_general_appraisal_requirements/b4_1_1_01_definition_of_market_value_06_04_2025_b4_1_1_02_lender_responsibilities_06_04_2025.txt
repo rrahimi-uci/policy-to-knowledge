@@ -1,0 +1,112 @@
+# B4-1.1-01, Definition of Market Value (06/04/2025) + B4-1.1-02, Lender Responsibilities (06/04/2025)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_255
+**Pages:** 534-536
+**Section Path:** Part B, Origination Through Closing > Subpart B4, Underwriting Property > Chapter B4-1, Property Assessment and Valuation > Section B4-1.1, General Appraisal Requirements > B4-1.1-01, Definition of Market Value (06/04/2025)
+
+---
+
+Published March 4, 2026
+516Section B4-1.1, General Appraisal Requirements
+B4-1.1-01, Deﬁnition of Market Value (06/04/2025)
+Introduction
+This topic contains information on the deﬁnition of market value.
+Deﬁnition of Market Value
+Uniform Appraisal Dataset (UAD) 3.6 Policy
+Deﬁnition of Market Value
+Market value is the most probable price that a property should bring in a competitive and open market under all
+conditions requisite to a fair sale with, the buyer and seller, each acting prudently and knowledgeably, and
+assuming the price is not aﬀected by undue stimulus. Implicit in this deﬁnition is the consummation of a sale as
+of a speciﬁed date and the passing of title from seller to buyer under conditions whereby:
+buyer and seller are typically motivated;
+both parties are well informed or well advised, and each acting in what they consider to be in their own
+best interest;
+a reasonable time is allowed for exposure in the open market;
+payment is made in terms of cash in U.S. dollars or in terms of ﬁnancial arrangements comparable
+thereto; and
+the price represents the normal consideration for the property sold unaﬀected by special or creative
+ﬁnancing or sales concessions granted by anyone associated with the sale.
+Note : Adjustments to the comparables must be made for special or creative ﬁnancing or sales
+concessions. No adjustments are necessary for costs that are normally paid by sellers as a result of
+tradition or law in a market area; these costs are readily identiﬁable because the seller pays these
+costs in virtually all sales transactions. Special or creative ﬁnancing adjustments can be made to the
+comparable property by comparisons to ﬁnancing terms oﬀered by a third-party institutional lender
+that is not already involved in the property or transaction. Any adjustment should not be calculated on
+a mechanical dollar for dollar cost of the ﬁnancing or concession, but the dollar amount of any
+adjustment should approximate the market’s reaction to the ﬁnancing or concessions based on the
+appraiser’s judgment.
+Uniform Appraisal Dataset (UAD) 3.6 Policy
+Lenders using UAD 3.6 must follow the requirements in the  UAD 3.6 Policy Supplement  .
+
+Published March 4, 2026
+517Recent Related Announcements
+The table below provides references to the Announcements that have been issued that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2025-04 June 04, 2025
+B4-1.1-02, Lender Responsibilities (06/04/2025)
+Introduction
+This topic contains information on lender requirements, including:
+Lender Responsibilities
+Conﬁrmation and Documentation of the Current Owner
+Objective and Unbiased Appraisals
+Reporting Unfavorable Conditions
+Uniform Appraisal Dataset (UAD) 3.6 Policy
+Lender Responsibilities
+The lender is responsible for ensuring that the subject property provides adequate collateral for the mortgage.
+For most loans, Fannie Mae requires that the lender obtain a signed and complete appraisal report that
+accurately reﬂects the market value, condition, and marketability of the property. Some loans may be eligible
+for a value acceptance option, and an appraisal is not required if the lender exercises the option and complies
+with the related requirements. (See B4-1.4-10, Value Acceptance and B4-1.4-11, Value Acceptance + Property
+Data , for additional information.)
+If an appraisal is obtained, the lender is responsible for
+providing the borrower disclosures and requirements described in B4-1.3-12, Appraisal Quality Matters ;
+compliance with the   Appraiser Independence Requirements  ;
+selection of the appraiser (see B4-1.1-03, Appraiser Selection Criteria );
+compliance with the Uniform Appraisal Dataset (UAD) when applicable (see B4-1.1-06, Uniform Appraisal
+Dataset (UAD) and the Uniform Collateral Data Portal (UCDP) );
+ensuring the appraiser has utilized sound reasoning and provided evidence to support the methodology
+chosen to develop the value opinion, particularly in cases that are not covered by Fannie Mae policy;
+successful submission of the appraisal through the UCDP prior to sale of the loan (see  B4-1.1-06, Uniform
+Appraisal Dataset (UAD) and the Uniform Collateral Data Portal (UCDP) );
+continually evaluating the appraiser’s work through the quality control process (see  B4-1.3-12, Appraisal
+Quality Matters  and Subpart D1, Lender QC Process ); and
+ensuring the appraisal does not contain subjective and prohibited language relating to discriminatory
+practices and appraisal bias.
+
+Published March 4, 2026
+518If the transaction involves property data collection, the lender is responsible for
+compliance with the  Property Data Collector Independence Requirements  ;
+selection of the property data collector (see  B4-1.4-11, Value Acceptance + Property Data );
+successful submission of the data to Fannie Mae's Property Data API prior to loan delivery; and
+continually evaluating the property data collector's work through the quality control process (see also
+Subpart D1, Lender QC Process ).
+Conﬁrmation and Documentation of the Current Owner
+Publicly available information helps to identify property ﬂipping schemes, which typically involve various
+combinations of transactions and result in a sale of recently acquired property for signiﬁcant proﬁt based on a
+misleading or fraudulent appraisal with an inﬂated property value. The lender must conﬁrm that the property
+seller in a purchase transaction (or the borrower in a reﬁnance transaction) is the owner of the subject property.
+Lenders must conﬁrm and document in the loan ﬁle that the property seller in a purchase money transaction or
+the borrower in a reﬁnance transaction is the owner of the subject property when an appraisal is required.
+Examples of acceptable documentation include, but are not limited to:
+a copy of a recorded deed, mortgage, or deed of trust,
+a recent property tax bill or tax assessment notice,
+a title report,
+a title commitment or binder, or
+a property sale history report.
+This documentation is especially important for transactions involving an assignment (or sale) of a contract for
+sale and back-to-back, simultaneous, double transaction closings, or double escrows to support the property
+acquisition, ﬁnancing, and closing.
+When the transaction is part of an employee relocation, the relocation company may be the assignee of the
+seller, which should be indicated on the sales contract. Additionally, the appraiser must comment on this
+condition in the appraisal report.
+Objective and Unbiased Appraisals
+A lender must ensure the appraiser
+described the property and the market area in factual, unbiased, and speciﬁc terms;
+considered all factors that have an eﬀect on value; and
+was objective and unbiased in the development of the opinion of market value in the appraisal report.
+A number of federal, state, and local laws prohibit discrimination in the appraisal of housing. Fannie Mae
+expects professional appraisers to fully understand that discriminatory valuation and appraisal reporting
+practices are not only illegal, but also unethical. Unintentional discrimination can occur in the appraisal report as
+the result of what an appraiser states, or fails to state. The lender and appraiser must ensure the appraisal is
+not in violation of any unacceptable appraisal practices (see  B4-1.1-04, Unacceptable Appraisal Practices ).

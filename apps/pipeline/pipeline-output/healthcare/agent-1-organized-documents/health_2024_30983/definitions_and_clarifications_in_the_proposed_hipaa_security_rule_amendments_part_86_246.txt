@@ -1,0 +1,22 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 86/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_086
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+488 
+Under the proposed implementation 
+specification for maintenance at proposed 45 CFR 164.308(a)(2)(ii)(B), a regulated entity additionally would be required to review, verify, and update the written assessment on an ongoing basis, but in any event no less frequently than at least once every 12 months, and in response to a change in the regulated entity’s environment or operations that may affect ePHI. As discussed above, a change in the regulated entity’s environment or operations that may affect ePHI would include, but would not be limited to, the adoption of new technology assets; the 
+upgrading, updating, or patching of technology assets; newly recognized threats to the confidentiality, integrity, or availability of ePHI; a sale, transfer, merger, or consolidation of all or part of the regulated entity with another person; a security incident that affects the confidentiality, integrity, or availability of ePHI; and relevant changes in Federal, State, Tribal, or territorial law. 
+e. Section 164.308(a)(3)(i)—Standard: 
+Evaluation 
+The Department proposes to 
+redesignate the existing evaluation standard at 45 CFR 164.308(a)(8) as 45 CFR 164.308(a)(3)(i) and to revise the redesignated evaluation standard to require the technical and nontechnical evaluation(s) to be in writing and performed to determine whether change in the regulated entity’s environment or operations may affect the confidentiality, integrity, or availability of ePHI. Evaluating the effects of a potential change on a regulated entity’s environment or operations, including the effects on the confidentiality, integrity, and availability of ePHI, is a critical step in the change control process. An evaluation serves a similar purpose to a risk analysis. However, while a risk analysis looks at the entirety of a regulated entity’s enterprise regularly and in response to a change in the regulated entity’s environment or operations, an evaluation looks at a specific change that a regulated entity intends to make before the change is made. Thus, this proposal, if adopted, would ensure that a regulated entity proactively considers whether any risks or vulnerabilities to ePHI or its relevant electronic information systems will be introduced by changes it intends to make to its environment or operations and responds by implementing appropriate safeguards in a timely fashion.
+489 
+We also propose to delete the 
+requirement that the evaluation be 
+performed ‘‘based initially on the standards implemented under this rule’’ because an evaluation is performed to assess the effect(s) of a planned change on the environment, which can be observed when those effects are compared to the environment reflected in the risk analysis. Additionally, the Department proposes to add two implementation specifications at 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00045 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

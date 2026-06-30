@@ -1,0 +1,37 @@
+# According to proposed Senior Technology Officer Brian Bain, the proposed infrastructure retains the sufficient degree of scale and capacity to accommodate forecasted customer account volumes throughout the formative stages.
+
+**Source:** risk_management_manual_complete.pdf
+**Chunk ID:** risk_management_manual_complete_2007
+**Pages:** 799-799
+**Section Path:** section19-1 > Report of Investigation > CONSISTENCY OF CORPORATE POWERS > According to proposed Senior Technology Officer Brian Bain, the proposed infrastructure retains the sufficient degree of scale and capacity to accommodate forecasted customer account volumes throughout the formative stages.
+
+---
+
+OTHER PERTINENT INFORMATION (Continued)  
+FDIC 6510/10 (02 -2002) 38 Technology Platform and Ensuing Security Risks  
+ 
+Overview  
+ 
+The Applicant plans to offer banking services via multiple electronic delivery channels including the Internet, automated tel ephone, 
+Customer Call Center (telephone, facsimile, secure web message, e-mail, and regular mail), WAP (handheld wireless), and tra ditional 
+retail branches.  
+ Services that will be offered are customer identification for account opening, bill pay, check printing, fulfillments, electr onic funds 
+transfer (EFT), item processing, AS/400 mainframe hosting, ATM and Visa checkcards.  Internet banking will allow account  review, 
+bill pay, transactions entry, check order, statements, printing statements, on- line applications, and wire transfers.  {A schematic 
+rendering of the operational support service is provided on a subsequent page.}  
+ Vendors/Service Providers  
+ Aurum Technologies (MISER III), Orlando, Florida, will provide the CBS (Comprehensive Banking System) software for processing core banking applications, EFT, Visa checkcards, item processing, network services, Internet connection, VRU as well as, inte rface to 
+De Luxe check printing, and Equifax credit scoring. Aurum Technologies will host and manage the bank’s AS/400 server.   Equifax Credit Services, Inc., Atlanta, Georgia, will provide credit scoring and authentication using Decision Power and eID -Verifier, 
+respectively.  Shoreline Business Forms, Inc., Wallingford, Connecticut will provide ATM and Visa check cards. Checkpoint  will 
+provide network firewall maintenance.  Princeton ecom Corporation, Princeton, New Jersey, will provide bill payments and 
+collections.   
+ Internet access is provided by UUNET through a 1.5 MB T1 line.  Fuzion will provide a future second wireless service.  There are two local area networks (LANs), located in the London office and in the Anytown office, which are to be joined by a virtual pri vate 
+network (VPN) connection, secured by Checkpoint network firewalls.  The web site will be hosted (load balanced) jointly by Applicant and an external provider (Aurum).   
+ According to proposed Senior Technology Officer Brian Bain, the proposed infrastructure retains the sufficient degree of scal e and 
+capacity to accommodate forecasted customer account volumes throughout the formative stages.   Facilities  
+ 
+The Applicant has dedicated T1 point -to-point links to Aurum Technologies, Charlotte, NC (hosting center) using redundancy circuits 
+to ensure continuous service at all times.  Disaster Recovery is with Sunguard, Philadelphia, Pennsylvania.  Telecommunicati ons 
+connectivity was tested and the full system was restored successfully in September 2000.  Additionally, the AS400 center in C harlotte 
+is equipped with an emergency system consisting of an uninterrupted power supply (UPS), fire suppression, air conditioning and 
+security access system.

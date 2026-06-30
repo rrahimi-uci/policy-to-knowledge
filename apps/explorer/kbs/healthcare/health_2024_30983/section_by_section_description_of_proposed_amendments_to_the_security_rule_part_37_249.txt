@@ -1,0 +1,38 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 37/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_037
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+246OCR’s investigation 
+found evidence of potential failures of the regulated entity to conduct a risk analysis or to sufficiently monitor information system activity. OCR also found evidence that the regulated entity may not have had policies and procedures in place to implement the requirements of the Security Rule to protect the confidentiality, integrity, 
+and availability of ePHI.
+247 
+As another example, an OCR 
+investigation of a large health care system found indications of multiple potential violations of the Security Rule, 
+including failures by the regulated entity to conduct a risk analysis, monitor and safeguard its electronic information systems, and implement policies and procedures to record and examine activity in its electronic information systems containing ePHI.
+248 
+The regulated entity was not only unable to prevent the cyberattack, but it was unaware the attack had occurred until two years later. This is despite the long-standing requirements of the Security Rule and the obligations imposed on regulated entities for risk analysis and risk management. 
+Despite the long-standing nature of 
+the Security Rule and the proliferation of guidance documents from NIST, the Department, CISA, FTC, and others, regulated entities continue to fail to implement reasonable and appropriate security measures as required by the Security Rule.
+249For example, the 
+Security Rule and NIST guidance have addressed encryption for data in transit and at rest for many years.
+250And yet, 
+in the 2021 survey of health care cybersecurity professionals, only half of the respondents reported having implemented encryption for data in transit across the enterprise.
+251 
+Similarly, according to its CEO, a large covered entity failed to deploy multi- factor authentication (MFA) throughout its enterprise and experienced a significant breach.
+252If this is accurate, it would run counter to long-standing provisions in both the Security Rule and NIST guidance; the Security Rule has required the implementation of appropriate access controls since 2003 and NIST recommends similar controls.
+253 
+As another example, based on OCR’s 
+investigation experience, some regulated entities are not developing and implementing compliant response plans for security incidents, including those that are breaches of unsecured ePHI under the Breach Notification Rule. Section 164.308(a)(6)(i) establishes the standard that requires regulated entities to implement policies and procedures to address security incidents, while 45 CFR 164.308(a)(6)(ii) includes the implementation specifications for that standard. This requirement, included in the 2003 Final Rule, aligns with the NIST Cybersecurity Framework version 2.0 requirement for incident management.
+254Similarly, NIST 
+Cybersecurity Framework version 1.1 recommended the execution and maintenance of response processes and procedures to ensure response to detected cybersecurity incidents.
+255 
+And yet, when OCR investigates the circumstances surrounding breach reports, OCR continues to find evidence that regulated entities have not implemented policies and procedures to detect and respond to security incidents, leading to significant time lapses between a ‘‘successful’’ security incident
+256and discovery of, and 
+response to, the security incident.257 
+Thus, based on the OCR’s experience investigating and enforcing the Security Rule, the Department believes that many regulated entities would benefit from additional instruction in regulatory text regarding their compliance obligations to determine how to select security 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00019 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

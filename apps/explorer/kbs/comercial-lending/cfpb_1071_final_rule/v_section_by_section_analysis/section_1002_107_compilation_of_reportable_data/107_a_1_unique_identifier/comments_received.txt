@@ -1,0 +1,48 @@
+# Comments Received
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_323
+**Pages:** 285-285
+**Section Path:** V. Section-by-Section Analysis > Section 1002.107 Compilation of Reportable Data > 107(a)(1) Unique Identifier > Comments Received
+
+---
+
+285 LEI in order to identify itself when reporting the data. Although a “ check digit” —a portion of an 
+identifying number that can be used to check accuracy—is required for the HMDA universal 
+loan identifier , the Bureau did  not propos e to require its use in the 1071 unique identifier.  
+The Bureau sought  comment on its proposed approach to the unique identifier data point. 
+In addition, the Bureau request ed comment on the use of the LEI in the unique identifier and the 
+possible use of a check digit.  
+Comments Received  
+The Bureau received comments on the unique identifier data point from several lenders 
+and trade associations. Some commenters supported the data point as proposed; several stated 
+that it was a reasonable and appropria te means of implementing the statutory requirement.  
+Another lender noted that it already reports this type of data for Paycheck Protection Program  
+and CDFI Fund lending. A trade association stated that c ommunity banks prefer not to be 
+required to create this identifier too early in the credit origination process.  A national auto 
+finance trade association noted that its members generally assign application or loan numbers to 
+new credit applications, but not necessarily to credit line increases, and suggested that f inancial 
+institutions will have this data without needing the Federal Reserve to issue a parallel  rule to 
+implement section 1071 for motor vehicle dealers.598 
+A community bank stated that the cost of creating a custome r identification numbering 
+system that does not use the employer identification number, taxpayer identification number, or 
+Social Security number  (SSN) would be passed on to the borrower. That commenter requested 
+that the Bureau allow use of the last four digits of the employer identification number, taxpayer 
+identification number, or SSN for identification purposes.  They also expressed confusion as to 
+how an LEI (which it may not currently have) could be incorporated with the loan number in its 
+system for reporting, and stated that the Bureau did not provide sufficient guidance on how to 
+incorporate the unique  identifiers  into its current system . 
+Final Rule  
+For the reasons set forth herein, the Bureau is finalizing  § 1002.107(a)(1)  with a minor 
+edit for cla rity. Financial institutions will report an alphanumeric identifier , starting with the LEI 
+of the financial institution , that is  unique within the financial institution to the specific covered 
+application . The identifier  must  be usable to identify and retr ieve the specific file or files 
+corresponding to the application for or extension of credit.   
+The Bureau is finalizing comment 107(a)(1) -1 with a minor change. As apparent from the 
+instructions in comment 107(a)(1) -1, the Bureau chose to follow the well -known and workable 
+HMDA format to avoid introducing new complications. With respect to the concerns raised by one commenter about the unique identifier data point, the Bureau notes that a customer  
+identification number is not required. The unique identifier refers to the application or 
+ 
+598 ECOA a uthority over motor vehicle  dealers lies with the Board, not the Bureau, because Regulation  B does not 
+apply to a person excluded from coverage by section 1029 of the Consumer Financial Protection Act of 2010, title  X 
+of the Dodd -Frank Wa ll Street Reform a nd Consumer Protection Act,  Pub. L. 111-203, 124  Stat. 1376, 2004 (2010).

@@ -1,0 +1,60 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 190/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_190
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+992 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+928See Raj Mehta, et al., ‘‘The future of cyber in 
+the future of health. The evolving role of 
+cybersecurity in health care,’’ Deloitte (2020), https://www2.deloitte.com/us/en/pages/advisory/ articles/future-of-cybersecurity-healthcare.html. 
+929Id. 
+930Id. regarding ‘‘DevSecOps.’’ 93158 FR 51735 (Oct. 4, 1993). 
+93276 FR 3821 (Jan. 21, 2011). 
+93388 FR 21879 (Apr. 11, 2023). 
+934Public Law 96–354, 94 Stat. 1164 (Sept. 19, 
+1980) (codified at 5 U.S.C. 601–612). 
+935Public Law 104–4, 109 Stat. 48 (Mar. 22, 1995) 
+(codified at 2 U.S.C. 1501). 
+93664 FR 43255 (Aug. 4, 1999). 
+937Sec. 202 of Public Law 104–4, 109 Stat. 64 
+(Mar. 22, 1995) (codified at 2 U.S.C. 1532(a)). appropriate knowledge of and 
+experience with generally accepted cybersecurity principles and methods for ensuring the confidentiality, integrity, and availability of ePHI verifying compliance with the requirements of 45 CFR 164.312 and a written certification that the analysis has been performed and is accurate. Under this proposal, a regulated entity would be required to obtain such verification from a business associate- developer of VR/AR software, ensuring that ePHI that is created, received, maintained, or transmitted using the VR/AR software is protected to the same extent as ePHI that is created, received, maintained, or transmitted using other technology assets that are components of the regulated entity’s relevant electronic information systems. 
+Many regulated entities are piloting 
+innovative technologies. Such entities generally have separate departments that research, develop, test, and deploy 
+such technologies.
+928Regulated entities 
+might consider integrating workforce members with expertise in security and privacy into their technology development groups to ensure that privacy and security, including the Security Rule-required safeguards, are embedded into the design of new and emerging technologies.
+929Doing so can 
+help improve security ‘‘while boosting quality, efficiency, and productivity.’’
+930 
+4. Request for Comment 
+The Department requests comment on 
+the foregoing discussion of how the Security Rule protects ePHI used in new and developing technologies, including any benefits, drawbacks, or unintended consequences. We also request comment on the following considerations in particular: 
+a. Whether the Department’s 
+understanding of how the Security Rule applies to new technologies involving ePHI is not comprehensive and if so, what issues should also be considered. 
+b. Whether there are technologies that 
+currently or in the future may harm the security and privacy of ePHI in ways that the Security Rule could not mitigate without modification, and if so, what modifications would be required. 
+c. Whether there are additional policy 
+or technical tools that the Department may use to address the security of ePHI in new technologies. V. Regulatory Impact Analysis 
+A. Executive Order 12866 and Related 
+Executive Orders on Regulatory Review 
+The Department of Health and Human 
+Services (HHS or ‘‘Department’’) has examined the effects of this proposed rule under Executive Order (E.O.) 12866, Regulatory Planning and Review,
+931E.O. 13563, Improving 
+Regulation and Regulatory Review,932 
+E.O. 14094, Modernizing Regulatory Review,
+933the Regulatory Flexibility 
+Act934(RFA), the Unfunded Mandates 
+Reform Act of 1995935(UMRA), and 
+E.O. 13132 on Federalism.936E.O.s 
+12866 and 13563 direct the Department to assess all costs and benefits of available regulatory alternatives and, when regulation is necessary, to select regulatory approaches that maximize net benefits (including potential economic, environmental, public health 
+and safety, and other advantages; distributive effects; and equity). The proposed rule meets the criteria as significant under section 3(f)(1) of E.O. 12866, as amended by E.O. 14094. 
+The RFA requires us to analyze 
+regulatory options that would minimize any significant effect of a rule on small entities. As discussed in greater detail below, this analysis concludes, and the Secretary certifies, that the notice of proposed rulemaking (NPRM), if adopted, would not result in a significant economic effect on a substantial number of small entities. 
+The UMRA (section 202(a)) generally 
+requires us to prepare a written statement, which includes an assessment of anticipated costs and benefits, before proposing ‘‘any rule that includes any Federal mandate that may result in the expenditure by State, local, and Tribal governments, in the aggregate, or by the private sector, of $100,000,000 or more (adjusted annually for inflation) in any 1 year.’’
+937

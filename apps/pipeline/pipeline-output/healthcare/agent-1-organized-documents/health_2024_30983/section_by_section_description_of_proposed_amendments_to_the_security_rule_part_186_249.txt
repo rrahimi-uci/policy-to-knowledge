@@ -1,0 +1,76 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 186/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_186
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+990 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+893Kathryn Marchesini, et al., ‘‘Getting the Best 
+out of Algorithms in Health Care,’’ HealthITbuzz, 
+Assistant Secretary for Technology Policy, U.S. Department of Health and Human Services (June 15, 2022), https://www.healthit.gov/buzz-blog/ 
+electronic-health-and-medical-records/getting-the- best-out-of-algorithms-in-health-care. 
+894See Nazish Khalid, et al., ‘‘Privacy-preserving 
+artificial intelligence in healthcare: Techniques and applications,’’ Computers in Biology and Medicine, Volume 158, p. 1 (May 2023), https://www.sciencedirect.com/science/article/pii/ S001048252300313X?ref=pdf_ download&fr=RR- 
+2&rr=8a7dac430d6d07d5. 
+895See ‘‘Artificial Intelligence Program: Research 
+on AI/[Machine Learning] ML-Based Medical Devices,’’ U.S. Food & Drug Administration, U.S. Department of Health and Human Services (June 10, 2024), https://www.fda.gov/medical-devices/ 
+medical-device-regulatory-science-research- programs-conducted-osel/artificial-intelligence- program-research-aiml-based-medical-devices. 
+896Id. 897See Michael D. Howell, et al., ‘‘Three Epochs 
+of Artificial Intelligence in Health Care,’’ Journal of 
+the American Medical Association, Volume 331, Number 3 (Jan. 16, 2024), https://jamanetwork.com/ journals/jama/fullarticle/2813874. 
+898See Aaron A. Tierney, et al., ‘‘Ambient 
+Artificial Intelligence Scribes to Alleviate the Burden of Clinical Documentation,’’ New England Journal of Medicine Catalyst (Feb. 21, 2024), https://catalyst.nejm.org/doi/full/10.1056/ CAT.23.0404. 
+899Id. 
+900Julia Adler-Milstein, et al., ‘‘Next-Generation 
+Artificial Intelligence for Diagnosis: From Predicting Diagnostic Labels to ‘Wayfinding,’’’ Journal of the American Medical Association (Dec. 9, 2021), https://jamanetwork- com.hhsnih.idm.oclc.org/journals/jama/fullarticle/ 2787207. 
+901Id. 
+902See Letter from NCVHS Chair Jacki Monson 
+(2023), supra note 123, Appendix p. 8 (providing 
+NCVHS recommendations to strengthen the HIPAA Security Rule); see also William Dixon, et al., ‘‘3 
+ways AI will change the nature of cyber attacks,’’ World Economic Forum (June 19, 2019), https://www.weforum.org/agenda/2019/06/ai-is-powering- a-new-generation-of-cyberattack-its-also-our-best- defence/. 
+903‘‘3 ways AI will change the nature of cyber 
+attacks,’’ supra note 902. 904Id. 
+905Id. 
+906Id. 
+907Where a regulated entity is maintaining ePHI 
+for research purposes as described by 45 CFR 
+164.512(i), the regulated entity is not performing a covered function. 
+908See Jordan Pearson, ‘‘ChatGPT Can Reveal 
+Personal Information From Real People, Google 
+Researchers Show,’’ Vice (Nov. 29, 2023), https:// 
+www.vice.com/en/article/chatgpt-can-reveal- 
+personal-information-from-real-people-google- researchers-show/; see also Bridget McArthur, ‘‘AI chatbot blamed for psychosocial workplace training gaffe at Bunbury prison,’’ ABC Southwest (Aug. 20, 2024), https://www.abc.net.au/news/2024-08-21/ai- 
+chatbot-psychosocial-training-bunbury-regional- prison/104230980. 
+909See Nick Easen, ‘‘Why generative AI presents 
+a fundamental security risk,’’ Raconteur (Sept. 9, 2024), https://www.raconteur.net/technology/why- 
+generative-ai-presents-a-fundamental-security- threat. 
+910See 45 CFR 164.308(a)(1)(ii)(A) and (B); 
+proposed 45 CFR 164.308(a)(2)(i) and (a)(5)(i). cognition, planning, learning, 
+communication, or physical action. 
+•An artificial system designed to 
+think or act like a human, including cognitive architectures and neural networks. 
+•A set of techniques, including 
+machine learning, that is designed to approximate a cognitive task. 
+•An artificial system designed to act 
+rationally, including an intelligent software agent or embodied robot that achieves goals using perception, planning, reasoning, learning, communicating, decision making, and acting. 
+AI requires enormous amounts of data 
+to develop, but it also has enormous potential benefits. The Department has previously stated that these ‘‘technologies have the potential to drive innovation, increase market competition, and vastly improve care for patients and populations.’’
+893 
+According to experts, ‘‘[. . .]AI is unlocking new possibilities by advancing medicine in entirely unimaginable ways and solving some of the grand global healthcare challenges.’’
+894And FDA agrees: ‘‘AI 
+technologies are transforming health care by producing diagnostic, therapeutic, and prognostic medical recommendations, or decisions, in some cases independently, informed by the vast amount of data generated during the delivery of health care.’’
+895In 
+medical devices, areas for AI application include: 
+•Image acquisition and processing 
+•Early disease detection 
+•More accurate diagnosis, prognosis, 
+and risk assessment 
+•Identification of new patterns in 
+human physiology and disease progression 
+•Development of personalized 
+diagnostics 
+•Therapeutic treatment response 
+monitoring

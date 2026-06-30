@@ -1,0 +1,40 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 50/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_050
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+We also propose to make a technical 
+correction to paragraph (2) of the definition, consistent with a revision made in the 2013 Omnibus Rule to paragraph (1).
+345Specifically, the 
+Department proposes to replace the term ‘‘electronic storage media’’ with ‘‘electronic storage material’’ in paragraph (2) to clarify the connection between definitions of electronic storage material and transmission media. We neglected to make this change in 2013 when we replaced ‘‘electronic storage media’’ with ‘‘electronic storage material’’ in paragraph (1), which means that paragraph (2) relies on a term that is no longer defined. This technical correction we propose is consistent with how the Department has interpreted the definition of transmission media and the connection between it and electronic storage material since the change was made in 2013. 
+4. Request for Comment 
+The Department requests comment on 
+the foregoing proposals, including any 
+benefits, drawbacks, or unintended consequences. We also request comment on the following considerations in particular: 
+a. Whether the proposed 
+modifications accurately capture current use of electronic media. b. Whether the proposed 
+modifications allow for future technological innovation. 
+c. Whether there are other types of 
+electronic storage material that the Department should include in the non- exhaustive list of examples. 
+d. Whether there are other types of 
+transmission media that the Department should include in the non-exhaustive list of examples. 
+B. Section 164.304—Definitions 
+Section 164.304 includes definitions 
+for key regulatory terms in the Security 
+Rule. The Department proposes to add ten new defined terms and to modify the definitions of fifteen existing terms. The proposed new regulatory terms would be: Deploy, Implement, Electronic information system, Multi- factor authentication, Relevant electronic information system, Risk, Technical controls, Technology asset, Threat, and Vulnerability. The definitions we propose to modify are for the following terms: Access, Administrative safeguards, Authentication, Availability, Confidentiality, Information system, Malicious software, Password, Physical safeguards, Security or Security measures, Security incident, Technical safeguards, User, and Workstation. Generally, the Department is proposing to add or modify regulatory terms that would either clarify how regulated entities should apply the standards and implementation specifications or modernize the rule to better account for changes in the environment in which health care is provided. 
+1. Clarifying the Definition of ‘‘Access’’ 
+a. Current Provision and Issues To 
+Address 
+The Security Rule defines the term 
+‘‘access’’ as the ability or means necessary to perform a set of activities 
+describing how a user may interact with a system resource.
+346These activities 
+are reading, writing, modifying, communicating data/information, or otherwise using any component of an information system. The definition applies only to the Security Rule, not to the Breach Notification Rule or the Privacy Rule. 
+The term ‘‘access’’ defines the scope 
+of some key regulatory provisions in the Security Rule. For example, whether a person meets the definition of a ‘‘user’’ is determined based on whether their access to information or a component of the regulated entity’s information system is authorized.
+347The definition 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00026 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

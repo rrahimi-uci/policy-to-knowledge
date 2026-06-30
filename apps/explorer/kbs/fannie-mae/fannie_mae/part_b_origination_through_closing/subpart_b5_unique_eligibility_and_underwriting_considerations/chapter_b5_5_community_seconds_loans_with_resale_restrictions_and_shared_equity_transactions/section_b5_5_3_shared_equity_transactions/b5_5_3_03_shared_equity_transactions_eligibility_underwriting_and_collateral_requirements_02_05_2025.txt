@@ -1,0 +1,218 @@
+# B5-5.3-03, Shared Equity Transactions: Eligibility, Underwriting and Collateral Requirements (02/05/2025)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_360
+**Pages:** 801-805
+**Section Path:** Part B, Origination Through Closing > Subpart B5, Unique Eligibility and Underwriting Considerations > Chapter B5-5, Community Seconds, Loans with Resale Restrictions, and Shared Equity Transactions > Section B5-5.3, Shared Equity Transactions > B5-5.3-03, Shared Equity Transactions: Eligibility, Underwriting and Collateral Requirements (02/05/2025)
+
+---
+
+Published March 4, 2026
+783Announcements Issue Date
+Announcement SEL-2025-01 February 05, 2025
+Announcement SEL-2024-04 June 05, 2024
+Announcement SEL-2023-11 December 13, 2023
+Announcement SEL-2023-04 May 03, 2023
+ 
+B5-5.3-03, Shared Equity Transactions: Eligibility, Underwriting and
+Collateral Requirements (02/05/2025)
+Introduction
+This topic contains information on shared equity transactions, including:
+Eligibility Requirements
+Aﬀordable LTV Calculation: Resale Restrictions that Terminate at Foreclosure
+LTV Calculation: Resale Restrictions that Survive Foreclosure
+Appraisal Requirements
+Title Insurance and Delivery Requirements
+Eligibility Requirements
+The following table describes eligibility requirements for shared equity transactions.
+Criteria Community Land Trusts Income and Resale Price Restrictions
+Eligible
+shared equity
+providersShared equity providers must comply with the eligible provider requirements in    B5-5.1-02, Community Seconds
+Loan Eligibility . Additionally, the following ﬂexibilities are permitted:
+• Legal entities that are owned exclusively by a nonproﬁt organization are also considered eligible shared equity
+providers. For example, an LLC wholly owned by a nonproﬁt organization is considered an eligible shared equity
+provider.
+• Shared equity providers are not considered interested parties to the transaction.
+Note : Programs on the Shared Eq - Model Forms tab of the Certiﬁed Shared Equity Program List  meet these
+provider requirements. See B5-5.3-02, Shared Equity Transactions: General Requirements for additional
+information.
+
+Published March 4, 2026
+784Criteria Community Land Trusts Income and Resale Price Restrictions
+Required
+counselingThe shared equity provider must comply
+with the provisions of the Model Ground
+Lease relating to counseling the
+prospective borrowers.The shared equity provider must have an established procedure
+that requires counseling or similar engagement with prospective
+borrowers to ensure such individuals are educated on the speciﬁc
+terms of the income and resale price restrictions, including the
+calculation that will be used to determine the maximum resale
+price. This counseling or engagement must be conducted at least
+30 days prior to the closing of any purchase transaction. Examples
+may include, but are not limited to:
+• one-on-one counseling speciﬁc to the transaction,
+• a program summary document in plain language, or
+• an attorney review of the program with the prospective
+homebuyer.
+Eligible
+borrowersBecause of the aﬀordable terms that they oﬀer, shared equity programs include restrictions on borrower eligibility
+and on the resale price of the property. Eligible borrowers must satisfy the speciﬁc eligibility criteria set up by the
+shared equity program.
+Note:  If income limit requirements are imposed by both the shared equity provider and the ﬁrst mortgage, the
+most restrictive will apply.
+Eligible
+property and
+occupancy
+typesAll loans secured by one- and two-unit
+principal residence community land trust
+properties are eligible for purchase by
+Fannie Mae with the exception of units in a
+co-op project, which are not eligible.
+All manufactured homes are eligible;
+however, if located in a condo or PUD
+project, Fannie Mae PERS approval of the
+project is required. (See B4-2.2-06, Project
+Eligibility Review Service (PERS) )
+Manufactured homes must comply with all
+applicable requirements in this Guide with
+the following exceptions:
+As of the loan application date
+• the manufactured home must be aﬃxed
+to a permanent foundation, and
+• unless it has already been converted,
+the lessor must have initiated the
+conversion of the manufactured home to
+real property.All loans secured by one- and two-unit principal residence
+properties are eligible for purchase by Fannie Mae.
+When the subject property is a unit in a limited or shared equity co-
+op project, the requirements in this Section B5-5.3, Shared Equity
+Transactions , do not apply. For limited or shared equity co-ops, the
+lender must ensure compliance with Chapter B4-2, Project
+Standards .
+Eligible loansEligible loans include purchase and reﬁnance transactions. Loans must be ﬁxed-rate or ARMs with an initial ﬁxed
+period of ﬁve years or more.
+Underwriting
+considerationsThese loans may be underwritten manually or through DU.
+Any recurring monthly fees or expenses associated with the shared equity program must be included in the
+monthly housing expense for qualifying purposes. See  B3-6-03, Monthly Housing Expense for the Subject Property .
+
+Published March 4, 2026
+785Aﬀordable LTV Calculation: Resale Restrictions that Terminate at Foreclosure
+When resale restrictions terminate automatically upon foreclosure (or the expiration of any applicable
+redemption period), or the recordation of a deed-in-lieu of foreclosure, the sales price is typically not a reliable
+indicator of market value for the property because the sales price does not include the subsidy from the shared
+equity provider. The appraised value is more indicative of the actual value of the property in the event of a
+foreclosure or acceptance of a deed-in-lieu of foreclosure (disregarding factors that may aﬀect value after
+origination and prior to foreclosure). Accordingly, for these types of transactions, lenders must use the
+"Aﬀordable LTV" calculation to determine LTV, CLTV, and HCLTV ratios.
+The Aﬀordable LTV calculation divides the loan amount by the appraised value of the property, rather than the
+lesser of the sales price or the appraised value. The following table provides an example of the Aﬀordable LTV
+calculation method.
+Item Amount
+Appraised value $200,000
+Shared equity program subsidy amount $40,000
+Subsidized sales price $160,000
+First mortgage loan amount $160,000
+Aﬀordable LTV Ratio (ﬁrst mortgage loan amount divided by the
+appraised value)80%
+When using the Aﬀordable LTV calculation, the lender must
+for DU loans, enter "Aﬀordable LTV" in the Product Description ﬁeld in the online application, which will
+result in DU calculating the LTV, CLTV, and HCLTV ratios based solely on the appraised value for purchase
+transactions (and not the lesser of the sales price or appraised value); and
+for all loans, use the appraised value to determine
+the minimum down payment;
+the borrower contribution, if applicable, that must be made from the borrower's own resources;
+and
+the level of mortgage insurance required.
+LTV Calculation: Resale Restrictions that Survive Foreclosure
+When resale restrictions survive foreclosure or a deed-in-lieu of foreclosure, the lender must use the lesser of
+the sales price or appraised value of the property with resale restrictions when calculating the LTV, CLTV, and
+HCLTV ratios, which is the standard method of calculation. Fannie Mae requires use of the standard calculation
+on the lower value due to the presence of resale restrictions, which limit the property's sales price in the event
+
+Published March 4, 2026
+786of foreclosure or acceptance of a deed-in-lieu of foreclosure.
+Note:  This does not apply to loans secured by community land trust properties, which require the
+resale restrictions to terminate automatically upon foreclosure (or the expiration of any applicable
+redemption period), or acceptance of a deed-in-lieu of foreclosure.
+Appraisal Requirements
+For properties in a community land trust, the appraisal requirements can be found in  B4-1.4-06, Community
+Land Trust Appraisal Requirements .
+For properties with income and resale price restrictions, the following requirements apply:
+In cases where the resale restrictions terminate automatically upon foreclosure (or the expiration of any
+applicable redemption period), or upon recordation of a deed-in-lieu of foreclosure, the appraisal should
+reﬂect the market value of the property without resale restrictions. The lender must ensure that the
+borrower and appraiser are aware of the resale restrictions and should advise the appraiser that they
+must include the following statement in the appraisal report:
+"This appraisal is made on the basis of a hypothetical condition that the property rights being appraised are
+without resale and other restrictions that are terminated automatically upon the latter of foreclosure or the
+expiration of any applicable redemption period, or upon recordation of a deed-in-lieu of foreclosure."
+In cases where the resale restrictions survive foreclosure or deed-in-lieu of foreclosure, the appraisal
+must reﬂect the impact the restrictions have on value and be supported by comparable sales with similar
+restrictions. The appraisal report must note the existence of the resale restrictions and comment on any
+impact the resale restrictions have on the property's value and marketability.
+Title Insurance and Delivery Requirements
+The following table describes title insurance and delivery requirements for shared equity transactions.
+
+Published March 4, 2026
+787Criteria Community Land Trusts Income and Resale Price Restrictions
+Title
+insurance
+requirementsThe title insurance policy or an
+endorsement to the policy must
+expressly conﬁrm all of the following:
+• the recording of the complete
+community land trust ground lease or
+ground lease memorandum;
+• the recording of the Community Land
+Trust Ground Lease Rider ;
+• the community land trust loan is
+secured by a ﬁrst lien on the leasehold
+estate and the improvements;
+• there are no existing loans or other
+liens on the fee estate, except as may
+be permitted under the Community Land
+Trust Ground Lease Rider ;
+• the ground lessor's reversionary
+interest is subordinate to the community
+land trust loan; and
+• there are no related community land
+trust ground lease occupancy and resale
+restrictions, covenants, or agreements
+that "run with the land," and that have
+been recorded apart from the ground
+lease, except as may be permitted
+under the Community Land Trust
+Ground Lease Rider .The title insurance policy or an endorsement to the policy must
+expressly reﬂect the source and terms of the resale restrictions are
+included in the public land records so that they are readily identiﬁable in
+a routine title search.
+Pre-delivery
+considerationsPrior to delivering the loan to Fannie Mae, the lender must conﬁrm
+• any payments or assessments required to be paid by the borrower under the legal documentation (including ground
+lease rents for community land trusts) are not past due, and
+• the borrower is not in default under any other provisions of the legal documentation, nor has the shared equity
+provider claimed such a default.
+Special
+feature codes
+and delivery
+requirementsThe lender must include the following in
+the delivery data:
+• SFC 054,
+• the value of the leasehold (inclusive of
+the improvements) as the appraisal
+amount, and
+• the Aﬀordable LTV ratio.The lender must include the following in the delivery data:
+• SFC 630 and the Aﬀordable LTV when the resale restrictions terminate
+automatically upon foreclosure (or the expiration of any applicable
+redemption period), or the recordation of a deed-in-lieu of foreclosure.
+• SFC 631 when the resale restrictions survive foreclosure or a deed-in-
+lieu of foreclosure.
+• SFC 177 when the Grounded Solutions Network 2021 Model
+Declaration of Aﬀordability Covenants with Reﬁnance and Resale
+Restriction and Purchase Option  form was used.
+ 
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.

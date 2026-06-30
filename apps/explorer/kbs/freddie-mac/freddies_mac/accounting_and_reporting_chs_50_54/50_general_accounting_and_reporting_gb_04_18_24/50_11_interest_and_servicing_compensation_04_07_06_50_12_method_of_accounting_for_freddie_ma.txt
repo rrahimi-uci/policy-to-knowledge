@@ -1,0 +1,119 @@
+# 50.11   Interest and Servicing compensation (04/07/06) + 50.12   Method of accounting for Freddie Ma
+
+**Source:** freddies_mac.pdf
+**Chunk ID:** freddies_mac_2160
+**Pages:** 886-887
+**Section Path:** Accounting and Reporting (Chs 50-54) > 50 - General Accounting and Reporting GB-04-18-24 > 50.11   Interest and Servicing compensation (04/07/06)
+
+---
+
+Guide Bulletin Update 04/18/24 Chapter 50 – Page 11 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the 
+AllRegs web site of ICE Mortgage Technology  (with a paid subscription).  
+Guide Chapter 50 – General Accounting and Reporting Requirements  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+f. Newly purchased Mortgages (12/07/05)  
+For a newly purchased Mortgage, the Servicer must report transactions for the Mortgage for the 
+first time according to Section 54.1 . 
+ 
+50.11   Interest and Servicing compensation (04/07/06)  
+When Freddie Mac purchases a Mortgage, it computes interest at the Accounting Net Yield on the total 
+outstanding principal.  Freddie Mac pays that interest to the Seller from the first of the month through 
+the day before the Freddie Mac Funding Date.  
+ 
+When computing the Accounting Net Yield, Freddie Mac takes into consideration a minimum Servicing 
+compensation.  Usually, the Accounting Net Yield equals the Required Net Yield, which is the Coupon 
+Rate less the Servicing Spread.  If the Coupon Rate of a Mortgage, less the Servicing Spread, is 
+greater than Freddie Mac's Required Net Yield, the Servicer must refer to the Purchase and Servicing 
+Documents to determine whether the Servicer may retain the interest received in excess of t he Freddie 
+Mac Required N et Yield as additional Servicing compensation.  
+ For each Mortgage without exception activity, accounting reports are due:  
+Five Business Days after the accounting cutoff date  
+For each Mortgage paid in full, accounting reports are due:  
+By the earlier  of: 
+• Two Business Days after the payoff occurred; or  
+• The last Business Day of the month in which the payoff occurred  
+Reports for payoff s that occur on the last Business Day of the month are due the same 
+Business Day.   
+For each Mortgage sold into a securitization (CME sale), accounting reports are due:  
+• The same Business Day that the securitization (CME sale) occurred  
+For each Mortgage liquidated by a third -party foreclosure sale, short payoff or 
+transfer to REO, accounting reports are due:  
+By the earlier  of: 
+• Five Business Days after receipt of third -party foreclosure sale proceeds, short payoff 
+notification or notification of transfer to REO; or  
+• The last Business Day of the month in which third -party foreclosure sale proceeds, 
+short payoff notification or notification of transfer to REO were received
+
+Guide Bulletin Update 04/18/24 Chapter 50 – Page 12 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the 
+AllRegs web site of ICE Mortgage Technology  (with a paid subscription).  
+Guide Chapter 50 – General Accounting and Reporting Requirements  
+Freddie Mac's Accounting Net Yield for ARMs will vary as the interest rate varies.  Freddie Mac's 
+Accounting Net Yield for ARMs will be the index rate applicable to such month plus the Freddie Mac 
+required net spread.  
+ 
+50.12   Method of accounting for Freddie Mac yield ( 10/20/22 ) 
+For each Mortgage, Freddie Mac designates one of three methods for calculating monthly interest and 
+principal to be reported to Freddie Mac.  
+ 
+1. Alternate method  (Actual/Actual)  
+ 
+Under the alternate method, the Servicer must report Freddie Mac's proportionate share of all 
+interest and principal actually received.   Freddie Mac requires the use of the alternate method for 
+Mortgages purchased under the Multifamily Conventional Cash Mortgage Purchase Program, 
+Mortgages for which securitization is scheduled but has not occurred,  as well as for certain 
+designated Mortgages purchased under the Multifamily Negotiated Transactions Program.  
+ 
+2. Net yield method  (Scheduled/Actual)  
+ 
+Under the net yield method, the Servicer must compute the monthly interest by applying the 
+Accounting Net Yield rate to the beginning principal balance, using a 30 -day month and a 360 -day 
+year, regardless of the amount collected from the Borrower.   The Servicer must report the interest 
+computed and the principal actually received for each monthly reporting period.  
+ 
+3. Scheduled/ Scheduled method  
+ 
+Under the scheduled/scheduled method, the Servicer reports to Freddie Mac both principal and 
+interest payments calculated on a scheduled amortized balance, regardless of actual collections.   
+The Servicer must use the scheduled/scheduled method for certain designated Mortgages 
+purchased under the Multifamily Negotiated Transactions Program.  
+  
+50.13   Certification and financial reporting requirements (05/11/10)  
+Sections 3.5 and 3.6 set forth the requirements for submitting the following:  
+ 
+• Form 16M, Multifamily Annual Certification Report , 
+ 
+• Form 17M, Multifamily Annual Certification Report – Structured Transactions and Tax -Exempt 
+Bond Seller/Servicers , and  
+ 
+• Form 1055, Mortgage Bankers Financial Reporting Form  
+ 
+50.14   Audit confirmation requests (12/07/05)  
+Sellers or Servicers requiring audit confirmation from Freddie Mac with respect to the Mortgages sold 
+to and serviced for Freddie Mac must use the format and address provided in Exhibit 8 .

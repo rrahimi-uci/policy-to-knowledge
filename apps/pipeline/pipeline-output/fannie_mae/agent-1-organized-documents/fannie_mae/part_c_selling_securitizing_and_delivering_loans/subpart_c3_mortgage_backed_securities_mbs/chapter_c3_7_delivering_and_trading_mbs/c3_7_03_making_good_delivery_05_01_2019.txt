@@ -1,0 +1,97 @@
+# C3-7-03, Making Good Delivery (05/01/2019)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_495
+**Pages:** 1035-1037
+**Section Path:** Part C, Selling, Securitizing, and Delivering Loans > Subpart C3, Mortgage-Backed Securities (MBS) > Chapter C3-7, Delivering and Trading MBS > C3-7-03, Making Good Delivery (05/01/2019)
+
+---
+
+Published March 4, 2026
+1017conversation with the lender.
+That evening, Fannie Mae will send the lender a written conﬁrmation statement that includes the details of the
+trade such as the trade number, date, amount, price, the coupon rate, and the settlement date. The
+conﬁrmation, taken together with the relevant sections of this Guide, constitutes conclusive evidence of the
+terms between Fannie Mae and the lender for the respective trade, unless the lender notiﬁes the Operations
+team of any errors in the conﬁrmation by close of trading on the next trading day.  Lenders will be responsible
+for any resulting economic diﬀerences from a trade if they fail to notify Fannie Mae of any errors in the
+conﬁrmation within the speciﬁed window.
+Note:  For lenders executing trades with Fannie Mae via Fannie Mae’s electronic trading platform, the
+lender’s trade details for the bid or oﬀer will be available through the platform using appropriate login
+credentials.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2021-06 July 07, 2021
+Announcement SEL-2019-04 May 01, 2019
+ 
+C3-7-03, Making Good Delivery (05/01/2019)
+Introduction
+This topic describes the requirements for making good delivery of MBS, (which includes UMBS), including:
+Good Delivery Conditions
+Principal Amount of the Trade
+Accrued Interest
+Maximum Number of Pools and Minimum Delivery Amounts
+Pairing Oﬀ
+Good Delivery Conditions
+Acceptance of a ﬁrm bid to sell MBS to the Desk is an enforceable obligation that requires the lender to deliver
+the security at the parameters agreed upon at the time of the trade and in amount that meets the minimum
+trade requirements for the commitment. When a lender meets this obligation, it has made good delivery.
+
+Published March 4, 2026
+1018However, a good delivery for Fannie Mae’s purposes and a good delivery that satisﬁes SIFMA's guidelines for a
+TBA trade are not always the same. The guidelines that determine whether a lender has or has not made good
+delivery for a TBA trade include the following:
+The delivery of a single-lender MBS under a ﬁrm bid that speciﬁed a Fannie Majors multiple-lender MBS
+does not constitute good delivery for that trade. The delivery of a Fannie Majors UMBS, however, will be
+considered good delivery for a TBA trade under any ﬁrm bid, even if the lender did not specify that the
+trade would include a Fannie Majors UMBS.
+The delivery of a 30-year term UMBS against a TBA trade that speciﬁes a 30-year UMBS will not be
+considered as a good delivery unless the ﬁnal maturity date of the security was greater than 181 months
+when the security was issued.
+The delivery of an MBS backed by pools that are comprised of more than 10% of any single type of
+nonstandard loan or more than 15% of any combination of nonstandard loans is not considered a good
+delivery for a TBA trade. See C3-2-01, Determining Eligibility for Loans Pooled into MBS  for additional
+information about pooling nonstandard loans.
+Failure to eﬀect a good delivery of a security for a TBA trade can severely limit a lender’s ability to deal with the
+Desk and could result in Fannie Mae declaring the lender to be in default. See C3-7-01, Establishing an MBS
+Trading Account , for more details.
+See C3-7-04, Delivering MBS Pool Data and Documents , for speciﬁcs on the data and documents required in
+order to make good delivery.
+Principal Amount of the Trade
+The maximum diﬀerence between the principal balance the lender committed to deliver and the amount
+actually delivered can be plus or minus 0.01% of the trade amount for a TBA trade. If multiple trades are
+executed against a single pool transmission, the delivery variance applies to each trade.
+Lenders that need a higher or lower variance in some situations should contact the Capital Markets Pricing and
+Sales Desk to negotiate an alternative variance. Lenders should note, however, that trades that have variances
+outside of SIFMA's tolerances will not be eligible for TBA trades. Also, no variance is allowed for transactions in
+which the seller provides the buyer with a pool number and speciﬁc original face amount on the date the two
+parties agree to enter into the transaction. For funding purposes, the principal amount is calculated as follows:
+a = d x b, where
+a = net principal
+d = current balance of the security
+b = price (in decimals)
+Accrued Interest
+
+Published March 4, 2026
+1019Accrued interest is paid up to, but not including, the settlement date. Therefore, if the settlement occurs on the
+ﬁrst of the month, the current amount due does not include an accrued interest payment. For funding purposes,
+the accrued interest amount is calculated based on the following formula:
+c = [d x e/360 days] x (f – 1 day), where
+c = interest
+d = current balance of the security
+e = the pass-through rate
+f = the settlement date
+Maximum Number of Pools and Minimum Delivery Amounts
+The maximum number of pools permitted for delivery into a given trade depends on:
+the MBS pass-through rate,
+the amount of the trade, and
+the number of pools that are needed to reach the minimum delivery amount (which is determined by the
+applicable trade delivery variance). The current minimum balance for each pool in a group submission
+must be at least $25,000.
+The limits are described in the following table:
+MBS Pass-Through Rate Original Trade Amount Maximum Number of Pools
+< 8%≤ $500,000 1
+> $500,000 and < $1,000,000 2
+≥ $1,000,0003 pools per each million dollars of
+the trade amount

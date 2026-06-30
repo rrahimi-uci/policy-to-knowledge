@@ -1,0 +1,59 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 210/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_210
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+1002 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+968The impact factor costs and cost savings are 
+based on estimates for all breaches from the annual 
+IBM Security and Ponemon Institute Costs of a Data Breach Reports for years 2018–2023. See id. at p. 
+28. 
+969The Department calculated the percentage 
+decrease as a share of the sum of factor costs from the average breach cost: ($218,915 + $180,358 + $187,703 + $221,593 + $232,867)/$4,450,000 = 0.236. 
+970See ‘‘New Dangers in the New World: Cyber 
+Attacks in the Healthcare Industry,’’ supra note 135, 
+p. 3. 
+971See ‘‘Is the HIPAA Security Rule Enough to 
+Protect Electronic Personal Health Information (PHI) in the Cyber Age? ’’ supra note 207; see also 
+Adam Wright, et al., ‘‘The Big Phish: Cyberattacks Against U.S. Healthcare Systems,’’ Journal of General Internal Medicine, Volume 31, p. 1115– 
+1118 (May 13, 2016), https://www.ncbi.nlm.nih.gov/ pmc/articles/PMC5023604/. 972See Thomas Clifford, ‘‘Provider Liability and 
+Medical Identity Theft: Can I Get Your (Insurance) 
+Number?,’’ Northwestern Journal of Law & Social Policy, Volume 12, p. 45 (2016), https://scholarlycommons.law.northwestern.edu/njlsp/ vol12/iss1/2/. 
+973Id. 
+974Id. 
+975See ‘‘Assessing resilience of hospitals to 
+cyberattack,’’ supra note 130; see also Ashley 
+Carman, ‘‘ ‘MEDJACK’ tactic allows cyber criminals to enter healthcare networks undetected,’’ SC Media (June 4, 2015) (‘‘Medjack’’ means a medical device hijack that attackers use to exploit outdated and unpatched medical devices), https://www.scmagazine.com/news/medjack-tactic-allows- cyber-criminals-to-enter-healthcare-networks- undetected. 
+976See ‘‘New Dangers in the New World: Cyber 
+Attacks in the Healthcare Industry,’’ supra note 135. 977See Steven Ades, et al., ‘‘Cancer Care in the 
+Wake of a Cyberattack: How to Prepare and What 
+to Expect,’’ JCO Oncology Practice, Volume 18, p. 23–24 (Aug. 2, 2021), https://pubmed.ncbi.nlm.nih.gov/34339260/. 
+978See ‘‘Assessing resilience of hospitals to 
+cyberattack,’’ supra note 130. 
+979See Mohammed Alkinoon, et al., ‘‘Measuring 
+Health Care Data Breaches,’’ Information Security Applications, Volume 13009, p. 265–277 (Aug. 11, 2021), https://dl.acm.org/doi/10.1007/978-3-030- 
+89432-0_ 22. 
+980See ‘‘The Big Phish: Cyberattacks Against U.S. 
+Healthcare Systems,’’ supra note 971, p. 1115–1118. 
+981See ‘‘Health Records Database and Inherent 
+Security Concerns: A Review of the Literature,’’ supra note 177. correspond to major factors affecting the 
+costs of large breaches as identified in published reports.
+968The Department 
+estimates that, at a minimum, performing the following actions would quantifiably reduce costs: (1) encryption; (2) penetration testing; (3) requiring MFA and notification of termination of access to ePHI; (4) increasing employee training; and (5) reducing noncompliance with regulations. These factors would account for an estimated 23.6 percent decrease in large breach costs.
+969For 
+health care breaches, this corresponds to an estimated cost savings of $2.6 million per large breach in high incidence years, and $2.1 million per large breach in low incidence years. 
+Non-Quantitative Analysis of Benefits 
+A fundamental benefit of the 
+proposed rule would be to decrease the 
+effects of breaches on individuals who are the subjects of ePHI, namely patients and health plan members. Breaches of ePHI may cause harm to individuals in many ways, including loss of reputation and personal dignity and financial and medical fraud, which may result in false debts, impaired credit, and even health threats from misuse of health insurance credentials by another individual. ‘‘[H]ealthcare data, which includes medical histories and personal identification, can last a lifetime. The information collected can be used for ransom, to commit tax frauds, to provide supporting disability documentation, to send fake bills to insurance providers, to obtain healthcare, prescription drugs, medical treatment, and to obtain government benefits like Medicare and Medicaid.’’
+970Hackers can use stolen 
+personal, medical, and financial data to take out a bank loan in the victim’s name and change direct deposit information in payroll systems, allowing them to steal wages as well.
+971In 
+addition, medical identity fraud can impact the victim’s credit score and health insurance premiums, and may result in unexpected legal fees.
+972 
+Medical identity fraud also enables thieves to obtain medical treatment using the victim’s stolen ePHI. This can lead to the thief’s medical conditions being incorporated into the victim’s medical records and impacting the victim’s ability to receive appropriate medical treatment based on accurate records in the future, or any care at all depending on whether the thief has exhausted the victim’s insurance benefits.
+973Overall, recovering

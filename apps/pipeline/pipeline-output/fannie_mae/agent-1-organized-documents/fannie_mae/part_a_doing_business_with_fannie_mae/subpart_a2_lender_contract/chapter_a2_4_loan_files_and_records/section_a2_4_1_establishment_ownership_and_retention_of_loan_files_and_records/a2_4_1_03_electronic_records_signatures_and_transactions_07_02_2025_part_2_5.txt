@@ -1,0 +1,83 @@
+# A2-4.1-03, Electronic Records, Signatures, and Transactions (07/02/2025) (part 2/5)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_034_sub_002
+**Pages:** 89-98
+**Section Path:** Part A, Doing Business with Fannie Mae > Subpart A2, Lender Contract > Chapter A2-4, Loan Files and Records > Section A2-4.1, Establishment, Ownership, and Retention of Loan Files and Records > A2-4.1-03, Electronic Records, Signatures, and Transactions (07/02/2025)
+
+---
+
+Published March 4, 2026
+74GENERAL REQUIREMENTS FOR ELECTRONIC RECORDS
+Topic Description
+Conversion of documentsSellers/servicers may convert a paper document to an
+electronic record for storage purposes if it is not one of
+the documents required to be maintained in its original
+paper form. Sellers/servicers may destroy the paper
+document. Similarly, a seller/servicer may convert an
+electronic record to a paper document for storage
+purposes or to provide loan modiﬁcations to document
+custodians that are not electronically enabled.
+• When documents are converted to an alternative
+format, the legibility and integrity of the information and
+formatting, including indications of alterations (such as
+erasures and white-outs), in the original document must
+be preserved.
+• If servicing of a loan is transferred, the servicer must
+securely transfer all relevant electronic records to the
+new servicer, along with all information verifying the
+authenticity, validity and enforceability of the records
+and any associated signatures.
+• Sellers/servicers must retain documentation that
+explains the process used to convert paper-based
+records to electronic formats and specify the date of
+conversion, method of conversion, and disposition of the
+original paper records.
+For purposes of the preceding table, “electronic records” do not include eNotes, and paper notes may not be
+converted into eNotes. See  B8-8-02, Requirements for Creating, Closing, and Correcting eNotes  for additional
+information regarding electronic records.
+Electronic Signatures
+Sellers/servicers may use any form of electronic signature on an electronic record that is valid under applicable
+law (except that audio and video recordings cannot be used as the electronic signature), as long as the
+signature is attached to or logically associated with the record intended to be signed. From time to time, Fannie
+Mae may require a seller/servicer to use a speciﬁc signature format for a particular electronic record or type of
+record.
+The following table describes Fannie Mae’s requirements for electronic signatures.
+
+Published March 4, 2026
+75ELECTRONIC SIGNATURE REQUIREMENTS
+Topic Description
+Compliance with ESIGN, UETA, and applicable
+lawsAll electronic signatures, electronic signature systems,
+and software must comply with, and be enforceable
+under
+• ESIGN and UETA adopted by the state in which the
+signature is applied, and
+• all other applicable federal and state laws.
+Attribution and EvidenceAll electronic signatures must be attributable to an
+identiﬁed signer.
+When a record is electronically signed, the seller/servicer
+must retain, for each electronic signature, evidence of
+the following:
+• the authenticated identity of the signer and, if
+applicable, related entity;
+• attribution of the signature to the purported signer;
+• the signer’s express or implied agreement to use an
+electronic signature;
+• date of the signature; and
+• the method (and, if applicable, eSign vendor) by which
+the signature was made.
+For electronically-signed records for loans purchased or
+securitized by Fannie Mae, this evidence and
+documentation must be suﬃcient to enable Fannie Mae
+to conduct a thorough quality control review of the loan.
+For example, the evidence of the borrower’s signature
+with respect to a veriﬁcation of employment must allow
+Fannie Mae the ability to request and receive a
+reveriﬁcation of the information from the borrower’s
+employer.
+ 
+See  B8-8-01, General Information on eMortgages  for information about electronic signature requirements for
+eMortgage transactions.
+Electronic Notarizations
+Fannie Mae accepts delivery and servicing of loans with electronic documents, including security instruments or

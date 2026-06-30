@@ -1,0 +1,28 @@
+{
+  "total_files": 1,
+  "processed": 1,
+  "failed": 0,
+  "total_chunks": 2366,
+  "chunker_tools_used": {
+    "PDFChunker (TOC)": 1
+  },
+  "sub_chunks_created": 0,
+  "merges_performed": 728,
+  "files": [
+    {
+      "file": "freddies_mac.pdf",
+      "status": "success",
+      "chunks": 2366,
+      "method": "toc_based",
+      "chunker_tool": "PDFChunker (TOC)"
+    }
+  ],
+  "chunk_size_stats": {
+    "min_words": 4,
+    "max_words": 2936,
+    "avg_words": 765,
+    "median_words": 760,
+    "sub_chunks_created": 0,
+    "merges_performed": 728
+  }
+}

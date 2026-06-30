@@ -1,0 +1,121 @@
+# B3-2-01, General Information on DU (07/02/2025)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_115
+**Pages:** 287-289
+**Section Path:** Part B, Origination Through Closing > Subpart B3, Underwriting Borrowers > Chapter B3-2, Desktop Underwriter (DU) > B3-2-01, General Information on DU (07/02/2025)
+
+---
+
+Published March 4, 2026
+269This chapter describes DU considerations and requirements.
+B3-2-01, General Information on DU (07/02/2025)
+Introduction
+This topic contains general information on DU, including:
+Overview
+Underwriting with DU
+DU Underwriting Reports
+Loan Caseﬁle Archival Policy
+DU Underwriting Recommendations
+General Requirements for Lenders
+Overview
+Fannie Mae’s underwriting policies include an evaluation of the borrower’s (or spouse’s to the extent required
+by applicable law) equity investment, credit history, liquid reserves, reliable and recurring income, and the
+cumulative eﬀect that these and other risk factors have on mortgage loan performance. Fannie Mae’s
+underwriting policies enable the lender to consider various scenarios in evaluating a borrower’s willingness and
+capacity to repay the mortgage loan. The lender must conﬁrm that information provided by the borrower during
+the loan application process is accurate and complete; include documentation in the loan ﬁle that supports the
+lender’s assessment of the borrower’s credit history, employment and income, assets, and other ﬁnancial
+information used for qualifying; conduct a comprehensive risk assessment of each mortgage loan application;
+and render a decision to either approve or decline the mortgage loan application.
+Fannie Mae oﬀers lenders two options for conducting a comprehensive risk assessment–automated underwriting
+through DU or manual underwriting. Both methods include an evaluation of the borrower’s equity investment,
+credit history, liquid reserves, reliable and recurring income, and the cumulative eﬀect that these and other risk
+factors have on mortgage loan performance.
+DU evaluates mortgage delinquency risk and arrives at an underwriting recommendation by relying on a
+comprehensive examination of the primary and contributory risk factors in a mortgage application. (See
+B3-2-03, Risk Factors Evaluated by DU ) It analyzes the information in the loan caseﬁle to reach an overall credit
+risk assessment to determine eligibility for delivery to Fannie Mae.
+No one factor determines a borrower’s ability or willingness to make their mortgage payments. DU identiﬁes
+low-risk factors that can oﬀset high-risk factors. When several high-risk factors are present in a loan caseﬁle
+without suﬃcient oﬀsets, the likelihood of serious delinquency increases.
+DU conducts its analysis uniformly, and without regard to race, gender, or other prohibited factors. DU uses
+validated, statistically signiﬁcant variables that have been shown to be predictive of mortgage delinquency
+across all groups.
+
+Published March 4, 2026
+270DU does not evaluate a loan’s compliance with federal and state laws and regulations including, without
+limitation, a loan’s potential status as a qualiﬁed mortgage under applicable laws and regulations. Lenders bear
+sole responsibility for complying with applicable laws and regulations, and these compliance obligations may not
+be imposed upon or shared by Fannie Mae.
+Underwriting with DU
+Lenders must enter loan data (including data from the Form 1003) in their loan origination system or in the DU
+user interface before submitting for underwriting. A credit report must also be obtained. Loans may be
+submitted to DU before or after the closing of the mortgage loan; however, the ﬁrst submission to DU for
+underwriting purposes must occur before closing of the mortgage loan.
+When the mortgage loan or borrower information changes and it no longer matches the information used when
+the loan caseﬁle was last underwritten with DU, the lender must update the data and resubmit the loan caseﬁle
+to DU. Exceptions are speciﬁed in B3-2-10, Accuracy of DU Data, DU Tolerances, and Errors in the Credit Report .
+When the loan caseﬁle is resubmitted to DU after closing and prior to delivery to Fannie Mae, the lender is
+responsible for ensuring that:
+all information provided in the ﬁnal submission to DU matches the terms of the closed loan;
+the loan complies with the requirements speciﬁed in A2-2-04, Limited Waiver and Enforcement Relief of
+Representations and Warranties ;
+the loan delivery data matches both the closed loan and the ﬁnal data submitted to DU; and
+the loan caseﬁle receives an eligible recommendation from DU on the ﬁnal submission.
+The lender may request a new credit report after closing when the loan caseﬁle is resubmitted and, as with all
+loan caseﬁles, must comply with the Fair Credit Reporting Act with regard to the purpose and nature of the
+inquiry. If the new credit report contains information that is diﬀerent than the information used to prepare the
+ﬁnal loan application that was signed by the borrower at closing, the loan application must be updated.
+(Borrower signature(s) are not required due to the update occurring post-closing.) The lender must include both
+the ﬁnal signed and the updated unsigned loan applications in the loan ﬁle.
+Note: The credit report must meet the allowable age of documents as of the note date. If the credit
+report expired prior to the note date and the loan caseﬁle is being resubmitted to DU, a new credit
+report must be requested.
+In certain instances, the lender may not be able to access the original DU loan caseﬁle for resubmission
+purposes. Lenders may create a new loan caseﬁle in DU after closing to ensure that all information in the ﬁnal
+DU submission matches the terms of the closed loan, provided all of the following conditions are met:
+the above lender responsibilities are met, including the updating of the ﬁnal loan application, if
+applicable;
+the loan has not yet been delivered to Fannie Mae;
+the loan has the same information (for example, the same borrower(s) and property) as had previously
+been underwritten through DU prior to closing using another loan caseﬁle, and that loan caseﬁle received
+an eligible recommendation from DU;
+the lender retains the DU Underwriting Findings Report from the original loan caseﬁle ID in the loan ﬁle;
+the DU submission using the new loan caseﬁle occurs no more than 60 days after closing (based on the
+note date) or 18 months after initial closing for single-closing construction-to-permanent loans (described
+
+Published March 4, 2026
+271in B5-3.1-02, Conversion of Construction-to-Permanent Financing: Single-Closing Transactions ); and
+as stated above, when a new credit report is requested, the lender complies with the Fair Credit
+Reporting Act.
+If the resubmission to DU results in an “ineligible” recommendation, the mortgage loan may not be delivered to
+Fannie Mae.
+Note: If the quality control function is performed before delivery, the above requirements apply. If
+quality control is performed after delivery, see  Chapter D1-3, Lender Post-Closing QC Mortgage
+Review.
+DU Underwriting Reports
+DU issues two types of reports:
+The DU Underwriting Findings report summarizes the overall underwriting recommendation and lists the
+steps necessary for the lender to complete the processing of the loan ﬁle. This is typically the ﬁrst report
+viewed by an underwriter or a loan oﬃcer after the loan caseﬁle has been underwritten with DU. This
+report is described in B3-2-11, DU Underwriting Findings Report .
+The Underwriting Analysis report contains much of the same information requested on the Uniform
+Underwriting and Transmittal Summary  ( Form 1008 ).
+Each time a loan caseﬁle is resubmitted to DU, the information in these reports is updated with information from
+the most recent submission. The date and time of each submission are recorded on each report, along with the
+unique loan caseﬁle ID.
+Loan Caseﬁle Archival Policy
+DU loan caseﬁles are archived and no longer retained in DU from the earlier of
+270 days from the date on which the loan caseﬁle was last updated, or
+540 days from the date on which the loan caseﬁle was created.
+Loan caseﬁles for single-closing construction-to-permanent transactions (identiﬁed in DU as a Construction-to-
+Permanent Closing Type of Single-Closing), will only be archived using 540 days from the date on which the loan
+caseﬁle was created.
+These time frames are intended to ensure that the total volume of loans in the system is at a manageable level,
+reducing the time required by DU to search for and retrieve loan caseﬁles
+After a loan caseﬁle is archived from DU, it cannot be restored. If a loan caseﬁle that has been archived must be
+re-underwritten, a new loan caseﬁle must be created and submitted to DU. The loan caseﬁle will be subject to
+the policies in eﬀect for the current version of DU. Fannie Mae is not responsible for retaining loan caseﬁles for
+the lender.
+DU Underwriting Recommendations

@@ -1,0 +1,47 @@
+# v. Credit Purpose
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_704
+**Pages:** 692-692
+**Section Path:** VIII. Public Disclosure of Data > B. Preliminary Privacy Assessment > 6. Preliminary Privacy Assessment of Particular Data Fields > v. Credit Purpose
+
+---
+
+692 The Bureau further stated that d isclosure of the se data fields in unmodified form may 
+reveal information that financial institutions regard as harmful or sensitive, such as the types of 
+product s they offer or the government programs in which they participate. However , the Bureau 
+did not expect disclosure of these data fields to permit the reverse-engineering of proprietary 
+lending models. Furthermore,  the Bureau stated that  general information a bout the types of credit 
+a financial institution is offering is already widely available . 
+The Bureau  was aware that certain identified datasets include application -level 
+information on the type of credit product, type of guarantee, or loan term. Government lending programs, such as the SBA ’s 7(a) and 504 programs, publish loan-level data that indicate the 
+term of the loan and whether the loan is a term loan or a line of credit. In some States, UCC 
+filings may include some information related to the type of collateral. In the NPRM, the Bureau 
+stated that the existing public availability of this information dec rease d the potential harm or 
+sensitivity of disclosing information about the type of credit product, type of guarantee, and loan 
+term in the 1071 data.  By the same token, however, the Bureau recognized that an adversary 
+could use these other datasets, comb ined with other fields, to match a section 1071 record to an 
+identified publicly available record.  
+If it determined that modifications were ultimately needed, the Bureau identified a 
+number of possible approaches. T he Bureau could disclose “ Federal guaran tee” instead of 
+disclosing the specific program. Similarly , the Bureau could recod e loan term data into bins —for 
+example, using intervals of two or five years .  
+The Bureau  received feedback from two community group commenters. One  stated that 
+publication of credit type data would promote understanding of small business lending. The other stated that combining loans from different Federal government guarantee programs into a single 
+category for publication would not reduce the utility of 1071 data. The comme nter also stated 
+that if the Bureau recodes length of the loan term data into bins, the Bureau should test those bins 
+to ensure that the recoded data are useful to users.  
+Based on its earlier analysis and from the comments received, the Bureau assesses  that 
+disclosing  credit type data  in unmodified form may present significant privacy risks if re -
+identification occurred. For example, the Bureau believes that these data could result in non-
+personal  commercial privacy risks to small businesses, including rev ealing sensitive financial 
+information or facilitating problematic targeted marketing. However, the Bureau does not 
+identify any compelling privacy risks to financial institutions.  
+v. Credit Purpose  
+Proposed § 1002.107(a)(6) would  have require d financial institutions to collect and report 
+the purpose or purposes of the credit applied for or originated.  As discussed in the section -by-
+section analysis of §  1002.107(a)(6),  the Bureau is finalizing this  data point with modifications.  
+The NPRM stated that d isclosing credit purpose in unmodified form by itself would 
+likely disclose minimal, if any, information about an applicant or related natural person that may 
+be harmful or sensitive if such person were re -identified, or that may be harmful or sensitive to  
+an identified financial institution. It noted that information about credit  purpose could be useful

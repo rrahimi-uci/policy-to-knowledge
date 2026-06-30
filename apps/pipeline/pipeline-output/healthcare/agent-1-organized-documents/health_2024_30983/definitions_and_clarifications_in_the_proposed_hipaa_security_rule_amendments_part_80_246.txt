@@ -1,0 +1,32 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 80/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_080
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+When creating or maintaining a 
+technology asset inventory that can aid in identifying risks to ePHI, regulated entities should consider their technology assets that may not create, receive, maintain or transmit ePHI, but that may affect technology assets that do so.
+458Assets within an organization that 
+do not create, receive, maintain, or transmit ePHI may still present opportunities for intruders to enter the regulated entity’s electronic information systems, which could lead to risks to the confidentiality, integrity, or availability of an organization’s ePHI. For example, consider a smart device that is connected to the internet (e.g., connected to the Internet of Things
+459 
+(IoT)) and provides access to facilities 
+for maintenance personnel to control and monitor an organization’s heating, ventilation, and air conditioning (HVAC). Although it may not maintain or process ePHI, such a device potentially can present serious risks to the security of ePHI in an organization’s information systems. Unpatched IoT devices with known vulnerabilities, such as weak or unchanged default passwords installed on a network without firewalls, network segmentation, or other techniques that deny or impede an intruder’s lateral movement, can provide an intruder with access to an organization’s relevant electronic information systems. The intruder may then leverage this access to conduct reconnaissance and further penetrate an organization’s network and potentially compromise ePHI. 
+The risks and deficiencies OCR has 
+observed in its enforcement experience persuades us that we must consider adding an express requirement for a regulated entity to conduct an accurate and thorough written inventory of its technology assets and create a network map. 
+d. Section 164.308(a)(2)(i)—Standard: 
+Risk Analysis 
+After a regulated entity conducts a 
+written inventory of its technology assets and creates its network map, it is critical for it to identify the potential risks and vulnerabilities to its ePHI. Conducting a risk analysis is necessary to adequately protect the confidentiality, integrity, and availability of ePHI because it provides the basis for determining the manner in which the regulated entity will comply with and carry out the other standards and implementation specifications in the Security Rule.
+460Basic questions 
+that a regulated entity would consider when conducting a risk analysis that is compliant with the Security Rule include:
+461 
+•Have you identified all the ePHI 
+that you create, receive, maintain, or transmit? 
+•What are the external sources of 
+ePHI? For example, do vendors or consultants create, receive, maintain, or transmit ePHI? 
+•What are the human, natural, and 
+environmental threats to information systems that contain ePHI? 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00042 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

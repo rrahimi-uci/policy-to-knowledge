@@ -1,0 +1,43 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 204/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_204
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+999 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+963As defined by having 500 or fewer employees. 
+See ‘‘2021 [Statistics of U.S. Businesses] SUSB 
+Annual Data Tables by Establishment Industry,’’ 
+supra, note 947. $119.94] and a high estimate of 
+$1,093,013,220 [= 1,822,600 regulated entities × 5 hours × $119.94]. 
+g. Cost Related to Disabling Ports and Removing Extraneous Software 
+The Department believes that large 
+regulated entities have already disabled unused network ports and removed extraneous software as part of existing configuration requirements. However, the Department believes that small and medium-sized regulated entities are less likely to have performed these actions and thus would incur a new burden to implement these aspects of configuration management proposed at 45 CFR 164.312(c)(2)(ii) and (iv). The Department estimates that 629,796 establishments are owned by small and medium-sized covered entities,
+963 
+which is approximately 76.56 percent of all covered entities [= 629,796/822,600]. The Department applies that percentage to the estimated number of business associates [= 0.7656 × 1,000,000] to 
+arrive at the estimated number of regulated entities with quantifiably increased burdens from these proposed requirements to disable unused ports and remove extraneous software. We estimate that for these 1,395,396 regulated entities [= 629,796 covered entities + 765,600 business associates], an average annual burden of 30 minutes would be needed at the wage rate of an information security analyst to make needed changes to configuration management, specifically disabling unused ports and removing extraneous software. This would result in estimated total cost increases of $83,681,898 [= 1,395,3960 regulated entities × 0.5 hours 
+× $119.94], with a low estimate of 
+$41,840,949 [= 1,395,396 regulated entities × 0.25 hours × $119.94] based 
+on an estimated annual burden of 15 minutes per affected entity and a high estimate of $109,301,322 [= 1,822,600 regulated entities × 0.50 hours × 
+$119.94] based on an estimated annual burden of 30 minutes for all regulated entities. 
+h. Costs Related to Regulated Entities 
+Conducting Penetration Testing 
+The Department estimates that each 
+regulated entity would spend an average of 3 hours conducting penetration testing (with a low estimate of 2 hours and a high estimate of 10 hours) at the hourly wage of an information security analyst. The Department expects that there might be a high degree of variability between entities depending 
+on their size and technological sophistication. Large entities have more endpoints to test, and thus have greater exposure. The Department also believes there is room for significant variability in the effort that regulated entities may apply to this activity. At the wage rate of an information security analyst, this would result in estimated total annual costs for regulated entities of $655,807,932 [= 1,822,600 regulated entities × 3 hours × $119.94], with a low 
+estimated total of $437,205,288 [= 1,822,600 regulated entities × 2 hours × 
+$119.94] and high estimated total of $2,186,026,440 [= 1,822,600 regulated entities × 10 hours × $119.94]. 
+i. Costs Arising From Reporting Contingency Plan Activation 
+The Department estimates that 
+business associates would need to notify other regulated entities in the event that they activate their contingency plan once business associate agreements are revised according to proposed 45 CFR 164.314(a)(2)(i)(D). The Department believes this is unlikely to occur more frequently than once per year and that the time to do so would be minimal because the proposed requirement does not specify the means or scope of such notification. The Department estimates that business associates would need an average of 30 minutes (with 15 minutes as a low estimate and 45 minutes as a high estimate) to report to other regulated entities, as applicable, when their contingency plan is activated at the wage rate of an information security analyst for a total annual cost of $59,970,000 [= 1,000,000 business associates × 0.5 hours × $119.94], with 
+a low estimated total of $29,985,000[= 
+1,000,000 business associates × 0.25 
+hours × $119.94] and high estimated 
+total of $89,955,000 [= 1,000,000 business associates × 0.75 hours × 
+$119.94]. 
+j. Revised Health Plan Documents 
+The Department estimates that health 
+care insurers and third-party

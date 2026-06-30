@@ -1,0 +1,101 @@
+# C1-2-05, Delivering Green MBS to Fannie Mae (09/04/2024) + C1-2-06, Bailee Letters (04/06/2022)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_441
+**Pages:** 955-957
+**Section Path:** Part C, Selling, Securitizing, and Delivering Loans > Subpart C1, General Information on Execution Options and Loan Delivery > Chapter C1-2, Loan Delivery Overview > C1-2-05, Delivering Green MBS to Fannie Mae (09/04/2024)
+
+---
+
+Published March 4, 2026
+937Loan Delivery Data
+Lenders must perform the following process in addition to delivering the eMortgage through MERS eDelivery:
+Add the eNote Indicator ﬂag to the corresponding loan(s) in Fannie Mae's Loan Delivery application which
+identiﬁes the loan as an eMortgage loan; and 
+Perform the usual whole loan or MBS delivery through Fannie Mae's Loan Delivery application.
+NOTE : If for any reason an eMortgage must be transferred back to the lender (for example, in the
+event of an error on the loan or transferred in error), the lender must submit Form 2009e to Fannie
+Mae's Custodian Oversight and Monitoring Department to request the transfer (see  E-1-02, List of
+Contacts ).
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2023-11 December 13, 2023
+ 
+C1-2-05, Delivering Green MBS to Fannie Mae (09/04/2024)
+Introduction
+This topic contains information about delivering Green MBS to Fannie Mae, including:
+Overview
+Eligibility Requirements
+Loan Delivery Data
+Overview
+Fannie Mae's Green MBS consists of loans secured by properties that have received approved green building
+certiﬁcations within the last ﬁve years. An eligible green building certiﬁcation requires the home to be at least
+10% more eﬃcient than a home built to an individual state's energy code. Lenders may deliver whole loans or
+MBS.
+Eligibility Requirements
+
+Published March 4, 2026
+938Green MBS loans are subject to standard Selling Guide requirements, including the following:
+Loans may be ARMs or ﬁxed-rate.
+All property types are eligible.
+Refer to the Eligibility Matrix  for applicable LTV, CLTV and HCLTV ratio requirements.
+The property must have one or more eligible green building certiﬁcations obtained within the last ﬁve
+years. See Single-Family Green MBS Certiﬁcations  for a list of current organizations that meet our
+requirements. 
+For whole loans: The loan must be sold within ﬁve years of the property's certiﬁcation year.
+For loans in MBS: The pool must have a pool issuance year within ﬁve years of the property's
+certiﬁcation year.
+Example : For a loan secured by a property with a green building certiﬁcation received in the year 2020, the
+loan must be sold to Fannie Mae by the end of 2025.
+Loan Delivery Data
+For a Green whole loan sale, lenders should contact their Fannie Mae Account Team (see  E-1-02, List of
+Contacts ).
+For a Green MBS, lenders may use EarlyCheck or Loan Delivery to conﬁrm that all loans are Green MBS-eligible.
+To be considered a Green MBS, 100% of the loans in the MBS must be eligible.
+One of the following special feature codes must be delivered in addition to any other SFCs that may apply to the
+transaction:
+SFC 784 - ENERGY STAR green building certiﬁcation, or
+SFC 881 - Department of Energy Zero Ready Home.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcement Issue Date
+Announcement SEL-2024-06 September 04, 2024
+ 
+C1-2-06, Bailee Letters (04/06/2022)
+Introduction
+This topic provides information on bailee letters, including:
+
+Published March 4, 2026
+939Bailee Letters
+Resolution of Mismatched Delivery Instructions
+Liability for Losses Incurred by a Mortgage Seller or any Other Party
+Bailee Letters
+Bailee letters typically state that:
+the notes identiﬁed in the letter are pledged to the named third party,
+the lien of the third party’s security interest will be released only if the proceeds from the transfer of the
+mortgages to Fannie Mae are delivered to the third party in accordance with the delivery instructions in
+the letter, and
+the recipient holds the notes as a “bailee” (or in trust) for the third party until the third party either
+receives the proceeds (cash or securities) or receives back the notes for any mortgages that were not
+purchased or securitized.
+The term “bailee letter” includes any communication that notiﬁes a document custodian of any of the following:
+the notes are pledged to a third party;
+the notes are subject to a security interest or lien held by a third party;
+the notes are owned by, or titled in the name of, a third party (for example, mortgages that are subject to
+a sale and repurchase arrangement); or
+the notes are subject to some other claim or interest held by a third party that would, if it were not
+released, result in Fannie Mae’s acquiring less than clear, unencumbered, and exclusive title to the
+mortgage notes.
+The requirements for processing bailee letters and other notiﬁcation of third-party interests in mortgage loans
+can be found in Fannie Mae’s RDC guide .
+Resolution of Mismatched Delivery Instructions
+Fannie Mae will undertake to identify mismatches and to achieve matches in delivery instructions promptly, in
+good faith, and in accordance with reasonable business practices.
+Liability for Losses Incurred by a Mortgage Seller or any Other Party
+Fannie Mae will not be liable for any losses that a mortgage seller or any other party incurs as the result of
+Fannie Mae’s actions or omissions related to these procedures, including Fannie Mae’s execution of (or failure to
+execute) speciﬁc steps, and any resulting delay.
+A mortgage seller is obligated to ensure that Fannie Mae takes free and clear title to the mortgages it delivers
+to Fannie Mae; therefore, it must make sure that its delivery instructions match those of its warehouse lender
+before it delivers the mortgage to Fannie Mae. Because of this obligation, the mortgage seller will be fully

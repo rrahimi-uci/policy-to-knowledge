@@ -1,0 +1,70 @@
+# C3-6-01, Parameters for Pooling Loans Into Fannie Majors (09/04/2024)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_491
+**Pages:** 1023-1024
+**Section Path:** Part C, Selling, Securitizing, and Delivering Loans > Subpart C3, Mortgage-Backed Securities (MBS) > Chapter C3-6, Pooling Loans into Fannie Majors > C3-6-01, Parameters for Pooling Loans Into Fannie Majors (09/04/2024)
+
+---
+
+Published March 4, 2026
+1005ARMs originated under the same ARM plan may have original terms up to 30 years and may be commingled in
+the same ARM pool.
+ARM Loan Types Lenders May Not Commingle in the Same Pool
+ARMs originated under diﬀerent ARM plans cannot be commingled in the same pool. In certain cases, however,
+lenders may be permitted to pool seasoned ARMs in ARM plans with shorter initial ﬁxed-rate periods. Interested
+lenders should contact their Fannie Mae customer account team to determine what ﬂexibility may be available
+for a speciﬁc situation.
+ARMs originated under a single ARM plan, but with diﬀerent post-conversion disposition options (market rate
+option or take-out option) cannot be included in the same pool.
+Recent Related Announcements
+There are no recently issued Announcements related to this topic.
+Chapter C3-6, Pooling Loans into Fannie Majors
+Introduction
+Lenders can pool mortgages into two types of MBS, which includes UMBS: Single-Issuer and Fannie Majors. This
+chapter provides information on pooling loans into Fannie Majors.
+C3-6-01, Parameters for Pooling Loans Into Fannie Majors
+(09/04/2024)
+Introduction
+This topic contains general parameters for pooling loans into Fannie Majors, including:
+Fannie Majors Overview
+Obtaining Fannie Majors Pool Numbers
+Selecting Mortgages to Include in a Fannie Majors Pool
+Selecting a Settlement Date and Security Issuance
+Making Multiple Submissions
+Fannie Majors Overview
+Fannie Majors are pools of loans that are contributed by more than one lender. Lenders participating in a Fannie
+Majors pool receive an MBS representing its share of the pool in proportion to the dollar amount of mortgages it
+
+Published March 4, 2026
+1006contributed to the pool.
+Obtaining Fannie Majors Pool Numbers
+The pool number identiﬁes the pools in which a lender’s loans are included. Fannie Mae assigns Fannie Majors
+pool numbers based on loan term, pass-through rate, and the month of issuance. Pool numbers, CUSIP numbers,
+and pass-through rates are posted on the Fannie Majors  page on Fannie Mae's website and on the various wire
+services.
+Selecting Mortgages to Include in a Fannie Majors Pool
+When deciding which mortgages to include in a Fannie Majors pool, lenders must make sure that:
+the mortgage conforms to the appropriate product type,
+the mortgage has the appropriate seasoning,
+the note rate is within the minimum and maximum range in relation to the pass-through rate, and
+the minimum submission size is satisﬁed.
+To be eligible for a Fannie Majors pool, mortgages may be no older than 11 months as of the security issue date.
+For example, all loans to be included in a December 2019 pool, must have ﬁrst payment dates on or after
+January 2019.
+As with single-lender, ﬁxed-rate MBS pools, the minimum and maximum allowable interest rate within a Fannie
+Majors pool is 25 basis points (.25%) and 112.5 basis points (1.125%) respectively above the pool’s pass-
+through rate. Lenders can use loan-level buyups and buydowns to eliminate excess servicing and, in the case of
+buydowns, include loans in a higher coupon.
+Fannie Majors have a minimum submission requirement of $1,000 when lenders deliver the loan to Fannie Mae.
+To qualify for a Fannie Mae Green Majors pool, loans must meet Green MBS eligibility standards and have an
+eligible green building certiﬁcation. See  C1-2-05, Delivering Green MBS to Fannie Mae for additional details.
+Selecting a Settlement Date and Security Issuance
+Lenders may choose their own settlement date for a Fannie Majors pool. If a lender makes several submissions
+into the same Fannie Majors pool, it may select diﬀerent settlement dates for each.
+Fannie Mae can issue securities in book-entry form within three business days after the lender submits a
+complete, error-free pool documentation package via Loan Delivery, as long as Fannie Mae receives:
+the lender’s transmission of the loan delivery data by 6:00 p.m. (Eastern time), and
+the transmission of the document custodian’s pool certiﬁcation by 10:30 a.m. (Eastern time) on the day
+following the lender’s Loan Delivery transmission.
+See C3-7-06, Settling the Trade , for additional information on turnaround times.

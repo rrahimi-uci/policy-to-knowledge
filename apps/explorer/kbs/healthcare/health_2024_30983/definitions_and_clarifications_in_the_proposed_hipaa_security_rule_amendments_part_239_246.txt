@@ -1,0 +1,53 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 239/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_239
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+1018 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+(5) Maintenance. Review and test the 
+effectiveness of the technical controls 
+required by this paragraph (b) at least once every 12 months or in response to environmental or operational changes, whichever is more frequent, and modify as reasonable and appropriate. 
+(c) Standard: Configuration 
+management—(1) General. Establish 
+and deploy technical controls for securing the covered entity’s or business associate’s relevant electronic information systems and technology assets in its relevant electronic information systems, including workstations, in a consistent manner, and maintain such electronic information systems and technology 
+assets according to the covered entity’s or business associate’s established secure baselines. 
+(2) Implementation specifications—(i) 
+Anti-malware protection. Deploy technology assets and/or technical controls that protect all of the covered entity’s or business associate’s technology assets in its relevant electronic information systems against malicious software, including but not limited to viruses and ransomware. 
+(ii) Software removal. Remove 
+extraneous software from the covered entity’s or business associate’s relevant electronic information systems. 
+(iii) Configuration. Configure and 
+secure operating system(s) and software consistent with the covered entity’s or business associate’s risk analysis under § 164.308(a)(2). 
+(iv) Network ports. Disable network 
+ports in accordance with the covered entity’s or business associate’s risk analysis under § 164.308(a)(2). 
+(v) Maintenance. Review and test the 
+effectiveness of the technical controls required by this paragraph (c) at least once every 12 months or in response to environmental or operational changes, whichever is more frequent, and modify as reasonable and appropriate. 
+(d) Standard: Audit trail and system 
+log controls—(1) General. Deploy 
+technology assets and/or technical controls that record and identify activity in the covered entity’s or business associate’s relevant electronic information systems. 
+(2) Implementation specifications—(i) 
+Monitor and identify. The covered entity or business associate must deploy technology assets and/or technical controls that monitor in real-time all activity in its relevant electronic information systems, identify indications of unauthorized persons or unauthorized activity as determined by the covered entity’s or business associate’s risk analysis under § 164.308(a)(2), and alert workforce members of such indications in accordance with the policies and procedures required by § 164.308(a)(7). 
+(ii) Record. The covered entity or 
+business associate must deploy technology assets and/or technical controls that record in real-time all activity in its relevant electronic information systems. 
+(iii) Retain. The covered entity or 
+business associate must deploy technology assets and/or technical controls to retain records of all activity in its relevant electronic information systems as determined by the covered entity’s or business associate’s policies and procedures for information system activity review at § 164.308(a)(7)(ii)(A). 
+(iv) Scope. Activity includes creating, 
+accessing, receiving, transmitting, modifying, copying, or deleting any of the following: 
+(A) Electronic protected health 
+information. 
+(B) Relevant electronic information 
+systems and the information therein. 
+(v) Maintenance. Review and test the 
+effectiveness of the technology assets and/or technical controls required by this paragraph (d) at least once every 12 months or in response to environmental or operational changes, whichever is more frequent, and modify as reasonable and appropriate. 
+(e) Standard: Integrity. Deploy 
+technical controls to protect electronic protected health information from improper alteration or destruction, both at rest and in transit; and review and test the effectiveness of such technical controls at least once every 12 months or in response to environmental or operational changes, whichever is more frequent, and modify as reasonable and appropriate. 
+(f) Standard: Authentication—(1) 
+General. Deploy technical controls to 
+verify that a person or technology asset seeking access to electronic protected health information and/or the covered entity’s or business associate’s relevant electronic information systems is the one claimed. 
+(2) Implementation specifications—(i) 
+Information access management policies. Deploy technical controls in 
+accordance with the covered entity’s or business associate’s information access management policies and procedures under § 164.308(a)(10), including technical controls that require users to adopt unique passwords that are consistent with the current recommendations of authoritative sources. 
+(ii) Multi-factor authentication. (A)

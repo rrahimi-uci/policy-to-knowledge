@@ -1,0 +1,37 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 113/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_113
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+955 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+609See Press Release, ‘‘HHS Office for Civil Rights 
+Settles HIPAA Security Rule Failures for $950,000,’’ 
+U.S. Department of Health and Human Services (July 1, 2024), https://prod- wwwhhsgov.cloud.hhs.gov/about/news/2024/07/01/ hhs-office-civil-rights-settles-hipaa-security-rule- failures-950000.html. 
+610See ‘‘Security Standards: Administrative 
+Safeguards,’’ supra note 517, p. 22. 
+611See proposed 45 CFR 164.308(a)(13)(ii)(A). 612See ‘‘Cybersecurity Program Audit Guide,’’ 
+GAO–23–104705, U.S. Government Accountability Office, p. 1 (Sept. 28, 2023), https://www.gao.gov/ products/gao-23-104705; see also ‘‘Security and Privacy Controls for Information Systems and Organizations,’’ supra note 600. 
+613See ‘‘The IIA’s Three Lines Model: An update 
+of the Three Lines of Defense,’’ The Institute of Internal Auditors, p. 4 (Sept. 9, 2020), https://www.theiia.org/globalassets/documents/resources/ the-iias-three-lines-model-an-update-of-the-three- lines-of-defense-july-2020/three-lines-model- updated-english.pdf. 
+614We believe that health plans that are subject 
+to HIPAA and to the Employee Retirement Income Security Act of 1974 could comply with the proposed compliance audit requirement and follow the Employee Benefits Security Administration’s Cybersecurity Program Best Practices, which specifies that all such plans have a reliable annual third party audit of security controls. ‘‘Cybersecurity Program Best Practices,’’ Employee Benefits Security Administration, U.S. Department of Labor, p. 1, 2 (Apr. 2021), https://www.dol.gov/ 
+Continued planning and then have been unable to 
+fully recover from ransomware attacks that bring down electronic systems that create, receive, maintain, or transmit ePHI. For example, a large health system that experienced a ransomware attack had to shut down services at multiple locations and encountered difficulties restoring those services. OCR’s investigation indicated a potential failure to, among other things, implement contingency plans.
+609Such 
+planning is crucial for maintaining the resilience of a regulated entity’s health IT. 
+To address these inadequacies in 
+compliance and to protect the confidentiality, integrity, and availability of ePHI, the Department proposes to redesignate the standard for a contingency plan at 45 CFR 164.308(a)(7)(i) as proposed 45 CFR 164.308(a)(13)(i), to add a paragraph heading to clarify the organization of the regulatory text, and to modify the regulatory text to clarify it. The modified standard, as proposed, would require a regulated entity to establish (and implement as needed) a written contingency plan, consisting of written policies and procedures for responding to an emergency or other occurrence, including, but not limited to, fire, vandalism, system failure, natural disaster, or security incident, that adversely affects relevant electronic information systems. 
+The Department proposes a new 
+implementation specification for criticality analysis at proposed 45 CFR 164.308(a)(13)(ii)(A). This would require a regulated entity to perform and document an assessment of the relative criticality of its relevant electronic information systems and technology assets in its relevant electronic information systems. The proposal would not limit this analysis to electronic information systems that create, receive, maintain, or transmit ePHI because other electronic information systems and/or technology assets may be crucial to ensuring the confidentiality, integrity, or availability of ePHI, providing patient care, and supporting other business needs. A prioritized list of specific relevant electronic information systems and technology assets in those electronic information systems would help a regulated entity to determine their criticality and the order of 
+restoration.
+610 
+Under this proposal, the 
+implementation specification for establishing and implementing a data backup plan would be redesignated as proposed 45 CFR 164.308(a)(13)(ii)(B) and renamed ‘‘Data backups.’’ It would also be modified to clarify that the procedures to create and maintain exact retrievable copies of ePHI must be in writing, and to also require such procedures to include verifying that the ePHI has been copied accurately. For example, the ability to access ePHI from 
+a remote location in the event of a total failure should be reflected in the procedures specified for data backups. 
+The proposed implementation 
+specification for backing up information systems at proposed paragraph (a)(13)(ii)(C) would require a regulated entity to establish and implement written procedures to create and maintain backups of its relevant electronic information systems, including verifying the success of such backups. Establishing such procedures would ensure that the ePHI in relevant electronic information systems is both protected and available. 
+Additionally, the Department

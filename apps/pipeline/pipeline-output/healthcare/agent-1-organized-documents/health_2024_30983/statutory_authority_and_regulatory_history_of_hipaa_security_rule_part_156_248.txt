@@ -1,0 +1,23 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 156/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_156
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+782 
+However, as discussed above, such devices can pose significant risks to the confidentiality, integrity, and availability of ePHI.
+783By limiting these 
+exceptions to devices that have been updated and/or patched while they were supported by their manufacturer, we believe that this proposal would balance the interest in encouraging regulated entities to dispense with legacy devices with the cost of replacing such devices. Additionally, the Department believes that regulated 
+entities should already have plans to replace legacy devices that cannot be made cybersecure because of their existing Security Rule obligations. As discussed above, we also recognize that at some point, most, if not all, devices will likely become legacy devices and that there may be legitimate reasons not to immediately replace them when the manufacturer ceases to provide support. In such cases, it will continue to be important for regulated entities to plan for how to address their ongoing Security Rule obligations. 
+The third proposed exception to MFA 
+at 45 CFR 164.312(f)(2)(iii)(C)(3) for devices authorized by the FDA for marketing would be available for those devices authorized for marketing by the FDA pursuant to a submission received on or after March 29, 2023, where they are supported by their manufacturer. We understand that the FDA considers security during the review of medical device marketing submissions and works with device manufacturers to ensure that appropriate cybersecurity protections are built into such devices, pursuant to FDA’s authority under the Consolidated Appropriations Act, 2023.
+784Thus, we do not believe it 
+would be necessary or appropriate for the Security Rule to require MFA for an FDA-authorized medical device that has been authorized by FDA for marketing pursuant to a submission received on or after March 29, 2023, where the device continues to be supported by its manufacturer. However, these devices may continue to be used by a regulated entity when they are no longer supported, consistent with the proposed exception for legacy devices that were approved pursuant to a submission received on or after March 29, 2023, as described above. 
+Where a proposed exception would 
+apply to the proposed MFA requirement, the Department proposes to require that a regulated entity implement alternative measures and compensating controls.
+785Specifically, 
+when a regulated entity seeks to comply with the Security Rule by meeting one of the proposed exceptions to the proposed MFA requirement, the Department proposes to require a regulated entity to document both the existence of the criteria demonstrating that the proposed exception would apply and the rationale for why the proposed exception would apply. 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00079 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

@@ -1,0 +1,32 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 106/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_106
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+or other reasonable and appropriate 
+means of access). 
+•Decide and document how access to 
+ePHI would be granted for privileged functions. 
+•Ensure that there is a list of 
+personnel with authority to approve user requests to access ePHI and systems with ePHI. 
+•Identify authorized users with 
+access to ePHI, including data owners and data custodians. •Consider whether multiple access 
+control methods are needed to protect ePHI according to the results of the risk assessment. 
+•Determine whether direct access to 
+ePHI would ever be appropriate for individuals external to the organization (e.g., business partners or patients 
+seeking access to their own ePHI). 
+Other questions that a regulated entity 
+should consider when establishing such policies and procedures include: Have appropriate authorization and clearance procedures, as specified in the standard for workforce security,
+578been 
+performed prior to granting access? Do the organization’s systems have the capacity to set access controls? Are there additional access control requirements for users who would be accessing privileged functions? Have organizational personnel been explicitly authorized to approve user requests to access ePHI and/or systems with ePHI? 
+The Department proposes three 
+additional implementation specifications for authentication management, maintenance, and network segmentation. These specifications clarify the Department’s expectations for compliance and are consistent with NIST guidance. We believe that the proposed additions would assist regulated entities in their efforts to prevent or mitigate attacks by malicious internal and external actors. For the implementation specification on authentication management at proposed 45 CFR 164.308(a)(10)(ii)(C), we propose to require a regulated entity to establish and implement written policies and procedures for verifying the identities of users and technology assets before accessing the regulated entity’s relevant electronic information systems, including written policies and procedures for implementing MFA technical controls.
+579The proposed 
+implementation specification for network segmentation at proposed 45 CFR 164.308(a)(10)(ii)(E) would require a regulated entity to establish and implement written policies and procedures that ensure that its relevant electronic information systems are segmented to limit access to ePHI to authorized workstations. 
+Finally, to address the Department’s 
+general concerns regarding the ongoing failure of many regulated entities to regularly review and revise their policies and procedures, the proposed implementation specification for maintenance at proposed 45 CFR 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00055 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

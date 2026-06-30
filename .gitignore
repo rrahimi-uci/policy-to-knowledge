@@ -53,21 +53,12 @@ config.json
 *.sqlite3
 
 # ─────────────────────────────────────────────────────────────────
-# Proprietary / user-supplied data — NOT distributed.
-# The directory skeletons (README + .gitkeep) are kept so the apps and
-# Docker builds work; their data contents are ignored. Users supply their
-# own data — see each app's README.
+# Bundled dataset — committed so a fresh clone runs with real, populated
+# data out of the box: the explorer loads kgs/*.json into JanusGraph on the
+# first `setup`, kbs/ backs the source-document reference links, and
+# compliance-files/ + pipeline-output/ let the pipeline be re-run/inspected.
+# Only genuinely runtime artifacts (logs, the UI run database) stay ignored.
 # ─────────────────────────────────────────────────────────────────
-apps/explorer/kbs/*
-!apps/explorer/kbs/.gitkeep
-!apps/explorer/kbs/README.md
-apps/explorer/kgs/*
-!apps/explorer/kgs/.gitkeep
-!apps/explorer/kgs/README.md
-apps/pipeline/compliance-files/*
-!apps/pipeline/compliance-files/.gitkeep
-!apps/pipeline/compliance-files/README.md
-apps/pipeline/pipeline-output/
 apps/pipeline/pipeline-data/
 apps/pipeline/pipeline-logs/
 

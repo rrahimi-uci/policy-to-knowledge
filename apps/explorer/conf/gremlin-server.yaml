@@ -9,6 +9,10 @@ graphManager: org.janusgraph.graphdb.management.JanusGraphManager
 graphs:
   sample_guidelines: conf-graphs/janusgraph-sample_guidelines.properties
   example_policies: conf-graphs/janusgraph-example_policies.properties
+  comercial_lending: conf-graphs/janusgraph-comercial_lending.properties
+  fannie_mae: conf-graphs/janusgraph-fannie_mae.properties
+  freddie_mac: conf-graphs/janusgraph-freddie_mac.properties
+  healthcare: conf-graphs/janusgraph-healthcare.properties
 scriptEngines:
   gremlin-groovy:
     plugins:

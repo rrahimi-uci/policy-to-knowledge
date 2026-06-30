@@ -1,0 +1,89 @@
+# Monte Carlo Simulation
+
+**Source:** risk_management_manual_complete.pdf
+**Chunk ID:** risk_management_manual_complete_899
+**Pages:** 331-331
+**Section Path:** section7-1 > MARKET RISK GLOSSARY > Monte Carlo Simulation
+
+---
+
+SENSITIVITY TO MARKET RISK  Section 7.1  
+Sensitivity to Market Risk ( 10/2025 ) 7.1-22 RMS Manual of Examination Policies  
+  Federal Deposit Insurance Corporation  are administered at less frequent intervals over the 
+measured period.  For instance, in a 300 basis point 
+increasing rate environment measured over a two -year 
+time period, rates may be increased 5 0 basis points 
+each quarter  of the first year and 25 basis points each 
+quarter of the second year . 
+ 
+Non-parallel Y ield C urve S hifts  
+ A shift in the yield curve in which yields do not change by 
+the same number of basis points for every maturity.   When 
+running various interest rate scenarios, management may set non-parallel shifts in a manner similar to deterministic rate 
+scenarios (rate shock, rate ramp, or stair step).   The 
+scenarios often have a pivot point on the yield curve from 
+which longer -term and shorter -term rates change in 
+different amounts.  
+ 
+Static Models  
+ 
+Static simulation models are based on current exposures and 
+assume a constant , no-growth balance sheet.   In order to 
+simulate  no growth in balance sheet accounts, some static 
+models assume that all principal cash flows from a 
+particular account are reinvested back into that same account.  This assumption is sometimes referred to as replacement growth.  
+ 
+Dynamic Models  
+ Dynamic simulation models rely on detailed assumptions regarding changes in existing business lines, new business, and changes in management and customer behavior.  The assumptions change the existing balance sheet to reflect 
+expected business changes.  
+ 
+ 
+Stochastic Models  
+ Stochastic modeling consists of the modeling of an 
+uncertain variable over time using a random selection 
+process.  It recognizes that market variables, such as interest rates, exhibit a general trend (drift) and some degree of volatility around that trend.   Stochastic models provide a 
+framework for the evaluation of the impact of embedded options in financial instruments.  
+ 
+Constraints are usually imposed so that the model is 
+representative of current market conditions.  For example, if Treasury securities are priced using interest rate paths, a constraint may be imposed so that the average present value derived from all the paths must equal the observed market 
+price of the Treasury securities.  In such a case, the model 
+can also be classified as a Stochastic No Arbitrage Model.  
+ Monte Carlo Simulation 
+ A Monte Carlo simulation randomly generates a large 
+sample set of values from a reasonable population of 
+variable s such as an interest rate.  The stochastic model 
+provides a framework for the evolution of the variable, and 
+a Monte Carlo simulation is an application of that stochastic model.  The randomness in games of chance is similar to how Monte Carlo simulation selects values at random to 
+simulate a model.  When you turn a roulette wheel, you 
+know that one number within a range of numbers will come 
+up, but you do not know which number will come up for any particular turn.  The  same concept applies  with a Monte 
+Carlo simulation where the variables (e.g., interest rates, 
+security prices) have a known range of values but an 
+uncertain value for any particular time.  Monte Carlo 
+simulations can take into account returns, volatility, correlations, and other factors.  Monte Carlo programs can generate millions of different scenarios by randomly changing a component for each run or iteration.  Monte 
+Carlo simulation allows the banker to simulate thousands of 
+market -like scenarios and learn the probability of a 
+particular outcome or a range of outcomes.  Assume that the investment portfolio is run through 20,000 simulations, projecting 20,000 separate scenarios over a two- year period, 
+and acceptable results occur 16,000 times.  This means that 
+there is an 80 percent probability that the portfolio will 
+perform at an acceptable level.  Like any financial model, the results are sensitive to underlying assumptions.  The number of runs or simulations is also important.  For 
+example, a Monte Carlo model with only 500 iterations captu res fewer possible scenarios than one that runs 50,000  
+iterations . 
+ 
+Spread Types  
+ 
+• Static Spread – Basis points, that when added to a set 
+of implied forward rates, discounts the cash flows  of 
+an instrument  back to its observed market value.  For 
+an instrument without embedded optionality, the static 
+spread is the best measure of return in excess of the risk-free rates provided by that instrument.  For 
+instruments with embedded optionality, it may be 
+useful to calculate a static spread only as a starting 
+point for comparison with a more appropriate mark -
+to-market spread measure, such as the option adjusted 
+spread.  
+• Option Adjusted Spread (OAS)  – Basis points, that 
+when added to a set of interest rates discounts the cash flows of an instrument back to its observed market 
+value.  This measure only applies to instruments with 
+embedded optionality.  The static spread applies to instruments without embedded optionality.  For example, consider a mortgage -backed security, which 
+typically contains an embedded prepayment option.

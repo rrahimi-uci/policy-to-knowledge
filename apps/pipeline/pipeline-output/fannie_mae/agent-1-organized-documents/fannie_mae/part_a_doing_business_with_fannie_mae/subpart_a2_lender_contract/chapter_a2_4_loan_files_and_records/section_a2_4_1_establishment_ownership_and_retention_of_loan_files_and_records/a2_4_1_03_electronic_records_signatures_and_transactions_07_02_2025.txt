@@ -1,0 +1,320 @@
+# A2-4.1-03, Electronic Records, Signatures, and Transactions (07/02/2025)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_034
+**Pages:** 89-98
+**Section Path:** Part A, Doing Business with Fannie Mae > Subpart A2, Lender Contract > Chapter A2-4, Loan Files and Records > Section A2-4.1, Establishment, Ownership, and Retention of Loan Files and Records > A2-4.1-03, Electronic Records, Signatures, and Transactions (07/02/2025)
+
+---
+
+Published March 4, 2026
+71 
+A2-4.1-03, Electronic Records, Signatures, and Transactions
+(07/02/2025)
+Introduction
+This topic contains information on electronic records, including:
+Electronic Records
+Electronic Signatures
+Electronic Notarizations
+Remote Online Notarizations
+Electronic Transactions with Fannie Mae
+Electronic Transactions with Third Parties
+Electronic Records
+All documents used to originate, service or modify a loan, may be generated, signed, processed, stored or
+transmitted electronically, provided they are capable of reproduction in paper format except:
+the promissory note and any related addenda (unless the seller has received special approval to deliver
+electronic notes (eNotes));
+any unrecorded ink-signed originals of documents that modify or supplement the security instrument;
+and
+assignments for MERS-registered loans when MERS is not named as nominee.
+The following table describes Fannie Mae’s requirements for electronic records. An electronic record is a
+contract or other record that is created, generated, sent, communicated, received, or stored by electronic
+means. A record is information that is inscribed on a tangible medium or that is stored in an electronic or other
+medium and is retrievable in perceivable form.
+
+Published March 4, 2026
+72GENERAL REQUIREMENTS FOR ELECTRONIC RECORDS
+Topic Description
+Permitted format, transmission method and
+storage protocol• Any appropriate electronic format or transmission
+method for an electronic record other than audio or
+video recording may be used (except to the extent
+permitted in connection with electronic
+notarizations, remote online notarizations, and audio-
+visual aided remote ink-signed notarizations (RIN)). See 
+A2-4.1-04, Notarization Standards   for additional
+information.
+• Sellers and servicers may use any technology other
+than audio or video recording for storing electronic
+records, as long as the electronic records are securely
+stored and remain accessible by all persons entitled to
+access them for as long as access is required.
+• Any loan ﬁle composed of electronic records must be
+clearly identiﬁed by logical association with Fannie Mae’s
+loan number.
+• If a seller/servicer chooses to store permitted
+documents in a format other than paper, it must provide
+any prospective transferee servicer with information
+about the methods it uses for document and records
+storage. If the transferee servicer uses a diﬀerent
+storage method, the transferor servicer must work with
+the transferee servicer to convert the documents and
+records to a format that is compatible with the
+transferee servicer’s storage methods.
+Compliance with ESIGN, UETA, and applicable
+lawsAll electronic records and systems used to generate,
+process, store or transmit electronic records must
+comply with
+• the federal Electronic Signatures in Global and National
+Commerce Act (ESIGN);
+• the Uniform Electronic Transactions Act (UETA)
+adopted by the state in which the subject property is
+located; if applicable, and
+• all other applicable federal and state laws.
+
+Published March 4, 2026
+73GENERAL REQUIREMENTS FOR ELECTRONIC RECORDS
+Topic Description
+Enforceability and AccuracyAll electronic records must be valid and enforceable and
+accurately reﬂect all information and formatting (where
+the formatting is prescribed by law or material to
+interpretation of the record) that was in the record as it
+was presented to intended beneﬁciaries and signers.
+System RequirementsAll systems generating or storing electronic records
+must:
+• generate or maintain them as valid and enforceable
+records,
+• be suﬃciently secure to preserve the integrity and
+authenticity of the records, and
+• protect against loss of unauthorized access to records.
+See below for additional system requirements that apply
+to remote online notarizations.
+
+Published March 4, 2026
+74GENERAL REQUIREMENTS FOR ELECTRONIC RECORDS
+Topic Description
+Conversion of documentsSellers/servicers may convert a paper document to an
+electronic record for storage purposes if it is not one of
+the documents required to be maintained in its original
+paper form. Sellers/servicers may destroy the paper
+document. Similarly, a seller/servicer may convert an
+electronic record to a paper document for storage
+purposes or to provide loan modiﬁcations to document
+custodians that are not electronically enabled.
+• When documents are converted to an alternative
+format, the legibility and integrity of the information and
+formatting, including indications of alterations (such as
+erasures and white-outs), in the original document must
+be preserved.
+• If servicing of a loan is transferred, the servicer must
+securely transfer all relevant electronic records to the
+new servicer, along with all information verifying the
+authenticity, validity and enforceability of the records
+and any associated signatures.
+• Sellers/servicers must retain documentation that
+explains the process used to convert paper-based
+records to electronic formats and specify the date of
+conversion, method of conversion, and disposition of the
+original paper records.
+For purposes of the preceding table, “electronic records” do not include eNotes, and paper notes may not be
+converted into eNotes. See  B8-8-02, Requirements for Creating, Closing, and Correcting eNotes  for additional
+information regarding electronic records.
+Electronic Signatures
+Sellers/servicers may use any form of electronic signature on an electronic record that is valid under applicable
+law (except that audio and video recordings cannot be used as the electronic signature), as long as the
+signature is attached to or logically associated with the record intended to be signed. From time to time, Fannie
+Mae may require a seller/servicer to use a speciﬁc signature format for a particular electronic record or type of
+record.
+The following table describes Fannie Mae’s requirements for electronic signatures.
+
+Published March 4, 2026
+75ELECTRONIC SIGNATURE REQUIREMENTS
+Topic Description
+Compliance with ESIGN, UETA, and applicable
+lawsAll electronic signatures, electronic signature systems,
+and software must comply with, and be enforceable
+under
+• ESIGN and UETA adopted by the state in which the
+signature is applied, and
+• all other applicable federal and state laws.
+Attribution and EvidenceAll electronic signatures must be attributable to an
+identiﬁed signer.
+When a record is electronically signed, the seller/servicer
+must retain, for each electronic signature, evidence of
+the following:
+• the authenticated identity of the signer and, if
+applicable, related entity;
+• attribution of the signature to the purported signer;
+• the signer’s express or implied agreement to use an
+electronic signature;
+• date of the signature; and
+• the method (and, if applicable, eSign vendor) by which
+the signature was made.
+For electronically-signed records for loans purchased or
+securitized by Fannie Mae, this evidence and
+documentation must be suﬃcient to enable Fannie Mae
+to conduct a thorough quality control review of the loan.
+For example, the evidence of the borrower’s signature
+with respect to a veriﬁcation of employment must allow
+Fannie Mae the ability to request and receive a
+reveriﬁcation of the information from the borrower’s
+employer.
+ 
+See  B8-8-01, General Information on eMortgages  for information about electronic signature requirements for
+eMortgage transactions.
+Electronic Notarizations
+Fannie Mae accepts delivery and servicing of loans with electronic documents, including security instruments or
+
+Published March 4, 2026
+76mortgage loan modiﬁcation agreements that have been electronically notarized, either in person or remotely
+using real-time, two-way audio/video communication. Electronic notarizations (including remote online
+notarizations) may be used with eMortgage transactions as long as the notarization is
+performed in accordance with and is legally valid under the laws and regulations of the state in which the
+notarization is performed at the time it was performed; and
+in compliance with the Uniform Electronic Transactions Act, as adopted in such state, and the Electronic
+Signatures in Global and National Commerce Act.
+A lender may not require a borrower to use remote notarization and must have other notary options available
+for borrowers upon request.
+Remote Online Notarizations
+A remote online notarization is an electronic notarization where the person whose signature is being notarized
+and the notary are in diﬀerent physical locations and are communicating via two-way audio-visual conferencing,
+the signatures are provided electronically, and the notarial seal is applied electronically.
+In addition to the above requirements, the following requirements apply to remote online notarization:
+✓ Requirements
+ The notary public is licensed and physically located in the state where the notarial act occurred
+and, where required by law or regulation, is speciﬁcally licensed to perform electronic
+notarizations.
+ If the loan document is required to be recorded, then the county recorder in the state and
+county where the property is located must accept the remotely notarized document for
+recording.
+
+Published March 4, 2026
+77✓ Requirements
+ The system used for the remote online notarization must meet the following minimum
+standards:
+• at least two-factor identity authentication, using a combination of at least two of the following
+factors:
+    ⚬ remote presentation of a government-issued photo ID that has a signature
+    ⚬ credential analysis
+    ⚬ identity-prooﬁng (i.e., knowledge-based authentication)
+• tamper-sealed notarized documents and system security suﬃcient to
+    ⚬ prevent interference with the authenticity, integrity and security of the notarial ceremony
+or corruption or loss of the recording of the same; and
+    ⚬ protect the communication technology, electronic record and backup record from
+unauthorized use
+• the notary must keep a secure electronic journal of the notarial act including evidence of
+identity of the principal (a video and audio recording can be the basis for satisfactory evidence
+of identiﬁcation) and maintain a backup of the electronic record
+• the ability to record the notarial ceremony with storage for the minimum period required by
+applicable laws or if no period is speciﬁed in the applicable law, for ten years.
+ The lender must maintain, or cause to be retained, the recording of the notarial ceremony for
+the greater of 10 years or the minimum period required by applicable law, in accordance with
+the requirements above.
+ If the remotely notarized document is a security instrument or amendment to the security
+instrument, the loan must be delivered with the Remote Notarization Indicator ﬂag.
+ The mortgage loan is not a Texas Section 50(a)(6) loan.
+ If the notarized document is a security instrument or an amendment to a security instrument,
+the remote online notarization must comply with the title requirements in B7-2-04, Special Title
+Insurance Coverage Considerations  and the title insurance company may not take any exception
+with respect to any element of the loan being remotely notarized.
+All selling representations and warranties continue to apply, including those related to
+clear title and ﬁrst lien enforceability;
+compliance with laws and responsible lending practices, and
+requirements regarding title insurance, including those in B7-2-04, Special Title Insurance Coverage
+Considerations .
+In addition to the above requirements, the subject property must be in a state in the following table:
+
+Published March 4, 2026
+78LIST OF STATES
+Alabama Florida MaineNew
+HampshirePennsylvania Washington
+Alaska Hawaii Maryland New Jersey Rhode Island West Virginia
+Arizona Idaho Massachusetts New MexicoSouth
+CarolinaWisconsin
+Arkansas Illinois Michigan New York South Dakota Wyoming
+*California Indiana MinnesotaNorth
+CarolinaTennessee  
+Colorado Iowa Missouri North Dakota Texas  
+Connecticut Kansas Montana Ohio Utah  
+Delaware Kentucky Nebraska Oklahoma Vermont  
+District of
+ColumbiaLouisiana Nevada Oregon Virginia  
+*For a subject property located in California, a remote online notarization may be taken by a notary outside of
+the State of California in accordance with the laws of the state in which the notarial act was performed.
+However, a California notary may take a remote online notarization for a subject property located in California
+only upon and after the trigger provision of the law that permits the use of remote online notarization by
+California notaries is activated, and only in compliance with that law.
+If the subject property is not in a state listed above, loan documents notarized using remote online notarization
+will be permitted if the state
+adopts a law that expressly permits the use of remote online notarization, or
+accepts (either through state law or through the application of an express federal law) remote online
+notarizations performed out-of-state in accordance with the laws of the state in which the notarial act is
+performed.
+Electronic Transactions with Fannie Mae
+Electronic records may be delivered and electronic signatures may be provided by the seller, servicer, or Fannie
+
+Published March 4, 2026
+79Mae (or by a third party, when one is involved) as part of a transaction between them.
+Every seller/servicer consents to the use of electronic records and signatures in its transactions with Fannie Mae
+and intends to be bound by the electronic signatures of its representatives as if they were ink signatures on
+paper.
+The following table describes Fannie Mae’s requirements for electronic transactions with Fannie Mae.
+REQUIREMENTS FOR ELECTRONIC TRANSACTIONS WITH FANNIE MAE
+Topic Description
+Transaction-speciﬁc RequirementsIf Fannie Mae requires the seller/servicer to conduct one
+or more electronic transactions, or a particular kind of
+transaction, in a particular way (e.g., speciﬁc format,
+signature process or method of delivery), the
+seller/servicer must conduct the transaction(s)
+accordingly. However, the seller/servicer is bound by the
+electronic transaction(s) even if not conducted in an
+authorized manner.
+Responsibilities of Sellers/Servicers• The seller/servicer is responsible for all Fannie Mae
+Losses resulting from its failure or the failure of its
+technology provider to comply with the requirements of
+this Guide in generating, signing, processing, storing or
+transmitting electronic records and electronic signatures.
+• Fannie Mae is authorized to rely conclusively on the
+accuracy, authenticity, integrity, and validity of electronic
+records and electronic signatures the seller/servicer
+transmits to Fannie Mae.
+Time of Receipt• Unless Fannie Mae speciﬁes otherwise, the rules in
+Section 15 of UETA will determine whether an electronic
+record has been sent and received. However, an
+electronic record will not be considered to have been
+received by Fannie Mae until it is able to access it during
+its regular business hours.
+• Fannie Mae will not be responsible for the failure of an
+electronic record to be timely or accurately transmitted
+due to any event beyond Fannie Mae’s control or any
+event that could not be reasonably foreseen at the time
+of the transmission.
+
+Published March 4, 2026
+80Electronic Transactions with Third Parties
+When a seller/servicer electronically engages in a mortgage transaction with a borrower, the seller and the
+servicer must fulﬁll all requirements of Section 101(c) of ESIGN to create a binding electronic record or a binding
+electronic signature with a consumer. Each seller/servicer must retain evidence of its compliance with this
+requirement.
+Under no circumstances may a borrower be required to use electronic records and electronic signatures. For a
+borrower who chooses not to use electronic records and electronic signatures, the seller/servicer must continue
+to provide and accept all such documents on paper.
+When the servicer issues any disclosure electronically, the individual mortgage loan ﬁle also must include
+evidence of:
+any required disclosures made before obtaining the borrower’s consent,
+the borrower’s consent to receiving subsequent disclosure electronically, and
+evidence of how the servicer “reasonably demonstrated” the borrower’s ability to receive the disclosures
+for which the consent was provided.
+The servicer must not electronically issue a notice of default, acceleration, repossession, foreclosure, eviction or
+the right to cure to a borrower.
+The seller/servicer is required to retain a copy of an electronically executed sales contract, if applicable.
+Recent Related Announcements
+The table below provides references to recently issued Announcements related to this topic.
+Announcements Issue Date
+Announcement SEL-2025-05 July 02, 2025
+Announcement SEL-2023-11 December 13, 2023
+Announcement SEL-2022-08 September 07, 2022
+Announcement SEL- 2022-04 May 04, 2022
+Announcement SEL-2021-05 June 02, 2021
+Announcement SEL-2020-06 October 07, 2020
+Announcement SEL-2019-05 June 05, 2019

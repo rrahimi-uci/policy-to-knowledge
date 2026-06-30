@@ -1,0 +1,60 @@
+# c. Allocation to intangible assets (10/17/24) (part 682/749)
+
+**Source:** freddies_mac.pdf
+**Chunk ID:** freddies_mac_3094_sub_682
+**Pages:** 279-1254
+**Section Path:** 10 - Mtg, Orig, UW Fundamentals GB-02-24-26.pdf > 10.18 Permitted Mortgage amount – Acquisition financing and certain refinances (12/16/25) > c. Allocation to intangible assets (10/17/24)
+
+---
+
+Guide Bulletin Update 12/15/22 Chapter 64 – Page 3 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the AllRegs 
+web site of ICE Mortgage Technology  (with a paid subscription).  
+Guide Chapter 64 – Seismic Risk Assessment 
+Requirements  
+b. Determining whether a Property is located in an Elevated Seismic Hazard Region 
+(12/15/22 ) 
+An “Elevated Seismic Hazard Region” is defined as a geographic location with a horizontal 
+Peak Ground Acceleration (PGA) equal to or greater than 0.15g.  For Properties located in 
+the continental United States, the PGA must be calculated using  the United States 
+Geological Survey (USGS) website . 
+ 
+For any Property located in Hawaii, Alaska (limited to within 100 miles of the city of 
+Anchorage or the Gulf of Alaska), or one of the U.S. territories, the Seller/Servicer must 
+assume that the PGA is greater than 0.15g, and an SRA is required.  For areas of Alaska 
+outside the delineated area, the Seller/Servicer can assume a PGA of less than 0.15g, and 
+therefore an SRA is not required.  
+ 
+For areas that require a PGA calculation, the Seller/Servicer must enter or select the input 
+values into the tool found on the USGS website as identified in the table below.  An example 
+of the use of the tool, using the address of the Freddie Mac Los Angel es office at 444 South 
+Flower Street, can be found at mf.freddiemac.com/ lenders/uw .  The example includes 
+instructions on saving the data in PDF format for submission to Freddie Mac.  
+ 
+Data Element  Input  
+Edition  Dynamic: Conterminous U.S. 2014 (latest release) , Alaska, 
+Hawaii  
+Spectral Period  Peak Ground Acceleration  (PGA)  
+Location  Generate the latitude/longitude using the “choose location using a 
+map” feature to enter an address  
+Time 
+Horizon /Earthquake 
+Return Period  10% in 50 years (475 years)  
+Site Class*  • 259 m/s (site class D) for properties located in CA, NV, OR, 
+WA 
+• 760 m/s (B/C boundary) for all other locations  
+*  The site class must be adjusted as indicated in the table above, unless the 
+Consultant justifies an alternate soil classification value and provides documentation.  
+ 
+If the PGA is less than 0.15g, an SRA is not required.  
+ 
+If the PGA is equal to or greater than 0.15g, then the Property is located in an Elevated 
+Seismic Risk Region and an SRA is required.  The Seller/Servicer must  
+ 
+• Obtain an SRA meeting the requirements of this Chapter 64 (see Section 64.2(c) to 
+determine whether a Level 0 or Level 1 SRA is required)  
+ 
+• Upload the PDF obtained as output from the USGS website into DMS and submit the 
+SRA and the PDF to Freddie Mac in the applicable underwriting package as the required 
+seismic risk documentation

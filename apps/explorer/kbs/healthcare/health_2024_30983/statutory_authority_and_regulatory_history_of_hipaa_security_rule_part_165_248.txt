@@ -1,0 +1,56 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 165/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_165
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+980 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+817Id. 81845 CFR 164.314(a)(2)(i)(A). 
+81945 CFR 164.314(a)(2)(i)(B). 
+82045 CFR 164.314(a)(2)(i)(C). confidentiality, integrity, and 
+availability of ePHI.817 
+4. Request for Comment 
+The Department requests comments 
+on the foregoing proposals, including any benefits, drawbacks, or unintended consequences. We also request comment on the following considerations in particular: 
+a. Whether there are additional 
+technical safeguards that the Department should require regulated entities to implement. 
+b. Whether there are additional 
+implementation specifications that should be adopted for any of the proposed or existing technical safeguards. 
+c. Whether the Department should 
+extend the standard for encryption and decryption and associated implementation specifications to require encryption of all relevant electronic information systems. 
+d. Whether there should be 
+exceptions to any of the proposed or existing technical safeguards or related implementation specifications, in addition to those proposed for encryption and decryption and MFA. For example, are there any proposed or existing standards or implementation specifications with which small or rural regulated entities would have substantial difficulty complying? If so, please explain the type of regulated entities that would be adversely affected by the requirement, the nature of the compliance difficulty, and any alternative or compensating measures that such entities are implementing now or could implement in the event of such requirement to address the risk to ePHI posed by the specific standard or implementation specification. 
+e. Whether the exceptions the 
+Department has proposed to the standard for encryption or decryption are appropriate. If not, please explain. 
+f. Data about the frequency and 
+number of requests regulated entities receive pursuant to the individual right of access at 45 CFR 164.524 where an individual requests that the regulated entity transmit to the individual or a third party a copy of the individual’s ePHI via unencrypted email or other unencrypted messaging technologies. Please confirm that these are requests made pursuant to the individual right of access, rather than other types of communications, such as appointment reminders or requests made pursuant to a valid authorization. 
+g. Whether the Department should 
+provide any additional exceptions to standard for encryption or decryption. If so, please explain. 
+h. Whether there are additional 
+criteria or parameters for encryption that regulated entities would find helpful. If yes, please explain and provide examples. 
+i. Whether the Department should 
+require review of compensating controls implemented to comply with an exception to the encryption and decryption standard more frequently than once every 12 months where there are no environmental or operational changes. 
+j. With respect to the exception to the 
+standard for encryption and decryption for certain requests made pursuant to the individual right of access, whether there are forms and formats the Department should include or exclude from the exception (e.g., portable 
+document format (PDF)). If so, please explain. 
+k. Resources that regulated entities 
+have identified to help inform individuals about the risks associated with the unencrypted transmission of ePHI, and whether the Department should compile and publish a list of such resources. 
+l. Whether the Department should 
+define in regulation or guidance what constitutes a prevailing cryptographic standard. If so, please explain. 
+m. Whether the Department should 
+specify the deployment of a particular form or manner of encryption, such as the use of particular algorithms, protocols, or compliance standards. If so, please explain. 
+n. Whether the Department should 
+specify how much time regulated entities have to implement encryption for technology assets that do not support encryption. If so, please explain. 
+o. Whether the Department should 
+provide more detailed requirements for network segmentation, such as the type(s) of technologies that should be segmented and how to determine whether certain technologies should be segmented. If so, please explain. 
+p. Whether the exceptions the 
+Department has proposed to the implementation specification for MFA are appropriate. If not, please explain. 
+q. Whether the Department should 
+provide additional exceptions to the implementation specification for MFA. If so, please explain. 
+r. Whether the Department should 
+require a regulated entity to review its compensating controls adopted to comply with the exceptions to the implementation specification for MFA more frequently than once every 12 months. s. The costs and burdens for regulated 
+entities to implement MFA. 
+t. Whether the Department should

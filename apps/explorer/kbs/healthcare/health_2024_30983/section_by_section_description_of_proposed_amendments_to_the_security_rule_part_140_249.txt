@@ -1,0 +1,45 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 140/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_140
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+967 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+712See Letter from NCVHS Chair Jacki Monson 
+(2023), supra note 123, Appendix p. 3 
+(recommending that the Department require 
+network segmentation as part of a layered security approach, segregating network components based on user characteristics, such as corporate network compared to business associate network); ‘‘Layering Network Security Through Segmentation,’’ Cybersecurity & Infrastructure Security Agency, U.S. Department of Homeland Security, https://www.cisa.gov/sites/default/files/publications/ layering-network-security-segmentation_infographic_ 508_ 0.pdf; ‘‘Health Industry 
+Cybersecurity Practices: Managing Threats and Protecting Patients,’’ supra note 16, pp. 23 and 31; 
+PR.IR–01, ‘‘The NIST Cybersecurity Framework (CSF) 2.0,’’ supra note 15. 
+713‘‘Layering Network Security Through 
+Segmentation,’’ supra note 712. 714Letter from NCVHS Chair Jacki Monson 
+(2023), supra note 123, Appendix p. 3. 
+715‘‘Cybersecurity Performance Goals,’’ supra 
+note 18. 
+716‘‘Controlling Access to ePHI: For Whose Eyes 
+Only?,’’ supra note 416. 
+717Id. 
+718Id. 719Id. 
+720See 45 CFR 402. The presumption applies 
+unless it can be rebutted in accordance with the breach risk assessment described in 45 CFR 164.402(2). 
+72145 CFR 164.402. 
+722Karen Scarfone, et al., ‘‘Guide to Storage 
+Encryption Technologies for End User Devices: Recommendations of the National Institute of Standards and Technology,’’ NIST Special Publication 800–111, National Institute of Standards and Technology, U.S. Department of Commerce (Nov. 2007), https://nvlpubs.nist.gov/ nistpubs/Legacy/SP/nistspecialpublication800- 111.pdf. 
+72374 FR 19600, 19009–19010 (Apr. 27, 2009). be reasonable and appropriate for the 
+type of user or technology asset, the electronic information system or technology asset to which access is sought, and the type of information maintained on such information system or technology asset. For example, a regulated entity may determine that any authentication failure of an administrative privileged access account should disable the account because of the level of risk compared to an authentication failure of a non- administrative privileged account. The Department does not propose to define disable or suspend and relies upon the industry understanding that disabling a user’s access would require intervention 
+to restore the capability to use the user identity, while a suspension may prevent additional log-in attempts for a temporary, limited period of time. 
+Consistent with NCVHS’ 
+recommendation and existing guidance, the Department also proposes to add an implementation specification for network segmentation at 45 CFR 164.312(a)(2)(vi) that would require a regulated entity to deploy technical controls to segment its relevant electronic information systems in a reasonable and appropriate manner.
+712 
+Under this proposal, a regulated entity with multiple, distinct electronic information systems would be required to separate relevant electronic information systems using reasonable and appropriate technical controls. Network segmentation is a physical or virtual division of a network into multiple segments, creating boundaries between the operational and IT networks to reduce risks, such as threats caused by phishing attacks.
+713For 
+example, where a regulated entity operates both a point-of-sale system and an EHR on the same network, the EHR could be compromised through a successful attack by an intruder moving laterally (i.e., within the same network) 
+from a previously compromised point- of-sale system because the intruder’s movements were not impeded by 
+network segmentation. Accordingly, we believe that it is appropriate to require regulated entities to deploy technical controls to segment the networks to which their relevant electronic information systems are connected.
+714 
+What constitutes reasonable and appropriate network segmentation depends on the regulated entity’s risk analysis and how it has implemented its network(s) and relevant electronic information systems. This proposed new implementation specification aligns with the Department’s enhanced CPG for Network Segmentation because where the CPG is implemented, an intruder’s ability to freely move within a regulated entity’s network and protect ePHI is minimized.
+715 
+The proposed implementation

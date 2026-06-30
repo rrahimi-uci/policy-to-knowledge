@@ -1,0 +1,852 @@
+{
+  "source_file": "hhs_oig_gcpg_2023.pdf",
+  "total_chunks": 53,
+  "chunk_methods": [
+    "toc_based"
+  ],
+  "structure": [
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_001",
+      "title": "User's Guide + Table of Contents",
+      "path": "hhs_oig_gcpg_2023/user_s_guide_table_of_contents.txt",
+      "section_path": [
+        "User's Guide"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "merged_with": "hhs_oig_gcpg_2023_002",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 891
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_003",
+      "title": "I. Introduction",
+      "path": "hhs_oig_gcpg_2023/i_introduction.txt",
+      "section_path": [
+        "I. Introduction"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 345
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_004",
+      "title": "A. OIG’s History of Compliance Program Guidance: Commitment to Preventing Health Care Fraud and Abus",
+      "path": "hhs_oig_gcpg_2023/i_introduction/a_oig_s_history_of_compliance_program_guidance_commitment_to_preventing_health_care_fraud_and_abus.txt",
+      "section_path": [
+        "I. Introduction",
+        "A. OIG’s History of Compliance Program Guidance: Commitment to Preventing Health Care Fraud and Abuse"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "merged_with": "hhs_oig_gcpg_2023_005",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 1018
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_006",
+      "title": "C. Application of the GCPG and ICPGs",
+      "path": "hhs_oig_gcpg_2023/i_introduction/c_application_of_the_gcpg_and_icpgs.txt",
+      "section_path": [
+        "I. Introduction",
+        "C. Application of the GCPG and ICPGs"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 352
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_007",
+      "title": "II. Health Care Fraud Enforcement and Other Standards: Overview of Certain Federal Laws",
+      "path": "hhs_oig_gcpg_2023/ii_health_care_fraud_enforcement_and_other_standards_overview_of_certain_federal_laws.txt",
+      "section_path": [
+        "II. Health Care Fraud Enforcement and Other Standards: Overview of Certain Federal Laws"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 392
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_008",
+      "title": "A. Federal Anti-Kickback Statute",
+      "path": "hhs_oig_gcpg_2023/ii_health_care_fraud_enforcement_and_other_standards_overview_of_certain_federal_laws/a_federal_anti_kickback_statute.txt",
+      "section_path": [
+        "II. Health Care Fraud Enforcement and Other Standards: Overview of Certain Federal Laws",
+        "A. Federal Anti-Kickback Statute"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 881
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_009",
+      "title": "Key Questions",
+      "path": "hhs_oig_gcpg_2023/ii_health_care_fraud_enforcement_and_other_standards_overview_of_certain_federal_laws/a_federal_anti_kickback_statute/key_questions.txt",
+      "section_path": [
+        "II. Health Care Fraud Enforcement and Other Standards: Overview of Certain Federal Laws",
+        "A. Federal Anti-Kickback Statute",
+        "Key Questions"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 878
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_010",
+      "title": "B. Physician Self-Referral Law",
+      "path": "hhs_oig_gcpg_2023/ii_health_care_fraud_enforcement_and_other_standards_overview_of_certain_federal_laws/b_physician_self_referral_law.txt",
+      "section_path": [
+        "II. Health Care Fraud Enforcement and Other Standards: Overview of Certain Federal Laws",
+        "B. Physician Self-Referral Law"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 848
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_011",
+      "title": "C. False Claims Act",
+      "path": "hhs_oig_gcpg_2023/ii_health_care_fraud_enforcement_and_other_standards_overview_of_certain_federal_laws/c_false_claims_act.txt",
+      "section_path": [
+        "II. Health Care Fraud Enforcement and Other Standards: Overview of Certain Federal Laws",
+        "C. False Claims Act"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 734
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_012",
+      "title": "D. Civil Monetary Penalty Authorities",
+      "path": "hhs_oig_gcpg_2023/ii_health_care_fraud_enforcement_and_other_standards_overview_of_certain_federal_laws/d_civil_monetary_penalty_authorities.txt",
+      "section_path": [
+        "II. Health Care Fraud Enforcement and Other Standards: Overview of Certain Federal Laws",
+        "D. Civil Monetary Penalty Authorities"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 412
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_013",
+      "title": "1. Beneficiary Inducements CMP",
+      "path": "hhs_oig_gcpg_2023/ii_health_care_fraud_enforcement_and_other_standards_overview_of_certain_federal_laws/d_civil_monetary_penalty_authorities/1_beneficiary_inducements_cmp.txt",
+      "section_path": [
+        "II. Health Care Fraud Enforcement and Other Standards: Overview of Certain Federal Laws",
+        "D. Civil Monetary Penalty Authorities",
+        "1. Beneficiary Inducements CMP"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 830
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_014",
+      "title": "2. Information Blocking + 3. CMP Authority Related to HHS Grants, Contracts, and  Other Agreements",
+      "path": "hhs_oig_gcpg_2023/ii_health_care_fraud_enforcement_and_other_standards_overview_of_certain_federal_laws/d_civil_monetary_penalty_authorities/2_information_blocking_3_cmp_authority_related_to_hhs_grants_contracts_and_other_agreements.txt",
+      "section_path": [
+        "II. Health Care Fraud Enforcement and Other Standards: Overview of Certain Federal Laws",
+        "D. Civil Monetary Penalty Authorities",
+        "2. Information Blocking"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "hhs_oig_gcpg_2023_015",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 911
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_016",
+      "title": "E. Exclusion Authorities",
+      "path": "hhs_oig_gcpg_2023/ii_health_care_fraud_enforcement_and_other_standards_overview_of_certain_federal_laws/e_exclusion_authorities.txt",
+      "section_path": [
+        "II. Health Care Fraud Enforcement and Other Standards: Overview of Certain Federal Laws",
+        "E. Exclusion Authorities"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 1190
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_017",
+      "title": "F. Criminal Health Care Fraud Statute + G. HIPAA Privacy and Security Rules",
+      "path": "hhs_oig_gcpg_2023/ii_health_care_fraud_enforcement_and_other_standards_overview_of_certain_federal_laws/f_criminal_health_care_fraud_statute_g_hipaa_privacy_and_security_rules.txt",
+      "section_path": [
+        "II. Health Care Fraud Enforcement and Other Standards: Overview of Certain Federal Laws",
+        "F. Criminal Health Care Fraud Statute"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "merged_with": "hhs_oig_gcpg_2023_018",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 1321
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_019",
+      "title": "III. Compliance Program Infrastructure: The Seven Elements",
+      "path": "hhs_oig_gcpg_2023/iii_compliance_program_infrastructure_the_seven_elements.txt",
+      "section_path": [
+        "III. Compliance Program Infrastructure: The Seven Elements"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 159
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_020",
+      "title": "Element 1—Written Policies and Procedures",
+      "path": "hhs_oig_gcpg_2023/iii_compliance_program_infrastructure_the_seven_elements/element_1_written_policies_and_procedures.txt",
+      "section_path": [
+        "III. Compliance Program Infrastructure: The Seven Elements",
+        "Element 1—Written Policies and Procedures"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 361
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_021",
+      "title": "1. Code of Conduct + 2. Compliance Policies and Procedures",
+      "path": "hhs_oig_gcpg_2023/iii_compliance_program_infrastructure_the_seven_elements/element_1_written_policies_and_procedures/1_code_of_conduct_2_compliance_policies_and_procedures.txt",
+      "section_path": [
+        "III. Compliance Program Infrastructure: The Seven Elements",
+        "Element 1—Written Policies and Procedures",
+        "1. Code of Conduct"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "hhs_oig_gcpg_2023_022",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 635
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_023",
+      "title": "Policy Maintenance",
+      "path": "hhs_oig_gcpg_2023/iii_compliance_program_infrastructure_the_seven_elements/element_1_written_policies_and_procedures/policy_maintenance.txt",
+      "section_path": [
+        "III. Compliance Program Infrastructure: The Seven Elements",
+        "Element 1—Written Policies and Procedures",
+        "Policy Maintenance"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 674
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_024",
+      "title": "B. Element 2—Compliance Leadership and Oversight",
+      "path": "hhs_oig_gcpg_2023/iii_compliance_program_infrastructure_the_seven_elements/b_element_2_compliance_leadership_and_oversight.txt",
+      "section_path": [
+        "III. Compliance Program Infrastructure: The Seven Elements",
+        "B. Element 2—Compliance Leadership and Oversight"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 272
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_025",
+      "title": "1. Compliance Officer",
+      "path": "hhs_oig_gcpg_2023/iii_compliance_program_infrastructure_the_seven_elements/b_element_2_compliance_leadership_and_oversight/1_compliance_officer.txt",
+      "section_path": [
+        "III. Compliance Program Infrastructure: The Seven Elements",
+        "B. Element 2—Compliance Leadership and Oversight",
+        "1. Compliance Officer"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 881
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_026",
+      "title": "2. Compliance Committee",
+      "path": "hhs_oig_gcpg_2023/iii_compliance_program_infrastructure_the_seven_elements/b_element_2_compliance_leadership_and_oversight/2_compliance_committee.txt",
+      "section_path": [
+        "III. Compliance Program Infrastructure: The Seven Elements",
+        "B. Element 2—Compliance Leadership and Oversight",
+        "2. Compliance Committee"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 773
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_027",
+      "title": "3. Board Compliance Oversight",
+      "path": "hhs_oig_gcpg_2023/iii_compliance_program_infrastructure_the_seven_elements/b_element_2_compliance_leadership_and_oversight/3_board_compliance_oversight.txt",
+      "section_path": [
+        "III. Compliance Program Infrastructure: The Seven Elements",
+        "B. Element 2—Compliance Leadership and Oversight",
+        "3. Board Compliance Oversight"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 987
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_028",
+      "title": "C. Element 3—Training and Education",
+      "path": "hhs_oig_gcpg_2023/iii_compliance_program_infrastructure_the_seven_elements/c_element_3_training_and_education.txt",
+      "section_path": [
+        "III. Compliance Program Infrastructure: The Seven Elements",
+        "C. Element 3—Training and Education"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 1214
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_029",
+      "title": "D. Element 4—Effective Lines of Communication with the Compliance Officer and Disclosure Programs",
+      "path": "hhs_oig_gcpg_2023/iii_compliance_program_infrastructure_the_seven_elements/d_element_4_effective_lines_of_communication_with_the_compliance_officer_and_disclosure_programs.txt",
+      "section_path": [
+        "III. Compliance Program Infrastructure: The Seven Elements",
+        "D. Element 4—Effective Lines of Communication with the Compliance Officer and Disclosure Programs"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 817
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_030",
+      "title": "E. Element 5—Enforcing Standards:  Consequences and Incentives",
+      "path": "hhs_oig_gcpg_2023/iii_compliance_program_infrastructure_the_seven_elements/e_element_5_enforcing_standards_consequences_and_incentives.txt",
+      "section_path": [
+        "III. Compliance Program Infrastructure: The Seven Elements",
+        "E. Element 5—Enforcing Standards:  Consequences and Incentives"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 356
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_031",
+      "title": "1. Consequences + 2. Incentives",
+      "path": "hhs_oig_gcpg_2023/iii_compliance_program_infrastructure_the_seven_elements/e_element_5_enforcing_standards_consequences_and_incentives/1_consequences_2_incentives.txt",
+      "section_path": [
+        "III. Compliance Program Infrastructure: The Seven Elements",
+        "E. Element 5—Enforcing Standards:  Consequences and Incentives",
+        "1. Consequences"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "hhs_oig_gcpg_2023_032",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 669
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_033",
+      "title": "F. Element 6—Risk Assessment, Auditing, and Monitoring",
+      "path": "hhs_oig_gcpg_2023/iii_compliance_program_infrastructure_the_seven_elements/f_element_6_risk_assessment_auditing_and_monitoring.txt",
+      "section_path": [
+        "III. Compliance Program Infrastructure: The Seven Elements",
+        "F. Element 6—Risk Assessment, Auditing, and Monitoring"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 309
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_034",
+      "title": "1. Risk Assessment",
+      "path": "hhs_oig_gcpg_2023/iii_compliance_program_infrastructure_the_seven_elements/f_element_6_risk_assessment_auditing_and_monitoring/1_risk_assessment.txt",
+      "section_path": [
+        "III. Compliance Program Infrastructure: The Seven Elements",
+        "F. Element 6—Risk Assessment, Auditing, and Monitoring",
+        "1. Risk Assessment"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 980
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_035",
+      "title": "2. Auditing and Monitoring",
+      "path": "hhs_oig_gcpg_2023/iii_compliance_program_infrastructure_the_seven_elements/f_element_6_risk_assessment_auditing_and_monitoring/2_auditing_and_monitoring.txt",
+      "section_path": [
+        "III. Compliance Program Infrastructure: The Seven Elements",
+        "F. Element 6—Risk Assessment, Auditing, and Monitoring",
+        "2. Auditing and Monitoring"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 303
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_036",
+      "title": "G. Element 7—Responding to Detected Offenses and Developing Corrective Action Initiatives",
+      "path": "hhs_oig_gcpg_2023/iii_compliance_program_infrastructure_the_seven_elements/g_element_7_responding_to_detected_offenses_and_developing_corrective_action_initiatives.txt",
+      "section_path": [
+        "III. Compliance Program Infrastructure: The Seven Elements",
+        "G. Element 7—Responding to Detected Offenses and Developing Corrective Action Initiatives"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 345
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_037",
+      "title": "1. Investigations of Violations + 2. Reporting to the Government",
+      "path": "hhs_oig_gcpg_2023/iii_compliance_program_infrastructure_the_seven_elements/g_element_7_responding_to_detected_offenses_and_developing_corrective_action_initiatives/1_investigations_of_violations_2_reporting_to_the_government.txt",
+      "section_path": [
+        "III. Compliance Program Infrastructure: The Seven Elements",
+        "G. Element 7—Responding to Detected Offenses and Developing Corrective Action Initiatives",
+        "1. Investigations of Violations"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "hhs_oig_gcpg_2023_038",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 1009
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_039",
+      "title": "3. Implementing Corrective Action Initiatives",
+      "path": "hhs_oig_gcpg_2023/iii_compliance_program_infrastructure_the_seven_elements/g_element_7_responding_to_detected_offenses_and_developing_corrective_action_initiatives/3_implementing_corrective_action_initiatives.txt",
+      "section_path": [
+        "III. Compliance Program Infrastructure: The Seven Elements",
+        "G. Element 7—Responding to Detected Offenses and Developing Corrective Action Initiatives",
+        "3. Implementing Corrective Action Initiatives"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 308
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_040",
+      "title": "IV.  Compliance Program Adaptations for Small and Large Entities",
+      "path": "hhs_oig_gcpg_2023/iv_compliance_program_adaptations_for_small_and_large_entities.txt",
+      "section_path": [
+        "IV.  Compliance Program Adaptations for Small and Large Entities"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 313
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_041",
+      "title": "A. Compliance Programs for Small Entities",
+      "path": "hhs_oig_gcpg_2023/iv_compliance_program_adaptations_for_small_and_large_entities/a_compliance_programs_for_small_entities.txt",
+      "section_path": [
+        "IV.  Compliance Program Adaptations for Small and Large Entities",
+        "A. Compliance Programs for Small Entities"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 313
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_042",
+      "title": "1. Compliance Contact + 2. Policies, Procedures, and Training",
+      "path": "hhs_oig_gcpg_2023/iv_compliance_program_adaptations_for_small_and_large_entities/a_compliance_programs_for_small_entities/1_compliance_contact_2_policies_procedures_and_training.txt",
+      "section_path": [
+        "IV.  Compliance Program Adaptations for Small and Large Entities",
+        "A. Compliance Programs for Small Entities",
+        "1. Compliance Contact"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "hhs_oig_gcpg_2023_043",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 594
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_044",
+      "title": "3. Open Lines of Communication + 4. Risk Assessment, Auditing, and Monitoring",
+      "path": "hhs_oig_gcpg_2023/iv_compliance_program_adaptations_for_small_and_large_entities/a_compliance_programs_for_small_entities/3_open_lines_of_communication_4_risk_assessment_auditing_and_monitoring.txt",
+      "section_path": [
+        "IV.  Compliance Program Adaptations for Small and Large Entities",
+        "A. Compliance Programs for Small Entities",
+        "3. Open Lines of Communication"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "hhs_oig_gcpg_2023_045",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 1075
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_046",
+      "title": "5. Enforcing Standards + 6. Responding to Detected Offenses and Developing  Corrective Action Initia",
+      "path": "hhs_oig_gcpg_2023/iv_compliance_program_adaptations_for_small_and_large_entities/a_compliance_programs_for_small_entities/5_enforcing_standards_6_responding_to_detected_offenses_and_developing_corrective_action_initia.txt",
+      "section_path": [
+        "IV.  Compliance Program Adaptations for Small and Large Entities",
+        "A. Compliance Programs for Small Entities",
+        "5. Enforcing Standards"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "hhs_oig_gcpg_2023_047",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 490
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_048",
+      "title": "B. Compliance Leadership for Large Entities",
+      "path": "hhs_oig_gcpg_2023/iv_compliance_program_adaptations_for_small_and_large_entities/b_compliance_leadership_for_large_entities.txt",
+      "section_path": [
+        "IV.  Compliance Program Adaptations for Small and Large Entities",
+        "B. Compliance Leadership for Large Entities"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 381
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_049",
+      "title": "1. Compliance Officer",
+      "path": "hhs_oig_gcpg_2023/iv_compliance_program_adaptations_for_small_and_large_entities/b_compliance_leadership_for_large_entities/1_compliance_officer.txt",
+      "section_path": [
+        "IV.  Compliance Program Adaptations for Small and Large Entities",
+        "B. Compliance Leadership for Large Entities",
+        "1. Compliance Officer"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 703
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_050",
+      "title": "2. Compliance Committee + 3. Board Compliance Oversight",
+      "path": "hhs_oig_gcpg_2023/iv_compliance_program_adaptations_for_small_and_large_entities/b_compliance_leadership_for_large_entities/2_compliance_committee_3_board_compliance_oversight.txt",
+      "section_path": [
+        "IV.  Compliance Program Adaptations for Small and Large Entities",
+        "B. Compliance Leadership for Large Entities",
+        "2. Compliance Committee"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "hhs_oig_gcpg_2023_051",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 828
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_052",
+      "title": "V. Other Compliance Considerations",
+      "path": "hhs_oig_gcpg_2023/v_other_compliance_considerations.txt",
+      "section_path": [
+        "V. Other Compliance Considerations"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 372
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_053",
+      "title": "A. Quality and Patient Safety",
+      "path": "hhs_oig_gcpg_2023/v_other_compliance_considerations/a_quality_and_patient_safety.txt",
+      "section_path": [
+        "V. Other Compliance Considerations",
+        "A. Quality and Patient Safety"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 691
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_054",
+      "title": "B. New Entrants in the Health Care Industry + C. Financial Incentives: Ownership and Payment –  Foll",
+      "path": "hhs_oig_gcpg_2023/v_other_compliance_considerations/b_new_entrants_in_the_health_care_industry_c_financial_incentives_ownership_and_payment_foll.txt",
+      "section_path": [
+        "V. Other Compliance Considerations",
+        "B. New Entrants in the Health Care Industry"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "merged_with": "hhs_oig_gcpg_2023_055",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 783
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_056",
+      "title": "1. Ownership, including Private Equity and Others + 2. Payment Incentives",
+      "path": "hhs_oig_gcpg_2023/v_other_compliance_considerations/c_financial_incentives_ownership_and_payment_follow_the_money/1_ownership_including_private_equity_and_others_2_payment_incentives.txt",
+      "section_path": [
+        "V. Other Compliance Considerations",
+        "C. Financial Incentives: Ownership and Payment –  Follow the Money",
+        "1. Ownership, including Private Equity and Others"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "hhs_oig_gcpg_2023_057",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 702
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_058",
+      "title": "D. Financial Arrangements Tracking",
+      "path": "hhs_oig_gcpg_2023/v_other_compliance_considerations/d_financial_arrangements_tracking.txt",
+      "section_path": [
+        "V. Other Compliance Considerations",
+        "D. Financial Arrangements Tracking"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 210
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_059",
+      "title": "VI. OIG Resources and Processes",
+      "path": "hhs_oig_gcpg_2023/vi_oig_resources_and_processes.txt",
+      "section_path": [
+        "VI. OIG Resources and Processes"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 346
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_060",
+      "title": "A. Compliance Toolkits; Compliance Resources for Health Care Boards; Provider Compliance Training; A",
+      "path": "hhs_oig_gcpg_2023/vi_oig_resources_and_processes/a_compliance_toolkits_compliance_resources_for_health_care_boards_provider_compliance_training_a.txt",
+      "section_path": [
+        "VI. OIG Resources and Processes",
+        "A. Compliance Toolkits; Compliance Resources for Health Care Boards; Provider Compliance Training; A Roadmap for New Physicians; and RAT-STATS Statistical Software"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "merged_with": "hhs_oig_gcpg_2023_061",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 753
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_062",
+      "title": "C. Advisory Opinions; Special Fraud Alerts, Bulletins, and Other Guidance; and Safe Harbor Regulations",
+      "path": "hhs_oig_gcpg_2023/vi_oig_resources_and_processes/c_advisory_opinions_special_fraud_alerts_bulletins_and_other_guidance_and_safe_harbor_regulations.txt",
+      "section_path": [
+        "VI. OIG Resources and Processes",
+        "C. Advisory Opinions; Special Fraud Alerts, Bulletins, and Other Guidance; and Safe Harbor Regulations"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 328
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_063",
+      "title": "1. Advisory Opinions + 2. Special Fraud Alerts, Bulletins, and Other Guidance; and Safe Harbor Regul",
+      "path": "hhs_oig_gcpg_2023/vi_oig_resources_and_processes/c_advisory_opinions_special_fraud_alerts_bulletins_and_other_guidance_and_safe_harbor_regulations/1_advisory_opinions_2_special_fraud_alerts_bulletins_and_other_guidance_and_safe_harbor_regul.txt",
+      "section_path": [
+        "VI. OIG Resources and Processes",
+        "C. Advisory Opinions; Special Fraud Alerts, Bulletins, and Other Guidance; and Safe Harbor Regulations",
+        "1. Advisory Opinions"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "hhs_oig_gcpg_2023_064",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 697
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_065",
+      "title": "D. Frequently Asked Questions + E. Corporate Integrity Agreements",
+      "path": "hhs_oig_gcpg_2023/vi_oig_resources_and_processes/d_frequently_asked_questions_e_corporate_integrity_agreements.txt",
+      "section_path": [
+        "VI. OIG Resources and Processes",
+        "D. Frequently Asked Questions"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "merged_with": "hhs_oig_gcpg_2023_066",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 735
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_067",
+      "title": "F. Enforcement Action Summaries + G. OIG Self-Disclosure Information",
+      "path": "hhs_oig_gcpg_2023/vi_oig_resources_and_processes/f_enforcement_action_summaries_g_oig_self_disclosure_information.txt",
+      "section_path": [
+        "VI. OIG Resources and Processes",
+        "F. Enforcement Action Summaries"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "merged_with": "hhs_oig_gcpg_2023_068",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 636
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_069",
+      "title": "H. OIG Hotline",
+      "path": "hhs_oig_gcpg_2023/vi_oig_resources_and_processes/h_oig_hotline.txt",
+      "section_path": [
+        "VI. OIG Resources and Processes",
+        "H. OIG Hotline"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 276
+      }
+    },
+    {
+      "chunk_id": "hhs_oig_gcpg_2023_070",
+      "title": "VII. Conclusion + Definitions",
+      "path": "hhs_oig_gcpg_2023/vii_conclusion_definitions.txt",
+      "section_path": [
+        "VII. Conclusion"
+      ],
+      "metadata": {
+        "source_file": "hhs_oig_gcpg_2023.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "merged_with": "hhs_oig_gcpg_2023_071",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 383
+      }
+    }
+  ]
+}

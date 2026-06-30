@@ -1,0 +1,140 @@
+# B4-1.4-11, Value Acceptance + Property Data (12/10/2025)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_291
+**Pages:** 635-638
+**Section Path:** Part B, Origination Through Closing > Subpart B4, Underwriting Property > Chapter B4-1, Property Assessment and Valuation > Section B4-1.4, Special Appraisal and Other Valuation Considerations > B4-1.4-11, Value Acceptance + Property Data (12/10/2025)
+
+---
+
+Published March 4, 2026
+617A lender may only exercise value acceptance if
+the ﬁnal submission of the loan caseﬁle to DU resulted in a value acceptance oﬀer,
+an appraisal is not obtained for the transaction, and
+the value acceptance oﬀer is not more than four months old on the date of the note and the mortgage.
+Lenders that elect to exercise value acceptance must include SFC 801 at delivery. Lenders may not adversely
+select against Fannie Mae in determining which value acceptance oﬀers to accept. Fannie Mae may monitor the
+lender’s exercise of value acceptance oﬀers and delivery of loans to Fannie Mae, and may take appropriate
+measures if adverse selection is identiﬁed.
+Uniform Appraisal Dataset (UAD) 3.6 Policy
+Lenders using UAD 3.6 must follow the requirements in the  UAD 3.6 Policy Supplement .
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2025-10 December 10, 2025
+Announcement SEL-2025-07 September 03, 2025
+Announcement SEL-2025-04 June 04, 2025
+Announcement SEL-2023-02 March 01, 2023
+Announcement SEL-2022-10 December 14, 2022
+Announcement SEL-2020-03 June 03, 2020
+Announcement SEL-2019-07 August 07, 2019
+
+Published March 4, 2026
+618B4-1.4-11, Value Acceptance + Property Data (12/10/2025)
+Introduction
+This topic contains information on value acceptance + property data including:
+Overview
+Eligible Transactions
+Ineligible Transactions
+Representations and Warranties
+Property Data Collection
+Property Data Collector
+Exercising Value Acceptance + Property Data
+Property Data Collection with Needed Repairs or Completion Veriﬁcation
+Uniform Appraisal Dataset (UAD) 3.6 Policy
+Overview
+For certain loan caseﬁles, DU oﬀers value acceptance + property data - an option that requires interior and
+exterior property data collection to verify property eligibility prior to the note date. An appraisal is not required.
+Eligible Transactions
+Loan caseﬁles for certain one-unit properties will be considered for value acceptance + property data.
+Ineligible Transactions
+The following transactions are not eligible for value acceptance + property data:
+two- to four-unit properties;
+co-op units;
+manufactured homes;
+proposed construction;
+construction-to-permanent loans (single-close and two-close);
+investment properties when rental income is used to qualify the borrower;
+HomeStyle Renovation and HomeStyle Refresh loans;
+Texas 50(a)(6) loans;
+leasehold properties;
+community land trusts or other properties with resale price restrictions, which include loan caseﬁles using
+the Aﬀordable LTV feature;
+transactions where either the purchase price or estimated value provided to DU is $1,000,000 or more;
+transactions using gifts of equity;
+DU loan caseﬁles that receive an Ineligible recommendation; and
+manually underwritten loans.
+
+Published March 4, 2026
+619Representations and Warranties
+When a loan caseﬁle is eligible for value acceptance + property data and exercised by the lender, Fannie Mae
+accepts the value estimate submitted by the lender as the value for the subject property. See  A2-2-06,
+Representations and Warranties on Property Value  for more information.
+Property Data Collection
+The property data collection consists of a visual observation of the interior and exterior areas of the subject
+property. It must be performed by a trained and vetted property data collector and must adhere to the Uniform
+Property Dataset (UPD). This dataset consists of all required, conditionally required, and optional data elements
+for property data collection of subject property data including photos and a ﬂoor plan conforming to the ANSI
+Standard. See Above- and Below-Grade Area(s)  in B4-1.3-05, Improvements Section of the Appraisal Report  for
+ANSI standards, the Property Data Collection User Guide and Uniform Property Dataset (UPD) Speciﬁcation  for
+more information.
+After the property data collection is completed, it must be successfully submitted to Fannie Mae's Property Data
+API. See Fannie Mae's website  for more information about the UPD and the Fannie Mae Property Data API and
+access. 
+Property Data Collector
+The property data collector is the individual who personally visits the subject property to perform the property
+data collection guided by an application on a hand-held device developed in compliance with the UPD. The
+property data collector must identify and communicate any safety, soundness, or structural integrity issues and
+signiﬁcant items of incomplete construction or renovation. 
+Lender Vetting of Property Data Collectors
+The lender must verify and be able to demonstrate that the data collectors are
+selected in accordance with Fannie Mae requirements, including the Property Data Collector
+Independence Requirements  ,
+vetted through an annual background check,
+professionally trained, and
+they possess the essential knowledge to competently complete the property data collection.
+The lender must ensure that the data collectors are trained to comply with their fair lending laws and deliver
+accurate results unaﬀected by personal biases. To avoid conﬂict of interest, the lender must ensure that the
+data collector has no interest in or ties to the underlying loan origination transaction, participants, or subject
+property.
+The lender (or its authorized agent) must review the data collector's credentials and qualiﬁcations on an annual
+basis to ensure ongoing compliance. Evidence of the reviews must be available to Fannie Mae upon request.
+The lender must also have a procedure for suspending or terminating business with individual property data
+collectors.
+
+Published March 4, 2026
+620The lender must monitor and assess the work performed by the data collector through the lender's quality
+control program including prefunding and post-closing reviews. See Subpart D1, Lender QC Process , for
+additional information.
+Exercising Value Acceptance + Property Data
+A lender may only exercise value acceptance + property data when
+the ﬁnal submission of the loan caseﬁle to DU resulted in an eligibility message for value acceptance +
+property data,
+property data collection is submitted to the Property Data API prior to the note date,
+an appraisal is not obtained for the transaction, and
+the oﬀer is not more than four months old on the date of the note and mortgage.
+Lenders that elect to exercise value acceptance + property data must include Special Feature Code 774 at loan
+delivery. The property data collection is only valid for 12 months from date of collection and must be performed
+prior to the note date.
+If the value acceptance + property data oﬀer is lost due to changes in qualifying loan characteristics after the
+property data collection was obtained, in some cases it may be possible for the lender to provide the property
+data collection to an appraiser to perform a hybrid appraisal assignment. See  B4-1.2-03, Hybrid Appraisals   for
+speciﬁc requirements. Alternatively, the lender may obtain a desktop or traditional appraisal report as speciﬁed
+by DU.
+Property Data Collection with Needed Repairs or Completion Veriﬁcation
+The lender must represent and warrant that the property
+does not have safety, soundness, or structural integrity issues;
+does not have signiﬁcant items of incomplete construction or renovation; and
+meets Fannie Mae's property eligibility requirements (see  B2-3-01, General Property Eligibility ).
+To make these representations and warranties in the absence of an appraisal, the lender must examine the
+descriptive information and photo exhibits from the property data collection to determine whether the property
+meets the above requirements.
+When the property data collection evidences any items failing eligibility requirements, the lender may need to
+obtain a professionally prepared report from a qualiﬁed professional to conﬁrm the eligibility of the property and
+if repairs are required (well, septic, foundation, roof, electrical, mold, etc.). If repairs or alterations are necessary
+to bring the property into compliance with Fannie Mae's eligibility requirements, the lender must provide
+satisfactory evidence and documentation showing the condition has been corrected or completed prior to sale
+of the loan to Fannie Mae.
+See Form 1004D and Completion Alternatives  in B4-1.2-05, Requirements for Verifying Completion and
+Postponed Improvements  for the applicable requirements to verify completion of repairs, alterations, or
+inspections.

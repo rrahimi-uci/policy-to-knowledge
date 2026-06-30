@@ -1,0 +1,43 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 18/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_018
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+108when 
+determining which security measures are reasonable and appropriate for protecting the security of individuals’ ePHI.
+109 
+For example, the Security Rule 
+requires that a regulated entity implement policies and procedures to limit physical access to its electronic information systems and the facilities in which they are housed, while ensuring that users who are authorized to access such information systems and facilities are permitted to do so.
+110The 
+implementation specifications associated with this standard only address the need for operationalized policies and procedures related to specific aspects of physical security.
+111 
+They do not dictate the specifics of such policies and procedures because we recognize that the nature of the physical 
+safeguards should depend on the type of regulated entity, its size, its level of access to ePHI, and a number of other factors. 
+Since the Security Rule’s 
+promulgation in 2003, the environment in which health care is provided and in which regulated entities operate has changed significantly, including transformative changes in how regulated entities create, receive, maintain, and transmit ePHI. For example, as of 2021, almost 80 percent of physician offices and 96 percent of hospitals had adopted certified EHRs.
+112The use of health IT, 
+including EHRs (certified or otherwise), has led to enormous advancements in the fields of medicine and public health, 
+not only improving outcomes for individuals, but also assisting in addressing the social, economic, and environmental factors that affect health on an individual and community level.
+113And the electronic exchange of 
+health information, spurred by HIPAA, the HITECH Act, and the 21st Century Cures Act (‘‘Cures Act’’),
+114has enabled 
+regulated entities and others to more quickly and efficiently share individuals’ health information, increasing the quality and efficiency of health care, increasing patient engagement, and reducing administrative burden.
+115However, the widespread use of health IT systems 
+makes it even more critical for regulated entities, regardless of their size or location, to fully assess the risks and vulnerabilities to ePHI and their information systems and implement strong security measures to address those risks and vulnerabilities. 
+Experts repeatedly have expressed 
+concern regarding the state of cybersecurity in the health care industry.
+116For example, in a 2017 
+report to Congress, experts convened by 
+the Department pronounced, ‘‘Now more than ever, all health care delivery organizations [. . .] have a greater responsibility to secure their systems, medical devices, and patient data.’’
+117 
+This responsibility has only increased 
+as the delivery of health care and the exchange of PHI have increasingly shifted to cyberspace. 
+Despite advancements in technology, 
+including health IT, the core requirements of the Security Rule remain relevant and applicable today. In fact, they serve as a foundation for more recently promulgated cybersecurity guidelines, best practices, processes, and procedures. Security management, regular monitoring and review of information system activity, information access management, security awareness and training, contingency planning, encryption, and authentication all continue to be represented in the most well-known cybersecurity frameworks, including the NIST’s Cybersecurity Framework,
+118the HHS 405(d) 
+Program’s ‘‘Health Industry Cybersecurity Practices: Managing 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00010 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

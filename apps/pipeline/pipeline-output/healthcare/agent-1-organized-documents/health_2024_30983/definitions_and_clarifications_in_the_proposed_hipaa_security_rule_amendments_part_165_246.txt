@@ -1,0 +1,46 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 165/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_165
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+981 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+821Section 164.504(e) provides that when a 
+covered entity and its business associate are both 
+governmental entities, they do not have to negotiate a business associate agreement and may provide adequate assurances for its uses and disclosures of PHI if they enter into a memorandum of understanding or adopt a regulation that has the force and effect of law that incorporates the requirements of a business associate agreement. 65 FR 82462, 82597, 82677 (Dec. 28, 2000); see also 68 
+FR 8334, 8360 (Feb. 20, 2003) (§ 164.314(a) provisions are drawn from and intended to support the analogous privacy protections provided for by 45 CFR 164.504(e) and discussed in the 2000 Privacy Rule.); 78 FR 5566, 5590 (Jan. 25, 2013) (removed the specific requirements under 45 CFR 164.314 for a memorandum of understanding when both a covered entity and business associate are government entities and referred to the parallel requirements of the Privacy Rule at 45 CFR 164.504(e)(3)). 
+82245 CFR 164.304 (definition of ‘‘Security 
+incident’’). 
+823See 45 CFR 164.314(a). 
+824Where a business associate experiences a 
+security incident that meets the definition of a breach at 45 CFR 164.402, the business associate must comply with the requirements of the Breach Notification Rule. See 45 CFR part 160 and subparts 
+A and D of 45 CFR part 164. Specifically, the Breach Notification Rule requires a business associate to report a breach of unsecured PHI to a covered entity without unreasonable delay and in no case later than 60 days from the discovery of the breach. See 45 CFR 164.410(b). 
+825Testimony of Andrew Witty, supra note 214 
+(According to CEO Andrew Witty, intruders attempt to gain access to UnitedHealth Group’s electronic information systems every 70 seconds, or more than 450,000 times per year.). 82645 CFR 164.308(a)(7)(i). 
+827Id. 
+828See 45 CFR 164.308(a)(7)(i); proposed 45 CFR 
+164.308(a)(13)(i). 
+82968 FR 8334, 8351 (Feb. 20, 2003). 
+830‘‘Since 1980, the United States has 
+experienced 265 weather and climate disasters in 
+which the overall damages reached or exceeded US$1 billion.’’ Kristie L. Ebi, et al., ‘‘Extreme Weather and Climate Change: Population Health and Health System Implications,’’ Annual Review of Public Health (Jan. 2021), https://pubmed.ncbi.nlm.nih.gov/33406378/; see also ‘‘Climate Change Indicators: U.S. and Global Temperature,’’ U.S. Environmental Protection Agency (June 27, 2024) (‘‘2023 was the warmest year on record [. . .] and 2014–2023 was the warmest decade on record since thermometer-based observations began.’’), https://www.epa.gov/ climate-indicators/climate-change-indicators-us- and-global-temperature. 
+831‘‘Annual Report to Congress on HIPAA 
+Privacy, Security, and Breach Notification Rule Compliance, For Calendar Year 2022,’’ Office for Civil Rights, U.S. Department of Health and Human Services, p. 8 (2022) (From 2018 to 2022, the 
+number of breaches affecting fewer than 500 individuals increased 1 percent and breaches affecting 500 or more individuals rose 107 percent.), https://www.hhs.gov/sites/default/files/compliance- report-to-congress-2022.pdf. 
+832‘‘Unraveling the role of cloud computing in 
+health care system and biomedical sciences,’’ supra note 632 (‘‘These days numerous commercial merchants are intermingling with hospitals as well as healthcare providers to establish healthcare- based cloud computing networks.’’); see also id. (‘‘[. . .] Microsoft, Google and Amazon have instantly realized that the majority of hospitals will not continue working with servers that are privately owned as well as controlled.’’); ‘‘Increase in health- care cyberattacks affecting patients with cancer,’’ supra note 180 (In 2021, an attack against oncology 
+services targeted data stored in cloud-based systems and affected patients in several States.). 
+833Nicole Perlroth, et al., ‘‘Cyberattack Hits 
+Ukraine Then Spreads Internationally,’’ The New York Times (June 27, 2017) (discussing a worldwide ransomware attack in 2017), https://www.nytimes.com/2017/06/27/technology/ 
+ransomware-hackers.html. 
+834See 68 FR 8334 (Feb. 20, 2003). 
+835See 78 FR 5566 (Jan. 25, 2013). analogous requirements of the Privacy 
+Rule at 45 CFR 164.504(e)(3).821 
+Additionally, 45 CFR 
+164.314(a)(2)(iii) requires that a business associate and its subcontractor enter into a business associate agreement that meets the same requirements as those that apply to a business associate agreement between a covered entity and business associate. 
+As described above, a business 
+associate agreement must include a provision that requires a business associate to report to the covered entity any known security incident. The term ‘‘security incident’’ includes both attempted and successful unauthorized events in an information system.
+822The

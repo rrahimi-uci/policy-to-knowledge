@@ -1,0 +1,125 @@
+# B3-5.1-01, General Requirements for Credit Scores (11/05/2025)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_223
+**Pages:** 470-473
+**Section Path:** Part B, Origination Through Closing > Subpart B3, Underwriting Borrowers > Chapter B3-5, Credit Assessment > Section B3-5.1, Credit Scores > B3-5.1-01, General Requirements for Credit Scores (11/05/2025)
+
+---
+
+Published March 4, 2026
+452the market value of the actual asset, and the net asset value should be entered. For example, if the borrower
+has a vested value, less taxes and penalties, of $30,000 in a 401(k) account and borrows $10,000 against the
+401(k), enter $10,000 as secured borrowed funds and enter $20,000 as retirement funds.
+A loan that is secured against a liquid asset owned by the borrower (such as a 401(k) or mutual fund) does not
+have to be entered as a liability in the loan application if the appropriate documentation is provided.
+Loans that are secured against real estate, or any other non-liquid asset, must be entered as the applicable
+liability (for example, as a mortgage).
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2022-05 June 01, 2022
+Announcement SEL-2022-01 February 02, 2022
+Announcement SEL-2021-06 July 07, 2021
+Announcement SEL-2020-07 December 16, 2020
+ 
+Chapter B3-5, Credit Assessment
+Introduction
+This chapter describes credit assessment for qualifying, underwriting, and documentation purposes.
+Section B3-5.1, Credit Scores
+B3-5.1-01, General Requirements for Credit Scores (11/05/2025)
+Introduction
+This topic describes Fannie Mae’s requirements for borrower credit scores, including:
+
+Published March 4, 2026
+453Credit Score Versions
+Minimum Credit Score Requirements
+Exceptions to the Minimum Credit Score Requirement
+DU Credit Score Requirements
+Delivery of Credit Scores
+Loan-Level Price Adjustments Based on Credit Score
+Credit Score Versions
+Credit scores are required for most loans purchased or securitized by Fannie Mae. The classic FICO credit score
+is produced from software developed by Fair Isaac Corporation and is available from the three major credit
+repositories. Fannie Mae requires the following versions of the classic FICO score for both DU and manually
+underwritten mortgage loans:
+Equifax Beacon® 5.0;
+Experian®/Fair Isaac Risk Model V2SM; and
+TransUnion FICO® Risk Score, Classic 04.
+The lender must request these FICO credit scores for each borrower from each of the three major credit
+repositories when they order the three in-ﬁle merged credit report. If the borrower’s credit ﬁle includes
+complete and accurate information to ensure the validity of the credit score, the lender does not need to further
+evaluate the borrower’s creditworthiness.
+Note : The credit report will indicate if a credit score could not be produced due to insuﬃcient credit.
+The credit report must be maintained in the loan ﬁle, whether the report includes traditional credit and
+a credit score or indicates that a credit score could not be produced due to insuﬃcient or frozen credit.
+Minimum Credit Score Requirements
+The following table describes the minimum credit score requirements and how to determine the loan-level credit
+score that applies to loan eligibility.
+
+Published March 4, 2026
+454Transaction Type Minimum Credit Score
+Manually underwritten loansThe requirements are published in the Eligibility Matrix
+and are based on the credit score and the highest of the
+LTV, CLTV, or HCLTV ratios (as applicable); loan purpose;
+number of units; amortization type; and DTI ratio. To
+determine the credit score that applies for loan eligibility,
+use the following:
+• Loans with one borrower - representative credit score,
+• Loans with more than one borrower - average median
+credit score.
+The minimum credit score that applies for loan eligibility
+is:
+620 — ﬁxed-rate loans
+640 — ARMs
+DU loan caseﬁlesA minimum credit score is not required for DU loan
+caseﬁles. DU will assess a borrower's creditworthiness in
+accordance with the risk factors outlined in B3-2-03, Risk
+Factors Evaluated by DU .
+Mortgage loans insured or guaranteed by a
+federal government agency (HUD, FHA, VA,
+and RD)The minimum representative credit score is 620.
+Loans delivered pursuant to any variance
+contained in the Lender ContractManually underwritten loans: Higher of 620
+representative credit score or average median credit
+score, as applicable, or the minimum representative
+credit score required by the variance.
+See  B3-5.1-02, Determining the Credit Score for a Mortgage Loan  for additional information.
+Exceptions to the Minimum Credit Score Requirement
+Certain transactions are not subject to the minimum credit score requirement, including:
+loans where no borrower has a credit score (see Section B3–5.4, Nontraditional Credit History);
+manually underwritten HomeReady mortgage loans that include a borrower with a low credit score (see 
+B5-6-02, HomeReady Mortgage Underwriting Methods and Requirements ); and
+high LTV reﬁnance loans, except for those loans underwritten using the Alternative Qualiﬁcation Path.
+
+Published March 4, 2026
+455DU Credit Score Requirements
+Credit scores are not an integral part of DU's risk assessment because DU performs its own analysis of the
+credit report data. However, lenders must request credit scores for each borrower from each of the three credit
+repositories when they order the three in-ﬁle merged credit report, described in B3-5.2-01, Requirements for
+Credit Reports . If one or two of the credit repositories do not contain any credit information for the borrowers
+who have traditional credit, the credit report is still acceptable as long as
+credit data is available from one repository, and
+the lender requested a three in-ﬁle merged report.
+If the transaction does not meet the above requirements, refer to Section B3–5.4, Nontraditional Credit History,
+for underwriting and eligibility requirements.
+Frozen Credit Requirements
+If the borrower’s credit information is frozen at one of the credit repositories for borrowers who have traditional
+credit, the credit report is still acceptable as long as
+credit data is available from two repositories, and
+the lender requested a three in-ﬁle merged report.
+Loans for borrowers with credit data frozen at two or more of the credit repositories will not be eligible whether
+underwritten manually or in DU.
+Delivery of Credit Scores
+Loan Delivery collects credit score data for each borrower and also at the loan level. Lenders are required to
+deliver the representative credit score for all loans. For additional information, see the Loan Delivery Job Aid:
+Credit Scores .
+Loan-Level Price Adjustments Based on Credit Score
+Loan-level price adjustments (LLPAs) are assessed based on the representative credit score for the loan, in
+addition to other eligibility and loan features. See the Loan-Level Price Adjustment (LLPA) Matrix  for additional
+information about LLPAs, including information about how LLPAs are assessed for loans that include borrowers
+without a credit score.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2025-09 November 05, 2025

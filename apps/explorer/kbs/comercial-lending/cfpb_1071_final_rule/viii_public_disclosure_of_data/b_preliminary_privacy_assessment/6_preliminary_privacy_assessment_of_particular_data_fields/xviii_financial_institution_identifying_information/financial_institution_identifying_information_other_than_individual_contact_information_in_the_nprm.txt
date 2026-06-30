@@ -1,0 +1,131 @@
+# Financial institution identifying information other than individual contact information. In the NPRM, the Bureau stated its intention to disclose the financial institution identifying information data fields in unmodified form, other than the name and...
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_718
+**Pages:** 711-713
+**Section Path:** VIII. Public Disclosure of Data > B. Preliminary Privacy Assessment > 6. Preliminary Privacy Assessment of Particular Data Fields > xviii. Financial Institution Identifying Information > Financial institution identifying information other than individual contact information. In the NPRM, the Bureau stated its intention to disclose the financial institution identifying information data fields in unmodified form, other than the name and...
+
+---
+
+711 privacy protocols in place, it se ems likely that a financial institution could comply with both this 
+final rule and other privacy requirements.  
+Accordingly, the Bureau  preliminarily assesses that disclosure in unmodified form may 
+increase re-identification risk  and presents significant risk of harm or sensitivity  if re-
+identification occurred. T he possibility of significant privacy risk primarily results from the fact 
+that sex data will be reported as free-form text , which as discussed in part VIII.B.6.xix below, 
+the Bureau preliminarily assesses it will include, in some form, in the public data . The disclosure 
+of information about the ethnicity and race of principal owners generally will present lesser risk. 
+The Bureau does not discern evidence of compelling privacy risks to financial institutions.  
+xviii. Financial Institution Identifying Information  
+Proposed § 1002.109(b) would have require d a financial institution to provide the Bureau 
+with certain information with its submission of its small business lending application r egister: 
+(1) its name; (2)  its headquarters address; (3)  the name and business contact information of a 
+person who may be contacted with questions about the financial institution’s submission; (4)  its 
+Federal prudential regulator, if applicable; (5)  its Fe deral Taxpayer Identification Number; (6)  its 
+LEI; (7)  its RSSD ID, if applicable; (8)  parent and top-parent entity information, if applicable; 
+(9) the type of financial institution that it is, indicated by selecting the appropriate type or types 
+of institution from the list provided or entering free -form text;902 and (10)  whether the financial 
+institution is voluntarily reporting covered applications for covered credit transactions.  As 
+discussed above in the section-by -section analysis of §  1002.10 9(b), the  Bureau is generally 
+finalizing this data point as proposed,  with certain modifications . 
+Regulation  C requires financial institutions to report similar information when submitting 
+their loan -level HMDA data. Regulation  C also requires financial institution s to report the 
+calendar year of submission and the total number of entries in their loan-level HMDA data. Regulation  C does not require financial institutions to submit their headquarters address, RSSD 
+ID, or financial institution type or indicate whether  they are reporting data voluntarily. With the 
+exception of contact information for a person who can be reached about the financial institution ’s 
+submission, the information financial institutions are required to submit with their HMDA submissions under §  1003.5(a)(3) is publicly available through the FFIEC website.  
+Financial institution identifying information other than individual contact information. In 
+the NPRM, t he Bureau  stated its intention to disclose  the financial institution identifying 
+information data fields in unmodified form, other than the name and business contact information of a person who may be contacted with questions about the submission. The Bureau 
+stated that disclosing financial institution identifying information in the 1071 data in unmodified 
+form would likely disclose minimal, if any, information about an applicant or related natural 
+person that may be harmful or sensitive if such person were re -identified.  While some businesses 
+might view their identification as an applicant as h armful or sensitive, revealing the name of the 
+financial institution would not significantly increase such risks.  In addition, the Bureau reasoned 
+that this information is already largely available from other identified public records, such as 
+UCC filings.  For the same reason, revealing the name of the financial institution would not 
+ 
+902 Part VIII.B.6.xix furthe r discusses the disclosure of free -form text field information.
+
+712 significantly increase risk of fraud or identity theft. The Bureau stated that disclosing financial 
+institution identifying information in the data in unmodified form would not , by itself, reveal 
+information that is harmful or sensitive, given financial institutions ’ commercial interests.  
+Additionally, other public records, such as public HMDA data, tax records, and commercial databases disclose Federal Taxpayer Identification n umber, RSSD ID, and LEI.
+903 Disclosing 
+financial institution identifying information in unmodified form may reveal information that financial institutions regard as harmful or sensitive, but the Bureau  did not discern evidence that 
+it would permit reverse -engineering of proprietary lending models.  The Bureau acknowledged , 
+however, that this information could, in some circumstances, lead to reputational risks and increased costs for financial institutions, which might be passed on to their customers in the form of increased costs or decreased access to credit.  
+The NPRM noted that the Bureau had received feedback that publishing financial 
+institution identifying information could increase re -identification risk of  applicants and related 
+natural persons. This included  feedback that customers of captive wholesale finance companies 
+with applicant bases limited to franchises or licensees of a particular distributor or manufacturer 
+would face unique re -identification risks because , in many instances, these applicants may be the 
+financial institution ’s only customer in a particular State, or one of only a very small number of 
+customers in the State, heightening the privacy concerns for publication of data tied to these 
+financial institutions. The NPRM also noted that the Bureau had identified publicly available 
+datasets that include data fields an adversary could directly match to financial institution 
+identifying information data fields in unmodified form . Therefore, in m any cases, the Bureau 
+reasoned that  an adversary could use identifying financial institution data fields, combined with 
+other  section  1071 data fields, to match a section 1071 record to an identified public record.  
+With respect to concerns  about wholesale  finance companies, the Bureau acknowledged 
+that financial institution identifying information in unmodified form in the public application -
+level data could, in combination with other data fields like census tract, NAICS codes, and credit type or purpose, facilitate re -identification of applicants that have a common name, without 
+requiring that adversaries match 1071 records to other identified datasets. Under  proposed 
+§ 1002.104(b) , which the Bureau has finalized, trade credit and other transactions would be 
+excluded from the scope of covered credit transactions. The Bureau indicated  that this might 
+eliminate some transactions involving such lenders. The Bureau sought  comment on the 
+circumstances under which a transaction involving a captive wholesale finan ce company would 
+be covered by the proposal notwithstanding the exemption.  To the extent there are such 
+transactions, the Bureau also sought  comment on the instances in which captive wholesale 
+finance companies lend exclusively  to businesses that are publicly branded in a way that can be 
+easily matched to the identity of the financial institution. T he Bureau sought  comment on 
+whether a final rule could include certain categories of financial institution types that would allow th e Bureau to easily identify such financial institutions in the unmodified 1071 dataset 
+without an application -level analysis. Finally, the Bureau sought  comment on whether there are 
+particular modification techniques that would reduce re -identification ris ks and risks of harm or 
+ 
+903 The FFIEC publishes transmittal sheet information, including LEI and Federal Taxpayer Identification number, 
+on its website. Fed. Fin. Insts. Examination Council, Public Transmittal Sheet —Schema , 
+https://ffiec.cfpb.gov/documentation/2020/public -ts-schema/  (last visited Mar. 20, 2023).
+
+713 sensitivity for applicants and related natural persons who might be re -identified in the public 
+application -level data.   
+In the NPRM, the Bureau stated its intention to publish financial institution identifying 
+information, other th an individual contact information, as reported  and without modification. The  
+Bureau stated that risks to privacy interests from the  disclosure of this data in  unmodified form 
+would be justified by the benefits of disclosure for section  1071 ’s purposes.  While the Bureau 
+did not conduct a uniqueness analysis, it stated that disclosure of financial institution identifying 
+information would very likely  substantially facilitate the re -identification of applicants or related 
+natural persons. If such persons were  re-identified, the Bureau stated that disclosure of other data 
+fields would likely create a risk of harm or sensitivity.  In addition,  the Bureau stated that  the 
+disclosure of other proposed data fields in combination with a financial institution name like ly 
+would reveal information that may be harmful or sensitive to financial institutions. The Bureau 
+nonetheless stated  that these risks to privacy would be justified by the benefits of disclosure in 
+light of section 1071’s purposes.  
+The Bureau sought  commen t on this analysis and its stated intention  to disclose these 
+fields without modification in the public application -level data.  The Bureau received feedback on 
+this proposed analysis from trade association and community group commenters. Two community group commenters generally supported the Bureau ’s proposal to disclose unmodified 
+financial institution identifying information , other than individual contact information. A trade 
+association opposed the proposal. This commenter urged the Bureau to withhold al l financial 
+institution identifying information data fields because, w hether or not it is available elsewhere, 
+this information w ould create privacy risks for financial institutions, including risks involving  
+identity theft and data security. With respect  to the Bureau ’s request for comment about whether 
+these proposed data fields would pose risks to captive wholesale companies and  their customers, 
+this commenter urged the Bureau to provide  additional protections for this market segment to 
+mitigate re-identification  risk.  
+The Bureau acknowledges that publication of financial institution identifying information 
+may reveal information that may be harmful or sensitive to financial institutions , leading to 
+reputational risks and increased costs . However , feedback received by the Bureau does not 
+explain how these data would pose previously unconsidered identity theft or data security risks. 
+Separately, the Bureau acknowledges feedback that the proposed data fields may pose special 
+risks to captive wholesa le companies and their customers. It intends to consider what additional 
+modifications or deletions may be appropriate to protect the privacy interests of these entities.  
+As explained in the NPRM, this data point could potentially increase re -identification risk 
+and commenters did not provide additional evidence related to re -identification risk that would 
+alter the partial privacy analysis described above. However, t he Bureau preliminarily assesses  
+that disclosing the financial institution identifying inf ormation data fields in unmodified form, 
+other than data fields containing the information for the financial institution ’s point of contact , 
+would present limited  risk of harm or sensitivity  if re-identification occurred . The Bureau 
+believes that it is unlikely that publication of this data would disclose personal  information about 
+an applicant or related natural person that would be harmful or sensitive if such person were re -
+identified. The Bureau does not believe this data will result in significant non-personal  
+commercial risks to small businesses. The disclosure of this data field does not pose  compelling

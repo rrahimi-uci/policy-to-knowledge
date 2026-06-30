@@ -1,0 +1,72 @@
+# 2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 65/144)
+
+**Source:** health_2024_02544.pdf
+**Chunk ID:** health_2024_02544_028_sub_065
+**Pages:** 1-160
+**Section Path:** V. Regulatory Impact Analysis > F. Paperwork Reduction Act of 1995 > 2. Explanation of Estimated Capital Expenses for 42 CFR Part 2
+
+---
+
+12536 Federal Register / Vol. 89, No. 33 / Friday, February 16, 2024 / Rules and Regulations 
+231See 45 CFR 164.528(a)(3). 232See sec. 13405(c) of the HITECH Act (codified 
+at 42 U.S.C. 17935(c)). 
+23387 FR 74216, 74239, 74249. 234See 42 U.S.C. 17935(a). the maximum allowable cost that a 
+patient can incur when requesting an accounting of disclosure. However, the Department has provided guidance in other resources on the costs a covered entity may charge individuals to receive a copy of their PHI, which is a different cost from providing individuals an accounting of disclosures. For an accounting of disclosures, the HIPAA Privacy Rule at 45 CFR 164.528(c)(2) requires a covered entity provide the first accounting to an individual in any 12-month period without charge. The covered entity may impose a reasonable, cost-based fee for each subsequent request for an accounting by the same individual within the 12-month period, provided that the covered entity informs the individual in advance of the fee and provides the individual with an opportunity to withdraw or modify the request. 
+Comment 
+Several commenters were supportive 
+of the proposal to add a new accounting 
+of disclosures requirement in part 2 because it would align with an individual’s rights under the HIPAA Privacy Rule. One health IT vendor said health IT and other digital technologies should incorporate audit trails to help detect inappropriate access to PHI. An advocacy organization supported the proposed timeframes an accounting of disclosures would cover, while a health system said the three-year timeframe for TPO disclosures should match the six- year timeframe in the HIPAA Privacy 
+Rule. 
+Response 
+We appreciate the comments. With 
+respect to the ‘‘look back’’ period for 
+accounting of disclosures in the HIPAA Privacy Rule, an individual has a right to receive an accounting of disclosures of PHI made by a covered entity in the six years prior to the date on which the accounting is requested.
+231The HITECH 
+accounting requirement covers disclosures for TPO made via an EHR and a look back period of only three years; however, this has not been finalized in the HIPAA Privacy Rule, so we cannot harmonize the part 2 TPO disclosure timeframe to that of the HIPAA Privacy Rule accounting of disclosure requirement. Additionally, a HIPAA accounting of disclosures rulemaking would implement the HITECH Act modification to 45 CFR 164.528 for disclosures for TPO to three years prior to the date which the 
+accounting is requested.
+232 
+Comment 
+A few trade associations and a health 
+IT vendor requested the Department provide a template for the accounting of disclosures that includes the level of detail necessary to fulfill the requirement. 
+Response 
+We appreciate the comments and will 
+consider providing a template when the 
+HITECH accounting of disclosures requirement is finalized within the HIPAA Privacy Rule. 
+Tolling of Compliance Date 
+Comment 
+A few commenters addressed tolling 
+the compliance date for part 2 programs 
+and each of them agreed with tolling the effective and compliance dates of the accounting of disclosures proposal until the effective and compliance dates of the modified HIPAA Privacy Rule accounting provision to provide consistency for part 2 providers, covered entities, and business associates. 
+Response 
+We appreciate the comments. We are 
+tolling the effective and compliance 
+dates for part 2 programs until the effective and compliance dates of a final rule on the HIPAA/HITECH accounting of disclosures standard (section 13405(c) of the HITECH Act) to ensure part 2 programs do not incur new compliance obligations before covered entities and business associates under the HIPAA Privacy Rule are obligated to comply. We are also mindful that the alignment of the part 2 and HIPAA compliance dates for the accounting of disclosures is most important for part 2 programs that are also covered entities. We also note the part 2 programs are not required to include the statement of a patient’s right to an accounting of disclosures in the Patient Notice under § 2.22 until the future compliance date of the accounting of disclosures. 
+Other Comments on Requests for 
+Accountings of Disclosures 
+The Department, in the NPRM, asked 
+for feedback on potential burdens such as staff time and other costs associated with accounting of disclosure requests.
+233The Department also 
+requested data on the extent to which covered entities receive requests from patients to restrict disclosures of patient 
+identifying information for TPO purposes, how covered entities document such requests, and the procedures and mechanisms used by covered entities to ensure compliance with patient requests to which they have agreed or that they are otherwise required to comply with by law. 
+Comment 
+A few commenters said they rarely 
+receive requests for an accounting of 
+disclosures and a few commenters stated they receive between 1–10 requests annually. Some of these commenters said in their experiences a single request for an accounting of disclosures from a patient may take one staffer with the current functionality within an organization a full 40-hour week to respond. 
+Response 
+We appreciate the comments and the 
+information provided on the number 
+and type of requests for an accounting of disclosures of PHI received annually and the staff time involved in responding to an individual’s request for an accounting of disclosures of PHI. 
+Final Rule 
+The final rule adopts all proposed 
+modifications to § 2.25, with a 
+correction to the timeframe in paragraph (a) to require an accounting of disclosures made with consent in the 3 years prior to the date of the request. 
+Section 2.26—Right to Request Privacy 
+Protection for Records 
+Proposed Rule 
+Prior to the CARES Act amendments, 
+the part 2 statute did not explicitly 
+provide a patient the right to request restrictions on disclosures of part 2 
+records for TPO, although patients could tailor the scope of their consent, which would govern the disclosure of their part 2 records. Section 3221(b) of the CARES Act amended 42 U.S.C. 290dd–2 such that section 13405(c) of the Health Information Technology and Clinical Health Act (42 U.S.C. 17935(c)) applies to subsection (b)(1). Therefore, the Department proposed to codify in § 2.26 a patient’s rights to: (1) request restrictions on disclosures of part 2 records for TPO purposes, and (2) obtain restrictions on disclosures to health plans for services paid in full. The proposed provision would align with the individual right in the HITECH Act, as implemented in the HIPAA Privacy Rule at 45 CFR 164.522.
+234As with the 
+HIPAA Privacy Rule right to request 
+VerDate Sep<11>2014 18:41 Feb 15, 2024 Jkt 262001 PO 00000 Frm 00066 Fmt 4701 Sfmt 4700 E:\FR\FM\16FER2.SGM 16FER2lotter on DSK11XQN23PROD with RULES2

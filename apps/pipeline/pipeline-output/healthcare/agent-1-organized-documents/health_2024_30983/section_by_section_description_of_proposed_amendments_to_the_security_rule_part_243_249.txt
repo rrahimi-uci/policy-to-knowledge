@@ -1,0 +1,33 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 243/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_243
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+(ii) Multi-factor authentication. (A) 
+Deploy multi-factor authentication to all technology assets in the covered entity’s or business associate’s relevant electronic information systems to verify 
+that a person seeking access to the relevant electronic information system(s) is the user that the person claims to be. 
+(B) Deploy multi-factor authentication 
+for any action that would change a user’s privileges to the covered entity’s or business associate’s relevant electronic information systems in a 
+manner that would alter the user’s ability to affect the confidentiality, integrity, or availability of electronic protected health information. 
+(iii) Exceptions. Deployment of multi- 
+factor authentication is not required in any of the following circumstances. 
+(A) The technology asset in use does 
+not support multi-factor authentication, and the covered entity or business associate establishes and implements a written plan to migrate electronic protected health information to a technology asset that supports multi- factor authentication within a reasonable and appropriate period of time. 
+(B) During an emergency or other 
+occurrence that adversely affects the covered entity’s or business associate’s relevant electronic information systems or the confidentiality, integrity, or availability of electronic protected health information in which multi- factor authentication is infeasible and the covered entity or business associate implements reasonable and appropriate compensating controls in accordance with its emergency access procedures under paragraph (a)(2)(iii) of this section and the covered entity’s or business associate’s contingency plan under §
+164.308(a)(13). 
+(C) The technology asset in use is a 
+device under section 201(h) of the Food, Drug, and Cosmetic Act, 21 U.S.C. 321(h) that has been authorized for marketing by the Food and Drug Administration, as follows: 
+(1) Pursuant to a submission received 
+before March 29, 2023, provided that the covered entity or business associate has deployed any updates or patches required or recommended by the manufacturer of the device. 
+(2) Pursuant to a submission received 
+on or after March 29, 2023, where the device is no longer supported by its manufacturer, provided that the covered entity or business associate has deployed any updates or patches required or recommended by the manufacturer of the device. 
+(3) Pursuant to a submission received 
+on or after March 29, 2023, where the device is supported by its manufacturer. 
+(iv) Alternative measures—(A) 
+Alternative measures. Where an exception at paragraph (f)(2)(iii) of this 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00122 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

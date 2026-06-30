@@ -1,0 +1,56 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 5/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_005
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+900 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+9In this NPRM, ‘‘we’’ and ‘‘our’’ denote the 
+Department. 
+10See ‘‘Breach Portal: Notice to the Secretary of 
+HHS Breach of Unsecured Protected Health 
+Information,’’ Office for Civil Rights, U.S. Department of Health and Human Services, https:// 
+ocrportal.hhs.gov/ocr/breach/breach_ report.jsf. 
+11Presidential Memorandum on National 
+Security Memorandum on Critical Infrastructure Security and Resilience, National Security Memorandum/NSM–22, The White House (Apr. 30, 2024), https://www.whitehouse.gov/briefing-room/ 
+presidential-actions/2024/04/30/national-security- memorandum-on-critical-infrastructure-security- and-resilience/ (‘‘Critical infrastructure comprises 
+the physical and virtual assets and systems so vital to the Nation that their incapacity or destruction would have a debilitating impact on national security, national economic security, or national 
+public health or safety.’’). 
+12Id. (charging an SRMA with serving as the 
+primary Federal liaison to their designated critical infrastructure and ‘‘conduct[ing] sector-specific risk management and resilience activities’’). 
+13Id. 
+14See, e.g., ‘‘New York State Register,’’ 46 N.Y. 
+Reg. 7–10, Division of Administrative Rules, New 
+York State Department of State (Oct. 2, 2024), https://dos.ny.gov/system/files/documents/2024/ 10/100224.pdf; ‘‘Invitation for Preliminary 
+Comments on Proposed Rulemaking: Cybersecurity Audits, Risk Assessments, and Automated Decisionmaking,’’ California Privacy Protection Agency (Feb. 10, 2023), https://cppa.ca.gov/ regulations/pdf/invitation_ for_comments_ pr_02- 
+2023.pdf; see also Cal. Civ. Code Section 1798.185. 
+15‘‘The NIST Cybersecurity Framework (CSF) 
+2.0,’’ National Institute of Standards and Technology, U.S. Department of Commerce (Feb. 26, 2024), https://doi.org/10.6028/NIST.CSWP.29. 
+16‘‘Health Industry Cybersecurity Practices: 
+Managing Threats and Protecting Patients,’’ U.S. Department of Health and Human Services and the Healthcare & Public Health Sector Coordinating Council (2023), https://405d.hhs.gov/Documents/ HICP-Main-508.pdf. 17‘‘Start with Security: A Guide for Business,’’ 
+Federal Trade Commission (Aug. 2023), https://
+www.ftc.gov/system/files/ftc_ gov/pdf/920a_ start_
+with_ security_ en_aug2023_ 508_ final_ 0.pdf. 
+18‘‘Cybersecurity Performance Goals,’’ U.S. 
+Department of Health and Human Services (Jan. 2024), https://hphcyber.hhs.gov/performance- 
+goals.html. 
+19Sec. 1174(b)(1) of the SSA; 45 CFR 160.104. 
+20See sec. 261 of Public Law 104–191, 110 Stat. 
+1936 (codified at 42 U.S.C. 1320d note). 
+21See ‘‘A Guide to the Rulemaking Process,’’ 
+Office of the Federal Register (2011), p. 8, https:// 
+www.federalregister.gov/uploads/2011/01/the_
+rulemaking_ process.pdf. Almost every stage of modern health 
+care relies on stable and secure computer and network technologies, including, but not limited to, the following: appointment scheduling, prescription orders, telehealth visits, medical devices, patient records, medical and pharmacy claims submissions and billing, insurance coverage verifications, payroll, facilities access and management, internal and external communications, and clinician resources. These tools and technologies are an integral part of the modern health care system, but they also present opportunities for bad actors to cause harm through hacking, ransomware, and other means. Covered entities and business associates (collectively, ‘‘regulated entities’’) may also experience malfunctions and inadvertent errors that threaten the confidentiality, integrity, or availability of ePHI. Thus, cyberattacks, malfunctions, and inadvertent errors can negatively affect the provision of health care, as well as the efficiency and effectiveness of the health care system. 
+As discussed in greater detail below, 
+in recent years, there has been an alarming growth in the number of breaches affecting 500 or more individuals reported to the Department, the overall number of individuals affected by such breaches, and the rampant escalation of cyberattacks using hacking and ransomware. The Department is concerned by the increasing numbers of breaches and other cybersecurity incidents experienced by regulated entities. We
+9 
+are also increasingly concerned by the upward trend in the numbers of individuals affected by such incidents and the magnitude of the potential harms from such incidents.
+10 
+In recognition of those potential 
+harms and the health care sector’s importance to the economy and security of the U.S., the President has designated ‘‘Healthcare and Public Health’’ as a critical infrastructure sector
+11and the Department as the Sector Risk 
+Management Agency (SRMA).12In

@@ -1,0 +1,1734 @@
+{
+  "source_file": "pub_ch_commercial_real_estate.pdf",
+  "total_chunks": 98,
+  "chunk_methods": [
+    "toc_based"
+  ],
+  "structure": [
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_001",
+      "title": "Commercial Real Estate Lending, Comptroller's Handbook",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 53
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_002",
+      "title": "Contents",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/contents.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Contents"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 830
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_003",
+      "title": "Introduction",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/introduction.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Introduction"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 493
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_004",
+      "title": "Overview",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/introduction/overview.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Introduction",
+        "Overview"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 493
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_005",
+      "title": "Authority and Limits",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/introduction/overview/authority_and_limits.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Introduction",
+        "Overview",
+        "Authority and Limits"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "word_count": 502
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_006",
+      "title": "Equity Investments in Real Estate",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/introduction/overview/authority_and_limits/equity_investments_in_real_estate.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Introduction",
+        "Overview",
+        "Authority and Limits",
+        "Equity Investments in Real Estate"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "word_count": 627
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_007",
+      "title": "Real Estate Lending Standards and Interagency Guidelines for Real Estate Lending + CRE Industry, Pro",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/introduction/overview/real_estate_lending_standards_and_interagency_guidelines_for_real_estate_lending_cre_industry_pro.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Introduction",
+        "Overview",
+        "Real Estate Lending Standards and Interagency Guidelines for Real Estate Lending"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_real_estate_008",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 902
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_009",
+      "title": "Acquisition, Development, and Construction Loans",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/introduction/overview/cre_industry_property_types_and_loan_types/acquisition_development_and_construction_loans.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Introduction",
+        "Overview",
+        "CRE Industry, Property Types, and Loan Types",
+        "Acquisition, Development, and Construction Loans"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "word_count": 1224
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_010",
+      "title": "Interest Reserves",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/introduction/overview/cre_industry_property_types_and_loan_types/interest_reserves.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Introduction",
+        "Overview",
+        "CRE Industry, Property Types, and Loan Types",
+        "Interest Reserves"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "word_count": 1079
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_011",
+      "title": "Income-Producing CRE Loans + High-Volatility CRE Loans",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/introduction/overview/cre_industry_property_types_and_loan_types/income_producing_cre_loans_high_volatility_cre_loans.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Introduction",
+        "Overview",
+        "CRE Industry, Property Types, and Loan Types",
+        "Income-Producing CRE Loans"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_real_estate_012",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 856
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_013",
+      "title": "Risks Associated With CRE Lending",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/introduction/risks_associated_with_cre_lending.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Introduction",
+        "Risks Associated With CRE Lending"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 421
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_014",
+      "title": "Credit Risk",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/introduction/risks_associated_with_cre_lending/credit_risk.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Introduction",
+        "Risks Associated With CRE Lending",
+        "Credit Risk"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "word_count": 453
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_015",
+      "title": "Construction Issues + Market Conditions",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/introduction/risks_associated_with_cre_lending/credit_risk/construction_issues_market_conditions.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Introduction",
+        "Risks Associated With CRE Lending",
+        "Credit Risk",
+        "Construction Issues"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_real_estate_016",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 906
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_017",
+      "title": "Concentration Risk + Regulatory Changes",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/introduction/risks_associated_with_cre_lending/credit_risk/concentration_risk_regulatory_changes.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Introduction",
+        "Risks Associated With CRE Lending",
+        "Credit Risk",
+        "Concentration Risk"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_real_estate_018",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 886
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_019",
+      "title": "Interest Rates + Environmental Liability",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/introduction/risks_associated_with_cre_lending/credit_risk/interest_rates_environmental_liability.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Introduction",
+        "Risks Associated With CRE Lending",
+        "Credit Risk",
+        "Interest Rates"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_real_estate_020",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 886
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_021",
+      "title": "Interest Rate Risk + Liquidity Risk",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/introduction/risks_associated_with_cre_lending/interest_rate_risk_liquidity_risk.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Introduction",
+        "Risks Associated With CRE Lending",
+        "Interest Rate Risk"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_real_estate_022",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 996
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_023",
+      "title": "Operational Risk",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/introduction/risks_associated_with_cre_lending/operational_risk.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Introduction",
+        "Risks Associated With CRE Lending",
+        "Operational Risk"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "word_count": 542
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_024",
+      "title": "Compliance Risk + Strategic Risk",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/introduction/risks_associated_with_cre_lending/compliance_risk_strategic_risk.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Introduction",
+        "Risks Associated With CRE Lending",
+        "Compliance Risk"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_real_estate_025",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 824
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_026",
+      "title": "Reputation Risk + Price Risk",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/introduction/risks_associated_with_cre_lending/reputation_risk_price_risk.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Introduction",
+        "Risks Associated With CRE Lending",
+        "Reputation Risk"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_real_estate_027",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 712
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_028",
+      "title": "Risk Management",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 412
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_029",
+      "title": "Management and Board Oversight",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/management_and_board_oversight.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Management and Board Oversight"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 412
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_030",
+      "title": "Strategic Planning + Governance Structure",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/management_and_board_oversight/strategic_planning_governance_structure.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Management and Board Oversight",
+        "Strategic Planning"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_real_estate_031",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 779
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_032",
+      "title": "Management and Board Reports",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/management_and_board_oversight/management_and_board_reports.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Management and Board Oversight",
+        "Management and Board Reports"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "word_count": 367
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_033",
+      "title": "Loan Policies",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/loan_policies.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Loan Policies"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 360
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_034",
+      "title": "Loan Portfolio Management Considerations + Underwriting Standards",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/loan_policies/loan_portfolio_management_considerations_underwriting_standards.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Loan Policies",
+        "Loan Portfolio Management Considerations"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_real_estate_035",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 829
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_036",
+      "title": "Acquisition, Development, and Construction Policies",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/loan_policies/underwriting_standards/acquisition_development_and_construction_policies.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Loan Policies",
+        "Underwriting Standards",
+        "Acquisition, Development, and Construction Policies"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "word_count": 1476
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_037",
+      "title": "Investor-Owned Residential Real Estate Lending Standards",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/loan_policies/underwriting_standards/investor_owned_residential_real_estate_lending_standards.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Loan Policies",
+        "Underwriting Standards",
+        "Investor-Owned Residential Real Estate Lending Standards"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "word_count": 455
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_038",
+      "title": "Supervisory Loan-to-Value Limits",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/loan_policies/supervisory_loan_to_value_limits.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Loan Policies",
+        "Supervisory Loan-to-Value Limits"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "word_count": 653
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_039",
+      "title": "Excluded Transactions",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/loan_policies/supervisory_loan_to_value_limits/excluded_transactions.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Loan Policies",
+        "Supervisory Loan-to-Value Limits",
+        "Excluded Transactions"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "word_count": 616
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_040",
+      "title": "Loans Exceeding Supervisory Loan-to-Value Ratio Limits",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/loan_policies/supervisory_loan_to_value_limits/loans_exceeding_supervisory_loan_to_value_ratio_limits.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Loan Policies",
+        "Supervisory Loan-to-Value Limits",
+        "Loans Exceeding Supervisory Loan-to-Value Ratio Limits"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "word_count": 543
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_041",
+      "title": "Exceptions to General Lending Policy",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/loan_policies/exceptions_to_general_lending_policy.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Loan Policies",
+        "Exceptions to General Lending Policy"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "word_count": 543
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_042",
+      "title": "Underwriting Practices",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/underwriting_practices.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Underwriting Practices"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 455
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_043",
+      "title": "Analysis of Borrower’s and Guarantor’s Financial Condition + Underwriting Acquisition, Development, ",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/underwriting_practices/analysis_of_borrower_s_and_guarantor_s_financial_condition_underwriting_acquisition_development.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Underwriting Practices",
+        "Analysis of Borrower’s and Guarantor’s Financial Condition"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_real_estate_044",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 984
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_045",
+      "title": "Construction Concerns + Evaluating the Developer Borrower",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/underwriting_practices/underwriting_acquisition_development_and_construction_loans/construction_concerns_evaluating_the_developer_borrower.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Underwriting Practices",
+        "Underwriting Acquisition, Development, and Construction Loans",
+        "Construction Concerns"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_real_estate_046",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 929
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_047",
+      "title": "Determining Project Feasibility",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/underwriting_practices/underwriting_acquisition_development_and_construction_loans/determining_project_feasibility.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Underwriting Practices",
+        "Underwriting Acquisition, Development, and Construction Loans",
+        "Determining Project Feasibility"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "word_count": 1911
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_048",
+      "title": "Collateral Valuation for Acquisition, Development, and + Construction Loans",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/underwriting_practices/underwriting_acquisition_development_and_construction_loans/collateral_valuation_for_acquisition_development_and_construction_loans.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Underwriting Practices",
+        "Underwriting Acquisition, Development, and Construction Loans",
+        "Collateral Valuation for Acquisition, Development, and"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_real_estate_049",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 1983
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_050",
+      "title": "Underwriting Income-Producing CRE Loans",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/underwriting_practices/underwriting_income_producing_cre_loans.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Underwriting Practices",
+        "Underwriting Income-Producing CRE Loans"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "word_count": 457
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_051",
+      "title": "Loan Structure",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/underwriting_practices/underwriting_income_producing_cre_loans/loan_structure.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Underwriting Practices",
+        "Underwriting Income-Producing CRE Loans",
+        "Loan Structure"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "word_count": 1022
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_052",
+      "title": "Covenants + Income-Generating Capacity of CRE",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/underwriting_practices/underwriting_income_producing_cre_loans/covenants_income_generating_capacity_of_cre.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Underwriting Practices",
+        "Underwriting Income-Producing CRE Loans",
+        "Covenants"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_real_estate_053",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 940
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_054",
+      "title": "Debt-Service Coverage Ratio",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/underwriting_practices/underwriting_income_producing_cre_loans/debt_service_coverage_ratio.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Underwriting Practices",
+        "Underwriting Income-Producing CRE Loans",
+        "Debt-Service Coverage Ratio"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "word_count": 504
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_055",
+      "title": "Debt Yield",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/underwriting_practices/underwriting_income_producing_cre_loans/debt_yield.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Underwriting Practices",
+        "Underwriting Income-Producing CRE Loans",
+        "Debt Yield"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "word_count": 504
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_056",
+      "title": "Value Analysis",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/underwriting_practices/underwriting_income_producing_cre_loans/value_analysis.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Underwriting Practices",
+        "Underwriting Income-Producing CRE Loans",
+        "Value Analysis"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "word_count": 504
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_057",
+      "title": "Loan-to-Value Ratio",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/underwriting_practices/underwriting_income_producing_cre_loans/loan_to_value_ratio.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Underwriting Practices",
+        "Underwriting Income-Producing CRE Loans",
+        "Loan-to-Value Ratio"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "word_count": 405
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_058",
+      "title": "Credit Administration",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/credit_administration.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Credit Administration"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 405
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_059",
+      "title": "Acquisition, Development, and Construction Credit Administration",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/credit_administration/acquisition_development_and_construction_credit_administration.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Credit Administration",
+        "Acquisition, Development, and Construction Credit Administration"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "word_count": 395
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_060",
+      "title": "Monitoring Progress of Construction Projects",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/credit_administration/acquisition_development_and_construction_credit_administration/monitoring_progress_of_construction_projects.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Credit Administration",
+        "Acquisition, Development, and Construction Credit Administration",
+        "Monitoring Progress of Construction Projects"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "word_count": 1415
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_061",
+      "title": "Disbursement Processes",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/credit_administration/acquisition_development_and_construction_credit_administration/disbursement_processes.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Credit Administration",
+        "Acquisition, Development, and Construction Credit Administration",
+        "Disbursement Processes"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "word_count": 456
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_062",
+      "title": "Income-Producing Property Credit Administration",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/credit_administration/income_producing_property_credit_administration.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Credit Administration",
+        "Income-Producing Property Credit Administration"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "word_count": 460
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_063",
+      "title": "Investor-Owned Residential Real Estate",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/credit_administration/income_producing_property_credit_administration/investor_owned_residential_real_estate.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Credit Administration",
+        "Income-Producing Property Credit Administration",
+        "Investor-Owned Residential Real Estate"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "word_count": 490
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_064",
+      "title": "File Documentation",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/credit_administration/file_documentation.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Credit Administration",
+        "File Documentation"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "word_count": 905
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_065",
+      "title": "Risk-Rating CRE Loans",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/risk_rating_cre_loans.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Risk-Rating CRE Loans"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 385
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_066",
+      "title": "Analyzing Repayment Capacity of the Borrower + Evaluating Guarantees",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/risk_rating_cre_loans/analyzing_repayment_capacity_of_the_borrower_evaluating_guarantees.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Risk-Rating CRE Loans",
+        "Analyzing Repayment Capacity of the Borrower"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_real_estate_067",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 804
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_068",
+      "title": "Assessing Collateral Values + Other Considerations",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/risk_rating_cre_loans/assessing_collateral_values_other_considerations.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Risk-Rating CRE Loans",
+        "Assessing Collateral Values"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_real_estate_069",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 1355
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_070",
+      "title": "Risk-Rating Investor-Owned Residential Real Estate Loans + Classification of CRE Loans",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/risk_rating_cre_loans/risk_rating_investor_owned_residential_real_estate_loans_classification_of_cre_loans.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Risk-Rating CRE Loans",
+        "Risk-Rating Investor-Owned Residential Real Estate Loans"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_real_estate_071",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 878
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_072",
+      "title": "Special Mention + Substandard",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/risk_rating_cre_loans/classification_of_cre_loans/special_mention_substandard.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Risk-Rating CRE Loans",
+        "Classification of CRE Loans",
+        "Special Mention"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_real_estate_073",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 796
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_074",
+      "title": "Doubtful + Loss",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/risk_rating_cre_loans/classification_of_cre_loans/doubtful_loss.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Risk-Rating CRE Loans",
+        "Classification of CRE Loans",
+        "Doubtful"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_real_estate_075",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 883
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_076",
+      "title": "Appraisals and Evaluations",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/appraisals_and_evaluations.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Appraisals and Evaluations"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 1359
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_077",
+      "title": "Appraisal and Evaluation Program + Appraisal and Evaluation Reviews",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/appraisals_and_evaluations/appraisal_and_evaluation_program_appraisal_and_evaluation_reviews.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Appraisals and Evaluations",
+        "Appraisal and Evaluation Program"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_real_estate_078",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 957
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_079",
+      "title": "Environmental Risk Management",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/environmental_risk_management.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Environmental Risk Management"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 1456
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_080",
+      "title": "Loan Workouts and Restructures",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/loan_workouts_and_restructures.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Loan Workouts and Restructures"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 390
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_081",
+      "title": "Accrual Status",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/loan_workouts_and_restructures/accrual_status.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Loan Workouts and Restructures",
+        "Accrual Status"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "word_count": 879
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_082",
+      "title": "Troubled Debt Restructurings + Allowance for Credit Losses",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/loan_workouts_and_restructures/troubled_debt_restructurings_allowance_for_credit_losses.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Loan Workouts and Restructures",
+        "Troubled Debt Restructurings"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_real_estate_083",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 892
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_084",
+      "title": "Foreclosure",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/loan_workouts_and_restructures/foreclosure.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Loan Workouts and Restructures",
+        "Foreclosure"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "word_count": 446
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_085",
+      "title": "Concentration Risk Management",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/concentration_risk_management.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Concentration Risk Management"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 914
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_086",
+      "title": "Key Elements for CRE Concentration Risk Management",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/concentration_risk_management/key_elements_for_cre_concentration_risk_management.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Concentration Risk Management",
+        "Key Elements for CRE Concentration Risk Management"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "word_count": 416
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_087",
+      "title": "Control Systems",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/control_systems.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Control Systems"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 416
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_088",
+      "title": "Credit Risk Review + Internal Audit",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/control_systems/credit_risk_review_internal_audit.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Control Systems",
+        "Credit Risk Review"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_real_estate_089",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 922
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_090",
+      "title": "Third-Party Risk Management",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/risk_management/control_systems/third_party_risk_management.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Risk Management",
+        "Control Systems",
+        "Third-Party Risk Management"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "word_count": 465
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_091",
+      "title": "Examination Procedures",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/examination_procedures.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Examination Procedures"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 360
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_092",
+      "title": "Scope",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/examination_procedures/scope.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Examination Procedures",
+        "Scope"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 914
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_093",
+      "title": "Quantity of Risk",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/examination_procedures/quantity_of_risk.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Examination Procedures",
+        "Quantity of Risk"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 2008
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_094",
+      "title": "Quality of Risk Management",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/examination_procedures/quality_of_risk_management.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Examination Procedures",
+        "Quality of Risk Management"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 330
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_095",
+      "title": "Policies",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/examination_procedures/quality_of_risk_management/policies.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Examination Procedures",
+        "Quality of Risk Management",
+        "Policies"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "word_count": 696
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_096",
+      "title": "Processes",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/examination_procedures/quality_of_risk_management/processes.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Examination Procedures",
+        "Quality of Risk Management",
+        "Processes"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "word_count": 699
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_097",
+      "title": "Personnel + Control Systems",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/examination_procedures/quality_of_risk_management/personnel_control_systems.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Examination Procedures",
+        "Quality of Risk Management",
+        "Personnel"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_real_estate_098",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 681
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_099",
+      "title": "Conclusions",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/examination_procedures/conclusions.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Examination Procedures",
+        "Conclusions"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 564
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_100",
+      "title": "Internal Control Questionnaire",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/examination_procedures/internal_control_questionnaire.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Examination Procedures",
+        "Internal Control Questionnaire"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 404
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_101",
+      "title": "Policies",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/examination_procedures/internal_control_questionnaire/policies.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Examination Procedures",
+        "Internal Control Questionnaire",
+        "Policies"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "word_count": 741
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_102",
+      "title": "Appraisal and Evaluation Program",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/examination_procedures/internal_control_questionnaire/appraisal_and_evaluation_program.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Examination Procedures",
+        "Internal Control Questionnaire",
+        "Appraisal and Evaluation Program"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "word_count": 290
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_103",
+      "title": "Appraisals—External + Appraisals—Internal",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/examination_procedures/internal_control_questionnaire/appraisal_and_evaluation_program/appraisals_external_appraisals_internal.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Examination Procedures",
+        "Internal Control Questionnaire",
+        "Appraisal and Evaluation Program",
+        "Appraisals—External"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_real_estate_104",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 590
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_105",
+      "title": "Appraisal Review Processes",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/examination_procedures/internal_control_questionnaire/appraisal_review_processes.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Examination Procedures",
+        "Internal Control Questionnaire",
+        "Appraisal Review Processes"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "word_count": 300
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_106",
+      "title": "Evaluations + Other",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/examination_procedures/internal_control_questionnaire/appraisal_review_processes/evaluations_other.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Examination Procedures",
+        "Internal Control Questionnaire",
+        "Appraisal Review Processes",
+        "Evaluations"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_real_estate_107",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 500
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_108",
+      "title": "Construction Loans",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/examination_procedures/internal_control_questionnaire/construction_loans.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Examination Procedures",
+        "Internal Control Questionnaire",
+        "Construction Loans"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "word_count": 250
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_109",
+      "title": "Loan Agreements and Other Documents",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/examination_procedures/loan_agreements_and_other_documents.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Examination Procedures",
+        "Loan Agreements and Other Documents"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 2581
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_110",
+      "title": "Verification Procedures",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/examination_procedures/verification_procedures.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Examination Procedures",
+        "Verification Procedures"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 593
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_111",
+      "title": "Appendixes",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/appendixes.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Appendixes"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 452
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_112",
+      "title": "Appendix A: Quantity of Credit Risk Indicators",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/appendixes/appendix_a_quantity_of_credit_risk_indicators.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Appendixes",
+        "Appendix A: Quantity of Credit Risk Indicators"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 986
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_113",
+      "title": "Appendix B: Quality of Credit Risk Management Indicators",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/appendixes/appendix_b_quality_of_credit_risk_management_indicators.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Appendixes",
+        "Appendix B: Quality of Credit Risk Management Indicators"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 1827
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_114",
+      "title": "Appendix C: Supervisory Loan-to-Value Limits",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/appendixes/appendix_c_supervisory_loan_to_value_limits.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Appendixes",
+        "Appendix C: Supervisory Loan-to-Value Limits"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 1147
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_115_sub_001",
+      "title": "Appendix D: Underwriting Considerations by Property Type (part 1/5)",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/appendixes/appendix_d_underwriting_considerations_by_property_type_part_1_5.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Appendixes",
+        "Appendix D: Underwriting Considerations by Property Type"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "pub_ch_commercial_real_estate_115",
+        "sub_chunk_index": 1,
+        "total_sub_chunks": 5,
+        "parent_word_count": 5957,
+        "word_count": 1386
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_115_sub_002",
+      "title": "Appendix D: Underwriting Considerations by Property Type (part 2/5)",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/appendixes/appendix_d_underwriting_considerations_by_property_type_part_2_5.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Appendixes",
+        "Appendix D: Underwriting Considerations by Property Type"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "pub_ch_commercial_real_estate_115",
+        "sub_chunk_index": 2,
+        "total_sub_chunks": 5,
+        "parent_word_count": 5957,
+        "word_count": 1255
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_115_sub_003",
+      "title": "Appendix D: Underwriting Considerations by Property Type (part 3/5)",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/appendixes/appendix_d_underwriting_considerations_by_property_type_part_3_5.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Appendixes",
+        "Appendix D: Underwriting Considerations by Property Type"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "pub_ch_commercial_real_estate_115",
+        "sub_chunk_index": 3,
+        "total_sub_chunks": 5,
+        "parent_word_count": 5957,
+        "word_count": 1386
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_115_sub_004",
+      "title": "Appendix D: Underwriting Considerations by Property Type (part 4/5)",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/appendixes/appendix_d_underwriting_considerations_by_property_type_part_4_5.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Appendixes",
+        "Appendix D: Underwriting Considerations by Property Type"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "pub_ch_commercial_real_estate_115",
+        "sub_chunk_index": 4,
+        "total_sub_chunks": 5,
+        "parent_word_count": 5957,
+        "word_count": 1500
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_115_sub_005",
+      "title": "Appendix D: Underwriting Considerations by Property Type (part 5/5)",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/appendixes/appendix_d_underwriting_considerations_by_property_type_part_5_5.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Appendixes",
+        "Appendix D: Underwriting Considerations by Property Type"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "pub_ch_commercial_real_estate_115",
+        "sub_chunk_index": 5,
+        "total_sub_chunks": 5,
+        "parent_word_count": 5957,
+        "word_count": 430
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_116",
+      "title": "Appendix E: Appraisal Review Worksheet",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/appendixes/appendix_e_appraisal_review_worksheet.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Appendixes",
+        "Appendix E: Appraisal Review Worksheet"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 972
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_117",
+      "title": "Appendix F: Evaluation Review Worksheet + Appendix G: Glossary",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/appendixes/appendix_f_evaluation_review_worksheet_appendix_g_glossary.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Appendixes",
+        "Appendix F: Evaluation Review Worksheet"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_real_estate_118",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 2756
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_119",
+      "title": "Appendix H: Abbreviations",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/appendixes/appendix_h_abbreviations.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "Appendixes",
+        "Appendix H: Abbreviations"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 204
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_real_estate_120",
+      "title": "References",
+      "path": "pub_ch_commercial_real_estate/commercial_real_estate_lending_comptroller_s_handbook/references.txt",
+      "section_path": [
+        "Commercial Real Estate Lending, Comptroller's Handbook",
+        "References"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_real_estate.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 827
+      }
+    }
+  ]
+}

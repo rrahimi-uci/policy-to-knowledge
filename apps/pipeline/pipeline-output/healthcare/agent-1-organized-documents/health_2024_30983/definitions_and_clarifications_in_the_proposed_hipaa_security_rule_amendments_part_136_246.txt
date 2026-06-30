@@ -1,0 +1,25 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 136/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_136
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+707 
+The Department proposes that the 
+period of inactivity be both predetermined and reasonable and appropriate. When determining the length of the period of inactivity, a regulated entity should consider the access privileges of a given user or technology asset, the system(s) being accessed, the environment in which the system access occurs, and other appropriate factors in determining a reasonable and appropriate time of inactivity before session termination. For example, in an emergency setting, a user may not have time to manually log out of a system. User identities with 
+administrative and other high-level access that present a greater risk to the confidentiality, integrity, and availability of ePHI should have appropriately shorter periods of inactivity because of the increased risk. While many applications have configuration settings for automatic logoff,
+708a regulated entity must 
+determine whether the default automatic logoff is reasonable and appropriate and make modifications if it is not. For example, the adoption of health IT that is certified through the ONC Health IT Certification Program as having the technical capability to automatically stop a user’s access to health information after inactivity for a predetermined period and require a user to re-enter their credentials to resume or regain access may contribute to a regulated entity’s compliance with the proposed implementation specification for automatic logoff, should the proposal be finalized.
+709 
+Additionally, we propose to add an 
+implementation specification for log-in attempts at proposed 45 CFR 164.312(a)(2)(v). The proposal would require a regulated entity to deploy technical controls that disable or suspend the access of a user or technology asset to relevant electronic information systems after a certain number of unsuccessful authentication attempts. Although incorrectly keying in a known password by the intended user may occur infrequently, a repeated and persistent failure is a strong indication of an attempt at unauthorized access. For example, brute force attacks are attempts to gain unauthorized access by guessing the password many times in a row.
+710Technical controls that limit the 
+number of incorrect log-in attempts by disabling or suspending the access of a user or technology asset to relevant electronic information systems are appropriate to address unsuccessful login attempts.
+711 
+The proposal would require a 
+regulated entity to determine the 
+number of unsuccessful authentication attempts that would trigger disabling or suspending access to relevant electronic information system. The number should 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00070 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

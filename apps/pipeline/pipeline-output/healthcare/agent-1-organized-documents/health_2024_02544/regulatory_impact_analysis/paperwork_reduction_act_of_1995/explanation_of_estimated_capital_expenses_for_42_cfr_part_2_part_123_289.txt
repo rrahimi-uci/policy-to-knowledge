@@ -1,0 +1,39 @@
+# Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 123/289)
+
+**Source:** health_2024_02544.pdf
+**Chunk ID:** health_2024_02544_028_sub_123
+**Pages:** 1-160
+**Section Path:** Regulatory Impact Analysis > Paperwork Reduction Act of 1995 > Explanation of Estimated Capital Expenses for 42 CFR Part 2
+
+---
+
+12533 Federal Register / Vol. 89, No. 33 / Friday, February 16, 2024 / Rules and Regulations 
+224Id. See also, 87 FR 74216, 74224; 82 FR 6052, 
+6055. 225See ‘‘Behavioral Health,’’ supra note 133. 226See U.S. Dep’t of Health and Human Servs., 
+‘‘Business Associates’’ (May 24, 2019), https://
+www.hhs.gov/hipaa/for-professionals/privacy/ guidance/business-associates/index.html. intermediaries but this may be a fact- 
+specific inquiry.224 
+Comment 
+Other comments on the proposal 
+addressed the role of community-based organizations (CBOs), such as those providing services to people experiencing homelessness. A few commenters requested that such CBOs be considered as intermediaries, and one pointed out that the limitation on sharing part 2 records through an intermediary would likely result in limiting the sharing of records with CBOs via an HIE because CBOs are not treating providers. A county HIE said that it fosters data sharing across dozens of health care providers, managed care, and CBOs to enable better care coordination to and address social determinants of health. The county asserted that allowing part 2 records to be shared based on a single consent for TPO would be ‘‘deeply enhanced by pairing it with the technology of an HIE.’’ 
+Response 
+We have noted the definition of 
+‘‘intermediary’’ and examples above. An 
+intermediary may be named in a general designation in § 2.31(a)(4) though special instructions apply to such use. Under the final rule, we have excluded business associates, part 2 programs, and covered entities from the definition of ‘‘intermediary’’ in § 2.11. Thus, HIEs that meet the definition of ‘‘business associates’’ are not intermediaries. 
+Part 2 programs, covered entities, and 
+business associates (notably HIEs) are permitted to disclose records for TPO under the new TPO consent requirements and redisclose records as permitted by the HIPAA Privacy Rule once a consent for all future uses and disclosures for TPO is obtained. Accordingly, when a part 2 program that is covered entity discloses records through an HIE, the intermediary consent requirements under § 2.31(a)(4) do not apply because the HIE would be serving as a business associate of the part 2 program/covered entity, and as a business associate the HIE would be excluded from the definition of ‘‘intermediary.’’ We believe that part 2 programs that rely on HIEs are those most likely to be covered entities and to benefit from the narrowed definition of intermediary in the final rule. 
+Comment 
+A commenter said that definition of 
+‘‘intermediary’’ is broad enough that a primary care provider connecting a 
+patient (and a patient’s part 2 records) from one program to another could be seen as an intermediary. This commenter seeks guidance on the relationship between part 2 programs and intermediaries, and what unintended consequences the Department is seeking to avoid. The commenter suggests collaboration with ONC to leverage TEFCA, as there seems to be overlap between what constitutes an intermediary and how ONC defines a Qualified Health Information Network under TEFCA. 
+An insurance association referenced 
+TEFCA and said that it is expected to be operating this year, creating a national network for health care information exchange among both HIPAA covered and non-HIPAA covered entities. The part 2 rule, the association said, should be structured to ensure data can be seamlessly shared among covered entities for TPO and other purposes designated in an individual’s consent. However, the commenter believed that robust privacy protections for part 2 records remain critical for all entities involved in health data exchanges. The TEFCA processes are building in governance and operating requirements parallel to the HIPAA privacy and security requirements for all participants in the system even if they are not covered entities under the law to ensure robust protections no matter what role the entity plays. The commenter was concerned that a single weak link in the chain could compromise the entire system. 
+The commenter also stated that 
+activities by HIEs that go beyond the 
+role of a ‘‘basic conduit’’ should come with commensurate responsibilities for data protections. Therefore, the commenter questioned the definition of ‘‘intermediary’’ as proposed, asserting that it would minimize the accountability of these entities. 
+Response 
+We appreciate input from commenters 
+on the role of HIEs and TEFCA. ONC, 
+OCR, SAMHSA and others are collaborating to support participation in TEFCA and implementation of health IT and EHRs within the behavioral health sector.
+225When an HIE is acting as a 
+business associate to a part 2 program that is also a covered entity, it would not be considered an ‘‘intermediary’’ as defined in this final rule because we have excluded business associates (along with programs and covered entities) from the definition. An HIE that is a ‘‘business associate’’ is subject to certain HIPAA requirements,

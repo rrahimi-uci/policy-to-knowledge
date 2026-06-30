@@ -1,0 +1,26 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 216/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_216
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+The Federal Information Security 
+Modernization Act 
+The Department considered the 
+requirements of the Federal Information Security Modernization Act (FISMA)
+992 
+and whether compliance with FISMA by Federal agencies that are also regulated entities would be comparable to meeting the proposals in this NPRM. FISMA requires each Federal agency to develop, document, and implement an agency-wide program to provide information security for the information and information systems that support the operations and assets of the agency, including those provided or managed by another agency, contractor, or other source.
+993After careful consideration, 
+the Department does not believe that a regulated entity’s compliance with FISMA would necessarily ensure compliance with all applicable proposed requirements in this NPRM because FISMA’s requirements and the Security Rule’s requirements are designed to serve different purposes. FISMA primarily focuses on securing Federal information systems, while the Security Rule applies specifically to ePHI. This NPRM contains specific proposed requirements, not found in FISMA, which are tailored to ensure the confidentiality, integrity, and availability of ePHI. Therefore, although the Department believes that FISMA requirements are consistent with those in the Security Rule and the proposals in this NPRM, we decline to propose that compliance with FISMA requirements would be a comparable alternative to compliance with the proposals in this NPRM. Instead, we believe that FISMA requirements complement the Security Rule and the proposed requirements and will facilitate the ability of regulated entities that are also subject to FISMA to fulfill their compliance with the HIPAA Rules. 
+Modifications to the Definition of 
+‘‘Information System’’ 
+The Department considered proposing 
+additional modifications to the definition of ‘‘information system.’’ The Security Rule currently defines the term ‘‘information system’’ as an interconnected set of information resources under the same direct management control that shares common functionality and includes hardware, software, information, data, applications, communications, and people.
+994This definition is based on 
+the definition of ‘‘general support system’’ or ‘‘system’’ in the appendix to the 1996 version of OMB Circular A– 130, Security of Federal Automated Information Systems.
+995We considered 
+proposing to remove the phrase ‘‘under the same direct management control’’ as a potential way to clarify the application of the definition to cloud-based computing. Cloud computing applications play an important role in health care today. For example, many health care providers have implemented cloud-based electronic health records (EHRs) and practice management systems. These applications are used to create, receive, maintain, and transmit ePHI, and as such, should be included as components of a covered entity’s relevant electronic information system, a term which is based upon the term ‘‘information system.’’ After careful consideration, we have decided to retain the phrase ‘‘under the same direct 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00109 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

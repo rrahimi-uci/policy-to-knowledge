@@ -1,0 +1,662 @@
+{
+  "source_file": "nursing_facility_icpg.pdf",
+  "total_chunks": 39,
+  "chunk_methods": [
+    "toc_based"
+  ],
+  "structure": [
+    {
+      "chunk_id": "nursing_facility_icpg_001",
+      "title": "User’s Guide",
+      "path": "nursing_facility_icpg/user_s_guide.txt",
+      "section_path": [
+        "User’s Guide"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 611
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_002",
+      "title": "Table of Contents + I. Introduction",
+      "path": "nursing_facility_icpg/table_of_contents_i_introduction.txt",
+      "section_path": [
+        "Table of Contents"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "merged_with": "nursing_facility_icpg_003",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 706
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_004",
+      "title": "A. Application of the Nursing Facility ICPG",
+      "path": "nursing_facility_icpg/i_introduction/a_application_of_the_nursing_facility_icpg.txt",
+      "section_path": [
+        "I. Introduction",
+        "A. Application of the Nursing Facility ICPG"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 831
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_005",
+      "title": "B. Motivating Factors",
+      "path": "nursing_facility_icpg/i_introduction/b_motivating_factors.txt",
+      "section_path": [
+        "I. Introduction",
+        "B. Motivating Factors"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 439
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_006",
+      "title": "II. Compliance Risk Areas and Recommendations for Mitigation",
+      "path": "nursing_facility_icpg/ii_compliance_risk_areas_and_recommendations_for_mitigation.txt",
+      "section_path": [
+        "II. Compliance Risk Areas and Recommendations for Mitigation"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 295
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_007",
+      "title": "A. Quality of Care and Quality of Life",
+      "path": "nursing_facility_icpg/ii_compliance_risk_areas_and_recommendations_for_mitigation/a_quality_of_care_and_quality_of_life.txt",
+      "section_path": [
+        "II. Compliance Risk Areas and Recommendations for Mitigation",
+        "A. Quality of Care and Quality of Life"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 1141
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_008",
+      "title": "1. Staffing Levels, Shortages, and Competencies",
+      "path": "nursing_facility_icpg/ii_compliance_risk_areas_and_recommendations_for_mitigation/a_quality_of_care_and_quality_of_life/1_staffing_levels_shortages_and_competencies.txt",
+      "section_path": [
+        "II. Compliance Risk Areas and Recommendations for Mitigation",
+        "A. Quality of Care and Quality of Life",
+        "1. Staffing Levels, Shortages, and Competencies"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 1513
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_009",
+      "title": "2. Appropriate Resident Care Plans and Resident Activities",
+      "path": "nursing_facility_icpg/ii_compliance_risk_areas_and_recommendations_for_mitigation/a_quality_of_care_and_quality_of_life/2_appropriate_resident_care_plans_and_resident_activities.txt",
+      "section_path": [
+        "II. Compliance Risk Areas and Recommendations for Mitigation",
+        "A. Quality of Care and Quality of Life",
+        "2. Appropriate Resident Care Plans and Resident Activities"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 414
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_010",
+      "title": "a. Appropriate Resident Care Plans + b. Resident Activities",
+      "path": "nursing_facility_icpg/ii_compliance_risk_areas_and_recommendations_for_mitigation/a_quality_of_care_and_quality_of_life/2_appropriate_resident_care_plans_and_resident_activities/a_appropriate_resident_care_plans_b_resident_activities.txt",
+      "section_path": [
+        "II. Compliance Risk Areas and Recommendations for Mitigation",
+        "A. Quality of Care and Quality of Life",
+        "2. Appropriate Resident Care Plans and Resident Activities",
+        "a. Appropriate Resident Care Plans"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "nursing_facility_icpg_011",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 838
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_012",
+      "title": "3. Challenges Due to Demographic Changes in the Resident Profile, Higher Resident Acuity Levels, and",
+      "path": "nursing_facility_icpg/ii_compliance_risk_areas_and_recommendations_for_mitigation/a_quality_of_care_and_quality_of_life/3_challenges_due_to_demographic_changes_in_the_resident_profile_higher_resident_acuity_levels_and.txt",
+      "section_path": [
+        "II. Compliance Risk Areas and Recommendations for Mitigation",
+        "A. Quality of Care and Quality of Life",
+        "3. Challenges Due to Demographic Changes in the Resident Profile, Higher Resident Acuity Levels, and Behavioral Health Issues "
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "nursing_facility_icpg_013",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 821
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_014",
+      "title": "5. Appropriate Use of Medications",
+      "path": "nursing_facility_icpg/ii_compliance_risk_areas_and_recommendations_for_mitigation/a_quality_of_care_and_quality_of_life/5_appropriate_use_of_medications.txt",
+      "section_path": [
+        "II. Compliance Risk Areas and Recommendations for Mitigation",
+        "A. Quality of Care and Quality of Life",
+        "5. Appropriate Use of Medications"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 331
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_015",
+      "title": "a. Adequate Indication of Necessary Use",
+      "path": "nursing_facility_icpg/ii_compliance_risk_areas_and_recommendations_for_mitigation/a_quality_of_care_and_quality_of_life/5_appropriate_use_of_medications/a_adequate_indication_of_necessary_use.txt",
+      "section_path": [
+        "II. Compliance Risk Areas and Recommendations for Mitigation",
+        "A. Quality of Care and Quality of Life",
+        "5. Appropriate Use of Medications",
+        "a. Adequate Indication of Necessary Use"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "word_count": 788
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_016",
+      "title": "Minimizing Conflicts of Interest",
+      "path": "nursing_facility_icpg/ii_compliance_risk_areas_and_recommendations_for_mitigation/a_quality_of_care_and_quality_of_life/5_appropriate_use_of_medications/minimizing_conflicts_of_interest.txt",
+      "section_path": [
+        "II. Compliance Risk Areas and Recommendations for Mitigation",
+        "A. Quality of Care and Quality of Life",
+        "5. Appropriate Use of Medications",
+        "Minimizing Conflicts of Interest"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "word_count": 383
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_017",
+      "title": "6. Resident Safety",
+      "path": "nursing_facility_icpg/ii_compliance_risk_areas_and_recommendations_for_mitigation/a_quality_of_care_and_quality_of_life/6_resident_safety.txt",
+      "section_path": [
+        "II. Compliance Risk Areas and Recommendations for Mitigation",
+        "A. Quality of Care and Quality of Life",
+        "6. Resident Safety"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 373
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_018",
+      "title": "a. Resident Abuse and Neglect ",
+      "path": "nursing_facility_icpg/ii_compliance_risk_areas_and_recommendations_for_mitigation/a_quality_of_care_and_quality_of_life/6_resident_safety/a_resident_abuse_and_neglect.txt",
+      "section_path": [
+        "II. Compliance Risk Areas and Recommendations for Mitigation",
+        "A. Quality of Care and Quality of Life",
+        "6. Resident Safety",
+        "a. Resident Abuse and Neglect "
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "word_count": 680
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_019",
+      "title": "b. Staff Screening + c. Emergency Preparedness and Life Safety",
+      "path": "nursing_facility_icpg/ii_compliance_risk_areas_and_recommendations_for_mitigation/a_quality_of_care_and_quality_of_life/6_resident_safety/b_staff_screening_c_emergency_preparedness_and_life_safety.txt",
+      "section_path": [
+        "II. Compliance Risk Areas and Recommendations for Mitigation",
+        "A. Quality of Care and Quality of Life",
+        "6. Resident Safety",
+        "b. Staff Screening"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "nursing_facility_icpg_020",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 824
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_021",
+      "title": "d. Infection Control + e. Facility-Initiated Discharges",
+      "path": "nursing_facility_icpg/ii_compliance_risk_areas_and_recommendations_for_mitigation/a_quality_of_care_and_quality_of_life/6_resident_safety/d_infection_control_e_facility_initiated_discharges.txt",
+      "section_path": [
+        "II. Compliance Risk Areas and Recommendations for Mitigation",
+        "A. Quality of Care and Quality of Life",
+        "6. Resident Safety",
+        "d. Infection Control"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "nursing_facility_icpg_022",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 1261
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_023",
+      "title": "B. Medicare and Medicaid Billing Requirements",
+      "path": "nursing_facility_icpg/ii_compliance_risk_areas_and_recommendations_for_mitigation/b_medicare_and_medicaid_billing_requirements.txt",
+      "section_path": [
+        "II. Compliance Risk Areas and Recommendations for Mitigation",
+        "B. Medicare and Medicaid Billing Requirements"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 421
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_024",
+      "title": "1. SNF Prospective Payment System (PPS)",
+      "path": "nursing_facility_icpg/ii_compliance_risk_areas_and_recommendations_for_mitigation/b_medicare_and_medicaid_billing_requirements/1_snf_prospective_payment_system_pps.txt",
+      "section_path": [
+        "II. Compliance Risk Areas and Recommendations for Mitigation",
+        "B. Medicare and Medicaid Billing Requirements",
+        "1. SNF Prospective Payment System (PPS)"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 644
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_025",
+      "title": "2. Value-Based Payment Models and Programs + 3. Medicare Advantage and Medicaid Managed Care ",
+      "path": "nursing_facility_icpg/ii_compliance_risk_areas_and_recommendations_for_mitigation/b_medicare_and_medicaid_billing_requirements/2_value_based_payment_models_and_programs_3_medicare_advantage_and_medicaid_managed_care.txt",
+      "section_path": [
+        "II. Compliance Risk Areas and Recommendations for Mitigation",
+        "B. Medicare and Medicaid Billing Requirements",
+        "2. Value-Based Payment Models and Programs"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "nursing_facility_icpg_026",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 758
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_027",
+      "title": "4. Medicare Part D + 5. Medicare Health Plan Enrollment for Nursing Facility Residents",
+      "path": "nursing_facility_icpg/ii_compliance_risk_areas_and_recommendations_for_mitigation/b_medicare_and_medicaid_billing_requirements/4_medicare_part_d_5_medicare_health_plan_enrollment_for_nursing_facility_residents.txt",
+      "section_path": [
+        "II. Compliance Risk Areas and Recommendations for Mitigation",
+        "B. Medicare and Medicaid Billing Requirements",
+        "4. Medicare Part D"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "nursing_facility_icpg_028",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 758
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_029",
+      "title": "Federal Anti-Kickback Statute",
+      "path": "nursing_facility_icpg/ii_compliance_risk_areas_and_recommendations_for_mitigation/federal_anti_kickback_statute.txt",
+      "section_path": [
+        "II. Compliance Risk Areas and Recommendations for Mitigation",
+        "Federal Anti-Kickback Statute"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 794
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_030",
+      "title": "1. Free (or Below Fair Market Value) Goods and Services + 2. Discounts",
+      "path": "nursing_facility_icpg/ii_compliance_risk_areas_and_recommendations_for_mitigation/federal_anti_kickback_statute/1_free_or_below_fair_market_value_goods_and_services_2_discounts.txt",
+      "section_path": [
+        "II. Compliance Risk Areas and Recommendations for Mitigation",
+        "Federal Anti-Kickback Statute",
+        "1. Free (or Below Fair Market Value) Goods and Services"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "nursing_facility_icpg_031",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 870
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_032",
+      "title": "a. Price Reductions + Swapping",
+      "path": "nursing_facility_icpg/ii_compliance_risk_areas_and_recommendations_for_mitigation/federal_anti_kickback_statute/2_discounts/a_price_reductions_swapping.txt",
+      "section_path": [
+        "II. Compliance Risk Areas and Recommendations for Mitigation",
+        "Federal Anti-Kickback Statute",
+        "2. Discounts",
+        "a. Price Reductions"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "nursing_facility_icpg_033",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 866
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_034",
+      "title": "3. Arrangements for Services and Supplies + 4. Long-Term Care Pharmacy and Consultant Pharmacist Arr",
+      "path": "nursing_facility_icpg/ii_compliance_risk_areas_and_recommendations_for_mitigation/federal_anti_kickback_statute/3_arrangements_for_services_and_supplies_4_long_term_care_pharmacy_and_consultant_pharmacist_arr.txt",
+      "section_path": [
+        "II. Compliance Risk Areas and Recommendations for Mitigation",
+        "Federal Anti-Kickback Statute",
+        "3. Arrangements for Services and Supplies"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "nursing_facility_icpg_035",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 760
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_036",
+      "title": "5. Hospital Arrangements",
+      "path": "nursing_facility_icpg/ii_compliance_risk_areas_and_recommendations_for_mitigation/federal_anti_kickback_statute/5_hospital_arrangements.txt",
+      "section_path": [
+        "II. Compliance Risk Areas and Recommendations for Mitigation",
+        "Federal Anti-Kickback Statute",
+        "5. Hospital Arrangements"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 366
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_037",
+      "title": "a. General + b. Payments to Expedite Admission of Hospital Patients to a Nursing Facility",
+      "path": "nursing_facility_icpg/ii_compliance_risk_areas_and_recommendations_for_mitigation/federal_anti_kickback_statute/5_hospital_arrangements/a_general_b_payments_to_expedite_admission_of_hospital_patients_to_a_nursing_facility.txt",
+      "section_path": [
+        "II. Compliance Risk Areas and Recommendations for Mitigation",
+        "Federal Anti-Kickback Statute",
+        "5. Hospital Arrangements",
+        "a. General"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "nursing_facility_icpg_038",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 821
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_039",
+      "title": "i. Payments to Accept a Discharged Patient + ii. Payments to Reserve or Hold Beds ",
+      "path": "nursing_facility_icpg/ii_compliance_risk_areas_and_recommendations_for_mitigation/federal_anti_kickback_statute/5_hospital_arrangements/b_payments_to_expedite_admission_of_hospital_patients_to_a_nursing_facility/i_payments_to_accept_a_discharged_patient_ii_payments_to_reserve_or_hold_beds.txt",
+      "section_path": [
+        "II. Compliance Risk Areas and Recommendations for Mitigation",
+        "Federal Anti-Kickback Statute",
+        "5. Hospital Arrangements",
+        "b. Payments to Expedite Admission of Hospital Patients to a Nursing Facility",
+        "i. Payments to Accept a Discharged Patient"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "merged_with": "nursing_facility_icpg_040",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 885
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_041",
+      "title": "6. Hospice Arrangements",
+      "path": "nursing_facility_icpg/ii_compliance_risk_areas_and_recommendations_for_mitigation/federal_anti_kickback_statute/6_hospice_arrangements.txt",
+      "section_path": [
+        "II. Compliance Risk Areas and Recommendations for Mitigation",
+        "Federal Anti-Kickback Statute",
+        "6. Hospice Arrangements"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 822
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_042",
+      "title": "7. Care Coordination and Value-Based Care Arrangements  + 8. Joint Ventures",
+      "path": "nursing_facility_icpg/ii_compliance_risk_areas_and_recommendations_for_mitigation/federal_anti_kickback_statute/7_care_coordination_and_value_based_care_arrangements_8_joint_ventures.txt",
+      "section_path": [
+        "II. Compliance Risk Areas and Recommendations for Mitigation",
+        "Federal Anti-Kickback Statute",
+        "7. Care Coordination and Value-Based Care Arrangements "
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "nursing_facility_icpg_043",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 1337
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_044",
+      "title": "D. Other Risk Areas",
+      "path": "nursing_facility_icpg/ii_compliance_risk_areas_and_recommendations_for_mitigation/d_other_risk_areas.txt",
+      "section_path": [
+        "II. Compliance Risk Areas and Recommendations for Mitigation",
+        "D. Other Risk Areas"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 465
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_045",
+      "title": "1. Related-Party Transactions + 2. Physician Self-Referral Law",
+      "path": "nursing_facility_icpg/ii_compliance_risk_areas_and_recommendations_for_mitigation/d_other_risk_areas/1_related_party_transactions_2_physician_self_referral_law.txt",
+      "section_path": [
+        "II. Compliance Risk Areas and Recommendations for Mitigation",
+        "D. Other Risk Areas",
+        "1. Related-Party Transactions"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "nursing_facility_icpg_046",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 868
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_047",
+      "title": "Anti-Supplementation + 4. HIPAA Privacy, Security, and Breach Notification Rules",
+      "path": "nursing_facility_icpg/ii_compliance_risk_areas_and_recommendations_for_mitigation/d_other_risk_areas/anti_supplementation_4_hipaa_privacy_security_and_breach_notification_rules.txt",
+      "section_path": [
+        "II. Compliance Risk Areas and Recommendations for Mitigation",
+        "D. Other Risk Areas",
+        "Anti-Supplementation"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "nursing_facility_icpg_048",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 842
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_049",
+      "title": "5. Civil Rights ",
+      "path": "nursing_facility_icpg/ii_compliance_risk_areas_and_recommendations_for_mitigation/d_other_risk_areas/5_civil_rights.txt",
+      "section_path": [
+        "II. Compliance Risk Areas and Recommendations for Mitigation",
+        "D. Other Risk Areas",
+        "5. Civil Rights "
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 732
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_050",
+      "title": "III. Other Compliance, Quality, and Resident Safety Considerations",
+      "path": "nursing_facility_icpg/iii_other_compliance_quality_and_resident_safety_considerations.txt",
+      "section_path": [
+        "III. Other Compliance, Quality, and Resident Safety Considerations"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 402
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_051",
+      "title": "A. Oversight Role of Responsible Individuals  + B. Compliance Officer Experience",
+      "path": "nursing_facility_icpg/iii_other_compliance_quality_and_resident_safety_considerations/a_oversight_role_of_responsible_individuals_b_compliance_officer_experience.txt",
+      "section_path": [
+        "III. Other Compliance, Quality, and Resident Safety Considerations",
+        "A. Oversight Role of Responsible Individuals "
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "merged_with": "nursing_facility_icpg_052",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 801
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_053",
+      "title": "C. Role of the Compliance Committee in Supporting Collaboration and Alignment Between Compliance and",
+      "path": "nursing_facility_icpg/iii_other_compliance_quality_and_resident_safety_considerations/c_role_of_the_compliance_committee_in_supporting_collaboration_and_alignment_between_compliance_and.txt",
+      "section_path": [
+        "III. Other Compliance, Quality, and Resident Safety Considerations",
+        "C. Role of the Compliance Committee in Supporting Collaboration and Alignment Between Compliance and Quality Functions"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "merged_with": "nursing_facility_icpg_054",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 843
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_055",
+      "title": "E. Risk Assessment, Internal Review, and Monitoring Processes + F. Reporting Requirements",
+      "path": "nursing_facility_icpg/iii_other_compliance_quality_and_resident_safety_considerations/e_risk_assessment_internal_review_and_monitoring_processes_f_reporting_requirements.txt",
+      "section_path": [
+        "III. Other Compliance, Quality, and Resident Safety Considerations",
+        "E. Risk Assessment, Internal Review, and Monitoring Processes"
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "merged_with": "nursing_facility_icpg_056",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 968
+      }
+    },
+    {
+      "chunk_id": "nursing_facility_icpg_057",
+      "title": "IV. Conclusion  + Stay Up To Date",
+      "path": "nursing_facility_icpg/iv_conclusion_stay_up_to_date.txt",
+      "section_path": [
+        "IV. Conclusion "
+      ],
+      "metadata": {
+        "source_file": "nursing_facility_icpg.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "merged_with": "nursing_facility_icpg_058",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 552
+      }
+    }
+  ]
+}

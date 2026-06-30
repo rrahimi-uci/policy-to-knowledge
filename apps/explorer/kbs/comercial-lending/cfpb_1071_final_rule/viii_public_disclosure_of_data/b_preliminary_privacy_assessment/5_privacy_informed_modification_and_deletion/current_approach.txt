@@ -1,0 +1,85 @@
+# Current Approach
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_698
+**Pages:** 685-686
+**Section Path:** VIII. Public Disclosure of Data > B. Preliminary Privacy Assessment > 5. Privacy-informed Modification and Deletion > Current Approach
+
+---
+
+685 at the application level, the Bureau s hould aggregate any data points that present re -identification 
+risk. 
+Recoding.  Several community  group commenters  stated that if the disclosure of 1071 
+data fields present significant privacy risks, the Bureau should consider  binning data or 
+disclos ing intervals of values. For example, these commenters stated that when disclosing gross 
+annual revenue data, the Bureau could consider publishing data in $10,000 increments. One 
+stated that binning would be appropriate as long as the modified public 1071 dataset  could 
+satisfy the fair lending and business and community development statutory purposes of section 1071.  
+Other commenters stated that the use of binning should be limited. A community group 
+and a software vendor stated that if the Bureau bins data, it should ensure that the public 1071 
+dataset remains sufficiently detailed to allow meaningful analysis. To demonstrate this point, the 
+community group asserted that t he current CRA system of combining all loans for  businesses 
+with revenue under $1 million doe s not allow for analysis of small businesses within that range. 
+The software vendor cautioned that binning may not always be effective.  
+Other techniques . With respect to other modification techniques discussed in the NPRM, 
+a community group stated that da ta swapping and targeted suppression  would be appropriate as 
+long as the modified public 1071 dataset could satisfy the fair lending and business and 
+community development statutory purposes of section 1071.  The Bureau received no comments 
+about other pote ntial modification techniques.  
+Current Approach  
+The Bureau intends to consider modification and deletion techniques as necessary to 
+reduce cognizable privacy risks. The  Bureau agrees with comments that a robust public dataset 
+will serve the statutory objec tives of section 1071.
+894 By extension, a public application-level 
+dataset with less detailed data or that omits certain data points entirely would confer relatively less public benefit. These benefits notwithstanding,  in some cases modification and deletion 
+decisions may be appropriate to protect privacy interests. The statute empowers the Bureau to 
+modify or delete data, and the Bureau believes that modifications or deletions may be 
+appropriate in some circumstances to  reduce the cognizable privacy risks set forth above.  
+Modifications or deletions will not necessarily undermine the utility of the published data 
+or will not be futile because they will not mitigate risks. With respect to the effectiveness of 
+modification s and deletion techniques, the Bureau points to the lack of reported incidents in 
+which an individual has been re -identified in  public  HMDA data, which the Bureau modifies to 
+reduce re-identification risk. The Bureau concludes that targeted modification an d deletion 
+decisions can adequately reduce privacy risks while preserving the utility of 1071 data, as is the case with HMDA data. Modifications and deletions may be necessary, for example, in cases 
+ 
+894 The Bureau lacks evidence to assess the comment that published data would promote financial stability. If true, 
+this result would align with the Bureau ’s authorizing statute whose purpose, in part, is to “ promote the financial 
+stability of the United States by improving accountability and transparency in the financial system.” Dodd -Frank 
+Wall Street Reform and Consumer Protection Act, Pub. L. 111 -203, 124 Stat. 1376 (2010).
+
+686 where unmodified application-level data will likely lead to re -identification of small business 
+applicants or related natural persons. The Bureau will also consider modifications and deletions 
+to the public 1071 dataset when data fields, individually or in combination with other data, pose 
+cognizable privacy ris ks, as discussed above.  
+After  obtaining a full year of reported data and conducting a full privacy analysis, the 
+Bureau intends to make modification and deletion decisions tailored for individual data  points 
+where appropriate. The Bureau will not delete o r modify data solely to align with HMDA 
+practice.  Small business lending and mortgage lending are distinct markets which face their own 
+unique privacy risks , and r e-identification risk depends on the characteristics of particular data.  
+With respect to comm ents about modifying or deleting  data that may convey the gender identity  
+or sexual orientation of applicants ’ principal owners or other individuals that own or control 
+applicants , the Bureau views this as sensitive information that implicates important pe rsonal 
+privacy interests. While the Bureau is not  making modification and deletion decisions about this 
+information prior to conducting the full privacy analysis,  it does intend to give significant 
+consideration to personal privacy interests . However, it w ould not be feasible to make 
+modification and deletion decisions on a loan-by -loan basis, as one comment suggested.  
+Regarding feedback on specific modification techniques, the Bureau does not intend to 
+publish aggregate data instead of application-level data. Aggregate datasets do not permit the 
+detailed , application -level analys es that best facilitate  the fair lending enforcement and business 
+and community development  purposes of section 1071. In addition, the Bureau can adequately 
+mitigate privacy risks through targeted modification and deletions of individual data fields —it is 
+not necessary to avoid publi cation of all application -level data. While the Bureau does not intend 
+to publish aggregate data in place of an application-level dataset, it anticipates releasing select  
+aggregated data before it publishes application -level data . 
+The Bureau sees  recoding,  including binning data or disclosing intervals, as an 
+appropriate modification technique to address privacy risks that may be posed by public release 
+of unmodified data. While the Bureau is not making specific modification decisions at this time, 
+it inten ds to consider recoding data in a targeted manner that preserves the utility of the public 
+dataset. The Bureau also views  other modification techniques, including data swapping and 
+targeted suppression, as  appropriate tools to address privacy risks. Finali zing the exact tool set, 
+however, will depend on securing a full year of data and will be informed by continued engagement with stakeholders.  
+When exercising its discretion to modify or delete 1071 data, the Bureau anticipates 
+publishing  data in a manner t hat reduces  privacy risks, in particular re -identification risk. If the 
+Bureau determines that it is necessary to modify an individual data point to address a privacy risk, the Bureau intends to consider a range of modification techniques, including, but not limited 
+to, recoding, data swapping, and targeted suppression.  The Bureau intends to engage with 
+stakeholders in the future about these issues, including providing opportunities for additional input as the Bureau considers its privacy analysis further.

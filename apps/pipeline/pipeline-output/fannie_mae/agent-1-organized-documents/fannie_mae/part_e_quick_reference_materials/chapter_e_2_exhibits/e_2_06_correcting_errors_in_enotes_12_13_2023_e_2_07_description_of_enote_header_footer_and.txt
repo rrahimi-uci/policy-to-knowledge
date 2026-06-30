@@ -1,0 +1,113 @@
+# E-2-06, Correcting Errors in eNotes (12/13/2023) + E-2-07, Description of eNote Header, Footer, and 
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_529
+**Pages:** 1135-1137
+**Section Path:** Part E, Quick Reference Materials > Chapter E-2, Exhibits > E-2-06, Correcting Errors in eNotes (12/13/2023)
+
+---
+
+Published March 4, 2026
+1117EXHIBIT A
+TO MORTGAGE LOAN SERVICING PURCHASE AND SALE AGREEMENT
+REPURCHASE SERVICING RELEASED PREMIUM SCHEDULE
+37 to 60 months 25%
+Greater than 60 months 0%
+E-2-06, Correcting Errors in eNotes (12/13/2023)
+Introduction
+This exhibit contains the following information
+Permitted Clerical Errors in eNotes
+Errors Requiring a New Note
+Permitted Clerical Errors in eNotes
+Clerical Error Description
+Execution city• Must be present on eNote
+• Misspelling can be corrected via a correction agreement
+Execution state• Must be present on eNote
+• Misspelling can be corrected via a correction agreement
+• Incorrect state cannot be corrected via a correction agreement
+Property address• Misspelling of the street name can be corrected via a correction agreement
+• Incomplete or incorrect property number address requires a new Note be executed
+Lender name• Misspelling can be corrected via a correction agreement
+• Missing or incorrect lender name requires a new Note be executed
+• Lenders are reminded that they must use their legal name, in accordance with B8-8-02,
+Requirements for Creating, Closing, and Correcting eNotes
+Borrower printed name below signature line• Must be present
+• Misspelling, including the addition of a middle initial or suﬃx, can be corrected via a correction
+agreement, including a name aﬃdavit.
+• Missing or incorrect name requires a new Note be executed
+ 
+Errors Requiring a New Note
+
+Published March 4, 2026
+1118If errors are identiﬁed in the following ﬁelds, an eNote correction agreement cannot be used to amend the
+eNote and a new note will need to be produced and executed with the correction(s):
+MERS MIN
+Note Date
+Original Loan Amount
+Note Rate
+Maturity Date
+Payment Amount (P&I)
+Mortgage Margin
+1st Rate Chg Cap Up
+1st Rate Chg Cap Dwn
+Lifetime Cap Up
+Lifetime Cap Dwn
+Registry Operator Tag
+E-2-07, Description of eNote Header, Footer, and eNote Clause
+(12/13/2023)
+Introduction
+This exhibit provides the description of eNote header, footer, and eNote clause.
+Descriptions
+Descriptions
+a) eNote Header
+The Uniform eNote has a new line below the word "Note" that serves as an additional reminder that the eNote is
+designed only for electronic signatures. The word "Note" should be replaced by: 
+Note
+(For Electronic Signature)
+ 
+b) eNote Footer
+The footer for an eNote is similar to the document footer that appears on our standard mortgage and deed of
+trust notes, except for the identiﬁcation of the document as an eNote.
+                         Fixed-rate tagline:  MULTISTATE FIXED RATE eNOTE--Single Family -- Fannie Mae/Freddie Mac
+Uniform Instrument Form 3200e
+
+Published March 4, 2026
+1119                         For state-speciﬁc ﬁxed-rate notes the tagline will be the Form number followed by "e" with the
+date of 07/2021. Example:
+                         PENNSYLVANIA FIXED RATE eNOTE--Single Family -- Fannie Mae/Freddie Mac UNIFORM
+INSTRUMENT Form 3239e 07/2021
+                         ARM tagline: MULTISTATE ADJUSTABLE RATE eNOTE-30-day Average SOFR--Single Family--
+Fannie Mae/Freddie Mac UNIFORM INSTRUMENT Form 3441e 07/2021
+                         For state-speciﬁc ARM-rate notes the tagline will be the Form number followed by "e" with the
+date of 07/2021. Example:
+                         ALASKA ADJUSTABLE RATE eNOTE-30-day Average SOFR--Single Family--Fannie Mae/Freddie
+Mac UNIFORM INSTRUMENT Form 3441.02e07/2021
+ 
+c) eNote Clause
+An electronic Note must contain a new section as follows as the last section of the Note preceding the signature
+block with the appropriate number (e.g., #11 for Form 3200, #12 for Form 3210):
+"[##]. ISSUANCE OF TRANSFERABLE RECORD (ELECTRONICE NOTE)
+(A) Deﬁnitions
+The following terms used in this Section 11 are deﬁned as set forth below: (1) "Authoritative Copy" will have the
+meaning ascribed to such term in the UETA and E-SIGN (both as deﬁned below), as amended from time to time;
+(2) "Electronic Note" means an electronically created note; (3) "Electronic Record" means a Record created,
+generated, sent, communicated, received, or stored by electronic means; (4) "Electronic Signature" means an
+electronic symbol or process attached to or logically associated with a record and executed or adopted by a
+person with the intent to sign a record; (5) "E-SIGN" means the Electronic Signatures in Global and National
+Commerce Act, codiﬁed at 15 U.S.C. § 7001 et seq., as it may be amended from time to time, or any applicable
+additional or successor legislation that governs the same subject matter; (6) "Note Holder Registry" means a
+registry system that is used to record the issuance and transfer of Electronic Notes; (7) "Paper Note" means an
+Electronic Note that is converted into a paper note; (8) "Record" means information that is inscribed on a
+tangible medium or that is stored in an electronic or other medium and is retrievable in perceivable form; (9)
+"Transferable Record" means an Electronic Record that: (i) would be a note under Article 3 of the Uniform
+Commercial Code if the Electronic Record were in writing and (ii) I, as the issuer, have agreed is a Transferable
+Record; and (10) "UETA" means the Uniform Electronic Transactions Act, as enacted by the jurisdiction in which
+the property is located, as may be amended from time to time, or any applicable additional or successor
+legislation that governs the same subject matter.
+(B) Issuance of Transferable Record
+I have signed this Electronic Note using my adopted Electronic Signature. By signing this Electronic Note using
+my adopted Electronic Signature, I am: (1) promising to pay the amount owed, as evidenced by this Electronic
+Note, to the Note Holder, and (2) agreeing that this Electronic Note is a valid, enforceable and eﬀective
+Transferable Record issued by me to the Note Holder under the transferable records provisions of UETA and E-
+SIGN. By virtue of my agreements above, this Electronic Note is a Transferable Record. 
+(C)  Identiﬁcation of Registry and Note Holder

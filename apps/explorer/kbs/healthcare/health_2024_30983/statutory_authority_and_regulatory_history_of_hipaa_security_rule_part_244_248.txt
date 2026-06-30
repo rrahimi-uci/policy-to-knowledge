@@ -1,0 +1,35 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 244/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_244
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+recovery—(1) General. Deploy technical 
+controls to create and maintain exact retrievable copies of electronic protected health information. 
+(2) Implementation specifications—(i) 
+Data backup. Create backups of electronic protected health information in accordance with the policies and procedures required by § 164.308(a)(13)(ii)(B) and with such frequency to ensure retrievable copies of electronic protected health information are no more than 48 hours older than the electronic protected health information maintained in the covered entity or business associate’s relevant electronic information systems. 
+(ii) Monitor and identify. Deploy 
+technical controls that, in real-time, monitor, and alert workforce members about, any failures and error conditions of the backups required by paragraph (i)(2)(i) of this section. 
+(iii) Record. Deploy technical controls 
+that record the success, failure, and any error conditions of backups required by paragraph (i)(2)(i) of this section. 
+(iv) Testing. Restore a representative 
+sample of electronic protected health information backed up as required by paragraph (i)(2)(i) of this section, and document the results of such test restorations at least monthly. 
+(j) Standard: Information systems 
+backup and recovery. Deploy technical controls to create and maintain backups of relevant electronic information systems; and review and test the effectiveness of such technical controls at least once every six months or in response to environmental or operational changes, whichever is more frequent, and modify as reasonable and appropriate. 
+§ 164.314 Organizational requirements. 
+(a)(1) Standard: Business associate 
+contracts or other arrangements. The contract or other arrangement required by § 164.308(b)(2) must meet the requirements of paragraph (a)(2)(i), (ii), or (iii) of this section, as applicable. 
+(2) Implementation specifications—(i) 
+Business associate contracts. The contract must provide that the business associate will do all of the following: 
+(A) Comply with the applicable 
+requirements of this subpart. 
+(B) In accordance with 
+§ 164.308(b)(1)(ii), ensure that any subcontractors that create, receive, maintain, or transmit electronic protected health information on behalf of the business associate agree to comply with the applicable requirements of this subpart by entering into a contract or other arrangement that complies with this section. 
+(C) Report to the covered entity any 
+security incident of which it becomes aware, including breaches of unsecured electronic protected health information as required by § 164.410. 
+(D) Report to the covered entity 
+activation of its contingency plan under § 164.308(a)(13) without unreasonable 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00123 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

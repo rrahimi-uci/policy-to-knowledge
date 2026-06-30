@@ -1,0 +1,49 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 239/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_239
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+1017 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+of this section at least once every 12 
+months or in response to environmental or operational changes, whichever is more frequent, and modify as reasonable and appropriate. 
+§ 164.312 Technical safeguards. 
+Each covered entity or business 
+associate must, in accordance with §§ 164.306 and 164.316, implement all of the following technical safeguards, including technical controls, to protect the confidentiality, integrity, and availability of all electronic protected health information that it creates, receives, maintains, or transmits: 
+(a) Standard: Access control—(1) 
+General. Deploy technical controls in 
+relevant electronic information systems to allow access only to users and technology assets that have been granted access rights. 
+(2) Implementation specifications—(i) 
+Unique identification. Assign a unique name, number, and/or other identifier for tracking each user and technology asset in the covered entity or business associate’s relevant electronic information systems. 
+(ii) Administrative and increased 
+access privileges. Separate user identities from identities used for administrative and other increased access privileges. 
+(iii) Emergency access procedure. 
+Establish (and implement as needed) written and technical procedures for obtaining necessary electronic protected health information during an emergency. 
+(iv) Automatic logoff. Deploy 
+technical controls that terminate an electronic session after a predetermined time of inactivity that is reasonable and appropriate. 
+(v) Log-in attempts. Deploy technical 
+controls that disable or suspend the access of a user or technology asset to relevant electronic information systems after a reasonable and appropriate predetermined number of unsuccessful authentication attempts. 
+(vi) Network segmentation. Deploy 
+technical controls to ensure that the covered entity’s or business associate’s relevant electronic information systems are segmented in a reasonable and appropriate manner. 
+(vii) Data controls. Deploy technical 
+controls to allow access to electronic protected health information only to those users and technology assets that have been granted access rights to the covered entity’s or business associate’s relevant electronic information systems as specified in § 164.308(a)(10). 
+(viii) Maintenance. Review and test 
+the effectiveness of the procedures and technical controls required by this paragraph (a)(2) at least once every 12 months or in response to environmental or operational changes, whichever is more frequent, and modify as reasonable and appropriate. 
+(b) Standard: Encryption and 
+decryption—(1) General. Deploy 
+technical controls to encrypt and decrypt electronic protected health information using encryption that meets prevailing cryptographic standards. 
+(2) Implementation specification. 
+Encrypt all electronic protected health information at rest and in transit, except to the extent that an exception at paragraph (b)(3) of this section applies. 
+(3) Exceptions. This paragraph (b)(3) 
+applies only to the electronic protected health information directly affected by one or more of the following exceptions and only to the extent that the covered entity or business associate documents that an exception applies and that all other applicable conditions are met. 
+(i) The technology asset in use does 
+not support encryption of the electronic protected health information consistent with prevailing cryptographic standards, and the covered entity or business associate establishes and implements a written plan to migrate electronic protected health information to a technology asset that supports encryption consistent with prevailing cryptographic standards within a reasonable and appropriate period of time. 
+(ii) An individual requests pursuant 
+to § 164.524 to receive their electronic protected health information in an unencrypted manner and has been informed of the risks associated with the transmission, receipt, and storage of unencrypted electronic protected health information. This exception does not apply where such individual will receive their electronic protected health information pursuant to § 164.524 and the technology used by the individual to receive the electronic protected health information is controlled by the covered entity or its business associate. 
+(iii) During an emergency or other 
+occurrence that adversely affects the covered entity’s or business associate’s relevant electronic information systems in which encryption is infeasible, and the covered entity or business associate implements reasonable and appropriate compensating controls in accordance with and determined by the covered entity’s or business associate’s contingency plan under § 164.308(a)(13). 
+(iv) The technology asset in use is a 
+device under section 201(h) of the Food, Drug, and Cosmetic Act, 21 U.S.C. 321(h) that has been authorized for marketing by the Food and Drug

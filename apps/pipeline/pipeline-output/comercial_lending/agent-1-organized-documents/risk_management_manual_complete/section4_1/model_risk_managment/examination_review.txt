@@ -1,0 +1,80 @@
+# Examination Review
+
+**Source:** risk_management_manual_complete.pdf
+**Chunk ID:** risk_management_manual_complete_517
+**Pages:** 208-208
+**Section Path:** section4-1 > MODEL RISK MANAGMENT > Examination Review
+
+---
+
+MANAGEMENT  Section 4. 1 
+RMS Manual of Examination Policies  4.1-17 Management (10/2025) 
+Federal Deposit Insurance Corporation   
+An effective model risk management framework includes:  
+• Disciplined and knowledgeable model development processes that are well documented and conceptually 
+sound, with controls to ensure proper implementation and processes to ensure correct and appropriate use;  
+• Effective validation processes; and  
+• Strong governance, policies, and controls.  
+ Tools used for simple mathematical calculations are generally not considered models, but should nonetheless be 
+subject to a reasonable control process.  
+ 
+Model Development, Implementation, and Use  
+ Disciplined and knowledgeable development and implementation processes that are consistent with the model’s intended use  and with bank policy are critical to 
+appropriately managing model risk.  There are many important aspects to model development and 
+implementation, including:   
+• A clear statement of purpose to ensure development is 
+aligned with intended use;  
+• Design, theory, and logic that are well documented and 
+supported;  
+• Rigorous assessment and documentation of data quality 
+and relevance;  
+• Documented testing during model development to 
+determine whether the m odel is performing as 
+intended; and  
+• Controls and testing for model implementation and 
+systems integration.   
+Model use provides additional opportunity to test whether a 
+model is functioning effectively and to assess its performance over time as conditions and model applications change.  Also, an understanding of model uncertainty and inaccuracy and a demonstration that the bank is accounting 
+for them appropriately are important outcomes of effective 
+model development, implementation, and use.   
+ 
+Model Validation 
+ Model validation is the set of processes and activities 
+intended to verify that models are performing as expected, 
+in line with their design objectives and business uses.  Effective validation helps ensure that models are sound.  It also identifies potential limitations and assumptions, and assesses their possible impact.  Independence, competence, knowledge, skills, expertise, incentives, influence, and 
+authorities of staff conducting validation are important 
+elements of model validation.    Key elements of comprehensive validation include:  evaluation of conceptual soundness, ongoing monitoring, 
+and outcomes analysis.   • Evaluation of conceptual soundness includes assessing the quality of the model design and construction, a 
+review of documentation supporting the methods used 
+and variables selected for the model, sensitivity analysis (where appropriate), and evaluating qua litative 
+information and judgment.   
+• Ongoing monitoring includes  designing a program of 
+ongoing testing and evaluation of model performance 
+to confirm that the model is appropriately implemented 
+and is being used and is performing as intended, which may include process verification and benchmarking.   
+• Outcomes analysis, including backtesting, includes a comparison of model outputs to corresponding actual 
+outcomes, with the precise nature of comparisons 
+depending on the objectives of a model.  
+ 
+Governance, Policies, and Controls 
+ Developing and maintaining strong governance, policies, and controls over the model risk management framework is 
+fundamentally important to its effectiveness.  Even if model 
+development, implementation, use, and validation are satisfactory, a weak governan ce function will reduce the 
+effectiveness of overall model risk management.  A strong governance framework provides explicit support and structure to risk management functions through policies 
+defining relevant risk management activities, procedures 
+that implement those policies, allocation of resources, and mechanisms for evaluating whether policies and procedures are being carried out as specified.  Notably, the extent and sophistication of a bank’s governance function is expected to align with the extent and sophistication of model usage.   
+ 
+Examination Review 
+ Examination planning contact with bank management, as 
+well as interim contacts, provides examination staff with opportunities to discuss the extent of model use and 
+determine whether there are any material changes since the 
+prior examination.  If management indicates new model use 
+or material changes since the prior examination, examiners should consider asking some additional questions to assist in exam scoping and to appropriately tailor  the request list.  
+For example, ask management:  
+ 
+• Where model risk management is addressed in 
+policies and whether there are any procedures , 
+standards or monitoring practices the bank may have that address model risk management practices.   
+• Whether the bank maintains a model inventory.  While banks are not required to maintain a model inventory, identifying  models used across the bank 
+can be an important practice to assist in model risk management.  For banks with minimal model use, 
+model risk, and model complexity, the inventory may

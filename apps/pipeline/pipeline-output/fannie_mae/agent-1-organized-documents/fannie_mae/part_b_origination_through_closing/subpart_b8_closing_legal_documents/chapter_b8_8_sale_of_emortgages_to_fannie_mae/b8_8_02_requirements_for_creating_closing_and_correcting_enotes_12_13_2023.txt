@@ -1,0 +1,107 @@
+# B8-8-02, Requirements for Creating, Closing, and Correcting eNotes (12/13/2023)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_431
+**Pages:** 937-939
+**Section Path:** Part B, Origination Through Closing > Subpart B8, Closing: Legal Documents > Chapter B8-8, Sale of eMortgages to Fannie Mae > B8-8-02, Requirements for Creating, Closing, and Correcting eNotes (12/13/2023)
+
+---
+
+Published March 4, 2026
+919Lenders selling eMortgages to Fannie Mae that were originated by a third-party broker or lender are responsible
+for establishing guidelines and procedures to ensure that the loans are created and maintained in accordance
+with the requirements of this Guide. Such guidelines and procedures must be furnished to Fannie Mae upon
+request and may be a requirement for eMortgage approval.
+Servicing
+For complete requirements for servicing eMortgages, refer to Fannie Mae's Servicing Guide .
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2025-09 November 05, 2025
+Announcement SEL-2023-11 December 13, 2023
+ 
+B8-8-02, Requirements for Creating, Closing, and Correcting eNotes
+(12/13/2023)
+Introduction
+This topic contains additional requirements that are applicable to eNotes, including:
+Uniform eNotes
+Record Retention Requirements
+Requirements for Registering eNotes
+Requirements for Correcting eNotes
+Uniform eNotes
+To be eligible for sale to Fannie Mae, eMortgages must be originated using the Uniform Fannie Mae/Freddie Mac
+form of eNote. This form of eNote is created by modifying the appropriate Fannie Mae/Freddie Mac uniform note
+in accordance with E-2-07, Description of eNote Header, Footer, and eNote Clause . Such modiﬁcation includes
+addition of a speciﬁc provision (Section 11, or Section 12 in the case of ARM eNotes) that addresses the
+electronic nature of the note. This special provision also includes reference to the MERS eRegistry. Immediately
+upon execution by the borrower, all eNotes must be registered on the MERS eRegistry and contain a valid,
+
+Published March 4, 2026
+920unique 18-digit Mortgage Identiﬁcation Number (MIN).
+Fannie Mae requires creation of eNotes in the MISMO SMART Doc® format. For additional information, refer to
+Fannie Mae's eMortgage Technical Requirements .
+Note:  To ensure that the eNote is a discrete transferable record, closing instructions or other
+procedures must be created to ensure that the borrower signs only the eNote at closing and does not
+also sign a paper version of the Uniform note.
+Record Retention Requirements
+To preserve the lender's ability to attribute the signer's signature to their identity, certain documents and
+system records must be retained in a manner that will provide Fannie Mae with ready access to such documents
+and records if requested of the lender. For example, the lender must retain evidence of a borrower's identity in
+the loan ﬁle. The lender must collect and retain systems logs and audit trails that establish a temporal and
+process link between the presentation of identity documents and the electronic signing of a document.
+Additionally, the lender must collect evidence of a borrower's agreement to conduct the transaction
+electronically and their execution of a particular electronic signature.
+All ﬁles must be retained for the life of the loan plus seven years. Any ﬁles that a lender maintains must include
+the following:
+the name of the person (and related entity, if the borrower is not a natural person) who signed each
+document in the loan ﬁle,
+the date of the signature,
+the method by which the document was signed, and 
+any relevant identifying (and other) information that can be used to verify the electronic signature and its
+attribution to the signer's identity.
+Lenders must provide Fannie Mae with any audit trail ﬁles requested at any time in a format that is compatible
+with Fannie Mae systems. In the event of a servicing transfer, the lender is required to provide the new servicer
+with all attribution evidence and audit trails associated with the loans being transferred.
+Requirements for Registering eNotes
+The Fannie Mae/Freddie Mac Uniform eNote provides that the Note Holder (as deﬁned in the eNote) will be the
+entity listed in the MERS eRegistry as Controller. Lenders must have process controls in place to ensure eNotes
+are registered in the MERS eRegistry as soon as possible after the tamper-evident seal has been applied, but no
+later than one business day after signing. The record in the MERS eRegistry must reﬂect the originating lender -
+the lender whose name is on the eNote - as the ﬁrst Controller. The following applies to lenders using
+tradenames or assumed names on eNotes:
+the legal entity name must also be included on the eNote (for example, ABC Financial, Inc., dba XYZ
+Mortgage); and
+the initial MERS eRegistry registration must reﬂect the legal entity name as the initial Controller.
+Any and all subsequent transfers of the eNotes - changes of Control - must be reﬂected in the MERS eRegistry.
+Failure to comply with these requirements could render the loan ineligible for sale to Fannie Mae. Refer to the
+
+Published March 4, 2026
+921MERS eRegistry requirements for detailed documentation.
+Requirements for Correcting eNotes
+eNotes containing errors will typically require that a new note be executed. In this instance, once the new note
+has been executed (either in ink-signed paper or as an eNote) the original eNote should be de-activated on the
+MERS eRegistry via a Registration Reversal transaction. For additional questions, lenders should contact Fannie
+Mae's eMortgage Group (see  E-1-02, List of Contacts ). If there are any issues identiﬁed with an eNote after it
+has been sold to Fannie Mae, the Servicer should contact Fannie Mae's eMortgage Custodian Oversight
+Department (see  E-1-02, List of Contacts ) to discuss resolution options.
+eNote Errors Not Requiring a New eNote
+The lender may amend an eNote via an eNote correction agreement, including a name aﬃdavit where
+applicable, executed by both the lender and the borrower, for the clerical errors noted in Exhibit  E-2-06,
+Correcting Errors in eNotes . The eNote correction agreement must include a statement regarding the clertical
+errors that are being corrected within the eNote, and may be executed either electronically or via ink-signed
+paper. Fannie Mae does not prescribe a form of eNote correction agreement or provide a template, as lenders
+must ensure compliance with applicable legal requirements in the relevant jurisdiction. The lender is responsible
+for ensuring that the eNote correction agreement is enforceable and made in compliance with applicable law.
+If the eNote correction agreement is electronic, the electronic signatures on the correction agreement must
+comply with the electronic signature requirements in B8-8-01, General Information on eMortgages . Regardless
+of whether the document is electronic or paper, the lender must:
+report a "modiﬁcation" to the MERS eRegistry with respect to the eNote,
+transmit a copy of the correction agreement to Fannie Mae's eVault, and
+provide a copy of the correction agreement to the servicer to be maintained in the sevicing ﬁle.
+For instructions related to post-acquisition eNote corrections, contact Fannie Mae's eMortgage Custodian
+Oversight Department (see  E-1-02, List of Contacts ). 
+ 
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2023-11 December 13, 2023

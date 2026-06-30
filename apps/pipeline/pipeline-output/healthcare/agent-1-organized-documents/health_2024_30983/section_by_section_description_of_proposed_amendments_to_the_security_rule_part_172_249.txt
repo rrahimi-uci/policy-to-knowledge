@@ -1,0 +1,57 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 172/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_172
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+983 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+845See 45 CFR 164.504(f)(1)(ii). 
+846See 45 CFR 164.504(f)(1)(iii). 
+84745 CFR 160.103 (definition of ‘‘Group health 
+plan’’). 84845 CFR 164.314(b)(2)(i). 
+84945 CFR 164.504(f)(2)(iii) requires the plan 
+documents to describe an employee or class of 
+employee who receives PHI for payment, health care operations or other matters related to the group health plan; restrict access to PHI and use of PHI by such employees to the plan administration functions that the plan sponsor performs for the group health plan; and provide an effective mechanism for resolving any issues of noncompliance by such persons. 
+85045 CFR 164.314(b)(2)(ii). 
+85145 CFR 164.314(b)(2)(iii). 
+85245 CFR 164.314(b)(2)(iv). 85365 FR 82462, 82508 (Dec. 28, 2000). 
+854See ‘‘2024 Data Breach Investigations Report,’’ 
+Verizon Business (2024), https://www.verizon.com/ business/resources/reports/dbir/. contingency plan is activated, would 
+also apply when a business associate that is a governmental entity enters into an arrangement with a covered entity that is also a governmental entity where such arrangement meets the requirements of the Privacy Rule at 45 CFR 164.504(e)(3) in accordance with 45 CFR 164.314(a)(2)(ii) and when a business associate enters into a business associate agreement with a subcontractor in accordance with 45 CFR 164.314(a)(2)(iii) to notify its business associate when it has activated its contingency plan. 
+Additionally, the Department 
+proposes conforming changes to the references of 45 CFR 164.308(b) throughout 45 CFR 164.314 consistent with proposals made to modify 45 CFR 164.308(b). The Department does not intend these to be substantive changes, but rather an alignment with the proposed structural modifications in 45 CFR 164.308(b). 
+As discussed above, the Department 
+proposes to remove the term ‘‘required’’ from the implementation specification at 45 CFR 164.314(a)(2) consistent with its proposal to eliminate the distinction between addressable and required implementation specifications. We also 
+propose a few miscellaneous non- substantive corrections to update citations in the standard at 45 CFR 164.314(a)(1)(i) and (a)(2)(iii). We do not believe that these technical amendments would add or change any regulatory, recordkeeping, or reporting requirements, nor would they change the Department’s interpretation of any regulation. 
+2. Section 164.314(b)(1)—Standard: 
+Requirements for Group Health Plans 
+a. Current Provision 
+The second standard in 45 CFR 
+164.314 requires that, except when ePHI 
+disclosed to a plan sponsor is summary health information
+845or enrollment or 
+disenrollment information,846group 
+health plan847documents must provide 
+that the plan sponsor will reasonably and appropriately safeguard ePHI created, received, maintained, or transmitted to or by the plan sponsor on behalf of the group health plan. Section 164.314(b)(2) requires that the plan documents of a group health plan must be amended to incorporate provisions to require the plan sponsor to: 
+•Implement reasonable and 
+appropriate administrative, physical, and technical safeguards to protect the confidentiality, integrity, and 
+availability of the ePHI that it creates, receives, maintains, or transmits on behalf of the group health plan.
+848 
+•Ensure that the separation between 
+the group health plan and plan sponsor 
+required by the Privacy Rule at 45 CFR 164.504(f)(2)(iii)
+849is supported by 
+reasonable and appropriate security measures.
+850 
+•Ensure that any agent to whom it 
+provides ePHI, agrees to implement reasonable and appropriate security measures to protect the information.
+851 
+•Report to the group health plan any 
+security incident of which it becomes aware.
+852 
+b. Issues To Address 
+Plan sponsors are not directly liable 
+for compliance with the Security Rule because they are not regulated entities, i.e., covered entities or business

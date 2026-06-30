@@ -1,0 +1,37 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 49/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_049
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+A. Section 160.103—Definitions 
+1. Current Provision 
+Electronic media are used by many 
+health care organizations to process, 
+transmit, and maintain ePHI. As defined by the Security Rule, the term ‘‘electronic media’’
+334encompasses 
+both (1) electronic storage material on which data is or may be electronically recorded; and (2) transmission media used to exchange information already in electronic storage media. It specifically excludes certain transmissions, such as those of paper, via facsimile (‘‘fax’’), and voice, via telephone, from being considered transmissions via electronic media if the information being exchanged did not exist in electronic form immediately before the transmission. 
+2. Issues To Address 
+The Department revised the definition 
+of ‘‘electronic media’’ in 2013 by 
+replacing the term ‘‘electronic storage media’’ with ‘‘electronic storage 
+material’’ in recognition that there may be storage material other than ‘‘media’’ that houses electronic data in the future.
+335At that time, the Department 
+said that a fax machine accepting a hardcopy document for transmission is not a covered transmission even though the document may have originated from printing from an electronic file.
+336In 
+response to commenter concerns, we also clarified that ePHI maintained, intentionally or otherwise, in a photocopier, fax machine, or other device is subject to the Security Rule and reminded regulated entities that they should be aware of the capabilities of such devices with respect to their ability to maintain ePHI.
+337 
+Additionally, a regulated entity should consider the appropriateness of implementing security measures that account for such capabilities.
+338 
+Since 2013, the role technology plays 
+in the storage and transmission of information has changed, as have the types of media used to store and transmit such information. For example, traditional landlines
+339are rapidly 
+being replaced with electronic communication technologies, such as Voice over internet Protocol (VoIP),
+340 
+and mobile technologies that use electronic media, such as the internet, intra- and extranets, cellular, and Wi- Fi.
+341Some current electronic 
+technologies that regulated entities use for remote communications may include communication applications on a smartphone or another computing device, VoIP technologies, technologies that electronically record or transcribe a telehealth session, and messaging services that electronically store audio messages. The definition of electronic media does not account for these changes because it excepts 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00025 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

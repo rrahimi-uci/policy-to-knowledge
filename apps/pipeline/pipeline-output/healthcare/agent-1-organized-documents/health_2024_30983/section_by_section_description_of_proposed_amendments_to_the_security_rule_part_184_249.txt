@@ -1,0 +1,66 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 184/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_184
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+989 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+880See ‘‘Post-Quantum Cryptography, Quantum 
+Background,’’ U.S. Department of Homeland 
+Security (last accessed July 23, 2024), https://
+www.dhs.gov/quantum; see also ‘‘Quantum- Readiness: Migration to Post-Quantum Cryptography,’’ Cybersecurity & Infrastructure Security Agency, National Security Agency, and National Institute of Standards and Technology, p. 1 (Aug. 21, 2023), https://media.defense.gov/2023/ Aug/21/2003284212/-1/-1/0/CSI-QUANTUM- READINESS.PDF. 
+881‘‘Post-Quantum Cryptography, Quantum 
+Background,’’ supra note 880. 
+882See ‘‘Post-Quantum Cryptography PQC,’’ 
+Computer Security Resource Center, National Institute of Standards and Technology, U.S. Department of Commerce (July 19, 2024), https://
+www.nist.gov/pqcrypto. 
+883See ‘‘Post-Quantum Cryptography, Quantum 
+Background,’’ supra note 880. 
+884See ‘‘Post-Quantum Cryptography PQC,’’ 
+supra note 882. 
+885Id. 
+886See id. (removed emphasis from ‘‘post- 
+quantum cryptography’’ in original). 887National Security Memorandum on Promoting 
+United States Leadership in Quantum Computing While Mitigating Risks to Vulnerable Cryptographic Systems, National Security Memorandum/NSM–10, The White House (May 4, 2022), https://www.whitehouse.gov/briefing-room/statements- releases/2022/05/04/national-security- memorandum-on-promoting-united-states- leadership-in-quantum-computing-while- mitigating-risks-to-vulnerable-cryptographic- systems/. 
+888Id. 
+889See Letter from NCVHS Chair Jacki Monson 
+(2023), supra note 123, Appendix p. 2 (providing 
+NCVHS recommendations to strengthen the HIPAA Security Rule). 
+890See ‘‘Quantum-Readiness: Migration to Post- 
+Quantum Cryptography,’’ Cybersecurity & Infrastructure Security Agency, National Security Agency, and National Institute of Standards and Technology, p. 1 (Aug. 21, 2023), https://media.defense.gov/2023/Aug/21/2003284212/-1/-1/ 0/CSI-QUANTUM-READINESS.PDF. 
+891Id. 892Sec. 238(g) of Public Law 115–232, 132 Stat. 
+1697–98 (Aug. 13, 2018) (10 U.S.C. 2358 note) (definition of ‘‘AI’’). how the Security Rule would apply in 
+each case. 
+1. Quantum Computing 
+Several Federal agencies have 
+considered the potential benefits and 
+drawbacks of quantum information science,
+880that is, the study of ‘‘the 
+impacts of quantum physics properties on information science. Those properties can increase computational power and speed significantly over classical computers, provide precision measurements; enhance sensing capabilities; and increase the accuracy of position, navigation, and timing services.’’
+881According to NIST, ‘‘In 
+recent years, there has been a substantial amount of research on quantum computers—machines that exploit quantum mechanical phenomena to solve mathematical problems that are difficult or intractable for conventional computers.’’
+882 
+However, the increase in 
+computational capability threatens the security of asymmetric cryptography,
+883 
+which is critical to encryption solutions, a key protection for ePHI and other sensitive information today. Scientists warn that when such quantum computers are built, they will have the 
+ability to break many of the systems for asymmetric cryptography that are in use today.
+884Thus, experts anticipate that 
+quantum computing will adversely affect the confidentiality and integrity of digital communications.
+885‘‘The goal of 
+post-quantum cryptography (also called quantum-resistant cryptography) is to develop cryptographic systems that are secure against both quantum and classical computers, and can interoperate with existing communications protocols and networks.’’
+886A recent National 
+Security Memorandum affirmed that ‘‘alongside its potential benefits, 
+quantum computing also poses significant risks to the economic and national security of the United States....  [including the potential to 
+break] much of the public-key cryptography used on digital systems across the United States and around the world.’’
+887Accordingly, the White 
+House has directed Federal agencies to take specific steps to ‘‘mitigate the threat of [cryptanalytically relevant quantum computers] through a timely and equitable transition of the Nation’s cryptographic systems to interoperable quantum-resistant cryptography.’’
+888 
+NCVHS examined these security 
+issues and provided recommendations to the Department for applying the safeguards of the HIPAA Rules to potential quantum computing threats. Specifically, NCVHS declared that incorporation of recent Administration guidance for Federal agencies ‘‘on vulnerable cryptographic systems is necessary to strengthen the Technical Safeguards within the Security Rule.’’
+889This joint guidance, 
+developed by NIST, CISA, and NSA, encourages ‘‘the early planning for migration to post-quantum cryptographic standards by developing a Quantum-Readiness Road map.’’
+890It

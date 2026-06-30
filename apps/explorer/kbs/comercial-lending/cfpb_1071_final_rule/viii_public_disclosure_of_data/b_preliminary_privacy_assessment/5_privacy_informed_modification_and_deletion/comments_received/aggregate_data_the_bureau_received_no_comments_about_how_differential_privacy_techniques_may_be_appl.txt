@@ -1,0 +1,50 @@
+# Aggregate data. The Bureau received no comments about how differential privacy techniques may be applied to application-level data. However, the Bureau did receive comments about aggregating 1071 data. Several industry commenters suggested that the Bu...
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_695
+**Pages:** 684-684
+**Section Path:** VIII. Public Disclosure of Data > B. Preliminary Privacy Assessment > 5. Privacy-informed Modification and Deletion > Comments Received > Aggregate data. The Bureau received no comments about how differential privacy techniques may be applied to application-level data. However, the Bureau did receive comments about aggregating 1071 data. Several industry commenters suggested that the Bu...
+
+---
+
+684 stability in the economy , and cited  insufficiently granular HMDA data as contributing to the 
+2008 subprime financial crisis.  
+Some community group commenters and a software vendor urged the Bureau not  to 
+delete or modify public application-level data because it would undermine the statutory purposes 
+of section 1071. The software vendor stated that modifications or deletions may reduce the utility 
+of the data for no privacy benefit . Several commenters asserted that the Bureau should only 
+modify public 1071 data to protect the privacy interests of small business applicants. A joint 
+letter from community and business advocacy groups agreed with the Bureau’s statement that 
+litigation and reputational risks  faced by financial institutions do not justify excluding data from 
+public disclosure.  
+On the other hand, several industry commenters urged the Bureau to make modification 
+and deletion decisions to protect the privacy of financial institutions, applicants, and related 
+natural persons. They stated that protecting these privacy interests was consistent with the 
+statutory purposes of section 1071 because limiting disclosure would increase credit access and lower credit costs to minority -owned and women-owned sm all businesses.  
+Several industry, community group, and academic commenters  supported modification 
+and deletion of application -level data, stating that it could adequately address privacy risks posed 
+by publication. A trade association asserted that publishing certain data points in an unedited, 
+application -level format would increase the risk of  applicant re-identification.  Another trade 
+association supported the liberal use of modification and deletion techniques to protect privacy 
+interests of lenders, sm all business applicants, and related natural persons. Some commenters 
+stated that the lack of reported incidents in which an individual has been re -identified in HMDA 
+data suggests that modifications or deletions can reduce  re-identification risk s here als o. 
+Some commenters offered views about what data points would be modified or deleted. 
+Several suggested that data m odifications or deletions should be consistent with HMDA.  
+According to these commenters, t he Bureau should ensure that any data deleted in the HMDA 
+dataset is also deleted in the 1071 dataset, including the unique identifier , the application date , 
+and the action taken date. A software vendor stated that the Bureau should modify data points  
+that reflect  gender identity  or sexual orientation info rmation, which could result in persons being 
+subject to physical harm.  Several individual commenters likewise suggested that LGBTQI+ 
+persons face particular privacy risks . A joint letter from community and business advocacy 
+groups stated that if the Bureau modifies 1071 data, it should do so on a loan-by -loan basis 
+because the modification of a particular data field may not be necessary for all records  in the 
+dataset . 
+Aggregate data.  The Bureau received no comments about how differential privacy 
+techniques may be applied to application -level data. However, the Bureau did receive comments 
+about aggregating 1071 data. Several industry commenters suggested that the Bureau publis h 
+aggregate data, instead of an application -level dataset, to mitigate privacy risks. One stated that 
+aggregate data are sufficient to analyze the business needs and credit access  of applicants, 
+including minority -owned and women -owned small businesses . Another said that disclosing 
+aggregate data, as opposed  to application -level data, would be consistent with the practices of 
+other agencies.  Other industry commenters stated that, while some 1071 data could be disclosed

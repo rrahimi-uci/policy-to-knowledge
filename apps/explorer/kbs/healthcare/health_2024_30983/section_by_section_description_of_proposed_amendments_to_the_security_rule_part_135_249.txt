@@ -1,0 +1,36 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 135/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_135
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+•A large health system that operates 
+in multiple States experienced a massive data breach resulting from a hacking incident. OCR’s investigation found indications of potential failures to sufficiently monitor its activity in its information systems that was insufficient to protect against a cyberattack, implement an authentication process to safeguard its ePHI, and have security measures in place to protect ePHI from unauthorized access when it was being transmitted electronically.
+687 
+•A Rhode Island nonprofit health 
+system experienced a data breach resulting from the theft of a laptop. OCR’s investigation found indications of potential failures to encrypt ePHI, despite the entity’s determination to implement encryption, and a lack of device and media controls.
+688 
+•At a large covered entity, workforce 
+members used their log-in credentials to access medical records maintained in the entity’s EHR without a job-related purpose.
+689OCR’s investigation found 
+evidence of potential violations of the requirement to implement reasonable and appropriate policies and procedures to comply with the standards, implementation specifications, or other requirements of the Security Rule.
+690 
+•At another covered entity, the 
+potential failure to implement hardware, software, and/or procedural mechanisms that record and examine activity in information systems that contain or use ePHI, among other things, enabled a workforce member to sell the ePHI of more than 12,000 individuals.
+691 
+Some investigations have found 
+indications that regulated entities may implement technical controls that address some, but not all, users of and technology assets in a relevant electronic information system, such as software, hardware, and persons involved in the development, configuration, and implementation of technical controls.
+692And other 
+investigations have suggested that the potential failure of a regulated entity to have security measures in place to protect ePHI from unauthorized access when it is transmitted electronically has resulted in increased risk and breaches of ePHI.
+693Common network 
+segmentation practices would have substantially reduced the risk to the security ePHI and could have prevented such breaches. 
+Beyond the health care sector, threat 
+actors have been able to gain access to networks by compromising user accounts and taking advantage of insufficient network segregation. For example, the 2014 Home Depot breach involved the compromise of a third- party vendor’s username and password to enter Home Depot’s network, which allowed hackers to obtain elevated rights to navigate to self-checkout point- of-sale system.
+694The Department is 
+concerned about the potential effects of such incidents in health care, where they would jeopardize the confidentiality, integrity, and availability of ePHI. 
+Finally, consistent with the concerns 
+expressed above about the implications of recent caselaw and the uncertainty it might cause among regulated entities assessing whether they have adequately protected their ePHI, the Department is concerned that the existing Security Rule may not provide sufficient instruction to regulated entities about 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00068 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

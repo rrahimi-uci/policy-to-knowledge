@@ -1,0 +1,64 @@
+# A3-2-01, Compliance With Laws (12/10/2025) (part 3/5)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_042_sub_003
+**Pages:** 107-118
+**Section Path:** Part A, Doing Business with Fannie Mae > Subpart A3, Getting Started With Fannie Mae > Chapter A3-2, Compliance With Requirements and Laws > A3-2-01, Compliance With Laws (12/10/2025)
+
+---
+
+Published March 4, 2026
+94The notiﬁcation is required within 60 days of the later of:
+the end of the calendar quarter in which such loans were delivered, or
+discovery of the potential breach.
+The seller/servicer must report these loans using the self-report functionality in  Loan Quality Connect .
+Note : If the calculation described above results in fewer than ﬁve potentially aﬀected loans, then the
+seller/servicer does not need to notify Fannie Mae.
+Reporting Category 2
+The following reporting requirements apply when:
+the potential breach could warrant a repurchase demand, or
+the number of loans aﬀected by the same type of potential breach delivered in the same calendar
+quarter does not exceed the lesser of 500 loans or 1% of the total number of loans delivered to Fannie
+Mae in the prior year.
+Reporting Requirements
+If... Then...
+the breach could warrant a repurchase demand and
+has not been remedied or will not be remedied
+within 60 days,the seller/servicer must notify Fannie Mae within
+60 days by using the self-report functionality in
+Loan Quality Connect .
+the breach could warrant a repurchase demand and
+has been remedied or will be remedied within 60
+days,the seller/servicer does not need to notify Fannie
+Mae.
+the breach would not warrant a repurchase
+demand,the seller/servicer does not need to notify Fannie
+Mae.
+Examples:
+Scenario 1: A lender identiﬁes a repeated potential breach related to compliance with laws where a
+repurchase demand is not warranted.
+The lender determines June 1 it may have failed to provide a property valuation when required under the Equal
+Credit Opportunity Act. This impacted 600 loans that were delivered to Fannie Mae between January 1 and
+March 31. The lender must report the potential breach to Fannie Mae within 60 days of June 1. In this scenario,
+the number of loans impacted exceeded 500 loans and the loans were delivered within the same quarter.
+Scenario 2: A lender that delivered 70,000 loans to Fannie Mae the prior year identiﬁes a repeated
+potential breach related to compliance with laws where a repurchase demand is not warranted.
+
+Published March 4, 2026
+95The lender determines August 15 it may have failed to provide a property valuation when required under the
+Equal Credit Opportunity Act. This impacted 200 loans that were delivered to Fannie Mae between January 1 and
+March 31, and 400 loans that were delivered to Fannie Mae between April 1 and June 30. The lender will not be
+required to report the potential breach for either quarter, as the number of loans impacted in each quarter did
+not exceed 500 loans. In this scenario, 500 loans is less than 700 loans (1% of prior year deliveries).
+Scenario 3: A lender identiﬁes a single loan impacted by a potential breach for which a repurchase
+demand is a potential remedy.
+The lender may have violated the Fair Housing Act. The lender must report the breach to Fannie Mae within 60
+days of determination of the potential breach, unless it determines the non-compliance has been remedied or
+will be remedied within 60 days in accordance with applicable law.
+Requirements Related to Speciﬁc Laws and Other Fannie Mae Requirements
+Following is a table of additional requirements related to speciﬁc laws and other Fannie Mae requirements.
+REQUIREMENTS FOR SPECIFIC LAWS AND OTHER REQUIREMENTS
+Topic A seller/servicer...
+IRS Reporting Requirementsmust report to the IRS as required by Part of this Guide, Part C of
+the Servicing Guide , and in accordance with the instructions of
+the Internal Revenue Service .

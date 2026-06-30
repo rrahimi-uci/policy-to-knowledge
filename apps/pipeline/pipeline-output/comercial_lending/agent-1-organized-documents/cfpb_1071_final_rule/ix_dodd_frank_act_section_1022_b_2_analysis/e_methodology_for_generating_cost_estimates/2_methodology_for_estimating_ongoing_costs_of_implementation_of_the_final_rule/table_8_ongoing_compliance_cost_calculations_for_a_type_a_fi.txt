@@ -1,0 +1,125 @@
+# Table 8: Ongoing compliance cost calculations for a Type A FI
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_743
+**Pages:** 738-740
+**Section Path:** IX. Dodd-Frank Act Section 1022(b)(2) Analysis > E. Methodology for Generating Cost Estimates > 2. Methodology for Estimating Ongoing Costs of Implementation of the Final Rule > Table 8: Ongoing compliance cost calculations for a Type A FI
+
+---
+
+738 No. Activity  
+2 Resolving reportability questions  
+3 Transferring to Data Entry System, Loan Origination System, or other 
+data storage system  
+4 Geocoding data  
+5 Standard annual edit and internal checks  
+6 Researching questions  
+7 Resolving question responses  
+8 Checking post -submission edits  
+9 Filing post -submission documents  
+10 Small business data reporting/geocoding software  
+11 Training 
+12 Internal audit  
+13 External audit  
+14 Exam preparation  
+15 Exam assistance 
+ 
+Table 8 provides an example of how the Bureau calculates ongoing compliance costs 
+associated with each compliance task. The table shows the calculation for each activity and notes 
+whether the task would be a “ variable cost,” which would depend on the number of applications 
+the institution receives, or a “ fixed cost” that does not depend on the number of applications. 
+Table 8 shows these calculations for a Type A FI, or the institution with the least amount of 
+complexity. Table 9 below summarizes the activities whose calculation differs by institution 
+complexity and shows the calculations for Type B FIs and Type C FIs (where they differ from 
+those for a Type A FI).  
+Table 8: Ongoing compliance cost calculations for a Type A FI  
+No. Activity  Calculation Type939 
+1 Transcribing data  Hourly compensation x hours per app. x applications  Variable 
+2 Resolving reportability 
+questions Hourly compensation x hours per app. with question x applications with questions  Variable 
+3 Transfer to Data Entry System  Hourly compensation x hours per app. x applications  Variable 
+ 
+939 In this table, the term “ variable” means the compliance cost depends on the number of applications. The term 
+“fixed” means the compliance cost does not depend on the number of applications (even if there are other factors 
+upon which it may vary).
+
+739 No. Activity  Calculation Type939 
+4 Complete geocoding 
+data Hourly compensation x hours per app. x applications  Variable 
+5 Standard annual edit and internal checks  Hourly compensation x hours spent on edits and checks  Fixed  
+6 Researching questions  Hourly compensation x hours per app. with question x applications with questions  Variable 
+7 Resolving question responses Hourly compensation x hours per app. with question x applications with questions  Variable 
+8 Checking post-submission edits  Hourly compensation x hours checking post -submission 
+edits per application  Variable 
+9 Filing post -submission 
+documents Hourly compensation x hours filing post -submission 
+docs Fixed  
+10 Small business data 
+reporting/geocoding 
+software  Uses free geocoding software  Fixed  
+11 Training Hourly compensation x hours of training per year x number of loan officers  Fixed  
+12 Internal audit  No internal audit conducted by financial institution staff  Fixed  
+13 External audit  One external audit per year  Fixed  
+14 Exam preparation  Hourly compensation x hours spent on examination preparation  Fixed  
+15 Exam assistance Hourly compensation x hours spent on examination assistance  Fixed  
+ 
+Many of the activities in Table 8 require time spent by loan officers and other financial 
+institution employees. To account for time costs, the calculation use s the hourly compensation of 
+a loan officer multiplied by the amount of time required for the activity. The Bureau use s a mean 
+hourly wage of $38.74 for loan officers, based on data from the Bureau of Labor Statistics.940 To 
+account for non -monetary compensation, the Bureau scale s this hourly wage by 43 percent to 
+arrive at a total hourly compensation of $55.40  for use in t hese calculations.941 The Bureau uses 
+assumptions from its 2015 HMDA final rule analysis, updated to reflect differences between 
+ 
+940 These data reflect the mean hourly wage for “ loan officers” according to the 2021 Occupational Employment 
+Sta tistics compiled by the Bureau of Labor Sta tistics. See  U.S. Bureau of Labor Stat., U.S. Dep ’t of Labor, 
+Occupational Employment and Wages  (May 2021), https://www.bls.gov/oes/current/oes132072.htm .  
+941 The June 2022 Employer Costs for Employee Compensation from the Bureau of Labor Sta tistics documents that 
+wages and salaries are, on average, about 70  percent of employee compensation f or private industry workers. The 
+Bureau inflates the hourly wage to account for 100  percent of employee compensation ((100 / 70) – 1) * 100 = 
+43 percent). U.S. Bureau of Labor Stat., U.S. Dep ’t of Labor, Employer Costs for Employee Compensation  (June 
+2022) , https://www.bls.gov/news.release/archives/eci_07292022.pdf .
+
+740 mortgage lending and small business lending,  to estimate time spent on “ ongoing tasks.”942 As 
+an example of a time calculation, t he Bureau estimates  that transcribing the required data points 
+would require approximately 11 minutes per application for a Type A FI. The calculation 
+multiplied the number of minutes by the number of applications and the hourly compensation to 
+arrive at t he total cost, on an annual basis, of transcribing data. As another example, the Bureau 
+estimate s that ongoing training for loan officers to comply with a financial institution ’s 1071 
+policies and procedures would take about two hours per loan officer per year. The cost 
+calculation multiplies the number of hours by the number of loan officers and by the hourly 
+compensation.  
+To arrive at the amount of time required per application for each of the 15 tasks covered 
+financial institutions would conduct to collect, check, and report 1071 data, the Bureau begins 
+with the assumptions made for each task for the 35 data points under t he 2015 HMDA final rule 
+and then adjusts these required times relative to the number of data points required under the 
+final rule. The final rule requires covered financial institutions to collect 20 data points for each covered application. Several of the se data points have multiple components. For example, the 
+credit type data point has three subcomponents: the product type, the type of guarantee, and the 
+term. The data points for pricing information and the ethnicity, race, and sex of principal owners 
+also have multiple subcomponents.  
+Some activity costs in Table 8  depend on the number of applications. It is important to 
+differentiate between these variable costs and fixed costs because the type of cost impacts 
+whether and to what extent covered institut ions might be expected to pass on their costs to small 
+business loan applicants in the form of higher interest rates or fees (discussed in more detail in 
+part IX.F.4 below). Data collection, reporting, and submission activities such as geocoding data, 
+standard annual edits and internal checks, researching questions, and resolving question 
+responses are variable costs. All other activities are fixed cost because they do not depend on the 
+overall number of applications being processed. An example of a fixed c ost calculation is exam 
+preparation, where the hourly compensation is multiplied by the number of total hours required 
+by loan officers to prepare for 1071 -related compliance examinations.  
+Table 9 shows where and how the Bureau assume s Type B FIs and Type  C FIs differ 
+from Type A FIs in its ongoing cost methodology. Type B FIs and Type C FIs use more 
+automated procedures, which result in different cost calculations. For example, for Type B FIs 
+and Type C FIs, transferring data to the data entry system and geocoding applications are done 
+automatically by business application data management software licensed annually by the 
+financial institution. The relevant address is submitted for geocoding via batch processing, rather 
+than done manually for each applicat ion. The additional ongoing geocoding costs reflect the time 
+spent by loan officers on “ problem” applications —that is, a percentage of overall applications 
+that the geocoding software misses —rather than time spent on all applications. However, Type B 
+FIs a nd Type C FIs have the additional ongoing cost of a subscription to a geocoding software or 
+service as well as a data management software that represents an annual fixed cost of reporting 
+1071 data. This is an additional ongoing cost that less complex Type  A FIs (that are covered 
+ 
+942 Home Mortgage Disclosure (Regulation  C), 80 FR 66128 (Oct. 28, 2015).Some differences, for example, are 
+reflected in  the number of applications, the number of data points per application, and the number of loan officers 
+for the representative institutions.

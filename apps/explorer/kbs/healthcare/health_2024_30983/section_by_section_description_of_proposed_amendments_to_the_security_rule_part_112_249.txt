@@ -1,0 +1,52 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 112/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_112
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+953 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+58945 CFR 164.308(a)(5)(ii)(A). 
+590Proposed 45 CFR 164.308(a)(11)(ii)(B)(1). 
+591Proposed 45 CFR 164.308(a)(11)(ii)(B)(2). 
+592Proposed 45 CFR 164.308(a)(11)(ii)(B)(3). 593See ‘‘HIPAA Security Rule Security Incident 
+Procedures,’’ Cybersecurity Newsletter, Office for 
+Civil Rights U.S. Department of Health and Human Services (Oct. 2022), https://www.hhs.gov/hipaa/ for-professionals/security/guidance/cybersecurity- newsletter-october-2022/index.html. 
+594Id. 
+595See ‘‘Implementing the Health Insurance 
+Portability and Accountability Act (HIPAA) Security Rule: A Cybersecurity Resource Guide,’’ 
+supra note 461. 596See Paul Cichonski, et al., ‘‘Computer Security 
+Incident Handling Guide: Recommendations of the 
+National Institute of Standards and Technology,’’ NIST Special Publication 800–61, Revision 2, National Institute of Standards and Technology, U.S. Department of Commerce (Aug. 2012), https:// 
+www.nist.gov/privacy-framework/nist-sp-800-61. 
+597‘‘The NIST Cybersecurity Framework (CSF) 
+2.0,’’ (removed emphasis on ‘‘Actions regarding a detected cybersecurity incident are taken’’ in original), supra note 15, p. 9. 
+598Id. 
+599Proposed 45 CFR 164.308(a)(12)(ii)(A)(1). 
+600See, e.g., Joint Task Force, ‘‘Security and 
+Privacy Controls for Information Systems and 
+Continued entity to educate its workforce members 
+on best practices for setting passwords and to ensure that its workforce members implement such best practices. 
+The Department proposes to replace 
+the implementation specification for periodic security updates
+589with one 
+addressing the timing and frequency of security awareness training at proposed 45 CFR 164.308(a)(11)(ii)(B). Specifically, we propose to require a 
+regulated entity to provide such training to each member of the regulated entity’s workforce by the compliance date for this rulemaking, if finalized, and at least once every 12 months thereafter.
+590For 
+example, under this proposal, workforce members would receive security awareness training on the protection of ePHI and on the regulated entity’s Security Rule policies and procedures that is based on their specific role at least once a year. A regulated entity would be required to provide role-based security awareness training to a new workforce member within a reasonable period of time, but no later than 30 days after the workforce member first has access to the regulated entity’s relevant electronic information systems.
+591We 
+also propose to require that the regulated entity provide such training.
+592For example, if the entity 
+implements a new EHR system, it would be required to also train its workforce, as appropriate, on measures to guard against security incidents related to the installation, maintenance and/or use of the system. 
+Additionally, the Department 
+proposes at proposed 45 CFR 164.308(a)(11)(ii)(C) an implementation specification for ongoing education. This would require a regulated entity to provide its workforce members with ongoing reminders of their security responsibilities and notice of relevant threats, including but not limited to, new and emerging malicious software and social engineering. Lastly, we propose a new implementation specification for documentation at proposed 45 CFR 164.308(a)(11)(ii)(D) that would require a regulated entity to document that it has provided training and ongoing reminders to its workforce members. 
+n. Section 164.308(a)(12)(i)—Standard: 
+Security Incident Procedures 
+Addressing security incidents is an 
+integral part of an overall security program. While a regulated entity will never be able to prevent all security incidents, implementing the Security 
+Rule standards would reduce the amount and negative consequences of security incidents it encounters. Even regulated entities with detailed security policies and procedures and advanced technology may experience security incidents, but through sufficient planning and continued monitoring generally can mitigate the negative effects of such incidents on regulated entities, and, ultimately, individuals. The security incident procedures standard is intended to help ensure that a regulated entity conducts such planning and monitoring to allow it to mitigate such negative effects. 
+The Department has also provided 
+guidance that a regulated entity can use to devise its security incident plans. The policies and procedures a regulated entity establishes to prepare for and respond to security incidents can pay dividends with faster recovery times and reduced compromises of ePHI.
+593A

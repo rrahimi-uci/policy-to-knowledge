@@ -1,0 +1,136 @@
+# B2-1.4-03, Convertible ARMs (02/23/2016)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_089
+**Pages:** 215-218
+**Section Path:** Part B, Origination Through Closing > Subpart B2, Eligibility > Chapter B2-1, Mortgage Eligibility > Section B2-1.4, Loan Amortization Types > B2-1.4-03, Convertible ARMs (02/23/2016)
+
+---
+
+Published March 4, 2026
+197 
+B2-1.4-03, Convertible ARMs (02/23/2016)
+Introduction
+This topic contains information on convertible ARMs, including:
+General Information
+Converted ARMs Removed from ARM MBS Pools
+Borrower Requaliﬁcation Considerations for Fixed-Rate Mortgages Converted from ARMs and Redelivered
+Under “Market Rate” Post-Conversion Options
+Eligibility Requirements for Converted ARMs
+Delivery Requirements and Security Instruments for ARMs Converted to Fixed-Rate Mortgages
+Mortgage Documents for Fixed-Rate Conversion Option
+General Information
+Fannie Mae accepts delivery of ﬁxed-rate mortgages that were converted from ARMs either by a legally
+executed modiﬁcation agreement or under the provisions of the mortgage instrument.
+Although the ARM does not have to have been originated on Fannie Mae uniform instruments or in accordance
+with Fannie Mae eligibility requirements for ARMs, the new ﬁxed-rate mortgage that results from the conversion
+must meet Fannie Mae’s general eligibility and underwriting requirements for newly originated ﬁxed-rate
+mortgages.
+Converted ARMs Removed from ARM MBS Pools
+This topic describes the circumstances under which a converted ARM that is removed from an ARM MBS pool as
+the result of its conversion to a ﬁxed-rate mortgages may be redelivered to Fannie Mae.
+If the mortgage is more than 12 months old at the time of the redelivery, and the lender speciﬁed a “market
+rate” post-conversion disposition option when the MBS pool was delivered to Fannie Mae, the mortgage must
+meet the same eligibility criteria as other converted ARMs (as discussed in “Eligibility Requirements for
+Converted ARMs” later in this topic).
+If the lender speciﬁed a take-out post-conversion disposition option when the MBS pool was delivered to Fannie
+Mae, the lender does not need to requalify the borrower or verify that the mortgage satisﬁes Fannie Mae
+eligibility criteria.
+Borrower Requaliﬁcation Considerations for Fixed-Rate Mortgages Converted
+from ARMs and Redelivered Under “Market Rate” Post-Conversion Options
+
+Published March 4, 2026
+198To qualify a borrower, lenders may use the original in-ﬁle documentation to evaluate the borrower’s ﬁnancial
+ability, as long as the borrower is able to qualify for the mortgage based on either of the following:
+The mortgage interest rate in eﬀect following the conversion and Fannie Mae’s current underwriting
+guidelines for a conventional ﬁxed-rate mortgage, or
+The mortgage interest rate in eﬀect for the ARM when it was originated and the underwriting guidelines
+Fannie Mae used for ARMs at that time.
+If the lender is unable to qualify a borrower under the previous options, the lender must requalify the borrower
+under Fannie Mae’s standard guidelines, including
+obtaining a new loan application,
+obtaining up-to-date credit reports,
+obtaining new employment and income veriﬁcations using the acceptable documentation,
+evaluating the borrower’s ﬁnancial ability based on
+the mortgage interest rate in eﬀect for the converted mortgage, and
+Fannie Mae’s current underwriting guidelines for a conventional ﬁxed-rate mortgage.
+Eligibility Requirements for Converted ARMs
+The following speciﬁc eligibility requirements apply to converted ARMs that are delivered as either whole loans
+or MBS pool deliveries under the “market rate” post-conversion disposition option that were removed from an
+ARM MBS pool as the result of the conversion:
+✓ Requirements
+ The ARM must have been at least 12 months old when the conversion occurred.
+ The converted mortgage must meet all of the eligibility criteria speciﬁed for mortgages that
+are more than one year old, unless Fannie Mae has speciﬁed that those criteria do not apply.
+Note : The age of the mortgage is calculated from the date the ARM was originated. These
+speciﬁc eligibility criteria appear in B2-1.5-02, Loan Eligibility .
+ The mortgage loan must be current at the time of delivery.
+Note : To minimize processing delays, Fannie Mae considers a mortgage current if no more
+than 45 days have elapsed since the last paid installment date.
+
+Published March 4, 2026
+199✓ Requirements
+ The total of all interest rate increases or payment adjustments (including any combination of
+scheduled ARM interest rate changes and the increases scheduled under an interest rate
+buydown plan) that occurred after the ARM was originated must not have exceeded 2% (for
+the interest rate adjustment) or 15% (for the payment adjustment) if the lender qualiﬁes the
+borrower on the basis of the mortgage interest rate that was in eﬀect for the ARM when it was
+originated and the ARM underwriting guidelines Fannie Mae used at that time.
+ The modiﬁed mortgage must provide for a ﬁxed-interest rate, level monthly payments, and
+amortization within the term of the original mortgage.
+ The title insurance policy or any endorsements to it are not impaired because of the option to
+convert to a ﬁxed-rate mortgage or the actual conversion.
+ If the original title policy did not include the ARM endorsements currently required, the lender
+must indemnify Fannie Mae (as described in A2-1-03, Indemniﬁcation for Losses ) against
+Fannie Mae losses that arise out of future title disputes related to the years in which the
+mortgage was an ARM.
+ The original loan amount of the ARM did not exceed Fannie Mae's current maximum mortgage
+amount limitation at the time Fannie Mae originally securitized the mortgage in an ARM MBS
+pool.
+ The greater of the original mortgage amount (at origination of the ARM, pre-conversion) or the
+current unpaid principal balance must be used to determine that the modiﬁed mortgage meets
+Fannie Mae requirements for maximum mortgage amount, LTV ratios, mortgage insurance
+coverage, and title insurance.
+EXCEPTION: For the delivery of a converted ARM that Fannie Mae initially securitized in an ARM
+MBS pool,
+if Fannie Mae’s loan limits decreased between the time Fannie Mae initially securitized the
+ARM and the time the converted mortgage is redelivered to Fannie Mae after it is removed
+from the pool, the mortgage will still be acceptable to Fannie Mae even if the original
+mortgage balance exceeds the maximum mortgage amount that is in eﬀect at the time of the
+redelivery.
+BACKGROUND
+This recognizes and acknowledges, respectively, the fact that
+• the loan satisﬁed Fannie Mae requirements when it was securitized, and
+• the redelivery is a function of an administrative requirement Fannie Mae imposed for
+mortgage-backed security transactions, rather than the delivery of a diﬀerent mortgage.
+
+Published March 4, 2026
+200✓ Requirements
+ The LTV, CLTV, and HCLTV ratios at the time of conversion must not exceed the maximum
+allowable limits for ﬁxed-rate mortgages, see the Standard ARM Plan Matrix .
+If the ARM had negatively amortized, the LTV ratio (and the CLTV ratio and the HCLTV ratio)
+requirement must be satisﬁed as a result of
+• Subsequent normal amortization
+• The application of funds contributed by the borrower, or
+• An increase in the value of the property.
+Note : Increase in property value must be supported by a current appraisal.
+Delivery Requirements and Security Instruments for ARMs Converted to Fixed-
+Rate Mortgages
+Lenders must identify each converted ARM that was repurchased from an MBS pool because the conversion to
+ﬁxed-rate option was exercised and subsequently redelivered to Fannie Mae as a whole loan delivery of a ﬁxed-
+rate mortgage with SFC 036.
+Lenders must include in the delivery package a Loan Modiﬁcation Agreement (  Form 3179  ) as evidence of the
+conversion to a ﬁxed-rate mortgage.
+Note : A diﬀerent (but substantially equivalent) modiﬁcation agreement is also acceptable, as long as
+it includes an enforceable due-on-sale clause.
+ 
+✓ Modiﬁcation Agreement Requirements
+ Lenders must determine whether a modiﬁcation agreement has to be recorded in each
+particular jurisdiction in order to preserve the lien position of the mortgage.
+ If recordation is required, lenders must submit the recorded instrument when it delivers the
+mortgage for purchase or securitization.
+ Lenders must obtain a title bring-down through the date of the recordation.
+Mortgage Documents for Fixed-Rate Conversion Option
+Execution of Fannie Mae’s standard riders or addenda that provide the terms for conversion to a ﬁxed-rate
+mortgage or any other conversion option instrument is not required if:
+a convertibility provision was included in the adjustable-rate note, or

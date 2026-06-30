@@ -1,0 +1,25 @@
+# Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 122/289)
+
+**Source:** health_2024_02544.pdf
+**Chunk ID:** health_2024_02544_028_sub_122
+**Pages:** 1-160
+**Section Path:** Regulatory Impact Analysis > Paperwork Reduction Act of 1995 > Explanation of Estimated Capital Expenses for 42 CFR Part 2
+
+---
+
+information to the very same health plan if the disclosure was made via an intermediary without specifically 
+naming the intermediary and the health plan. This approach could thus impede operations of HIEs/HINs. 
+Response 
+We agree with the commenter’s 
+concerns that the proposed consent 
+requirements for intermediaries may impede HIEs/HINs. The finalized definition of intermediary in § 2.11 excludes part 2 programs, covered entities, and business associates. This approach should help remove barriers to 
+HIEs’/HINs’ inclusion of part 2 records from part 2 programs that are also covered entities. As noted, we believe excluding business associates, in particular, will encourage HIEs to accept part 2 records and include part 2 programs as participants and reduce burdens on business associates that serve as HIEs. 
+Comment 
+One HIE commenter said that the 
+NRPM provides an example of an 
+intermediary being an electronic health vendor that enables entities at two different health systems to share records and would be bound by the requirements proposed under § 2.24. However, that same vendor would not be an intermediary when used by employees in different departments of a hospital to access the same patient’s records. The commenter finds this confusing and seeks clarification on the definition of intermediary and their associated requirements. Another commenter, a health IT vendor, also questioned our example in the NPRM claiming that the developer of the product used in an exchange of information is no more an intermediary to the exchange than the manufacturer of a fax machine is an intermediary to information faxed from one place to another. The EHR vendor described in the NPRM should only be considered an intermediary when it controls the exchange of health records between systems using its software or when it serves as the recipient of records. 
+Response 
+We acknowledge that some 
+commenters may have found this NPRM 
+example confusing. We believe our revised definition and changes to § 2.24 help clarify the role of intermediaries. We have in the NPRM and other past rules and guidance cited HIEs/health information networks or ‘‘HINs,’’ ACOs, coordinated care organizations, care management organizations, and research institutions as examples of 
+VerDate Sep<11>2014 18:41 Feb 15, 2024 Jkt 262001 PO 00000 Frm 00062 Fmt 4701 Sfmt 4700 E:\FR\FM\16FER2.SGM 16FER2lotter on DSK11XQN23PROD with RULES2

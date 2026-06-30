@@ -1,0 +1,20 @@
+# Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 176/289)
+
+**Source:** health_2024_02544.pdf
+**Chunk ID:** health_2024_02544_028_sub_176
+**Pages:** 1-160
+**Section Path:** Regulatory Impact Analysis > Paperwork Reduction Act of 1995 > Explanation of Estimated Capital Expenses for 42 CFR Part 2
+
+---
+
+Among others, a health IT vendor, a 
+health care provider, and a health insurer believed that part 2 programs should not be required to provide a 
+copy of the written patient consent when disclosing records. They believe the notice to accompany disclosures already required under the § 2.32 is sufficient to alert the recipient of potential restrictions regarding redisclosure and the requirement would not align with disclosures for TPO under HIPAA. A health insurer suggested that allowing a part 2 program to retain the consent for future auditing and use or disclosure needs is sufficient and also helps to share only the minimum necessary PHI. If the Department were to also require provision of the written consent authorizing the disclosure, it would place an unnecessary administrative burden on both the part 2 program and the recipient of records. Even more problematic, such a requirement would create a corresponding duty for the recipient of records to evaluate the legal sufficiency of the consent related to the part 2 program’s disclosure. The recipient of records should not be placed in the position of identifying and correcting errors in a part 2 program’s disclosure, or assuming any potential downstream liabilities that may result. 
+An insurance association supported 
+the use of electronic processes whenever feasible. In addition, to reduce the burden on part 2 programs and to ensure that HIPAA entities can act promptly on part 2 data, the association asked that the Department clarify in final regulations that HIPAA entities that receive part 2 data may accept that the data was disclosed pursuant to a TPO consent unless otherwise notified in writing. This is particularly important in industries such as pharmacy benefits management, where data is transmitted in huge volumes in real time, and there is no consistent mechanism currently available to ‘‘flag’’ certain records as containing part 2 data, nor explain the legal basis on which the data were disclosed. 
+Response 
+We acknowledge commenter concerns 
+about how to manage consent and any 
+limitations on consent within EHRs and 
+through HIEs and the disadvantages of segmenting data and segregating records. Although we are finalizing a modification to § 2.12 to expressly state that ‘‘[a] program, covered entity, or business associate that receives records based on a single consent for all treatment, payment, and health care operations is not required to segregate or segment such records[,]’’ some means to ensure that records are used and disclosed according to the scope of the 
+VerDate Sep<11>2014 18:41 Feb 15, 2024 Jkt 262001 PO 00000 Frm 00089 Fmt 4701 Sfmt 4700 E:\FR\FM\16FER2.SGM 16FER2lotter on DSK11XQN23PROD with RULES2

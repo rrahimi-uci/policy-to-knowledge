@@ -1,0 +1,36 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 167/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_167
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+entities to implement MFA. 
+t. Whether the Department should 
+require regulated entities to deploy an endpoint detection and response (EDR), security information and event management (SIEM), or other specific solution. 
+u. Whether once every six months is 
+the appropriate frequency for the automated vulnerability scans required under the implementation specification for vulnerability management. If not, please explain. 
+v. Whether the Department should 
+define in regulation or guidance what constitutes an authoritative source of known vulnerabilities. If so, please explain. 
+w. Whether once every 12 months is 
+the appropriate frequency for the penetration testing required under the implementation specification for vulnerability management. If not, please explain. 
+x. For regulated entities that have 
+conducted penetration tests, the amount of time and costs of such tests. 
+G. Section 164.314—Organizational 
+Requirements 
+1. Section 164.314(a)(1)—Standard: 
+Business Associate Contracts or Other Arrangements 
+a. Current Provisions 
+The first standard in 45 CFR 164.314 
+contains the requirements for business 
+associate agreements and other arrangements. The associated implementation specifications at 45 CFR 164.314(a)(2) require that a business associate agreement include provisions compelling a business associate to do all of the following: (1) comply with the requirements of the Security Rule;
+818(2) 
+ensure that any subcontractors that create, receive, maintain, or transmit ePHI on behalf of the business associate agree to comply with the applicable requirements of the Security Rule by also entering into a business associate agreement;
+819and (3) report to the 
+covered entity any security incident of which it becomes aware, including breaches of unsecured PHI as required by the Breach Notification Rule.
+820 
+Under 45 CFR 164.314(a)(2)(ii), a 
+covered entity that is a governmental entity is in compliance with the requirements of this section if it has in place an arrangement with a business associate that is also a governmental entity where the arrangement meets the 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00084 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

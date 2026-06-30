@@ -1,0 +1,57 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 45/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_045
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+920 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+316Id. 
+31742 U.S.C. 1320d–1(c)(1) and (2). 
+31842 U.S.C. 1320d–1(c)(2)(B). 
+319See 42 U.S.C. 1320d(7) (definition of 
+‘‘Standard’’). 
+320See 42 U.S.C. 1320d–2(a)(1). 32165 FR 50312, 50320 (Aug. 17, 2000); see also 
+42 U.S.C. 1320d–2(b), (c), and (d); sec. 264(c) of 
+HIPAA. 
+32265 FR 50312, 50320 (Aug. 17, 2000). 
+32345 CFR 160.103 (definition of ‘‘Standard’’). 
+32463 FR 43242, 43249 (Aug. 12, 1998); 68 FR 
+8334, 8341 (Feb. 20, 2003). 
+32578 FR 5566, 5589–91, 5693–95 (Jan. 25, 2013). 
+32663 FR 43249 (Aug. 12, 1998); 68 FR 8341 (Feb. 
+20, 2003). 32742 U.S.C. 1320d–2(d)(1)(A). 
+328‘‘ANSI/NIST–ITL Standard,’’ National 
+Institute of Standards and Technology, U.S. Department of Commerce (Feb. 3, 2023), https://
+www.nist.gov/programs-projects/ansinist-itl- standard. 
+329See section 13412(a) of the HITECH Act, as 
+amended by section 1 of Public Law 116–321, 134 Stat. 5072 (Jan. 5, 2021) (codified at 42 U.S.C. 17941(a)(1)). prevent all breaches or interruptions in 
+the confidentiality, integrity, or availability of ePHI, we believe that it will prevent many and enable regulated entities to identify, mitigate, and remediate the damage more quickly if there is a breach or other security incident, thereby reducing harm to individuals and the overall costs of such occurrences to regulated entities and to the U.S. health care system. As such, the proposed modifications would support a primary goal of HIPAA’s Administrative Simplification provisions: improving the efficiency and effectiveness of the U.S. health care system by encouraging the development of health information systems through the establishment of uniform standards and requirements for electronic transmission of ePHI, including those for security.
+316 
+E. The Secretary Must Develop Standards for the Security of ePHI Because None Have Been Developed by an ANSI-Accredited Standard Setting Organization 
+HIPAA requires the Secretary to adopt 
+standards that have been developed, adopted, or modified by a standard setting organization accredited by ANSI, except in certain circumstances.
+317For 
+example, HIPAA permits the Secretary to develop standards where no relevant standards have been developed, adopted, or modified by an ANSI- accredited standard setting organization. In developing, adopting, or modifying a standard, the Secretary is required to consult with standard setting organizations, NCVHS, and with the appropriate Federal and State agencies.
+318 
+The statutory definition of the term 
+‘‘standard’’ applies only to standards for electronic transactions and data elements for such transactions that are appropriate for: (1) the financial and administrative transactions described in the statute; and (2) other financial and administrative transactions consistent with the goals of improving the operation of the health care system and reducing administrative costs, as determined appropriate by the Secretary.
+319Under HIPAA, security is 
+not considered a financial or administrative transaction, or a data element of such transaction.
+320In the 
+‘‘Health Insurance Reform: Standards for Electronic Transactions’’ final rule in 2000, we explicitly adopted a broader definition of ‘‘standard’’ because we recognized that the statutory definition only applied to standards for financial and administrative transactions, despite the statute’s requirement that the Secretary adopt standards addressing other matters, including privacy and security.
+321At that time, we explained 
+that we adopted a broader definition of standard to accommodate the varying functions of the specific standards proposed in other HIPAA regulations.
+322 
+For the same reason, we believe that it is appropriate to continue to rely on the regulatory definition of standard.
+323 
+As discussed above, in both 1998 and 
+2003, the Department determined that no comprehensive, scalable, and technology-neutral set of standards exists, and accordingly, we proposed and adopted a new standard.
+324In 2013, 
+we made only minor modifications to the standards when we complied with explicit directions from Congress to apply the requirements of the Security Rule to business associates, so we did not need to consider whether an ANSI- accredited standard setting organization had adopted a comprehensive set of standards on the security for ePHI that was flexible, scalable, and technology- neutral.
+325 
+However, because we believe it is 
+appropriate for us to consider modifying the Security Rule at this time for the reasons discussed above, we must again consider whether an ANSI-accredited standards setting organization has developed, adopted, or modified a standard relating to the security of ePHI. The Department continues to believe that any standard must be comprehensive, rather than piecemeal, as recommended by the ANSI Healthcare Informatics Standards Board.
+326We also continue to agree

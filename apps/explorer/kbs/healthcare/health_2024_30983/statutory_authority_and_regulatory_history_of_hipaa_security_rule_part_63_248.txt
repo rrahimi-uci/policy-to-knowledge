@@ -1,0 +1,57 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 63/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_063
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+929 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+39045 CFR 164.304 (definition of ‘‘Technical 
+safeguards’’). 391Proposed 45 CFR164.308(a)(2)(ii)(A)(2). 
+392See NIST definition of ‘‘threat,’’ Glossary, 
+Computer Security Resource Center, National Institute of Standards and Technology, U.S. 
+Department of Commerce, https://csrc.nist.gov/ glossary/term/threat. 
+393See 45 CFR 160.502 of the 2003 interim final 
+rule, 68 FR 18895, 18898 (Apr. 17, 2003). 
+39445 CFR 160.103 (definition of ‘‘Person’’). 
+39545 CFR 164.304 (definition of ‘‘User’’). 
+396See ‘‘Defending Against Common Cyber- 
+Attacks,’’ Cybersecurity Newsletter, Office for Civil Rights, U.S. Department of Health and Human 
+Continued required to deploy technical safeguards 
+across its enterprise by, among other things, configuring and using technical mechanisms in the hardware, software, and firmware components of its relevant electronic information systems to protect ePHI and electronic information systems that create, receive, maintain, or transmit ePHI or that otherwise affect the confidentiality, availability, or integrity of ePHI. 
+17. Modifying the Definition of 
+‘‘Technical Safeguards’’ 
+a. Current Provision and Issues To 
+Address 
+The current definition of ‘‘technical 
+safeguards’’ includes the technology and policy and procedures for its use that protect ePHI and control access to it.
+390 
+As discussed above, the Department believes that there is an immediate need to modernize and update the definition to better reflect the role technology plays in protecting ePHI and the technical components of information systems, versus the role of policies and procedures. This would complement our effort to clarify the relationship between technology and the implementation of technical policies and procedures. 
+b. Proposal 
+The Department proposes to modify 
+the definition of ‘‘technical safeguards’’ 
+to expressly include ‘‘technical controls.’’ We also propose to add language that would clarify that the technology, technical controls, and related policies and procedures in this category govern the use of the technology to protect and control access to ePHI. The proposed changes also would improve the consistency of language across the safeguard provisions and rule. 
+18. Adding a Definition of ‘‘Technology 
+Asset’’ 
+a. Issues To Address 
+Throughout the Security Rule, 
+standards and implementation 
+specifications list the components of electronic information systems to which its requirements apply. Based on the Department’s enforcement experience, we believe that it would be beneficial to more clearly distinguish between the requirements that apply to all components of an electronic information system and those that only apply to certain components. Additionally, we believe it would be beneficial to distinguish between requirements that apply specifically to 
+each particular component of an electronic information system and those that apply to the electronic information system as a whole. 
+b. Proposal 
+The Department proposes to define 
+the term ‘‘technology asset’’ to mean the 
+components of an electronic information system, including but not limited to hardware, software, electronic media, information, and data. In so doing, we would clarify which Security 
+Rule requirements apply to all of the components of electronic information systems as opposed to those that apply only to certain components, and which requirements apply to each particular components and which apply to the entire electronic information system. 
+For example, understanding the risks 
+and vulnerabilities to a regulated entity’s ePHI requires a thorough understanding of the components of its electronic information systems, the electronic information systems themselves, how they are connected, and how ePHI moves through those systems. Thus, by requiring a regulated entity to conduct an inventory of its technology assets and to create a network map of its electronic information systems, we clarify that a regulated entity is obligated to consider not only its electronic information systems as a whole, but also the components within those electronic information systems and their functions. 
+19. Adding a Definition of ‘‘Threat’’ 
+a. Issues To Address 
+Addressing threats to the 
+confidentiality, integrity, and 
+availability of ePHI is a key function of the Security Rule, but the rule does not define ‘‘threat.’’ The concept of threat also underlies the Department’s proposed definition of ‘‘risk’’ defined above and forms the basis of a key proposed implementation specification associated with the standard for risk analysis.
+391 
+b. Proposal 
+The Department proposes to define

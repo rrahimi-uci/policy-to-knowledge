@@ -1,0 +1,29 @@
+# Amendments to Existing Exceptions — Cybersecurity Donations and EHR Services (42 CFR Part 411) (part 293/384)
+
+**Source:** health_2020_26140.pdf
+**Chunk ID:** health_2020_26140_005_sub_293
+**Section Path:** Amendments to Existing Exceptions — Cybersecurity Donations and EHR Services (42 CFR Part 411)
+**Summary:** This section details the amendments made to existing exceptions, including those for cybersecurity donations and electronic health records, clarifying the compliance requirements for these areas.
+
+---
+
+77637 Federal Register / Vol. 85, No. 232 / Wednesday, December 2, 2020 / Rules and Regulations 
+28Appendix B, Version 1.1 (April 16, 2018) 
+available at https://nvlpubs.nist.gov/nistpubs/ 
+CSWP/NIST.CSWP.04162018.pdf. be necessary and used predominantly 
+for cybersecurity, we agree that the type 
+of connection between a donor and a physician (bidirectional read-write connection versus unidirectional read- only access) is an important factor in determining whether particular technology or services are necessary for cybersecurity. However, we do not believe that any software or other information technology should be deemed to be necessary for 
+cybersecurity simply because the technology permits a physician to access a hospital’s computer system. Moreover, the determination of whether technology or services are used predominantly to implement, maintain, 
+or reestablish cybersecurity depends on how the donated technology or services are used in fact and, therefore, not appropriate for a deeming provision. Although technology or services donated under the cybersecurity exception may have uses or functions other than cybersecurity (for example, software that allows a physician to access a hospital’s computer system), the cybersecurity use must in fact predominate. 
+b. Definitions of ‘‘Cybersecurity’’ and 
+‘‘Technology’’ 
+In the proposed rule, we proposed to 
+define the term ‘‘cybersecurity’’ to mean the process of protecting information by preventing, detecting, and responding to cyberattacks and to define the term ‘‘technology’’ to mean any software or other type of information technology, other than hardware (84 FR 55831). Because the term ‘‘cybersecurity’’ also appears in the EHR exception at § 411.357(w), which expressly applies to the donation of cybersecurity software and services, we proposed to include the definition of ‘‘cybersecurity’’ in our regulations at § 411.351. Because the term ‘‘technology,’’ as used in the new exception for cybersecurity technology and related services, would be defined solely for purposes of the exception at § 411.357(bb), we proposed to include its definition at § 411.357(bb)(2) (84 FR 55831). We note that the term ‘‘technology’’ is included in several instances in our regulations as part of the term ‘‘information technology’’ and at § 411.357(w)(6)(iv) to describe one of the ways in which the determination of the eligibility of a physician for a donation of EHR items or services, or the amount or nature of the items or services, would be deemed not to be 
+determined in a manner that directly takes into account the volume or value of referrals or other business generated between the parties. The proposed definition of ‘‘technology’’ was not intended to affect the meaning of the 
+term ‘‘information technology’’ or the interpretation of § 411.357(w)(6)(iv). 
+In the proposed rule, we proposed a 
+broad definition of ‘‘cybersecurity’’ derived from the NIST Framework for Improving Critical Infrastructure,
+28a 
+framework that does not apply specifically to the health care industry, but applies generally to any United States critical infrastructure (84 FR 55831). We proposed a broad definition of ‘‘cybersecurity’’ to avoid unintentionally limiting donations by relying on a narrow definition or a definition that might become obsolete over time, although we solicited comments whether a definition tailored to the health care industry would be more appropriate (84 FR 55831). We proposed a similarly broad definition of 
+‘‘technology’’ that is neutral with respect to the types of cybersecurity technology to which the exception applies (84 FR 55831). We explained in the proposed rule that the definition of ‘‘technology’’ is broad enough to include cybersecurity software and other IT, such as an Application Programming Interface (API)—which is neither software nor a service, as those terms are generally used—that is available now, as well as technology that may become available as the industry continues to develop. As proposed, ‘‘technology’’ would have excluded hardware. We explained our concern in the proposed rule that donations of valuable multiuse hardware could pose a risk of program or patient abuse (84 FR 55832). 
+In the proposed rule, we also

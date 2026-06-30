@@ -1,0 +1,49 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 35/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_035
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+916 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+258University of Texas M.D. Anderson Cancer 
+Center v. U.S. Department of Health and Human 
+Services, 985 F.3d 472, 478 (5th Cir. 2021). 
+259Id. 
+260Id. 261Sec. 1173(d)(2)(B) of Pub. L. 104–191, 110 
+Stat. 2026 (Aug. 21, 1996) (codified at 42 U.S.C. 
+1320d–2). 
+26268 FR 8334, 8336 (Feb. 20, 2003). 
+26342 U.S.C. 17931(a); 78 FR 5566 (Jan. 25, 2013). 26478 FR 5566 (Jan. 25, 2013). 
+265Id. at 5591. 
+266See 68 FR 8334, 8341 (Feb. 20, 2003). 
+267Id. at 8344. measures that are reasonable and 
+appropriate for their circumstances. 
+We are also concerned that recent 
+caselaw has not accurately set forth the 
+steps regulated entities must take to adequately protect the confidentiality, integrity, and availability of ePHI, as required by the statute. Specifically, in the University of Texas M.D. Anderson 
+Cancer Center v. HHS (‘‘M.D. 
+Anderson’’), the U.S. Court of Appeals 
+for the Fifth Circuit held, among other things, that the Security Rule does not say anything about how effective a mechanism for encryption must be, nor does it require that an encryption mechanism provide ‘‘bulletproof protection’’ of all systems containing ePHI.
+258Thus, under the court’s 
+interpretation, a regulated entity can meet its obligations under the Security Rule concerning encryption and decryption of ePHI by implementing a mechanism to do so, without regard for the effectiveness of the implementation.
+259Additionally, the 
+court noted that the requirement for ‘‘a mechanism’’ does not ‘‘prohibit a [regulated] entity from creating ‘a mechanism’ by directing employees to sign an [agreement] that requires the encryption of portable devices.’’
+260 
+While the Department disagrees with the court’s interpretation that merely requiring employees to sign an agreement to encrypt portable devices is sufficient to comply with its Security 
+Rule obligations to implement a mechanism to encrypt and decrypt ePHI, the Department believes that additional clarity is warranted to ensure that regulated entities understand their obligation to have encryption mechanisms in place and deployed throughout the regulated entity’s enterprise to ensure the confidentiality, integrity, and availability of ePHI. 
+Several technical safeguards currently 
+require regulated entities to implement a ‘‘mechanism’’ as part of complying with the associated standard. Given that written policies and procedures alone are insufficient to protect ePHI, and the misinterpretation of what it means to implement a mechanism also could lead to inadequate protection of ePHI, the Department believes that the Security Rule must be revised, consistent with its statutory mandate, as discussed in greater detail above. D. It Is Reasonable and Appropriate To 
+Strengthen the Security Rule To Address the Changes in the Health Care Environment and Clarify the Compliance Obligations of Regulated Entities 
+1. Congress and the Department 
+Anticipated That Security Standards Safeguards Would Evolve To Address Changes in the Health Care Environment 
+By requiring that regulated entities 
+maintain reasonable and appropriate safeguards to protect against reasonably anticipated threats or hazards or unauthorized uses or disclosures of ePHI, Congress clearly anticipated that the administrative, physical, and technical safeguards implemented to protect the security of ePHI would need to change in response to changes in the environment in which health care is provided.
+261As the health care 
+environment and the operations of regulated entities evolve, so must the protections for ePHI and the information systems used to create, receive, maintain, or transmit it. For example, regulated entities must be expected to adopt safeguards that address new risks to the security of ePHI, such as those posed by maintaining ePHI in the cloud; the connection of medical devices and other technology to networks; and the connection of information systems used to create, receive, maintain, or transmit ePHI to the same networks as those do not perform such activities. After all, it is reasonable to anticipate that there will be new threats or hazards to ePHI or efforts by unauthorized persons to use or disclose such ePHI in an increasingly connected environment. 
+By design, the Security Rule sets a 
+national floor for the security measures that regulated entities are required to implement to protect the confidentiality, integrity, and availability of ePHI. In 2003, the Department opted to frame the standards in terms that were as generic as possible and in a manner that enabled the standards to be met through various approaches or technologies to ensure that regulated entities had the flexibility to determine how best to protect the confidentiality, integrity, and availability of ePHI based on their specific circumstances.
+262When we 
+extended the Security Rule in 2013 to directly apply to business associates in accordance with the HITECH Act,

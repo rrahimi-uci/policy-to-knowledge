@@ -1,0 +1,72 @@
+# C3-7-02, Initiating an MBS Sale (07/07/2021)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_494
+**Pages:** 1033-1034
+**Section Path:** Part C, Selling, Securitizing, and Delivering Loans > Subpart C3, Mortgage-Backed Securities (MBS) > Chapter C3-7, Delivering and Trading MBS > C3-7-02, Initiating an MBS Sale (07/07/2021)
+
+---
+
+Published March 4, 2026
+1015remedies upon a default is a contractual right to liquidate such transaction as described in Section 555 and 556
+of the United States Bankruptcy Code, as amended, and a right to terminate, liquidate, or accelerate as
+described in Sections 5390(c)(8)(A) and (C) of Title 12 of the United States Code, as amended.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2021-09 October 06, 2021
+Announcement SEL-2019-09 December 04, 2019
+ 
+C3-7-02, Initiating an MBS Sale (07/07/2021)
+Introduction
+This topic describes the steps lenders take to initiate an MBS, including UMBS, sale via Fannie Mae’s Capital
+Markets Pricing and Sales Desk, including:
+Determining the Trade Type
+Checking Market Prices
+Selecting a Settlement Date
+Selecting a Settlement Method
+Requesting and Accepting a Firm Bid/Oﬀer
+Determining the Trade Type
+If a lender sells MBS, its trade may be TBA or speciﬁed. With a TBA trade, the lender may deliver any UMBS
+meeting eligibility requirements as deﬁned by SIFMA. A speciﬁed trade means that a speciﬁc MBS is being
+traded and only that security can be delivered in satisfaction of the trade. TBA trades settle on the SIFMA
+settlement dates (see Pool Settlement Dates ).
+Checking Market Prices
+See C3-1-01, General Information About Fannie Mae’s MBS Program , for information on MBS prices and their
+determinants. Prices of Fannie Mae MBS are quoted in 32nds of a percent for both immediate and forward
+delivery issues.
+
+Published March 4, 2026
+1016Selecting a Settlement Date
+The lender must plan its settlement date to be sure it can deliver the securities as scheduled. In particular, the
+lender must allow suﬃcient time after loan closing for the processing of the documentation package. Any errors
+in the package can result in a delay in settlement.
+Lenders may settle trades for newly issued securities on any day of the month in which they are issued. When a
+trade is settled on a “regular” settlement date, it will occur on a date that is predetermined by SIFMA, based on
+a schedule that changes periodically.
+Note: Settlements cannot occur on holidays.
+Selecting a Settlement Method
+The method of funding the sale of a security depends on the settlement method the lender chooses when
+delivering the pool to Fannie Mae. Lenders that want to use an early funding settlement option such as As Soon
+As Pooled Sale (for pools) or As Soon As Pooled Plus (for whole loans) must execute a special agreement that
+provides the speciﬁc terms for the type of transaction it is using. Lenders interested in using an early funding
+settlement option should contact the Capital Market Sales Desk. See E-1-02, List of Contacts .
+For newly issued securities, if a lender opts for an “original issue” settlement instead of “delivery vs. payment,”
+lenders must specify Fannie Mae’s account in the wiring instructions on the Delivery Schedule  (Form 2014 ) it
+submits when the pool is delivered. Lenders using this option must follow SIFMA’s guidelines and submit
+notiﬁcation 48 hours prior to settlement.
+Existing MBS must be funded through “delivery vs. payment” (or a “delivery against funds” or “existing issue”)
+settlement option. Under this settlement option, when Fannie Mae receives the security, it credits the lender’s
+account at the institution that wires the security to the Desk.
+If a lender has not sold the securities to an investor before it delivers loans to Fannie Mae and has not elected to
+use the “original issue” settlement option, Fannie Mae will issue the securities to the lender.
+Requesting and Accepting a Firm Bid/Oﬀer
+When contacting the Desk to request a ﬁrm bid/oﬀer, the lender must be prepared to specify the following
+information:
+MBS product,
+amount of the trade,
+coupon rate,
+settlement date,
+unique characteristics of the pool that will back the security.
+Fannie Mae’s Sales Desk will convey a bid/oﬀer for the security to the lender. If the lender accepts the ﬁrm bid
+or ﬁrm oﬀer, the Sales Desk will lock in the bid or oﬀer and verify the trade details in a recorded telephone

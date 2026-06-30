@@ -1,0 +1,40 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 153/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_153
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+974 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+773Letter from NCVHS Chair Jacki Monson 
+(2022), supra note 123, p. 6. 774‘‘Risks of Default Passwords on the internet,’’ 
+Cybersecurity & Infrastructure Security Agency, 
+U.S. Department of Homeland Security (Oct. 7, 2016), https://www.cisa.gov/news-events/alerts/ 
+2013/06/24/risks-default-passwords-internet. 
+775‘‘Multi-Factor Authentication,’’ Cybersecurity 
+& Infrastructure Security Agency, U.S. Department of Homeland Security (Jan. 5, 2022), https://www.cisa.gov/sites/default/files/publications/MFA- Fact-Sheet-Jan22-508.pdf; Letter from NCVHS Chair 
+Jacki Monson (2022), supra note 123, pp. 7–8. 
+776Letter from NCVHS Chair Jacki Monson 
+(2022), supra note 123, pp. 7–8. 
+777‘‘Cybersecurity Performance Goals,’’ supra 
+note 18. 778See 89 FR 63498, 63574, 63506, 63528 (Aug. 
+5, 2024) (proposed 45 CFR 170.315(d)(13)(ii) of ASTP/ONC’s HTI–2 NPRM). ‘‘implement’’ and ‘‘deploy,’’ we propose 
+to replace the requirement for a regulated entity to implement procedures with a requirement to deploy technical controls. Also, consistent with our proposals to clarify that a regulated entity’s obligations to ensure the confidentiality, integrity, and availability extend to all of its relevant electronic information systems, we propose to clarify that the regulated entity is to deploy technical controls to verify that a person seeking access to the regulated entity’s relevant electronic information systems is the one claimed. The Department also proposes to modify the existing standard to clarify that a regulated entity would be required to deploy technical controls to verify that a technology asset seeking access to the regulated entity’s relevant electronic information systems is the one claimed. Thus, the proposed standard for authentication would require a regulated entity to deploy technical controls to verify that a person or technology asset seeking access to ePHI and/or the regulated entity’s relevant electronic information systems is, in fact, the person or technology asset that the person or asset claims to be. We also propose to remove the reference to an entity because entity is included within the definition of person. 
+The Department proposes four 
+implementation specifications under this standard. Consistent with NCVHS’ recommendation to eliminate the use of default passwords, the proposed implementation specification for information access management policies at proposed 45 CFR 164.312(f)(2)(i) would require a regulated entity to deploy technical controls in accordance with its information access management policies and procedures, including technical controls that require users to adopt unique passwords.
+773Among 
+other things, this proposal would ensure 
+that regulated entities change default passwords. Such unique passwords would be required to be consistent with current recommendations of authoritative sources. The Department does not propose to define authoritative sources and defers to best practices for setting and maintaining passwords of sufficient strength to ensure the confidentiality, integrity, and availability of ePHI. Under this proposal, a regulated entity would need to require its workforce members to change any default passwords to unique passwords that are consistent with current authoritative source recommendations for unique passwords, as well as prevent the sharing of 
+passwords among workforce members. Default passwords, typically factory-set passwords, may be discovered in common product documentation and used by attackers to gain access to relevant electronic information systems.
+774Thus, the Department 
+believes that it is crucial for the security of ePHI that a regulated entity eliminate the use of default passwords. 
+In addition to proposing the 
+elimination of default passwords, the Department proposes a specific requirement for a regulated entity to deploy MFA in the implementation specification for MFA at proposed 45 CFR 164.312(f)(2)(ii). We propose to expressly require MFA, as 
+recommended by NCVHS, because it increases security by ensuring that a compromise of a single credential does not allow access to unauthorized users.
+775MFA is an effective way to 
+reduce the risk of brute force attacks and to increase the cost of such attack, making such an attack less appealing to intruders.
+776Further, deployment of 
+MFA aligns with the Department’s essential CPGs for Email Security and Multifactor Authentication because use of MFA would be applicable to email access and protect assets connected to the internet.
+777Accordingly, proposed

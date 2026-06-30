@@ -1,0 +1,122 @@
+# Structured Securities and Securitizations 
+
+**Source:** risk_management_manual_complete.pdf
+**Chunk ID:** risk_management_manual_complete_101
+**Pages:** 35-35
+**Section Path:** section2-1 > CAPITAL > RISK-WEIGHTED ASSETS  > Structured Securities and Securitizations 
+
+---
+
+CAPITAL Sectio n 2.1 
+Capital (8/22) 2.1-6 Risk Management Manual of Examination Policies  
+Federal Deposit Insurance Corporation  •A credit facility that is secured by real property  and
+pr
+imarily finances,  has financed, or refinances
+acquisition, development, or construction of real
+property;
+•An exten
+sion of credit that  provides  financing to
+acquire, develop, or improve such real property intoincome -producing property; and
+•
+A cred
+it facility that i s dependent on future income or
+sales pr
+oceeds from, or refinancing of, such real
+property for repayment.
+The HV
+CRE definition provides s everal exclusions, 
+including:  
+•One-to four -f
+amily residential properties ;
+•Commun
+ity development projects;
+•Agricu
+ltural land;
+•Existi
+ng income -producing property secured by
+permanent financings;
+•Certain
+ commercial real property projects where the
+borrower ha s contributed at least 15 percent of  the as-
+completed value of the project;
+•Real pro
+perty where the loan has been reclassified as a
+non-HVCRE loan; and  
+•Real estat
+e where the loan was made before January 1,
+2015.
+The HVC
+RE definition does not apply in any manner to  
+institutions that elect the CBLR.  
+Past-Due Asset Risk -Weights 
+The stand
+ardized approach requires financial institutions to 
+transition assets that are 90 days or more past due or on 
+nona ccrual from their original risk -weight to 150 percent . 
+For example, if the institution  held a revenue bond that was 
+on nonaccrual, Part 324 requires the bond to be risk 
+weighted at 150  percent  compared to its original 50  percent  
+risk-weight .  This treatment could potentially apply to 
+commercial, agricultural, mul ti-family, and consumer loans 
+as well as fixed -income securities .  However, this 
+requirement does not apply to past due 1- 4 family 
+residential real estate loans (which would be risk weighted 
+at 100 percent ), HVCRE (risk weighted at 150  percent ), 
+exposures to sovereign entities, and the portion of loan 
+balances with eligible guarantees or collateral where the risk-weight can vary.  
+Structured Securities and Securitizations  
+Part 32
+4 establishes sophisticated risk-weight approaches  
+for securitization  exposure s and structured security 
+exposures that are retained on - or off -balance sheet .  Typical 
+examples of securitiz ation exposures  include private label 
+collateralized mortgage obligations (CMOs), trust preferred collateralized debt obligations , and asset -backed securities , 
+provided there is tranching of credit risk .  Generally , pass-
+through and government agency CMOs  are excluded  from 
+the securitization exposure risk -weight approaches .  In 
+general, Part 324 requires FDIC -supervised institutions to 
+calculate the risk-weight of securitization exposures using  
+either the gross -up approach or the Simplified Supervisory 
+Formula Approach (SSFA)  consistently across all 
+securitization exposures, except in certain cases .  For 
+instance, the institution  can, at any time, ri sk weight a 
+securitization exposure at 1,250 percent . 
+The gros
+s-up approach is similar to earlier risk -based capital 
+rules, where capital is required on the credit exposure of the 
+institution ’s investment in the subordinate tranche , as well 
+as its pro  rata share of the more senior tranches it supports . 
+The gross -up approach calculates a capital requirement 
+based on the weighted -average risk -weights of the 
+underlying exposures in the securitization pool .   
+The SS
+FA is designed to assign a lower risk -weigh t to more 
+senior -class securities and higher risk -weights to support 
+tranches .  The SSFA is both risk  sensitive and forward  
+looking .  The formula adjusts the risk- weight for a 
+security’s underlying collateral based on key risk factors , 
+such as incurred losses, nonperforming loans, and the ability of subordinate tranches to absorb losses .  In any case, a 
+securitization is assigned at least a minimum risk -weight of 
+20 percent . 
+Securitization Due  Diligence  
+Secti
+on 324.41(c)  implements due diligence requireme nts 
+for securitization exposures .  The analysis must be 
+commensurate with the complexity of the securitization exposure and the materiality of the exposure in relation to capital .   
+Under t
+hese requirements, management must demonstrate a 
+comprehensive understanding of the features of a securitization exposure that would materially affect its performance.  The due diligence analysis must  be conducted 
+prior to acquisition and at least quarterly as long as the 
+instrument is in the  institution’s  portfolio .   
+When cond
+ucting analysis of a securitization exposure, 
+management  typically  consider s structural features , such as: 
+•Credi
+t enhancements ,
+•Perfor
+mance of servicing organizations ,
+•Deal -speci
+fic definitions of default , and
+•Any ot
+her features that could materially impact the
+performance of the exposure.

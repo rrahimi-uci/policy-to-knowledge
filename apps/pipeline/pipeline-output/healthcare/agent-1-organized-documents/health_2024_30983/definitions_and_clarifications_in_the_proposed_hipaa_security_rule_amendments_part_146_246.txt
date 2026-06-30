@@ -1,0 +1,22 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 146/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_146
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+security for each relevant electronic information system and technology asset in its relevant electronic information systems and to maintain such information systems and technology assets according to those secure baselines. Consistent with our proposals regarding risk analysis and risk management planning, the Department intends for a regulated entity to establish its security baseline and to maintain that baseline even when technology changes. For example, a regulated entity that uses software to access ePHI would be required to update the software with patches as reasonable and appropriate. But where a developer ceases to support a software, it would be reasonable and appropriate for the regulated entity to take steps to either replace it or to otherwise ensure that its level of security remains consistent with the regulated entity’s established baseline. Under this proposal, if finalized, the Department would expect a regulated entity to continually monitor its relevant electronic information systems and technology assets in its relevant electronic information systems to ensure that the secure baselines established by the regulated entity are maintained and take appropriate actions when a relevant electronic information system or technology asset in a relevant electronic information system fails to meet the established baselines. A regulated entity’s secure baselines would be determined based on its risk analysis and use of security settings that are consistent across its relevant electronic information systems and technology 
+assets in its relevant electronic information systems. For example, the risk analysis may determine that a manufacturer’s default settings for a particular technology asset are insufficient. Accordingly, the regulated entity may establish the baseline for settings that should be applied to the particular asset and similar technologies across the regulated entity’s enterprise. This proposed standard aligns with the Department’s enhanced CPG for Configuration Management, which calls for regulated entities to define secure device and system settings. It also aligns with the enhanced CPG for Detect and Respond to Relevant Threats and Tactics, Techniques, and Procedures by calling for regulated entities to include malware protection in their security baseline to detect threats and protect electronic information systems.
+748 
+Additionally, the proposed standard also aligns with the Department’s essential CPG for Email Security, which addresses the reduction of risks from email-based threats.
+749 
+The Department proposes five 
+implementation specifications for the proposed standard for configuration management.
+750Under the proposed 
+implementation specification for anti- malware protection at proposed 45 CFR 164.312(c)(2)(i), a regulated entity would be required to deploy technology assets and/or technical controls that protect all of the technology assets in its relevant electronic information systems against malicious software, such as viruses and ransomware. Anti-malware software, especially when used in combination with other technical controls such as intrusion detection/ prevention solutions, can also help prevent, detect, and contain cyberattacks.
+751This protection would 
+be applied to all of a regulated entity’s technology assets in its relevant electronic information systems. When 
+determining how to fulfill this proposed obligation, regulated entities may consider deploying tools such as anti- malware and endpoint detection and response (EDR) solutions. Anti-malware tools generally scan a regulated entity’s electronic information systems to 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00075 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

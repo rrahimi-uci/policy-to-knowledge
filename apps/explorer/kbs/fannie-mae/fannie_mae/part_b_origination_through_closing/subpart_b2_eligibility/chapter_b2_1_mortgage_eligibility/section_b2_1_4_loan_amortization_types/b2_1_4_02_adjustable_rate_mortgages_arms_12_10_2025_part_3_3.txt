@@ -1,0 +1,91 @@
+# B2-1.4-02, Adjustable-Rate Mortgages (ARMs) (12/10/2025) (part 3/3)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_088_sub_003
+**Pages:** 207-214
+**Section Path:** Part B, Origination Through Closing > Subpart B2, Eligibility > Chapter B2-1, Mortgage Eligibility > Section B2-1.4, Loan Amortization Types > B2-1.4-02, Adjustable-Rate Mortgages (ARMs) (12/10/2025)
+
+---
+
+Published March 4, 2026
+194✓ Requirement: Conversion Disclosures Must Include
+ The instances when the conversion option may be exercised.
+ The time frame within which conversion requests must be received.
+ The time frame within which the borrower must return executed conversion documents.
+ Any fees that will be charged for processing the conversion.
+Note : Fannie Mae allows a $250 fee for ARM plans that have a monthly conversion option and
+a $100 fee for other ARM plans.
+ Once the ARM plan converts to a ﬁxed-rate loan, the mortgage is no longer assumable.
+ Any other special conditions.
+Disclosures Regarding Assumption of ARMs
+Although Fannie Mae ARMs are usually assumable, some plans do restrict assumability.
+When assumptions are restricted, the lender must advise the borrower of the exact nature of the restriction(s).
+Note : Lenders must disclose to borrowers that any ARM plan that includes an option to convert to a
+ﬁxed-rate mortgage cannot be assumed once the conversion option is exercised.
+See the Standard ARM Plan Matrix  for information about the assumability provisions of Fannie Mae’s various
+ARM plans.
+Requirements Regarding Interest Rate and Monthly Payment Adjustments
+The following requirements apply to interest rate and monthly payment adjustments for ARM loans:
+The loan being delivered must not be subject to any current litigation with respect to the manner in which
+the interest rate and/or payment adjustments were calculated or implemented.
+The lender must not be servicing other ARMs that include interest rate and payment adjustment
+provisions similar to those of the mortgage being sold to Fannie Mae that are the subject of current
+litigation related to the manner in which adjustments were made.
+ARM Payment Shock
+ARMs that provide for low initial payments based on ﬁxed introductory rates that expire after a short period of
+time and then adjust to a variable rate for the remaining term of the mortgage loan have the potential for
+
+Published March 4, 2026
+195payment shock. “Payment shock” refers to the impact on the borrower’s ability to continue making the
+mortgage payments once the introductory rate expires. After the rate and payment increase, the borrower is
+subsequently faced with a large increase in monthly PITIA.
+Lenders must limit the impact of any potential payment shock on an ARM with an initial ﬁxed-rate period of ﬁve
+years or less by qualifying borrowers based on the qualifying rate described in B3-6-04, Qualifying Payment
+Requirements .
+DU Generic ARM Plans
+Generic ARM plans are provided for loan caseﬁles underwritten through DU. These generic ARM plans are
+available:
+as tools for underwriting with DU, and
+to assist lenders in underwriting negotiated ARMs and standard ARM plans that are not speciﬁcally
+identiﬁed in the ARM plan ﬁeld in the DO/DU user interface (such as all SOFR ARM plans).
+The following generic ARM plans are listed in the DO/DU user interface:
+FM GENERIC, 1 YR, 1% ANNUAL Cap
+FM GENERIC, 1 YR, 2% ANNUAL Cap
+FM GENERIC, 3 YR
+FM-GENERIC, 5 YR
+FM-GENERIC, 7 YR
+FM-GENERIC, 10 YR
+Note : The term in these generic plans refers to the initial ﬁxed-rate period. Generic plan names, such
+as FM GENERIC, 10 YR, are only used to submit loan caseﬁles to DU. Lenders must identify the
+applicable Fannie Mae ARM plan number in closing documents and at delivery of the loan to Fannie
+Mae.
+Generic ARM Underwriting Guidelines
+DU applies standard Fannie Mae ARM underwriting and eligibility guidelines to the generic ARM plan equivalent
+based on the initial interest rate adjustment period.
+✓ For generic ARM plans, DU will …
+ apply standard ARM eligibility guidelines.
+ qualify borrowers based on ARM qualifying guidelines in B3-6-04, Qualifying Payment
+Requirements .
+ allow temporary buydowns based on standard ARM guidelines.
+
+Published March 4, 2026
+196✓ For generic ARM plans, DU will …
+ allow generic ARM plans equivalent to standard ARM plans on special mortgage products.
+ return a message stating that the lender must ensure that the loan is eligible for purchase.
+Loan-Level Price Adjustments
+An LLPA applies to certain ARM loans. These LLPAs are in addition to any other price adjustments that are
+otherwise applicable to the particular transaction. See the Loan-Level Price Adjustment (LLPA) Matrix.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2025-10 December 10, 2025
+Announcement SEL-2022-10 December 14, 2022
+Announcement SEL-2022-09 October 05, 2022
+Announcement SEL-2022-05 June 01, 2022
+Announcement SEL-2021-09 October 06, 2021
+Announcement SEL-2021-08 September 01, 2021
+Announcement SEL-2020-07 December 16, 2020
+Announcement SEL-2020-02 April 01, 2020
+Announcement SEL-2019-08 October 02, 2019
+Announcement SEL-2019-05 June 05, 2019
+Announcement SEL-2019-01 February 06, 2019

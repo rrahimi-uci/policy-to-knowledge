@@ -1,0 +1,25 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 163/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_163
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+810whichever is more frequent. 
+Lastly, we are proposing a new 
+implementation specification for patch and update installation at 45 CFR 164.312(h)(2)(iv) to require a regulated entity to configure and implement technical controls to install software patches and critical updates in a timely manner in accordance with the regulated entity’s patch management program.
+811The proposed standard for 
+patch management, an administrative 
+safeguard discussed above, would require a regulated entity to establish and implement written policies and procedures for applying patches and updating relevant electronic information system configurations, while this proposal would require the regulated entity to implement technical controls to implement those written policies and procedures. In other words, proposed 45 CFR 164.312(h)(2)(iv) addresses the technical controls to effectuate a regulated entity’s patch management plan. Applying patches for technology assets, including workstations, is an effective mechanism to mitigate known vulnerabilities and limit the risk of exploitation.
+812Although older 
+applications or devices may no longer be supported with patches for new vulnerabilities, regulated entities still must take appropriate action if a newly discovered vulnerability affects an older application or device. If an obsolete, unsupported system cannot be upgraded or replaced, additional safeguards should be implemented or existing safeguards enhanced to mitigate known vulnerabilities until upgrade or replacement can occur (e.g., increase 
+access restrictions, remove or restrict network access, disable unnecessary features or services).
+813Deployment of 
+such technical controls would help to ensure that a regulated entity’s relevant electronic information systems are updated as quickly as possible after a vulnerability has been identified and a patch released. 
+The proposed standard for patch 
+management, discussed above, would work in tandem with the proposed standard for vulnerability management to ensure that regulated entities substantially reduce the risk to ePHI from known vulnerabilities.
+814 
+Together, these proposals would clarify that a regulated entity is required to affirmatively seek out information about known vulnerabilities, assess the risks to the confidentiality, integrity, and availability of ePHI, and implement effective mechanisms through both policies and procedures and technical controls to reduce the risk, as well the actual occurrence, of breaches resulting from known vulnerabilities. For example, known vulnerabilities should be readily identified by a regulated entity through monitoring of 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00082 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

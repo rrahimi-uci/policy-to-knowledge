@@ -1,0 +1,63 @@
+# B5-4.2-03, Loans Secured by HomePath Properties (05/07/2025)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_348
+**Pages:** 779-780
+**Section Path:** Part B, Origination Through Closing > Subpart B5, Unique Eligibility and Underwriting Considerations > Chapter B5-4, Property-Specific Products > Section B5-4.2, Other Property-Specific Products > B5-4.2-03, Loans Secured by HomePath Properties (05/07/2025)
+
+---
+
+Published March 4, 2026
+761loans, including those mortgages that receive an Approve/Ineligible recommendation, provided the loan meets
+the requirements contained in this section as well as those contained in A2-2-04, Limited Waiver and
+Enforcement Relief of Representations and Warranties .
+Appraisal Requirements
+The appraisal for the property must follow standard requirements contained in Chapter B4–1, Appraisal
+Guidelines.
+Those guidelines allow an appraisal to be based on the “as is” condition of the property provided there are no
+conditions that aﬀect the safety, soundness, or structural integrity of the property. If those conditions do exist,
+the property must be appraised subject to completion of the speciﬁc alterations or repairs (“as repaired”) and a
+completion report must be obtained from the appraiser prior to delivery of the mortgage to Fannie Mae.
+Delivery
+Loans originated in accordance with this section must be delivered to Fannie Mae no later than two years from
+the date of the disaster declaration by FEMA.
+Special Feature Codes
+Loans delivered under these guidelines must include SFC 416 as part of the delivery data.
+Uniform Appraisal Dataset (UAD) 3.6 Policy
+Lenders using UAD 3.6 must follow the requirements in the  UAD 3.6 Policy Supplement .
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2025-08 October 08, 2025
+Announcement SEL-2025-04 June 04, 2025
+
+Published March 4, 2026
+762B5-4.2-03, Loans Secured by HomePath Properties (05/07/2025)
+Introduction
+This topic describes exceptions to standard policies that are permitted for HomePath properties and delivery
+requirements, including:
+Eligibility Exceptions for HomePath Properties
+Interested Party Contributions
+Certain Resale Restrictions
+Special Feature Code for HomePath Properties using the IPC Exception
+Loan-level Price Adjustment Credit for Appraisals
+Eligibility Exceptions for HomePath Properties
+A HomePath property is a property that was owned and sold by Fannie Mae through a transaction resulting in
+the disposition of its real estate owned (REO). When the property secured by the mortgage is a HomePath
+property, Fannie Mae will allow certain exceptions to standard Selling Guide  eligibility policies as described
+below.
+Interested Party Contributions
+In cases where the subject property is a HomePath property, an exception to the maximum ﬁnancing
+concessions for principal residences is permitted, as described in the table below. All other requirements related
+to IPCs, as described in  B3-4.1-02, Interested Party Contributions (IPCs) , continue to apply.
+Occupancy Type LTV/CLTV Ratio Maximum Financing
+Concessions
+Principal Residence Greater than 90% 6%
+Note:  DU will issue a message if the amount of the IPC appears to exceed the standard ﬁnancing
+concessions described in  B3-4.1-02, Interested Party Contributions (IPCs) . (DU does not apply the
+higher limit even if DU identiﬁes the property as a HomePath property.) The lender must determine
+whether the subject transaction is a purchase of a HomePath property eligible for the higher ﬁnancing
+concessions and document the loan ﬁle accordingly.
+Certain Resale Restrictions
+Notwithstanding any other provision of this Selling Guide , loans subject to resale restrictions imposed by Fannie
+Mae as the seller of its REO property are eligible.

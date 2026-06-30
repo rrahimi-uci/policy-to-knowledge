@@ -1,0 +1,48 @@
+# 112(c) Safe harbors.
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_914
+**Pages:** 882-882
+**Section Path:** SUBPART B—SMALL BUSINESS LENDING DATA COLLECTION > Supplement I to Part 1002—Official Interpretations > Section 1002.112—Enforcement > 112(c) Safe harbors.
+
+---
+
+882 2. Tolerances and data fields . For purposes of determining whether an error is bona fide 
+under § 1002.112(b),  the term “ data field” generally refers to individual fields. All required data 
+fields, and valid response options for t hose fields, are set forth in the Bureau ’s Filing Instructions 
+Guide, available at https://www.consumerfinance.gov/data-research/small -business-
+lending/filing -instructions -guide/ . Some data fields may allow for more than one response. For 
+example, with res pect to information on the ethnicity and race of an applicant ’s principal owner, 
+a data field may identify more than one race or ethnicity. If there are one or more errors within 
+an ethnicity data field, or within a race data field, for a particular princi pal owner, they would 
+count as one (and only one) error for that data field. For instance, in the ethnicity data field, if an 
+applicant indicates that one of its principal owners is Cuban, but the financial institution reports 
+that the principal owner is M exican and Puerto Rican, the financial institution has made one error 
+in the ethnicity data field for that principal owner. For purposes of the error threshold table in appendix F, the financial institution is deemed to have made one error, not two.  
+3. Tolerances and safe harbors . An error that meets the criteria for one of the four safe 
+harbor provisions in §  1002.112(c)  is not counted as an error for purposes of determining 
+whether a financial institution has exceeded the relevant error threshold in appe ndix F for a given 
+data field.  
+112(c) Safe harbors.  
+1. Information from a Federal agency —census tract.  Section 1002.112(c)(2)  provides 
+that an incorrect entry for census tract is not a violation of the Act or subpart  B of this part, if the 
+financial institution obtained the census tract using a geocoding tool provided by the FFIEC or 
+the Bureau. However, this safe harbor provisi on does not extend to a financial institution’s 
+failure to provide the correct census tract number for a covered application on its small business 
+lending application register, as required by §  1002. 107(a)(13), because the FFIEC or Bureau 
+geocoding tool di d not return a census tract for the address provided by the financial institution. 
+In addition, this safe harbor provision does not extend to a census tract error that results from a 
+financial institution entering an inaccurate address into the FFIEC or Bu reau geocoding tool.  
+2. Applicability of NAICS code safe harbor.  The safe harbor in §  1002.112(c)(3)  applies 
+to an incorrect entry for the 3-digit NAICS code that financial institutions must collect and report pursuant to §  1002.107(a)(15) , provided certai n conditions are met. For purposes of 
+§ 1002.112(c)(3)(i),  a financial institution is permitted to rely on statements made by the 
+applicant, information provided by the applicant, or on other information obtained through its use of appropriate third-party sources, including business information products. See also 
+comments 107(a)(15) - 4 and 107(b) -1.  
+3. Incorrect determination of small business status, covered credit transaction, or 
+covered application— examples.  Section 1002.112(c)(4)  provides a safe harbor  from violations of 
+the Act or this regulation for a financial institution that initially collects data under 
+§ 1002.107(a)(18) and (19)  regarding whether an applicant for a covered credit transaction is a 
+minority -owned, a women-owned, or LGBTQI+ -owned business, and the ethnicity, race, and sex 
+of the applicant ’s principal owners, but later concludes that it should not have collected this data , 
+if certain conditions are met. Specifically, to qualify for this safe harbor, §  1002.112(c)(4)  
+requires that the financial institution ha ve had a reasonable basis at the time it collected data

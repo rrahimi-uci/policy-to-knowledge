@@ -1,0 +1,72 @@
+# B2-1.2-01, Loan-to-Value (LTV) Ratios (06/01/2022)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_076
+**Pages:** 179-180
+**Section Path:** Part B, Origination Through Closing > Subpart B2, Eligibility > Chapter B2-1, Mortgage Eligibility > Section B2-1.2, LTV, CLTV, HCLTV, and Subordinate Financing > B2-1.2-01, Loan-to-Value (LTV) Ratios (06/01/2022)
+
+---
+
+Published March 4, 2026
+161Section B2-1.2, LTV, CLTV, HCLTV, and Subordinate Financing
+B2-1.2-01, Loan-to-Value (LTV) Ratios (06/01/2022)
+Introduction
+This topic contains information on LTV ratios, including:
+Calculation of the LTV Ratio
+Sales Price and Appraised Value Used by DU
+Loan-Level Price Adjustments
+Calculation of the LTV Ratio
+The maximum allowable LTV ratio for a ﬁrst mortgage is based on a number of factors including, the
+representative credit score, the type of mortgage product, the number of dwelling units, and the occupancy
+status of the property.
+The following table describes the requirements for calculating LTV ratios for a ﬁrst mortgage transaction. The
+result of these calculations must be truncated (shortened) to two decimal places, then rounded up to the
+nearest whole percent. For example:
+94.01% will be delivered as 95%, and
+80.001% will be delivered as 80%.
+The rounding rules noted above also apply to the CLTV and HCLTV ratio calculations. Lenders' systems must
+contain rounding methodology that results in the same or a higher LTV ratio.
+Underwriting
+MethodType of Transaction Calculation of the LTV Ratio1
+Manual and DUPurchase money
+transactionsDivide the original loan amount by the property
+value. (The property value is the lower of the sales
+price or the current appraised value.)
+Manual and DU Reﬁnance transactionsDivide the original loan amount by the property
+value. (The property value is the current appraised
+value.)
+
+Published March 4, 2026
+162Underwriting
+MethodType of Transaction Calculation of the LTV Ratio1
+Manual and DU Co-op share loansSee Calculating the LTV ratio for Co-op Share Loans
+in B4-2.3-04, Loan Eligibility for Co-op Share Loans .
+Manual and DUMortgages with ﬁnanced
+mortgage insuranceDivide the original loan amount plus the ﬁnanced
+mortgage insurance by the property value. (The
+property value is the lower of the sales price or the
+current appraised value.)
+Note : The LTV ratio calculations shown above may diﬀer for certain mortgage loans. For details on
+these diﬀerences, see  B2-1.3-05, Payoﬀ of Installment Land Contract Requirements ; B5-2-03,
+Manufactured Housing Underwriting Requirements ; B5-3.1-02, Conversion of Construction-to-
+Permanent Financing: Single-Closing Transactions ; B5-3.3-01, HomeStyle Refresh for Improvements on
+Existing Properties ; B5-3.2-03, HomeStyle Renovation Mortgages: Collateral Considerations ; B5-5.1-02,
+Community Seconds Loan Eligibility ;   B5-5.2-02, Loans with Resale Restrictions: Eligibility, Collateral
+and Delivery Requirements ; B5-5.3-03, Shared Equity Transactions: Eligibility, Underwriting and
+Collateral Requirements ; and  B7-1-01, Provision of Mortgage Insurance .
+Refer to the Eligibility Matrix   for maximum allowable LTV ratios.
+Sales Price and Appraised Value Used by DU
+DU uses information in the loan application to determine the sales price and appraised value it uses to calculate
+the LTV, CLTV, and HCLTV ratios.
+DU uses the amounts entered in the following data ﬁelds in the online loan application:
+Sales price = Line A + Line B + Line C (in Section L4)
+Line A = Sales Contract Price (the sales price for purchase transactions, or the cost of construction for
+construction transactions).
+Line B = Improvements, Renovations,  and Repairs (the cost of these items for HomeStyle Renovation
+transactions).
+Line C = Land Value (For certain construction or manufactured home transactions the cost or value of the
+land if the borrower acquired the lot separately).
+Appraised value = Appraised Property Value (in Section 4a)
+Note : If the Appraised Property Value is not present, DU will use the Estimated Property Value. The
+Appraised Property Value must be entered (when available) and the loan caseﬁle must be resubmitted.
+Loan-Level Price Adjustments

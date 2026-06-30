@@ -1,0 +1,39 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 141/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_141
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+969 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+735Messaging in the context of telehealth is 
+discussed in Department guidance on telehealth. 
+See ‘‘Guidance on How the HIPAA Rules Permit 
+Covered Health Care Providers and Health Plans to Use Remote Communication Technologies for Audio-Only Telehealth,’’ Office for Civil Rights, U.S. Department of Health and Human Services (June 13, 2022), https://www.hhs.gov/hipaa/for- professionals/privacy/guidance/hipaa-audio- 
+telehealth/index.html. 
+736For example, health IT certified through the 
+ONC Health IT Certification Program as meeting the ‘‘[v]iew, download, and transmit to 3rd party’’ certification criterion must be able to create and transmit continuity of care document summaries to patients through email via an encrypted method of electronic transmission. See 45 CFR 170.315(e)(1). 
+737The ONC Health IT Certification Program sets 
+forth at 45 CFR 170.550(h) the privacy and security certification framework for Health IT Modules. Section 170.550(h) identifies a mandatory minimum set of the certification criteria that ONC ACBs must ensure are also included as part of specific Health IT Modules that are presented for certification. For example, to meet the ‘‘[s]tandardized API for patient and population services’’ certification criterion, the ONC Health IT Certification Program requires that a Health IT Module presented for testing and certification must demonstrate the ability to establish a secure and trusted connection with an application requesting data for patients. See 45 CFR 170.315(g)(10); see 
+also 45 CFR 170.215. 
+738See ‘‘Resource for Health Care Providers on 
+Educating Patients about Privacy and Security Risks to Protected Health Information when Using Remote Communication Technologies for Telehealth,’’ Office for Civil Rights, U.S. Department of Health and Human Services, (Oct. 17, 2023), https://www.hhs.gov/hipaa/for- professionals/privacy/guidance/resource-health- care-providers-educating-patients/index.html. 
+739See 45 CFR part 171; 85 FR 25642, 25815 (May 
+1, 2020). 740See, e.g., 45 CFR part 171. 
+74145 CFR 164.308(a)(13). a reasonable and appropriate period of 
+time. For example, it would not be reasonable or appropriate for a regulated entity to establish a plan to migrate ePHI on a single flash drive within 30 days and not complete migration of that ePHI for a period of a year because migrating ePHI from a flash drive to a more secure medium is a simple and quick process that the regulated entity already determined could be completed within 30 days. Thus, a year would be an unreasonably long period to leave ePHI insufficiently encrypted, particularly after a need to migrate the ePHI has been established. In such circumstances, the regulated entity would not be complying with the requirements of this proposed exception. 
+The second proposed exception at 
+proposed 45 CFR 164.312(b)(3)(ii) would be available for ePHI transmitted in response to an individual request, pursuant to 45 CFR 164.524, to receive their ePHI in an unencrypted manner. Unencrypted manners for an individual to receive their ePHI may include some types of text messaging, instant messaging, and other applications on a smartphone or another computing device that are capable of making an access request and receiving ePHI.
+735 
+This exception for individual access requests under 45 CFR 164.524 would not apply when the individual would receive their ePHI using technology controlled by the regulated entity, such as a patient portal
+736or other 
+technology for the transmission of ePHI (e.g., API technology).
+737Such email or 
+messaging technologies are considered to be among a covered entity’s 
+technology assets because they are components of a covered entity’s relevant electronic information systems, and the requirement to encrypt ePHI would apply. 
+Under the right of access, an 
+individual who is the subject of PHI has the right to inspect and request a copy of PHI about them in a designated record set, subject to certain exceptions. A regulated entity is required to provide such access in the form and format requested by the individual, if it is readily producible in such form and format. Thus, if an individual requests that the regulated entity provide them access in a manner that does not support encryption, a regulated entity is generally required to do so if it does not jeopardize the security of the regulated entity’s information systems. For the exception to apply, a regulated entity would be required to have informed the individual of the risks associated with the transmission, receipt, and storage of unencrypted ePHI when the individual requests unencrypted access and to document that the individual has been informed of such risks.
+738 
+Consistent with the information

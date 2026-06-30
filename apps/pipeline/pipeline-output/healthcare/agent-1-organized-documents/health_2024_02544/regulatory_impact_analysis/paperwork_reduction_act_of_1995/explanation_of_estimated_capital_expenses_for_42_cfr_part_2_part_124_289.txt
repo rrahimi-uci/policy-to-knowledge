@@ -1,0 +1,22 @@
+# Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 124/289)
+
+**Source:** health_2024_02544.pdf
+**Chunk ID:** health_2024_02544_028_sub_124
+**Pages:** 1-160
+**Section Path:** Regulatory Impact Analysis > Paperwork Reduction Act of 1995 > Explanation of Estimated Capital Expenses for 42 CFR Part 2
+
+---
+
+including safeguards under the HIPAA Security Rule.
+226 
+For clarity, we also explain here that 
+the exclusion of business associates from the ‘‘intermediary’’ definition in § 2.11 results in far fewer entities being subject to intermediary consent requirements under § 2.31(a)(4) and the list of disclosures obligations under § 2.24 because most HIEs—which were the most typical example of an intermediary—are business associates. A QSO—which is analogous to a business associate for a part 2 program—is only considered an intermediary when it is providing services to a program that is not a covered entity. We believe that part 2 programs that are covered entities are those most likely to make use of HIE services and that the burden reduction on HIE business associates in this final rule may incentivize them to accept part 2 records into their systems more frequently than under the existing part 2 regulation. 
+Comment 
+SUD recovery organizations 
+recommended modifying the proposed 
+definition of ‘‘intermediary’’ to also include ‘‘a member of the intermediary named in the consent,’’ rather than limiting it to members of the intermediary that have a treating provider relationship with the patient. A state data agency urged us to add intermediaries and other lawful holders to the language of § 2.12(d)(2)(ii), which permitted a non-part 2 treatment provider who receives part 2 information to record it without it becoming a part 2 record, so long as any part 2 records they receive are segregated from other health information. 
+Response 
+Section 2.12(d)(2)(ii) applies to 
+persons who receive records directly 
+from a part 2 program or other lawful holder of patient identifying information and who are notified of the prohibition on redisclosure in accordance with § 2.32. We are finalizing a modification to this provision to expressly state that: ‘‘[a] program, covered entity, or business associate that receives records based on a single consent for all treatment, payment, and health care operations is not required to segregate or segment such records.’’ Thus, an HIE that is a business associate of a covered entity 
+VerDate Sep<11>2014 18:41 Feb 15, 2024 Jkt 262001 PO 00000 Frm 00063 Fmt 4701 Sfmt 4700 E:\FR\FM\16FER2.SGM 16FER2lotter on DSK11XQN23PROD with RULES2

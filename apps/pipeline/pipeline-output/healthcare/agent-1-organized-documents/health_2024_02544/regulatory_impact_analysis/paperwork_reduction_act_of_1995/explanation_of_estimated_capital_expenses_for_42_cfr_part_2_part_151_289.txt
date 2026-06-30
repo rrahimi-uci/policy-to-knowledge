@@ -1,0 +1,43 @@
+# Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 151/289)
+
+**Source:** health_2024_02544.pdf
+**Chunk ID:** health_2024_02544_028_sub_151
+**Pages:** 1-160
+**Section Path:** Regulatory Impact Analysis > Paperwork Reduction Act of 1995 > Explanation of Estimated Capital Expenses for 42 CFR Part 2
+
+---
+
+12547 Federal Register / Vol. 89, No. 33 / Friday, February 16, 2024 / Rules and Regulations 
+263As discussed elsewhere in this rule, 
+psychotherapy notes are part of the designated 
+record set. See ‘‘Individuals’ Right under HIPAA to 
+Access their Health Information 45 CFR 164.524,’’ supra note 159. 
+264See Steve O’Neill, Charlotte Blease, Tom 
+Delbanco, ‘‘Open Notes Become Law: A Challenge 
+for Mental Health Practice,’’ Psychiatric Services (2021), https://pubmed.ncbi.nlm.nih.gov/ 
+33971748/. 
+26565 FR 82461, 82623. 26687 FR 74216, 74230. consent for any use or disclosure of SUD 
+counseling notes subject to certain specific listed exceptions. We will consider what additional guidance may be helpful on these issues after the rule is finalized. 
+Comment 
+According to several SUD and 
+recovery associations, notes often 
+contain highly sensitive information that supports therapy. Limiting access to these notes is critical to protect the therapeutic alliance due to the unique risks that patients face due to the risks of inappropriate sharing of highly sensitive information in these notes. A health care provider believed the SUD counseling note provision would allow a SUD provider the ability to more accurately capture critical impressions of his or her patient without running the risk that it could adversely impact the patient or the provider-patient relationship. 
+A few HIE associations commented 
+that providers rarely use the option to keep psychotherapy notes as defined in the HIPAA regulations; instead, the type of information previously envisioned to be included in the psychotherapy note is now included in ‘‘progress notes’’ or the information is not captured and documented in an EHR. If organizations move towards utilizing a separate category for SUD counseling notes, it could lead to information either not being documented, or to important information not being captured at all, which is against the principles of interoperability supported by these associations and the Federal Government, these commenters asserted. A hospital said that in its experience clinicians, both internal and external to its organization, usually refer to these types of notes as ‘‘process notes’’ which are not part of the designated record set and are not 
+documented in the EHR. This commenter also has heard from clinicians that these types of notes are rarely used. 
+A medical professionals association 
+believed that SUD counseling notes should be separated from the rest of the patient’s health record, to allow a firewall between notes used by the individual therapist or treating professional and the rest of the patient’s health record (such as diagnosis, functional status, treatment plan, symptoms, prognosis, start and stop times, modalities and frequencies of treatment, medication prescription and monitoring, and results of clinical tests) that is designed to be shared, as appropriate, with other health care entities. According to this association, psychotherapy notes provide a vital tool 
+for psychologists to protect sensitive therapy details from third parties. These notes are a way for psychologists to protect patient privacy as to sensitive details that are important for the psychologist to remember, but that do not need to be shared with other health care entities. 
+Response 
+We discuss our changes to the 
+definition of ‘‘SUD counseling notes’’ in 
+§ 2.11 above. We intend for SUD counseling note provisions in 42 CFR part 2 to parallel the HIPAA psychotherapy note provisions.
+263 
+Providers may vary in their use of 
+SUD counseling or psychotherapy notes. Moreover, some providers in behavioral health or other medical practices also may use ‘‘open notes’’ intended to permit patient access to EHRs, including provider notes.
+264The preamble to the 
+2000 HIPAA Privacy Rule explained that ‘‘process notes capture the therapist’s impressions about the patient, contain details of the psychotherapy conversation considered to be inappropriate for the medical record, and are used by the provider for future sessions.’’ The preamble further noted that ‘‘[w]e were told that process notes are often kept separate to limit access, even in an electronic record system, because they contain sensitive information relevant to no one other than the treating provider. These separate ‘process note’ are what we are calling ‘psychotherapy notes.’ ’’
+265By 
+contrast, progress notes (referred to as ‘‘progress to date’’ in our definition of ‘‘SUD counseling notes’’) would be included in the patient’s medical record or part 2 record. 
+We also believe that licensed part 2 
+program providers that are especially trained in the handling of these types of records (i.e., familiar with and qualified

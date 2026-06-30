@@ -1,0 +1,91 @@
+# A2-4.1-03, Electronic Records, Signatures, and Transactions (07/02/2025) (part 1/5)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_034_sub_001
+**Pages:** 89-98
+**Section Path:** Part A, Doing Business with Fannie Mae > Subpart A2, Lender Contract > Chapter A2-4, Loan Files and Records > Section A2-4.1, Establishment, Ownership, and Retention of Loan Files and Records > A2-4.1-03, Electronic Records, Signatures, and Transactions (07/02/2025)
+
+---
+
+Published March 4, 2026
+71 
+A2-4.1-03, Electronic Records, Signatures, and Transactions
+(07/02/2025)
+Introduction
+This topic contains information on electronic records, including:
+Electronic Records
+Electronic Signatures
+Electronic Notarizations
+Remote Online Notarizations
+Electronic Transactions with Fannie Mae
+Electronic Transactions with Third Parties
+Electronic Records
+All documents used to originate, service or modify a loan, may be generated, signed, processed, stored or
+transmitted electronically, provided they are capable of reproduction in paper format except:
+the promissory note and any related addenda (unless the seller has received special approval to deliver
+electronic notes (eNotes));
+any unrecorded ink-signed originals of documents that modify or supplement the security instrument;
+and
+assignments for MERS-registered loans when MERS is not named as nominee.
+The following table describes Fannie Mae’s requirements for electronic records. An electronic record is a
+contract or other record that is created, generated, sent, communicated, received, or stored by electronic
+means. A record is information that is inscribed on a tangible medium or that is stored in an electronic or other
+medium and is retrievable in perceivable form.
+
+Published March 4, 2026
+72GENERAL REQUIREMENTS FOR ELECTRONIC RECORDS
+Topic Description
+Permitted format, transmission method and
+storage protocol• Any appropriate electronic format or transmission
+method for an electronic record other than audio or
+video recording may be used (except to the extent
+permitted in connection with electronic
+notarizations, remote online notarizations, and audio-
+visual aided remote ink-signed notarizations (RIN)). See 
+A2-4.1-04, Notarization Standards   for additional
+information.
+• Sellers and servicers may use any technology other
+than audio or video recording for storing electronic
+records, as long as the electronic records are securely
+stored and remain accessible by all persons entitled to
+access them for as long as access is required.
+• Any loan ﬁle composed of electronic records must be
+clearly identiﬁed by logical association with Fannie Mae’s
+loan number.
+• If a seller/servicer chooses to store permitted
+documents in a format other than paper, it must provide
+any prospective transferee servicer with information
+about the methods it uses for document and records
+storage. If the transferee servicer uses a diﬀerent
+storage method, the transferor servicer must work with
+the transferee servicer to convert the documents and
+records to a format that is compatible with the
+transferee servicer’s storage methods.
+Compliance with ESIGN, UETA, and applicable
+lawsAll electronic records and systems used to generate,
+process, store or transmit electronic records must
+comply with
+• the federal Electronic Signatures in Global and National
+Commerce Act (ESIGN);
+• the Uniform Electronic Transactions Act (UETA)
+adopted by the state in which the subject property is
+located; if applicable, and
+• all other applicable federal and state laws.
+
+Published March 4, 2026
+73GENERAL REQUIREMENTS FOR ELECTRONIC RECORDS
+Topic Description
+Enforceability and AccuracyAll electronic records must be valid and enforceable and
+accurately reﬂect all information and formatting (where
+the formatting is prescribed by law or material to
+interpretation of the record) that was in the record as it
+was presented to intended beneﬁciaries and signers.
+System RequirementsAll systems generating or storing electronic records
+must:
+• generate or maintain them as valid and enforceable
+records,
+• be suﬃciently secure to preserve the integrity and
+authenticity of the records, and
+• protect against loss of unauthorized access to records.
+See below for additional system requirements that apply
+to remote online notarizations.

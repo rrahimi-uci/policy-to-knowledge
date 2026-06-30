@@ -1,0 +1,119 @@
+# B3-5.3-09, DU Credit Report Analysis (02/05/2025) (part 1/3)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_238_sub_001
+**Pages:** 495-503
+**Section Path:** Part B, Origination Through Closing > Subpart B3, Underwriting Borrowers > Chapter B3-5, Credit Assessment > Section B3-5.3, Traditional Credit History > B3-5.3-09, DU Credit Report Analysis (02/05/2025)
+
+---
+
+Published March 4, 2026
+477There are no recently issued Announcements related to this topic.
+B3-5.3-09, DU Credit Report Analysis (02/05/2025)
+Introduction
+This topic describes how DU analyzes credit report data and requirements lenders must follow in response to
+the credit-related Findings messages. This topic includes:
+Inquiries
+Trended Credit Data
+Omitted Accounts
+Authorized User Tradelines
+Disputed Credit Report Tradelines
+DU Debt Comparison
+Contradictory, Derogatory, or Erroneous Information
+Duplicate Public Records
+Judgments and Liens
+Mortgage Delinquencies
+Past-Due, Collection, and Charge-Oﬀ of Non-Mortgage Accounts
+Prior Bankruptcy, Foreclosure, Deed-in-Lieu of Foreclosure, Preforeclosure Sales, and Charge-Oﬀ of
+Mortgage Accounts
+Bankruptcy
+Foreclosure
+Deed-in-Lieu of Foreclosure
+Preforeclosure Sales or Short Sales
+Charge-Oﬀ of Mortgage Accounts
+Inquiries
+The lender should examine inquiries to determine whether they represent potential sources of undisclosed
+credit. If new debt was obtained, the lender may need to correct the loan application and resubmit it.
+Trended Credit Data
+Lenders are not required to analyze trended credit data in the credit report. For more information, see B3-2-03,
+Risk Factors Evaluated by DU .
+Omitted Accounts
+Supporting documentation is required when a credit report liability with a balance greater than zero is omitted
+from the loan application.
+
+Published March 4, 2026
+478Authorized User Tradelines
+DU takes credit report tradelines designated as authorized user tradelines into consideration as part of the DU
+credit risk assessment. However the lender must review credit report tradelines in which the applicant has been
+designated as an authorized user in order to ensure the tradelines are an accurate reﬂection of the borrower's
+credit history. If the lender believes the authorized user tradelines are not an accurate reﬂection of the
+borrower's credit history, the lender should evaluate the borrower's credit history without the beneﬁt of these
+tradelines and use prudent underwriting judgment when making its ﬁnal underwriting decision. In order to assist
+the lender in its review of authorized user tradelines, DU issues a message providing the name of the creditor
+and account number for each authorized user tradeline identiﬁed.
+When ensuring tradelines are an accurate reﬂection of the borrower's credit history, as a general guide, if the
+borrower has several authorized user accounts but only has a few accounts of their own, the lender should
+establish:
+the relationship of the borrower to the owner of the account,
+if the borrower uses the account, and
+if the borrower makes the payments on the account.
+If the authorized user tradeline belongs to another borrower on the mortgage loan, no additional investigation is
+needed. On the other hand, if the borrower has several tradelines in good standing and only a minor number of
+authorized user accounts, the lender could make the determination that:
+the authorized user accounts had minimal, if any, impact on the borrower's overall credit proﬁle; and
+the information reported on the credit report is an accurate reﬂection of the borrower's credit history.
+The lender is not required to review an authorized user tradelines that belongs to the borrower's spouse when
+the spouse is not on the mortgage transaction.
+For manual underwriting consideration of authorized users of credit, see B3-5.3-06, Authorized Users of Credit .
+Disputed Credit Report Tradelines
+When the credit report contains tradelines disputed by the borrower, DU will ﬁrst assess the risk of the loan
+caseﬁle using all tradelines, including those disputed. If DU issues an Approve recommendation using the
+disputed tradelines, no further documentation or action is necessary. DU will issue a message speciﬁc to this
+scenario.
+If DU does not issue an Approve recommendation when including the disputed tradelines, DU will re-assess the
+risk without using the disputed tradelines. If DU is then able to issue an Approve recommendation, the lender
+must investigate the tradelines to determine whether the borrower is responsible for the accounts or if the
+account information is accurate or complete.
+If the borrower is not responsible for the disputed accounts, the lender must obtain supporting
+documentation and may deliver the loan as a DU loan. No further action is necessary regarding the
+disputed tradelines.
+
+Published March 4, 2026
+479If the borrower is responsible for the disputed account, the lender must investigate the information,
+including determining the aspect of the tradeline that is being disputed. If the borrower is able to provide
+documentation to disprove any adverse information (such as canceled checks), the lender may deliver
+the loan as a DU loan.
+If the borrower is responsible for the disputed account and the account and tradeline information is
+accurate and complete, the loan is not eligible for delivery as a DU loan. The lender may manually
+underwrite the loan if the transaction is eligible for manual underwriting.
+The monthly payments for the disputed tradelines must be included in the debt-to-income ratio if the accounts
+belong to the borrower.
+Note : Tradelines reported as medical debt are not shown in the disputed tradeline message.
+Therefore, lenders are not required to investigate disputed medical tradelines.
+Examples
+The following scenarios are examples of when a loan receiving an Approve/Eligible recommendation with the
+disputed tradeline(s) excluded from DU's risk assessment would be eligible for delivery as a DU loan:
+A borrower’s account was referred for collection by the creditor. Subsequently, the borrower paid oﬀ the
+account, but the pay-oﬀ was not reported on the tradeline. The borrower requested that a dispute be
+placed on the tradeline. The tradeline information was accurate, but because it did not reﬂect that the
+borrower paid oﬀ the account, it may be considered incomplete. The borrower must provide
+documentation that the account was paid in full.
+A borrower and his son have the same name (Sr. and Jr.). The borrower’s credit report contains a
+tradeline that actually belongs to the son. The tradeline is reported as disputed. The borrower can
+provide conﬁrmation that they are not obligated on the account.
+The servicer of a disputed loan indicates a late payment in January of the previous year. The borrower
+can provide documentation (such as canceled checks or bank statements) that indicate that the payment
+was made on time.
+The following scenario is an example of when a loan receiving an Approve/Eligible recommendation with the
+disputed tradeline(s) excluded from DU’s risk assessment would not be eligible for delivery as a DU loan:
+The credit report indicates a disputed tradeline on the borrower’s mortgage being reﬁnanced. The
+tradeline indicates a 60–day late payment in January of the previous year. The borrower cannot provide
+any documentation to support that the payment was made on time.
+DU Debt Comparison
+DU compares the balances and payments of the debts on the credit report with the debts on the loan
+application. If material diﬀerences are found, the lender must conﬁrm that all debts from the credit report are
+included on the loan application and provide documentation to support the use of payments and balances lower
+than those on the credit report. If the debt aﬀects the debt-to-income ratio by more than the allowable
+tolerances, the lender must add the debt to the loan application and resubmit the loan. Otherwise, the lender is
+expected to provide documentation that supports the omission from the loan application. See B3-6-02, Debt-to-
+Income Ratios , and B3-2-10, Accuracy of DU Data, DU Tolerances, and Errors in the Credit Report , for additional

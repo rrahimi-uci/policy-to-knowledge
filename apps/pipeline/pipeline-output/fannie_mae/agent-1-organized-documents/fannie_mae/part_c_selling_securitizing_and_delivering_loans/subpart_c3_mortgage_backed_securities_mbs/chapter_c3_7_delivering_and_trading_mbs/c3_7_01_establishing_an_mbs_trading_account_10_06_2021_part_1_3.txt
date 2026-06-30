@@ -1,0 +1,110 @@
+# C3-7-01, Establishing an MBS Trading Account (10/06/2021) (part 1/3)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_493_sub_001
+**Pages:** 1026-1032
+**Section Path:** Part C, Selling, Securitizing, and Delivering Loans > Subpart C3, Mortgage-Backed Securities (MBS) > Chapter C3-7, Delivering and Trading MBS > C3-7-01, Establishing an MBS Trading Account (10/06/2021)
+
+---
+
+Published March 4, 2026
+1008Pricing and Sales Desk to obtain a competitive price. In this chapter, the steps entailed in delivering and trading
+MBS and the requirements associated with these processes are provided.
+C3-7-01, Establishing an MBS Trading Account (10/06/2021)
+Introduction
+This topic provides information on establishing an MBS trading account, including:
+Process Used to Establish a Trading Account
+Requirements and Terms Governing the Trading Account
+Terms and Conditions Governing Use of the Electronic Trading Platform
+Establishment of Trading Limits and Margin Requirements
+Oﬀsetting Price Diﬀerentials
+Designated Threshold Amount and Minimum Transfer Amount
+Default of Lender Under the Terms of Trading Account
+Consequences of a Default
+Remedies for the Default of a Lender’s Trading Account
+Suitability and Risk of Loss
+Transactional Intent of the Lender and Fannie Mae
+Process Used to Establish a Trading Account
+The table below describes the stages to establish a trading account.
+Stage Description
+1To establish a trading account, the lender may call the Capital Markets Pricing and Sales Desk.
+See E-1-02, List of Contacts .
+2Each lender must provide the following information:
+• either a corporate resolution from its board of directors or an oﬃcer’s certiﬁcate to indicate
+its authority to establish a trading account with the Capital Markets Pricing and Sales Desk;
+and
+• the names of the designated individuals who will be authorized to sell securities to, or to buy
+them from, the Capital Markets Pricing and Sales Desk and the limit of their authority (if any).
+
+Published March 4, 2026
+1009Stage Description
+3Each lender must provide an address that can be used for all oﬃcial notices and
+communications sent to the lender, and wiring instructions for the diﬀerent types of payments
+Fannie Mae makes to the lender.
+4The lender must continue to provide updates about any changes to its authority to perform
+under the trading account, the individuals authorized to transact business with the Capital
+Markets Pricing and Sales Desk (or their limits of authority), and the lender’s address or wiring
+instructions.
+Requirements and Terms Governing the Trading Account
+A lender’s trading account is governed by the terms of its Mortgage Selling and Servicing Contract (MSSC), the
+provisions of this Guide and any special instructions provided for in a speciﬁc trade conﬁrmation or settlement
+notice.
+By initiating trade activity with the Capital Markets Pricing and Sales Desk, lenders agree to adhere to Fannie
+Mae’s guidelines for selling securities and to SIFMA's Uniform Practices for the Clearance and Settlement of
+Mortgage-Backed Securities and Other Related Securities , including any amendments to either. Should there be
+a conﬂict between the requirements in this Guide and the SIFMA provisions, the requirements of this Guide take
+precedence.
+As security for payment of its obligations and liabilities under its trading account, the lender grants Fannie Mae
+a ﬁrst priority security interest in any and all of its right, title, and interest in its securities, money, or other
+property that is held for (or by) Fannie Mae.
+If appropriate authorities require the ﬁling of a ﬁnancing statement to evidence this security interest, the lender
+must execute and deliver any legal instruments required to protect or perfect Fannie Mae’s security interest.
+Terms and Conditions Governing Use of the Electronic Trading Platform
+By accessing Fannie Mae’s electronic trading platform, currently known as the MBS Trading Portal, the lender
+agrees that the platform will be a “Licensed Application,” as deﬁned in the Software Subscription Agreement
+General Terms and Conditions. See the Consolidated Technology Guide . The lender also agrees that it is subject
+to the General Terms and Conditions, and that the following additional terms apply.
+Authorized User For purposes of the electronic trading platform, the term “Authorized User” includes
+individuals:
+working for Third-Party Providers retained by the lender to perform mortgage-related services requiring
+access to the Licensed Application on the lender’s behalf or third-party originators (such as mortgage
+brokers or correspondents that are aﬃliated with lender) that require access to the Licensed Application;
+and
+who have obtained Authentication Credentials as a result of the lender’s actions.
+
+Published March 4, 2026
+1010The lender agrees that actions of Authorized Users are deemed to be actions of the lender.
+Evidence of a Trade  The Licensed Application’s conﬁrmation of a trade as “Accepted,” together with the
+Selling Guide and any applicable MBS trading agreement between lender and Fannie Mae, the conclusive
+evidence of a trade and the terms between Fannie Mae and lender with respect to the trade described in the
+conﬁrmation.
+Indicative Pricing If indicative pricing is displayed to the lender, the lender acknowledges and understands
+that such pricing is not the actual pricing and is subject to increase or decrease prior to acceptance of the trade.
+Termination of Relationships  Fannie Mae reserves the right to immediately suspend or terminate any
+relationship established between a lender and a third party by and for the Licensed Application at any time, in
+its sole discretion.
+Establishment of Trading Limits and Margin Requirements
+When Fannie Mae establishes a trading account for a lender, it may establish trading limits, margin
+requirements, a designated threshold amount, and a minimum transfer amount speciﬁc to a lender.
+After a trading account is established for a lender, Fannie Mae may:
+amend or cancel any trading limits, margin requirements, designated threshold amounts, or minimum
+transfer amounts initially imposed on a lender’s trading accounts; and
+decline to engage in any speciﬁc transaction with the lender.
+Oﬀsetting Price Diﬀerentials
+Subject to the applicable designated threshold amount and minimum transfer amount (deﬁned below), a lender
+and Fannie Mae may elect to exchange variation margin if there is a price diﬀerential on the lender’s open
+(unsettled) trades with Fannie Mae.
+A price diﬀerential exists if, at any time, with respect to a lender’s open trades with the Capital Markets Pricing
+and Sales Desk, either party would incur a loss if it canceled the open trades and entered into replacement
+transactions (i.e., there is a diﬀerence between the current market price and the settlement price of the open
+trades). If a price diﬀerential exists, the party that would receive positive income from the cancellation of the
+open trades and entry into replacement transactions is “in the money,” and the party that would incur a cost
+from the cancellation of the open trades and entry into replacement transactions is “out of the money.”
+If there is a negative price diﬀerential for a lender’s open trades with the Capital Markets Pricing and
+Sales Desk (i.e., on any trading day, the lender is “out of the money” with regard to the securities it has
+contracted to purchase or sell to Fannie Mae), then Fannie Mae may request that the lender wire cash to
+Fannie Mae, subject to the lender’s designated threshold amount and minimum transfer amount.
+If there is a positive price diﬀerential for a lender’s open trades with the Capital Markets Pricing and Sales
+Desk (i.e., on any trading day, the lender is “in the money” with regard to the securities the lender has
+contracted to purchase or sell to Fannie Mae), then the lender may request that Fannie Mae wire cash to
+the lender, subject to Fannie Mae’s designated threshold amount and minimum transfer amount.

@@ -1,0 +1,53 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 175/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_175
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+986 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+upon a given entity’s size, configuration, 
+environment, operational changes, and the security measures implemented. 68 FR 8334, 8361 (Feb. 20, 2003). 866HIPAA set forth the compliance dates for the 
+initial standards. 42 U.S.C. 1320d–4; see also 68 FR 8334, 8351 (Feb. 20, 2003). 
+867Similarly, a business associate subcontractor 
+would need to report to the business associate. See 
+‘‘Business Associate Contracts,’’ Office for Civil Rights, U.S. Department of Health and Human Services (June 16, 2017) (A ‘‘business associate’’ also is a subcontractor that creates, receives, maintains, or transmits PHI on behalf of another business associate), https://www.hhs.gov/hipaa/for- professionals/covered-entities/sample-business- associate-agreement-provisions/index.html. 
+868Proposed 45 CFR 164.314(a)(2)(i)(D). 869The Department has previously included 
+transition provisions to ensure that important functions of the health care system were not impeded. See, e.g., 65 FR 82462 (Dec. 28, 2000); 67 
+FR 53182 (Aug. 14, 2002); 78 FR 5566 (Jan. 25, 2013). 
+870See proposed 45 CFR 164.308(b)(1)(i). discussed above, the Department 
+recognizes that the health care environment has changed in a way that necessitates thorough and frequent review of and updates to documentation. By proposing to specify how often documentation must be updated, the Department would clarify that we expect regulated entities to review and update their documentation at regular intervals, in addition to doing so in response any changes to a security measure. Cybersecurity and data protection is an evolving process, which makes formal, updated, and detailed documentation imperative for data protection. By reviewing and updating its documentation, including its written policies and procedures, at least annually and in response to changes to its security measures, a regulated entity should have a full understanding of its implemented security measures and be able to determine which measures should be updated to protect the confidentiality, integrity, and availability of ePHI. 
+As discussed above and consistent 
+with the proposed changes to 45 CFR 164.306, the Department is proposing to remove the term ‘‘required’’ from 45 CFR 164.316(b)(1) through (3). 
+4. Request for Comment 
+The Department requests comment on 
+the foregoing proposals, including any 
+benefits, drawbacks, or unintended consequences. We also request comment on the following consideration in particular: 
+a. Whether it would be appropriate to 
+require regulated entities to review and update documentation for security measures at least once every 12 months. If not, please explain. 
+b. Whether it is clear that 45 CFR 
+164.316 provides regulated entities with directions on when and how they are to document all security measures across all safeguard requirements. If not, please explain. 
+c. Whether it is feasible for regulated 
+entities to document all of the actions, activities, and assessments required by the Security Rule as proposed at 45 CFR 164.316(a)(2). If not, please explain. 
+I. Section 164.318—Transition 
+Provisions 
+1. Current Provisions and Issues To 
+Address 
+Section 164.318 established the 
+compliance dates for the initial implementation of the security standards for health plans, health care 
+clearinghouses, and health care providers in 2005 and 2006.
+866Covered 
+entities have been required to comply with the security standards for almost 20 years, and the initial implementation of the security standards is no longer applicable. Because of this, the Department believes that these 
+provisions are no longer necessary. 
+2. Proposal 
+The Department proposes to remove 
+the information in 45 CFR 164.318 and 
+replace the language with provisions for transitioning to the revised Security Rule, should the proposals included in this NPRM be adopted. 
+The Department understands that 
+regulated entities may be concerned with the anticipated administrative burden and cost of revising their business associate agreements or other written arrangements to comply with a revised Security Rule. For example, a regulated entity would need to update its business associate agreements to add a provision specifying that the business associate will report to the covered entity
+867that it activated its 
+contingency plan no later than 24 hours after activation of such plan.
+868A 
+regulated entity may have existing contracts that are not set to terminate or expire until after the compliance date for a final rule modifying the Security Rule, and we understand that a six- month compliance period may not provide enough time to reopen and renegotiate all contracts, in addition to ensuring that all regulated entities are compliant with the revised Security Rule. Accordingly, the Department proposes to relieve some of the burden on regulated entities by adding a specified period of transition for certain existing contracts.

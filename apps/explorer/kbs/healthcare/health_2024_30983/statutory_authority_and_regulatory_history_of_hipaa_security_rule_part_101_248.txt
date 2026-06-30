@@ -1,0 +1,52 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 101/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_101
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+948 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+544See Press Release, ‘‘City Health Department 
+failed to terminate former employee’s access to 
+protected health information,’’ U.S. Department of Health and Human Services (Oct. 30, 2020), https:// 
+public3.pagefreezer.com/content/HHS.gov/31-12- 
+2020T08:51/https://www.hhs.gov/about/news/2020/ 10/30/city-health-department-failed-terminate- former-employees-access-protected-health- information.html. 
+545See ‘‘Security Standards: Administrative 
+Safeguards,’’ supra note 517, p. 8–11. 546See ‘‘Summary of the HIPAA Security Rule,’’ 
+U.S. Department of Health and Human Services (Oct. 19, 2022), https://www.hhs.gov/hipaa/for- professionals/security/laws-regulations/index.html. 
+547See 45 CFR 164.502(b) and 164.514(d). 
+548See ‘‘Security Standards: Administrative 
+Safeguards,’’ supra note 517, p. 9. 
+549See ‘‘Implementing the Health Insurance 
+Portability and Accountability Act (HIPAA) Security Rule: A Cybersecurity Resource Guide,’’ supra note 461. 550See id. at 36. 
+551See proposed 45 CFR 164.308(a)(9)(i). 
+552See ‘‘Implementing the Health Insurance 
+Portability and Accountability Act (HIPAA) Security Rule: A Cybersecurity Resource Guide,’’ supra note 461, p. 36. 
+553See id. 
+554See ‘‘Security Standards: Administrative 
+Safeguards,’’ supra note 517, p. 10. complete job description that accurately 
+reflects assigned security duties and responsibilities. 
+k. Section 164.308(a)(9)(i)—Standard: 
+Workforce Security 
+The purpose of the workforce security 
+standard is to ensure that workforce members only have access to ePHI that they need to perform their assigned 
+functions and are prevented from accessing ePHI that they are not authorized to access to perform such functions. The proposed changes to the standard and implementation specifications would clarify the actions required of a regulated entity to assure such limits. 
+Individuals have been harmed in the 
+past by the failure of regulated entities to comply with the Security Rule requirements for workforce security. For example, a former employee of a large covered entity was able to access their former worksite and workstation using still-active credentials for more than a week after their employment was terminated.
+544OCR’s investigation 
+found evidence of a potential failure to terminate the former employee’s access to PHI, which enabled the former employee to download the ePHI of nearly 500 individuals, including their names, addresses, dates of birth, race/ ethnicity, gender, and sexually transmitted infection test results onto a USB drive. This type of real-world experience and OCR’s observations more broadly inform the changes proposed in this NPRM. 
+Moreover, this proposal is consistent 
+with guidance issued by HHS and NIST for implementing this standard and associated implementation specifications. For example, in guidance issued in 2005, we explained that regulated entities must identify workforce members who need access to ePHI to carry out their duties.
+545For 
+each workforce member or job function, the regulated entity must identify the ePHI that is needed, when it is needed, and make reasonable efforts to control access to the ePHI, a concept generally referred to as role-based access (i.e., authorizing access to ePHI only when such access is appropriate based on the workforce member’s role).
+546This also 
+includes identification of the computer systems and applications that provide access to the ePHI. A regulated entity must provide only the minimum necessary access to ePHI that is required for a workforce member to do their job.
+547As described in HHS guidance, 
+access authorization is the process of determining whether a particular user (or a computer system) has the right, consistent with their function, to carry out a certain activity, such as reading a file or running a program.
+548 
+Implementation may vary among regulated entities, depending on the size and complexity of their workforce, and their electronic information systems that contain ePHI. For example, in a small medical practice, all staff members may need to access all ePHI in their information systems because each staff member may perform multiple functions. In this case, the regulated entity would document the reasons for implementing policies and procedures that permit this type of global access. If the documented rationale is reasonable and appropriate, this may be an acceptable approach. The implementation specification provision for authorization and/or supervision provides the necessary checks and balances to ensure that all members of the workforce have appropriate access (or, in some cases, no access) to ePHI. 
+NIST guidance provides descriptions 
+of key activities and sample questions for regulated entities implementing this implementation specification.
+549To

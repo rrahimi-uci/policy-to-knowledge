@@ -1,0 +1,30 @@
+# Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 162/289)
+
+**Source:** health_2024_02544.pdf
+**Chunk ID:** health_2024_02544_028_sub_162
+**Pages:** 1-160
+**Section Path:** Regulatory Impact Analysis > Paperwork Reduction Act of 1995 > Explanation of Estimated Capital Expenses for 42 CFR Part 2
+
+---
+
+Comment 
+A health information association 
+recommended requiring programs to 
+inform HIEs, and HIEs to follow, a patient’s request to revoke consent for distribution of their information for TPO. If patients are not able to stop the exchange of their information once it is released to an HIE, they may hesitate to consent to information being released to an HIE or HIN. If a patient’s data is out of date at one provider and the patient cannot revoke consent for that information to be exchanged by an HIE, then they will continue to fight a losing battle to ensure every subsequent record is correct as the HIE may still be exchanging the incorrect information. 
+Response 
+The language in the final rule for 
+§ 2.31(a)(6) regarding ‘‘[t]he patient’s 
+right to revoke the consent in writing, except to the extent that the part 2 program, or other lawful holder of patient identifying information that is permitted to make the disclosure, has already acted in reliance on it [. . .]’’ is broadly applicable and therefore would include HIEs/HINs. As a result, when an HIE/HIN learns of a patient’s revocation of consent they would need to cease using or redisclosing the patient’s part 2 record to other entities. 
+Comment 
+An academic medical center 
+compared the proposed part 2 TPO 
+consent to a HIPAA authorization for TPO disclosures and explained that during the entire period that the HIPAA Privacy Rule has been effective they were not aware of any patient that sought to revoke a HIPAA authorization for use of their PHI for purposes of TPO. 
+Response 
+We acknowledge the similarities and 
+differences between part 2 consent and 
+HIPAA authorization. Under HIPAA, neither consent nor authorization is required for TPO, so the opportunity to revoke such an authorization is unlikely to exist. Revocation of consent is further discussed under § 2.31. 
+Comment 
+Some commenters addressed the 
+question of whether a revocation should 
+halt all future uses and disclosures by a recipient or whether a revocation should only prevent any further disclosures to that recipient. Commenters did not show a strong consensus on one approach, although more comments than not supported allowing additional redisclosures following revocation when the information is limited to records already in possession of the initial recipient. HIE-related comments uniformly affirmed the Department’s statement in the NPRM preamble that information did not need to be ‘‘clawed back’’ following a revocation and several further asserted that an HIE needs to cease making redisclosures of health 
+VerDate Sep<11>2014 18:41 Feb 15, 2024 Jkt 262001 PO 00000 Frm 00082 Fmt 4701 Sfmt 4700 E:\FR\FM\16FER2.SGM 16FER2lotter on DSK11XQN23PROD with RULES2

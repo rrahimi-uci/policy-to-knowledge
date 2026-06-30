@@ -1,0 +1,67 @@
+# B4-2.1-01, General Information on Project Standards (08/06/2025) (part 5/6)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_294_sub_005
+**Pages:** 639-649
+**Section Path:** Part B, Origination Through Closing > Subpart B4, Underwriting Property > Chapter B4-2, Project Standards > Section B4-2.1, General Project Standards > B4-2.1-01, General Information on Project Standards (08/06/2025)
+
+---
+
+Published March 4, 2026
+629If the condo or PUD project... Then...
+is located in a jurisdiction that enacted a law on
+or before January 14, 2014, that provides that
+regular common expense assessments will have
+priority over Fannie Mae’s mortgage lien for a
+maximum amount greater than six months,the maximum number of months of regular common
+expense assessments permitted under the applicable
+jurisdiction’s law as of January 14, 2014, may have
+priority over Fannie Mae’s mortgage lien, provided
+that if the applicable jurisdiction’s law as of that date
+referenced an exception for Fannie Mae’s
+requirements, then no more than six months of
+regular common expense assessments may have
+priority over Fannie Mae’s mortgage lien.
+is located in any other jurisdiction,no more than six months of regular common expense
+assessments may have priority over Fannie Mae’s
+mortgage lien, even if applicable law provides for a
+longer priority period.
+Notwithstanding any provisions to the contrary in the Guide, which do not require the lender to represent or
+warrant compliance with Fannie Mae project legal document requirements, the condo or PUD project legal
+documents must evidence compliance with the above priority of common expense assessment requirements.
+Delivery Requirements
+When delivering a loan for a unit located in a project, the lender must provide the Project Type Code and any
+applicable special feature codes as shown in the following table. The lender must also report all other applicable
+special feature code(s), including those speciﬁed in a variance in the Lender Contract and in the Special Feature
+Codes  document on Fannie Mae's website.
+Project Type Code Description
+E Established PUD project
+F New PUD project
+P Limited Review—New condo project
+Q Limited Review—Established condo project
+R Full Review—New condo project
+
+Published March 4, 2026
+630Project Type Code Description
+S Full Review—Established condo project
+TFannie Mae-approved condo or PUD project, including those that:
+• have an Approved by Fannie Mae status in CPM,
+• are approved through PERS,
+• receive a CPM Approved by Fannie Mae  message in DU
+U FHA-approved condo project
+V Condo project review waived - for certain project and transaction types
+1 Full Review—Co-op project
+2 Fannie Mae-approved co-op project, including those approved through PERS
+Special Feature Code Description
+588Detached Condominium Unit
+Used to identify detached units in an attached or detached condominium
+project
+CPM ID Delivery Requirements
+Lenders are required to deliver the CPM ID number in the ﬁeld for "FNM Condominium Project Manager Project
+Identiﬁer" (Sort ID 39) in ULDD for the following projects:
+projects that require the use of CPM; or
+Fannie Mae-approved projects that are delivered as Type T for condos or PUDs, or Type 2 for co-ops.
+Lenders are encouraged to include the condo or co-op’s HOA or Project IRS Federal Tax Identiﬁcation Number
+(TIN) in the loan ﬁle and in CPM.
+Expiration for Project Reviews
+Project reviews must meet the following timeline requirements.

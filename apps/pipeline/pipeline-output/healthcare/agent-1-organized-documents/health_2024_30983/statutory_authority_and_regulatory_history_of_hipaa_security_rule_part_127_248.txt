@@ -1,0 +1,40 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 127/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_127
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+961 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+648See ‘‘Workstation Security: Don’t Forget About 
+Physical Security,’’ Office for Civil Rights, U.S. 
+Department of Health and Human Services, p. 2 (May 2018), https://www.hhs.gov/sites/default/files/ cybersecurity-newsletter-may-2018-workstation- security.pdf. 
+649See proposed 45 CFR 164.308(a)(11)(ii)(A)(1). 650‘‘Considerations for Securing Electronic Media 
+and Devices,’’ supra note 631, p. 1. 
+651Id. 
+652See id. for a list of questions that regulated 
+entities should consider when developing their 
+policies and procedures regarding device and media controls. 653See Richard Kissel, et al., ‘‘Guidelines for 
+Media Sanitization,’’ NIST Special Publication 800– 
+88, Revision 1, National Institute of Standards and Technology, U.S. Department of Commerce (Dec. 2014), https://csrc.nist.gov/publications/detail/sp/ 
+800-88/rev-1/final; see also ‘‘Proper Disposal of Electronic Devices,’’ Cybersecurity & Infrastructure Security Agency, U.S. Department of Homeland Security (Feb. 1, 2021), https://www.cisa.gov/news- events/news/proper-disposal-electronic-devices. 
+654See ‘‘Guidelines for Media Sanitization,’’ 
+supra note 653; see also ‘‘Proper Disposal of 
+Electronic Devices,’’ supra note 653. the proposed revision to the definition 
+of ‘‘workstation’’ discussed above. Additionally, we propose to add an implementation specification for maintenance at proposed 45 CFR 164.310(b)(2)(ii) to require that a regulated entity review and test its written policies and procedures at least once every 12 months, and to modify those policies and procedures as reasonable and appropriate based on that review. 
+Relatedly, the Department proposes to 
+modify the standard for workstation security at 45 CFR 164.310(c) to require a regulated entity to implement physical safeguards for workstations that access ePHI or relevant electronic information systems to comply with its written policies and procedures for workstation use. This proposal would also make clear that such physical safeguards must be modified in response to any modifications to the written policies and procedures for workstation use. As part of their policies and procedures for workstation security, the Department encourages regulated entities to consider, among other things, whether there are workstations located in public areas or other areas that are more vulnerable to theft, unauthorized use, or unauthorized viewing; whether such devices should be relocated; the physical security controls for workstations that are in use (e.g., cable 
+locks, privacy screens, secured rooms, cameras) and whether they are easy to use; and whether there are additional 
+physical security controls that could reasonably be put into place.
+648 
+Additionally, consistent with the Department’s proposal to require that a regulated entity provide role-based security awareness training on its Security Rule policies and procedures,
+649the Department expects 
+that such training would address the physical safeguards it has implemented, particularly those policies and procedures for mobile devices that are used to create, receive, maintain, or transmit ePHI or that otherwise affect the confidentiality, integrity, or availability of ePHI. 
+d. Section 164.310(d)(1)—Standard: 
+Technology Asset Controls 
+The Department proposes to modify 
+the standard at 45 CFR 164.310(d)(1) by changing the heading to ‘‘Technology asset controls’’ from ‘‘Device and media controls,’’ and replacing ‘‘hardware and 
+electronic media’’ in 45 CFR 164.310(d)(1) and (2) with ‘‘technology assets.’’ We believe that this modification would more accurately capture the various categories of components of a regulated entity’s relevant electronic information systems that may be received in, removed from, or moved within a facility and that also affect the confidentiality, integrity, or availability of ePHI. Thus, we believe that this modification would provide regulated entities with a clearer understanding of their compliance obligations with respect to the physical safeguards that should be implemented to protect ePHI when technology assets are received by, removed from, or moved within a facility. While we are not proposing other significant changes to 45 CFR 164.310(d)(1) at this time, we remind regulated entities to consider the appropriateness of the policies and procedures they have implemented with respect to the movement of technology assets that maintain ePHI into and out of their facilities and the movement of these items within their facilities. The processes a regulated entity chooses to implement to govern the movement of technology assets may vary based on the type of technology asset.
+650For

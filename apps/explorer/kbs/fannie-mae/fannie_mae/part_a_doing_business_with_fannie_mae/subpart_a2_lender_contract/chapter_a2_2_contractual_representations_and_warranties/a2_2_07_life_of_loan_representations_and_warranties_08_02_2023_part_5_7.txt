@@ -1,0 +1,50 @@
+# A2-2-07, Life-of-Loan Representations and Warranties (08/02/2023) (part 5/7)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_019_sub_005
+**Pages:** 48-55
+**Section Path:** Part A, Doing Business with Fannie Mae > Subpart A2, Lender Contract > Chapter A2-2, Contractual Representations and Warranties > A2-2-07, Life-of-Loan Representations and Warranties (08/02/2023)
+
+---
+
+Published March 4, 2026
+35A data inaccuracy will be considered signiﬁcant and the lender will be required to repurchase the loan only if the
+loan receives a worse DU risk assessment from the simulator than it received (or would have received) at the
+time of delivery to Fannie Mae. Fannie Mae will also take into account any applicable variance entered into with
+the lender when determining such signiﬁcance. Fannie Mae will provide the lender with documentation
+supporting the signiﬁcance determination.
+If Fannie Mae determines that the loan would have been eligible for purchase using the accurate information
+from the loan ﬁle but under diﬀerent terms than those under which the loan was sold, Fannie Mae will not seek
+repurchase, but will instead re-price the loan, consistent with the lender’s contract at the time of loan delivery,
+to reﬂect the true risk proﬁle of the loan.
+Examples
+The following examples illustrate instances of application of this life-of-loan exclusion:
+In connection with a system upgrade, a coding error is introduced into a lender’s system such that the
+representative credit score is incorrectly calculated. The lender reports inaccurate representative credit
+scores at loan delivery for ﬁve or more loans. After the loans obtain relief, a review of the credit reports in
+the lender’s origination ﬁles shows that for these mortgages, the actual representative credit scores were
+lower than those reﬂected in the data provided at delivery. The DU simulator, using the actual
+representative credit scores, produces an “ineligible” recommendation for each loan. The lender must
+repurchase the aﬀected loans, if requested, despite the fact that the loans have obtained relief.
+For unknown reasons over a period of time, the lender’s origination system indicated that TILA-exempt
+investment property loans were principal residences. This error was reﬂected both in the DU submission
+and in the ULDD data at delivery for 30 loans. After the loans obtained relief, a review of the
+documentation in the lender’s loan ﬁles uncovers the error. The DU simulator, using the correct, revised
+data, produces an “Approve/Eligible” recommendation on 20 of the loans and a “Refer with
+Caution/Ineligible” recommendation on the other 10 loans. Fannie Mae will not require the lender to
+repurchase the 20 loans, but may assess increased loan-level price adjustments to reﬂect their actual
+risk. However, if requested, the lender must repurchase the 10 loans that received a “Refer with
+Caution/Ineligible” recommendation.
+Life-of-Loan Exclusions: Clear Title/First-Lien Enforceability
+The lender is responsible for representations and warranties for the life of the loan that pertain to clear title and
+ﬁrst-lien enforceability. A mortgage loan must
+be sold by a lender that was the sole owner and holder of the mortgage loan and had the full right and
+authority to sell and assign it, or a participation interest therein, to Fannie Mae. The lender’s right to sell
+or assign the mortgage loan cannot be subject to any other party’s interest or to an agreement with any
+other party;
+be a valid and subsisting ﬁrst lien enforceable in accordance with its terms (with no pending
+condemnation or other legal proceedings) and that otherwise meets Fannie Mae’s requirements for loan
+documents;
+have a mortgagee policy of title insurance meeting Fannie Mae’s requirements, or other title evidence
+acceptable to Fannie Mae. Lenders continue to be responsible for all warranties related to title,
+marketability, and lien position, regardless of whether included or excluded by coverage under a

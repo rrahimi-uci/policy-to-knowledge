@@ -1,0 +1,85 @@
+# 2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 55/144)
+
+**Source:** health_2024_02544.pdf
+**Chunk ID:** health_2024_02544_028_sub_055
+**Pages:** 1-160
+**Section Path:** V. Regulatory Impact Analysis > F. Paperwork Reduction Act of 1995 > 2. Explanation of Estimated Capital Expenses for 42 CFR Part 2
+
+---
+
+12526 Federal Register / Vol. 89, No. 33 / Friday, February 16, 2024 / Rules and Regulations 
+203See ‘‘About COE PHI,’’ supra note 105. 
+204See The Ctr. of Excellence for Protected Health 
+Info., ‘‘Telehealth,’’ https://coephi.org/protecting- 
+health-information/telehealth-resources/; U.S. Dep’t 
+of Health and Human Servs., ‘‘Telehealth for behavioral health care,’’ https://telehealth.hhs.gov/ providers/best-practice-guides/telehealth-for- behavioral-health; Substance Abuse and Mental 
+Health Servs. Admin., ‘‘Telehealth for the Treatment of Serious Mental Illness and Substance Use Disorders’’ (2021), https://www.samhsa.gov/ resource/ebp/telehealth-treatment-serious-mental- illness-substance-use-disorders. 
+20582 FR 6052, 6071. 206See U.S. Dep’t of Health and Human Servs., 
+‘‘Preemption of State Law,’’ https://www.hhs.gov/ 
+hipaa/for-professionals/faq/preemption-of-state- law/index.html. For surveys of state privacy laws 
+and discussion of state requirements see, e.g., ‘‘50- State Survey of Health Care Information Privacy Laws,’’ supra note 107; George Washington Univ.’s 
+Hirsh Health Law and Pol’y Program and the Robert Wood Johnson Found., ‘‘States,’’ Health Information & the Law, http://www.healthinfolaw.org/state; ‘‘TAC Assessment Working Paper: 2016 Compilation of State Behavioral Health Patient Treatment Privacy and Disclosure Laws and Regulations,’’ supra note 122. 
+207See The Off. of the Nat’l Coordinator for 
+Health Info. Tech. (ONC), ‘‘Trusted Exchange Framework and Common Agreement (TEFCA),’’ https://www.healthit.gov/topic/interoperability/ policy/trusted-exchange-framework-and-common- 
+agreement-tefca. 
+208See ‘‘Behavioral Health,’’ supra note 133. 
+209See ‘‘Substance Abuse Confidentiality 
+Regulations,’’ supra note 113. 
+210See ‘‘Behavioral Health,’’ supra note 133. 211U.S. Dep’t of Health and Human Servs., Off. 
+for Civil Rights, ‘‘How do HIPAA authorizations 
+apply to an electronic health information exchange environment?’’ (Sept. 17, 2021), https://www.hhs.gov/hipaa/for-professionals/faq/554/how- do-hipaa-authorizations-apply-to-electronic-health- information/index.html; U.S. Dep’t of Health and 
+Human Servs., ‘‘Does the Security Rule require the use of an electronic or digital signature?’’ (July 26, 2013), https://www.hhs.gov/hipaa/for- 
+professionals/faq/2009/does-the-security-rule- require-the-use-of-an-electronic-signature/ index.html. 
+212See ‘‘Frequently Asked Questions: Applying 
+the Substance Abuse Confidentiality Regulations to 
+Health Information Exchange (HIE),’’ supra note 
+150. 
+21382 FR 6052, 6080. multiple states, the commenter pointed 
+out, and patients may therefore receive treatment at facilities in more than one state. Other commenters requested additional guidance on the interaction between Federal and state SUD confidentiality requirements and provide technical assistance to help providers operationalize these requirements. One commenter also requested guidance to address such issues as hospitals providing services in multiple states and application of state laws to out-of-state telehealth consultations. 
+Response 
+We appreciate these comments and 
+may provide additional guidance and 
+technical support to states and others after this rule is finalized. As previously noted, the Department supports the Center of Excellence for Protected Health Information Related to Behavioral Health, that can provide guidance and technical support on behavioral health privacy laws.
+203The 
+Department will continue to support this Center. The Department supports efforts to facilitate telehealth use consistent with HIPAA, part 2, and other state and Federal requirements. The Department has developed and supported resources to promote appropriate use of telehealth for SUD and other behavioral health conditions.
+204The Department 
+acknowledges that hospitals or other providers providing services in multiple states may face more complex compliance burdens and may need to consult legal counsel to ensure compliance, as the Department has previously advised.
+205 
+Comment 
+One commenter said that any changes 
+need to take into account discrepancies between state and Federal laws regarding release of information and ways to protect patients from the consequences of their information being used against them. 
+Response 
+The Department acknowledges that 
+the complex intersection of state and Federal behavioral health privacy 
+statutes and regulations may result in unnecessary or improper disclosures. As we have noted in this section, part 2 does not preempt more stringent state statutes or regulations. Likewise, we have stated that HIPAA constitutes a floor of privacy protection that does not preclude more stringent state laws.
+206 
+Comment 
+One commenter was concerned that 
+Federal efforts to promote interoperability may intersect with conflicting state requirements, pointing to the Federal Trusted Exchange Framework and Common Agreement (TEFCA) initiative as an example.
+207 
+The commenter believed that the health care industry does not yet fully understand all the potential conflicts and how they will impact health information exchange. Another commenter suggested requiring electronic records to display the basis when certain information is not visible or accessible (e.g., due to state law, 
+patient restriction, etc.). 
+Response 
+The Department will continue to 
+support health IT and behavioral health 
+integration by ensuring that TEFCA and other efforts are consistent with part 2 and take into account state requirements.
+208As noted above, the 
+Department has developed guidance for part 2 programs on exchanging part 2 data and may update such guidance in the future.
+209The Department continues 
+to support EHRs and health IT compliant with part 2 and HIPAA requirements as well as care coordination and behavioral health integration.
+210 Comment 
+A commenter recommended that a 
+Federal electronic consent standard 
+should override conflicting state law. 
+Response 
+While electronic signatures are 
+beyond the scope of this rulemaking and 
+no modifications to electronic signature requirements were proposed by the Department, both HIPAA and part 2 permit electronic signatures for authorizations or consents consistent with state law. As stated in HHS guidance, the HIPAA Privacy Rule ‘‘allows HIPAA authorizations to be obtained electronically from individuals, provided any electronic signature is valid under applicable law.’’
+211The Department also has stated 
+in guidance and regulation that under part 2 electronic signatures are permissible.
+212In 2017 the Department 
+revised § 2.31 to ‘‘to permit electronic signatures to the extent that they are not prohibited by any applicable law.’’ However, the Department also advised that ‘‘[b]ecause there is no single federal law on electronic signatures and there may be variation in state laws, SAMHSA recommends that stakeholders consult their attorneys to ensure they are in compliance with all applicable laws.’’
+213 
+The requirements for providing 
+consent under § 2.31 and the notice and copy of consent to accompany disclosure under § 2.32 could be met in electronic form. The requirements of § 2.32 would not require the written consent, copies of a written consent, or a notice to accompany a disclosure of part 2 records to be in paper or other hard copy form, provided that any required signatures obtained in electronic form would be valid under applicable law. This interpretation is consistent with the Department’s approach under the HIPAA Privacy Rule. OCR has provided prior guidance stating that covered entities can disclose PHI pursuant to an electronic copy of a valid and signed authorization, and the 
+VerDate Sep<11>2014 18:41 Feb 15, 2024 Jkt 262001 PO 00000 Frm 00056 Fmt 4701 Sfmt 4700 E:\FR\FM\16FER2.SGM 16FER2lotter on DSK11XQN23PROD with RULES2

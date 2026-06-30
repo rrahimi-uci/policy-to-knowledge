@@ -1,0 +1,42 @@
+# Subpart B6, Government Programs Eligibility and Underwriting Requirements
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_372
+**Pages:** 835-835
+**Section Path:** Part B, Origination Through Closing > Subpart B6, Government Programs Eligibility and Underwriting Requirements
+
+---
+
+Published March 4, 2026
+817For high LTV reﬁnance loans, lenders must provide all applicable loan delivery data elements and special
+feature codes.
+The following special feature codes (SFC) may apply:
+SFC 839 may optionally be delivered for high LTV reﬁnance loans underwritten using the standard
+requirements.
+SFC 840 is required for high LTV reﬁnance loans that are underwritten using the Alternative Qualiﬁcation
+Path.
+These codes are to be used in addition to any other special feature codes that may apply.
+Income must be reported to Fannie Mae for all high LTV reﬁnance loans at the time of loan delivery even for
+those transactions where there is no maximum DTI ratio. For high LTV reﬁnance loans with payment changes
+less than or equal to 20%, the lender must report the stated income on the loan application (if any). If the
+borrower does not state any income and the lender uses the veriﬁcation of reserves option as the income
+source, the lender must deliver the equivalent of the new monthly payment (PITIA) as the “Monthly Income”
+data element (Sort ID 291).
+Note:  Lenders must report gross monthly rent in the loan delivery data for all investment properties
+and two- to four- unit principal residence properties, regardless of whether the borrower is using rental
+income to qualify for the mortgage loan. See A3-4-02, Data Quality and Integrity  for additional
+information.
+Whole Loan Committing and Pooling of Loans with LTV Ratios Above 105%
+Separate committing is required for high LTV reﬁnance loans with LTV ratios above 105%. These loans may not
+be delivered against standard whole loan commitments. Speciﬁc “High LTV Reﬁ” products are available in
+Fannie Mae’s whole loan committing application.
+High LTV reﬁnance loans with LTV ratios above 105% cannot be included in TBA-eligible MBS, but must be
+included in pools speciﬁcally created for loans with LTV ratios above 105%.
+Furthermore, lenders may be able to deliver high LTV reﬁnance loans with LTV ratios above 105% into the
+respective Fannie Majors pool speciﬁcally available for these loans. Due to the separate pool preﬁxes required
+for loans with LTV ratios above 105%, these loans may not be delivered into standard TBA-eligible Fannie Majors
+pools. However, MBS deliveries of loans reﬁnanced under this new option are eligible for securitization utilizing
+existing Fannie Mae pool preﬁxes.
+Recent Related Announcements
+There are no recently issued Announcements related to this topic.
+Subpart B6, Government Programs Eligibility and

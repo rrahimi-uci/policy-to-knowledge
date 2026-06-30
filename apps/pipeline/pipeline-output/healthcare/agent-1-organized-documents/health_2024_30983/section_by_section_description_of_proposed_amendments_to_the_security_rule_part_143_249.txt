@@ -1,0 +1,23 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 143/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_143
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+733 
+Under the proposal, a regulated entity 
+would need to ensure that an encryption solution that it adopts meets prevailing cryptographic standards prior to using it. The Department uses the phrase ‘‘prevailing cryptographic standards’’ to refer to widely accepted standards for encryption and decryption that are recommended by authoritative sources and that ensure the confidentiality, integrity, and availability of ePHI at the time the regulated entity performs its risk analysis and establishes or modifies its risk management plan. The Department would expect a regulated entity to deploy updated encryption solutions as prevailing cryptographic standards evolve, consistent with both of the proposed requirements discussed above: (1) to review, verify, and update its risk analysis in response to changes in its environment that may affect ePHI; and (2) to review and modify, as reasonable and appropriate, its risk management plan in response to changes in its risk analysis. Thus, a regulated entity using an encryption algorithm that is known to be insecure would not be in compliance with the proposed requirement to deploy an encryption algorithm that meets prevailing cryptographic standards. We are not proposing to define prevailing cryptographic standards in regulatory text at this time. 
+The Department proposes to add one 
+implementation specification for the proposed standard for encryption and decryption. Specifically, proposed 45 CFR 164.312(b)(2) would require regulated entities to encrypt all ePHI at rest and in transit, with limited exceptions.
+734Thus, a regulated entity 
+would be required to encrypt all ePHI it maintains, as well as all ePHI it transmits, unless an exception applies, and the following conditions are met: 
+•Each exception applies only to the 
+ePHI directly affected by the circumstances described in the specific exception. 
+•Each exception applies only to the 
+extent that the regulated entity documents its understanding that the exception applies to the scenario in which the regulated entity relies upon the exception and why or how the exception applies, and that any additional applicable conditions are met. 
+The first proposed exception at 
+proposed 45 CFR 164.312(b)(3)(i) would apply to a technology asset currently used by a regulated entity that does not support encryption according to prevailing cryptographic standards. Because the requirements for encryption under the Security Rule today are addressable, a regulated entity may be in compliance with the encryption requirement without actual encryption of ePHI if encryption is not reasonable and appropriate, provided that the entity meets certain conditions. Additionally, technology assets in use today may rely on cryptographic standards that are no longer accepted industry practice. The Department recognizes that it may take some time for a regulated entity to adopt compliant technology assets. Thus, we propose this exception for such technology assets that do not support encryption consistent with prevailing cryptographic standards in limited circumstances. Specifically, to meet this exception, a regulated entity would be required to establish a written plan to migrate ePHI to technology assets that support encryption consistent with prevailing cryptographic standards and to implement such plan. The regulated entity would be required to establish and implement the written plan within 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00072 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

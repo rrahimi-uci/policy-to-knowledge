@@ -1,0 +1,43 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 47/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_047
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+922 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+342See ‘‘NIST Privacy Framework: A Tool for 
+Improving Privacy Through Enterprise Risk 
+Management, Version 1.0,’’ National Institute of Standards and Technology, U.S. Department of Commerce, p. 29 (Jan. 16, 2020) (see definition of ‘‘data processing’’), https://nvlpubs.nist.gov/ nistpubs/CSWP/NIST.CSWP.01162020.pdf. 
+343See Maithilee Joshi, et al., ‘‘Delegated 
+Authorization Framework for EHR Services Using Attribute-Based Encryption,’’ IEEE Transactions on Services Computing, Volume 14, No. 6, p. 1 (2021) (discussing that health care providers are increasingly using Cloud-based EHR services to manage ePHI, which increases the possibility of attacks on ePHI), https://ebiquity.umbc.edu/get/a/ publication/1126.pdf; see also ‘‘Security Standards: Technical Safeguards,’’ HIPAA Security Series, Office for Civil Rights, U.S. Department of Health and Human Services, (May 2005, revised Mar. 2007) (The goal of encryption is to protect ePHI from being accessed and viewed by unauthorized users.), https://www.hhs.gov/sites/default/files/ocr/privacy/ hipaa/administrative/securityrule/ techsafeguards.pdf?language=es. 
+344The Department previously acknowledged that 
+information transmitted by a telephone voice 
+response system in response to a telephone request, and some voice technology digitally produced from an information system and transmitted by telephone are both covered by this definition. See 68 FR 8334, 8342 (Feb. 20, 2003); 75 FR 40868, 
+40874 (July 14, 2010); and 78 FR 5566, 5575 (Jan. 25, 2013). 
+34578 FR 5566, 5575–5576 (Jan. 25, 2013). 34645 CFR 164.304 (definition of ‘‘Access’’). 
+34745 CFR 164.304 (definition of ‘‘User’’). transmissions via fax, and of voice, via 
+telephone, from transmissions via electronic media, nor does the definition take into consideration new and emerging technologies. Accordingly, the Department believes that it is appropriate to reconsider this definition. 
+3. Proposals 
+The Department proposes to modify 
+the definition of ‘‘electronic media’’ as 
+follows. First, the Department proposes to revise paragraph (1) of the definition to clarify that electronic media includes not only media on which data may be recorded, but also media on which data may be maintained or processed. 
+Generally, data is either at rest, in 
+transit, or in process (e.g., being worked 
+on, in use, being modified in memory, or being updated).
+342After the data is 
+no longer in use, it is either maintained or transmitted. It is especially important for entities to protect data in process because generally, data must be unencrypted to be processed, making this a time when it is particularly vulnerable to a breach or other security incident.
+343To that end, the 
+Department’s proposal would clarify that the definition includes electronic media that is used to record, maintain, or process data. 
+The Department also proposes to 
+revise paragraph (1) to clarify and update terminology used in a non- exhaustive list of examples of electronic storage material. Additionally, to ensure that the definition includes future technology, the Department proposes to add to the list of examples ‘‘any other form of digital memory or storage’’ on which data may be recorded, maintained, or processed. 
+As discussed above, traditional 
+landlines and fax machines are rapidly being replaced with electronic communication technologies and 
+mobile technologies that use electronic media. The Security Rule applies when a regulated entity uses such electronic communication technologies. Therefore, regulated entities using telephone systems and fax equipment that transmit ePHI need to apply the Security Rule safeguards to those technologies.
+344 
+Accordingly, in paragraph (2), we propose to revise the description of ‘‘transmission media’’ to recognize that data is transmitted almost exclusively in electronic form today. The limited exception to this would be data that is handwritten on paper and hand- delivered or mailed, such that the data is never on electronic storage material. Additionally, the Department proposes to include public networks in the examples of transmission media and to remove the sentence that describes transmissions that are not considered transmissions via electronic media. By making these changes, we would reflect technology’s evolution since 2013. 
+We also propose to make a technical 
+correction to paragraph (2) of the definition, consistent with a revision made in the 2013 Omnibus Rule to paragraph (1).
+345Specifically, the

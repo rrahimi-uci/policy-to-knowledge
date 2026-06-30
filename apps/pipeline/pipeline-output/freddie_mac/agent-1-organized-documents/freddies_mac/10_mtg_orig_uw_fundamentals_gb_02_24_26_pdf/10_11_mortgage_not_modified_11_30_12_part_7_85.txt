@@ -1,0 +1,165 @@
+# 10.11 Mortgage not modified (11/30/12) (part 7/85)
+
+**Source:** freddies_mac.pdf
+**Chunk ID:** freddies_mac_3082_sub_007
+**Pages:** 1-277
+**Section Path:** 10 - Mtg, Orig, UW Fundamentals GB-02-24-26.pdf > 10.11 Mortgage not modified (11/30/12)
+
+---
+
+Guide Bulletin Update 04/21/26 Chapter 2 – Page 11 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the AllRegs 
+web site of ICE Mortgage Technology  (with a paid subscription).  Guide Chapter  2 – General Freddie Mac Policies  
+Guide Chapter 2 – General Freddie Mac Policies  
+ e. Ownership of the Freddie Mac Multifamily Software Applications ( 10/21/25 ) 
+The Seller/Servicer acknowledges that the Seller/Servicer has no ownership or other interest 
+in the Freddie Mac Multifamily Software Applications, or the contents contained therein, 
+except to the extent of the rights expressly granted in the Guide.  
+ 
+The Seller/Servicer agrees that Freddie Mac shall be the sole and exclusive owner of any 
+actual or proposed changes, modifications, upgrades or enhancements in functionality, 
+design or otherwise, to the Multifamily Software Applications and any successor p roducts or 
+systems (collectively, the “Enhancements”), and the Seller/Servicer hereby assigns, and 
+agrees to assign, to Freddie Mac all rights in the Enhancements, without any recourse to the 
+Seller/Servicer.  The Seller/Servicer understands and acknowledg es that Freddie Mac shall 
+not be under any obligation to consider or implement any Enhancements it may suggest or 
+recommend to Freddie Mac.  
+ 
+f. Termination of the right to use the Freddie Mac Multifamily Software Applications 
+(09/30/20)  
+Freddie Mac reserves the right to terminate a Seller/Servicer’s use of any of the Freddie Mac 
+Multifamily Software Applications and/or the Freddie Mac Approved Third Party Applications  
+at any time in its sole discretion upon notice to the Seller/Servicer.  
+ 
+2.13 System administrator requirements  (08/26/25 ) 
+a. Seller/Servicer assignment of a system administrator (0 6/17/21) 
+Prior to the Seller/Servicer’s implementation of any of the Freddie Mac Multifamily Software 
+Applications and/or the Freddie Mac Approved Third Party Applications, the Seller/Servicer 
+must designate one or more individuals on its staff to serve as the syst em administrator(s) to 
+manage access to the following:  
+ 
+• The Freddie Mac Multifamily Software Applications and the Freddie Mac Approved Third 
+Party Applications, as listed in Section 2.12(a)  
+ 
+• Multifamily secure content on mf.freddiemac.com , including the Freddie Mac 
+Exclusionary List  
+ 
+The Seller/Servicer must add, update or remove access for system administrators by submitting 
+Form 1146, System Administrator Add/Update/Remove Request Form,  following the directions 
+found on the form.  
+ 
+b. System administrator responsibilities ( 08/26/25 ) 
+The system administrator is required to identify:  
+ 
+• Each Seller/Servicer employee (or vendor) who needs access to a particular Freddie Mac 
+Multifamily Software Application, Freddie Mac Approved Third Party Application and/or 
+Multifamily secure content on mf.freddiemac.com
+
+Guide Bulletin Update 04/21/26 Chapter 2 – Page 12 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the AllRegs 
+web site of ICE Mortgage Technology  (with a paid subscription).  Guide Chapter  2 – General Freddie Mac Policies  
+Guide Chapter 2 – General Freddie Mac Policies  
+ • For Freddie Mac Multifamily Software Applications and Freddie Mac Approved Third 
+Party Applications, the appropriate authority level of the employee’s or vendor’s access 
+based on the employee’s or vendor’s roles and responsibilities  
+ 
+The method of identification will vary.  The system administrator must:  
+ 
+• Enter the user’s contact information in FAM , to provide access to  myOptigo  and 
+Multifamily secure content  
+ 
+• Enter the user’s contact information in both FAM and in OUS, to provide access to OUS  
+and to facilitate myOptigo digital loan submissions  
+ 
+• Complete the DMS New User Setup, Reactivation , Modification  and Deactivation Form 
+and submit it to MF_Service_Desk@freddiemac.com , to provide access to or reactivate 
+user access to DMS  
+ 
+• Enter the user’s contact information in FAM , complete the ICT User Access Request  and 
+submit it to MF_Service_Desk@freddiemac.com , to provide access to the I nsurance 
+Compliance Tool 
+ 
+• Enter user information into PRS to manage access to that software application  
+ 
+• Enter user information into MES to manage access to that software application  
+ 
+• Confirm or revoke requests for user access to CRT as appropriate  
+ 
+• Work with the third -party service provider to manage user access for the applicable 
+Freddie Mac Approved Third Party Application  
+ 
+When an employee or vendor for a Seller/Servicer leaves the Seller/Servicer’s employ or 
+transitions to a role that no longer requires access to any Freddie Mac Multifamily Software 
+Application or Freddie Mac Approved Third Party Application, the system adm inistrator must, 
+take each of the following actions  in a timely manner : 
+ 
+• Revoke the user’s access in FAM  
+ 
+• Revoke the user’s access to OUS  
+ 
+• Submit the DMS New User Setup, Reactivation and Deactivation Form to 
+MF_Service_Desk@freddiemac.com  to request removal of the employee or vendor from 
+DMS  
+ 
+• Revoke the user’s access information in PRS  
+ 
+• Revoke the user’s access information in MES  
+ 
+• Revoke the user’s access information in CRT  
+ 
+• Revoke the user’s access information in each applicable Freddie Mac Approved Third 
+Party Application, including Optigo Happy Inspection Application, powered by HappyCo
+
+Guide Bulletin Update 04/21/26 Chapter 2 – Page 13 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the AllRegs 
+web site of ICE Mortgage Technology  (with a paid subscription).  Guide Chapter  2 – General Freddie Mac Policies  
+Guide Chapter 2 – General Freddie Mac Policies  
+  
+c. System administrator certification of valid users (0 8/26/25 ) 
+At least twice a year , Freddie Mac will provide a user listing to the Seller/Servicer’s system 
+administrator(s), who must review the listing and certify to Freddie Mac that each user 
+granted access to a Multifamily Software Application is a current employee of the 
+Seller/Servi cer or a vendor for the Seller/Servicer, that the user has the appropriate 
+application access and authority level based on the user’s roles and responsibilities, and that 
+the user contact information, including the user’s email address , is correct.  The system 
+administrator must complete Form 1148, System User Verification and Certification , to make 
+such certifications.  
+ 
+Form 1148  must be returned to Freddie Mac according to the instructions shown on the form 
+within 15 Business Days of receipt of the request from Freddie Mac.  
+ 
+Any Seller/Servicer with a contract for services from a Freddie Mac Approved Third Party 
+Application provider must obtain a user listing from such provider at least twice a year .  The 
+Seller/Servicer’s system administrator(s) must confirm that each user granted access to a 
+Freddie Mac Approved Third Party Application is a current employee of the Seller/Servicer or 
+a vendor for the Seller/Servicer, that the user has the appropriat e application access and 
+authority level based on the user’s roles and responsi bilities, and that the user contact 
+information, including the user’s email address, is correct.  Seller/Servicer’s system 
+administrator(s) must retain evidence of this review and provide such evidence to Freddie 
+Mac within 15 Business Days of receipt of a  request from Freddie Mac.  Additionally, 
+Seller/Servicer grants Freddie Mac the right to periodically request a user listing for 
+Seller/Servicer’s users from the system administrators of Freddie Mac Approved Third Party 
+Applications.  
+ 
+d. Seller/Servicer officer verification and certification of system administrators (0 8/26/25 ) 
+At least twice a year , an authorized officer of the Seller/Servicer must review and verify the 
+record for each of its system administrators and certify the following to Freddie Mac : 
+ 
+• Each of the current system administrators is a current employee of or vendor for the 
+Seller/Servicer with appropriate application access and authority level based on the 
+system administrator’s roles and responsibilities, and  
+ 
+• All system administrator contact information, including the system administrator's email 
+address, is correct.  The officer must complete Form 1149, System Administrator 
+Verification and Certification , to make these certifications.  
+ 
+Form 1149  must be returned to Freddie Mac according to the instructions shown on the form 
+within 15 Business Days of receipt of the request from Freddie Mac.  
+ 
+2.14 Electronic Signatures, Electronic Records, and data security ( 02/27/25) 
+a. Overview (05/05/17)  
+Freddie Mac may require or permit Seller/Servicers to conduct certain transactions with 
+Freddie Mac electronically.  Freddie Mac will identify the particular transactions that will be

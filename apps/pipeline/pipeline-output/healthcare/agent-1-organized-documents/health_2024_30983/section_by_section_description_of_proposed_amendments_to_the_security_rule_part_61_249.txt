@@ -1,0 +1,19 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 61/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_061
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+important to clarify that the requirements of the Security Rule do not only apply to electronic information systems that create, receive, maintain, or transmit ePHI. After all, cybercriminals 
+may be able to access ePHI by leveraging vulnerabilities in some electronic information systems that do not themselves create, receive, maintain, or transmit ePHI where such information systems are connected to or otherwise affect electronic information systems that do create, receive, maintain, or transmit ePHI. For example, while a payment processing system used in a covered entity’s food and beverage outlets or gift shops may not create, receive, maintain, or transmit ePHI, it may affect the confidentiality, integrity, or availability of ePHI in certain circumstances, such as where such 
+systems are connected to the same network as servers that contain ePHI.
+378 
+Accordingly, we would interpret an 
+electronic information system as otherwise affecting the confidentiality, integrity, or availability of ePHI if it is insufficiently segregated physically and electronically from an electronic information system that creates, receives, maintains, or transmits ePHI or one that otherwise affects the confidentiality, integrity, or availability of ePHI. 
+An electronic information system 
+would also fit the category of ‘‘otherwise 
+affecting’’ if it contains information that relates to an electronic information system that creates, receives, maintains, or transmits ePHI or to another electronic information system that otherwise affects the confidentiality, integrity, or availability of ePHI. For example, a compromised electronic information system used to provide administrative functions, such as user authentication or management of storage area network infrastructure, that does not contain ePHI may allow unauthorized access to ePHI (affecting the confidentiality of ePHI) or disruption of storage configuration data (affecting the integrity and availability of ePHI). An electronic information system that is not connected to a covered health care provider’s EHR but that maintains user IDs and passwords for the EHR also may not create, receive, maintain, or transmit ePHI; however, the confidentiality, integrity, or availability of the ePHI in the EHR would be affected if an unauthorized person gained access to that electronic information system. And the same is true for an electronic information system that contains the decryption keys for a regulated entity’s encryption algorithms. Thus, it is important that administrative, physical, and technical safeguards be implemented not only for electronic information systems that create, receive, maintain, or transmit ePHI, but also for electronic information systems that otherwise affect the confidentiality, integrity, or availability of ePHI. 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00031 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

@@ -1,0 +1,3441 @@
+{
+  "source_file": "health_2024_02544.pdf",
+  "total_chunks": 171,
+  "chunk_methods": [
+    "toc_based"
+  ],
+  "structure": [
+    {
+      "chunk_id": "health_2024_02544_001",
+      "title": "I. Executive Summary",
+      "path": "health_2024_02544/i_executive_summary.txt",
+      "section_path": [
+        "I. Executive Summary"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 692
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_002",
+      "title": "A. Purpose of Rulemaking and Issuance of Proposed Rule",
+      "path": "health_2024_02544/i_executive_summary/a_purpose_of_rulemaking_and_issuance_of_proposed_rule.txt",
+      "section_path": [
+        "I. Executive Summary",
+        "A. Purpose of Rulemaking and Issuance of Proposed Rule"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 692
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_003",
+      "title": "B. Severability",
+      "path": "health_2024_02544/i_executive_summary/b_severability.txt",
+      "section_path": [
+        "I. Executive Summary",
+        "B. Severability"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 692
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_004",
+      "title": "C. Summary of the Major Provisions",
+      "path": "health_2024_02544/i_executive_summary/c_summary_of_the_major_provisions.txt",
+      "section_path": [
+        "I. Executive Summary",
+        "C. Summary of the Major Provisions"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 692
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_005",
+      "title": "D. Summary of the Costs and Benefits of the Major Provisions",
+      "path": "health_2024_02544/i_executive_summary/d_summary_of_the_costs_and_benefits_of_the_major_provisions.txt",
+      "section_path": [
+        "I. Executive Summary",
+        "D. Summary of the Costs and Benefits of the Major Provisions"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 692
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_006",
+      "title": "II. Statutory and Regulatory Background",
+      "path": "health_2024_02544/ii_statutory_and_regulatory_background.txt",
+      "section_path": [
+        "II. Statutory and Regulatory Background"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 692
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_007",
+      "title": "III. Overview of Public Comments",
+      "path": "health_2024_02544/iii_overview_of_public_comments.txt",
+      "section_path": [
+        "III. Overview of Public Comments"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 692
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_008",
+      "title": "A. General Discussion of Comments",
+      "path": "health_2024_02544/iii_overview_of_public_comments/a_general_discussion_of_comments.txt",
+      "section_path": [
+        "III. Overview of Public Comments",
+        "A. General Discussion of Comments"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 692
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_009",
+      "title": "B. General Comments",
+      "path": "health_2024_02544/iii_overview_of_public_comments/b_general_comments.txt",
+      "section_path": [
+        "III. Overview of Public Comments",
+        "B. General Comments"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 692
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_010",
+      "title": "1. General Support for the Proposed Rule",
+      "path": "health_2024_02544/iii_overview_of_public_comments/b_general_comments/1_general_support_for_the_proposed_rule.txt",
+      "section_path": [
+        "III. Overview of Public Comments",
+        "B. General Comments",
+        "1. General Support for the Proposed Rule"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 692
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_011",
+      "title": "2. General Opposition to the Proposed Rule",
+      "path": "health_2024_02544/iii_overview_of_public_comments/b_general_comments/2_general_opposition_to_the_proposed_rule.txt",
+      "section_path": [
+        "III. Overview of Public Comments",
+        "B. General Comments",
+        "2. General Opposition to the Proposed Rule"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 692
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_012",
+      "title": "IV. Analysis and Response to Public Comments and Final Modifications",
+      "path": "health_2024_02544/iv_analysis_and_response_to_public_comments_and_final_modifications.txt",
+      "section_path": [
+        "IV. Analysis and Response to Public Comments and Final Modifications"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 692
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_013",
+      "title": "A. Effective and Compliance Dates",
+      "path": "health_2024_02544/iv_analysis_and_response_to_public_comments_and_final_modifications/a_effective_and_compliance_dates.txt",
+      "section_path": [
+        "IV. Analysis and Response to Public Comments and Final Modifications",
+        "A. Effective and Compliance Dates"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 692
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_014",
+      "title": "B. Substantive Proposals and Responses to Comments",
+      "path": "health_2024_02544/iv_analysis_and_response_to_public_comments_and_final_modifications/b_substantive_proposals_and_responses_to_comments.txt",
+      "section_path": [
+        "IV. Analysis and Response to Public Comments and Final Modifications",
+        "B. Substantive Proposals and Responses to Comments"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 692
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_015",
+      "title": "V. Regulatory Impact Analysis",
+      "path": "health_2024_02544/v_regulatory_impact_analysis.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 692
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_016",
+      "title": "A. Executive Orders 12866 and 13563 and Related Executive Orders on Regulatory Review",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/a_executive_orders_12866_and_13563_and_related_executive_orders_on_regulatory_review.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "A. Executive Orders 12866 and 13563 and Related Executive Orders on Regulatory Review"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 692
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_017",
+      "title": "1. Summary of the Final Rule",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/a_executive_orders_12866_and_13563_and_related_executive_orders_on_regulatory_review/1_summary_of_the_final_rule.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "A. Executive Orders 12866 and 13563 and Related Executive Orders on Regulatory Review",
+        "1. Summary of the Final Rule"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 692
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_018",
+      "title": "2. Need for the Final Rule",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/a_executive_orders_12866_and_13563_and_related_executive_orders_on_regulatory_review/2_need_for_the_final_rule.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "A. Executive Orders 12866 and 13563 and Related Executive Orders on Regulatory Review",
+        "2. Need for the Final Rule"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 692
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_019",
+      "title": "3. Response to Public Comment",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/a_executive_orders_12866_and_13563_and_related_executive_orders_on_regulatory_review/3_response_to_public_comment.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "A. Executive Orders 12866 and 13563 and Related Executive Orders on Regulatory Review",
+        "3. Response to Public Comment"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 692
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_020",
+      "title": "4. Cost-Benefit Analysis",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/a_executive_orders_12866_and_13563_and_related_executive_orders_on_regulatory_review/4_cost_benefit_analysis.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "A. Executive Orders 12866 and 13563 and Related Executive Orders on Regulatory Review",
+        "4. Cost-Benefit Analysis"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 692
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_021",
+      "title": "5. Consideration of Regulatory Alternatives",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/a_executive_orders_12866_and_13563_and_related_executive_orders_on_regulatory_review/5_consideration_of_regulatory_alternatives.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "A. Executive Orders 12866 and 13563 and Related Executive Orders on Regulatory Review",
+        "5. Consideration of Regulatory Alternatives"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 692
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_022",
+      "title": "B. Regulatory Flexibility Act",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/b_regulatory_flexibility_act.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "B. Regulatory Flexibility Act"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 692
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_023",
+      "title": "C. Unfunded Mandates Reform Act",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/c_unfunded_mandates_reform_act.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "C. Unfunded Mandates Reform Act"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 692
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_024",
+      "title": "D. Executive Order 13132—Federalism",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/d_executive_order_13132_federalism.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "D. Executive Order 13132—Federalism"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 692
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_025",
+      "title": "E. Assessment of Federal Regulation and Policies on Families",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/e_assessment_of_federal_regulation_and_policies_on_families.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "E. Assessment of Federal Regulation and Policies on Families"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 692
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_026",
+      "title": "F. Paperwork Reduction Act of 1995",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 692
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_027",
+      "title": "1. Explanation of Estimated Annualized Burden Hours for 42 CFR Part 2",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/1_explanation_of_estimated_annualized_burden_hours_for_42_cfr_part_2.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "1. Explanation of Estimated Annualized Burden Hours for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 692
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_001",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 1/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_1_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 1,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 692
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_002",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 2/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_2_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 2,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 935
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_003",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 3/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_3_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 3,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1215
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_004",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 4/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_4_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 4,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1082
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_005",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 5/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_5_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 5,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1099
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_006",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 6/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_6_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 6,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1128
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_007",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 7/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_7_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 7,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1318
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_008",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 8/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_8_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 8,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1212
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_009",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 9/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_9_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 9,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1239
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_010",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 10/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_10_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 10,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1097
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_011",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 11/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_11_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 11,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1075
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_012",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 12/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_12_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 12,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1034
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_013",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 13/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_13_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 13,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1179
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_014",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 14/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_14_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 14,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1162
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_015",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 15/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_15_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 15,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1169
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_016",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 16/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_16_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 16,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1192
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_017",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 17/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_17_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 17,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1245
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_018",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 18/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_18_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 18,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1135
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_019",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 19/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_19_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 19,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1170
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_020",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 20/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_20_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 20,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1127
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_021",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 21/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_21_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 21,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1129
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_022",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 22/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_22_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 22,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1098
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_023",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 23/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_23_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 23,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1112
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_024",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 24/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_24_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 24,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1059
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_025",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 25/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_25_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 25,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1018
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_026",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 26/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_26_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 26,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 986
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_027",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 27/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_27_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 27,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1086
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_028",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 28/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_28_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 28,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1071
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_029",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 29/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_29_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 29,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 998
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_030",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 30/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_30_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 30,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1107
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_031",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 31/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_31_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 31,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1154
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_032",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 32/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_32_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 32,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1100
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_033",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 33/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_33_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 33,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1103
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_034",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 34/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_34_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 34,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1106
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_035",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 35/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_35_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 35,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1127
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_036",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 36/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_36_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 36,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1080
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_037",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 37/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_37_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 37,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1105
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_038",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 38/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_38_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 38,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1075
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_039",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 39/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_39_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 39,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1004
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_040",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 40/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_40_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 40,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1116
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_041",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 41/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_41_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 41,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1109
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_042",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 42/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_42_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 42,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1102
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_043",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 43/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_43_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 43,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1155
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_044",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 44/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_44_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 44,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1061
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_045",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 45/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_45_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 45,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1055
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_046",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 46/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_46_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 46,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1127
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_047",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 47/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_47_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 47,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1189
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_048",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 48/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_48_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 48,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1163
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_049",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 49/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_49_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 49,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1081
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_050",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 50/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_50_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 50,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1086
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_051",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 51/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_51_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 51,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1119
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_052",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 52/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_52_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 52,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1076
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_053",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 53/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_53_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 53,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1089
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_054",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 54/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_54_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 54,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1152
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_055",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 55/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_55_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 55,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1054
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_056",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 56/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_56_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 56,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1086
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_057",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 57/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_57_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 57,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1134
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_058",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 58/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_58_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 58,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1144
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_059",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 59/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_59_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 59,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1161
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_060",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 60/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_60_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 60,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1098
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_061",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 61/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_61_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 61,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1111
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_062",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 62/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_62_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 62,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1126
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_063",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 63/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_63_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 63,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1153
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_064",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 64/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_64_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 64,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1201
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_065",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 65/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_65_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 65,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1081
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_066",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 66/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_66_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 66,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1223
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_067",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 67/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_67_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 67,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1124
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_068",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 68/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_68_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 68,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1126
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_069",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 69/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_69_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 69,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1088
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_070",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 70/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_70_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 70,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1171
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_071",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 71/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_71_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 71,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1079
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_072",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 72/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_72_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 72,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1114
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_073",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 73/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_73_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 73,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1048
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_074",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 74/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_74_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 74,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1025
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_075",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 75/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_75_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 75,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1122
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_076",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 76/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_76_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 76,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1155
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_077",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 77/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_77_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 77,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1115
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_078",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 78/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_78_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 78,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1119
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_079",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 79/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_79_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 79,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1095
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_080",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 80/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_80_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 80,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1184
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_081",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 81/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_81_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 81,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1176
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_082",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 82/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_82_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 82,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1187
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_083",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 83/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_83_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 83,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1172
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_084",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 84/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_84_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 84,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1102
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_085",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 85/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_85_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 85,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1136
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_086",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 86/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_86_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 86,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1105
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_087",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 87/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_87_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 87,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1106
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_088",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 88/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_88_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 88,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1164
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_089",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 89/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_89_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 89,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1174
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_090",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 90/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_90_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 90,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1073
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_091",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 91/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_91_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 91,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1195
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_092",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 92/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_92_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 92,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1077
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_093",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 93/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_93_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 93,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1051
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_094",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 94/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_94_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 94,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1126
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_095",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 95/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_95_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 95,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1162
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_096",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 96/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_96_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 96,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1178
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_097",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 97/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_97_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 97,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1178
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_098",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 98/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_98_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 98,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1055
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_099",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 99/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_99_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 99,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1143
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_100",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 100/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_100_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 100,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1089
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_101",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 101/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_101_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 101,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1104
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_102",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 102/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_102_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 102,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1104
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_103",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 103/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_103_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 103,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1176
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_104",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 104/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_104_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 104,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1115
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_105",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 105/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_105_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 105,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1184
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_106",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 106/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_106_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 106,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1086
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_107",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 107/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_107_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 107,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1159
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_108",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 108/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_108_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 108,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1194
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_109",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 109/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_109_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 109,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1095
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_110",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 110/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_110_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 110,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 756
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_111",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 111/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_111_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 111,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1260
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_112",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 112/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_112_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 112,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1393
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_113",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 113/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_113_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 113,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 325
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_114",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 114/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_114_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 114,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1133
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_115",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 115/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_115_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 115,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1178
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_116",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 116/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_116_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 116,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 996
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_117",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 117/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_117_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 117,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1476
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_118",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 118/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_118_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 118,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1422
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_119",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 119/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_119_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 119,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1051
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_120",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 120/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_120_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 120,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1372
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_121",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 121/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_121_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 121,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1106
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_122",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 122/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_122_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 122,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1103
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_123",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 123/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_123_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 123,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1283
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_124",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 124/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_124_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 124,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1274
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_125",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 125/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_125_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 125,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1189
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_126",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 126/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_126_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 126,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1199
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_127",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 127/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_127_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 127,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1199
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_128",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 128/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_128_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 128,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1320
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_129",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 129/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_129_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 129,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1272
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_130",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 130/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_130_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 130,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 953
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_131",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 131/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_131_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 131,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1192
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_132",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 132/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_132_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 132,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1108
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_133",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 133/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_133_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 133,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1171
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_134",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 134/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_134_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 134,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1259
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_135",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 135/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_135_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 135,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1157
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_136",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 136/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_136_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 136,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1158
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_137",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 137/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_137_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 137,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1254
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_138",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 138/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_138_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 138,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1175
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_139",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 139/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_139_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 139,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1208
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_140",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 140/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_140_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 140,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1150
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_141",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 141/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_141_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 141,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1091
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_142",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 142/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_142_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 142,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1142
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_143",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 143/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_143_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 143,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 1221
+      }
+    },
+    {
+      "chunk_id": "health_2024_02544_028_sub_144",
+      "title": "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 144/144)",
+      "path": "health_2024_02544/v_regulatory_impact_analysis/f_paperwork_reduction_act_of_1995/2_explanation_of_estimated_capital_expenses_for_42_cfr_part_2_part_144_144.txt",
+      "section_path": [
+        "V. Regulatory Impact Analysis",
+        "F. Paperwork Reduction Act of 1995",
+        "2. Explanation of Estimated Capital Expenses for 42 CFR Part 2"
+      ],
+      "metadata": {
+        "source_file": "health_2024_02544.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_02544_028",
+        "sub_chunk_index": 144,
+        "total_sub_chunks": 144,
+        "parent_word_count": 161870,
+        "word_count": 618
+      }
+    }
+  ]
+}

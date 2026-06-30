@@ -1,0 +1,50 @@
+# Proposed Rule
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_200
+**Pages:** 174-174
+**Section Path:** V. Section-by-Section Analysis > Section 1002.104 Covered Credit Transactions and Excluded Transactions > 104(b)(2) HMDA-Reportable Transactions > Proposed Rule
+
+---
+
+174 typically off ered and serviced by financial institutions, with applications typically submitted 
+directly to the financial institution via a website, the Bureau does not have the same concerns 
+related to data quality or regulatory compliance as it does with trade credit  offered by a supplier 
+of goods and services who is not in the business of providing financial services. The Bureau also 
+is not placing  a $50,000 minimum threshold on such transactions, as suggested by a few 
+commenters, because doing so would exclude signi ficant portions of small business lending . The 
+Bureau does not believe that such an approach would further the purposes of section 1071.  
+104(b)(2) HMDA -Reportable Transactions  
+Proposed Rule  
+The potential for overlap exists between section 1071 and HMDA bec ause HMDA 
+reporting requirements apply to mortgages regardless of whether they are consumer -purpose or 
+business -purpose, so long as they are secured by residential real property. Section 1071 applies 
+to all small business credit, regardless of what the cre dit is to be used for. For example, a 
+mortgage intended to finance the purchase of an investment property would be covered by 
+HMDA, assuming relevant institutional thresholds and other coverage criteria were otherwise 
+met. If the mortgage applicant is a natural person, their ethnicity, race, and sex  would be 
+captured and reported under HMDA. However, if the mortgage applicant were a non -natural 
+person ( e.g., a limited liability compan y or a corporation), then the lender would not collect 
+demographic data under HMDA. That is, the lender would still need to report the application under HMDA, but they would report ethnicity, race, and sex as “not applicable.” But under the 
+Bureau ’s proposed rule , the lender would have captured the applicant ’s principal owners ’ 
+ethnicity, race, and sex . 
+In its NPRM, the Bureau stated that by proposing to adopt Regulation C’s definition of 
+dwelling and its commentary regarding investment properties, the Bureau sought to ensure 
+consistency and minimize compliance burdens for financ ial institutions that must also report 
+credit transactions covered by HMDA (that is, HMDA -reportable transactions). Using the 2019 
+HMDA data, the Bureau had found that close to 2,000 lenders and around 530,000 applications 
+indicated a “ business or commerci al purpose” and around 500,000 applications were used for an 
+“investment” (as defined by the occupancy code) purpose.
+ Of those applications, around 50,000 
+were for 5+ unit properties. The overall number of applications the Bureau expected to be 
+reported an nually under the proposed rule would have been around 26 million. Thus, the Bureau 
+had anticipated a relatively small but not insignificant overlap regarding real estate investment loans between HMDA and section 1071.  
+Also in its proposal, the Bureau stated that it had considered excluding all transactions 
+that were also reportable under HMDA but believed such an exclusion would have added 
+complexity to data analysis. The Bureau understood that requiring lenders to find  and delete 
+from databases that supply their small business lending data  submission only those transactions 
+that also appear in HMDA may require a separate scrub of the data and create additional 
+compliance burden, as well as compliance risk , if HMDA-repor table transactions are not deleted 
+from a small business lending data  submission. For example, if a small business wants to 
+purchase a 5+ dwelling unit property (that is , HMDA reportable), the financial institution would 
+have to make sure it is not collecting protected demographic information on principal owners,

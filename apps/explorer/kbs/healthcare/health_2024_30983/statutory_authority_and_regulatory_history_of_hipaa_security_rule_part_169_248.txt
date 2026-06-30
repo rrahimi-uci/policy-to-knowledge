@@ -1,0 +1,45 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 169/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_169
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+982 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+836A subcontractor of a business associate also 
+would be required to make such report to the 
+business associate. See 45 CFR 164.314(a)(2)(iii) 
+(applying the requirements in paragraphs (a)(2)(i) and (ii) to business associate agreements between business associates and subcontractors in the same manner as they apply to business associate agreements between covered entities and business associates). 
+837See 45 CFR 164.410. 
+838Saheed Oladimeji, et al., ‘‘SolarWinds hack 
+explained: Everything you need to know,’’ TechTarget (Nov. 3, 2023) (SolarWinds is a software company and one of its products that was part of a supply chain attack is an IT performance monitoring system that had privileged access to IT systems.), https://www.techtarget.com/whatis/ 
+feature/SolarWinds-hack-explained-Everything- you-need-to-know. 839As discussed in greater detail above, the 
+Department is proposing to renumber the standard 
+for the contingency plan as 45 CFR 164.308(a)(13) and to require a written contingency plan for responding to an emergency or other occurrence that adversely affects relevant electronic information systems, as opposed to the current standard which applies when the emergency or other occurrence damages information systems that contain ePHI. 
+840Proposed 45 CFR 164.314(a)(2)(i)(C) and (D); 
+‘‘Cybersecurity Performance Goals,’’ supra note 18. 
+841Proposed 45 CFR 164.308(a)(13)(i). 
+842The ping command is a network diagnostic, 
+and firewalls often block incoming pings to prevent attackers from learning more about the organization’s network. Karen Scarfone, et al., ‘‘Guidelines on Firewalls and Firewall Policy,’’ NIST Special Publication 800–41, Revision 1, National Institute of Standards and Technology, U.S. Department of Commerce, p. 31 (Sept. 2009), https://doi.org/10.6028/NIST.SP.800-41r1. 84345 CFR 164.314(a)(2)(i)(C). 
+844While we are proposing in this NPRM in 45 
+CFR 164.308(a)(13)(i) to specifically include a 
+security incident as an example of an emergency or occurrence that may damage a relevant electronic information system for which a contingency plan would be required, we believe that this is a clarification, rather than a change. access ePHI or the electronic 
+information systems that create, receive, maintain, or transmit ePHI may be affected. This lack of prompt notification delays a covered entity (or business associate) from responding and protecting its ePHI and electronic information systems accordingly. 
+c. Proposal 
+To address these risk trends and 
+deficiencies in protections, the 
+Department proposes to add an implementation specification at proposed 45 CFR 164.314(a)(2)(i)(D) that would require a business associate agreement to include a provision for a business associate to report to the covered entity activation of its 
+contingency plan that would be required under 45 CFR 164.308(a)(13) without unreasonable delay, but no later than 24 hours after activation.
+836This 
+proposal, if finalized, would not alter the business associate’s breach reporting obligations under the Breach Notification Rule.
+837The Department 
+believes that it is necessary to notify the covered entity in a timely manner of the contingency plan activation because of the downstream implications for such activation. Receiving such prompt notice could enable the covered entity to take the necessary steps to protect its own relevant electronic information systems, as well as to implement its own contingency plan if necessary and appropriate (e.g., enable the covered 
+entity to access a remote or offline backup of its ePHI if necessary to ensure that patient care is unaffected—or to reduce the effect on patient care as much as possible). For example, in 2020, a software company was the target of an attack that used software containing malware to infiltrate the electronic information systems of subsequent users of the software. This allowed cybercriminals to gain access to several government systems and thousands of private systems worldwide.
+838Requiring a business associate to provide prompt notice to 
+the covered entity when the business associate activates its contingency plan could enable regulated entities to maintain individuals’ confidence in their commitment to protecting the confidentiality, integrity, and availability of ePHI in the event of an emergency or other occurrence that adversely affects relevant electronic information systems.
+839Additionally, 
+the modified standard would align with the enhanced CPG for Third Party Incident Reporting because this proposal would require a business associate to both report to a covered entity or another business associate activation of its contingency plan within 24 hours of such activation and report known or suspected security incidents.
+840 
+As discussed above, the Department

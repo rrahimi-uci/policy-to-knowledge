@@ -1,0 +1,49 @@
+# ii. Risk of Harm or Sensitivity
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_673
+**Pages:** 671-671
+**Section Path:** VIII. Public Disclosure of Data > B. Preliminary Privacy Assessment > 4. Privacy Risk > ii. Risk of Harm or Sensitivity
+
+---
+
+671 The Bureau assesses that modification and deletion techniques can effectively limit re-
+identification risk and therefore concludes that completely withholding data —which would be 
+contrary to section 1071 ’s statutory purposes and express disclosure provisions —is not necessary 
+to manage re-identification risk. As noted by commenters, modification and deletion techniques 
+have effectively reduced re-identification risk from HMDA data, and the Bureau anticipates the 
+same r esult with this data. The existence of some data that matches with existing data sets is not 
+grounds to forego the full privacy analysis of collected data that will allow it to make targeted 
+modification and deletion decisions to protect privacy interests.   
+For the reasons given above and as discussed in part VIII.B.4.ii below, the Bureau 
+preliminarily views re -identification risk as the most significant privacy risk associated with 
+publishing application-level data —and thus the most important privacy risk to consider in 
+making modification and deletion decisions. Re -identification is a prerequisite to any potential 
+harms or sensitivities that small business applicants or related natural persons may experience 
+from publishing such data.  As the risk of re -identification is reduced, the risk of harm caused by 
+disclosing harmful or sensitive information also will be reduced.  Further, as discussed below, 
+because almost all the harms and sensitivities to financial institutions result from concerns about small business applicant or related natural person re-identification, preventing such re -
+identification will also prevent the most serious harms and sensitivities for financial institutions.  
+ii. Risk of Harm or Sensitivity  
+Proposed Approach  
+The NPRM considered whe ther a re-identified application -level record would disclose 
+information about an applicant, related natural person, or financial institution that is  not 
+otherwise public and may be harmful or sensitive. Specifically, the Bureau evaluated whether 
+such data could be used for harmful purposes such as fraud or identity theft or the targeted 
+marketing of products and services that may pose other risks . The NPRM evaluated whether the 
+data could cause competitive harm to small business applicants or to financial institutions. It also 
+evaluated whether certain data fields m ight be viewed as sensitive if associated with a particular 
+applicant, related natural person, or financial institution. In evaluating the potential sensitivity of 
+a data field, the Bureau consid ered whether disclosure of the data field could cause dignitary or 
+reputational harm to small business applicants , related natural persons , and financial institutions.  
+The NPRM explained that  some identifiable information about small business lending is 
+already publicly available . Such information is both in public records and in private datasets with 
+varying barriers to access and restrictions on use. The Bureau ’s analysis accordingly considered 
+the degree to which disclosure would increase this risk relat ive to the risk that already exists . In 
+general, where a data field was already publicly available, the NPRM saw a reduced  risk of harm 
+or sensitivity from its further disclosure .
+877 
+ 
+877 However, where a data field wa s a lready publicly a vaila ble, disclosing that da ta field in the data may have 
+enabled the matching of data to other datasets that may not have been controlled by the Bureau, which could have 
+substantially facilitated re -identification or the disclosure of harmful or sensitive infor mation.

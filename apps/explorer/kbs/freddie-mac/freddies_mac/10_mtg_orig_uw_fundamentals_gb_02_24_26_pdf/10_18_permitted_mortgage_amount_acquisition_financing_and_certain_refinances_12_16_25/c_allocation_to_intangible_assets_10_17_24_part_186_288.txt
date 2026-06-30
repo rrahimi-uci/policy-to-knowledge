@@ -1,0 +1,155 @@
+# c. Allocation to intangible assets (10/17/24) (part 186/288)
+
+**Source:** freddies_mac.pdf
+**Chunk ID:** freddies_mac_3094_sub_186
+**Pages:** 279-1254
+**Section Path:** 10 - Mtg, Orig, UW Fundamentals GB-02-24-26.pdf > 10.18 Permitted Mortgage amount – Acquisition financing and certain refinances (12/16/25) > c. Allocation to intangible assets (10/17/24)
+
+---
+
+Guide Bulletin Update 04/18/24 Chapter 50 – Page 12 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the 
+AllRegs web site of ICE Mortgage Technology  (with a paid subscription).  
+Guide Chapter 50 – General Accounting and Reporting Requirements  
+Freddie Mac's Accounting Net Yield for ARMs will vary as the interest rate varies.  Freddie Mac's 
+Accounting Net Yield for ARMs will be the index rate applicable to such month plus the Freddie Mac 
+required net spread.  
+ 
+50.12   Method of accounting for Freddie Mac yield ( 10/20/22 ) 
+For each Mortgage, Freddie Mac designates one of three methods for calculating monthly interest and 
+principal to be reported to Freddie Mac.  
+ 
+1. Alternate method  (Actual/Actual)  
+ 
+Under the alternate method, the Servicer must report Freddie Mac's proportionate share of all 
+interest and principal actually received.   Freddie Mac requires the use of the alternate method for 
+Mortgages purchased under the Multifamily Conventional Cash Mortgage Purchase Program, 
+Mortgages for which securitization is scheduled but has not occurred,  as well as for certain 
+designated Mortgages purchased under the Multifamily Negotiated Transactions Program.  
+ 
+2. Net yield method  (Scheduled/Actual)  
+ 
+Under the net yield method, the Servicer must compute the monthly interest by applying the 
+Accounting Net Yield rate to the beginning principal balance, using a 30 -day month and a 360 -day 
+year, regardless of the amount collected from the Borrower.   The Servicer must report the interest 
+computed and the principal actually received for each monthly reporting period.  
+ 
+3. Scheduled/ Scheduled method  
+ 
+Under the scheduled/scheduled method, the Servicer reports to Freddie Mac both principal and 
+interest payments calculated on a scheduled amortized balance, regardless of actual collections.   
+The Servicer must use the scheduled/scheduled method for certain designated Mortgages 
+purchased under the Multifamily Negotiated Transactions Program.  
+  
+50.13   Certification and financial reporting requirements (05/11/10)  
+Sections 3.5 and 3.6 set forth the requirements for submitting the following:  
+ 
+• Form 16M, Multifamily Annual Certification Report , 
+ 
+• Form 17M, Multifamily Annual Certification Report – Structured Transactions and Tax -Exempt 
+Bond Seller/Servicers , and  
+ 
+• Form 1055, Mortgage Bankers Financial Reporting Form  
+ 
+50.14   Audit confirmation requests (12/07/05)  
+Sellers or Servicers requiring audit confirmation from Freddie Mac with respect to the Mortgages sold 
+to and serviced for Freddie Mac must use the format and address provided in Exhibit 8 .
+
+Guide Bulletin Update 04/18/24 Chapter 50 – Page 13 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the 
+AllRegs web site of ICE Mortgage Technology  (with a paid subscription).  
+Guide Chapter 50 – General Accounting and Reporting Requirements  
+50.15   Accounting for Servicer's compensation (12/07/05)  
+The compensation earned by the Servicer for the performance of its duties is based on the outstanding 
+principal balance and the interest collected from Mortgages.  The Servicer earns compensation when it 
+collects interest on Mortgages.  See Section 50.11 for details regarding the computation of 
+compensation for each of the various Freddie Mac programs and products.  
+ 
+50.16   Transfer of Servicing (12/07/05)  
+The Servicer must not transfer its Servicing portfolio (in whole or in part) without Freddie Mac's prior 
+written approval.  Chapter 42 describes the conditions under which a Transfer of Servicing may take 
+place.  
+ 
+50.17   Reconciliation responsibilities ( 04/15/21 ) 
+Each month, the Servicer must report via myOptigo for Investor Reporting  each Mortgage serviced for 
+Freddie Mac.   The data reported must reflect accurately the activity applied to each Mortgage.   The 
+Servicer must report each Mortgage regardless of whether there was any activity on that Mortgage 
+during the accounting cycle.  The Servicer must take action to identify and reconcile discrepancies that 
+result in transaction errors no later than the next accounting cutoff date.  The Servicer must notify 
+Freddie Mac immediately of any reporting errors that appear to be caused by incorrect information on 
+Freddie Mac's system (see Section 54.10).
+
+Guide Bulletin Update 10/20/22 Chapter 51 – Page 1 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the 
+AllRegs web site of ICE Mortgage Technology  (with a paid subscription).  
+Chapter 51 
+Prepayments  
+ Multifamily Seller/Servicer Guide 
+      
+51.1 Prepayments (10/20/22)  
+a. Review of prepayment provision (04/30/15)  
+b. Delegation of determination of the prepayment amounts and notice to Borrower (10/20/22)  
+c. Notice to Freddie Mac of the request for prepayment (04/30/15)  
+d. Freddie Mac review (04/30/15)  
+e. Assignment of Mortgage in lieu of prepayment in full (04/30/15)  
+f. Attempts to avoid restrictions (09/28/12)  
+g. Liability of Servicer (12/05/03)  
+h. Short payoffs (04/15/21)  
+i. Requests for Freddie Mac execution of documents (04/30/15)  
+j. Documentation delivered after payment -in-full (04/30/15)
+
+Guide Bulletin Update 10/20/22 Chapter 51 – Page 2 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the AllRegs 
+web site of ICE Mortgage Technology  (with a paid subscription).  
+Guide Chapter 51 – Prepayments  
+51.1 Prepayments  (10/20/22) 
+a. Review of prepayment  provision (04/30/15)  
+The Servicer is responsible for the initial review of a Borrower's request to prepay a Mortgage 
+in whole or in part.  Before responding to any inquiry regarding the prepayment of a Mortgage 
+serviced for Freddie Mac, the Servicer must carefully review the terms of the Note to 
+determine any prepayment restrictions and the amount of any prepayment premium to be 
+collected if prepayment is permitted.  For example, a Plan B Mortgage may not be prepaid in 
+whole or in part unless the prepayment is made after the pe rmitted prepayment date 
+specified in the Note.  
+  
+A Servicer may accept a prepayment of principal in whole or in part only if the prepayment is 
+made in accordance with the terms of the Note.   The Servicer may not waive any restrictions 
+on prepayment.  
+ 
+b. Delegation of determination of the prepayment amounts and notice to Borrower 
+(10/20/22 ) 
+In connection with a full prepayment of a Mortgage, Freddie Mac delegates to the Servicer 
+the authority to determine the prepayment amount, including calculating the amount of any 
+prepayment premium, and to inform the Borrower of the total prepayment amoun t, if the 
+Mortgage meets the following conditions:  
+ 
+• The Mortgage is owned by Freddie Mac  
+ 
+• The Mortgage has a prepayment premium that is calculated as a percentage of the 
+unpaid principal balance of the Mortgage  
+ 
+• The Mortgage is current, with no pending workouts, delinquencies or events of default 
+under the terms of the Loan Documents  
+ 
+• The Mortgage is not being refinanced with a new loan which Freddie Mac has committed 
+to purchase  
+ 
+• There are no pending asset management transactions or waiver requests with respect to 
+the Mortgage  
+ 
+The Servicer must advise Freddie Mac of the amount of the delegated prepayment 
+calculations by email to Mfopsloanacctpayoffs@freddiemac.com  within two Business Days 
+after the Servicer provides the quoted prepayment calculations to the Borrower or the 
+Borrower’s agent.   The email must include a copy of the payoff statement/quote and the 
+borrower’s request for the payoff quote.  
+ 
+Freddie Mac will confirm all delegated prepayment calculations following the payoff of the 
+Mortgage and will advise the Servicer of any shortfall or overpayment.  
+ 
+• The Servicer must remit the amount of any shortfall to Freddie Mac within 10 days 
+following Freddie Mac’s notice of shortfall to the Servicer.  If the Servicer does not satisfy 
+the shortfall within 10 days, Freddie Mac will charge penalties and/or interest  and/or

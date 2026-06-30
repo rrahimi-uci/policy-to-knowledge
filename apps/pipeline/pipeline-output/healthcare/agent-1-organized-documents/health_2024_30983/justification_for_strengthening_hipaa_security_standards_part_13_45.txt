@@ -1,0 +1,84 @@
+# Justification for Strengthening HIPAA Security Standards (part 13/45)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_003_sub_013
+**Section Path:** Justification for Strengthening HIPAA Security Standards
+**Summary:** This section argues for the necessity of revising the Security Rule, citing the changing healthcare environment, increasing cybersecurity threats, and inconsistent compliance among regulated entities. It outlines the need for robust standards to ensure the protection of ePHI.
+
+---
+
+904 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+64The Security Rule is codified at 45 CFR part 
+160 and subparts A and C of 45 CFR part 164. 
+65See 45 CFR 164.306(a)(1). 
+66See 45 CFR 164.306(a)(2). 
+67See 45 CFR 164.306(a)(3). 
+68See 45 CFR 164.306(a)(4). 
+69See sec. 262(a) of Public Law 104–191, 110 
+Stat. 2025 (Aug. 21, 1996), adding sec. 1173(d) 
+(codified at 42 U.S.C. 1320d–2(d)). 
+7063 FR 43242 (Aug. 12, 1998). 
+71Id. at 43244. 
+72Id. at 43244, 43249, 43260–61. 73Id. at 43249. 
+74See 68 FR 8334, 8335 (Feb. 20, 2003). 
+75Id.; see also 63 FR 43242, 43249 (Aug. 12, 
+1998). 
+7663 FR 43242, 43250 (Aug. 12, 1998). 
+77Id. 
+78Id. at 43249–50. 
+79Id. at 43250. 
+8045 CFR parts 160 and subparts A and C of 45 
+CFR part 164; 68 FR 8334 (Feb. 20, 2003). 8168 FR 8334, 8335, 8371–72 (Feb. 20, 2003). 
+82Id. 
+83Id. 
+84Id. at 8335. 
+85Id. 
+86Id. at 8336. protect ePHI.64Specifically, regulated 
+entities must ensure the confidentiality, 
+integrity, and availability of all ePHI they create, receive, maintain, or transmit;
+65protect against reasonably 
+anticipated threats or hazards to the security or integrity of the information
+66and reasonably 
+anticipated impermissible uses or disclosures;
+67and ensure compliance 
+by their workforce.68 
+1. 1998 Security Rule Notice of Proposed Rulemaking 
+The Administrative Simplification 
+provisions of HIPAA instructed the Secretary to adopt several standards concerning electronic transmission of health information, including those for the security of health information.
+69In 
+accordance with these provisions, the Department published the Security and Electronic Signature Standards; Proposed Rule (‘‘1998 Proposed Rule’’) on August 12, 1998.
+70 
+In support of developing the national 
+standards mandated under HIPAA’s Administrative Simplification provisions, the Secretary, with significant input from the health care industry, defined a set of principles for guiding choices for the standards to be adopted by the Secretary.
+71The 
+principles were based on direct specifications in HIPAA and also took the purpose of the law and generally desirable principles into account. Based on this work, the Department proposed that each HIPAA standard should be clear and unambiguous but technology neutral, improve the efficiency and effectiveness of the health care system, meet the needs of covered entities related to ease of use and affordability of adoption, and maintain consistency or alignment with other HIPAA standards adopted by an organization accredited by the American National Standards Institute (ANSI) and using the ANSI process for adopting such standards.
+72 
+In describing its general approach to 
+the 1998 Proposed Rule, the Department defined the security standard as a set of requirements with implementation features that covered entities must include in their operations to assure the security of individuals’ ePHI.
+73The 
+security standard was based on three basic concepts that were derived from the Administrative Simplification provisions of HIPAA and consistent with the characteristics the Department identified as appropriate for all HIPAA Rules.
+74First, the standard should be 
+comprehensive and coordinated to address all aspects of security. Second, it should be scalable, so that it could be effectively implemented by covered entities of all types and sizes. Third, it should not be linked to specific technologies, allowing covered entities the flexibility to make use of future technology advancements.
+75 
+The 1998 Proposed Rule included 
+four categories of requirements that a covered entity would have to address to safeguard the confidentiality, integrity, and availability of ePHI. They were as follows: 
+•Administrative procedures. 
+•Physical safeguards. 
+•Technical security services. 
+•Technical mechanisms. 
+The implementation specifications 
+described some of the requirements in greater detail, based on our determination regarding the level of instruction necessary to implement such requirements.
+76The Department viewed 
+all categories as equally important.77 
+The proposed standard did not 
+address the extent to which a covered entity should implement the specifications.
+78Instead, the 
+Department proposed to require that each covered entity assess its own security needs and risks and devise, implement, and maintain appropriate security to address its business requirements. The Department believed that this approach would leave a significant amount of flexibility for covered entities and balance the needs of securing health data against risk with the economic cost of doing so.
+79 
+2. 2003 Final Rule 
+The Department issued the final 
+Security Rule80on February 20, 2003 
+(‘‘2003 Final Rule’’). In accordance with the Administrative Simplification provisions of HIPAA, the 2003 Final Rule adopted standards for the security of ePHI to be implemented by covered 
+entities. 
+The Department reiterated the 
+purposes and guiding principles it

@@ -1,0 +1,46 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 96/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_096
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+945 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+511‘‘The 2024 Study on Cyber Insecurity in 
+Health Care: The Cost and Impact on Patient Safety 
+and Care,’’ supra note 143, p. 7. 
+512See ‘‘How Sanction Policies Can Support 
+HIPAA Compliance,’’ Cybersecurity Newsletter, Office for Civil Rights, U.S. Department of Health and Human Services (Oct. 2023), https://www.hhs.gov/hipaa/for-professionals/security/ guidance/cybersecurity-newsletter-october-2023/ index.html#ftn10. 
+51368 FR 8334, 8347 (Feb. 20, 2003). 
+51465 FR 82462, 82747 (Dec. 28, 2000). 
+51568 FR 8334, 8347 (Feb. 20, 2003). 51665 FR 82462, 82562 (Dec. 28, 2000). 
+517See ‘‘Security Standards: Administrative 
+Safeguards,’’ HIPAA Security Series, Volume 2, Paper 2, Centers for Medicare & Medicaid Services (May 2005, revised Mar. 2007), https://www.hhs.gov/sites/default/files/ocr/privacy/hipaa/ administrative/securityrule/adminsafeguards.pdf; see also ‘‘Implementing the Health Insurance Portability and Accountability Act (HIPAA) Security Rule: A Cybersecurity Resource Guide,’’ supra note 461, p. 33. 
+518Records of sanction activity should be retained 
+for at least six years. See 45 CFR 164.316 and 
+164.530(e)(2). 
+519See 65 FR 82462, 82562 (Dec. 28, 2000). 
+520Id. 
+521Id. 
+522See ‘‘Security Standards: Administrative 
+Safeguards,’’ supra note 517. 
+523See 45 CFR 164.308(a)(1)(ii)(C), 164.530(e)(1); 
+see also 65 FR 82462, 82747 (Dec. 28, 2000) (‘‘All members of a covered entity’s workforce are subject to sanctions for violations.’’). security of ePHI, serves as an important 
+tool for improving compliance by other workforce members with the regulated entity’s safeguards for ePHI. While the Department does not propose to modify the language of the standard, we are proposing three implementation specifications that are consistent with guidance that was previously issued by the Department. 
+Specifically, under the proposed 
+implementation specification for policies and procedures at proposed 45 CFR 164.308(a)(6)(ii)(A), a regulated entity would be required to establish written policies and procedures for sanctioning workforce members who fail to comply with the regulated entity’s security policies and procedures. The proposed implementation specification for modifications at paragraph (a)(6)(ii)(B) would require a regulated entity to review its written sanctions policies and procedures at least once every 12 months, and, based on that review, modify such policies and procedures as reasonable and appropriate. The proposed implementation specification for application at proposed paragraph (a)(6)(ii)(C) would direct a regulated entity to apply appropriate sanctions against workforce members who fail to comply with such security policies and procedures and to document when it sanctions a workforce member and the circumstances in which it applies such sanctions. 
+The policy choices represented in this 
+NPRM are informed by the compliance challenges OCR has observed through its enforcement activities. These challenges demonstrate that regulated entities would benefit from greater precision and clarity about their legal obligations in the proposed standard. Additionally, according to a recent 
+survey of IT and IT security practitioners in healthcare, careless users were the top cause of data loss and exfiltration, while accidental loss was the second highest cause. Thirty-one percent of respondents indicated that the data loss or exfiltration was caused by a failure of workforce members to follow organizational policies.
+511As 
+described in existing Department guidance, an organization’s sanction policies can be an important tool for supporting accountability and improving cybersecurity and data protection.
+512Sanction policies can be used to address the intentional actions 
+of malicious insiders, such as a workforce member that accesses the ePHI of a public figure or steals ePHI to sell as part of an identity-theft ring, as well as the failure of workforce members to comply with policies and procedures, such as failing to secure data on a network server or investigate a potential security incident. 
+Sanction policies that are 
+appropriately applied can improve a regulated entity’s general compliance with the HIPAA Rules. Imposing consequences on workforce members who violate a regulated entity’s policies and procedures implemented as required by the Security Rule or the 
+HIPAA Rules generally can be effective in creating a culture of HIPAA compliance and improved cybersecurity. Knowledge that there is a negative consequence to noncompliance enhances the likelihood of compliance.
+513Training workforce 
+members on a regulated entity’s sanction policy can also promote compliance and greater cybersecurity vigilance by informing workforce members in advance which actions are prohibited and punishable.
+514A

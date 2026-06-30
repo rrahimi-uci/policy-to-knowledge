@@ -1,0 +1,44 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 103/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_103
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+949 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+555See ‘‘Implementing the Health Insurance 
+Portability and Accountability Act (HIPAA) 
+Security Rule: A Cybersecurity Resource Guide,’’ supra note 461, p. 37. 
+556See ‘‘Insider Threats and Termination 
+Procedures,’’ Cybersecurity Newsletter, Office for Civil Rights, U.S. Department of Health and Human Services (Nov. 2017), https://www.hhs.gov/sites/ default/files/november-cybersecurity-newsletter- 11292017.pdf. 
+557See ‘‘Managing Malicious Insider Threats,’’ 
+supra note 528. 
+558Id. 559See 45 CFR 164.308(a)(4)(ii)(C). 
+560See ‘‘Security Standards: Administrative 
+Safeguards,’’ supra note 517, p. 10–11. 
+561See ‘‘Implementing the Health Insurance 
+Portability and Accountability Act (HIPAA) Security Rule: A Cybersecurity Resource Guide,’’ supra note 461. 562See proposed 45 CFR 164.308(a)(9)(ii)(A). 
+563See proposed 45 CFR 164.308(a)(9)(ii)(B). regulated entities to consider include 
+the following: Are there existing procedures for determining that the appropriate workforce members have access to the necessary information? Are the procedures used consistently within the organization when determining access of related workforce job functions? NIST guidance describes this implementation specification as calling for regulated entities to implement appropriate screening of persons who would have access to ePHI, and a procedure for obtaining clearance from appropriate offices or workforce members where access is provided or terminated.
+555 
+We issued guidance in 2017 
+addressing termination procedures.556 
+Data breaches caused by current and former workforce members are a recurring issue across many industries, including the health care industry. Effective identity and access management policies and controls are essential to reduce the risks posed by these types of insider threats. Identity and access management can include many processes, but, most commonly, it would include the processes by which appropriate access to data is granted and terminated by creating and managing user accounts. Ensuring that user accounts are terminated—and in a timely manner—so that former workforce members do not have access to data, is one important way identity and access management can help reduce risks posed by insider threats. Additionally, effective termination procedures also reduce the risk that inactive user accounts (e.g., user 
+accounts that are not being used or are inactive but are not fully terminated or disabled) could be used by a current or former workforce member with malicious motives to get access to ePHI. The Department’s guidance also offers tips to prevent unauthorized access to PHI by former workforce members, such as having standard procedures of all 
+action items to be completed when an individual leaves.
+557 
+Guidance that we issued in 2019 
+further explains that ‘‘security is a dynamic process.’’
+558Good security 
+practices entail continuous awareness, assessment, and action in the face of changing circumstances. The information users can and should be allowed to access may change over time; organizations should recognize this in their policies and procedures and in their implementation of those policies and procedures. For example, if a user is promoted, demoted, or transfers to a different department, a user’s need to access data may change. In such situations, the user’s data access privileges should be re-evaluated and, as needed, modified to match the new role, if needed.
+559As described in other 
+HHS guidance, these procedures should also address the complexity of the organization and the sophistication of its relevant electronic information systems.
+560 
+NIST guidance provides additional 
+descriptions of key activities and sample questions for regulated entities to consider when implementing this standard and associated implementation specifications.
+561Regulated entities 
+should establish a standard set of procedures that should be followed to recover access control devices (e.g., identification badges, keys, access cards) when employment ends and, likewise, they should timely deactivate computer access (e.g., disable user IDs 
+and passwords) and facility access (e.g., change facility security codes/PINs). Sample questions for implementation include the following: Are there separate procedures for voluntary termination (e.g., retirement, promotion, 
+transfer, change of employment) versus involuntary termination (e.g., termination for cause, reduction in force, involuntary transfer, criminal or disciplinary actions)? Is there a standard checklist for all action items that should be completed when a workforce member leaves (e.g., return of all access devices,

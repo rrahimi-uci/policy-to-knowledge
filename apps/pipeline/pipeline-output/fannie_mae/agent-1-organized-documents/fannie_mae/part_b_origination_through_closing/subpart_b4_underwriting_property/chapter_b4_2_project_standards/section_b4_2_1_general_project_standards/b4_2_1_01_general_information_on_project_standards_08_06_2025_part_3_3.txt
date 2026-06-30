@@ -1,0 +1,64 @@
+# B4-2.1-01, General Information on Project Standards (08/06/2025) (part 3/3)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_294_sub_003
+**Pages:** 639-649
+**Section Path:** Part B, Origination Through Closing > Subpart B4, Underwriting Property > Chapter B4-2, Project Standards > Section B4-2.1, General Project Standards > B4-2.1-01, General Information on Project Standards (08/06/2025)
+
+---
+
+Published March 4, 2026
+630Project Type Code Description
+S Full Review—Established condo project
+TFannie Mae-approved condo or PUD project, including those that:
+• have an Approved by Fannie Mae status in CPM,
+• are approved through PERS,
+• receive a CPM Approved by Fannie Mae  message in DU
+U FHA-approved condo project
+V Condo project review waived - for certain project and transaction types
+1 Full Review—Co-op project
+2 Fannie Mae-approved co-op project, including those approved through PERS
+Special Feature Code Description
+588Detached Condominium Unit
+Used to identify detached units in an attached or detached condominium
+project
+CPM ID Delivery Requirements
+Lenders are required to deliver the CPM ID number in the ﬁeld for "FNM Condominium Project Manager Project
+Identiﬁer" (Sort ID 39) in ULDD for the following projects:
+projects that require the use of CPM; or
+Fannie Mae-approved projects that are delivered as Type T for condos or PUDs, or Type 2 for co-ops.
+Lenders are encouraged to include the condo or co-op’s HOA or Project IRS Federal Tax Identiﬁcation Number
+(TIN) in the loan ﬁle and in CPM.
+Expiration for Project Reviews
+Project reviews must meet the following timeline requirements.
+
+Published March 4, 2026
+631Project Review Process Employed Expiration of Project Review
+• Limited Review
+• Full Review for Established ProjectsMust have been completed within one year prior to
+the note date
+Full Review for New ProjectsMust have been completed within 180 days prior to
+the note date
+Approved by Fannie Mae as reﬂected in CPM Must be valid (unexpired) as of the note date*
+Approved by FHA Must be valid (unexpired) as of the note date
+*A loan that receives a CPM Approved by Fannie Mae  message in DU will retain the Approved by Fannie Mae
+status through the credit report expiration date speciﬁed on the DU Underwriting Findings report, unless the
+lender makes any changes to the CPM ID, project name, property address (state or zip code), or credit report.
+See B4-2.2-02, Full Review Process  for additional requirements for loans that receive a CPM Approved by Fannie
+Mae message in DU. 
+Loans must be delivered to Fannie Mae within 120 days following the note date. When the elapsed time
+between note date and delivery date exceeds this limit, the lender may deliver the loan only if the project
+continues to meet Fannie Mae project eligibility requirements at the time of delivery.
+Loans secured by units in a project that fails to meet Fannie Mae’s project eligibility requirements under the
+applicable review type as of the note date are eligible for delivery after the project comes into compliance with
+the eligibility requirements (provided all standard mortgage seasoning and other applicable requirements are
+met). For example, if a lender closes a loan in a new project for which the pre-sales are less than the pre-sale
+requirement, the lender may deliver the loan after the project’s pre-sales meet the Fannie Mae requirement
+(assuming the loan meets all other applicable requirements).
+Uniform Appraisal Dataset (UAD) 3.6 Policy
+Lenders using UAD 3.6 must follow the requirements in the  UAD 3.6 Policy Supplement .
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2025-06 August 06, 2025
+Announcement SEL-2025-04 June 04, 2025

@@ -1,0 +1,107 @@
+# B3-3.4-15, Social Security Income (03/04/2026)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_160
+**Pages:** 371-373
+**Section Path:** Part B, Origination Through Closing > Subpart B3, Underwriting Borrowers > Chapter B3-3, Income Assessment > Section B3-3.4, Other Sources of Income > B3-3.4-15, Social Security Income (03/04/2026)
+
+---
+
+Published March 4, 2026
+353Announcements Issue Date
+Announcement SEL-2026-02 March 04, 2026
+ 
+B3-3.4-15, Social Security Income (03/04/2026)
+Social Security Income
+Social Security Income
+The following table provides requirements for Social Security income.
+
+Published March 4, 2026
+354Criteria Requirements
+DocumentationThe lender must obtain evidence of regular receipt of payments, as veriﬁed by the
+following, depending on the type of beneﬁt and the relationship of the beneﬁciary
+(self or other) as shown in the table below.
+In addition, an SSA Award letter may be used to document the income if the borrower
+is receiving Social Security payments or if the borrower will begin receiving payments
+on or before the ﬁrst payment date of the subject mortgage as conﬁrmed by a
+recently issued award letter.
+Type of Social
+Security beneﬁtBorrower is drawing
+Social Security beneﬁts
+based on own
+account/work recordBorrower is drawing
+Social Security
+beneﬁts based on
+another person's
+account/work record
+or based on their own
+account/work record
+for the beneﬁt of
+another1
+Retirement• Social Security
+Administration's (SSA)
+Award letter,
+• SSA-1099,
+• Most recent signed
+federal income tax returns
+(or tax transcripts2), or
+• Proof of current receipt• SSA Award letter,
+• Proof of current
+receipt, and
+• Three-year
+continuance
+Disability• Social Security
+Administration's (SSA)
+Award letter,
+• SSA-1099,
+• Most recent signed
+federal income tax returns
+(or tax transcripts2), or
+• Proof of current receipt
+Survivor Beneﬁts NA
+Supplemental
+Social Security
+Income• SSA Award letter, and
+• Proof of current receiptNA
+
+Published March 4, 2026
+355Criteria Requirements
+Income History No minimum history is required.
+Income
+ContinuanceRetirement/Long-Term Disability based on own account/work record : Lenders
+are not required to verify continuance unless they have reason to believe the income
+may not continue.
+Other scenarios : The lender must document that income is expected to continue for
+at least three years from the note date.
+Note:  Conﬁrmation of three-year continuance does not require documentation that
+provides a deﬁned expiration date and can be assessed by verifying the SSA's
+requirements related to the speciﬁc beneﬁt(s) being paid. For example, if the SSA ties
+receipt of the beneﬁts to the beneﬁciary's age, conﬁrmation of a three-year
+continuance can be met by verifying the beneﬁciary's age supports that beneﬁt(s) will
+continue for at least three years from the date of the loan application.
+Determination of
+Qualifying
+IncomeThe monthly income amount as documented above may be used as qualifying
+income. 
+Note: The lender is not required to provide documentation to support that 15% of the
+Social Security income is nontaxable. 
+Example :
+• Beneﬁt amount: $1,500
+• Nontaxable amount: $1,500 x 15% = $225
+• Gross-up amount: $225 x 25% = $56 (rounded to the nearest dollar)
+• Qualifying income: $1,556 (does not required additional documentation
+If the lenders opts to gross-up more than 15% of Social Security income, then
+additional documentation to support that nontaxable income must be included in the
+loan ﬁle. See  B3-3.1-01, General Income Information  for nontaxable income
+guidelines.
+DU Validation
+ServiceIf a borrower's Social Security income is validated by the DU validation service, DU
+will issue a message indicating the required documentation. This documentation may
+diﬀer from the requirements described above. See B3-2-02, DU Validation Service  for
+additional information.
+Examples of how a borrower might draw Social Security beneﬁts from another person's account/work
+record and use the income for qualifying:
+A borrower may be eligible for beneﬁts from a spouse, ex-spouse, or dependent parents (the
+beneﬁt is paid to the borrower on behalf of the spouse, etc.; or
+A borrower may use Social Security income received by a dependent (a minor or disabled
+dependent).1

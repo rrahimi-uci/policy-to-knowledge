@@ -1,0 +1,47 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 68/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_068
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+931 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+411The factors are: (1) the technical capabilities 
+of records systems used to maintain health 
+information; (2) the costs of security measures; (3) the need for training; (4) the value of audit trails in computerized record systems; and (5) the needs and capabilities of small and rural health care providers. See 42 U.S.C. 1320d–2(d)(1)(A)(i)–(v). 
+412See University of Texas M.D. Anderson Cancer 
+Center, supra note 258, p. 478. 
+41368 FR 8334, 8343 (Feb. 20, 2023). 414See ‘‘What is the difference between 
+addressable and required implementation 
+specifications in the Security Rule?,’’ Office for Civil Rights, U.S. Department of Health and Human Services, HIPAA FAQ #2020 (Dec. 28, 2022), https://www.hhs.gov/hipaa/for-professionals/faq/ 
+2020/what-is-the-difference-between-addressable- and-required-implementation-specifications/ index.html. 
+415See 45 CFR 164.306(d)(3); ‘‘What is the 
+difference between addressable and required implementation specifications in the Security Rule?,’’ supra note 414. 
+416The Department has consistently attempted to 
+dispel the notion that addressable implementation specifications are optional. See, e.g., ‘‘Security 101 for Covered Entities,’’ HIPAA Security Series, Centers for Medicare & Medicaid Services, p. 6 (Nov. 2004, revised Mar. 2007), https://www.hhs.gov/sites/default/files/ocr/privacy/hipaa/ administrative/securityrule/ security101.pdf?language=es; ‘‘Controlling Access 
+to ePHI: For Whose Eyes Only?,’’ Cybersecurity 
+Newsletter, Office for Civil Rights, U.S. Department 
+of Health and Human Services (July 14, 2021), https://www.hhs.gov/hipaa/for-professionals/ security/guidance/cybersecurity-newsletter- summer-2021/index.html; and ‘‘HIPAA Security Rule Facility Access Controls—What are they and how do you implement them?,’’ Cybersecurity 
+Newsletter, Office for Civil Rights, U.S. Department 
+of Health and Human Services (Aug. 2024), https:// 
+www.hhs.gov/hipaa/for-professionals/security/ 
+guidance/cybersecurity-newsletter-august-2024/ index.html. 
+417Letter from NCVHS Chair Jacki Monson 
+(2022), supra note 123, p. 2. appropriate security measures for 
+protecting ePHI and their information systems. Accordingly, 45 CFR 164.306(b)(1) permits regulated entities to use any security measures to reasonably and appropriately implement the standards and implementation specifications of the Security Rule, while 45 CFR 164.306(b)(2) contains the factors that regulated entities are to consider when deciding which security measures to use. This paragraph furthers the aim of HIPAA’s requirement for the security standards to take into account certain factors by providing for their consideration by regulated entities.
+411 
+Accordingly, 45 CFR 164.306(b)(2) directs regulated entities to take these factors into account when determining 
+the manner in which they will comply with the security standards and implementation specifications. 
+Section 164.306(c) requires regulated 
+entities to comply with the administrative, physical, and technical safeguard standards in sections 45 CFR 164.308, 164.310, and 164.312 respectively, and with standards for organizational requirements and policies, procedures, and documentation requirements in sections 45 CFR 164.314 and 164.316. This provision is followed by paragraph (d), which explains that regulated entities are required to implement a specific implementation specification if described as ‘‘required.’’ If the implementation specification is described as ‘‘addressable,’’ regulated entities are required to implement the implementation specification if it is reasonable and appropriate to do so; or, if it is not reasonable and appropriate, document why and implement an equivalent alternative measure. 
+Finally, the maintenance provision at 
+45 CFR 164.306(e) requires regulated entities to review and modify security measures implemented under the Security Rule as needed to continue providing reasonable and appropriate protection of ePHI. It also requires regulated entities to update documentation of such security measures in accordance with the requirements for documentation at 45 CFR 164.316(b)(2)(iii). 
+2. Issues To Address 
+We believe that we can improve 
+consistency in language between this section and other Security Rule 
+provisions and better align this section with statutory terms and intent. For example, we are concerned that regulated entities are misinterpreting 45 CFR 164.306(a) to apply the requirements of the Security Rule to only some ePHI, rather than all ePHI. This interpretation could lead to inadequate protection of ePHI and relevant electronic information systems.
+412We also believe that 
+consistency in language facilitates clear understanding and less ambiguity about how regulated entities must apply Security Rule standards. 
+Flexibility and scalability are among

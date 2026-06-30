@@ -1,0 +1,139 @@
+# C3-1-01, General Information About Fannie Mae’s MBS Program (10/06/2021)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_471
+**Pages:** 992-995
+**Section Path:** Part C, Selling, Securitizing, and Delivering Loans > Subpart C3, Mortgage-Backed Securities (MBS) > Chapter C3-1, MBS Program Overview > C3-1-01, General Information About Fannie Mae’s MBS Program (10/06/2021)
+
+---
+
+Published March 4, 2026
+974representative’s request; however, Fannie Mae cannot guarantee that it will be able to act quickly
+enough to prevent the execution of transfers that had been previously validated. The lender must then
+submit a Form 482 to conﬁrm the request for the deletion.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcement Issue Date
+Announcement SEL-2024-03 May 01, 2024
+ 
+ 
+Subpart C3, Mortgage-Backed Securities (MBS)
+Introduction
+This subpart describes Fannie Mae's requirements for pooling mortgages that will serve as the underlying asset
+for MBS, which includes UMBS. It includes Fannie Mae's MBS program parameters and other information
+regarding MBS commitments, guaranty and buyup and buydown fees, pooling loans into ﬁxed-rate and ARM
+MBS and Fannie Majors, and delivering and trading MBS and UMBS.
+Chapter C3-1, MBS Program Overview
+Introduction
+This chapter provides basic information on Fannie Mae’s MBS program and the lender’s responsibilities
+associated with pooling loans into MBS, which includes UMBS.
+C3-1-01, General Information About Fannie Mae’s MBS Program
+(10/06/2021)
+Introduction
+This topic includes general information about Fannie Mae’s MBS program (which includes UMBS), including:
+MBS Program Description
+UMBS Program Description
+
+Published March 4, 2026
+975MBS Single-Family Pool Trust Agreement
+Guaranty Fees
+MBS Pricing Parameters
+MBS Servicing Fees
+MBS Remittance Types and Cycles
+MBS Program Transaction Options
+Structured Transactions
+Fannie Mae’s Capital Markets Pricing and Sales Desk
+MBS Program Description
+Fannie Mae MBS are securities that represent an ownership interest in pools of residential mortgages with
+similar characteristics. MBS are also known as “pass-through certiﬁcates,” because the principal and interest on
+the underlying mortgages are passed through to investors based on the percentage of the security that each
+investor owns. Fannie Mae guarantees to the related trust holding the mortgages that it will supplement
+amounts received by that trust as required to permit timely payment of principal and interest on the MBS.
+Fannie Mae’s MBS program provides for the issuance and sale of MBS that represent fractional, undivided,
+beneﬁcial ownership interests in a distinct pool of mortgages, such as the following mortgage types:
+conventional,
+FHA-insured,
+VA-guaranteed, and
+HUD-guaranteed Section 184 loans.
+MBS transactions result in the formation of one of two types of pools:
+a single-lender pool, in which all of the mortgages share a common characteristic, such as amortization
+type, loan term or range of loan terms, mortgage type, or ARM plan number. The minimum pool size
+(aggregate UPB) for a ﬁxed rate, single-lender pool is $1 million. For ARMs, the minimum pool size is
+$500,000.
+a multiple-lender pool, known as a Fannie Majors, that consists of pools of whole mortgages delivered by
+more than one lender. For Fannie Mae to open a Fannie Majors pool, the pool’s aggregate UPB must meet
+the minimum amounts noted above. Once opened, a lender may deliver loans with UPBs as low as
+$1,000.
+UMBS Program Description
+A common security issued by the GSEs that is eligible for trading in the To-be-Announced market. The securities
+are backed by ﬁxed-rate loans secured by single-family one-to-four unit properties and are identiﬁed by certain
+pool preﬁxes.
+MBS Single-Family Pool Trust Agreement
+
+Published March 4, 2026
+976Fannie Mae holds, in its capacity as trustee, the mortgages sold to Fannie Mae by a lender or lenders in a trust
+comprising the pool and issues MBS that are backed by those mortgages. All mortgage loans related to a pool
+represent a separate trust and issuance of MBS. For each issuance of MBS, there will be an issue supplement to
+the Trust Agreement.
+The Trust Agreement and any issue supplement are entered into by Fannie Mae in its corporate capacity (as
+Issuer, Master Servicer and Guarantor) and as Trustee. The trust agreement is posted at Single Family Master
+Trust Agreement . Issue supplements are available to investors in related pools upon request from the Fixed-
+Income Investor Helpline; see  E-1-02, List of Contacts .
+The Amended and Restated 2016 Single-Family Master Trust Agreement is eﬀective for all ﬁxed-rate and
+adjustable-rate mortgage loans in pools delivered to Fannie Mae, and Pooled from Portfolio loans included in
+pools, for all MBS issued on or after June 1, 2016.
+Guaranty Fees
+The lender must pay Fannie Mae a guaranty fee remittance each month as compensation for the lender’s right
+to participate in the MBS program. The guaranty fee is ultimately a corporate responsibility of the servicer and is
+not a function of the pool cash ﬂows; therefore, it must be paid even if there is no pool collection activity.
+The guaranty fee remittance rate for MBS mortgages varies depending on:
+the credit risk of mortgages included in the pool,
+the servicing option that applies to each mortgage in the pool, and
+the remittance cycle that applies to the pool.
+For additional details, see C1-1-01, Execution Options .
+Lenders may buy up or buy down their guaranty fees. See  C3-2-03, MBS Remittance Type and Selecting a
+Remittance Cycle , and Chapter C3–3, MBS Guaranty Fees and Guaranty Fee Buyups and Buydowns , for more
+information.
+MBS Pricing Parameters
+MBS prices are driven by investors and can change continually throughout the day. Pricing is a function of the
+security itself, such as, the type of mortgage backing the security and the coupon rate (the rate at which
+interest is paid to the investor); and market factors, such as interest rate ﬂuctuations and overall MBS demand.
+MBS may be bought or sold at par, at a premium, or at a discount, that is, a price equal to, greater than, or less
+than 100% of their face value.
+MBS Servicing Fees
+The lender determines the amount of the total servicing compensation it wants to receive when it establishes
+the interest rate for the mortgage, but Fannie Mae requires that it provide for at least a minimum servicing fee.
+Generally, the total servicing fee for a regularly amortizing mortgage is the diﬀerence between the interest rate
+
+Published March 4, 2026
+977of a loan and the sum of (a) the pass-through rate on the loan (or, for ARMs, the loan’s contributions to the pool
+accrual rate) and (b) the guaranty fee.
+The total servicing fee that is established when the MBS pool is formed generally will remain in eﬀect for the life
+of the pool (without regard to whether the pool contains ﬁxed-rate loans or ARMs).
+For all ﬁxed-rate loans, the minimum servicing fee is 25 basis points (.25%) and the maximum servicing
+fee is limited to 50 basis points (.50%).
+For ARM loans, the minimum servicing fee is 25 basis points (.25%).
+For additional information regarding minimum and maximum servicing fees, refer to Servicing Guide  F-2-08,
+Servicing Fees for MBS Mortgage Loans.
+MBS Remittance Types and Cycles
+The scheduled principal and interest due on mortgages pooled into MBS must be remitted to Fannie Mae,
+whether or not it is collected from the borrowers (that is, accounted for using the scheduled/scheduled
+remittance type).
+MBS Program Transaction Options
+Lenders can opt to either hold the MBS in their investment portfolio (often referred to as a “swap-and-hold”
+transaction) or sell the MBS to another investor as part of the same transaction (“swap-and-sell”). Lenders can
+choose to service the mortgages underlying the MBS or sell the servicing associated with these loans to another
+ﬁnancial institution.
+Structured Transactions
+MBS may be combined with other Fannie Mae mortgage-related securities to create a single structured
+transaction security, such as:
+Supers - Pass-through securities backed by groups of existing UMBS or other existing Supers;
+Megas — Pass-through securities backed by groups of existing MBS or other existing Megas;
+SMBS — Pass-through securities created by either (1) restructuring the interest and principal payments
+into separately tradable securities (standard SMBS) or (2) with Fannie Mae’s approval, depositing into an
+SMBS trust a portion of the interest payable on mortgage loans backing certain MBS—the “excess yield”
+(excess servicing SMBS); and
+REMICs — Multiclass mortgage-related securities backed by UMBS, MBS, Supers, Megas or whole loans.
+Lenders that wish to deliver mortgage-related securities to Fannie Mae in exchange for a structured transaction
+security should contact the Capital Markets Structured Transactions group, to seek approval to do so.
+Fannie Mae’s Capital Markets Pricing and Sales Desk

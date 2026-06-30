@@ -9,18 +9,6 @@ defaults:
   storage_batch_loading: false
   query_batch: true
 aliases: {}
-
-# ---------------------------------------------------------------------------
-# Graph manifest — single source of truth for every knowledge graph the
-# Explorer serves. Add one block per graph and regenerate the JanusGraph
-# config with:
-#
-#     python scripts/generate_graph_config.py
-#
-# Each graph needs a KG JSON at `kg_file` and (optionally) source documents
-# at `docs_folder`. Sample data is NOT distributed with this repo — supply
-# your own under assistant/kgs/ and assistant/kbs/. See the README.
-# ---------------------------------------------------------------------------
 graphs:
   sample_guidelines:
     display_name: Sample Guidelines
@@ -30,7 +18,6 @@ graphs:
     opensearch_index: sample_guidelines_search
     kg_file: kgs/sample-guidelines-kg.json
     docs_folder: kbs/sample-guidelines
-
   example_policies:
     display_name: Example Policies
     graph_ref: example_policies
@@ -39,3 +26,35 @@ graphs:
     opensearch_index: example_policies_search
     kg_file: kgs/example-policies-kg.json
     docs_folder: kbs/example-policies
+  comercial_lending:
+    display_name: Comercial Lending
+    graph_ref: comercial_lending
+    traversal_source: comercial_lending_g
+    cassandra_keyspace: janusgraph_comercial_lending
+    opensearch_index: comercial_lending_search
+    kg_file: kgs/comercial_lending-kg.json
+    docs_folder: kbs/comercial-lending
+  fannie_mae:
+    display_name: Fannie Mae
+    graph_ref: fannie_mae
+    traversal_source: fannie_mae_g
+    cassandra_keyspace: janusgraph_fannie_mae
+    opensearch_index: fannie_mae_search
+    kg_file: kgs/fannie_mae-kg.json
+    docs_folder: kbs/fannie-mae
+  freddie_mac:
+    display_name: Freddie Mac
+    graph_ref: freddie_mac
+    traversal_source: freddie_mac_g
+    cassandra_keyspace: janusgraph_freddie_mac
+    opensearch_index: freddie_mac_search
+    kg_file: kgs/freddie_mac-kg.json
+    docs_folder: kbs/freddie-mac
+  healthcare:
+    display_name: Healthcare
+    graph_ref: healthcare
+    traversal_source: healthcare_g
+    cassandra_keyspace: janusgraph_healthcare
+    opensearch_index: healthcare_search
+    kg_file: kgs/healthcare-kg.json
+    docs_folder: kbs/healthcare

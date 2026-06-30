@@ -1,0 +1,48 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 229/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_229
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+1013 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+(7) An assessment of risk level for 
+each threat identified in accordance 
+with paragraph (a)(2)(ii)(A)(2) of this section and vulnerability identified in accordance with paragraph (a)(2)(ii)(A)(3) of this section, based on the determinations made in accordance with paragraphs (a)(2)(ii)(A)(5) and (6) 
+of this section. 
+(8) An assessment of the risks to 
+electronic protected health information posed by entering into or continuing a business associate contract or other written arrangement with any prospective or current business associate, respectively, based on the written verification obtained from the prospective or current business associate in accordance with paragraph (b)(1) of this section. 
+(B) Maintenance. Review, verify, and 
+update the written assessment on an ongoing basis, but at least once every 12 months and, in accordance with paragraph (a)(1)(ii)(C)(2) of this section, in response to a change in the covered entity’s or business associate’s 
+environment or operations that may affect electronic protected health information. 
+(3) Standard: Evaluation—(i) General. 
+Perform a written technical and nontechnical evaluation to determine whether a change in the covered entity’s or business associate’s environment or operations may affect the confidentiality, integrity, or availability of electronic protected health information. 
+(ii) Implementation specifications— 
+(A) Performance. Perform a written 
+technical and nontechnical evaluation within a reasonable period of time before making a change in the covered entity’s or business associate’s environment or operations as described in paragraph (a)(1)(ii)(C)(2) of this section. 
+(B) Response. Respond to the written 
+technical and nontechnical evaluation in accordance with the covered entity’s or business associate’s risk management plan required by paragraph (a)(5)(ii)(A) of this section. 
+(4) Standard: Patch management—(i) 
+General. Implement written policies and 
+procedures for applying patches and updating the configuration(s) of the covered entity’s or business associate’s relevant electronic information systems. 
+(ii) Implementation specifications— 
+(A) Policies and procedures. Establish 
+written policies and procedures for identifying, prioritizing, acquiring, installing, evaluating, and verifying the timely installation of patches, updates, and upgrades throughout the covered entity’s or business associate’s relevant electronic information systems. (B) Maintenance. Review and test 
+written policies and procedures 
+required by paragraph (a)(4)(ii)(A) of this section at least once every 12 months, and modify such policies and procedures as reasonable and appropriate. 
+(C) Application. Patch, update, and 
+upgrade the configurations of relevant electronic information systems in accordance with the written policies and procedures required by paragraph (a)(4)(ii)(A) of this section and based on the results of the covered entity’s or business associate’s risk analysis required by paragraph (a)(2) of this section, the vulnerability scans required by § 164.312(h)(2)(i), the monitoring of authoritative sources required by § 164.312(h)(2)(ii), and penetration tests required by § 164.312(h)(2)(iii), within a reasonable and appropriate period of time, as follows, except to the extent that an exception at paragraph (a)(4)(ii)(D) of this section applies: 
+(1) Within 15 calendar days of 
+identifying the need to patch, update, or 
+upgrade the configuration of a relevant electronic information system to address a critical risk in accordance with this paragraph (a)(4)(ii)(C), where a patch, update, or upgrade is available; or, where a patch, update, or upgrade is not available, within 15 calendar days of a patch, update, or upgrade becoming available. 
+(2) Within 30 calendar days of 
+identifying the need to patch, update, or upgrade the configuration of a relevant electronic information system to address a high risk in accordance with this paragraph (a)(4)(ii)(C), where a patch, update, or upgrade is available; or, where a patch, update, or upgrade is not available, within 30 calendar days of a patch, update, or upgrade becoming available. 
+(3) As determined by and documented 
+in the covered entity’s or business associate’s policies and procedures under paragraph (a)(4)(ii)(A) of this section for all other patches, updates, and upgrades to the configuration of a relevant electronic information system. 
+(D) Exceptions. This paragraph 
+(a)(4)(ii)(D) applies only to the extent that a covered entity or business associate documents that an exception in this paragraph (a)(4)(ii)(D) applies and that all other applicable conditions are met. 
+(1) A patch, update, or upgrade to the 
+configuration of a relevant electronic information system is not available to address a risk identified in the risk analysis under paragraph (a)(2) of this section. 
+(2) The only available patch, update,

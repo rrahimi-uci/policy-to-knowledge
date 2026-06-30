@@ -1,0 +1,41 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 91/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_091
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+943 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+493See ‘‘Guidance on Software Vulnerabilities 
+and Patching,’’ Cybersecurity Newsletter, Office for 
+Civil Rights, U.S. Department of Health and Human Services (June 2018), https://www.hhs.gov/sites/ default/files/june-2018-newsletter-software- patches.pdf. 
+494See ‘‘Securing Your Legacy [System 
+Security],’’ Cybersecurity Newsletter, Office for Civil Rights, U.S. Department of Health and Human Services (Oct. 2021), https://www.hhs.gov/hipaa/ for-professionals/security/guidance/cybersecurity- newsletter-fall-2021/index.html. 
+495See ‘‘Guidance on Software Vulnerabilities 
+and Patching,’’ supra note 493. 
+496See Murugiah Souppaya, et al., ‘‘Guide to 
+Enterprise Patch Management Planning: Preventive Maintenance for Technology,’’ NIST Special Publication 800–40, Revision 4, National Institute of Standards and Technology, U.S. Department of Commerce (Apr. 2022), https://nvlpubs.nist.gov/ nistpubs/SpecialPublications/NIST.SP.800- 40r4.pdf. 
+497Letter from NCVHS Chair Jacki Monson 
+(2023), supra note 123, Appendix p. 1; Letter from 
+NCVHS Chair Jacki Monson (2022), supra note 123, 
+p. 8–9. 498An explanation of risk rating is provided 
+above in the discussion of the proposed standard for risk analysis and associated implementation specifications. poses to ePHI is important to ensuring 
+that ePHI is protected.493 
+Although older applications or 
+devices may no longer be supported with patches for new vulnerabilities, regulated entities must still take appropriate action if a newly discovered vulnerability affects an older application or device. If an obsolete, unsupported system cannot be upgraded or replaced, additional safeguards should be implemented or existing safeguards enhanced to mitigate known vulnerabilities until upgrade or replacement can occur (e.g., increase 
+access restrictions, remove or restrict network access, disable unnecessary features or services).
+494 
+Patches can be applied to software 
+and firmware on all types of devices— telephones, computers, servers, routers, and more. Installation of vendor- recommended patches is typically a routine process. However, regulated entities should be prepared if issues arise as a result of applying patches. Software and hardware are often interconnected and dependent on the functionality and output of other information systems or components of other information systems. When certain changes are made, including the installation of a patch, software dependent on the changed application may not perform as expected because settings or data may be affected. Thus, in complex environments, patch management plays a crucial role in the safe and correct implementation of these changes.
+495Enterprise patch 
+management is the process of identifying, prioritizing, acquiring, installing, and verifying the installation of patches, updates, and upgrades throughout an organization.
+496NIST has 
+issued a series of guidance documents that regulated entities can use to design their own patch management processes as part of their risk management plans. Consistent with previously issued 
+guidance, the discussion above, and 
+recommendations from NCVHS,
+497the 
+Department proposes a new standard for patch management at proposed 45 CFR 164.308(a)(4)(i) that would require a regulated entity to implement written policies and procedures for applying 
+patches and updating the configurations of its relevant electronic information systems. This proposed standard would ensure that a regulated entity is aware of its liability for appropriately safeguarding ePHI by installing patches, updates, and upgrades throughout its relevant electronic information systems. 
+The Department proposes six

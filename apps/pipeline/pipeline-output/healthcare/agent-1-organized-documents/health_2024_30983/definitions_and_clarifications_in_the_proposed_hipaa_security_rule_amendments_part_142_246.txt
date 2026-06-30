@@ -1,0 +1,27 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 142/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_142
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+738 
+Consistent with the information 
+blocking regulations, the information provided by regulated entities that are also actors must: focus on any current privacy and/or security risks posed by the technology or the third-party developer of the technology; be factually accurate, unbiased, objective, and not unfair or deceptive; and be provided in a non-discriminatory manner.
+739For 
+example, a regulated entity that is an actor must provide information to individuals about the privacy and security risks of all mobile health applications in the same manner. 
+We are not proposing to require that 
+the documentation be in any particular form or format. Rather, the required information could be on a standard form, chart note, or checkbox, as examples. The Department does not propose to apply this exception to ePHI transmitted in other forms or formats, such as on a CD or other physical device used to maintain and transmit ePHI. The proposal would not absolve a regulated entity from compliance with other applicable laws or regulations, including the information blocking 
+regulations.
+740 
+We recognize that emergencies or 
+other occurrences may render it infeasible to encrypt ePHI. Thus, the third proposed exception at 45 CFR 164.312(b)(3)(iii) would apply to certain circumstances in which encryption is infeasible. Such circumstances would be limited to when there is emergency or other occurrence that adversely affects a regulated entity’s relevant electronic information systems. For the proposed exception to apply, a regulated entity would be required to implement reasonable and appropriate compensating controls in accordance with and determined by its contingency plan.
+741The Department would expect 
+this proposed exception to be applicable for a limited period of time and only when encryption is infeasible. As noted above, the proposed exception to encryption would narrowly apply only when a regulated entity’s relevant electronic information system is adversely affected by the emergency or other occurrence. The proposed exception would no longer be applicable at such time encryption becomes feasible, regardless of whether the emergency or other occurrence continues. 
+The fourth proposed set of exceptions 
+at proposed 45 CFR 164.312(b)(3)(iv) would be for ePHI that is created, received, maintained, or transmitted by a medical device (i.e., a ‘‘device’’ within 
+the meaning of section 201(h) of the Federal Food, Drug, and Cosmetic Act, 21 U.S.C. 321(h)) that is authorized by the FDA for marketing. We propose three separate exceptions for devices that are authorized by the FDA for marketing pursuant to: a submission received before March 29, 2023; a submission received on or after March 29, 2023, where the device is no longer supported by its manufacturer; or a submission received on or after March 29, 2023, where the device is supported by its manufacturer. Where a device has 
+been authorized by the FDA for marketing pursuant to a submission received before March 29, 2023, we propose that the exception at proposed 45 CFR 164.312(b)(3)(iv)(A) would be available only where the regulated entity deploys in a timely manner any updates or patches required or recommended by the manufacturer of the device. We also propose a similar exception at proposed 45 CFR 164.312(b)(3)(iv)(B) for devices authorized by the FDA for marketing pursuant to a submission received on or 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00073 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

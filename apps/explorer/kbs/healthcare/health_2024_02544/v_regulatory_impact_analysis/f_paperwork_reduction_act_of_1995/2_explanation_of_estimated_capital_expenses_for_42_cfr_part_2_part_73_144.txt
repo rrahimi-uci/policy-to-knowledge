@@ -1,0 +1,67 @@
+# 2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 73/144)
+
+**Source:** health_2024_02544.pdf
+**Chunk ID:** health_2024_02544_028_sub_073
+**Pages:** 1-160
+**Section Path:** V. Regulatory Impact Analysis > F. Paperwork Reduction Act of 1995 > 2. Explanation of Estimated Capital Expenses for 42 CFR Part 2
+
+---
+
+12544 Federal Register / Vol. 89, No. 33 / Friday, February 16, 2024 / Rules and Regulations 
+256See sec. 3221(k)(5) of the CARES Act. 25745 CFR 164.501 (definition of ‘‘Health care 
+operations,’’ paragraph (6)(v)). the consent requirements for the new 
+disclosure and redisclosure permissions. The CARES Act amendments preserved the requirement to obtain initial consent and the prohibition against use of records in proceedings against a patient—both core elements of the part 2 confidentiality protections for SUD records. We further discuss the single TPO consent in § 2.33. 
+Uses and Disclosures With Written 
+Consent 
+Comment 
+Commenters opposing use of a single 
+TPO consent recommended that the 
+consent provide clear options for the types of consent a patient may sign, which would include a consent for a specific, one-time use or disclosure. The commenters believed that this approach would allow patients to understand their options and to avoid being pressured into signing a TPO consent because they mistakenly believe it is their only option. 
+Response 
+We agree that part 2 programs should 
+ensure that patients understand their 
+consent options—which include signing a consent for a specific, one-time use or disclosure—and we encourage programs to draft their consent in a manner that is clear and easy to understand. Congress urged the Department to provide incentives to programs for explaining to patients the benefits of sharing their records.
+256Accordingly, 
+the manner in which programs offer information about different consent options should not undermine efforts to explain to patients the benefits of TPO consent. Sections 2.22 and 2.31(a) of this final rule require that part 2 programs notify patients of their rights and obtain consent before using and disclosing records for TPO. 
+Comment 
+Approximately half of commenters on 
+intermediaries opposed the 
+Department’s proposal to retain consent requirements for disclosures to intermediaries that differ from consent requirements for disclosures to business associates generally. Of the HIEs and health IT vendors that commented on this set of proposals, most expressed opposition. Opposing commenters believed that the special provisions for intermediaries were a holdover from before the CARES Act and were inconsistent with aligning part 2 with the HIPAA regulations, especially with regard to the new provision to allow a single TPO consent. 
+The board of supervisors for a large 
+county explained the county’s view that the combination of consent proposals (allowing TPO consent and retaining the consent provision for intermediaries) would result in a system where health plans, third-party payers, and business associates may be generally described in a consent as recipients, but these same recipient entities must be specifically named if the disclosure is made through an HIE. According to the commenter, ‘‘[t]his imposes a burden on the use of HIEs for enhancing patient care while providing no discernable privacy benefit.’’ 
+A state-wide e-health collaborative 
+that administers a network of HINs similarly remarked that if a patient signed a consent form designating ‘‘my health plan’’ as the recipient, the part 2 program would be permitted to disclose such information directly to the health plan, but the program would be prohibited from disclosing that information to the very same health plan if the disclosure was made via an intermediary without specifically naming the intermediary and the health plan. A large health IT vendor also voiced these concerns, describing the potential result as a ‘‘two-tiered’’ system that perpetuates discrimination because patients with SUD cannot reap the benefits of integrated care that is facilitated by shared electronic records. 
+Response 
+We appreciate the comments and 
+information about how intermediaries 
+operate and acknowledge that the CARES Act changes to consent for uses and disclosures for TPO and redisclosures by business associates have significantly reduced the need for a regulatory provision for intermediaries. In response to public comments the final rule excludes covered entities and business associates from the definition of ‘‘intermediary’’ in § 2.11. Thus, an HIE, for example, that meets the definition of ‘‘business associate’’ is excluded from the definition of ‘‘intermediary’’ and would not need to be specifically named in the consent—it would fall under the provision for a general designation under a TPO consent in § 2.31(a)(4). Other issues regarding intermediaries are discussed in §§ 2.11, 2.13, and 2.24. 
+Comment 
+A commenter recommended changes 
+to § 2.31 that would modify the wording 
+of a consent to specifically permit disclosures to the Food and Drug Administration (FDA) even after revocation of consent. 
+Response 
+We appreciate the comment, but 
+believe expressly permitting additional 
+disclosures after revocation of consent, where consent is required, is inconsistent with respecting patient choice. However, there may be circumstances where consent is not required for disclosures to the FDA, for example, if they fall within the provision for program audits and financial evaluations in § 2.53 or public health disclosures of de-identified records under § 2.54. 
+Comment 
+One commenter recommended that 
+disclosures to public health authorities 
+be included in the general TPO consent. 
+Response 
+The CARES Act mandated that 
+disclosures to public health authorities 
+are permitted without consent, but this permission applies only to records that have been de-identified. Further, the general consent authorized by the CARES Act applies only to uses and disclosures for TPO. Under the HIPAA Privacy Rule, disclosures to public health authorities are not considered disclosures for TPO and we apply this same interpretation to part 2. To the extent that a patient elects to consent to the disclosure of identifiable records to a public health authority, the consent must include a specific designation of the recipient. 
+Consent for Fundraising and De- 
+Identification Activities 
+Comment 
+A commenter suggested that consent 
+for fundraising be offered as an opt-out 
+rather than an opt-in process. Other commenters requested that fundraising not be allowed or that consent for use or disclosure of part 2 information for fundraising be obtained using a separate consent form (i.e., not combined with 
+any other consent). A few commenters stated that part 2 programs did not need to use part 2 records for fundraising purposes. 
+Response 
+Under the HIPAA Privacy Rule, 
+fundraising falls within the definition of 
+health care operations.
+257The CARES 
+Act required us to incorporate the definition of health care operations wholesale into this regulation. However, the CARES Act also included a Sense of 
+VerDate Sep<11>2014 18:41 Feb 15, 2024 Jkt 262001 PO 00000 Frm 00074 Fmt 4701 Sfmt 4700 E:\FR\FM\16FER2.SGM 16FER2lotter on DSK11XQN23PROD with RULES2

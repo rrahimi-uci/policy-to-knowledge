@@ -1,0 +1,57 @@
+# 54.5 Third-party foreclosure sales and short payoffs (10/21/21)
+
+**Source:** freddies_mac.pdf
+**Chunk ID:** freddies_mac_2265
+**Pages:** 922-922
+**Section Path:** Accounting and Reporting (Chs 50-54) > 54 - Accounting and Reporting GB-12-14-23 > 54.5 Third-party foreclosure sales and short payoffs (10/21/21)
+
+---
+
+Guide Bulletin Update 12/14/23 Chapter 54 – Page 5 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the AllRegs 
+web site of ICE Mortgage Technology  (with a paid subscription).  
+Guide Chapter 54 – Accounting and Reporting  
+d. Mortgages sold in a Securitization ( 09/14/23 ) 
+The Servicer must report via myOptigo for Investor Reporting  each Mortgage sold in a 
+Securitization.   After reporting the regular scheduled payment, the Servicer must report in the 
+Non-Cash Writedown field the unpaid principal balance (UPB) of the Mortgage after the regular 
+scheduled payment is applied.  If applicable, the Servicer must calculate the interest and 
+prepayment premium on the exception activity (see Section 50.8), basing this calculation on the 
+amount appearing in the  Non-Cash Writedown field .   
+ 
+ Mortgage repurchase ( 10/20/22) 
+Chapter 47 governs repurchases by the Seller or Servicer.  
+ 
+a. Repurchase price (10/07/02)  
+Freddie Mac will calculate the repurchase price as set forth in Section 47.4.  
+ 
+b. Reporting of repurchases ( 10/20/22) 
+For any repurchase required by Freddie Mac or requested by the Servicer and approved by 
+Freddie Mac, the Servicer must report the repurchase via myOptigo for Investor Reporting  
+(coded as a Mortgage repurchase  using Exception Code 66 ) no later than the due date specified 
+by Freddie Mac.  Freddie Mac may require the repurchase of any Mortgage or any Real Estate 
+Owned (REO).  
+ 
+The Servicer must account for and report the repurchase of a Mortgage or REO in the same 
+manner as it accounts for and reports a Mortgage paid in full.  The Servicer must set the date on 
+which the exception activity will occur at no more than 10 Business Days after the date on which 
+Freddie Mac notified the Servicer that Freddie Mac is requiring or approving the repurchase.  
+ 
+ Third -party foreclosure sales and short payoffs ( 10/21/21) 
+If a Property is sold to a third party on the foreclosure sale date, that sale is referred to as a third -party 
+foreclosure sale.  If Freddie Mac accepts less than payment -in-full on a Mortgage, that payment is 
+referred to as a short payoff.  
+ 
+a. Reporting requirements ( 04/15/21 ) 
+The Servicer must report third -party foreclosure sales and short payoffs via myOptigo for 
+Investor Reporting  in accordance with the specific instructions provided by Freddie Mac 
+Multifamily Loan Accounting for each transaction.  Freddie Mac Multifamily Loan Accounting will 
+forward a transaction summary to the Servicer indicating the exception code, the amounts and 
+the appropriate fields to complete in myOptigo for Investor Reporting .  The summary also will 
+indicate the amounts (if any) to be called in to Fr eddie Mac's service bureau; the amounts (if 
+any) received by Freddie Mac; and the amounts to be credited to the Servicer for Servicing fees 
+earned or for any losses, expenses or advances recovered.  
+ 
+The transmission must reach Freddie Mac in accordance with the reporting due date in Section 
+50.10.

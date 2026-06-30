@@ -1,0 +1,38 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 90/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_090
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+942 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+490See ‘‘Implementing the Health Insurance 
+Portability and Accountability Act (HIPAA) 
+Security Rule: A Cybersecurity Resource Guide,’’ supra note 461; ‘‘Security Rule Guidance Material,’’ 
+Office for Civil Rights, U.S. Department of Health and Human Services (Feb. 16, 2024), https://
+www.hhs.gov/hipaa/for-professionals/security/ guidance/index.html?language=es. 
+491See ‘‘Defending Against Common Cyber- 
+Attacks,’’ supra note 396. 492It may not be reasonable and appropriate for 
+a regulated entity to patch software or update a system configuration where the risk of introducing a change is greater than the status quo risk or where the regulated entity does not own or manage a networked device. For example, instances where it might not be reasonable and appropriate to patch or update an information system include: (1) where a system needs to run continuously for mission critical support and is not patched or updated during its lifetime; and (2) where the regulated entity’s testing of such patch or update indicates potential adverse impacts or where industry is reporting adverse impacts of such patch or update. This does not negate the regulated entity’s need to address the vulnerability with a compensating control. For example, where a hospital discovers a vulnerability on a device that is connected to its network but owned and managed by a business associate, the hospital may not have access to install a patch, but it should employ a compensating control, such as disabling or limiting that device’s access to the hospital’s network. proposed 45 CFR 164.308(a)(3)(ii). The 
+proposed implementation specification for performance at proposed 45 CFR 164.308(a)(3)(ii)(A) would require that a regulated entity conduct the evaluation within a reasonable period of time before making a change to its environment or operations, while the proposed implementation specification for response at proposed 45 CFR 164.308(a)(3)(ii)(B) would require a regulated entity to respond to the evaluation in accordance with its risk management plan. 
+A change in the regulated entity’s 
+environment or operations would include, but would not be limited to, the adoption of new technology assets; the upgrading, updating, or patching of technology assets; newly recognized threats to the confidentiality, integrity, or availability of ePHI; a sale, transfer, merger or consolidation of all or part of the regulated entity with another person; a security incident that affects the confidentiality, integrity, or availability of ePHI; and relevant changes in Federal, State, Tribal, and territorial law. 
+NIST guidance provides descriptions 
+of key activities and sample questions that would help regulated entities meet this evaluation standard.
+490They 
+include: 
+•Determine whether internal or 
+external evaluation is most appropriate. Which staff has the technical experience and expertise to evaluate the systems? If an outside vendor is used, what factors should be considered when selecting the vendor, such as credentials and experience? 
+•Develop standards and 
+measurements for reviewing all standards and implementation specifications of the Security Rule. Have management, operational, and technical issues been considered? Do the elements of each evaluation procedure (e.g., questions, statements, or other components) address individual, measurable security safeguards for ePHI? 
+•Conduct an evaluation. Has the 
+process been formally communicated to those who have been assigned roles and responsibilities in the evaluation process? Has the organization explored the use of automated tools to support the process? •Document results, including: each 
+evaluation finding and remediation 
+options, recommendations, and decisions; known gaps between identified risks, mitigating security controls, and any acceptance of risk, including justification; developed security program priorities and established targets for continuous improvement; use of evaluation results to inform security changes to protect ePHI; communication of evaluation results, metrics, and/or measurements to relevant organizational personnel. 
+•Repeat evaluations periodically. 
+Establish the frequency of evaluations, repeating evaluations when environmental and operational changes that affect the security of ePHI are made (e.g., if new technology is adopted or if 
+there are newly recognized risks to the 
+confidentiality, integrity, or availability of ePHI). 
+Despite the existing standard and the

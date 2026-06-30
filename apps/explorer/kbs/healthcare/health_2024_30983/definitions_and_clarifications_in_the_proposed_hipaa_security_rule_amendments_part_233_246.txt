@@ -1,0 +1,61 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 233/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_233
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+1015 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+of the covered entity’s or business 
+associate’s relevant electronic information systems. 
+(E) Network segmentation. Establish 
+and implement written policies and procedures that ensure that a covered entity’s or business associate’s relevant electronic information systems are segmented to limit access to electronic protected health information to authorized workstations. 
+(F) Maintenance. Review and test the 
+written policies and procedures required by this paragraph (a)(10)(ii) at least once every 12 months, and modify as reasonable and appropriate. 
+(11) Standard: Security awareness 
+training—(i) General. Implement 
+security awareness training for all workforce members on protection of electronic protected health information and information systems as necessary and appropriate for the members of the workforce to carry out their assigned function(s). 
+(ii) Implementation specifications— 
+(A) Training. A covered entity or 
+business associate must develop and implement security awareness training for all workforce members that addresses all of the following: 
+(1) The written policies and 
+procedures with respect to electronic protected health information required by this subpart as necessary and appropriate for the workforce members to carry out their assigned functions. 
+(2) Guarding against, detecting, and 
+reporting suspected or known security incidents, including but not limited to, malicious software and social engineering. 
+(3) The written policies and 
+procedures for accessing the covered entity’s or business associate’s relevant electronic information systems, including but not limited to: safeguarding passwords; setting unique passwords of sufficient strength to ensure the confidentiality, integrity, and availability of electronic protected health information; and limitations on sharing passwords. 
+(B) Timing. A covered entity or 
+business associate must provide security awareness training as follows: 
+(1) As required by paragraph 
+(a)(11)(ii)(A) of this section, to each member of its workforce by no later than the compliance date, and at least once every 12 months thereafter. 
+(2) As required by paragraph 
+(a)(11)(ii)(A) of this section, to each new member of its workforce within a reasonable period of time but no later than 30 days after the person first has access to the covered entity’s or business associate’s relevant electronic information systems. (3) On a material change to the 
+policies or procedures required by this subpart, to each member of its workforce whose functions are affected by such change, within a reasonable period of time but no later than 30 days after the material change occurs. 
+(C) Ongoing education. A covered 
+entity or business associate must provide its workforce members ongoing reminders of their security responsibilities and notifications of relevant threats, including but not limited to new and emerging malicious software and social engineering. 
+(D) Documentation. A covered entity 
+or business associate must document that the training required by paragraph (a)(11)(ii)(A) of this section and ongoing reminders required by paragraph (a)(11)(ii)(C) of this section have been provided. 
+(12) Standard: Security incident 
+procedures—(i) General. Implement 
+written policies and procedures to respond to security incidents. 
+(ii) Implementation specifications— 
+(A) Planning and testing. (1) Establish 
+written security incident response plan(s) and procedures documenting how workforce members are to report suspected or known security incidents and how the covered entity or business associate will respond to suspected or known security incidents in accordance with paragraph (a)(12)(ii)(B) of this section. 
+(2) Implement written procedures for 
+testing and revising security incident response plan(s) required by paragraph (a)(12)(ii)(A)(1) of this section. 
+(3) Review and test security incident 
+response plan(s) and procedures required by paragraph (a)(12)(ii)(A)(1) of this section at least once every 12 months, document the results of such tests, and modify security incident response plan(s) and procedures as reasonable and appropriate. 
+(B) Response. (1) Identify and respond 
+to suspected or known security incidents. 
+(2) Mitigate, to the extent practicable, 
+harmful effects of security incidents that are suspected or known to the covered entity or business associate. 
+(3) Identify and remediate, to the 
+extent practicable, the root cause(s) of security incidents that are suspected or known to the covered entity or business associate. 
+(4) Eradicate the security incidents 
+that are suspected or known to the covered entity or business associate. 
+(5) For suspected and known security 
+incidents, develop and maintain documentation of investigations, analyses, mitigation, and remediation. (13) Standard: Contingency plan—(i) 
+General. Establish and implement as 
+needed a written contingency plan,

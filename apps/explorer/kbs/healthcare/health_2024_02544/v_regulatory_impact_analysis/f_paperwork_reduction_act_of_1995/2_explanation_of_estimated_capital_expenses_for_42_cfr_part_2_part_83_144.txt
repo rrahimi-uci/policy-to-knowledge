@@ -1,0 +1,64 @@
+# 2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 83/144)
+
+**Source:** health_2024_02544.pdf
+**Chunk ID:** health_2024_02544_028_sub_083
+**Pages:** 1-160
+**Section Path:** V. Regulatory Impact Analysis > F. Paperwork Reduction Act of 1995 > 2. Explanation of Estimated Capital Expenses for 42 CFR Part 2
+
+---
+
+12554 Federal Register / Vol. 89, No. 33 / Friday, February 16, 2024 / Rules and Regulations 
+27783 FR 239, 241; See ‘‘Frequently Asked 
+Questions: Applying the Substance Abuse 
+Confidentiality Regulations to Health Information Exchange (HIE),’’ supra note 150. redesignates the content of paragraph (b) 
+as a new paragraph (c). Additionally, the final rule adds a new paragraph (b) to require separate consent for the use and disclosure of SUD counseling notes, and a new paragraph (d) to require a separate consent for use and disclosure 
+of records in civil, criminal, administrative, or legislative proceedings. 
+Section 2.32—Notice and Copy of 
+Consent To Accompany Disclosure 
+Heading of Section Proposed Rule 
+The Department proposed to change 
+the heading of this section from 
+‘‘Prohibition on re-disclosure’’ to ‘‘Notice to accompany disclosure’’ because § 2.32 is wholly a notice requirement, while other provisions (§ 2.12(d)) prohibit recipients of part 2 records from redisclosing the records without obtaining a separate written patient consent. To ensure that recipients of part 2 records comply with the prohibition at § 2.12(d), § 2.32(a) requires that part 2 programs attach a notice whenever part 2 records are disclosed with patient consent, notifying the recipient of the prohibition on redisclosure and of the prohibition on use of the records in civil, criminal, administrative, and legislative proceedings against the patient. 
+Comments 
+We received no comments on the 
+proposed change to the heading of this 
+section. 
+Final Rule 
+The final rule is adopting the 
+language of the proposed heading with 
+a further modification to take into account the new paragraph (b) that we are adding, as discussed below. The new heading reads, ‘‘Notice and copy of consent to accompany disclosure.’’ 
+Expanded Notice of Prohibited Uses and 
+Disclosures 
+Proposed Rule 
+The Department proposed to modify 
+paragraph (a)(1) of § 2.32 to reflect the 
+expanded prohibition on use and disclosure of part 2 records in certain proceedings against the patient, which includes testimony that relays information in a part 2 record and the use or disclosure of such records or testimony in civil, criminal, administrative, and legislative proceedings, absent consent or a court order. 
+In addition, the proposed language of 
+the notice listed exceptions to the general rule prohibiting further use or disclosure of the part 2 records by recipients of such records, which would allow covered entities, business associates, and part 2 programs who receive part 2 records for TPO based on a patient’s consent to redisclose the records as permitted by the HIPAA Privacy Rule. This exception also would apply to entities that received part 2 records from a covered entity or business associate under the HIPAA Privacy Rule disclosure permissions, although the legal proceedings prohibition would still apply to covered entities and business associates that receive these part 2 records. The Department stated that these changes are necessary to conform § 2.32 with 42 U.S.C. 290dd–2(b)(1)(B), as amended by section 3221(b) of the CARES Act, and proposed a statement in paragraph (a)(1) as follows: 
+This record which has been disclosed to 
+you is protected by Federal confidentiality 
+rules (42 CFR part 2). These rules prohibit you from using or disclosing this record, or 
+testimony that describes the information contained in this record, in any civil, criminal, administrative, or legislative proceedings by any Federal, State, or local authority, against the patient, unless authorized by the consent of the patient, except as provided at 42 CFR 2.12(c)(5) or as authorized by a court in accordance with 42 CFR 2.64 or 2.65. In addition, the Federal rules prohibit you from making any other use or disclosure of this record unless at least one of the following applies: 
+•Further use or disclosure is expressly 
+permitted by the written consent of the individual whose information is being disclosed in this record or is otherwise permitted by 42 CFR part 2; 
+•You are a covered entity or business 
+associate and have received the record for treatment, payment, or health care operations as defined in this part; or 
+•You have received the record from a 
+covered entity or business associate as permitted by 45 CFR part 164, subparts A and E. 
+Comment 
+An individual commenter asserted 
+that disclosures made by a part 2 
+program to a covered entity or a business associate for TPO and redisclosures made by a covered entity or business associate in accordance with the HIPAA regulations should not require a notice accompanying the disclosure as set out in § 2.32 of the proposed revisions. 
+The commenter stated that under the 
+CARES Act, with the prior written consent of the patient, the contents of a part 2 program record may be used or disclosed by a covered entity, business associate, or program for TPO as permitted by the HIPAA regulations. Further, once disclosed to a covered entity or business associate, the CARES Act provides that the information so disclosed may be redisclosed in accordance with the HIPAA regulations. The requirement of an accompanying written notice for each disclosure imposes a hurdle to the electronic exchange of information though a HIE and is not required under 42 U.S.C. 290dd–2. The commenter suggested that the provisions of 42 U.S.C. 290dd–2(c) operate independently and refer to uses and disclosures in proceedings rather than uses and disclosures by covered entities or business associates. Thus, the prohibition can be enforced independently by the patient in the course of any such proceeding. To the extent that an accompanying notice is determined to be necessary, it should be permissible to reference the provisions of 42 U.S.C. 290dd–2(c) in contractual agreements between the program, covered entities, and business associates rather than requiring that a notice accompany each disclosure. 
+An HIE described its reliance on 
+contractual requirements in its agreements with data providers to ensure that it is notified of any limitations on its ability to share data prior to receiving that data. That practice will continue in response to the proposed changes contained in the NPRM. The commenter said that if the final rule includes a requirement for part 2 programs to notify data recipients, that requirement should be that they notify recipients when data is not received pursuant to a global consent for TPO, and that the operating assumption of parties receiving all forms of health data should be that it can be used consistently with the requirements of HIPAA and any relevant state laws or express contractual limitations. 
+Response 
+The notice does not establish a 
+limitation on redisclosure but rather is 
+intended to align the content of § 2.32 (Notice to accompany disclosure) with the requirements of 42 U.S.C. 290dd– 2(b), as amended by the CARES Act. 
+As the Department noted in its 2010 
+HIE guidance and regulations, this notice was intended to inform downstream record recipients of part 2 and restrictions on redisclosure.
+277The 
+notice as we have finalized it in this rule, like the existing notice, continues to inform record recipients that the information they receive may not be 
+VerDate Sep<11>2014 18:41 Feb 15, 2024 Jkt 262001 PO 00000 Frm 00084 Fmt 4701 Sfmt 4700 E:\FR\FM\16FER2.SGM 16FER2lotter on DSK11XQN23PROD with RULES2

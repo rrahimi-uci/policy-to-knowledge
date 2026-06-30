@@ -1,0 +1,52 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 209/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_209
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+1003 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+982Id.; see also Victoria Kisekka, et al., ‘‘The 
+Effectiveness of Health Care Information 
+Technologies: Evaluation of Trust, Security Beliefs, and Privacy as Determinants of Health Care Outcomes,’’ Journal of Medical Internet Research, Volume 20 (Apr. 11, 2018), https://pubmed.ncbi.nlm.nih.gov/29643052/. 983For this analysis, a record is the ePHI of one 
+individual. 
+984See ‘‘Annual Report to Congress on Breaches 
+of Unsecured Protected Health Information for 
+Calendar Year 2022,’’ supra note 213, p. 9 (2023); 
+‘‘December 2023 Healthcare Data Breach Report,’’ 
+supra note 960. 985The break-even calculations presented here 
+only include regulated entities because breach data 
+is not available for health plan sponsors. Including sponsors and assuming they have the same rate of breaches would result in a similar break-even point in terms of percent decrease from baseline. withhold information from health care 
+practitioners, ultimately compromising the decision-making capacity of their health care provider to administer the best quality of care.
+982Decreasing the 
+number and scope of health care breaches would reduce the harms of such breaches and would be a significant benefit of the proposals in the NPRM. 
+5. Comparison of Benefits and Costs 
+Key inputs to the estimation of costs 
+of this proposed rule include the 
+numbers of regulated entities and health plan sponsors. The Department has not previously quantified the costs of Security Rule compliance for health plan sponsors because the existing requirements are for plan documents to require such sponsors to implement 
+administrative, physical, and technical safeguards, but not necessarily to 
+comply with the specific requirements of the Security Rule. Therefore, the proposed requirement to comply with the proposed changes to the Security Rule, along with the number of affected plan sponsors (approximately 740,000), results in a significant increase in overall cost estimates compared to the existing rule. The benefits of improved security for ePHI accrue to individuals, regulated entities, and health plan sponsors and are significant. The 
+Department has discussed the benefits above. 
+The Department seeks to reduce the 
+risk and mitigate the effects of breaches of ePHI and related information systems through the proposals included in this NPRM. Because the frequency and magnitude of cybersecurity events are inherently difficult to predict, we chose 
+to conduct a break-even analysis in lieu of a cost savings analysis. The Department solicits comments with any information and data on the incidence and negative consequences of cybersecurity breaches. 
+The Department examined two 
+different data points: the annual number of individuals affected by health care breaches, and the annual number of large breaches. Additionally, the Department considered a high and a low baseline based on the number of 
+breaches and affected individuals per year. The Department calculated the high baseline as the average of the three highest values in the 6 years of available data (2018 to 2023, shown in table 8), and the low baseline as the average of the three lowest values. 
+TABLE 8—D ATA ON BREACHES OF ePHI 
+Breach years Affected individuals 
+for large breachesa Costbper record983 
+2018 ........................................................................................................................... ...... 12,493,549 $488 
+2019 ........................................................................................................................... ...... 38,732,966 504 
+2020 ........................................................................................................................... ...... 37,641,403 476 
+2021 ........................................................................................................................... ...... 37,182,558 502 
+2022 ........................................................................................................................... ...... 41,747,613 477 
+2023 ........................................................................................................................... ...... 113,173,613 463 
+Number of large breaches 
+(500+ individuals) Cost per breach 
+2018 ........................................................................................................................... ...... 302 12,012,809 
+2019 ........................................................................................................................... ...... 408 7,582,508 
+2020 ........................................................................................................................... ...... 656 8,273,537 
+2021 ........................................................................................................................... ...... 609 10,241,897

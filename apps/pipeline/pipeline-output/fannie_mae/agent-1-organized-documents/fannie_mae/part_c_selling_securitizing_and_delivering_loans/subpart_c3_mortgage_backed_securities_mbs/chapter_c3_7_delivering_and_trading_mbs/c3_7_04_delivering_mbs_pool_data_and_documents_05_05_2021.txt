@@ -1,0 +1,146 @@
+# C3-7-04, Delivering MBS Pool Data and Documents (05/05/2021)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_496
+**Pages:** 1038-1041
+**Section Path:** Part C, Selling, Securitizing, and Delivering Loans > Subpart C3, Mortgage-Backed Securities (MBS) > Chapter C3-7, Delivering and Trading MBS > C3-7-04, Delivering MBS Pool Data and Documents (05/05/2021)
+
+---
+
+Published March 4, 2026
+1020MBS Pass-Through Rate Original Trade Amount Maximum Number of Pools
+≥ 8%≤ $500,000 3
+> $500,000 and < $1,000,000 4
+≥ $1,000,0005 pools per each million dollars of
+the trade amount
+Pairing Oﬀ
+If a lender is having diﬃculty meeting its commitment to deliver a security, the Desk may permit the lender to
+execute a “pair-oﬀ.” The lender should request a pair-oﬀ well in advance of the scheduled settlement date to
+avoid a “failed” delivery.
+To request a pair-oﬀ, a lender may either:
+request a “ﬁrm oﬀer” from the Desk, identifying the trade to be paired oﬀ. A ﬁrm oﬀer will enable the
+lender to buy from the Desk (at current market value) an MBS that is comparable to the one the lender
+agreed to sell to the Desk, or
+arrange a transaction with a third party whereby the lender purchases the MBS from that party and
+delivers it to the Desk in fulﬁllment of its commitment.
+Pair-oﬀs are not always possible in certain market environments; therefore, a lender should evaluate market
+conditions before considering their use.
+The lender must wire pair-oﬀ funds to Fannie Mae on the settlement date. If the lender owes Fannie Mae pair-oﬀ
+funds from two or more related buy and sell transactions that settle on the same day, it should remit a single
+wire for the net amount due to Fannie Mae. The wire transfer must include the lender’s name, the settlement
+date, and the word “pair-oﬀ.”
+Fannie Mae has the right to charge interest on delinquent funds.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2019-04 May 01, 2019
+
+Published March 4, 2026
+1021C3-7-04, Delivering MBS Pool Data and Documents (05/05/2021)
+Introduction
+This topic includes speciﬁcs on pool data and documentation delivery requirements, including:
+Required Documents for MBS Pool Loans
+General MBS Pool Delivery Requirements
+MBS Pool Data Delivery Requirements
+MBS Pool Document Delivery Requirements
+As Soon As Pooled Plus Loan Deliveries and Redeliveries as As Soon As Pooled Plus Pools
+Required Documents for MBS Pool Loans
+See E-2-01, Required Custodial Documents  for a list of mortgage documents that should be included in the
+document submission package for all loans. C3-7-07, Sale of Fannie Mae Securities to Third Parties  for additional
+information.
+General MBS Pool Delivery Requirements
+A lender must deliver the mortgage document submission package to the document custodian at the same time
+it transmits the loan delivery data to Fannie Mae. The submission package must be sent to the assigned
+document custodian and addressed according to the instructions provided by that custodian. The custodian
+must then complete the required loan certiﬁcation prior to pool closing, which must occur before Fannie Mae
+issues the related securities.
+The lender must allow suﬃcient processing time between the time it submits its loan delivery data and the
+document submission package and the time it wants the securities to be issued in book-entry form. See
+C3-7-07, Sale of Fannie Mae Securities to Third Parties  for additional information.
+For additional information on the eligibility criteria for document custodians, see the RDC guide . For a complete
+list of active document custodians, refer to Fannie Mae's Active Document Custodians .
+MBS Pool Data Delivery Requirements
+When a lender transmits its loan delivery data, it must include a Delivery Schedule ( Form 2014 ) for MBS pools.
+Form 2014 identiﬁes the parties to which the securities are to be issued. If the lender markets and sells the
+securities before it submits its pool documentation to Fannie Mae, it must provide instructions related to the
+delivery of the securities on this form. Special instructions for preparing Form 2014 are necessary for MBS
+delivered using the early funding option As Soon As Pooled Sale.
+The lender enters loan data into Loan Delivery. Data should include the Financial Institution Number (FIN) of the
+applicable document custodian. When submitting loan delivery data to Fannie Mae, the lender represents and
+warrants that:
+
+Published March 4, 2026
+1022the data is correct,
+each loan listed is to be transferred to Fannie Mae on the book-entry delivery date of the related
+securities, and
+the loans will be delivered and serviced in accordance with the terms of the MBS commitment and Fannie
+Mae’s Guides.
+For information about speciﬁc FIN codes, see Loan Delivery Data Requirements .
+Lenders delivering into Fannie Majors must include the Fannie Majors pool and CUSIP number in their deliveries.
+A lender may submit data for mortgages in the same Fannie Majors at diﬀerent times and on diﬀerent days of
+the month, as long as all of the mortgages submitted are the same product type and have the same remittance
+cycle and servicer. All Fannie Major deliveries must be error-free and certiﬁed by 6:00 p.m. Eastern time on the
+fourth to last business day before the end of the month.
+Example
+In the following calendar example, the fourth to last business day of the month is Friday the 26th.
+Sunday Monday Tuesday Wednesday Thursday Friday Saturday
+21 22 23 24 25 26 27
+28 29 30 31    
+Lender submissions must align to the eligible settlement dates as published on the applicable Pool Settlement
+Calendar for the issue month of the submission. Data submission must be transmitted in Loan Delivery by 6:00
+p.m. Eastern time on the published last day to submit to be eligible for delivery to Fannie Mae in that issue
+month. For more information on eligible settlement and submission dates, see the Loan Delivery  page on Fannie
+Mae’s website.
+Fannie Mae must have received the lender’s loan delivery data for a speciﬁc MBS pool transaction by the time it
+receives the document custodian’s electronic certiﬁcation for the pool. Loan delivery data is sent electronically
+to the document custodian and Fannie Mae at the same time, via Loan Delivery.
+If the lender fails to deliver the required delivery data for any speciﬁc MBS pool transaction to Fannie Mae,
+Fannie Mae may terminate the related MBS commitment by giving the lender written notice of the termination.
+Fannie Mae will telephone the lender in advance to inform it that a written termination notiﬁcation is being sent.
+MBS Pool Document Delivery Requirements
+The lender must have a custodial arrangement for each MBS pool transaction it delivers to Fannie Mae. The
+seller must add the document custodian to its proﬁle within the Loan Delivery application. In addition, the seller
+must submit the FIN code for the document custodian in the delivery ﬁle. The FIN code allows the data to be
+routed to the proper document custodian. Failure to specify the proper FIN may result in a delay of certiﬁcation
+and/or MBS pool securitization. However, if an MBS pool contains one or more ASAP Plus loans, all loans within
+the pool must be certiﬁed by the custodian who certiﬁed the ASAP Plus delivery. See ASAP Plus Loan Deliveries
+
+Published March 4, 2026
+1023and Redeliveries as ASAP Plus Pools below, for additional details.
+Once the lender has the applicable Master Custodial Agreement ( Form 2017 ) on ﬁle with Fannie Mae for each of
+the diﬀerent document custodians it uses, the lender will not need to advise Fannie Mae about the speciﬁc
+custodial arrangement for speciﬁc MBS pools when they are delivered. See A3-3-04, Document Custodians  for
+additional information.
+When a lender delivers loans into an MBS, it must send documentation on each mortgage to its document
+custodian for certiﬁcation and retention of physical custody, from that point forward, pending successful
+completion of the loan acquisition transaction. The seller should ensure that the mortgage document submission
+package is submitted to its overnight carrier (with instructions for ﬁrst morning delivery) the same day that the
+seller submits the loan data to Fannie Mae for purchase. Loan data delivered by the seller to Fannie Mae will be
+certiﬁed the next business day provided the documents have been delivered to the document custodian via ﬁrst
+morning delivery, and there are no discrepancies and no unresolved lien issues. See  E-1-02, List of Contacts .
+When the document custodian receives the mortgage document submission package, it will review the related
+mortgage documentation to verify all of the required documents have been received and are in order. The
+document custodian will then work with the lender to correct any certiﬁcation data or document errors. Lenders
+can opt-in to receive email notices through Loan Delivery when data or document discrepancies are noted
+during certiﬁcation. Lenders then have the option to accept or decline data changes the custodian proposes as a
+result of a discrepancy on the note and the data they provided. The lender must work with the custodian to
+ensure all discrepancies are resolved.
+If there are no document or data-related errors, the document custodian will transmit a certiﬁcation to Fannie
+Mae.
+As Soon As Pooled Plus Loan Deliveries and Redeliveries as As Soon As Pooled
+Plus Pools
+In addition to the instructions above in MBS Pool Document Delivery Requirements , the following requirements
+also pertain to As Soon As Pooled Plus loan deliveries and redeliveries.
+If sellers opt to redeliver an As Soon As Pooled Plus loan as a whole loan execution to Fannie Mae, they must
+redeliver the loan to Fannie Mae via Loan Delivery. When an As Soon As Pooled Plus loan is redelivered as a
+whole loan, sellers must include the FIN code upon redelivery. Failure to specify the proper code may result in a
+delay of certiﬁcation and/or purchase of the loan.
+If sellers opt to redeliver an As Soon As Pooled Plus loan as an MBS execution to Fannie Mae, they should
+redeliver the loan to Fannie Mae via Loan Delivery.
+If an MBS pool contains one or more As Soon As Pooled Plus loans, all ASAP Plus loans within the pool must be
+certiﬁed by the same document custodian who certiﬁed the ASAP Plus loan. In addition, the seller must transmit
+all of the loans in the pool with the same document custodian FIN code. The seller will need to add the
+document custodian to its proﬁle within the Loan Delivery application.
+Failure to specify the proper FIN code may result in a delay of certiﬁcation and/or purchase of the loan.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.

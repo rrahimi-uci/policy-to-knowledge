@@ -1,0 +1,42 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 85/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_085
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+940 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+Technology, U.S. Department of Commerce (Sept. 
+2012), https://nvlpubs.nist.gov/nistpubs/Legacy/SP/ 
+nistspecialpublication800-30r1.pdf. 
+472Id. at Appendix I; see also ‘‘Reducing the 
+Significant Risk of Known Exploited Vulnerabilities,’’ Cybersecurity & Infrastructure Security Agency, U.S. Department of Homeland Security (Nov. 3, 2021), https://www.cisa.gov/sites/ default/files/publications/Reducing_ the_
+Significant_ Risk_ of_Known_ Exploited_
+Vulnerabilities_ 211103.pdf. 473See ‘‘Implementing the Health Insurance 
+Portability and Accountability Act (HIPAA) 
+Security Rule: A Cybersecurity Resource Guide,’’ supra note 461, p. 16–22. 
+474‘‘2016–2017 HIPAA Audits Industry Report,’’ 
+supra note 121. 475Id. 
+476Press Release, ‘‘HHS Office for Civil Rights 
+Settles HIPAA Security Rule Failures for $950,000,’’ U.S. Department of Health and Human Services (July 1, 2024), https://prod- wwwhhsgov.cloud.hhs.gov/about/news/2024/07/01/ hhs-office-civil-rights-settles-hipaa-security-rule- failures-950000.html. 
+477See ‘‘Montefiore Medical Center,’’ supra note 
+248. 
+478See ‘‘Doctors’ Management Services, Inc.,’’ 
+supra note 246. Consistent with the discussion above, a 
+key step is determining the risk level posed to such ePHI by threats and vulnerabilities and how critical it is to address and mitigate the identified risk. In general, the descriptive words ‘‘very high’’ or ‘‘critical’’ are used to indicate that a threat event could be expected to have multiple severe or catastrophic adverse effects on organizational operations, organizational assets, individuals, other organizations, or the country.
+472A ‘‘high’’ risk would 
+indicate that a threat event could be expected to have a severe or catastrophic adverse effect on the same, while a ‘‘moderate’’ risk could indicate that the threat event could have a serious adverse effect on the same. Risks that are ‘‘low’’ and ‘‘very low’’ could be expected to have a limited and negligible effect, respectively, on organizational operations or assets, individuals, other organizations, or the country. 
+The Department believes that 
+determinations of risk level and criticality may vary based on the specific type of regulated entity and the regulated entity’s specific circumstances. For example, a health care provider must consider the higher levels of risks to physical and technical security that are created by regular entry and exit of individuals seeking health care and other members of the public into its facilities, creating potentially numerous avenues for access to ePHI through technology assets; in contrast, a health plan that generally does not permit physical entry by individuals into its office building may determine that the risks to ePHI from physical entry by individuals or other members of the public is low because its workforce members do not generally physically interact with the public. As another example, a vulnerability permitting unauthenticated remote code execution on a device connected to a regulated entity’s relevant electronic information systems would likely constitute either a high or critical risk. However, should such a device not have the ability to connect to the network, the risk might be low or moderate because the likelihood of triggering a network vulnerability on a non-networked device is low, even though the impact of such trigger might be high. Thus, it 
+is essential that a regulated entity consider its specific circumstances when assessing the criticality of a risk and to address such risks in a manner that is appropriate to its specific facts and circumstances.
+473In yet another 
+example, a regulated entity in possession of legacy devices or devices that are nearing the end of their lifespan should assess the risks associated with continued use of such devices as part of its risk analysis and ensure that replacement of such devices and/or the implementation of compensating controls are included in its risk management plan. 
+Despite our having made available an 
+abundance of free and widely- publicized guidance tools, OCR unfortunately has learned through its compliance and enforcement activities that regulated entities often do not perform compliant risk analyses. As discussed above, in 2016 and 2017, the Department conducted audits of 166 covered entities and 41 business associates for their compliance with selected provisions of the HIPAA Rules.
+474These audits confirmed that 
+only small percentages of covered entities (14 percent) and business associates (17 percent) were substantially fulfilling their regulatory responsibilities to safeguard ePHI they hold through risk analysis activities. Entities generally failed to: 
+•Identify and assess the risks to all 
+of the ePHI in their possession or even develop and implement policies and procedures for conducting a risk analysis. 
+•Identify threats and vulnerabilities

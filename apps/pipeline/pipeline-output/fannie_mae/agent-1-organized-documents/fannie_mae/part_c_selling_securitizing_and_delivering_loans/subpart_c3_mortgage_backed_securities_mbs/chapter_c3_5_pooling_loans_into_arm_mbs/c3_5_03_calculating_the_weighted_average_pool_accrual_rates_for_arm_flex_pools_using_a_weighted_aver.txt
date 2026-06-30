@@ -1,0 +1,117 @@
+# C3-5-03, Calculating the Weighted-Average Pool Accrual Rates for ARM Flex Pools Using a Weighted-Average MBS Margin (04/01/2009)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_487
+**Pages:** 1017-1020
+**Section Path:** Part C, Selling, Securitizing, and Delivering Loans > Subpart C3, Mortgage-Backed Securities (MBS) > Chapter C3-5, Pooling Loans into ARM MBS > C3-5-03, Calculating the Weighted-Average Pool Accrual Rates for ARM Flex Pools Using a Weighted-Average MBS Margin (04/01/2009)
+
+---
+
+Published March 4, 2026
+999Loan ID Net Mortgage
+Interest RateUPB Product
+Loan C 14.75% $60,000 8,850.00
+  $180,000 26,075.00
+26,075.00/180,0000 = 14.486%, rounded to three decimal places.
+Step Six:
+Determine the minimum weighted-average pool accrual rate (if the mortgages have an interest rate ﬂoor). Since
+the mortgages in this example do not have an interest rate ﬂoor, this step is not necessary. It is shown for
+illustration purposes only.
+First, ﬁnd the net mortgage interest rate ﬂoor by following Step Four, substituting the mortgage interest rate
+ﬂoor for the ceiling.
+Then, follow Step Five to ﬁnd the minimum weighted-average pool accrual rate, using the net mortgage interest
+rate ﬂoor just calculated for each mortgage instead of the mortgage interest rate ceilings.
+Recent Related Announcements
+There are no recently issued Announcements related to this topic.
+C3-5-03, Calculating the Weighted-Average Pool Accrual Rates for
+ARM Flex Pools Using a Weighted-Average MBS Margin (04/01/2009)
+Introduction
+This topic contains information on calculating the weighted-average pool accrual rates for ARM ﬂex pools using
+a weighted-average MBS margin.
+How to Determine the Weighted-Average Pool Accrual Rate(s) for ARM Flex Pools Using a Weighted-
+Average MBS Margin (based on Pool-Level Servicing Fee and Loan-Level MBS Margin)
+Step One:
+Step 2:
+Step 3:
+Step Four:
+Step Five:
+Step Six:
+
+Published March 4, 2026
+1000How to Determine the Weighted-Average Pool Accrual Rate(s) for ARM Flex
+Pools Using a Weighted-Average MBS Margin (based on Pool-Level Servicing Fee
+and Loan-Level MBS Margin)
+In the following example, assume that the lender wants to place the following three ARM Plan 57 ARMs into a
+weighted-average ARM Flex MBS pool with a standard remittance cycle. All of the mortgages in the pool will be
+serviced under the special servicing option and will have a guaranty fee of 0.35%. All of the mortgages have
+borrower-purchased mortgage insurance.
+Category Loan A Loan B Loan C
+Mortgage Interest Rate 9.00% 9.50% 10.00%
+Mortgage Margin 2.25% 2.50% 2.50%
+Mortgage Ceiling 15.00% 15.50% 16.00%
+UPB $70,000 $50,000 $60,000
+Interest Rate Change Date 1–Jun 1–Jul 1–Aug
+To develop a weighted-average MBS margin, the lender must reduce the mortgage margin for each mortgage to
+be included in the pool by the applicable guaranty fee percentage and then by the desired ﬁxed servicing fee
+(and, if applicable, by the periodic renewal premium for lender-purchased mortgage insurance) to arrive at a
+loan-level MBS margin. The diﬀerence between the MBS margins for the mortgages in the pool will be exactly
+equal to the diﬀerences in their mortgage margins. The weighted-average pool accrual rate is then determined
+by ﬁrst reducing each individual mortgage interest rate by the servicing spread for the mortgage (the sum of
+the guaranty fee and the desired servicing fee and, if applicable, the periodic renewal premium for lender-
+purchased mortgage insurance) and then developing a weighted-average of the net mortgage interest rates.
+This same procedure also is used to establish the maximum weighted-average pool accrual rate (and any
+applicable minimum weighted-average pool accrual rate), using the weighted-average of the net mortgage
+interest rate ceilings (or ﬂoors) of the mortgages in the pool.
+Step One:
+Determine the loan-level MBS margin, using a 0.250% standard servicing fee.
+(This step is not necessary. It is included for informational purposes only.)
+Category Loan A Loan B Loan C
+Mortgage Margin 2.250% 2.500% 2.750%
+
+Published March 4, 2026
+1001Category Loan A Loan B Loan C
+–Guaranty Fee 0.350% 0.350% 0.350%
+–Servicing Fee 0.250% 0.250% 0.250%
+MBS Margin 1.650% 1.900% 2.150%
+Step 2:
+Determine the net mortgage interest rate.
+Category Loan A Loan B Loan C
+Mortgage Interest Rate 9.000% 9.500% 10.000%
+Guaranty Fee 0.350% 0.350% 0.350%
+Servicing Fee 0.250% 0.250% 0.250%
+Net Mortgage Interest Rate 8.400% 8.900% 9.400%
+Step 3:
+Determine the weighted-average pool accrual rate.
+Loan ID Net Mortgage
+Interest RateUPB Product
+Loan A 8.400% $70,000 5,880.00
+Loan B 8.900% $50,000 4,440.00
+Loan C 9.400% $60,000 5,640.00
+ $180,000 15,970.00
+15,970/180,000 = 8.872%, rounded to three decimal places.
+
+Published March 4, 2026
+1002Step Four:
+Determine the net mortgage interest rate ceiling.
+Category Loan A Loan B Loan C
+Mortgage Interest Rate Ceiling 15.000% 15.500% 16.000%
+–Guaranty Fee 0.350% 0.350% 0.350%
+–Servicing Fee 0.250% 0.250% 0.250%
+Net Mortgage Interest Rate Ceiling 14.400 14.900% 15.400%
+Step Five:
+Determine the maximum weighted-average pool accrual rate.
+Loan ID Net Mortgage Interest
+Rate CeilingUPB Product
+Loan A 14.400% $70,000 10,080.00
+Loan B 14.900% $50,000 7,450.00
+Loan C 15.400% $60,000 9,240.00
+ $180,000 26,770.00
+26,770.00/180,000 = 14.872%, rounded to three decimal places.
+Step Six:
+Determine the minimum weighted-average pool accrual rate (if the mortgages have an interest rate ﬂoor). Since
+the mortgages in this example do not have an interest rate ﬂoor, this step is not necessary. It is shown for
+illustration purposes only.
+First, ﬁnd the net mortgage interest rate ﬂoor by following Step Four, substituting the mortgage interest rate
+ﬂoor for the ceiling.
+Then, follow Step Five to ﬁnd the minimum weighted-average pool accrual rate, using the net mortgage interest
+rate ﬂoor just calculated for each mortgage instead of the mortgage interest rate ceilings.

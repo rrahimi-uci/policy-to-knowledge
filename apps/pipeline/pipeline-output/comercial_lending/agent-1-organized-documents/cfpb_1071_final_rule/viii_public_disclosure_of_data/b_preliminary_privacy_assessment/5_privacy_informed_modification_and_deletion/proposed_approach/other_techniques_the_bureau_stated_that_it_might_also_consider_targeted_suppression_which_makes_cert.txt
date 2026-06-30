@@ -1,0 +1,50 @@
+# Other techniques. The Bureau stated that it might also consider “targeted suppression,” which makes certain values of data points unavailable when a certain combination of values is held by too few records. The Bureau stated that it might consider tre...
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_692
+**Pages:** 682-682
+**Section Path:** VIII. Public Disclosure of Data > B. Preliminary Privacy Assessment > 5. Privacy-informed Modification and Deletion > Proposed Approach > Other techniques. The Bureau stated that it might also consider “targeted suppression,” which makes certain values of data points unavailable when a certain combination of values is held by too few records. The Bureau stated that it might consider tre...
+
+---
+
+682 information submitted to it by financial institutions pursuant to proposed §  1002.109, subject to 
+deletions or modifications made by the Bureau. The Bureau stated that, as authorized by the 
+statute, propos ed § 1002.110( b) would have stated that  the Bure au may, at its discretion, compile 
+and aggregate information submitted by financial institutions pursuant to proposed §  1002.109, 
+and make any compilations or aggregations of such data publicly available as the Bureau deems 
+appropriate. The Bureau initially anticipate d making the data collected under section 1071 
+available at the application level —with appropriate potential modifications and deletions —rather 
+than providing aggregate data with counts and averages for each data field. The Bureau  stated 
+that it  may consider releasing aggregated data in the future, after it determined  whether narrower 
+modifications or deletions could address privacy risks. The Bureau had received some 
+suggestions to consider “ differential privacy” techniques ,891 which  are typically used in 
+connection with aggregate statistics to reduce the identifiability of more granular data. The Bureau sought  comment on whether differential privacy techniques might be appropriate for 
+application -level data.  
+Recoding. The NPRM identified the Bureau ’s intention to consider various methods to 
+“recode” the proposed data fields as necessary. The Bureau explained that r ecoding techniques 
+decrease the number of distinct categories for a data field. In th is context, recoding would 
+involve pr oviding the value of a data field in a higher -level category that increases the number of 
+records within a given combination. S ome data fields like census tract and NAICS code have 
+structures that permit recoding without developing new 1071 -specific recodi ng categories. For 
+instance , if the Bureau were to determine that the re-identification risk presented by the census 
+tract data field does not justify the benefits of unmodified disclosure, the Bureau could instead provide geography at the county level  because census tracts are designed to be non -overlapping 
+subdivisions of a county.  
+The Bureau also stated that it intend ed to consider recoding via bins or intervals of values 
+for data fields that, in unmodified form, would have continuous values . The Burea u stated that 
+unmodified continuous data fields can be highly identifying,  but binning can significantly reduce 
+this risk. It also noted the possibility of top - or bottom -coding a data field to prevent extreme —
+and potentially very re -identifiable —values from being released .  
+Other techniques. The Bureau stated that it might also consider “ targeted suppression ,” 
+which makes certain values of data points unavailable when a certain combination of values is 
+held by too few records. The Bureau stated that it mig ht consider  treating certain values of data 
+points as “ not available” if the application is the only small business application from a particular 
+census tract. The Bureau explained that t argeted suppression can be applied in several ways. One 
+way would be to remove the value of a field that makes the record identifiable. For example, if 
+census tract and NAICS code identify a record, the microdata could delete the value of the 
+NAICS code for any applications that are in cells deemed sensitive. A second appro ach could 
+leave the census tract and NAICS code but suppress the values of other data points. This method 
+would reduce the potential harm if the record were re-identified. A third approach could be to 
+ 
+891 Differential privacy is a  sta tistical method designed to protect individuals from reidentification risk. A da taset is 
+said to be differentially private if, by looking at the dataset, one cannot tell whether any individual ’s data  was 
+included in the dataset.

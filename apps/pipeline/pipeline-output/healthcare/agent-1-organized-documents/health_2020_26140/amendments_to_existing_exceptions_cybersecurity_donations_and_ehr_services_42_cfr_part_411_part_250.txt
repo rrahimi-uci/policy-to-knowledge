@@ -1,0 +1,21 @@
+# Amendments to Existing Exceptions — Cybersecurity Donations and EHR Services (42 CFR Part 411) (part 250/384)
+
+**Source:** health_2020_26140.pdf
+**Chunk ID:** health_2020_26140_005_sub_250
+**Section Path:** Amendments to Existing Exceptions — Cybersecurity Donations and EHR Services (42 CFR Part 411)
+**Summary:** This section details the amendments made to existing exceptions, including those for cybersecurity donations and electronic health records, clarifying the compliance requirements for these areas.
+
+---
+
+‘‘interoperable.’’ For example, these commenters asked when the test for interoperability occurs and whether a prior donation of electronic health records items or services would cease to satisfy the requirements of the EHR exception if there was a finding of information blocking sometime after the donation. One commenter asked for further clarification of the phrase ‘‘without special effort on the part of the user.’’ 
+Response: As we explain above in the 
+discussion of our proposal to include the concept of ‘‘information blocking’’ in the exception at § 411.357(w)(3), we believe that newer and separate authorities are better suited than the EHR exception to deter information blocking and hold individuals and entities that engage in information blocking appropriately accountable. We are concerned that, if we include the phrase ‘‘does not constitute information blocking’’ in the definition of ‘‘interoperable’’ at § 411.351, then § 411.357(w)(2), which requires that the donated software is interoperable, could be interpreted to prohibit parties from engaging in practices that constitute ‘‘information blocking’’ but that might not be prohibited under ONC rules. Therefore, we are not including the phrase ‘‘does not constitute information blocking’’ in the definition of ‘‘interoperable’’ at § 411.351. 
+With respect to the phrase ‘‘without 
+special effort on the part of the user,’’ we note that, the phrase is used in the definition of ‘‘interoperability’’ at section 4003(a)(2) of the Cures Act and the partial phrase ‘‘without special effort’’ is used in the conditions of certification at section 4002(a) of the Cures Act. As explained above, although software certified by ONC is deemed to be interoperable for purposes of the physician self-referral law, certification is not required for compliance with § 411.357(w)(2). To avoid any implication that we are incorporating a certification requirement into the definition of ‘‘interoperable’’ at § 411.351, we are removing the phrase ‘‘without special effort on the part of the user’’ from the definition. 
+e. Additional Proposals and 
+Considerations 
+(1) 15 Percent Recipient Contribution 
+(§ 411.357(w)(4)) 
+In the 2006 EHR final rule, we agreed 
+with a number of commenters that suggested that cost sharing is an appropriate method to address some of the program integrity risks inherent in unlimited donations of electronic health records items and services (71 FR 45160 through 45161). Accordingly, we incorporated a requirement at § 411.357(w)(4) that, before the receipt of the items or services, the physician pays 15 percent of the donor’s cost of the items or services. We stated our belief that the 15 percent cost sharing requirement is high enough to encourage prudent and robust electronic health records arrangements without imposing a prohibitive financial burden on recipients. Moreover, we stated that this approach requires recipients to contribute toward the benefits they may experience from the adoption of interoperable electronic health records software (for example, a decrease in 
+VerDate Sep<11>2014 18:07 Dec 01, 2020 Jkt 253001 PO 00000 Frm 00125 Fmt 4701 Sfmt 4700 E:\FR\FM\02DER2.SGM 02DER2

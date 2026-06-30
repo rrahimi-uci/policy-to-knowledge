@@ -1,0 +1,99 @@
+# B6-1-01, General Government Mortgage Loan Requirements (07/05/2023)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_374
+**Pages:** 836-838
+**Section Path:** Part B, Origination Through Closing > Subpart B6, Government Programs Eligibility and Underwriting Requirements > Chapter B6-1, Government Insured and Guaranteed Mortgages > B6-1-01, General Government Mortgage Loan Requirements (07/05/2023)
+
+---
+
+Published March 4, 2026
+818Underwriting Requirements
+Introduction
+This subpart contains information on government mortgage loans eligible for sale to Fannie Mae.
+Chapter B6-1, Government Insured and Guaranteed
+Mortgages
+Introduction
+This chapter describes the requirements for selling a government mortgage loan to Fannie Mae. These include
+the general requirements related to all government mortgage loans as well as the requirements for speciﬁc
+government mortgage programs.
+B6-1-01, General Government Mortgage Loan Requirements
+(07/05/2023)
+Introduction
+This topic contains general information on government mortgage loan requirements, including:
+Overview
+Lender Eligibility
+Mortgage Term
+Age of Loans
+Lien Requirements
+Rental Property Leases
+Mortgages Permitting Open-End Advances
+Mortgage Payments
+Notice of Transfer
+MBS Pool Parameters
+Remittance Types
+Credit Score
+Delivery of Government Mortgage Loans
+Loan Guaranty or Insurance
+Overview
+
+Published March 4, 2026
+819All eligible government mortgage loans purchased or securitized by Fannie Mae must comply with the
+requirements of the respective government agency. Those loans must also comply with Fannie Mae
+requirements for government mortgage loans as speciﬁcally addressed in this Selling Guide .
+Lender Eligibility
+Most government mortgage loans can only be delivered to Fannie Mae under a variance in the Lender Contract.
+Mortgage Term
+The term of a government mortgage loan may not extend more than 30 years beyond the date of the ﬁrst
+monthly payment.
+Age of Loans
+All government mortgage loans must be no more than six months old measured from the ﬁrst payment date to
+the "Purchase Ready" date (whole loan) or the MBS pool issue date (MBS loan). 
+Lien Requirements
+The security instrument for a government mortgage loan must be a ﬁrst lien on the borrower’s real property.
+The security property may be subject only to liens for taxes and special assessments that are not yet due and
+payable and to conditions, restrictions, and encumbrances that Fannie Mae does not consider as material. The
+lender must provide documentation to show that the current installments of taxes and assessments (including
+those that may have been attached as prior liens, but are not now in arrears) have been paid or that suﬃcient
+deposits are being collected to pay them.
+Rental Property Leases
+When the property that secures the mortgage is rented, the rental agreement or lease may not include any
+provision that could aﬀect signiﬁcantly Fannie Mae’s position as mortgagee. In some jurisdictions, leases that
+predate the mortgage have a superior claim to the mortgage even if they have not been recorded. Normally, a
+tenant’s rights under a pre-existing lease remain intact on the sale of the leased premises. Accordingly, if the
+lease is not subordinate to the mortgage, the lender must review each lease to ensure that any tenant’s rights
+to purchase the property, and any other rights that could aﬀect adversely the mortgagee’s interest, have been
+waived formally by the tenant or tenants.
+Mortgages Permitting Open-End Advances
+Fannie Mae will purchase or securitize a government mortgage loan that includes an open-end advance
+provision only if the provision gives Fannie Mae the option not to make any advances. If funds were advanced
+prior to delivery, the transaction is considered a modiﬁed mortgage that is not eligible for delivery. See
+
+Published March 4, 2026
+820B2-1.5-02, Loan Eligibility .
+Mortgage Payments
+Because Fannie Mae will not decline delivery submissions for slight diﬀerences in payment calculations, the
+lender may use any widely accepted amortization table or formula. However, the monthly payment provided as
+part of the delivery data and the one that Fannie Mae calculates cannot diﬀer by more than $1.00.
+Notice of Transfer
+When lenders deliver government mortgage loans to Fannie Mae for purchase or securitization, they must
+report the transfer of the loan in accordance with the applicable agency’s requirements, if applicable.
+MBS Pool Parameters
+Government mortgage loans (for example, FHA-insured, VA-guaranteed, HUD-guaranteed, and RD-guaranteed)
+that are securitized must be pooled in government-preﬁx MBS pools. Government mortgage loans cannot be
+commingled in the same pool with conventional mortgage loans.
+Remittance Types
+For all government mortgage loans, the actual/actual remittance type is required for whole loans. The
+scheduled/scheduled remittance type is required for all government mortgage loans delivered into MBS.
+(Lenders should refer to Fannie Mae’s whole loan committing application for additional information regarding
+eligible whole loan remittance types.)
+Credit Score
+All government mortgage loans are subject to a minimum representative credit score of 620. Manually
+underwritten government mortgage loans with nontraditional credit are exempt from this policy.
+Delivery of Government Mortgage Loans
+For government mortgage loans, the lender must report all applicable data elements at delivery, including but
+not limited to, the Section of the Act and certain government loan-speciﬁc special feature codes. Refer to the
+Fannie Mae Implementation Guide for Loan Delivery Data  on Fannie Mae's website for additional information.
+Loan Guaranty or Insurance
+For Government Mortgage Loan Guaranty or Insurance, see  B7-1-05, Government Mortgage Loan Guaranty or
+Insurance .

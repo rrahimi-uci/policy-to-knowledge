@@ -1,0 +1,45 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 32/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_032
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+C. Regulated Entities’ Compliance With 
+the Requirements of the Security Rule Is Inconsistent 
+Despite the proliferation of 
+cybersecurity standards, guidelines, best practices, methodologies, procedures, and processes and the documented increase in unauthorized uses and disclosures of ePHI, many regulated entities have been slow to strengthen their security measures to protect ePHI and their information systems that create, receive, maintain, or transmit it 
+in this new environment.
+228Among the 
+reasons for this are the rapid pace of EHR adoption and digitization of health care, increased connectivity and use of cloud-based infrastructures, limited competition and a stable customer base, limited operating margins, and a failure 
+to invest in cybersecurity infrastructure.
+229For example, regulated 
+entities continue to rely on legacy systems and software that are unsupported by manufacturers, which means that the manufacturers no longer provide security patches or other updates to address security threats and vulnerabilities.
+230In a 2021 survey of 
+health care cybersecurity professionals, 73 percent reported having legacy operating systems.
+231This apparent lack 
+of urgency in adopting new, supported operating systems has serious implications for the confidentiality, integrity, and availability of ePHI. 
+In addition, many regulated entities 
+fail to invest adequate resources in cybersecurity. Far too many regulated entities do not view cybersecurity as a necessary component of their operations that allows them to fulfill their health care missions. Anecdotal evidence suggests that senior management often lacks awareness of cybersecurity, including both threats and methods for protecting against such threats.
+232‘‘A 
+lack of maturity and effectiveness of the [information technology] function is evident when healthcare organizations fail to maintain a current inventory of 
+sensitive and valuable data and where those reside.’’
+233While maintaining an 
+accurate and thorough inventory of technology assets is not currently an explicit requirement of the Security Rule, it is clearly a fundamental component of conducting a risk analysis and many of the other existing requirements.
+234And yet, based on the 
+Department’s experience, many regulated entities are not maintaining such an inventory. At least in part because of senior management’s lack of cybersecurity awareness, many fail to invest or fail to invest appropriately in cybersecurity infrastructure.
+235Given 
+the vulnerability of ePHI and the information systems of regulated entities and the potential effects of cyberattacks on patient safety and the delivery of health care, it is important that regulated entities prioritize such investments.
+236 
+The security of ePHI also is at risk 
+because, despite our explanation of the Security Rule’s structure in 2003,
+237 
+regulated entities are not fully complying with the standards and implementation specifications. From 2016 to 2017, the Department conducted audits of 166 covered entities and 41 business associates regarding compliance with selected provisions of the HIPAA Rules, including the required implementation specifications for risk analysis
+238and risk 
+management.239The Department found 
+that most regulated entities failed to implement the Security Rule requirements for risk analysis and risk management, requirements that are fundamental to protecting the confidentiality, integrity, and availability of ePHI.
+240While most of 
+the audited business associates reported not having experienced any breaches of unsecured PHI, we found that those that 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00018 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

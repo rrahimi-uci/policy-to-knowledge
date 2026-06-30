@@ -1,0 +1,34 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 129/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_129
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+650For 
+example, once installed, a server or desktop computer may not need to be moved for the entirety of its lifecycle within the regulated entity, while portable electronic devices and media, such as smartphones, tablets, and USB flash drives are designed to be mobile and may move frequently into, out of, and within a regulated entity’s facilities.
+651Thus, the regulated entity’s 
+policies and procedures must account for these differences.
+652Further, we 
+note that the proposed definition of workstation includes mobile devices. Mobile devices that serve as workstations are subject to the requirements in this paragraph and those in paragraphs (b) and (c). 
+The Department also proposes to 
+modify the standard at 45 CFR 164.310(d)(1) to clarify the organization of regulatory text and to clarify its longstanding expectations that policies and procedures must be in writing and to replace ‘‘contain’’ with ‘‘maintain,’’ consistent with terminology used throughout the HIPAA Rules. The Department believes that having written policies for the disposal of ePHI and the technology assets on which it is stored 
+and for the removal of ePHI from electronic media such that the ePHI cannot be recovered continues to be important to ensuring the physical safety of ePHI. Improper disposal of technology assets puts the ePHI stored in or on such assets at risk for a potential breach, and as discussed elsewhere, data breaches can result in substantial costs to regulated entities and the individuals affected by the breach. We also propose in the related implementation specifications at 45 CFR 164.310(d)(2)(i) and (ii) to require that written policies and procedures for disposal of ePHI and sanitization of electronic media be tied to current standards for sanitizing electronic media before the media are made available for re-use.
+653For example, 
+photocopiers today are often connected to the same network as workstations and generally store the information, including ePHI, transmitted to them. This capability is a significant change from photocopier capabilities that existed when the Security Rule was first issued in 2003. Under this proposal, a regulated entity would be required to include in its written policies and procedures for disposing of ePHI, and the technology assets on which it is 
+maintained, policies and procedures addressing ePHI maintained on photocopiers, consistent with the current standards for disposing and removing ePHI from electronic media.
+654 
+We have previously explained in 
+guidance that a regulated entity should consider all of the following as part of its risk analysis: 
+•Disposal of hardware and software, 
+and the documentation of such disposal. 
+•Destruction of ePHI in such a 
+manner that it cannot be recreated. 
+•Secure removal of ePHI that was 
+previously stored on hardware or electronic media such that it cannot be accessed and reused. 
+•The identification of all removable 
+media and their use (e.g., CDs/DVDs, 
+USB flash drives). 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00065 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

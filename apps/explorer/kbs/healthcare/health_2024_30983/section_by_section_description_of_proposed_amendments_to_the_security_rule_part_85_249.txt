@@ -1,0 +1,30 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 85/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_085
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+weaknesses) that could be exploited by potential threat sources. 
+•Determine the likelihood that a 
+threat would exploit a vulnerability. For each threat event/threat source identified, a regulated entity should consider: the likelihood that the threat would occur and the likelihood that an occurred threat would exploit an identified vulnerability and result in an adverse effect. A regulated entity might consider assigning a likelihood value (e.g., ‘‘very low,’’ ‘‘low,’’ ‘‘moderate,’’ 
+‘‘high,’’ or ‘‘very high’’) to each threat/ 
+vulnerability pairing. As an example, the regulated entity may determine that the likelihood of a phishing attack occurring is very high and that the likelihood of the event exploiting a human vulnerability is moderate, resulting in an overall likelihood rating of high. 
+•Determine the impact of a threat 
+exploiting a vulnerability. As with likelihood determination, a regulated entity may choose to express this effect in qualitative terms or use any other scale that the entity chooses. When selecting an impact rating, the regulated entity may consider how the threat event can affect the loss or degradation of the confidentiality, integrity, or availability of ePHI. Some tangible impacts can be measured quantitatively in terms of lost revenue, the cost of repairing the system, or the level of effort required to correct problems caused by a successful threat action. Other impacts cannot be measured in specific units (e.g., the loss of public 
+confidence, the loss of credibility, or damage to an organization’s interests), but they can be qualitatively described. 
+•Determine the level of risk to ePHI 
+while considering the information gathered and determinations made during the previous steps. The level of risk is determined by analyzing the values assigned to the overall likelihood of threat occurrence and the resulting impact of threat occurrence. 
+•Document the risk assessment 
+results. Once the risk assessment has been completed as described above, the results of the risk assessment should be documented. Principally, the regulated entity should document all threat/ vulnerability pairs (i.e., a scenario in 
+which an identified threat can exploit a vulnerability) applicable to the organization, the likelihood and impact calculations, and the overall risk to ePHI for the threat/vulnerability pair. Regulated entities should consider sharing the risk assessment results with organizational leadership, whose review can be crucial to the organization’s ongoing risk management. 
+The Department has also published 
+guidance that explains the differences between a risk analysis and a gap analysis, and the use of both in an entity’s risk management program.
+470 
+While a risk analysis is a comprehensive identification of risks and vulnerabilities to all ePHI, a gap analysis typically provides a partial assessment of an entity’s enterprise and is often used to provide a high-level overview of what safeguards are in place (or missing) and may also be used to review a regulated entity’s compliance with particular standards and implementation specifications of the Security Rule. 
+Other NIST guidance on conducting 
+risk assessments explains that the result of a risk analysis is a determination of risk posed to the regulated entity’s ePHI and related information systems.
+471 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00043 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

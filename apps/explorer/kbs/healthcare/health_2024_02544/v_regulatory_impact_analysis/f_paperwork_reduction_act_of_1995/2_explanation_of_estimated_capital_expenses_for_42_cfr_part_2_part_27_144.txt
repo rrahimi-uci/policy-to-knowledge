@@ -1,0 +1,47 @@
+# 2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 27/144)
+
+**Source:** health_2024_02544.pdf
+**Chunk ID:** health_2024_02544_028_sub_027
+**Pages:** 1-160
+**Section Path:** V. Regulatory Impact Analysis > F. Paperwork Reduction Act of 1995 > 2. Explanation of Estimated Capital Expenses for 42 CFR Part 2
+
+---
+
+12498 Federal Register / Vol. 89, No. 33 / Friday, February 16, 2024 / Rules and Regulations 
+Response 
+We considered the possibility of 
+removing the part 2 definition of 
+‘‘intermediary’’ entirely; however, that would leave a gap in privacy protection for records that are disclosed to intermediaries that are not subject to HIPAA requirements. For example, intermediaries may include research institutions and care coordination organizations that are not always subject to HIPAA. We adopt the proposed language of the definition with modification: we exclude programs, covered entities, and business associates, in part because the primary requirement of intermediaries—to provide a list of disclosures upon patient request—is similar to the new accounting of disclosures requirements that the CARES Act applied to part 2 programs and that already applies to covered entities and business associates. 
+For clarification, we reiterate here that 
+a research institution that is not providing treatment would not be considered an intermediary because it would not have member participants with a treating provider relationship to a patient. A health app that is providing individual patients with access to their records would not be considered an intermediary unless it is also facilitating the exchange of part 2 records from a part 2 program to other treating providers using a general designation in a consent. 
+We also clarify that member 
+participants of an intermediary refers to health care provider practices or health- related organizations, such as health plans. The member participants of an intermediary may or may not be covered entities. Individual health plan subscribers (i.e., enrollees, members of a 
+health plan) are not considered member participants of an intermediary, although they may access records through an EHR, because they are not providers or health-related organizations. Further, employees of providers or health-related organizations who share access to the same EHR system are not considered member participants of an intermediary because the employer as an entity is considered the participant. However, an HIE/HIN that is providing services to a part 2 program that is not a covered entity would be an intermediary (and the HIE/HIN would also be a QSO). 
+Comment 
+An SUD provider recommended 
+modifying the proposed definition of 
+‘‘intermediary’’ to include ‘‘a member of the intermediary named in the consent,’’ rather than limiting it to members of the intermediary that have a treating 
+provider relationship with the patient. 
+Response 
+Expanding the definition of 
+‘‘intermediary’’ to include any member 
+participant would open the door to accessing patients’ SUD records without their specific knowledge in advance (because the recipient would be in a general designation within a consent). Although the CARES Act expanded health plans’ and other providers’ access to records for TPO, we do not believe the intention was to remove all restrictions on access by member participants of a research institution, for example. Removing programs, covered entities, and business associates from the definition carves out a significant portion of entities that would otherwise be subject to the intermediary requirements so that it is not necessary to change the definition as suggested by the commenter. 
+Final Rule 
+We are adopting the proposed 
+definition of ‘‘intermediary,’’ but with 
+an exclusion for part 2 programs, covered entities, and business associates. We believe excluding business associates, in particular, will encourage HIEs to accept part 2 records and include part 2 programs as participants and reduce burdens on business associates that serve as HIEs. 
+Investigative Agency 
+The Department proposed to create a 
+new definition of ‘‘investigative agency’’ 
+to describe those government agencies with responsibilities for investigating and prosecuting part 2 programs and persons holding part 2 records, such that they would be required to comply with subpart E when seeking to use or disclose records against a part 2 program or lawful holder. In conjunction with proposed changes to subpart E pertaining to use and disclosure of records for investigating and prosecuting part 2 programs, the Department proposed to define an ‘‘investigative agency’’ as ‘‘[a] state or federal administrative, regulatory, supervisory, investigative, law enforcement, or prosecutorial agency having jurisdiction over the activities of a part 2 program or other person holding part 2 records.’’ Such agencies potentially will have available a new limitation on liability under § 2.3 if they unknowingly obtain part 2 records before obtaining a court order for such records, provided they meet certain prerequisites. Comment 
+Several commenters recommended 
+that local, territorial, and Tribal investigative agencies be added to the definition of ‘‘investigative agency’’ because they have a role in investigations of part 2 program. These commenters asserted, for instance, that local agencies play a role in investigating or prosecuting part 2 programs or other holders of part 2 records and excluding them from the definition could create an uneven application of the law. 
+Response 
+We appreciate the feedback in 
+response to the request for comment on 
+whether other types of agencies should be included in the definition of ‘‘investigative agency’’, and specifically whether adding agencies that may be smaller or less resourced would present any concerns or unintended consequences. We believe it is useful to include local, Tribal, and territorial agencies in the definition; however, such agencies should be aware that use of the safe harbor also requires reporting to the Secretary of instances when it is applied in an investigation or proceeding against a part 2 program or other holder of records. 
+Comment 
+A few commenters recommended 
+narrowing the definition of 
+‘‘investigative agency’’ by excluding agencies that supervise part 2 programs, to avoid creating uncertainty about whether, in performing their supervisory functions, they are expected to obtain a court order to use or disclose part 2 records of their subordinate programs. For example, a state agency believed that, as proposed, the safe harbor applies whenever an agency has obtained records without a court order—thus the existence of the safe harbor implies that a court order may be required for all types of investigations, even when other part 2 disclosure permissions apply, such as § 2.53 (Management audits, financial audits, and program evaluation). They expressed concern that holders of records may resist legitimate agency requests for records and urge the agency to first seek a court order. One commenter recommended clarifying that existing permissions for agencies to obtain records without a court order still apply. Another commenter pointed out that § 2.12(c)(3)(ii) already allows unlimited communication ‘‘[b]etween a part 2 program and an entity that has direct administrative control over the program,’’ which includes government- 
+VerDate Sep<11>2014 18:41 Feb 15, 2024 Jkt 262001 PO 00000 Frm 00028 Fmt 4701 Sfmt 4700 E:\FR\FM\16FER2.SGM 16FER2lotter on DSK11XQN23PROD with RULES2

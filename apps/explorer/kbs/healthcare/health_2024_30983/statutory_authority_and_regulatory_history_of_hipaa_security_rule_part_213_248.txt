@@ -1,0 +1,70 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 213/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_213
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+1004 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+986‘‘Cybersecurity Performance Goals,’’ supra 
+note 18. 
+987Id. 988According to the 2021 Verizon Data Breach 
+Investigations Report, ‘‘phishing was ‘present in 
+36% of breaches (up from 25% last year);’ [and] 23% of malware was delivered through email.’’ See ‘‘Technical Volume 2: Cybersecurity Practices for Medium and Large Healthcare Organizations,’’ Cybersecurity Practice #1: Email Protection Systems, HHS Healthcare & Public Health Sector Coordinating Council, p. 13 (2023), https://405d.hhs.gov/Documents/tech-vol2-508.pdf (citing 
+a 2021 Verizon Data Breach Investigations Report). 
+989See proposed 45 CFR 164.312(b)(2) and (g). TABLE 9—B REAK -EVENTHRESHOLDS BY NUMBER OF AFFECTED INDIVIDUALS  
+Baseline Affected 
+individuals Regulated 
+entities NPRM 
+costs Unit cost 
+(per individual 
+record) Break-even 
+threshold 
+(NPRM cost ÷ 
+unit cost) Percent 
+decrease 
+(threshold ÷ 
+affected) × 100 
+High ........................................................................ 64,551,397 $2,251,258,305 $498 4,521,423 7 
+Low ......................................................................... 29,006,854 16.4 
+The analysis in table 9 suggests that 
+this NPRM would break even (cost 
+savings would match monetized costs incurred) if the number of affected individuals is reduced by approximately 4.5 million. In years with a high incidence of breaches, this would be a reduction of approximately 7 percent, and in low-incidence years this would be a decrease of 16.4 percent. Thus, if the proposed changes in the NPRM reduce the number of affected individuals by 7 to 16 percent, the rule would pay for itself. Alternatively, the same cost savings may be achieved by lowering the cost per affected individual’s ePHI by 7 percent ($35) and 
+16 percent ($82), respectively. 
+Table 10 analyzes the potential cost 
+savings for regulated entities based on the annual number of large breaches of ePHI and the cost per breach, as shown below. 
+TABLE 10—B REAK -EVENTHRESHOLDS BY NUMBER OF LARGE BREACHES  
+Baseline Breaches NPRM cost for 
+regulated 
+entities Unit cost 
+(per breach) Break-even 
+threshold 
+(NPRM cost ÷ 
+unit cost) Percent 
+decrease 
+(threshold ÷ 
+breaches) × 100 
+High ........................................................................ 669 $2,251,258,305 $11,136,982 202 30.1 
+Low ......................................................................... 440 58.9 
+In table 10, the Department assumes 
+that the average cost per breach in 
+industry reports ($11.1 million, calculated as the average of the three highest values in table 9, adjusted for inflation) refers to large breaches of ePHI . The analysis in table 10 suggests that the NPRM would break even if the annual number of large breaches is reduced by approximately 202. In high- incidence years, this would be a reduction of approximately 30 percent, and in low-incidence years, this would be a decrease of 59 percent. Alternatively, the same cost savings may be achieved by lowering the cost per breach by 30 percent ($3.4 million) and 9 percent ($6.6 million), respectively. 
+B. Regulatory Alternatives to the 
+Proposed Rule 
+The Department welcomes public 
+comment on any benefits or drawbacks of the following alternatives it considered, but did not propose, while developing this proposed rule. We also request comment on whether the Department should reconsider any of the alternatives considered, and if so, why. 
+No Changes to the Security Rule 
+We considered not proposing 
+revisions to the Security Rule. However, 
+the Department believes that not revising the Security Rule would result in continued increases in both the number and size of breaches. Such increases would result in an exponential increase in costs as shown in table 8 above. If the modifications to the Security Rule result in even modest improvements to the security of ePHI, the reduction in the number and/or size of breaches would reduce the overall costs associated with breaches, including the costs of mitigating harm resulting from such breaches. 
+Email Security 
+The Department considered proposing 
+a separate standard for regulated entities 
+to secure email transmissions. In the Department’s Cybersecurity Performance Goals,
+986the Department 
+identifies email security as an essential goal for reducing risk from common email-based threats such as email spoofing, phishing, and fraud. Therein, the Department points to basic email protection controls identified in the Health Industry Cybersecurity Practices, such as spam/virus checking and real- time deny lists, as well as strategies that may be deployed across small, medium, and large organizations, including MFA for email access, email encryption, workforce education, and advance tooling (e.g., URL click protection via 
+analytics, attachment sandboxing).
+987 
+The Department is aware of the threat

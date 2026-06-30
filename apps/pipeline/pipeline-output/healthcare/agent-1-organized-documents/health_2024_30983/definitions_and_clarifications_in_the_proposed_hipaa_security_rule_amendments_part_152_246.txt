@@ -1,0 +1,20 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 152/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_152
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+777Accordingly, proposed 
+45 CFR 164.312(f)(2)(ii)(A) would require a regulated entity to deploy MFA to all technology assets in its relevant electronic information systems to verify that the person seeking access to its relevant electronic information system is the user that the person claims to be. A regulated entity should deploy MFA to all technology assets in its relevant electronic information systems in a manner consistent with its risk analysis. MFA allows for the use of different categories of factors as described earlier. A decision by a regulated entity to use specific factors during specific circumstances where MFA is deployed will be dependent upon the risks to ePHI identified by the regulated entity and the ability of technology to use such factors to authenticate specific users. For example, certain behavioral 
+characteristics may not satisfy current standards for MFA; however, the Department anticipates that it may be reasonable and appropriate in the future for a regulated entity to adopt a solution where users provide such characteristics as one of the factors. Additionally, a regulated entity may identify varying levels of risk posed by its technology assets and elect to deploy MFA in different ways to address the risk posed by each asset. For example, consistent with its risk analysis, a regulated entity may choose to deploy a single sign-on (SSO) authentication solution using MFA to allow users to access multiple local applications, while also requiring users to authenticate using MFA to access certain cloud-based services. 
+This proposed implementation 
+specification generally is consistent 
+with ASTP/ONC’s ‘‘Health Data, Technology, and Interoperability: Patient Engagement, Information Sharing, and Public Health Interoperability’’ (HTI–2) NPRM’s proposed revisions to the MFA criterion requiring certified health IT to support authentication, through multiple elements, of the user’s identity, according to today’s standards such as those recommended by NIST, and enable user to configure, enable, and disable the MFA capabilities.
+778 
+Adoption of health IT that is certified through the ONC Health IT Certification Program as meeting the proposed MFA criterion, should the proposal be finalized, may contribute to a regulated entity’s compliance with the proposed implementation specification for MFA in this NPRM. 
+Under proposed 45 CFR 
+164.312(f)(2)(ii)(B), a regulated entity would be required to deploy MFA for any action that would change a user’s privileges to the regulated entity’s relevant electronic information systems in a manner that would alter the user’s ability to affect the confidentiality, integrity, or availability of ePHI. These modified privileges may provide a user with a level of access inconsistent with a regulated entity’s policies and procedures and increase the risk to ePHI by affording a user who does not need to have access to certain systems or information the opportunity to remove security measures deployed to protect ePHI. Because a user may affect the confidentiality, integrity, or availability of ePHI by accessing a relevant electronic information system, a regulated entity would be expected to 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00078 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

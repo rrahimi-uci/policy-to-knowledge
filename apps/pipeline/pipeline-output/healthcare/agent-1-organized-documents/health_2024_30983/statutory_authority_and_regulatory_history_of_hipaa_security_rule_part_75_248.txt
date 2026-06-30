@@ -1,0 +1,43 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 75/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_075
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+935 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+434See 45 CFR 164.502(b) and 164.514(d). 43545 CFR 164.308(a)(5)(ii)(A). 
+43645 CFR 164.308(a)(5)(ii)(B). 
+43745 CFR 164.308(a)(5)(ii)(C). 
+43845 CFR 164.308(a)(5)(ii)(D). 
+43945 CFR 164.308(a)(7)(ii)(A). 
+44045 CFR 164.308(a)(7)(ii)(B). 44145 CFR 164.308(b)(3). obtaining it. The implementation 
+specifications associated with this standard address the need to implement certain procedures regarding workforce member access to ePHI. Section 164.308(a)(3)(ii)(A) addresses the implementation of procedures for the authorization and/or supervision of workforce members who work with ePHI or in locations where it might be accessed. The implementation specification for workforce clearance procedure at 45 CFR 164.308(a)(3)(ii)(B) addresses the implementation of procedures to determine that a workforce member’s access to ePHI is appropriate, while 45 CFR 164.308(a)(3)(ii)(C) addresses the implementation of procedures for terminating a workforce member’s access to ePHI when their employment or similar arrangement ends or as required by the regulated entity’s workforce clearance procedures. 
+Under 45 CFR 164.308(a)(4)(i), the 
+standard for information access management, a regulated entity is required to implement policies and procedures for authorizing access to ePHI in a manner that is consistent with the requirements of the Privacy Rule, that is, only when such access is appropriate based on the user or recipient’s role (i.e., ‘‘role-based 
+access’’). This interpretation is consistent with the Privacy Rule’s standard that limits most uses and disclosures of PHI to the ‘‘minimum necessary’’ to accomplish the purpose of the use or disclosure.
+434The standard 
+for information access management has three implementation specifications: paragraph (a)(4)(ii)(A) requires a health care clearinghouse that is part of a larger organization to implement policies and procedures to protect ePHI from unauthorized access by that organization; paragraph (a)(4)(ii)(B) addresses implementation of policies and procedures for granting access to ePHI, for example, through a workstation, program, or other mechanism; and paragraph (a)(4)(ii)(C) addresses the implementation of policies and procedures that, based on the regulated entity’s access authorization policies, establish, document, review, and modify a user’s right of access to a workstation, program, or other process. 
+Section 164.308(a)(5)(i) contains the 
+standard for security awareness and 
+training. This standard requires a regulated entity to implement a security awareness and training program for all workforce members, including management. There are four associated implementation specifications that address the need for regulated entities to implement the following: 
+•Periodic security updates.
+435 
+•Procedures for guarding against, 
+detecting, and reporting malicious software.
+436 
+•Procedures for monitoring log-in 
+attempts and reporting discrepancies.437 
+•Procedures for creating, changing, 
+and safeguarding passwords.438 
+The standard for security incident 
+procedures at 45 CFR 164.308(a)(6)(i) requires a regulated entity to implement policies and procedures to address security incidents. The one implementation specification associated with this standard, 45 CFR 164.308(a)(6)(ii), requires regulated entities to identify and respond to suspected or known security incidents; to mitigate, to the extent practicable, harmful effects of security incidents that are known to the regulated entity; and to document security incidents and their outcomes. 
+Under the standard for contingency 
+planning at 45 CFR 164.308(a)(7)(i), a regulated entity is required to establish, and implement as needed, policies and procedures for responding to an emergency or other occurrence that damages systems that contain ePHI. The standard includes five implementation specifications at 45 CFR 164.308(a)(7)(ii). The first, paragraph (a)(7)(ii)(A), requires a regulated entity to establish and implement procedures to create and maintain exact copies of ePHI that are retrievable.
+439Paragraph 
+(a)(7)(ii)(B) requires a regulated entity to establish, and implement as needed, procedures to restore any lost data.
+440 
+Paragraph (a)(7)(ii)(C) requires a regulated entity to establish, and implement as needed, procedures to enable continuation of critical business processes for protecting the security of ePHI while the regulated entity is operating in emergency mode. Paragraph (a)(7)(ii)(D) addresses the implementation of procedures for periodic testing and revision of contingency plans, and paragraph (a)(7)(ii)(E) addresses the assessment of the relative criticality of specific applications and data in support of other contingency plan components. 
+The standard for evaluation at 45 CFR

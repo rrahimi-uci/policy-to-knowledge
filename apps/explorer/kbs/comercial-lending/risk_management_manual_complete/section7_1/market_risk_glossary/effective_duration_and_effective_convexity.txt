@@ -1,0 +1,61 @@
+# Effective Duration and Effective Convexity
+
+**Source:** risk_management_manual_complete.pdf
+**Chunk ID:** risk_management_manual_complete_903
+**Pages:** 333-333
+**Section Path:** section7-1 > MARKET RISK GLOSSARY > Effective Duration and Effective Convexity
+
+---
+
+SENSITIVITY TO MARKET RISK  Section 7.1  
+Sensitivity to Market Risk ( 10/2025 ) 7.1-24 RMS Manual of Examination Policies  
+  Federal Deposit Insurance Corporation   
+Effective Duration and Effective Convexity  
+ 
+Effective duration and effective convexity are used to 
+calculate the price sensitivity of bonds with embedded 
+options.  The calculations provide an approximate price 
+change of a bond given a parallel yield curve shift.  Measures of modified duration and convexity do not provide accurate calculations of price sensitivity for bonds 
+with embedded options.  Effective duration and convexity 
+provide a more accurate view of price sensitivity since the 
+measures allow for cash flows to change due to a change in yield.  Formula:  
+ Effective Duration = (V
+- - V +)/(2V 0 x ΔY)  
+Effective Convexity = (V + + V - - 2V 0)/(2V 0 x ΔY)²  
+ Where, ΔY = Change in market interest rate used to calculate new values:  
+ 
+V
++ = Price if yield is increased by Change Y  
+V- = Price if yield is decreased by Change Y  
+V0 = Initial price per $100 of par value  
+ 
+Assume: a three- year callable bond ’s current market value 
+is $98.60 (V 0); that interest rates are projected to change by 
+100 basis points (Y); that the price of this bond given a 100 basis point increase in rates is $96.75 (V
++); and that the price 
+of this bond given a 100 basis point decrease in rates is $99.98 (V
+-).  
+ To calculate effective duration and convexity:  
+ Effective Duration  =  
+ (99.98 – 96.75)/ (2(98.60)(.01)) = 1.64  
+Effective Convexity = 
+  96.75 + 99.98 – 2(98.60)÷ (2(98.60)(.01) )² = -23.83  
+ 
+If we assume interest rates increase 100 basis points, the 
+approximate price change due to effective duration is the following:  
+ Percentage Price Change = -Effective Duration x Yield 
+Change  
+Percentage Change in Price = -1.64 x .01 = - 1.64%  
+ The approximate price change due to effective convexity is the following:  
+ 
+½ x Effective Convexity x (Yield Change)²  
+½ x - 23.83 x (0.01)² x 100 = -0.12%  
+ 
+Thus this bond’ s price would be expected to decrease by 
+about 1.76 percent  given a 100 bps rise in rates:  
+ Effective 
+Duration  = -1.64%  
+Effective 
+Convexity  = -0.12%  
+ 
+-1.76%

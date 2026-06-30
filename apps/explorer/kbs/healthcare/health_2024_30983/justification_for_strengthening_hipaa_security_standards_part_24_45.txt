@@ -1,0 +1,37 @@
+# Justification for Strengthening HIPAA Security Standards (part 24/45)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_003_sub_024
+**Section Path:** Justification for Strengthening HIPAA Security Standards
+**Summary:** This section argues for the necessity of revising the Security Rule, citing the changing healthcare environment, increasing cybersecurity threats, and inconsistent compliance among regulated entities. It outlines the need for robust standards to ensure the protection of ePHI.
+
+---
+
+153A 
+study published in 2023 examined the effects on the of a cyberattack at a neighboring, unaffiliated hospital on a large academic medical center.
+154The 
+study found that the academic medical center experienced, among other things, significant increases in the number of patients admitted, ambulance arrivals, waiting room times, and patients leaving without being seen. The study’s authors concluded that their findings suggested ‘‘that health care cyberattacks such as ransomware are associated with greater disruptions to regional hospitals and should be treated as disasters, necessitating coordinated planning and response efforts.’’
+155Thus, 
+implementing reasonable and appropriate security measures better protects not only the regulated entity and its ePHI, but other regulated entities with whom it interacts, and may reduce the effects of cyberattacks and other security incidents that adversely affect the confidentiality, integrity, or availability of ePHI. As discussed above, several industry 
+organizations have published and 
+maintained compilations of voluntary standards, guidelines, best practices, methodologies, procedures, and processes for protecting the security of sensitive and confidential information, including PHI. Additionally, certain Federal health programs now either require or recommend the adoption of specific criteria that are intended to protect the confidentiality, integrity, and availability of ePHI. For example, the Health IT Certification Program maintained by the Assistant Secretary for Technology Policy and Office of the National Coordinator for Health Information Technology (ASTP/ ONC)
+156sets minimum requirements 
+for certified health IT, including criteria that pertain to cybersecurity.
+157These 
+criteria are included in the Health IT Certification Program’s Health IT Privacy and Security Framework,
+158 
+which identifies when technical capabilities to support the privacy and security of electronic health information
+159must be included in 
+certified health IT products. Additionally, health care providers that participate in certain Federal health programs must use health IT certified to these requirements.
+160Regulated 
+entities also may want to consider adoption of certified health IT because it could contribute to compliance with the Security Rule. We will continue to work across the Department to ensure the adoption of consistent requirements for Federal programs that support the secure electronic exchange of health information to the extent that such 
+consistency is appropriate. Throughout this preamble, we provide examples of how a regulated entity’s participation in other Federal programs that require the use of health IT certified through the ONC Health IT Certification Program, or adoption of other Federal recommendations, such as the HHS CPGs, might support their compliance with the proposals in this NPRM. 
+Additionally, as discussed above, 
+several organizations have published and maintained compilations of voluntary standards, guidelines, best practices, methodologies, procedures, and processes for protecting the security of sensitive and confidential information, including PHI. These compilations and the State regulations discussed above range from granular
+161 
+to high-level162and from health care- 
+specific163to industry agnostic.164 
+Despite these differences, these compilations and regulations have a great deal in common with each other— and with the Security Rule, its longevity notwithstanding. In fact, the foundational elements of the Security Rule, promulgated more than 20 years ago, can still be found in cybersecurity compilations published today. They generally either require or recommend administrative, physical, and technical safeguards to identify and mitigate risks and vulnerabilities, implement authentication and access controls, conduct security awareness and training for information system users, and plan for contingencies and incident response.
+165Additionally, these 
+compilations all require or recommend the designation of a specific individual who is accountable for implementing the requirements or recommendations. And, importantly, they all ultimately address how to maintain the 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00013 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

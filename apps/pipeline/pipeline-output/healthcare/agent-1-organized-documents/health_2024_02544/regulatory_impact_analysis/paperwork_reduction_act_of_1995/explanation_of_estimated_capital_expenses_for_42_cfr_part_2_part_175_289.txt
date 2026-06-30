@@ -1,0 +1,31 @@
+# Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 175/289)
+
+**Source:** health_2024_02544.pdf
+**Chunk ID:** health_2024_02544_028_sub_175
+**Pages:** 1-160
+**Section Path:** Regulatory Impact Analysis > Paperwork Reduction Act of 1995 > Explanation of Estimated Capital Expenses for 42 CFR Part 2
+
+---
+
+12559 Federal Register / Vol. 89, No. 33 / Friday, February 16, 2024 / Rules and Regulations 
+required in §§ 2.31 and 2.33), both 
+global (i.e., TPO consent) and granular 
+(for a specific use and disclosure). Of the commenters that addressed whether the rule should require a copy of 
+consent to be attached with each disclosure of records, a majority opposed such a requirement, several supported it, and a few responded with other viewpoints. A mix of professional associations, SUD providers, and advocacy organizations provided views on both sides of the question; however, all health plans, health IT vendors, and HIE/HIN organizations that weighed in opposed the idea and all government entities that voiced an opinion supported providing a copy of the consent. 
+Comment 
+A medical professionals association 
+urged the Department to ensure that, 
+going forward, patient information will be tagged and limited to the purpose of TPO. The agencies can incentivize compliance with these goals through enforcement actions and penalties for noncompliance. The commenter believes that technology can assist physicians with increasing the flow of information while maintaining privacy and a patient’s consent. To do so, information should be tagged to identify where the information originated, for what purposes it can be disclosed, and to whom. Another medical professionals’ association asked the Department to facilitate collaboration with ONC and health IT vendors to develop technical standards and feasible certification criteria to identify, tag, segregate, and remove specific data based on type of care, provider, and patient consent. The commenter also stated that HHS should provide incentives and support to clinicians, practices, and EHR vendors— particularly those designed for specialty settings or small practices—in designing and adopting health IT that meets these objectives. A provider health system believed that even if HIPAA and part 2 records are treated as PHI for most of the situations, there will still be the need to identify part 2 records due to any directed restrictions and the legal proceedings prohibition. This could become further complicated as part 2 records and PHI are intermingled. While the provider health system supported alignment of HIPAA and part 2, it requested the Department provide guidance about how records will be denoted and differentiated to ensure compliance. Response 
+We appreciate input from these 
+commenters, including suggestions to 
+tag or segregate part 2 records. We acknowledge concerns about data segmentation and address it further in the discussion of § 2.12. The continuing prohibition in § 2.12(d) on a recipient’s use or disclosure of records in legal proceedings must be effectively operationalized, and it is unclear how that can be accomplished unless the recipient is aware that the records are subject to the prohibition. Although the Department may provide further guidance in relation to data segmentation, tagging, or tracking, we are not requiring specific technology or software solutions. 
+Comment 
+A trade association suggested that 
+HHS is maintaining separate underlying 
+regulatory structures for SUD patient records and all other patient data, meaning EHR vendors will need to distinguish between the two types of records. Some SUD patients may not provide consent or revoke their consent throughout the course of their treatment, meaning their record will need to be flagged differently. This is a significant health IT challenge that is not addressed in the NPRM. The commenter stated that HHS should ensure that there is ample time and resources for health IT vendors to update their capabilities and adapt to the evolving operational needs of health care providers. 
+An academic medical center 
+suggested that information about the scope of consent be included in the notice that is required to accompany disclosures of part 2 records and that this would be the simplest way to communicate the patient’s intent and have that intent stay with the actual records downstream. 
+A health IT vendor recommended that 
+the Department explore further how revocation becomes known, and if it means that the HIE must directly record the status of a revocation (and how this is done) or if the HIE relies on some kind of ‘‘polling’’ of the part 2 program to ascertain if a valid consent remains effective by interrogating the part 2 program electronically for whether a valid consent exists or if an applicable consent has been revoked. In the end, a revocation needs to not only limit future disclosures but also limit disclosures of any part 2 records an HIE already may possess should they store patient records. 
+Among others, a health IT vendor, a 
+health care provider, and a health insurer believed that part 2 programs should not be required to provide a

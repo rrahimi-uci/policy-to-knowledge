@@ -1,0 +1,140 @@
+# C3-2-01, Determining Eligibility for Loans Pooled into MBS (09/07/2022)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_474
+**Pages:** 997-1000
+**Section Path:** Part C, Selling, Securitizing, and Delivering Loans > Subpart C3, Mortgage-Backed Securities (MBS) > Chapter C3-2, MBS Securitization Process > C3-2-01, Determining Eligibility for Loans Pooled into MBS (09/07/2022)
+
+---
+
+Published March 4, 2026
+979the lender’s ability to manage and maintain a delivery process that ensures the delivery of accurate data
+to Fannie Mae,
+the lender’s prepayment speeds, and
+the lender’s performance against outstanding Fannie Mae obligations.
+Fannie Mae does not accept requests for MBS execution from lenders whose selling or servicing privileges have
+been suspended or that have not performed satisfactorily under other MBS commitments or contracts.
+Selecting a Document Custodian
+Lenders must select an eligible document custodian and have an executed Master Custodial Agreement  (Form
+2017 ) in place before obtaining an MBS commitment (see A3-3-04, Document Custodians ). The document
+custodian certiﬁes, takes and retains actual physical possession of the custodial documents for the mortgages.
+Also, see the RDC guide  for document custodian eligibility criteria, and Fannie Mae's Active Document
+Custodians  for a complete list of eligible custodians.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2019-04 May 01, 2019
+ 
+Chapter C3-2, MBS Securitization Process
+Introduction
+This chapter provides information on the MBS securitization process, including loan parameters, transaction
+types, guaranty fees, buyups and buydowns, servicing fees, pricing, and funding.
+C3-2-01, Determining Eligibility for Loans Pooled into MBS
+(09/07/2022)
+Introduction
+This topic contains information on eligibility requirements for loans pooled into MBS (which includes UMBS),
+including:
+
+Published March 4, 2026
+980General Eligibility Requirements for Loans Pooled into MBS
+Nonstandard Loans
+Identifying Nonstandard Loans at Delivery
+Amortization Schedule Requirements for MBS Loans
+Requirements for Pooling Seasoned Loans into MBS
+Interest Rate Requirements for Loans Pooled into MBS
+Servicer Requirements for Loans Pooled into MBS
+General Eligibility Requirements for Loans Pooled into MBS
+All loans pooled into MBS must be secured by a ﬁrst mortgage and must represent the entire right, title, and
+interest in the note and the related security instrument, unless the MBS commitment expressly indicates
+otherwise.
+As of the issue date of the MBS, the loans in the related MBS pool may not be delinquent by more than one
+monthly installment of principal and interest that is due on the issue date (including the period beginning on the
+second day of the month preceding the issue date and ending on the issue date). For example, if the ﬁrst
+payment date is November 1, and the issue date of the MBS is January 1, then, in order to be eligible for
+purchase by Fannie Mae, the November and December payments must have been paid, and the only payment
+that may be delinquent (due) would be for the period December 2 through January 1.
+In addition,
+if the loan is one year or less from the ﬁrst payment date to the pool issue date, the borrower cannot
+have any 30–day delinquencies since origination; and
+if the current borrower assumed the loan and has owned the property for one year or less, the borrower
+must have no 30-day delinquencies since purchasing the property.
+See  B2-1.5-02, Loan Eligibility , for the requirements concerning seasoned loans.
+Nonstandard Loans
+“Nonstandard loans” (or loans with nonstandard characteristics) may be pooled into MBS, but depending on the
+concentration in the pool, may only be pooled as negotiated rather than standard transactions.
+Nonstandard loans are:
+co-op share loans,
+relocation loans (deﬁned below),
+loans with signiﬁcant interest rate buydowns, and
+high-balance loans.
+In a TBA-eligible UMBS pool, nonstandard loans are each limited to 10% of the issue date UPB of a TBA-eligible
+UMBS pool. If loans with more than one of the nonstandard characteristics are included in the same TBA-eligible
+UMBS pool, the sum of the issue date UPB of two or more of the loans with nonstandard characteristics may not
+
+Published March 4, 2026
+981exceed 15% of the total issue date UPB of the pool. The 15% cumulative limitation, however, does not apply to
+high-balance loans.
+For pools with greater than 10% concentrations of nonstandard loans, see the Pool Preﬁx Glossary  for the
+applicable pool preﬁxes. Nonstandard loans may be delivered into existing MBS commitments and may use the
+same base guaranty fee as those used for the lender’s standard conforming loans.
+Lenders may deliver loans with the nonstandard characteristics described above into Fannie Majors TBA-eligible
+UMBS pools. For Fannie Majors requirements, see C3-6-01, Parameters for Pooling Loans Into Fannie Majors .
+For the purposes of TBA pooling parameters, a relocation loan is an owner-occupied purchase money loan,
+originated pursuant to an established employee relocation program, administered by the employer (or its
+agent), where the employer relocates employees as part of its normal course of business. A loan that involves
+an employee relocation that does not meet these parameters is not considered a relocation loan for TBA pooling
+purposes, and as such, the pooling limitations and SFC 013 delivery requirement are not applicable.
+Examples
+The issue date UPB of loans with signiﬁcant interest rate buydowns and the issue date UPB of co-op share loans
+individually may not exceed 10% of the total issue date UPB of the TBA-eligible UMBS, and together may not
+exceed 15% of the total TBA-eligible UMBS. However, while the issue date UPB of high-balance loans and the
+issue date UPB of co-op share loans individually may not exceed 10% of the total issue date UPB of the TBA-
+eligible UMBS, together they may exceed 15% of the total TBA-eligible UMBS because high-balance loans are
+not subject to the 15% limitation.
+Identifying Nonstandard Loans at Delivery
+As a reminder, nonstandard loans must be identiﬁed at delivery with the following:
+relocation loans – SFC 013
+loans with signiﬁcant interest rate buydowns – SFC 014
+high-balance loans – SFC 808
+co-op share loans – the Legal Structure in Loan Delivery is “cooperative.”
+Amortization Schedule Requirements for MBS Loans
+For loans pooled into MBS, the ﬁrst payment date must be no later than two months from the ﬁnal disbursement
+date of the loan proceeds. In the case of a single-close construction-to-permanent loan, the two-month period
+begins at the time of the conversion to permanent ﬁnancing.
+The following table provides an example of this requirement.
+If the ﬁnal disbursement date occurs in...Then the ﬁrst payment date must be no later
+than...
+
+Published March 4, 2026
+982If the ﬁnal disbursement date occurs in...Then the ﬁrst payment date must be no later
+than...
+January March
+February April
+November January
+Standard pooling allows lenders to include in an MBS pool only those loans for which the ﬁrst payment date is
+no later than the ﬁrst day of the month that immediately follows the issue date of the related MBS. The pool
+issue date is the ﬁrst day of the month in which securities backed by the MBS pool are issued. For seasoned
+loans, the ﬁrst payment date must be at least 12 months prior to the pool’s issue date.
+In addition, the loan’s amortization schedule must not provide for any period during which principal has been
+disbursed and is outstanding, but interest is not accruing. However, if the lender chooses to pool within the
+same month of loan origination (also known as "same month pooling"), the loan may begin to amortize on the
+ﬁrst day of the month that is two months after the issue date of the securities, with the initial remittance to
+Fannie Mae being an “interest-only” remittance, because the borrower will not have made their ﬁrst payment at
+the time of the initial remittance.
+A negotiated contract is needed to pool loans for which the borrower’s monthly payment is due on a day other
+than ﬁrst of the month (“odd due dates”).
+Requirements for Pooling Seasoned Loans into MBS
+Lenders may pool current or seasoned loans into a single-lender MBS. Fannie Mae has no minimum seasoning
+requirement for conventional loans included in single pool transactions. Refer to C3-6-01, Parameters for Pooling
+Loans Into Fannie Majors  for additional information about seasoning for Fannie Majors.
+If a pool of ARM loans will have amortized by more than 12 monthly payments as of the issue date of the pool,
+the terms of a negotiated contract will specify whether the loans will be treated as current or seasoned. The key
+determinants are the length of the interest rate adjustment intervals and whether interest rate or payment
+adjustments will have occurred by the pool’s issue date.
+For a converted ARM (which is a ﬁxed-rate loan that was once an ARM until the borrower exercised an option to
+convert it to a ﬁxed rate), the 12-month period is measured from the date of conversion to the issue date month
+of the related pool.
+To sell seasoned loans under an MBS execution, lenders must have an MBS commitment that permits delivery of
+seasoned loans. For information on pricing and parameters, contact the Capital Markets Pricing and Sales Desk
+(see  E-1-02, List of Contacts ).
+Interest Rate Requirements for Loans Pooled into MBS

@@ -1,0 +1,26 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 52/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_052
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+356In another 
+example, the Department is proposing new implementation specifications 
+under the access control standard that would require a regulated entity to deploy technical controls for relevant electronic information systems so that the system is configured and applied to limit access to only users and technology assets that have been granted access rights.
+357In the automatic logoff 
+implementation specification for that same standard, the Department is proposing to replace the requirement to implement electronic procedures for terminating an electronic session with a requirement to deploy technical controls that terminate an electronic session after a period of inactivity.
+358In 
+each case, the technical controls must not only be configured for use, but they also must be applied to and in effect in all ePHI and relevant electronic information systems. 
+The Department proposes to define 
+the term ‘‘implement’’ to clarify that a safeguard must be put into place and be in effect throughout the enterprise, as opposed to only some components of a regulated entity’s relevant information systems (e.g., some laptops or servers) or 
+applied to a subset of ePHI. The Department also proposes the term to further clarify what it means to configure and put technology, technical controls, and related policies and procedures into effect and be in use, operational, and function as expected throughout the regulated entity’s enterprise (i.e., deploy) as compared to 
+putting into place and making effective administrative or physical safeguards. Further, the Department proposes to expressly clarify that implement also means that a safeguard must function as 
+expected. Under this proposal, if adopted, we would not consider a safeguard to be implemented if it is not functioning in the manner in which it is expected. 
+For example, a regulated entity’s 
+administrative policy requiring it to take action to prevent infections from malicious software is not implemented until it is applied throughout the enterprise, meaning that the entity has ensured that anti-malware protections have been put into place on all relevant electronic information systems that create, receive, maintain, or transmit ePHI or that otherwise affect the confidentiality, integrity, or availability of ePHI throughout the enterprise. 
+Similarly, to operationalize such a 
+policy, the regulated entity must deploy technology assets and/or technical controls to block such software according to its technical policies and 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00028 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

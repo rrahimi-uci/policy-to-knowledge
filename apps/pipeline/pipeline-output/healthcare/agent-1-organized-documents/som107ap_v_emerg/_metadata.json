@@ -1,0 +1,399 @@
+{
+  "source_file": "som107ap_v_emerg.pdf",
+  "total_chunks": 23,
+  "chunk_methods": [
+    "toc_based"
+  ],
+  "structure": [
+    {
+      "chunk_id": "som107ap_v_emerg_001",
+      "title": "I.  General Information",
+      "path": "som107ap_v_emerg/i_general_information.txt",
+      "section_path": [
+        "I.  General Information"
+      ],
+      "metadata": {
+        "source_file": "som107ap_v_emerg.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 1496
+      }
+    },
+    {
+      "chunk_id": "som107ap_v_emerg_002",
+      "title": "II.  Principal Focus of Investigation + III.  Task 1 - Entrance Conference",
+      "path": "som107ap_v_emerg/ii_principal_focus_of_investigation_iii_task_1_entrance_conference.txt",
+      "section_path": [
+        "II.  Principal Focus of Investigation"
+      ],
+      "metadata": {
+        "source_file": "som107ap_v_emerg.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "merged_with": "som107ap_v_emerg_003",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 841
+      }
+    },
+    {
+      "chunk_id": "som107ap_v_emerg_004",
+      "title": "IV.  Task 2 - Case Selection Methodology",
+      "path": "som107ap_v_emerg/iv_task_2_case_selection_methodology.txt",
+      "section_path": [
+        "IV.  Task 2 - Case Selection Methodology"
+      ],
+      "metadata": {
+        "source_file": "som107ap_v_emerg.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 1048
+      }
+    },
+    {
+      "chunk_id": "som107ap_v_emerg_005",
+      "title": "V.  Task 3- Record Review",
+      "path": "som107ap_v_emerg/v_task_3_record_review.txt",
+      "section_path": [
+        "V.  Task 3- Record Review"
+      ],
+      "metadata": {
+        "source_file": "som107ap_v_emerg.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 816
+      }
+    },
+    {
+      "chunk_id": "som107ap_v_emerg_006",
+      "title": "VI.  Task 4- Interviews + VII.  Task 5-Exit Conference",
+      "path": "som107ap_v_emerg/vi_task_4_interviews_vii_task_5_exit_conference.txt",
+      "section_path": [
+        "VI.  Task 4- Interviews"
+      ],
+      "metadata": {
+        "source_file": "som107ap_v_emerg.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "merged_with": "som107ap_v_emerg_007",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 838
+      }
+    },
+    {
+      "chunk_id": "som107ap_v_emerg_008",
+      "title": "VIII.  Task 6- Professional Medical Review + IX.  Task 7- Assessment of Compliance and Completion of",
+      "path": "som107ap_v_emerg/viii_task_6_professional_medical_review_ix_task_7_assessment_of_compliance_and_completion_of.txt",
+      "section_path": [
+        "VIII.  Task 6- Professional Medical Review"
+      ],
+      "metadata": {
+        "source_file": "som107ap_v_emerg.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "merged_with": "som107ap_v_emerg_009",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 856
+      }
+    },
+    {
+      "chunk_id": "som107ap_v_emerg_010",
+      "title": "X.  Additional Survey Report Documentation",
+      "path": "som107ap_v_emerg/x_additional_survey_report_documentation.txt",
+      "section_path": [
+        "X.  Additional Survey Report Documentation"
+      ],
+      "metadata": {
+        "source_file": "som107ap_v_emerg.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 620
+      }
+    },
+    {
+      "chunk_id": "som107ap_v_emerg_011",
+      "title": "Basic Section 1866 Commitments Relevant to Section 1867 Responsibilities – Tags A-2400/C2400 – A2405",
+      "path": "som107ap_v_emerg/basic_section_1866_commitments_relevant_to_section_1867_responsibilities_tags_a_2400_c2400_a2405.txt",
+      "section_path": [
+        "Basic Section 1866 Commitments Relevant to Section 1867 Responsibilities – Tags A-2400/C2400 – A2405/C2405"
+      ],
+      "metadata": {
+        "source_file": "som107ap_v_emerg.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "merged_with": "som107ap_v_emerg_012",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 518
+      }
+    },
+    {
+      "chunk_id": "som107ap_v_emerg_013",
+      "title": "§489.20(l)",
+      "path": "som107ap_v_emerg/489_20_l.txt",
+      "section_path": [
+        "§489.20(l)"
+      ],
+      "metadata": {
+        "source_file": "som107ap_v_emerg.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 259
+      }
+    },
+    {
+      "chunk_id": "som107ap_v_emerg_014_sub_001",
+      "title": "(l)  In the case of a hospital as defined in §489.24 (b) to comply with §489.24 . (part 1/4)",
+      "path": "som107ap_v_emerg/l_in_the_case_of_a_hospital_as_defined_in_489_24_b_to_comply_with_489_24_part_1_4.txt",
+      "section_path": [
+        "(l)  In the case of a hospital as defined in §489.24 (b) to comply with §489.24 ."
+      ],
+      "metadata": {
+        "source_file": "som107ap_v_emerg.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "som107ap_v_emerg_014",
+        "sub_chunk_index": 1,
+        "total_sub_chunks": 4,
+        "parent_word_count": 5552,
+        "word_count": 1359
+      }
+    },
+    {
+      "chunk_id": "som107ap_v_emerg_014_sub_002",
+      "title": "(l)  In the case of a hospital as defined in §489.24 (b) to comply with §489.24 . (part 2/4)",
+      "path": "som107ap_v_emerg/l_in_the_case_of_a_hospital_as_defined_in_489_24_b_to_comply_with_489_24_part_2_4.txt",
+      "section_path": [
+        "(l)  In the case of a hospital as defined in §489.24 (b) to comply with §489.24 ."
+      ],
+      "metadata": {
+        "source_file": "som107ap_v_emerg.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "som107ap_v_emerg_014",
+        "sub_chunk_index": 2,
+        "total_sub_chunks": 4,
+        "parent_word_count": 5552,
+        "word_count": 1325
+      }
+    },
+    {
+      "chunk_id": "som107ap_v_emerg_014_sub_003",
+      "title": "(l)  In the case of a hospital as defined in §489.24 (b) to comply with §489.24 . (part 3/4)",
+      "path": "som107ap_v_emerg/l_in_the_case_of_a_hospital_as_defined_in_489_24_b_to_comply_with_489_24_part_3_4.txt",
+      "section_path": [
+        "(l)  In the case of a hospital as defined in §489.24 (b) to comply with §489.24 ."
+      ],
+      "metadata": {
+        "source_file": "som107ap_v_emerg.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "som107ap_v_emerg_014",
+        "sub_chunk_index": 3,
+        "total_sub_chunks": 4,
+        "parent_word_count": 5552,
+        "word_count": 1352
+      }
+    },
+    {
+      "chunk_id": "som107ap_v_emerg_014_sub_004",
+      "title": "(l)  In the case of a hospital as defined in §489.24 (b) to comply with §489.24 . (part 4/4)",
+      "path": "som107ap_v_emerg/l_in_the_case_of_a_hospital_as_defined_in_489_24_b_to_comply_with_489_24_part_4_4.txt",
+      "section_path": [
+        "(l)  In the case of a hospital as defined in §489.24 (b) to comply with §489.24 ."
+      ],
+      "metadata": {
+        "source_file": "som107ap_v_emerg.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "som107ap_v_emerg_014",
+        "sub_chunk_index": 4,
+        "total_sub_chunks": 4,
+        "parent_word_count": 5552,
+        "word_count": 1516
+      }
+    },
+    {
+      "chunk_id": "som107ap_v_emerg_015_sub_001",
+      "title": "§489.24(a) - Applicability of Provisions of this Section (part 1/5)",
+      "path": "som107ap_v_emerg/489_24_a_applicability_of_provisions_of_this_section_part_1_5.txt",
+      "section_path": [
+        "§489.24(a) - Applicability of Provisions of this Section"
+      ],
+      "metadata": {
+        "source_file": "som107ap_v_emerg.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "som107ap_v_emerg_015",
+        "sub_chunk_index": 1,
+        "total_sub_chunks": 5,
+        "parent_word_count": 6929,
+        "word_count": 1374
+      }
+    },
+    {
+      "chunk_id": "som107ap_v_emerg_015_sub_002",
+      "title": "§489.24(a) - Applicability of Provisions of this Section (part 2/5)",
+      "path": "som107ap_v_emerg/489_24_a_applicability_of_provisions_of_this_section_part_2_5.txt",
+      "section_path": [
+        "§489.24(a) - Applicability of Provisions of this Section"
+      ],
+      "metadata": {
+        "source_file": "som107ap_v_emerg.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "som107ap_v_emerg_015",
+        "sub_chunk_index": 2,
+        "total_sub_chunks": 5,
+        "parent_word_count": 6929,
+        "word_count": 1543
+      }
+    },
+    {
+      "chunk_id": "som107ap_v_emerg_015_sub_003",
+      "title": "§489.24(a) - Applicability of Provisions of this Section (part 3/5)",
+      "path": "som107ap_v_emerg/489_24_a_applicability_of_provisions_of_this_section_part_3_5.txt",
+      "section_path": [
+        "§489.24(a) - Applicability of Provisions of this Section"
+      ],
+      "metadata": {
+        "source_file": "som107ap_v_emerg.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "som107ap_v_emerg_015",
+        "sub_chunk_index": 3,
+        "total_sub_chunks": 5,
+        "parent_word_count": 6929,
+        "word_count": 1383
+      }
+    },
+    {
+      "chunk_id": "som107ap_v_emerg_015_sub_004",
+      "title": "§489.24(a) - Applicability of Provisions of this Section (part 4/5)",
+      "path": "som107ap_v_emerg/489_24_a_applicability_of_provisions_of_this_section_part_4_5.txt",
+      "section_path": [
+        "§489.24(a) - Applicability of Provisions of this Section"
+      ],
+      "metadata": {
+        "source_file": "som107ap_v_emerg.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "som107ap_v_emerg_015",
+        "sub_chunk_index": 4,
+        "total_sub_chunks": 5,
+        "parent_word_count": 6929,
+        "word_count": 1238
+      }
+    },
+    {
+      "chunk_id": "som107ap_v_emerg_015_sub_005",
+      "title": "§489.24(a) - Applicability of Provisions of this Section (part 5/5)",
+      "path": "som107ap_v_emerg/489_24_a_applicability_of_provisions_of_this_section_part_5_5.txt",
+      "section_path": [
+        "§489.24(a) - Applicability of Provisions of this Section"
+      ],
+      "metadata": {
+        "source_file": "som107ap_v_emerg.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "som107ap_v_emerg_015",
+        "sub_chunk_index": 5,
+        "total_sub_chunks": 5,
+        "parent_word_count": 6929,
+        "word_count": 1391
+      }
+    },
+    {
+      "chunk_id": "som107ap_v_emerg_016_sub_001",
+      "title": "§489.24(d) Necessary Stabilizing Treatment for Emergency Medical Conditions (part 1/3)",
+      "path": "som107ap_v_emerg/489_24_d_necessary_stabilizing_treatment_for_emergency_medical_conditions_part_1_3.txt",
+      "section_path": [
+        "§489.24(d) Necessary Stabilizing Treatment for Emergency Medical Conditions"
+      ],
+      "metadata": {
+        "source_file": "som107ap_v_emerg.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "som107ap_v_emerg_016",
+        "sub_chunk_index": 1,
+        "total_sub_chunks": 3,
+        "parent_word_count": 3671,
+        "word_count": 1332
+      }
+    },
+    {
+      "chunk_id": "som107ap_v_emerg_016_sub_002",
+      "title": "§489.24(d) Necessary Stabilizing Treatment for Emergency Medical Conditions (part 2/3)",
+      "path": "som107ap_v_emerg/489_24_d_necessary_stabilizing_treatment_for_emergency_medical_conditions_part_2_3.txt",
+      "section_path": [
+        "§489.24(d) Necessary Stabilizing Treatment for Emergency Medical Conditions"
+      ],
+      "metadata": {
+        "source_file": "som107ap_v_emerg.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "som107ap_v_emerg_016",
+        "sub_chunk_index": 2,
+        "total_sub_chunks": 3,
+        "parent_word_count": 3671,
+        "word_count": 1218
+      }
+    },
+    {
+      "chunk_id": "som107ap_v_emerg_016_sub_003",
+      "title": "§489.24(d) Necessary Stabilizing Treatment for Emergency Medical Conditions (part 3/3)",
+      "path": "som107ap_v_emerg/489_24_d_necessary_stabilizing_treatment_for_emergency_medical_conditions_part_3_3.txt",
+      "section_path": [
+        "§489.24(d) Necessary Stabilizing Treatment for Emergency Medical Conditions"
+      ],
+      "metadata": {
+        "source_file": "som107ap_v_emerg.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "som107ap_v_emerg_016",
+        "sub_chunk_index": 3,
+        "total_sub_chunks": 3,
+        "parent_word_count": 3671,
+        "word_count": 1121
+      }
+    },
+    {
+      "chunk_id": "som107ap_v_emerg_017",
+      "title": "§489.24(e) Restricting Transfer Until the Individual Is Stabilized",
+      "path": "som107ap_v_emerg/489_24_e_restricting_transfer_until_the_individual_is_stabilized.txt",
+      "section_path": [
+        "§489.24(e) Restricting Transfer Until the Individual Is Stabilized"
+      ],
+      "metadata": {
+        "source_file": "som107ap_v_emerg.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 2697
+      }
+    },
+    {
+      "chunk_id": "som107ap_v_emerg_018",
+      "title": "§489.24(f) Recipient Hospital Responsibilities",
+      "path": "som107ap_v_emerg/489_24_f_recipient_hospital_responsibilities.txt",
+      "section_path": [
+        "§489.24(f) Recipient Hospital Responsibilities"
+      ],
+      "metadata": {
+        "source_file": "som107ap_v_emerg.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 1437
+      }
+    }
+  ]
+}

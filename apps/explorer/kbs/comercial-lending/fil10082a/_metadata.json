@@ -1,0 +1,443 @@
+{
+  "source_file": "fil10082a.pdf",
+  "total_chunks": 27,
+  "chunk_methods": [
+    "toc_based"
+  ],
+  "structure": [
+    {
+      "chunk_id": "fil10082a_001",
+      "title": "I. Purpose + II. Background",
+      "path": "fil10082a/i_purpose_ii_background.txt",
+      "section_path": [
+        "I. Purpose"
+      ],
+      "metadata": {
+        "source_file": "fil10082a.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "merged_with": "fil10082a_002",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 16
+      }
+    },
+    {
+      "chunk_id": "fil10082a_003",
+      "title": "III. Supervisory Policy",
+      "path": "fil10082a/iii_supervisory_policy.txt",
+      "section_path": [
+        "III. Supervisory Policy"
+      ],
+      "metadata": {
+        "source_file": "fil10082a.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 1046
+      }
+    },
+    {
+      "chunk_id": "fil10082a_004",
+      "title": "IV. Appraisal and Evaluation Program",
+      "path": "fil10082a/iv_appraisal_and_evaluation_program.txt",
+      "section_path": [
+        "IV. Appraisal and Evaluation Program"
+      ],
+      "metadata": {
+        "source_file": "fil10082a.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 1046
+      }
+    },
+    {
+      "chunk_id": "fil10082a_005",
+      "title": "V. Independence of the Appraisal and Evaluation Program",
+      "path": "fil10082a/v_independence_of_the_appraisal_and_evaluation_program.txt",
+      "section_path": [
+        "V. Independence of the Appraisal and Evaluation Program"
+      ],
+      "metadata": {
+        "source_file": "fil10082a.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 1004
+      }
+    },
+    {
+      "chunk_id": "fil10082a_006",
+      "title": "VI. Selection of Appraisers or Persons Who Perform Evaluations",
+      "path": "fil10082a/vi_selection_of_appraisers_or_persons_who_perform_evaluations.txt",
+      "section_path": [
+        "VI. Selection of Appraisers or Persons Who Perform Evaluations"
+      ],
+      "metadata": {
+        "source_file": "fil10082a.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 389
+      }
+    },
+    {
+      "chunk_id": "fil10082a_007",
+      "title": "A. Approved Appraiser List + B. Engagement Letters",
+      "path": "fil10082a/vi_selection_of_appraisers_or_persons_who_perform_evaluations/a_approved_appraiser_list_b_engagement_letters.txt",
+      "section_path": [
+        "VI. Selection of Appraisers or Persons Who Perform Evaluations",
+        "A. Approved Appraiser List"
+      ],
+      "metadata": {
+        "source_file": "fil10082a.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "merged_with": "fil10082a_008",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 968
+      }
+    },
+    {
+      "chunk_id": "fil10082a_009",
+      "title": "VII. Transactions That Require Appraisals + VIII. Minimum Appraisal Standards",
+      "path": "fil10082a/vii_transactions_that_require_appraisals_viii_minimum_appraisal_standards.txt",
+      "section_path": [
+        "VII. Transactions That Require Appraisals"
+      ],
+      "metadata": {
+        "source_file": "fil10082a.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "merged_with": "fil10082a_010",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 1792
+      }
+    },
+    {
+      "chunk_id": "fil10082a_011",
+      "title": "IX. Appraisal Development",
+      "path": "fil10082a/ix_appraisal_development.txt",
+      "section_path": [
+        "IX. Appraisal Development"
+      ],
+      "metadata": {
+        "source_file": "fil10082a.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 529
+      }
+    },
+    {
+      "chunk_id": "fil10082a_012",
+      "title": "X. Appraisal Reports",
+      "path": "fil10082a/x_appraisal_reports.txt",
+      "section_path": [
+        "X. Appraisal Reports"
+      ],
+      "metadata": {
+        "source_file": "fil10082a.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 529
+      }
+    },
+    {
+      "chunk_id": "fil10082a_013",
+      "title": "XI. Transactions That Require Evaluations + XII. Evaluation Development",
+      "path": "fil10082a/xi_transactions_that_require_evaluations_xii_evaluation_development.txt",
+      "section_path": [
+        "XI. Transactions That Require Evaluations"
+      ],
+      "metadata": {
+        "source_file": "fil10082a.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "merged_with": "fil10082a_014",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 976
+      }
+    },
+    {
+      "chunk_id": "fil10082a_015",
+      "title": "XIII. Evaluation Content",
+      "path": "fil10082a/xiii_evaluation_content.txt",
+      "section_path": [
+        "XIII. Evaluation Content"
+      ],
+      "metadata": {
+        "source_file": "fil10082a.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 502
+      }
+    },
+    {
+      "chunk_id": "fil10082a_016",
+      "title": "XIV. Validity of Appraisals and Evaluations + XV. Reviewing Appraisals and Evaluations",
+      "path": "fil10082a/xiv_validity_of_appraisals_and_evaluations_xv_reviewing_appraisals_and_evaluations.txt",
+      "section_path": [
+        "XIV. Validity of Appraisals and Evaluations"
+      ],
+      "metadata": {
+        "source_file": "fil10082a.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "merged_with": "fil10082a_017",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 898
+      }
+    },
+    {
+      "chunk_id": "fil10082a_018",
+      "title": "A. Reviewer Qualifications + B. Depth of Review",
+      "path": "fil10082a/xv_reviewing_appraisals_and_evaluations/a_reviewer_qualifications_b_depth_of_review.txt",
+      "section_path": [
+        "XV. Reviewing Appraisals and Evaluations",
+        "A. Reviewer Qualifications"
+      ],
+      "metadata": {
+        "source_file": "fil10082a.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "merged_with": "fil10082a_019",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 1037
+      }
+    },
+    {
+      "chunk_id": "fil10082a_020",
+      "title": "C. Resolution of Deficiencies + D. Documentation of the Review",
+      "path": "fil10082a/xv_reviewing_appraisals_and_evaluations/c_resolution_of_deficiencies_d_documentation_of_the_review.txt",
+      "section_path": [
+        "XV. Reviewing Appraisals and Evaluations",
+        "C. Resolution of Deficiencies"
+      ],
+      "metadata": {
+        "source_file": "fil10082a.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "merged_with": "fil10082a_021",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 810
+      }
+    },
+    {
+      "chunk_id": "fil10082a_022",
+      "title": "XVI. Third Party Arrangements",
+      "path": "fil10082a/xvi_third_party_arrangements.txt",
+      "section_path": [
+        "XVI. Third Party Arrangements"
+      ],
+      "metadata": {
+        "source_file": "fil10082a.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 908
+      }
+    },
+    {
+      "chunk_id": "fil10082a_023",
+      "title": "XVII. Program Compliance",
+      "path": "fil10082a/xvii_program_compliance.txt",
+      "section_path": [
+        "XVII. Program Compliance"
+      ],
+      "metadata": {
+        "source_file": "fil10082a.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 489
+      }
+    },
+    {
+      "chunk_id": "fil10082a_024",
+      "title": "A. Monitoring Collateral Values + B. Portfolio Collateral Risk",
+      "path": "fil10082a/xvii_program_compliance/a_monitoring_collateral_values_b_portfolio_collateral_risk.txt",
+      "section_path": [
+        "XVII. Program Compliance",
+        "A. Monitoring Collateral Values"
+      ],
+      "metadata": {
+        "source_file": "fil10082a.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "merged_with": "fil10082a_025",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 928
+      }
+    },
+    {
+      "chunk_id": "fil10082a_026",
+      "title": "C. Modifications and Workouts of Existing Credits",
+      "path": "fil10082a/xvii_program_compliance/c_modifications_and_workouts_of_existing_credits.txt",
+      "section_path": [
+        "XVII. Program Compliance",
+        "C. Modifications and Workouts of Existing Credits"
+      ],
+      "metadata": {
+        "source_file": "fil10082a.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 556
+      }
+    },
+    {
+      "chunk_id": "fil10082a_027",
+      "title": "XVIII. Referrals",
+      "path": "fil10082a/xviii_referrals.txt",
+      "section_path": [
+        "XVIII. Referrals"
+      ],
+      "metadata": {
+        "source_file": "fil10082a.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 388
+      }
+    },
+    {
+      "chunk_id": "fil10082a_028_sub_001",
+      "title": "Appendix A, Appraisal Exemptions (part 1/3)",
+      "path": "fil10082a/appendix_a_appraisal_exemptions_part_1_3.txt",
+      "section_path": [
+        "Appendix A, Appraisal Exemptions"
+      ],
+      "metadata": {
+        "source_file": "fil10082a.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "fil10082a_028",
+        "sub_chunk_index": 1,
+        "total_sub_chunks": 3,
+        "parent_word_count": 3780,
+        "word_count": 1086
+      }
+    },
+    {
+      "chunk_id": "fil10082a_028_sub_002",
+      "title": "Appendix A, Appraisal Exemptions (part 2/3)",
+      "path": "fil10082a/appendix_a_appraisal_exemptions_part_2_3.txt",
+      "section_path": [
+        "Appendix A, Appraisal Exemptions"
+      ],
+      "metadata": {
+        "source_file": "fil10082a.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "fil10082a_028",
+        "sub_chunk_index": 2,
+        "total_sub_chunks": 3,
+        "parent_word_count": 3780,
+        "word_count": 1102
+      }
+    },
+    {
+      "chunk_id": "fil10082a_028_sub_003",
+      "title": "Appendix A, Appraisal Exemptions (part 3/3)",
+      "path": "fil10082a/appendix_a_appraisal_exemptions_part_3_3.txt",
+      "section_path": [
+        "Appendix A, Appraisal Exemptions"
+      ],
+      "metadata": {
+        "source_file": "fil10082a.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "fil10082a_028",
+        "sub_chunk_index": 3,
+        "total_sub_chunks": 3,
+        "parent_word_count": 3780,
+        "word_count": 1592
+      }
+    },
+    {
+      "chunk_id": "fil10082a_029",
+      "title": "Appendix B, Evaluations Based on Analytical Methods and Technological Tools",
+      "path": "fil10082a/appendix_b_evaluations_based_on_analytical_methods_and_technological_tools.txt",
+      "section_path": [
+        "Appendix B, Evaluations Based on Analytical Methods and Technological Tools"
+      ],
+      "metadata": {
+        "source_file": "fil10082a.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 1882
+      }
+    },
+    {
+      "chunk_id": "fil10082a_030_sub_001",
+      "title": "Appendix C, Deductions and Discounts (part 1/4)",
+      "path": "fil10082a/appendix_c_deductions_and_discounts_part_1_4.txt",
+      "section_path": [
+        "Appendix C, Deductions and Discounts"
+      ],
+      "metadata": {
+        "source_file": "fil10082a.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "fil10082a_030",
+        "sub_chunk_index": 1,
+        "total_sub_chunks": 4,
+        "parent_word_count": 5585,
+        "word_count": 1445
+      }
+    },
+    {
+      "chunk_id": "fil10082a_030_sub_002",
+      "title": "Appendix C, Deductions and Discounts (part 2/4)",
+      "path": "fil10082a/appendix_c_deductions_and_discounts_part_2_4.txt",
+      "section_path": [
+        "Appendix C, Deductions and Discounts"
+      ],
+      "metadata": {
+        "source_file": "fil10082a.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "fil10082a_030",
+        "sub_chunk_index": 2,
+        "total_sub_chunks": 4,
+        "parent_word_count": 5585,
+        "word_count": 1288
+      }
+    },
+    {
+      "chunk_id": "fil10082a_030_sub_003",
+      "title": "Appendix C, Deductions and Discounts (part 3/4)",
+      "path": "fil10082a/appendix_c_deductions_and_discounts_part_3_4.txt",
+      "section_path": [
+        "Appendix C, Deductions and Discounts"
+      ],
+      "metadata": {
+        "source_file": "fil10082a.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "fil10082a_030",
+        "sub_chunk_index": 3,
+        "total_sub_chunks": 4,
+        "parent_word_count": 5585,
+        "word_count": 1563
+      }
+    },
+    {
+      "chunk_id": "fil10082a_030_sub_004",
+      "title": "Appendix C, Deductions and Discounts (part 4/4)",
+      "path": "fil10082a/appendix_c_deductions_and_discounts_part_4_4.txt",
+      "section_path": [
+        "Appendix C, Deductions and Discounts"
+      ],
+      "metadata": {
+        "source_file": "fil10082a.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "fil10082a_030",
+        "sub_chunk_index": 4,
+        "total_sub_chunks": 4,
+        "parent_word_count": 5585,
+        "word_count": 1289
+      }
+    }
+  ]
+}

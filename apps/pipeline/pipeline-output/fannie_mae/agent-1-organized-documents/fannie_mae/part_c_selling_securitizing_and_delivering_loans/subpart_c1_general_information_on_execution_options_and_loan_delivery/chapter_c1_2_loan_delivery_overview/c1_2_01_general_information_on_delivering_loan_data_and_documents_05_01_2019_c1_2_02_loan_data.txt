@@ -1,0 +1,141 @@
+# C1-2-01, General Information on Delivering Loan Data and Documents (05/01/2019) + C1-2-02, Loan Data
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_437
+**Pages:** 946-949
+**Section Path:** Part C, Selling, Securitizing, and Delivering Loans > Subpart C1, General Information on Execution Options and Loan Delivery > Chapter C1-2, Loan Delivery Overview > C1-2-01, General Information on Delivering Loan Data and Documents (05/01/2019)
+
+---
+
+Published March 4, 2026
+928C1-2-01, General Information on Delivering Loan Data and
+Documents (05/01/2019)
+Introduction
+This topic provides general information on a lender’s obligation to supply data and documentation of all loans
+submitted to Fannie Mae for purchase, including:
+Timing and Deadlines
+Delivery Tolerances
+Loan Qualiﬁcations
+Receiving Sale Proceeds or Securities
+Timing and Deadlines
+A lender can begin to deliver loans against its commitments as soon as it receives a commitment conﬁrmation
+number for whole loans, or an MBS commitment contract number for MBS loans. The lender must deliver the
+loans required to fulﬁll the commitment prior to the commitment expiration date. Speciﬁcally, lenders must
+submit loan data electronically, via Loan Delivery, and send the documentation package to the document
+custodian.
+Fannie Mae may reject a loan for a variety of reasons, including failure to meet Fannie Mae’s eligibility
+requirements, incomplete or inaccurate loan delivery data, or incomplete document submission packages.
+Fannie Mae may assess a late delivery fee for loans that are redelivered after a commitment has expired. See
+C2-2-01, General Requirements for Good Delivery of Whole Loans , and C2-2-02, Documentation Requirements
+for Whole Loan Deliveries , for information concerning whole loan data and document delivery requirements and
+C3-7-04, Delivering MBS Pool Data and Documents , for information concerning data and document delivery
+requirements for loans in MBS pools.
+Delivery Tolerances
+For both whole loan and MBS deliveries, lenders may deliver an amount slightly higher or lower than the original
+commitment amount, without charge. For information on delivery tolerances speciﬁc to whole loan sales and
+MBS transactions, see C2-1.1-02, General Information about Mandatory Commitment Pricing and Fees , and
+C3-7-03, Making Good Delivery .
+Loan Qualiﬁcations
+Lenders must ensure that all loans selected for delivery meet Fannie Mae’s underwriting and eligibility
+guidelines and legal requirements. The loan terms must also match the terms of the commitment, including
+mortgage type, amortization, original term, and pass-through rate(s) selected for delivery when the
+commitment was created.
+
+Published March 4, 2026
+929Receiving Sale Proceeds or Securities
+When Fannie Mae purchases loans in fulﬁllment of a whole loan execution, it does so by sending funds via wire
+transfer to an account designated by the lender for this purpose. For MBS transactions, Fannie Mae issues
+securities to the lender, if the lender has elected to hold the securities in its portfolio, or to the investor
+designated by the lender, if the lender has sold the securities before it delivers the loans to Fannie Mae. If the
+lender has elected to use an “original issue” settlement to fund a forward trade through Fannie Mae’s Capital
+Markets Pricing and Sales Desk (see E-1-02, List of Contacts ), the securities will be assigned directly to Fannie
+Mae. For details speciﬁc to the two types of transactions, see C2-2-03, General Information on Whole Loan
+Purchasing Policies , and C3-7-06, Settling the Trade , respectively.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2019-04 May 01, 2019
+ 
+C1-2-02, Loan Data and Documentation Delivery Requirements
+(10/04/2023)
+Introduction
+This topic provides information on the loan data lenders must deliver to make good delivery, including:
+Electronic Submission via Loan Delivery
+Loan Delivery Application Resources
+Seller/Servicer-Initiated Post-Purchase Adjustments
+Special Feature Codes
+Documentation Requirements
+Delivery of the Fannie Mae Loan Number to the Document Custodian
+Additional Required Electronic Submissions
+Electronic Submission via Loan Delivery
+Data for all loans must be electronically transmitted to Fannie Mae using Loan Delivery. Loan Delivery is a web-
+based application that allows lenders to deliver whole loans for purchase and MBS loans for securitization to
+Fannie Mae. Lenders can import loan and pool data, perform edits to facilitate error-free delivery, transfer loans
+
+Published March 4, 2026
+930between commitments (or pools), track the status of loan deliveries, generate reports, and export loan and pool
+data back to the lender’s organization.
+Loans may only be submitted and purchased in Loan Delivery if they are clear of all fatal edits.  Loans are
+subject to all fatal edits in Loan Delivery throughout the submission, loan documentation certiﬁcation and
+acquisition purchase process.  If a loan encounters a fatal edit, the fatal edit must be resolved for Fannie Mae to
+acquire the loan.
+Loan Delivery Application Resources
+For information regarding the Uniform Loan Delivery Dataset (ULDD) and the data delivery requirements, access
+the ULDD  page on Fannie Mae’s website. The Fannie Mae Implementation Guide for Loan Delivery Data ,
+Appendix D: Fannie Mae XML Data Reference, provides a listing of the ULDD required and conditionally required
+data ﬁelds, as well as ﬁeld deﬁnitions and implementation notes. For additional guidance on ULDD, refer to the
+following resources available on the ULDD page:
+Frequently Asked Questions,
+ULDD Speciﬁcation, and
+General and Technical Implementation Resources.
+Resources speciﬁc to the Loan Delivery application that support the delivery of the ULDD data can be found on
+the Loan Delivery  page on Fannie Mae’s website. This page includes links to various resources, including:
+Loan Delivery Release Notes,
+Loan Delivery Business Rules Dictionary, and
+Loan Delivery Job Aids and User Guide (in Help & Training).
+Seller/Servicer-Initiated Post-Purchase Adjustments
+Lenders must notify Fannie Mae when
+they determine there are discrepancies in the data attributes submitted to Fannie Mae at loan delivery
+and their loan records,
+they did not submit housing goal attributes at loan delivery, or
+the property address has been rezoned.
+Lenders must follow the post-purchase adjustment process to resolve these matters. For additional information
+and instructions, see Fannie Mae's website . Also, see  C2-2-05, Whole Loan Purchasing Process  for additional
+information about reconciling the Purchase Advice and after sale corrections.
+Lenders must submit data corrections within 18 months of the loan's acquisition date to be considered for
+repricing of loan-level price adjustments (LLPAs). A minimum $100 requirement per loan (credit or debit) is also
+required. The 18-month lookback period does not apply to the drafting or collection of repurchase alternative
+fees. Fannie Mae, in its sole discretion, may adjust the minimum dollar amount and lookback period at any time.
+
+Published March 4, 2026
+931Special Feature Codes
+Lenders must include speciﬁc special feature code(s) (investor feature identiﬁer) as part of the delivery data
+when delivering certain loans. Fannie Mae auto-derives certain special feature codes based on other data
+submitted. Auto-derived special feature codes are not required to be included in the lender’s delivery data. For
+a list of special feature codes, including those that are auto-derived, see Special Feature Codes .
+If a lender fails to identify (or incorrectly identiﬁes on a consistent basis) any applicable special feature code(s)
+when they submit loans that require these codes in fulﬁllment of a whole loan commitment or for inclusion in an
+MBS pool, Fannie Mae may impose a compensatory fee. The amount of the fee will be based on:
+the lender’s overall performance,
+the lender’s explanation for their failure to comply,
+previous instances of noncompliance,
+the amount of any previous compensatory fee, and
+any other factors Fannie Mae deems relevant.
+For additional information about delivery of special feature codes, see the Special Feature Code section of the
+Loan Delivery/ULDD Job Aids .
+Documentation Requirements
+Documentation requirements will diﬀer based on the type of loans being delivered to Fannie Mae. For additional
+details, see C2-2-01, General Requirements for Good Delivery of Whole Loans , C2-2-02, Documentation
+Requirements for Whole Loan Deliveries , and  C3-7-04, Delivering MBS Pool Data and Documents , respectively.
+See the Fannie Mae Requirements for Document Custodians (RDC guide ) for document delivery and certiﬁcation
+requirements.
+Delivery of the Fannie Mae Loan Number to the Document Custodian
+The lender is responsible for ensuring that the document custodian receives the Fannie Mae loan number for
+every loan within 30 days of loan certiﬁcation. The lender must respond within three business days to any
+request from the document custodian to provide the Fannie Mae loan number following the certiﬁcation of the
+related mortgage loan.
+Additional Required Electronic Submissions
+Appraisal Data
+Lenders must electronically submit certain appraisal reports through the UCDP prior to the delivery of the loan.
+See B4-1.1-06, Uniform Appraisal Dataset (UAD) and the Uniform Collateral Data Portal (UCDP)  for details on
+these requirements.

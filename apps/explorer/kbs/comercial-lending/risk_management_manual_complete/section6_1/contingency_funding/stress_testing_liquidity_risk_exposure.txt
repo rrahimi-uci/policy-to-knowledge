@@ -1,0 +1,109 @@
+# Stress Testing Liquidity Risk Exposure
+
+**Source:** risk_management_manual_complete.pdf
+**Chunk ID:** risk_management_manual_complete_840
+**Pages:** 306-306
+**Section Path:** section6-1 > CONTINGENCY FUNDING > Stress Testing Liquidity Risk Exposure
+
+---
+
+LIQUIDITY AND FUNDS MANAGEMENT  Section 6.1  
+ 
+RMS  Manual of Examination Policies  6.1-27 Liquidity and Funds Management ( 10/2025) 
+Federal Deposit Insurance Corporation  
+ • General or sector -specific market disruptions (e.g. , 
+payment systems or capital markets), and  
+• Competitor or peer institutions  experiencing liquidity 
+duress with the potential for spillover effects or 
+contagion risk spreading to the subject institution . 
+ 
+Counterparties can also cause stress events  (both credit and 
+non-credit exposures).  For example, if a n institution  sells 
+financial assets to correspondent institutions  for 
+securitization , and its primary correspondent exits the 
+market, the institution  may need to use  a contingent funding 
+source . 
+ Institutions with unrealized holding losses on debt securities 
+should fully understand potential restrictions that could be 
+imposed by the FHLB and other institutional counterparties (e.g., public depositors, deposit brokers, and listing and registry servi ces) should the unrealized losses affect certain 
+capital measures, such as GAAP equity .  These restrictions 
+may include a curtailment of new advances or placements (based on law or policy) at institutions that report a low or negative GAAP equity position.    
+ Comprehensive CFPs  identify institution -specific events 
+that may impact on - and off -balance sheet cash  flows given 
+the specific balance- sheet structure, business lines, and 
+organizational structure.  For example, institutions that securitize loans  have CFPs that consider a stress event 
+where the institution loses access to the market but still has 
+to honor its commitments to customers to extend loans.   
+ 
+Comprehensive  CFPs also  delineate various stages and 
+severity levels for ea ch potential contingent liquidity event .  
+For example, asset quality can deteriorate  incrementally  and 
+have  various levels of severity, such as less than 
+satisfactory, deficient, and critically deficient.  CFPs also 
+address the timing  and severity levels of  temporary , 
+intermediate -term, and long-term disruptions.   For example, 
+a natural disaster may cause temporary disruptions to 
+payment systems, while deficient asset quality may occur  
+over a longer  term.  Institutions can then use the stages or 
+severity levels identified to establish  various stress test 
+scenarios and early -warning indicators .   
+ 
+Stress Testing Liquidity Risk Exposure   
+ After identifying potential stress events, management  often 
+implements quantitative projections, such as stress test s, to 
+assess the liquidity risk posed by the potential events.  Stress 
+testing helps management  understand the vulnerability of 
+certain funding sources to various risks and to determine 
+when and how to access alternative funding sources.  Stress 
+testing also helps management  identify methods for rapid 
+and effective responses, guide crisis management planning, and determine an appropriate liquidity buffer.   
+ Generally, the  magnitude and frequency of stress testing is 
+commensurate with the complexity of the institution, as well 
+as the level and trend of its liquidity risk.  If liquidity risk 
+becomes elevated, management could benefit from  
+conducting more frequent stress testing , while  large or 
+complex institutions  may also benefit from daily liquidity 
+stress test ing to inform , in part, day -to-day liquidity 
+management.   
+ The growing prevalence of digital banking and online 
+banking applications has facilitated 24/ 7 banking.  These 
+innovations , in addition to the influence of social media , can 
+accelerate and intensify liquidity risk due to deposit runs 
+and contagion.  A comprehensive CFP  reflects this risk  and 
+could include  within the suite of stress scenarios  an end- of-
+day or end -of-week  stress scenario  with severe deposit run-
+off occurring in hours or  minutes as opposed to days or 
+week s.  For example, the modeling and testing of a severe 
+stress event that begins on a Friday afternoon may expose vulnerabilities in the ability to execute a CFP (e.g., the 
+ability to quickly monetize unencumbered collateral and execute on borrowing lines) that would not be identified  in 
+longer -duration scenarios.   
+ Liquidity stress tests are typically based on  existing cash -
+flow projections that are appropriately modified  to reflect 
+potential stress events ( institution -specific or market -wide ) 
+across multiple time horizons.  S tress test s are used  to 
+identify and quantify potential risks and to analyze possible 
+effects on the institution ’s cash flows, liquidity position, 
+profitability, and solvency.  For instance, during a crisis , an 
+institution ’s liquidity needs can quickly escalate while  
+liquidity sources can decline (e.g., customers may withdraw 
+uninsured deposits or draw down borrowing li nes, or the 
+institution’s lines of credit may be reduced or canceled).  
+Stress testing allows an  institution to evaluate the possible 
+impact  of these events and to plan accordingly.  
+ Examiners should review documented a ssumptions 
+regarding the cash flows used in stress test scenarios and 
+consider whether they incorporate:  
+ 
+• Customer behavior s (early deposit withdrawals , 
+renewal  and run-off of loans, exercising options) ;  
+• Significant runoff of surge, uninsured, or volatile 
+deposits ; 
+• Prepayments on loans and mortgage -backed 
+securities ; 
+• Curtailment of committed borrowing lines ; 
+• Material reduction in asset values ; 
+• Regulatory restrictions on brokered deposits or 
+interest rates paid on deposits ; 
+• Significant changes in market interest rates;  
+• Seasonality (public  fund fluctuations, agricultural 
+credits, construction lending) ; and

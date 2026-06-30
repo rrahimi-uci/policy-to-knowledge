@@ -1,0 +1,51 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 22/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_022
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+909 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+152‘‘Assessing resilience of hospitals to 
+cyberattack,’’ supra note 130, p. 13. 
+153See Paige Minemyer, ‘‘AMA: 80% of docs 
+have lost revenue amid disruptions from Change 
+Healthcare cyberattack,’’ Fierce Healthcare (Apr. 10, 2024), https://www.fiercehealthcare.com/practices/ 
+ama-80-docs-have-lost-revenue-amid-disruptions- change-healthcare-cyberattack; ‘‘AHA survey: 
+Change Healthcare cyberattack having significant disruptions on patient care, hospitals’ finances’’ (Mar. 15, 2024), https://www.aha.org/news/news/ 2024-03-15-aha-survey-change-healthcare- cyberattack-having-significant-disruptions-patient- care-hospitals-finances; see also Sean Lyngaas, ‘‘ ‘We’re hemorrhaging money’: US health clinics try to stay open after unprecedented cyberattack,’’ CNN (Mar. 9, 2024), https://www.cnn.com/2024/03/09/ tech/medical-supply-chain-cybersecurity/ index.html. 
+154Christian Dameff, et al., ‘‘Ransomware Attack 
+Associated With Disruptions at Adjacent Emergency Departments in the U.S.,’’ JAMA Network Open (May 8, 2023), https://jamanetwork.com/journals/jamanetworkopen/ fullarticle/2804585. 
+155Id. 156On July 29, 2024, the Department announced 
+that the Office of the National Coordinator for 
+Health Information Technology was being renamed the Assistant Secretary for Technology Policy and Office of the National Coordinator for Health Information Technology. In this NPRM, we continue to use ONC for publications cited that predate the renaming of that office. 89 FR 60903 (July 29, 2024). 
+157See, e.g., 45 CFR 170.315(d)(6), (7), (12), and 
+(13). For more information on the ONC Health IT Certification Program, visit https://www.healthit.gov/topic/certification-ehrs/ certification-health-it. 
+158The ONC Health IT Certification Program 
+specifies at 45 CFR 170.550(h) the privacy and security certification framework for Health IT Modules. Section 170.550(h) identifies a mandatory minimum set of the certification criteria that ONC- Authorized Certification Bodies (ONC ACBs) must ensure are also included as part of specific Health IT Modules that are presented for certification. See 
+‘‘Certification Companion Guide Privacy and Security,’’ The Office of the National Coordinator for Health Information Technology, U.S. Department of Health and Human Services (May 7, 2024), https://www.healthit.gov/sites/default/files/ 
+2015Ed_ CCG_ Privacy_ and_ Security.pdf. 
+159See 45 CFR 171.102 (definition of ‘‘Electronic 
+health information’’). 
+160See, e.g., Medicare Promoting Interoperability 
+Program, 42 CFR 495.24 (eligible hospitals and critical access hospitals must use certified electronic health record technology (CEHRT), with limited exceptions, to comply with the program’s meaningful use requirements); Merit-based Incentive Payment System (MIPS) Promoting Interoperability performance category, 42 CFR 414.1375 (requiring MIPS eligible clinicians to use CEHRT, as defined in 42 CFR 414.1305, to comply with reporting requirements for the Promoting Interoperability performance category). 161See, e.g., ‘‘Health Industry Cybersecurity 
+Practices: Managing Threats and Protecting 
+Patients,’’ supra note 16. 
+162See, e.g., ‘‘The NIST Cybersecurity Framework 
+(CSF) 2.0,’’ supra note 15. 
+163See, e.g., ‘‘Cybersecurity Performance Goals,’’ 
+supra note 18. 
+164See, e.g., ‘‘Cross-Sector Cybersecurity 
+Performance Goals,’’ Cybersecurity & Infrastructure Security Agency, U.S. Department of Homeland Security (Mar. 2023), https://www.cisa.gov/sites/ default/files/2023-03/CISA_ CPG_ REPORT_ v1.0.1_
+FINAL.pdf. 
+165See generally 45 CFR 164.308(a); ‘‘The NIST 
+Cybersecurity Framework (CSF) 2.0,’’ supra note 15; 
+‘‘Cybersecurity Performance Goals,’’ supra note 18. cyberattack or other event that adversely 
+affects a regulated entity’s information systems. While such planning and preparation may not prevent all cyberattacks, it can reduce the number of successful incidents and mitigate their effects. In fact, studies have suggested that such preparation may allow for at least close to real-time recovery.
+152 
+The effects of a cyberattack are not 
+limited to the regulated entity that experiences it and the individuals whose ePHI is compromised. Surveys conducted by various organizations representing health care providers indicate that an overwhelming majority of health care providers in the U.S. were affected by a ransomware attack on a large health care clearinghouse.
+153A 
+study published in 2023 examined the effects on the of a cyberattack at a neighboring, unaffiliated hospital on a large academic medical center.
+154The

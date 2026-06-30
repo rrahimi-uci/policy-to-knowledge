@@ -1,0 +1,104 @@
+# Qualitative Capital Adequacy Considerations
+
+**Source:** risk_management_manual_complete.pdf
+**Chunk ID:** risk_management_manual_complete_366
+**Pages:** 155-155
+**Section Path:** section3-3 > Examination CONSIDERATIONS > Qualitative Capital Adequacy Considerations
+
+---
+
+SECURITIES  Section 3.3 
+ 
+Securities (10/2025) 3.3-16 RMS  Manual of Examination Policies  
+  Federal Deposit Insurance Corporation  
+ an ACL  (i.e., impairment related to non -credit factors)  is 
+required to be recorded through other comprehensive 
+income net of tax.   
+ If management  intend s to sell an AFS debt security , or it is 
+likely  that it will be required to sell the debt security before 
+recovery of its amortized cost basis , any ACL  should be 
+written off an d the amortized cost basis written down to the 
+debt security’s fair value at the reporting date , with any 
+incremental impairment (i.e., any decline in fair value since the last reporting date) reported through earnings .   Once an 
+individual AFS debt security has been written down, the 
+previous amortized cost basis less write -offs, including non-
+credit related impairment reported in earnings, becomes the 
+new amortized cost basis of the debt security.  The new 
+amortized cost basis is not adjusted for subsequent recoveries of cash flows, but is reflected as a yield adjustment.     
+ 
+Subinvestment  Debt Securities  
+ Consistent with ASC Topic 320, AFS debt securities are 
+marked -to-market and carried at their fair value on the 
+balance sheet .  The U.S. implementation of  Basel III  capital 
+measures developed by the Basel Committee on Banking Supervision, reflected in Part 324 of the FDIC Rules and 
+Regulations,  gave most banking organizations with total 
+assets below $250 billion a one -time election to opt out of 
+the requirement to include AOCI components in the 
+calculation of regulatory capital (AOCI opt -out).  Therefore , 
+the net unrealized holding gains (losses) on AFS debt  
+securities, net of tax effects, are generally excluded from 
+earnings .  For institutions that have adopted ASC Topic 326, 
+an exception  to this rule occurs when credit impairment has 
+occurred on an AFS debt security.  In this case, only the non-
+credit impairment (i.e., the depreciation related to other factors) o n the individual security  is not recognized in 
+earnings.  T he non- credit portion , net of applicable taxes, is 
+reported in AOCI provided the AFS debt security will not be sold before recovery of the amort ized cost basis.   
+ For purposes of determining a n institution’ s regulatory 
+capital under Part 32 4 when there is an AOCI opt -out 
+election , any net unrealized holding gains (losses) on AFS 
+debt securities , including the non-credit portion of a fair 
+value decline to an AFS debt security in the circumstances 
+described above, that are included in AOCI,  are ignored.   As 
+a result, the  amount  reported in AOCI  normally is not 
+deducted , but is neutralized  (i.e., added back in the case of 
+net unrealized losses)  in determining regulatory capital .    
+ 
+To appropriately reflect regulatory capital , the amount of 
+the credit impairment or write -downs  recognized in 
+earnings based on U.S. GAAP is classified Loss , with the 
+remaining balance classified Substandard .  Therefore, only the credit loss portion on a subinvestment debt security  
+should be deducted in determining tier 1 capital . 
+ 
+For subinvestment AFS debt securities with fair values below its  amortized cost , the amortized cost ( rather than the 
+lower amount at which these securities are carried on the balance sheet, i.e., fair value) is classifi ed Substandard.  
+This classification is consistent with the regulatory capital 
+treatment of AFS debt securities  when there is an AOCI opt -
+out election .  As mentioned above, under U.S. GAAP,  net 
+unrealized holding gains (losses) on AFS debt securities are 
+excluded from earnings , unless a  credit loss is recognized , 
+and reported in a separate component of equity capital.  In contrast, these  net unrealized holding gains (losses) are 
+excluded from regulatory capital.  Accordingly, the amount classified Substandard on these subinvestment quality AFS debt securities  (i.e., amortized cost ) also excludes the 
+balance sheet adjustment for unrealized holding losses.  
+ 
+Determining Fair Value  
+ As currently defined under U.S. GAAP, the fair value of an 
+asset is defined as the price  that would be received to sell an 
+asset or the amount paid to transfer a liability  in an orderly  
+transaction between willing market participants  (i.e., other 
+than in a forced or liquidation sale ).  Quoted market prices 
+are the best evidence of fair value and must be used , if 
+available,  as the basis for measuring fair value.  If quoted 
+market prices are not available, the estimate of fair value 
+must be based on the best information available in the 
+circumstances.  The estimate of fair value must consider 
+prices for similar assets and the results of valuation techniques , to the extent available in the circumstances.    
+ 
+Examiners must ascertain a security’s fair value to properly 
+classify or make needed  regulatory capital adjustments.  
+Hence, e xaminers should review management ’s fair value  
+measurement s for all adversely classified securities.  When 
+management ’s valuation is  reasonable, examiners will use 
+that value to classify  the security .  If unreasonable or 
+unsupported, examiners should discuss their concerns with 
+management an d request that management provide a 
+reasonable and supportable valuation.   When management 
+cannot provide a reasonable valuation during the examination, examiners should use the information and pricing services provided by RMS  Capital Markets to 
+estimate values for examination purposes .  
+ 
+Qualitative Capital Adequacy Considerations 
+ Net unrealized holding gains (losses) on AFS debt securities 
+are not normally recognized in calculating an institution’ s 
+regulatory capital ratios  as discussed .  However , examiners 
+should consider  the extent of the  net unrealized gains or 
+losses, as well as the appreciation and  depreciation on HTM  
+debt securities  in the  overall assessment of the institution ’s

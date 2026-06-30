@@ -1,0 +1,770 @@
+{
+  "entity_types": {
+    "REGULATED_ENTITY": {
+      "definition": "An organization subject to the HIPAA Security Rule requirements to protect the confidentiality, integrity, and availability of ePHI, including covered entities and business associates as applicable.",
+      "attributes": [
+        "regulated_entity_id",
+        "regulated_entity_type",
+        "legal_name",
+        "hipaa_role",
+        "primary_contact_role",
+        "compliance_program_status",
+        "security_officer_assigned",
+        "last_risk_analysis_date",
+        "policy_review_cycle",
+        "operating_environment_type"
+      ],
+      "examples": [
+        "Regional hospital system acting as a HIPAA covered entity operating an EHR",
+        "Claims processing vendor acting as a HIPAA business associate for multiple health plans",
+        "Community health clinic subject to HIPAA Security Rule technical safeguards"
+      ],
+      "business_rules": [
+        "Regulated entities must implement reasonable and appropriate security measures to meet Security Rule standards and implementation specifications.",
+        "Regulated entities must document, implement, and maintain security policies and procedures consistent with the Security Rule.",
+        "Regulated entities must periodically review and update documentation to reflect security measures currently in effect and operational changes."
+      ]
+    },
+    "COVERED_ENTITY": {
+      "definition": "A HIPAA-regulated organization (health plan, health care clearinghouse, or certain health care providers) that creates, receives, maintains, or transmits PHI/ePHI in connection with covered transactions.",
+      "attributes": [
+        "covered_entity_id",
+        "covered_entity_type",
+        "legal_name",
+        "tax_id",
+        "hipaa_transactions_supported",
+        "designated_security_official",
+        "designated_privacy_official",
+        "ehr_in_use",
+        "breach_history_count",
+        "last_ocr_inquiry_date"
+      ],
+      "examples": [
+        "Medicare Advantage health plan (MA organization)",
+        "Hospital-based physician group billing electronically",
+        "Health care clearinghouse performing claims translation services"
+      ],
+      "business_rules": [
+        "Covered entities must ensure Security Rule safeguards are applied to ePHI across relevant electronic information systems.",
+        "Covered entities must ensure appropriate access is granted based on workforce job functions and is applied consistently.",
+        "Covered entities must establish and maintain required administrative and technical safeguards for ePHI."
+      ]
+    },
+    "BUSINESS_ASSOCIATE": {
+      "definition": "A person or organization (other than a workforce member) that performs functions or activities on behalf of, or provides services to, a covered entity involving the use or disclosure of PHI/ePHI.",
+      "attributes": [
+        "business_associate_id",
+        "legal_name",
+        "service_category",
+        "ba_agreement_status",
+        "subcontractor_usage",
+        "systems_handling_ephi",
+        "incident_response_contact",
+        "contingency_plan_status",
+        "last_security_assessment_date",
+        "notification_procedure_defined"
+      ],
+      "examples": [
+        "Cloud-hosted EHR platform vendor managing ePHI for clinics",
+        "Billing and coding vendor processing claims data containing ePHI",
+        "Managed security services provider monitoring hospital networks that include ePHI systems"
+      ],
+      "business_rules": [
+        "Business associates must implement Security Rule safeguards for ePHI they create, receive, maintain, or transmit.",
+        "Business associates must adhere to business associate agreement requirements addressing safeguarding ePHI and related notifications.",
+        "Business associates may be required to notify relevant parties upon contingency plan activation per contractual/regulatory obligations."
+      ]
+    },
+    "HEALTH_PLAN": {
+      "definition": "A covered entity that provides or pays the cost of medical care and is subject to HIPAA requirements, including the Security Rule for ePHI handled in plan operations.",
+      "attributes": [
+        "health_plan_id",
+        "plan_type",
+        "legal_name",
+        "member_population_size",
+        "claims_platform_name",
+        "delegated_functions",
+        "business_associate_count",
+        "document_update_frequency",
+        "security_controls_baseline",
+        "last_compliance_attestation_date"
+      ],
+      "examples": [
+        "Medicaid managed care organization",
+        "Employer-sponsored group health plan administered by a TPA",
+        "Dual-eligible special needs plan (D-SNP)"
+      ],
+      "business_rules": [
+        "Health plans must ensure ePHI in plan systems is protected by required administrative and technical safeguards.",
+        "Health plans must ensure vendors handling ePHI comply with applicable Security Rule requirements via appropriate agreements and oversight.",
+        "Health plan operational documentation and procedures impacting ePHI security must be kept current with implemented controls."
+      ]
+    },
+    "EPHI": {
+      "definition": "Electronic protected health information—individually identifiable health information that is transmitted by or maintained in electronic media and is protected under HIPAA.",
+      "attributes": [
+        "ephi_dataset_id",
+        "data_classification",
+        "contains_identifiers",
+        "creation_source_system",
+        "storage_locations",
+        "transmission_channels",
+        "encryption_status",
+        "retention_period",
+        "access_sensitivity_level",
+        "last_modified_datetime"
+      ],
+      "examples": [
+        "EHR patient chart data stored in a database cluster",
+        "Claims history file transmitted via secure API to a clearinghouse",
+        "Imaging study metadata stored in PACS integrated with EHR"
+      ],
+      "business_rules": [
+        "ePHI must be protected to ensure confidentiality, integrity, and availability across its lifecycle (creation, storage, use, sharing, dissemination, disposition).",
+        "Access to ePHI must be limited to authorized workforce members based on job function and need.",
+        "Security controls must account for changes in the regulated entity’s environment or operations that could affect ePHI risk."
+      ]
+    },
+    "INFORMATION_SYSTEM": {
+      "definition": "A discrete set of information resources organized for the collection, processing, maintenance, use, sharing, dissemination, or disposition of information, including systems in cloud computing environments relevant to ePHI.",
+      "attributes": [
+        "information_system_id",
+        "system_name",
+        "system_type",
+        "deployment_model",
+        "system_owner_role",
+        "hosts_ephi",
+        "data_flow_description",
+        "criticality_level",
+        "last_security_patch_date",
+        "vendor_dependency_level"
+      ],
+      "examples": [
+        "On-premises EHR application and database servers",
+        "Cloud object storage bucket containing exported patient records",
+        "Networked infusion pump management platform connected to clinical network"
+      ],
+      "business_rules": [
+        "Security safeguards must be applied to relevant electronic information systems that create, receive, maintain, or transmit ePHI.",
+        "Regulated entities must understand and account for the extent of control they have over applications and infrastructure in cloud computing environments.",
+        "Information systems handling ePHI must be included within risk analysis scope and documented safeguarding measures."
+      ]
+    },
+    "CLOUD_COMPUTING_ENVIRONMENT": {
+      "definition": "A cloud-based deployment context (e.g., IaaS/PaaS/SaaS) where information systems and ePHI may be hosted and for which the regulated entity’s control and shared responsibility must be assessed.",
+      "attributes": [
+        "cloud_environment_id",
+        "service_model",
+        "deployment_type",
+        "cloud_provider_name",
+        "shared_responsibility_model",
+        "tenant_isolation_mechanism",
+        "logging_monitoring_enabled",
+        "encryption_key_management_model",
+        "data_residency_region",
+        "third_party_integrations"
+      ],
+      "examples": [
+        "SaaS EHR hosted by a vendor in a HIPAA-eligible cloud",
+        "IaaS environment running virtual machines for a claims platform",
+        "PaaS database service storing ePHI-backed application data"
+      ],
+      "business_rules": [
+        "When using cloud environments, regulated entities must assess and document which security controls are under their control versus the provider’s control.",
+        "Cloud-hosted systems that handle ePHI must meet applicable technical safeguard requirements (e.g., encryption, access control).",
+        "Cloud-specific configurations must be managed and reviewed to prevent misconfiguration risks to ePHI."
+      ]
+    },
+    "HIPAA_SECURITY_RULE": {
+      "definition": "The HIPAA regulation establishing administrative, physical, and technical safeguards to ensure the confidentiality, integrity, and availability of ePHI.",
+      "attributes": [
+        "rule_citation",
+        "effective_date",
+        "rule_version",
+        "covered_standards",
+        "implementation_specifications",
+        "update_status",
+        "enforcement_authority",
+        "documentation_requirements",
+        "risk_management_requirements",
+        "technical_safeguard_scope"
+      ],
+      "examples": [
+        "45 CFR part 164 subpart C (Security Rule)",
+        "Proposed amendments requiring additional technical safeguards",
+        "Security Rule documentation standard for policies and procedures"
+      ],
+      "business_rules": [
+        "Security Rule standards and implementation specifications must be implemented using reasonable and appropriate security measures.",
+        "Documentation must be maintained to demonstrate implementation and ongoing operation of required safeguards.",
+        "Security Rule requirements apply across all relevant electronic information systems handling ePHI."
+      ]
+    },
+    "HHS_OFFICE_FOR_CIVIL_RIGHTS": {
+      "definition": "The HHS Office for Civil Rights (OCR), the primary HIPAA enforcement authority responsible for compliance oversight, investigations, audits, and resolution agreements.",
+      "attributes": [
+        "agency_name",
+        "jurisdiction",
+        "enforcement_programs",
+        "audit_program_name",
+        "complaint_intake_process",
+        "investigation_authority",
+        "resolution_agreement_template",
+        "civil_money_penalty_authority",
+        "guidance_publications",
+        "contact_channel"
+      ],
+      "examples": [
+        "OCR 2016–2017 HIPAA Audits program",
+        "OCR-issued guidance on HIPAA risk analysis",
+        "OCR resolution agreement following a security incident investigation"
+      ],
+      "business_rules": [
+        "OCR may assess whether regulated entities have performed and documented risk analysis and implemented required safeguards.",
+        "Regulated entities must be able to produce documentation demonstrating compliance upon OCR inquiry or audit.",
+        "OCR guidance and enforcement history can inform expectations for safeguarding ePHI (e.g., risk analysis sufficiency)."
+      ]
+    },
+    "SECURITY_POLICY_AND_PROCEDURE": {
+      "definition": "A documented set of security rules, processes, and controls adopted by a regulated entity to satisfy HIPAA Security Rule standards and implementation specifications.",
+      "attributes": [
+        "policy_id",
+        "policy_title",
+        "policy_scope",
+        "policy_owner_role",
+        "approval_date",
+        "effective_date",
+        "last_review_date",
+        "version_number",
+        "implementation_status",
+        "change_log_reference"
+      ],
+      "examples": [
+        "Access control policy defining role-based access and approval workflow",
+        "Configuration management procedure for system hardening and patching",
+        "Incident response and contingency plan activation procedure"
+      ],
+      "business_rules": [
+        "Policies and procedures must be consistent with Security Rule requirements and reflect security measures currently in effect.",
+        "Changes to policies and procedures must be documented and implemented in accordance with the Security Rule.",
+        "Policies and procedures must be reviewed and updated as needed based on risk, operational changes, and technology adoption."
+      ]
+    },
+    "RISK_ANALYSIS": {
+      "definition": "A documented process to assess potential risks and vulnerabilities to the confidentiality, integrity, and availability of ePHI within the regulated entity’s environment and information systems.",
+      "attributes": [
+        "risk_analysis_id",
+        "analysis_date",
+        "scope_description",
+        "methodology_reference",
+        "systems_in_scope",
+        "threats_considered",
+        "vulnerabilities_identified",
+        "likelihood_rating_scale",
+        "impact_rating_scale",
+        "risk_register_reference"
+      ],
+      "examples": [
+        "Annual enterprise risk analysis covering EHR, PACS, and identity platform",
+        "Cloud migration risk analysis evaluating shared responsibility and configuration risk",
+        "Targeted risk analysis after adoption of new IoT medical devices"
+      ],
+      "business_rules": [
+        "Risk analysis must consider changes in environment or operations (e.g., new technology adoption) that could affect ePHI risk.",
+        "Risk analysis outcomes should drive selection and updating of security measures and documentation.",
+        "Regulated entities must be able to demonstrate risk analysis activities through maintained documentation."
+      ]
+    },
+    "WORKFORCE_MEMBER": {
+      "definition": "An individual in the regulated entity’s workforce (employees, volunteers, trainees, or other persons under direct control) who may have authorized access to ePHI through job functions.",
+      "attributes": [
+        "workforce_member_id",
+        "workforce_role",
+        "department",
+        "employment_status",
+        "start_date",
+        "termination_date",
+        "access_level",
+        "screening_status",
+        "training_completion_status",
+        "assigned_system_accounts"
+      ],
+      "examples": [
+        "Billing specialist with access to claims system containing ePHI",
+        "IT administrator with privileged access to EHR infrastructure",
+        "Nurse accessing EHR for treatment documentation"
+      ],
+      "business_rules": [
+        "Workforce access to ePHI must be granted based on job function and applied consistently within the organization.",
+        "Appropriate screening or onboarding procedures should be applied for persons who will have access to ePHI.",
+        "Workforce members must receive training on relevant security policies and procedures and comply with access control requirements."
+      ]
+    },
+    "WORKFORCE_TRAINING_PROGRAM": {
+      "definition": "A structured training capability maintained by a regulated entity to educate workforce members on HIPAA Security Rule obligations, security policies, and secure handling of ePHI.",
+      "attributes": [
+        "training_program_id",
+        "training_name",
+        "target_audience_roles",
+        "delivery_method",
+        "frequency",
+        "content_topics",
+        "required_completion_timeframe",
+        "completion_tracking_method",
+        "last_updated_date",
+        "noncompliance_consequences_defined"
+      ],
+      "examples": [
+        "Annual HIPAA Security awareness training for all staff",
+        "Privileged access training for system administrators using MFA",
+        "Termination procedures and insider threat training module"
+      ],
+      "business_rules": [
+        "Training must align with current policies, procedures, and implemented security measures.",
+        "Training content and frequency should be updated when security controls or operational risks change.",
+        "Training completion should be tracked to demonstrate compliance and workforce readiness."
+      ]
+    },
+    "ACCESS_AUTHORIZATION": {
+      "definition": "A formal permission decision and supporting record that grants a workforce member access to specific information systems or ePHI based on job function and least-privilege principles.",
+      "attributes": [
+        "access_authorization_id",
+        "requestor_id",
+        "approver_role",
+        "authorized_systems",
+        "authorized_data_scope",
+        "authorization_reason",
+        "effective_start_date",
+        "effective_end_date",
+        "review_date",
+        "revocation_status"
+      ],
+      "examples": [
+        "Access approval for a new nurse to use the EHR medication administration module",
+        "Privileged access authorization for an IT admin to manage directory services",
+        "Temporary access authorization for an auditor to view security logs"
+      ],
+      "business_rules": [
+        "Access authorization decisions must follow defined procedures and be consistent across similar job functions.",
+        "Access must be reviewed and adjusted when roles change or upon termination.",
+        "Access authorization records should be maintained as compliance evidence."
+      ]
+    },
+    "MULTI_FACTOR_AUTHENTICATION": {
+      "definition": "A technical safeguard requiring two or more authentication factors to verify a user’s identity before granting access to an information system that handles ePHI.",
+      "attributes": [
+        "mfa_control_id",
+        "factor_types_supported",
+        "enforcement_scope",
+        "exceptions_defined",
+        "fallback_procedure",
+        "authentication_provider",
+        "log_retention_period",
+        "last_configuration_review_date",
+        "implementation_status",
+        "user_population_covered"
+      ],
+      "examples": [
+        "MFA required for remote access VPN into hospital network",
+        "MFA enforced for administrative access to cloud console hosting ePHI systems",
+        "MFA used for EHR login for clinicians"
+      ],
+      "business_rules": [
+        "MFA must be implemented where required for access to relevant electronic information systems containing ePHI, subject to defined exceptions if permitted.",
+        "MFA configuration and coverage should be documented and reviewed as part of ongoing security program maintenance.",
+        "Authentication mechanisms must be deployed to reduce unauthorized access risk to ePHI."
+      ]
+    },
+    "ENCRYPTION_CONTROL": {
+      "definition": "A technical safeguard that uses cryptographic methods to protect ePHI and other relevant electronic information from unauthorized access, including for data at rest and/or in transit as required.",
+      "attributes": [
+        "encryption_control_id",
+        "encryption_scope",
+        "data_states_covered",
+        "algorithm_standard",
+        "key_management_model",
+        "exception_criteria",
+        "last_key_rotation_date",
+        "encryption_coverage_percent",
+        "implementation_status",
+        "audit_logging_enabled"
+      ],
+      "examples": [
+        "Database encryption for EHR data volumes at rest",
+        "TLS encryption for ePHI APIs between provider and clearinghouse",
+        "Full-disk encryption on laptops used for care coordination containing ePHI exports"
+      ],
+      "business_rules": [
+        "Encryption controls should be applied to relevant electronic information systems consistent with Security Rule requirements and implementation specifications.",
+        "If exceptions are permitted, they must be defined, justified, and documented with compensating safeguards where applicable.",
+        "Key management and encryption configurations must be governed and reviewed to maintain confidentiality and integrity of ePHI."
+      ]
+    },
+    "NETWORK_SEGMENTATION_CONTROL": {
+      "definition": "A technical safeguard that separates networks or system zones to reduce exposure of ePHI systems and limit lateral movement by unauthorized actors.",
+      "attributes": [
+        "segmentation_control_id",
+        "segmentation_model",
+        "protected_zones",
+        "allowed_connections",
+        "firewall_policy_reference",
+        "monitoring_coverage",
+        "exception_process",
+        "last_rule_review_date",
+        "implementation_status",
+        "iot_device_isolation_enabled"
+      ],
+      "examples": [
+        "Separating clinical device network from corporate user network",
+        "Restricting EHR database subnet to application servers only",
+        "Isolating IoT medical devices into a dedicated VLAN with strict egress rules"
+      ],
+      "business_rules": [
+        "Segmentation controls must be designed and maintained to reduce risks to ePHI systems based on risk analysis findings.",
+        "Segmentation rules and exceptions must be documented and reviewed periodically.",
+        "Network design changes affecting ePHI system exposure must trigger evaluation and updates to controls and documentation."
+      ]
+    },
+    "CONFIGURATION_MANAGEMENT_CONTROL": {
+      "definition": "A technical and administrative capability to establish, implement, and maintain secure configuration baselines and change controls for information systems that handle ePHI.",
+      "attributes": [
+        "configuration_control_id",
+        "baseline_standard_reference",
+        "systems_covered",
+        "change_approval_workflow",
+        "patch_management_process",
+        "configuration_drift_monitoring",
+        "last_baseline_update_date",
+        "exception_register_reference",
+        "implementation_status",
+        "evidence_repository_location"
+      ],
+      "examples": [
+        "Hardening baseline applied to Windows servers hosting EHR components",
+        "Change control process for cloud security group modifications",
+        "Patch cadence and configuration scanning for database servers containing ePHI"
+      ],
+      "business_rules": [
+        "Security-relevant configurations for ePHI systems must be controlled, documented, and monitored for drift.",
+        "Material changes to system configurations must follow approved change processes and be reflected in updated documentation.",
+        "Configuration management must support confidentiality, integrity, and availability objectives for ePHI."
+      ]
+    },
+    "PENETRATION_TEST": {
+      "definition": "A security testing activity that simulates attacks to identify exploitable vulnerabilities in information systems handling ePHI and to validate the effectiveness of technical safeguards.",
+      "attributes": [
+        "penetration_test_id",
+        "test_date",
+        "test_type",
+        "scope_systems",
+        "testing_vendor",
+        "rules_of_engagement_reference",
+        "findings_severity_summary",
+        "remediation_plan_reference",
+        "retest_required",
+        "evidence_location"
+      ],
+      "examples": [
+        "External penetration test of patient portal and supporting APIs",
+        "Internal penetration test targeting lateral movement to EHR database",
+        "Cloud penetration test of identity and access misconfigurations affecting ePHI workloads"
+      ],
+      "business_rules": [
+        "Penetration testing activities and results must be documented and used to inform remediation and risk management.",
+        "Testing scope should include relevant ePHI systems and be updated based on environment and technology changes.",
+        "High-severity findings should trigger timely remediation and validation (retest) where appropriate."
+      ]
+    },
+    "CONTINGENCY_PLAN": {
+      "definition": "A documented plan for responding to emergencies or system disruptions to ensure availability and recovery of ePHI-related services and data.",
+      "attributes": [
+        "contingency_plan_id",
+        "plan_owner_role",
+        "systems_covered",
+        "activation_criteria",
+        "backup_strategy",
+        "disaster_recovery_strategy",
+        "testing_frequency",
+        "last_test_date",
+        "notification_requirements",
+        "last_updated_date"
+      ],
+      "examples": [
+        "Downtime and recovery plan for EHR outage affecting inpatient workflows",
+        "Cloud region failover plan for claims processing platform",
+        "Backup and restoration plan for PACS and imaging archives"
+      ],
+      "business_rules": [
+        "Contingency plans must be documented, maintained, and tested according to defined procedures.",
+        "Plan activation must follow documented criteria and may require notifications to relevant parties per obligations.",
+        "Contingency planning documentation must be updated when systems, vendors, or recovery capabilities change."
+      ]
+    }
+  },
+  "relationships": {
+    "APPLIES_TO": {
+      "source_entity": "HIPAA_SECURITY_RULE",
+      "target_entity": "REGULATED_ENTITY",
+      "definition": "Indicates that the HIPAA Security Rule establishes compliance obligations for a regulated entity to safeguard ePHI.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "The HIPAA Security Rule applies to a hospital system operating an EHR with ePHI.",
+        "The HIPAA Security Rule applies to a cloud service vendor acting as a business associate processing ePHI."
+      ],
+      "business_rules": [
+        "Regulated entities must implement Security Rule standards and implementation specifications using reasonable and appropriate security measures.",
+        "Regulated entities must maintain documentation sufficient to demonstrate compliance with the Security Rule."
+      ]
+    },
+    "ENFORCES": {
+      "source_entity": "HHS_OFFICE_FOR_CIVIL_RIGHTS",
+      "target_entity": "REGULATED_ENTITY",
+      "definition": "Represents OCR’s authority to oversee and enforce HIPAA compliance obligations for regulated entities through audits, investigations, and enforcement actions.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "OCR audits a regulated entity and requests evidence of risk analysis documentation.",
+        "OCR investigates a regulated entity following allegations of insufficient ePHI safeguards."
+      ],
+      "business_rules": [
+        "Regulated entities must be able to produce relevant compliance documentation upon OCR request.",
+        "OCR evaluation may consider whether risk analysis and safeguard implementation are performed and documented."
+      ]
+    },
+    "CREATES_RECEIVES_MAINTAINS_OR_TRANSMITS": {
+      "source_entity": "REGULATED_ENTITY",
+      "target_entity": "EPHI",
+      "definition": "Indicates the regulated entity’s interaction with ePHI across its operational lifecycle, triggering safeguarding obligations.",
+      "cardinality": "many-to-many",
+      "examples": [
+        "A health plan transmits ePHI to a clearinghouse for claims processing.",
+        "A clinic maintains ePHI within its EHR and backups."
+      ],
+      "business_rules": [
+        "Whenever ePHI is created, received, maintained, or transmitted, applicable safeguards must be applied to protect confidentiality, integrity, and availability.",
+        "Changes in how ePHI flows through systems should trigger review of safeguards and documentation."
+      ]
+    },
+    "STORES_OR_PROCESSES": {
+      "source_entity": "INFORMATION_SYSTEM",
+      "target_entity": "EPHI",
+      "definition": "Indicates that an information system stores, processes, or otherwise handles ePHI, making it in scope for Security Rule safeguards.",
+      "cardinality": "many-to-many",
+      "examples": [
+        "A database cluster stores ePHI from the EHR application.",
+        "A cloud file storage service processes ePHI exports for care coordination."
+      ],
+      "business_rules": [
+        "Information systems that store or process ePHI must be included in the regulated entity’s safeguarding and risk analysis scope.",
+        "Controls applied to ePHI must account for the systems and components where ePHI resides or transits."
+      ]
+    },
+    "OPERATES_IN": {
+      "source_entity": "INFORMATION_SYSTEM",
+      "target_entity": "CLOUD_COMPUTING_ENVIRONMENT",
+      "definition": "Indicates that an information system is deployed within a cloud environment, requiring assessment of shared responsibility and control boundaries.",
+      "cardinality": "many-to-one",
+      "examples": [
+        "A claims platform operates in an IaaS environment with customer-managed network controls.",
+        "A SaaS EHR operates in a vendor-controlled cloud environment used by multiple clinics."
+      ],
+      "business_rules": [
+        "For cloud-deployed systems, the regulated entity must identify which safeguards are implemented by the entity versus the cloud provider and document the arrangement.",
+        "Cloud configuration changes affecting ePHI security must be governed and reflected in updated procedures."
+      ]
+    },
+    "MAINTAINS": {
+      "source_entity": "REGULATED_ENTITY",
+      "target_entity": "SECURITY_POLICY_AND_PROCEDURE",
+      "definition": "Indicates the regulated entity authors, approves, and maintains required security policies and procedures used to implement the Security Rule.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "A regulated entity maintains an access control policy and reviews it annually.",
+        "A regulated entity maintains a configuration management procedure and updates it after adopting cloud services."
+      ],
+      "business_rules": [
+        "Policies and procedures must be documented, implemented, and kept consistent with Security Rule requirements.",
+        "Policy/procedure changes must be documented and implemented; outdated documentation should be updated as needed."
+      ]
+    },
+    "PERFORMS": {
+      "source_entity": "REGULATED_ENTITY",
+      "target_entity": "RISK_ANALYSIS",
+      "definition": "Indicates that the regulated entity conducts a risk analysis to identify risks and vulnerabilities to ePHI within its environment and information systems.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "A health plan performs a risk analysis after integrating a new vendor API that transmits ePHI.",
+        "A business associate performs a risk analysis following expansion to new cloud regions."
+      ],
+      "business_rules": [
+        "Risk analysis activities must be documented and support ongoing risk management decisions.",
+        "Risk analysis should account for changes in technology, operations, and the entity’s environment."
+      ]
+    },
+    "EVALUATES": {
+      "source_entity": "RISK_ANALYSIS",
+      "target_entity": "INFORMATION_SYSTEM",
+      "definition": "Connects a risk analysis to the specific information systems assessed for threats, vulnerabilities, and impacts involving ePHI.",
+      "cardinality": "many-to-many",
+      "examples": [
+        "A risk analysis evaluates the EHR system, identity provider, and backup infrastructure.",
+        "A cloud risk analysis evaluates object storage, IAM policies, and logging services."
+      ],
+      "business_rules": [
+        "Risk analysis scope must include relevant ePHI systems and supporting components.",
+        "Findings should drive updates to safeguards, configurations, and documentation."
+      ]
+    },
+    "TRAINS": {
+      "source_entity": "WORKFORCE_TRAINING_PROGRAM",
+      "target_entity": "WORKFORCE_MEMBER",
+      "definition": "Indicates that the training program delivers required security training to workforce members with access to ePHI or ePHI systems.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Annual HIPAA Security training is delivered to all staff.",
+        "Privileged access training is delivered to IT administrators managing ePHI systems."
+      ],
+      "business_rules": [
+        "Training completion should be tracked for workforce members as evidence of compliance readiness.",
+        "Training content should be updated when policies, procedures, or required technical safeguards change."
+      ]
+    },
+    "AUTHORIZES_ACCESS_FOR": {
+      "source_entity": "ACCESS_AUTHORIZATION",
+      "target_entity": "WORKFORCE_MEMBER",
+      "definition": "Represents the decision record that grants a workforce member specific access privileges based on role and job function.",
+      "cardinality": "one-to-one",
+      "examples": [
+        "An access authorization grants a nurse access to EHR clinical documentation modules.",
+        "An access authorization grants an IT admin privileged access for system maintenance tasks."
+      ],
+      "business_rules": [
+        "Access authorizations must align with defined procedures and least privilege principles.",
+        "Access should be reviewed and revoked or modified when job functions change or upon termination."
+      ]
+    },
+    "GRANTS_ACCESS_TO": {
+      "source_entity": "ACCESS_AUTHORIZATION",
+      "target_entity": "INFORMATION_SYSTEM",
+      "definition": "Indicates the information system(s) for which access is granted under a specific access authorization decision.",
+      "cardinality": "many-to-many",
+      "examples": [
+        "An access authorization grants access to the EHR and patient portal administrative console.",
+        "A temporary access authorization grants access to a log management system for audit purposes."
+      ],
+      "business_rules": [
+        "Authorization scope should be defined and limited to necessary systems and data.",
+        "Authorization records must be maintainable and reviewable for compliance audits."
+      ]
+    },
+    "IMPLEMENTS": {
+      "source_entity": "REGULATED_ENTITY",
+      "target_entity": "MULTI_FACTOR_AUTHENTICATION",
+      "definition": "Indicates that the regulated entity deploys and enforces MFA as a required or adopted safeguard for accessing ePHI systems.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "A regulated entity implements MFA for remote access into its network containing ePHI systems.",
+        "A regulated entity implements MFA for cloud console access managing ePHI workloads."
+      ],
+      "business_rules": [
+        "MFA coverage, exceptions (if any), and enforcement scope must be defined and documented.",
+        "MFA must be applied consistently to reduce unauthorized access risks to ePHI systems."
+      ]
+    },
+    "IMPLEMENTS_ENCRYPTION_FOR": {
+      "source_entity": "REGULATED_ENTITY",
+      "target_entity": "ENCRYPTION_CONTROL",
+      "definition": "Indicates that the regulated entity deploys encryption controls to protect ePHI and relevant electronic information within information systems.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "A regulated entity implements encryption at rest for databases storing ePHI.",
+        "A regulated entity implements encryption in transit for ePHI APIs."
+      ],
+      "business_rules": [
+        "Encryption scope and key management must be governed and documented.",
+        "Any permitted exceptions must be justified, documented, and managed with appropriate safeguards."
+      ]
+    },
+    "IMPLEMENTS_SEGMENTATION_FOR": {
+      "source_entity": "REGULATED_ENTITY",
+      "target_entity": "NETWORK_SEGMENTATION_CONTROL",
+      "definition": "Indicates that the regulated entity establishes network segmentation to reduce ePHI system exposure and limit unauthorized movement.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "A regulated entity segments clinical devices into an isolated network zone.",
+        "A regulated entity restricts access to the EHR database subnet to application servers only."
+      ],
+      "business_rules": [
+        "Segmentation controls and exceptions must be documented and reviewed periodically.",
+        "Network architecture changes must trigger evaluation of segmentation effectiveness for ePHI systems."
+      ]
+    },
+    "GOVERNS_CONFIGURATION_OF": {
+      "source_entity": "CONFIGURATION_MANAGEMENT_CONTROL",
+      "target_entity": "INFORMATION_SYSTEM",
+      "definition": "Indicates configuration management processes apply to a specific information system to maintain secure baselines and controlled changes.",
+      "cardinality": "many-to-many",
+      "examples": [
+        "Configuration management governs patching and hardening of EHR servers.",
+        "Configuration management governs cloud security group and IAM policy changes for ePHI workloads."
+      ],
+      "business_rules": [
+        "Security-relevant configurations for ePHI systems must be controlled, monitored, and documented.",
+        "Configuration changes must follow defined workflows and be reflected in updated procedures and evidence."
+      ]
+    },
+    "TESTS": {
+      "source_entity": "PENETRATION_TEST",
+      "target_entity": "INFORMATION_SYSTEM",
+      "definition": "Indicates a penetration test assesses an information system for exploitable vulnerabilities and control effectiveness relevant to ePHI security.",
+      "cardinality": "many-to-many",
+      "examples": [
+        "A penetration test targets the patient portal connected to the EHR.",
+        "A penetration test targets internal network paths to systems storing ePHI."
+      ],
+      "business_rules": [
+        "Penetration testing results must be documented and used to prioritize remediation activities.",
+        "Test scope should be updated based on system changes and evolving threats to ePHI."
+      ]
+    },
+    "ACTIVATES": {
+      "source_entity": "REGULATED_ENTITY",
+      "target_entity": "CONTINGENCY_PLAN",
+      "definition": "Indicates that the regulated entity initiates its contingency plan in response to a qualifying disruption or emergency affecting ePHI systems.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "A regulated entity activates the contingency plan after an EHR outage.",
+        "A regulated entity activates the disaster recovery plan after a cloud region failure affecting ePHI availability."
+      ],
+      "business_rules": [
+        "Contingency plan activation must follow documented criteria and procedures.",
+        "Activation activities and resulting actions should be documented for compliance evidence and improvement."
+      ]
+    },
+    "NOTIFIES_CONTINGENCY_PLAN_ACTIVATION": {
+      "source_entity": "BUSINESS_ASSOCIATE",
+      "target_entity": "COVERED_ENTITY",
+      "definition": "Indicates a business associate provides required notification to a covered entity when a contingency plan is activated in a way that could affect ePHI systems or services.",
+      "cardinality": "many-to-many",
+      "examples": [
+        "A cloud-hosting business associate notifies a covered entity that disaster recovery failover was initiated for an ePHI system.",
+        "A billing vendor notifies a health plan that its contingency plan was activated due to a system disruption impacting claims processing involving ePHI."
+      ],
+      "business_rules": [
+        "Notification procedures and timelines for contingency plan activation should be defined and documented in agreements and operational procedures.",
+        "Notifications must include sufficient information for the covered entity to manage continuity and compliance impacts."
+      ]
+    }
+  },
+  "iteration": 3,
+  "timestamp": "2026-06-29 14:07:35",
+  "optimization_summary": {
+    "total_iterations": 3,
+    "improvements": "Extraction completed successfully"
+  },
+  "final_quality_analysis": {
+    "iteration": 3,
+    "quality_score": 85,
+    "completeness": "Good",
+    "suggestions": []
+  }
+}

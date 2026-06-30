@@ -1,0 +1,51 @@
+# Physical Security & Secure Modem Access
+
+**Source:** risk_management_manual_complete.pdf
+**Chunk ID:** risk_management_manual_complete_2015
+**Pages:** 801-801
+**Section Path:** section19-1 > Report of Investigation > CONSISTENCY OF CORPORATE POWERS > According to proposed Senior Technology Officer Brian Bain, the proposed infrastructure retains the sufficient degree of scale and capacity to accommodate forecasted customer account volumes throughout the formative stages. > Physical Security & Secure Modem Access
+
+---
+
+OTHER PERTINENT INFORMATION (Continued)  
+FDIC 6510/10 (02 -2002) 40  
+In addition to the security measures delineated below, the Applicant is contracting with Aurum, an entity that has attained t he requisite 
+SAS 70 certification.   This certification, rendered by an independent accounting firm, affirms that a provider’s computer systems are being managed and operated in a manner consistent with accepted industry practices.   
+ Security measures proposed for the fully transactional web channel include the following:  
+ Encrypted Transactions  
+ All banking and Internet communications will be encrypted.  This will preclude sensitive financial data from being easily read and/or 
+deciphered.  Encryption will be accomplished via the use of Secure Sockets Layer Technology.  This technology, considered the 
+standard for encryption, is currently utilized by large nationally recognized web browsers.  Data transmission from the Appli cant’s 
+server and Aurum will be encrypted using Data Encryption Standard (DES) encryption, as further described below.   
+ Secure Logon  
+ 
+To preclude the possibility of a third party downloading the Applicant’s or a customer’s password file, user identification a nd 
+passwords will be encrypted and stored on a separate database server, not on the Internet or the web server.  In addition, pa ssword 
+parameters will be structured in a format, which makes the probability of randomly acquiring or guessing said password, extre mely 
+low. 
+ Isolated Bank Server  
+ 
+The computer used to provide the Applicant’s services would not be directly accessed via the Internet.  It will be on a priva te 
+connection, or intranet, that provides two- way communication between the isolated bank server and Internet server.  Consequently, an 
+Internet user will be prevented from accessing the computer that provides the Applicant’s services.  All banking services wil l be 
+routed from the Internet server through a firewall.  The firewall is a combination of software and hardware devices that specifically 
+defines, controls, and limits access to internal computers from outside computers across a network.  The firewall framework m eans 
+that only authenticated bank customers or administrators may send or receive transactions through it.   The firew all will also be 
+immune to penetration from within the network.  All messages transmitted or received between the Internet server and the oper ating 
+server will be encrypted using DES encryption.   
+ 
+This consists of a symmetric key algorithm.  Such technology is highly secure as it is not vulnerable to standard ciphertext attacks. 
+Therefore, even if an individual was to route a message to the Applicant’s server and through the firewall, the message co uld not be 
+encrypted in a manner, which would be considered valid by the server.  Consequently, the Applicant’s server would reject the 
+message.  
+ Authenticated Session Integrity 
+ 
+An authenticated user pertains to any user who signs onto the Applicant’s web site with a valid user ID and password.  The 
+Applicant’s server will be configured to limit exposure to authenticated users who attempt to defraud it.  If an authenticated user a lters 
+a command (URL), which is sent from the web browser to the server, in any way in an attempt to gain access to another user’s account, the Applicant’s server immediately detects that the session integrity variables have been violated.   Once detected,  the 
+Applicant’s server will terminate the session and record the unsuccessful attempt in a log so that staff can investigate.  
+ Physical Security & Secure Modem Access  
+ All servers and network computers will reside in secure facilities.  Computer operations supporting the Applicant’s internet access will also reside in secure back -up facilities.  Only employees with a valid access card may enter the physical premises.  Access to server 
+systems will require further password authentication.  A private line, which is not accessible by or from the public, will connect the 
+Applicant’s server with Aurum.  A dial -up maintenance port will also permit access to the server.  The modem that provides the only 
+access to this port will be specially protected and will only be enabled when necessary.

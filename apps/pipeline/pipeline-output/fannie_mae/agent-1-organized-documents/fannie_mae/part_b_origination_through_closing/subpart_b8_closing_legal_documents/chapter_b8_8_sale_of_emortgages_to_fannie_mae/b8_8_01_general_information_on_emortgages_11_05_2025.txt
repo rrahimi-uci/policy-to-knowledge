@@ -1,0 +1,111 @@
+# B8-8-01, General Information on eMortgages (11/05/2025)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_430
+**Pages:** 934-936
+**Section Path:** Part B, Origination Through Closing > Subpart B8, Closing: Legal Documents > Chapter B8-8, Sale of eMortgages to Fannie Mae > B8-8-01, General Information on eMortgages (11/05/2025)
+
+---
+
+Published March 4, 2026
+916Announcements Issue Date
+Announcement SEL-2023-11 December 13, 2023
+Announcement SEL-2022-04 May 04, 2022
+Announcement SEL-2019-02 March 06, 2019
+ 
+Chapter B8-8, Sale of eMortgages to Fannie Mae
+Introduction
+This chapter provides information related to selling eMortgages to Fannie Mae.
+B8-8-01, General Information on eMortgages (11/05/2025)
+Introduction
+This topic contains general information on eMortgages, including:
+Overview
+Technology Requirements
+eMortgage Legal Requirements
+eMortgage Eligibility
+eMortgage Electronic Signatures
+Delivery of eMortgages to Fannie Mae
+Sale of Third-Party Originated eNotes
+Servicing
+Overview
+An eMortgage is a loan for which the promissory note and possibly other documents (such as the security
+instrument and loan application) are created and stored electronically rather than by traditional paper
+documentation that has a pen and ink signature. Because some recording jurisdictions will not yet accept
+electronic documents for recordation, eMortgages may consist of a paper security instrument and an electronic
+note (eNote).
+
+Published March 4, 2026
+917This topic provides general information on the requirements for the origination and sale of one- to four-family
+eMortgages that Fannie Mae will purchase and securitize. See  A2-1-01, Contractual Obligations for
+Sellers/Servicers  for special approval requirements for sellers and servicers of eMortgages.  Additionally, the
+eMortgage Technical Requirements  are incorporated into the terms of the lender's Mortgage Selling and
+Servicing Contract, as amended by the eMortgage Addendum.
+Technology Requirements
+Each lender must use an eNote technology provider that has completed integration testing with Fannie Mae
+(see eClosing Technology Service Provider List ). The lender is responsible for determining that the technology
+provider meets the legal, technological, and operational requirements necessary to electronically create valid
+and enforceable mortgage obligations and/or eﬀectively service eMortgages and that it otherwise complies with
+Fannie Mae's requirements (which may be in addition to minimum statutory requirements). A lender cannot use
+any other software technology or any other technology provider without the express written prior approval of
+Fannie Mae. Lenders must inform Fannie Mae prior to making substantial technology changes including changes
+to eNote or eVault technology providers to ensure changes are coordinated with Fannie Mae systems.
+The lender must ensure that it has executed all tests required by Fannie Mae and that all systems and
+processes necessary to deliver and/or service eMortgages pursuant to this Guide and the MERS eRegistry
+requirements, are fully operational, including, systems integration among the lender, Fannie Mae and MERS.
+eMortgage Legal Requirements
+The lender makes all of the following representations and warranties with respect to each eMortgage sold to
+and, where applicable, serviced for Fannie Mae:
+Each eMortgage is evidenced by an eNote that is a valid and enforceable Transferable Record Pursuant to
+the Uniform Electronic Transactions Act ("UETA"), or the Electronic Signatures in Global and National
+Commerce Act ("ESIGN"), as applicable, and there is no defect with respect to the eNote that would
+confer upon Fannie Mae, or a subsequent transferor, less than the full rights, beneﬁts and defenses of
+Control (as deﬁned by the UETA and ESIGN) of the Transferable Record.
+Prior to transfer to Fannie Mae, the lender is an entity entitled to enforce the eMortgage and, subject to 
+C1-2-04, Delivering eMortgages to Fannie Mae , is named the Controller (the person having control of the
+Transferable Record) on the MERS eRegistry; and, except as provided in that topic, the lender's right to
+sell or assign is not subject to any other party's interest or to an agreement with any other party.
+All electronic signatures associated with the eMortgage are authenticated and authorized.
+The lender has established procedures and controls limiting access to the lender's eMortgage delivery
+platform and the MERS eRegistry to duly authorized individuals, and Fannie Mae is entitled to rely on any
+transmission, transfer or other communication via these systems to be the authorized act of the lender.
+Any transfers of Control of the eNote are authenticated and authorized.
+The Authoritative Copy (a single, unique, identiﬁable, and generally unalterable copy) of the eNote has
+not been altered since it was electronically signed by its issuers.
+There has been, at all times, one and only one Authoritative Copy of the eNote in existence, and all
+copies other than the Authoritative Copy are readily identiﬁable as non-authoritative copies.
+The eNote is not subject to a defense, claim of ownership or security interest, or claim in recoupment of
+any party that can be asserted against the lender.
+
+Published March 4, 2026
+918eMortgage Eligibility
+Most conventional loans can be sold to Fannie Mae as eMortgages. This includes fully amortizing ﬁxed-rate and
+adjustable-rate loans. However, the following are not currently permitted to be sold as eMortgages:
+loans for properties in Puerto Rico,
+HomeStyle Renovation loans,
+New York CEMA loans,
+single-close construction-to-permanent loans,
+co-op share loans, and
+Texas Section 50(a)(6) loans.
+The following transactions are eligible for sale as an eMortgage, but require supplemental documents for
+certiﬁcation.  The supplemental document must be eDelivered to Fannie Mae's eVault along with the eNote.
+notes executed with a power of attorney,
+RD-Guaranteed Section 502 loans,
+loans with a principal curtailment prior to purchase, and
+loans with temporary buydowns.
+Loans with supplemental documents (required for certiﬁcation) other than those listed above are not eligible for
+sale to Fannie Mae as an eMortgage,
+Other than the above eligibility restrictions, all other standard Fannie Mae underwriting and eligibility
+requirements apply to eMortgages.
+eMortgage Electronic Signatures
+By selling an eMortgage to Fannie Mae, the lender represents and warrants that the type of electronic signature
+that is used by the borrower to sign the eNote and any other electronic record associated with the transaction is
+legal and enforceable under applicable law and the electronic signature was not eﬀected by means of audio or
+video recording.
+The systems and processes employed in the execution of an electronic signature must comply with the
+requirements of the Selling Guide , including clearly identifying the electronic record being signed, clearly
+displaying the borrower's name and requiring the borrower to take action to initiate the electronic signature. A
+single electronic signature cannot be applied to multiple electronic records simultaneously.
+Delivery of eMortgages to Fannie Mae
+For complete requirements for transfer of control, certiﬁcation and custody, and selling of eMortgages, refer to
+C1-2-04, Delivering eMortgages to Fannie Mae .
+Sale of Third-Party Originated eNotes

@@ -1,0 +1,51 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 108/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_108
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+951 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+57245 CFR 160.103 (definition of ‘‘Health care 
+clearinghouse’’). 
+57345 CFR 164.500(b); see also ‘‘Implementing 
+the Health Insurance Portability and Accountability 
+Act (HIPAA) Security Rule: A Cybersecurity Resource Guide,’’ supra note 461, p. 38. 
+574See ‘‘Implementing the Health Insurance 
+Portability and Accountability Act (HIPAA) Security Rule: A Cybersecurity Resource Guide,’’ supra note 461, p. 38. 57545 CFR 164.308(a)(4)(ii)(C). 
+57645 CFR 164.308(a)(4)(ii)(B). 
+577See ‘‘Implementing the Health Insurance 
+Portability and Accountability Act (HIPAA) Security Rule: A Cybersecurity Resource Guide,’’ supra note 461. 578See 45 CFR 164.308(a)(3); proposed 45 CFR 
+164.308(a)(9)(i). 
+579See proposed 45 CFR 164.312(f)(2)(ii) through 
+(iv). whether any of its components 
+constitute a health care clearinghouse under the Security Rule.
+572If no health 
+care clearinghouse functions exist within the organization, the regulated entity should document this finding. If a health care clearinghouse does exist within the organization, the regulated 
+entity must implement procedures that are consistent with the Privacy Rule.
+573 
+Questions for regulated entities to consider include: If health care clearinghouse functions are performed, are policies and procedures implemented to protect ePHI from the other functions of the larger organization? Does the health care clearinghouse share hardware or software with a larger organization of which it is a part? Does the health care clearinghouse share staff or physical space with staff from a larger organization? Has a separate network or subsystem been established for the health care clearinghouse, if reasonable and appropriate? Has staff of the health care clearinghouse been trained to safeguard ePHI from disclosure to the larger organization, if required for compliance with the Privacy Rule?
+574 
+Regulated entities should also consider whether additional technical safeguards are needed to separate ePHI in electronic information systems used by the health care clearinghouse to protect against unauthorized access by the larger organization. 
+We also propose to redesignate the 
+implementation specification for access authorization as proposed 45 CFR 164.308(a)(10)(ii)(B) and to modify it to emphasize that a regulated entity must establish and implement written policies and procedures for granting and revising access to ePHI and the regulated entity’s relevant electronic information systems as necessary and appropriate for each prospective user and technology asset to carry out their assigned function(s) (i.e., role-based 
+access policies). Additionally, we propose to redesignate the implementation specification for access establishment and modification as 45 CFR 164.308(a)(10)(ii)(D) and to modify the heading to ‘‘Access determination and modification.’’ We also propose to modify this implementation specification to require a regulated entity to establish and implement 
+written policies and procedures that, based on its access authorization policies, establish, document, review, and modify the access of each user and technology asset to specific components of the regulated entity’s relevant electronic information systems. Such written policies and procedures would be required to be based upon the regulated entity’s policies for authorizing access. Under this proposal, and consistent with the existing implementation specification,
+575the 
+regulated entity would be required to establish standards for granting access to ePHI and relevant electronic information systems and provide formal authorization from the appropriate authority before granting access to ePHI or relevant electronic information systems. Regulated entities should regularly review personnel access to ePHI and relevant electronic information systems to ensure that access is still authorized and needed, and modify personnel access to ePHI and electronic information systems, as needed, based on review activities. 
+The existing implementation 
+specification for access authorization calls for the regulated entity to implement policies and procedures for granting access to ePHI, for example, through components of its information system.
+576The Department’s proposal to 
+revise this implementation specification would provide greater specificity than our existing requirements, and echo NIST guidance on this topic. Specifically, NIST guidance
+577 
+describes the key steps for developing policies and procedures for granting access to ePHI as follows: 
+•Decide and document procedures 
+for how access to ePHI would be granted to workforce members within the organization. 
+•Select the basis for restricting 
+access to ePHI. Select an access control method (e.g., identity-based, role based, 
+or other reasonable and appropriate 
+means of access). 
+•Decide and document how access to 
+ePHI would be granted for privileged functions.

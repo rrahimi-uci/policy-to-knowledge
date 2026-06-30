@@ -1,0 +1,88 @@
+# Proposed Rule
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_322
+**Pages:** 283-284
+**Section Path:** V. Section-by-Section Analysis > Section 1002.107 Compilation of Reportable Data > 107(a)(1) Unique Identifier > Proposed Rule
+
+---
+
+283 Disability status. The Bureau did not propose or seek comment on including this data 
+point, and so does not have the benefit of robust stakeholder input as to whether and how to 
+implement it. More importantly, ECOA does not include disability as one of the enumerated 
+bases on which discrimination is prohibited, and so it is not clear that the Bureau has the legal 
+authority to include this data point.  
+Additional agricultural data.  The Bureau did not propose or seek comment on including 
+these data points, and so does not have the benefit of robust stakeholder input as to whether and 
+how to implement them. In addition, the  Bureau does not have sufficient other information to 
+assess the importance or feasibility of requiring that these data points be reported.  
+Other requested data points. The Bureau did not propose or seek comment on including 
+these data points regarding vet eran, limited English proficiency, and senior citizen status, and so 
+does not have the benefit of robust stakeholder input as to whether and how to implement them. 
+In addition, the Bureau does not have sufficient other information to assess the importance or 
+feasibility of requiring that these data points be reported.  
+Credit reporting information, including whether credit information was accessed. 
+Commenters did not focus on this potential additional data point  that the Bureau sought comment 
+on, instead foc using their requests on the related potential credit score data point discussed 
+above. For the reasons discussed above, the Bureau is not including this data point in the final rule. 
+Percentage ownership of each principal owner and  percent age ownership by women and 
+by minorities . The Bureau did not receive comments on this potential additional data point  that 
+the Bureau sought comment on . For the reasons discussed above, the Bureau is not including this 
+data point in the final rule.  
+Whether the applicant has an existing relationship with the financial institution and the 
+nature of that relationship. The Bureau did not receive comments on this potential additional 
+data point  that the Bureau sought comment on. For the reasons discussed above, the Bureau is 
+not including this data point in the final rule.  
+Customer number, and/or unique (but anonymous) identification number for applicants 
+or associated persons for tracking of multiple applications.  The Bureau did not receive 
+comments on this potential additional data point  that the Bureau sought comment on. For the 
+reasons discussed above, the Bureau is not including this data point in the final rule.  
+107(a)(1) Unique Identifier  
+Proposed Rule  
+ECOA section 704B(e)(2)(A) requires financial institutions to collect and report “ the 
+number of the application . . . .” Regulation  C includes a similar reporting requirement for a 
+universal loan identifier,
+594 though some insured credit unions and depositories whose lending 
+ 
+594 12 CFR 1003.4(a)(1)(i).
+
+284 activity  falls below applicable thresholds are partially exempt and only need to report a non-
+universal loan identifier.595 Both the universal loan identifier and the non -universal loan 
+identifier use only alphanumeric characters, and do not allow use of identifying information 
+about the applicant or borrower in the identifier. The universal loan identifier is “ unique” in the 
+national HMDA reporting market because it uses a unique LEI for the reporting institution and 
+then the identifier is required to be unique within that institution.596 The universal loan identifier 
+must be no more than 45 characters and the non-universal loa n identifier must be no more than 
+22 characters.597 
+The Bureau proposed  to require that financial institutions report an alphanumeric 
+identifier starting with the LEI of the financial institution. This unique alphanumeric identifier would have been required to be unique within the financial institution to the specific covered 
+application and to be usable to identify and retrieve the specific file corresponding to the 
+application for or extension of credit. The Bureau  also propos ed commentary with additional 
+details, as discussed below.  
+For clarity, the Bureau  includ ed language in proposed comment 107(a)(1) -1 that would  
+have explain ed that the identifier can be assigned at any time prior to reporting the application.  
+Proposed comment 107(a)(1) -1 would also  have  provide d the formatting requirements for the 
+unique identifier. The Bureau proposed  an identifier of 45 characters or fewer, as is currently 
+required for HMDA.  The Bureau made  clear  in the proposal that the unique identifier would not 
+need to stay “ uniform” throughout the application and subsequent processing . Proposed 
+comment 107(a)(1) -1 would have also explain ed that refinancings or applications for refinancing 
+must be assigned a different identifier than the transaction that is being refinanced.  
+Proposed comment 107(a)(1) -2 would have made clear that the unique identifier must not 
+include any directly identifying information regarding the applicant or persons (natural or legal) associated with the applicant. The Bureau was aware that internal identific ation numbers 
+assigned by the financial institution to the application or applicant could be considered directly or indirectly identifying information, and request ed comment on this issue. The Bureau also 
+noted that due to privacy risks the Bureau was proposing to not publish unique identifier in 
+unmodified form; the Bureau sought  comment on potential modifications to or deletion of this 
+data point in the published application-level data. Proposed comment 107(a)(1) -2 would have 
+also cross-referenced proposed § 1002.111(c) and related commentary, which would have 
+prohibit ed any personally identifiable information concerning any individual who is, or is 
+connected with, an applicant, in records retained under proposed  § 1002.111.  
+As stated above, the Bureau  propos ed to require that the unique identifier begin with the 
+financial institution ’s LEI. Pursuant to proposed  § 1002.109(b)(1)(vi), any covered financial 
+institution that did  not currently use an LEI would have been required to obtain and maintain an 
+ 
+595 12 CFR 1003.3(d)(5).  
+596 12 CFR 1003.4(a)(1)(i)(A), (B)(2). The non -universal loan identifier is only required to  be unique within the 
+annual loan/application register in which the covered loan or application is included. 12  CFR 1003.3(d)(5)(ii).  
+597 The universal loa n identifier length limit is included in the Bureau ’s yearly HMDA Filing Instructions Guide. See 
+CFPB, Filing instructions guide for HMDA Data collected in 2023  (2022), https://ffiec.cfpb.gov/ . The length limit 
+for the non- universal loa n identifier is in Regula tion  C § 1003.3(d)(5).

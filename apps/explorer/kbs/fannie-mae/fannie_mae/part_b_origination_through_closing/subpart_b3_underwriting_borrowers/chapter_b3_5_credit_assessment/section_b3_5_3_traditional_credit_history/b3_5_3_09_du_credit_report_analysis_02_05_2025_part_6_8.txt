@@ -1,0 +1,49 @@
+# B3-5.3-09, DU Credit Report Analysis (02/05/2025) (part 6/8)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_238_sub_006
+**Pages:** 495-503
+**Section Path:** Part B, Origination Through Closing > Subpart B3, Underwriting Borrowers > Chapter B3-5, Credit Assessment > Section B3-5.3, Traditional Credit History > B3-5.3-09, DU Credit Report Analysis (02/05/2025)
+
+---
+
+Published March 4, 2026
+483Bankruptcy
+DU applies the following guidelines to prior bankruptcies:
+If a Chapter 13 bankruptcy was discharged within the last two years, dismissed within the last four years,
+or ﬁled but neither discharged nor dismissed within the last four years, the loan caseﬁle will receive an
+Ineligible recommendation and will be ineligible for delivery to Fannie Mae.
+If a non-Chapter 13 bankruptcy was ﬁled, discharged, or dismissed within the last four years, the loan
+caseﬁle will receive an Ineligible recommendation and will be ineligible for delivery to Fannie Mae.
+DU will not take bankruptcy information in the public record section of the credit report into account if the
+bankruptcy is dated more than seven years prior to the credit report date.
+DU will not take tradeline accounts that are reported with a bankruptcy status code or manner of
+payment (MOP) code of “7” into account if there is at least one bankruptcy reported in a public record
+within seven years of the credit report date. In this scenario, DU assumes the date ﬁled and the date
+discharged in the public record are more accurate than the dates in the tradeline; i.e., speciﬁc ﬁled and
+discharged dates do not exist in the tradeline.
+DU will use tradeline accounts that are reported with a bankruptcy status code or MOP code of “7” if
+there is not a bankruptcy reported in a public record within seven years of the credit report date. In this
+scenario, the lender will need to verify the actual ﬁled and discharged dates to determine that the
+bankruptcy meets the DU bankruptcy policy.
+DU is not able to determine if multiple ﬁlings have occurred due to the manner in which bankruptcies are
+reported to the credit report. DU will issue a message when it appears that there may have been multiple
+bankruptcy ﬁlings. This message will list each of the bankruptcies seen on the credit report, and will
+instruct lenders to ensure the loan caseﬁle meets the criteria for underwriting loan caseﬁles with multiple
+bankruptcies.
+Underwriting when the Credit Report Contains Inaccurate Bankruptcy Information
+When DU identiﬁes a bankruptcy on the credit report and the information is inaccurate, the lender may
+instruct DU to disregard the bankruptcy information on the credit report in the eligibility assessment. This
+is done by entering “Conﬁrmed CR BK Incorrect” in the online loan application and resubmitting the loan
+caseﬁle to DU. When the loan caseﬁle is resubmitted to DU, the bankruptcy information on the credit
+report will not be used.
+If the lender enters “Conﬁrmed CR BK Incorrect”, the lender must document that the Chapter 13
+bankruptcy was discharged two or more years or dismissed four or more years from the disbursement
+date of the new loan, or that the non-Chapter 13 bankruptcy was discharged or dismissed four years or
+more years from the disbursement date of the new loan
+Underwriting when a Bankruptcy Was Due to Extenuating Circumstances
+When DU identiﬁes a bankruptcy on the credit report and that bankruptcy was due to extenuating
+circumstances, the lender may instruct DU to disregard the bankruptcy information on the credit report in
+the eligibility assessment. This is done by entering “Conﬁrmed CR BK EC” in the online loan application
+and resubmitting the loan caseﬁle to DU. When the loan caseﬁle is resubmitted to DU, the bankruptcy
+information on the credit report will not be used.

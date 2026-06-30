@@ -1,0 +1,31 @@
+# Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 169/289)
+
+**Source:** health_2024_02544.pdf
+**Chunk ID:** health_2024_02544_028_sub_169
+**Pages:** 1-160
+**Section Path:** Regulatory Impact Analysis > Paperwork Reduction Act of 1995 > Explanation of Estimated Capital Expenses for 42 CFR Part 2
+
+---
+
+12556 Federal Register / Vol. 89, No. 33 / Friday, February 16, 2024 / Rules and Regulations 
+27982 FR 5485, 5487. 
+28083 FR 239, 240. this Notice means that the need to 
+identify, segment, and segregate the data will persist to append the notice with each disclosure. And a few commenters requested that the Department eliminate this notice to align with HIPAA. At a minimum, the Department should excuse covered entity and business associate recipients of the part 2 records from the notice requirement, according to one commenter. 
+A few HIEs suggested that the § 2.32 
+notice requirement has been difficult to implement in electronic systems and across electronic networks in part because it requires the part 2 data to be treated and maintained differently than the rest of the clinical record. The commenters also suggested that it may also be legally impermissible under the CARES Act amendments, which mandate that once a patient’s TPO consent is obtained, the disclosed part 2 record may be redisclosed in accordance with HIPAA and HIPAA does not require use of a prohibition on redisclosure notice. 
+Continuing to require the notice, 
+according to these commenters, may effectively require the continued downstream identification, segmentation, and segregation of part 2 records, because segmentation/ segregation will be necessary to properly apply, transmit, and display the notice in an electronic environment. Even though the Department emphasizes that the Notice to Accompany Disclosure is not a consent requirement (that is, it is not necessary for there to be a valid disclosure), these commenters believed that it was still a legal requirement that would carry stringent penalties under the HIPAA enforcement structure. Thus, requiring the notice would perpetuate the same barriers to SUD data sharing that the 
+CARES Act amendment’s changes were intended to eliminate. 
+Response 
+We appreciate input from these 
+commenters, including concerns about 
+continued segmentation of part 2 records that may result from providing the required notice. The introductory sentence of paragraph (a) of § 2.32 applies to each disclosure made with the patient’s written consent, which includes the TPO consent finalized in this rule. We do not intend for this requirement to impede the integration of part 2 records with other PHI and have expressly removed any requirement to segregate or segment such records in this final rule at § 2.12(d)(2)(i)(C). Additionally, we believe the notice remains necessary to operationalize the continuing prohibition on redisclosures for use in civil, criminal, administrative, 
+and legislative proceedings against the patient, absent written consent or a court order under this part. We also believe that Congress attempted to balance permitting multiple redisclosures under a TPO consent for programs, covered entities, and business associates who are recipients of part 2 records and retaining the core patient protection against use of the records in proceedings against the patient. Congress could have amended part 2 to strike entirely the regulatory Notice to Accompany Disclosure or removed the consent requirement for disclosures to programs, covered entities, and business associates, but it did not do so; instead, Congress mandated a modified version of consent. Therefore, we interpret the existing requirement of a notice that accompanies each disclosure to apply to disclosures under a TPO consent in the same manner as for other disclosures with consent. 
+Comment 
+A commenter asserted that the 
+proposed Notice to Accompany 
+Disclosure language might confuse both patients and part 2 program recipients because it uses legalese and confusingly requires provision of the notice while simultaneously notifying covered entity and business associate recipients (and their downstream recipients) that they are not subject to part 2’s use and disclosure restrictions. The commenter stated that proposed § 2.32 was silent regarding ‘‘intermediaries,’’ which also seemingly conflicted with the part 2 consent form elements that restrict redisclosures by covered entities and business associate that function as 
+‘‘intermediaries’’ to only named member participants or participants that have a ‘‘treating provider relationship’’ with the patient. For these reasons, the commenter encouraged the Department to remove the notice requirement under this section or, at the least, not to require it for redisclosures made by covered entities and business associates (including those that operate as ‘‘intermediaries’’) and their downstream recipients pursuant to a patient’s TPO consent. 
+Response 
+We appreciate input from these 
+commenters and agree that the language

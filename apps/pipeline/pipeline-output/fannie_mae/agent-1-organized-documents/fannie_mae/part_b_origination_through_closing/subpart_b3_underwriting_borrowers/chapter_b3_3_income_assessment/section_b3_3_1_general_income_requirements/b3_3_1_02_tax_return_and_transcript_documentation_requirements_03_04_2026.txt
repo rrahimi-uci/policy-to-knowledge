@@ -1,0 +1,112 @@
+# B3-3.1-02, Tax Return and Transcript Documentation Requirements (03/04/2026)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_129
+**Pages:** 320-322
+**Section Path:** Part B, Origination Through Closing > Subpart B3, Underwriting Borrowers > Chapter B3-3, Income Assessment > Section B3-3.1, General Income Requirements > B3-3.1-02, Tax Return and Transcript Documentation Requirements (03/04/2026)
+
+---
+
+Published March 4, 2026
+302Income Paid in Virtual Currency
+Any income paid to or earned by the borrower in the form of virtual currency, such as cryptocurrencies, is not
+eligible to be used to qualify for the loan.
+Reduced Income Documentation Requirements for High LTV Reﬁnance Loans
+For certain high LTV reﬁnance loans, the lender is not required to follow the income documentation
+requirements described in this Chapter. Additionally, DU oﬀers a reduced level of income documentation for
+High LTV Reﬁnance loans. See Chapter B5-7, High Loan-to-Value Reﬁnance Option for speciﬁc requirements.
+DU Documentation Requirements
+DU indicates the minimum income veriﬁcation documentation required to process a loan application. This level
+of documentation may not be adequate for every borrower and every situation. The lender must determine
+whether additional documentation is warranted. If the lender is unable to determine the stability of the
+borrower’s income on the basis of the available documentation, the income must be removed and the loan
+resubmitted to DU.  
+When employment or income is validated by the DU validation service, DU will issue a message indicating the
+required documentation. This documentation requirement may diﬀer from those described below. See  B3-2-02,
+DU Validation Service  for more information.
+Refer to  DU Job Aids  for information regarding data entry to DU.
+Recent Related Announcements
+The table below provides reference to recently issued Announcements related to this topic.
+Announcements Issue Date
+Announcement SEL-2026-02  March 04, 2026 
+B3-3.1-02, Tax Return and Transcript Documentation Requirements
+(03/04/2026)
+Introduction
+Tax returns and transcripts can be used to calculate and verify certain types of borrower income. This topic
+contains the requirements for use of tax return information including:
+Federal Income Tax Return Standards
+
+Published March 4, 2026
+303Using Tax Return Transcripts in Lieu of Tax Returns
+Use of IRS Form 4506-C to Verify Borrower Income Documentation
+Retaining Tax Documents
+Federal Income Tax Return Standards
+When required, personal federal income tax returns must be copies of the original returns that were ﬁled with
+the IRs.  All supporting schedules must be included.  Alternatively, the lender may obtain applicable transcripts
+of federal income tax returns.  “Most recent” tax return is deﬁned as the last return scheduled to have been
+ﬁled with the IRS. See  B1-1-03, Allowable Age of Credit Documents and Federal Income Tax Returns .
+Each tax return must be signed by the borrower unless the lender has obtained one of the following signature
+alternatives:
+documentation conﬁrming that the tax returns were ﬁled electronically,
+a completed IRS Form 4506–C (signed by the borrower) for the year in question, or
+IRS transcripts that validate the tax return.
+See the speciﬁc income topics in Chapter B3-3, Income Assessment for additional information and speciﬁc
+documentation requirements.
+Using Tax Return Transcripts in Lieu of Tax Returns
+When federal income tax information is used to document income for qualifying purposes, the lender may
+obtain transcripts of the applicable federal income tax documents. For example, the lender may obtain Tax
+Return Transcripts for Form 1040 or Wage and Income Transcripts for W-2s, 1098s, and 1099s.
+In certain instances, tax transcripts may not provide suﬃcient detail to support the qualifying income. In those
+cases, the lender must obtain copies of the actual returns, schedules, or forms. For example, the lender must
+obtain copies of Schedules B through F, Schedule K-1, or business returns, unless:
+the income reﬂected on the applicable schedule transcripts is positive, and
+the income supported by that schedule or form is not being used for qualifying.
+If a borrower’s self-employment income from a sole proprietorship (as reported on IRS Form 1040, Schedule C or
+C-EZ) is validated by the DU validation service, the lender is not required to obtain the tax returns.
+Documentation in accordance with the DU message is acceptable. The DU message may allow a tax transcript
+rather than the tax returns. See  B3-2-02, DU Validation Service , for additional information.
+ 
+Use of IRS Form 4506-C to Verify Borrower Income Documentation
+IRS Form 4506-C can be used to obtain tax transcripts for up to four years or tax periods and is valid for 120
+days after completion (including signature) by the borrower. The lender must have each borrower whose income
+is used in qualifying (regardless of income source) complete and sign a separate IRS Form 4506-C at or before
+closing. An alternative form or process is also acceptable if it authorizes the release of comparable tax
+
+Published March 4, 2026
+304information from the IRS.
+Note:  When all of a borrower’s income is validated by the DU validation service, the lender is not
+required to obtain a signed IRS Form 4506–C for that borrower.
+Multiple IRS Form 4506-Cs may be required depending on the number and type of transcripts required to verify
+the income because only one tax form can be requested per each IRS Form 4506-C. For example, a self-
+employed borrower whose income documentation includes two years each of personal and business tax returns
+must complete:
+one IRS Form 4506-C to request transcript of the personal tax returns, and
+a separate IRS Form 4506-C to request transcripts of the business returns (e.g., Form 1065, Form 1120,
+Form 1120S).  
+The lender must complete IRS Form 4506-C as follows:
+Enter the lender’s name (or the name of the servicer, if servicing will be transferred within 120 days of
+the taxpayer signing the form) as the recipient of the tax documents.
+Indicate the year(s) or tax period(s) for which the borrower’s income was or will be used in underwriting
+the loan.
+Ensure the form(s) is dated on the same day the borrower signs it (or ascertain that the borrower dates
+the form when they sign it).
+Note: The borrower should not be required to sign an IRS authorization form before all items on the
+form, including the transcript being requested, the years/tax periods, and the date, have been
+completed.
+In addition, the lender must document the requirement to obtain tax transcripts by submitting the IRS Form
+4506–C to the IRS (directly or through an authorized designee) in their written quality control (QC) plan. See
+D1-3-03, Lender Post-Closing Quality Control Reveriﬁcations  for details concerning QC requirements.
+If the lender receives the transcript(s) prior to closing, the transcript(s) must be used to verify the income
+documentation provided by the borrower and used in the underwriting process. In this case, because the lender
+has already received the tax transcript(s), an additional signed IRS Form 4506-C is not required to be signed by
+the borrower. 
+Note:  Borrowers with income from Puerto Rico must use Modelo SC 2907 (Solicitud De Copia De
+Planilla, Relevo De Herencia Y De Donacion) rather than IRS Form 4506-C. Applicable forms or
+processes for eligible borrowers ﬁling tax returns in other U.S. territories must be adhered to and
+obtained when required.
+ 
+Retaining Tax Documents
+The lender must retain all tax documents, including either the IRS Form 4506-C or the tax transcript(s) and any
+subsequent explanation or documentation of discrepancies in the loan ﬁle for QC review.
+Recent Related Announcements
+The table below provides reference to recently issued Announcements related to this topic.

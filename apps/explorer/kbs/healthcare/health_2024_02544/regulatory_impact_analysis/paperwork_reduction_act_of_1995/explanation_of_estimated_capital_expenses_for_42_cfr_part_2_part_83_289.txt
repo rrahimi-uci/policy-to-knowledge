@@ -1,0 +1,35 @@
+# Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 83/289)
+
+**Source:** health_2024_02544.pdf
+**Chunk ID:** health_2024_02544_028_sub_083
+**Pages:** 1-160
+**Section Path:** Regulatory Impact Analysis > Paperwork Reduction Act of 1995 > Explanation of Estimated Capital Expenses for 42 CFR Part 2
+
+---
+
+12513 Federal Register / Vol. 89, No. 33 / Friday, February 16, 2024 / Rules and Regulations 
+169See The Off. of the Nat’l Coordinator for 
+Health Info. Tech., ‘‘Certification Companion 
+Guide: Security tags’’ (2015), https://www.healthit.gov/test-method/security-tags- summary-care-send. this to include consent for use and 
+disclosure of records in legal proceedings, including those that are brought against a patient. Thus, we do not view this final rule’s language about consent in § 2.12(d) as creating a substantive change to patients’ rights or the existing procedures for legal proceedings, but as clarifying how consent is one option for achieving the use and disclosure of records in proceedings against a patient. 
+Nonetheless, because the role of 
+patient consent is expanding, we created the new requirement for separate consent as § 2.31(d) in response to many comments about the potential for coerced consent and specific suggestions about ways to reduce instances of potential coercion, including requiring it to be separate from TPO consent or consent to treatment. This paragraph provides that patient consent for use and disclosure of records (or testimony relaying information contained in a record) in a civil, criminal, administrative, or legislative investigation or proceeding cannot be combined with a consent to use and disclose a record for any other purpose. Some commenters asserted that patients are particularly vulnerable to coerced consent at the initiation of treatment when they are suffering the effects of SUD and that they may not fully appreciate how their records may be used or disclosed in proceedings against them. Thus, requiring separate consent for use or disclosure of records in investigations or proceedings against a patient would help ensure that patients are better aware of the nature of the proceedings and how their records may be used. Signing a separate document specific to one purpose draws attention to the consent decision and provides greater opportunity for review of the nature of the consent. Comments about the proposed changes for legal proceedings are also addressed in §§ 2.2, 2.31, 2.66, and 2.67. Additional comments with similar concerns are discussed in § 2.31. 
+Comment 
+With respect to the applicability of 
+part 2 to third-party payers, we received 
+overwhelming support from the several organizations that commented on the proposed changed definition of third- party payer as applied in paragraph (d)(2)(i) of this section. These commenters supported the proposal to distinguish health plans, which are covered entities, from other third-party payers who are subject to part 2 (but not subject to HIPAA). One commenter explained their understanding that covered entity payers (e.g., health plans) would already be included in the 
+meaning of covered entity for the purposes of part 2 and HIPAA, and therefore able to operate under the relaxation of the redisclosure prohibition for TPO purposes while ‘‘third-party payers’’ under this narrowed definition would not. The commenter stated its belief that the change was an important and useful clarification of the continued redisclosure prohibition on treatment uses by such third-party payers. 
+A few HIE/HIN commenters strongly 
+supported this change because the 
+inability to segment the part 2-protected claims/encounter data from the non-part 2 data has often been a barrier to health plans contributing the clinical component of this administrative data to local, regional, and national HIE efforts. Additionally, a health system requested that the Department ensure that ACOs and population health providers have access to full part 2 information without a beneficiary having to explicitly opt-in to data sharing. 
+Response 
+We appreciate the comments 
+concerning how the proposed narrower 
+definition of ‘‘third-party payer’’ operates in paragraph (d)(2) of this section. Applicability to health plans is now addressed under paragraph (d)(2)(C) within the reference to covered entities. Additionally, the new statement in paragraph (d)(2)(C) in this final rule provides that health plans are not required to segregate records or segment data upon receipt from a part 2 program. ACOs and population health providers will need to evaluate the applicability provision based on their status as covered entities or business associates. 
+Comment 
+A medical professionals association 
+voiced its strong support for data 
+segmentation in support of data interoperability while maintaining patient privacy; capabilities for EHRs to track and protect sensitive information before it can be disclosed or redisclosed; and continuous monitoring and data collection regarding unintended harm to patients from sharing their sensitive information. 
+Response 
+We appreciate the comment about 
+improving the capabilities for EHRs to

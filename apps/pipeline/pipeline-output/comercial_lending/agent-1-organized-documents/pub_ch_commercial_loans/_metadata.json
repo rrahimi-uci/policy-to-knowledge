@@ -1,0 +1,311 @@
+{
+  "source_file": "pub_ch_commercial_loans.pdf",
+  "total_chunks": 18,
+  "chunk_methods": [
+    "toc_based"
+  ],
+  "structure": [
+    {
+      "chunk_id": "pub_ch_commercial_loans_001",
+      "title": "Commercial Loans, Comptroller's Handbook",
+      "path": "pub_ch_commercial_loans/commercial_loans_comptroller_s_handbook.txt",
+      "section_path": [
+        "Commercial Loans, Comptroller's Handbook"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_loans.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "word_count": 53
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_loans_002",
+      "title": "Table of Contents + Introduction",
+      "path": "pub_ch_commercial_loans/commercial_loans_comptroller_s_handbook/table_of_contents_introduction.txt",
+      "section_path": [
+        "Commercial Loans, Comptroller's Handbook",
+        "Table of Contents"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_loans.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_loans_003",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 391
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_loans_004",
+      "title": "International Lending + Shared National Credit Program",
+      "path": "pub_ch_commercial_loans/commercial_loans_comptroller_s_handbook/introduction/international_lending_shared_national_credit_program.txt",
+      "section_path": [
+        "Commercial Loans, Comptroller's Handbook",
+        "Introduction",
+        "International Lending"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_loans.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_loans_005",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 718
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_loans_006",
+      "title": "Interagency Country Exposure Review Committee + Extensions of Credit to “Insiders”",
+      "path": "pub_ch_commercial_loans/commercial_loans_comptroller_s_handbook/introduction/interagency_country_exposure_review_committee_extensions_of_credit_to_insiders.txt",
+      "section_path": [
+        "Commercial Loans, Comptroller's Handbook",
+        "Introduction",
+        "Interagency Country Exposure Review Committee"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_loans.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_loans_007",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 760
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_loans_008",
+      "title": "Extension of Credit to Brokerage Firms",
+      "path": "pub_ch_commercial_loans/commercial_loans_comptroller_s_handbook/introduction/extension_of_credit_to_brokerage_firms.txt",
+      "section_path": [
+        "Commercial Loans, Comptroller's Handbook",
+        "Introduction",
+        "Extension of Credit to Brokerage Firms"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_loans.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 729
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_loans_009",
+      "title": "Highly Leveraged Transactions",
+      "path": "pub_ch_commercial_loans/commercial_loans_comptroller_s_handbook/introduction/highly_leveraged_transactions.txt",
+      "section_path": [
+        "Commercial Loans, Comptroller's Handbook",
+        "Introduction",
+        "Highly Leveraged Transactions"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_loans.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 766
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_loans_010",
+      "title": "Examination Procedures",
+      "path": "pub_ch_commercial_loans/commercial_loans_comptroller_s_handbook/examination_procedures.txt",
+      "section_path": [
+        "Commercial Loans, Comptroller's Handbook",
+        "Examination Procedures"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_loans.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 275
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_loans_011",
+      "title": "General Procedures",
+      "path": "pub_ch_commercial_loans/commercial_loans_comptroller_s_handbook/examination_procedures/general_procedures.txt",
+      "section_path": [
+        "Commercial Loans, Comptroller's Handbook",
+        "Examination Procedures",
+        "General Procedures"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_loans.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 519
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_loans_012",
+      "title": "Quantity of Risk",
+      "path": "pub_ch_commercial_loans/commercial_loans_comptroller_s_handbook/quantity_of_risk.txt",
+      "section_path": [
+        "Commercial Loans, Comptroller's Handbook",
+        "Quantity of Risk"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_loans.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 823
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_loans_013",
+      "title": "General Portfolio Review",
+      "path": "pub_ch_commercial_loans/commercial_loans_comptroller_s_handbook/quantity_of_risk/general_portfolio_review.txt",
+      "section_path": [
+        "Commercial Loans, Comptroller's Handbook",
+        "Quantity of Risk",
+        "General Portfolio Review"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_loans.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 718
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_loans_014",
+      "title": "Quality of Risk Management",
+      "path": "pub_ch_commercial_loans/commercial_loans_comptroller_s_handbook/quality_of_risk_management.txt",
+      "section_path": [
+        "Commercial Loans, Comptroller's Handbook",
+        "Quality of Risk Management"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_loans.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 230
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_loans_015",
+      "title": "Policy",
+      "path": "pub_ch_commercial_loans/commercial_loans_comptroller_s_handbook/quality_of_risk_management/policy.txt",
+      "section_path": [
+        "Commercial Loans, Comptroller's Handbook",
+        "Quality of Risk Management",
+        "Policy"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_loans.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 230
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_loans_016",
+      "title": "Processes",
+      "path": "pub_ch_commercial_loans/commercial_loans_comptroller_s_handbook/quality_of_risk_management/policy/processes.txt",
+      "section_path": [
+        "Commercial Loans, Comptroller's Handbook",
+        "Quality of Risk Management",
+        "Policy",
+        "Processes"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_loans.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "word_count": 230
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_loans_017",
+      "title": "Commercial Loan Records + Loan Interest",
+      "path": "pub_ch_commercial_loans/commercial_loans_comptroller_s_handbook/quality_of_risk_management/policy/processes/commercial_loan_records_loan_interest.txt",
+      "section_path": [
+        "Commercial Loans, Comptroller's Handbook",
+        "Quality of Risk Management",
+        "Policy",
+        "Processes",
+        "Commercial Loan Records"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_loans.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_loans_018",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 539
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_loans_019",
+      "title": "Collateral",
+      "path": "pub_ch_commercial_loans/commercial_loans_comptroller_s_handbook/quality_of_risk_management/policy/processes/collateral.txt",
+      "section_path": [
+        "Commercial Loans, Comptroller's Handbook",
+        "Quality of Risk Management",
+        "Policy",
+        "Processes",
+        "Collateral"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_loans.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "word_count": 570
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_loans_020",
+      "title": "Other + Commodity loans or loans to commodity brokers and dealers",
+      "path": "pub_ch_commercial_loans/commercial_loans_comptroller_s_handbook/quality_of_risk_management/policy/processes/other_commodity_loans_or_loans_to_commodity_brokers_and_dealers.txt",
+      "section_path": [
+        "Commercial Loans, Comptroller's Handbook",
+        "Quality of Risk Management",
+        "Policy",
+        "Processes",
+        "Other"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_loans.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_loans_021",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 530
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_loans_022",
+      "title": "Personnel + Controls",
+      "path": "pub_ch_commercial_loans/commercial_loans_comptroller_s_handbook/quality_of_risk_management/policy/processes/personnel_controls.txt",
+      "section_path": [
+        "Commercial Loans, Comptroller's Handbook",
+        "Quality of Risk Management",
+        "Policy",
+        "Processes",
+        "Personnel"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_loans.pdf",
+        "toc_level": 4,
+        "chunk_method": "toc_based",
+        "merged_with": "pub_ch_commercial_loans_023",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 540
+      }
+    },
+    {
+      "chunk_id": "pub_ch_commercial_loans_024",
+      "title": "Conclusion",
+      "path": "pub_ch_commercial_loans/commercial_loans_comptroller_s_handbook/conclusion.txt",
+      "section_path": [
+        "Commercial Loans, Comptroller's Handbook",
+        "Conclusion"
+      ],
+      "metadata": {
+        "source_file": "pub_ch_commercial_loans.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 671
+      }
+    }
+  ]
+}

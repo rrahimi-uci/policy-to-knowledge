@@ -1,0 +1,39 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 77/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_077
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+937 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+447See ‘‘Guidance on HIPAA & Cloud 
+Computing,’’ Office for Civil Rights, U.S. 
+Department of Health and Human Services (‘‘A covered entity (or business associate) that engages a [cloud service provider (CSP)] should understand the cloud computing environment or solution offered by a particular CSP so that the covered entity (or business associate) can appropriately conduct its own risk analysis and establish risk management policies, as well as enter into appropriate [business associate agreements.].’’), https://www.hhs.gov/hipaa/for-professionals/ special-topics/health-information-technology/ cloud-computing/index.html. 
+448‘‘Cybersecurity Performance Goals,’’ supra 
+note 18. 
+449See Letter from NCVHS Chair Jacki Monson 
+(2023), supra note 123, Appendix p. 5. 
+450See 68 FR 8333, 8352 (Feb. 20, 2003). 
+451See ‘‘Making a List and Checking it Twice: 
+HIPAA and IT Asset Inventories,’’ Cybersecurity Newsletter, Office for Civil Rights, U.S. Department of Health and Human Services (Aug. 25, 2020), https://www.hhs.gov/hipaa/for-professionals/ security/guidance/cybersecurity-newsletter- summer-2020/index.html. 452Id. 
+453See ‘‘The NIST Cybersecurity Framework 
+(CSF) 2.0,’’ supra note 15, p. 3. 
+454Proposed 45 CFR 164.308(a)(1)(ii)(A). 
+455Id. safeguarding ePHI. These proposals are 
+consistent with current guidance, as described below. 
+In place of the existing standard for 
+security management process, we propose a standard at 45 CFR 164.308(a)(1)(i) that would require a regulated entity to conduct and maintain an accurate and thorough written technology asset inventory and a network map of its electronic information systems and all technology assets that may affect the confidentiality, integrity, or availability of ePHI. The inventory forms the foundation for a fulsome and accurate 
+risk analysis. A regulated entity must identify its information systems that create, receive, maintain, or transmit ePHI and all technology assets, as we propose to define them in 45 CFR 164.304, that may affect ePHI in such information systems in order to secure them. Regulated entities cannot understand the risks to the confidentiality, integrity, and availability of their ePHI without a complete understanding of these assets. We believe that this proposal would clarify compliance expectations and provide increased protections for the confidentiality, integrity, and availability of ePHI. Consistent with practices previously highlighted in guidance, regulated entities would be required by this proposal to conduct and maintain an accurate and thorough written inventory of technology assets. 
+The standard would also require each 
+regulated entity to determine the movement of ePHI through, into, and out of its information systems and to describe such movement in a network map. A regulated entity’s network map would reflect where its technology assets are, for example, physically located at the regulated entity’s worksite, or accessed through the cloud. As another example, a covered entity might determine that ePHI is created, received, maintained, or transmitted by one or more offshore business associates (i.e., persons that are located outside of 
+the U.S.) for such services as claims processing, call center staffing, and technical support, activities that inherently involve ePHI. The technology assets used by the business associate to create, receive, maintain, or transmit ePHI are not a part of the covered entity’s electronic information system, but do affect the confidentiality, integrity, or availability of ePHI and so would be required to be included in the network map of the covered entity.
+447 Such assets would be considered part of the business associate’s electronic information systems and therefore would need to be included in both its technology asset inventory and network map. Any technology assets used by the covered entity to create, receive, maintain, or transmit ePHI to the business associate would need to be accounted for in both its technology asset inventory and network map. Such technology assets would not be part of the business associate’s technology asset inventory, but would need to be included on its network map. 
+This proposed standard aligns with 
+the Department’s enhanced CPG for Asset Inventory, which requires that a regulated entity identify assets to more rapidly detect and respond to potential risks and vulnerabilities,
+448and is 
+consistent with NCVHS’ recommendation to require regulated entities to identify where all PHI is stored and to collect data on applications and systems used by the organization to create a systems inventory.
+449 
+In 2003, the Department elected not to 
+require regulated entities to conduct an inventory because we believed that regulated entities would understand that such an inventory is a vital component of the risk analysis, making it redundant of other requirements of the Security Rule.

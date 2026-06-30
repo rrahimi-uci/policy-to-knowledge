@@ -1,0 +1,64 @@
+# B4-2.2-01, Limited Review Process (04/02/2025)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_301
+**Pages:** 674-675
+**Section Path:** Part B, Origination Through Closing > Subpart B4, Underwriting Property > Chapter B4-2, Project Standards > Section B4-2.2, Project Eligibility > B4-2.2-01, Limited Review Process (04/02/2025)
+
+---
+
+Published March 4, 2026
+656Section B4-2.2, Project Eligibility
+B4-2.2-01, Limited Review Process (04/02/2025)
+Introduction
+This topic contains information on the Limited Review process performed by lenders, including:
+Unit and Project Type Eligible for Limited Review
+Transactions Eligible for a Limited Review
+Limited Review Eligibility Requirements
+CPM Delivery Restrictions Notiﬁcations
+Unit and Project Type Eligible for Limited Review
+To be eligible for a Limited Review, the unit securing the mortgage must be an attached unit in an established
+condo project.
+Transactions Eligible for a Limited Review
+The following table describes the transactions that are eligible for a Limited Review.
+Limited Review Eligible Transactions -Attached Units in Established Condo Projects (For
+Projects Outside of Florida)
+Occupancy Type Maximum LTV, CLTV, and HCLTV Ratios
+Principal residence 90%
+Second home 75%
+Investment property 75%
+Attached units in established projects located in Florida are subject to more restrictive LTV ratio requirements
+under the Limited Review process. See  B4-2.2-04, Geographic-Speciﬁc Condo Project Considerations , for
+additional information.
+
+Published March 4, 2026
+657Limited Review Eligibility Requirements
+In completing a Limited Review, the lender must ensure that the project and subject unit meet the eligibility
+requirements described in the following table.
+✓ Limited Review Eligibility Requirements
+ The project meets Requirements Applicable to All Properties in a Condo, Co-op, or PUD Project
+described in  B4-2.1-01, General Information on Project Standards .
+ The project is not an ineligible project. (See  B4-2.1-03, Ineligible Projects ).
+ The project does not consist of manufactured homes.
+Note : Manufactured housing projects require a Fannie Mae PERS review or a Full Review.
+ No more than 15% of the total number of units in the project are 60 days or more past due in
+the payment of each special assessment.
+These requirements apply to both DU loan caseﬁles and manually underwritten loans.
+If the project and loan transaction are eligible for and meet all of the eligibility requirements of the Limited
+Review process, the lender is not required to validate that the project also meets the eligibility requirements of
+another project review type. However, if the LTV, CLTV, or HCLTV ratios exceed the limits above, or in the event
+the lender becomes aware of a circumstance that would cause the project or transaction to be ineligible under a
+Limited Review, the lender must use one of the other project review methods to determine project eligibility and
+the project must meet all of the eligibility requirements of that selected alternate project review type.
+Note : For loans eligible for Limited Review that receive a CPM Approved by Fannie Mae  message in
+DU, see CPM Approved by Fannie Mae Message in DU  in B4-2.2-02, Full Review Process , for additional
+information.
+CPM Delivery Restrictions Notiﬁcations
+Project transaction eligibility or other loan-level restrictions will display in CPM and/or on the DU underwriting
+Findings report, when applicable. When CPM displays a delivery restriction for a speciﬁc project, lenders may
+only sell loans that comply with the stated restrictions, even if the loan receives a CPM Approved by Fannie Mae
+message in DU.
+For example, loans in some projects may be limited to certain occupancy types (such as principal residences
+only, or principal residences and second homes), or there may be limit on the LTV ratios.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.

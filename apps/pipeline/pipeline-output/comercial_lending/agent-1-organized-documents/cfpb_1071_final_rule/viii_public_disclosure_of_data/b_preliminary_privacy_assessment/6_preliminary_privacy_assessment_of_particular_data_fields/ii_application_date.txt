@@ -1,0 +1,48 @@
+# ii. Application Date
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_701
+**Pages:** 689-689
+**Section Path:** VIII. Public Disclosure of Data > B. Preliminary Privacy Assessment > 6. Preliminary Privacy Assessment of Particular Data Fields > ii. Application Date
+
+---
+
+689 the unique identifier may include a loan number or account number, the  data point in 
+combination with the financial institution ’s name provides  substantial opportunity for fraud.  
+Because of the privacy risks discussed above, most of these commenters supported the Bureau’s 
+suggestion not to publish the unmodified unique identifier field. A  CDFI lender stated that the 
+Bureau should consider publishing a modified identifier or a  separate one created by  the Bureau . 
+After considering these comments, the Bureau intends not to publish the unique identifier 
+data field in an unmodified form. Although it has not yet conducted a full re -identification 
+analysis for the 1071 data, the Bureau ag rees with the re -identification risks raised by 
+commenters. The universal loan identifier for HMDA data, which is similar to the unique 
+identifier, is not published because of the re -identification risk that it poses.898 While HMDA 
+publication practices are not dispositive here, the Bureau draws upon its experience 
+implementing HMDA and Regulation  C where appropriate, and it does so here.  
+At this time, the Bureau has not decided whether to publish public application-level data 
+without any unique identifier information, disclose instead a separate unique identifier created by the Bureau for this purpose, or employ some other modification. The Bureau will consider what 
+modification or deletion  techniques may be appropriate when it analyzes application -level da ta 
+and conducts its full privacy analysis.  
+ii. Application Date  
+Proposed § 1002.107(a)(2) would have  required financial institutions to collect and report 
+the date the covered application was received by the financial institution or the date shown on a 
+paper or electronic application form.  As discussed in  the section -by-section analysis of  
+§ 1002.107(a)(2),  the Bureau is finalizing this  data point with modifications  such that financial 
+institutions must collect and report the date the covered application was received or shown on a paper or electronic application form.  
+The NPRM stated that, by itself, disclosing application date in unmodified form would 
+likely disclos e minimal, if any, information about an applicant or related natural person that may 
+be harmful or sensitive if such person were re -identified, or that may be harmful or sensitive to 
+an identified financial institution. The Bureau noted  that an adversary s uch as a competitor may 
+conceivably find it helpful to understand when a business is seeking credit . In addition, 
+marketers and creditors could use this information to target products to entities recently in the 
+market for credit, either to deploy new funds or to refinance out of a current loan. However, the 
+Bureau did not believe that disclosing the application date would otherwise disclose sensitive 
+information about a small business or its owner . The Bureau also reasoned that any utility of this 
+data fie ld for such purposes would be curtailed by the time to public ation.  
+The Bureau was not able to identif y publicly available datasets that include data fields an 
+adversary could directly match to the application date field. However, the Bureau acknowledged 
+that an adversary may be able to infer a likely origination date based on typical time lags 
+between appl ication, credit decision, and origination, potentially enabling matching to other 
+datasets that record these later dates.  The Bureau stated that, i f it determine d that application date 
+ 
+898 See 84 FR 649, 660 (Jan. 31, 2019).

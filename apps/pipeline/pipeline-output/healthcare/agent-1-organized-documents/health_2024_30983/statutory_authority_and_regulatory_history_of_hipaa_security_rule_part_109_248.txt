@@ -1,0 +1,52 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 109/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_109
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+952 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+580See ‘‘Train Your Workforce, so They Don’t Get 
+Caught by a Phish!,’’ Cybersecurity Newsletter, 
+Office for Civil Rights, U.S. Department of Health and Human Services (July 2017), https://www.hhs.gov/sites/default/files/july-2017-ocr- cyber-newsletter.pdf. 581See ‘‘Training Materials,’’ Office for Civil 
+Rights, U.S. Department of Health and Human Services, https://www.hhs.gov/hipaa/for- 
+professionals/training/index.html. 
+582See ‘‘Implementing the Health Insurance 
+Portability and Accountability Act (HIPAA) Security Rule: A Cybersecurity Resource Guide,’’ supra note 461. 
+583See Resolution Agreement, ‘‘West Georgia 
+Ambulance, Inc.’’ Office for Civil Rights, U.S. Department of Health and Human Services (Dec. 23, 2019), https://www.hhs.gov/sites/default/files/west- 
+georgia-ra-cap.pdf. 584‘‘Cybersecurity Performance Goals,’’ supra 
+note 18. 
+585Id. 
+586Proposed 45 CFR 164.308(a)(11)(ii)(A)(1). 
+587Proposed 45 CFR 164.308(a)(11)(ii)(A)(2). 
+588Proposed 45 CFR 164.308(a)(11)(ii)(A)(3); 
+Letter from NCVHS Chair Jacki Monson (2023), supra note 123, Appendix p. 1; Letter from NCVHS 
+Chair Jacki Monson (2022), supra note 123, p. 6– 
+7. 164.308(a)(10)(ii)(F) would require a 
+regulated entity to review the written policies and procedures required by this standard at least once every 12 months and to modify them as reasonable and appropriate. 
+m. Section 164.308(a)(11)(i)—Standard: 
+Security Awareness Training 
+A covered entity’s workforce is its 
+frontline not only in patient care and patient service, but also in safeguarding the privacy and security of PHI.
+580The 
+health care sector’s risk landscape continues to grow with the increasing number of interconnected, smart devices of all types, the increased use of interconnected medical record and billing systems, and the increased use of applications and cloud computing. This standard reflects the fact that training on data security for workforce members is essential for protecting an organization against cyberattacks. 
+An organization’s training program 
+should be an ongoing, evolving process and flexible enough to educate workforce members on new cybersecurity threats and how to respond to them. As such, regulated entities should consider how often to train workforce members on security issues, given the risks and threats to their enterprises, and how often to send security updates to their workforce members. Many regulated entities have determined that twice-annual training and monthly security updates are necessary, given their risks analyses. 
+Regulated entities should apply 
+security updates and reminders to quickly communicate new and emerging cybersecurity threats to workforce members such as new social engineering ploys (e.g., fake tech support requests 
+and new phishing scams) and malicious software attacks including new ransomware variants. Entities need to address what type of training to provide to workforce members on security issues, given the risks and threats to their enterprises. Computer-based training, classroom training, monthly newsletters, posters, email alerts, and team discussions are all tools that different organizations use to fulfill their training requirements. Entities must also address how to document that training to workforce members was provided, including dates and types of training, training materials, and evidence of workforce participation. HHS has issued many types of 
+training materials on securing PHI.
+581 
+NIST has also provided detailed 
+guidance for developing and implementing workforce training programs.
+582Despite this existing 
+guidance, regulated entities often fail to provide appropriate training to adequately safeguard ePHI. For example, in one investigation, OCR investigators found evidence that not only had an ambulance company potentially failed to conduct a risk analysis, it also potentially failed to implement a security training program or to train any of its employees.
+583Such 
+failures can contribute to breaches of individuals’ unsecured ePHI. 
+To ensure security awareness training 
+compliance, a regulated entity needs to regularly educate its workforce members on the evolving technological threats to ePHI, how to use the technology that the regulated entity has adopted and implemented, and the specific procedures workforce members must follow to ensure that the ePHI remains protected. Additionally, while many educational programs for clinicians provide general training on the HIPAA Rules, the curriculums vary widely. Without providing its own training on the Security Rule, a regulated entity cannot ensure that the training its workforce received elsewhere meets the required standards. 
+Given the failure of regulated entities 
+to implement the security awareness and training standard and consistent with existing guidance, the Department proposes to provide more detailed requirements for security awareness

@@ -1,0 +1,79 @@
+# Justification for Strengthening HIPAA Security Standards (part 3/45)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_003_sub_003
+**Section Path:** Justification for Strengthening HIPAA Security Standards
+**Summary:** This section argues for the necessity of revising the Security Rule, citing the changing healthcare environment, increasing cybersecurity threats, and inconsistent compliance among regulated entities. It outlines the need for robust standards to ensure the protection of ePHI.
+
+---
+
+899 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+1Subtitle F of title II of HIPAA (Pub. L. 104–191, 
+110 Stat. 1936 (Aug. 21, 1996)) added a new part 
+C to title XI of the Social Security Act of 1935 
+(SSA), Public Law 74–271, 49 Stat. 620 (Aug. 14, 1935), (see sections 1171–1179 of the SSA (codified 
+at 42 U.S.C. 1320d–1320d–8)), as well as promulgating section 264 of HIPAA (codified at 42 U.S.C. 1320d–2 note), which authorizes the Secretary to promulgate regulations with respect to the privacy of individually identifiable health information. The Privacy Rule has subsequently been amended pursuant to the Genetic Information Nondiscrimination Act of 2008, title I, section 105, Public Law 110–233, 122 Stat. 881 (May 21, 2008) (codified at 42 U.S.C. 2000ff), and the Health Information Technology for Economic and Clinical Health (HITECH) Act of 2009, Public Law 111–5, 123 Stat. 226 (Feb. 17, 2009) (codified at 42 U.S.C. 139w–4(0)(2)). 
+245 CFR part 160 subparts A and C of 45 CFR 
+part 164. For a history of the Security Rule, see section II.B, ‘‘Regulatory History.’’ 
+3See also the HIPAA Privacy Rule, 45 CFR part 
+160 and subparts A and E of 45 CFR part 164; HIPAA Breach Notification Rule, 45 CFR part 164, subpart D; and the HIPAA Enforcement Rule, 45 CFR part 160, subparts C through E. 
+445 CFR 160.103 (definition of ‘‘Protected health 
+information’’). 
+545 CFR 160.103 (definition of ‘‘Individually 
+identifiable health information’’). 
+6At times throughout this NPRM, the Department 
+uses the terms ‘‘health information’’ or ‘‘individuals’ health information’’ to refer generically to health information pertaining to an individual or individuals. In contrast, the Department’s use of the term ‘‘IIHI’’ refers to a category of health information defined in HIPAA, and ‘‘PHI’’ is used to refer specifically to a category of IIHI that is defined by and subject to the requirements of the HIPAA Rules. The HIPAA Rules exclude from the definition of PHI: IIHI in employment records held by a covered entity in its role as employer; IIHI in education records and certain treatment records covered by the Family Educational Rights and Privacy Act (codified at 20 U.S.C. 1232g); and IIHI regarding a person who has been deceased for more than 50 years. 45 CFR 160.103 (definition of ‘‘Protected health information’’). 
+745 CFR 160.103 (definition of ‘‘Electronic 
+protected health information’’). 
+8See 68 FR 8334 (Feb. 20, 2003) and 78 FR 5566 
+(Jan. 25, 2013). Safeguards Would Evolve To Address 
+Changes in the Health Care Environment 
+2. NCVHS Believes That the Security 
+Standards Evolve To Address Changes in the Health Care Environment 
+3. A Strengthened Security Rule Would 
+Continue To Be Flexible and Scalable While Providing Regulated Entities With Greater Clarity 
+4. Small and Rural Health Care Providers 
+Must Implement Strong Security Measures To Provide Efficient and Effective Health Care 
+5. A Strengthened Security Rule Is Critical 
+to an Efficient and Effective Health Care System 
+E. The Secretary Must Develop Standards 
+for the Security of ePHI Because None Have Been Developed by an ANSI- Accredited Standard Setting Organization 
+IV. Section-by-Section Description of the 
+Proposed Amendments to the Security 
+Rule 
+A. Section 160.103—Definitions 1. Current Provision 2. Issues To Address 3. Proposals 4. Request for Comment B. Section 164.304—Definitions 1. Clarifying the Definition of ‘‘Access’’ 2. Clarifying the Definition of 
+‘‘Administrative Safeguards’’ 
+3. Clarifying the Definition of 
+‘‘Authentication’’ 
+4. Clarifying the Definition of 
+‘‘Availability’’ 
+5. Clarifying the Definition of 
+‘‘Confidentiality’’ 
+6. Adding Definitions of ‘‘Deploy’’ and 
+‘‘Implement’’ 
+7. Adding a Definition of ‘‘Electronic 
+Information System’’ 
+8. Modifying the Definition of ‘‘Information 
+System’’ 
+9. Modifying the Definition of ‘‘Malicious 
+software’’ 
+10. Adding a Definition of ‘‘Multi-factor 
+Authentication’’ (MFA) 
+11. Clarifying the Definition of ‘‘Password’’ 12. Clarifying the Definition of ‘‘Physical 
+Safeguards’’ 
+13. Adding a Definition of ‘‘Relevant 
+Electronic Information System’’ 
+14. Adding a Definition of ‘‘Risk’’ 15. Clarifying the Definitions of ‘‘Security 
+or Security Measures’’ and ‘‘Security Incident’’ 
+16. Adding Definitions of ‘‘Technical 
+Controls’’ 
+17. Modifying the Definition of ‘‘Technical 
+Safeguards’’ 
+18. Adding a Definition of ‘‘Technology 
+Asset’’ 
+19. Adding a Definition of ‘‘Threat’’ 20. Clarifying the Definition of ‘‘User’’ 21. Adding a Definition of ‘‘Vulnerability’’ 22. Clarifying the Definition of 
+‘‘Workstation’’ 
+23. Request for Comment C. Section 164.306—Security Standards: 
+General Rules 
+1. Current Provisions 2. Issues To Address 3. Proposals 4. Request for Comment D. Section 164.308—Administrative 
+Safeguards

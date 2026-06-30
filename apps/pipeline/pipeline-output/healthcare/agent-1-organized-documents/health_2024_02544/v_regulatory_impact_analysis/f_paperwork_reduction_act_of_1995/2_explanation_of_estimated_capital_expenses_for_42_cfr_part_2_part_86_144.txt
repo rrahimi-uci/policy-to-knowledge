@@ -1,0 +1,69 @@
+# 2. Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 86/144)
+
+**Source:** health_2024_02544.pdf
+**Chunk ID:** health_2024_02544_028_sub_086
+**Pages:** 1-160
+**Section Path:** V. Regulatory Impact Analysis > F. Paperwork Reduction Act of 1995 > 2. Explanation of Estimated Capital Expenses for 42 CFR Part 2
+
+---
+
+12557 Federal Register / Vol. 89, No. 33 / Friday, February 16, 2024 / Rules and Regulations 
+281See ‘‘Behavioral Health,’’ supra note 133. 
+282Note Health Level 7 is discussed in ONC 
+guidance at https://www.healthit.gov/topic/ 
+standards-technology/standards/fhir-fact-sheets. ADT is a reference to admit, discharge, transfer. 
+28382 FR 6052, 6089. 28452 FR 21796, 21810. 
+28583 FR 239, 240. 
+28683 FR 239, 240. Engaging the organizations that govern 
+this work will give OCR and SAMHSA a clearer picture of understanding related to the ability for an accompanying notice of disclosure to be included with a part 2 record and consent form. 
+Response 
+We acknowledge the commenter’s 
+concerns about EHRs and the need to 
+ensure they have the capabilities necessary to transmit information about prohibited uses and disclosures and the scope of consent on which a disclosure is based. ONC, OCR, SAMHSA, and other Federal partners are collaborating to support EHRs and health IT within the behavioral health sector.
+281We also 
+may provide additional guidance on this section after the rule is finalized. 
+Comment 
+A commenter said that one concern 
+they had with including a Notice to 
+Accompany Disclosure on every patient record that is being redisclosed is the ability of EHR systems to ingest that information. The commenter explained that a v2x HL7 ADT message (or for that matter a lab message) does not include this type of language.
+282 
+The commenter suggested that even if 
+an HL7 message could be created with the information, it is unclear that receiving systems are currently able to populate the field in the ADT message 
+or will be able to consume the message. The commenter is not aware of any designated spot for that type of language on any interstate event notification specification. Therefore, if a hospital wanted to share an admission or discharge notice for a patient admitted to a substance use unit, they couldn’t easily include the language in the notification. Even if the sending part 2 program could transmit the message, the downstream receiver may not be able to receive it. 
+The commenter suggested that it 
+would be possible to put a confidentiality/protection flag on an ADT message—but not general language like the notice to accompany disclosure language. 
+Response 
+We have previously noted that EHR 
+systems are beyond the scope of this 
+rulemaking. However, the abbreviated notice in § 2.32(a)(2) is intended to support use of EHRs, and the abbreviated notice remains a valid option. ONC, SAMHSA, and OCR 
+continue to work to support EHR implementation and may provide guidance on these issues after this rule is finalized. 
+Comment 
+An academic medical center said that 
+it saw no value in adding the language 
+regarding redisclosure to part 2 records and believed that recipients of these notices were not familiar with part 2 restrictions. The commenter stated that it is able to affix stamps on records that are being disclosed but from a practical perspective does not believe the stamp is value added. Recipients may not know what a part 2 program is. The commenter has other patients 
+throughout the medical center that are not being discharged from part 2 program that also have been or are being treated for SUD conditions and receive medications specific to SUDs. 
+Response 
+We appreciate the commenter’s 
+perspective on patients’ and recipients’ 
+lack of understanding about part 2 protections. We hope that the revised Patient Notice will improve part 2 patients’ understanding of their confidentiality rights under part 2 which should also enhance their appreciation for the prohibition on redisclosure in proceedings against patients. As explained in this rule, we continue to believe that the Notice to Accompany Disclosures under § 2.32 provides important protections to part 2 patients, and the lack of these protections for other patients is not a justification for reducing or removing protections for part 2 patients. As stated in the 2017 final rule, part 2 does not apply to health information unrelated to SUDs, such as patient treatment for unrelated medical conditions.
+283 
+Comment 
+A SUD provider and a health plan 
+requested clarification about the applicability of the notice requirement to recipients who redisclose records, including whether the requirement for the Notice to Accompany Disclosure applies only to part 2 programs, or whether it also applies to covered entities, business associates, and intermediaries that might receive and redisclose the patient’s PHI. The commenters asked, collectively, whether an HIE, covered entity, and business associate must attach the notice on part 2 records being redisclosed in accordance with the HIPAA privacy regulations, such as in paragraph (a)(2): ‘‘42 CFR part 2 
+prohibits unauthorized use or disclosure of these records.’’ 
+Response 
+The existing introductory language of 
+paragraph (a) applies the notice 
+requirement to ‘‘[e]ach disclosure made with the patient’s written consent.’’
+284 
+The abbreviated notice under paragraph 
+(a)(2) was primarily intended to support EHR systems. As the Department explained in 2018, ‘‘SAMHSA has adopted an abbreviated notice that is 80 characters long to fit in standard free- text space within health care electronic systems.’’
+285Though the notice under 
+paragraph (a)(2) has been modified in this final rule to include the word ‘‘use,’’ it remains largely as adopted in 2018. At that time the Department also said that it ‘‘encourages part 2 programs and other lawful holders using the abbreviated notice to discuss the requirements with those to whom they disclose patient identifying information.’’
+286An HIE may elect to 
+use the abbreviated notice under paragraph (a)(2) or can choose to use one of the notices permitted under paragraph (a)(1). Covered entities and business associates are referenced in § 2.32(a)(1). 
+Comment 
+An HIE urged the Department to 
+include language that will resonate with 
+the patient as opposed to those in the health care space. The commenter stated that in the NPRM, the Department proposed to require the consent form to notify the patient about how covered entities and business associate recipients may use and redisclose information as permitted by HIPAA. The commenter expressed concern that this was problematic for two reasons. First, this is not an existing requirement under HIPAA and the objective of the rule is to align part 2 with HIPAA. Second, the terms covered entity and business associate are not terms some patients may be aware of. To include this requirement, according to the commenter, could introduce legalese in the patient-facing workflow and be contrary to calls to improve the rule’s utility for patients. The commenter asked the Department to use standard language required under HIPAA that notifies individuals that not all recipients are subject to the same laws. 
+VerDate Sep<11>2014 18:41 Feb 15, 2024 Jkt 262001 PO 00000 Frm 00087 Fmt 4701 Sfmt 4700 E:\FR\FM\16FER2.SGM 16FER2lotter on DSK11XQN23PROD with RULES2

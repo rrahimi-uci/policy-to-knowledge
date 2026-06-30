@@ -1,0 +1,27 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 163/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_163
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+979 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+815See ‘‘Plan A . . . B . . . Contingency Plan!,’’ 
+supra note 606. 816See ‘‘Implementing the Health Insurance 
+Portability and Accountability Act (HIPAA) 
+Security Rule: A Cybersecurity Resource Guide,’’ supra note 461, p. 49. authoritative sources for known 
+vulnerabilities, such as those referenced above, and remediating any identified vulnerabilities. When a vulnerability is discovered, a regulated entity, through its patch management program, should have in place a policy and procedure for applying any available patches or implementing reasonable and appropriate compensating controls if a patch is not available. Remediation may be as simple as applying a vendor- offered software patch or, in the case of software no longer supported by a vendor, designing and implementing reasonable and appropriate compensating controls to reduce the risk of the vulnerability. The policies and procedures required by the proposed standard for patch management in proposed 45 CFR 164.308(a)(4)(i) also would be implemented in part by the proposed implementation specifications associated with the proposed standard for vulnerability management. Those proposed implementation specifications would require the deployment of technical controls to ensure the patch management program is carried out, automated vulnerability scans, and penetration testing, all of which may identify when a patch or compensating control has not been put in place. The Department envisions that the full implementation of all of the proposed standards and implementation 
+specifications would effectively reduce the risk to ePHI. 
+j. Section 164.312(i)(1)—Standard: Data 
+Backup and Recovery 
+The Security Rule requires regulated 
+entities to regularly create copies of ePHI to ensure that it can be restored in the event of a loss or disruption.
+815 
+However, OCR’s enforcement experience indicates that regulated entities could benefit from a more specific standard. Consistent with the proposed standard for contingency planning at 45 CFR 164.308(a)(13)(ii)(B), the Department proposes to add a standard for a new technical safeguard for data backup and recovery. This new standard would require a regulated entity to deploy technical controls to create and maintain exact retrievable copies of ePHI. The proposed changes would remove the existing implementation specification for this activity from the physical safeguards section and place it within technical safeguards. The Department also proposes to modify the language of the existing requirement by removing the limitation that it applies before moving equipment, so that it applies broadly and comprehensively. Elevating data backup and recovery to a standard would also increase the prominence of this requirement and highlight the liability of regulated entities for creating the capacity to restore systems after a data breach. 
+The Department proposes four new 
+implementation specifications for the data backup and recovery standard. The first, 45 CFR 164.312(i)(2)(i), would require a regulated entity to create copies of ePHI in a manner that ensures that such copies are no more than 48 hours older than the ePHI maintained in the regulated entity’s relevant electronic information systems and in accordance with the policies and procedures required by proposed 45 CFR 164.308(a)(13)(ii)(B). The second, 45 CFR 164.312(i)(2)(ii), would require a regulated entity to deploy technical controls that, in real-time, monitor, and alert workforce members about, any failures and error conditions of the backups required by the first implementation specification. The third, 45 CFR 164.312(i)(2)(iii), would require a regulated entity to deploy technical controls that record the success, failure, and any error conditions of backups required. The fourth, 45 CFR 164.312(i)(2)(iv), would require a regulated entity to test the effectiveness of its backups and document the results at least monthly. Specifically, a regulated entity would be required to restore a representative sample of backed up ePHI (after the ePHI is backed up as required by paragraph (i)(2)(i)) and document the results of such test restorations at least monthly. Such tests should include verifying regulated entity’s ability to access ePHI from a remote location. 
+These activities are included in NIST 
+guidance for Security Rule compliance,
+816which directs regulated

@@ -1,0 +1,61 @@
+# C3-7-05, Confirming Presettlement Information (04/01/2009)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_497
+**Pages:** 1042-1043
+**Section Path:** Part C, Selling, Securitizing, and Delivering Loans > Subpart C3, Mortgage-Backed Securities (MBS) > Chapter C3-7, Delivering and Trading MBS > C3-7-05, Confirming Presettlement Information (04/01/2009)
+
+---
+
+Published March 4, 2026
+1024Announcements Issue Date
+Announcement SEL-2021-04 May 05, 2021
+Announcement SEL-2019-04 May 01, 2019
+ 
+C3-7-05, Conﬁrming Presettlement Information (04/01/2009)
+Introduction
+This topic provides the steps entailed and the information the lender must provide to Fannie Mae prior to the
+security settlement date, including:
+Basic Requirements for Presettlement
+Information Required for Presettling Pools of Seasoned Mortgages
+Information Required for Presettling ARM MBS
+Basic Requirements for Presettlement
+When a lender sells MBS through the Capital Markets Pricing and Sales Desk, it must call the Desk to verify
+trade details no later than 3:00 p.m. (Eastern time) two business days before the settlement date. This is called
+the notiﬁcation date.
+If a lender needs to make any corrections or cancellations, it must call before 12:15 p.m. (Eastern time) on the
+notiﬁcation date to ensure that delivery can take place within two business days. If the call is received after this
+time, the delivery cannot take place until three business days after the notiﬁcation date.
+Fannie Mae will accept a fax transmission of the trade details as long as the lender notiﬁes the Desk in advance
+about the pending transmission and the transmission is received by 3:00 p.m. (Eastern time) on the notiﬁcation
+date. See Capital Markets Operations Collateral Management for fax number information E-1-02, List of
+Contacts .
+After the change or deletion of the payee code has been made, Fannie Mae mails the lender a list of its
+outstanding payee arrangements.
+✓ Requirements
+ MBS pool number and the related CUSIP number
+
+Published March 4, 2026
+1025✓ Requirements
+ Original pool balance (which is the face amount of the security)
+ Pass-through rate (which is the “coupon” rate of interest that will be paid to the investor)
+ Price (which is the dollar amount paid for the MBS)
+ Trade date (which is the date on which the parties agree to the terms of the transaction)
+ Settlement date (which is the date that the parties agreed the transfer of the securities and
+the payment of the purchase price would take place)
+ Issue date (which is the ﬁrst day of the month in which the securities backed by the pool are
+issued)
+ Any unique pool speciﬁcations (such as a Fannie Majors)
+Information Required for Presettling Pools of Seasoned Mortgages
+There may be some instances in which Fannie Mae requires a pool that is seasoned for two or fewer years to be
+treated as a “seasoned” pool. When this occurs, Fannie Mae will inform the lender during the oral conﬁrmation
+of the trade. For any pool that is treated as a “seasoned” pool, the lender must provide not only the information
+required above, but also the following additional information:
+✓ Requirements
+ Weighted-average maturity (which is the weighted-average of the remaining terms of the
+mortgages underlying the MBS as of the trade date)
+ Weighted-average coupon (which is the weighted-average of the note rates of the
+mortgages underlying the MBS as of the trade date)
+ Latest loan maturity (which is the maturity date of the latest maturing mortgage in the MBS)
+ Geographic concentration of the mortgages in the pool (if a concentration was speciﬁed at
+the time of the trade)

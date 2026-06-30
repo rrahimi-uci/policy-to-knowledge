@@ -1,0 +1,352 @@
+{
+  "timestamp": "2026-06-29T14:25:12.523125",
+  "total_rules": 290,
+  "passed": [
+    {
+      "check": "contradictions",
+      "message": "No obvious contradictions detected"
+    },
+    {
+      "check": "source_verification",
+      "message": "Verified 10/10 sampled rules have valid references"
+    }
+  ],
+  "warnings": [
+    {
+      "rule_id": "BR_SUBJECT_PROPERTY_PROCESS_023_003",
+      "check": "confidence_score",
+      "severity": "high",
+      "issue": "Low confidence score: 67.2/100",
+      "recommendation": "Requires human review and validation"
+    },
+    {
+      "rule_id": "BR_SUBJECT_PROPERTY_VALIDATION_023_004",
+      "check": "confidence_score",
+      "severity": "high",
+      "issue": "Low confidence score: 69.4/100",
+      "recommendation": "Requires human review and validation"
+    },
+    {
+      "rule_id": "BR_MORTGAGE_LOAN_PROHIBITION_030_006",
+      "check": "confidence_score",
+      "severity": "high",
+      "issue": "Low confidence score: 69.75/100",
+      "recommendation": "Requires human review and validation"
+    },
+    {
+      "rule_id": "BR_BORROWER_PROHIBITION_023_007",
+      "check": "confidence_score",
+      "severity": "high",
+      "issue": "Low confidence score: 69.85/100",
+      "recommendation": "Requires human review and validation"
+    },
+    {
+      "rule_id": "BR_BORROWER_EXCEPTION_023_008",
+      "check": "confidence_score",
+      "severity": "high",
+      "issue": "Low confidence score: 68.55/100",
+      "recommendation": "Requires human review and validation"
+    },
+    {
+      "rule_id": "BR_LOAN_APPLICATION_DOCUMENTATION_008_002",
+      "check": "confidence_score",
+      "severity": "high",
+      "issue": "Low confidence score: 69.75/100",
+      "recommendation": "Requires human review and validation"
+    },
+    {
+      "rule_id": "BR_MORTGAGE_FILE_DOCUMENTATION_008_001",
+      "check": "confidence_score",
+      "severity": "high",
+      "issue": "Low confidence score: 69.95/100",
+      "recommendation": "Requires human review and validation"
+    },
+    {
+      "check": "numeric_consistency",
+      "severity": "medium",
+      "issue": "Inconsistent thresholds for 'ltv'",
+      "rules": [
+        "BR_LOAN_ELIGIBILITY_PROFILE_ELIGIBILITY_007_009",
+        "BR_LOAN_ELIGIBILITY_PROFILE_CONSTRAINT_007_010",
+        "BR_LOAN_ELIGIBILITY_PROFILE_ELIGIBILITY_013_009",
+        "BR_LOAN_ELIGIBILITY_PROFILE_CONSTRAINT_017_008",
+        "BR_LOAN_ELIGIBILITY_PROFILE_CONSTRAINT_018_003",
+        "BR_MORTGAGE_LOAN_ELIGIBILITY_004_010",
+        "BR_MORTGAGE_LOAN_CONSTRAINT_007_004",
+        "BR_MORTGAGE_LOAN_CONSTRAINT_008_010",
+        "BR_MORTGAGE_LOAN_CONSTRAINT_009_006",
+        "BR_MORTGAGE_LOAN_CONSTRAINT_013_003",
+        "BR_MORTGAGE_LOAN_CONSTRAINT_013_004",
+        "BR_MORTGAGE_LOAN_ELIGIBILITY_020_002",
+        "BR_MORTGAGE_LOAN_EXCEPTION_020_003",
+        "BR_MORTGAGE_LOAN_PROCESS_029_004",
+        "BR_MORTGAGE_LOAN_CONSTRAINT_029_005",
+        "BR_MORTGAGE_LOAN_CONSTRAINT_029_006",
+        "BR_MORTGAGE_LOAN_ELIGIBILITY_030_005",
+        "BR_MORTGAGE_LOAN_CONSTRAINT_039_001",
+        "BR_MORTGAGE_LOAN_CONSTRAINT_039_002",
+        "BR_LENDER_CONTRACT_CONSTRAINT_014_009",
+        "BR_BORROWER_CONSTRAINT_021_004",
+        "BR_BORROWER_EXCEPTION_031_008",
+        "BR_LOAN_APPLICATION_PROCESS_028_003",
+        "BR_GRANT_CONSTRAINT_022_008",
+        "BR_GRANT_ELIGIBILITY_022_009",
+        "BR_DESKTOP_APPRAISAL_ELIGIBILITY_033_005",
+        "BR_HIGH_BALANCE_MORTGAGE_LOAN_CONSTRAINT_034_005"
+      ],
+      "thresholds": [
+        "3.4",
+        "3",
+        "06",
+        "01",
+        "4",
+        "95",
+        "60",
+        "6",
+        "1",
+        "620.",
+        "36",
+        "80",
+        "2018",
+        "04",
+        "250.",
+        "97.00",
+        "85.01",
+        "12",
+        "25",
+        "95.00",
+        "2019",
+        "1004",
+        "75",
+        "5",
+        "9",
+        "1003",
+        "16",
+        "105",
+        "000",
+        "75.01",
+        "2",
+        "35",
+        "85.00",
+        "7",
+        "90.01",
+        "10",
+        "15",
+        "70",
+        "30",
+        "45",
+        "18",
+        "2017",
+        "20",
+        "90",
+        "97",
+        "62",
+        "80.01",
+        "90.00",
+        "95.01"
+      ],
+      "recommendation": "Review rules for correct thresholds or contextual differences"
+    },
+    {
+      "check": "numeric_consistency",
+      "severity": "medium",
+      "issue": "Inconsistent thresholds for 'loan amount'",
+      "rules": [
+        "BR_LOAN_ELIGIBILITY_PROFILE_CONSTRAINT_007_010",
+        "BR_MORTGAGE_LOAN_CONSTRAINT_004_003",
+        "BR_MORTGAGE_LOAN_CONSTRAINT_009_006",
+        "BR_MORTGAGE_LOAN_CONSTRAINT_014_010",
+        "BR_MORTGAGE_LOAN_CONSTRAINT_040_007"
+      ],
+      "thresholds": [
+        "000",
+        "250.",
+        "2",
+        "75.01",
+        "3",
+        "9",
+        "90",
+        "6",
+        "1",
+        "75",
+        "10",
+        "5",
+        "100"
+      ],
+      "recommendation": "Review rules for correct thresholds or contextual differences"
+    },
+    {
+      "check": "numeric_consistency",
+      "severity": "medium",
+      "issue": "Inconsistent thresholds for 'down payment'",
+      "rules": [
+        "BR_MORTGAGE_LOAN_CONSTRAINT_007_004",
+        "BR_MORTGAGE_LOAN_VALIDATION_007_005",
+        "BR_MORTGAGE_LOAN_CONSTRAINT_007_006",
+        "BR_MORTGAGE_LOAN_CONSTRAINT_014_010",
+        "BR_MORTGAGE_LOAN_CONSTRAINT_040_007",
+        "BR_BORROWER_VALIDATION_028_010",
+        "BR_BORROWER_ELIGIBILITY_030_002",
+        "BR_BORROWER_EXCEPTION_031_008",
+        "BR_LOAN_APPLICATION_VALIDATION_013_006",
+        "BR_MANUFACTURED_HOME_VALIDATION_036_003",
+        "BR_MANUFACTURED_HOME_CONSTRAINT_036_004",
+        "BR_GRANT_CONSTRAINT_022_008"
+      ],
+      "thresholds": [
+        "80",
+        "2",
+        "3",
+        "12",
+        "50",
+        "1040",
+        "90",
+        "1",
+        "97",
+        "10",
+        "5",
+        "30",
+        "95.01"
+      ],
+      "recommendation": "Review rules for correct thresholds or contextual differences"
+    },
+    {
+      "check": "numeric_consistency",
+      "severity": "medium",
+      "issue": "Inconsistent thresholds for 'credit score'",
+      "rules": [
+        "BR_MORTGAGE_LOAN_CONSTRAINT_015_006",
+        "BR_MORTGAGE_LOAN_CONSTRAINT_029_005",
+        "BR_MORTGAGE_LOAN_CONSTRAINT_039_001",
+        "BR_BORROWER_VALIDATION_029_009",
+        "BR_LOAN_APPLICATION_PROCESS_028_003"
+      ],
+      "thresholds": [
+        "3",
+        "4",
+        "95",
+        "6",
+        "1",
+        "620.",
+        "36",
+        "97.00",
+        "85.01",
+        "12",
+        "25",
+        "95.00",
+        "16",
+        "35",
+        "2",
+        "50",
+        "85.00",
+        "90.01",
+        "45",
+        "30",
+        "18",
+        "20",
+        "80.01",
+        "90.00",
+        "95.01"
+      ],
+      "recommendation": "Review rules for correct thresholds or contextual differences"
+    },
+    {
+      "check": "numeric_consistency",
+      "severity": "medium",
+      "issue": "Inconsistent thresholds for 'dti'",
+      "rules": [
+        "BR_MORTGAGE_LOAN_CONSTRAINT_015_006",
+        "BR_MORTGAGE_LOAN_CONSTRAINT_029_006",
+        "BR_BORROWER_CONSTRAINT_032_001",
+        "BR_BORROWER_CALCULATION_035_009",
+        "BR_BORROWER_CALCULATION_037_006",
+        "BR_DESKTOP_UNDERWRITER_CONSTRAINT_023_005",
+        "BR_LOAN_APPLICATION_PROHIBITION_021_005"
+      ],
+      "thresholds": [
+        "2",
+        "12.",
+        "50",
+        "12",
+        "1",
+        "10",
+        "36",
+        "5",
+        "45"
+      ],
+      "recommendation": "Review rules for correct thresholds or contextual differences"
+    }
+  ],
+  "failures": [
+    {
+      "rule_id": "BR_SELLER_SERVICER_EXCEPTION_012_004",
+      "check": "completeness",
+      "severity": "high",
+      "issue": "Missing required fields: mandatory",
+      "recommendation": "Ensure extraction prompt requires all mandatory fields"
+    },
+    {
+      "rule_id": "BR_SELLER_SERVICER_EXCEPTION_012_006",
+      "check": "completeness",
+      "severity": "high",
+      "issue": "Missing required fields: mandatory",
+      "recommendation": "Ensure extraction prompt requires all mandatory fields"
+    },
+    {
+      "rule_id": "BR_MORTGAGE_LOAN_EXCEPTION_028_005",
+      "check": "completeness",
+      "severity": "high",
+      "issue": "Missing required fields: mandatory",
+      "recommendation": "Ensure extraction prompt requires all mandatory fields"
+    },
+    {
+      "rule_id": "BR_BORROWER_VALIDATION_013_005",
+      "check": "completeness",
+      "severity": "high",
+      "issue": "Missing required fields: mandatory",
+      "recommendation": "Ensure extraction prompt requires all mandatory fields"
+    },
+    {
+      "rule_id": "BR_BORROWER_EXCEPTION_023_008",
+      "check": "completeness",
+      "severity": "high",
+      "issue": "Missing required fields: mandatory",
+      "recommendation": "Ensure extraction prompt requires all mandatory fields"
+    },
+    {
+      "rule_id": "BR_BORROWER_CONSTRAINT_032_001",
+      "check": "completeness",
+      "severity": "high",
+      "issue": "Missing required fields: mandatory",
+      "recommendation": "Ensure extraction prompt requires all mandatory fields"
+    },
+    {
+      "rule_id": "BR_BORROWER_PROCESS_032_002",
+      "check": "completeness",
+      "severity": "high",
+      "issue": "Missing required fields: mandatory",
+      "recommendation": "Ensure extraction prompt requires all mandatory fields"
+    },
+    {
+      "rule_id": "BR_LOAN_APPLICATION_VALIDATION_013_006",
+      "check": "completeness",
+      "severity": "high",
+      "issue": "Missing required fields: mandatory",
+      "recommendation": "Ensure extraction prompt requires all mandatory fields"
+    },
+    {
+      "rule_id": "BR_DISASTER_RELIEF_GRANT_OR_LOAN_EXCEPTION_034_004",
+      "check": "completeness",
+      "severity": "high",
+      "issue": "Missing required fields: mandatory",
+      "recommendation": "Ensure extraction prompt requires all mandatory fields"
+    }
+  ],
+  "corrections": [],
+  "statistics": {
+    "passed_count": 2,
+    "warning_count": 12,
+    "failure_count": 9,
+    "avg_confidence": 87.80534482758621
+  }
+}

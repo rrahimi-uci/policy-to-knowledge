@@ -1,0 +1,51 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 187/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_187
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+and risk assessment 
+•Identification of new patterns in 
+human physiology and disease progression 
+•Development of personalized 
+diagnostics 
+•Therapeutic treatment response 
+monitoring
+896 For example, clinicians are using AI 
+to distill large volumes of EHR information about a complex patient into a summarized note that they can use to consider diagnoses and treatment. AI also has been used for aid in the detection of diabetic retinopathy, screening for breast and lung cancer, and classification of skin conditions.
+897 
+Others are using ambient AI scribes, a technology that uses microphones to transcribe encounters with patients in real-time.
+898This tool creates clinical 
+documentation that clinicians can later edit, which can lead to improved interactions with patients and reduced time on documentation.
+899Newer AI 
+tools may search medical records for relevant information regarding common conditions and other risk factors
+900or 
+offer relevant questions for clinicians to pose to make an accurate diagnosis.
+901 
+Unfortunately, AI can also be used to 
+harm individuals, both intentionally and unintentionally. Bad actors are using generative AI to threaten the privacy and security of ePHI more effectively through phishing and other social engineering. As explained by 
+NCVHS, ‘‘AI tools can create mass scale [cyberattacks] that are highly effective and major threats to ePHI.’’
+902Experts 
+anticipate that AI ‘‘will ultimately pioneer the malicious use of [. . .] ‘Offensive AI’—highly sophisticated and malicious attack code—[that] will be able to mutate itself as it learns about its environment, and to expertly compromise systems with minimal chance of detection.’’
+903Such experts 
+are concerned about the level of destruction that will lie in its wake and compare it to an arms race that can only 
+escalate.
+904Indeed, it seems likely that 
+regulated entities will need to invest in AI to defend against malicious use of AI in the future.
+905 
+After assessing current and potential 
+AI threats, NCVHS recommended that the Department clarify how the HIPAA Rules apply to AI.
+906We agree with 
+their assessment and recommendation. Specifically, ePHI, including ePHI in AI training data, prediction models, and algorithm data that is maintained by a regulated entity for covered functions is protected by the HIPAA Rules and all applicable standards and specifications.
+907For example, 
+generative AI tools have produced in their output the names and personal information of persons included in the tools’ sources of training data.
+908 
+Similar uses of generative AI by regulated entities, including the training of AI models on patient data, could result in impermissible uses and disclosures, including exposure to bad actors that can exploit the information.
+909As part of its risk 
+analysis and risk management activities, a regulated entity must consider the risk associated with different uses and data.
+910Accordingly, we expect that a 
+regulated entity interested in using AI would include the use of such tools in its risk analyses and associated risk management activities. The regulated entity’s risk analysis must include consideration of, among other things, the type and amount of ePHI accessed by the AI tool, to whom the data is disclosed, and to whom the output is provided. The NIST AI Risk Management Framework is a helpful resource for regulated entities to better 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00094 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

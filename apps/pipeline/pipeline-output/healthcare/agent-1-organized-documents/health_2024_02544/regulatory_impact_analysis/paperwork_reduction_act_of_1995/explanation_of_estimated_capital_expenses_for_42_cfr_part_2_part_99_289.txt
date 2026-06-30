@@ -1,0 +1,43 @@
+# Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 99/289)
+
+**Source:** health_2024_02544.pdf
+**Chunk ID:** health_2024_02544_028_sub_099
+**Pages:** 1-160
+**Section Path:** Regulatory Impact Analysis > Paperwork Reduction Act of 1995 > Explanation of Estimated Capital Expenses for 42 CFR Part 2
+
+---
+
+12521 Federal Register / Vol. 89, No. 33 / Friday, February 16, 2024 / Rules and Regulations 
+184See 45 CFR 160.103 (definition of ‘‘Protected 
+health information’’). 185The HIPAA term also includes a description 
+of the activities that are excluded as not 
+constituting a breach, and an explanatory paragraph that applies a breach presumption when an ‘‘acquisition, access, use, or disclosure’’ of PHI occurs in a manner not permitted under the HIPAA Privacy Rule, and that fails to demonstrate a low probability of breach based on breach risk assessment. See discussion of proposed definition of the term ‘‘breach’’ above. incorporating the HIPAA standard 
+codified at 45 CFR 164.514(b), either method of de-identification of PHI can be used to de-identify records under part 2. We also note here a critical difference between the definitions of PHI under the HIPAA Privacy Rule and records in this part. The definition of PHI is grounded in the recognition that it is ‘‘individually identifiable health information.’’
+184The HIPAA Privacy 
+Rule standard for de-identification therefore renders PHI no longer ‘‘individually identifiable.’’ In this part, the definition of records does not refer to ‘‘individually identifiable’’ information, but rather information ‘‘relating to a patient’’ and is already understood to relate to SUD records. The final rule modifies the de- identification standard in § 2.16(a)(1)(v) (for paper records) and (a)(2)(iv) (for electronic records) so it aligns more closely with the HIPAA language such that the de-identified part 2 information cannot be ‘‘used to identify a patient.’’ 
+Comment 
+A few HIEs asked the Department to 
+re-examine the ‘‘base minimum’’ 
+standards for de-identified data, opining that some data may be anonymized for some algorithms, but as technology continues to improve, ‘‘de-identification in perpetuity’’ is truly unknown, and therefore the proposed standard may still represent a privacy risk for patients. 
+Response 
+The Department acknowledges the 
+concerns about the burgeoning ability of 
+some technologists to re-identify data stored in large data sets. The Department is committed to monitoring these issues as it works to determine their application to the HIPAA and part 2 de-identification standards. 
+Comment 
+One commenter, a health system, 
+suggested that the Department make 
+explicit the right to use part 2 records for health care operations to create a de- identified data set without patient consent. Another commenter, a health plan, recommended that the Department remove the requirement to obtain express written consent to create a de- identified data set because it conflicts with the HIPAA Privacy Rule, is counterproductive, and confuses patients when they receive a notice requesting consent to use their SUD data once de-identified. Response 
+We appreciate the comment, but are 
+constrained by the authorizing statute at 42 U.S.C. 290dd–2, which sets forth the circumstances for which records subject to part 2 may be disclosed. Where part 2 programs are not disclosing to a covered entity, the CARES Act amendments did not rescind the requirement to obtain consent prior to disclosing records for TPO.
+185 
+Comment 
+One commenter, an industry trade 
+association for pharmacies, commented that § 2.16 should simply refer to rendering the patient identifying information de-identified where practicable, and then define ‘‘de- identified’’ in section § 2.11 as data which meets the standard for de- identification under HIPAA. 
+Response 
+The proposed regulatory text is 
+consistent with the intent expressed by 
+the commenter, but still comports with the language required by the CARES Act for disclosures for public health activities. We therefore believe that we are finalizing a more workable standard because it is uniform across the regulation. 
+Comment 
+Several commenters opposed the 
+proposed de-identification standard for 
+various reasons. A privacy advocacy organization commented that the target HIPAA standard is outdated and needs ‘‘tightening.’’ A few HIE organizations commented that the proposal would materially and detrimentally affect the use of SUD information from part 2 records in limited data sets. These organizations interpreted the current part 2 regulations to only require removal of ‘‘direct identifiers’’ and believed that, under HIPAA, a limited data set can be used and disclosed for research, public health, and health care operations activities if the recipient agrees to a HIPAA data use agreement, which prohibits (among other things) re- identification of individuals. These organizations further suggested that changing §§ 2.16 and 2.52 to require use of the more stringent HIPAA de- identification standard under 45 CFR 164.514(b) will prevent researchers,

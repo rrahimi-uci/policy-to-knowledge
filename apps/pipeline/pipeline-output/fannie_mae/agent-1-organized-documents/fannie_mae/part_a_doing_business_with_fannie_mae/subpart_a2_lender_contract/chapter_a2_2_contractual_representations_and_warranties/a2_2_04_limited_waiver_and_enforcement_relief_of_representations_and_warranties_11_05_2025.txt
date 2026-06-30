@@ -1,0 +1,252 @@
+# A2-2-04, Limited Waiver and Enforcement Relief of Representations and Warranties (11/05/2025)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_016
+**Pages:** 38-43
+**Section Path:** Part A, Doing Business with Fannie Mae > Subpart A2, Lender Contract > Chapter A2-2, Contractual Representations and Warranties > A2-2-04, Limited Waiver and Enforcement Relief of Representations and Warranties (11/05/2025)
+
+---
+
+Published March 4, 2026
+20intervening liens;
+the lien of the mortgage loan is a valid ﬁrst lien; and
+the priority of the mortgage lien at the time of delivery will not be diminished over the term of the
+mortgage loan and, during that time, all sums, including any sums previously added to the
+mortgage loan balance, will be repaid in monthly installments.
+Notice of grievance  — The instruments require the lender and the borrower to give the other party a
+notice of any grievance arising under the security instrument and to allow the notiﬁed party a reasonable
+period after receipt of the notiﬁcation to cure the grievance before the party providing the notice
+commences, joins, or is joined to a judicial action, as either an individual litigant or as a member of a
+litigant class that seeks redress or recovery in connection with the grievance.
+Maintenance of property  — The instruments obligate the borrower to maintain the property in a way
+that prevents deterioration and to repair promptly any damage to the property, whether or not such
+damage is covered by insurance.
+Mortgage Insurance  — The instruments provide that the lender, any purchaser of the mortgage note, a
+mortgage insurer other than the insurer of the mortgage, any reinsurer, or any other entity (including an
+aﬃliate of any of the foregoing) may receive (directly or indirectly) amounts that derive from (or might be
+characterized as) a portion of the borrower’s payments for the mortgage insurance in exchange for
+sharing or modifying the mortgage insurer’s risk or otherwise reducing losses.
+Borrower’s failure to take a future action  — The instrument (or any other agreement that the
+borrower signed) does not provide that the borrower’s failure to take a future action requested by the
+lender (such as providing and paying for additional documentation for the transaction after the date of
+loan closing) constitutes a default. Alternatively, if the instrument does include such a provision, the
+lender will not enforce it.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2021-09 October 06, 2021
+Announcement SEL-2019-01 February 06, 2019
+ 
+A2-2-04, Limited Waiver and Enforcement Relief of Representations
+
+Published March 4, 2026
+21and Warranties (11/05/2025)
+Introduction
+This topic contains information on the following:
+Limited Waiver of Representations and Warranties for Loan Caseﬁles Submitted to DU
+Enforcement Relief of Representations and Warranties for Undisclosed Non-Mortgage Debt
+Enforcement Relief of Representations and Warranties for Loans with Data Calculated by Approved
+Vendor Tools
+Enforcement Relief of Representations and Warranties for Loans with Data Validated by the DU Validation
+Service
+Enforcement Relief of Representations and Warranties for Loans with Income Calculated by Income
+Calculator
+Representations and Warranties on Property Value for Loan Caseﬁles Submitted to DU
+Limited Waiver of Representations and Warranties for Loan Caseﬁles Submitted
+to DU
+Fannie Mae grants a limited waiver of certain underwriting representations and warranties to a lender that sells
+an eligible mortgage that is underwritten with DU.
+If DU returns an Approve/Eligible recommendation on the ﬁnal submission of the loan caseﬁle to DU, then
+Fannie Mae will not require the lender to represent and warrant that the mortgage loan complies with the
+requirements of this Guide with regard to the mortgage loan’s eligibility for delivery to Fannie Mae and the
+borrower’s creditworthiness, provided that:
+All data pertaining to the mortgage loan is complete, accurate, and not fraudulent, and all data on which
+the underwriting recommendation was based reﬂects the ﬁnal terms of the closed mortgage loan, and
+otherwise comply with the requirements relating to submissions and resubmissions as stated in this
+Guide and any relevant supplemental materials.
+All data on which DU’s recommendation is based complies with Fannie Mae’s veriﬁcation requirements
+and the mortgage loan ﬁle is documented accordingly.
+The lender uses the appropriate special feature codes, as speciﬁed in the delivery reporting requirements
+of this Guide or elsewhere in the Lender Contract. SFC 127 is required for all loans underwritten through
+DU.
+All Veriﬁcation Messages/Approval Conditions that appear in the DU Underwriting Findings report with
+respect to the related mortgage loan application must be satisfactorily resolved, and the mortgage loan
+ﬁle documented accordingly.
+All other requirements, instructions, and restrictions set forth in this Guide and any release notes are
+complied with by the lender (or DU licensee).
+The lender reports the proper DU-assigned unique loan caseﬁle ID at the time of delivery on the
+appropriate loan schedule or schedule of mortgages. (A DU loan caseﬁle ID is unique to an individual
+mortgage loan. The same caseﬁle ID may not be used to underwrite more than one mortgage loan to
+DU.)
+The lender pays all applicable loan-level price adjustments.
+
+Published March 4, 2026
+22The foregoing waiver of underwriting representations and warranties does not apply to:
+loans that receive an Out of Scope recommendation, even if the underwriter believes that the mortgage
+should be approved;
+loans that receive an Approve/Ineligible or Refer with Caution recommendation; and
+the product eligibility representations and warranties in Ability to Repay Loan Eligibility Requirements
+(see B2-1.5-02, Loan Eligibility );
+the eligibility and underwriting representations and warranties that apply to the property, including, but
+not limited to, condition, value, or marketability of the property;
+appraisal or alternative property inspection as set forth in this Guide;
+government loans that are underwritten with DU; and
+seasoned loans, as deﬁned in this Guide.
+Note : All seasoned loans that are delivered to Fannie Mae, including those that received an
+Approve/Eligible recommendation from DU, must meet Fannie Mae’s seasoned mortgage
+requirements as set forth in B2-1.5-02, Loan Eligibility .
+All other representations and warranties that are part of the Lender Contract shall apply. The use of DU does not
+relieve the lender of any obligation set forth in the Lender Contract, except as expressly set forth:
+in this section with respect to Fannie Mae’s limited waiver of representations and warranties; and
+in any DU recommendation or ﬁndings relating to documentation requirements, property valuation
+requirements, and any other similar requirements provided by DU, unless such requirements are
+modiﬁed by  B3-2, Desktop Underwriter (DU) , of this Guide or the lender’s applicable DU license
+agreements.
+Enforcement Relief of Representations and Warranties for Undisclosed Non-
+Mortgage Debt
+When a DU loan caseﬁle receives an Approve/Eligible recommendation and a message indicating the loan has
+obtained representation and warranty relief for non-mortgage undisclosed liabilities on the ﬁnal DU submission,
+Fannie Mae will not enforce representations and warranties related to such debt obtained by the borrower(s)
+prior to or concurrent with the day of closing.
+The following details apply:
+All Veriﬁcation Messages and Approval Conditions that appear in the DU Underwriting Findings report
+must be satisfactorily resolved and documented accordingly.
+All data on which DU's recommendation is based complies with Fannie Mae's veriﬁcation requirements
+and the mortgage loan ﬁle is documented accordingly.
+If the lender becomes aware of, or the borrower discloses, changes in the terms of the loan or veriﬁed
+information (such as income, assets, or liabilities) prior to closing that exceeds the resubmission
+tolerances speciﬁed in B3-2-10, Accuracy of DU Data, DU Tolerances, and Errors in the Credit Report , the
+data must be updated, and the loan caseﬁle resubmitted to DU.
+If there is information that is conﬂicting with or contradictory to the data that was submitted to DU, the
+lender must perform due diligence to investigate and ensure that accurate data is entered into DU.
+DU's oﬀering of representation and warranty relief does not relieve the lender of any of its obligations
+within the Selling Guide  related to the identiﬁcation and inclusion of a borrower's liabilities in the DTI and
+
+Published March 4, 2026
+23for consideration in underwriting, including those that may be identiﬁed throughout the origination and
+prefunding QC processes.
+Undisclosed mortgage-related debt (including HELOCs and second liens) are excluded from eligibility for
+relief.
+The loan must close by the credit report expiration date.
+Enforcement Relief of Representations and Warranties for Loans with Data
+Calculated by Approved Vendor Tools
+The table below details enforcement relief for mortgages with data calculated by approved vendor tools.
+Data Calculated by a Fannie
+Mae-Approved Vendor ToolFannie Mae will not enforce
+representations and
+warranties onDetails
+Incomethe accuracy of the calculation of
+the amount of self-employment
+income by the tool.The following requirements
+apply:
+• the information submitted to
+the tool must be accurate and
+complete,
+• the lender must not perform
+any manual overrides of the
+output results of the tool,
+• the amount of self-
+employment income entered in
+DU must match the amount of
+income calculated by the tool,
+and
+• the loan must be delivered
+with SFC 777.
+In all cases, the lender must continue to comply with all DU messages, including documentation and
+determination that age of documentation requirements are met, and determine the eligibility of the self-
+employment income being used to qualify.
+See B3-3.5-01, Underwriting Factors and Documentation for a Self-Employed Borrower  for information on using
+other approved vendors.
+Enforcement Relief of Representations and Warranties for Loans with Data
+Validated by the DU Validation Service
+In addition to the limited waiver of representations and warranties described above, Approve/Eligible loans for
+which DU validated a loan component may also beneﬁt from certain representation and warranty enforcement
+relief. The table below describes the validated component, the related enforcement relief, and other details.
+
+Published March 4, 2026
+24Component Validated by
+DUFannie Mae will not enforce
+representations and
+warranties onDetails
+Income• the accuracy of the lender’s
+income calculations related to the
+validated income, and
+• the integrity of the data
+provided on the veriﬁcation
+report.The DU message must indicate
+that the amount of income
+entered into DU was validated
+and that the veriﬁcation report is
+acceptable documentation.
+ 
+For loans with income validated
+using an employment and
+income veriﬁcation report, this
+applies on a per-borrower, per-
+income-type basis.
+For loans with income validated
+using an asset veriﬁcation
+report, this applies on a per-
+borrower, per-income-source
+basis.
+Employment• the borrower’s employment,
+through the time of closing, with
+the employer attested to on the
+loan application, and
+• the integrity of the data
+provided on the veriﬁcation
+report.The DU message must indicate
+that the employment entered
+into DU was validated.
+ 
+Applies on a per-borrower, per-
+employer basis.
+Assets• the suﬃciency of the borrower’s
+assets to satisfy Total Funds to be
+Veriﬁed as required by DU or a
+greater amount if stated in the DU
+message, and
+• the integrity of the data
+provided on the veriﬁcation
+report.The DU message must indicate
+that assets were validated.
+ 
+Applies on a loan-level basis.
+The lender must comply with the following additional requirements in order for the representation and warranty
+enforcement relief to apply:
+All of the requirements that pertain to the DU validation service must be met.
+All Veriﬁcation Messages and Approval Conditions that appear in the DU Underwriting Findings report,
+
+Published March 4, 2026
+25including any related to the DU validation service, must be satisfactorily resolved and documented
+accordingly.
+The loan must close by the "Close by Date" stated in the DU message.
+If there is information that is conﬂicting with or contradictory to the data that was submitted to DU, the lender
+must perform due diligence to investigate and ensure that accurate data is entered into DU. Enforcement relief
+will not apply, regardless of DU’s issuance of validation messages, if the lender’s investigation of conﬂicting or
+contradictory information contained in the loan ﬁle or within the veriﬁcation report would have impacted the
+information entered by the lender in DU.
+For more information on the DU validation service, see B3-2-02, DU Validation Service .
+Enforcement Relief of Representations and Warranties for Loans with Income
+Calculated by Income Calculator
+Income Calculator  is an optional tool to assist lenders in calculating certain income types. Income Calculator
+performs a complete analysis of a borrower's qualifying income (for eligible income types) and produces a
+Findings Report.  If lenders comply with the following requirements, they will receive representation and
+warranty enforcement relief for the accuracy of the income calculation, on an income-source basis, on loans
+with income calculated by Income Calculator.
+All information submitted to Income Calculator must be accurate and complete.
+A copy of the Findings Report must be kept in the loan ﬁle.
+The amount of income used for qualifying cannot be more than the amount calculated by the tool.
+Lenders must continue to comply with all other Selling Guide  requirements, including DU messages, as
+applicable.
+See B3-3.1-03, Income Calculator  for additional requirements and technology servicer provider information.
+Representations and Warranties on Property Value for Loan Caseﬁles Submitted
+to DU
+In addition to the limited waiver and enforcement relief of representations and warranties described above,
+loans may also beneﬁt from waivers or enforcement relief of certain representations and warranties related to
+the appraisal and value of the subject property. See A2-2-06, Representations and Warranties on Property
+Value , for more information.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2025-09 November 05, 2025

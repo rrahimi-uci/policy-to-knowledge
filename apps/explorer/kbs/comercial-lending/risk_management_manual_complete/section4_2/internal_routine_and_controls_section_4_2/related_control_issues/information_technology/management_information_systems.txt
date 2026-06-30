@@ -1,0 +1,106 @@
+# Management Information Systems
+
+**Source:** risk_management_manual_complete.pdf
+**Chunk ID:** risk_management_manual_complete_614
+**Pages:** 234-234
+**Section Path:** section4-2 > INTERNAL ROUTINE AND CONTROLS Section 4.2 > RELATED CONTROL ISSUES > Information Technology > Management Information Systems
+
+---
+
+INTERNAL ROUTINE AND CONTROLS  Section 4. 2 
+RMS  Manual of Examination Policies  4.2-23 Internal Routine and Controls (3/15) 
+Federal Deposit Insurance Corporation   
+A bank ’s board of directors, or an appropriate board 
+committee, should :  
+ 
+• Approve a written information security program ; 
+• Oversee the development, implementation, and 
+maintenance of the program ; 
+• Assign specific responsibility for implementing the program ; and 
+• Review reports from management.  
+ Information systems present a variety of  risks that , if not 
+adequately managed , can negatively  affect  the safety and 
+soundness of the institution.  Therefore , examiners should 
+assess information technology controls and operation s at 
+every  examination.   If an institution ’s internal control 
+systems do not meet the program standards  described 
+above , the deficiencies should be described in the ROE . 
+ Institutions should  maintain  a comprehensive security plan  
+in order to maintain the confidentiality, integrity, and 
+reliability  of information .  The plan should include  regular 
+risk assessments and , at a minimum, address physical and  
+logical security , and backup and contingency strategies . 
+ Generally, IT risk assessments consist of the identification 
+of hardware, software, and information ; an analysis  of 
+internal and external threats  to the assets;  and an 
+evaluation of existing controls.  The findings can provide 
+management  valuable information regarding the security 
+of IT assets and any controls that may need strengthening.  
+Management should use the information to develop 
+strategies for improving identified control weaknesses and 
+mitigating  identified risks.  
+ 
+The FFIEC IT  Examinatio n Handbook , which  comprises  a 
+series of  booklets, serves as a reference for managing and 
+examining IT systems.  The Handbook contains IT  
+examination procedures, workprograms , and references to 
+related laws, regulations,  and examination policies.  It also 
+provides examiner s with fundamental principles of internal 
+controls applicable to  information processing 
+environments.  The FFIEC procedures  and workprograms 
+are the primary tools for the examination of large, complex data centers in financial institutions and independent technology service providers.  
+ Examiners can also use portions of the FFIEC procedures 
+and workprograms when  necessary to review  complex or 
+high-risk areas during IT reviews of  less complex, well -
+managed institutions . 
+ 
+Management Information Systems  
+ 
+The term m anagement information system  (MIS) broadly 
+refers to a comprehensive process, supported by computer -based system s, that provides the information necessary to 
+manage an organization.  An effective MIS is  essential  in 
+all institutions, b ut becomes increasingly important for 
+managing risks in larger institutions with diverse business 
+lines or a wide geographic footprint .  Essential components  
+of an effective MIS include  timeliness , accuracy , 
+completeness , consistency , and  relevance.  Management 
+decisions may be invalid if  any one of these components is  
+compromised.  
+ To evaluate an MIS , and ultimately the foundation upon 
+which management ’s decisions are based, examiners 
+should scrutinize each of the essential components .  First, 
+information must be current and available  in a useful 
+format  to all appropriate users.  This necessitates the 
+prompt collection and editing o f data.  Second, an effective  
+system of internal controls must be in place to ensure information is accurate  and complete .  Third, s trategies 
+and decisions cannot  be adequately monitored or measured 
+unless the information provided is consistent.  Variations 
+in how data is collected or reported  can distort its  
+usefulness, particularly in trend analyses .  Any chan ge in 
+information  collection or reporting procedures should be 
+clearly defined, documented , and communicated to all 
+users.  Finally,  the information provided must be relevant  
+to the user .  Reports that are overly complex or include 
+unnecessary  information  impede users’  ability to make 
+effective decision s.  Conversely, reviewing information 
+from numerous reports can  hinder analysis ; therefore, a 
+key consideration in the adequacy of reports  is that they 
+present information in a comprehensive, yet concise form at. 
+ 
+Payment Systems   
+ 
+Financial institutions process a variety of payment instruments using various  clearing and settlement systems.   
+The systems  are generally differentiated as wholesale or 
+retail systems.    Although there is no definitive division between  retail and 
+wholesale payments, retail payment systems generally involve transactions between two consumers or between 
+consumers and businesses and have higher transaction  
+volumes and lower average dollar values.  
+ Key risks in payment and settlement systems include:  
+ 
+• Credit Risk  - The possibility  a counterparty will not 
+settle an obligation for full value either when due, or 
+anytime thereafter.  
+• Liquidity Risk  - The possibility  a counterparty will not 
+settle an obligation for full value when due.  
+• Operational Risk  - The possibility  of loss resulting 
+from external events or inadequate internal processes,

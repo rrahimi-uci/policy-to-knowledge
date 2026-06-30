@@ -1,0 +1,40 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 7/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_007
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+901 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+22See 78 FR 5566, 5569 (Jan. 25, 2013). 
+23See 42 U.S.C. 1320d–4(b)(2). 
+2445 CFR 164.306(d)(3)(i) and (d)(3)(ii)(A). 2545 CFR 164.306(d)(3)(ii)(B). 
+26See 45 CFR 160.104(c)(1), which requires the 
+Secretary to provide at least a 180-day period for 
+regulated entities to comply with modifications to standards and implementation specifications in the 
+HIPAA Rules. 
+2745 CFR 164.314(a)(1). Regulated entities would be permitted 
+to comply earlier than the compliance date, but the Department would not take action against them for noncompliance with the proposed changes that occurs before the compliance date. Except as otherwise provided, 45 CFR 160.105 provides that regulated entities must comply with the applicable new or modified standards or implementation specifications no later than 180 days from the effective date of any such change. The Department has previously noted that the 180-day general compliance period for new or modified standards would not apply where a different compliance period is provided in the regulation for one or more provisions.
+22However, the compliance 
+period cannot be less than the statutory minimum of 180 days.
+23 
+While we recognize that we are 
+proposing to substantially revise the regulatory text, the Department believes that most of the existing Security Rule’s obligations for regulated entities would not be substantially changed by the proposed modifications. Instead, the proposed modifications would explicitly codify those activities that are critical to protecting the security of ePHI 
+as requirements and provide greater detail for such requirements in the regulatory text. For example, regulated entities are already required to conduct an accurate and thorough risk analysis. While not specified in the regulatory text of the Security Rule, an accurate and thorough risk analysis requires a regulated entity to perform an inventory of its technology assets, determine how ePHI moves through its information systems, and identify the locations within its information systems (or components thereof) where ePHI may be created, received, maintained, or transmitted. Applying such an approach 
+protects ePHI across all phases of the data lifecycle consistent with the purpose of the Security Rule. The proposals to require a regulated entity to inventory its technology assets and map the movement of ePHI through its information systems would illuminate considerations to be included in the regulated entity’s risk analysis. 
+As another example, implementing a 
+mechanism to encrypt ePHI is an addressable implementation specification under the standard for access control at 45 CFR 164.312(a)(2)(iv). Under the existing Security Rule, a regulated entity must assess whether encryption is a reasonable and appropriate safeguard in its environment, when analyzed with reference to its likely contribution to protecting ePHI, and implement encryption if reasonable and appropriate.
+24If encryption is not 
+reasonable and appropriate, a regulated entity must document why it would not be reasonable and appropriate for it to implement the safeguard and must implement an equivalent alternative measure if reasonable and appropriate.
+25As discussed in greater 
+detail below, encryption is built into 
+most software today, and where it is not, there are affordable and easily implemented solutions that can encrypt sensitive information. Thus, it generally would be reasonable and appropriate for regulated entities to implement a mechanism to encrypt ePHI, and regulated entities should already have done so in most circumstances. By expressly requiring regulated entities to encrypt ePHI, with limited exceptions, the Department’s proposal would reflect our expectations in the current cybersecurity environment and eliminate the need for regulated entities to perform an analysis of whether encryption is reasonable and appropriate. 
+Thus, most of the modifications we 
+are proposing would provide regulated entities with greater clarity and specificity regarding how to fulfill their obligations and the Department’s expectations. 
+Accordingly, we do not believe that 
+the proposed rule would pose unique implementation challenges that would justify an extended compliance period (i.e., a period longer than the standard 
+180 days provided in 45 CFR 160.105). Further, the Department believes that adherence to the standard compliance period is necessary to timely address the circumstances described in this NPRM. Thus, the Department proposes to apply the standard compliance date of 180 days after the effective date of a final rule.
+26 
+To help reduce administrative

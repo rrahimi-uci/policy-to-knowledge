@@ -1,0 +1,229 @@
+# D1-3-03, Lender Post-Closing Quality Control Reverifications (11/05/2025)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_511
+**Pages:** 1073-1078
+**Section Path:** Part D, Ensuring Quality Control (QC) > Subpart D1, Lender QC Process > Chapter D1-3, Lender Post-Closing QC Mortgage Review > D1-3-03, Lender Post-Closing Quality Control Reverifications (11/05/2025)
+
+---
+
+Published March 4, 2026
+1055If errors are discovered in the post-closing review process, lenders must
+determine the signiﬁcance of the errors;
+promptly correct data or documents or obtain corrected documents from the vendor or service provider
+(i.e., mortgage insurer, property insurer, title insurer, or escrow/closing company); and
+provide corrected documents to the document custodian, if applicable.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2025-04 June 04, 2025
+Announcement SEL-2024-05 August 07, 2024
+Announcement SEL-2023-05 June 07, 2023
+Announcement SEL-2023-01 February 01, 2023
+Announcement SEL-2022-09 October 05, 2022
+Announcement SEL-2020-07 December 16, 2020
+Announcement SEL-2019-07 August 07, 2019
+ 
+D1-3-03, Lender Post-Closing Quality Control Reveriﬁcations
+(11/05/2025)
+Introduction
+This topic contains information on the lender's post-closing QC reveriﬁcations, including:
+Overview
+Requirements for Reveriﬁcations
+Overview
+
+Published March 4, 2026
+1056The reveriﬁcation process is used to substantiate there were no material changes that aﬀect the eligibility of the
+loan as delivered to Fannie Mae. The lender must conﬁrm the accuracy and integrity of the information used to
+make the underwriting decision. As such, the lender is required to request reveriﬁcation of the components of
+the loan ﬁle utilized for qualiﬁcation, which may include income, employment, assets, liabilities, valuation
+(appraisal or property data collection), and occupancy.
+The lender must use the information in the reveriﬁcation documentation to reconcile the information used to
+underwrite the loan and make the lending decision.
+Requirements for Reveriﬁcations
+The lender must pay any applicable fees charged by employers, ﬁnancial institutions, or other third parties used
+to obtain reveriﬁcation information.
+The lender may supplement reveriﬁcation processes with alternative information sources available online,
+sources maintained by government agencies or other licensing authorities, and through the use of other third
+parties to obtain a successful reveriﬁcation result.
+All reveriﬁcation documentation must be retained for at least three years in either the loan ﬁle or in the lender's
+QC records. If the lender uses a vendor to perform reveriﬁcation services, the lender must be provided, or have
+access to, the written results and documentation, for at least three years. The lender must provide reveriﬁcation
+documentation to Fannie Mae upon request.
+If the reveriﬁcation process reveals information that diﬀers from what was used in underwriting, the lender must
+re-underwrite the loan to conﬁrm its eligibility for delivery to Fannie Mae.
+For all loans selected for full-ﬁle review, the post-closing QC review must reverify the following:
+income and employment,
+income using IRS tax transcripts,
+assets,
+credit history,
+property eligibility and property value, and
+occupancy.
+As part of its discretionary loan selection process, the lender may choose to make targeted loan selections
+designed to focus solely on a speciﬁc element of the loan, such as product, business source, or underwriting
+component (for example, income and employment, assets, credit, or property).
+When performing discretionary post-closing QC reviews, the lender must align its reveriﬁcation eﬀorts with the
+review's focus. For example, if the review target income calculations, only income and employment
+reveriﬁcations are required, while reveriﬁcation of assets, liabilities, and the appraisal are not. However, if the
+discretionary selection aims to review loans from a new business source, then all aspects of the loan are
+included in the review, and all reveriﬁcations must be completed.
+If the lender cannot obtain required post-closing QC reveriﬁcations, the lender must document the loan ﬁle with
+the request date, and that the information requested was not obtained. The lender must track reveriﬁcation
+results, including successful reveriﬁcations and unsuccessful attempts.
+The borrower's income, employment, or assets do not have to be reveriﬁed (or recalculated) if they were
+
+Published March 4, 2026
+1057validated by the DU Validation Service, and
+the lender satisﬁed all the requirements for obtaining representation and warranty enforcement relief (as
+described in  A2-2-04, Limited Waiver and Enforcement Relief of Representations and Warranties ), and
+the loan closed by the "Close by Date" stated in the DU validation message.
+For loans with representation and warranty enforcement relief related to undisclosed non-mortgage liabilities,
+the lender is not required to re-underwrite the loan to conﬁrm its eligibility for delivery to Fannie Mae when:
+the new, post-closing QC credit report reveals non-mortgage debt that was not disclosed by the borrower
+or discovered by the lender prior to or concurrent with the day of closing,
+the lender's review of the ﬁle does not identify inconsistencies between the data or information in the
+loan ﬁle and the information submitted to DU, and
+all conditions for eligibility for relief described in A2-2-04, Limited Waiver and Enforcement Relief of
+Representations and Warranties  have been met, including the reconciliation of conﬂicting and
+contradictory information and closing by the credit report expiration date.
+Income and Employment
+The lender must obtain updated records verifying that all borrowers remain employed with the employer listed
+on the loan application through closing, and that all income of all borrowers has not changed to the point where
+the loan is ineligible for delivery to Fannie Mae. Documentation that is a replica of the initial
+income/employment veriﬁcation does not meet this requirement because it does not provide updated records to
+verify the income or employment have not changed through the note date.
+Reveriﬁcation of income and employment may include current and previous employment depending on what
+was utilized in DU for eligibility assessment.
+A verbal reveriﬁcation of employment and income is acceptable if the lender documents the conversation,
+including the date, name, title, and contact information of the person providing the details.
+Income using IRS Tax Transcripts
+The post-closing QC review must include the lender's submission for tax transcripts to the IRS (or designee)
+using the IRS Form 4506-C, or an alternative IRS form or process that authorizes the release of comparable tax
+information.
+Post-closing QC tax transcripts validate the income documentation provided by the borrower that was utilized
+during the underwriting process. Transcripts must be requested for all income types used in the underwriting
+process (personal and business, if applicable). If tax returns were required in the underwriting of the loan, the
+lender must reconcile the transcript information received from the IRS with the income documents in the loan
+ﬁle. See  B3-3.1-02, Tax Return and Transcript Documentation Requirements , for detailed information.
+The following exception applies:
+If the lender obtained the appropriate IRS transcripts during its preclosing process (processing and
+underwriting), it may use the same documents in its post-closing QC process, without ordering new transcripts.
+The lender is not required to request tax transcripts for a borrower when all the borrower's income is validated
+by the DU validation service.
+At times, the lender may encounter diﬃculties in obtaining IRS tax transcripts for post-closing QC, such as:
+
+Published March 4, 2026
+1058the transcript request is rejected by the IRS with a Code 10 indicating "Due to Limitations, the IRS is
+unable to process this request";
+the transcript request is rejected because of missing, incomplete, illegible, or altered information on the
+Form 4506-C (Codes 1-9); or
+automated methods for obtaining tax transcripts are unavailable.
+Note:  Fannie Mae expects the lender to carefully review transactions and take prudent measures to
+investigate red ﬂags that may indicate the presence of fraud. The lender must have fraud investigation
+processes and procedures in place regarding potential identity theft scenarios. The lender should keep
+in mind that Code 10 is a potential indicator of fraud or identity theft and should exercise the
+appropriate level of caution in conﬁrming a borrower's identity when a Code 10 has been returned by
+the IRS.
+If the lender attempts to execute Form 4506-C with the IRS but is unable to obtain a transcript due to receiving
+a rejection Code 10, the lender does not need to take further steps to attempt to obtain a transcript.
+For issues other than rejection Code 10, the lender should attempt to obtain a corrected and signed Form 4506-
+C. If a lender chooses not to get the corrected form, or is unable to obtain a corrected form, it must have a
+process to cite a moderate defect and implement a corrective action plan, where appropriate.
+The following table describes alternative reveriﬁcation options for Social Security and military income.
+Income Type Original Veriﬁcation Post-Closing Reveriﬁcation Options
+Social Security
+RetirementSSA Award Letter• Directly with the Social Security Administration,
+or
+• Executed 4506-C transcripts. The tax return
+transcripts must reﬂect one (1) full year of
+income and support the amount used during
+origination, taking into account diﬀerences for
+cost of living adjustments.
+Proof of current payment
+with bank statements
+showing direct deposit of
+the income into the
+borrower’s account• Asset documentation used to support the
+receipt of the Social Security income must be
+reveriﬁed, or
+• Directly with the Social Security Administration,
+or
+• Executed 4506-C transcripts. The tax return
+transcripts must reﬂect one (1) full year of
+income and support the amount used during
+origination, taking into account diﬀerences for
+cost of living adjustments.
+
+Published March 4, 2026
+1059Income Type Original Veriﬁcation Post-Closing Reveriﬁcation Options
+Social Security
+DisabilitySSA Award Letter Directly with the Social Security Administration
+Proof of current payment
+with bank statements
+showing direct deposit of
+the income into the
+borrower’s account• Asset documentation used to support the
+receipt of the Social Security income must be
+reveriﬁed, or
+• Directly with the Social Security Administration.
+MilitaryLeave and Earnings
+StatementThis income does not have to be reveriﬁed
+directly with the United States military. However,
+the lender must
+• verify the borrower’s pay rate is supported
+using Defense Finance and Accounting Services
+(DFAS) pay tables available online;
+• retain a copy of the pay table in the QC ﬁle;
+and
+• reverify employment by validating that the
+borrower was on active duty status at the time of
+the loan closing.
+Assets
+The lender must request reveriﬁcation of all sources of funds used for the down payment, closing costs, and
+reserves, including any reserves required to be veriﬁed by DU, using original documentation from sources
+including, but not limited to ﬁnancial institutions, third-party asset report providers and gift donors. The
+reveriﬁcation documentation obtained in post-closing QC must be compared to the documentation from
+origination to authenticate the amounts used are accurate and to ensure no documentation alterations were
+made.
+When a third-party asset veriﬁcation report is provided to DU for an assessment of rent payment history or a
+cash ﬂow assessment, reveriﬁcation of the full 12 months of asset data is not required. Reveriﬁcation of the
+assets used speciﬁcally for veriﬁcation of assets is required as described above.
+Credit History
+The post-closing QC review must include reveriﬁcation of the borrower's credit history.
+If a borrower's credit was evaluated by using a traditional credit report, the lender must reverify the borrower's
+credit history by obtaining a new tri-merge credit report. The new report does not need to generate a new
+inquiry that will appear on future credit reports or include trended credit data; even if reﬂected on the credit
+report used for underwriting purposes. The lender is not required to analyze trended credit data in the new
+credit report.
+
+Published March 4, 2026
+1060If a borrower's credit history was evaluated by using nontraditional credit or a nontraditional mortgage credit
+report, the lender must reverify each of the credit references on that report. If the lender obtained written
+references from creditors, the lender's QC review process must include reveriﬁcation of each of the credit
+references.
+The liability information obtained on the new credit report must be reconciled against the credit report or
+references used at the time of underwriting to identify any discrepancies or the existence of any debt that may
+not have been taken into account when the loan was underwritten. The lender must also review any "potential
+red ﬂag" message appearing in the DU Underwriting Findings report, or alerts created by sources other than DU
+associated with the credit report, to ensure all messages have been addressed, documented, and that the loan
+is eligible for sale to Fannie Mae.
+Property Eligibility and Property Value
+The lender must complete a collateral risk assessment for loans with an appraisal or property data collection.
+Full appraisal collateral risk assessment must include the elements shown in the following table.
+✓ The lender must...
+ determine the property meets eligibility requirements including the LTV, CLTV, and HCLTV ratios.
+ assess the appropriateness of comparable sales. Appraisal comps do not have to be reveriﬁed on
+appraisals with a Collateral Underwriter (CU) score of 2.5 or below if the lender satisﬁed all the
+requirements for obtaining representation and warranty enforcement relief (as described in A2-2-06,
+Representations and Warranties on Property Value .
+ assess the appropriateness of the data presented and verify the appraisal report complies with
+B4-1.1-04, Unacceptable Appraisal Practices .
+ conclude that the rationale for the reconciliation of value is supported.
+ prescribe corrective actions for defects identiﬁed in the appraisal process.
+ reconcile ﬂags and messages that were identiﬁed in Collateral Underwriter (CU) if the property was
+able to be scored in CU. If the property was not able to be scored in CU, then reconcile any known
+quality messages (messages, alerts, ﬂags) reﬂected in other third-party tools, if utilized.
+If the lender is unable to complete the collateral risk assessment or evaluate the origination appraisal, it may
+order either a desk review or ﬁeld review from a licensed appraiser. The desk review or ﬁeld review must
+account for all of the above collateral risk assessment requirements.
+Property data collection collateral risk assessment must include the elements shown in the following table.

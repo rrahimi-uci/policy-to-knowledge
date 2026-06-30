@@ -1,0 +1,143 @@
+# D1-3-02, Lender Post-Closing Quality Control Review of Approval Conditions, Underwriting Decisions, Data, and Documentation (06/04/2025)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_510
+**Pages:** 1069-1072
+**Section Path:** Part D, Ensuring Quality Control (QC) > Subpart D1, Lender QC Process > Chapter D1-3, Lender Post-Closing QC Mortgage Review > D1-3-02, Lender Post-Closing Quality Control Review of Approval Conditions, Underwriting Decisions, Data, and Documentation (06/04/2025)
+
+---
+
+Published March 4, 2026
+1051loans that may be subject to concerns about delinquency rates or patterns identiﬁed in other reviews;
+loans for which the feedback or results from third-party tools indicates potential areas of concern; and
+loans that have a high risk for fraud, including loans that are early payment defaults (see A3-4-03,
+Preventing, Detecting, and Reporting Mortgage Fraud ).
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2025-04 June 04, 2025
+Announcement SEL-2023-02 March 01, 2023
+Announcement SEL-2020-03 June 03, 2020
+Announcement SEL-2019-07 August 07, 2019
+Announcement SEL-2019-03 April 03, 2019
+ 
+D1-3-02, Lender Post-Closing Quality Control Review of Approval
+Conditions, Underwriting Decisions, Data, and Documentation
+(06/04/2025)
+Introduction
+This topic contains information on the lender’s post-closing QC review of underwriting decisions, DU ﬁndings,
+approval conditions, origination and closing documents, and data integrity including:
+Overview
+Review of Underwriting Decision and Approval Conditions
+Review of DU Findings and Conditions
+Veriﬁcation of Data
+Review of Potential Red Flag and Alert Messages
+Review of Social Security Numbers
+Review of Transaction and Closing Documents
+
+Published March 4, 2026
+1052Overview
+The lender must verify the accuracy and integrity of the information used to support the underwriting decision
+for any loans selected for a QC review. 
+Review of Underwriting Decision and Approval Conditions
+The lender must conﬁrm the loan was underwritten in accordance with Fannie Mae’s requirements and that
+adequate support for the underwriting decision is contained in the loan ﬁle.
+The post-closing ﬁle review process must include a review of the loan to assess the accuracy and integrity of the
+information used to support the underwriting decision, and an assessment as to whether or not the loan
+complies with the Selling Guide and the Lender Contract and is in all respects eligible for delivery to Fannie Mae.
+At a minimum, the review must include an evaluation of the:
+accuracy and completeness of the loan application;
+existence and accuracy of the underwriting documents used to support credit, income, assets, including
+reveriﬁcations of underwriting documents, and a data integrity review;
+underwriting decision to conﬁrm it is supported;
+output from any third-party data analysis tools;
+data entered into DU, if applicable;
+appraisal or other eligible collateral data or documentation, if applicable;
+property eligibility;
+project eligiblity, if applicable;
+property insurance and ﬂood insurance, if applicable;
+compliance with the mortgage insurer's guidelines, and adequate mortgage insurance coverage;
+existence and accuracy of legal, transaction documentation(for example, sales contract), and closing
+documentation; and
+compliance with applicable laws, as provided in  A3-2-01, Compliance With Laws .
+The lender must conﬁrm that all loan approval conditions required by the underwriter were satisﬁed and that
+the information on the closing documents, including the ﬁnal settlement statement, is consistent with the
+underwriting decision and ﬁnal terms of the loan.
+Review of DU Findings and Conditions
+For loans underwritten through DU, the lender must conﬁrm that all DU Veriﬁcation Messages/Approval
+Conditions that appear in the DU Underwriting Findings report were satisfactorily resolved and adequately
+supported by appropriate documentation. If DU returned an Ineligible recommendation, the reviewer must
+conﬁrm that the loan was eligible for delivery to Fannie Mae.
+For additional information on circumstances under which an Ineligible recommendation may be acceptable,
+see Chapter B3-2, Desktop Underwriter (DU).
+
+Published March 4, 2026
+1053Veriﬁcation of Data
+The lender must review the ﬁnal terms of the loan to ensure they align with the data used to support the
+underwriting decisions. When a lender's review identiﬁes discrepancies between the data used in underwriting
+and the data veriﬁed through the QC process, the lender must reassess the underwriting decision based on the
+newly veriﬁed information to determine whether the loan remains eligible as delivered to Fannie Mae.
+For loan caseﬁles created in DU, the lender must ensure all data submitted to DU is true, correct, and complete.
+The loan ﬁle must contain documentation supporting all data submitted to DU necessary to process the loan.
+When there are inconsistencies between the data and/or information submitted to DU (or used for manual
+underwriting) and the source documents, the lender must complete the steps in the following table.
+Step The lender must....
+1determine whether discrepancies are within the tolerances permitted by the Selling Guide
+(see B3-2-10, Accuracy of DU Data, DU Tolerances, and Errors in the Credit Report , and
+B3-6-02, Debt-to-Income Ratios ).
+2resubmit the loan to DU with the correct data, if discrepancies are outside the DU allowed
+tolerances, for loans underwritten in DU. If the lender is unable to resubmit the loan to DU,
+the lender must manually perform a comprehensive risk assessment using the
+documentation required by DU, to determine if the loan meets the Selling Guide
+requirements for manually underwritten loans. The DU limited waiver of representations and
+warranties is invalidated when loans that exceed DU tolerances are not resubmitted to DU.
+For additional information, see B3-2-10, Accuracy of DU Data, DU Tolerances, and Errors in
+the Credit Report .
+For manually underwritten loans, if discrepancies are outside of the allowed tolerances, the
+lender must manually perform a comprehensive risk assessment to determine if the loan
+meets Selling Guide  requirements. For additional information, see B3-6-02, Debt-to-Income
+Ratios .
+Note : DU-only products are not eligible for a manual comprehensive risk assessment.
+ 
+3make a determination as to whether or not the loan, with the corrected data, remains
+eligible as delivered to Fannie Mae, either through the receipt of a DU recommendation of
+Approve/Eligible, or through manually underwriting the loan, if appropriate.
+4document the underwriting ﬁle to reﬂect its decision when the lender determines the loan
+remains eligible as delivered.
+
+Published March 4, 2026
+1054Step The lender must....
+5advise Fannie Mae of these ﬁndings using the self-report functionality in Loan Quality
+Connect  when the lender determines the loan was not eligible as delivered. For additional
+information, see D1-1-01, Lender Quality Control Programs, Plans, and Processes .
+Review of Potential Red Flag and Alert Messages
+The lender’s ﬁle review process must include a review of any “potential red ﬂag” messages appearing in the DU
+Underwriting Findings report or alerts created by sources other than DU, such as those associated with credit
+reports or Social Security veriﬁcation systems. The lender must ensure all messages have been addressed and
+documented, and that the loan remains eligible as delivered to Fannie Mae.
+Review of Social Security Numbers
+As part of the lender's review process, it must ensure the Social Security number for all borrowers are consistent
+in all ﬁle documentation and that any requirements for validation of Social Security numbers were satisﬁed prior
+to closing. For additional information, see B2-2-01, General Borrower Eligibility Requirements .
+Review of Transaction and Closing Documents
+The lender must review each transaction and each closing document for completeness, accuracy, and
+compliance with all underwriting and eligibility requirements, and to ensure adherence to the loan transaction.
+The following list reﬂects the most common documents that must be included in the post-closing document
+review. This list is not intended to be all-inclusive, and the lender must exercise judgment when determining
+other documents to include in the review process.
+Uniform Residential Loan Application (Form 1003)
+Signed sales contract and any applicable addenda
+Recorded security instrument and any applicable riders or addenda
+Note
+Assignment of the loan
+Mortgage insurance certiﬁcate or policy
+Any applicable government loan insurance or loan guarantee certiﬁcates (i.e., FHA, USDA, VA)
+Title evidence
+Plat or survey, as applicable
+Final Truth in Lending disclosure, as applicable
+Final settlement statement
+Other closing documents, as applicable
+Note: If recorded documents are not available when the post-closing QC review is performed due to
+timing requirements for the review and the length of time the jurisdictions need for recording, the
+lender must review a copy of the document sent for recordation. The lender must also have a process
+to review the recorded documents when received to ensure accuracy and remediate any errors.

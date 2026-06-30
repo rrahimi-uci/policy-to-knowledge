@@ -1,0 +1,94 @@
+# Re-identification based on matching. Under the first scenario, the Bureau explained that it might be possible to match a data record to an identified dataset, either directly or through a combination of intermediate datasets.871F  However, successfull...
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_667
+**Pages:** 666-667
+**Section Path:** VIII. Public Disclosure of Data > B. Preliminary Privacy Assessment > 4. Privacy Risk > i. Re-Identification Risk > Proposed Approach > Re-identification based on matching. Under the first scenario, the Bureau explained that it might be possible to match a data record to an identified dataset, either directly or through a combination of intermediate datasets.871F  However, successfull...
+
+---
+
+666 i. Re-Identification Risk  
+Proposed Approach  
+The NPRM  explained that, while information that directly identifies natural persons, such 
+as name, address, date of birth, or Social Security number would not be collected, publication of 
+application -level data in an unmodified format potentially could be used to re -identify small 
+business applicants and related natural persons and  potentially harm their privacy interests. The 
+Bureau identified two re -identification scenarios. First, a third party may use common data fields 
+to match a data  record to a record in another dataset that contains the identity of the applicant or 
+related natural person. Second , a third party  may rely on pre -existing personal knowledge to 
+recognize an applicant ’s record in the unmodified data.  The Bureau use d the term “ adversary” to 
+refer to either  type of third part y.871 
+Re-identification based on matching. Under the first scenario, the Bureau explained that it 
+might  be possible to match a data  record to an identified dataset, either directly or through a 
+combination of intermediate datasets.872 However, successfully re -identifying a data  record 
+would require several steps and could  present a significant challenge. A n adversary generally 
+would have to isolate a record that is unique or rare  within the data. A record is unique  or rare  
+when the values of the data fields associated with it are shared by zero or few other records. T he 
+Bureau stated that it believe d actual data would be  needed to perform an accurate re-
+identification analysis. Thus, it did not intend to apply the balancing test until after it ha d 
+analyzed re-identification risk with a full year of re ported data.  
+The Bureau explained that a data record having unique combinations of values would not 
+automatically result in re -identification; an adversary would also have to find a record 
+corresponding to the applicant or related natural person in anothe r dataset by matching similar 
+combinations of data fields. Once a data  record ha d been matched , an adversary would possess 
+any additional fields found in the corresponding record but not found in the data  record—
+including, potentially, the applicant ’s identity. However, even after accomplishing such a match, 
+an adversary might not have accurately re-identified the true applicant to whom the data  record 
+relates. For example, if the corresponding record wa s not the only record in the other dataset to 
+share certain data fields with the unique data  record, an adversary would have to make a 
+probabilistic determination as to which corresponding record belongs to the applicant.  
+The Bureau expected that census tract and NAICS code, if published as proposed and 
+without modification, could significantly contribute to re -identification risk. Geographic and 
+industry information are publicly available in a variety of sources and in a form that directly identifies businesses or in a way that could be derived with reasonab le accuracy. This 
+information is also likely to produce unique instances in the data, both when used separately, but 
+particularly when combined. Other proposed data fields could have resulted in unique 
+ 
+871 The term does not mean that the adversary ’s motives are necessarily malicious or adverse to the interests of 
+others. See, e.g. , Nat ’l Inst. of Standards & Tech., De -Identification of Personal Information  (2015), 
+http://nvlpubs .nist.gov/nistpubs/ir/2015/NIST.IR.8053.pdf  (using the term “ adversary”).  
+872 For these purposes, an “ identified” dataset is one that directly identifies a  natural or non -natural person.
+
+667 combinations (particularly when combined with census t ract), but the Bureau stated it would 
+need actual data to analyze their contribution to uniqueness.  
+In this context, the Bureau indicated that particularly relevant sources of identified data 
+for matching purposes we re UCC filings, property records, and ti tles. Such filings could pose a 
+serious re -identification risk because of the availability of information about the lender, the 
+applicant, and the date of transaction. F or example, an adversary might be able to use the date 
+and financial institution listed  in UCC filings to identify the applicants of originated loans in the 
+public application -level data. UCC filing s also typically have the address of the borrower. With 
+this information, c ombinations of financial institution identity , action taken date, and census tract 
+data might result in unique combinations that an adversary could connect to a publicly available 
+source of information to re -identify the applicant.  
+With respect to covered  loans secured by residential and commercial property, publicly 
+available real estate transaction records and property tax records would be particularly relevant 
+sources of identified data, as the Bureau described in its proposed policy guidance on the disclosure of loan-level  HMDA data.
+873 Because so me of the data fields in such public records 
+are also present in application -level data, publication without any modifications would have 
+created  a risk that these public records could be directly matched to a data  record . UCC filings 
+also frequently inclu de the name of the lender, the name of the business, and the date that the 
+filing was submitted. Though the availability differs by State, UCC filings are often searchable in 
+State databases, and are frequently mined by data brokers. UCC statements are often filed against 
+specific collateral and business assets generally . The NPRM accordingly indicated that s uch 
+filings could pose a serious re -identification risk .  
+The NPRM also explained that  public records in loan-level datasets for programs like the 
+SBA ’s 7(a), 8(a), 504, and Paycheck Protection Program , as well as State -level registries of 
+women -owned and minority-owned businesses for contracting purposes, could  contribute to re -
+identification risk. These datasets include information such as loan program  guarantee 
+information, industry information  or NAICS code, demographic information about the business 
+owners, time in business, and number of employees . As a result, the time in business and number 
+of workers data fields might significantly contribute to re -identification risk, especially in 
+combination with other data fields like census tract and NAICS code.  Similarly, loan -level 
+performance datasets made available by the Government -Sponsored Enterprises include 
+information such as borrower demographic i nformation, loan program guarantee information, 
+pricing data, loan term, loan purpose, and the year of action taken. A sset-backed securities 
+datasets for securitized mortgage and auto loans are made available by the Securities and 
+Exchange Commission throu gh the Electronic Data Gathering, Analysis, and Retrieval system. 
+These datasets , which  include information about the lender, the date of action taken, pricing data, 
+loan term, loan amount applied for and approved , are available online with limited restric tions on 
+access. But these datasets d o not include the name of the borrower; as described above, this 
+mean s that an adversary who is able to match a record in one of these datasets to a record in the 
+data would need to make an additional match to an identi fied dataset to re -identify an applicant. 
+And some of these datasets contain restrictions on use, such as a prohibition on attempting to re -
+identify borrowers.  Finally, the Bureau noted the existence of p rivate datasets  that might b e 
+ 
+873 See 82 FR 44586, 44593 (Sept. 25, 2017).

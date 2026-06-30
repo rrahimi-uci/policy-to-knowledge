@@ -1,0 +1,26 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 172/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_172
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+852 
+b. Issues To Address 
+Plan sponsors are not directly liable 
+for compliance with the Security Rule because they are not regulated entities, i.e., covered entities or business 
+associates under HIPAA. Therefore, plan sponsors’ obligations to apply safeguards to ensure the confidentiality, integrity, and availability of ePHI are limited to the requirements set forth in the plan documents of its group health plan. While 45 CFR 164.314(b) generally requires that plan documents call for the implementation of Security Rule-like safeguards, the current provision does not specifically require the group health plan to require the plan sponsor or any agent to whom it provides ePHI to comply with the requirements of the Security Rule. Given the concerns we have regarding Security Rule compliance generally by regulated entities, the Department is also concerned that group health plans have not sufficiently ensured that plan documents require that plan sponsors reasonably and appropriately safeguard ePHI created, received, maintained, or transmitted to or by the plan sponsor on behalf of the group health plan. Additionally, the Department is concerned that group health plans may not be monitoring plan sponsors to ensure that ePHI is disclosed to a plan sponsor only if the plan sponsor voluntarily agrees to use and disclose the information only as permitted or required by the regulations.
+853 
+Plan sponsors may perform certain 
+functions that are integrally related to, or similar to, the administrative functions of group health plans, and in carrying out these functions, need access to ePHI held by the group health plan. For example, plan sponsors may perform plan administration functions on behalf of the group health plan which are specified in plan documents. The increase in cybercrime and other emergencies adversely affecting electronic information systems is not limited to regulated entities or to the health care sector; plan sponsors are experiencing similar increases in events that require the activation of contingency plans.
+854And plan 
+sponsors may not be reasonably and appropriately protecting the confidentiality, integrity, and availability of ePHI absent an express requirement that plan documents obligate a plan sponsor to implement the security measures in the Security Rule. Additionally, regulated entities may not have the ability to determine whether alternate security measures will accomplish the same result because they do not have access to the information systems of plan sponsors, nor would it be appropriate for them to have such access. 
+Additionally, the Department believes 
+that prompt notification by a plan sponsor to the group health plan that the ability of the plan sponsor or the group health plan to access ePHI or relevant electronic information systems may be affected by a security incident is important for the same reasons discussed above in 45 CFR 164.314(a). This lack of prompt notification delays a group health plan from responding and protecting its ePHI and relevant electronic information systems accordingly. 
+c. Proposal 
+The Department proposes to modify 
+the implementation specifications at 45 
+CFR 164.314(b)(2)(i) through (iii) to address concerns that group health plans may not recognize that reasonable and appropriate safeguarding of ePHI requires the implementation of security measures that are the same as, or at least equivalent to, the security measures in the Security Rule. First, we propose to rename the implementation specifications as ‘‘Safeguard implementation,’’ ‘‘Separation,’’ and 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00087 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

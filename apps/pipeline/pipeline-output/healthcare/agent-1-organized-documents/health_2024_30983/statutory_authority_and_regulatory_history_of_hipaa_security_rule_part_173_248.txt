@@ -1,0 +1,48 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 173/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_173
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+984 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+85565 FR 82462, 82508 (Dec. 28, 2000); see also 
+68 FR 8334, 8360 (Feb. 20, 2003) (§ 164.314(b) 
+provisions are drawn from and intended to support the analogous privacy protections provided for by 45 CFR 164.504(f) and discussed in the 2000 Privacy Rule.). 
+856‘‘Cross-Sector Cybersecurity Performance 
+Goals,’’ supra note 164. 
+857Proposed 45 CFR 164.308(a)(2)(i). 
+858Proposed 45 CFR 164.308, 164.310, 164.312, 
+and 164.316. 859The plan sponsor would implement a 
+contingency plan because it is one of the requirements of the administrative safeguards of the Security Rule and would be implemented based on the proposed requirements in 45 CFR 164.314(b)(2)(i). 
+86045 CFR 164.306(b)(2)(i). 
+86145 CFR 164.306(b)(2)(ii). 
+86245 CFR 164.306(b)(2)(iii). ‘‘Agents,’’ respectively. We also propose 
+to modify all three implementation specifications to require that plan documents of the group health plan would obligate a plan sponsor or any agent to whom it provides ePHI to implement the administrative, physical, and technical safeguards of the Security Rule. The Department recognizes that plan sponsors may need access to ePHI in certain situations, such as when they perform functions that are integrally related to, or similar to, those performed by group health plans, and we believe that such information must be protected by plan sponsors in the same manner in which it is protected by group health plans and other regulated entities.
+855 
+The security measures we are 
+proposing in this NPRM are consistent with the CISA Cross-Sector CPGs,
+856 
+and thus should be consistent with measures plan sponsors are implementing to protect their own electronic information systems, regardless of the obligations imposed on them by plan documents. For example, the Department seeks to ensure that plan sponsors are implementing administrative safeguards, such as performing a risk analysis,
+857to protect 
+the confidentiality, integrity, and availability of all ePHI in its information systems; documenting required policies and procedures; and documenting implementation of such administrative safeguards, including the required policies and procedures.
+858Thus, 
+requiring plan sponsors to implement the same security measures that regulated entities are implementing would maintain confidence in the commitment of plan sponsors to protecting the confidentiality, integrity, and availability of ePHI in light of the increasing cybersecurity threats as discussed above. 
+Additionally, the Department 
+proposes to rename the implementation specification at 45 CFR 164.314(b)(2)(iv) as ‘‘Security incident awareness.’’ 
+Similar to the discussion above, the 
+Department proposes to add a new implementation specification for contingency plan activation at proposed 45 CFR 164.314(b)(2)(v) that would require plan documents to include a provision requiring a plan sponsor to report to the group health plan without 
+unreasonable delay, but no later than 24 hours after activation of its contingency plan.
+859As discussed above, the 
+Department believes that a group health plan needs to be notified in a timely manner when a plan sponsor activates its contingency plan because of the potential implications on the ability of a group health plan to protect the confidentiality, integrity, and availability of ePHI in its relevant electronic information systems. Accordingly, we believe that 24 hours would provide a plan sponsor sufficient time to do all of the following: determine that there is an emergency or other occurrence adversely affecting the plan sponsor’s relevant electronic information systems; determine that it needs to activate its contingency plan; activate its contingency plan; identify any group health plans that need to be notified; and notify such group health plans. 
+Similarly, as discussed above, we 
+propose to permit the group health plan and plan sponsor to negotiate the form, content, or manner of the notice and include them in their plan documents if they so choose. 
+The Department believes that 
+requiring a plan sponsor to provide prompt notice to the group health plan 
+when the plan sponsor activates its contingency plan would enable group health plans and plan sponsors to maintain individuals’ confidence in their commitment to protecting the confidentiality, integrity, and availability of ePHI. 
+Additionally, consistent with our 
+proposal to revise 45 CFR 164.306, the Department proposes to remove the term ‘‘required’’ from the implementation specification at 45 CFR 164.314(b)(2) consistent with our overall proposal to eliminate the distinction between ‘‘required’’ and ‘‘addressable’’ implementation specifications. However, a regulated entity would still be required to comply with all standards and implementation specifications as applicable to its situation, as proposed in 45 CFR 164.306(c). 
+3. Request for Comment 
+The Department requests comment on

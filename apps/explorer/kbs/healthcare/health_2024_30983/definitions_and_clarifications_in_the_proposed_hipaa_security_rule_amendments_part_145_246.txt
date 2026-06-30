@@ -1,0 +1,32 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 145/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_145
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+971 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+746The Department does not propose to require 
+that the periodic review include a review of 
+whether the conditions of the exception continue to apply because, when the conditions qualifying for an exception change such that an exception no longer applies, a regulated entity would be expected to resume compliance with the standard for encryption and decryption and the associated implementation specifications without exception. 
+747‘‘Defending Against Common Cyber-Attacks,’’ 
+supra note 396; see also ‘‘HIPAA and Cybersecurity 
+Authentication,’’ supra note 368. 748‘‘Cybersecurity Performance Goals,’’ supra 
+note 18. 
+749Id. 
+750See proposed 45 CFR 164.312(c)(2). 
+751‘‘What Happened to My Data?: Update on 
+Preventing, Mitigating and Responding to 
+Ransomware,’’ Cybersecurity Newsletter, Office for Civil Rights, U.S. Department of Health and Human Services (Dec. 2019), https://www.hhs.gov/hipaa/ for-professionals/security/guidance/cybersecurity- newsletter-fall-2019/index.html. information systems. While regulated 
+entities should review deployed compensating controls on a routine basis, the Department proposes to require a regulated entity to periodically review the implementation and effectiveness of compensating controls to ensure the continued protection of ePHI.
+746For example, if a regulated 
+entity’s plan to migrate ePHI from hardware that does not support encryption changes such that the use of the unencrypted hardware continues for a longer period of time, the regulated entity should review implemented compensating controls to ensure ongoing effectiveness and whether new compensating controls should be deployed. We propose to require the designated Security Office conduct such review at least once every 12 months or in response to environmental or operational changes, whichever is more frequent. Additionally, the Department proposes to require that the review be documented in writing and signed. If the regulated entity’s Security Official review determines that certain compensating controls are no longer effective, the Department expects that the regulated entity would adopt new compensating controls that are effective to continue to meet the applicable exception. For example, a regulated entity would be expected to update any compensating controls for use of an FDA-authorized medical device when and as instructed by the manufacturer of the device. 
+We also propose to add an 
+implementation specification for maintenance at proposed 45 CFR 164.312(b)(5). Under this proposal, a regulated entity would be expressly required to review and test the effectiveness of the technical controls required by the standard for encryption at least once every 12 months or in response to environmental or operational changes, whichever is more frequent, and modify as reasonable and appropriate. This proposal is consistent with others in this NPRM that would require regulated entities to maintain specified administrative, physical, and technical safeguards. d. Section 164.312(c)(1)—Standard: 
+Configuration Management 
+The Department believes that the 
+failure to configure technical controls appropriately and to establish and maintain secure baselines for relevant electronic information systems and technology assets in its relevant electronic information systems presents an opportunity for cyberattack and compromise of ePHI.
+747Accordingly, 
+we propose to add a standard for configuration management at proposed 45 CFR 164.312(c)(1). The proposed standard would require a regulated entity to establish and deploy technical controls for securing relevant electronic information systems and technology assets in its relevant electronic information systems, including workstations, in a consistent manner. Under this proposal, a regulated entity also would be required to establish a baseline (i.e., minimum) level of

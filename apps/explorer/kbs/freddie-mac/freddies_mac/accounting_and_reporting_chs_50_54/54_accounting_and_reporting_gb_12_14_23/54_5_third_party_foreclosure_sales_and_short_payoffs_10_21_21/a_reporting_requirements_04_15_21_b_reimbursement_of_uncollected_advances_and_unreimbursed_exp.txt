@@ -1,0 +1,109 @@
+# a. Reporting requirements (04/15/21) + b. Reimbursement of uncollected advances and unreimbursed exp
+
+**Source:** freddies_mac.pdf
+**Chunk ID:** freddies_mac_2266
+**Pages:** 922-923
+**Section Path:** Accounting and Reporting (Chs 50-54) > 54 - Accounting and Reporting GB-12-14-23 > 54.5 Third-party foreclosure sales and short payoffs (10/21/21) > a. Reporting requirements (04/15/21)
+
+---
+
+Guide Bulletin Update 12/14/23 Chapter 54 – Page 5 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the AllRegs 
+web site of ICE Mortgage Technology  (with a paid subscription).  
+Guide Chapter 54 – Accounting and Reporting  
+d. Mortgages sold in a Securitization ( 09/14/23 ) 
+The Servicer must report via myOptigo for Investor Reporting  each Mortgage sold in a 
+Securitization.   After reporting the regular scheduled payment, the Servicer must report in the 
+Non-Cash Writedown field the unpaid principal balance (UPB) of the Mortgage after the regular 
+scheduled payment is applied.  If applicable, the Servicer must calculate the interest and 
+prepayment premium on the exception activity (see Section 50.8), basing this calculation on the 
+amount appearing in the  Non-Cash Writedown field .   
+ 
+ Mortgage repurchase ( 10/20/22) 
+Chapter 47 governs repurchases by the Seller or Servicer.  
+ 
+a. Repurchase price (10/07/02)  
+Freddie Mac will calculate the repurchase price as set forth in Section 47.4.  
+ 
+b. Reporting of repurchases ( 10/20/22) 
+For any repurchase required by Freddie Mac or requested by the Servicer and approved by 
+Freddie Mac, the Servicer must report the repurchase via myOptigo for Investor Reporting  
+(coded as a Mortgage repurchase  using Exception Code 66 ) no later than the due date specified 
+by Freddie Mac.  Freddie Mac may require the repurchase of any Mortgage or any Real Estate 
+Owned (REO).  
+ 
+The Servicer must account for and report the repurchase of a Mortgage or REO in the same 
+manner as it accounts for and reports a Mortgage paid in full.  The Servicer must set the date on 
+which the exception activity will occur at no more than 10 Business Days after the date on which 
+Freddie Mac notified the Servicer that Freddie Mac is requiring or approving the repurchase.  
+ 
+ Third -party foreclosure sales and short payoffs ( 10/21/21) 
+If a Property is sold to a third party on the foreclosure sale date, that sale is referred to as a third -party 
+foreclosure sale.  If Freddie Mac accepts less than payment -in-full on a Mortgage, that payment is 
+referred to as a short payoff.  
+ 
+a. Reporting requirements ( 04/15/21 ) 
+The Servicer must report third -party foreclosure sales and short payoffs via myOptigo for 
+Investor Reporting  in accordance with the specific instructions provided by Freddie Mac 
+Multifamily Loan Accounting for each transaction.  Freddie Mac Multifamily Loan Accounting will 
+forward a transaction summary to the Servicer indicating the exception code, the amounts and 
+the appropriate fields to complete in myOptigo for Investor Reporting .  The summary also will 
+indicate the amounts (if any) to be called in to Fr eddie Mac's service bureau; the amounts (if 
+any) received by Freddie Mac; and the amounts to be credited to the Servicer for Servicing fees 
+earned or for any losses, expenses or advances recovered.  
+ 
+The transmission must reach Freddie Mac in accordance with the reporting due date in Section 
+50.10.
+
+Guide Bulletin Update 12/14/23 Chapter 54 – Page 6 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the AllRegs 
+web site of ICE Mortgage Technology  (with a paid subscription).  
+Guide Chapter 54 – Accounting and Reporting  
+For further assistance in reporting third -party foreclosure sales or short payoffs, the Servicer 
+should contact its accounting representative at Freddie Mac Multifamily Loan Accounting . 
+ 
+b. Reimbursement of uncollected advances and unreimbursed expenses (06/30/15)  
+A third -party foreclosure sale or short payoff may not generate sufficient proceeds to pay off the 
+total indebtedness (UPB, accrued interest and any incurred expenses) and legal fees, either 
+because : 
+ 
+• Freddie Mac has approved a bid or accepted a payoff amount of less than total indebtedness 
+to prevent or facilitate the foreclosure sale, or  
+ 
+• Applicable law does not allow recovery of certain expenses or fees from the Borrower  
+ 
+In either case, the Servicer must comply with the reporting requirements set forth in Section 
+54.5(a).  Freddie Mac will reimburse the Servicer from the proceeds in proportion to Freddie 
+Mac's percentage of participation in the Mortgage.  Depending upon the amount of the proceeds 
+and the amount of Freddie Mac's participation in the Mortgage, Freddie Mac may be unable to 
+fully reimburse the Servicer.  
+ 
+1. Reimbursement of interest  
+ 
+Freddie Mac will calculate interest paid to Freddie Mac for the period of time the Servicer 
+advanced uncollected interest.  Freddie Mac will reimburse the Servicer via a credit to the 
+Servicer's monthly remittance amount due to Freddie Mac.  
+ 
+2. Reimbursement of expenses  
+ 
+To request reimbursement of unrecovered expenses, the Servicer must submit Form 104, 
+Loan and Real Estate Owned (REO) Expenses and Income,  via the Document Management 
+System (DMS), within the time specified in Section 45.3.  
+  
+c. IRS reporting of property acquisitions and abandonments (IRS Form 1099 -A) (10/ 21/21 ) 
+On Freddie Mac's behalf, the Servicer must submit IRS Form 1099 -A, Acquisition or 
+Abandonment of Secured Property, to the Internal Revenue Service (IRS), in accordance with 
+Section 43.3.  
+ 
+d. IRS reporting of Cancellations of Debt (IRS Form 1099 -C) (10/ 21/21 ) 
+See Section 43.3 regarding reporting discharge of indebtedness on IRS Form 1099 -C, 
+Cancellation of Debt.  
+ 
+ Reporting REO  (04/15/21)  
+a. Reporting requirements for transfers to REO ( 04/15/21 ) 
+The Servicer must transfer a Mortgage to REO if the Property is not sold before or at the 
+foreclosure sale.  The Servicer must use myOptigo for Investor Reporting  and the REO 
+exception code to report the transfer to REO.   If the Servicer does not receive prompt notification 
+of the foreclosure sale, Freddie Mac will not assess a late reporting fee.

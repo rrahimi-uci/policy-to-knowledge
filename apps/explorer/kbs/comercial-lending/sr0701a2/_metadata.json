@@ -1,0 +1,93 @@
+{
+  "source_file": "sr0701a2.pdf",
+  "total_chunks": 5,
+  "chunk_methods": [
+    "ai_reasoning"
+  ],
+  "structure": [
+    {
+      "chunk_id": "sr0701a2_001",
+      "title": "Purpose & Regulatory Context — Interagency CRE Concentrations Guidance (references to 12 CFR real estate lending standards and safety & soundness guidelines)",
+      "path": "sr0701a2/purpose_regulatory_context_interagency_cre_concentrations_guidance_references_to_12_cfr_real_estate.txt",
+      "section_path": [
+        "Purpose & Regulatory Context — Interagency CRE Concentrations Guidance (references to 12 CFR real estate lending standards and safety & soundness guidelines)"
+      ],
+      "metadata": {
+        "source_file": "sr0701a2.pdf",
+        "section_level": 0,
+        "summary": "States the purpose of the joint OCC/FRB/FDIC guidance: address increased concentrations of commercial real estate (CRE) loans and emphasize that concentration risk compounds individual loan risk. Clarifies the guidance promotes sound risk management and appropriate capital (not hard CRE lending limits) and cites applicable real estate lending standards and safety-and-soundness guidelines (e.g., 12 CFR part 34; 12 CFR part 208; 12 CFR part 365; and interagency safety and soundness standards).",
+        "chunk_method": "ai_reasoning",
+        "document_type": "occ_guidance",
+        "word_count": 244
+      }
+    },
+    {
+      "chunk_id": "sr0701a2_002",
+      "title": "Background — Historical CRE Concentration Loss Experience and Expectation that Risk Management/Capital Match CRE Concentration Risk",
+      "path": "sr0701a2/background_historical_cre_concentration_loss_experience_and_expectation_that_risk_management_capital.txt",
+      "section_path": [
+        "Background — Historical CRE Concentration Loss Experience and Expectation that Risk Management/Capital Match CRE Concentration Risk"
+      ],
+      "metadata": {
+        "source_file": "sr0701a2.pdf",
+        "section_level": 0,
+        "summary": "Explains why the agencies issued the guidance: historical CRE losses driven by concentrations, weak underwriting, and depressed markets. Notes an observed trend of increasing CRE concentrations and lagging evolution of risk management practices, concluding that institutions should align risk management practices and capital levels with the level and nature of CRE concentration risk.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "occ_guidance",
+        "word_count": 2934
+      }
+    },
+    {
+      "chunk_id": "sr0701a2_003",
+      "title": "Scope & Definitions — CRE Loan Coverage, Primary Source of Repayment Test (≥50% third-party rental i",
+      "path": "sr0701a2/scope_definitions_cre_loan_coverage_primary_source_of_repayment_test_50_third_party_rental_i.txt",
+      "section_path": [
+        "Scope & Definitions — CRE Loan Coverage, Primary Source of Repayment Test (≥50% third-party rental income), Inclusions (construction/land/REIT/developer) and Exclusions (owner-occupied operating cash flow)"
+      ],
+      "metadata": {
+        "source_file": "sr0701a2.pdf",
+        "section_level": 0,
+        "summary": "Defines the CRE loans targeted by the guidance as those where real estate cash flow is the primary repayment source and where performance is sensitive to CRE market conditions. Specifies inclusions (land development/construction, other land loans, multifamily, and nonfarm nonresidential where ≥50 percent of repayment comes from third party, nonaffiliated rental income or from sale/refinance/permanent financing proceeds; certain REIT and unsecured developer loans linked to CRE markets) and exclusions (nonfarm nonresidential where repayment is primarily from ongoing business operations of the property owner/affiliate).",
+        "chunk_method": "ai_reasoning",
+        "document_type": "occ_guidance",
+        "merged_with": "sr0701a2_004",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 526
+      }
+    },
+    {
+      "chunk_id": "sr0701a2_005",
+      "title": "Risk Management Framework & Governance — Required CRE Risk Management Elements and Board/Management ",
+      "path": "sr0701a2/risk_management_framework_governance_required_cre_risk_management_elements_and_board_management.txt",
+      "section_path": [
+        "Risk Management Framework & Governance — Required CRE Risk Management Elements and Board/Management Oversight Responsibilities"
+      ],
+      "metadata": {
+        "source_file": "sr0701a2.pdf",
+        "section_level": 0,
+        "summary": "Introduces the expectation that CRE risk management sophistication should match portfolio size and concentration risk, and lists key framework elements (board/management oversight, portfolio management, MIS, market analysis, underwriting standards, stress testing/sensitivity analysis, and credit risk review). Details board responsibilities, including adopting written real estate lending policy limits/standards, approving overall CRE strategy and risk limits/sublimits, ensuring controls for policy compliance, and reviewing reports on CRE concentration levels and CRE market conditions.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "occ_guidance",
+        "merged_with": "sr0701a2_006",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 485
+      }
+    },
+    {
+      "chunk_id": "sr0701a2_007",
+      "title": "Management Information Systems (MIS) & Reporting — Required CRE Portfolio Stratifications and Aggregation of Borrower/Derivative Exposures (Market Analysis section begins; text truncated)",
+      "path": "sr0701a2/management_information_systems_mis_reporting_required_cre_portfolio_stratifications_and_aggregation.txt",
+      "section_path": [
+        "Management Information Systems (MIS) & Reporting — Required CRE Portfolio Stratifications and Aggregation of Borrower/Derivative Exposures (Market Analysis section begins; text truncated)"
+      ],
+      "metadata": {
+        "source_file": "sr0701a2.pdf",
+        "section_level": 0,
+        "summary": "Specifies that MIS should enable identification/measurement/monitoring/management of CRE concentration risk and be periodically assessed as CRE volume and complexity change. Provides examples of recommended CRE stratifications (property type, geography, tenant concentrations/industries, developer concentrations, risk rating, loan structure/purpose, LTV limits, debt service coverage, policy exceptions, affiliated loans) and requires ability to aggregate exposures to a borrower including derivative-related credit exposure; also describes timeliness and processes for management review of concentration reports and ad hoc analyses. The next component, “Market Analysis,” begins but is truncated in the provided excerpt.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "occ_guidance",
+        "word_count": 1758
+      }
+    }
+  ]
+}

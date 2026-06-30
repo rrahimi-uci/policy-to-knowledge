@@ -1,0 +1,99 @@
+# Economic Value of Equity
+
+**Source:** risk_management_manual_complete.pdf
+**Chunk ID:** risk_management_manual_complete_866
+**Pages:** 317-317
+**Section Path:** section7-1 > INTEREST RATE RISK MEASUREMENT METHODS > Economic Value of Equity
+
+---
+
+SENSITIVITY TO MARKET RISK  Section 7.1  
+Sensitivity to Market Risk ( 10/2025 ) 7.1-8 RMS Manual of Examination Policies  
+  Federal Deposit Insurance Corporation  Earnings Simulation Analysis 
+ 
+Earnings simulation models (such as pro -forma income 
+statement s and balance sheet s) estimate the effect of interest 
+rate changes on net interest income, net income, and capital 
+for a range of scenarios and exposures .  Historically,  
+comprehensive simulation models (both long- and short -
+term) were primarily used by larger, more complex institutions.  Current technology allows less complex 
+institutions to perform cost effective , comprehensive 
+simulations of the potential impact of changes in market 
+rates on earnings and capital.  
+ A simulation model’ s accuracy depends on the  use of 
+accurate assumptions and data.  Like any model, inaccurate 
+data or unreasonable assumptions lead to inaccurate or unreasonable results.  
+ A key aspect of IRR simulation modeling involves selecting  
+an appropriate time horizon(s) for assessing  IRR exposures.  
+Simulations can be performed over any period  and are often 
+used to analyze multiple horizons identifying short -, 
+intermediate -, and long- term risk s.  When using earnings 
+simulation models, IRR exposures are often more accurate  
+when  projected over at least a two -year period.  Using a two-
+year time frame better capture s the full impact of important 
+transactions, tactics, and strategies , whic h may be hidden by 
+only viewing project ions over shorter time horizons.  
+Management  should be  encouraged to measure earnings at 
+risk for each one -year period over their simulation horizon 
+to better understand how risks evolve over time.  For 
+example, if the bank runs a two year simulation, one - and 
+two-year simulation report s should be generated.  
+ Longer -term earnings simulations of up to five  to seven  
+years may be recommended for institutions with material holdings of products with embedded options.  Such extended simulations can be helpful for IRR analysis and 
+economic value measurement s.  It is usually easier for an 
+extended simulation model to identify  when long -term 
+mismatches occur (e.g., it can show that a bank is liability sensitive in years two , three , and four , but asset sensitive in 
+years five, six, and seven ), whereas EVE models aggregate  
+the effect of such mismatches.  
+ Institutions may vary their simulation rate scenarios based on factors such as pricing strategies, balance sheet compositions , hedging activities , etc.  Simulation may also 
+measure risk s presented by non- parallel yield curve shifts.  
+ Institutions can run  static or dynamic  simulations .  Static 
+models are based on current exposures and assume a constant balance sheet with no new growth.  The  models  can 
+also include replacement -growth assumptions w here 
+replacement growth  is used  to offset  reductions in the 
+balance sheet during the simulation period.    Dynamic simulation  models  may assume asset growth, 
+changes in existing business lines, new business, or  changes 
+in management or customer behavior s.  Dynamic simulation 
+models can be useful for business planning and budgeting purposes.  However, these  simulations are highly dependent 
+on key variables and assumptions that are difficult to project with accuracy over an extended period.  Also, when  
+management changes  simulation scenarios , it may lose 
+insights on the bank’ s current IRR positions.  Dynamic 
+simul ations can provide beneficial information but , due to 
+their complexity and  multitude of assumptions , can be 
+difficult to use effectively and may mask significant  risks.    
+  
+Projected growth assumptions in dynamic modeling often 
+alter the balance sheet in a manner that reflect s reduced IRR 
+exposure.  For example, if a liability -sensitive bank assumes 
+significant growth in one -year adjustable  rate mortgages or 
+long- term liabilities and  the growth targets are not met, 
+management may have underestimated exposure s to 
+changing interest rates.  Therefore , when performing 
+dynamic simulations, institutions should also run static or no-growth simulations to ensure  they produce  an accurate , 
+comparative description of the bank’ s IRR exposure.   
+ 
+Economic Value of Equity  
+ Despite their benefits, both static and dynamic earnings simulations have limitations in quantifying IRR exposure.  As a result, economic value methodologies should also be used to broaden the assessment of IRR exposure s, 
+particularly to capital.  
+ 
+Economic value methodologies attempt to estimate the 
+changes in a bank’ s economic value of capital caused by 
+changes in interest rates.  A bank’ s economic value of equity 
+represents the present value of the expected cash flows on assets minus the present value of the expected cash flows on 
+liabilities, plus or minus the present value of the expected 
+cash flows on off -balance sheet instruments.   Typically, an 
+EVE model projects the value of a bank’ s economic capital 
+for a base- case scenario, and then compares it to a stress 
+scenario.  These models go by various names and acronyms, 
+such as EVE , MVE (Market Value of Equity),  or NPV (Net 
+Present Value).   
+ 
+In theory, an  economic valuation approach has a broader 
+scope than an  earnings approach, since it captures all 
+anticipated cash flows and is generally more effective in 
+capturing  embedded options.  An economic valuation 
+approach measures all estimated changes to the balance 
+sheet and earnings, as opposed to gap models and earnings simulations , which generally measure shorter -term balance 
+sheet and earnings projections.  Economic valuation  
+methods can be an effective supplement to short -term 
+measures .

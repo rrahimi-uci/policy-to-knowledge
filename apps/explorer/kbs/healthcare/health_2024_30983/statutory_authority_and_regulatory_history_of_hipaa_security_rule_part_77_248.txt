@@ -1,0 +1,41 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 77/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_077
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+936 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+442See proposed revisions to 45 CFR 164.316 for 
+a more fulsome discussion of documentation 
+requirements. 
+443See proposed revisions to 45 CFR 164.306(c) 
+and (d) for a more fulsome discussion of the 
+distinction between ‘‘required’’ and ‘‘addressable’’ implementation specifications. 
+444See ‘‘The NIST Cybersecurity Framework 
+(CSF) 2.0,’’ supra note 15. 
+445See 78 FR 5566, 5572–5573 (Jan. 25, 2013) 
+(explaining reasons for adopting proposal to apply the business associate provisions of the HIPAA Rules to subcontractors and thus, provides in the definition of ‘‘business associate’’ that a business associate includes a ‘‘subcontractor that creates, receives, maintains, or transmits protected health information on behalf of the business associate’’). 446See, e.g., OCR information about the Change 
+Healthcare cybersecurity incident. ‘‘Change 
+Healthcare Cybersecurity Incident Frequently Asked Questions,’’ U.S. Department of Health and Human Services (July 30, 2024), https://www.hhs.gov/hipaa/for-professionals/special- topics/change-healthcare-cybersecurity-incident- frequently-asked-questions/index.html. incorrectly interpreted the standards to 
+not require implementing administrative safeguards, such as risk analyses, for all relevant electronic information systems. Some regulated entities have not documented in writing their policies, procedures, plans, and analyses.
+442As discussed above, many 
+mistakenly treated ‘‘addressable’’ implementation standards as optional.
+443Enforcement experience has 
+shown that regulated entities generally do not perform all elements of the risk management process that are fundamental to protecting the confidentiality, integrity, and availability of ePHI and to cybersecurity more broadly. 
+In addition, since the Security Rule 
+was issued in 2003 and revised in 2013, newer, more protective security technology has become widely available to regulated entities, and best practices for securing electronic information have evolved. NIST has published numerous guides, including its recent Cybersecurity Framework 2.0, providing resources for establishing and implementing policies and practices to better manage cybersecurity risks.
+444 
+OCR is drawing upon its enforcement experience, as well as best practices, guidelines, processes, and procedures for improving cybersecurity to propose changes to these standards to better protect ePHI that a regulated entity creates, receives, maintains, or transmits. We believe that these proposals would help ensure that regulated entities implement compliance activities that are consistent with recommendations made by NIST, the HHS 405(d) program, and standards setting bodies regarding cybersecurity. 
+Because business associates are 
+directly liable for compliance with the Security Rule, in our 2013 Security Rule revisions we did not require covered entities to implement any additional safeguards to ensure that their business associate is in fact in compliance.
+445 
+However, OCR has learned through its enforcement experience that many covered entities have entrusted ePHI to business associates that are not 
+employing appropriate safeguards. Some business associates have such market power that covered entities may believe they have no alternative to using their services, even if they have concerns about the safeguards employed by the business associate. The Department is concerned by the breaches experienced by business associates and the effects of such breaches on the confidentiality, integrity, and availability of ePHI.
+446 
+3. Proposals 
+a. Section 164.308—Administrative 
+Safeguards 
+Throughout this section, the

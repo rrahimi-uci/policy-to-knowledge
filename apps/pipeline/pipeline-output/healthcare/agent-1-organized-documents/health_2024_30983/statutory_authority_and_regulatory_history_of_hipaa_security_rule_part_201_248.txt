@@ -1,0 +1,38 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 201/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_201
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+998 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+962See table 3, wage rate for Office and 
+Administrative Support Occupations. b. Estimated Costs From Adding a 
+Requirement for Business Associates to Analyze Compliance With Technical Safeguards 
+For proposed 45 CFR 164.308(b), the 
+Department estimates that business associates that handle ePHI would need to spend an average of 2 hours (with a low estimate of 0.25 hours and high estimate of 2.5 hours) analyzing how their cybersecurity measures comply with the proposed requirements for technical safeguards and producing a verification report for covered entities at the hourly wage rate of an information security analyst. This estimate assumes that business associates have already documented existing safeguards, policies, and procedures, so that the costs attributable to the new requirement are incremental and would total approximately $239,880,000 [1 million business associates × 2 hours × 
+$119.94], with a low estimate of $29,985,000 [1 million business associates × 0.25 hours × $119.94] and 
+high estimate of $299,850,000 [1 million business associates × 2.5 hours × 
+$119.94]. 
+c. Costs Arising From Covered Entities 
+and Business Associates Obtaining Verification From Business Associates of Compliance With Technical Safeguards 
+Under 45 CFR 164.308(b), the 
+Department further estimates that each covered entity would need to spend an average of 30 minutes (with 15 minutes as a low estimate and 90 minutes as a high estimate) requesting and obtaining compliance reports from its business associates about their deployment of technical safeguards required by the Security Rule at the hourly wage of an information security analyst. This assumes that in most instances, business associates would produce the required verification for covered entities without being prompted by a request because they would be required to do so by the Security Rule, as proposed in the NPRM. It further assumes that covered entities have readily available means of contacting business associates, such as via email, and that the contact could be a single email draft sent in a batch. The average time burden per entity depends on verification frequency, likely influenced by entities’ average number of business associates and how frequently entities change business associates. The low estimate assumes that entities verify less frequently, whereas the high estimate assumes entities verify more frequently. At the wage rate of an information security analyst, this would result in estimated total costs for covered entities of 
+$49,331,322 [= 822,600 covered entities × 0.5 hours × $119.94], with a low 
+estimate of $24,665,661 [= 822,600 covered entities × 0.25 hours × $119.94] 
+and high estimate of $147,993,966 [= 822,600 covered entities × 1.5 hours × 
+$119.94]. 
+The proposed requirement to obtain 
+verification of compliance with 
+technical safeguards also would apply to business associates with respect to their subcontractors. However, we believe that a much smaller number of business associates rely on subcontractors compared to the number of covered entities that rely on business associates to conduct activities on their behalf. Thus, we estimate that, on average, business associates would need 5 minutes annually to obtain verification from their subcontractors that the subcontractors have complied with technical safeguards as required by the Security Rule. The estimate includes only the time needed for business associates to send a mass email to subcontractors because we have already addressed the burden on business associates of producing the verification in the previous section and that estimate includes burdens on subcontractors. The high estimate for this activity would be an average of 15 minutes per business associate, and a low estimate would be for business associates to 2 minutes on this activity. At the wage rate of an information security analyst, this would add estimated total costs for business associates of $9,995,000 [= 1,000,000 business associates × 0.083 
+hours × $119.94], with a high estimate 
+of $29,985,000 [= 1,000,000 business associates × .25 hours × $119.94]. 
+d. Cost Related to Notification of Termination or Change of Workforce Members’ Access to ePHI 
+The Department estimates that 
+regulated entities are likely to incur additional costs to implement a process to notify other regulated entities when a workforce member’s access to ePHI is terminated or changed under proposed 45 CFR 164.308(a)(9)(ii). This estimate assumes that notifications will take an average of 1 hour annually per regulated entity. This results in new estimated costs totaling $84,021,860 [= 1,822,600 regulated entities × 1 hour × $46.10].
+962 
+e. Cost Related to Regulated Entities Deploying Multi-Factor Authentication 
+The Department estimates that, on 
+average, regulated entities would have an information security analyst spend 1.5 hours deploying MFA, as

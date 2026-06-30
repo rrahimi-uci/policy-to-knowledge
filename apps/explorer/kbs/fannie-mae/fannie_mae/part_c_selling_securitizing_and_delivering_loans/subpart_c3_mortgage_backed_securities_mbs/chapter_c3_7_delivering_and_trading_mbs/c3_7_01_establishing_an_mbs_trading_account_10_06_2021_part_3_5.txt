@@ -1,0 +1,46 @@
+# C3-7-01, Establishing an MBS Trading Account (10/06/2021) (part 3/5)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_493_sub_003
+**Pages:** 1026-1032
+**Section Path:** Part C, Selling, Securitizing, and Delivering Loans > Subpart C3, Mortgage-Backed Securities (MBS) > Chapter C3-7, Delivering and Trading MBS > C3-7-01, Establishing an MBS Trading Account (10/06/2021)
+
+---
+
+Published March 4, 2026
+1011When calculating the price diﬀerential:
+any open trades between the lender and the Capital Markets Pricing and Sales Desk will be disregarded if
+they have been assigned, submitted, transferred, or reported to a securities clearing organization (e.g.,
+the Fixed Income Clearing Corporation) for clearing, netting, and/or settlement such that the open trade
+will be factored into the applicable margin requirements of such securities clearing organization; and
+any outstanding pair-oﬀ fees relating to trades between the lender and the Capital Markets Pricing and
+Sales Desk will be factored into the calculation of the price diﬀerential.
+Designated Threshold Amount and Minimum Transfer Amount
+The designated threshold amount represents a level of unsecured exposure an “in the money” party will accept
+before making a margin call on the “out of the money” party. Fannie Mae’s designated threshold amount and a
+lender’s designated threshold amount shall each be $3,000,000, unless otherwise agreed to by the parties in
+writing and/or subject to the occurrence of a triggering event as discussed below.
+Example
+If there is a positive price diﬀerential and a lender is in the money by $3,100,000, the lender may make a
+margin call to Fannie Mae for $100,000. ($3,100,000 – Fannie Mae’s designated threshold amount of
+$3,000,000).
+A minimum transfer is a speciﬁed amount of money that must be exceeded before a margin call can be made.
+Fannie Mae’s minimum transfer amount and a lender’s minimum transfer amount shall each be $50,000, unless
+otherwise agreed to by the parties in writing and/or subject to the occurrence of a triggering event as discussed
+below.
+Notwithstanding the foregoing, Fannie Mae will not wire cash to a lender in the event of a positive price
+diﬀerential if any of the following “triggering events” has occurred with respect to a lender:
+an event of default under the Lender Contract or any other contract between Fannie Mae and the lender,
+the lender’s failure to meet any of the lender eligibility requirements set forth in Subpart A-4, Maintaining
+Lender Eligibility,
+a decline in a lender’s adjusted net worth by more than 20% over a quarterly reporting period or by more
+than 30% over two consecutive quarterly periods,
+the total unpaid principal balance of all outstanding Fannie Mae repurchase requests to a lender exceeds
+15% of the lender’s adjusted net worth,
+Fannie Mae comes into possession of information that, in Fannie Mae’s reasonable discretion, could result
+in an adverse impact, either presently or in the future, on the lender’s counterparty relationship with
+Fannie Mae or the lender’s ﬁnancial condition, or
+outstanding contractual fees owed by a lender to Fannie Mae.
+Further, upon occurrence of a triggering event for a lender, Fannie Mae, in its sole and absolute discretion, may
+modify or eliminate the designated threshold amount and minimum transfer amount applicable to such lender
+without prior notice to the lender.

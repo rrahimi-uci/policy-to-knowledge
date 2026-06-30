@@ -1,0 +1,67 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 131/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_131
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+963 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+66645 CFR 164.312(a)(2)(i). 
+66745 CFR 164.312(a)(2)(ii). 
+668‘‘Security Standards: Technical Safeguards,’’ 
+supra note 343, p. 5. 
+66945 CFR 164.312(a)(2)(iii). 
+670‘‘Security Standards: Technical Safeguards,’’ 
+supra note 343, p. 6. 
+671Id. 67245 CFR 164.312(a)(2)(iv). 
+673‘‘Security Standards: Technical Safeguards,’’ 
+supra note 343, p. 7. 
+674‘‘Understanding the Importance of Audit 
+Controls,’’ Cybersecurity Newsletter, Office for Civil 
+Rights, U.S. Department of Health and Human Services, p. 1 (Jan. 2017), https://www.hhs.gov/ sites/default/files/january-2017-cyber- newsletter.pdf?language=es. 
+675Id. 
+676Id. at 2. 
+677Id. 
+678‘‘Security Standards: Technical Safeguards,’’ 
+supra note 343, p. 7. 679Id. 
+680Id. at 9. 
+681Id. at 10. 
+68245 CFR 164.312(e)(2)(i). specification for unique user 
+identification requires a regulated entity to assign unique identifiers to users to facilitate the identification of specific users of an information system.
+666By 
+assigning a unique identifier to each user, a regulated entity can track the specific activity of that user when they are logged into an information system and hold the user accountable for functions they perform in the information system when they access that system. 
+Under the implementation 
+specification for emergency access procedures, a regulated entity is required to establish procedures, such as documented operational practices and instructions to workforce members, for obtaining access to necessary ePHI during an emergency and to implement such procedures as needed.
+667In 
+accordance with this implementation specification, a regulated entity must identify the types of situations in which its normal procedures for accessing an information system or application that contains ePHI may not work and establish procedures for obtaining access in those situations.
+668These 
+procedures must be established prior to an emergency to instruct workforce members on possible ways to gain access to needed ePHI where, for example, the electrical system has been severely damaged or rendered inoperative, or where a software update fails and prevents the regulated entity from accessing ePHI in its EHR. 
+The implementation specification for 
+automatic logoff associated with the standard for access control addresses the need for a regulated entity to, when reasonable and appropriate, implement electronic procedures that terminate an electronic session after a period of inactivity.
+669Automatic logoff is an 
+effective way to prevent unauthorized users from accessing ePHI on a workstation when it is left unattended for a period of time.
+670While many 
+applications have configuration settings that automatically log a user out of the system after a period of inactivity, some systems have more limited capabilities and may activate a screen saver that is password protected.
+671 
+The implementation specification 
+under the standard for access control addresses encryption and decryption and requires regulated entities, when it is reasonable and appropriate, to 
+implement a mechanism to encrypt and decrypt ePHI.
+672Encrypting data, 
+including ePHI, reduces the likelihood that anyone other than the party that has the key to the encryption algorithm would be able to decrypt (i.e., translate) 
+the data and convert it into plain, comprehensible text.
+673 
+The standard for audit controls 
+requires a regulated entity to implement hardware, software, and/or procedural mechanisms that record and examine activity in electronic information systems that contain or use ePHI. Most electronic information systems provide some level of audit controls with a reporting method, such as audit reports.
+674These controls are useful for 
+recording and examining information system activity, especially when determining whether a security violation has occurred.
+675The Security 
+Rule does not identify data that must be gathered by the audit controls or how often the audit reports should be reviewed.
+676Instead, a regulated entity 
+must consider its risk analysis and organizational factors, such as current technical infrastructure and hardware and software security capabilities, to determine reasonable and appropriate audit controls for information systems that contain or use ePHI.
+677The audit 
+controls standard has no implementation specifications. 
+Section 164.312(c)(1), the standard for 
+integrity, requires a regulated entity to implement policies and procedures to protect ePHI from improper alteration or destruction. The integrity of data can be compromised by both technical and non-technical sources. Workforce members or business associates may make accidental or intentional changes that improperly alter or destroy ePHI. Data can also be altered or destroyed without human intervention, such as by electronic media errors or failures.
+678

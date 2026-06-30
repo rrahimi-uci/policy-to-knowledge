@@ -1,0 +1,50 @@
+# Comments Received
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_671
+**Pages:** 669-669
+**Section Path:** VIII. Public Disclosure of Data > B. Preliminary Privacy Assessment > 4. Privacy Risk > i. Re-Identification Risk > Comments Received
+
+---
+
+669 be re-identified by adversaries possessing sophisticated matching techniques. The Bureau 
+explained that uncertainty over the extent of relevant personal knowledge posed challenges for 
+evaluating how much individual data fields contribute  to this re-identification risk. For these 
+reasons,  the NPRM  generally focus ed on matching -based risk. However, the Bureau s ought  
+comment on how to assess re -identification risk ar ising  from personal knowledge.  
+Applic ations that do not result in originations. In  its final policy guidance on the 
+disclosure of loan-level HMDA data, the Bureau explained that the risk of re -identification to 
+applicants is significantly lower for applications that do not result in originate d loans.875 A lack 
+of public information about applications significantly reduces the likelihood that an adversary 
+could match the record of a HMDA loan application that was not originated to an identified 
+record in another dataset. In the NPRM, the  Bureau stated that it had not identified any publicly 
+available information about applications for business loans. However, unmodified data might 
+still contain data fields that facilitate the re -identification of applicants. For example, census tract 
+and NAICS co de data could result in unique combinations that an adversary could use to match 
+to an identified public record, such as a business directory.  
+Overlap between HMDA and 1071 data generally . The Bureau proposed that some  
+covered  applications would also be reported under HMDA.876 The public loan -level HMDA 
+dataset contains data fields in addition to, or that overlap with, the proposed data fields, and the 
+proposed data would have include d data fields not included in the public loan -level HMDA 
+dataset. The Bur eau recognized  that, in cases of overlap, some data fields may have require d 
+additional analysis with respect to risks of harm or sensitivity and re -identification posed by such 
+overlap. The Bureau  sought  comment on this issue and the implications of potential re -
+identification risk and potential risk of harm or sensitivity for applications reported under both 
+section 1071 and HMDA.  
+Comments Received  
+The Bureau received comments from lenders, trade associations, community groups, a 
+business advocacy group,  a software vendor, and several individuals on re -identification risk 
+posed by the publication of unmodified, application -level data. Nearly all of these commenters 
+agreed that re-identification risk, either through matching or via personal knowledge, should be 
+considered by the Bureau when determining whether to modify or delete data for publication.  
+Many industry commenters  and a business advocacy group  saw a high risk of data being 
+used to re -identify applicants and related natural persons and that this would disclose harmful or 
+sensitive  private information.  Some industry and individual commenters agreed that re -
+identification risk will be higher as a result of data point combinations; several pointed to the combination of NAICS and census tract . One com menter stated that because re-identification 
+risk depends  on the distinctness of the data being published and on the ability to match that data 
+to other datasets, the Bureau should consider privacy risk for the overall dataset rather than for 
+each data poi nt. Another stated that unpredictable changes in re -identification technologies may 
+make data that are currently impossible to re-identify susceptible to re -identification in the 
+ 
+875 See 84 FR 649, 658 (Jan. 31, 2019);  see also 82  FR 44586, 44593 n.55 (Sept. 25, 2017).  
+876 See the section -by-section a nalysis of §  1002.104 for a dditional details.

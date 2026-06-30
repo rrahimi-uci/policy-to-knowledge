@@ -1,0 +1,120 @@
+# C3-7-06, Settling the Trade (05/05/2021)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_498
+**Pages:** 1044-1046
+**Section Path:** Part C, Selling, Securitizing, and Delivering Loans > Subpart C3, Mortgage-Backed Securities (MBS) > Chapter C3-7, Delivering and Trading MBS > C3-7-06, Settling the Trade (05/05/2021)
+
+---
+
+Published March 4, 2026
+1026Information Required for Presettling ARM MBS
+ARM MBS pools are backed by ARMs of any age. For an ARM MBS pool, the lender must provide not only the
+information required above (and the information for a seasoned pool above, if the pool is treated as a
+“seasoned” pool), but also the following additional information:
+✓ Requirements
+ Index on which the periodic interest rate adjustments for the underlying mortgages are
+based
+ Periodic and lifetime interest rate caps for the underlying mortgages
+ Periodic payment caps (if any) for the underlying mortgages
+ MBS margin (which is the portion of the mortgage margin that is used to establish the pass-
+through rate for the pool on each interest rate change date)
+ Interest rate change date (which is the date on which the interest rates for the underlying
+mortgages will be adjusted)
+ Frequency of the interest rate adjustments for the underlying mortgages
+ Applicability and terms of any conversion-to-ﬁxed-rate feature for the underlying mortgages
+Recent Related Announcements
+There are no recently issued Announcements related to this topic.
+C3-7-06, Settling the Trade (05/05/2021)
+Introduction
+This topic provides information concerning buying an MBS from or selling the MBS to the Sales Desk, including:
+Turnaround Times for MBS Pool Deliveries
+Distribution of Securities
+“Due Bill” for MBS Pool Settlements
+Multiple Warehouse Lenders
+Rejection of a Wire Transfer/Change of Wire Transfer Instructions
+
+Published March 4, 2026
+1027Loan- and Pool-Level Information Available after Pool Closing
+Turnaround Times for MBS Pool Deliveries
+The following turnaround times apply to the elapsed time between Fannie Mae’s receipt of the lender’s error-
+free loan delivery data, Fannie Mae’s receipt of the document custodian’s certiﬁcation that the lender submitted
+a complete and accurate pool submission package, MBS disclosure data publishing, and Fannie Mae’s book-
+entry delivery of the securities.
+Note : The names of the days of the week are used as an example only.
+If processing
+type isAnd lender’s
+error-free
+transmission is
+received by:And custodian’s
+certiﬁcation is
+received by:Then,
+disclosure
+data is
+published by:Then, book-
+entry delivery
+of securities
+will be by:
+Single-Issue Pool16:00 p.m. (ET) on
+Monday10:30 a.m. (ET) on
+Tuesday6:30 a.m. (ET)
+on WednesdayThursday (4
+business days)
+Fannie Majors16:00 p.m. (ET) on
+Monday10:30 a.m. (ET) on
+Tuesday6:30 a.m. (ET)
+on WednesdayWednesday (3
+business days)
+If the pool is being delivered into a TBA trade, all TBA good delivery guidelines (per SIFMA) apply. These
+guidelines require the seller of MBS to provide the prospectus and the prospectus supplement at least 48 hours
+prior to TBA settlement.
+If Fannie Mae cannot meet a lender’s speciﬁed book-entry date, Fannie Mae will not be responsible for any
+direct, indirect, or consequential damages that the lender incurs because of the delayed book-entry delivery.
+See C3-7-07, Sale of Fannie Mae Securities to Third Parties  for additional information.
+Distribution of Securities
+When Fannie Mae accepts an MBS pool submission for securitization, it issues a security backed by the
+mortgages in the pool and delivers it electronically through the Federal Reserve Book-Entry System to an
+account in an institution that the lender speciﬁes. The lender’s book-entry delivery date may be the same date
+as settlement, but must not be later than the last day of the month in which the pool issue date occurs.
+“Due Bill” for MBS Pool Settlements
+A due bill is a document that the seller of a security issues to the purchaser of the security to enable the
+purchaser to redeem principal and interest the seller receives after the record date.
+If the settlement occurs before the record date, but the delivery and payment on the trade will occur between
+the record date and a subsequent “payable” date, then the due bill should accompany the securities.
+
+Published March 4, 2026
+1028If the delivery and payment occur after the payable date, then a postdated check for the amount of P&I the
+purchaser is due, which will serve as the due bill until the postdated date of the check, must accompany the
+securities. When securities are transferred over the Federal Reserve’s book-entry system, a Fedwire message is
+an acceptable substitute for the check. Due bill or Fedwire messages are valid for 60 days.
+The purchaser may submit a due bill or Fedwire message to the seller for payment as soon as pool factors are
+available. As long as the request for payment is presented three or more days before a “payable” date, the
+seller will pay the purchaser the amount on the “payable” date. If the purchaser requests payment after that,
+the seller has three days from the date of the due bill or Fedwire message is presented in which to pay the
+purchaser.
+Multiple Warehouse Lenders
+Currently, Fannie Mae can only link one warehouse lender to each document custodian the lender uses for its
+MBS pool deliveries. Therefore, if a lender that uses only one document custodian, and assembles pools
+involving more than one warehouse lender (or uses diﬀerent warehouse lenders for some MBS pools), the lender
+will need to designate one warehouse lender to represent the interests of the other warehouse lenders it uses.
+The other warehouse lenders must execute written agreements that:
+give the designated warehouse lender the authority to represent them for those mortgages in MBS pools
+in which they have an interest; and
+obligate the designated warehouse lender to take the steps necessary to ensure that they receive
+securities equal to their interests in the mortgages in the MBS pools, when appropriate.
+Rejection of a Wire Transfer/Change of Wire Transfer Instructions
+If a Fannie Mae wire transfer is rejected by a depository institution or by the Federal Reserve Bank of New York,
+Fannie Mae will contact the lender for veriﬁcation of the instructions and request that it update any information
+that resulted in the rejection.
+To change wire transfer instructions, the lender may modify its Delivery Schedule  (Form 2014 ) any time prior to
+6:00 p.m. (Eastern time) on the business day preceding the designated book-entry delivery date, except when
+the lender is using an early funding option or delivers a loan under a bailee letter. See C3-7-02, Initiating an
+MBS Sale  for additional information.
+If a change will aﬀect the lender’s warehouse lender, the lender should contact the warehouse lender. If the
+warehouse lender disagrees with the lender’s initial wire transfer instructions or any subsequent changes the
+lender makes to them, the warehouse lender should contact the lender. Fannie Mae will not compensate the
+lender or warehouse lender for any losses, costs, expenses, or damages it or another party incurs as a result of
+Fannie Mae’s adherence to the lender’s instructions.
+Loan- and Pool-Level Information Available after Pool Closing
+The table below summarizes the types and locations of MBS pool-related information that is available after the
+MBS pool is closed.
