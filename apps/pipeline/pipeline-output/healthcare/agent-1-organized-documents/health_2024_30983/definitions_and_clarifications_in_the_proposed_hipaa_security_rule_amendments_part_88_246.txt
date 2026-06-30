@@ -1,0 +1,27 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 88/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_088
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+there are newly recognized risks to the 
+confidentiality, integrity, or availability of ePHI). 
+Despite the existing standard and the 
+availability of guidance, many regulated entities do not evaluate how changes in their environment, such as a merger or acquisition or implementation of new technology, may affect the security of ePHI. In some instances, regulated entities assert that they have done so, but have no documentation of the purported evaluation. The Department believes that this proposal, if adopted, would clarify our expectations for implementing these safeguards. 
+f. Section 164.308(a)(4)(i)—Standard: 
+Patch Management 
+As described in Department guidance, 
+regulated entities can defend themselves from common cyberattacks, but hackers continue to target the health care industry in search of ways to access valuable ePHI.
+491Accordingly, timely 
+implementation of patches for known vulnerabilities is crucial to maintaining the security of ePHI. Many cyberattacks could be prevented or substantially mitigated if regulated entities implemented activities to manage the implementation of patches, updates, and upgrades to comply with the Security Rule’s requirements for risk management, which can deter one of the common types of attacks: exploitation of known vulnerabilities. If an attack is successful, the intruder often will encrypt a regulated entity’s ePHI to hold it for ransom, or exfiltrate the data for future purposes including identity theft or blackmail. Cyberattacks are especially concerning in the health care sector because they can disrupt the provision of health care services. Exploitable vulnerabilities can exist in many parts of a regulated entity’s information 
+systems, but often, known vulnerabilities can be mitigated by applying vendor patches, updating software or system configurations, or upgrading to a newer version of the product. If a patch, update, or upgrade is unavailable, vendors often suggest actions to take, that is, compensating controls, to mitigate a newly discovered vulnerability. Such actions could include modifications of configuration files or disabling of affected services. Regulated entities should pay careful attention to cybersecurity alerts describing newly discovered vulnerabilities. These alerts often include information on mitigation activities and patching. 
+Risk management processes that are 
+compliant with the Security Rule 
+include identifying and mitigating risks and vulnerabilities that unpatched software poses to an organization’s ePHI. Mitigation activities could include installing patches if patches are available and patching is reasonable and appropriate. In situations where patches are not available (e.g., obsolete or 
+unsupported software) or testing or other concerns weigh against patching as a mitigation solution,
+492regulated 
+entities should implement reasonable compensating controls to reduce the risk of identified vulnerabilities to a reasonable and appropriate level (e.g., restricting network access or disabling network services to reduce vulnerabilities that could be exploited via network access). Security vulnerabilities may be present in many types of software, including databases, EHRs, operating systems, email, and device firmware. Each type of program would have its own unique set of vulnerabilities and challenges for applying patches, but identifying and mitigating the risks unpatched software 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00046 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

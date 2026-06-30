@@ -1,0 +1,33 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 191/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_191
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+994 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+939‘‘Next Steps Toward Managing Legacy Medical 
+Device Cybersecurity Risks,’’ supra note 742, p. 6. 940‘‘View ICR,’’ Office of Information and 
+Regulatory Affairs, Office of Management and 
+Budget (July 9, 2024), https://www.reginfo.gov/ public/do/PRAViewICR?ref_ nbr=202401-0945-002. 
+94163 FR 43242 (Aug. 12, 1998). 
+94268 FR 8334 (Feb. 20, 2003). 
+94378 FR 5566 (Jan. 25, 2013). The Department also recognizes that 
+there may be some costs that are not 
+readily quantifiable, notably, actions that regulated entities may take to comply with existing requirements more fully as a result of proposed clarifications. For example, this would include completing a technology asset inventory, which is a baseline expectation for the existing requirement of conducting a risk assessment; documenting completion of existing requirements; adding more specificity to the required contingency plan, such as designating staff roles with specific responsibilities when a contingency occurs; testing safeguards as part of reviewing and updating policies and procedures and technical controls; and deploying encryption for ePHI in a more concerted manner (including documenting provision of notification in response to individuals’ access requests for transmission of ePHI in an unencrypted manner and has been informed of the risks associated with the transmission, receipt, and storage of unencrypted ePHI). These activities are specified in the NPRM, but they would be more in the nature of clarifications to and increased specificity of existing requirements. Because the degree of additional effort by regulated entities to meet these requirements would be dependent on multiple factors and likely to be highly variable, the additional cost is difficult to quantify. 
+We acknowledge that there may be a 
+small burden associated with 
+documenting that an individual was informed of the risks of unencrypted transmission of ePHI; however, we believe there are few requests that fall into this category. Because we do not have a basis to make an estimate, we have requested data on potential burdens associated with this proposed exception to the proposed standard for encryption in the preamble discussion of 45 CFR 164.312. 
+The cost of complying with the 
+exceptions to encryption and MFA for medical devices authorized by the U.S. Food & Drug Administration for marketing may depend in part on the extent to which a regulated entity relies on legacy devices because the regulated entity may be required to adopt compensating controls. New devices are likely to have encryption and MFA built into them, not requiring compensating controls. The Department is unable to estimate the range of costs to adopt compensating controls for legacy devices because there is no reliable data to accurately assess the extent to which legacy devices are used in the United States.
+939The Department requests 
+comment on the number of legacy 
+devices in use and the costs of applying compensating controls to such devices. 
+2. Baseline Conditions 
+The Security Rule, in conjunction 
+with the Privacy and Breach 
+Notification Rules, protects the privacy and security of individuals’ PHI, that is, individually identifiable health information (IIHI). The Security Rule’s protections are limited to ePHI, while the Privacy and Breach Notification Rules protect both electronic and non- electronic PHI. The Security Rule establishes standards to protect individuals’ ePHI and requires reasonable and appropriate administrative, physical, and technical safeguards. The Security Rule specifies a series of administrative, physical, and technical security requirements that 
+must be performed or implemented for regulated entities to safeguard ePHI. Specifically, entities regulated by the Security Rule must: (1) ensure the confidentiality, integrity, and availability of all ePHI they create, receive, maintain, or transmit; (2) protect against reasonably anticipated threats to the security and integrity of the information; (3) protect against reasonably anticipated impermissible uses or disclosures; and (4) ensure compliance by their workforce. A major goal of the Security Rule is protecting the security of individuals’ health information while allowing for the development of a health information system to improve the efficiency and effectiveness of the health care system. 
+The Administrative Simplification

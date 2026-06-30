@@ -1,0 +1,45 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 27/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_027
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+206See, e.g., 89 FR 37522, 37642 (May 6, 2024) 
+and 89 FR 1192, 1244 (Jan. 9, 2024). 
+207John Riggi, ‘‘The importance of cybersecurity 
+in protecting patient safety,’’ American Hospital Association Center for Health Innovation, https:// www.aha.org/center/cybersecurity-and-risk- advisory-services/importance-cybersecurity- protecting-patient-safety; In 2016, PHI was valued at 50 times the worth of financial information on the black market. Diane Doebele Koch, ‘‘Is the HIPAA Security Rule Enough to Protect Electronic Personal Health Information (PHI) in the Cyber Age?’’ Journal of Health Care Finance, p. 22 (Spring 2016) (citing Beth Kutscher, ‘‘Healthcare underspends on Cybersecurity as attacks accelerate,’’ Modern Healthcare (Mar. 3, 2016), https://www.modernhealthcare.com/article/ 20160303/NEWS/160309922/healthcare- underspends-on-cybersecurity-as-attacks- accelerate.); ‘‘New Dangers in the New World: Cyber Attacks in the Healthcare Industry,’’ supra note 135, p. 3 (‘‘[. . .] stolen medical data sells for 10–20 times more than credit card data.’’). their health care providers.195Such 
+applications may empower individuals 
+to better manage their health and participate in their health care and provide health care providers and researchers with a more holistic view of the individual’s health at a particular point in time and over an extended period of time.
+196This technology, 
+while valuable for understanding an individual’s overall health, introduces another potential vulnerability to the security of ePHI and the information systems that create, receive, maintain, or transmit it. 
+EHRs, networked medical devices, 
+and applications are only the beginning. Artificial intelligence (AI) in health care, particularly for diagnosis and 
+treatment, is in the nascent stages of development, but many are eager to test its promise.
+197After all, many experts 
+believe that AI promises opportunities to improve patient care, outcomes, and population health, as well as to reduce costs.
+198The use of AI in health care is 
+increasing and is expected to continue to increase.199A 2023 Healthcare 
+Information and Management Systems 
+Society (HIMSS) survey of health care cybersecurity professionals reported that approximately 50 percent of respondents’ organizations permitted the use of generative AI technology.
+200 
+And other new technologies are expected shortly, as discussed below. For example, according to reports, quantum computing may be available in the near future, which may have ramifications for data privacy and security.
+201We also know that 
+researchers are exploring methods for storing ePHI in biological material (e.g., DNA).
+202 
+While the promise of these new 
+technologies is exciting, they come with increased risks and vulnerabilities to ePHI and the information systems that create, receive, maintain, or transmit it. As noted by Executive Order (E.O.) 14110, ‘‘[AI] must be safe and secure. Meeting this goal requires [. . .] addressing AI systems’ most pressing security risks—including with respect to biotechnology, cybersecurity, critical infrastructure, and other national security dangers—while navigating AI’s opacity and complexity.’’
+203For these 
+reasons, the E.O. required the Secretary of HHS, in consultation with the Secretary of Defense and the Secretary of Veterans Affairs, to establish an HHS AI Task Force to develop a strategic plan that includes policies and frameworks on responsible deployment and use of AI and AI-enabled technologies in the health and human services sector, including the incorporation of safety, privacy, and 
+security standards into the software- development lifecycle for the protection of personally identifiable information, such as measures to address AI- enhanced cybersecurity threats in the health and human services sector.
+204 
+The Department has taken a number of actions to address the use of AI in health care, including establishing an AI Council, appointing a Chief AI Officer,
+205and taking steps to regulate 
+the use of AI in health care.206 
+Accordingly, regulated entities must be prepared to identify, mitigate, and remediate such risks and vulnerabilities. 
+While the health care industry has 
+generally shifted from paper record- keeping and non-interoperable electronic devices to an interconnected electronic health care system, it has led to an increasing vulnerability to breaches of unsecured PHI resulting from unauthorized uses and disclosures and cyberattacks. According to an article published by the American Hospital Association Center for Health Innovation, ‘‘Health care organizations are particularly vulnerable and targeted by cyberattacks because they possess so much information of high monetary and intelligence value to cyber thieves and nation-state actors.’’
+207In fact, ‘‘[. . .] 
+on the dark web, PHI is deemed more

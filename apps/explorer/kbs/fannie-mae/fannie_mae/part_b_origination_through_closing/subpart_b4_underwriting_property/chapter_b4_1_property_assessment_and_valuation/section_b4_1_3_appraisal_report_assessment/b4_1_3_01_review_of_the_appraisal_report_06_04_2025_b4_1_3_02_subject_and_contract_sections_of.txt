@@ -1,0 +1,109 @@
+# B4-1.3-01, Review of the Appraisal Report (06/04/2025) + B4-1.3-02, Subject and Contract Sections of
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_268
+**Pages:** 569-571
+**Section Path:** Part B, Origination Through Closing > Subpart B4, Underwriting Property > Chapter B4-1, Property Assessment and Valuation > Section B4-1.3, Appraisal Report Assessment > B4-1.3-01, Review of the Appraisal Report (06/04/2025)
+
+---
+
+Published March 4, 2026
+551B4-1.3-01, Review of the Appraisal Report (06/04/2025)
+Introduction
+This topic contains information on reviewing the appraisal report, including:
+Overview
+Appraisal Report Analysis
+Uniform Appraisal Dataset (UAD) 3.6 Policy
+Overview
+Fannie Mae’s appraisal report forms and the appraisal review requirements for one- to four-unit properties have
+been developed with the intent that the USPAP standards are followed and that Fannie Mae’s policies are
+supportive of fair lending practices. This topic provides lender requirements related to the transaction details
+and the property and appraisal eligibility analysis.
+Appraisal Report Analysis
+When an appraisal is obtained, the lender must analyze the
+current contract for sale for purchase money transactions,
+current oﬀering or listing for sale for both purchase and reﬁnance transactions when the home was listed
+for sale,
+comparable sales for both purchase and reﬁnance transactions, and
+current ownership for the subject property (see  B4-1.1-02, Lender Responsibilities , for further
+information).
+The lender is responsible for validating that
+the property meets Fannie Mae’s eligibility criteria (see  B2-3-01, General Property Eligibility , for eligibility
+requirements);
+the appraiser has provided an accurate and reliable opinion of value that reﬂects the market value,
+condition, and marketability of the subject property in compliance with Fannie Mae’s Selling Guide
+requirements. (See  B4-1.3-12, Appraisal Quality Matters , for further information); and
+the appraisal conforms with  B4-1.1-04, Unacceptable Appraisal Practices .
+Uniform Appraisal Dataset (UAD) 3.6 Policy
+Lenders using UAD 3.6 must follow the requirements in the  UAD 3.6 Policy Supplement .
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+
+Published March 4, 2026
+552Announcements Issue Date
+Announcement SEL-2025-04 June 04, 2025
+Announcement SEL-2024-06 September 04, 2024
+ 
+B4-1.3-02, Subject and Contract Sections of the Appraisal Report
+(06/04/2025)
+Introduction
+This topic contains information on reviewing the Subject and Contract sections of the appraisal report form,
+including:
+Subject Section
+Contract Section
+Uniform Appraisal Dataset (UAD) 3.6 Policy
+Subject Section
+The appraiser must identify the subject property by its complete property address and legal description. The
+appraiser must enter the physical property address, including the unit number for a condo, in a format that
+conforms to the United States Postal Service (USPS) address standards in Publication 28 – Postal Addressing
+Standards (pub28) for complete addresses. Address standards can be found at usps.com . The subject address
+must be populated consistently throughout the form.
+When the legal description is lengthy, the appraiser may attach the full legal description as an addendum to the
+appraisal report. The appraiser must also identify the property rights to be appraised. (For eligibility
+requirements, see  B2-3-01, General Property Eligibility .)
+Fannie Mae's appraisal report forms require the appraiser to research and identify whether the subject property
+is currently for sale or if it has been oﬀered for sale in the 12 months prior to the eﬀective date of the appraisal
+by selecting either the ‘Yes’ or the ‘No’ checkbox. If the answer is ‘No,’ the data source(s) used must be
+provided. If the answer is ‘Yes,’ the appraiser must report on each occurrence or listing and provide the
+following information:
+oﬀering price(s),
+oﬀering date(s), and
+data source(s) used.
+For example, if the subject property is currently listed for sale and was previously listed eight months ago, the
+
+Published March 4, 2026
+553appraiser must report on both oﬀerings.
+Note : For appraisals required to be UAD compliant, Days on Market (DOM) must be reported.
+See Fannie Mae and Freddie Mac Uniform Appraisal Dataset Speciﬁcation, Appendix D: Field-Speciﬁc
+Standardization Requirements , and the associated FAQ’s, for additional information and examples regarding
+these topics.
+Contract Section
+The lender must provide the appraiser with a copy of the complete, ratiﬁed contract. The appraiser must
+indicate whether an analysis was or was not performed on the contract for sale. If an analysis was performed,
+the appraiser must provide the results of the analysis. If an analysis was not performed, the appraiser must
+provide an explanation why the analysis was not performed.
+For appraisals required to be UAD compliant, the appraiser must also indicate the type of sale for the
+transaction. The appraiser may report any other relevant information in this ﬁeld or elsewhere in the report
+regarding the sale type, including whether more than one sale type applies.
+The appraiser must
+enter an amount in the Contract Price ﬁeld if the Assignment Type is a purchase transaction. Contract
+price must be the same as the sales price for the subject property in the Sales Comparison Approach
+section;
+enter a contract date if the Assignment Type is a purchase transaction; and
+indicate if the property seller is the owner of record.
+The appraiser must indicate if there is any ﬁnancial assistance such as loan charges, sales concessions or gift,
+or down payment assistance to be paid by any party on behalf of the borrower, including any closing costs or
+other payments from the seller or other third party. If there is ﬁnancial assistance, the appraiser must
+report the total dollar amount of the loan charges or concessions that will be paid (if the appraiser is not
+able to determine a dollar amount for all or part of the ﬁnancial assistance, the number must reﬂect the
+total known dollar amount); and
+provide a description of the items being paid.
+Note : Financial assistance or concessions paid by any party on behalf of the borrower includes both
+monetary and non-monetary items, including below-market-rate mortgage ﬁnancing, gifts of personal
+property, and payment of property taxes or HOA dues for a period of time.
+See Fannie Mae and Freddie Mac Uniform Appraisal Dataset Speciﬁcation, Appendix D: Field-Speciﬁc
+Standardization Requirements , for additional information regarding the Contract Section, and B4-1.3-09,
+Adjustments to Comparable Sales , for additional information regarding evaluating sales or ﬁnancing concessions
+for comparables.
+Uniform Appraisal Dataset (UAD) 3.6 Policy
+Lenders using UAD 3.6 must follow the requirements in the  UAD 3.6 Policy Supplement .

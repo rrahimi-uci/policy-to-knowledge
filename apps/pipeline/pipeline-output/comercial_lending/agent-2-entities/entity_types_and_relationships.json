@@ -1,0 +1,797 @@
+{
+  "entity_types": {
+    "REGULATED_FINANCIAL_INSTITUTION": {
+      "definition": "A supervised depository institution or regulated lender that originates, holds, and manages commercial real estate (CRE) exposures and is expected to maintain risk management and capital commensurate with CRE concentration risk.",
+      "attributes": [
+        "institution_id",
+        "charter_type",
+        "primary_regulator",
+        "total_assets",
+        "tier1_capital",
+        "total_capital",
+        "cre_exposure_amount",
+        "cre_concentration_level",
+        "risk_management_maturity_level",
+        "reporting_frequency"
+      ],
+      "examples": [
+        "State-chartered commercial bank with $8B in assets and elevated CRE concentration",
+        "Federally regulated thrift with growing construction and development exposure"
+      ],
+      "business_rules": [
+        "Risk management sophistication must be appropriate to the size/complexity of the CRE portfolio and the level/nature of concentration risk.",
+        "Capital planning and capital levels should be commensurate with CRE concentration risk."
+      ]
+    },
+    "BOARD_OF_DIRECTORS": {
+      "definition": "The governing body with ultimate responsibility for the level of risk assumed by the institution, including oversight of CRE concentration strategy, limits, and reporting.",
+      "attributes": [
+        "board_id",
+        "risk_appetite_statement_id",
+        "committee_structure",
+        "cre_strategy_approval_date",
+        "limit_approval_date",
+        "reporting_pack_frequency",
+        "escalation_thresholds",
+        "minutes_retention_period",
+        "policy_exception_tolerance"
+      ],
+      "examples": [
+        "Board Risk Committee approving CRE sublimits by property type",
+        "Board receiving quarterly CRE concentration and market condition reporting"
+      ],
+      "business_rules": [
+        "Board (or designated committee) should approve overall CRE lending strategy and risk limits/sublimits.",
+        "Board should receive periodic reporting on CRE concentration levels and relevant CRE market conditions."
+      ]
+    },
+    "SENIOR_MANAGEMENT": {
+      "definition": "Executive management responsible for implementing board-approved CRE strategy, operating controls, MIS, concentration monitoring, and contingency actions.",
+      "attributes": [
+        "management_team_id",
+        "cre_portfolio_owner_role",
+        "limit_monitoring_process_id",
+        "contingency_plan_owner",
+        "report_review_frequency",
+        "exception_approval_authority",
+        "secondary_market_access_assessment_date",
+        "stress_testing_governance_id",
+        "risk_escalation_sla"
+      ],
+      "examples": [
+        "Chief Credit Officer overseeing CRE concentration monitoring and limit breaches",
+        "ALCO reviewing stress testing impacts on CRE portfolio performance"
+      ],
+      "business_rules": [
+        "Management should regularly evaluate correlation among related real estate sectors and set guidelines/limits to control overall exposure.",
+        "Management should develop strategies and contingency plans to mitigate concentrations under adverse market conditions."
+      ]
+    },
+    "CRE_LOAN": {
+      "definition": "A commercial real estate loan whose primary repayment source is cash flow from real estate and whose risk profile is sensitive to general CRE market conditions, as scoped by the guidance.",
+      "attributes": [
+        "loan_id",
+        "loan_purpose",
+        "property_type",
+        "origination_date",
+        "maturity_date",
+        "outstanding_balance",
+        "repayment_source_type",
+        "third_party_rental_income_pct",
+        "risk_rating",
+        "market_sensitivity_factors"
+      ],
+      "examples": [
+        "Nonfarm nonresidential loan where 65% of repayment is from nonaffiliated tenant rents",
+        "Land development and construction loan dependent on sale/refinance proceeds"
+      ],
+      "business_rules": [
+        "A loan is treated as CRE when real estate cash flow is the primary repayment source and performance is sensitive to CRE market conditions (e.g., rents, vacancies, cap rates).",
+        "Owner-occupied nonfarm nonresidential loans where repayment primarily comes from business operations are generally excluded from this CRE scope."
+      ]
+    },
+    "CRE_PORTFOLIO": {
+      "definition": "The institution’s aggregated set of CRE loans and related exposures managed for concentration risk, segmentation, monitoring, and reporting.",
+      "attributes": [
+        "portfolio_id",
+        "as_of_date",
+        "total_outstanding_balance",
+        "portfolio_growth_rate",
+        "segment_count",
+        "weighted_average_risk_rating",
+        "policy_exception_rate",
+        "top_borrower_exposure",
+        "construction_development_pct",
+        "multifamily_pct"
+      ],
+      "examples": [
+        "CRE portfolio as of 2026-03-31 totaling $2.4B with 18% construction exposure",
+        "Portfolio view excluding owner-occupied loans for concentration assessment"
+      ],
+      "business_rules": [
+        "Portfolio stratification must be reasonable and supportable; it should not be subdivided simply to avoid the appearance of concentration risk.",
+        "Institutions with CRE concentrations should manage portfolio risk in addition to individual loan risk."
+      ]
+    },
+    "CRE_PORTFOLIO_SEGMENT": {
+      "definition": "A defined sub-portfolio grouping of CRE loans with common risk characteristics or sensitivities (e.g., property type, geography, tenant or developer concentration).",
+      "attributes": [
+        "segment_id",
+        "segment_dimension",
+        "segment_value",
+        "as_of_date",
+        "exposure_amount",
+        "loan_count",
+        "average_ltv_ratio",
+        "average_dscr",
+        "weighted_average_risk_rating",
+        "exception_rate"
+      ],
+      "examples": [
+        "Segment: Multifamily / Metro-A geography",
+        "Segment: Construction / Speculative office projects"
+      ],
+      "business_rules": [
+        "Segmentation should align with meaningful risk characteristics/sensitivities to economic, financial, or business developments.",
+        "Segment definitions should be stable enough to support monitoring and trending over time."
+      ]
+    },
+    "CRE_CONCENTRATION_RISK": {
+      "definition": "The portfolio-level risk that correlated CRE exposures could produce unacceptable losses under cyclical market stress due to common sensitivities across loans or segments.",
+      "attributes": [
+        "concentration_risk_id",
+        "risk_drivers",
+        "correlation_assumption_set_id",
+        "measured_concentration_metric",
+        "trend_direction",
+        "severity_assessment",
+        "early_warning_indicators",
+        "loss_experience_reference_period",
+        "capital_impact_estimate",
+        "management_action_status"
+      ],
+      "examples": [
+        "Elevated construction concentration risk tied to declining office demand and rising cap rates",
+        "Geographic concentration risk in a single MSA with increasing vacancy rates"
+      ],
+      "business_rules": [
+        "Institutions should identify and monitor credit concentrations rather than rely on a single universal limit.",
+        "A manageable level of concentration risk varies by institution based on risk characteristics, risk management quality, and capital levels."
+      ]
+    },
+    "CRE_CONCENTRATION_RISK_ASSESSMENT": {
+      "definition": "An ongoing process to identify, measure, and evaluate CRE concentrations through portfolio stratification, correlation analysis, and risk characterization.",
+      "attributes": [
+        "assessment_id",
+        "assessment_date",
+        "assessment_frequency",
+        "scope_definition",
+        "segmentation_methodology",
+        "concentration_metrics_used",
+        "key_findings",
+        "recommended_actions",
+        "model_or_tool_reference",
+        "approval_status"
+      ],
+      "examples": [
+        "Quarterly CRE concentration assessment using property type and geography stratifications",
+        "Ad hoc assessment triggered by rapid CRE portfolio growth in construction lending"
+      ],
+      "business_rules": [
+        "Institutions actively involved in CRE lending should perform ongoing risk assessments to identify CRE concentrations.",
+        "Depending on assessment results, the institution may need to enhance risk management systems and controls."
+      ]
+    },
+    "INTERNAL_CONCENTRATION_LIMIT": {
+      "definition": "An institution-defined threshold (limit or sublimit) used to control CRE concentration exposures by segment, borrower, or risk characteristic.",
+      "attributes": [
+        "limit_id",
+        "limit_type",
+        "scope_dimension",
+        "scope_value",
+        "limit_amount",
+        "limit_ratio",
+        "effective_date",
+        "breach_threshold",
+        "escalation_path",
+        "exception_process_id"
+      ],
+      "examples": [
+        "Sublimit: Construction loans not to exceed 15% of total capital",
+        "Geographic sublimit for a single MSA capped at $400MM exposure"
+      ],
+      "business_rules": [
+        "Institutions should establish internal concentration limits appropriate to their risk profile and capital levels.",
+        "Limit breaches or near-breaches should trigger escalation and documented management action."
+      ]
+    },
+    "REAL_ESTATE_LENDING_POLICY": {
+      "definition": "The written policy required by real estate lending regulations that establishes appropriate limits and standards for extensions of credit secured by liens on or interests in real estate, including CRE loans.",
+      "attributes": [
+        "policy_id",
+        "version",
+        "effective_date",
+        "approved_by",
+        "cre_strategy_reference",
+        "limit_framework_reference",
+        "underwriting_standard_reference",
+        "exception_governance",
+        "review_cycle",
+        "policy_scope"
+      ],
+      "examples": [
+        "Real Estate Lending Policy v4.2 with CRE property-type sublimits and exception authority",
+        "Board-approved policy requiring periodic concentration reporting to management and the board"
+      ],
+      "business_rules": [
+        "The institution must adopt and maintain a written real estate lending policy covering CRE extensions of credit.",
+        "Policy should define limits/standards and supporting controls to ensure compliance and monitoring."
+      ]
+    },
+    "CRE_LENDING_STRATEGY": {
+      "definition": "A board-approved strategic approach defining target CRE exposures, growth objectives, and risk boundaries consistent with the institution’s strategic and capital plans.",
+      "attributes": [
+        "strategy_id",
+        "planning_horizon",
+        "target_cre_level",
+        "growth_objectives",
+        "target_property_types",
+        "target_geographies",
+        "risk_tolerance_statement",
+        "capital_plan_alignment",
+        "approval_date",
+        "review_date"
+      ],
+      "examples": [
+        "Strategy targeting stabilized multifamily growth while reducing speculative construction exposure",
+        "Strategy limiting tenant-industry concentration within retail CRE segments"
+      ],
+      "business_rules": [
+        "If CRE concentration risk is significant, the strategic plan should address the rationale for CRE levels relative to growth objectives, financial targets, and capital plan.",
+        "Strategy should be supported by monitoring, limits, and contingency planning consistent with risk tolerance."
+      ]
+    },
+    "MANAGEMENT_INFORMATION_SYSTEM": {
+      "definition": "The institution’s MIS capabilities used to identify, measure, monitor, and manage CRE concentration risk through timely, meaningful portfolio information and aggregation.",
+      "attributes": [
+        "mis_id",
+        "data_sources",
+        "reporting_latency",
+        "data_quality_controls",
+        "portfolio_stratification_support",
+        "borrower_aggregation_support",
+        "derivative_exposure_integration",
+        "user_access_controls",
+        "periodic_adequacy_assessment_date",
+        "change_management_process_id"
+      ],
+      "examples": [
+        "MIS producing weekly concentration dashboards by property type, geography, and risk rating",
+        "System that aggregates loan and derivative-related credit exposure to the same borrower"
+      ],
+      "business_rules": [
+        "MIS should be periodically assessed for adequacy as CRE volume grows and portfolio risk profile/complexity changes.",
+        "MIS should provide sufficient detail to support the institution’s lending strategy, underwriting standards, and risk tolerances."
+      ]
+    },
+    "CRE_CONCENTRATION_REPORT": {
+      "definition": "A periodic or ad hoc management/board report presenting CRE concentration levels, stratifications, limit utilization, and relevant market condition context.",
+      "attributes": [
+        "report_id",
+        "as_of_date",
+        "report_type",
+        "stratifications_included",
+        "limit_utilization_summary",
+        "exceptions_summary",
+        "top_concentrations",
+        "market_condition_section",
+        "distribution_list",
+        "review_signoff"
+      ],
+      "examples": [
+        "Quarterly board package showing construction concentration, policy exceptions, and stress test outcomes",
+        "Ad hoc report requested after rapid CRE origination growth in a single geography"
+      ],
+      "business_rules": [
+        "All identified concentrations should be reported to management and the board on a periodic basis.",
+        "Management should have processes to review concentration reports and perform ad hoc analyses when needed."
+      ]
+    },
+    "MARKET_ANALYSIS_PROGRAM": {
+      "definition": "The institution’s program to analyze CRE market conditions and trends that influence collateral values, cash flows, and concentration risk (e.g., vacancies, rents, cap rates, demand).",
+      "attributes": [
+        "market_analysis_id",
+        "covered_markets",
+        "property_types_covered",
+        "data_providers",
+        "update_frequency",
+        "key_indicators",
+        "scenario_assumptions",
+        "governance_owner",
+        "output_usage",
+        "last_update_date"
+      ],
+      "examples": [
+        "Monthly analysis of cap rate movements and vacancy trends in primary MSAs",
+        "Sector analysis of office demand decline affecting underwriting and concentration limits"
+      ],
+      "business_rules": [
+        "Market analysis should inform concentration monitoring, underwriting standards, and stress testing assumptions.",
+        "Material changes in market indicators should prompt reassessment of concentrations and risk controls."
+      ]
+    },
+    "CREDIT_UNDERWRITING_STANDARD": {
+      "definition": "Institution-defined underwriting criteria for CRE lending used to originate and manage loans consistently with risk tolerance and market/portfolio risk conditions.",
+      "attributes": [
+        "underwriting_standard_id",
+        "property_type_applicability",
+        "max_ltv_ratio",
+        "min_dscr",
+        "amortization_policy",
+        "interest_only_policy",
+        "recourse_requirements",
+        "approval_authority_matrix",
+        "exception_definition",
+        "secondary_market_comparability"
+      ],
+      "examples": [
+        "Standard requiring max 70% LTV and minimum 1.25x DSCR for stabilized multifamily",
+        "Construction standard limiting interest-only periods and requiring stronger guarantees"
+      ],
+      "business_rules": [
+        "Underwriting standards should be aligned with the institution’s CRE strategy, risk tolerances, and observed market conditions.",
+        "If selling/securitizing is contemplated, underwriting standards should be periodically compared to those prevailing in the secondary market."
+      ]
+    },
+    "PORTFOLIO_STRESS_TEST": {
+      "definition": "A portfolio-level stress testing process applied to CRE exposures to evaluate performance and capital impact under adverse market conditions.",
+      "attributes": [
+        "stress_test_id",
+        "as_of_date",
+        "portfolio_scope",
+        "scenario_set_id",
+        "methodology",
+        "assumption_sources",
+        "output_metrics",
+        "loss_estimate",
+        "capital_impact",
+        "management_actions_documented"
+      ],
+      "examples": [
+        "CRE portfolio stress test assuming 200 bps cap rate expansion and 10% rent decline",
+        "Stress test focused on speculative construction segment under recession scenario"
+      ],
+      "business_rules": [
+        "Institutions should perform portfolio stress testing and sensitivity analysis appropriate to portfolio size, complexity, and concentration risk.",
+        "Stress testing results should inform limits, contingency plans, and capital planning."
+      ]
+    },
+    "SENSITIVITY_ANALYSIS": {
+      "definition": "An analysis that measures how changes in key CRE risk drivers (e.g., vacancy, rent, cap rate) affect borrower cash flow, collateral value, and portfolio performance.",
+      "attributes": [
+        "sensitivity_analysis_id",
+        "risk_driver",
+        "shock_magnitude",
+        "segment_scope",
+        "model_reference",
+        "impact_metric",
+        "result_summary",
+        "date_performed",
+        "reviewer",
+        "action_recommendations"
+      ],
+      "examples": [
+        "Sensitivity: +150 bps cap rate shock on retail segment LTV distribution",
+        "Sensitivity: 15% vacancy increase impact on DSCR for office segment"
+      ],
+      "business_rules": [
+        "Sensitivity analyses should be used to understand segment correlations and vulnerability to cyclical CRE market changes.",
+        "Material adverse sensitivities should trigger review of underwriting, limits, and mitigation strategies."
+      ]
+    },
+    "CREDIT_RISK_REVIEW_FUNCTION": {
+      "definition": "An independent credit risk review capability that evaluates underwriting quality, policy compliance, risk rating integrity, and portfolio-level CRE risk governance.",
+      "attributes": [
+        "credit_risk_review_id",
+        "independence_level",
+        "review_plan_frequency",
+        "scope_coverage",
+        "sampling_methodology",
+        "findings_severity_scale",
+        "issue_tracking_process_id",
+        "reporting_line",
+        "last_review_date",
+        "remediation_status"
+      ],
+      "examples": [
+        "Independent review identifying elevated exception rates in construction underwriting",
+        "Review validating segment risk rating distribution and concentration reporting accuracy"
+      ],
+      "business_rules": [
+        "Credit risk review should assess adherence to underwriting standards and the effectiveness of controls related to CRE concentrations.",
+        "Findings should be reported and remediated through tracked corrective action plans."
+      ]
+    },
+    "CORRELATION_RISK_EVALUATION": {
+      "definition": "A management evaluation of the degree of correlation among related real estate sectors and segments to understand concentration exposure under shared market shocks.",
+      "attributes": [
+        "correlation_evaluation_id",
+        "sectors_compared",
+        "correlation_method",
+        "time_horizon",
+        "data_inputs",
+        "key_assumptions",
+        "conclusions",
+        "date_performed",
+        "approver",
+        "limit_implications"
+      ],
+      "examples": [
+        "Correlation evaluation showing high linkage between office and retail vacancies in a metro area",
+        "Evaluation linking construction pipeline risk to refinancing availability and cap rate trends"
+      ],
+      "business_rules": [
+        "Management should regularly evaluate correlation between related real estate sectors when setting guidelines and concentration limits.",
+        "Correlation conclusions should be reflected in segmentation, stress testing, and mitigation planning."
+      ]
+    },
+    "CONTINGENCY_PLAN": {
+      "definition": "A documented plan to reduce or mitigate CRE concentrations during adverse market conditions using defined actions, governance, and triggers.",
+      "attributes": [
+        "contingency_plan_id",
+        "covered_concentrations",
+        "trigger_conditions",
+        "approved_actions",
+        "execution_owner",
+        "timeline_expectations",
+        "secondary_market_dependency",
+        "communication_plan",
+        "testing_or_dry_run_date",
+        "board_reporting_requirements"
+      ],
+      "examples": [
+        "Plan to reduce construction concentration via participations and whole loan sales if vacancy rates exceed threshold",
+        "Plan to slow originations and tighten underwriting in stressed geographies"
+      ],
+      "business_rules": [
+        "Institutions should maintain strategies and contingency plans to reduce/mitigate concentrations in adverse CRE market conditions.",
+        "If the plan relies on loan sales or securitizations, the institution should periodically assess marketability and access to the secondary market."
+      ]
+    },
+    "SECONDARY_MARKET_STRATEGY": {
+      "definition": "A set of actions and capabilities to manage CRE concentration levels through risk transfer or asset disposition (e.g., participations, whole loan sales, securitizations).",
+      "attributes": [
+        "secondary_market_strategy_id",
+        "allowed_methods",
+        "counterparty_criteria",
+        "execution_capacity",
+        "marketability_assessment_frequency",
+        "underwriting_comparison_process",
+        "liquidity_constraints",
+        "pricing_assumptions",
+        "documentation_requirements",
+        "last_marketability_assessment_date"
+      ],
+      "examples": [
+        "Use of participations to reduce single-segment exposure without stopping originations",
+        "Whole loan sale program for noncore CRE segments during market downturn"
+      ],
+      "business_rules": [
+        "Secondary-market actions can be used to manage concentration levels without curtailing new originations.",
+        "Institutions should periodically evaluate portfolio marketability and compare underwriting standards to secondary-market norms when relying on disposition/securitization."
+      ]
+    },
+    "BORROWER_EXPOSURE_AGGREGATION": {
+      "definition": "The required aggregation of all credit exposure to a borrower (and related/affiliated entities) across loans and derivative-related credit exposure to evaluate true concentration risk.",
+      "attributes": [
+        "aggregation_id",
+        "borrower_group_id",
+        "aggregation_scope",
+        "included_products",
+        "derivative_exposure_amount",
+        "loan_exposure_amount",
+        "total_exposure_amount",
+        "netting_method",
+        "as_of_date",
+        "data_lineage_reference"
+      ],
+      "examples": [
+        "Aggregation combining CRE term loans and interest rate swap credit exposure to the same developer group",
+        "Aggregation including affiliated borrower loans flagged as related exposure"
+      ],
+      "business_rules": [
+        "MIS should support aggregation of exposures to a borrower, including derivative-related credit exposure.",
+        "Borrower-level aggregation should be used to identify concentrations not visible at the individual loan level."
+      ]
+    },
+    "POLICY_EXCEPTION": {
+      "definition": "A documented deviation from the institution’s CRE lending policy or underwriting standards (e.g., LTV or DSCR thresholds) that requires governance and monitoring.",
+      "attributes": [
+        "exception_id",
+        "loan_id",
+        "exception_type",
+        "standard_threshold",
+        "approved_threshold",
+        "justification",
+        "approver_role",
+        "approval_date",
+        "compensating_controls",
+        "exception_status"
+      ],
+      "examples": [
+        "Exception approving 78% LTV against a 70% standard due to additional collateral and recourse",
+        "Exception to minimum DSCR due to stabilized cash flow projection timing"
+      ],
+      "business_rules": [
+        "Policy exceptions should be tracked and reported as part of concentration and portfolio risk monitoring.",
+        "High exception rates in a segment may indicate weakening underwriting discipline and should trigger management review."
+      ]
+    }
+  },
+  "relationships": {
+    "EXTENDS": {
+      "source_entity": "REGULATED_FINANCIAL_INSTITUTION",
+      "target_entity": "CRE_LOAN",
+      "definition": "The institution originates or holds a CRE loan as part of its credit activities and resulting CRE exposure profile.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "A bank extends a land development loan to a developer dependent on sale/refinance proceeds",
+        "A thrift extends a multifamily loan where repayment is primarily tenant rental income"
+      ],
+      "business_rules": [
+        "CRE lending activities should be supported by risk management processes commensurate with resulting concentration risk.",
+        "Loan inclusion in CRE scope depends on repayment source and market sensitivity characteristics."
+      ]
+    },
+    "COMPRISES": {
+      "source_entity": "CRE_PORTFOLIO",
+      "target_entity": "CRE_LOAN",
+      "definition": "The CRE portfolio is composed of individual CRE loans that collectively create segment and concentration exposures.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "The CRE portfolio includes 1,250 loans across multifamily, retail, and construction categories",
+        "The portfolio view includes qualifying nonfarm nonresidential loans meeting the rental income test"
+      ],
+      "business_rules": [
+        "Portfolio composition should be accurate and consistent with the CRE scope definition used for concentration assessment.",
+        "Portfolio-level risk must be managed even when individual loans appear prudently underwritten."
+      ]
+    },
+    "STRATIFIES_INTO": {
+      "source_entity": "CRE_PORTFOLIO",
+      "target_entity": "CRE_PORTFOLIO_SEGMENT",
+      "definition": "The CRE portfolio is segmented into groupings that share common risk characteristics or sensitivities for concentration identification and monitoring.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Portfolio stratified into segments by property type and geography",
+        "Portfolio stratified to isolate developer concentration risk and tenant-industry concentration"
+      ],
+      "business_rules": [
+        "Stratification must be reasonable and supportable and should not be engineered to obscure concentration risk.",
+        "Segments should reflect risk characteristics relevant to lending strategy, underwriting, and risk tolerances."
+      ]
+    },
+    "IDENTIFIES": {
+      "source_entity": "CRE_CONCENTRATION_RISK_ASSESSMENT",
+      "target_entity": "CRE_CONCENTRATION_RISK",
+      "definition": "A concentration risk assessment produces identified concentration risks based on segmentation, metrics, and correlation/sensitivity considerations.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Assessment identifies geographic concentration risk in a single MSA",
+        "Assessment identifies elevated construction concentration risk linked to cyclical market factors"
+      ],
+      "business_rules": [
+        "Institutions should conduct ongoing assessments to identify potential CRE concentrations and related vulnerabilities.",
+        "Assessment findings should drive enhancements to risk management systems and mitigation actions when warranted."
+      ]
+    },
+    "ESTABLISHES": {
+      "source_entity": "REGULATED_FINANCIAL_INSTITUTION",
+      "target_entity": "INTERNAL_CONCENTRATION_LIMIT",
+      "definition": "The institution sets internal limits and sublimits to control exposure concentrations across CRE segments, borrowers, or risk characteristics.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Institution establishes a sublimit for speculative construction exposures",
+        "Institution sets a tenant-industry concentration limit within retail CRE"
+      ],
+      "business_rules": [
+        "Internal concentration limits should be tailored to the institution’s portfolio risk characteristics, risk management quality, and capital.",
+        "Limit frameworks should include escalation and reporting requirements for breaches."
+      ]
+    },
+    "APPROVES": {
+      "source_entity": "BOARD_OF_DIRECTORS",
+      "target_entity": "CRE_LENDING_STRATEGY",
+      "definition": "The board approves the institution’s overall CRE strategy, including risk tolerances and alignment to strategic and capital planning.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Board approves strategy to reduce office construction and expand stabilized multifamily",
+        "Board approves revised CRE growth targets tied to capital plan constraints"
+      ],
+      "business_rules": [
+        "Significant CRE concentration risk requires board-level strategic rationale tied to growth objectives, financial targets, and capital plan.",
+        "Strategy approvals should be reviewed periodically and updated for market or portfolio changes."
+      ]
+    },
+    "ADOPTS": {
+      "source_entity": "BOARD_OF_DIRECTORS",
+      "target_entity": "REAL_ESTATE_LENDING_POLICY",
+      "definition": "The board adopts and maintains the written real estate lending policy that sets limits and standards for real estate-secured credit extensions.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Board adopts a real estate lending policy establishing underwriting standards and concentration limits",
+        "Board updates policy to add required reporting on policy exceptions and affiliated exposures"
+      ],
+      "business_rules": [
+        "Institutions must maintain a written policy establishing appropriate limits and standards for real estate-secured extensions of credit, including CRE loans.",
+        "Policy should define governance for limits, underwriting standards, and exception controls."
+      ]
+    },
+    "REQUIRES_SUPPORT_FROM": {
+      "source_entity": "CRE_CONCENTRATION_RISK",
+      "target_entity": "MANAGEMENT_INFORMATION_SYSTEM",
+      "definition": "Effective control of concentration risk depends on MIS capability to produce timely, meaningful stratified information and aggregated exposures.",
+      "cardinality": "many-to-many",
+      "examples": [
+        "Concentration monitoring requires MIS stratification by geography and property type",
+        "Identifying borrower concentrations requires MIS aggregation of loan and derivative exposures"
+      ],
+      "business_rules": [
+        "MIS must provide sufficient information to identify, measure, monitor, and manage CRE concentration risk.",
+        "MIS adequacy should be periodically assessed as portfolio size, risk profile, and complexity change."
+      ]
+    },
+    "GENERATES": {
+      "source_entity": "MANAGEMENT_INFORMATION_SYSTEM",
+      "target_entity": "CRE_CONCENTRATION_REPORT",
+      "definition": "MIS produces concentration reports for management and board review, including stratifications, limit utilization, exceptions, and market context where applicable.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "MIS generates a monthly management report showing property-type concentrations and exception rates",
+        "MIS generates an ad hoc report aggregating exposures to a developer group including swaps"
+      ],
+      "business_rules": [
+        "Concentration reports should be timely and support management review and decision-making.",
+        "Reporting should include stratifications relevant to strategy, underwriting standards, and risk tolerances (e.g., property type, geography, risk rating, structure/purpose, LTV, DSCR, exceptions, affiliated loans)."
+      ]
+    },
+    "REPORTS_TO": {
+      "source_entity": "CRE_CONCENTRATION_REPORT",
+      "target_entity": "BOARD_OF_DIRECTORS",
+      "definition": "CRE concentration reports are delivered to the board (or designated committee) for oversight of concentration levels, limit compliance, and market-related risk conditions.",
+      "cardinality": "many-to-many",
+      "examples": [
+        "Quarterly CRE concentration report delivered to Board Risk Committee",
+        "Board receives report highlighting increased vacancy rates and rising concentration utilization in retail segment"
+      ],
+      "business_rules": [
+        "All concentrations should be reported to management and the board on a periodic basis.",
+        "Board review should cover both concentration levels and relevant CRE market conditions."
+      ]
+    },
+    "INFORMS": {
+      "source_entity": "MARKET_ANALYSIS_PROGRAM",
+      "target_entity": "CREDIT_UNDERWRITING_STANDARD",
+      "definition": "Market analysis outputs influence underwriting parameters and controls by incorporating evolving market conditions affecting CRE cash flows and collateral values.",
+      "cardinality": "many-to-many",
+      "examples": [
+        "Market analysis of cap rate expansion informs tighter max LTV limits for retail",
+        "Market analysis of rising vacancies informs higher DSCR requirements for office"
+      ],
+      "business_rules": [
+        "Underwriting standards should reflect market conditions and portfolio risk to prevent risk layering during cyclical shifts.",
+        "Material market deterioration should prompt review and potential tightening of underwriting standards and limits."
+      ]
+    },
+    "PERFORMS_STRESS_TEST_ON": {
+      "source_entity": "SENIOR_MANAGEMENT",
+      "target_entity": "PORTFOLIO_STRESS_TEST",
+      "definition": "Senior management sponsors and performs (or ensures performance of) portfolio stress testing to quantify vulnerability and guide mitigation actions for CRE concentrations.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Management runs annual CRE stress test under recession scenario to estimate loss and capital impact",
+        "Management performs targeted stress test on construction segment after rapid growth"
+      ],
+      "business_rules": [
+        "Stress testing should be appropriate to the portfolio’s size, complexity, and concentration risk.",
+        "Stress test outcomes should feed into concentration limits, contingency planning, and capital considerations."
+      ]
+    },
+    "REVIEWS": {
+      "source_entity": "CREDIT_RISK_REVIEW_FUNCTION",
+      "target_entity": "CREDIT_UNDERWRITING_STANDARD",
+      "definition": "Credit risk review evaluates underwriting practice quality and adherence to underwriting standards as a control to prevent and detect elevated concentration-related credit risk.",
+      "cardinality": "many-to-many",
+      "examples": [
+        "Independent review flags deviation from DSCR standards in a high-growth segment",
+        "Review tests compliance with construction underwriting standards and exception approvals"
+      ],
+      "business_rules": [
+        "Independent credit risk review should validate compliance with underwriting standards and the effectiveness of controls.",
+        "Findings should be tracked to remediation and reflected in governance reporting."
+      ]
+    },
+    "EVALUATES": {
+      "source_entity": "SENIOR_MANAGEMENT",
+      "target_entity": "CORRELATION_RISK_EVALUATION",
+      "definition": "Management evaluates correlation among related real estate sectors/segments to understand how common shocks could drive portfolio losses and to calibrate concentration controls.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Management evaluates correlation between hospitality and retail performance in a tourist market",
+        "Management evaluates correlation between construction exposure and refinancing market availability"
+      ],
+      "business_rules": [
+        "Correlation evaluation should be performed regularly and used to set internal lending guidelines and concentration limits.",
+        "Highly correlated exposures should receive enhanced monitoring and potentially tighter limits."
+      ]
+    },
+    "TRIGGERS": {
+      "source_entity": "CRE_CONCENTRATION_RISK",
+      "target_entity": "CONTINGENCY_PLAN",
+      "definition": "Elevated or worsening concentration risk conditions can trigger execution of predefined contingency actions to reduce or mitigate exposures.",
+      "cardinality": "many-to-many",
+      "examples": [
+        "Rising concentration utilization and deteriorating market indicators trigger plan actions to reduce exposure",
+        "Stress test results indicating unacceptable capital impact trigger contingency plan escalation"
+      ],
+      "business_rules": [
+        "Contingency plans should define triggers tied to concentration levels, market conditions, and stress test outcomes.",
+        "Triggered plans should produce documented actions, ownership, and board/management reporting."
+      ]
+    },
+    "EXECUTES": {
+      "source_entity": "CONTINGENCY_PLAN",
+      "target_entity": "SECONDARY_MARKET_STRATEGY",
+      "definition": "A contingency plan may execute secondary market strategies (participations, whole loan sales, securitizations) to mitigate CRE concentrations without fully halting originations.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Contingency plan executes whole loan sales for a noncore segment to reduce concentration",
+        "Plan executes participations to reduce single-segment exposure while maintaining client relationships"
+      ],
+      "business_rules": [
+        "If loan sales or securitizations are contemplated, the institution should periodically assess portfolio marketability and access to the secondary market.",
+        "Secondary-market execution should be consistent with underwriting standards and documented governance approvals."
+      ]
+    },
+    "AGGREGATES": {
+      "source_entity": "MANAGEMENT_INFORMATION_SYSTEM",
+      "target_entity": "BORROWER_EXPOSURE_AGGREGATION",
+      "definition": "MIS aggregates all exposures to a borrower (and related/affiliated entities) including derivative-related credit exposure to support concentration identification and monitoring.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "MIS aggregates CRE loans plus swap exposure to a developer group into a single total exposure view",
+        "MIS aggregates affiliated borrower loans flagged as related-party exposure for concentration reporting"
+      ],
+      "business_rules": [
+        "Systems must be capable of aggregating borrower exposures inclusive of derivative-related credit exposure.",
+        "Aggregated exposures should be used in reporting and in evaluating concentration limits and sublimits."
+      ]
+    },
+    "TRACKS": {
+      "source_entity": "CRE_CONCENTRATION_REPORT",
+      "target_entity": "POLICY_EXCEPTION",
+      "definition": "Concentration reporting includes tracking and trending of underwriting/policy exceptions as a risk characteristic used in stratification and monitoring.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Report shows exception rate by segment and highlights segments with increasing LTV exceptions",
+        "Report lists top exceptions in a high-growth construction segment and notes compensating controls"
+      ],
+      "business_rules": [
+        "Policy exceptions should be incorporated into stratifications and concentration monitoring to detect weakening discipline.",
+        "High or increasing exception rates should prompt management review and potential tightening of controls or limits."
+      ]
+    }
+  },
+  "iteration": 3,
+  "timestamp": "2026-06-29 14:06:45",
+  "optimization_summary": {
+    "total_iterations": 3,
+    "improvements": "Extraction completed successfully"
+  },
+  "final_quality_analysis": {
+    "iteration": 3,
+    "quality_score": 85,
+    "completeness": "Good",
+    "suggestions": []
+  }
+}

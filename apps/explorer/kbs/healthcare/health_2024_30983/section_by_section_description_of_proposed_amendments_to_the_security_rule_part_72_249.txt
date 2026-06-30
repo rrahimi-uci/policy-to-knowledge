@@ -1,0 +1,33 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 72/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_072
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+933 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+42542 U.S.C. 1320d–2(d). 426Joint Task Force, ‘‘Managing Information 
+Security Risk: Organization, Mission, and 
+Information System View,’’ NIST Special Publication 800–39, Appendix B, National Institute of Standards and Technology, U.S. Department of Commerce, p. B–5 (Mar. 2011), https://nvlpubs.nist.gov/nistpubs/Legacy/SP/ nistspecialpublication800-39.pdf. 
+427Ron Ross, et al., ‘‘Developing Cyber-Resilient 
+Systems: A Systems Security Engineering Approach,’’ NIST Special Publication 800–160, Volume 2, Revision 1, National Institute of Standards and Technology, U.S. Department of Commerce, p. 1 (Dec. 2021), https://nvlpubs.nist.gov/nistpubs/SpecialPublications/ NIST.SP.800-160v2r1.pdf. 
+428Proposed 45 CFR 164.308(a)(12)(i). 
+429Proposed 45 CFR 164.308(a)(13)(i). 430Proposed 45 CFR 164.308(a)(4)(i). 
+431Proposed 45 CFR 164.312(h)(1). 
+432See Letter from NCVHS Chair Jacki Monson 
+(2022), supra note 123, p. 5–10. paragraph (b)(1) to provide that 
+regulated entities are to apply reasonable and appropriate security measures to implement the standards and implementation specifications of the Security Rule. This proposal, if adopted, would replace the existing paragraph providing for regulated entities’ reasonable and appropriate implementation of standards and implementation specifications, which could be misinterpreted to mean that a regulated entity may determine that implementation itself is unreasonable or inappropriate in some circumstances. That has never been the case. Thus, the proposed modification would clarify that implementation is not optional based on whether a regulated entity believes it is reasonable and appropriate; to the contrary, a regulated entity is required to implement the standards and implementation specifications and must adopt reasonable and appropriate security measures that allow the entity to achieve such implementation. The proposed clarification would comport more precisely with the statute, which requires regulated entities to maintain ‘‘reasonable and appropriate’’ safeguards.
+425 
+The Department also proposes to add 
+a new element to the list of factors that regulated entities must take into account when deciding whether a particular security measure (e.g., a technical 
+control) is reasonable and appropriate for implementing a standard and its associated implementation specifications: the effectiveness of the security measure in supporting the resiliency of the regulated entity. A regulated entity would be required to consider this factor, in addition to the existing factors, for example, when choosing a specific encryption solution that allows the entity to meet the proposed requirement to encrypt ePHI, which will help prevent an unauthorized user from accessing the entity’s ePHI; or when developing its security incident plan or disaster recovery plan, which will help ensure that the regulated entity can recover data or reestablish data integrity after a security incident or disaster. 
+The Department proposes at 45 CFR 
+164.306(b)(2)(v) to require a regulated entity to take into account how effectively its application of a particular security measure to achieve compliance 
+with a standard and its associated implementation specifications would support its resiliency in the face of an event that adversely affects the entity. According to NIST, ‘‘information system resilience’’ addresses how well information systems ‘‘continue to (i) operate under adverse conditions or stress, even if in a degraded or debilitated state, while maintaining essential operational capabilities; and (ii) recover to an effective operational posture in a time frame consistent with mission needs.’’
+426Recently, in this era 
+of rising cybercrime, NIST described ‘‘cyber resiliency’’ as ‘‘the ability to anticipate, withstand, recover from, and adapt to adverse conditions, stresses, attacks, or compromises on systems that use or are enabled by cyber resources.’’
+427Thus, the Department 
+proposes to require a regulated entity to consider the ability of its implementation of a particular security measure to aid it in preventing, withstanding, and recovering from an emergency or other occurrence that affects the confidentiality, integrity, or availability of ePHI, including a successful security incident. 
+The Department proposes this new

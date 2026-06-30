@@ -1,0 +1,64 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 61/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_061
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+928 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+37963 FR 8334, 8340 (Feb. 20, 2003). 
+38045 CFR 164.308(a)(1)(i)(A). 
+38145 CFR 164.308(a)(1)(i)(B). Section 164.306(a) 
+requires regulated entities to comply with four 
+general requirements to protect ePHI. 
+382See NIST definition of ‘‘risk,’’ Glossary, 
+Computer Security Resource Center, National Institute of Standards and Technology, U.S. Department of Commerce (citing William Newhouse, et al., ‘‘Multifactor Authentication for E- Commerce,’’ NIST Special Publication 1800–17, National Institute of Standards and Technology, U.S. Department of Commerce (July 2019)), https:// 
+csrc.nist.gov/glossary/term/risk. 
+38345 CFR 164.304(b)(2)(iv). 
+38445 CFR 164.308(a)(1)(ii)(A); proposed 45 CFR 
+164.308(a)(2)(i). 38545 CFR 164.304 (definition of ‘‘Security or 
+Security measures’’). 
+38645 CFR 164.304 (definition of ‘‘Security or 
+Security measures’’). 
+387See NIST definition of ‘‘firewall,’’ Glossary, 
+Computer Security Resource Center, National 
+Institute of Standards and Technology, U.S. Department of Commerce, https://csrc.nist.gov/ glossary/term/firewall. 388See generally University of Texas M.D. 
+Anderson Cancer Center, supra note 258, p. 478. 
+389For example, in the 2003 Final Rule, we 
+explained that in developing technical safeguards, 
+the Department proposed technical security services requirements and specific technical security mechanisms with implementation specifications without carving out or limiting these items to policies and procedures about the requirements. See 68 FR 8334, 8354 (Feb. 20, 2003). 14. Adding a Definition of ‘‘Risk’’ 
+a. Issues To Address 
+The Security Rule does not currently 
+include a definition for the term ‘‘risk.’’ 
+The Department considered defining it when it first promulgated the final rule in 2003, but declined to do so because it determined that the term was commonly understood.
+379However, the 
+Department now believes that the lack of a definition may affect the clarity of some key requirements for regulated entities. Such requirements include conducting a risk analysis to assess the potential risks and vulnerabilities to the 
+confidentiality, integrity, and availability of ePHI held by the regulated entity
+380and implementing 
+security measures sufficient to reduce risks and vulnerabilities to a reasonable and appropriate level to comply with the general rules at 45 CFR 164.306(a).
+381 
+One of the ways NIST defines the 
+term is as ‘‘a measure of the extent to which an entity is threatened by a potential circumstance or event, and typically a function of: (i) the adverse impacts that would arise if the circumstance or event occurs; and (ii) the likelihood of occurrence.’’
+382This 
+and other NIST definitions serve as helpful references for the Department when considering how to define the term within the rule. 
+b. Proposal 
+The Department proposes to define 
+‘‘risk’’ as the extent to which the 
+confidentiality, integrity, or availability of ePHI is threatened by a potential circumstance or event. The Department believes that defining the term would clarify several existing and proposed provisions of the Security Rule, such as the factors regulated entities must consider when determining the security measures they will implement
+383and 
+the importance and purpose of conducting the required risk analysis.
+384 15. Clarifying the Definitions of 
+‘‘Security or Security Measures’’ and ‘‘Security Incident’’ 
+a. Current Provision and Issues To 
+Address 
+The Security Rule defines ‘‘security or 
+security measures’’ as encompassing all of the administrative, physical, and technical safeguards in an information system.
+385The definition implies that 
+the safeguards must be part of the information system, as opposed to something that may be applied or done to a system to protect the confidentiality, integrity, and availability of ePHI. 
+The rule also defines ‘‘security 
+incident’’ as the attempted or successful unauthorized access, use, disclosure, modification, or destruction of information or interference with system operations in an information system. The existing definition does not make clear that a security incident may result from two types of behaviors—those related to attempted or successful but unauthorized access, use, disclosure, modification, or destruction of information in an information system, and those that are related to the attempted or successful unauthorized interference with system operations in an information system. In other words, a security incident may directly touch upon information in a system or interfere with the operations of the system itself. The Department believes that it is necessary to clearly convey the distinct types of incidents to regulated entities to ensure that regulated entities implement and deploy safeguards that address both concerns. 
+b. Proposal 
+The Department proposes to modify 
+the definition of ‘‘security or security

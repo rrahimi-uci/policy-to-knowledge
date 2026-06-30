@@ -1,0 +1,84 @@
+# i. Unique Identifier
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_700
+**Pages:** 687-688
+**Section Path:** VIII. Public Disclosure of Data > B. Preliminary Privacy Assessment > 6. Preliminary Privacy Assessment of Particular Data Fields > i. Unique Identifier
+
+---
+
+687 6. Preliminary Privacy Assessment of P articular Data Fields   
+In the NPRM, the Bureau identified certain data fields that it believed would need 
+modification or deletion to appropriately protect privacy interests, while taking account of 
+disclosure benefits : individual contact information at reporting financial institutions; free -form 
+text data, which occurs in a number of data fields; and the unique identifier for each application. 
+Beyond these specific fields, t he NPRM explained that the Bureau lacked data under section 
+1071 or comparable proxies that it could use for its privacy risk assessment. Accordingly, it did 
+not suggest specific modifications and deletions with respect to any other data.  
+In order to benefit from stakeholder engagement, however, the  Bureau did set forth  some 
+initial analysis on how it would apply the NPRM ’s balancing test to the proposed data fields . 
+With respect to each such data field, whether individually or in combination with others, the Bureau sought comments on: (1) whether there are additional benefits of unmodified public 
+disclosure in light of the purposes of the statute; (2)  whether disclo sure in unmodified form 
+would reveal additional information that might be considered harmful or sensitive by an 
+applicant, related natural person, or financial institution; and (3)  whether disclosure in 
+unmodified form would significantly contribute to the  risk that an applicant or related natural 
+person might be re -identified. The Bureau  also sought  comment on  modification techniques it 
+could use, and whether deletion would be appropriate. Where no specific technique was described with respect to particula r data points, the Bureau did not identif y any obvious 
+technique besides  potentially swapping, suppression, or deletion.  
+The Bureau received feedback on this initial analysis from a range of commenters, 
+including industry and community group commenters. The Bureau has taken this feedback into consideration to refine its analysis of the qualitative risks associated with disclosing particular 
+data fields in unmodified form , although, consistent with the above analysis, the Bureau’s 
+assessment remains prelimin ary.
+895  
+Overall, with the exceptions noted with respect to unique identifier, free -form text, and 
+individual contact information, for all other finalized data points, the Bureau intends to further consider whether modification techniques may be appropriate  when it analyzes reported data and 
+conducts its full privacy analysis. In doing so, the Bureau intends to take into account existing 
+feedback , as well as conduct ing ongoing engagement , about potential modifications as it 
+examines what modifications or del etions may be appropriate for these fields. In addition, the 
+Bureau is mindful of the statutory purposes of section 1071 and will only modify or delete data to advance a privacy interest.  
+i. Unique Identifier  
+Proposed § 1002.107(a)(1) would have  require d financial institutions to collect and report 
+an alphanumeric identifier, starting with the legal entity identifier of the financial institution, unique within the financial institution to the specific covered application, and which can be used 
+to identify a nd retrieve the specific file or files corresponding to the application for or extension 
+ 
+895 The Burea u sought a nd received feedback a bout several da ta points that it did not propose. As it is not adopting 
+those data points, it does not address privacy risks or modification techniques associated with reporting them.
+
+688 of credit. As discussed in the section -by-section analysis of  § 1002.107(a)(1),  the Bureau is 
+finalizing this  data point substantially as proposed.  
+In the NPRM, the Bureau stated that d isclosing the unique identifier in the 1071 data in 
+unmodified form by itself would likely disclose minimal, if any, information about an applicant 
+or related natural person that may be harmful or sensitive if such person were re -identified, or 
+that may be harmful or sensitive to an identified financial institution. S ection 1071 prohibits 
+financial institutions from including in 1071 records certain personally identifiable information 
+that directly identifies a natural person applicant o r someone connected with the applicant.896 In 
+addition , the Bureau propos ed to prohibit financial institutions from reporting information that 
+would directly identify a small business. For these reasons, the Bureau d id not expect that the 
+unique identifier  would be considered harmful or sensitive.   
+With respect to re -identification risk, the NPRM noted that a lthough publicly available 
+datasets do not presently include the unique identifier data field, financial institution legal entity 
+identifiers are public ly available, and the Bureau was aware of rare instances in which a loan 
+number was included in UCC filings.  In addition, the Bureau noted that many  jurisdictions 
+publicly disclose real estate transaction records in an identified form, and the Bureau state d that  
+many financial institutions may include loan numbers on these publicly recorded documents.897  
+The Bureau  stated that inclusion of the proposed unique identifier, rather than application 
+or loan numbers, would limit the possibility of using an application or loan number to match 
+1071 data to those publicly recorded documents, thus reducing risk of re -identification. 
+Howe ver, the Bureau acknowledged that  there is a risk that, after financial institutions begin to 
+report data under section 1071, they may replace the loan numbers currently assigned to small business loans with the unique identifier and, if they do, the uniqu e identifier could be included 
+on publicly recorded documents. Considering the uniqueness of the identifiers, the Bureau reasoned that this data field on a publicly recorded document could be used to match a 1071 record to an identified public record direc tly and reliably.  
+In light of these potential re -identification risks, the Bureau stated that it did not intend to 
+publish the unique identifier data field in unmodified form. The Bureau sought  comment on 
+whether there are modifications to the unique identifier data field that would appropriately balance identified privacy risks and disclosure benefits. The Bureau stated that it was  considering 
+the feasibility of disclosing a separate unique identifier that the Bureau could create. The Bureau 
+also consider ed deleting the data field from the public application -level data, but sought  
+comment on whether such deletion would create challenges for users of the data and, if so, how 
+the Bureau could address those challenges other than by creating a separate unique identifier.  
+The Bureau sought  comment on this  analysis as well as its intent not to  publish the unique 
+identifier in  unmodified form.   
+An academic research and policy organization agreed with the Bureau ’s initial analysis, 
+noting that public  HMDA data do not include  a unique identifier . Several industry commenters 
+stated that, because lenders are allowed to use their own internal account numbers  and therefore 
+ 
+896 ECOA section  704B (e)(3).  
+897 See 82 FR 44586, 44599 (Sept. 25, 2017); see also  84 FR 64 9, 660 (Jan. 31, 2019).

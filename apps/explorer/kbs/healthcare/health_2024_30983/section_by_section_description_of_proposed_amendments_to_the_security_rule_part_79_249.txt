@@ -1,0 +1,30 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 79/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_079
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+446 
+3. Proposals 
+a. Section 164.308—Administrative 
+Safeguards 
+Throughout this section, the 
+Department proposes to add explicit maintenance requirements to certain standards to address concerns that regulated entities may be misinterpreting the regulatory text that connects the maintenance provision at 45 CFR 164.306(e) with the administrative safeguards. These proposals would clarify that a regulated entity is required to maintain certain security measures, and that where a regulated entity is required to maintain a particular security measure, it is required to review and test such measure on a specified cadence, and to modify the measure as reasonable and appropriate. Testing of particular security measures, such as technical controls or policies and procedures, would include verifying that the security measures work as designed and that workforce members know how to implement them. For example, written policies and procedures can be tested through various methods including, but not limited to: simulating security events that mimic real-world attacks to assess how effectively employees follow incident response and security procedures; conducting knowledge assessments after training on policies and procedures; and reviewing system logs and access records to evaluate whether policies and procedures governing access to ePHI are being followed. We would expect a regulated entity to take the results of the required tests into consideration when determining whether it is reasonable and appropriate to modify its security measures, as well as the actions that would be expected of a regulated entity that is similarly situated based on the 
+results of such tests. 
+We also propose to modify certain 
+administrative safeguards to clarify the obligations of a regulated entity to ensure the confidentiality, integrity, and availability of ePHI by securing its relevant electronic information systems—that is, its electronic information systems that create, receive, maintain, or transmit ePHI and those that otherwise affect its confidentiality, integrity, or availability—and the technology assets in its relevant electronic information systems. 
+b. Section 164.308(a) 
+The Department proposes to modify 
+the general language at 45 CFR 
+164.308(a) to clarify the connection between the general rules for security standards at 45 CFR 164.306, the standards for policies and procedures and documentation requirements at 45 CFR 164.316, and the standards for the administrative safeguards under 45 CFR 164.308(a). We also propose to clarify that regulated entities would be required to implement all of the 
+administrative safeguards of the Security Rule to protect the confidentiality, integrity, or availability of all ePHI that they create, receive, maintain, or transmit. Thus, when read together, proposed 45 CFR 164.308(a) and 164.316(a) would require that a regulated entity implement and document, in writing, its implementation of the administrative safeguards required by the Security Rule. These requirements set the baseline for administrative safeguards. Nothing in this NPRM would prevent a regulated entity from implementing additional administrative safeguards, provided that those additional safeguards do not conflict with any requirements in the Security Rule. 
+The proposed changes are discussed 
+in greater detail below. 
+c. Section 164.308(a)(1)(i)—Standard: 
+Technology Asset Inventory 
+We propose to modify 45 CFR 
+164.308(a)(1) by elevating to standard- level status the existing implementation specifications for the standard for security management process at 45 CFR 164.308(a)(1)(ii)(A) through (D), and deleting the existing standard. Doing so would highlight the importance of these elements and permit us to add implementation specifications that detail our expectations for compliance with those elements. We believe that providing more specificity in our requirements would help regulated entities better understand their compliance responsibilities for 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00040 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

@@ -1,0 +1,32 @@
+# Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 125/289)
+
+**Source:** health_2024_02544.pdf
+**Chunk ID:** health_2024_02544_028_sub_125
+**Pages:** 1-160
+**Section Path:** Regulatory Impact Analysis > Paperwork Reduction Act of 1995 > Explanation of Estimated Capital Expenses for 42 CFR Part 2
+
+---
+
+12534 Federal Register / Vol. 89, No. 33 / Friday, February 16, 2024 / Rules and Regulations 
+22782 FR 6052, 6072. that operates a part 2 program cannot, 
+by definition, be an intermediary, and thus would not be required to segregate the part 2 records they receive. However, the records would still be considered part 2 records (as well as PHI) and there is a continuing obligation to protect the records from use or disclosure in proceedings against the patient. 
+Because the concept of intermediary 
+by its nature is limited to organizations that mediate the interactions between a program and an intended recipient of records, it would not be practical to include in the definition of ‘‘intermediary’’ language concerning ‘‘a member of the intermediary named in the consent.’’ 
+Comment 
+Several commenters requested 
+clarification of certain aspects of the 
+proposal, such as: whether entities already subject to HIPAA are included as intermediaries; whether QSOs can serve as intermediaries and how the QSO role would fit into the requirements; whether the intermediary definition is limited to facilitating access for treatment purposes or whether the definition contemplates facilitating access for other purposes (e.g., for payment purposes, patient 
+access, etc.); and which entities have the responsibility for the required list of disclosures and exactly which 
+responsibilities related to that requirement. One commenter requested that the Department expressly clarify that QSOs are not intermediaries since QSOs do not receive records under a general designation in a written patient consent, but rather they receive records through a QSOA. 
+Response 
+We discuss our changes to the 
+definition of ‘‘intermediary’’ here and in 
+§ 2.11. As noted, in response to public comments we are excluding covered entities, business associates, and part 2 programs from the definition of ‘‘intermediary.’’ Further, the ‘‘intermediary’’ definition is not, in and of itself, expressly limited to facilitating access for treatment purposes; however, by the operation of the consent requirement in § 2.31, the use of intermediaries is generally limited to facilitating the exchange of records among treating providers. The final rule definition of ‘‘qualified service organization’’ includes a person who meets the definition of ‘‘business associate’’ in 45 CFR 160.103, for a part 2 program that is a covered entity, with respect to the use and disclosure of PHI that also constitutes a part 2 record. Expressly including business associates 
+as QSOs, where both definitions are met, responds to comments received on the NPRM noting that the role of QSOs is analogous to business associates, such that aligning terminology makes sense given the purpose of section 3221 of the CARES Act to enhance harmonization of HIPAA and part 2. Additionally, as commenters requested, we have carved out business associates from the definition of ‘‘intermediary.’’ Thus, while a QSO may be a business associate, it cannot at the same time also be considered an intermediary. As a result, an HIE/HIN that is a QSO and business associate for a part 2 program that is also a covered entity would not be subject to the intermediary requirements (e.g., a general designation 
+in a consent and the list of disclosures). 
+Comment 
+About half of the commenters on 
+intermediaries opposed the requirement 
+that intermediaries provide a list of disclosures for the 3 years preceding the request. Many commenters expressed concern that the TPO consent provisions in §§ 2.31 and 2.33 would result in an increase in requests for a list of disclosures made via an intermediary and that HIEs were not equipped to respond in volume. One commenter opined that millions of transactions will be facilitated by the intermediary daily and, as a result, it would be difficult for both the part 2 program and the intermediary to provide a full accounting of disclosure that would feasibly be usable and helpful to the patient. Others suggested the part 2 program directly assume this obligation. 
+While supporting the proposed 
+changes, a few commenters raised substantial concerns about the existing requirements, stating that it would be difficult for an intermediary to log individual accesses and reasons why data was accessed over a multi-year period. While patients should understand where and how their data is being transferred, it must be done while maintaining the interoperability pathway outlined by other HHS programs and with the full understanding of burden represented. A

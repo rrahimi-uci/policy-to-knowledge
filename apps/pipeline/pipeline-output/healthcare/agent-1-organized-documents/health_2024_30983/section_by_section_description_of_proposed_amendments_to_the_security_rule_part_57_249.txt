@@ -1,0 +1,27 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 57/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_057
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+We use this opportunity to affirm that 
+a technology asset may be included as part of the information systems of multiple regulated entities where such regulated entities all have direct management control over the technology asset. For example, both a health care provider and a cloud-based EHR vendor have direct management control over the ePHI in the cloud-based EHR. Accordingly, such ePHI generally is part of both the information system of the health care provider and of the cloud-based EHR vendor. Additionally, the EHR that is used to create, receive, maintain, or transmit ePHI, regardless of whether it is accessed using software installed on the health care provider’s workstation(s) or an internet browser, generally is also part of the information system of both entities because both the health care provider and the vendor 
+have direct management control over the EHR. 
+9. Modifying the Definition of 
+‘‘Malicious software’’ 
+a. Current Provision and Issues To 
+Address 
+Persons seeking unauthorized access 
+to data and information are increasingly 
+sophisticated. Their methods of attempting to gain such access can take many forms and result in a wide array of harms, as discussed above. One of the methods they use is through the introduction of malicious software (also referred to as malware) into an electronic information system. As the sophistication of bad actors has increased, so has the variety of types of malicious software that they use to access electronic information systems. The Security Rule defines malicious software but limits it to software designed to damage or disrupt a system. The regulatory text provides only one example of malicious software in regulatory text—a virus. 
+b. Proposal 
+The Department proposes to replace 
+the current definition of malicious 
+software with one that would be consistent with how cybersecurity 
+experts define the term today.
+362 
+Specifically, we propose to define it to mean software or firmware intended to perform an unauthorized action or activity that will have adverse impact on an electronic information system and/or the confidentiality, integrity, or availability of electronic protected health information. This proposal would therefore clarify that malicious software could include either software or firmware and that the negative effects of the malicious software may not be limited to damaging or disrupting a system. Rather, effects of the software could be intended to have any type of adverse impact on an electronic information system and/or the confidentiality, integrity, or availability of ePHI. The Department also proposes to include in regulatory text a non- exhaustive list of examples, such as viruses, worms, Trojan horses, spyware, and some forms of adware, to assist regulated entities in understanding what constitutes malicious software. 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00029 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

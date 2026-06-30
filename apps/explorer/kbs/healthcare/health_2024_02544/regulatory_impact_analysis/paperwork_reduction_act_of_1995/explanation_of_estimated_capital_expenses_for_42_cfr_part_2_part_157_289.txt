@@ -1,0 +1,43 @@
+# Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 157/289)
+
+**Source:** health_2024_02544.pdf
+**Chunk ID:** health_2024_02544_028_sub_157
+**Pages:** 1-160
+**Section Path:** Regulatory Impact Analysis > Paperwork Reduction Act of 1995 > Explanation of Estimated Capital Expenses for 42 CFR Part 2
+
+---
+
+12550 Federal Register / Vol. 89, No. 33 / Friday, February 16, 2024 / Rules and Regulations 
+270See ‘‘Does HIPAA provide extra protections 
+for mental health information compared with other 
+health information? ’’ supra note 157. 
+271See Substance Abuse and Mental Health 
+Servs. Admin., ‘‘SAMHSA Announces National Survey on Drug Use and Health (NSDUH) Results Detailing Mental Illness and Substance Use Levels in 2021’’ (Jan. 4, 2023), https://www.samhsa.gov/ newsroom/press-announcements/20230104/ samhsa-announces-nsduh-results-detailing-mental- illness-substance-use-levels-2021. 
+272See ‘‘Information Blocking,’’ supra note 160. additional guidance on these issues after 
+the rule is finalized. 
+Comment 
+An academic health center said that 
+as proposed, an SUD counseling note, 
+created by and used by the creating provider, segments patient care and could introduce patient safety risks. Information known to only one member of the treatment team is antithetical to an integrated care approach. The commenter believed that once the patient has provided consent to be treated in our SUD program those records should be visible to the rest of the care team across the covered entity, not just the SUD treatment counselor who created the note or the SUD team. 
+Response 
+‘‘SUD counseling notes’’ as defined in 
+this rule ‘‘excludes medication 
+prescription and monitoring, counseling session start and stop times, the modalities and frequencies of treatment furnished, results of clinical tests, and 
+any summary of the following items: diagnosis, functional status, the treatment plan, symptoms, prognosis, and progress to date.’’ SUD counseling notes are intended, like psychotherapy notes, to support an individual provider and are not routinely shared with others. Information critical to patient diagnosis and treatment such as prognosis and test results, should be within the patient’s medical record or part 2 record. We do not believe the use of separate SUD counseling notes will impede either integrated care or patient safety; however, a program may adopt its own policy with respect to the use by its clinicians of such notes. 
+Comment 
+According to a health IT vendor, the 
+treatment of SUD counseling notes 
+under part 2 raises complexities similar to HIPAA with respect to limits on patient access and for the need for a distinct specific consent from the patient. Addressing such matters depends on whether the notes are included in a specific medical record document or record type or comingled with other documentation. The health IT vendor stated that many part 2 providers have not been in a habit of maintaining distinct forms of documents or records that would allow for these provisions to be so simply applied. The commenter urged the Department develop guidance for their effective implementation. The commenter suggested a single consent option to cover both psychotherapy and SUD counseling notes, not combined with any consent to disclose any other type of health information, to facilitate 
+the release of notes for dually diagnosed consumers being treated by the same provider/provider group. For this and other reasons, it would seem beneficial to this commenter to align these consent requirements as closely as possible to avoid confusion, and variations in data exchange rules. 
+Response 
+As noted, the Department, including 
+ONC, is working to support 
+implementation of EHRs and health IT within the behavioral health sector. We believe that separate consent for release of SUD counseling notes is important because these notes will be maintained distinctly from other parts of the patient’s medical record. This approach is consistent with our approach to psychotherapy notes under HIPAA.
+270 
+According to SAMHSA’s National Survey on Drug Use and Health, we know that many patients will have both mental health and SUDs as well as other comorbidities or co-occurring conditions. We believe the definition of ‘‘SUD counseling notes’’ in this final rule and the consent provisions will support integration of care and care coordination for dually diagnosed SUD and mental health patients.
+271 
+Comment 
+An insurer suggested that the final 
+rule make clear that this narrow category of SUD counseling notes is limited to contemporaneous notes from an in-person counseling session and not, as is noted in the proposed rule, summary information from the overall part 2 record and information such as diagnosis, treatment plan, and progress notes. The commenter asserted that in practice the HIPAA Privacy Rule’s provision on ‘‘psychotherapy notes’’ has been used by some parties as a justification for information blocking 
+and refusal to provide information for TPO in some cases. The commenter believed that similar behavior could occur with this provision if boundaries and limitations are not clearly articulated both in the definition and related provisions of the final rule. Response 
+The Department is collaborating to

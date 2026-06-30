@@ -1,0 +1,98 @@
+# B2-1.4-02, Adjustable-Rate Mortgages (ARMs) (12/10/2025) (part 1/3)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_088_sub_001
+**Pages:** 207-214
+**Section Path:** Part B, Origination Through Closing > Subpart B2, Eligibility > Chapter B2-1, Mortgage Eligibility > Section B2-1.4, Loan Amortization Types > B2-1.4-02, Adjustable-Rate Mortgages (ARMs) (12/10/2025)
+
+---
+
+Published March 4, 2026
+189The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2022-10 December 14, 2022
+Announcement SEL-2019-01 February 06, 2019
+ 
+B2-1.4-02, Adjustable-Rate Mortgages (ARMs) (12/10/2025)
+Introduction
+This topic contains information on ARMs, including:
+Overview
+Acceptable ARM Characteristics
+ARMs and Temporary Interest Rate Buydowns
+ARM Plan Indexes
+Standard Conventional ARM Plans
+Initial Note Rate Limitations
+Calculating the Fully Indexed Rate
+Determining ARM Acceptability
+Mortgage Margin
+Interest Accrual Rate Calculation
+ARMs and MBS Pools
+Pooling Standard Fannie Mae ARM Plans Without Special Disclosure
+ARM Disclosures
+Disclosures Regarding Availability of Index Values
+Disclosures Regarding Below-Market Interest Rates
+Disclosures Regarding Conversions
+Disclosures Regarding Assumption of ARMs
+Requirements Regarding Interest Rate and Monthly Payment Adjustments
+ARM Payment Shock
+DU Generic ARM Plans
+Generic ARM Underwriting Guidelines
+Loan-Level Price Adjustments
+Overview
+Fannie Mae purchases or securitizes fully amortizing ARMs that are originated under its standard or negotiated
+
+Published March 4, 2026
+190plans. For maximum LTV/CLTV/HCLTV ratios and credit score requirements for ARMs, see the Eligibility Matrix .
+Acceptable ARM Characteristics
+The following table describes standard conventional Fannie Mae ARM requirements.
+✓ Standard Conventional ARM Requirements
+ Fannie Mae does not set a minimum remaining term requirement at the time of loan
+purchase.
+ The initial adjustment period in months must align with the initial ﬁxed-rate period in years.
+For example, a "3-year ARM" must have an initial ﬁxed period of 36 months, and a "5-year
+ARM" must be 60 months.
+ Each ARM plan must oﬀer lifetime and per-adjustment interest rate change limitations.
+• Lifetime interest rate change limitations apply to interest rate increases only.
+• Per-adjustment interest rate change limitations apply to interest rate increases and
+decreases.
+ Mortgage interest rates may never decrease to less than the ARM’s margin, regardless of any
+downward interest rate cap.
+ Fannie Mae restricts purchase or securitization of seasoned ARMs to those that are delivered
+as negotiated transactions.
+ARMs and Temporary Interest Rate Buydowns
+The following table provides parameters pertaining to ARMs subject to temporary interest rate buydowns.
+✓ ARMs Subject to Interest Rate Buydowns
+ Must be secured by a principal residence or second home.
+ Are only permitted with an ARM plan that has an initial interest rate period of three years or
+more.
+
+Published March 4, 2026
+191✓ ARMs Subject to Interest Rate Buydowns
+ ARM plans that have an initial interest rate period of three years (Plan 4926) must be secured
+by a one- or two-unit property and must be structured as a 2-1 buydown with a buydown
+period no greater than 24 months.
+ ARM plans with an initial interest rate period greater than three years (Plans 4927, 4928, and
+4929) can be structured as either 3-2-1 or 2-1 buydowns (or other allowable structures per 
+B2-1.4-04, Temporary Interest Rate Buydowns ).
+ARM Plan Indexes
+A Fannie Mae ARM plan must be tied to the Secured Overnight Financing Rate (SOFR) Index. SOFR is a broad
+measure of the cost of borrowing cash overnight collateralized by U. S. Treasury securities in the repurchase
+agreement (repo) market. Fannie Mae uses a 30-day average of the SOFR index as published by the Federal
+Reserve Bank of New York.
+Standard Conventional ARM Plans
+To qualify as a Fannie Mae standard conventional ARM, the ARM must have all of the characteristics speciﬁed in
+the Standard ARM Plan Matrix  for the speciﬁc ARM plan.
+The Standard ARM Plan Matrix  is available on Fannie Mae's website and is incorporated by reference into this
+Guide .
+Initial Note Rate Limitations
+Fannie Mae limits the initial note rate for ARMs with initial interest rate periods of less than ﬁve years.
+The limitation requires comparison of the initial note rate to the fully indexed rate that is applicable at the time
+the loan is originated.
+Calculating the Fully Indexed Rate
+The fully indexed rate is the sum of the value of the applicable index and the mortgage margin, which is then
+rounded to the nearest one-eighth percent.
+Note : Unless speciﬁc product terms provide otherwise, if the index plus gross margin equals a number
+that is equidistant between the higher and lower one-eighth percent, Fannie Mae rounds down to the
+nearest one-eighth percent.
+The applicable index value that determines the fully indexed rate is any index value in eﬀect during the 90 days
+that precede the note date.

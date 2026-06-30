@@ -1,0 +1,41 @@
+# Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 139/289)
+
+**Source:** health_2024_02544.pdf
+**Chunk ID:** health_2024_02544_028_sub_139
+**Pages:** 1-160
+**Section Path:** Regulatory Impact Analysis > Paperwork Reduction Act of 1995 > Explanation of Estimated Capital Expenses for 42 CFR Part 2
+
+---
+
+12541 Federal Register / Vol. 89, No. 33 / Friday, February 16, 2024 / Rules and Regulations 
+249See section 3221(k)(3). 25082 FR 6052, 6096. 251‘‘Under HIPAA, may an individual request 
+that a covered entity restrict how it uses or 
+discloses that individual’s protected health information (PHI)?’’ supra note 245. 
+25278 FR 5565, 5621 (Jan. 25, 2013). 
+253See Ctrs. for Medicare & Medicaid Servs., 
+‘‘CMS Security and Privacy Handbooks,’’ https://security.cms.gov/learn/cms-security-and-privacy- handbooks; Ctrs. for Medicare & Medicaid Servs., ‘‘CMS Privacy Program Plan,’’ https://security.cms.gov/policy-guidance/cms-privacy- program-plan. 
+254See Kyle Murphy, ‘‘How IHS plans to 
+implement the HIPAA Privacy Rule,’’ HealthITSecurity (Jan. 11, 2013). https://healthitsecurity.com/news/how-ihs-plans-to- implement-the-hipaa-privacy-rule (discussing 
+Indian Health Service efforts). See also, Indian Health Service, ‘‘Patient Forms,’’ https://www.ihs.gov/forpatients/patientforms/. building trust with the patient but urged 
+HHS to adopt a reasonable or as practicable a standard as possible when adopting this proposal. Some patient requests may not be feasible, and a part 2 program should not have to comply with requests that are overly burdensome or impractical. 
+Response 
+We draw attention to the Sense of 
+Congress expressed in the CARES Act 
+that ‘‘[c]overed entities should make every reasonable effort to the extent feasible to comply with a patient’s request for a restriction regarding such use or disclosure,’’
+249and we encourage 
+part 2 programs to do so as well. We believe that this language makes it clear 
+that reasonable effort is expected and that it may be balanced by what is feasible. We believe that a program should not condition treatment on a TPO consent unless it has some capacity to fulfill patients’ requests for restrictions on uses and disclosures for TPO such that ‘‘every reasonable effort’’ has some meaning. We are finalizing as proposed in § 2.22 a requirement to include in the Patient Notice a statement that the patient has the right to request restrictions on disclosures for TPO and in § 2.26 a patient’s right to request restrictions. 
+Comment 
+With respect to proposed § 2.26(a)(4), 
+a health system suggested that a request 
+to restrict access to records for treatment purposes would likely not be granted since such a restriction could not be reasonably guaranteed in an EHR. In its system, part 2 programs have been implemented as restricted departments. Access controls have been implemented to permit emergency physicians to access such records by breaking the glass and documenting the purpose of access. At this time, the commenter believed that there is not a practical way to operationalize the inclusion of additional language in the break the glass process so emergency physicians could view language to not further use or disclose this information. 
+Response 
+As finalized § 2.26(a)(4) states that 
+‘‘[i]f information from a restricted record 
+is disclosed to a health care provider for emergency treatment under paragraph (a)(3) of this section, the part 2 program must request that such health care provider not further use or disclose the information.’’ Section 2.26(a)(3) permits use of restricted records for emergency treatment. While we have stated in this rule that data segmentation is not 
+required, we also stated in 2017 that ‘‘data systems must be designed to ensure that the part 2 program is notified when a ‘break the glass’ disclosure occurs and part 2 records are released pursuant to a medical emergency. The notification must include all the information that the part 2 program is required to document in the patient’s records.’’
+250We recognize 
+that EHR systems have varying degrees of functionality for implementing requested restrictions and programs are in different stages of updating their systems; however, we believe that programs need to evaluate how the limitations of their EHRs may affect patient choice and develop policies accordingly. For example, if a program conditions treatment on a patient’s TPO consent and the patient agrees to sign the consent, but only if their records are not provided to a certain provider, the program should have the means to accommodate the request and if not, allow the patient to sign a more limited consent as appropriate within the context. While lack of EHR system capability may be a valid rationale for not accommodating some patients’ requests for restrictions, it may also be a basis for not adopting a policy of conditioning treatment on signing a single consent for all TPO if the program has no other mechanism available to limit disclosures of part 2 records in the event that patients request restrictions. 
+Final Rule 
+We are finalizing this new section as 
+proposed. We also note the Sense of

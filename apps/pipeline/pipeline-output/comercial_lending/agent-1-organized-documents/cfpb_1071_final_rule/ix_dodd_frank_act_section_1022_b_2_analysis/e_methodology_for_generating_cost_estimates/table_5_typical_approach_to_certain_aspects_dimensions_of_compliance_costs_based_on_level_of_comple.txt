@@ -1,0 +1,167 @@
+# Table 5: Typical approach to certain aspects/dimensions of compliance costs based on level of comple
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_737
+**Pages:** 730-733
+**Section Path:** IX. Dodd-Frank Act Section 1022(b)(2) Analysis > E. Methodology for Generating Cost Estimates > Table 5: Typical approach to certain aspects/dimensions of compliance costs based on level of complexity for types of financial institutions
+
+---
+
+730 Table 5: Typical approach to certain aspects/dimensions of compliance costs based 
+on level of complexity for types of financial institutions  
+Aspect/dimension of 
+compliance costs  Typical approach by low 
+complexity financia l 
+institutions (Type A FIs) Typical approach by 
+medium complexity 
+financial institutions 
+(Type B FIs)  Typical approach by 
+high complexity 
+financial institutions 
+(Type C FIs)  
+Data storage system 
+used Store data in Excel  Use LOS and SBL DMS  Use multiple LOS, FI ’s 
+central SoR, SBL DMS 
+Degree of system integration  (None)  Have forward integration (LOS to SBL DMS)  Ha ve backward a nd forward integration  
+Degree of system automation  Highly manual process 
+for entering and checking 
+data Use ma nual edit checks  Have high automation 
+(only verifying edits 
+ma nually)  
+Tools for geocoding  Use FFIEC tool (manual)  Use batch processing  Use batch processing with multiple sources  
+Tools for completeness checks  Conduct manual checks 
+and rely on CFPB 
+qua lity/validity checks  Use LOS, which includes completeness checks  Use multiple stages of checks  
+Tools for edits  Use CFPB edits only  Use CFPB and customized edits  Use CFPB and 
+customized edits run 
+multiple times  
+Compliance program  Have a joint compliance and a udit office  Have basic internal and external accuracy audit  Ha ve in -depth a ccuracy 
+and fair lending audit  
+Note: LOS is “Loa n Origina tion System”; SoR is “ System of Record”; SBL DMS is “ Small Business 
+Lending Data Management System.”927 
+During the  rulemaki ng process for the 2015 HMDA final rule, the Bureau found that the 
+number of loan applications received was largely correlated with overall complexity of financial 
+institutions ’ compliance operations.928 The Bureau used this observation of financial institu tion 
+practices under  the previous HMDA rulemaking work, in addition to early outreach to financial 
+institutions and data from Call Reports and publicly available data from the CDFI Fund, to generate assumptions about the annual number of small business lending applications for 
+covered credit transactions processed by each type  of financial institution . These assumptions 
+adapt the volume assumptions from the mortgage lending context to address the fact that 
+financial institutions typically process fewer small business credit applications than mortgage 
+applications. The Bureau assumes that Type A FIs receive fewer than 300 applications per year, 
+Type B FIs receive between 300 and 2,000 applications per year, and Type C FIs receive more than 2,000 applications per year. The Bureau assumes that, for T ype A and B  FIs, one out of two 
+ 
+927 The Bureau expects the development of a market for small business data management systems, similar to HMDA 
+ma nagement systems, that financial institutions will license or purchase from third parties.  
+928 80 FR 66128, 66270 (Oct. 28, 2015).
+
+731 small business applications will result in an origination. Thus, the Bureau assumes that Type A 
+FIs originate fewer than 150 covered credit transactions  per year and Type B FIs originate 
+between 150 and 999  covered credit transactions  per year. The Bureau assumes that Type C FIs 
+originate one out of three small business applications and at least 1,000 covered credit 
+transactions per year.929 As described in the comment review below, these methodology 
+assumptions were generally supported by the SBREFA process and comments on the NPRM.  
+The Bureau understands  that costs vary by financial institution due to many factors, such 
+as size, operational structure, and product complexity, and that this variance exists on a continuum that is impossible to fully represent.  Due to data limitations, the Bureau is unable to 
+capture many of the ways in which costs vary by institution, and therefore uses these representative financial institutions with the above assumptions for its analysis. In order to 
+aggregate costs to a market level, the Bureau must map financial institutions onto its types using 
+discrete volume categories.  
+For the hiring costs discussion in part IX.F.3.i and ongoing costs discussion in part 
+IX.F.3.ii below, the Bureau discusses costs in the context of representative institutions for  ease of 
+exposition. The Bureau assumes that a representative Type A FI receives 100 small business credit applications per year, a representative Type B FI receives 400 small business credit applications per year, and a representative Type C FI receives 6 ,000 small business credit 
+applications per year. The Bureau further assumes that a representative Type A FI originates 50 
+covered credit transactions per year ,
+930 a representative Type B FI originates 200 covered credit 
+transactions per year, and a representative Type C FI originates 2 ,000 covered credit transactions 
+per year.  
+1. Methodology for Estimating One -time Costs of Implementation of the Final Rule 
+The one -time cost estimation methodology for the final rule described in this section is 
+the same meth odology that the Bureau used in the NPRM unless otherwise noted. The primary 
+differences are the addition of hiring costs, in response to comments, and changes in the wages to 
+reflect the most recent data.  
+The Bureau has identified the following nine  categ ories of one -time costs that will likely 
+be incurred by financial institutions to develop the infrastructure to collect and report data under the final rule: 
+ 
+929 The Bureau chose the 1:2 and 1:3 application to origination ratios based on two sources of information. First see  
+Biz2Credit, Small Business Loan Approval Rates Rebounded in May 2020: Biz2Credit Small Business Lending 
+Index  (Ma y 2020),  https://cdn.biz2credit.com/appfiles/biz2credit/pdf/report -may-2020.pdf , which shows that, in 
+December of 2019, large banks approved small business loans at a rate of 27.5  percent, while sma ll ba nks a nd credit 
+unions had approval rates of 49.9  percent and 40.1  percent. Additionally, the Bureau ’s supervisory data supports a 
+33 percent approval rate as a conservative measure among these estimates for complex fin ancial institutions (Type C 
+FIs).  
+930 The Bureau discusses a representative Type A FI that will not be covered by the final rule to make the final 
+estimates easier to compare with those in the NPRM and to highlight what the costs of the rule would have been  for 
+a financial institution that is not covered by the final rule.
+
+732 1. Preparation/planning  
+2. Updating computer systems  
+3. Testing/validating systems  
+4. Developing forms/applications  
+5. Training staff and third parties (such as brokers)  
+6. Developing policies/procedures  
+7. Legal/compliance review  
+8. Post-implementation review of compliance policies and procedures  
+9. Hiring costs931 
+Pre-NPRM outreach with financial institutions has informed the Bureau ’s understanding 
+of one -time costs. Financial institutions will likely have to spend time and resources 
+understanding the final rule, developing the required policies and procedures for their employees 
+to follow, and engaging a legal tea m to review their draft policies and procedures. Additionally, 
+financial institutions may require new equipment, such as new computer systems that can store 
+and check the required data points; new or revised application forms or related materials to 
+collec t any data required under the final rule that they do not currently collect, including 
+minority -owned, women -owned, and LGBTQI+ -owned business statuses and the ethnicity, race, 
+and sex of applicants ’ principal owners, and to provide any related disclosures  required by the 
+rule. Some financial institutions mentioned that they may store, check, and report data using third -party providers such as Fiserv, Jack Henry, LaserPro, or Fidelity Information Systems, 
+while others may use more manual methods of data storage, checking, and reporting using 
+software applications such as Microsoft Excel. Financial institutions will also engage in a one -
+time training of all small business lending staff to ensure that employees understand the new 
+policies and procedures. After  all new policies and procedures have been implemented and 
+systems/equipment deployed, financial institutions will likely undertake a final internal review to 
+ensure that all the requirements of the final rule have been satisfied.  
+The Bureau presented  one-time cost categories 1 through 8 in the SBREFA Outline and 
+during the SBREFA process  in 2020.
+932 The small entity representative s generally confirmed 
+that the se eight categories listed  above accurately capture the components of one -time costs.  
+Small entity representatives did not mention hiring costs during the SBREFA process. The Bureau added the hiring costs category after receiving comments in response to the NPRM.  
+ 
+931 The Bureau added this category after the NPRM and did not ask about it in the survey.  
+932 SBREFA Outline at 49 -52.
+
+733 The Bureau  also conducted a survey in 2020  regarding one -time implementation costs for 
+section 1071 compliance targeted at financial institutions  who extend small business credit.933 
+The Bureau developed the survey instrument based on guidance from industry on the potential 
+types of one -time costs institutions might incur if required to repor t under a rule  implementing 
+section 1071 and tested the survey instrument on a small set of financial institutions , 
+incorporating their feedback prior to implementation. The Bureau worked with several major 
+industry trade associations to recruit their memb ers to respond to the survey. A total of 105 
+financial institutions responded to the survey.   
+Estimates from survey respondents form the basis of the Bureau ’s estimates for one -time 
+costs in assessing the impact of this final rule. The survey was broadly designed to ask about the 
+one-time costs of reporting data under a regime that only include d mandatory data points, use d a 
+reporting structure similar to HMDA, use d the Regulation  B definition of an “ application,” and 
+used the respondent ’s own internal small business definition. The survey was divided into three 
+sections: Respondent Information, One -Time Costs, and the Cost of Credit to Small Entities.  
+In the Respondent Information section, the Bureau obtained basic information about  the 
+respondent, includin g information on the type of institution, its size, and its volume of small 
+business lending. (The Bureau did not, however, obtain the actual name or other directly 
+identifying information about respondents.) The  One-Time Costs section of the survey measur ed 
+the total hours, staff costs, and non -salary expenses associated with the different tasks 
+comprising one -time costs. Using the reported costs of each task, the Bureau estimated the total 
+one-time cost for each respondent. The Cost of Credit to Small Entities section dealt with the 
+respondent ’s anticipated response to the increased compliance costs of being covered by a rule 
+implementing section 1071  in order to understand the  potential impacts of the rule  on its small 
+business lending activity, including any anticipated potential changes to underwriting standards, 
+volume, prices, product mix, or market participation.  
+To estimate one -time costs, the Bureau need s information on a financial institution ’s one -
+time costs by category and number of originations. Of the 105 total respondents, 49 answered 
+these questions. The Bureau refer s to these respondents as the “ cost estimation sample.” Of these 
+respondents, 42 (86 percent) self -reported that they were a depo sitory institution (bank , saving 
+association,  or credit union). The remaining seven (14  percent) were nondepository institutions. 
+Table 6 presents the self -reported asset size of the 42 depository institution respondents in the 
+cost estimation sample.934 
+ 
+933 The One -Time Cost Survey was released on July 22, 2020; the response pe riod closed on October 16, 2020. The 
+OMB control number for this collection is 3170 -0032.  
+934 Nondepository institutions also reported assets. The Bureau separ ately reports asset category for depository 
+institutions because asset sizes are not as comparable  between depositories a nd nondepositories. The Bureau does 
+not report asset sizes for nondepository respondents because there were too few respondents to report separately 
+without risking re -identification of respondents.

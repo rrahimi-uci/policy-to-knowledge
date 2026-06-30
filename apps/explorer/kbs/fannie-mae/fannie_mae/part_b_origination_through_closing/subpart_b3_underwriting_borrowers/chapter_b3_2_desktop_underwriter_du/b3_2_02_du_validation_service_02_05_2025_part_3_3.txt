@@ -1,0 +1,48 @@
+# B3-2-02, DU Validation Service (02/05/2025) (part 3/3)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_116_sub_003
+**Pages:** 290-298
+**Section Path:** Part B, Origination Through Closing > Subpart B3, Underwriting Borrowers > Chapter B3-2, Desktop Underwriter (DU) > B3-2-02, DU Validation Service (02/05/2025)
+
+---
+
+Published March 4, 2026
+28030 days of account activity for reﬁnance transactions
+60 days of account activity for purchase transactions
+The most recent quarter, if account information is reported on a quarterly basis
+The lender must review the veriﬁcation report (covering the account activity for the period of time
+required) and investigate and resolve any conﬂicting or contradictory information. The lender must also
+conﬁrm that the borrower is listed as an account holder for each asset account.
+The DU validation service automates the assessment of large deposits on purchase transactions required
+in B3-4.2-02, Depository Accounts . When a large deposit needs to be documented, DU will issue a
+message specifying the amount of the large deposit, as well as the institution name and account number
+of the account that includes the large deposit. If no message is issued by DU, then no documentation of
+any large deposit appearing on the asset report is required when assets have been validated.
+When the DU validation service validates assets on transactions with gift funds, the lender must ensure
+that the gift funds that appear as deposits on the asset veriﬁcation report (if any) meet the requirements
+in B3-4.3-04, Personal Gifts .
+If the actual amount of funds required to complete the transaction is greater than the Funds Required to
+Close speciﬁed in DU, the lender must document liquid assets to cover the additional amount. See
+B3-2-10, Accuracy of DU Data, DU Tolerances, and Errors in the Credit Report  for additional details on
+whether the loan must be resubmitted to DU.
+For self-employed borrowers, if an eligible asset account is reﬂected as a business account on the
+veriﬁcation report, the lender must perform a business cash ﬂow analysis to conﬁrm that the withdrawal
+of funds for this transaction will not have a negative impact on the business. If the lender determines the
+withdrawal would have a negative impact on the business, the lender must remove the assets from the
+online loan application, obtain an updated veriﬁcation report that excludes the business account, and
+resubmit the loan to DU.
+When retirement assets are entered in DU, DU issues a message requiring the lender to ensure that
+withdrawals are permitted, and that withdrawals are not limited to those completed in connection with
+the borrower’s employment termination, retirement, or death. If any of these conditions are present, the
+lender must remove the retirement account assets from the online loan application, obtain an updated
+veriﬁcation report that excludes the retirement account, and resubmit the loan to DU.
+Note:  If the lender would like to use the asset veriﬁcation report to supplement the credit risk
+assessment in DU, see Rent Payment History  in B3-2-03, Risk Factors Evaluated by DU   for additional
+information.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2025-01 February 05, 2025
+Announcement SEL-2024-06 September 04, 2024
+Announcement SEL-2024-05 August 07, 2024

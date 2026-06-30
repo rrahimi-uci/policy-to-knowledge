@@ -1,0 +1,53 @@
+# Justification for Strengthening HIPAA Security Standards (part 28/45)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_003_sub_028
+**Section Path:** Justification for Strengthening HIPAA Security Standards
+**Summary:** This section argues for the necessity of revising the Security Rule, citing the changing healthcare environment, increasing cybersecurity threats, and inconsistent compliance among regulated entities. It outlines the need for robust standards to ensure the protection of ePHI.
+
+---
+
+generated or transmitted during a telemedicine visit constitutes ePHI, so the increase in telemedicine further increases the amount of PHI that is also ePHI. 
+It is not only the ePHI maintained in 
+EHRs and other electronic recordkeeping systems that faces security risks. Medical equipment and devices are increasingly connected through one or more networks, which means that any issues affecting the network likely will affect the medical equipment and devices.
+177And some 
+medical equipment and devices rely on off-the-shelf operating systems, such as Windows, Linux, and similar third- party software;
+178thus, the medical 
+equipment and devices can experience the same vulnerabilities as personal computing devices. Generally, the U.S. Food & Drug Administration (FDA) does not need to review software patches or configuration updates for off-the-shelf software before a device manufacturer puts them in place because the FDA views most patches and configuration updates as design changes that can be made without prior discussion.
+179 
+Cybercriminals may use—or target— 
+technology assets, such as software or medical devices used for treating individuals. For example, in 2021, a cyberattack on cloud-based systems supplied by a particular company compromised the ePHI of more than 200,000 individuals and affected the software for linear accelerators used in radiotherapy, leading to disruptions to cancer treatment.
+180Thus, to protect 
+technology assets used for treatment, the information systems that create, receive, maintain, and transmit ePHI also must be protected. As another example, in 2013, the Mayo Clinic
+181hired a group 
+of ethical hackers182to identify 
+vulnerabilities in 40 different medical devices.
+183The hackers were able to 
+gain access to all of the devices, meaning that the devices could all be vulnerable to a cyberattack.
+184Such 
+attacks may create an opening for a subsequent attack on the device itself or on the regulated entity’s information systems that create, receive, maintain, or transmit ePHI, compromising those information systems and the ePHI itself.
+185It also may lead, intentionally 
+or not, to a loss of device integrity, which could result in the corruption of the device’s functionality or the ePHI on the device.
+186A cyberattack on a 
+medical device may also reduce the ability of the authorized person to use the device (e.g., a denial of service 
+attack, which is a type of cyberattack that overloads the device by flooding the network with traffic).
+187Depending 
+on the device and its use, the result of cyberattacks on a medical device could range from little or no effect to serious injury or death.
+188 
+According to researchers at Brown 
+University, medical devices are a prime target for cybercriminals. In fact, they believe, ‘‘More than just technically 
+feasible, the widespread takedown of medical devices is an imminent threat.’’
+189A 2023 Government 
+Accountability Office report on medical device cybersecurity described the importance of ‘‘robust cybersecurity controls to ensure medical device safety and effectiveness’’ because of ‘‘the increasing integration of wireless, internet- and network-connected capabilities, and the electronic exchange of health information.’’
+190The FDA has 
+also acknowledged, ‘‘As electronic medical devices become increasingly 
+connected to each other and to other technologies, the ability of connected systems to safely, securely and effectively exchange and use the information becomes critical. [. . .] Cybersecurity concerns rise along with the increasing medical device interoperability.’’
+191Accordingly, in 
+2023, the FDA issued updated guidance for industry and FDA staff on requirements for cybersecurity in medical devices.
+192 
+And then there are digital health 
+applications. When an application is deployed by a covered entity, an application developer may be a business associate and subject to the Security Rule. An application developer may also meet the HIPAA Rules’ definition of ‘‘health care provider’’
+193and be a 
+covered entity.194But also, individuals 
+are increasingly interested in accessing their ePHI using applications and transmitting information collected by health and wellness applications to 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00015 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

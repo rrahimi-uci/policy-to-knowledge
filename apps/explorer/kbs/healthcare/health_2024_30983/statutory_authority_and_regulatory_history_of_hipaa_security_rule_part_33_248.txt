@@ -1,0 +1,58 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 33/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_033
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+914 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+225‘‘Remediation and Guidance Hub: Falcon 
+Content Update for Windows Hosts,’’ CrowdStrike, 
+https://www.crowdstrike.com/falcon-content- update-remediation-and-guidance-hub/. 
+226See ‘‘Data Integrity: Detecting and Responding 
+to Ransomware and Other Destructive Events,’’ NIST Special Publication 1800–26A, National Institute of Standards and Technology, U.S. Department of Commerce, p. 1 (Dec. 2020), https:// 
+nvlpubs.nist.gov/nistpubs/SpecialPublications/
+NIST.SP.1800-26.pdf. 
+227‘‘Likely eCrime Actor Uses Filenames 
+Capitalizing on July 19, 2024, Falcon Sensor Content Issues in Operation Targeting LATAM- Based CrowdStrike Customers,’’ CrowdStrike Blog (July 20, 2024), https://www.crowdstrike.com/blog/ likely-ecrime-actor-capitalizing-on-falcon-sensor- issues/. 228Letter from NCVHS Chair Jacki Monson 
+(2023), supra note 123, p. 2 (explaining that NCVHS 
+conducted an inquiry into whether compliance with the Security Rule had improved since the Department released the results of its 2016–2017 audit of selected provisions of the Security Rule and found that ‘‘not much had changed’’); ‘‘Muddling through cybersecurity: Insights from the U.S. healthcare industry,’’ supra note 116, p. 540 
+(‘‘There is enough evidence to suggest that U.S. healthcare organizations lack a deliberate, organized, and comprehensive cyber-resilience strategy.’’). 
+229See Susan Kiser, et al., ‘‘Ransomware: 
+Healthcare Industry at Risk,’’ Journal of Business and Accounting, p. 65–66 (Fall 2021); Meghan Hufstader Gabriel, ‘‘Data Breach Locations, Types, and Associated Characteristics Among US Hospitals,’’ American Journal of Managed Care, p. 78 (Feb. 2018); ‘‘Is the HIPAA Security Rule Enough to Protect Electronic Personal Health Information (PHI) in the Cyber Age?’’ supra note 207, p. 20–23. 
+230Chris Hayhurst, ‘‘On Guard: Staying Vigilant 
+Against Medical Device Vulnerabilities,’’ Biomedical Instrumentation & Technology, Volume 54, Issue 3, p. 169 (May/June 2020); ‘‘Report on Improving Cybersecurity In The Health Care Industry,’’ supra note 117, p. 2. 
+231‘‘2021 HIMSS Healthcare Cybersecurity 
+Survey,’’ Healthcare Information and Management Systems Society, p. 18 (Jan. 28, 2022), https://www.himss.org/sites/hde/files/media/file/2022/01/ 28/2021 _himss_ cybersecurity_ survey.pdf. 
+232‘‘Muddling through cybersecurity: Insights 
+from the U.S. healthcare industry,’’ supra note 116, 
+p. 543. 233Id. at 542. 
+234See 68 FR 8334, 8352 (Feb. 20, 2003). In the 
+preamble to the 2003 Security Rule, the Department 
+explained that it had determined that an inventory requirement was unnecessary because it is redundant of other requirements. We assumed that covered entities (and later all regulated entities) would have performed this activity by virtue of having implemented the security measures required 
+under the security management process standard. 
+235‘‘Muddling through cybersecurity: Insights 
+from the U.S. healthcare industry,’’ supra note 116, 
+p. 542–543. 
+236Eric C. Reese, ‘‘Healthcare’s cybersecurity 
+stakes reach alarming levels,’’ Health Facilities Management Magazine, Volume 76, Issue 8, p. 22 (Nov. 2022). 
+23768 FR 8334, 8343 (Feb. 20, 2003). 
+23845 CFR 164.308(a)(1)(ii)(A). 
+23945 CFR 164.308(a)(1)(ii)(B); ‘‘2016–2017 
+HIPAA Audits Industry Report,’’ supra note 121, p. 
+4. 
+240‘‘2016–2017 HIPAA Audits Industry Report,’’ 
+supra note 121, p. 4. internal ones, and both intentional and 
+accidental breaches. 
+Emergencies or other occurrences can 
+affect the security of ePHI without an intentional act. For example, in 2024, CrowdStrike released a defective update for its software on computers running Microsoft Windows.
+225This update 
+affected the ability of regulated entities to access the ePHI of millions of individuals for varying periods of time. During this time, ePHI was unavailable, meaning that one of the key prongs of the security triad of confidentiality, integrity, and availability was affected.
+226Because of the increased 
+digitization of PHI, it is, for example, essential that covered health care providers engage in thoughtful contingency planning that considers how they will proceed in the event that they are unable to access ePHI in their EHRs. Additionally, threat actors will often seek to take advantage of such incidents. As reported by a large subcontractor of a business associate, less than a week after the outage, the company ‘‘observed threat actors leveraging the event to distribute’’ 
+ransomware.
+227The environment in 
+which health care is delivered, the way in which it is delivered, and the manner in which related information is collected all mean that regulated entities must consider a different approach to operational continuity and resiliency in the face of such challenges. Additionally, they must be wary of the potential for bad actors to attempt to take advantage of such events. 
+C. Regulated Entities’ Compliance With

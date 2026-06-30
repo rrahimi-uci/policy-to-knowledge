@@ -1,0 +1,33 @@
+# Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 133/289)
+
+**Source:** health_2024_02544.pdf
+**Chunk ID:** health_2024_02544_028_sub_133
+**Pages:** 1-160
+**Section Path:** Regulatory Impact Analysis > Paperwork Reduction Act of 1995 > Explanation of Estimated Capital Expenses for 42 CFR Part 2
+
+---
+
+12538 Federal Register / Vol. 89, No. 33 / Friday, February 16, 2024 / Rules and Regulations 
+240See ‘‘Behavioral Health,’’ supra note 133. patient’s request for a restriction’’ 
+regarding such use or disclosure. 
+Comment 
+A health system citing to 42 CFR 
+2.12(c)(3) supported HHS’ attempt to 
+better align part 2 with HIPAA as it relates to both uses and disclosures, stated that the introduction of restrictions on uses poses significant challenges for part 2 programs unless additional changes or clarifications to the regulations are made. The commenter urged the Department to clarify in the final rule that permitted uses also include those uses necessary to carry out the payment or health care operations of the part 2 program. Such clarification will ensure part 2 programs may continue to use part 2 records internally for payment and health care operations that may not directly relate to the diagnosis, treatment, or referral for treatment of patients. Without this 
+clarification, if a part 2 program fails to secure consent from a patient, the part 2 program would be prohibited from using part 2 records for essential internal purposes, such as quality improvement, peer review, and other legally required patient safety activities. 
+Response 
+Section 2.12(c)(3), which excludes 
+from part 2 restrictions treatment- 
+related internal communications among staff in a program and communications with entities that have direct administrative control of the program, is not inconsistent with the new patient right to request restrictions on disclosures for TPO purposes, and a patient’s right to obtain restrictions on disclosures to health plans for services paid in full by the patient. Additional changes desired by the commenter to § 2.12(c)(3) are outside the scope of this rulemaking. 
+Comment 
+A medical professionals association 
+asserted that given the sensitivity of 
+SUD data patients may request that their SUD treatment data not be shared with other clinicians nor be accessible via various third-party applications. The commenter believed that physicians, especially those in primary care, generally lack the ability to segment out certain parts of a patient’s record while maintaining the ability to meaningfully share the non-SUD treatment data with the patient’s care team for the purposes of care coordination and management. The commenter explained its view that this lack of granular data segmentation functionality increases administrative burden and creates challenges for clinicians who are complying with requests not to disclose SUD treatment 
+data while still complying with HIPAA and information blocking requirements. As a result, clinicians must either place sensitive data in the general medical record and institute policies and procedures outside of the EHR to protect this data or create a new location or shadow chart that houses and protects the data. These workarounds disrupt the flow of comprehensive health data within a patient’s care team and increases administrative tasks. The association urges HHS to work with EHR vendors to modernize the functionality of health care data management platforms to ensure part 2 programs can keep patients’ data confidential when requested. Another medical association also reflected similar views. 
+A health IT vendor claimed that 
+several NPRM provisions, including § 2.26, would require it to implement procedural changes. But the vendor stated that these updates are necessary to eliminate barriers to data sharing amongst patients, providers, and health care facilities. The vendor also believed these requirements can be implemented within the proposed 22-month compliance period. 
+A health IT association supported 
+alignment with a patient’s right to request restrictions under the existing HIPAA Privacy Rule. But the commenter believed that it is important not to add a burden on covered entities participating in a shared electronic health information platform or with an HIE or HIN. The commenter urged OCR and SAMHSA to connect to health IT developers, technology companies, HIE, and HINs to ensure that technology exists to feasibly allow for covered entity compliance with interoperability and information blocking requirements. 
+Response 
+We acknowledge concerns that data 
+segmentation may be difficult for part 2

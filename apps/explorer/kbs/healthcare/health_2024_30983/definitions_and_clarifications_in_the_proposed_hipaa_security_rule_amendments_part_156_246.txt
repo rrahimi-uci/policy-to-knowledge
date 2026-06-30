@@ -1,0 +1,26 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 156/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_156
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+788For 
+example, if a regulated entity’s plan to migrate ePHI from hardware that does not support MFA changes such that the use of the non-MFA hardware continues for a longer period of time, the regulated entity should review implemented compensating controls to ensure ongoing effectiveness and whether new compensating controls should be implemented. We are proposing to require that the review be conducted at least once every 12 months or in response to an environmental or operational change, whichever is more 
+frequent, and that the review be documented. Additionally, the Department proposes to require that the review be documented. If the regulated entity’s Security Official review determines that certain compensating controls are no longer effective, the Department would expect the regulated entity to adopt other compensating controls that are effective to continue to meet the applicable proposed exception. 
+As an example of how proposed 45 
+CFR 164.312(f)(2)(iii) would operate in concert with proposed 45 CFR 164.312(f)(2)(iv), a regulated entity experiencing an emergency that adversely affects a relevant electronic information system and renders MFA infeasible would be required to document the following: 
+•The regulated entity has 
+experienced an emergency that has adversely affected a relevant electronic information system, including the nature of the emergency and the specific circumstances that adversely affected the specific electronic information system. 
+•MFA has been rendered infeasible 
+with respect to the specific relevant electronic information system adversely affected by the emergency. 
+•The regulated entity has put in 
+place reasonable and appropriate compensating controls in accordance with the regulated entity’s emergency 
+access procedures and contingency plan. 
+As part of its documentation, a 
+regulated entity would need to include the controls that have been deployed, a record of the fact that the compensating controls are in use, and a record indicating that the compensating controls have been reviewed and approved by the regulated entity’s Security Official. Proposed 45 CFR 164.312(f)(2)(iv)(B)(3) would require the Security Official to review and document the effectiveness of the compensating controls at least once every 12 months or in response to an environmental or operational change, whichever is more frequent. A determination regarding the effectiveness of the technical controls would be based on their ability to secure the regulated entity’s ePHI and its relevant electronic information systems. 
+Last, we propose to add an 
+implementation specification for maintenance at proposed 45 CFR 164.312(f)(2)(v). Under this proposal, a regulated entity would be expressly required to review and test the effectiveness of the technical controls required by this standard at least once every 12 months or in response to 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00080 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

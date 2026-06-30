@@ -1,0 +1,51 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 52/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_052
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+923 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+34845 CFR 164.304 (definition of ‘‘Security 
+incident’’). 
+34945 CFR 164.308(a)(3)(i); proposed 45 CFR 
+164.308(a)(9)(i). 
+35045 CFR 164.304 (definition of ‘‘Administrative 
+safeguards’’). 35145 CFR 164.304 (definitions of 
+‘‘Administrative safeguards,’’ ‘‘Physical 
+safeguards,’’ and ‘‘Technical safeguards’’). 352See also Special Publication 800–82r3, Guide 
+to Operational Technology Security, National Institute of Standards and Technology, section 6.2.1, p. 97, Identity Management and Access Control (PR.AC) (discussing the need of organizations to apply authentication controls for users, devices, and processes within the technology environment) (September 2023). of the term ‘‘security incident’’ requires 
+consideration of whether a person attempted to access or accessed information without authorization.
+348 
+To determine whether a regulated entity complied with the administrative safeguard standard for workforce security, the Department must consider to what extent a regulated entity established policies and procedures for ensuring that workforce members have appropriate access to ePHI.
+349 
+The current definition is expansive 
+but not fully representative of how users could interact with information today. As discussed above, users create, receive, maintain, and transmit information in more ways now than they did ten years ago. Thus, the Department believes that it is critical for the Department to consider modifying the definition of this term to adequately reflect the current electronic environment. 
+b. Proposal 
+The Department proposes to expand 
+the list of activities that should be 
+considered under the term by adding the activities of ‘‘deleting’’ and ‘‘transmitting.’’ The Department also proposes to replace ‘‘system resource’’ with ‘‘component of an information system’’ to rely on an already defined term, ‘‘information system.’’ The proposed modification would clarify that the term includes any and all components of an information system and an information system as a whole. Additionally, the Department believes that a component of an information system better describes how the term access applies today because it is inclusive of hardware, software, and people, as opposed to only the inherent capabilities that contribute to performance, such as system memory and hard disk space. 
+2. Clarifying the Definition of 
+‘‘Administrative Safeguards’’ 
+a. Current Provision and Issues To 
+Address 
+Administrative safeguards are 
+administrative actions, policies, and procedures to manage the selection, development, implementation, and maintenance (including reviewing and modifying) of security measures to protect ePHI.
+350Administrative 
+safeguards also manage the conduct of the regulated entity’s workforce in relation to the protection of ePHI. Under 
+the Security Rule, there are minor inconsistencies in language between the definitions of the types of safeguards, which might lead to uncertainty about how to interpret the terms and lead to unintended consequences. For example, the definitions of ‘‘administrative safeguards’’ and ‘‘physical safeguards’’ use ‘‘are,’’ while the definition of technical safeguards uses ‘‘means.’’
+351 
+In addition, the existing definition of 
+‘‘administrative safeguards’’ does not expressly relate the administrative actions to the policies and procedures addressing the activities covered by the definition, nor does it make clear that the policies and procedures are in addition to the administrative actions. The same is true for the definitions of physical and technical safeguards. Further, the definition of ‘‘administrative safeguards’’ does not expressly mention managing updates and modifications to safeguards. 
+b. Proposal 
+To address the minor inconsistencies 
+between the definitions of the 
+safeguards and to ensure that each 
+safeguard is afforded an equal weight of importance, the Department proposes similar but minor changes across the definitions. The Department proposes to add the word ‘‘related’’ to the definition here, and below to add the words ‘‘and related’’ when necessary, to more clearly connect the components that make up safeguards. In the case of administrative safeguards, the Department’s proposal relates administrative actions to administrative policies and procedures. The Department believes that this change would reduce confusion and improve clarity about compliance obligations. We are proposing a similar change to the definitions of physical safeguards and technical safeguards below. Additionally, we are proposing to clarify that maintenance includes updating and modifying with respect to administrative safeguards. 
+3. Clarifying the Definition of 
+‘‘Authentication’’ 
+a. Current Provision and Issues To 
+Address 
+The Security Rule defines

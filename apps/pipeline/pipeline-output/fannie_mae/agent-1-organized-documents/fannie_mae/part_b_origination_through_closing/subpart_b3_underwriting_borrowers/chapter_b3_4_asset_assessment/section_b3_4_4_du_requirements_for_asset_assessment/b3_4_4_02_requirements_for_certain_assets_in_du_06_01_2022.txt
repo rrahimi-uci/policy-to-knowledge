@@ -1,0 +1,103 @@
+# B3-4.4-02, Requirements for Certain Assets in DU (06/01/2022)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_220
+**Pages:** 467-469
+**Section Path:** Part B, Origination Through Closing > Subpart B3, Underwriting Borrowers > Chapter B3-4, Asset Assessment > Section B3-4.4, DU Requirements for Asset Assessment > B3-4.4-02, Requirements for Certain Assets in DU (06/01/2022)
+
+---
+
+Published March 4, 2026
+449The table below provides references to recently issued Announcements that are related to this topic. 
+Announcements Issue Date
+Announcement SEL-2020-07 December 16, 2020
+ 
+B3-4.4-02, Requirements for Certain Assets in DU (06/01/2022)
+Introduction
+This topic contains information about certain asset policies in DU, including:
+Asset Veriﬁcation Documentation
+Depository Assets
+Bridge Loan
+Cash Deposit on Sales Contract (Earnest Money)
+Gifts and Grants
+Gifts of Equity
+Net Equity from Properties Pending Sale
+Proceeds from Sold Properties
+Other Liquid Assets
+Secured Borrowed Funds
+Asset Veriﬁcation Documentation
+When DU requires assets to be veriﬁed, DU will indicate the minimum veriﬁcation documentation requirements
+necessary for the lender to process the loan application. This level of documentation may not be adequate for
+every borrower and every situation. The lender must determine whether additional documentation is warranted.
+DU will not require documentation of assets for reﬁnance transactions when the total funds to be veriﬁed are
+$500 or less.
+ 
+Depository Assets
+For depository assets (checking and savings accounts, money market funds, and certiﬁcates of deposit), DU will
+require the following:
+two consecutive monthly bank statements (60 days of account activity) for all purchase transactions, or
+
+Published March 4, 2026
+450one monthly statement (30 days of account activity) for all limited cash-out and cash-out reﬁnance
+transactions.
+Monthly bank statements must be dated within 45 days of the initial loan application date.
+Quarterly bank statements must be dated within 90 days of the initial loan application date, and the lender
+must conﬁrm that the funds in the account have not been transferred to another asset account that is veriﬁed
+with more current documentation.
+A Veriﬁcation of Deposit  (Form 1006 ) can be obtained in place of bank statements.
+When DU validates assets, DU issues a message indicating the acceptable documentation. Compliance with the
+DU message satisﬁes the requirement for documenting assets. This documentation may diﬀer from the
+requirements described above. See  B3-2-02, DU Validation Service .
+Bridge Loan
+Enter the amount of a bridge (or swing) loan in the asset section 2a of the loan application. Do not include the
+amount of the bridge loan in any other liquid asset. (For example, do not enter the amount of the loan both as a
+bridge loan and in a checking account, even if the loan funds have been deposited.)
+Bridge loans should also be considered in the net equity calculation for properties that are pending sale. (In
+other words, the amount of the bridge loan should be subtracted from the net proceeds to avoid counting this
+asset twice.)
+See  B3-4.3-14, Bridge/Swing Loans  for additional information.
+Note : It may also be necessary to enter the bridge loan and corresponding monthly payment as a
+recurring liability in the liabilities section of the loan application. See the bridge loan liability discussion
+in  B3-6-05, Monthly Debt Obligations .
+Cash Deposit on Sales Contract (Earnest Money)
+Earnest money is entered in Section 2b in the loan application. It is treated as a credit to the transaction and will
+reduce the borrower’s required funds to close as reﬂected in Section L4. The earnest money check is assumed
+to have cleared the borrower’s bank account and must not be reﬂected in the balance of an asset account.
+See  B3-4.3-09, Earnest Money Deposit , for documentation requirements.
+Gifts and Grants
+Gifts or donations from entities (grants) are permitted and documented in accordance with B3-4.3-04, Personal
+Gifts, and  B3-4.3-06, Grants and Lender Contributions .
+Gifts and grants are entered in Section 4d of the loan application and identiﬁed as being deposited or not
+deposited. Gifts and grants that are deposited have been received by the borrower and the value should be
+included in another asset account. The amount of the gift or grant is not included in available funds.
+
+Published March 4, 2026
+451Gifts and grants that are not deposited are not included in another asset account. The amount of the gift is
+included in available funds.
+Gifts of Equity
+Enter a gift of equity in Section 4d of the loan application.
+A gift of equity must meet the gift of equity requirements deﬁned in  B3-4.3-05, Gifts of Equity .
+Net Equity from Properties Pending Sale
+See  B3-4.3-10, Anticipated Sales Proceeds , for additional information.
+The lender must calculate the net equity outside of DU for a property marked Pending Sale in Section 3 of the
+loan application. The amount is entered in the asset section (2b) using the asset type Proceeds from Real Estate
+Property to be Sold on or Before Closing.
+If a bridge loan is obtained, the amount of the bridge loan is entered as an asset and must be subtracted from
+net equity before entry in the loan application.
+When the net equity is positive, DU will add the amount to the funds available for closing. When the net equity
+is negative, DU will subtract the amount from the funds available for closing.
+Proceeds from Sold Properties
+Proceeds from properties that have already been sold must be included in a depository account, such as a
+checking or savings account.
+Other Liquid Assets
+Enter the value of personal assets that will be converted to a liquid asset (or sold) prior to closing in Section 2b
+using the asset type Proceeds from Sale of Non-Real Estate Asset. (See B3-4.3-18, Sale of Personal Assets , for
+additional information.) Life insurance that will be used for the transaction is entered in Section 2a using the
+account type Cash Value of Life Insurance. An Other Asset (liquid) may be entered for other types of assets that
+will be used for the transaction, such as pending tax refunds that will be received prior to closing.
+A veriﬁcation message will require evidence of the value of the asset and conﬁrmation that the asset was
+converted to cash.
+Secured Borrowed Funds
+Borrowers can borrow against an asset they own, such as a 401(k) account or real estate, according to the
+requirements of  B3-6-05, Monthly Debt Obligations . The amount of the secured loan should be entered in
+Section 2b using the asset type Secured Borrowed Funds. The secured loan amount should be subtracted from

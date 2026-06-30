@@ -1,0 +1,30 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 150/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_150
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+f. Section 164.312(e)—Standard: 
+Integrity 
+Improper alteration or destruction of 
+ePHI, even unintentionally, can result in clinical quality problems, including patient safety issues, for a covered entity.
+767Workforce members or 
+business associates may make accidental or intentional changes that improperly alter or destroy ePHI.
+768 Data can also be altered or destroyed without human intervention, such as by electronic media errors or failures.
+769It 
+is important to protect ePHI from being compromised, regardless of the source.
+770 
+The current standard for integrity at 
+45 CFR 164.312(c)(1) requires implementation of policies and procedures, rather than actual deployment of technical controls, to ensure integrity of ePHI. To improve the effectiveness of this standard, the Department proposes to redesignate it as proposed 45 CFR 164.312(e) and modify it for clarity. Under the proposal, a regulated entity would be required to deploy technical controls to protect ePHI from improper alteration or destruction when at rest and in transit and to review and test the effectiveness of such technical controls at least once every 12 months or in response to environmental or operational changes, whichever is more frequent, and modify as reasonable and appropriate. For example, the adoption of health IT that is certified through the ONC Health IT Certification Program as having the technical capability to verify that the electronically exchanged health information contained within the health IT has not been altered, using a hashing algorithm that meets certain requirements, may contribute to a regulated entity’s compliance with the proposed standard for integrity.
+771The 
+Department proposes to remove the implementation specification at 45 CFR 164.312(c)(2) because technical controls to corroborate that ePHI has not been altered or destroyed in an unauthorized manner are commonly built into hardware and protocols today. Thus, it is unnecessary to require a regulated entity to specifically deploy such controls. 
+g. Section 164.312(f)(1)—Standard: 
+Authentication 
+Authentication ensures that a person 
+is in fact who they claim to be before being allowed access to ePHI by providing proof of identity.
+772The 
+Department proposes to redesignate the standard for person or entity authentication at 45 CFR 164.312(d) as 45 CFR 164.312(f)(1) to rename it ‘‘Authentication’’ to reflect its broad purpose, and to add a paragraph heading to clarify the organization of the regulatory text. Additionally, consistent with our proposals to define 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00077 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

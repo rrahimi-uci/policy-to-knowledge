@@ -1,0 +1,46 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 244/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_244
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+1019 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+section applies, a covered entity or 
+business associate must document in real-time the existence of an applicable exception and implement reasonable and appropriate compensating controls as required by paragraph (f)(2)(iv)(B) of this section. 
+(B) Compensating controls. (1) To the 
+extent that a covered entity or business associate determines that an exception at paragraph (f)(2)(iii)(A) or (B) or (f)(2)(iii)(C)(1) or (2) of this section applies, the covered entity or business associate must secure its relevant electronic information systems by implementing reasonable and appropriate compensating controls reviewed, approved, and signed by the covered entity’s or business associate’s designated Security Official. 
+(2) To the extent that a covered entity 
+or business associate determines that an exception at paragraph (f)(2)(iii)(C)(3) of this section applies, the covered entity or business associate shall be presumed to have implemented reasonable and appropriate compensating controls where the covered entity or business associate has deployed the security measures prescribed and as instructed by the authorized label for the device, including any updates or patches recommended or required by the manufacturer of the device. 
+(3) To the extent that a covered entity 
+or business associate is implementing 
+compensating controls under this paragraph (f)(2)(iv)(B), the effectiveness of compensating controls must be reviewed and documented by the designated Security Official at least once every 12 months or in response to environmental or operational changes, whichever is more frequent, to continue securing electronic protected health information and its relevant electronic information systems. 
+(v) Maintenance. Review and test the 
+effectiveness of the technical controls required by this paragraph (f) at least once every 12 months or in response to environmental or operational changes, whichever is more frequent, and modify as reasonable and appropriate. 
+(g) Standard: Transmission security. 
+Deploy technical controls to guard against unauthorized access to electronic protected health information that is being transmitted over an electronic communications network; and review and test the effectiveness of such technical controls at least once every 12 months or in response to environmental or operational changes, whichever is more frequent, and modify as reasonable and appropriate. 
+(h) Standard: Vulnerability 
+management—(1) General. Deploy 
+technical controls in accordance with the covered entity’s or business 
+associate’s patch management policies and procedures required by § 164.308(a)(4)(ii)(A) to identify and address technical vulnerabilities in the covered entity’s or business associate’s relevant electronic information systems. 
+(2) Implementation specifications—(i) 
+Vulnerability scanning. (A) Conduct automated vulnerability scans to 
+identify technical vulnerabilities in the covered entity’s or business associate’s relevant electronic information systems in accordance with the covered entity’s or business associate’s risk analysis required by § 164.308(a)(2) or at least once every six months, whichever is more frequent. 
+(B) Review and test the effectiveness 
+of the technology asset(s) that conducts the automated vulnerability scans required by paragraph (h)(2)(i)(A) of this section at least once every 12 months or in response to environmental or operational changes, whichever is more frequent, and modify as reasonable and appropriate. 
+(ii) Monitoring. Monitor authoritative 
+sources for known vulnerabilities on an ongoing basis and remediate such vulnerabilities in accordance with the covered entity’s or business associate’s patch management program under § 164.308(a)(4). 
+(iii) Penetration testing. Perform 
+penetration testing of the covered entity’s or business associate’s relevant electronic information systems by a qualified person. 
+(A) A qualified person is a person 
+with appropriate knowledge of and experience with generally accepted cybersecurity principles and methods for ensuring the confidentiality, integrity, and availability of electronic protected health information. 
+(B) Penetration testing must be 
+performed at least once every 12 months or in accordance with the covered entity’s or business associate’s risk analysis required by § 164.308(a)(2), whichever is more frequent. 
+(iv) Patch and update installation. 
+Deploy technical controls in accordance with the covered entity’s or business associate’s patch management program under § 164.308(a)(4) to ensure timely installation of software patches and critical updates as reasonable and appropriate. 
+(i) Standard: Data backup and 
+recovery—(1) General. Deploy technical 
+controls to create and maintain exact retrievable copies of electronic protected health information. 
+(2) Implementation specifications—(i)

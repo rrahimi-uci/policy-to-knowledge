@@ -1,0 +1,56 @@
+# c. Interest calculations for multiple installments (10/07/02)
+
+**Source:** freddies_mac.pdf
+**Chunk ID:** freddies_mac_2210
+**Pages:** 906-906
+**Section Path:** Accounting and Reporting (Chs 50-54) > 53 - Determining and Remitting Payments GB-10-19-23 > 53.1 Determining payments (10/20/22) > c. Interest calculations for multiple installments (10/07/02)
+
+---
+
+Guide Bulletin Update 10/19 /23 Chapter 53 – Page 3 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the AllRegs 
+web site of ICE Mortgage Technology  (with a paid subscription).  
+Guide Chapter 53 – Determining and 
+Remitting Payments  
+ Determining  payments  (10/20/22 ) 
+a. Interest in arrears (03/31/11)  
+The Servicer must calculate interest in arrears for each Mortgage it services for Freddie Mac by 
+using the amortization method.   Under this method, an individual mortgage payment is applied to 
+interest and principal by first calculating the interest portion and then applying the balance of the 
+payment as a principal reduction.  
+ 
+Freddie Mac does not permit the use of the prepaid interest or interest -in-advance methods on 
+Mortgages Freddie Mac owns.  Any Servicer using the interest -in-advance method must convert 
+to the interest -in-arrears method for Mortgages purchased by Freddie Mac before delivering the 
+Mortgages to Freddie Mac.   If a different method is specifically required by the law of the State 
+where the Property is located, the Servicer must notify Freddie Mac Multifamily Loan Accounting  
+in writing before remitting payments to Freddie Mac.  
+ 
+b. Interest calculations for each month ( 10/20/22 ) 
+Unless otherwise specifically required by law, the Servicer must determine the interest portion of 
+the payment by computing one full month's interest on the outstanding principal balance ( Exhibit 
+6) regardless of the day on which the payment is actually received.  To determine the interest 
+due for the month, the Servicer must follow the interest rate calculation method set forth in the 
+Note.  The Servicer must carry factors used for interest calculations to at least six decimal 
+places, then round to two decimal places based on the third digit.   After applying the interest 
+portion of the payment, the Servicer must apply the remainder to principal.  
+ 
+c. Interest calculations for multiple installments (10/07/02)  
+When computations involve multiple installments, such as several delinquent installments, the 
+Servicer may compute the interest from each installment using the same principal balance 
+(Exhibit 7 ).  The Servicer, at its option, may also calculate the amount to be applied to interest 
+from each installment in succession, using the principal balance remaining after the previous 
+calculation and principal application.  Alternatively, the Servicer, at its option, may use a method 
+that strictly applies payments according to a predetermined amortization schedule.  
+ 
+d. Interest calculations involving a period of less than one month (10/07/02)  
+1. If a loan is originated and purchased by Freddie Mac in the same month, the Servicer must 
+calculate, report and remit 30 days of interest to Freddie Mac, based on a 30 -day month and 
+a 360 -day year.   However, for loans originated and purchased by Freddie Mac in the month 
+of February, the Servicer must calculate, report and remit interest to Freddie Mac based on 
+the number of days in February (28 days in a non -leap year or 29 days in a leap year) and a  
+360-day year.  
+ 
+2. Except for the interest calculations referenced above, the Servicer must calculate, report and 
+remit interest for a period of less than one month based on actual days and a 365 -day year.

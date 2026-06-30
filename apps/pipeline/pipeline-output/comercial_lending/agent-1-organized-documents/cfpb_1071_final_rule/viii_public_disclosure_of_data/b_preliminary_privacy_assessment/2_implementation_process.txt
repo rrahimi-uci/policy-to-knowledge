@@ -1,0 +1,48 @@
+# 2. Implementation Process
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_656
+**Pages:** 657-657
+**Section Path:** VIII. Public Disclosure of Data > B. Preliminary Privacy Assessment > 2. Implementation Process
+
+---
+
+657 Most comments on privacy risk  generally  supported the Bureau ’s intention  to consider 
+the privacy interests of small businesses, related individuals,  and financial institutions. While the 
+Bureau cannot conduct the statistical analysis necessary for a full re-identification analysis until 
+it receives reported data from financial institutions, the Bureau ’s preliminary privacy assessment 
+accepts that some  such data likely could re -identify applicants and their owners, potentially 
+disclosing sensitive information. The personal privacy interests of small business owners, in 
+particular, implicate compelling risks of harms or sensitivities. As acknowledged in the NPRM, 
+some privacy risks are m itigated by the interval between collection  and publication,  and some 
+1071 data are  already available from other sources. But publication of some data fields 
+potentially poses significant risks of harm or sensiti vities to both the personal privacy interests 
+and non-personal commercial privacy interests  of applicants and related individuals . While 
+public HMDA data do not result in substantial privacy harms  for mortgage applicants , that is in 
+part because the Bureau makes modification s and deletion s before publication, informed by a 
+privacy risk assessment.859 
+The Bureau does not intend to ignore the privacy interests of financial institutions. As 
+discussed further  below, however, the privacy risks to financial institutions raised by 
+commenters are less significant than those to small businesses and related individuals . 
+Accordingly, while the Bureau does not intend to exclude consideration of financial institution 
+privacy risks , it anticipates modifying or deleting data to pr otect a financial institution ’s privacy 
+interests  only when publication poses  a compelling privacy risk.  At this time, commenters have 
+not identified compelling privacy risks to financial institutions.  
+In response to comments, the CFPB does not believe that a presumption or threshold 
+would provide the Bureau with a more administrable standard. However, partly in response to comments on these issues, the Bureau ’s preliminary privacy assessment is more directly focused 
+on the most significant privacy risks —particularly re -identification risk —than the balancing test 
+described in the NPRM.  
+2. Implementation Process  
+Proposed Approach  
+The NPRM did not include a full application of the balancing test to most of the proposed 
+data points. It stated that the Bureau would analyze the re -identification risk element, in part, 
+using a statistical analysis. However, the absence of an existing dataset or an alternative s et of 
+sufficiently similar data significantly impede d the Bureau ’s ability to discern whether a proposed 
+data field, individually or in combination with other  data, would substantially facilitate re -
+identification  of small businesses and related persons , and how specifically to modify data to 
+reduce that risk.  Underestimating the degree to which a 1071 data field, individually or in 
+combination with other  data, facilitates re -identification risk could unnecessarily increase 
+privacy risks to an applicant or  a related individual , while overestimating re -identification risk 
+could unnecessarily reduce data utility.  Accordingly, the Bureau believed  that a re-identification 
+ 
+859 See generally 82 FR 44586 (Sept. 25, 2017).

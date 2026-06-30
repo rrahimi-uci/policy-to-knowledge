@@ -1,0 +1,18 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 212/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_212
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+analytics, attachment sandboxing).
+987 
+The Department is aware of the threat 
+that email poses to the information systems of regulated entities and to the confidentiality, integrity, and availability of ePHI.
+988However, the 
+Department believes that it is important that the Security Rule remain technology-neutral and that the security measures we propose in this NPRM apply to a regulated entity’s information systems broadly, including email programs. For example, in this NPRM, the Department proposes to require regulated entities to encrypt all ePHI at rest and in transit and proposes a transmission security standard in which regulated entities would be required to deploy technical controls to guard against unauthorized access to ePHI that is being transmitted over an electronic communications network.
+989Therefore, 
+the Department believes it is unnecessary to promulgate a separate standard for email security. Because the other technical controls, such as encryption and MFA, are already incorporated into the requirements that would protect relevant electronic information systems, the Department believes that adopting a separate secure email standard would duplicate costs without creating a net benefit. 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00108 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

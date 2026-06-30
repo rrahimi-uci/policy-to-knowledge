@@ -1,0 +1,64 @@
+{
+  "total_files": 6,
+  "processed": 6,
+  "failed": 0,
+  "total_chunks": 607,
+  "chunker_tools_used": {
+    "PDFChunker (TOC)": 4,
+    "PDFChunker (AI)": 2
+  },
+  "sub_chunks_created": 454,
+  "merges_performed": 37,
+  "files": [
+    {
+      "file": "health_2024_02544.pdf",
+      "status": "success",
+      "chunks": 171,
+      "method": "toc_based",
+      "chunker_tool": "PDFChunker (TOC)"
+    },
+    {
+      "file": "nursing_facility_icpg.pdf",
+      "status": "success",
+      "chunks": 39,
+      "method": "toc_based",
+      "chunker_tool": "PDFChunker (TOC)"
+    },
+    {
+      "file": "som107ap_v_emerg.pdf",
+      "status": "success",
+      "chunks": 23,
+      "method": "toc_based",
+      "chunker_tool": "PDFChunker (TOC)"
+    },
+    {
+      "file": "hhs_oig_gcpg_2023.pdf",
+      "status": "success",
+      "chunks": 53,
+      "method": "toc_based",
+      "chunker_tool": "PDFChunker (TOC)"
+    },
+    {
+      "file": "health_2024_30983.pdf",
+      "status": "success",
+      "chunks": 127,
+      "method": "ai_reasoning",
+      "chunker_tool": "PDFChunker (AI)"
+    },
+    {
+      "file": "health_2020_26140.pdf",
+      "status": "success",
+      "chunks": 194,
+      "method": "ai_reasoning",
+      "chunker_tool": "PDFChunker (AI)"
+    }
+  ],
+  "chunk_size_stats": {
+    "min_words": 159,
+    "max_words": 2697,
+    "avg_words": 1038,
+    "median_words": 1121,
+    "sub_chunks_created": 454,
+    "merges_performed": 37
+  }
+}

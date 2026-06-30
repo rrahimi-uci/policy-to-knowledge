@@ -1,0 +1,87 @@
+# viii. Type of Action Taken and Denial Reasons
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_707
+**Pages:** 695-696
+**Section Path:** VIII. Public Disclosure of Data > B. Preliminary Privacy Assessment > 6. Preliminary Privacy Assessment of Particular Data Fields > viii. Type of Action Taken and Denial Reasons
+
+---
+
+695 credit limit approved.  As discussed in the section -by-section analysis of § 1002.107(8), the 
+Bureau is finalizing the amount approved or originated data point as proposed.  
+The NPRM  stated that disclosing this data in unmodified form would likely disclose 
+information about an applicant or related natural person that might be harmful or sensitive if 
+such person were re -identified, or that might be harmful or sensitive to an identified financial 
+institution. The Bureau  stated  that information about the amount approved or originated  could be 
+useful to potential adversaries. For example , these data fields would provide creditors some 
+insight into competitors ’ lending practices, particularly when combined with other data points 
+such as gross annual revenue, number of workers, time in business, and pricing. Likewise,  these  
+data might allow creditors to make general inferences about the relative risk appetites of their 
+competitors. However, the Bureau did  not see any reason  that disclosure would permit the 
+reverse-engineering of proprietary lending models.  
+The Bureau stated that it had identified publicly available datasets that include data fields 
+an adversary could directly match to the amount approved or originated data fields in unmodified 
+form. Credit amount approved or originated is  often widely available in public datasets, such as 
+loan-level  data for the SBA 7(a) and 504 programs, as well as property records and UCC filings.  
+The Bureau accordingly stated that  adversaries would be able to match the amount of credit 
+approved or origi nated to an existing public record. The Bureau further stated that if it 
+determined that the amount approved or originated should be modified, it may consider recoding .  
+The Bureau received comments from  several industry and community group commenters. 
+The community groups generally supported publishing these data fields. Several industry commenters disagreed. Two such  commenters stated that if re -identification occurred, the 
+amount approved or originated could harm small business applicants by disclosing information 
+about business expansions or acquisitions. A community group stated that the Bureau could 
+recode the amount applied for into bins that use the mid-point of $10,000 intervals. As the commenter noted, HMDA utilizes this technique and, according to the commenter, it would be sufficient for privacy purposes while producing more accurate data.  
+After reviewing these comments, the Bureau preliminarily assesses that disclosing 
+amount approved or originated data in unmodified form may prese nt significant privacy risk if 
+re-identification occurred . In some  circumstances  disclosing  amount  approved or originated  
+could disclose  personal  information  about  an applicant  or related  natural  person  that would be 
+harmful  or sensitive  if such person  were re-identified.  For example, because amount approved or 
+originated was found in publicly available datasets, in combination with information about the amount applied for, this data could facilitate targeted marketing of higher interest or predatory credit  products. This combination of data could also have reputational impacts on small business 
+applicants and related natural persons. The  Bureau does not see any reason,  however,  that this 
+data field  will create compelling  privacy  risks  for financial  institutions.   
+viii. Type of Action Taken and Denial Reasons  
+Proposed § 1002.107(a)(9) and (11) would have  required financial institutions to collect 
+and report to the Bureau the action taken by the financial institution on the covered application, and for denied applications, the principal reason or reasons the financial institution denied the
+
+696 covered application.  As discussed in the section -by-section analysis of §  1002.107(a)(9) and 
+(11), the Bureau is finalizing these data points as proposed.  
+The NPRM stated that reasons for denial data could be harmful or sensitive for applicants 
+or related natural persons. However, the Bureau d id not believe disclosing the fact that credit was 
+sought, in and of itself, likely would be harmful or sensitive to small businesses because credit is 
+so widely used by small businesses. Further, the harm or sensitivity of disclosing information 
+that credit was originated is mitigated by the publication of originated loan details in other 
+databases such as UCC filings . Additionally, the  Bureau did not assess that disclosure of action 
+taken would permit the reverse -engineering of proprietary lending models.   
+The Bureau ha d not identified publicly available datasets that include data fields an 
+adversary could directly match to these data fields in unmodified form . At a category level, 
+however, the Bureau noted that  these data fields could tell adversaries which records it may be 
+possible to match against databases that include originated loans . The Bureau stated that most of 
+these data fields included in this data point are not found in publicly available records that 
+contain the identity of an applicant; the only data field that would be consistently available 
+would be for originated loans. Without such an identified publicly available record to match 
+with, attempting to re -identify an applicant by matching a 1071 record using these data fields  
+likely would be difficult. Howe ver, the Bureau stated that  adversaries may be able to use other 
+data fields, such as census tract, NAICS code, and identified public information, such as business 
+directories, to determine the identity of an applicant or related natural person. Thus, if a pplicants 
+and related natural persons could be re -identified, an adversary could learn information about 
+application denials for these businesses and use this information for a variety of purposes.  
+The Bureau sought comment on this analysis, specifically in light of potential harm and 
+sensitivity arising from the disclosure of application denials and the reasons for denial, whether 
+there are specific modification techniques that should be considered, and whether modifying 
+these data fields by grouping or deleting these data fields would appropriately balance the 
+privacy risks and benefits of disclosure, in light of the purposes of section 1071.  
+Community group commenters stated that the Bureau should publish data about action 
+taken, including whether the l oan was approved or denied or whether it was withdrawn or left 
+incomplete. One stated their opposition to deleting action taken categories such as “ denied,” 
+“incomplete,” or “ approved but not accepted,” stating that such data are fundamental to the fair 
+lending purpose of the statute. Several stated that publishing data on denial reasons would 
+promote fair lending and business and community development objectives by helping lenders 
+and policymakers assess whether creditors are denied credit for legitimate r easons. An industry 
+commenter said that action taken data may also be misleading in the context of agricultural loans 
+because not all creditworthy applicants are eligible for loans through the Farm Credit System.  
+Other trade associations and a lender commented that disclosure of action taken could 
+cause commercial or competitive harms to applicants and related natural persons. These 
+commenters specifically noted that data about the action taken could reveal information about a 
+business ’s financial status, o r acquisition or expansion plans. Other commenters stated that 
+including denial reasons in 1071 data, without including contextual information surrounding 
+individual credit decisions, would result in unjustified reputational or litigation harm to smaller

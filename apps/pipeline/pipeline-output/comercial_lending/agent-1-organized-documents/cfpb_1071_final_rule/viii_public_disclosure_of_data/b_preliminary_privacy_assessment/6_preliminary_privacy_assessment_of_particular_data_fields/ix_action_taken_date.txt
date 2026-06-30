@@ -1,0 +1,47 @@
+# ix. Action Taken Date
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_708
+**Pages:** 697-697
+**Section Path:** VIII. Public Disclosure of Data > B. Preliminary Privacy Assessment > 6. Preliminary Privacy Assessment of Particular Data Fields > ix. Action Taken Date
+
+---
+
+697 financial institutions, which originate a lower loan volume —possibly resulting in more 
+pronounced statistical aberrations that could be erroneously interpreted as discrimination.  
+In response to the Bureau’s request for comment about whether these data shoul d be 
+modified or deleted from the public dataset, a community group stated that the Bureau should not 
+modify or delete these fields because they are fundamental to the fair lending purposes of the statute. The commenter further noted that for decades, and without adverse consequences, HMDA has included information on whether an application for credit was originated, approved 
+but not accepted, denied, withdrawn by the applicant, or incomplete . This commenter stated that 
+if the Bureau found it necessary to modify this data field, a higher level of disclosure that 
+included reasons of denial by category of business and for groupings of census tracts could achieve important fair lending and community development objectives . 
+As discussed above in part VIII.B.3 , the Bureau views these data fields as hav ing 
+significant disclosure benefits.  Commenters did not offer compelling evidence that disclosure of 
+action taken, in and of itself, would reveal information about a small business applicant ’s 
+financial status or stra tegic plans also lacked evidentiary support.
+900 If re-identification were to 
+occur, however, information about an application for credit being denied could have detrimental impacts to applicants or related natural persons when personal credit qualifications  are used in 
+making credit decisions, including personal embarrassment. Likewise, re -identification could 
+cause non-personal commercial harm to small businesses. Accordingly, the Bureau preliminarily 
+assesses that disclosing these data fields in unmodified form may present  significant privacy risk 
+if re-identification occurred.  
+ix. Action Taken Date  
+Proposed § 1002.107(a)(10) would have  required financial institutions to collect and 
+report the date of the action taken by the financial institut ion. As discussed in the section -by-
+section analysis of § 1002.107(10), the Bureau is finalizing this data point as proposed.  
+The Bureau stated that d isclosing action taken date in the 1071 data in unmodified form 
+would likely disclose minimal, if any, inf ormation about an applicant or related natural person 
+that may be harmful or sensitive if such person were re -identified, or that may be harmful or 
+sensitive to an identified financial institution. The NPRM noted that publicly available datasets 
+include da ta fields an adversary could directly match to the action taken date data field in 
+unmodified form in the public application -level data with respect to an applicant or related 
+natural person.  Public  availability of this data depends on the type of action t aken. The approval 
+date of originated loans is widely  available in SBA 7(a), 504, and other program loan-level 
+records that identify borrowers, and the date of executed agreements , which could be closely 
+related to the action taken date,  is often available for property records and UCC filings . For 
+originated loans,  therefore, the action taken date would substantially facilitate matching with 
+publicly available datasets that identify borrowers. The Bureau also stated that action taken date  
+ 
+900 When the Bureau previously assessed whether to include action taken and denial reasons in HMDA loan -level 
+public data, it concluded that modification was unnecessary 84  FR 649, 658 (Jan. 31, 2019). The Bureau articulated 
+its decision that “action  taken a nd reasons for denial” would be disclosed without modification.

@@ -1,0 +1,1526 @@
+{
+  "entity_types": {
+    "FANNIE_MAE": {
+      "definition": "The government-sponsored enterprise (GSE) that publishes the Selling Guide and purchases or securitizes eligible mortgage loans delivered by approved lenders.",
+      "attributes": [
+        "counterparty_id",
+        "guide_publication_date",
+        "program_name",
+        "eligibility_framework_version",
+        "qc_review_authority",
+        "remedy_authority",
+        "technology_portal_names",
+        "delivery_channel"
+      ],
+      "examples": [
+        "Fannie Mae Selling Guide (Published March 4, 2026)",
+        "Fannie Mae QC process for purchased or securitized loans",
+        "Fannie Mae remedies including compensatory fees or loan repurchase"
+      ],
+      "business_rules": [
+        "Only mortgage loans delivered by approved Seller/Servicers may be purchased or securitized under the Guide.",
+        "Fannie Mae may review delivered loans and enforce remedies for breaches of requirements or representations and warranties.",
+        "Fannie Mae technology and dataset requirements (e.g., UCDP/UAD) can be mandatory for appraisal delivery and validation."
+      ]
+    },
+    "SELLER_SERVICER": {
+      "definition": "A lender approved by Fannie Mae to sell and service residential mortgage loans, subject to ongoing eligibility, contractual obligations, and quality control requirements.",
+      "attributes": [
+        "seller_servicer_id",
+        "approval_status",
+        "approval_effective_date",
+        "servicing_scope",
+        "net_worth_amount",
+        "operational_capabilities",
+        "quality_control_program_status",
+        "technology_access_status",
+        "termination_status"
+      ],
+      "examples": [
+        "Fannie Mae-approved Seller/Servicer with active approval",
+        "Seller/Servicer under probationary status",
+        "Seller/Servicer terminated for breach of obligations"
+      ],
+      "business_rules": [
+        "Seller/Servicers must satisfy approval qualification requirements and maintain eligibility over time.",
+        "Seller/Servicers must implement and follow a lender quality control program aligned to Fannie Mae requirements.",
+        "Seller/Servicers make enforceable representations and warranties when delivering mortgage loans to Fannie Mae."
+      ]
+    },
+    "LENDER_CONTRACT": {
+      "definition": "The contractual agreement governing the obligations, representations, warranties, and remedies applicable to an approved Seller/Servicer’s transactions with Fannie Mae.",
+      "attributes": [
+        "contract_id",
+        "effective_date",
+        "termination_date",
+        "representation_and_warranty_scope",
+        "indemnification_terms",
+        "record_retention_requirements",
+        "remedy_provisions",
+        "sanctions_provisions",
+        "limited_waiver_conditions"
+      ],
+      "examples": [
+        "Seller/Servicer contract with representations and warranties for delivered mortgages",
+        "Contractual record retention and examination provisions for mortgage files",
+        "Contract remedy section enabling repurchase or make-whole payments"
+      ],
+      "business_rules": [
+        "Breach of contractual obligations can trigger remedies including repurchase, substitution, compensatory fees, or sanctions.",
+        "Contract may define limited waivers of certain representations and warranties for specified underwriting channels (e.g., DU).",
+        "Contract can require establishment, maintenance, and examination of mortgage files and related records."
+      ]
+    },
+    "MORTGAGE_LOAN": {
+      "definition": "A residential mortgage loan intended for delivery to, purchase by, or securitization through Fannie Mae, evaluated against eligibility, underwriting, and documentation standards.",
+      "attributes": [
+        "loan_number",
+        "loan_purpose",
+        "loan_amount",
+        "note_rate",
+        "amortization_term_months",
+        "loan_type",
+        "occupancy_type",
+        "ltv_ratio",
+        "cltv_ratio",
+        "dti_ratio"
+      ],
+      "examples": [
+        "30-year fixed-rate purchase mortgage delivered to Fannie Mae",
+        "Adjustable-rate mortgage with initial fixed period and subsequent adjustments",
+        "Refinance mortgage loan requiring appraisal and eligibility checks"
+      ],
+      "business_rules": [
+        "Loan eligibility depends on product attributes, borrower eligibility, property eligibility, and documentation requirements.",
+        "Certain loan attributes (e.g., ARMs, temporary buydowns) require additional policy compliance and disclosures.",
+        "Loans delivered to Fannie Mae are subject to post-delivery QC reviews and enforcement of representations and warranties."
+      ]
+    },
+    "HIGH_BALANCE_MORTGAGE_LOAN": {
+      "definition": "A mortgage loan with an original loan amount exceeding the baseline conforming loan limit but within the permitted high-balance limit for the property’s location and program.",
+      "attributes": [
+        "loan_number",
+        "original_loan_amount",
+        "baseline_conforming_limit",
+        "high_balance_limit",
+        "county_fips",
+        "pricing_adjustment_indicator",
+        "mortgage_insurance_requirement",
+        "delivery_limitations",
+        "special_feature_codes"
+      ],
+      "examples": [
+        "High-balance loan in a designated high-cost county within permitted limits",
+        "High-balance loan requiring mortgage insurance due to LTV thresholds",
+        "High-balance loan with special delivery limitations and pricing requirements"
+      ],
+      "business_rules": [
+        "High-balance classification depends on location-based limits and original loan amount.",
+        "High-balance loans may have specific pricing, mortgage insurance, special feature codes, and delivery limitations.",
+        "Eligibility and underwriting requirements can be more restrictive for high-balance loans than baseline conforming loans."
+      ]
+    },
+    "LOAN_APPLICATION": {
+      "definition": "The structured borrower request for a mortgage loan, including declarations, income/asset information, liabilities, and property/transaction details used for underwriting and eligibility.",
+      "attributes": [
+        "application_id",
+        "application_date",
+        "loan_purpose",
+        "requested_loan_amount",
+        "property_address",
+        "occupancy_intent",
+        "submission_channel",
+        "underwriting_method",
+        "application_status",
+        "signature_date"
+      ],
+      "examples": [
+        "Loan application submitted for purchase of a primary residence",
+        "Loan application submitted for refinance requiring updated appraisal",
+        "Loan application underwritten through Desktop Underwriter (DU)"
+      ],
+      "business_rules": [
+        "Application data must be sufficient to support underwriting, eligibility determination, and documentation requirements.",
+        "Underwriting method (manual vs DU) impacts required documentation and validation steps.",
+        "Borrower eligibility (e.g., citizenship/residency status, multiple financed properties) must be evaluated based on application data."
+      ]
+    },
+    "BORROWER": {
+      "definition": "The primary applicant who seeks credit and is obligated on the mortgage loan, whose eligibility, credit risk, income, assets, and liabilities are underwritten.",
+      "attributes": [
+        "borrower_id",
+        "date_of_birth",
+        "citizenship_status",
+        "residency_status",
+        "credit_score",
+        "employment_status",
+        "monthly_qualifying_income",
+        "monthly_debt_obligations",
+        "assets_verified_amount",
+        "number_of_financed_properties"
+      ],
+      "examples": [
+        "U.S. citizen borrower purchasing an owner-occupied home",
+        "Permanent resident borrower applying for a conforming loan",
+        "Borrower with multiple financed properties seeking an additional mortgage"
+      ],
+      "business_rules": [
+        "Borrower eligibility requirements vary based on citizenship/residency status and program rules.",
+        "Multiple financed properties can trigger additional eligibility, reserve, or underwriting considerations.",
+        "Income and asset sources must be documented and meet acceptability requirements for underwriting."
+      ]
+    },
+    "CO_BORROWER": {
+      "definition": "An additional applicant jointly obligated on the mortgage loan, contributing income/assets and subject to eligibility and underwriting requirements.",
+      "attributes": [
+        "co_borrower_id",
+        "relationship_to_borrower",
+        "citizenship_status",
+        "residency_status",
+        "credit_score",
+        "monthly_qualifying_income",
+        "monthly_debt_obligations",
+        "assets_verified_amount",
+        "occupancy_intent",
+        "is_on_title"
+      ],
+      "examples": [
+        "Spouse co-borrower contributing qualifying income",
+        "Non-occupant co-borrower supporting the application",
+        "Co-borrower with separate asset accounts used for down payment"
+      ],
+      "business_rules": [
+        "Co-borrowers must meet the same core eligibility and documentation standards applicable to obligated parties.",
+        "Occupancy intent and relationship can affect underwriting treatment and required documentation.",
+        "Combined borrower/co-borrower income and debts drive DTI and other underwriting metrics."
+      ]
+    },
+    "SUBJECT_PROPERTY": {
+      "definition": "The residential real estate collateral securing the mortgage loan, evaluated for eligibility, valuation, and acceptable property/project characteristics.",
+      "attributes": [
+        "property_id",
+        "property_address",
+        "property_type",
+        "unit_count",
+        "occupancy_type",
+        "project_type",
+        "year_built",
+        "condition_rating",
+        "disaster_impact_indicator",
+        "appraised_value"
+      ],
+      "examples": [
+        "One-unit single-family detached primary residence",
+        "Condominium unit in an eligible project",
+        "Property affected by a declared disaster requiring additional review"
+      ],
+      "business_rules": [
+        "Property eligibility depends on type (e.g., manufactured housing, PUD, co-op) and specific program requirements.",
+        "Disaster impact can trigger additional documentation, inspection, or appraisal requirements.",
+        "Collateral valuation must be supported by an acceptable appraisal method and documentation standards."
+      ]
+    },
+    "PUD_UNIT": {
+      "definition": "A property unit located within a Planned Unit Development (PUD) project, subject to PUD-specific eligibility requirements for delivery to Fannie Mae.",
+      "attributes": [
+        "property_id",
+        "pud_project_name",
+        "pud_project_id",
+        "unit_legal_description",
+        "hoa_name",
+        "hoa_dues_amount",
+        "common_elements_description",
+        "title_vesting_type",
+        "occupancy_type",
+        "project_eligibility_status"
+      ],
+      "examples": [
+        "Detached PUD unit with HOA dues and common area maintenance",
+        "Attached PUD unit in a master-planned community",
+        "PUD unit requiring verification of project/unit eligibility"
+      ],
+      "business_rules": [
+        "Units in PUD projects must satisfy eligibility requirements applicable to the unit and project characteristics.",
+        "HOA/assessment obligations may affect underwriting and escrow considerations.",
+        "Project classification must be consistent with guide-defined PUD requirements."
+      ]
+    },
+    "COOP_UNIT": {
+      "definition": "A cooperative (co-op) unit where the borrower obtains shares and a proprietary lease, subject to co-op project and share-loan eligibility requirements.",
+      "attributes": [
+        "property_id",
+        "coop_project_name",
+        "coop_project_id",
+        "shares_count",
+        "proprietary_lease_term_months",
+        "monthly_maintenance_fee",
+        "project_legal_compliance_status",
+        "occupancy_type",
+        "share_loan_eligibility_status",
+        "underlying_mortgage_indicator"
+      ],
+      "examples": [
+        "Co-op share loan for an owner-occupied unit",
+        "Co-op project requiring legal compliance review",
+        "Co-op unit with maintenance fee and underlying mortgage considerations"
+      ],
+      "business_rules": [
+        "Co-op project eligibility and legal requirements must be satisfied before a co-op share loan is eligible.",
+        "Share-loan eligibility rules can differ from standard fee-simple collateral requirements.",
+        "Maintenance fees and underlying financing can affect borrower qualification and loan eligibility."
+      ]
+    },
+    "MANUFACTURED_HOME": {
+      "definition": "A manufactured housing collateral type subject to specialized eligibility, underwriting, and documentation requirements under the Guide.",
+      "attributes": [
+        "property_id",
+        "hud_label_number",
+        "manufacturer_name",
+        "manufacture_date",
+        "foundation_type",
+        "land_ownership_type",
+        "square_footage",
+        "singlewide_indicator",
+        "property_condition",
+        "eligibility_status"
+      ],
+      "examples": [
+        "Doublewide manufactured home on a permanent foundation",
+        "Manufactured home with HUD label verification",
+        "Manufactured housing loan requiring specific eligibility checks"
+      ],
+      "business_rules": [
+        "Manufactured housing must meet Guide eligibility requirements related to construction, foundation, and land ownership.",
+        "Documentation must evidence compliance with manufactured housing standards (e.g., labeling, foundation).",
+        "Appraisal requirements may include additional comparability or marketability considerations for manufactured homes."
+      ]
+    },
+    "APPRAISER": {
+      "definition": "A credentialed valuation professional selected under lender responsibilities and selection criteria to develop an appraisal compliant with Guide requirements.",
+      "attributes": [
+        "appraiser_id",
+        "license_state",
+        "license_number",
+        "license_expiration_date",
+        "independence_attestation",
+        "geographic_competency_area",
+        "panel_status",
+        "engagement_date",
+        "amc_involvement_indicator",
+        "disciplinary_action_indicator"
+      ],
+      "examples": [
+        "State-certified residential appraiser engaged for a purchase transaction",
+        "Appraiser meeting lender selection criteria and independence requirements",
+        "Appraiser rejected due to unacceptable appraisal practice indicators"
+      ],
+      "business_rules": [
+        "Lender must select appraisers based on Guide selection criteria and ensure appraiser independence.",
+        "Unacceptable appraisal practices must be avoided; violations can invalidate the appraisal or trigger remedies.",
+        "Information disclosed to appraisers must comply with policy (e.g., avoid undue influence while allowing necessary data)."
+      ]
+    },
+    "APPRAISAL_REPORT": {
+      "definition": "The valuation deliverable supporting collateral market value and property condition, produced under documentation standards and subject to appraisal age and use requirements.",
+      "attributes": [
+        "appraisal_id",
+        "appraisal_form_type",
+        "appraisal_type",
+        "effective_date",
+        "report_date",
+        "appraised_value",
+        "property_condition_rating",
+        "comparable_sales_count",
+        "uad_compliance_indicator",
+        "age_in_days"
+      ],
+      "examples": [
+        "Uniform Residential Appraisal Report (URAR) with UAD-compliant fields",
+        "Appraisal report reused within permitted age and use requirements",
+        "Appraisal report flagged for unacceptable practices or missing exhibits"
+      ],
+      "business_rules": [
+        "Appraisal report must be on an acceptable form and include required exhibits per documentation standards.",
+        "Appraisal age and use requirements determine whether an appraisal is acceptable for the transaction date and purpose.",
+        "Appraisal data may need to conform to UAD and be successfully submitted through UCDP for delivery."
+      ]
+    },
+    "DESKTOP_APPRAISAL": {
+      "definition": "A valuation product completed without an interior physical inspection, permitted only when specific Guide requirements for desktop appraisals are met.",
+      "attributes": [
+        "appraisal_id",
+        "effective_date",
+        "valuation_method",
+        "inspection_scope",
+        "data_sources_used",
+        "property_photos_source",
+        "uad_compliance_indicator",
+        "ucdp_submission_status",
+        "lender_acceptance_decision",
+        "eligibility_constraints"
+      ],
+      "examples": [
+        "Desktop appraisal used for a low-risk refinance where permitted",
+        "Desktop appraisal completed with required data sources and exhibits",
+        "Desktop appraisal rejected because transaction/property type is ineligible"
+      ],
+      "business_rules": [
+        "Desktop appraisals are only allowed for specific transactions and property scenarios defined by policy.",
+        "Required scope, data sources, and documentation must be met to support credibility of value conclusion.",
+        "Lender must ensure submission/validation requirements are satisfied when a desktop appraisal is used."
+      ]
+    },
+    "HYBRID_APPRAISAL": {
+      "definition": "A valuation product combining third-party property data collection with an appraiser’s analysis and reconciliation, subject to Guide hybrid appraisal requirements.",
+      "attributes": [
+        "appraisal_id",
+        "effective_date",
+        "data_collection_provider",
+        "data_collection_date",
+        "inspection_scope",
+        "appraiser_reconciliation_notes",
+        "uad_compliance_indicator",
+        "ucdp_submission_status",
+        "lender_acceptance_decision",
+        "eligibility_constraints"
+      ],
+      "examples": [
+        "Hybrid appraisal with separate property data collector and appraiser analysis",
+        "Hybrid appraisal delivered with required data collection documentation",
+        "Hybrid appraisal declined due to insufficient data collection scope"
+      ],
+      "business_rules": [
+        "Hybrid appraisals must meet defined roles, responsibilities, and documentation requirements for data collection and appraiser analysis.",
+        "Eligibility for hybrid appraisals can vary by transaction type and collateral characteristics.",
+        "Submission standards (e.g., UAD/UCDP where applicable) must be met for delivery and downstream validation."
+      ]
+    },
+    "MARKET_VALUE": {
+      "definition": "The defined concept of market value used for collateral valuation in the appraisal process, reflecting an objective value opinion under stated assumptions and conditions.",
+      "attributes": [
+        "market_value_definition_version",
+        "effective_date",
+        "value_amount",
+        "valuation_purpose",
+        "exposure_time_assumption",
+        "market_conditions_assumption",
+        "arm_length_transaction_assumption",
+        "typical_motivation_assumption",
+        "cash_equivalency_assumption"
+      ],
+      "examples": [
+        "Market value concluded as of appraisal effective date for a purchase transaction",
+        "Market value estimate based on sales comparison and reconciliation",
+        "Market value definition applied per Guide section B4-1.1-01"
+      ],
+      "business_rules": [
+        "Market value must be determined using the Guide’s definition and consistent assumptions.",
+        "Value conclusion must be supported by credible analysis and adequate market data.",
+        "Discrepancies between market value and contract price may trigger additional review requirements."
+      ]
+    },
+    "UAD_DATASET": {
+      "definition": "The Uniform Appraisal Dataset (UAD) standardized data fields and formats required for appraisal reporting and electronic submission for certain loans.",
+      "attributes": [
+        "uad_version",
+        "field_standardization_rules",
+        "enumeration_sets_used",
+        "required_fields_count",
+        "format_validation_status",
+        "submission_ready_indicator",
+        "property_condition_coding",
+        "quality_rating_coding",
+        "comparable_data_coding"
+      ],
+      "examples": [
+        "UAD-compliant appraisal field coding for condition and quality",
+        "UAD standard formatting for comparable sale adjustments",
+        "UAD validation errors requiring correction before submission"
+      ],
+      "business_rules": [
+        "Appraisal data must adhere to UAD formatting and enumerations when required for submission and delivery.",
+        "UAD validation failures can require correction or resubmission and may delay loan delivery.",
+        "UAD requirements vary by appraisal form/type and delivery channel policies."
+      ]
+    },
+    "UCDP_SUBMISSION": {
+      "definition": "The electronic submission of appraisal data and files to the Uniform Collateral Data Portal (UCDP) for validation and delivery requirements.",
+      "attributes": [
+        "ucdp_submission_id",
+        "submission_date",
+        "portal_status",
+        "successful_submission_indicator",
+        "hard_stop_messages",
+        "warning_messages",
+        "resubmission_count",
+        "lender_id",
+        "appraisal_id",
+        "uad_version"
+      ],
+      "examples": [
+        "UCDP submission with hard-stop errors requiring correction",
+        "Successful UCDP submission and acceptance prior to loan delivery",
+        "Resubmission after updating UAD field formatting"
+      ],
+      "business_rules": [
+        "Certain loans require successful UCDP submission/acceptance as a prerequisite for delivery.",
+        "Hard-stop messages must be resolved; warnings may require documented lender review.",
+        "Submission must match the correct appraisal, property, and loan identifiers to avoid delivery defects."
+      ]
+    },
+    "DESKTOP_UNDERWRITER": {
+      "definition": "Fannie Mae’s automated underwriting system (DU) that evaluates risk factors and produces underwriting recommendations and documentation/validation requirements.",
+      "attributes": [
+        "du_casefile_id",
+        "du_version",
+        "submission_date",
+        "risk_evaluation_factors",
+        "validation_service_used",
+        "documentation_requirements_set",
+        "recommendation_type",
+        "message_codes",
+        "casefile_status",
+        "resubmission_count"
+      ],
+      "examples": [
+        "DU casefile receiving Approve/Eligible recommendation",
+        "DU casefile receiving Refer with Caution recommendation",
+        "DU casefile using DU Validation Service for income/asset validation"
+      ],
+      "business_rules": [
+        "DU recommendations drive required documentation levels and underwriting conditions.",
+        "DU evaluates defined risk factors; missing or inconsistent data can change recommendations.",
+        "Limited waivers of representations and warranties may depend on DU usage and compliance with DU requirements."
+      ]
+    },
+    "UNDERWRITING_DECISION": {
+      "definition": "The underwriting outcome for a loan application (automated or manual), including approval status, conditions, and documentation requirements.",
+      "attributes": [
+        "decision_id",
+        "decision_date",
+        "decision_type",
+        "decision_status",
+        "conditions_count",
+        "documentation_level",
+        "risk_classification",
+        "underwriter_id",
+        "du_recommendation_type",
+        "expiration_date"
+      ],
+      "examples": [
+        "Approve/Eligible with standard documentation conditions",
+        "Approve/Ineligible requiring changes to become eligible",
+        "Refer with Caution requiring manual underwriting and additional conditions"
+      ],
+      "business_rules": [
+        "Decision type and conditions must align to underwriting method (DU vs manual) and Guide requirements.",
+        "Conditions must be cleared with acceptable documentation before closing/delivery.",
+        "Out-of-scope or ineligible decisions require corrective action or loan ineligibility designation."
+      ]
+    },
+    "BORROWER_ELIGIBILITY_PROFILE": {
+      "definition": "The structured set of borrower eligibility determinations used to assess compliance with Guide borrower requirements (e.g., citizenship, residency, financed property count).",
+      "attributes": [
+        "eligibility_profile_id",
+        "citizenship_category",
+        "residency_category",
+        "non_us_citizen_indicator",
+        "number_of_financed_properties",
+        "occupancy_intent",
+        "identity_verification_status",
+        "credit_acceptability_status",
+        "documentation_completeness_status",
+        "eligibility_result"
+      ],
+      "examples": [
+        "Non-U.S. citizen borrower profile meeting documented eligibility requirements",
+        "Borrower profile flagged due to multiple financed properties",
+        "Borrower profile marked ineligible due to unmet documentation or status criteria"
+      ],
+      "business_rules": [
+        "Borrower eligibility requirements differ for non-U.S. citizens and must be supported by acceptable documentation.",
+        "Multiple financed properties can require additional constraints, reserves, or eligibility checks.",
+        "Eligibility results must be consistent with underwriting method outputs and Guide rules."
+      ]
+    },
+    "LOAN_ELIGIBILITY_PROFILE": {
+      "definition": "The structured set of loan-level eligibility attributes and determinations (loan limits, legal requirements, attributes like ARMs and escrow policies) for delivery to Fannie Mae.",
+      "attributes": [
+        "loan_eligibility_id",
+        "conforming_limit_amount",
+        "loan_limit_type",
+        "high_balance_indicator",
+        "arm_indicator",
+        "temporary_buydown_indicator",
+        "escrow_required_indicator",
+        "legal_compliance_status",
+        "delivery_eligibility_status",
+        "ineligibility_reason_codes"
+      ],
+      "examples": [
+        "Loan eligibility profile meeting baseline conforming loan limit requirements",
+        "Loan eligibility profile flagged due to ARM feature noncompliance",
+        "Loan eligibility profile requiring escrow account per policy"
+      ],
+      "business_rules": [
+        "Loan amount must not exceed applicable loan limits for the property location and program.",
+        "Loan attributes (ARMs, buydowns, curtailments, escrow) must comply with related policies and legal requirements.",
+        "Delivery eligibility status must integrate borrower, property, appraisal, and documentation outcomes."
+      ]
+    },
+    "ESCROW_ACCOUNT": {
+      "definition": "A lender-managed account used to collect and disburse funds for property-related obligations (e.g., taxes, insurance) per escrow policies.",
+      "attributes": [
+        "escrow_account_id",
+        "escrowed_items",
+        "monthly_escrow_payment",
+        "cushion_amount",
+        "waiver_indicator",
+        "setup_date",
+        "disbursement_schedule",
+        "shortage_surplus_amount",
+        "account_status",
+        "servicer_id"
+      ],
+      "examples": [
+        "Escrow account established for property taxes and homeowners insurance",
+        "Escrow waiver granted where permitted and documented",
+        "Escrow analysis identifying shortage and updated monthly payment"
+      ],
+      "business_rules": [
+        "Escrow establishment and waiver must follow product, legal, and investor-specific requirements.",
+        "Escrowed items and payment calculations must be consistent with allowable cushion and analysis rules.",
+        "Escrow account status and servicing controls can be reviewed in QC and servicing oversight."
+      ]
+    },
+    "ARM_TERMS": {
+      "definition": "The adjustable-rate mortgage (ARM) feature set defining interest rate adjustment mechanics, caps, index, margin, and conversion options where applicable.",
+      "attributes": [
+        "arm_terms_id",
+        "index_name",
+        "margin_percent",
+        "initial_fixed_period_months",
+        "adjustment_frequency_months",
+        "initial_cap_percent",
+        "periodic_cap_percent",
+        "lifetime_cap_percent",
+        "lookback_period_days",
+        "convertible_indicator"
+      ],
+      "examples": [
+        "5/6 ARM with periodic and lifetime caps defined",
+        "Convertible ARM with conversion feature per product terms",
+        "ARM with temporary interest rate buydown applied at origination"
+      ],
+      "business_rules": [
+        "ARM parameters must comply with product eligibility rules and any special policy requirements.",
+        "Temporary interest rate buydowns must be structured and documented per policy.",
+        "Convertible features must meet defined requirements and be accurately reflected in disclosures and loan data."
+      ]
+    },
+    "TRUST_ACCOUNT": {
+      "definition": "A trust account used as an asset source in underwriting, subject to verification of ownership, access, and acceptable use for closing/ reserves.",
+      "attributes": [
+        "trust_account_id",
+        "trust_type",
+        "account_value",
+        "vested_interest_indicator",
+        "distribution_terms",
+        "trustee_name",
+        "beneficiary_name",
+        "withdrawal_restrictions",
+        "documentation_type",
+        "eligible_for_closing_indicator"
+      ],
+      "examples": [
+        "Revocable trust account with documented access for closing funds",
+        "Irrevocable trust with restricted distributions affecting eligibility",
+        "Trust account counted for reserves based on permitted distribution terms"
+      ],
+      "business_rules": [
+        "Trust assets must be verified and evaluated for borrower access and permitted use.",
+        "Restrictions or lack of control can limit whether funds may be used for closing or reserves.",
+        "Documentation must support ownership/beneficiary status and distribution terms."
+      ]
+    },
+    "RETIREMENT_ACCOUNT": {
+      "definition": "A retirement account (e.g., 401(k), IRA) used as an asset source, subject to documentation, vesting, and withdrawal/penalty considerations for allowable use.",
+      "attributes": [
+        "retirement_account_id",
+        "account_type",
+        "current_balance",
+        "vested_balance",
+        "loan_against_account_indicator",
+        "withdrawal_terms",
+        "early_withdrawal_penalty_estimate",
+        "documentation_type",
+        "eligible_for_reserves_indicator",
+        "eligible_for_closing_indicator"
+      ],
+      "examples": [
+        "401(k) with vested balance used to meet reserve requirements",
+        "IRA funds withdrawn for down payment with documented terms",
+        "Retirement account with outstanding loan affecting available funds"
+      ],
+      "business_rules": [
+        "Only vested and accessible retirement funds may be considered, subject to documentation and withdrawal terms.",
+        "Penalties/terms can affect usable amounts for closing and reserves calculations.",
+        "Any loans against retirement accounts may reduce available assets and must be considered in underwriting."
+      ]
+    },
+    "PERSONAL_GIFT": {
+      "definition": "Funds provided to the borrower as a personal gift for down payment, closing costs, or reserves, subject to acceptable donor, documentation, and transfer requirements.",
+      "attributes": [
+        "gift_id",
+        "gift_amount",
+        "donor_relationship",
+        "donor_type",
+        "transfer_method",
+        "transfer_date",
+        "gift_letter_received_indicator",
+        "source_of_funds_documented_indicator",
+        "seasoning_indicator",
+        "use_of_funds"
+      ],
+      "examples": [
+        "Gift from parent used toward down payment on a primary residence",
+        "Gift funds transferred via wire with documentation",
+        "Gift letter and proof of transfer retained in mortgage file"
+      ],
+      "business_rules": [
+        "Gift acceptability depends on donor eligibility, relationship, and transaction requirements.",
+        "Documentation must support gift letter and evidence of transfer/source as required.",
+        "Certain transactions may restrict gift use (e.g., investment properties or minimum borrower contribution rules)."
+      ]
+    },
+    "GIFT_OF_EQUITY": {
+      "definition": "A gift where the seller provides equity to the borrower (e.g., below-market sale price), subject to documentation and acceptability criteria.",
+      "attributes": [
+        "equity_gift_id",
+        "gift_amount",
+        "contract_sales_price",
+        "appraised_value",
+        "seller_relationship_to_borrower",
+        "transaction_type",
+        "documentation_type",
+        "lender_calculated_ltv",
+        "contribution_treatment",
+        "eligibility_status"
+      ],
+      "examples": [
+        "Seller-parent provides equity gift via below-market sales price",
+        "Gift of equity used to satisfy down payment requirement",
+        "Equity gift documented in purchase contract and appraisal"
+      ],
+      "business_rules": [
+        "Gift of equity must be properly documented and reflected in sales contract and valuation support.",
+        "Relationship and transaction structure can affect whether equity is eligible and how it is treated in LTV calculations.",
+        "Equity gift may be subject to limitations depending on property type and occupancy."
+      ]
+    },
+    "GRANT": {
+      "definition": "A grant provided by a government entity, nonprofit, or other eligible source used for down payment or closing costs, subject to program terms and documentation.",
+      "attributes": [
+        "grant_id",
+        "grant_amount",
+        "grant_provider_name",
+        "provider_type",
+        "repayment_terms",
+        "forgiveness_terms",
+        "subordinate_lien_indicator",
+        "funding_date",
+        "use_of_funds",
+        "documentation_type"
+      ],
+      "examples": [
+        "State housing finance agency grant applied to closing costs",
+        "Nonprofit down payment assistance grant with recorded terms",
+        "Grant structured as a forgivable subordinate lien"
+      ],
+      "business_rules": [
+        "Grants must be from acceptable providers and comply with program and Guide requirements.",
+        "Repayment/forgiveness terms and lien structure must be documented and may affect loan eligibility and CLTV.",
+        "Use of grant funds must be consistent with allowable purposes and properly evidenced in the mortgage file."
+      ]
+    },
+    "LENDER_CONTRIBUTION": {
+      "definition": "Funds contributed by the lender (or through an approved mechanism) toward borrower closing costs or other allowable amounts, subject to limits and documentation.",
+      "attributes": [
+        "contribution_id",
+        "contribution_amount",
+        "contribution_purpose",
+        "pricing_tradeoff_indicator",
+        "credit_type",
+        "max_allowed_amount",
+        "calculation_basis",
+        "disclosure_indicator",
+        "seller_concession_interaction",
+        "documentation_type"
+      ],
+      "examples": [
+        "Lender credit applied to borrower closing costs",
+        "Lender contribution structured as pricing credit (rate/points tradeoff)",
+        "Contribution limited by transaction caps and documented on closing disclosure"
+      ],
+      "business_rules": [
+        "Lender contributions may be capped based on transaction characteristics and must be properly disclosed.",
+        "Pricing credits and contributions must be consistent with product and investor rules and not circumvent eligibility constraints.",
+        "Documentation must clearly evidence the contribution source and application at closing."
+      ]
+    },
+    "DISASTER_RELIEF_GRANT_OR_LOAN": {
+      "definition": "Disaster-related assistance provided to the borrower (grant or loan) used as funds for closing or recovery, subject to documentation and acceptability rules.",
+      "attributes": [
+        "assistance_id",
+        "assistance_type",
+        "assistance_amount",
+        "provider_name",
+        "repayment_terms",
+        "declared_disaster_identifier",
+        "funding_date",
+        "use_of_funds",
+        "documentation_type",
+        "eligibility_status"
+      ],
+      "examples": [
+        "Disaster relief grant used to replenish savings for reserves",
+        "Disaster relief loan with repayment terms impacting DTI",
+        "Assistance tied to a declared disaster affecting the subject property area"
+      ],
+      "business_rules": [
+        "Disaster relief assistance must be documented and evaluated for repayment obligations and impact on qualifying ratios.",
+        "Assistance acceptability may depend on provider type and program terms.",
+        "Disaster-related property impacts may trigger additional collateral and underwriting requirements beyond the assistance itself."
+      ]
+    },
+    "EARNEST_MONEY_DEPOSIT": {
+      "definition": "Buyer funds deposited to demonstrate good faith under a purchase contract, which may be credited toward closing, subject to verification and source requirements.",
+      "attributes": [
+        "emd_id",
+        "deposit_amount",
+        "deposit_date",
+        "holder_type",
+        "holder_name",
+        "payment_method",
+        "cleared_indicator",
+        "account_source_documented_indicator",
+        "credited_at_closing_indicator",
+        "documentation_type"
+      ],
+      "examples": [
+        "Earnest money deposit paid by check and verified as cleared",
+        "EMD held by title company and credited toward closing costs",
+        "EMD sourced from borrower bank account with verification"
+      ],
+      "business_rules": [
+        "Earnest money deposits must be verified for amount, source, and clearing as required.",
+        "Unverified or unacceptable sources can trigger additional documentation or disallowance toward required funds to close.",
+        "Holder and crediting mechanics must align with purchase contract and closing documentation."
+      ]
+    },
+    "BRIDGE_SWING_LOAN": {
+      "definition": "A short-term loan used to finance a borrower’s current transaction pending sale of another property, subject to underwriting and documentation requirements.",
+      "attributes": [
+        "bridge_loan_id",
+        "loan_amount",
+        "monthly_payment_amount",
+        "repayment_terms",
+        "secured_by_property_indicator",
+        "collateral_property_address",
+        "expected_payoff_source",
+        "documentation_type",
+        "included_in_dti_indicator",
+        "liability_status"
+      ],
+      "examples": [
+        "Bridge loan used to fund down payment before sale of existing home",
+        "Swing loan with monthly payment included in DTI until payoff",
+        "Bridge loan secured by departing residence with documented terms"
+      ],
+      "business_rules": [
+        "Bridge/swing loans must be documented and treated appropriately as a liability in underwriting where applicable.",
+        "Expected payoff source (e.g., sales proceeds) may require evidence and timing alignment.",
+        "Collateral and repayment terms can affect eligibility, reserve requirements, and DTI calculations."
+      ]
+    },
+    "QUALITY_CONTROL_PROGRAM": {
+      "definition": "The Seller/Servicer’s quality control (QC) program consisting of policies, sampling, audits, and corrective actions designed to ensure loans meet eligibility and underwriting requirements.",
+      "attributes": [
+        "qc_program_id",
+        "program_effective_date",
+        "sampling_methodology",
+        "audit_frequency",
+        "defect_taxonomy",
+        "corrective_action_process",
+        "reporting_governance",
+        "record_retention_period",
+        "vendor_oversight_indicator",
+        "program_status"
+      ],
+      "examples": [
+        "Lender QC program performing pre-funding and post-closing audits",
+        "QC program with documented defect categories and corrective action tracking",
+        "QC program updated to reflect new appraisal or DU policy changes"
+      ],
+      "business_rules": [
+        "Seller/Servicers must maintain a QC program that meets Fannie Mae requirements and is consistently executed.",
+        "QC findings must drive corrective actions and may be reviewed by Fannie Mae.",
+        "QC scope must cover underwriting, appraisal, documentation, and delivery data integrity."
+      ]
+    },
+    "QC_REVIEW": {
+      "definition": "A quality control review performed by the Seller/Servicer and/or Fannie Mae to confirm that delivered loans meet eligibility, underwriting, and documentation requirements.",
+      "attributes": [
+        "qc_review_id",
+        "reviewing_party",
+        "review_type",
+        "review_date",
+        "loan_number",
+        "file_completeness_status",
+        "defect_severity",
+        "defect_codes",
+        "remediation_required_indicator",
+        "final_disposition"
+      ],
+      "examples": [
+        "Fannie Mae post-purchase QC review identifying an appraisal documentation defect",
+        "Lender post-closing QC audit sampling loans and documenting findings",
+        "QC review resulting in remediation and updated mortgage file records"
+      ],
+      "business_rules": [
+        "QC reviews may be required both by the lender (internal QC) and by Fannie Mae (investor QC).",
+        "Identified defects must be categorized, remediated where possible, and tracked to resolution.",
+        "Material defects can lead to remedies including repurchase, make-whole payments, fees, or sanctions."
+      ]
+    },
+    "MORTGAGE_FILE": {
+      "definition": "The complete loan file containing the required records, disclosures, underwriting documentation, appraisal, and evidence of compliance for a mortgage delivered to Fannie Mae.",
+      "attributes": [
+        "mortgage_file_id",
+        "loan_number",
+        "file_location",
+        "record_retention_end_date",
+        "completeness_status",
+        "appraisal_included_indicator",
+        "income_documentation_level",
+        "asset_documentation_level",
+        "closing_document_set_status",
+        "audit_trail_indicator"
+      ],
+      "examples": [
+        "Mortgage file retained with appraisal, DU findings, and closing package",
+        "Mortgage file requested for examination during Fannie Mae review",
+        "Mortgage file missing required exhibit leading to defect findings"
+      ],
+      "business_rules": [
+        "Mortgage files must be established, maintained, retained, and made available for examination per contractual requirements.",
+        "File completeness and audit trail support defensibility of eligibility and underwriting determinations.",
+        "Missing or inconsistent documents can create delivery defects and trigger remedies."
+      ]
+    },
+    "REPRESENTATION_AND_WARRANTY": {
+      "definition": "A binding assurance made by the Seller/Servicer about loan quality, data accuracy, underwriting compliance, and documentation at the time of delivery to Fannie Mae.",
+      "attributes": [
+        "rw_id",
+        "rw_category",
+        "rw_effective_date",
+        "coverage_scope",
+        "limited_waiver_indicator",
+        "waiver_conditions",
+        "breach_indicator",
+        "breach_discovery_date",
+        "cure_attempt_indicator",
+        "enforcement_status"
+      ],
+      "examples": [
+        "Representation that underwriting complied with eligibility and documentation requirements",
+        "Warranty that loan data delivered matches the mortgage file",
+        "Limited waiver applied for DU-underwritten loans under specified conditions"
+      ],
+      "business_rules": [
+        "Representations and warranties attach to delivered loans and may be enforced when defects are found.",
+        "Limited waivers may apply only if underwriting channel and conditions are met (e.g., DU with required compliance).",
+        "Breach of representations and warranties can lead to repurchase, make-whole payments, fees, or sanctions."
+      ]
+    },
+    "LOAN_REPURCHASE_REQUEST": {
+      "definition": "A formal demand by Fannie Mae for the Seller/Servicer to repurchase a mortgage loan or otherwise remedy a material breach or defect under contractual remedies.",
+      "attributes": [
+        "repurchase_request_id",
+        "loan_number",
+        "request_date",
+        "defect_basis",
+        "remedy_type",
+        "cure_deadline_date",
+        "make_whole_amount",
+        "status",
+        "appeal_indicator",
+        "final_resolution_date"
+      ],
+      "examples": [
+        "Repurchase request issued due to ineligible borrower status documentation",
+        "Repurchase request based on unacceptable appraisal practice findings",
+        "Make-whole payment request issued as an alternative remedy"
+      ],
+      "business_rules": [
+        "Repurchase/make-whole remedies are driven by defect severity and contractual remedy provisions.",
+        "Seller/Servicer may have defined processes/timelines for cure, appeal, or alternative remedy outcomes.",
+        "Repurchase triggers can include eligibility failures, documentation gaps, data misrepresentation, or appraisal defects."
+      ]
+    }
+  },
+  "relationships": {
+    "APPROVES_SELLER_SERVICER": {
+      "source_entity": "FANNIE_MAE",
+      "target_entity": "SELLER_SERVICER",
+      "definition": "Fannie Mae grants approval status to a lender to act as an eligible Seller/Servicer, enabling delivery and servicing activities under the Guide and contract.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Fannie Mae approves a lender after completing the approval qualification process.",
+        "Fannie Mae changes a Seller/Servicer’s status to terminated following a breach."
+      ],
+      "business_rules": [
+        "Approval requires satisfaction of eligibility and operational qualification criteria.",
+        "Approval status must be maintained; loss of eligibility can restrict or end delivery/servicing authority.",
+        "Approval decisions can be subject to ongoing monitoring and periodic review."
+      ]
+    },
+    "GOVERNS_RELATIONSHIP_WITH": {
+      "source_entity": "LENDER_CONTRACT",
+      "target_entity": "SELLER_SERVICER",
+      "definition": "The lender contract establishes the obligations and enforceable terms that apply to the Seller/Servicer in its transactions with Fannie Mae.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Contract requires record retention and examination of mortgage files for all delivered loans.",
+        "Contract defines remedies available to Fannie Mae for material defects."
+      ],
+      "business_rules": [
+        "Contract provisions define representations and warranties and the consequences of breach.",
+        "Contract can specify termination rights and sanctions for noncompliance.",
+        "Contract may set conditions for limited waivers tied to underwriting channels."
+      ]
+    },
+    "ORIGINATES_MORTGAGE_LOAN": {
+      "source_entity": "SELLER_SERVICER",
+      "target_entity": "MORTGAGE_LOAN",
+      "definition": "The Seller/Servicer originates (or delivers as the responsible party) a mortgage loan that will be evaluated for eligibility and delivery to Fannie Mae.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Approved Seller/Servicer originates a fixed-rate purchase loan intended for delivery.",
+        "Seller/Servicer originates an ARM subject to ARM policy requirements."
+      ],
+      "business_rules": [
+        "Originated loans must meet eligibility, underwriting, appraisal, and documentation standards prior to delivery.",
+        "Loan attributes determine which additional policies apply (e.g., ARM, escrow).",
+        "Originator remains responsible for loan quality and data integrity under representations and warranties."
+      ]
+    },
+    "SUBMITS_LOAN_APPLICATION": {
+      "source_entity": "BORROWER",
+      "target_entity": "LOAN_APPLICATION",
+      "definition": "A borrower submits a loan application containing the data used to evaluate eligibility and underwriting requirements.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Borrower submits a purchase application listing income, assets, and liabilities.",
+        "Borrower submits a refinance application requiring an updated appraisal."
+      ],
+      "business_rules": [
+        "Application must contain sufficient information to support underwriting and compliance determinations.",
+        "Changes to application data may require resubmission to DU or re-underwriting.",
+        "Borrower declarations (occupancy, financed properties) must be evaluated for eligibility impact."
+      ]
+    },
+    "JOINS_APPLICATION_AS": {
+      "source_entity": "CO_BORROWER",
+      "target_entity": "LOAN_APPLICATION",
+      "definition": "A co-borrower is included on a loan application as an additional obligated party contributing income/assets and subject to underwriting.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Co-borrower is added to support qualifying income for DTI.",
+        "Non-occupant co-borrower joins the application to strengthen credit profile."
+      ],
+      "business_rules": [
+        "All obligated parties must meet applicable eligibility and documentation requirements.",
+        "Co-borrower occupancy intent and relationship can affect underwriting treatment.",
+        "Combined liabilities and income determine key ratios and eligibility outcomes."
+      ]
+    },
+    "REQUESTS_MORTGAGE_LOAN": {
+      "source_entity": "LOAN_APPLICATION",
+      "target_entity": "MORTGAGE_LOAN",
+      "definition": "A loan application requests a specific mortgage loan product and terms that will be underwritten and evaluated for eligibility.",
+      "cardinality": "one-to-one",
+      "examples": [
+        "Application requests a 30-year fixed-rate loan amount of $450,000.",
+        "Application requests an ARM with a specified initial fixed period."
+      ],
+      "business_rules": [
+        "Requested terms must satisfy loan limits, product rules, and legal requirements.",
+        "If requested terms change (loan amount, product type), eligibility and underwriting may need to be recalculated.",
+        "Product selection can drive required appraisal type and documentation level."
+      ]
+    },
+    "IS_SECURED_BY": {
+      "source_entity": "MORTGAGE_LOAN",
+      "target_entity": "SUBJECT_PROPERTY",
+      "definition": "A mortgage loan is collateralized by the subject property whose eligibility and market value support the credit decision.",
+      "cardinality": "one-to-one",
+      "examples": [
+        "Purchase loan secured by a one-unit primary residence.",
+        "Refinance loan secured by a property in a disaster-affected area requiring additional review."
+      ],
+      "business_rules": [
+        "Property type and project characteristics can change eligibility requirements and permissible appraisal methods.",
+        "Collateral valuation must be supported by an acceptable appraisal compliant with documentation standards.",
+        "Disaster impact can trigger extra inspection/appraisal or documentation requirements."
+      ]
+    },
+    "CLASSIFIES_AS_PUD_UNIT": {
+      "source_entity": "SUBJECT_PROPERTY",
+      "target_entity": "PUD_UNIT",
+      "definition": "The subject property is classified as a PUD unit, making PUD-specific eligibility requirements applicable.",
+      "cardinality": "one-to-one",
+      "examples": [
+        "Subject property identified as a detached PUD unit with HOA dues.",
+        "Subject property identified as an attached PUD unit in a planned development."
+      ],
+      "business_rules": [
+        "Correct classification is required to apply the right eligibility and documentation rules.",
+        "PUD-related obligations (e.g., HOA dues) may affect underwriting and escrow decisions.",
+        "Project/unit eligibility must be validated when PUD classification applies."
+      ]
+    },
+    "CLASSIFIES_AS_COOP_UNIT": {
+      "source_entity": "SUBJECT_PROPERTY",
+      "target_entity": "COOP_UNIT",
+      "definition": "The subject property is classified as a co-op unit, making co-op project and share-loan eligibility requirements applicable.",
+      "cardinality": "one-to-one",
+      "examples": [
+        "Subject property identified as a cooperative unit requiring project legal review.",
+        "Loan structured as a co-op share loan with proprietary lease documentation."
+      ],
+      "business_rules": [
+        "Co-op legal and project eligibility must be met for delivery eligibility.",
+        "Share-loan requirements differ from fee-simple collateral and must be applied correctly.",
+        "Maintenance fees and underlying financing must be considered in qualification and eligibility."
+      ]
+    },
+    "CLASSIFIES_AS_MANUFACTURED_HOME": {
+      "source_entity": "SUBJECT_PROPERTY",
+      "target_entity": "MANUFACTURED_HOME",
+      "definition": "The subject property is identified as manufactured housing, triggering manufactured housing-specific eligibility and documentation rules.",
+      "cardinality": "one-to-one",
+      "examples": [
+        "Subject property identified as a doublewide manufactured home on a permanent foundation.",
+        "Subject property identified as manufactured housing requiring HUD label verification."
+      ],
+      "business_rules": [
+        "Manufactured housing eligibility depends on construction, foundation, and land ownership criteria.",
+        "Additional documentation may be required to evidence compliance with manufactured housing standards.",
+        "Valuation may require careful comparable selection and marketability analysis."
+      ]
+    },
+    "ENGAGES_APPRAISER": {
+      "source_entity": "SELLER_SERVICER",
+      "target_entity": "APPRAISER",
+      "definition": "The Seller/Servicer selects and engages an appraiser under defined selection criteria and independence requirements.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Lender selects an appraiser from an approved panel meeting independence standards.",
+        "Lender reassigns an appraiser due to credential or independence concerns."
+      ],
+      "business_rules": [
+        "Appraiser selection must meet eligibility criteria and independence requirements.",
+        "Unacceptable practices or conflicts of interest can disqualify an appraiser or appraisal.",
+        "Lender is responsible for ensuring proper engagement and permitted information disclosure."
+      ]
+    },
+    "PRODUCES_APPRAISAL_REPORT": {
+      "source_entity": "APPRAISER",
+      "target_entity": "APPRAISAL_REPORT",
+      "definition": "An appraiser completes and signs an appraisal report documenting the analysis supporting the value conclusion and required exhibits.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Appraiser produces a UAD-compliant URAR with required exhibits.",
+        "Appraiser produces an appraisal report with comparable sales and reconciliation."
+      ],
+      "business_rules": [
+        "Appraisal report must comply with acceptable forms, exhibits, and documentation standards.",
+        "Reports can be rejected if unacceptable appraisal practices are identified.",
+        "Appraisal report dates must support appraisal age and use requirements."
+      ]
+    },
+    "ESTIMATES_MARKET_VALUE": {
+      "source_entity": "APPRAISAL_REPORT",
+      "target_entity": "MARKET_VALUE",
+      "definition": "The appraisal report provides an estimate of market value as of the effective date using the applicable market value definition and assumptions.",
+      "cardinality": "one-to-one",
+      "examples": [
+        "Appraisal report concludes market value of $525,000 as of the effective date.",
+        "Appraisal report applies the Guide’s market value definition and assumptions."
+      ],
+      "business_rules": [
+        "Market value must use the Guide-defined framework and be supported by credible analysis.",
+        "Value conclusion must be consistent with documented comparables and reconciliation logic.",
+        "Significant variances from contract price or prior values may require additional review."
+      ]
+    },
+    "IS_DESKTOP_APPRAISAL_TYPE": {
+      "source_entity": "APPRAISAL_REPORT",
+      "target_entity": "DESKTOP_APPRAISAL",
+      "definition": "An appraisal report is categorized as a desktop appraisal, indicating the inspection scope and desktop-specific policy requirements apply.",
+      "cardinality": "one-to-one",
+      "examples": [
+        "Appraisal report labeled as desktop appraisal for an eligible transaction.",
+        "Desktop appraisal identified and reviewed for required data sources and scope."
+      ],
+      "business_rules": [
+        "Desktop appraisal usage is restricted to policy-permitted scenarios.",
+        "Desktop appraisal scope and documentation must meet specific requirements.",
+        "If ineligible for desktop use, an alternative appraisal type may be required."
+      ]
+    },
+    "IS_HYBRID_APPRAISAL_TYPE": {
+      "source_entity": "APPRAISAL_REPORT",
+      "target_entity": "HYBRID_APPRAISAL",
+      "definition": "An appraisal report is categorized as a hybrid appraisal, indicating data collection and appraiser analysis roles are split and hybrid requirements apply.",
+      "cardinality": "one-to-one",
+      "examples": [
+        "Hybrid appraisal includes third-party data collection with appraiser reconciliation.",
+        "Hybrid appraisal reviewed for compliance with hybrid documentation requirements."
+      ],
+      "business_rules": [
+        "Hybrid appraisals must meet role separation, documentation, and quality requirements.",
+        "Hybrid eligibility depends on transaction and property characteristics.",
+        "Submission/validation requirements must still be satisfied for delivery when applicable."
+      ]
+    },
+    "SUBMITS_TO_UCDP": {
+      "source_entity": "SELLER_SERVICER",
+      "target_entity": "UCDP_SUBMISSION",
+      "definition": "The Seller/Servicer submits appraisal data/files to UCDP to obtain validation results required for delivery and compliance.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Lender submits appraisal file to UCDP and receives hard-stop messages.",
+        "Lender resubmits corrected appraisal after resolving UAD formatting errors."
+      ],
+      "business_rules": [
+        "Successful UCDP submission may be required for loan delivery depending on policy and loan characteristics.",
+        "Hard-stop messages must be resolved; warnings may require documented review and acceptance.",
+        "Submission identifiers must align with loan/appraisal records to prevent delivery defects."
+      ]
+    },
+    "INCLUDES_UAD_DATASET": {
+      "source_entity": "UCDP_SUBMISSION",
+      "target_entity": "UAD_DATASET",
+      "definition": "A UCDP submission includes standardized UAD data elements that must pass formatting and content validation rules.",
+      "cardinality": "many-to-many",
+      "examples": [
+        "UCDP submission includes UAD-coded condition and quality fields.",
+        "UCDP submission includes UAD-formatted comparable sale entries."
+      ],
+      "business_rules": [
+        "UAD formatting and enumerations must be correct to pass validation.",
+        "UAD compliance requirements vary based on appraisal form and policy requirements.",
+        "Validation errors must be corrected to avoid delivery delays or defects."
+      ]
+    },
+    "EVALUATES_IN_DU": {
+      "source_entity": "DESKTOP_UNDERWRITER",
+      "target_entity": "LOAN_APPLICATION",
+      "definition": "Desktop Underwriter evaluates the loan application’s data to assess risk factors and determine underwriting recommendations and documentation requirements.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "DU evaluates an application and generates an Approve/Eligible recommendation.",
+        "DU evaluates an application and returns Refer with Caution requiring manual underwriting."
+      ],
+      "business_rules": [
+        "DU outcomes depend on accuracy and completeness of submitted loan/application data.",
+        "DU documentation requirements must be satisfied to support delivery eligibility.",
+        "DU validation services can change documentation needs and may affect representation and warranty exposure."
+      ]
+    },
+    "GENERATES_UNDERWRITING_DECISION": {
+      "source_entity": "DESKTOP_UNDERWRITER",
+      "target_entity": "UNDERWRITING_DECISION",
+      "definition": "Desktop Underwriter produces an underwriting decision/recommendation record, including conditions and documentation requirements.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "DU generates Approve/Eligible decision with standard documentation conditions.",
+        "DU generates Approve/Ineligible decision requiring changes to achieve eligibility."
+      ],
+      "business_rules": [
+        "Decision types map to defined categories (Approve/Eligible, Approve/Ineligible, Refer with Caution, Out of Scope).",
+        "Conditions must be tracked and cleared prior to closing/delivery.",
+        "Decision validity can expire or require refresh if material loan data changes."
+      ]
+    },
+    "DETERMINES_BORROWER_ELIGIBILITY": {
+      "source_entity": "LOAN_APPLICATION",
+      "target_entity": "BORROWER_ELIGIBILITY_PROFILE",
+      "definition": "Loan application data is used to create a borrower eligibility profile capturing citizenship/residency and financed property considerations affecting eligibility.",
+      "cardinality": "one-to-one",
+      "examples": [
+        "Application indicates non-U.S. citizen status, triggering specific eligibility documentation requirements.",
+        "Application indicates multiple financed properties, triggering additional eligibility and reserve considerations."
+      ],
+      "business_rules": [
+        "Borrower eligibility must be explicitly assessed and supported by documentation in the mortgage file.",
+        "Non-U.S. citizen requirements vary by status category and must be correctly applied.",
+        "Multiple financed property rules can restrict eligibility or add underwriting constraints."
+      ]
+    },
+    "DETERMINES_LOAN_ELIGIBILITY": {
+      "source_entity": "MORTGAGE_LOAN",
+      "target_entity": "LOAN_ELIGIBILITY_PROFILE",
+      "definition": "Loan attributes and policy checks produce a loan eligibility profile capturing loan limits, product attributes (e.g., ARM), escrow, and legal compliance status for delivery.",
+      "cardinality": "one-to-one",
+      "examples": [
+        "Loan eligibility profile shows high-balance indicator true based on county limits.",
+        "Loan eligibility profile flags escrow required per policy and loan characteristics."
+      ],
+      "business_rules": [
+        "Loan limits must be evaluated using location-based thresholds and program definitions (including high-balance rules).",
+        "Loan attribute policies (ARM, buydown, curtailments) must be checked and documented.",
+        "Legal compliance status can be a prerequisite to delivery eligibility."
+      ]
+    },
+    "REQUIRES_ESCROW_ACCOUNT": {
+      "source_entity": "MORTGAGE_LOAN",
+      "target_entity": "ESCROW_ACCOUNT",
+      "definition": "A mortgage loan requires an escrow account when escrow policies and loan characteristics dictate collection and disbursement of property-related obligations.",
+      "cardinality": "one-to-one",
+      "examples": [
+        "Loan requires escrow for property taxes and homeowners insurance.",
+        "Loan includes an escrow waiver only where permitted and properly documented."
+      ],
+      "business_rules": [
+        "Escrow requirement/waiver must comply with applicable policy and legal requirements.",
+        "Escrow items and calculations must be supported by acceptable documentation and servicing controls.",
+        "Escrow setup and maintenance may be evaluated in QC reviews."
+      ]
+    },
+    "HAS_ARM_TERMS": {
+      "source_entity": "MORTGAGE_LOAN",
+      "target_entity": "ARM_TERMS",
+      "definition": "A mortgage loan includes ARM terms that define how interest rates adjust over time, including index, margin, caps, and frequency.",
+      "cardinality": "one-to-one",
+      "examples": [
+        "ARM loan references index and margin and defines periodic and lifetime caps.",
+        "Convertible ARM includes conversion indicator and related parameters."
+      ],
+      "business_rules": [
+        "ARM term parameters must comply with product rules and be consistent across loan data and disclosures.",
+        "Temporary buydowns must be structured in accordance with policy and not conflict with ARM mechanics.",
+        "ARM-specific eligibility checks may affect delivery acceptance."
+      ]
+    },
+    "USES_DOWN_PAYMENT_SOURCE": {
+      "source_entity": "MORTGAGE_LOAN",
+      "target_entity": "PERSONAL_GIFT",
+      "definition": "A mortgage loan transaction uses personal gift funds as part of the funds to close, down payment, or reserves, subject to gift documentation requirements.",
+      "cardinality": "many-to-many",
+      "examples": [
+        "Loan uses a $15,000 gift from a parent for down payment.",
+        "Loan uses documented gift funds transferred prior to closing."
+      ],
+      "business_rules": [
+        "Gift eligibility and documentation rules must be satisfied before counting funds toward required borrower contribution.",
+        "Source/transfer evidence must be retained in the mortgage file per documentation standards.",
+        "Some transactions may limit gift usage depending on occupancy or property type."
+      ]
+    },
+    "USES_GIFT_OF_EQUITY": {
+      "source_entity": "MORTGAGE_LOAN",
+      "target_entity": "GIFT_OF_EQUITY",
+      "definition": "A mortgage loan transaction uses a gift of equity from the seller, affecting sales price, LTV calculation, and required documentation.",
+      "cardinality": "many-to-many",
+      "examples": [
+        "Loan uses gift of equity documented in purchase contract and supported by appraisal.",
+        "Loan uses equity gift from a related-party seller with required documentation."
+      ],
+      "business_rules": [
+        "Equity gift must be documented and accurately reflected in the contract and valuation to support LTV calculations.",
+        "Related-party transactions can require heightened scrutiny and documentation.",
+        "Equity gift acceptability can vary by occupancy and property type."
+      ]
+    },
+    "USES_GRANT_ASSISTANCE": {
+      "source_entity": "MORTGAGE_LOAN",
+      "target_entity": "GRANT",
+      "definition": "A mortgage loan uses grant assistance for down payment or closing costs, subject to provider eligibility and program terms affecting liens and CLTV.",
+      "cardinality": "many-to-many",
+      "examples": [
+        "Loan uses a state agency grant for closing costs with documented terms.",
+        "Loan uses nonprofit down payment assistance structured as a forgivable lien."
+      ],
+      "business_rules": [
+        "Grant provider and terms must be acceptable and properly documented.",
+        "Subordinate lien or repayment/forgiveness terms can affect eligibility and CLTV calculation.",
+        "Grant disbursement and application must be evidenced in closing documentation."
+      ]
+    },
+    "USES_LENDER_CONTRIBUTION": {
+      "source_entity": "MORTGAGE_LOAN",
+      "target_entity": "LENDER_CONTRIBUTION",
+      "definition": "A mortgage loan uses lender contributions (credits) applied to closing costs or other allowable items, subject to caps and disclosure requirements.",
+      "cardinality": "many-to-many",
+      "examples": [
+        "Loan includes a lender credit due to pricing choice to reduce borrower cash to close.",
+        "Loan includes lender contribution limited by applicable caps and shown in closing documentation."
+      ],
+      "business_rules": [
+        "Lender contributions must not exceed permitted amounts and must be accurately disclosed.",
+        "Credits must not be used to circumvent eligibility or minimum contribution requirements.",
+        "Contribution structure must align with pricing and loan terms."
+      ]
+    },
+    "USES_EARNEST_MONEY_DEPOSIT": {
+      "source_entity": "MORTGAGE_LOAN",
+      "target_entity": "EARNEST_MONEY_DEPOSIT",
+      "definition": "A mortgage loan purchase transaction applies an earnest money deposit toward funds to close, requiring verification of amount, source, and clearing.",
+      "cardinality": "many-to-many",
+      "examples": [
+        "Loan credits EMD held by title company toward borrower funds to close.",
+        "Loan uses EMD paid from borrower account with documented clearing."
+      ],
+      "business_rules": [
+        "EMD must be verified and sourced per requirements before it can be counted toward funds to close.",
+        "Unverified EMD may require additional borrower funds or documentation.",
+        "EMD treatment must be consistent between the purchase contract and closing records."
+      ]
+    },
+    "USES_BRIDGE_SWING_LOAN": {
+      "source_entity": "MORTGAGE_LOAN",
+      "target_entity": "BRIDGE_SWING_LOAN",
+      "definition": "A mortgage loan relies on a bridge/swing loan to facilitate closing, requiring evaluation of repayment terms and impact on liabilities/DTI.",
+      "cardinality": "many-to-many",
+      "examples": [
+        "Loan uses a bridge loan secured by departing residence until that property sells.",
+        "Loan includes swing loan monthly payment in DTI until payoff."
+      ],
+      "business_rules": [
+        "Bridge loan terms and repayment obligations must be documented and included in underwriting where applicable.",
+        "Expected payoff via sale proceeds may require evidence and timing consistency.",
+        "Bridge loan can affect reserves and DTI calculations and may be constrained by eligibility rules."
+      ]
+    },
+    "MAINTAINS_QC_PROGRAM": {
+      "source_entity": "SELLER_SERVICER",
+      "target_entity": "QUALITY_CONTROL_PROGRAM",
+      "definition": "The Seller/Servicer maintains a quality control program to monitor and ensure loan compliance with Fannie Mae eligibility and underwriting requirements.",
+      "cardinality": "one-to-one",
+      "examples": [
+        "Seller/Servicer maintains a QC program with post-closing sampling and defect tracking.",
+        "Seller/Servicer updates QC procedures following policy changes in appraisal requirements."
+      ],
+      "business_rules": [
+        "QC program must meet defined requirements for scope, frequency, and corrective actions.",
+        "QC program execution must be documented and auditable.",
+        "Program deficiencies can be considered a compliance risk and trigger further oversight."
+      ]
+    },
+    "CONDUCTS_QC_REVIEW": {
+      "source_entity": "FANNIE_MAE",
+      "target_entity": "QC_REVIEW",
+      "definition": "Fannie Mae conducts quality control reviews of purchased or securitized loans to confirm compliance and determine remedies when defects are found.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Fannie Mae performs a post-purchase QC review and identifies an underwriting documentation defect.",
+        "Fannie Mae performs a review focused on appraisal compliance and UCDP submission results."
+      ],
+      "business_rules": [
+        "Fannie Mae QC reviews can select loans based on risk, sampling, or targeted concerns.",
+        "Material defects identified can lead to remedies under contract and representations/warranties.",
+        "QC findings require traceability to mortgage file evidence and delivery data."
+      ]
+    },
+    "EXAMINES_MORTGAGE_FILE": {
+      "source_entity": "QC_REVIEW",
+      "target_entity": "MORTGAGE_FILE",
+      "definition": "A QC review examines the mortgage file for required documentation, consistency with delivered data, and compliance with underwriting and appraisal standards.",
+      "cardinality": "one-to-one",
+      "examples": [
+        "QC review examines file for required appraisal exhibits and UCDP acceptance.",
+        "QC review checks file for borrower eligibility documentation and DU findings."
+      ],
+      "business_rules": [
+        "Mortgage file must contain required documents to support eligibility and underwriting decisions.",
+        "Inconsistencies between file documents and delivered data can be treated as defects.",
+        "File retention and availability must meet contractual requirements for examination."
+      ]
+    },
+    "ATTACHES_REPRESENTATION_AND_WARRANTY": {
+      "source_entity": "SELLER_SERVICER",
+      "target_entity": "REPRESENTATION_AND_WARRANTY",
+      "definition": "The Seller/Servicer makes representations and warranties that attach to delivered loans, covering compliance, data accuracy, and documentation.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Seller/Servicer makes underwriting compliance representations for each delivered loan.",
+        "Seller/Servicer relies on limited waiver conditions for certain warranties when DU is used properly."
+      ],
+      "business_rules": [
+        "Representations and warranties apply per delivered loan and are enforceable upon breach.",
+        "Limited waivers depend on satisfying required conditions and documentation standards.",
+        "Breach outcomes and cure/appeal processes are governed by the lender contract and review findings."
+      ]
+    },
+    "APPLIES_TO_LOAN": {
+      "source_entity": "REPRESENTATION_AND_WARRANTY",
+      "target_entity": "MORTGAGE_LOAN",
+      "definition": "A representation and warranty applies to a specific mortgage loan delivered to Fannie Mae, defining the assurance scope for that loan.",
+      "cardinality": "many-to-many",
+      "examples": [
+        "Data accuracy warranty applies to delivered loan data fields for a specific mortgage loan.",
+        "Underwriting compliance representation applies to the loan’s eligibility and documentation."
+      ],
+      "business_rules": [
+        "Different categories of representations and warranties may apply based on delivery channel and underwriting method.",
+        "Waiver indicators must be evidenced by satisfying prerequisites (e.g., DU conditions).",
+        "Defects tied to applicable representations/warranties can drive remedy selection."
+      ]
+    },
+    "ISSUES_REPURCHASE_REQUEST": {
+      "source_entity": "FANNIE_MAE",
+      "target_entity": "LOAN_REPURCHASE_REQUEST",
+      "definition": "Fannie Mae issues a repurchase (or make-whole) request as a remedy after identifying material defects or breaches related to a loan.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Fannie Mae issues repurchase request due to ineligible loan attribute discovered in QC.",
+        "Fannie Mae issues make-whole request based on appraisal-related defect findings."
+      ],
+      "business_rules": [
+        "Repurchase/make-whole requests must be supported by documented defect basis and contractual remedy authority.",
+        "Requests may include cure deadlines and defined appeal processes.",
+        "Severity and nature of defect influence whether repurchase, substitution, fees, or sanctions are pursued."
+      ]
+    },
+    "REFERENCES_LOAN": {
+      "source_entity": "LOAN_REPURCHASE_REQUEST",
+      "target_entity": "MORTGAGE_LOAN",
+      "definition": "A repurchase request references the specific mortgage loan subject to the requested remedy action.",
+      "cardinality": "one-to-one",
+      "examples": [
+        "Repurchase request references loan number and details of the defect basis.",
+        "Make-whole request references loan delivered date and QC findings."
+      ],
+      "business_rules": [
+        "Repurchase request must unambiguously identify the affected loan and defect basis.",
+        "Status tracking and resolution outcomes must be auditable and linkable to QC findings and mortgage file evidence.",
+        "Resolution can include cure, repurchase, substitution, make-whole, or other contract-defined remedy."
+      ]
+    }
+  },
+  "iteration": 3,
+  "timestamp": "2026-06-29 14:12:13",
+  "optimization_summary": {
+    "total_iterations": 3,
+    "improvements": "Extraction completed successfully"
+  },
+  "final_quality_analysis": {
+    "iteration": 3,
+    "quality_score": 85,
+    "completeness": "Good",
+    "suggestions": []
+  }
+}

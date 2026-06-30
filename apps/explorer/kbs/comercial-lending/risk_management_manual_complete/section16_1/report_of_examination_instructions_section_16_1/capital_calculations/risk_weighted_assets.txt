@@ -1,0 +1,64 @@
+# Risk-Weighted Assets
+
+**Source:** risk_management_manual_complete.pdf
+**Chunk ID:** risk_management_manual_complete_1480
+**Pages:** 556-556
+**Section Path:** section16-1 > REPORT OF EXAMINATION INSTRUCTIONS Section 16.1 > CAPITAL CALCULATIONS > Risk-Weighted Assets
+
+---
+
+REPORT OF EXAMINATION INSTRUCTIONS  Section 16.1  
+ 
+ 
+Report  of Examination Instructions ( 4/24) 16.1-48 RMS Manual of Examination Policies  
+  Federal Deposit Insurance Corporation
+   AFS Securities Classified Loss for institutions that have adopted CECL : For institutions that have adopted CECL 
+and made the AOCI opt -out election for regulatory capital purposes and have AFS securities (not held for trading) 
+classified Loss because of impairment, the portion of impairment that has not been charged to earnings, if any, 
+should be reverse d using line item Other Adjustments to and Deductions from Common Equity Tier 1  Capital.  
+Examiners  should contact  the Regional  Office  accounting  and capital  markets  specialists  for more  information.  
+ 
+Capital Treatment of Other Real Estate (ORE) Allowances  
+ 
+ORE valuation allowances are not recognized as a component of capital for either Risk- Based Capital or Leverage 
+Capital standards. A valuation allowance is established for each parcel of ORE during the holding period when the real estate’s fair value minus the estimated costs to sell the real estate is less than the real estate’s cost. Call Report 
+Instructions clarify that valuation allowances must be determined on an asset -by-asset basis. As a result, the 
+individual valuation allowance should be subtracte d from the related asset’s cost to determine the property’s 
+carrying value.  
+ 
+Risk -Weighted Assets  
+ 
+Risk-Weighted Assets are as of the latest Call Report date. Refer to Schedule RC -R of the Call Report Instructions 
+for information regarding the Risk -Weighte d Assets calculation. Adjustments for any Risk -Weighted Assets 
+classified Loss should be reflected in line item Less: Risk -Weighted Asset Amounts Deducted from Capital .  This 
+line item should also include adjustments for items identified during the examination process in the Other 
+Adjustments to and Deductions from Common Equity Tier 1 Capital line item, but only to the extent the items were 
+risk weighted. For example, a Category I contingent liability classified Loss should be deducted if the contingent liability is included in the calculation of risk -weighted assets; however, other losses that are not associated with an 
+asset or off -balance sheet item that is included in the calculation of risk -weighted assets should not be deducted from 
+Risk-Weighted  Assets.  
+ 
+The amount deducted from Risk -Weighted Assets should represent the risk -weighted portion of the asset. 
+Automated  examination  tools  may deduct  the classified  Loss  amount  instead  of the risk-weighted  portion;  examiners 
+should adjust the automated examination tool deduction from risk -weighted assets if the difference is significant 
+(refer to the inadequate ALLL section above for discussion on significance).  
+ 
+Average Total Assets 
+ 
+Average Total Assets are as of the latest Call Report date. Refer to S chedules RC -K and RC -R of the Call Report 
+Instructions for detailed information on this figure. Use the amounts deducted from Common Equity Tier 1 Capital above to adjust Average Total Assets to calculate Average Total Assets for the Leverage Ratio. Note: Do not deduct 
+Other Adjustments to and Deductions from Common Equity Tier 1 Capital that are not associated with an asset. For 
+example, do not deduct contingent liabilities losses from Average Total Assets . 
+ 
+Use Average Total Assets from the latest Call Re port date, even if using a month -end financial date throughout the 
+ROE.  
+ 
+Memoranda Items 
+ 
+Capital Conservation Buffer (beginning first quarter of 2016) - The capital buffer necessary to avoid limitations on 
+distributions and discretionary bonus payments.  
+ 
+Securities appreciation (depreciation) - The dollar amount of securities appreciation (depreciation), net of Loss 
+classifications, reflected in the HTM and AFS portfolios.  
+ 
+Contingent Liabilities - The first item, Contingent Liabilities, refers to Category  I contingent liabilities. The 
+second item, Potential Loss, refers only to Category II contingent liabilities. Refer to the Contingent Liabilities entry in Manual Section 2.1 – Capital for a discussion of potential and estimated losses.

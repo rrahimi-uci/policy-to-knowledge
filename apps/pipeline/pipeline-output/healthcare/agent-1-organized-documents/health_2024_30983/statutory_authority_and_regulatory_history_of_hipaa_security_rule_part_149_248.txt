@@ -1,0 +1,62 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 149/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_149
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+972 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+752See ‘‘Understanding Anti-Virus Software,’’ 
+Cybersecurity & Infrastructure Security Agency, 
+U.S. Dept. of Homeland Security (June 30, 2009, rev. Sept. 27, 2019), https://www.cisa.gov/news- events/news/understanding-anti-virus-software. 
+753‘‘Improving Detection of Cybersecurity 
+Vulnerabilities and Incidents on Federal Government Systems through Endpoint Detection and Response,’’ M–22–01, Office of Management and Budget, Executive Office of the President, p. 1 (Oct. 8, 2021), https://www.whitehouse.gov/wp- content/uploads/2021/10/M-22-01.pdf. 
+754‘‘Defending Against Common Cyber-Attacks,’’ 
+supra note 396. 
+755Id. 756Id. 
+757Id. 
+758See proposed 45 CFR 164.308(a)(2). 
+759‘‘What Happened to My Data?: Update on 
+Preventing, Mitigating and Responding to Ransomware,’’ supra note 751. 
+760‘‘Defending Against Common Cyber-Attacks,’’ 
+supra note 396. 
+761‘‘Security Standards: Technical Safeguards,’’ 
+supra note 343, p. 7. 
+762Id. 763‘‘Cybersecurity Performance Goals,’’ supra 
+note 18. 
+764The criterion for auditing actions on health 
+information requires adoption of health IT that has identify malicious software.752Such 
+tools may also quarantine malicious 
+software if identified. As explained by the Office of Management and Budget, ‘‘EDR combines real-time continuous monitoring and collection of endpoint data [. . .] with rules-based automated response and analysis capabilities.’’
+753 
+We propose a new implementation 
+specification for software removal at proposed 45 CFR 164.312(c)(2)(ii) to require a regulated entity to remove extraneous software from the regulated entity’s relevant electronic information systems. Software is extraneous if it is unnecessary for the regulated entity’s operations. It can be a target for attack, and older applications may no longer be supported with patches for new vulnerabilities.
+754Removal of 
+unnecessary software reduces an avenue of attack. The Department is not proposing to specify what would constitute necessary and unnecessary software. Rather, we intend that the regulated entity would consider removal of unwanted or unused software, for example, default software added by a computer manufacturer or reseller where such software may open an avenue for unnecessary risk because the regulated entity does not intend to use it. Accordingly, the proposal would require a regulated entity to consider all software on its relevant electronic information systems and any potential avenue of risk and address the risk through software removal where such software is unnecessary for the regulated entity’s operations. 
+The proposed implementation 
+specification for configuration at proposed 45 CFR 164.312(c)(2)(iii) would require a regulated entity to configure and secure operating systems and software in a manner consistent with the regulated entity’s risk analysis. Generally, a regulated entity’s risk analysis should guide its implementation of appropriate technical controls to reduce the risk to ePHI.
+755 
+Requiring operating systems and software to be maintained in a secure manner would reduce exploitable vulnerabilities.
+756Often, known 
+vulnerabilities can be mitigated by applying vendor patches or upgrading to a newer version.
+757 
+Under the proposed implementation 
+specification for network ports at proposed 45 CFR 164.312(c)(2)(iv), a regulated entity would be required to disable network ports in accordance with the regulated entity’s risk analysis.
+758Successful ransomware 
+deployment often depends on the exploitation of technical vulnerabilities such as unsecured ports.
+759The 
+proposal to require network ports to be disabled in accordance with the risk analysis would reduce exploitable vulnerabilities.
+760 
+Lastly, the proposed implementation 
+specification for maintenance at proposed 45 CFR 164.312(c)(2)(v) would expressly require a regulated entity to review and test the effectiveness of the technical controls required by the other implementation specifications associated with the standard for configuration management at least once every 12 months or in response to environmental or operational changes, whichever is more frequent, and modify as reasonable and appropriate. 
+e. Section 164.312(d)(1)—Standard: 
+Audit Trail and System Log Controls 
+Audit controls are crucial technical 
+safeguards that are useful for recording and examining activity in electronic information systems, especially when determining whether a security violation occurred.
+761A regulated entity 
+must consider its risk analysis and organizational factors, such as current technical infrastructure, hardware, and software security capabilities, to determine reasonable and appropriate audit controls.
+762However, based on 
+OCR’s enforcement experience, we believe that regulated entities’ understanding of and compliance with this standard could be improved by providing more specificity. 
+Accordingly, the Department

@@ -1,0 +1,99 @@
+# STRESS TESTING
+
+**Source:** risk_management_manual_complete.pdf
+**Chunk ID:** risk_management_manual_complete_867
+**Pages:** 318-318
+**Section Path:** section7-1 > STRESS TESTING
+
+---
+
+SENSITIVITY TO MARKET RISK  Section 7.1  
+RMS Manual of Examination Policies  7.1-9 Sensitivity to Market Risk ( 10/2025 ) 
+Federal Deposit Insurance Corporation   
+Many institutions can benefit from the use of economic 
+value methods and should establish EVE risk limits and 
+integrate economic valuation  methods into their  IRR 
+measurement procedures .  Because different EVE models 
+calculate different base- case economic capital values for the 
+same bank, limits should generally be based on the change 
+of economic capital rather than absolute levels of economic 
+capital.   Accordingly, examiners should assess the relative 
+changes in economic value of capital as a key indication  of 
+risk. 
+ 
+Most economic value models use a static approach where the analysis does not incorporate new business  lines  and all 
+financial instruments are  held until final payout or maturity.  
+The analysis shows a snapshot of the risk inherent in a 
+portfolio or balance sheet.  However, this is not always the case as some  models incorporate dynamic techniques that 
+provide forward- looking estimates of economic value.   
+ 
+Because EVE estimates  the future cash flows of the bank’ s 
+financial instruments, the cash flows  can be difficult to 
+accurately quantify.  This can be especially true for non-
+maturity deposits since the products generally have 
+uncertain cash flows and durations.  Consequently, 
+estimating the value of these accounts can be difficult and 
+require s the use of several assumptions.  Management 
+should be cautious when making EVE assumptions, as output errors can be more pronounced in long -term 
+measurements.  Examin ers should consider  the significance , 
+accuracy,  and sensitivity of underlying assumptions when 
+assessing EVE models.  
+ When modeling complex products with embedded options, the importance of data aggregation and stratification should not be overlooked.  Complex or structured securities should be modeled on an individual basis, and homogenous  balance 
+sheet accounts should be aggregated by common IRR features.  For example, loan portfolios, when  possible, 
+should be aggregated by product type, coupon, maturity, and prepayment volatility.  For adjustable  rate portfolios, 
+modeling should include more IRR attributes, such as 
+coupon reset dates and  indexes; embedded caps and floors; 
+and prepayment penalties.  
+ Despite being different methodologies, earnings simulation 
+and EVE models generally provide a consistent view of IRR trends .  However, the two approaches may also  generate 
+divergent outcomes.  In many cases, earnings simulation 
+mode ls provide shorter -term results  and EVE models 
+provide a much longer -term risk profile.   These divergent 
+outcomes can result from  a variety of factors, such as the 
+structure of the balance sheet , including the bank’ s 
+derivative position s and off-balance sheet items , the interest 
+rate environment, the timing of asset/liability mismatches, the sensitivity of funding sources to interest rate changes, and the volume of fixed- or floating -rate assets.  Because 
+many versions of each model type are available, 
+management should  ensure that the models used capture  all 
+significant risk factors.  
+ 
+← 
+STRESS TESTING  
+ 
+Stress testing, which includes both scenario and sensitivity analysis, is an integral part  of IRR management.  S cenario 
+analysis estimates  possible outcome s given an event or 
+series of events,  while sensitivity analysis estimates  the 
+impact of change in one or only a few of a model ’s 
+significant parameters.  
+ Management  should assess a range of alternative interest 
+rate scenarios when conducting scenario analyses .  The 
+range should be sufficient to fully identify repricing, basis, and yield curve risks as well as the risk of embedded 
+options.  In many cases, static interest rate shocks consisting of parallel shifts in the yield curve of only plus and minus 200 basis points are not sufficient to adequately assess IRR 
+exposure.  Therefore, management  should regularly assess 
+a wide range of exposures  across differe nt periods , 
+including changes in rates of greater magnitude (e.g., up and 
+down 300 and 400 basis points) .  When conducting stress 
+tests, management should give special consideration to financial instruments or markets where concentrations exist, 
+as such positions  may be difficult to unwind or hedge during 
+periods of market stress.   Management should compare 
+stress test results against approved limits.  
+ Management  should ensure their scenarios are  rigorous  and 
+consistent  with the existing level of rates and the interest 
+rate cycle.  For example, in low -rate environments, 
+scenarios involving significant declines in market rates can be deemphasized in favor of increasing the number and size of alternative rising -rate scenarios.  Alternatively, there may 
+be instances where more extreme stress tests would be 
+desirable.  
+ 
+Depending on a bank ’s IRR profile, stress scenarios should  
+include:  
+ 
+• Instantaneous and significant rate changes , 
+• Substantial rate changes  over time,  
+• Changes in the relationships between key market 
+rates , and 
+• Changes in the shape or slope of the yield curve.  
+ 
+Not all financial institutions need to use  the full range of the 
+scenarios discussed above.  Non- complex institutions (for 
+instance, institutions with limited embedded options or 
+structured products) may be able to justify running fewer or less intricate scenarios.

@@ -1,0 +1,2662 @@
+{
+  "source_file": "health_2024_30983.pdf",
+  "total_chunks": 127,
+  "chunk_methods": [
+    "ai_reasoning"
+  ],
+  "structure": [
+    {
+      "chunk_id": "health_2024_30983_001",
+      "title": "Federal Register NPRM Header + Agency/Action/Summary — HIPAA Security Rule Cybersecurity Strengtheni",
+      "path": "health_2024_30983/federal_register_nprm_header_agency_action_summary_hipaa_security_rule_cybersecurity_strengtheni.txt",
+      "section_path": [
+        "Federal Register NPRM Header + Agency/Action/Summary — HIPAA Security Rule Cybersecurity Strengthening (45 CFR Parts 160 and 164)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Identifies the issuing agency (HHS OCR), the regulatory vehicle (Notice of proposed rulemaking; notice of Tribal consultation), and the NPRM’s purpose: proposed modifications to the HIPAA Security Rule to better protect confidentiality, integrity, and availability of ePHI. Describes drivers for change (breaches/cyberattacks, common compliance deficiencies, evolving care environment, cybersecurity best practices, and relevant court decisions) and frames affected parties as covered entities and business associates (“regulated entities”).",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "merged_with": "health_2024_30983_002",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 481
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_003",
+      "title": "Administrative Record and Public Posting Rules — Comment Inspection, Redaction/Rejection Criteria, D",
+      "path": "health_2024_30983/administrative_record_and_public_posting_rules_comment_inspection_redaction_rejection_criteria_d.txt",
+      "section_path": [
+        "Administrative Record and Public Posting Rules — Comment Inspection, Redaction/Rejection Criteria, Docket Access, and Tribal Registration Link"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Explains how comments will be made public on Regulations.gov and warns that postings may include personal information; outlines HHS’s ability to redact or reject specific non-substantive or prohibited content (e.g., threats, profanity, sensitive health information, copyrighted materials, third-party identifiers). Provides docket access instructions and the advance registration requirement/link for Tribal consultation participation.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "merged_with": "health_2024_30983_004",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 336
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_005",
+      "title": "Table of Contents (Part 1) — Executive Summary + Statutory Authority and Regulatory History (HIPAA, ",
+      "path": "health_2024_30983/table_of_contents_part_1_executive_summary_statutory_authority_and_regulatory_history_hipaa.txt",
+      "section_path": [
+        "Table of Contents (Part 1) — Executive Summary + Statutory Authority and Regulatory History (HIPAA, HITECH, prior Security Rule rulemakings)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Outlines the NPRM’s front-matter structure: Executive Summary (overview, applicability, abbreviations) and Statutory Authority/Regulatory History, including HIPAA and HITECH authority and the Security Rule’s regulatory milestones (1998 NPRM, 2003 final rule, 2009 delegation, 2013 omnibus rulemaking). Establishes where legal authority and historical amendments are discussed for later citation linking.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "merged_with": "health_2024_30983_006",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 197
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_007",
+      "title": "Statutory/Regulatory Footnotes + Definitions Context — HIPAA/HITECH Citations and PHI/ePHI Scope Exclusions (45 CFR 160.103, 164 subparts)",
+      "path": "health_2024_30983/statutory_regulatory_footnotes_definitions_context_hipaa_hitech_citations_and_phi_ephi_scope_exclusi.txt",
+      "section_path": [
+        "Statutory/Regulatory Footnotes + Definitions Context — HIPAA/HITECH Citations and PHI/ePHI Scope Exclusions (45 CFR 160.103, 164 subparts)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Provides legal and definitional grounding via footnoted citations: HIPAA Subtitle F authority (SSA sections 1171–1179), references to Privacy, Breach Notification, and Enforcement Rules, and key definitional distinctions (IIHI vs. PHI) including PHI exclusions (employment records, FERPA-related education/treatment records, decedent information >50 years). Also continues justification subpoints about evolving safeguards and maintaining flexibility/scalability.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "word_count": 488
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_001",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 1/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 1,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 667
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_002",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 2/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 2,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1109
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_003",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 3/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 3,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 915
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_004",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 4/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 4,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 944
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_005",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 5/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 5,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1192
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_006",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 6/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 6,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1079
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_007",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 7/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 7,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1155
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_008",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 8/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 8,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1136
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_009",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 9/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 9,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1174
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_010",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 10/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 10,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1180
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_011",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 11/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 11,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1152
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_012",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 12/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 12,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1279
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_013",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 13/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 13,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1189
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_014",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 14/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 14,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1253
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_015",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 15/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 15,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1240
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_016",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 16/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 16,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1203
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_017",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 17/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 17,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1155
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_018",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 18/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 18,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1125
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_019",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 19/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 19,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1143
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_020",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 20/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 20,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1156
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_021",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 21/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 21,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1142
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_022",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 22/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 22,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1121
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_023",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 23/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 23,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1094
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_024",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 24/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 24,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1131
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_025",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 25/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 25,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1040
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_026",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 26/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 26,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1093
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_027",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 27/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 27,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1038
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_028",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 28/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 28,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1063
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_029",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 29/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 29,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1048
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_030",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 30/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 30,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1085
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_031",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 31/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 31,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1038
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_032",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 32/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 32,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1005
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_033",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 33/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 33,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1097
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_034",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 34/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 34,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1118
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_035",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 35/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 35,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1074
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_036",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 36/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 36,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1017
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_037",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 37/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 37,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1008
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_038",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 38/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 38,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1071
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_039",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 39/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 39,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1136
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_040",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 40/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 40,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1128
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_041",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 41/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 41,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1159
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_042",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 42/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 42,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1126
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_043",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 43/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 43,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1080
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_044",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 44/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 44,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1127
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_045",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 45/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 45,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1113
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_046",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 46/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 46,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1059
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_047",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 47/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 47,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1071
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_048",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 48/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 48,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1041
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_049",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 49/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 49,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1107
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_050",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 50/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 50,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1123
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_051",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 51/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 51,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1075
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_052",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 52/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 52,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1068
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_053",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 53/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 53,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1053
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_054",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 54/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 54,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1078
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_055",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 55/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 55,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1081
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_056",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 56/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 56,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1103
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_057",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 57/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 57,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1106
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_058",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 58/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 58,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1053
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_059",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 59/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 59,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1105
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_060",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 60/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 60,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1102
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_061",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 61/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 61,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1096
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_062",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 62/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 62,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1088
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_063",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 63/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 63,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1138
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_064",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 64/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 64,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1034
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_065",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 65/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 65,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1062
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_066",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 66/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 66,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1113
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_067",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 67/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 67,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1057
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_068",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 68/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 68,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1094
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_069",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 69/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 69,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1109
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_070",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 70/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 70,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1161
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_071",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 71/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 71,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1264
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_072",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 72/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 72,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1096
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_073",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 73/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 73,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1072
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_074",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 74/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 74,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1089
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_075",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 75/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 75,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1064
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_076",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 76/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 76,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1147
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_077",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 77/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 77,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1213
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_078",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 78/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 78,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1074
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_079",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 79/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 79,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1006
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_080",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 80/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 80,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1052
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_081",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 81/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 81,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1116
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_082",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 82/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 82,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1014
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_083",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 83/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 83,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1335
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_084",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 84/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 84,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1230
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_085",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 85/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 85,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1102
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_086",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 86/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 86,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1102
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_087",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 87/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 87,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1115
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_088",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 88/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 88,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1144
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_089",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 89/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 89,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1124
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_090",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 90/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 90,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1073
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_091",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 91/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 91,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1013
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_092",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 92/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 92,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1089
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_093",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 93/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 93,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1111
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_094",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 94/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 94,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1093
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_095",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 95/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 95,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 869
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_096",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 96/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 96,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1101
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_097",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 97/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 97,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 977
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_098",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 98/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 98,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 789
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_099",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 99/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 99,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 897
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_100",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 100/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 100,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1173
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_101",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 101/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 101,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1152
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_102",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 102/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 102,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1002
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_103",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 103/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 103,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 770
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_104",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 104/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 104,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1193
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_105",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 105/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 105,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 893
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_106",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 106/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 106,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 886
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_107",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 107/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 107,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1108
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_108",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 108/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 108,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1132
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_109",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 109/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 109,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1181
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_110",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 110/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 110,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1204
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_111",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 111/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 111,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1138
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_112",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 112/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 112,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1037
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_113",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 113/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 113,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 969
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_114",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 114/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 114,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1002
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_115",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 115/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 115,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1071
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_116",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 116/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 116,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1042
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_117",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 117/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 117,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1030
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_118",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 118/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 118,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1044
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_119",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 119/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 119,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1070
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_120",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 120/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 120,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1040
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_121",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 121/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 121,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1051
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_122",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 122/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 122,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 1008
+      }
+    },
+    {
+      "chunk_id": "health_2024_30983_008_sub_123",
+      "title": "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308) (part 123/123)",
+      "path": "health_2024_30983/section_by_section_proposed_amendments_outline_definitions_and_security_standards_160_103_164_304_16.txt",
+      "section_path": [
+        "Section-by-Section Proposed Amendments Outline — Definitions and Security Standards (160.103, 164.304, 164.306, 164.308)"
+      ],
+      "metadata": {
+        "source_file": "health_2024_30983.pdf",
+        "section_level": 0,
+        "summary": "Begins the detailed outline for proposed Security Rule amendments: Section 160.103 definitions (current provision, issues, proposals, request for comment) and extensive Section 164.304 definition changes/additions (e.g., access, safeguards, authentication, availability/confidentiality, multi-factor authentication, risk/threat/vulnerability, technology asset, technical controls). Also introduces proposed revisions to general security standards (164.306) and administrative safeguards (164.308) with the standard sub-structure of current provisions, issues, proposals, and requests for comment.",
+        "chunk_method": "ai_reasoning",
+        "document_type": "hipaa_security_rule_nprm",
+        "is_sub_chunk": true,
+        "parent_chunk_id": "health_2024_30983_008",
+        "sub_chunk_index": 123,
+        "total_sub_chunks": 123,
+        "parent_word_count": 132802,
+        "word_count": 460
+      }
+    }
+  ]
+}

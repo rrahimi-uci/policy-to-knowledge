@@ -1,0 +1,679 @@
+{
+  "source_file": "2020_june_24_fairlending.pdf",
+  "total_chunks": 38,
+  "chunk_methods": [
+    "toc_based"
+  ],
+  "structure": [
+    {
+      "chunk_id": "2020_june_24_fairlending_001",
+      "title": "Office of the Comptroller of the Currency Federal Deposit Insurance Corporation Federal Reserve Boar",
+      "path": "2020_june_24_fairlending/office_of_the_comptroller_of_the_currency_federal_deposit_insurance_corporation_federal_reserve_boar.txt",
+      "section_path": [
+        "Office of the Comptroller of the Currency Federal Deposit Insurance Corporation Federal Reserve Board Office of Thrift Supervision National Credit Union Administration"
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 0,
+        "chunk_method": "toc_based",
+        "merged_with": "2020_june_24_fairlending_002",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 322
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_003",
+      "title": "INTRODUCTION",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/introduction.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "INTRODUCTION"
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 301
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_004",
+      "title": "Overview of Fair Lending Laws and Regulations",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/introduction/overview_of_fair_lending_laws_and_regulations.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "INTRODUCTION",
+        "Overview of Fair Lending Laws and Regulations"
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 301
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_005",
+      "title": "1. Lending Discrimination Statutes and Regulations + 2. Types of Lending Discrimination",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/introduction/overview_of_fair_lending_laws_and_regulations/1_lending_discrimination_statutes_and_regulations_2_types_of_lending_discrimination.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "INTRODUCTION",
+        "Overview of Fair Lending Laws and Regulations",
+        "1. Lending Discrimination Statutes and Regulations"
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "2020_june_24_fairlending_006",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 2002
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_007",
+      "title": "PART I EXAMINATION SCOPE GUIDELINES",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_i_examination_scope_guidelines.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART I EXAMINATION SCOPE GUIDELINES"
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 472
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_008",
+      "title": "Background",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_i_examination_scope_guidelines/background.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART I EXAMINATION SCOPE GUIDELINES",
+        "Background"
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 472
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_009",
+      "title": "1. Understanding Credit Operations",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_i_examination_scope_guidelines/background/1_understanding_credit_operations.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART I EXAMINATION SCOPE GUIDELINES",
+        "Background",
+        "1. Understanding Credit Operations"
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "word_count": 1397
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_010",
+      "title": "2. Evaluating the Potential for Discriminatory Conduct + Step Two: Identify Compliance Program Discr",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_i_examination_scope_guidelines/background/2_evaluating_the_potential_for_discriminatory_conduct_step_two_identify_compliance_program_discr.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART I EXAMINATION SCOPE GUIDELINES",
+        "Background",
+        "2. Evaluating the Potential for Discriminatory Conduct"
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "2020_june_24_fairlending_011",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 837
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_012",
+      "title": "Step Three: Review Residential Loan Products + Step Four: Identify Residential Lending Discriminatio",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_i_examination_scope_guidelines/background/step_three_review_residential_loan_products_step_four_identify_residential_lending_discriminatio.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART I EXAMINATION SCOPE GUIDELINES",
+        "Background",
+        "Step Three: Review Residential Loan Products"
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "2020_june_24_fairlending_013",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 2114
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_014",
+      "title": "Step Five: Organize and Focus Residential Risk Analysis + Step Six: Identify Consumer Lending Discri",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_i_examination_scope_guidelines/background/step_five_organize_and_focus_residential_risk_analysis_step_six_identify_consumer_lending_discri.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART I EXAMINATION SCOPE GUIDELINES",
+        "Background",
+        "Step Five: Organize and Focus Residential Risk Analysis"
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "2020_june_24_fairlending_015",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 898
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_016",
+      "title": "Step Seven: Identify Commercial Lending Discrimination Risk Factors + Step Eight: Complete the Scopi",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_i_examination_scope_guidelines/background/step_seven_identify_commercial_lending_discrimination_risk_factors_step_eight_complete_the_scopi.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART I EXAMINATION SCOPE GUIDELINES",
+        "Background",
+        "Step Seven: Identify Commercial Lending Discrimination Risk Factors"
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "2020_june_24_fairlending_017",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 993
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_018",
+      "title": "PART II COMPLIANCE MANAGEMENT REVIEW + PART III EXAMINATION PROCEDURES",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_ii_compliance_management_review_part_iii_examination_procedures.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART II COMPLIANCE MANAGEMENT REVIEW"
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "merged_with": "2020_june_24_fairlending_019",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 806
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_020",
+      "title": "A. Verify Accuracy of Data + B. Documenting Overt Evidence of Disparate Treatment",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_iii_examination_procedures/a_verify_accuracy_of_data_b_documenting_overt_evidence_of_disparate_treatment.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART III EXAMINATION PROCEDURES",
+        "A. Verify Accuracy of Data"
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "2020_june_24_fairlending_021",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 820
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_022",
+      "title": "Step 1: Where the indicator(s) of overt discrimination are found in or based on a written policy (fo",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_iii_examination_procedures/b_documenting_overt_evidence_of_disparate_treatment/step_1_where_the_indicator_s_of_overt_discrimination_are_found_in_or_based_on_a_written_policy_fo.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART III EXAMINATION PROCEDURES",
+        "B. Documenting Overt Evidence of Disparate Treatment",
+        "Step 1: Where the indicator(s) of overt discrimination are found in or based on a written policy (for example, a credit scorecard) or communication, determine and document:"
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "2020_june_24_fairlending_023",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 840
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_024",
+      "title": "C. Transactional Underwriting Analysis - Residential and Consumer Loans.",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_iii_examination_procedures/c_transactional_underwriting_analysis_residential_and_consumer_loans.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART III EXAMINATION PROCEDURES",
+        "C. Transactional Underwriting Analysis - Residential and Consumer Loans."
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 430
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_025",
+      "title": "Step 1: Set Sample Size + Step 2: Determine Sample Composition.",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_iii_examination_procedures/c_transactional_underwriting_analysis_residential_and_consumer_loans/step_1_set_sample_size_step_2_determine_sample_composition.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART III EXAMINATION PROCEDURES",
+        "C. Transactional Underwriting Analysis - Residential and Consumer Loans.",
+        "Step 1: Set Sample Size"
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "2020_june_24_fairlending_026",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 858
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_027",
+      "title": "Step 3: Compare Approved and Denied Applications",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_iii_examination_procedures/c_transactional_underwriting_analysis_residential_and_consumer_loans/step_3_compare_approved_and_denied_applications.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART III EXAMINATION PROCEDURES",
+        "C. Transactional Underwriting Analysis - Residential and Consumer Loans.",
+        "Step 3: Compare Approved and Denied Applications"
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "word_count": 1248
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_028",
+      "title": "Step 4: If there is some evidence of violations in the underwriting process but not enough to clearl",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_iii_examination_procedures/c_transactional_underwriting_analysis_residential_and_consumer_loans/step_4_if_there_is_some_evidence_of_violations_in_the_underwriting_process_but_not_enough_to_clearl.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART III EXAMINATION PROCEDURES",
+        "C. Transactional Underwriting Analysis - Residential and Consumer Loans.",
+        "Step 4: If there is some evidence of violations in the underwriting process but not enough to clearly establish the existence of a pattern or practice, the examiner should expand the sample as necessary to determine whether a pattern or practice does or does not exist."
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "2020_june_24_fairlending_029",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 866
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_030",
+      "title": "D. Analyzing Potential Disparities in Pricing and Other Terms and Conditions + Step 1: Determine Sam",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_iii_examination_procedures/d_analyzing_potential_disparities_in_pricing_and_other_terms_and_conditions_step_1_determine_sam.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART III EXAMINATION PROCEDURES",
+        "D. Analyzing Potential Disparities in Pricing and Other Terms and Conditions"
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "2020_june_24_fairlending_031",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 866
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_032",
+      "title": "Step 2: Determine Sample Composition and Create Applicant Profiles + Step 3: Review Terms and Condit",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_iii_examination_procedures/step_2_determine_sample_composition_and_create_applicant_profiles_step_3_review_terms_and_condit.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART III EXAMINATION PROCEDURES",
+        "Step 2: Determine Sample Composition and Create Applicant Profiles"
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "2020_june_24_fairlending_033",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 891
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_034",
+      "title": "E. Steering Analysis + Step 1: Clarify what options are available to applicants.",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_iii_examination_procedures/step_3_review_terms_and_conditions_compare_with_borrower_outcomes/e_steering_analysis_step_1_clarify_what_options_are_available_to_applicants.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART III EXAMINATION PROCEDURES",
+        "Step 3: Review Terms and Conditions; Compare with Borrower Outcomes",
+        "E. Steering Analysis"
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "2020_june_24_fairlending_035",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 844
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_036",
+      "title": "Step 2: Document the policies, conditions or criteria that have been adopted by the institution for ",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_iii_examination_procedures/step_3_review_terms_and_conditions_compare_with_borrower_outcomes/step_2_document_the_policies_conditions_or_criteria_that_have_been_adopted_by_the_institution_for.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART III EXAMINATION PROCEDURES",
+        "Step 3: Review Terms and Conditions; Compare with Borrower Outcomes",
+        "Step 2: Document the policies, conditions or criteria that have been adopted by the institution for determining how referrals are to be made and choices presented to applicants."
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "2020_june_24_fairlending_037",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 896
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_038",
+      "title": "Step 4: Determine to what extent individual loan personnel are able to exercise personal discretion ",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_iii_examination_procedures/step_3_review_terms_and_conditions_compare_with_borrower_outcomes/step_4_determine_to_what_extent_individual_loan_personnel_are_able_to_exercise_personal_discretion.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART III EXAMINATION PROCEDURES",
+        "Step 3: Review Terms and Conditions; Compare with Borrower Outcomes",
+        "Step 4: Determine to what extent individual loan personnel are able to exercise personal discretion in deciding what loan products or other credit alternatives will be made available to a given applicant."
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "2020_june_24_fairlending_039",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 896
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_040",
+      "title": "Step 6: To the extent that individual loan personnel have any discretion in deciding what products a",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_iii_examination_procedures/step_3_review_terms_and_conditions_compare_with_borrower_outcomes/step_6_to_the_extent_that_individual_loan_personnel_have_any_discretion_in_deciding_what_products_a.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART III EXAMINATION PROCEDURES",
+        "Step 3: Review Terms and Conditions; Compare with Borrower Outcomes",
+        "Step 6: To the extent that individual loan personnel have any discretion in deciding what products and features to offer applicants, conduct a comparative analysis to determine whether that discretion has been exercised in a nondiscriminatory manner."
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "2020_june_24_fairlending_041",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 788
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_042",
+      "title": "F. Transactional Underwriting Analysis - Commercial Loans.",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_iii_examination_procedures/f_transactional_underwriting_analysis_commercial_loans.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART III EXAMINATION PROCEDURES",
+        "F. Transactional Underwriting Analysis - Commercial Loans."
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 353
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_043",
+      "title": "Step 1: Understand Commercial Loan Policies + Step 2: Conduct Comparative File Review",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_iii_examination_procedures/f_transactional_underwriting_analysis_commercial_loans/step_1_understand_commercial_loan_policies_step_2_conduct_comparative_file_review.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART III EXAMINATION PROCEDURES",
+        "F. Transactional Underwriting Analysis - Commercial Loans.",
+        "Step 1: Understand Commercial Loan Policies"
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "merged_with": "2020_june_24_fairlending_044",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 747
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_045",
+      "title": "Step 3: Conduct Targeted Sampling",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_iii_examination_procedures/f_transactional_underwriting_analysis_commercial_loans/step_3_conduct_targeted_sampling.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART III EXAMINATION PROCEDURES",
+        "F. Transactional Underwriting Analysis - Commercial Loans.",
+        "Step 3: Conduct Targeted Sampling"
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 3,
+        "chunk_method": "toc_based",
+        "word_count": 394
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_046",
+      "title": "G. Analysis of Potential Discriminatory “Redlining”.",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_iii_examination_procedures/g_analysis_of_potential_discriminatory_redlining.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART III EXAMINATION PROCEDURES",
+        "G. Analysis of Potential Discriminatory “Redlining”."
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 1230
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_047",
+      "title": "Step 1: Identify and delineate any areas within the institution’s CRA assessment area and reasonably",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_iii_examination_procedures/step_1_identify_and_delineate_any_areas_within_the_institution_s_cra_assessment_area_and_reasonably.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART III EXAMINATION PROCEDURES",
+        "Step 1: Identify and delineate any areas within the institution’s CRA assessment area and reasonably expected market area for residential products that are of a racial or national origin minority character."
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "2020_june_24_fairlending_048",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 867
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_049",
+      "title": "Step 3: Identify and delineate any areas within the institution’s CRA assessment area and reasonably",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_iii_examination_procedures/step_3_identify_and_delineate_any_areas_within_the_institution_s_cra_assessment_area_and_reasonably.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART III EXAMINATION PROCEDURES",
+        "Step 3: Identify and delineate any areas within the institution’s CRA assessment area and reasonably expected market area for residential products that are non-minority in character and that the institution appears to treat more favorably."
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "2020_june_24_fairlending_050",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 864
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_051",
+      "title": "Step 5: Obtain the institution’s explanation for the apparent difference in treatment between the ar",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_iii_examination_procedures/step_5_obtain_the_institution_s_explanation_for_the_apparent_difference_in_treatment_between_the_ar.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART III EXAMINATION PROCEDURES",
+        "Step 5: Obtain the institution’s explanation for the apparent difference in treatment between the areas and evaluate whether it is credible and reasonable."
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "2020_june_24_fairlending_052",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 1338
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_053",
+      "title": "H. Analysis of Potential Discriminatory Marketing Practices. + Step 1: Identify the institution’s ma",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_iii_examination_procedures/h_analysis_of_potential_discriminatory_marketing_practices_step_1_identify_the_institution_s_ma.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART III EXAMINATION PROCEDURES",
+        "H. Analysis of Potential Discriminatory Marketing Practices."
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "2020_june_24_fairlending_054",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 764
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_055",
+      "title": "Step 2: Determine whether the institution's activities show a significantly lower level of marketing",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_iii_examination_procedures/step_2_determine_whether_the_institution_s_activities_show_a_significantly_lower_level_of_marketing.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART III EXAMINATION PROCEDURES",
+        "Step 2: Determine whether the institution's activities show a significantly lower level of marketing effort toward minority areas or toward media or intermediaries that tend to reach minority areas."
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "2020_june_24_fairlending_056",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 598
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_057",
+      "title": "I. Credit Scoring. + J. Disparate Impact Issues.",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_iii_examination_procedures/i_credit_scoring_j_disparate_impact_issues.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART III EXAMINATION PROCEDURES",
+        "I. Credit Scoring."
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "2020_june_24_fairlending_058",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 598
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_059",
+      "title": "PART IV OBTAINING AND EVALUATING RESPONSES FROM THE INSTITUTION AND CONCLUDING THE EXAMINATION",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_iv_obtaining_and_evaluating_responses_from_the_institution_and_concluding_the_examination.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART IV OBTAINING AND EVALUATING RESPONSES FROM THE INSTITUTION AND CONCLUDING THE EXAMINATION"
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 1,
+        "chunk_method": "toc_based",
+        "word_count": 337
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_060",
+      "title": "Step 1: Present to the institution’s management for explanation: + Step 2: Document all responses th",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_iv_obtaining_and_evaluating_responses_from_the_institution_and_concluding_the_examination/step_1_present_to_the_institution_s_management_for_explanation_step_2_document_all_responses_th.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART IV OBTAINING AND EVALUATING RESPONSES FROM THE INSTITUTION AND CONCLUDING THE EXAMINATION",
+        "Step 1: Present to the institution’s management for explanation:"
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "2020_june_24_fairlending_061",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 674
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_062",
+      "title": "Step 3: Evaluate whether the responses are consistent with previous statements, information obtained",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_iv_obtaining_and_evaluating_responses_from_the_institution_and_concluding_the_examination/step_3_evaluate_whether_the_responses_are_consistent_with_previous_statements_information_obtained.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART IV OBTAINING AND EVALUATING RESPONSES FROM THE INSTITUTION AND CONCLUDING THE EXAMINATION",
+        "Step 3: Evaluate whether the responses are consistent with previous statements, information obtained from file review, documents, reasonable banking practices, and other sources, and satisfy common-sense standards of logic and credibility."
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "merged_with": "2020_june_24_fairlending_063",
+        "merge_reason": "both chunks under 500 words",
+        "word_count": 577
+      }
+    },
+    {
+      "chunk_id": "2020_june_24_fairlending_064",
+      "title": "Step 5: Consult with agency supervisory staff regarding whether (a) any violations should be referred to the Departments of Justice or Housing and Urban Development and (b) enforcement action should be undertaken by your agency.",
+      "path": "2020_june_24_fairlending/interagency_fair_lending_examination_procedures/part_iv_obtaining_and_evaluating_responses_from_the_institution_and_concluding_the_examination/step_5_consult_with_agency_supervisory_staff_regarding_whether_a_any_violations_should_be_referred_t.txt",
+      "section_path": [
+        "INTERAGENCY FAIR LENDING EXAMINATION PROCEDURES",
+        "PART IV OBTAINING AND EVALUATING RESPONSES FROM THE INSTITUTION AND CONCLUDING THE EXAMINATION",
+        "Step 5: Consult with agency supervisory staff regarding whether (a) any violations should be referred to the Departments of Justice or Housing and Urban Development and (b) enforcement action should be undertaken by your agency."
+      ],
+      "metadata": {
+        "source_file": "2020_june_24_fairlending.pdf",
+        "toc_level": 2,
+        "chunk_method": "toc_based",
+        "word_count": 240
+      }
+    }
+  ]
+}

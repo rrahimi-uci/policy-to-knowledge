@@ -1,0 +1,36 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 113/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_113
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+593A 
+well thought-out, well-tested security incident response plan is integral to ensuring the confidentiality, integrity, and availability of a regulated entity’s ePHI. A timely response to a security incident can be one of the best ways to prevent, mitigate, and recover from future cyberattacks. For example, responding to a single intrusion or inappropriate access can prevent a pattern of repeated malicious actions. It is extremely important that a regulated entity analyzes an incident to establish what has occurred and its root cause. Doing so will enable the regulated entity to use that information to update its security incident response plans. The Department has previously issued guidance addressing such activities as forming a security incident response team, identifying and responding to security incidents, mitigating harmful effects of and documenting a security incident, and breach reporting.
+594 
+NIST also offers guidance for 
+addressing security incidents.595It 
+describes four key activities with detailed descriptions and sample questions: 
+•Determine the goals of an incident 
+response. 
+•Develop and deploy an incident 
+response team or other reasonable and appropriate response mechanism. •Develop and implement policy and 
+procedures to respond to and report security incidents. 
+•Incorporate post-incident analysis 
+into updates and revisions. 
+NIST has also issued comprehensive 
+guidelines for incident handling, particularly for analyzing incident related data and determining the appropriate response to each incident.
+596For example, the NIST 
+Cybersecurity Framework addresses these activities as part of the core function of ‘‘[respond—a]ctions regarding a detected cybersecurity incident are taken.’’
+597‘‘Respond’’ 
+supports the ability of the regulated entity ‘‘to contain the effects of cybersecurity incidents. Outcomes within this Function [include] incident management, analysis, mitigation, reporting, and communication.’’
+598 
+Despite this existing guidance, OCR’s 
+enforcement experience indicates that many regulated entities have not met the existing standard, so we believe that additional specificity regarding their obligations and liability for incident response is warranted. Accordingly, the Department proposes to redesignate the standard for security incident procedures as 45 CFR 164.308(a)(12)(i), to add a paragraph heading to clarify the organization of the regulatory text, and to modify the regulatory text to clarify that a regulated entity would be required to implement written policies and procedures to ‘‘respond to,’’ rather than ‘‘address,’’ security incidents. Additionally, we propose to clarify expectations by adding an implementation specification for planning and testing at proposed 45 CFR 164.308(a)(12)(ii)(A)(1) that would require a regulated entity to establish written security incident response plan(s) and procedures documenting how workforce members are to report suspected or known security incidents and how the regulated entity will respond to suspected or known security incidents.
+599 
+Internal reporting is an essential 
+component of security incident procedures.
+600Plans and procedures for 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00057 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

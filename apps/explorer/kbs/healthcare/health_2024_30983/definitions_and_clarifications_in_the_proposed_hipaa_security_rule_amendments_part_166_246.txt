@@ -1,0 +1,44 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 166/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_166
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+822The 
+Security Rule does not prescribe the timing and frequency with which a business associate reports a security incident to the covered entity (or subcontractor to a business associate).
+823Instead, regulated entities 
+may determine the appropriate timing and frequency as part of their business associate agreement, consistent with the requirements of the Breach Notification Rule.
+824 
+Depending on the size of the regulated 
+entity, the number of security incidents it experiences may vary, ranging from the occasional incident experienced by a small regulated entity to more than 1,000 per hour for a large regulated entity.
+825Given that such incidents may have little to no effect if the regulated entity’s electronic information systems are able to deter it, it may not be necessary for a business associate to report the security incidents immediately to a covered entity (or a subcontractor to a business associate). 
+Additionally, as discussed above, 
+regulated entities are required to establish, and implement as needed, a contingency plan
+826that includes the 
+policies and procedures for responding to an emergency or other occurrence that damages systems that contain ePHI. 
+Such emergencies or other occurrences could include a fire, vandalism, system failure, or a natural disaster.
+827The 
+Department believes that, in some instances, a security incident would also be an emergency or other occurrence that could require a regulated entity to activate its contingency plan.
+828As the Department 
+previously explained, a contingency plan is the only way to protect the confidentiality, integrity, and availability of ePHI during unexpected events that may expose ePHI because the usual security measures may be disabled, ignored, or not observed.
+829 
+b. Issues To Address 
+In recent years, there has been an 
+increase in the number and types of emergencies or other occurrences that cause damage to systems that contain ePHI and may require a regulated entity to activate its contingency plan. For example, we have experienced an increase in extreme weather events over the last 40 years as a result of the changing climate.
+830Additionally, as 
+discussed in greater detail above, there has been a significant increase in the number of breaches of unsecured PHI reported to the Department over the last five years.
+831And increasingly, ePHI is created, received, maintained, and 
+transmitted using cloud-based software that may be located in a remote location, which means that covered entities more frequently rely on business associates to access ePHI.
+832Not only could the 
+covered entity’s ability to access ePHI or the relevant electronic information systems of the business associate that are affected by such an event, but the incident could also have repercussions for the covered entity’s ePHI or its relevant electronic information systems. For example, a business associate’s relevant electronic information systems may become infected with malicious software that spreads across devices connected to a network (e.g., the 
+NotPetya malware.
+833) If the covered 
+entity is also connected to the same network, providing prompt notice to the covered entity of the security incident and activation of its contingency plan could enable the covered entity to prevent or mitigate damage to the covered entity’s relevant electronic information systems. 
+When considered altogether, these 
+developments mean that a regulated entity is more likely to experience an emergency or other occurrence that damages systems that contain ePHI than it was in either 2003
+834or 2013.835 
+Unfortunately, based on the Department’s experience, neither the increased risk nor the Security Rule’s requirement that a business associate notify a covered entity (or that a subcontractor notify a business associate) of any security incident, including breaches of unsecured PHI, has been sufficient to encourage prompt notifications by a business associate to the covered entity (or of a subcontractor to a business associate) that its ability to 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00085 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

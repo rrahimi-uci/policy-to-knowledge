@@ -1,0 +1,110 @@
+{
+  "timestamp": "2026-06-29T10:17:21.091579",
+  "total_rules": 219,
+  "passed": [
+    {
+      "check": "contradictions",
+      "message": "No obvious contradictions detected"
+    },
+    {
+      "check": "source_verification",
+      "message": "Verified 10/10 sampled rules have valid references"
+    }
+  ],
+  "warnings": [
+    {
+      "rule_id": "BR_BORROWER_PROCESS_009_004",
+      "check": "confidence_score",
+      "severity": "high",
+      "issue": "Low confidence score: 68.95/100",
+      "recommendation": "Requires human review and validation"
+    },
+    {
+      "rule_id": "BR_MORTGAGE_PROHIBITION_028_004",
+      "check": "confidence_score",
+      "severity": "high",
+      "issue": "Low confidence score: 69.75/100",
+      "recommendation": "Requires human review and validation"
+    },
+    {
+      "rule_id": "BR_SERVICER_DOCUMENTATION_032_001",
+      "check": "confidence_score",
+      "severity": "high",
+      "issue": "Low confidence score: 69.25/100",
+      "recommendation": "Requires human review and validation"
+    },
+    {
+      "check": "numeric_consistency",
+      "severity": "medium",
+      "issue": "Inconsistent thresholds for 'ltv'",
+      "rules": [
+        "BR_MORTGAGE_CONSTRAINT_015_005",
+        "BR_MORTGAGE_CONSTRAINT_016_008",
+        "BR_SERVICER_CONSTRAINT_026_009"
+      ],
+      "thresholds": [
+        "1.25",
+        "10",
+        "85",
+        "000",
+        "1.20",
+        "100",
+        "80",
+        "1"
+      ],
+      "recommendation": "Review rules for correct thresholds or contextual differences"
+    },
+    {
+      "check": "numeric_consistency",
+      "severity": "medium",
+      "issue": "Inconsistent thresholds for 'loan amount'",
+      "rules": [
+        "BR_MORTGAGE_CONSTRAINT_036_005",
+        "BR_SELLER_SERVICER_CALCULATION_029_002",
+        "BR_SERVICER_CONSTRAINT_026_009"
+      ],
+      "thresholds": [
+        "1.25",
+        "0.25",
+        "10",
+        "000",
+        "00",
+        "0.10",
+        "80",
+        "2",
+        "25"
+      ],
+      "recommendation": "Review rules for correct thresholds or contextual differences"
+    }
+  ],
+  "failures": [
+    {
+      "rule_id": "BR_SERVICER_EXCEPTION_013_004",
+      "check": "completeness",
+      "severity": "high",
+      "issue": "Missing required fields: mandatory",
+      "recommendation": "Ensure extraction prompt requires all mandatory fields"
+    },
+    {
+      "rule_id": "BR_HAZARD_INSURANCE_POLICY_EXCEPTION_020_004",
+      "check": "completeness",
+      "severity": "high",
+      "issue": "Missing required fields: mandatory",
+      "recommendation": "Ensure extraction prompt requires all mandatory fields"
+    },
+    {
+      "rule_id": "BR_SERVICING_REPORT_EXCEPTION_013_003",
+      "check": "completeness",
+      "severity": "high",
+      "issue": "Missing required fields: mandatory",
+      "recommendation": "Ensure extraction prompt requires all mandatory fields"
+    }
+  ],
+  "corrections": [],
+  "statistics": {
+    "passed_count": 2,
+    "warning_count": 5,
+    "failure_count": 3,
+    "avg_confidence": 89.7365296803653
+  }
+}

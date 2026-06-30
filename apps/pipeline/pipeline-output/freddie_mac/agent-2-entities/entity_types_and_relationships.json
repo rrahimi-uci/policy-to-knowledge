@@ -1,0 +1,1155 @@
+{
+  "entity_types": {
+    "SELLER_SERVICER": {
+      "definition": "A Freddie Mac-approved counterparty that sells mortgages to Freddie Mac and/or services Freddie Mac-owned mortgages under the Multifamily Seller/Servicer Guide and related agreements.",
+      "attributes": [
+        "seller_servicer_id",
+        "legal_name",
+        "approval_status",
+        "delegated_authorities",
+        "net_worth_amount",
+        "financial_reporting_frequency",
+        "primary_contact_name",
+        "primary_contact_email",
+        "guide_version_applicable",
+        "bulletin_effective_date_last_acknowledged"
+      ],
+      "examples": [
+        "Approved multifamily Seller/Servicer #12345 with delegated underwriting authority",
+        "Non-delegated Seller/Servicer using Freddie Mac underwriting review",
+        "Seller/Servicer under heightened monitoring due to QC findings"
+      ],
+      "business_rules": [
+        "Seller/Servicers must comply with the Freddie Mac Multifamily Seller/Servicer Guide and applicable Bulletins with specific effective dates.",
+        "Delegated authorities (e.g., underwriting/servicing) constrain what actions a Seller/Servicer may take without Freddie Mac approval.",
+        "Seller/Servicers must maintain operational capacity and financial condition consistent with Freddie Mac eligibility requirements."
+      ]
+    },
+    "FREDDIE_MAC": {
+      "definition": "The government-sponsored enterprise that purchases, securitizes, and oversees servicing of multifamily mortgages in accordance with its Guide, Bulletins, and program requirements.",
+      "attributes": [
+        "counterparty_code",
+        "program_type",
+        "guide_publication_source",
+        "guide_version_date",
+        "bulletin_id",
+        "bulletin_publication_date",
+        "reporting_remittance_calendar",
+        "purchase_settlement_terms",
+        "servicing_contract_terms_reference"
+      ],
+      "examples": [
+        "Freddie Mac Multifamily purchase of a delivered mortgage",
+        "Freddie Mac issuance of Bulletin M2026-2 dated 04/21/26",
+        "Freddie Mac securitization into a Participation Certificate (PC)"
+      ],
+      "business_rules": [
+        "Freddie Mac establishes Guide requirements and enforces compliance through delivery reviews, QC, and servicing oversight.",
+        "Bulletins introduce changes with effective dates; impacted transactions must apply the correct version by date and applicability.",
+        "Freddie Mac may require corrective action or repurchase/remedies for noncompliance."
+      ]
+    },
+    "BORROWER": {
+      "definition": "The obligor(s) responsible for repayment under a multifamily mortgage and for making payments that are remitted through the Servicer to Freddie Mac or security holders.",
+      "attributes": [
+        "borrower_id",
+        "legal_name",
+        "borrower_type",
+        "tax_id",
+        "organizational_form",
+        "principal_contact_name",
+        "principal_contact_email",
+        "bankruptcy_indicator",
+        "litigation_indicator",
+        "payment_method"
+      ],
+      "examples": [
+        "Single-asset entity (SAE) borrower owning a 150-unit property",
+        "Limited partnership borrower with a managing member",
+        "Borrower under a loan modification during servicing"
+      ],
+      "business_rules": [
+        "Borrower eligibility and credit profile affect underwriting decisions and ongoing servicing risk assessments.",
+        "Borrower payment performance drives delinquency status and default management actions.",
+        "Borrower communications (e.g., adverse action, default notices) must satisfy legal and Guide requirements."
+      ]
+    },
+    "LOAN_APPLICATION": {
+      "definition": "The borrower’s formal request for credit for a mortgage, including financial, property, and sponsorship information used for underwriting and approval decisions.",
+      "attributes": [
+        "application_id",
+        "application_date",
+        "requested_loan_amount",
+        "requested_loan_purpose",
+        "property_address",
+        "occupancy_type",
+        "borrower_structure",
+        "submission_channel",
+        "application_status",
+        "decision_date"
+      ],
+      "examples": [
+        "New acquisition loan application for a multifamily property",
+        "Refinance loan application submitted via a delegated Seller/Servicer",
+        "Loan application declined triggering an adverse action notice"
+      ],
+      "business_rules": [
+        "Incomplete applications may not be underwritten or delivered until required third-party reports and borrower information are obtained.",
+        "Approval/denial decisions must be supported by documented underwriting rationale and required notices.",
+        "Application data must be consistent with delivered loan data used for purchase and securitization."
+      ]
+    },
+    "MORTGAGE": {
+      "definition": "A multifamily real estate loan (including note and security instrument) that may be originated, delivered to Freddie Mac, serviced, and potentially securitized into PCs.",
+      "attributes": [
+        "loan_number",
+        "origination_date",
+        "note_amount",
+        "interest_rate",
+        "amortization_term_months",
+        "maturity_date",
+        "loan_purpose",
+        "product_type",
+        "payment_due_day",
+        "current_unpaid_principal_balance"
+      ],
+      "examples": [
+        "Fixed-rate multifamily mortgage delivered to Freddie Mac",
+        "Floating-rate mortgage held in a warehouse line prior to delivery",
+        "Mortgage pooled into a 55-Day Multi PC securitization"
+      ],
+      "business_rules": [
+        "Delivered mortgages must satisfy Freddie Mac underwriting, documentation, title/insurance, and delivery requirements.",
+        "Mortgage terms and servicing parameters must align with the remittance and reporting rules applicable to the product/PC structure.",
+        "Noncompliance can trigger purchase denial, delivery conditions, repurchase, or servicing remedies."
+      ]
+    },
+    "PROMISSORY_NOTE": {
+      "definition": "The executed debt instrument evidencing the borrower’s obligation to repay the mortgage under specified terms.",
+      "attributes": [
+        "note_id",
+        "execution_date",
+        "note_amount",
+        "interest_rate",
+        "payment_frequency",
+        "amortization_schedule_type",
+        "late_charge_terms",
+        "default_rate_terms",
+        "prepayment_terms_reference"
+      ],
+      "examples": [
+        "Executed note with fixed interest rate and 30-year amortization",
+        "Modified note executed as part of a loan modification agreement",
+        "Note endorsed to Freddie Mac upon delivery"
+      ],
+      "business_rules": [
+        "The note must be properly executed and endorsed/assigned as required for delivery and enforceability.",
+        "Note terms must match delivered data and servicing setup to avoid reporting and remittance errors.",
+        "Any modification must be documented and, where required, approved and reported per Guide requirements."
+      ]
+    },
+    "SECURITY_INSTRUMENT": {
+      "definition": "The mortgage/deed of trust/security deed granting a lien on the property as collateral for the mortgage obligation.",
+      "attributes": [
+        "instrument_id",
+        "instrument_type",
+        "execution_date",
+        "recording_date",
+        "recording_book",
+        "recording_page",
+        "lien_position",
+        "legal_description_reference",
+        "jurisdiction_state"
+      ],
+      "examples": [
+        "Deed of trust recorded in county land records",
+        "Mortgage security instrument with first-lien position",
+        "Security instrument amended via recorded modification"
+      ],
+      "business_rules": [
+        "Recording and lien perfection must satisfy delivery requirements and title insurance coverage expectations.",
+        "Lien position and permitted exceptions are constrained by program and Guide requirements.",
+        "Recorded instrument data must align with the title policy and closing documentation."
+      ]
+    },
+    "MULTIFAMILY_PROPERTY": {
+      "definition": "The income-producing residential real estate collateral securing a multifamily mortgage, including physical characteristics and legal/ownership attributes.",
+      "attributes": [
+        "property_id",
+        "property_name",
+        "street_address",
+        "city",
+        "state",
+        "postal_code",
+        "number_of_units",
+        "year_built",
+        "property_type",
+        "ownership_status"
+      ],
+      "examples": [
+        "200-unit garden-style apartment community in Texas",
+        "Mixed-use property with residential units above retail space",
+        "Affordable housing property with regulatory restrictions"
+      ],
+      "business_rules": [
+        "Property eligibility and risk attributes drive underwriting standards and third-party report requirements.",
+        "Collateral must be properly insured and covered by acceptable title insurance with required endorsements/exceptions.",
+        "Changes to property condition, occupancy, or ownership can trigger servicing reporting and covenant compliance actions."
+      ]
+    },
+    "APPRAISAL_REPORT": {
+      "definition": "A valuation report prepared by a qualified appraiser to estimate the market value and/or other collateral metrics used in underwriting and delivery.",
+      "attributes": [
+        "appraisal_id",
+        "appraiser_license_number",
+        "appraisal_date",
+        "effective_date",
+        "appraised_value",
+        "valuation_method",
+        "market_rent_estimate",
+        "cap_rate",
+        "property_condition_rating",
+        "report_form_type"
+      ],
+      "examples": [
+        "MAI appraisal supporting a $35M value conclusion",
+        "Update appraisal required due to aging report date at closing",
+        "Appraisal with extraordinary assumptions disclosed"
+      ],
+      "business_rules": [
+        "Appraisal must meet scope, recency, and independence requirements applicable to the transaction and product.",
+        "Appraised value and assumptions must be consistent with underwriting conclusions and loan sizing.",
+        "Material appraisal deficiencies can block approval, delivery, or require remediation and re-review."
+      ]
+    },
+    "CREDIT_REPORT": {
+      "definition": "A third-party report summarizing credit history and obligations for borrower principals/guarantors as required for underwriting and risk assessment.",
+      "attributes": [
+        "credit_report_id",
+        "credit_bureau_name",
+        "report_date",
+        "subject_party_type",
+        "credit_score",
+        "trade_line_count",
+        "public_records_indicator",
+        "delinquency_history_summary",
+        "inquiries_count",
+        "fraud_alert_indicator"
+      ],
+      "examples": [
+        "Tri-merge credit report for key principals",
+        "Business credit report for borrowing entity",
+        "Credit report showing recent derogatory items"
+      ],
+      "business_rules": [
+        "Credit reports must be current enough for underwriting and reflect the correct parties per program requirements.",
+        "Material adverse findings require documented evaluation and may affect eligibility/terms or trigger decline.",
+        "Credit report data used in underwriting must reconcile to application and delivered loan file documentation."
+      ]
+    },
+    "TITLE_INSURANCE_POLICY": {
+      "definition": "A title insurance policy insuring the lien priority and marketability of title subject to allowed exceptions and endorsements required for Freddie Mac delivery.",
+      "attributes": [
+        "title_policy_id",
+        "issuing_title_company_name",
+        "policy_date",
+        "policy_amount",
+        "insured_party",
+        "lien_priority_insured",
+        "schedule_b_exceptions_summary",
+        "endorsements_list",
+        "gap_coverage_indicator",
+        "jurisdiction_state"
+      ],
+      "examples": [
+        "ALTA loan policy issued with required endorsements",
+        "Title policy with specific permitted easement exceptions",
+        "Title policy requiring curative action for a recorded lien"
+      ],
+      "business_rules": [
+        "Title insurance must meet minimum coverage, insured party, and endorsement requirements for delivery.",
+        "Unpermitted exceptions or defects must be cured or otherwise addressed per Guide before delivery.",
+        "Policy amount and insured lien position must align with the mortgage and recording details."
+      ]
+    },
+    "HAZARD_INSURANCE_POLICY": {
+      "definition": "Property insurance coverage protecting the collateral against specified hazards and satisfying Freddie Mac insurance requirements for the mortgage.",
+      "attributes": [
+        "insurance_policy_id",
+        "carrier_name",
+        "policy_number",
+        "coverage_type",
+        "coverage_amount",
+        "deductible_amount",
+        "effective_date",
+        "expiration_date",
+        "loss_payee",
+        "cancellation_notice_days"
+      ],
+      "examples": [
+        "Property hazard policy with Freddie Mac named as mortgagee/loss payee",
+        "Insurance renewal evidence provided prior to policy expiration",
+        "Policy change increasing deductible beyond permitted limits"
+      ],
+      "business_rules": [
+        "Minimum coverage types/amounts and maximum deductible limits must be satisfied throughout the loan term.",
+        "Lapses or insufficient coverage trigger servicing actions and may constitute an event of default.",
+        "Policy endorsements and loss payee language must align with Guide requirements and closing instructions."
+      ]
+    },
+    "CLOSING_PACKAGE": {
+      "definition": "The executed set of closing deliverables (loan documents and required certificates/evidence) supporting enforceability, delivery, and file retention requirements.",
+      "attributes": [
+        "closing_package_id",
+        "closing_date",
+        "settlement_agent_name",
+        "execution_completion_status",
+        "recording_completion_status",
+        "missing_document_list",
+        "delivery_ready_indicator",
+        "shipping_tracking_number",
+        "electronic_vault_indicator",
+        "file_retention_category"
+      ],
+      "examples": [
+        "Complete closing package including recorded security instrument and final title policy",
+        "Closing package pending receipt of updated insurance certificate",
+        "Digitally stored closing package in an approved eVault"
+      ],
+      "business_rules": [
+        "All required executed and recorded documents must be present and compliant before final delivery to Freddie Mac.",
+        "Defects (missing signatures, incorrect vesting, recording issues) require cure within specified timelines.",
+        "File retention must satisfy Guide retention periods and audit accessibility requirements."
+      ]
+    },
+    "LOAN_DELIVERY": {
+      "definition": "The process and event of submitting an originated mortgage and required data/documents to Freddie Mac for purchase and/or securitization eligibility.",
+      "attributes": [
+        "delivery_id",
+        "delivery_date",
+        "delivery_method",
+        "data_submission_status",
+        "document_submission_status",
+        "delivery_condition_list",
+        "purchase_eligibility_status",
+        "settlement_date",
+        "pricing_type",
+        "warehouse_release_indicator"
+      ],
+      "examples": [
+        "Final delivery accepted after satisfaction of title insurance conditions",
+        "Delivery suspended pending third-party report update",
+        "Delivery rejected due to data/document mismatch"
+      ],
+      "business_rules": [
+        "Delivery requires complete and accurate data and documentation per Guide chapters for documentation and deliveries.",
+        "Outstanding delivery conditions must be resolved before purchase/settlement or within permitted post-closing timeframes.",
+        "Delivered loan attributes must match legal documents and third-party reports to avoid purchase and securitization defects."
+      ]
+    },
+    "WAREHOUSING": {
+      "definition": "The interim holding period/process where a mortgage is funded and held prior to final delivery/purchase, often under a warehouse line with controls for collateral and documentation.",
+      "attributes": [
+        "warehouse_id",
+        "warehouse_lender_name",
+        "funding_date",
+        "collateral_control_method",
+        "bailee_letter_indicator",
+        "collateral_location",
+        "release_conditions_summary",
+        "max_days_in_warehouse",
+        "haircut_percentage",
+        "shipping_custodian_name"
+      ],
+      "examples": [
+        "Loan held in warehouse pending final title policy receipt",
+        "Bailee letter executed for note custody",
+        "Warehouse release after Freddie Mac settlement"
+      ],
+      "business_rules": [
+        "Custody and control of original notes and collateral documents must be maintained to preserve enforceability and delivery integrity.",
+        "Warehousing timelines and documentation controls must prevent stale reports and post-closing defects.",
+        "Warehouse release must align with settlement/purchase and custodial transfer requirements."
+      ]
+    },
+    "SERVICER": {
+      "definition": "The party responsible for collecting borrower payments, administering escrow/insurance, managing defaults, and performing accounting and reporting to Freddie Mac.",
+      "attributes": [
+        "servicer_id",
+        "legal_name",
+        "servicing_portfolio_size",
+        "remittance_type",
+        "reporting_method",
+        "accounting_net_yield_method",
+        "primary_servicing_system",
+        "default_management_unit_contact",
+        "qc_program_indicator",
+        "servicing_transfer_restrictions"
+      ],
+      "examples": [
+        "Seller/Servicer acting as Servicer for Freddie Mac-owned loans",
+        "Subservicer performing collections and reporting under oversight",
+        "Servicer implementing a remediation plan after reporting errors"
+      ],
+      "business_rules": [
+        "Servicers must report and remit on a monthly basis using the correct net yield method and product rules.",
+        "Servicers must track and report delinquency status accurately and timely for Active/Delinquent/Deactivated classifications.",
+        "Servicing actions (e.g., modifications, defaults) may require approvals and must be documented and reported per Guide."
+      ]
+    },
+    "SERVICING_REPORT": {
+      "definition": "The periodic reporting submitted by the Servicer covering loan status, payment activity, delinquency, and other servicing metrics required by Freddie Mac.",
+      "attributes": [
+        "servicing_report_id",
+        "reporting_period_start_date",
+        "reporting_period_end_date",
+        "submission_date",
+        "loan_number",
+        "payment_status",
+        "delinquency_days",
+        "principal_remitted_amount",
+        "interest_remitted_amount",
+        "curtailment_amount"
+      ],
+      "examples": [
+        "Monthly servicing report indicating 30 days delinquent status",
+        "Servicing report reflecting partial payment and suspense handling",
+        "Corrected servicing report resubmitted after reconciliation"
+      ],
+      "business_rules": [
+        "Reports must be submitted on schedule and reconcile to remittances and servicing system records.",
+        "Delinquency and status classifications must follow defined terms (e.g., Active Mortgage, deactivation for accounting/reporting).",
+        "Material reporting errors require correction, root-cause analysis, and may trigger QC findings."
+      ]
+    },
+    "ACCOUNTING_REPORT": {
+      "definition": "The Servicer’s accounting and remittance-related reporting to Freddie Mac, including interest calculations, net yield reporting, and reconciliation items.",
+      "attributes": [
+        "accounting_report_id",
+        "reporting_period",
+        "submission_date",
+        "loan_number",
+        "accounting_net_yield_rate",
+        "required_net_yield_rate",
+        "premium_discount_indicator",
+        "interest_calculation_basis",
+        "reconciliation_status",
+        "exception_reason_code"
+      ],
+      "examples": [
+        "Monthly accounting report where accounting net yield differs due to purchase premium",
+        "Reconciliation report identifying remittance variance",
+        "Exception report for incorrect net yield setup"
+      ],
+      "business_rules": [
+        "Accounting Net Yield must be reported and used for remittances consistent with Required Net Yield rules, adjusted for premium/discount where applicable.",
+        "Monthly remittance and reporting must reconcile; variances require timely correction and explanation.",
+        "Reporting logic must align with product type (e.g., PC structures with payment delay) and loan status."
+      ]
+    },
+    "MORTGAGE_STATUS": {
+      "definition": "A classification of a mortgage for servicing, accounting, and reporting purposes, including terms such as Active Mortgage, Delinquent Mortgage, and deactivation status.",
+      "attributes": [
+        "status_code",
+        "status_effective_date",
+        "delinquency_days",
+        "deactivated_indicator",
+        "deactivation_reason",
+        "cure_date",
+        "last_payment_received_date",
+        "next_payment_due_date",
+        "status_determination_method"
+      ],
+      "examples": [
+        "ACTIVE status where borrower payments are current",
+        "DELINQUENT status at 30 days delinquent",
+        "DEACTIVATED for accounting/reporting after specified servicing action"
+      ],
+      "business_rules": [
+        "Status must be determined consistently using defined delinquency measures and Guide definitions.",
+        "Deactivation for accounting/reporting must meet criteria and be tracked with reasons and effective dates.",
+        "Status drives downstream actions: default management workflow, reporting requirements, and potentially securitization cashflow treatment."
+      ]
+    },
+    "DELINQUENCY": {
+      "definition": "A servicing measure indicating how late a borrower is on required payments, commonly expressed in days delinquent (e.g., 30 days delinquent).",
+      "attributes": [
+        "delinquency_id",
+        "loan_number",
+        "as_of_date",
+        "days_delinquent",
+        "amount_past_due",
+        "installments_past_due_count",
+        "last_full_payment_date",
+        "next_due_date",
+        "cure_indicator",
+        "delinquency_bucket"
+      ],
+      "examples": [
+        "30 days delinquent classification as of month-end",
+        "60 days delinquent with two installments past due",
+        "Cured delinquency after full reinstatement payment"
+      ],
+      "business_rules": [
+        "Days delinquent must be calculated consistently and drive correct status and reporting classification.",
+        "Delinquency buckets trigger escalation timelines, notices, and default management actions.",
+        "Delinquency reporting must reconcile to borrower payment posting and suspense rules."
+      ]
+    },
+    "PARTICIPATION_CERTIFICATE": {
+      "definition": "A securitization instrument (PC) representing interests in pooled mortgages, where borrower payments are passed through to PC holders under defined delay and remittance structures.",
+      "attributes": [
+        "pc_cusip",
+        "pc_type",
+        "issue_date",
+        "payment_delay_days",
+        "pool_id",
+        "pass_through_rate",
+        "distribution_frequency",
+        "servicer_remittance_terms",
+        "principal_payment_rules_reference",
+        "interest_payment_rules_reference"
+      ],
+      "examples": [
+        "55-Day Multi PC with 55-day payment delay",
+        "Standard PC backed by a defined pool of multifamily mortgages",
+        "PC tranche issued from a securitization transaction"
+      ],
+      "business_rules": [
+        "PC type and payment delay determine timing of cashflow pass-through and servicing remittance obligations.",
+        "Only eligible mortgages meeting pooling criteria may be securitized into a given PC type.",
+        "Servicer reporting and remittance must align with PC structure to prevent investor distribution errors."
+      ]
+    },
+    "MORTGAGE_POOL": {
+      "definition": "A defined group of securitized mortgages aggregated for issuance of a Participation Certificate (PC), subject to pooling eligibility criteria and servicing/remittance rules.",
+      "attributes": [
+        "pool_id",
+        "pool_type",
+        "pool_issue_date",
+        "total_pool_balance",
+        "weighted_average_coupon",
+        "weighted_average_maturity",
+        "mortgage_count",
+        "pooling_criteria_reference",
+        "pc_payment_delay_days",
+        "servicer_of_record"
+      ],
+      "examples": [
+        "Pool of 55-Day Multi PC Securitized Mortgages",
+        "Pool assembled from multiple delivered mortgages in a month",
+        "Pool with weighted average coupon reported to investors"
+      ],
+      "business_rules": [
+        "Pooling criteria restrict which mortgages can be included based on product features and compliance status.",
+        "Pool metrics must be computed from loan-level data and reconcile to issuance disclosures.",
+        "Servicer of record must support pooling cashflow rules and reporting timelines."
+      ]
+    },
+    "ACCOUNTING_NET_YIELD": {
+      "definition": "The net yield rate used by the Servicer to report and remit interest to Freddie Mac on a monthly basis; it equals Required Net Yield except when mortgages were sold at a discount or premium.",
+      "attributes": [
+        "rate_value",
+        "rate_effective_date",
+        "calculation_method",
+        "required_net_yield_reference",
+        "premium_discount_indicator",
+        "purchase_price_percent_of_par",
+        "interest_remittance_basis",
+        "rounding_rule",
+        "rate_source_system",
+        "last_validated_date"
+      ],
+      "examples": [
+        "Accounting net yield equal to required net yield for par purchase",
+        "Accounting net yield adjusted due to premium purchase price",
+        "Accounting net yield adjusted due to discount purchase price"
+      ],
+      "business_rules": [
+        "Accounting Net Yield must be set and maintained accurately to drive correct monthly interest remittance.",
+        "When a mortgage is sold at premium/discount, Accounting Net Yield deviates from Required Net Yield as defined by Guide accounting rules.",
+        "Net yield setup errors require correction and may require reconciliations and make-whole adjustments."
+      ]
+    },
+    "REQUIRED_NET_YIELD": {
+      "definition": "The baseline net yield rate required under Freddie Mac remittance rules; used as a reference point for Accounting Net Yield reporting and remittances.",
+      "attributes": [
+        "rate_value",
+        "rate_effective_date",
+        "product_type",
+        "remittance_type",
+        "contract_reference",
+        "calculation_basis",
+        "rounding_rule",
+        "change_reason_code",
+        "source_authority",
+        "last_validated_date"
+      ],
+      "examples": [
+        "Required net yield for a fixed-rate mortgage remittance type",
+        "Required net yield for a specific PC program",
+        "Required net yield updated due to contract amendment"
+      ],
+      "business_rules": [
+        "Required Net Yield is determined by product/remittance terms and must be applied consistently to eligible loans.",
+        "Servicer must validate Required Net Yield inputs and changes against program/contract references.",
+        "Differences between Required Net Yield and Accounting Net Yield must be explainable under premium/discount rules."
+      ]
+    },
+    "ADVERSE_ACTION_NOTICE": {
+      "definition": "An oral or written communication informing a borrower of refusal to grant an application for an extension of credit, including information required by applicable law.",
+      "attributes": [
+        "notice_id",
+        "notice_type",
+        "delivery_method",
+        "delivery_date",
+        "application_id",
+        "decision_outcome",
+        "primary_reasons",
+        "required_disclosures_included_indicator",
+        "language_preference",
+        "retention_expiration_date"
+      ],
+      "examples": [
+        "Written adverse action notice sent after application denial",
+        "Oral adverse action notice followed by required written disclosures",
+        "Adverse action notice citing insufficient credit history and DSCR"
+      ],
+      "business_rules": [
+        "If an application is refused, the adverse action notice must include all legally required content and be delivered within applicable timelines.",
+        "Notice content must align with underwriting decision rationale and file documentation.",
+        "Notices must be retained for audit and compliance review according to retention requirements."
+      ]
+    },
+    "FILE_RETENTION_POLICY": {
+      "definition": "The requirements defining how long and in what form loan origination, delivery, and servicing records must be retained and made available for review.",
+      "attributes": [
+        "policy_id",
+        "record_type",
+        "retention_period_months",
+        "storage_medium",
+        "access_control_requirements",
+        "audit_availability_sla_days",
+        "destruction_method",
+        "legal_hold_indicator",
+        "policy_effective_date",
+        "policy_version"
+      ],
+      "examples": [
+        "Retention policy for closing package originals vs. electronic copies",
+        "Retention policy for servicing reports and remittance reconciliations",
+        "Legal hold applied to a loan file under dispute"
+      ],
+      "business_rules": [
+        "Loan files must be retained for the required period and be retrievable for Freddie Mac reviews, audits, and regulatory requests.",
+        "Electronic storage must preserve integrity, authenticity, and access controls for sensitive records.",
+        "Destruction must be suspended under legal hold or active investigation requirements."
+      ]
+    },
+    "THIRD_PARTY_REPORT": {
+      "definition": "An externally produced report used in underwriting, delivery, or servicing (e.g., appraisal, credit, engineering, environmental), subject to currency and quality requirements.",
+      "attributes": [
+        "third_party_report_id",
+        "report_type",
+        "provider_name",
+        "provider_license_or_cert",
+        "report_date",
+        "subject_property_id",
+        "scope_of_work_summary",
+        "reliance_party",
+        "recency_limit_days",
+        "acceptance_status"
+      ],
+      "examples": [
+        "Environmental site assessment report used in underwriting",
+        "Property condition assessment report required for delivery",
+        "Engineering report triggering repair escrow requirements"
+      ],
+      "business_rules": [
+        "Third-party reports must meet eligibility, independence, and recency requirements for the applicable loan product and stage.",
+        "Material findings must be evaluated and may require conditions, reserves, repairs, or denial.",
+        "Reports must be retained and traceable to underwriting decisions and delivered loan terms."
+      ]
+    },
+    "QUALITY_CONTROL_REVIEW": {
+      "definition": "A formal review process assessing loan file completeness, data accuracy, and compliance with Guide requirements across origination, delivery, and servicing.",
+      "attributes": [
+        "qc_review_id",
+        "review_scope",
+        "review_start_date",
+        "review_end_date",
+        "sample_selection_method",
+        "finding_count",
+        "severity_rating",
+        "corrective_action_required_indicator",
+        "remediation_due_date",
+        "closure_status"
+      ],
+      "examples": [
+        "Post-delivery QC review identifying missing endorsement on title policy",
+        "Servicing QC review identifying delinquency misclassification",
+        "QC review requiring remediation plan and re-testing"
+      ],
+      "business_rules": [
+        "QC reviews must be performed at required frequencies and cover required scopes (origination, delivery, servicing).",
+        "Findings must be tracked to remediation and validated for closure within timelines.",
+        "Repeat findings may trigger escalated oversight, restrictions, or remedies."
+      ]
+    },
+    "GUIDE_BULLETIN": {
+      "definition": "A Freddie Mac-issued bulletin that updates, clarifies, or amends Multifamily Seller/Servicer Guide requirements with stated publication and effective dates.",
+      "attributes": [
+        "bulletin_id",
+        "publication_date",
+        "effective_date",
+        "affected_chapters",
+        "change_summary",
+        "mandatory_indicator",
+        "implementation_deadline",
+        "supersedes_bulletin_id",
+        "reference_url",
+        "acknowledgement_required_indicator"
+      ],
+      "examples": [
+        "Bulletin M2026-2 published 04/21/26 affecting multiple chapters",
+        "Bulletin updating servicing reporting requirements",
+        "Bulletin clarifying delivery documentation expectations"
+      ],
+      "business_rules": [
+        "Transactions must follow the Guide requirements as amended by applicable Bulletins based on effective dates.",
+        "Seller/Servicers must monitor Bulletins and implement changes by required deadlines.",
+        "Conflicts between prior guidance and Bulletin updates are resolved per Freddie Mac’s stated applicability rules."
+      ]
+    }
+  },
+  "relationships": {
+    "SUBMITS_APPLICATION": {
+      "source_entity": "BORROWER",
+      "target_entity": "LOAN_APPLICATION",
+      "definition": "The borrower initiates the credit request by providing an application and supporting information for underwriting and decisioning.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Borrower submits a refinance application with sponsorship and property details",
+        "Borrower submits a new acquisition application through a Seller/Servicer channel",
+        "Borrower submits a revised application after requested corrections"
+      ],
+      "business_rules": [
+        "Submission completeness requirements determine whether underwriting can proceed and what follow-up documents are needed.",
+        "Application data must be traceable to source records used in underwriting and delivery.",
+        "Material changes after submission may require re-underwriting or updated third-party reports."
+      ]
+    },
+    "UNDERWRITES": {
+      "source_entity": "SELLER_SERVICER",
+      "target_entity": "LOAN_APPLICATION",
+      "definition": "The Seller/Servicer (or its underwriting function) evaluates the application for eligibility, risk, and compliance with program and Guide requirements.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Delegated Seller/Servicer underwrites application using required third-party reports",
+        "Non-delegated transaction where Seller/Servicer prepares underwriting package for Freddie Mac review",
+        "Underwriting identifies conditions such as insurance endorsements and repair escrows"
+      ],
+      "business_rules": [
+        "Underwriting must consider required third-party reports and document rationale for key decisions.",
+        "Delegated authority limits and approval conditions must be followed and recorded.",
+        "Underwriting conclusions must align with delivered loan data and legal documents."
+      ]
+    },
+    "APPROVES_MORTGAGE": {
+      "source_entity": "SELLER_SERVICER",
+      "target_entity": "MORTGAGE",
+      "definition": "The Seller/Servicer issues an approval/commitment for the mortgage consistent with underwriting results and applicable authorities.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Seller/Servicer approves a fixed-rate mortgage subject to final title policy conditions",
+        "Approval includes covenants requiring insurance coverage levels and reporting",
+        "Approval denied due to unacceptable credit or collateral risk"
+      ],
+      "business_rules": [
+        "Approval must satisfy delegated authority and Guide eligibility requirements for the selected product.",
+        "Approval conditions must be satisfied prior to closing and/or delivery as required.",
+        "Denials or adverse terms must be supported by documented reasons and required notices."
+      ]
+    },
+    "SECURES": {
+      "source_entity": "MULTIFAMILY_PROPERTY",
+      "target_entity": "MORTGAGE",
+      "definition": "The property serves as the collateral that secures repayment obligations under the mortgage.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "A 200-unit property secures a first-lien Freddie Mac mortgage",
+        "Property secures a refinanced mortgage after payoff of prior lien",
+        "Property secures a mortgage that is later securitized into a PC pool"
+      ],
+      "business_rules": [
+        "Collateral eligibility, condition, and legal attributes affect underwriting and required third-party reports.",
+        "Collateral must maintain required insurance coverage and title protection through the loan term.",
+        "Changes impacting collateral (damage, loss of coverage) require servicing actions and reporting."
+      ]
+    },
+    "EVIDENCES_DEBT": {
+      "source_entity": "PROMISSORY_NOTE",
+      "target_entity": "MORTGAGE",
+      "definition": "The promissory note evidences the debt obligation that the mortgage represents.",
+      "cardinality": "one-to-one",
+      "examples": [
+        "Note executed at closing evidences the mortgage note amount and interest rate",
+        "Modified note evidences updated payment terms after a modification",
+        "Endorsed note evidences transfer to Freddie Mac at delivery"
+      ],
+      "business_rules": [
+        "Note terms must match delivered loan data and servicing setup to ensure correct remittance and reporting.",
+        "Execution and endorsement requirements must be satisfied for enforceability and delivery acceptance.",
+        "Any note modification must follow approval, documentation, and reporting rules."
+      ]
+    },
+    "PERFECTS_LIEN": {
+      "source_entity": "SECURITY_INSTRUMENT",
+      "target_entity": "MORTGAGE",
+      "definition": "The security instrument creates and perfects the mortgage lien against the collateral property for the benefit of the mortgagee.",
+      "cardinality": "one-to-one",
+      "examples": [
+        "Recorded deed of trust perfects the first-lien position for the mortgage",
+        "Security instrument amendment recorded to correct legal description",
+        "Security instrument recorded after closing with permitted post-closing delivery"
+      ],
+      "business_rules": [
+        "Recording must occur in the correct jurisdiction with correct vesting and legal description.",
+        "Lien priority and permitted exceptions must align with title insurance coverage.",
+        "Post-closing recording delays must be within permitted timelines and controlled by file retention/curative processes."
+      ]
+    },
+    "REQUIRES_APPRAISAL": {
+      "source_entity": "MORTGAGE",
+      "target_entity": "APPRAISAL_REPORT",
+      "definition": "The mortgage underwriting and delivery process requires an appraisal report to support collateral valuation and loan sizing.",
+      "cardinality": "one-to-one",
+      "examples": [
+        "Mortgage requires an appraisal dated within the acceptable recency window at closing",
+        "Mortgage requires an appraisal update due to market changes or report staleness",
+        "Mortgage requires appraisal review when red flags are identified"
+      ],
+      "business_rules": [
+        "Appraisal independence, scope, and recency requirements must be met for eligibility.",
+        "Appraised value must support LTV and other sizing constraints used in underwriting.",
+        "Deficiencies require correction, re-appraisal, or additional review prior to approval/delivery."
+      ]
+    },
+    "REQUIRES_CREDIT_REPORT": {
+      "source_entity": "MORTGAGE",
+      "target_entity": "CREDIT_REPORT",
+      "definition": "The mortgage underwriting process requires a credit report for required parties to assess credit risk and eligibility.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Mortgage requires credit reports for key principals of the borrowing entity",
+        "Mortgage requires updated credit report due to elapsed time before closing",
+        "Mortgage requires additional credit documentation after derogatory findings"
+      ],
+      "business_rules": [
+        "Credit report parties, freshness, and content requirements depend on program and transaction structure.",
+        "Adverse findings must be evaluated and documented; may affect approval or terms.",
+        "Credit report data must reconcile with application disclosures and underwriting narratives."
+      ]
+    },
+    "ISSUES_TITLE_POLICY": {
+      "source_entity": "TITLE_INSURANCE_POLICY",
+      "target_entity": "MORTGAGE",
+      "definition": "The title insurance policy is issued to insure the mortgage lien priority and title marketability subject to allowed exceptions.",
+      "cardinality": "one-to-one",
+      "examples": [
+        "Final title policy insures first-lien priority for delivered mortgage",
+        "Policy issued with required endorsements and acceptable exceptions",
+        "Policy issuance delayed pending curative action for a recorded lien"
+      ],
+      "business_rules": [
+        "Policy insured party, amount, endorsements, and exceptions must meet delivery requirements.",
+        "Unpermitted exceptions must be cured or otherwise resolved before delivery acceptance.",
+        "Policy details must align with recorded instrument and closing package."
+      ]
+    },
+    "COVERS_PROPERTY": {
+      "source_entity": "HAZARD_INSURANCE_POLICY",
+      "target_entity": "MULTIFAMILY_PROPERTY",
+      "definition": "The hazard insurance policy provides required coverage for the collateral property against specified risks.",
+      "cardinality": "one-to-one",
+      "examples": [
+        "Hazard policy covers the property with coverage amount meeting minimum requirements",
+        "Renewal policy replaces expiring policy without coverage lapse",
+        "Policy endorsement updates loss payee language after servicing transfer"
+      ],
+      "business_rules": [
+        "Coverage amount and deductible must meet minimum/maximum thresholds throughout the loan term.",
+        "Coverage must not lapse; lapses require force-placement or other servicing remedies.",
+        "Policy must properly identify insured interests and loss payee/mortgagee requirements."
+      ]
+    },
+    "PRODUCES_CLOSING_PACKAGE": {
+      "source_entity": "SELLER_SERVICER",
+      "target_entity": "CLOSING_PACKAGE",
+      "definition": "The Seller/Servicer coordinates closing and produces the executed closing package required for delivery and retention.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Closing package assembled with executed note and recorded security instrument",
+        "Closing package flagged delivery-ready after final title and insurance evidence received",
+        "Closing package returned for correction due to missing signature/acknowledgment"
+      ],
+      "business_rules": [
+        "Closing package must include all required executed/recorded documents and evidence before final delivery.",
+        "Document defects require curative actions within specified timelines.",
+        "Closing records must be retained and retrievable under file retention requirements."
+      ]
+    },
+    "DELIVERS_LOAN": {
+      "source_entity": "SELLER_SERVICER",
+      "target_entity": "LOAN_DELIVERY",
+      "definition": "The Seller/Servicer submits the mortgage and required data/documents to Freddie Mac as a delivery event for purchase eligibility.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Seller/Servicer delivers a loan after satisfying title insurance conditions",
+        "Seller/Servicer delivers loan data first and documents subsequently per permitted process",
+        "Delivery resubmitted after correction of a data mismatch"
+      ],
+      "business_rules": [
+        "Delivery must meet completeness and accuracy standards for both data and documents.",
+        "Delivery conditions must be tracked, resolved, and evidenced in the loan file.",
+        "Delivery submissions must align with correct Guide version and Bulletin applicability by effective date."
+      ]
+    },
+    "PURCHASES": {
+      "source_entity": "FREDDIE_MAC",
+      "target_entity": "LOAN_DELIVERY",
+      "definition": "Freddie Mac reviews a delivery submission and, if acceptable, purchases/settles the delivered mortgage under program terms.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Freddie Mac purchases a delivered mortgage and schedules settlement",
+        "Purchase conditioned on curative documentation to be provided post-settlement",
+        "Freddie Mac declines purchase due to noncompliance findings"
+      ],
+      "business_rules": [
+        "Purchase eligibility depends on satisfaction of Guide delivery requirements and conditions.",
+        "Settlement terms and pricing (premium/discount) impact accounting net yield setup and ongoing remittance.",
+        "Noncompliance may result in purchase denial or post-purchase remedies."
+      ]
+    },
+    "HELD_IN_WAREHOUSE": {
+      "source_entity": "MORTGAGE",
+      "target_entity": "WAREHOUSING",
+      "definition": "The mortgage is held under warehousing controls prior to final delivery/purchase, with defined custody and release conditions.",
+      "cardinality": "many-to-many",
+      "examples": [
+        "Mortgage held in warehouse pending recording confirmation",
+        "Mortgage held in warehouse pending final third-party report update",
+        "Mortgage released from warehouse upon Freddie Mac settlement"
+      ],
+      "business_rules": [
+        "Collateral document custody must be controlled to preserve enforceability and delivery integrity.",
+        "Warehousing periods must not cause required reports to become stale for delivery/closing requirements.",
+        "Release conditions must align with settlement and custodial transfer requirements."
+      ]
+    },
+    "SERVICES": {
+      "source_entity": "SERVICER",
+      "target_entity": "MORTGAGE",
+      "definition": "The Servicer administers the mortgage lifecycle post-closing, including collections, escrow/insurance oversight, default management, and investor reporting.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Servicer collects monthly payments and remits interest and principal per remittance rules",
+        "Servicer monitors insurance renewals and enforces coverage requirements",
+        "Servicer initiates default management after sustained delinquency"
+      ],
+      "business_rules": [
+        "Servicing must follow Guide requirements for remittance, reporting, borrower communications, and default actions.",
+        "Insurance and title-related obligations continue post-closing and must be monitored and enforced.",
+        "Servicing transfers, if allowed, must preserve reporting continuity and compliance."
+      ]
+    },
+    "REPORTS_SERVICING_ACTIVITY": {
+      "source_entity": "SERVICER",
+      "target_entity": "SERVICING_REPORT",
+      "definition": "The Servicer submits periodic servicing reports reflecting payment activity, delinquency, and loan status as required by Freddie Mac.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Monthly servicing report submitted for all active loans in portfolio",
+        "Servicing report includes 30-day delinquency bucket updates",
+        "Corrected servicing report filed after reconciliation"
+      ],
+      "business_rules": [
+        "Submission frequency, timing, and content must meet specified reporting schedules and formats.",
+        "Reported delinquency and status must follow defined calculations and classifications.",
+        "Errors and exceptions must be corrected and documented with audit trails."
+      ]
+    },
+    "REPORTS_ACCOUNTING_NET_YIELD": {
+      "source_entity": "SERVICER",
+      "target_entity": "ACCOUNTING_REPORT",
+      "definition": "The Servicer reports interest and yield-related accounting information (including accounting net yield) used to remit and reconcile interest owed to Freddie Mac.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Accounting report shows accounting net yield equal to required net yield for par purchase loans",
+        "Accounting report reflects adjusted accounting net yield due to premium purchase",
+        "Accounting report flags exception where net yield setup differs from contract"
+      ],
+      "business_rules": [
+        "Accounting net yield must be reported monthly and calculated per Guide rules, including premium/discount treatment.",
+        "Reported yield values must reconcile to remitted interest and servicing system configuration.",
+        "Exceptions require timely resolution and may require corrective remittances."
+      ]
+    },
+    "HAS_STATUS": {
+      "source_entity": "MORTGAGE",
+      "target_entity": "MORTGAGE_STATUS",
+      "definition": "A mortgage is assigned a servicing/accounting status classification (e.g., Active, Delinquent, Deactivated) for reporting and operational actions.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Mortgage transitions from ACTIVE to DELINQUENT after missed payment",
+        "Mortgage marked DEACTIVATED for accounting/reporting after servicing action",
+        "Mortgage returns to ACTIVE after cure/reinstatement"
+      ],
+      "business_rules": [
+        "Status transitions must be controlled, date-effective, and consistent with delinquency calculations and Guide definitions.",
+        "Deactivation must be justified with a reason and follow specified accounting/reporting rules.",
+        "Status determines downstream servicing actions, reporting treatment, and exception handling."
+      ]
+    },
+    "MEASURED_BY_DELINQUENCY": {
+      "source_entity": "MORTGAGE",
+      "target_entity": "DELINQUENCY",
+      "definition": "A mortgage’s payment performance is measured by delinquency records indicating days past due and amounts past due as of a given date.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Month-end delinquency record indicates 30 days delinquent",
+        "Delinquency record increases to 60 days delinquent after second missed installment",
+        "Delinquency record shows cured indicator after reinstatement"
+      ],
+      "business_rules": [
+        "Delinquency must be computed using consistent rules and applied to reporting and status classification.",
+        "Delinquency buckets trigger default management timelines and required actions.",
+        "Delinquency records must reconcile with payment posting and suspense application."
+      ]
+    },
+    "SECURITIZES_INTO_POOL": {
+      "source_entity": "FREDDIE_MAC",
+      "target_entity": "MORTGAGE_POOL",
+      "definition": "Freddie Mac aggregates eligible mortgages into a mortgage pool for securitization and PC issuance.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Freddie Mac pools eligible delivered mortgages into a 55-Day Multi PC pool",
+        "Freddie Mac creates a pool with weighted average coupon and maturity computed from loan data",
+        "Pool formed for a specific issuance date and program"
+      ],
+      "business_rules": [
+        "Only eligible mortgages meeting pooling criteria (product type, status, documentation) may be included in a given pool.",
+        "Pool metrics must reconcile to loan-level data used in issuance and investor disclosures.",
+        "Pooling events must align with remittance/reporting structures (e.g., payment delay rules)."
+      ]
+    },
+    "BACKS_PC": {
+      "source_entity": "MORTGAGE_POOL",
+      "target_entity": "PARTICIPATION_CERTIFICATE",
+      "definition": "A mortgage pool provides the underlying collateral and cashflow for issuance of a Participation Certificate (PC).",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Pool backs a 55-Day Multi PC with 55-day payment delay",
+        "Pool backs a PC with defined pass-through rate and distribution rules",
+        "Pool backs a PC issuance with multiple underlying mortgages"
+      ],
+      "business_rules": [
+        "PC terms (delay, pass-through rate) must align with pool characteristics and program rules.",
+        "Changes to pool composition must follow controlled processes and eligibility requirements.",
+        "Servicer reporting/remittance must support PC investor distribution requirements."
+      ]
+    },
+    "DETERMINES_ACCOUNTING_NET_YIELD": {
+      "source_entity": "REQUIRED_NET_YIELD",
+      "target_entity": "ACCOUNTING_NET_YIELD",
+      "definition": "Required Net Yield serves as the baseline reference for Accounting Net Yield, with differences permitted under premium/discount purchase rules.",
+      "cardinality": "one-to-one",
+      "examples": [
+        "Required net yield equals accounting net yield when loan is sold at par",
+        "Accounting net yield differs from required net yield due to premium purchase",
+        "Accounting net yield differs from required net yield due to discount purchase"
+      ],
+      "business_rules": [
+        "Accounting Net Yield must equal Required Net Yield except for defined premium/discount treatments.",
+        "Any divergence must be traceable to purchase pricing and documented calculation rules.",
+        "Yield rates must be validated and updated when contract terms or purchase attributes change."
+      ]
+    },
+    "ISSUES_ADVERSE_ACTION_NOTICE": {
+      "source_entity": "SELLER_SERVICER",
+      "target_entity": "ADVERSE_ACTION_NOTICE",
+      "definition": "The Seller/Servicer provides an adverse action notice to the borrower when the application for an extension of credit is refused, including required legal information.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "Seller/Servicer sends written adverse action notice after denial",
+        "Seller/Servicer provides oral notice followed by required written disclosures",
+        "Adverse action notice delivered with stated reasons consistent with underwriting file"
+      ],
+      "business_rules": [
+        "Notice delivery timing and content must comply with applicable law and any Guide-referenced requirements.",
+        "Notice reasons must align with underwriting decision documentation.",
+        "Notices must be retained per file retention requirements and be available for audit."
+      ]
+    },
+    "RETAINS_RECORDS_UNDER": {
+      "source_entity": "SELLER_SERVICER",
+      "target_entity": "FILE_RETENTION_POLICY",
+      "definition": "The Seller/Servicer maintains origination, delivery, and servicing records according to defined retention requirements and accessibility controls.",
+      "cardinality": "many-to-many",
+      "examples": [
+        "Seller/Servicer retains closing package documents for the required retention period",
+        "Seller/Servicer retains accounting and servicing reports for audit support",
+        "Seller/Servicer applies legal hold to a loan file under investigation"
+      ],
+      "business_rules": [
+        "Retention periods and storage methods must meet Guide and legal requirements for each record type.",
+        "Records must remain retrievable and tamper-evident for reviews and audits.",
+        "Destruction must be controlled and suspended under legal hold conditions."
+      ]
+    },
+    "REVIEWS_COMPLIANCE": {
+      "source_entity": "QUALITY_CONTROL_REVIEW",
+      "target_entity": "CLOSING_PACKAGE",
+      "definition": "A QC review evaluates closing package completeness and compliance against delivery and documentation standards.",
+      "cardinality": "one-to-many",
+      "examples": [
+        "QC review finds missing endorsement on title policy within closing package",
+        "QC review identifies signature/acknowledgment defect requiring cure",
+        "QC review confirms file completeness and closes with no findings"
+      ],
+      "business_rules": [
+        "QC must detect missing/defective documents that could impair enforceability or delivery compliance.",
+        "Findings must be remediated within required timelines with evidence of cure.",
+        "Repeat defects may require process changes and escalated oversight."
+      ]
+    },
+    "UPDATES_GUIDE_REQUIREMENTS": {
+      "source_entity": "GUIDE_BULLETIN",
+      "target_entity": "SELLER_SERVICER",
+      "definition": "A Guide Bulletin imposes updated or clarified requirements that Seller/Servicers must implement by the stated effective date.",
+      "cardinality": "many-to-many",
+      "examples": [
+        "Bulletin M2026-2 requires Seller/Servicers to apply new requirements starting 04/21/26",
+        "Bulletin affects servicing reporting processes and system configurations",
+        "Bulletin changes delivery documentation expectations for future submissions"
+      ],
+      "business_rules": [
+        "Seller/Servicers must implement Bulletin changes by effective dates for applicable transactions.",
+        "Operational procedures and systems must be updated to reflect amended Guide requirements.",
+        "Compliance must be demonstrable through retained evidence, reporting, and QC results."
+      ]
+    }
+  },
+  "iteration": 3,
+  "timestamp": "2026-06-29 09:55:38",
+  "optimization_summary": {
+    "total_iterations": 3,
+    "improvements": "Extraction completed successfully"
+  },
+  "final_quality_analysis": {
+    "iteration": 3,
+    "quality_score": 85,
+    "completeness": "Good",
+    "suggestions": []
+  }
+}

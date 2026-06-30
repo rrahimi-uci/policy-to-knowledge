@@ -1,0 +1,40 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 60/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_060
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+927 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+376See 45 CFR 164.304 (definition of ‘‘Facility’’). 37745 CFR 164.306. 378See, e.g., Steve Alder, ‘‘$8.9 Million Banner 
+Health Data Breach Settlement Gets Final 
+Approval,’’ The HIPAA Journal (Apr. 27, 2020), https://www.hipaajournal.com/8-9-million-banner- health-data-breach-settlement-gets-final-approval/ (describing a settlement to cover claims stemming from an attack on a health system’s payment processing system used in the food and beverage outlets of its hospitals). 12. Clarifying the Definition of 
+‘‘Physical Safeguards’’ 
+a. Current Provision and Issues To 
+Address 
+‘‘Physical safeguards’’ encompass the 
+physical measures, policies, and procedures that protect a regulated entity’s electronic information systems and related buildings and equipment from natural and environmental hazards, and unauthorized intrusion. As discussed within the definition of administrative safeguards, the Department believes that it is necessary to reduce minor inconsistences in language between the definitions of the types of safeguards. Additionally, the definition of physical safeguards relies on an undefined term (‘‘buildings’’), despite the existence of a defined term (‘‘facilities’’) that has an equivalent meaning. 
+b. Proposal 
+The Department proposes to clarify 
+that the policies and procedures referred 
+to in the definition are those that specifically are related to physical measures, and to replace ‘‘buildings’’ with ‘‘facilities’’ because facility is a defined term under the Security Rule and has an equivalent meaning.
+376The 
+Department intends and has always intended the physical safeguards to apply to any location where a regulated entity might possess ePHI, including the physical premises and interior and exterior of a building, and any location that might affect the confidentiality, integrity, or availability of ePHI. Additionally, given the mobility of technology today, including workstations that may access ePHI, we believe it would be more appropriate to use the term facility to make clear that the physical safeguards are to apply throughout the premises of the regulated entity. For the same reasons discussed above, we also propose to clarify that 
+the physical safeguards serve to protect relevant electronic information systems, as we propose to define the term elsewhere in this NPRM, rather than all electronic information systems. Further, the Department proposes to better standardize the administrative, physical, and technical safeguard requirements by using defined terms where they exist. 
+13. Adding a Definition of ‘‘Relevant 
+Electronic Information System’’ 
+a. Issues To Address 
+The Security Rule requires a regulated 
+entity to ensure the confidentiality, 
+integrity, and availability of all of the ePHI it creates, receives, maintains, or 
+transmits.
+377To protect the ePHI as 
+required, a regulated entity must also protect the electronic information systems that create, receive, maintain, or transmit ePHI and the electronic information systems that otherwise affect the confidentiality, integrity, or availability of ePHI. The Department believes that regulated entities are not consistently protecting ePHI in a manner that is consistent with their Security Rule obligations and believes that it is necessary to clarify the scope of those obligations. We believe that creating a new defined term for the electronic information systems to which the Security Rule requirements apply will help achieve this goal by ensuring that regulated entities fully understand how their technology assets and the architecture of their electronic information systems affect the confidentiality, integrity, and availability of ePHI. 
+b. Proposal 
+The Department proposes to add and 
+define the term ‘‘relevant electronic 
+information system’’ to mean an electronic information system that creates, receives, maintains, or transmits ePHI or that otherwise affects the confidentiality, integrity, or availability of ePHI. We believe that distinguishing between a relevant electronic information system and an electronic information system, as proposed, would further clarify the scope of regulated entities’ compliance obligations, including the obligation of regulated entities to understand the relationship between their various electronic information systems and the confidentiality, integrity, and availability of ePHI. 
+The Department believes it is 
+important to clarify that the requirements of the Security Rule do not only apply to electronic information systems that create, receive, maintain, or transmit ePHI. After all, cybercriminals

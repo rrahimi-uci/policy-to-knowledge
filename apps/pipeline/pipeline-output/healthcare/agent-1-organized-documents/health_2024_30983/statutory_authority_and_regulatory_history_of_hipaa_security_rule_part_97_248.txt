@@ -1,0 +1,86 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 97/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_097
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+946 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+524Workstations may also be referred to as 
+‘‘endpoints.’’ See ‘‘Memorandum on Improving 
+Detection of Cybersecurity Vulnerabilities and 
+Incidents on Federal Government Systems through Endpoint Detection and Response,’’ Office of Management and Budget, Executive Office of the President, p. 1 (Oct. 8, 2021) https://www.whitehouse.gov/wp-content/uploads/2021/10/ M-22-01.pdf. 
+525See ‘‘Security Standards: Administrative 
+Safeguards,’’ supra note 517, p. 5–6. 
+526See id. at 6. 
+527Id. 
+528See ‘‘Managing Malicious Insider Threats,’’ 
+Cybersecurity Newsletter, Office for Civil Rights, 
+U.S. Department of Health and Human Services (Aug. 2019), https://www.hhs.gov/hipaa/for- professionals/security/guidance/cybersecurity- newsletter-summer-2019/index.html. 
+529Id. 
+530Id. 531Id. 
+532See ‘‘Implementing the Health Insurance 
+Portability and Accountability Act (HIPAA) Security Rule: A Cybersecurity Resource Guide,’’ supra note 461, p. 33. 
+533See id. at 34. 
+534See id. 
+535See ‘‘Security Standards: Administrative 
+Safeguards,’’ supra note 517, p. 7; see also 
+‘‘Implementing the Health Insurance Portability and Accountability Act (HIPAA) Security Rule: A Cybersecurity Resource Guide,’’ supra note 461, p. 
+30–34. 
+536See Press Release, ‘‘HHS Office for Civil Rights 
+Settles HIPAA Security Rule Failures for $950,000,’’ U.S. Department of Health and Human Services (July 1, 2024), https://prod- wwwhhsgov.cloud.hhs.gov/about/news/2024/07/01/ hhs-office-civil-rights-settles-hipaa-security-rule- failures-950000.html. 
+537See ‘‘Montefiore Medical Center,’’ supra note 
+248. 
+538See 45 CFR 164.308(a)(1)(ii)(D). 
+539See ‘‘Doctors’ Management Services, Inc.,’’ 
+supra note 246. 
+540Id. i. Section 164.308(a)(7)(i)—Standard: 
+Information System Activity Review 
+As described in previously issued 
+HHS guidance, review of activity in its relevant electronic information systems and their components, including workstations,
+524enables a regulated 
+entity to determine if any ePHI has been used or disclosed in an inappropriate manner.
+525The procedures should be 
+customized to meet the regulated entity’s risk management strategy and consider the capabilities of all information systems with ePHI.
+526 
+These activities should also promote continual awareness of any information system activity that could suggest a security incident.
+527 
+Detecting and preventing data leakage 
+initiated by malicious authorized users is a significant challenge.
+528Identifying 
+potential malicious activity in relevant electronic information systems, including in workstations and other components, as soon as possible is key to preventing or mitigating the impact of such activity.
+529To identify potential 
+suspicious activity, organizations should consider an insider’s interactions with information systems and their components. A regulated entity can detect anomalous user behavior or indicators of misuse by either a trusted employee or third-party vendor who has access to critical systems, workstations and other system components, and data.
+530To minimize 
+this risk, an organization may employ safeguards that detect suspicious user activities, such as traffic to an unauthorized website, downloading data to an external device (e.g., thumb 
+drive), or access to a network server by an unauthorized mobile device. Maintaining audit controls (e.g., system 
+event logs, application audit logs) and regularly reviewing audit logs, access reports, and security incident tracking reports are important security measures that can assist in detecting and identifying suspicious activity or 
+unusual patterns of data access.
+531 
+Regulated entities should regularly 
+review activity in their relevant electronic information systems (including the components of such systems) for potential concerns and consider ways to automate such reviews.
+532Additionally, regulated 
+entities are responsible for establishing and implementing appropriate standard operating procedures, including determining the types of audit trail data and monitoring procedures that would be needed to derive exception reports.
+533They also must activate the 
+necessary review processes and maintain auditing and logging activity.
+534 
+Department and NIST guidance 
+advise regulated entities to consider many questions when establishing their policies and procedures for reviewing activity in their relevant electronic information systems review.
+535These 
+include: 
+•What logs or reports are generated 
+by the information systems? 
+•Is there a policy that establishes 
+what reviews will be conducted? 
+•Are there corresponding procedures 
+that describe the specifics of the reviews? 
+•Who is responsible for the overall 
+process and results? 
+•How often will review results be 
+analyzed? 
+•Where will audit information reside 
+(e.g., separate server)? Will it be stored 
+external to the organization (e.g., cloud 
+service provider)?

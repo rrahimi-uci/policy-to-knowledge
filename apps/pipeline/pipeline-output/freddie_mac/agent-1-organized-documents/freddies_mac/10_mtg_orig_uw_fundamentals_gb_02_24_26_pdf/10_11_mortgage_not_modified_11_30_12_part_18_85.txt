@@ -1,0 +1,156 @@
+# 10.11 Mortgage not modified (11/30/12) (part 18/85)
+
+**Source:** freddies_mac.pdf
+**Chunk ID:** freddies_mac_3082_sub_018
+**Pages:** 1-277
+**Section Path:** 10 - Mtg, Orig, UW Fundamentals GB-02-24-26.pdf > 10.11 Mortgage not modified (11/30/12)
+
+---
+
+Guide Bulletin Update 04/21/26 Chapter 2 – Page 45 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the AllRegs 
+web site of ICE Mortgage Technology  (with a paid subscription).  Guide Chapter  2 – General Freddie Mac Policies  
+Guide Chapter 2 – General Freddie Mac Policies  
+ will provide Freddie Mac and its designees all information and assistance needed to 
+enable Freddie Mac to evaluate the need for, and to timely make, any notification it 
+deems necessary or advisable concerning the Security Incident.  
+5. Limitation, restriction or termination of system access  
+ 
+Whether in connection with the actual or suspected presence of Malicious Code, a  
+Security  Incident, or otherwise, Freddie Mac reserves the right, in its sole and absolute 
+discretion, at any time with or without notice, to limit, restrict and/or terminate a 
+Seller/Servicer’s access to any system(s), temporarily or permanently.  
+ 
+If, and when, Freddie Mac determines that restoring any level of system access to a 
+Seller/Servicer is appropriate, as a condition to such access restoration, Seller/Servicer 
+must provide to Freddie Mac upon request: (i) such assurances and information as 
+Freddie Mac may deem necessary, in its sole and absolute discretion; and (ii) an 
+attestation, executed by a duly authorized corporate officer, of the adequacy of any 
+applicable con tainment, eradication or remediation of any vulnerability related to such 
+Malicious Code, Security Incident, and the eradication of any threat actor from the 
+Seller/Servicer’s environment or any system or technology used by the Seller/Servicer 
+(whether or not such system or technology is developed by the Seller/Servicer or by a 
+third party and used by the Seller/Servicer) .      
+Freddie Mac will have no liability to any Seller/Servicer or third party arising out of, 
+related to, or in connection with Freddie Mac’s limitation, restriction, or termination of a 
+Seller/Servicer’s access to any system(s).  
+2.27 Vendor risk management (10/19/23)  
+Seller/Servicers must implement a vendor risk management program to formally evaluate, track 
+and measure third -party risk; to assess its impact on aspects of the organization’s business; and 
+to develop compensating controls or other forms of mitigation to safeguard and protect Freddie  
+Mac’s information, data such as sensitive personal data from unauthorized persons, malicious 
+software or other harmful computer information, commands, codes or programs.   
+  
+Seller/Servicers must have formal written vendor risk management requirements that are reviewed 
+periodically and kept up -to date with current practices.  Seller/Servicers must provide information 
+about the use of a vendor to Freddie Mac upon request.  
+ 
+2.28 Public Records Searches (0 4/22/25) 
+Seller/Servicers must conduct the public records searches  on applicable individuals and entities in 
+accordance with the requirements set forth in the Guide, including in Chapters 2, 7, 21, 29, 41, 
+41SBL, 43, 55 and 55SBL and the Public Records Search Requirements  posted on 
+mf.freddiemac.com (collectively, the “Public Records Searches”) in the origination of a Mortgage 
+or any Servicing -related transaction, as applicable.
+
+Guide Bulletin Update 04/21/26 Chapter 2 – Page 46 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the AllRegs 
+web site of ICE Mortgage Technology  (with a paid subscription).  Guide Chapter  2 – General Freddie Mac Policies  
+Guide Chapter 2 – General Freddie Mac Policies  
+ 2.29 Document retention and destruction  (12/12/24 ) 
+The requirements of this Section 2.29 are effective April 1, 2025.  
+ 
+Seller/Servicers must have written data retention and destruction policies and procedures which 
+contain minimum requirements to comply with applicable corporate, regulatory and legal 
+standards.  The policies and procedures must include the following:  
+ 
+• Identification or definition of the electronic or other information which are subject to the 
+policies, including how to handle electronic or other information that is, or may be, subject to a 
+legal or litigation -related hold  
+ 
+• A data storage, retention and destruction schedule  
+ 
+• Clearly defined criteria for destruction of electronic or other information, regardless of the form 
+in which the information is stored  
+ 
+• Destruction methodology, including a process for logging and certifying such destruction has 
+been completed  
+ 
+When electronic or other information is destroyed in accordance with Seller/Servicer’s corporate 
+policies in the ordinary course, or at Freddie Mac’s direction, such information must be rendered 
+unreadable and incapable of being re -created.  Paper records must be properly and securely 
+destroyed, and Seller/Servicer must retain evidence of destruction.  Upon request, 
+Seller/Servicers will provide to Freddie Mac certificates of destruction or other evidence 
+demonstrating the fact, time and manne r of destructi on, be it electronic, paper, hard drive or other 
+media, which contained the destroyed information.  Such certification or evidence is in addition to 
+any other obligations that Seller/Servicer may have with respect to the destroyed information . 
+ 
+2.30 Use of artificial intelligence and machine learning  (07/01/26) 
+a. Compliance with applicable law  (07/01/26) 
+Seller/Servicers that use artificial intelligence and/or machine learning (together, “AI/ML”) in 
+connection with the origination of Mortgages sold to Freddie Mac or Servicing Mortgages on 
+behalf of Freddie Mac must ensure compliance with applicable law and their Servicing and 
+Purchase Documents.  In addition, such use is conditioned upon:  
+ 
+• Seller/Servicer’s development, implementation and maintenance of policies and 
+procedures for the use of AI/ML, which must at a minimum:  
+ 
+o Be approved by Senior Management, including, at a minimum, the Chief Information 
+Officer, Chief Technology Officer, Chief Information Security Office r, Chief Risk 
+Officer , or Head of Artificial Intelligence  (or the equivalents thereof)   
+ 
+o Be communicated to appropriate personnel who have job responsibilit ies in areas that 
+use AI/ML; and
+
+Guide Bulletin Update 04/21/26 Chapter 2 – Page 47 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the AllRegs 
+web site of ICE Mortgage Technology  (with a paid subscription).  Guide Chapter  2 – General Freddie Mac Policies  
+Guide Chapter 2 – General Freddie Mac Policies  
+ o Have an owner(s) that implements, maintains and reviews the policies and 
+procedures at least annually to ensure they comply with applicable law and 
+consistently reflect industry best practices  
+ 
+• Upon request by Freddie Mac, Seller/Servicer’s prompt disclosure of the types of AI/ML 
+used, the purpose and manner for such use, safeguards to mitigate risks related to the 
+use of AI/ML, and such other information as Freddie Mac may require  
+ 
+b. Indemnification  (12/12/24 ) 
+Seller/Servicer agrees to indemnify Freddie Mac and its directors, officers, employees, 
+agents, successors and assigns, and to hold each harmless from and against any and all 
+liabilities, losses, claims, actions, damages, including, but not limited to, ind irect, incidental, 
+special or consequential damages, whether foreseeable or not, judgments, costs and 
+expenses, including reasonable attorneys' fees, arising directly or indirectly out of or relating 
+to Seller/Servicer’s  use of AI/ML.  Freddie Mac shall pr ovide the Seller/Servicer with notice of 
+any such claim after it comes to Freddie Mac's attention.  
+ 
+c. Governance framework (0 7/01/26) 
+Seller/Servicer must establish clear governance frameworks for AI/ML adoption that address 
+the following:  
+ 
+• Policies, processes, procedures and practices across the organization related to the 
+mapping, measur ement  and manag ement  of AI risks are in place, transparent and 
+implemented effectively  
+ 
+• Legal and regulatory requirements involving AI are understood, managed and 
+documented  
+ 
+• The characteristics of trustworthy AI are integrated into organizational policies, 
+processes, procedures and practices  
+ 
+• Processes, procedures and practices are in place to determine the level needed of risk 
+management activities based on the organization's risk tolerance  
+ 
+• Establish clear policies and codes of conduct to ensure the following:  
+ 
+o The characteristics of trustworthy AI are integrated into organizational policies, 
+processes, procedures and practices  
+ 
+o Processes, procedures and practices are in place to determine the level needed  of 
+risk management activities based on the organization's risk tolerance  
+ 
+o The risk management process and its outcomes are established through transparent 
+policies, procedures and other controls based on organizational risk priorities  
+ 
+• Apply segregation of duties to prevent conflicts of interest and ensure the following:

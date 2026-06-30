@@ -1,0 +1,58 @@
+# 39.7 Rental achievement Reserve Servicing (09/18/14)
+
+**Source:** freddies_mac.pdf
+**Chunk ID:** freddies_mac_1685
+**Pages:** 671-671
+**Section Path:** Servicing Freddie Mac Loans (Chs 36-49) > 39 - Admin of Reserves; Monitoring Repairs GB-02-24-26 > 39.7 Rental achievement Reserve Servicing (09/18/14)
+
+---
+
+Guide Bulletin Update 02/24/26 Chapter 39 – Page 25 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the AllRegs 
+web site of ICE Mortgage Technology  (with a paid subscription).  
+Guide Chapter 39 – Administration of Reserves; Monitoring Repairs  
+For all Mortgages, the Servicer must notify Freddie Mac of any actions taken under 
+this delegated approval within two days after the effective date of the approval by 
+creating a record in CRT with the selection that Freddie Mac approval is not 
+required due  to the specified Servicer Delegation Requirement being satisfied and 
+electronically submitting to Freddie Mac via DMS the following:  
+• The General Servicing Request form and all supporting documentation.  
+• A copy of the approval letter that the Servicer sent to the Borrower  
+• Copies of any modified loan documents.  
+If any of the above conditions are not met —including, but not limited to, cases 
+where the overall Property condition is “Fair” or worse, or the Servicer’s 
+recommendation does not align with the PCR and escrow analysis —the Servicer 
+must submit a formal requ est for Freddie Mac’s consent prior to approving any 
+modifications to the Replacement Reserve requirements as outlined in 
+Section  39.6(f)( 4)(c) below.  
+ 
+c. Submitting modification requests requiring Freddie Mac approval  
+Freddie Mac approval is required for all modifications of Replacement Reserves 
+with respect to any Mortgage not described in Section  39.6(f)( 4)(a).  If the Servicer 
+is submitting a modification request for Freddie Mac approval, the Servicer must 
+take the following actions:  
+i. Enter the modification  request into CRT .  For Consent Request Category, 
+select Escrow Extensions / Modifications.  For Consent Request Type, select 
+Replacement Reserve Modification.  The CRT record should be created with 
+the selection that Freddie Mac approval is required . 
+ii. Electronically deliver the  General Servicing Request  form, including any 
+necessary supporting documentation  including but not limited to updated 
+property condition report and analysis of Replacement Reserves.  
+5. Unless the Loan Documents provide otherwise, the Servicer must deduct from the 
+Replacement Reserve Fund an amount sufficient to pay all reasonable fees and 
+expenses charged by the property condition consultant or Servicer.  
+ 
+39.7 Rental achievement Reserve Servicing ( 09/18/14) 
+For the purposes of this section, any Property performance achievement agreement, such as a 
+rental achievement guaranty, a Rental Achievement Escrow Agreement – Cash or Rental 
+Achievement Agreement – Letter of Credit, or Rental Achievement Rider to Loan Ag reement 
+which a Borrower or Guarantor has executed with respect to a Mortgage, will be referred to as a 
+“rental achievement agreement .” 
+ 
+If a rental achievement agreement exists with respect to the Property, the Servicer must require 
+the Borrower to establish any required Reserve or post any required letter of credit within the time 
+and in the amount specified by Freddie Mac.  A rental achi evement guaranty executed in 
+connection with the Mortgage may include rental achievement provisions tied to a reduction in the 
+amount of the base guaranty or other provisions.  See Section 11.2 for the Seller/Servicer’s 
+obligations with respect to the appr oval and monitoring of Letters of Credit.

@@ -1,0 +1,21 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 44/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_044
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+326We also continue to agree 
+with the recommendation that the standards should be technology-neutral because security technology continues to evolve to keep pace with the evolution of technology more broadly. Additionally, the Security Rule must remain flexible and scalable to allow for consideration of the wide variety of regulated entities, enabling such entities to determine the reasonable and appropriate security measures for their circumstances by taking into account the factors specified by HIPAA.
+327 
+We are not aware of any standard 
+setting organizations that are accredited by ANSI that have issued standards for the security of ePHI, let alone standards that are sufficiently comprehensive, flexible, scalable, and technology- neutral to enable regulated entities to take into account the HIPAA factors. For example, NIST has issued numerous publications addressing health care cybersecurity that are considered by NIST to be guidance, rather than standards. In fact, NIST is ANSI- accredited for only one standard.
+328 
+And with the exception of publications that analyze the Security Rule, NIST’s guidance does not specifically address the security of ePHI. CISA has issued cross-sector CPGs, but it is not ANSI- accredited. There may be other organizations that have set standards for the transmission of particular information, such as the secure transmission of images, but adopting such individual standards would not meet the Department’s criteria. In this case, adoption of such standard would be far too granular and require the Department to revise the Security Rule at the same interval as the particular standard, which may be irregular. Additionally, given that the Department is limited to modifying each standard or implementation specification no more frequently than once every 12 months, this approach would be inefficient and could lead to a requirement that the Department update the Security Rule more than once a year, depending on when such individual standards or implementation specifications are revised. Even modifying the standards annually would require a significant investment of Department resources, not to mention the investment required of regulated entities to comply with an ever-changing set of requirements. 
+Additionally, in 2021, Congress 
+amended the HITECH Act to require the Secretary to consider whether a regulated entity has adequately demonstrated that it had in place recognized security practices for a certain period of time.
+329Congress 
+defined ‘‘recognized security practices’’ to include certain NIST publications; the approaches promulgated under 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00024 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

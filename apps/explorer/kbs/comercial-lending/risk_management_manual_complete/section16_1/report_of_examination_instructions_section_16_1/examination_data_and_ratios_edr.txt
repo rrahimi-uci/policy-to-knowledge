@@ -1,0 +1,72 @@
+# EXAMINATION DATA AND RATIOS (EDR)
+
+**Source:** risk_management_manual_complete.pdf
+**Chunk ID:** risk_management_manual_complete_1403
+**Pages:** 530-530
+**Section Path:** section16-1 > REPORT OF EXAMINATION INSTRUCTIONS Section 16.1 > EXAMINATION DATA AND RATIOS (EDR)
+
+---
+
+REPORT OF EXAMINATION INSTRUCTIONS  Section 16.1  
+ 
+ 
+Report  of Examination Instructions ( 4/24) 16.1-22 RMS Manual of Examination Policies  
+  Federal Deposit Insurance Corporation
+   EXAMINATION DATA AND RATIOS (EDR)  
+←  
+Purpose  
+ 
+The EDR page includes various data that details trends in key financial components and supplements examination 
+assessments of capital, asset quality, earnings, and liquidity. Examiners must include the EDR page in all 
+examination reports.  
+ 
+Summary of Items Subject To Adverse Classification 
+ 
+Generally, classification informatio n automatically pulls from other report schedules.  The Adversely Classified Items 
+Coverage Ratio4 included on this page represents all adversely classified items  (ACI), including loans and leases, 
+securities, other real estate owned, other assets, other transfer risk, and contingent liabilities .  
+ 
+Contingent Liabilities  
+ 
+Only Category I contingent liabilities (liabilities that will result in an equivalent increase in bank assets if the 
+contingencies convert to actual liabilities) are subject to adverse classification.  
+ 
+Financial Performance and Condition Ratios 
+ 
+The standard ratios included on this page are derived from examination results, Call Reports, and the UBPR. When 
+Call Report data is used, ratio calculations are consistent with UBPR User’s Guide  definitions. Call Report 
+instructions require banks to report capital ratios, which are used for determining the PCA capital category, as a percentage, rounded to four decimal places. Capital ratios reflected in the EDR page are truncated at two decimals.  
+ 
+Note: Institutions can elect the Current Expected Credit Loss (CECL) transition  provision in order to transition  
+the day- one impact of adopting CECL in regulatory capital through transition adjustments to retained earnings, 
+average total consolidated assets, temporary difference deferred tax assets (DTAs), and the adjusted allowance for credit losses (AACL). Additionally, those institutions that were required to adopt CECL during the 2020 calendar year can elect the CECL revised transition to delay for two years an estimate of CECL’s effect on regulatory 
+capital followed by the three- year transition  provision.  
+ 
+Selection of Ratios  
+ 
+Data in the Asset Quality section and the top portion of the Capital section5 is based on results from current and 
+prior examinations (if applicable). The left column of the bottom three Capital ratios6  and the Earnings and 
+Liquidity ratios should tie to the Examination as of Date of the current examination. The information in the adjacent 
+columns is user -defined. When sele cting the period and type of information displayed in the adjacent columns 
+(whether institution or peer), examiners should select the data that best supports examination  conclusions.  
+ 
+For institutions reporting capital under the community bank leverage  ratio (CBLR) framework, the risk based capital 
+ratios will not be calculated; the related ratios can be shown as NC and footnoted as “Not calculated under CBLR”.  
+ 
+Examiners can add one user -defined ratio to each section to further support examination find ings. User -defined 
+ratios for prior periods that are not readily available can be shown as NA and footnoted as Not Available, or 
+manually calculated based on UBPR definitions.  
+ 
+Note: The Capital Category will need to be changed from “W -Well- Capitalized” if  the bank is operating under a 
+formal corrective action that contains a capital provision even if the capital ratios meet the requirements of the Well - 
+Capitalized PCA category. (Change the category designation by overwriting the Capital Category cell in t he 
+automated examination tool.)   
+                                                      
+4 For institutions t hat have adopted the CECL methodology, total ACI is divided by  Tier 1 Capital plus the ACL for loans and leases (including the 
+off-balance sheet liability) plus the ACL for HTM debt securities plus assets other than loans and debt securities classified los s plus the ineligible 
+amount of the  ACL transferred from T ier 1 capital to T ier 2 capital, if applicable.  For institutions that have not adopted the CECL methodology, total  
+ACI is divided by  Tier 1 Capital plus the ALLL  plus assets other than loans classif ied loss plus the ineligible amount of the ALLL transferred from 
+Tier 1 Capital to Tier 2 Capital, if applicable.  
+5 Tier 1 Capital/Average Total Assets, Common Equity Tier 1  Capital/Risk Weighted Assets, Tier 1 Capital/Risk -Weighted Assets, and Total 
+Capital/Risk- Weighted Assets.   
+6 Retained Earnings/Average Total Equity, Asset Growth Rate, and Cash Dividends/Net Income

@@ -1,0 +1,49 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 14/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_014
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+906 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+107Id. (citing 45 CFR 164.308(b)). 
+108As technology has evolved and cybercriminals 
+have become more sophisticated, protective 
+measures, including technology, have been developed to prevent and mitigate such risks. For example, certain health IT may be certified through the ONC Health IT Certification Program as meeting certain criteria that address the security of information created, received, maintained, or transmitted by that health IT. See 45 CFR 
+170.550(h). 
+10945 CFR 164.306(b). 
+11045 CFR 164.310(a)(1). 
+11145 CFR 164.310(a)(2). 112‘‘National Trends in Hospital and Physician 
+Adoption of Electronic Health Records,’’ The Office of the National Coordinator for Health Information Technology, U.S. Department of Health and Human Services, https://www.healthit.gov/data/quickstats/ 
+national-trends-hospital-and-physician-adoption- electronic-health-records. 
+113See ‘‘2020–2025 Federal Health IT Strategic 
+Plan,’’ The Office of the National Coordinator for Health Information Technology, U.S. Department of Health and Human Services, p. 6 (Oct. 2020), https://www.healthit.gov/sites/default/files/page/ 2020-10/ Federal%20Health%20IT%20Strategic%20Plan_2020_ 2025.pdf. 
+114Among other things, the Cures Act provided 
+ONC, in collaboration with NIST and other relevant agencies within the Department, with the authority to convene public-private and public-public partnerships to build consensus and develop or support a trusted exchange framework, including a common agreement among health information networks nationally. The purpose of this work is to ensure full network-to-network exchange of health information. Sec. 4003(b) of Public Law 114–255, 130 Stat. 1165 (Dec. 13, 2016) (codified at 42 U.S.C. 300jj–11(c)). The Cures Act also provides penalties for any developer of certified health IT, health information exchange or network, and appropriate disincentives for any health care provider, determined by the Inspector General to have committed information blocking. Sec. 4004(b)(2) of Public Law 114–255, 130 Stat. 1165 (Dec. 13, 2016) (codified at 42 U.S.C. 300jj–52). 
+115See ‘‘Frequently Asked Question: Health 
+Information Exchange: The Benefits,’’ The Office of the National Coordinator for Health Information Technology, U.S. Department of Health and Human Services, https://www.healthit.gov/faq/why-health- 
+information-exchange-important. 116See Genevieve P. Kanter, et al., ‘‘Beyond 
+Security Patches—Fundamental Incentive Problems 
+in Health Care Cybersecurity,’’ JAMA Health Forum, Volume 2, Issue 10, p. e212969 (Oct. 8, 2021), https://jamanetwork.com/journals/jama- 
+health-forum/fullarticle/2784981; Chon Abraham, 
+et al., ‘‘Muddling through cybersecurity: Insights 
+from the U.S. healthcare industry,’’ Business Horizons, Volume 62, Issue 4, p. 539–548, p. 539 (July-Aug. 2019), https://www.sciencedirect.com/ science/article/abs/pii/S0007681319300436; Eric 
+Perakslis, ‘‘Responding to the Escalating Cybersecurity Threat to Health Care,’’ The New England Journal of Medicine, Volume 387, Issue 9 (Sept. 1, 2022), https://www.nejm.org/doi/abs/ 10.1056/NEJMp2205144; Anthony James 
+Cartwright, ‘‘The elephant in the room: cybersecurity in healthcare,’’ Journal of Clinical Monitoring and Computing, Volume 37, Issue 5, p. 1123–1132 (Apr. 24, 2023), https://link.springer.com/article/10.1007/s10877-023- 01013-5. 
+117‘‘Report on Improving Cybersecurity In The 
+Health Care Industry,’’ Health Care Industry Cybersecurity Task Force, p. 1 (June 2017), https:// 
+www.phe.gov/preparedness/planning/cybertf/ 
+documents/report2017.pdf. 
+118‘‘The NIST Cybersecurity Framework (CSF) 
+2.0,’’ supra note 15. associate of the covered entity must 
+obtain the required satisfactory assurances from the subcontractor to protect the security of ePHI.
+107 
+III. Justification for This Proposed Rulemaking 
+HIPAA and the HIPAA Rules promote 
+access to high-quality and effective health care by establishing standards for the security of ePHI. The standards, when implemented appropriately by regulated entities, protect the confidentiality, integrity, and availability of individuals’ health information. Such protections promote the electronic transmission of PHI through a national health information system. To ensure access to high-quality health care services, regulated entities must assure their customers (e.g., individuals, health care providers, and health plans) of the security of the 
+sensitive and confidential health information the regulated entities electronically create, receive, maintain, or transmit. 
+As discussed above, the Security Rule 
+carefully balances the benefits of safeguarding against security risks with the burdens of implementing protective measures by permitting regulated entities to consider several factors, including costs and available technology for preventing and mitigating security risks,
+108when

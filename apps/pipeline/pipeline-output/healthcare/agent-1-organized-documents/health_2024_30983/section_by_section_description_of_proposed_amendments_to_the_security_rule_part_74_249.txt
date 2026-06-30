@@ -1,0 +1,39 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 74/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_074
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+934 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+433See 68 FR 8334, 8344 (Feb. 20, 2003). covered entities.433In this rulemaking, 
+the Department proposes to strengthen 
+protections and address evolving cybersecurity threats. While we acknowledge that this proposal would reduce the Security Rule’s flexibility, we believe that it is necessary to do so to achieve HIPAA’s purpose of an efficient and effective health care system that relies on the secure electronic exchange of ePHI. Importantly, removing the distinction between required and addressable would not eliminate all of the Security Rule’s flexibility and scalability. Instead, it would simply clarify for regulated entities where the floor of protection must lie, and regulated entities must implement solutions that meet that floor, taking into consideration their needs and capabilities. For example, a small or rural health care provider must implement a solution that ensures the protection of ePHI in the manner required by the Security Rule, but the specific solution that it chooses would reflect consideration of its particular circumstances, including available resources. In some cases, a small or rural health care provider might opt to implement a cloud-based EHR or other software solution that could reduce the health care provider’s need to separately invest in data storage, backup systems, and IT personnel. And in other circumstances, a small or rural health care provider might choose to contract with a third party to provide IT support, rather than hiring its own workforce 
+members to perform such functions. 
+The Department also proposes to 
+delete the maintenance provision at 45 CFR 164.306(e). Instead, as discussed in greater detail below, we propose to clearly delineate maintenance implementation specifications for specific standards, when applicable. We believe this approach would clarify how maintenance requirements relate to specific security measures and would remove any ambiguity about the need for regulated entities to regularly review, test, and modify measures as reasonable and appropriate. We further discuss maintenance provisions below for each safeguard. 
+4. Request for Comment 
+The Department requests comment on 
+the foregoing proposals, including any 
+benefits, drawbacks, or unintended consequences. We also request comment on the following considerations in particular: 
+a. Whether removing the distinction 
+between required and addressable implementation specifications would 
+result in unintended negative consequences for regulated entities. If so, please explain and provide a recommendation for how the 
+Department should clarify how regulated entities are required to implement the security measures described in the proposed rule. 
+b. Whether the Department should 
+include other factors in 45 CFR 164.306(b) for regulated entities to consider when selecting the security measures that they will implement to meet the requirements of the Security Rule. If so, please explain. 
+c. Whether the factor proposed by the 
+Department at proposed 45 CFR 164.306(b)(2)(v) would help regulated entities identify reasonable and appropriate security measures. 
+d. Whether the Department’s 
+proposals sufficiently clarify that a regulated entity is expected to modify its security measures in response to changes in the environment in which health care is provided, including, but not limited to, the adoption of new technology, the evolution of existing technology, and the emergence of new threats. 
+e. Whether the proposals sufficiently 
+take into account the needs and capabilities of small health care providers and rural health care providers, as required by the statute. If not, please explain and include a recommendation for ways that the Department could better account for such needs and capabilities while adequately ensuring the confidentiality, integrity, and availability of ePHI that they create, receive, maintain, or transmit. The recommendations should also take into consideration the effect of the actions taken by small and rural health care providers on the ePHI that is created, received, maintained, or transmitted by other regulated entities with whom small and rural health care providers interact. 
+D. Section 164.308—Administrative 
+Safeguards 
+Section 164.308 of title 45 CFR 
+contains the administrative safeguards that a regulated entity must implement, consistent with the general requirements described in 45 CFR 164.306. All of the standards and implementation specifications found in the Administrative Safeguards section refer to administrative functions, such as policies and procedures that must be in place for the management and execution of security measures. 1. Current Provisions 
+a. Section 164.308(a) 
+Section 164.308(a) contains most of 
+the standards and associated

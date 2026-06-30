@@ -1,0 +1,132 @@
+# x. Pricing Information
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_709
+**Pages:** 698-700
+**Section Path:** VIII. Public Disclosure of Data > B. Preliminary Privacy Assessment > 6. Preliminary Privacy Assessment of Particular Data Fields > x. Pricing Information
+
+---
+
+698 may be less useful in re -identifying applicants of loans that were not originated because the 
+action taken date for such loans is rarely publicly available.  
+The Bureau stated that if it ultimately determined that the action taken date should be 
+modified for publication, it may consider disclosing at a higher level, such as month instead of a 
+specific date. The Bureau sought comment on this analysis, including about whether there are 
+specific modifications it should consider, and whether deletion would bet ter balance the risks and 
+benefits of disclosure.  
+In response, a group of  trade associations  stated that the Bureau should not disclose the 
+action taken date, noting that this information is not published in HMDA data. This commenter 
+expressed a concern t hat publishing the action taken date when the same data point is deleted or 
+modified in HMDA public data would constitute inconsistent treatment without adequate 
+explanation. The Bureau disagrees that it should omit action taken date from the public 1071 d ata 
+simply to ensure consistency between this final rule and HMDA. Commenters did not provide 
+additional evidence related to re -identification risk.  
+Commenters did not provide additional evidence related to re - identification risk that 
+would alter the initial assessment provided in the NPRM. In addition, the Bureau preliminarily assesses that the action taken date would present limited privacy risk  if re-identification 
+occurred. This data field  presents minimal, if any, personal information about an applicant or 
+related natural person that would be harmful or sensitive if such person were re -identified. The 
+Bureau also does not believe publication of these  data would result in non-personal  commercial  
+privacy risks to small businesses being disclosed. The Bureau also identifies no compelling 
+privacy risks to financial institutions.   
+x. Pricing Information 
+Proposed § 1002.107(a)(12) would have  required financial institutions to collect and 
+report to the Bureau t he following information , where applicable,  regarding the pricing of a 
+covered credit transaction that is originated , or approved but not accepted : (i) the interest rate; 
+(ii) total origination charges; (iii)  broker fees; (iv)  initial annual charges; (v)  additional costs for 
+merchant cash advances  or other sales -based financing; and (vi)  prepayment penalties.  As 
+discussed in the section-by -section analysis of § 1002.107(a)(12), the Bureau is finalizing the 
+pricing information data point largely as proposed.  
+The NPRM stated that information about the interest rates and fees charged in connection 
+with credit represents basic information about the features of a product  generally and would 
+present low risk of harm or sensitivity. It further noted that d isclosure  of pricing data in 
+unmodified form may reveal information that some applicants or related natural persons may 
+regard as harmful or sensitive, such as a reflection of their perceived credit risk. However, the 
+Bureau also reported that it had  received feedb ack during the SBREFA process that multiple 
+factors contribute to pricing for small business credit. While the Bureau further stated that 
+disclosure of pricing data in unmodified form may also reveal information that financial 
+institutions regard as harmful or sensitive , the NPRM  did not identify evidence  that disclosure of 
+pricing information would permit the reverse -engineering of proprietary lending models.
+
+699 The NPRM also noted that publicly available datasets include data fields an adversary 
+could directly match to the pricing data fields in unmodified form . Identified data about the 
+interest rate and fees charged for a given loan are available from a limited number of publicly 
+available datasets, such as data for the SBA 7(a) and 504 programs. The Bureau further stated 
+that, if it were to  determine that pricing data should be modified, it may consider recoding the 
+pricing information data fields into bins , such as interest rates  bins of 0.25 percentage points or 
+origination fee  bins of $500; and it also noted that it could consider top-coding pricing data . 
+The Bureau received  feedback from a range of commenters. Community groups and 
+some others generally agreed that publishing pricing information would serve the objectives of 
+section 1071. These commenters saw pricing information as necessary to monitor loan 
+affordability and assess lending in underserved communities. A software vendor stated that 
+publishing pricing information will improve competition and pricing efficiency by allowing 
+applicants  to compare credit costs offered by financial institutions. However, industry 
+commenters stated that pricing information would have limited benefits. Two lenders stated that 
+pricing information is not meaningful because it is based on a complex set of fact ors that is 
+unique to each transaction. A trade association stated that pricing information in small business lending would have little benefit compared to loan pricing data in HMDA because, unlike 
+consumer mortgage data reported in HMDA, commercial data t hat would be reported in the 1071 
+dataset is not standardized or uniform. Others said that pricing information has a high risk of 
+being misinterpreted.  
+Several lenders  also stated that small businesses would have privacy concerns if pricing 
+information on  their loans was made public.  Two industry commenters  stated that pricing 
+information would create re -identification risk, particularly in smaller and rural areas . Another  
+stated that farm loans present risks because such credit may be extended in small mar kets with 
+few customers which could increase the possibility of re -identification of small business 
+applicants or related natural persons.  Several other industry commenters said  that if re -
+identification were to occur, the publication of pricing data infor mation would create competitive 
+risks for small businesses.  One said  that this risk is particularly high in smaller communities 
+where it is possible to use published information to reveal pricing information about individual s. 
+Others  stated that privacy risks are especially potent for sole proprietorships because those 
+entities ’ pricing may be largely based on owners ’ individual credit performance and personal 
+information.  A group of trade associations  commented that pricing information was the most 
+sensitive data point  and it could reveal sensitive competitive information that would place 
+businesses at a substantial competitive disadvantage.  Regarding non-personal  commercial  harms 
+to small business applicants, some industry commenters aid that disclosing pr icing information 
+in 1071 data would cause some financial institutions to limit their lending to reduce reputational 
+or litigation risk.  
+Other commenters addressed the risk of harm or sensitivity to financial institutions. Some 
+industry commenters  stated that publishing pricing data will create competitive risks for financial 
+institutions by revealing pricing models for small business loans, potentially allowing competitors to undercut pricing.  Two agricultural lenders  commented that rural financial 
+institutions in markets with few customers face unique risks  and that the y may lose customers to 
+larger financial institutions or online lenders that have  larger customer bases and thus lower re -
+identification risk.  Several other industry commenters  stated that publishing pricing information
+
+700 would carry reputational and competitive risks for financial institutions. Some c ommenters were 
+concerned that pricing information would not capture the full context of credit decisions, risk ing 
+misconceptions about t he underlying rationale for pricing and creat ing illusory disparities in 
+credit terms.  A bank trade association stated that comparing pricing information between 
+different types of financial institutions can be misleading and may result in reputational har m 
+because certain lenders like credit unions and farm credit system lenders receive tax or funding 
+advantages to offer lower interest rates . Other commenters noted the risk of reputational harm 
+from  patronage dividends  in agricultural lending not being acc ounted for in disclosed pricing . 
+Other commenters asserted that disclosure of pricing information in 1071 data could create 
+litigation risk for financial institutions. Several commenters said that if regulators utilize pricing 
+information to analyze for fa ir lending without taking into account all variables that went into 
+underwriting, incorrect analyses could result in unwarranted allegations of discrimination. A bank said that litigation risk based on these misconceptions may be particularly high for smal ler 
+banks that originate fewer loans because the lower volume could result in greater variation in pricing information.  
+The Bureau also sought comment on whether pricing information, if published, should be 
+modified, and if so, what modification or deletio n techniques would preserve the benefits of the 
+public application -level data. A number of lenders and trade associations stated that pricing 
+information should not be published at all because of privacy risks. Other commenters suggested 
+modifications. A trade association stated that published pricing information should be limited to 
+interest rates and origination fees. This commenter also supported disclosing pricing information 
+in bins to protect privacy without harming data utility. In contrast, a commun ity group opposed 
+recoding interest rates or origination fees because that might mask lending disparities, thereby 
+hindering fair lending enforcement.  
+As discussed  in part VIII.B.3, the Bureau views pricing information as having significant 
+disclosure bene fits. In light of the re -identification risks discussed above, the Bureau appreciates 
+commenters ’ concerns that if re -identification were to occur, the disclosure of pricing 
+information in the public application -level data could pose significant risk to so le proprietors for 
+whom underwriting could be based on personal credit performance. The Bureau also recognizes 
+that re -identification , if it occurred,  could exacerbate privacy risks, including personal privacy 
+risks, presented by other data fields in the dataset. Additionally, re -identification could create a 
+risk of non-personal commercial harms for applicants, particularly in small or rural communities 
+when combined with other data fields like census tract or NAICS code. The Bureau 
+acknowledges commenters ’ concerns about potential risk of harm or sensitivity to financial 
+institutions, including reputation and litigation risks resulting from possible misinterpretations of 
+published pricing information. However, the Bureau does not view privacy risks to fina ncial 
+institutions as compelling enough to justify exclusion of the data field. As discussed in part 
+VIII.B.4 , by mitigating re -identification risk, other potential risks and harms, including those 
+faced by financial institutions, will also be mitigated.  
+The Bureau  preliminarily assesses that some modification techniques may be appropriate 
+when publishing pricing information. Potential modifications that the Bureau could consider include binning data or top-coding pricing data fields. However, the Bureau is  mindful that 
+modifying pricing information too much could mask discriminatory pricing practices, thus

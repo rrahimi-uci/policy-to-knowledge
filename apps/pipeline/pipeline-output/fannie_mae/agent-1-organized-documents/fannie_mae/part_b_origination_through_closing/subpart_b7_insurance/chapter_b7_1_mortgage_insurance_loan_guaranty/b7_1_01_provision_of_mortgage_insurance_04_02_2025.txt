@@ -1,0 +1,206 @@
+# B7-1-01, Provision of Mortgage Insurance (04/02/2025)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_381
+**Pages:** 845-850
+**Section Path:** Part B, Origination Through Closing > Subpart B7, Insurance > Chapter B7-1, Mortgage Insurance/Loan Guaranty > B7-1-01, Provision of Mortgage Insurance (04/02/2025)
+
+---
+
+Published March 4, 2026
+827 
+Subpart B7, Insurance
+Introduction
+This subpart describes Fannie Mae’s requirements for mortgage, title, property, ﬂood, liability, and ﬁdelity
+insurance.
+Chapter B7-1, Mortgage Insurance/Loan Guaranty
+Introduction
+This chapter describes Fannie Mae’s policies and requirements for standard conventional mortgage insurance
+coverage and government mortgage loan guaranty or insurance. The chapter includes requirements related to
+lender-purchased and borrower-ﬁnanced conventional mortgage insurance.
+B7-1-01, Provision of Mortgage Insurance (04/02/2025)
+Introduction
+This topic contains information on mortgage insurance, including:
+General Requirements
+Use of Approved Forms
+LTV Ratio Determination in New York State
+Payment of Mortgage Insurance Premiums
+Mortgage Insurability
+Prohibition of Certain Mortgage Insurance Agreements
+General Requirements
+Lenders must ensure that any mortgage insurance Fannie Mae requires for a mortgage loan is in place. Lenders
+must obtain and be able to produce evidence of any required mortgage insurance or loan guaranty.
+Unless the lender has provided another charter-compliant form of credit enhancement, the lender must obtain a
+primary mortgage insurance policy for a conventional ﬁrst mortgage loan that has an LTV ratio greater than
+80% at the time it is purchased for Fannie Mae’s portfolio or securitized. (For this purpose, the LTV ratio is
+calculated based upon the unpaid principal balance of the mortgage loan at the time it is purchased or
+securitized by Fannie Mae.)
+
+Published March 4, 2026
+828For a purchase money loan, the value used in determining the LTV ratio is the lower of the sales price or
+the appraised value of the security property.
+For a reﬁnance loan, the value used in originating the loan can be derived from an appraisal, AVM, or
+other acceptable method.
+Conventional mortgages may be insured by private mortgage insurers or state or local insuring agencies that
+have been approved under Fannie Mae’s Qualiﬁed Mortgage Insurer Approval Requirements to insure loans sold
+to or serviced for Fannie Mae. For a listing of the eligible conventional mortgage insurers and their associated
+mortgage insurance codes, see Approved Mortgage Insurers and Related Identiﬁers.  The website is the
+deﬁnitive source for approved mortgage insurers.
+The form of mortgage insurance policy, including any endorsements, must be acceptable to Fannie Mae.
+Use of Approved Forms
+Lenders are responsible for ensuring that only Fannie Mae-approved mortgage insurance forms and related
+endorsements and other forms (Forms) are used in connection with individual loans sold to or securitized by
+Fannie Mae. These Forms provide the terms of mortgage insurance coverage on individual loans. A list of Fannie
+Mae-approved Forms for each insurance provider is available on Fannie Mae’s website – see Approved Mortgage
+Insurance Forms .
+Any mortgage loan sold to or securitized by Fannie Mae that requires primary mortgage insurance (or is
+delivered with primary mortgage insurance even though not required) and has a loan application date on or
+after October 1, 2014, must be insured under one of the Fannie Mae-approved Forms. If such loan is insured
+under any pre-existing forms or agreements between lenders and mortgage insurers, the loan is not eligible for
+sale to Fannie Mae, and is subject to repurchase if identiﬁed after acquisition by Fannie Mae.
+Any mortgage loan sold to or securitized by Fannie Mae that requires primary mortgage insurance (or is
+delivered with primary mortgage insurance even though not required) and has a loan application date prior to
+October 1, 2014, may be insured under either
+one of the Fannie Mae-approved Forms; or
+any pre-existing forms and agreements between lenders and mortgage insurers, as long as the lender
+ﬁrst conﬁrms with the mortgage insurer that such forms and agreements were approved by Fannie Mae
+for use at the time of the loan application date.
+LTV Ratio Determination in New York State
+Under a New York statute, a mortgage insurer must issue mortgage insurance based on a determination of the
+“fair market value” of the property. The term “fair market value” is not deﬁned in the statute, but has been
+deﬁned by the New York insurance regulator as being the “appraised value.” Per the statute, for co-op
+properties, the issuance of mortgage insurance must be based on the “purchase price of the ownership interest
+and the proprietary lease.”
+As a result, the determination of value for properties in New York is diﬀerent from Fannie Mae’s standard
+deﬁnition of value that is used to calculate the LTV ratio. The following table identiﬁes the value calculation that
+is to be used for mortgage loans secured by properties in New York for policies that are based on the LTV ratio.
+
+Published March 4, 2026
+829LTV Ratio Calculation Policy
+LTV ratio based on the appraised value for non-
+co-op properties• Lenders must base their determination of when
+mortgage insurance is required solely on the
+appraised value of the property. If the appraised value
+of the property exceeds the sales price, this
+determination may result in mortgage insurance not
+being placed on a mortgage loan as would otherwise
+be required using Fannie Mae’s standard deﬁnition.
+• If this calculation results in mortgage insurance not
+being placed on the loan where mortgage insurance
+would otherwise have been required using Fannie
+Mae’s standard deﬁnition, the lender must deliver the
+loan to Fannie Mae using the MI Absence Reason Type
+of “No MI Based On Original LTV” (Sort ID 429).
+
+Published March 4, 2026
+830LTV Ratio Calculation Policy
+LTV ratio based on the sales price for co-op
+properties• For purchase transactions, except as provided
+below, lenders must base their determination of when
+mortgage insurance is required solely on the sales
+price for the co-op property. If the sales price of the
+property is more than the appraised value, this
+determination may result in mortgage insurance not
+being placed on a mortgage loan as would otherwise
+be required using Fannie Mae’s standard deﬁnition.
+• Exception: if mortgage insurance would be required
+based on sales price of the property but
+    ⚬ the sales price is less than the appraised value at
+the time the loan is made, and
+    ⚬ the LTV ratio based on that appraised value is
+75% or less (or the current percentage speciﬁed
+under Section 6503(d) of the New York Insurance law
+for continuing mortgage insurance)
+            then mortgage insurance must not be              
+      placed on the loan.
+Note:  For purchase transactions when the co-op
+property is subject to resale restrictions that
+terminate automatically upon foreclosure and the
+appraised value exceeds the sales price, lenders may
+use the appraised value of the property without resale
+restrictions, rather than the sales price when
+determining when mortgage insurance is required. For
+additional information on calculating LTV ratios on
+loans with resale restrictions, see  B5-5.2-02, Loans
+with Resale Restrictions: Eligibility, Collateral and
+Delivery Requirements  and B5-5.3-03, Shared Equity
+Transactions: Eligibility, Underwriting and Collateral
+Requirements .
+• If this calculation results in mortgage insurance not
+being placed on the loan where mortgage insurance
+would otherwise have been required using Fannie
+Mae’s standard deﬁnition, the lender must deliver the
+loan to Fannie Mae using the MI Absence Reason Type
+of “No MI Based On Original LTV” (Sort ID 429).
+
+Published March 4, 2026
+831LTV Ratio Calculation Policy
+LTV ratio based on the appraised value for
+reﬁnances of co-op share loans• Lenders must base their determination of when
+mortgage insurance is required for a reﬁnance
+transaction for co-op share loans solely on the
+appraised value.
+LTV ratio based on the lower of the sales price
+or appraised value (standard LTV ratio
+calculation) for all property types• Irrespective of the use of appraised value or sales
+price for determining whether mortgage insurance is
+required, this standard LTV ratio calculation must be
+used to determine the level of mortgage insurance
+coverage that is required on the mortgage loan. See
+B1-1-01, Contents of the Application Package , and
+B7-1-02, Mortgage Insurance Coverage Requirements ,
+for additional information.
+• The standard LTV ratio calculation must also be
+used
+    ⚬ to determine whether the loan satisﬁes any of
+Fannie Mae’s other eligibility criteria that are based on
+the LTV ratio of the loan;
+    ⚬ to determine any loan-level price adjustments
+derived from Fannie Mae’s pricing matrix that includes
+LTV ratios or CLTV ratios as a risk attribute in its
+lookup table; and
+    ⚬ when the loan is delivered to Fannie Mae (Sort ID
+254). (The standard LTV ratio must be delivered even
+if the appraised value or sales price is used to
+determine that mortgage insurance coverage is not
+required.)
+Payment of Mortgage Insurance Premiums
+Premium plans for mortgage insurance may be:
+monthly plans – monthly premiums from accumulated escrow deposits (with no initial payment at
+closing),
+annual plans – an initial payment at closing to cover the ﬁrst year's premium and annual renewal
+premiums thereafter paid from accumulated escrow deposits,
+single-premium plans – lump-sum premium at closing to purchase life-of-the-mortgage coverage, or
+split-premium plans – an initial payment at closing and an ongoing monthly premium from accumulated
+escrow deposits.
+
+Published March 4, 2026
+832Mortgage Insurability
+Each loan a lender delivers to Fannie Mae must be insurable. A mortgage is insurable if a mortgage insurer
+would not decline to insure it by reason of any fraud, misrepresentation, negligence, or dishonest, criminal, or
+knowingly wrongful act in origination or servicing, and would not be entitled to deny a claim by reason of any of
+the foregoing.
+Prohibition of Certain Mortgage Insurance Agreements
+Fannie Mae prohibits lenders from entering into any agreement that modiﬁes the terms of an approved
+mortgage insurance master policy on loans delivered to or intended for delivery to Fannie Mae. Prohibited
+agreements include, but are not limited to, agreements that directly or indirectly:
+modify master policy provisions for settling of claims,
+limit the right of a mortgage insurer to conduct ﬁle reviews or investigate claims,
+limit the right of a mortgage insurer to rescind coverage,
+rescind or modify coverage, or
+restrict notice to Fannie Mae of changes in coverage status.
+Further, Fannie Mae prohibits loss sharing, indemniﬁcation, settlement, or similar agreements of any kind
+between lenders and mortgage insurance companies that aﬀect Fannie Mae's interest in its mortgage loans or
+modify the terms of an approved mortgage insurance master policy on loans delivered to or intended for
+delivery to Fannie Mae. Traditional captive reinsurance arrangements between a mortgage insurance company
+and a licensed insurer or reinsurer may be permissible so long as they do not:
+aﬀect Fannie Mae's interest in its mortgage loans, or
+modify the terms of an approved mortgage insurance master policy on loans delivered to or intended for
+delivery to Fannie Mae.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2025-02 April 02, 2025
+Announcement SEL-2021-01 February 03, 2021
+Announcement SEL-2020-05 September 02, 2020
+Announcement SEL-2019-07 August 07, 2019

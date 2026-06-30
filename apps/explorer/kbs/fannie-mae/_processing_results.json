@@ -1,0 +1,28 @@
+{
+  "total_files": 1,
+  "processed": 1,
+  "failed": 0,
+  "total_chunks": 506,
+  "chunker_tools_used": {
+    "PDFChunker (TOC)": 1
+  },
+  "sub_chunks_created": 0,
+  "merges_performed": 51,
+  "files": [
+    {
+      "file": "fannie_mae.pdf",
+      "status": "success",
+      "chunks": 506,
+      "method": "toc_based",
+      "chunker_tool": "PDFChunker (TOC)"
+    }
+  ],
+  "chunk_size_stats": {
+    "min_words": 19,
+    "max_words": 2845,
+    "avg_words": 791,
+    "median_words": 658,
+    "sub_chunks_created": 0,
+    "merges_performed": 51
+  }
+}

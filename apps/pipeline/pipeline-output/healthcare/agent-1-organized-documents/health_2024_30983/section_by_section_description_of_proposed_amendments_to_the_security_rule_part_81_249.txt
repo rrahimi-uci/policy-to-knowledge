@@ -1,0 +1,27 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 81/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_081
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+450The Department 
+and NIST have provided extensive guidance, described below, about how to conduct such inventories as part of compliance with 45 CFR 164.308. However, nearly 20 years of enforcement experience indicates that regulated entities routinely disregard this part of the process. OCR’s investigations frequently find that organizations lack sufficient understanding of where all the ePHI entrusted to their care is located.
+451 Understanding one’s environment— 
+particularly how ePHI is created and enters an organization, how ePHI flows through an organization, and how ePHI leaves an organization—is crucial to understanding the risks ePHI is exposed to throughout an organization.
+452 
+According to the NIST Cybersecurity Framework 2.0, having a comprehensive understanding of the organization’s assets (e.g., data, hardware, software, 
+systems, facilities, services, people), suppliers, and related cybersecurity risks enables a regulated entity to prioritize its efforts consistent with its risk management strategy and its mission needs.
+453 
+The proposed standard would be 
+accompanied by three implementation specifications. Under the proposed implementation specification for inventory at proposed 45 CFR 164.308(a)(1)(ii)(A), the regulated entity would be required to establish a written inventory that contains the regulated entity’s technology assets. Technology assets are components of an electronic information system, including but not limited to hardware, software, electronic media, information, and data. The written inventory would be required to include technology assets that create, receive, maintain, or transmit ePHI and those that do not but that may affect the confidentiality, integrity, or availability of ePHI.
+454It would also be required to 
+include the identification, version, person accountable for, and location of each of the assets or information system components.
+455 
+The proposed implementation 
+specification for network map at proposed 45 CFR 164.308(a)(1)(ii)(B) would require a regulated entity to develop a network map that illustrates the movement of ePHI throughout its electronic information systems, including but not limited to how ePHI enters and exits such information systems, and is accessed from outside of such information systems. 
+Under the proposed implementation 
+specification for maintenance at proposed 45 CFR 164.308(a)(1)(ii)(C), a regulated entity would be required to review and update the written inventory of technology assets and the network map in the following circumstances: (1) on an ongoing basis, but at least once every 12 months; and (2) when there is a change in the regulated entity’s environment or operations that may affect ePHI. Such a change in the 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00041 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

@@ -1,0 +1,22 @@
+# Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 166/289)
+
+**Source:** health_2024_02544.pdf
+**Chunk ID:** health_2024_02544_028_sub_166
+**Pages:** 1-160
+**Section Path:** Regulatory Impact Analysis > Paperwork Reduction Act of 1995 > Explanation of Estimated Capital Expenses for 42 CFR Part 2
+
+---
+
+The commenter stated that under the 
+CARES Act, with the prior written consent of the patient, the contents of a part 2 program record may be used or disclosed by a covered entity, business associate, or program for TPO as permitted by the HIPAA regulations. Further, once disclosed to a covered entity or business associate, the CARES Act provides that the information so disclosed may be redisclosed in accordance with the HIPAA regulations. The requirement of an accompanying written notice for each disclosure imposes a hurdle to the electronic exchange of information though a HIE and is not required under 42 U.S.C. 290dd–2. The commenter suggested that the provisions of 42 U.S.C. 290dd–2(c) operate independently and refer to uses and disclosures in proceedings rather than uses and disclosures by covered entities or business associates. Thus, the prohibition can be enforced independently by the patient in the course of any such proceeding. To the extent that an accompanying notice is determined to be necessary, it should be permissible to reference the provisions of 42 U.S.C. 290dd–2(c) in contractual agreements between the program, covered entities, and business associates rather than requiring that a notice accompany each disclosure. 
+An HIE described its reliance on 
+contractual requirements in its agreements with data providers to ensure that it is notified of any limitations on its ability to share data prior to receiving that data. That practice will continue in response to the proposed changes contained in the NPRM. The commenter said that if the final rule includes a requirement for part 2 programs to notify data recipients, that requirement should be that they notify recipients when data is not received pursuant to a global consent for TPO, and that the operating assumption of parties receiving all forms of health data should be that it can be used consistently with the requirements of HIPAA and any relevant state laws or express contractual limitations. 
+Response 
+The notice does not establish a 
+limitation on redisclosure but rather is 
+intended to align the content of § 2.32 (Notice to accompany disclosure) with the requirements of 42 U.S.C. 290dd– 2(b), as amended by the CARES Act. 
+As the Department noted in its 2010 
+HIE guidance and regulations, this notice was intended to inform downstream record recipients of part 2 and restrictions on redisclosure.
+277The 
+notice as we have finalized it in this rule, like the existing notice, continues to inform record recipients that the information they receive may not be 
+VerDate Sep<11>2014 18:41 Feb 15, 2024 Jkt 262001 PO 00000 Frm 00084 Fmt 4701 Sfmt 4700 E:\FR\FM\16FER2.SGM 16FER2lotter on DSK11XQN23PROD with RULES2

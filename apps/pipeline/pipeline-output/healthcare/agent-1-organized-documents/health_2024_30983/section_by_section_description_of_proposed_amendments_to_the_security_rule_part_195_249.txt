@@ -1,0 +1,32 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 195/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_195
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+The Administrative Simplification 
+provisions of HIPAA (title II) provide the Secretary of HHS with the authority to publish standards for the privacy and security of health information. The Department first proposed standards for the security of ePHI on August 12, 1998, and published a final rule on February 20, 2003. The Department modified the Security Rule in 2013. Recently, as the preamble to this NPRM discusses, changes in the health care environment and insufficient compliance by regulated entities with the existing Security Rule require the modifications proposed here. 
+For purposes of this Regulatory 
+Impact Analysis (RIA), the proposed rule adopts the list of covered entities (with an updated count) and certain cost assumptions identified in the Department’s Information Collection Request (ICR) associated with the HIPAA Privacy Rule to Support Reproductive Health Care Privacy 
+(‘‘2024 ICR’’).
+940The Department also 
+relies on certain estimates and assumptions from the 1998 Proposed Rule
+941that remain relevant, the 2003 
+Final Rule,942and the 2013 Omnibus 
+Rule,943as referenced in the analysis 
+that follows. 
+The Department quantitatively 
+analyzes and monetizes the effect that this proposed rule would have on the actions of regulated entities to: conduct a Security Rule compliance audit; provide or obtain verification of business associates’ compliance with technical safeguards; notify other regulated entities when workforce members’ access to ePHI is altered or terminated; notify covered entities or business associates, as applicable, upon activation of a contingency plan; complete network segmentation; disable unused ports and remove extraneous software; deploy MFA and penetration testing; update health plan documents; update policies and procedures; update workforce training; and revise business associate agreements. The Department also quantitatively analyzes the effects on group health plan sponsors for ensuring that safeguards for their relevant electronic information systems meet Security Rule standards and notifying group health plans upon activation of the plan sponsors’ contingency plans. 
+Additionally, the Department 
+quantitatively analyzes the benefits of the proposed modifications to regulated entities due to an expected reduction in costs of remediation of breaches and risk of breaches by regulated entities. 
+The Department analyzes the 
+remaining benefits and costs qualitatively because many of the 
+proposed modifications are clarifications of existing requirements and predicting other concrete actions that such a diverse scope of regulated entities might take in response to this rule is inherently uncertain. 
+Analytic Assumptions 
+The Department bases its assumptions 
+for calculating estimated costs and 
+benefits on several publicly available datasets, including data from the U.S. Census Bureau (‘‘Census’’), the U.S. Department of Labor’s (DOL) Bureau of Labor Statistics, the Small Business Administration (SBA), and the Department’s Centers for Medicare & 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00098 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

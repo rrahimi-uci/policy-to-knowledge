@@ -1,0 +1,57 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 53/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_053
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+924 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+353While the Department also regulates 
+‘‘adoption and meaningful use of certified EHR 
+technology,’’ such as the actions of the end-user with respect to having and meaningfully using certified health IT to meet certain requirements, such as those requirements for the Promoting Interoperability performance category of the Merit- based Incentive Payment System (MIPS) (sections 1848(q)(2)(B)(iv) and 1848(o)(2) of the SSA), the 
+definitions proposed in this NPRM would apply only to regulated entities’ compliance with the Security Rule. 
+354University of Texas M.D. Anderson Cancer 
+Center, supra note 258, p. 478. 
+355Id. 
+356See proposed 45 CFR 164.308(b)(1)(i) and (ii) 
+and (b)(2)(ii). 357See proposed 45 CFR 164.312(a)(1). 
+358See proposed 45 CFR 164.312(a)(2)(iv). have access on demand to ePHI to carry 
+out their functions. 
+b. Proposal 
+Given the increased connectivity of 
+the health care environment, the 
+Department proposes to clarify the definition of availability by specifying that availability means the property that data or information is accessible and usable upon demand by not only an authorized person, but also an authorized technology asset. In so doing, the Department is not changing the meaning of availability, but rather clarifying its scope. 
+5. Clarifying the Definition of 
+‘‘Confidentiality’’ 
+a. Current Provision and Issues To 
+Address 
+Similar to the definition of 
+availability, the definition of the term ‘‘confidentiality’’ could be read as limited to the property that data or information is not made available or disclosed to unauthorized persons or processes. Read that way, the definition does not reflect today’s health care environment in which data and information may be accessed through any component of an interconnected electronic information system. 
+b. Proposal 
+The Department proposes to clarify 
+the definition of confidentiality to 
+specify that it means the property that data or information is not made available or disclosed to unauthorized persons, technology assets, or processes. 
+6. Adding Definitions of ‘‘Deploy’’ and 
+‘‘Implement’’ 
+a. Issues To Address 
+The Security Rule directs regulated 
+entities to implement technical policies 
+and procedures and assumes that such implementation requires the installation and configuration of technical safeguards.
+353OCR is concerned, based 
+on its investigations and compliance reviews, that some regulated entities may interpret the regulatory requirement to implement technical policies and procedures to mean that a regulated entity is only required to establish written policies and procedures about technical 
+requirements, but need not then apply effective, automated technical policies and procedures to all ePHI throughout the regulated entity’s enterprise. For example, in M.D. Anderson, the court stated that the encryption requirement at 45 CFR 164.312(a)(2)(iv) requiring a regulated entity to implement a mechanism to encrypt ePHI does not ‘‘require a covered entity to warrant that its mechanism provides bulletproof protection of ‘all systems containing ePHI.’ Nor does it require covered entities to warrant that all ePHI is always and everywhere ‘inaccessible to unauthorized users.’ ’’
+354Further, the 
+court added that the requirement does not ‘‘say anything about how effective a mechanism must be, how universally it must be enforced, or how impervious to human error or hacker malfeasance it must be.’’
+355 
+Therefore, the Department believes it 
+is necessary to add definitions that distinguish between implementation of the administrative and technical safeguards by separately describing how regulated entities can comply with requirements to implement technical safeguards and install technical solutions. 
+b. Proposal 
+The Department proposes to define 
+the term ‘‘deploy’’ to identify a specific 
+type of ‘‘implementation.’’ We believe that the new term and definition would help to better describe the compliance obligations for implementation specifications related to the use of technology for securing the confidentiality, integrity, or availability of ePHI. As proposed, the definition would require a regulated entity to ensure that technology is in place, configured for use, and actually in use and operational throughout the regulated entity. The Department’s proposed use of the term helps illustrate its purpose and utility in clarifying that policies and procedures, while necessary, are insufficient to meet requirements for technical safeguards. 
+For example, the Department is 
+proposing to create a new requirement for regulated entities to verify that business associates have deployed technical safeguards—that is, the technology is configured and operational, not only addressed in policies and procedures.
+356In another 
+example, the Department is proposing new implementation specifications

@@ -1,0 +1,36 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 82/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_082
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+938 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+456See, e.g., ‘‘New York State Register,’’ supra 
+note 14. 457‘‘Making a List and Checking it Twice: HIPAA 
+and IT Asset Inventories,’’ supra note 451. 
+458Id. 
+459NIST defines the Internet of Things as ‘‘[t]he 
+network of devices that contain the hardware, 
+software, firmware, and actuators which allow the devices to connect, interact, and freely exchange data and information.’’ NIST definition of ‘‘Internet of Things,’’ Glossary, Computer Security Resource Center, National Institute of Standards and Technology, U.S. Department of Commerce, https:// 
+csrc.nist.gov/glossary/term/internet_ of_things. 460See ‘‘Guidance on Risk Analysis,’’ Office for 
+Civil Rights, U.S. Department of Health and Human Services (July 22, 2019), https://www.hhs.gov/ hipaa/for-professionals/security/guidance/ guidance-risk-analysis/index.html?language=es. 
+461Id.; see also Jeffrey A. Marron, ‘‘Implementing 
+the Health Insurance Portability and Accountability Act (HIPAA) Security Rule: A Cybersecurity Resource Guide,’’ NIST Special Publication 800–66, Revision 2, National Institute of Standards and Technology, U.S. Department of Commerce, p.28– 84 (Feb. 2024), https://nvlpubs.nist.gov/nistpubs/ SpecialPublications/NIST.SP.800-66r2.pdf. regulated entity’s environment or 
+operations would include, but would not be limited to, the adoption of new technology assets; the upgrading, updating, or patching of technology assets; newly recognized threats to the confidentiality, integrity, or availability of ePHI; a sale, transfer, merger, or consolidation of all or part of the regulated entity with another person; a security incident that affects the confidentiality, integrity, and availability of ePHI; and relevant changes in Federal, State, Tribal, or territorial law. For example, a dissolution or bankruptcy of the regulated entity would require the regulated entity to review and update its inventory and network map. For another example, if a State implemented regulations specifying cybersecurity requirements for all hospitals, these proposed specifications would require a regulated entity in that State to review and update its inventory and network map considering implementation of the State regulations by the regulated entity or other persons whose activities may affect movement of ePHI throughout its electronic information systems.
+456 
+The proposed standard is consistent 
+with the NIST Cybersecurity Framework Identify function, Asset Management (ID.AM) category, which describes inventorying hardware and software and mapping communication and data flows to create and maintain an asset inventory that can be used in a risk analysis process. For example, the Cybersecurity Framework recommends that when creating an asset inventory, organizations should include all of the following, as applicable: 
+•Hardware assets that comprise 
+physical elements, including electronic devices and media, that make up an organization’s networks and systems. This may include mobile devices, servers, peripherals (e.g., printers, USB 
+hubs), workstations, removable media, firewalls, and routers. 
+•Software assets that are programs 
+and applications that run on an organization’s electronic devices. Well- known software assets include anti- malicious software tools, operating systems, databases, email, administrative and financial records systems, electronic medical/health record systems, and clinical decision support tools, including those that rely on AI. Though lesser known, there are other programs important to IT operations and security such as backup solutions, and other administrative tools that also should be included in an 
+organization’s inventory. 
+•Data assets that include ePHI that 
+an organization creates, receives, maintains, or transmits on its network, electronic devices, and media. How ePHI is used and flows through an organization is important to consider as an organization conducts its risk analysis.
+457 
+Where multiple persons have control 
+over a technology asset, all persons that have control should include the asset in both their technology asset inventories and on their network maps. For example, where a covered entity contracts with a cloud-based EHR vendor, both the covered entity and the EHR vendor have control over the ePHI in the EHR. Thus, the ePHI in the EHR and the EHR should be included in the technology asset inventories and network maps of both the covered entity and the cloud-based EHR vendor. Where the technology assets are controlled entirely by another person, such as the servers controlled by a cloud-based provider of data backup services, the technology assets would not be considered part of a health care provider’s electronic information systems, and therefore would not have to be included in its technology asset inventory. However, the data backup provider would have to be included in the health care provider’s network map.

@@ -1,0 +1,39 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 215/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_215
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+1006 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+996Public Law 104–13, 109 Stat. 166 (May 22, 
+1995) (codified at 44 U.S.C. 3502(8)) (definition of 
+‘‘information system’’); see also ‘‘Managing 
+Information as a Strategic Resource,’’ Circular No. A–130, Office of Management and Budget, Executive Office of the President, p. 31 (Jul. 28, 2016), (definition of ‘‘information system’’) https:// 
+www.whitehouse.gov/wp-content/uploads/legacy_
+drupal_ files/omb/circulars/A130/a130revised.pdf. 997Proposed 45 CFR 164.312(f)(2)(ii). 
+99845 CFR 164.304 (proposed definition of 
+‘‘Multi-factor authentication’’). management control’’ and instead 
+clarify in the preamble how the definition of ‘‘information system’’ applies in cloud computing environments. The Department also requests comment on the definition of ‘‘information system’’ and the extent of control a regulated entity has with respect to applications in cloud computing environments. 
+We also considered proposing to 
+adopt the definition of ‘‘information system’’ in the Paperwork Reduction Act of 1995 (PRA) and the current operative version of OMB Circular A– 130.
+996The PRA and OMB Circular A– 
+130 define ‘‘information system’’ as ‘‘a discrete set of information resources organized for the collection, processing, maintenance, use, sharing, dissemination, or disposition of information.’’ The Department declined to adopt this definition because the existing definition in the Security Rule based on the definition of ‘‘system’’ in the 1996 version of OMB Circular A– 130 more accurately reflects the typical components of an information system and the full extent of resources that are addressed by the Security Rule. Additionally, the definition of ‘‘information system’’ in the PRA and current operative version of OMB Circular A–130 contains some terms that are defined by the HIPAA Rules and some that are not. As a result, adopting this definition would require the Department to propose definitions to such additional terms and to ensure that the manner in which the terms with existing definitions are used is consistent with those existing definitions, and we are concerned that such change could cause significant confusion for regulated entities. 
+We do not believe that either of the 
+alternative definitions considered would have generated a quantifiable change in costs because the alternatives would be clarifications to existing requirements and would not have changed the scope of the Security Rule’s applicability. 
+Exception From Multi-Factor 
+Authentication (MFA) Requirement 
+The Department considered proposing 
+an exception to the MFA authentication requirement that would permit regulated entities in the future to adopt other technologies, in lieu of MFA, that 
+might offer a more secure method of authenticating user identity.
+997Based 
+on discussions with cybersecurity experts, the Department believes that MFA is likely to remain the most secure method for authenticating user identity in future years. It may take different forms, but it will still, at its core, meet the definition of MFA proposed in this NPRM for the foreseeable future.
+998 
+While the Department acknowledges 
+that technology will continue to evolve, we are unable to predict when and whether future technology will address identity verification and exceed the level of protection offered by MFA. This uncertainty renders us unable to articulate requirements specific enough 
+to justify a purposeful exception. Because of the uncertainty surrounding new technologies, we are also unable to estimate costs of adopting this alternative. Our current view is that proposing and codifying such an exception would be premature, but we will revisit the proposed specific requirement for MFA, if adopted, and reconsider the need for an exception should a more secure technology emerge. 
+Transition for Business Associates and 
+Group Health Plans 
+The Department considered requiring

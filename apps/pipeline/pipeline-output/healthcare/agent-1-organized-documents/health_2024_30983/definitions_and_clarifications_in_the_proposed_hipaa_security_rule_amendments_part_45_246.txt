@@ -1,0 +1,43 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 45/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_045
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+921 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+330Id. 
+331See Letter from NCVHS Chair Jacki Monson 
+(2022), supra note 123; Letter from NCVHS Chair 
+Jacki Monson (2023), supra note 123. 
+33242 U.S.C. 1320d–1(f). 
+33342 U.S.C. 1320d–1(c)(3)(A)(ii). 33445 CFR 160.103 (definition of ‘‘Electronic 
+media’’). 33578 FR 5566 (Jan. 25, 2013). 
+336Id. at 5576. 
+337Id. 
+338Id. 
+339A standard telephone line, often described as 
+a traditional landline, uses circuit-switched voice 
+communication service technologies through the Public Switched Telephone Network. The information transmitted through such traditional telephones is not electronic. 
+340VoIP technologies convert audio into a digital 
+signal that is then transmitted over the internet. See Voice Over internet Protocol (VoIP), Federal Communications Commission, https://www.fcc.gov/ general/voice-over-internet-protocol-voip. 
+341A 2022 report by the Federal Communications 
+Commission stated that the ‘‘number of fixed retail switched-access lines declined over the past three years at a compound annual rate of 12.3%, while interconnected VoIP subscriptions increased at a compound annual growth rate of 0.7%.’’ See ‘‘2022 
+COMMUNICATIONS MARKETPLACE REPORT,’’ Federal Communications Commission, p. 122 (Dec. 30, 2022), https://docs.fcc.gov/public/attachments/ FCC-22-103A1.pdf. section 405(d) of the Cybersecurity Act 
+of 2015; ‘‘and other programs and processes that address cybersecurity and that are developed, recognized, or promulgated through regulations under other statutory authorities.’’
+330 
+However, the HITECH Act amendment did not require the Secretary to accept a regulated entity’s implementation of recognized security practices as an alternative to compliance with the Security Rule, nor did it provide that such implementation was sufficient to meet the security objectives of HIPAA or the HITECH Act. Accordingly, it is appropriate for the Department to develop and adopt its own standards to meet the statutory objective of ensuring the security of ePHI. The standards and implementation specifications proposed herein take into consideration not only those promulgated by NIST, but also guidelines, best practices, methodologies, processes, and procedures published by CISA, the HHS 405(d) program, CMS, State governments, and others. The proposals also enable regulated entities to adopt security measures that ensure the confidentiality, integrity, and availability of ePHI; protect against any reasonably anticipated threats or hazards to the security or integrity of 
+ePHI and unauthorized uses or disclosures of such ePHI; ensure compliance with the Security Rule by the workforce members of regulated entities, while also taking into account the technical capabilities of record systems used to maintain ePHI; the costs of such measures; the need for training users who have access to ePHI; the value of audit trails in computerized record systems; and the needs and capabilities of small and rural health care providers. 
+The Department has consulted with 
+and relied on the recommendations of NCVHS in the formulation of this proposed rule
+331and intends to 
+continue to engage in these consultations before finalizing the rule.
+332We also expect to consult with 
+the National Uniform Billing Committee, the National Uniform Claim Committee, the Workgroup for Electronic Data Interchange, and the American Dental Association before finalizing this rule, as required by section 1172(c)(3)(A)(ii) of HIPAA.
+333 IV. Section-by-Section Description of 
+the Proposed Amendments to the Security Rule 
+This section contains a description of 
+the proposed amendments to the Security Rule and the Department’s rationale for its proposals. As part of this rationale, we often include a discussion of best practices contained in previously published guidance documents issued by the Department, NIST, and other Federal agencies. We request comment on previously published guidance documents that are not discussed herein that were issued by the Department or other Federal agencies and contain best practices but may be relevant or applicable to regulated entities, including the names of and citations for such guidance documents. We do not propose to adopt referenced best practices as the standard or implementation specifications unless otherwise specified in the proposed regulatory text. Rather, we include such discussion to provide regulated entities with context for the aforementioned proposals. We recognize that regulated entities are of varying types and sizes and may be concerned that requiring the adoption of such best practices might not be appropriate for all. However, we request comment on whether we should require implementation of certain aspects of a particular guidance document. If so, please explain which aspect(s) we should require, the rationale, and information about the burden of implementing such aspect(s). 
+A. Section 160.103—Definitions

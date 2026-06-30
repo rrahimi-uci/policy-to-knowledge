@@ -1,0 +1,42 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 122/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_122
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+958 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+631‘‘Considerations for Securing Electronic Media 
+and Devices,’’ Office for Civil Rights, U.S. 
+Department of Health and Human Services, p. 1 (Aug. 2018), https://www.hhs.gov/sites/default/ files/cybersecurity-newsletter-august-2018-device- and-media-controls.pdf. 
+632See, e.g., Sonali Sachdeva, et al., ‘‘Unraveling 
+the role of cloud computing in health care system and biomedical sciences,’’ Heliyon (Apr. 2, 2024) (‘‘These days numerous commercial merchants are intermingling with hospitals as well as healthcare providers to establish healthcare-based cloud computing networks.’’), https://www-ncbi-nlm-nih- gov.hhsnih.idm.oclc.org/pmc/articles/ PMC11004887/; see also id. (‘‘[. . .] Microsoft, Google and Amazon have instantly realized that the majority of hospitals will not continue working with servers that are privately owned as well as controlled.’’); ‘‘Increase in health-care cyberattacks affecting patients with cancer,’’ supra note 180 (In 
+2021, an attack against oncology services targeted data stored in cloud-based systems and affected patients in several States.). 
+633See 45 CFR 164.304 (definition of ‘‘Physical 
+safeguards’’). 
+63445 CFR 164.310(a)(2)(i). 63545 CFR 164.310(b). 
+63645 CFR 164.310(c). 
+637‘‘Considerations for Securing Electronic Media 
+and Devices,’’ supra note 631, p. 2. 
+638Id. electronic information systems, change 
+information, or access ePHI or other sensitive information.
+631Any of these 
+actions has the potential to adversely affect the confidentiality, integrity, or availability of ePHI, which means that physical safeguards for electronic media and a regulated entity’s relevant electronic information systems are critical to protecting the security of ePHI. Thus, the physical safeguards standards address the essential requirements for regulated entities to apply to limit physical access to their relevant electronic information systems to only authorized workforce members. As discussed above, ePHI is increasingly transmitted using interconnected systems that rely on cloud computing. The shift to a cloud-based infrastructure may increase regulated entities’ reliance on business associates to maintain and access ePHI stored in the cloud.
+632 
+Additionally, the shift to cloud computing enables regulated entities’ workforce members to access ePHI and relevant electronic information systems from a greater number of locations. Accordingly, regulated entities must appropriately expand and/or ensure that 
+applied physical safeguards take into account these new arrangements. 
+Section 164.310 includes the four 
+standards with which a regulated entity must comply to physically secure relevant electronic information systems and the premises where they are located. These standards require regulated entities to implement physical safeguards for facility access controls, workstation use, workstation security, and device and media controls in a manner that conforms with 45 CFR 164.306(c), the general compliance provision for the security standards. 
+As discussed above in greater detail, 
+physical safeguards encompass the physical measures, and related policies and procedures, to protect relevant electronic information systems and 
+related buildings and equipment from natural and environmental hazards, and unauthorized intrusion.
+633The standard 
+for facility access controls applies to protect the physical premises, while the standards for workstation use, workstation security, and device and media controls are aimed at protecting the electronic information systems and electronic media that create, receive, maintain, or transmit ePHI or that otherwise affect its confidentiality, integrity, and availability. 
+The standard for facility access 
+controls at 45 CFR 164.310(a)(1) requires a regulated entity to implement policies and procedures that limit physical access to electronic information systems and facilities that contain those systems. Section 164.310(a)(1) also requires a regulated entity to ensure its policies and 
+procedures allow persons who are properly authorized to access its facilities. 
+Under 45 CFR 164.310(a)(2), a 
+regulated entity must implement the standard for facility access controls in accordance with four implementation specifications. The implementation specification for contingency operations addresses the establishment (and implementation as needed) of procedures that allow for facility access in support of the restoration of lost data under a disaster recovery plan and emergency mode operations.
+634Section

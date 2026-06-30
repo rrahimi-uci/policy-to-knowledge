@@ -1,0 +1,14 @@
+# Service Continuity & Monitoring
+
+**Source:** risk_management_manual_complete.pdf
+**Chunk ID:** risk_management_manual_complete_2016
+**Pages:** 802-802
+**Section Path:** section19-1 > Report of Investigation > CONSISTENCY OF CORPORATE POWERS > According to proposed Senior Technology Officer Brian Bain, the proposed infrastructure retains the sufficient degree of scale and capacity to accommodate forecasted customer account volumes throughout the formative stages. > Service Continuity & Monitoring
+
+---
+
+OTHER PERTINENT INFORMATION (Continued)  
+FDIC 6510/10 (02 -2002) 41  
+  Service Continuity & Monitoring  
+ The Applicant’s server will be “mirrored” so that any existing software and/or hardware bugs should cause no more than a few minutes of service outage.  “Mirroring” means that the Applicant’s server is backed up continuously so that all data is stored in t wo 
+distinct physical locations.  This level of redundancy is necessary to ensure that access to the Applicant’s systems will be reliable.  All customer transactions utilizing the Applicant’s server will produce one or more entries within a transactional log.  The Applicant will regularly review these logs, along with Aurum , to ascertain whether any unusual transactions have occurred.

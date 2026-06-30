@@ -1,0 +1,49 @@
+# Proposed Rule
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_326
+**Pages:** 286-286
+**Section Path:** V. Section-by-Section Analysis > Section 1002.107 Compilation of Reportable Data > 107(a)(2) Application Date > Proposed Rule
+
+---
+
+286 origination being reported, not the customer who applies for or borrows the funds. In addition, 
+comment 107(a)(1) -1 makes clear that financial institutions may assig n the unique identifier at 
+any time prior to reporting the application, facilitating compliance. The Bureau believes that 
+final § 1002.107(a)(1)  will accommodate different institutions ’ numbering systems because the 
+unique identifier can  be created separat ely from th ose internal system s. In order to foster 
+uniformity of format and avoid confusion as to what constitutes a “ unique” identifier, comment 
+107(a)(1) -1 now requires that any alphabetical characters in the unique identifier be upper -case.  
+The Bureau is finalizing comment 107(a)(1) -2 with a minor change described below. 
+Final comment 107(a)(1) -2 states that the unique identifier must not include any directly 
+identifying information regarding the applicant or persons (natural or legal) associated with t he 
+applicant . In regard to the use of  directly identifying information , such as an SSN or taxpayer 
+identification number , the Bureau notes that section 1071 specifically forbids financial 
+institutions from using personally identifiable information concerni ng any individual who is, or 
+is connected with, an applicant in compiling and maintaining data for reporting.599 Although the 
+Bureau has preliminarily determined not to release unique identifier data reported to the Bureau 
+in unmodified form in the public, application -level dataset, inclusion of a small business ’s 
+employer identification number  or a natural person ’s SSN or taxpayer identification number  
+could present a risk of fraud or identity theft . Thus, for clarity, the Bureau is including in 
+comment 107(a)(1)-2 that SSN and employer identification number , in whole or partial form, are 
+examples of directly identifying information that must not be used.  
+The final rule  require s that the unique identifier begin with the financial institution ’s LEI.  
+Final § 1002.109(b)(1)(vi) requires any covered financial institution that does  not currently use 
+an LEI to obtain and maintain an LEI in order to identify itself when reporting data  to the 
+Bureau . The Bureau does not believe that i ncluding the financial institu tion’s LEI in its  unique 
+identifiers will pose particular  difficulties for reporting institutions; as noted above, the unique 
+identifier can be assigned at any time prior to reporting an application. The Bureau also believe s 
+that including the LEI will increase the specificity and usefulness of the identifier and the record 
+it identifies.  
+The Bureau did not receive comments discussing the possible inclusion of  a “check 
+digit, ” which is required for the HMDA universal loan identifier  but was not proposed as  part of 
+the 1071 unique identifier.  The Bureau  believe s that, based on its expectations for small business 
+lending data submission platform , a check digit w ill be unnecessary , as well as potentially 
+complicated for small financial institutions to implemen t, and thus it is not included in the final 
+rule. 
+107(a)(2) Application Date  
+Proposed Rule  
+ECOA section 704B(e)(2)(A) requires financial institutions to collect and report the “ date 
+on which the application was received.” 
+ 
+599 ECOA section 704B(e)(3).

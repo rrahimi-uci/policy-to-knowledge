@@ -1,0 +1,56 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 27/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_027
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+911 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+Communications During the COVID–19 Nationwide 
+Public Health Emergency,’’ Office for Civil Rights, U.S. Department of Health and Human Services 
+(Jan. 20, 2021), https://www.hhs.gov/hipaa/for- professionals/special-topics/emergency- preparedness/notification-enforcement-discretion-telehealth/index.html. 
+176Yuriy Pylypchuk, et al., ‘‘ONC Data Brief: Use 
+of Telemedicine among Office-Based Physicians, 2021,’’ The Office of the National Coordinator for Health Information Technology, U.S. Department of Health and Human Services, p. 1 (Mar. 2023), https://www.healthit.gov/sites/default/files/2023- 04/DB65_ TelemedicinePhysicians _508.pdf. 
+177Nduma N. Basil, ‘‘Health Records Database 
+and Inherent Security Concerns: A Review of the Literature,’’ Cureus, p. 3 (Oct. 11, 2022) (‘‘The increase in networked medical equipment and devices implies that, if there is a security breach in the form of hacking, then traffic on the network can slow down and interfere with the delivery of healthcare services.’’), https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9647912/. 
+178Id. 
+179‘‘Guidance Document: Information for 
+Healthcare Organizations about FDA’s ‘Guidance for Industry: Cybersecurity for Networked Medical Devices Containing Off-The-Shelf (OTS) Software,’ ’’ U.S. Food & Drug Administration, U.S. Department of Health and Human Services (Feb. 2005), https://www.fda.gov/regulatory-information/
+search-fda-guidance-documents/information- healthcare-organizations-about-fdas-guidance-industry-cybersecurity-networked-medical. 180Elizabeth Gourd, ‘‘Increase in health-care 
+cyberattacks affecting patients with cancer,’’ The 
+Lancet, p. 1215 (Sept. 2021), https://doi.org/ 10.1016/S1470-2045(21)00451-4. 
+181See Mayo Clinic, https://www.mayoclinic 
+.org/. 
+182An ‘‘ethical hacker’’ is a cybersecurity 
+researcher who ‘‘use[s] penetration testing techniques to test an organization’s cybersecurity and information technology (IT) security.’’ See Ed 
+Tittel, ‘‘How to Become a White Hat Hacker,’’ Business News Daily (June 17, 2024), https://
+www.businessnewsdaily.com/10713-white-hat- hacker-career.html. 
+183See Foued Badrouchi, et al., ‘‘Cybersecurity 
+Vulnerabilities in Biomedical Devices: A Hierarchical Layered Framework,’’ Internet of 
+Things Use Cases for the Healthcare Industry, p. 157–58 (2020); see also Monte Reel, et al., ‘‘It’s Way Too Easy to Hack the Hospital,’’ Bloomberg Businessweek (Nov. 2015), https://www.bloomberg.com/features/2015-hospital-hack/. 
+184See ‘‘Cybersecurity Vulnerabilities in 
+Biomedical Devices: A Hierarchical Layered Framework,’’ supra note 183, p. 157–58. 
+185See also ‘‘It’s Way Too Easy to Hack the 
+Hospital,’’ supra note 183; Nicole M. Thomasian, et 
+al., ‘‘Cybersecurity in the internet of Medical Things,’’ Health Policy and Technology (Sept. 2021), https://doi.org/10.1016/j.hlpt.2021.100549. 
+186‘‘Cybersecurity in the internet of Medical 
+Things,’’ supra note 185. 
+187Id. 
+188Id. 189Id. 
+190Report to Congressional Committees, ‘‘Medical 
+Device Cybersecurity: Agencies Need to Update 
+Agreement to Ensure Effective Coordination,’’ U.S. Government Accountability Office, p. 1 (Dec. 2023), https://www.gao.gov/assets/d24106683.pdf. 
+191‘‘Medical Device Interoperability,’’ U.S. Food 
+& Drug Administration, U.S. Department of Health and Human Services, https://www.fda.gov/medical- devices/digital-health-center-excellence/medical- device-interoperability. 
+192Guidance for Industry and Food & Drug 
+Administration Staff, ‘‘Cybersecurity in Medical Devices: Quality System Considerations and Content of Premarket Submissions,’’ U.S. Food & Drug Administration, U.S. Department of Health and Human Services (Sept. 27, 2023), https://www.fda.gov/media/119933/download. 
+19345 CFR 160.103 (definition of ‘‘Health care 
+provider’’). 
+194Where an application developer meets the 
+HIPAA Rules’ definition of health care provider and engages in standard electronic transactions, such as billing an insurance company for its services, it is a covered entity for the purposes of the HIPAA Rules, including the Security Rule. Where an application developer is not regulated under the HIPAA Rules, other Federal laws may apply to the application developer or the application, such as the FTC Act. See, e.g., FTC Act (codified at 15 U.S.C. 41–58). to ONC data, only 15 percent of office- 
+based physicians used any form of telemedicine in 2018–19. In 2021, telemedicine usage increased to 87 percent.
+176The electronic content 
+generated or transmitted during a telemedicine visit constitutes ePHI, so the increase in telemedicine further increases the amount of PHI that is also ePHI. 
+It is not only the ePHI maintained in

@@ -1,0 +1,27 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 158/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_158
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+Additionally, CISA has compiled a 
+database of free cybersecurity services and tools, some provided directly by CISA and others provided by private and public sector organizations.
+797For 
+example, public and private critical infrastructure organizations may avail themselves of CISA’s Cyber Hygiene Services.
+798These services are available 
+at no cost to such organizations and can help regulated entities reduce their risk level, identify vulnerabilities that could otherwise go unmanaged and increase the accuracy and effectiveness of their response activities, among other benefits, putting them in a better place to make risk-informed decisions. CISA’s Cyber Hygiene Services include both vulnerability scanning and web application scanning. CISA also has compiled a specific suite of tools and services for high-risk communities.
+799 
+To address the potential for a bad 
+actor to exploit publicly known vulnerabilities, and consistent with NCVHS’ recommendation, the Department proposes to add a new standard for vulnerability management at 45 CFR 164.312(h)(1).
+800The 
+proposed standard would require a regulated entity to deploy technical controls to identify and address technical vulnerabilities in the regulated entity’s relevant electronic information systems. The deployment of technical controls should be consistent with the regulated entity’s patch management policies and procedures at proposed 45 CFR 164.308(a)(4). This proposed standard aligns with the Department’s enhanced CPGs for Cybersecurity Testing and Third Party Vulnerability Disclosure by calling for regulated entities to employ multiple processes to discover technical vulnerabilities, including vulnerabilities in workstations and in technology assets provided by vendors and service providers.
+801For example, a regulated 
+entity should include a device owned by a person other than the regulated entity (e.g., the medical device 
+manufacturer) in its vulnerability management activities where the device is deployed on the regulated entity’s network. The regulated entity should also include all workstations (e.g., desktop computers, mobile devices) that are part of its relevant electronic information systems in its vulnerability management activities. 
+To implement this proposed standard, 
+we propose four implementation specifications. Proposed 45 CFR 164.312(h)(2)(i)(A) would require a regulated entity to conduct automated scans of the regulated entity’s relevant electronic information systems, including all of the components of such relevant electronic information systems (e.g., workstations, private networks) to 
+identify technical vulnerabilities. Vulnerability scans detect vulnerabilities such as obsolete software 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00081 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

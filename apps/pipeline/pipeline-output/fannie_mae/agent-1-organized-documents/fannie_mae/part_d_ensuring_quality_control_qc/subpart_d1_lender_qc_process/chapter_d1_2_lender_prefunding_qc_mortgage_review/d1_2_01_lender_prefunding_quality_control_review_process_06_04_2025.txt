@@ -1,0 +1,159 @@
+# D1-2-01, Lender Prefunding Quality Control Review Process (06/04/2025)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_507
+**Pages:** 1062-1065
+**Section Path:** Part D, Ensuring Quality Control (QC) > Subpart D1, Lender QC Process > Chapter D1-2, Lender Prefunding QC Mortgage Review > D1-2-01, Lender Prefunding Quality Control Review Process (06/04/2025)
+
+---
+
+Published March 4, 2026
+1044Post-closing Reporting Requirements
+Post-closing reports must, at a minimum, include:
+the date the report was published;
+a description of each sample selection, including the sampling criteria, number of loans reviewed, and
+percentage of total eligible loans reviewed;
+the rationale for each discretionary and each component review;
+summaries of the results of all random, discretionary, and component reviews;
+summaries of monthly third-party originations, including random, discretionary, and component reviews,
+if applicable;
+defect trending for all defect severity levels;
+the defect rate for, at minimum, the highest severity level resulting from each sample for at least the last
+three months;
+defect trending by category and subcategory for at least the last three months; and
+the resolution of speciﬁc defects with corrective action plans to address defect trends.
+In addition, post-closing reports must
+distinguish between defects related to compliance with applicable law and underwriting and eligibility
+defects,
+include reveriﬁcation success rates by reveriﬁcation type per D1-3-03, Lender Post-Closing Quality
+Control Reveriﬁcations ,
+include the ﬁnal results of the 10% QC vendor review described in D1-1-02, Lender Quality Control
+Staﬃng and Outsourcing of the Quality Control Process , if applicable, and
+identify loans required for investor self-reporting.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2025-04 June 04, 2025
+Chapter D1-2, Lender Prefunding QC Mortgage Review
+Introduction
+This chapter explains the requirements for a lender’s prefunding QC review process. It addresses the timing of
+ﬁle reviews and the process for selecting loans by various review types.
+
+Published March 4, 2026
+1045D1-2-01, Lender Prefunding Quality Control Review Process
+(06/04/2025)
+Introduction
+This topic contains information on the lender’s prefunding QC process and loan ﬁle reviews, including:
+Overview
+Timing of File Reviews
+Loan Selection Process
+Review Types
+Overview
+The lender must maintain and implement a written prefunding QC plan that outlines requirements for reviewing
+a sample of its loans prior to closing or, in the case of loans acquired from a delegated third party, prior to
+acquisition. The lender must have documented procedures that include, at a minimum, the following elements:
+timing of the prefunding QC ﬁle reviews,
+loan selection process, and
+veriﬁcation of data and documents.
+The lender’s prefunding QC process must operate independent of the lender’s production process, if practical.
+At a minimum, prefunding QC must be conducted by individuals who have no involvement in the origination,
+processing or underwriting functions of the loan being reviewed.
+The lender’s prefunding QC plan must be designed in a manner that supports its ability to identify and address
+defects prior to closing or acquiring the loan. The results of prefunding ﬁle reviews provide important and timely
+feedback, allowing the lender to identify loans with defects (such as analysis or calculation errors, inaccurate
+data, or inadequate documentation) prior to closing or acquiring the loan, and prevents the lender from selling
+ineligible loans to Fannie Mae.
+Fannie Mae encourages lenders to implement independent control points throughout the production lifecycle,
+such as internal data, third-party data, and analytical tools. Fannie Mae’s own research indicates that these
+tools can be eﬀective aids in identifying errors and inconsistencies early in the origination process. However, the
+isolated use of such tools is not a substitute for full-ﬁle reviews that are a critical component of a
+comprehensive prefunding QC process.
+Timing of File Reviews
+Prefunding QC reviews must be conducted early enough in the origination process to allow adequate time to
+make loan selections, complete the reviews, and properly inform the loan production staﬀ so that corrections
+can be made prior to loan closing or acquisition. The lender must complete the review when there is suﬃcient
+documentation in the ﬁle to perform the required review of data and documents described in Review Types ,
+below.
+
+Published March 4, 2026
+1046Loan Selection Process
+The lender's prefunding QC plan must contain requirements for full-ﬁle reviews and analysis of data and
+documents prior to funding. In addition to the required full-ﬁle reviews, the lender may choose to conduct
+component reviews by making loan selections designed to focus solely on a speciﬁc element of the loan or
+underwriting component (for example, income and employment, assets, credit, or property). 
+Component reviews may be completed without performing a full-ﬁle review. They should be completed in areas
+the lender believes pose unique or elevated risk, or to conﬁrm that a particular control or process is working as
+intended, such as newly added controls or processes. A full-ﬁle review is a comprehensive review of the
+underwriting decision while a component review is a review of a speciﬁc element.
+The lender must establish and document a monthly process for selecting loans for its prefunding QC reviews.
+The process must take into account the lender’s assessment of the risks inherent in its origination processes,
+business sources, production channels, volume, and product mix. The lender must regularly review its risk
+assessments to ensure the sample selected is appropriate. The monthly sample must include selections from
+each of the lender's production channels.
+Each month, the lender must complete a minimum number of prefunding QC reviews. The monthly loan
+selection must equal, at a minimum, the lesser of:
+10% of the prior month's total number of loans closed or acquired, or 10% of the current month's
+projected total number of loans to be closed or acquired (if using projections, the lender must perform a
+reconciliation process to ensure the 10% requirement is met); or
+750 loans.
+If the lender does not close or acquire at least 10 loans in the prior month, the lender must select at least one
+loan for its monthly prefunding QC review.
+Note:  Government loans acquired from a correspondent lender that meet the following requirements
+may be excluded from the 10% prefunding sample calculation:
+the correspondent lender completed the underwriting of the loan (delegated underwriting); and
+the correspondent lender obtained the required government guaranty or government insurance,
+as applicable. 
+Reviews must target areas the lender identiﬁes as having a higher potential for errors, misrepresentation, or
+fraud. Targeted areas may include the following:
+loans with characteristics or circumstances related to errors or defects identiﬁed in prior prefunding,
+prepurchase and post-closing review results;
+loans with complex income calculations (for example, rental income, self-employed, and short history of
+receipt of income);
+loans requiring the use of non-standard processing or underwriting guidelines (for example, delayed
+ﬁnancing, multiple ﬁnanced properties, assets used as income, or manual reserve calculations);
+loans secured by properties located in areas with high delinquency rates or areas experiencing rapid
+increases or decreases in property values;
+loans with ﬂags and messages that indicate potential overvaluation or appraisal quality issues on
+appraisals scored through Collateral Underwriter;
+
+Published March 4, 2026
+1047loans with multiple layers of credit risk, such as high LTV ratios, low credit scores, or high DTI ratios;
+loans originated or processed through various business sources, a particular branch oﬃce, employee,
+contractor, third-party originator, or appraiser;
+loans that test the eﬀectiveness of action plan controls;
+loans originated by third-party originators where elevated risks are observed based on lender oversight
+and controls (for example, results from the stratiﬁed random sample, scorecard metrics, other investor
+results, or third-party originators the lender identiﬁes as having a higher potential for errors,
+misrepresentation, fraud, etc.);
+loans originated or processed by newly hired loan oﬃcers, processors, underwriters, closers, funders,
+appraisers, other personnel, or third parties involved in the origination process; and
+loans for which the feedback or results from third-party tools indicate potential areas of concern.
+Review Types
+Leveraging a mix of full ﬁle and component reviews can enable lenders to review more loans and provide a
+broader comprehensive risk review than simply performing a full review on all loans sampled.
+Full-File Reviews
+Full-ﬁle reviews are comprehensive reviews of an underwriting decision and must include review of, at a
+minimum, the following data and documents to ensure the documents are present and complete, and that the
+data relied upon in making the underwriting decision is accurate. A full-ﬁle review must include an assessment
+of all of the following:
+data entered into an automated underwriting system;
+borrower Social Security number(s);
+income calculations and supporting documentation;
+employment documentation, including verbal veriﬁcation of employment;
+assets needed to close or meet reserve requirements;
+appraisal or other eligible collateral data or documentation, if applicable, including reconciliation of CU
+ﬂags and messages;
+adequate mortgage insurance coverage, if applicable; and
+occupancy.
+For loans with income or assets validated by the DU validation service, the lender is not required to recalculate
+validated income or assets as part of its prefunding QC review. However, the lender remains responsible for
+conﬁrming that the veriﬁcation report ID matches the ID captured in the ﬁnal DU ﬁndings report and the
+veriﬁcation report has not expired.
+For all loans, including those with validated income, assets, and employment, the lender must continue to
+ensure the information it enters in DU is appropriate based on its review and investigation of any inconsistent or
+contradictory information in the loan ﬁle and the veriﬁcation report.
+Component Reviews
+Component reviews focus on speciﬁc elements of a loan and typically can be completed more eﬃciently than
+full-ﬁle reviews. Targeting high-risk elements can help create visibility into unknown risks and conﬁrm controls
+are working eﬀectively. Components that can be reviewed include, but are not limited to:
+income when the DTI ratio is at or over a certain threshold,

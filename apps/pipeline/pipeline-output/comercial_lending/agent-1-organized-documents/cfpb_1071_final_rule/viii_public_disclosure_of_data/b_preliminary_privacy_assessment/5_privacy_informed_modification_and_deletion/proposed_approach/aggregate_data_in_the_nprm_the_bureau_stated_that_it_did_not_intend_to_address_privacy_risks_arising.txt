@@ -1,0 +1,49 @@
+# Aggregate data. In the NPRM, the Bureau stated that it did not intend to address privacy risks arising from application-level data by disclosing aggregated data in its place. As required by section 1071, the Bureau proposed in § 1002.110(a) to make av...
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_690
+**Pages:** 681-681
+**Section Path:** VIII. Public Disclosure of Data > B. Preliminary Privacy Assessment > 5. Privacy-informed Modification and Deletion > Proposed Approach > Aggregate data. In the NPRM, the Bureau stated that it did not intend to address privacy risks arising from application-level data by disclosing aggregated data in its place. As required by section 1071, the Bureau proposed in § 1002.110(a) to make av...
+
+---
+
+681 the Bureau  stated that its  consideration of the available forms of modification for the 1071 data 
+would also be informed by the operational challenges associated with various forms of 
+modification and the need to make application -level data available to the public in a timely 
+manner.  
+In general, the Bureau  stated that deleting or modifying data because the data would 
+disclose general information about a financial institution ’s lending practices —compared with 
+information that could substantially facilitate, for example, the reverse -engineering of a financial 
+institution ’s proprietary lending models —would be inconsistent with section 1071 , which 
+directly contemplates disclosure of financial institution identity in connection with the public 
+application -level dataset.887 Each of the data fields prescribed by the statute —with the exce ption 
+of the application number —could provide some insight into a financial institution ’s lending 
+practices. If the Bureau were to exclude data on this basis, therefore, it would exclude virtually 
+all of the statutorily required 1071 data points from the public data, frustrating both of the statutory purposes of section 1071.
+888 While the Bureau acknowledged financial institutions ’ 
+concern about the litigation and reputational risks involving 1071 data, the Bureau did  not 
+believe that this concern would just ify the exclusion of data from public disclosure. O ne of the 
+statutory purposes of section 1071 is to facilitate enforcement of fair lending laws, which authorize enforcement by parties other than the Bureau.
+889 Additionally, section 1071 
+contemplates that financial institutions would make their own application -level data available to 
+the public, which necessarily entails their identification .890  
+In light of the statutory purposes , the Bureau intend ed to modify or delete data only as 
+needed under the balancing test prior to public disclosure. The NPRM discussed associated modification  techniques with respect to specific data points. Where no specific modification 
+technique  was described with respect to a particular data point, the Bureau  stated that it had  not 
+identified an obvious modification technique other than swapping, suppression, or deletion.  
+While certain information that directly identifies applicants or related natur al persons 
+generally would not be collected under the proposed rule , the Bureau did  not accept that this 
+would eliminate privacy risks that would arise from publishing the data in unmodified form. The Bureau also rejected the idea that privacy risks c ould be adequately resolved through rule 
+coverage. While some re -identification risk could be reduced by increasing the number of 
+applications  reported to the Bureau, the Bureau did  not believe the effects of doing so are 
+necessarily predictable because re-iden tification risk depends on the characteristics of the data. 
+Further, the Bureau did not believe that increasing the number of applications  would have  
+addressed  risks of harm or sensitivity to re -identified applicants or natural persons.  
+Aggregate data. In the NPRM, t he Bureau  stated that it did not intend to address privacy 
+risks arising from  application -level data by disclosing  aggregate d data in its place . As required 
+by section 1071, the Bureau propos ed in § 1002.110(a)  to make available to the public the 
+ 
+887 See ECOA section 704B(f)(2)(B).  
+888 See ECOA section 704B(a).  
+889 See, e.g. , ECOA section 706 (providing for civil lia bility).  
+890 See ECOA section 704B(f)(2).

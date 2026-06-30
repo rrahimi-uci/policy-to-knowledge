@@ -1,0 +1,95 @@
+# INTEREST RATE RISK MEASUREMENT SYSTEMS
+
+**Source:** risk_management_manual_complete.pdf
+**Chunk ID:** risk_management_manual_complete_868
+**Pages:** 319-319
+**Section Path:** section7-1 > INTEREST RATE RISK MEASUREMENT SYSTEMS
+
+---
+
+SENSITIVITY TO MARKET RISK  Section 7.1  
+Sensitivity to Market Risk ( 10/2025 ) 7.1-10 RMS Manual of Examination Policies  
+  Federal Deposit Insurance Corporation   
+Management  should run repricing risk scenarios  regularly .  
+When applicable, institutions should also run scenarios for 
+other IRR risks, such as basis and yield curve risks.  Institutions should assess these risk exposures at least annually or when the risk profile of a bank changes , for 
+example, because of acquisitions, significant new products, or new hedging programs.  If a bank shows material 
+exposure to one of these risks, an appropriate scenario 
+should be included in monthly or quarterly IRR monitoring.  If an institution has relatively non -complex exposure to 
+basis, yield curve, or options risk, management should document that the exposure is minimal.  For example, 
+management may document its assessment with  a short 
+narrative description of what percentage of assets and liabilities are tied to various indices and a description of the potential impact of the risks.  These reports should typically 
+be reviewed by the board at least annually.  
+ Sensitivity analysis  should be included in stress testing to 
+help determine which assumptions have the most influence on a model ’s output.  By identifying key assumptions, 
+management, when necessary, can refine the assumptions to increase the accuracy of their models.  The most significant 
+variables can be tested by keeping all other variables 
+constant , changing the variable in question, and comparing 
+the results to the  base-case scenario .  Additionally, 
+sensitivity analysis can be used to determine the conditions 
+under which key business assumptions or model parameters 
+break down or when IRR may be exacerbated by other risks or earnings pressures.  When management includes 
+assumptions based on strategic initiatives, it is imperative 
+that they assess the impact of not meeting projections.  (Refer to Sensitivity Testing  - Key Assumptions for more 
+details .) 
+  
+ 
+ 
+← 
+INTEREST R ATE R ISK MEASUREMENT 
+SYSTEMS   
+ 
+The IRR measurement system should be appropriate for institution ’s risk profile .  The measurement system should 
+capture all material sources of IRR and generat e meaningful 
+reports for senior management and the board of directors.  Management should ensure risks are  measured over a 
+relevant range of interest rate changes, including meaningful stress situations.  Further, the measurement system must be subject to appropriate internal controls and periodic independent review s.  The IRR measurement 
+process should be well documented and administered by individuals with sufficient technical knowledge.  
+ IRR measurement systems can range from simple methods  
+to sophisticated programs that include stochastic data 
+modeling.   (Stochastic modeling involves using one or more 
+random variables in a model. )  However, all measurement 
+systems should  use generally accepted financial concepts 
+and risk measurement techniques  and have  an adequate 
+level of transparency.  If a third -party model is used, 
+management  should review the adequacy and 
+comprehensiveness of the vendor ’s model -validations and 
+internal control reviews .  Also, management  should 
+consider the capabilities  of the software to meet the 
+institution ’s future needs and  the adequacy of ongoing 
+vendor support  and training.  
+ A bank’ s IRR measurement system is a critical part  of its 
+overall risk management process.  Examiners rely heavily 
+on the output of the  measurement systems when assessing 
+sensitivity to market risk.  Accordingly, the review of such 
+systems and their operation is a crucial element of the 
+examination process.  The review process should address the following items:  
+ 
+• Capabilities of the measurement system , 
+• Accuracy of system inputs,  
+• Reasonableness and documentation of material 
+assumptions,  
+• Usefulness of system output/reports , and  
+• Adequacy of periodic variance analysis.  
+ 
+Measurement System Capabilities  
+ The IRR measurement system should capture and reliably 
+estimate all material risk exposures.  Therefore, the system 
+should consider all significant balance sheet categories, 
+income statement items , and risk factors.  For example, if 
+an institution has material holdings of mortgage loans or mortgage -backed securities, then its measurement system 
+should be able to adequately incorporate prepayment 
+projections.  Likewise, if the bank has a mortgage banking 
+operation that generates material fee income, its syst em 
+should capture the rate sensitivity of this noninterest income.  
+ 
+When an institution develops  an IRR model internally or 
+considers acquiring  a third -party model, management  
+should assess its suitability by evaluating the model ’s ability 
+to reasonably capture all relevant and material IRR 
+exposures.   Additionally, management should periodically 
+re-evaluate the adequacy  of a model in use  as risk positions, 
+strategies, and activities change.  
+ 
+To effectively use its IRR measurement system, management must fully understand the system ’s 
+capabilities, limitations, quantitative methodologies, and 
+use of assumptions.

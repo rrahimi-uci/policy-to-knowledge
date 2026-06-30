@@ -1,0 +1,96 @@
+# B3-3.4-09, Long-term Disability Income (03/04/2026) + B3-3.4-10, Mortgage Credit Certificates (03/04
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_154
+**Pages:** 364-366
+**Section Path:** Part B, Origination Through Closing > Subpart B3, Underwriting Borrowers > Chapter B3-3, Income Assessment > Section B3-3.4, Other Sources of Income > B3-3.4-09, Long-term Disability Income (03/04/2026)
+
+---
+
+Published March 4, 2026
+346Criteria Requirements
+Determination of
+Qualifying IncomeAverage Income:  Depending on the historical trend of the income, the
+lender must calculate qualifying income as follows:
+• Stable or Increasing: Calculate an average income amount using the
+most recent two years personal federal income tax returns.
+• Decreasing:  Calculate an average income amount using the most
+recent year personal federal income tax returns.
+Note:  Subtract any assets used for down payment or closing costs from
+the borrower's total assets before calculating expected future interest or
+dividend income.
+Recent Related Announcements
+The table below provides references to recently issued Announcements related to this topic.
+Announcements Issue Date
+Announcement SEL-2026-02 March 04, 2026
+B3-3.4-09, Long-term Disability Income (03/04/2026)
+The following table provides requirements for long-term disability income. It does not apply to disability income
+that is received from the Social Security Administration. See B3-3.4-15, Social Security Income , for additional
+information.
+
+Published March 4, 2026
+347Criteria Requirements
+DocumentationThe lender must obtain
+• a copy of the borrower's disability policy or beneﬁts statement from the
+beneﬁts payer (insurance company, employer, or other qualiﬁed
+disinterested party) to determine:
+    ⚬ the borrower's current eligibility for the disability beneﬁts,
+    ⚬ the amount and frequency of the disability payments, and
+    ⚬ if there is a contractually established termination or modiﬁcation date.
+Additionally, the lender must obtain evidence that the borrower will receive
+at least one payment on or before the ﬁrst payment due date.
+Income History No minimum history is required.
+Income ContinuanceLenders are not required to verify continuance unless they have reason to
+believe the income may not continue. (Re-evaluation of beneﬁts is not
+considered a reason to support income will not continue.)
+Determination of
+Qualifying IncomeThe monthly income amount as documented above may be used as
+qualifying income.
+However, if a borrower is currently receiving short-term disability payments
+that will decrease to a lesser amount within the next three years because
+they are being converted to long-term beneﬁts, the amount of the long-term
+beneﬁts must be used as income to qualify the borrower. For additional
+information on short-term disability, see B3-3.3-09, Temporary Leave
+Income .
+DU Validation Service If a borrower's long-term disability income is validated by the DU validation
+service, DU will issue a message indicating the required documentation. This
+documentation may diﬀer from the requirements described above. See
+B3-2-02, DU Validation Service .
+Recent Related Announcements
+The table below provides references to recently issued Announcement related to this topic.
+Announcements Issue Date
+Announcement SEL-2026-02 March 04, 2026
+
+Published March 4, 2026
+348B3-3.4-10, Mortgage Credit Certiﬁcates (03/04/2026)
+States and municipalities can issue mortgage credit certiﬁcates (MCCs) in place of, or as part of, their authority
+to issue mortgage revenue bonds. MCCs enable an eligible ﬁrst-time homebuyer to obtain a mortgage secured
+by their principal residence and to claim a federal tax credit for a speciﬁed percentage (usually 20% to 25%) of
+the mortgage interest payments.
+Criteria Requirements
+DocumentationFor purchase transactions, the lender must obtain :
+• a copy of the MCC, and
+• the lender's documented calculation of the adjustment to the borrower's
+income.
+For reﬁnance transactions, the lender must obtain :
+• conﬁrmation prior to loan closing from the MCC provider that the MCC
+remains in eﬀect for the new loan, and
+• copies of the MCC documents, including, the reissue certiﬁcation.
+Note:  Because the MCC is transaction speciﬁc, it does not have to comply
+with the Allowable Age of Credit Documents policy (see B1-1-03, Allowable
+Age of Credit Documents and Federal Income Tax Returns , for additional
+information).
+Income History No minimum history is required.
+Income ContinuanceLenders are not required to verify continuance unless they have reason to
+believe the income may not continue.
+Determination of
+Qualifying IncomeWhen calculating the borrower’s DTI ratio, treat the maximum possible
+MCC income as an addition to the borrower’s income, rather than as a
+reduction to the amount of the borrower’s mortgage payment. Use the
+following calculation when determining the available income:
+[(Mortgage Amount) x (Note Rate) x (MCC %)] ÷ 12 = Amount added to
+borrower’s monthly income.
+For example, if a borrower obtains a $100,000 mortgage that has a note
+rate of 7.5% and they are eligible for a 20% credit under the MCC
+program, the amount that should be added to their monthly income would
+be $125 ($100,000 x 7.5% x 20% = $1500 ÷ 12 = $125).

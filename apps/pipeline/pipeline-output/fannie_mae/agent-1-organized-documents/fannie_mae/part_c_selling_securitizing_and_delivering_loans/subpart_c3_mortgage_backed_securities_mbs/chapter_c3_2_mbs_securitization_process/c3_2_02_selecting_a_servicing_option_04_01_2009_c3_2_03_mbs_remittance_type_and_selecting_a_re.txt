@@ -1,0 +1,62 @@
+# C3-2-02, Selecting a Servicing Option (04/01/2009) + C3-2-03, MBS Remittance Type and Selecting a Re
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_475
+**Pages:** 1001-1002
+**Section Path:** Part C, Selling, Securitizing, and Delivering Loans > Subpart C3, Mortgage-Backed Securities (MBS) > Chapter C3-2, MBS Securitization Process > C3-2-02, Selecting a Servicing Option (04/01/2009)
+
+---
+
+Published March 4, 2026
+983Loans with diﬀerent annual rates of interest can be included in the same MBS pool, as long as those rates fall
+within the minimum and maximum spreads Fannie Mae allows between the loan interest rates and the pass-
+through rate for the MBS pool.
+For ﬁxed-rate loans that are pooled, the minimum allowable interest rate is 25 basis points (.25%) above the
+pool’s pass-through rate and the maximum allowable interest rate is 112.5 basis points (1.125%) above the
+pool’s pass-through rate.
+Generally, for ARMs that are pooled, the minimum allowable interest rate is the sum of the lowest guaranty fee
+(after all applicable adjustments have been made, including buyups and buydowns) and the lender’s minimum
+servicing fee, which must include renewal premiums for lender-purchased mortgage insurance, if applicable.
+The recommended maximum allowable interest rate is 100 basis points (1%) over the minimum allowable
+interest rate. Lenders must comply with the allowable minimum and maximum interest rates for each MBS ARM
+structure.
+Servicer Requirements for Loans Pooled into MBS
+All loans in a single issuer MBS pool must be serviced by the same entity. If a lender plans to deliver several
+pieces for inclusion in a multiple pool (Fannie Majors), each piece may have a diﬀerent servicer. The lender may
+deliver any combination of seller/servicer numbers for inclusion in a multiple pool (Fannie Majors), however the
+servicers designated must be servicing loans in the multiple pool that have the same remittance cycle as the
+loans being delivered.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2022-08 September 07, 2022
+Announcement SEL-2021-09 October 06, 2021
+Announcement SEL-2019-06 July 03, 2019
+Announcement SEL-2019-04 May 01, 2019
+Announcement SEL-2019-03 April 03, 2019
+
+Published March 4, 2026
+984C3-2-02, Selecting a Servicing Option (04/01/2009)
+Introduction
+This topic provides information about the two options lenders must choose from when deciding how they wish to
+service loans pooled into MBS. These options include:
+Impact of Servicing Option Selection on Guaranty Fees
+Regular Servicing Option
+Special Servicing Option
+Impact of Servicing Option Selection on Guaranty Fees
+Guaranty fees are aﬀected by the servicing option chosen by the lender. Generally, the guaranty fee for pooled
+loans serviced under the Regular Servicing option is typically lower than for pooled loans serviced under the
+Special Servicing option.
+Regular Servicing Option
+Under the Regular Servicing option (identiﬁed by foreclosure risk code L), the lender assumes the entire risk of
+loss from a borrower default while servicing the mortgage and, as a result, is charged a lower guaranty fee. The
+lender also agrees to provide for a successor to this agreement if it transfers its responsibilities for servicing the
+mortgage to another servicer.
+Special Servicing Option
+Under the Special Servicing option (identiﬁed by foreclosure risk code F), Fannie Mae assumes the risk of loss
+from a borrower default. Fannie Mae reimburses the lender for its share of the lender’s unrecovered advances
+for delinquencies and advances related to servicing the mortgages.
+See the Servicing Guide  for more information about both options.
+Recent Related Announcements
+There are no recently issued Announcements related to this topic.
+C3-2-03, MBS Remittance Type and Selecting a Remittance Cycle

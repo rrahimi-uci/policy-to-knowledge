@@ -1,0 +1,34 @@
+# Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments (part 128/246)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_005_sub_128
+**Section Path:** Definitions and Clarifications in the Proposed HIPAA Security Rule Amendments
+**Summary:** This section provides a comprehensive list of definitions and clarifications proposed for the Security Rule, including terms related to access, authentication, and security measures. It aims to enhance clarity and understanding of compliance obligations for regulated entities.
+
+---
+
+procedures for physical safeguards should be reviewed at different intervals, based on the specific standard or implementation specification. If so, please explain. 
+c. Whether the Department should 
+include additional examples in regulatory text at proposed 45 CFR 164.310(a)(2)(iv) of physical components of a facility related to security for which there should be written policies and procedures to document repairs and modifications. 
+d. Whether the standard at proposed 
+45 CFR 164.310(d)(1) and its associated implementation specifications at paragraph (d)(2) should apply to technology assets that do not maintain ePHI, but do access the regulated entity’s relevant electronic information systems. F. Section 164.312—Technical 
+Safeguards 
+1. Current Provisions 
+Section 164.312 includes five 
+standards for technical safeguards, 
+which are the requirements concerning the implementation of technology and technical policies and procedures to protect the confidentiality, integrity, and availability of ePHI and related information systems. A regulated entity must comply with the standards for technical safeguards in accordance with 45 CFR 164.306(c), the provision that describes the general rules for the security standards. 
+Under 45 CFR 164.312(a)(1), a 
+regulated entity is required to establish policies and procedures for electronic information systems to allow access only to those persons or software programs that have been granted access rights as specified in 45 CFR 164.308(a)(4). Regulated entities may comply with this standard by implementing a combination of access control methods and technical controls, consistent with the implementation specifications for this standard. The Security Rule does not identify a specific access control method or technology to implement. Regardless of the technology or information system used, access controls should be appropriate for the workforce member’s role and/or function.
+659For example, a 
+workforce member responsible for monitoring and administering information systems with ePHI, such as an administrator or a superuser,
+660 
+should only have access to ePHI as appropriate for their role and/or job function. 
+The implementation specifications 
+that provide instructions for satisfying the access control standard are found at 45 CFR 164.312(a)(2). Two are required and two are addressable.
+661The 
+implementation specifications address unique user identifiers,
+662emergency 
+access procedures,663automatic 
+logoff,664and encryption and 
+decryption.665The implementation 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00066 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

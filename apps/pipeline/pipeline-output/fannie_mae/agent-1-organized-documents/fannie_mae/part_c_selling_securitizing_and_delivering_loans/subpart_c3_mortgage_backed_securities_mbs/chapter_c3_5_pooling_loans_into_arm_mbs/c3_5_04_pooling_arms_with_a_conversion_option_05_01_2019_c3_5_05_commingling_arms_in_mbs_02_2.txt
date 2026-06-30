@@ -1,0 +1,68 @@
+# C3-5-04, Pooling ARMs with a Conversion Option (05/01/2019) + C3-5-05, Commingling ARMs in MBS (02/2
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_488
+**Pages:** 1021-1022
+**Section Path:** Part C, Selling, Securitizing, and Delivering Loans > Subpart C3, Mortgage-Backed Securities (MBS) > Chapter C3-5, Pooling Loans into ARM MBS > C3-5-04, Pooling ARMs with a Conversion Option (05/01/2019)
+
+---
+
+Published March 4, 2026
+1003Recent Related Announcements
+There are no recently issued Announcements related to this topic.
+C3-5-04, Pooling ARMs with a Conversion Option (05/01/2019)
+Introduction
+This topic provides information on pooling ARMs with conversion options, including
+ARM Conversion Options
+Redelivering a Converted ARM that Originally Required Recourse or Credit Enhancement
+ARM Conversion Options
+If a borrower chooses to convert an adjustable-rate mortgage that includes an option to convert to a ﬁxed-rate
+mortgage, the lender must repurchase the mortgage from the MBS pool before interest begins accruing at the
+new ﬁxed rate. Lenders may choose from two options for disposing of the converted mortgage after it has been
+repurchased from the pool:
+take-out option
+market rate option
+If the take-out post-conversion option was selected when the convertible ARM was delivered, the servicer must
+redeliver the converted mortgage to Fannie Mae as a whole loan or as part of a ﬁxed-rate MBS (A/A remittance
+type only).
+The take-out option is not available on mortgages that have lender-purchased mortgage insurance or were
+originated under an ARM plan that permits conversion to a ﬁxed interest rate only on speciﬁed interest rate
+adjustment dates.
+The conversion option selected for each convertible ARM delivered to Fannie Mae must be identiﬁed by the
+appropriate special feature code:
+SFC 037 Convertible ARM — Take-Out Option, or
+SFC 038 Convertible ARM — Market Rate Option.
+In order to receive a par price on a redelivered converted mortgage, the lender must obtain a take-out
+mandatory delivery commitment (Converted ARM Resale Commitment) by the 16th day of the month in which
+the conversion was requested.
+If the market rate option was chosen, the servicer is not required to redeliver the mortgage to Fannie Mae,
+although it may choose to redeliver the mortgage as a whole loan (A/A, S/A or S/S remittance types) or as part
+of a ﬁxed-rate MBS. It may deliver the loan under any existing standard ﬁxed-rate whole loan or MBS
+
+Published March 4, 2026
+1004commitment that it has outstanding, as long as Fannie Mae’s original acceptance of the mortgage was not
+conditional on the lender providing some type of special recourse or credit enhancement.
+Redelivering a Converted ARM that Originally Required Recourse or Credit
+Enhancement
+If Fannie Mae originally required recourse or credit enhancement on an ARM that includes an option to convert
+to a ﬁxed-rate mortgage, and the conditions that led to its requirement still exist, then lenders will not be able
+to use a standard commitment to redeliver the converted mortgage to Fannie Mae. Instead, lenders must
+obtain a new negotiated contract (which may or may not require recourse or credit enhancement) or
+include the converted mortgage as part of a delivery under an outstanding negotiated contract that has
+acceptable recourse or credit enhancement.
+If the conditions that led to Fannie Mae requiring recourse or credit enhancement no longer exist, and Fannie
+Mae determines that the recourse or credit enhancement is no longer necessary, lenders may redeliver the
+converted mortgage under
+a standard whole loan commitment, or
+a standard MBS commitment.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2019-04 May 01, 2019
+ 
+C3-5-05, Commingling ARMs in MBS (02/23/2016)
+Introduction
+This topic provides information on commingling ARMs, including:
+ARM Loan Types Lenders May Commingle in the Same Pool
+ARM Loan Types Lenders May Not Commingle in the Same Pool
+ARM Loan Types Lenders May Commingle in the Same Pool

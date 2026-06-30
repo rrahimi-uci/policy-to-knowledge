@@ -1,0 +1,63 @@
+# Justification for Strengthening HIPAA Security Standards (part 19/45)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_003_sub_019
+**Section Path:** Justification for Strengthening HIPAA Security Standards
+**Summary:** This section argues for the necessity of revising the Security Rule, citing the changing healthcare environment, increasing cybersecurity threats, and inconsistent compliance among regulated entities. It outlines the need for robust standards to ensure the protection of ePHI.
+
+---
+
+907 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+119‘‘Health Industry Cybersecurity Practices: 
+Managing Threats and Protecting Patients,’’ supra 
+note 16. 
+120‘‘Cybersecurity Performance Goals,’’ supra 
+note 18. 
+121See ‘‘2016–2017 HIPAA Audits Industry 
+Report,’’ Office for Civil Rights, U.S. Department of 
+Health and Human Services (Dec. 2020), https://
+www.hhs.gov/sites/default/files/hipaa-audits- industry-report.pdf. 
+122See sec. 262 of Public Law 104–191, 110 Stat. 
+2023 (Aug. 21, 1996) (codified at 42 U.S.C. 1320d– 1(f)), added sec. 1172(f) of the SSA; see also ‘‘About 
+NCVHS,’’ National Committee on Vital and Health Statistics, www.ncvhs.hhs.gov. 
+123See Letter from NCVHS Chair Jacki Monson to 
+HHS Secretary Xavier Becerra (May 10, 2022), https://ncvhs.hhs.gov/wp-content/uploads/2022/05/ NCVHS-Recommendations-to-Strengthen- Cybersecurity-in-HC-05-10-2022-508.pdf; see also Letter from NCVHS Chair Jacki Monson to HHS Secretary Xavier Becerra (Nov. 29, 2023), https://
+ncvhs.hhs.gov/wp-content/uploads/2024/01/Letter- to-the-Secretary-Recommendations-to-Strengthen- the-HIPAA-Security-Rule_ 508.pdf. 
+12442 U.S.C. 1320d–1(f). 125Subtitle F of title II of HIPAA, Public Law 
+104–191, 110 Stat. 1936 (Aug. 21, 1996). 
+126Sec. 261 of Public Law 104–191, 110 Stat. 
+2021 (Aug. 21, 1996), as amended by sec. 1104(a) 
+of Public Law 111–148, 124 Stat. 146 (Mar. 23, 2010) (codified at 42 U.S.C. 1320d note). 
+127See statement of Sen. Simon, supra note 34; 
+see also 155 Cong. Rec. H1562 (statement of Rep. Markey) (stating that ARRA includes provisions for health IT with built-in privacy and security); Implementation of the Health Information Technology for Economic and Clinical Health 
+(HITECH) Act: Hearing Before the House Committee on Energy and Commerce Subcommittee on Health, 111th Cong. 11–12 (2010) (statement of Rep. Schakowsky) (explaining that the HITECH Act strengthened Federal privacy and security laws to protect personal identifying information from misuse to ensure that individuals would be willing to use electronic records). 
+128Statement of Sen. Simon, supra note 34. 129See section 1173(d)(2) of HIPAA (codified at 
+42 U.S.C. 1320d–2(d)(2)) and section 13401 of 
+ARRA (codified at 42 U.S.C. 17931(a)) and 45 CFR 164.306. 
+130See Hadi Ghayoomi, et al., ‘‘Assessing 
+resilience of hospitals to cyberattack,’’ Digital Health, p. 2 (2021), https://doi.org/10.1177/ 20552076211059366; ‘‘Beyond Security Patches– 
+Fundamental Incentive Problems in Health Care Cybersecurity,’’ supra note 116; Jessica Brewer, et 
+al., ‘‘An Insight into the Current Security Posture of Healthcare IT: A National Security Concern,’’ The Institute for Critical Infrastructure Technology, p. 3 (2019), https://www.icitech.org/post/an-insight- into-the-current-security-posture-of-healthcare-it-a- national-security-concern. 
+131‘‘Cost of a Data Breach Report 2023,’’ IBM, p. 
+13 (2023) (explaining that the average cost of a health care data breach was $7.13 million in 2020), https://www.ibm.com/reports/data-breach. 
+132‘‘Report on Improving Cybersecurity In The 
+Health Care Industry,’’ supra note 117, p. 14–15. 
+133Id. 
+134‘‘An Insight into the Current Security Posture 
+of Healthcare IT: A National Security Concern,’’ supra note 130, p. 3. Threats and Protecting Patients,’’119and 
+the Department’s CPGs.120 
+While these concepts remain highly 
+relevant and applicable, the Department 
+has concerns regarding the sufficiency of the security measures implemented by regulated entities. OCR’s experience investigating allegations of Security Rule violations, reports received by OCR of breaches of unsecured PHI, and the results of the audits conducted by OCR in 2016–2017 demonstrate that regulated entities are not consistently complying with the Security Rule’s requirements.
+121Additionally, the 
+Department is concerned about the extent to which regulated entities have updated their security measures to adjust to the changes in the health care environment and their operations, including new and emerging threats to the confidentiality, integrity, and availability of ePHI. 
+And the Department is not alone in its 
+concerns. NCVHS serves as the Department’s advisory body for HIPAA.
+122Given the increase in 
+cybersecurity incidents affecting the health care sector, NCVHS held a series of public hearings on cybersecurity to better understand how to protect ePHI and individuals. In response to those hearings, NCVHS submitted several recommendations to the Department regarding the importance of strengthening the Security Rule.
+123As 
+discussed above, HIPAA requires the Secretary to rely on NCVHS’ recommendations
+124with respect to 
+standards promulgated under the statute. 
+Given the importance of strong 
+security measures, the changed environment and operations for health care, uncertainty expressed by regulated entities regarding their compliance obligations, deficiencies identified by

@@ -1,0 +1,28 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 241/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_241
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+(iv) The technology asset in use is a 
+device under section 201(h) of the Food, Drug, and Cosmetic Act, 21 U.S.C. 321(h) that has been authorized for marketing by the Food and Drug 
+Administration, as follows: 
+(A) Pursuant to a submission received 
+before March 29, 2023, provided that the covered entity or business associate deploys in a timely manner any updates or patches required or recommended by the manufacturer of the device. 
+(B) Pursuant to a submission received 
+on or after March 29, 2023, where the device is no longer supported by its manufacturer, provided that the covered entity or business associate has deployed any updates or patches required or recommended by the manufacturer of the device. 
+(C) Pursuant to a submission received 
+on or after March 29, 2023, where the device is supported by its manufacturer. 
+(4) Alternative measures—(i) 
+Alternative measures. Where an exception at paragraph (b)(3) of this section applies, a covered entity or business associate must document in real-time the existence of an applicable exception and implement reasonable and appropriate compensating controls in accordance with paragraph (b)(4)(ii) of this section. 
+(ii) Compensating controls. (A) To the 
+extent that a covered entity or business 
+associate determines that an exception at paragraph (b)(3)(i), (ii), or (iii) or (b)(3)(iv)(A) or (B) of this section applies, the covered entity or business associate must secure such electronic protected health information by implementing reasonable and appropriate compensating controls reviewed and approved by the covered entity’s or business associate’s designated Security Official. 
+(B) To the extent that a covered entity 
+or business associate determines that an exception at paragraph (b)(3)(iv)(C) of this section applies, the covered entity or business associate shall be presumed to have implemented reasonable and appropriate compensating controls where the covered entity or business associate has deployed the security measures prescribed and as instructed by the authorized label for the device, including any updates or patches recommended or required by the manufacturer of the device. 
+(C) To the extent that a covered entity 
+or business associate is implementing compensating controls under this paragraph (b)(4)(ii), the implementation and effectiveness of compensating controls must be reviewed, documented, and signed by the designated Security Official at least once every 12 months or in response to environmental or operational changes, whichever is more frequent, to continue securing electronic protected health information and relevant electronic information systems. 
+VerDate Sep<11>2014 18:00 Jan 03, 2025 Jkt 265001 PO 00000 Frm 00121 Fmt 4701 Sfmt 4702 E:\FR\FM\06JAP2.SGM 06JAP2khammond on DSK9W7S144PROD with PROPOSALS2

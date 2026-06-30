@@ -1,0 +1,94 @@
+# Current Approach
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_659
+**Pages:** 660-661
+**Section Path:** VIII. Public Disclosure of Data > B. Preliminary Privacy Assessment > 2. Implementation Process > Current Approach
+
+---
+
+660 Several industry commenters, as well as a joint letter from several members of Congress , 
+specifically requested that the Bureau implement its privac y assessment, and make associated 
+modifications and deletions, via legislative rule.  Some of these commenters asserted that this was 
+required under administrative law. A group of trade associations contended that section 1071 
+does not permit the Bureau to use its  discretion  to make modification and deletion decisions  
+outside  an Administrative Procedure Act rulemaking process.  According to this commenter, two 
+provisions in section 1071 provide the Bureau “discretion ”: ECOA section 704B(e)(4) provides 
+the Bur eau discretion to delete or modify public application -level data and ECOA section 
+704B(f)(3) provides the Bureau discretion to compile and publish a ggregate  1071 data.  Noting 
+that the Bureau proposed §  1002.110(b) to implement the latter provision  in this rule , the 
+commenter asserted that the Bureau did not adequately explain how it was appropriate to 
+implement the former provision outside a rule. Th e commenter said that  these provisions should 
+be implemented in a formal rulemaking . In addition, some industry commenters stated that 
+increasing transparency about forthcoming publication, including potentially through a notice -
+and-comment rulemaking, would protect the Bureau from litigation under FOIA. In this respect, 
+commenters cited litigation involvin g the SBA ’s publication of Paycheck Protection Program 
+data.862 
+Citing  the benefits of transparency  and to facilitate information about credit access and 
+fair lending information , a joint letter from community groups, community -oriented lenders, and 
+business advocacy groups stated that  the Bureau should produce and release aggregate analyses 
+of 1071 data in addition to releasing application -level data.  
+Current Approach  
+For reasons discussed below, the Bureau intends to conduct a full privacy analysis and 
+issue modification and deletion decisions with respect to the publication of application -level data 
+after it obtains a full year of reported 1071 data. However, the Bureau is not committing at this 
+time to issue modification and deletion decisions through a policy statement. Instead, the Bureau 
+will continue to consider the specific timing and vehicle choice for issuing modification and 
+deletion decisions, as it remains engaged with stakeholders on privacy and publication issues.  
+Publication  of application -level  data will substantially advance the fair lending 
+enforcement and business and community development purposes of section 1071. The Bureau 
+thus intends to conduct a full privac y analysis and issue modification and deletion decisions as 
+soon as practicable. It  will also continue to consider feedback  obtained to date and to engage 
+with the public on how best to mitigate re -identification  risk and other risks to privacy interests. 
+While the Bureau is not determining the vehicle with which it will announce  modification and 
+deletion decisions with respect to application -level data, or the precise timing of such decisions, 
+it anticipates that those decisions will continue to be informe d by public engagement .  
+The Bureau intends to announce modification and deletion decisions only after obtaining 
+a full year of application -level data. The Bureau lacks the data needed to perform an accurate re-
+identification analysis  and commenters were  not able to identify an alternative dataset that could 
+be used for this purpose . Without data for an accurate re-identification analysis, the Bureau 
+ 
+862 See, e.g. , WP Co. LLC v. U.S. Small Bus. Admin. , 502 F.  Supp.  3d 1 (D.D.C. Nov. 5, 2020).
+
+661 cannot conduct a full privacy analysis to inform modification and deletion decisions.863 As 
+discussed further  below, there are certain data fields that the Bureau anticipates may present 
+comparatively high risk to privacy interests, including the combination of NAICS code and 
+census tract. However, the Bureau lacks data to confirm whether these data fields in fact create 
+unique records that can be matched to public datasets.  
+The Bureau is not committing to a specific timeline for publishing application -level data. 
+However, a target date of January 1, 2024 for publication, as suggested by some commenters, is 
+not f easible because covered financial institutions are not required to begin collecting data under 
+this rule until October 1, 2024 at the earliest . The Bureau intends to treat data under this rule  as 
+confidential in accordance with 12 CFR part 1070 until such time as it has completed its privacy 
+analysis and published the data, and it will work expeditiously to those ends.  
+Robust feedback, including in response to the NPRM, SBREFA, and other outre ach, 
+about the risks and benefits of 1071 data publication, has informed the Bureau ’s thinking to 
+date.864 The Bureau intends to continue to seek further public engagement with respect to these 
+issues. It does not believe, however, that such further engagem ent must be by formal comment 
+either to ensure robust engagement or for the sake of procedural consistency with the Bureau ’s 
+approach in HMDA.865  
+The Bureau is not establishing a separate program by which industry, community 
+researchers, or academics will have access to unmodified data; the published data, subject to the modifications and deletions made by the Bureau, will be available to all users. However, it 
+intends the Bureau plans to exercise its discretion to provide access to State or Federal regulat ors 
+to the extent such disclosure is relevant to the exercise of the agency ’s authorities, and subject to 
+appropriate restrictions. The Bureau  plans to provide such access to Federal regulators that 
+enforce ECOA.
+866 
+The Administrative Procedure Act and othe r laws do not require the Bureau to seek 
+comment on the full privacy analysis or to  issue modification and deletion decisions through a 
+legislative rule with formal notice and comment. Section 1071 states that the Bureau may “ at its 
+discretion, delete or m odify data collected under [section 1071] which is or will be available to 
+the public, if the Bureau determines that the deletion or modification of the data would advance a privacy interest.”
+867 Statutorily, this  provides the Bureau with flexibility to dec ide how it will 
+make modification and deletion decisions, including the flexibility to do so without a legislative 
+ 
+863 As discussed below, the Bureau is announcing more conclusive intentions with respect to modifications or 
+deletions for individual contact information, unique identifier, and the use of free -form text in responses for certain 
+da ta fields.  
+864 See pa rt III a bove for a dditional information.  
+865 Unlike for HMDA, no data yet exists that the Bureau could use to conduct a full privacy analysis and make 
+modification a nd deletion decisions . 
+866 Other regulators with authority to enforce ECOA include the OCC, the Board, the FDIC, the NCUA, the Surface 
+Transportation Board, the Civil Aeronautics Board, the Secretary of Agriculture, the Farm Credit Administration, 
+the SEC, the SBA, the Secretary  of Transportation, and the FTC. See 15 U.S.C. 1691c; Regulation  B § 1002.16(a).  
+867 ECOA section 704B(e)(4).

@@ -1,0 +1,79 @@
+# Appendix 10: Electronic Signatures
+
+**Source:** sop_technical_updates_effective.docx
+**Chunk ID:** sop_technical_updates_effective_207
+**Section Path:** Appendices > Appendix 10: Electronic Signatures
+
+---
+
+## Appendix 10: Electronic Signatures
+
+SBA Lenders may use electronic signatures on SBA forms and other documents requiring signatures provided they comply with the performance standards outlined in this Appendix. Electronic signatures meeting the requirements of this Appendix will be treated as equivalent to handwritten signatures. Nothing in this Appendix affects existing SBA requirements as to who must sign any specific document, or which documents the SBA Lender must retain in the loan file.
+
+SBA’s policy is consistent with and requires SBA Lenders to comply with the current version of the National Institute of Standards and Technology (NIST) Digital Identity Guidelines. SBA requires compliance with Identity Assurance Level 2 (IAL2), as described in the NIST Digital Identity Guidelines.
+
+Electronic Form of Signature:
+
+For the SBA-approved forms of signature, the vendor must comply with “Use of Electronic Signatures in Federal Organization Transactions,” Version 1.0, January 25, 2013, section D: “Requirements for Legally Binding Electronic Signatures.”
+
+The Electronic Records and Signatures in Global and National Commerce Act (ESIGN) defines electronic signature as “any electronic sound, symbol, or process attached to or logically associated with a contract or record and executed or adopted by a person with the intent to sign the record.” Signatories should follow this definition of electronic signature with the exception that SBA will not accept an electronic signature that is solely voice or audio. Electronic signatures include digital signatures.
+
+Electronic Signature Eligible Documents:
+
+Unless otherwise prohibited by law, SBA Lenders may use electronic signatures on the documents referenced below (collectively referred to as “Eligible Documents”), provided that the signatories comply with the standards outlined in this Notice. Electronic signatures cannot be used on any document identified below if the recording office requires wet ink signatures.
+
+Application Documents: Electronic signatures may be accepted on all documents requiring signatures.
+
+Loan Closing Documents: Electronic signatures may be accepted on all documents requiring signatures.
+
+Secondary Market Sale Documents: With the exception of the Form of Detached Assignment for U.S. Small Business Administration Loan Pool or Guaranteed Interest Certificate (SBA Form 1088), electronic signatures may be accepted on all documents requiring signatures.
+
+Servicing Action – Pre-Disbursement Documents: Electronic signatures may be accepted on all documents requiring signatures, including but not limited to change requests and supporting documentation.
+
+Servicing Action – Post-Disbursement Documents: Electronic signatures may be accepted on all documents requiring signatures.
+
+Liquidation Documents: Electronic signatures may be accepted on all documents requiring signatures.
+
+Litigation Documents: Electronic signatures may be accepted on all documents requiring signatures, unless otherwise specified by a court order.
+
+Post Default Action Documents: Electronic signatures may be accepted on all documents requiring signatures.
+
+Lender On-Boarding Documents: Electronic signatures may be accepted on all documents requiring signatures, including but not limited to lender participation applications and agreements.
+
+Delegated Authority Documentation: Electronic Signatures may be accepted on all documents requiring signatures, including but not limited to supplemental guaranty agreements.
+
+Targeted and Full SBA Lender Review Documentation: Electronic Signatures may be accepted on all documents requiring signatures.
+
+The use of electronic signatures is voluntary; however, SBA Lenders who choose to use electronic signatures must fully comply with the standards outlined in this Appendix and may be held liable for failure to adhere to these standards. Electronic signatures may not be used for transactions that require filing of security or other documents with a jurisdiction that does not have electronic filing capabilities. SBA Lenders must comply with Uniform Commercial Code (UCC) Article 9-105, which outlines the requirements for electronic chattel paper, and article 3 of the UCC, which outlines the electronic equivalent of a paper promissory note, known as a “Transferrable Record”.
+
+Vendor/Technology Selection Requirements:
+
+An SBA Lender must ensure that any electronic signature technology vendor it uses:
+
+Complies with Section 101 of the ESIGN Act;
+
+Has the experience, capabilities, and expected longevity to meet all SBA electronic signature requirements;
+
+Includes vendor agreements that contain express provisions that vendors will comply with all applicable SBA requirements pertaining to this Appendix;
+
+Includes vendor agreements language that would ensure that vendor representatives will be available to provide testimony to support the United States government in litigation regarding electronic signature data that will be introduced in court;
+
+Meets disaster recovery and archiving requirements; and
+
+Has adequate quality control processes.
+
+Lender Liability for Failure to Adhere to Prescribed Standards:
+
+The Office of Credit Risk Management (OCRM) will review compliance with the ESIGN Act as well as standards outlined in this Appendix as components of its oversight of SBA Lenders.
+
+As with all Loan Program Requirements, SBA Lenders may be held accountable for not complying with the electronic signature standards and requirements set forth in this Appendix.
+
+Quality Control:
+
+SBA Lenders must ensure their electronic signature policies and procedures meet all requirements including their own oversight of the electronic signature process.
+
+Record Retention:
+
+SBA’s record retention requirements are the same for both wet ink and electronic signatures (see Appendix 11, Record Retention Requirements). When wet signatures are obtained on original hard copies, the SBA Lender must maintain the hard copy with wet signature in its loan file. For records signed electronically, the audit trail as well as any computer systems (including hardware and software), controls, and documentation must be readily available for, and subject to, SBA inspection for the same periods as records signed in wet ink.
+
+An SBA Lender’s system must be able to reproduce electronic records as accurately as if they were paper when printed or viewed. These records must be made available to SBA on request.

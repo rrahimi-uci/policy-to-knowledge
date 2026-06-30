@@ -1,0 +1,75 @@
+# C1-2-03, Ownership of Mortgage Loans Prior to Purchase or Securitization and Third-Party Security Interests (04/06/2022)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_439
+**Pages:** 950-951
+**Section Path:** Part C, Selling, Securitizing, and Delivering Loans > Subpart C1, General Information on Execution Options and Loan Delivery > Chapter C1-2, Loan Delivery Overview > C1-2-03, Ownership of Mortgage Loans Prior to Purchase or Securitization and Third-Party Security Interests (04/06/2022)
+
+---
+
+Published March 4, 2026
+932Uniform Closing Dataset (UCD)
+The UCD is a common industry dataset that allows information on the Closing Disclosure to be transmitted
+electronically to Fannie Mae. Lenders are required to electronically submit a UCD XML ﬁle of the loan to Fannie
+Mae and receive a “Successful” status from the UCD collection solution prior to the delivery of the loan. The
+UCD XML ﬁle must contain the borrower data and the PDF of the borrower Closing Disclosure. Lenders must
+submit the UCD XML ﬁle for all conventional loans, regardless of whether the TILA/Regulation Z Rule requires
+the Closing Disclosure, including non-owner-occupied property loans.
+For additional information on the UCD data requirements, refer to the UCD Delivery Speciﬁcation .
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2023-09 October 04, 2023
+Announcement SEL-2021-05 June 02, 2021
+Announcement SEL-2021-01 February 03. 2021
+Announcement SEL-2019-09 December 04, 2019
+ 
+C1-2-03, Ownership of Mortgage Loans Prior to Purchase or
+Securitization and Third-Party Security Interests (04/06/2022)
+Introduction
+This topic provides information on the following:
+Mortgage Loan Certiﬁcation Overview
+Control of Mortgage Notes During the Loan Certiﬁcation Processes
+Ownership Interest and Title to Mortgage Notes
+Conﬂicts Regarding Rights in Mortgages
+Mortgage Loan Certiﬁcation Overview
+
+Published March 4, 2026
+933The Fannie Mae certiﬁcation processes for whole loan and MBS deliveries are designed to assure Fannie Mae
+and the marketplace that all mortgage loans purchased or securitized by Fannie Mae conform to Fannie Mae’s
+requirements and are not subject to any liens or claims of any third parties. Therefore, it is in Fannie Mae’s
+interest that liens and claims in and to such notes are properly resolved as part of the loan pooling, certiﬁcation,
+and acquisition processes.
+It is critical to Fannie Mae’s purchase or securitization of mortgage loans that Fannie Mae receives good delivery
+of loans that conform to Fannie Mae’s requirements and, if applicable, meet the characteristics attributed to
+them in MBS disclosures. Therefore, Fannie Mae requires that mortgage sellers deliver mortgage documents to
+document custodians for review and certiﬁcation prior to Fannie Mae’s purchase or securitization of the loans.
+Document custodians must review all documents to ensure that all of the required documentation has been
+received and conform to Fannie Mae’s requirements. Fannie Mae will not purchase whole loans or issue MBS
+until after it has received the document custodian’s certiﬁcation. The certiﬁcation will state that the custodian
+has examined and maintains physical custody and control of the required documents for the mortgages.
+Control of Mortgage Notes During the Loan Certiﬁcation Processes
+Fannie Mae recognizes that possession of notes is an important element of a note owner’s or secured lender’s
+protection of its rights. However, the nature of the whole loan purchase and MBS pooling and securitization
+processes requires that Fannie Mae, through its document custodian, obtains control of the notes as part of the
+certiﬁcation review process and maintains control through the completion of the purchase or securitization
+process. Fannie Mae cannot purchase whole loans or permit pools to close and securities to be issued without
+being assured of continued control of the underlying notes.
+Fannie Mae does not assert that it obtains ownership or title to the notes during the certiﬁcation processes until
+such time as the purchase proceeds (cash or securities) for the certiﬁed loans are remitted pursuant to the
+terms of the purchase or securitization transaction. Any modiﬁcations or revisions to the terms of the notes or
+further physical movement of the notes during these processes are restricted; the certiﬁed documents must be
+“locked down” under the document custodian’s control prior to Fannie Mae’s remittance of the purchase
+proceeds. Fannie Mae recognizes that the legal rights of the mortgage seller delivering the notes (or, as
+applicable, of its warehouse lender) are unaﬀected by the certiﬁcation processes until Fannie Mae has remitted
+purchase proceeds.
+Ownership Interest and Title to Mortgage Notes
+Eﬀective upon the remittance of the purchase proceeds, Fannie Mae and/or its MBS trusts obtains and holds
+ownership and title to the notes and the notes will then be held by the document custodian on behalf of Fannie
+Mae. If the transaction fails to close as contemplated by the contract between Fannie Mae and the mortgage
+seller and purchase proceeds are not wired, Fannie Mae claims no ownership interest in the notes and requires
+that the document custodian return the notes to the mortgage seller or its warehouse lender, as applicable.
+Conﬂicts Regarding Rights in Mortgages
+If Fannie Mae becomes aware of any issues in which the rights of another party might impair its unqualiﬁed title
+to any mortgages that are delivered to Fannie Mae (including but not limited to a bailee letter), then Fannie Mae
+will not be required to deliver the related purchase proceeds in accordance with the lender’s delivery

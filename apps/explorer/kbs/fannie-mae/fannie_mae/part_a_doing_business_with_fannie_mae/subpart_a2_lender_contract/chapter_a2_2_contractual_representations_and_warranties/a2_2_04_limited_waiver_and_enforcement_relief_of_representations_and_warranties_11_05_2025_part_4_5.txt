@@ -1,0 +1,103 @@
+# A2-2-04, Limited Waiver and Enforcement Relief of Representations and Warranties (11/05/2025) (part 4/5)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_016_sub_004
+**Pages:** 38-43
+**Section Path:** Part A, Doing Business with Fannie Mae > Subpart A2, Lender Contract > Chapter A2-2, Contractual Representations and Warranties > A2-2-04, Limited Waiver and Enforcement Relief of Representations and Warranties (11/05/2025)
+
+---
+
+Published March 4, 2026
+23for consideration in underwriting, including those that may be identiﬁed throughout the origination and
+prefunding QC processes.
+Undisclosed mortgage-related debt (including HELOCs and second liens) are excluded from eligibility for
+relief.
+The loan must close by the credit report expiration date.
+Enforcement Relief of Representations and Warranties for Loans with Data
+Calculated by Approved Vendor Tools
+The table below details enforcement relief for mortgages with data calculated by approved vendor tools.
+Data Calculated by a Fannie
+Mae-Approved Vendor ToolFannie Mae will not enforce
+representations and
+warranties onDetails
+Incomethe accuracy of the calculation of
+the amount of self-employment
+income by the tool.The following requirements
+apply:
+• the information submitted to
+the tool must be accurate and
+complete,
+• the lender must not perform
+any manual overrides of the
+output results of the tool,
+• the amount of self-
+employment income entered in
+DU must match the amount of
+income calculated by the tool,
+and
+• the loan must be delivered
+with SFC 777.
+In all cases, the lender must continue to comply with all DU messages, including documentation and
+determination that age of documentation requirements are met, and determine the eligibility of the self-
+employment income being used to qualify.
+See B3-3.5-01, Underwriting Factors and Documentation for a Self-Employed Borrower  for information on using
+other approved vendors.
+Enforcement Relief of Representations and Warranties for Loans with Data
+Validated by the DU Validation Service
+In addition to the limited waiver of representations and warranties described above, Approve/Eligible loans for
+which DU validated a loan component may also beneﬁt from certain representation and warranty enforcement
+relief. The table below describes the validated component, the related enforcement relief, and other details.
+
+Published March 4, 2026
+24Component Validated by
+DUFannie Mae will not enforce
+representations and
+warranties onDetails
+Income• the accuracy of the lender’s
+income calculations related to the
+validated income, and
+• the integrity of the data
+provided on the veriﬁcation
+report.The DU message must indicate
+that the amount of income
+entered into DU was validated
+and that the veriﬁcation report is
+acceptable documentation.
+ 
+For loans with income validated
+using an employment and
+income veriﬁcation report, this
+applies on a per-borrower, per-
+income-type basis.
+For loans with income validated
+using an asset veriﬁcation
+report, this applies on a per-
+borrower, per-income-source
+basis.
+Employment• the borrower’s employment,
+through the time of closing, with
+the employer attested to on the
+loan application, and
+• the integrity of the data
+provided on the veriﬁcation
+report.The DU message must indicate
+that the employment entered
+into DU was validated.
+ 
+Applies on a per-borrower, per-
+employer basis.
+Assets• the suﬃciency of the borrower’s
+assets to satisfy Total Funds to be
+Veriﬁed as required by DU or a
+greater amount if stated in the DU
+message, and
+• the integrity of the data
+provided on the veriﬁcation
+report.The DU message must indicate
+that assets were validated.
+ 
+Applies on a loan-level basis.
+The lender must comply with the following additional requirements in order for the representation and warranty
+enforcement relief to apply:
+All of the requirements that pertain to the DU validation service must be met.
+All Veriﬁcation Messages and Approval Conditions that appear in the DU Underwriting Findings report,

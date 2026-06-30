@@ -1,0 +1,267 @@
+# B2-1.4-01, Fixed-Rate Loans (12/14/2022) + B2-1.4-02, Adjustable-Rate Mortgages (ARMs) (12/10/2025)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_087
+**Pages:** 206-214
+**Section Path:** Part B, Origination Through Closing > Subpart B2, Eligibility > Chapter B2-1, Mortgage Eligibility > Section B2-1.4, Loan Amortization Types > B2-1.4-01, Fixed-Rate Loans (12/14/2022)
+
+---
+
+Published March 4, 2026
+188Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2024-08 December 11, 2024
+ 
+ 
+Section B2-1.4, Loan Amortization Types
+B2-1.4-01, Fixed-Rate Loans (12/14/2022)
+Introduction
+This topic contains general information on ﬁxed-rate loans.
+Fixed-Rate Loan Eligibility
+Fixed-Rate Loan Eligibility
+Fannie Mae purchases or securitizes conventional, fully amortizing, ﬁxed-rate ﬁrst mortgage loans. Conventional
+ﬁxed-rate loans are not assumable as of the note date. When selling such loans to Fannie Mae, the Assumption
+Indicator in the Loan Delivery application must be "False" (which means not assumable).
+The payments must be structured as follows:
+level monthly installments of principal and interest (P&I),
+due on the ﬁrst day of each month, and
+payment of interest in arrears.
+The loan can be subject to a temporary interest rate buydown plan, provided that the subject property is
+secured by a principal residence or a second home. See  B2-1.4-04, Temporary Interest Rate Buydowns  for
+additional information.
+Recent Related Announcements
+
+Published March 4, 2026
+189The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2022-10 December 14, 2022
+Announcement SEL-2019-01 February 06, 2019
+ 
+B2-1.4-02, Adjustable-Rate Mortgages (ARMs) (12/10/2025)
+Introduction
+This topic contains information on ARMs, including:
+Overview
+Acceptable ARM Characteristics
+ARMs and Temporary Interest Rate Buydowns
+ARM Plan Indexes
+Standard Conventional ARM Plans
+Initial Note Rate Limitations
+Calculating the Fully Indexed Rate
+Determining ARM Acceptability
+Mortgage Margin
+Interest Accrual Rate Calculation
+ARMs and MBS Pools
+Pooling Standard Fannie Mae ARM Plans Without Special Disclosure
+ARM Disclosures
+Disclosures Regarding Availability of Index Values
+Disclosures Regarding Below-Market Interest Rates
+Disclosures Regarding Conversions
+Disclosures Regarding Assumption of ARMs
+Requirements Regarding Interest Rate and Monthly Payment Adjustments
+ARM Payment Shock
+DU Generic ARM Plans
+Generic ARM Underwriting Guidelines
+Loan-Level Price Adjustments
+Overview
+Fannie Mae purchases or securitizes fully amortizing ARMs that are originated under its standard or negotiated
+
+Published March 4, 2026
+190plans. For maximum LTV/CLTV/HCLTV ratios and credit score requirements for ARMs, see the Eligibility Matrix .
+Acceptable ARM Characteristics
+The following table describes standard conventional Fannie Mae ARM requirements.
+✓ Standard Conventional ARM Requirements
+ Fannie Mae does not set a minimum remaining term requirement at the time of loan
+purchase.
+ The initial adjustment period in months must align with the initial ﬁxed-rate period in years.
+For example, a "3-year ARM" must have an initial ﬁxed period of 36 months, and a "5-year
+ARM" must be 60 months.
+ Each ARM plan must oﬀer lifetime and per-adjustment interest rate change limitations.
+• Lifetime interest rate change limitations apply to interest rate increases only.
+• Per-adjustment interest rate change limitations apply to interest rate increases and
+decreases.
+ Mortgage interest rates may never decrease to less than the ARM’s margin, regardless of any
+downward interest rate cap.
+ Fannie Mae restricts purchase or securitization of seasoned ARMs to those that are delivered
+as negotiated transactions.
+ARMs and Temporary Interest Rate Buydowns
+The following table provides parameters pertaining to ARMs subject to temporary interest rate buydowns.
+✓ ARMs Subject to Interest Rate Buydowns
+ Must be secured by a principal residence or second home.
+ Are only permitted with an ARM plan that has an initial interest rate period of three years or
+more.
+
+Published March 4, 2026
+191✓ ARMs Subject to Interest Rate Buydowns
+ ARM plans that have an initial interest rate period of three years (Plan 4926) must be secured
+by a one- or two-unit property and must be structured as a 2-1 buydown with a buydown
+period no greater than 24 months.
+ ARM plans with an initial interest rate period greater than three years (Plans 4927, 4928, and
+4929) can be structured as either 3-2-1 or 2-1 buydowns (or other allowable structures per 
+B2-1.4-04, Temporary Interest Rate Buydowns ).
+ARM Plan Indexes
+A Fannie Mae ARM plan must be tied to the Secured Overnight Financing Rate (SOFR) Index. SOFR is a broad
+measure of the cost of borrowing cash overnight collateralized by U. S. Treasury securities in the repurchase
+agreement (repo) market. Fannie Mae uses a 30-day average of the SOFR index as published by the Federal
+Reserve Bank of New York.
+Standard Conventional ARM Plans
+To qualify as a Fannie Mae standard conventional ARM, the ARM must have all of the characteristics speciﬁed in
+the Standard ARM Plan Matrix  for the speciﬁc ARM plan.
+The Standard ARM Plan Matrix  is available on Fannie Mae's website and is incorporated by reference into this
+Guide .
+Initial Note Rate Limitations
+Fannie Mae limits the initial note rate for ARMs with initial interest rate periods of less than ﬁve years.
+The limitation requires comparison of the initial note rate to the fully indexed rate that is applicable at the time
+the loan is originated.
+Calculating the Fully Indexed Rate
+The fully indexed rate is the sum of the value of the applicable index and the mortgage margin, which is then
+rounded to the nearest one-eighth percent.
+Note : Unless speciﬁc product terms provide otherwise, if the index plus gross margin equals a number
+that is equidistant between the higher and lower one-eighth percent, Fannie Mae rounds down to the
+nearest one-eighth percent.
+The applicable index value that determines the fully indexed rate is any index value in eﬀect during the 90 days
+that precede the note date.
+
+Published March 4, 2026
+192Determining ARM Acceptability
+Lenders must determine whether an ARM loan is acceptable for purchase by Fannie Mae by subtracting the
+initial note rate of the loan from the fully indexed rate in eﬀect when the loan originated. For 3- and 5-year
+ARMs, the diﬀerence must not exceed 3%.
+Mortgage Margin
+The mortgage margin is the “spread” that is added to the index value to develop the interest accrual rate for
+the mortgage. The maximum mortgage margin may be no more than 300 basis points.
+When lenders oﬀer a deeply discounted “teaser” rate for the mortgage, the margin is generally not used in
+determining the initial interest rate, but will be used to determine the interest rate for all future interest rate
+changes.
+Interest Accrual Rate Calculation
+ARM instruments provide for each new interest accrual rate to be calculated by adding the mortgage margin to
+the most recent index ﬁgure available 45 days before the interest change date. Fannie Mae uniform instruments
+for all standard ARM plans provide for rounding to the nearest one-eighth.
+Note : If a mortgage instrument provides otherwise, lenders must check with their Fannie Mae
+customer account team as there may be pooling and/or disclosure impact.
+Interest rate calculations are subject to the applicable per-adjustment and lifetime interest rate change
+limitations.
+ARMs and MBS Pools
+MBS pools cannot contain ARMs with provisions that allow or require the lender or servicer to change the
+minimum or maximum interest rate or the mortgage margin following an assumption, unless those provisions
+are waived prior to pooling such mortgage loans. Since this is not a feature contained in standard Fannie Mae
+ARM instruments, the lender must check with its Fannie Mae customer account team to determine acceptability
+of the nonstandard form.
+If such a unilateral waiver is legally precluded because the note provision would be beneﬁcial to the borrower
+and therefore requires borrower consent to waive, Fannie Mae will require evidence of a prior, duly written and
+executed bilateral waiver between the lender and the related borrower before allowing the loan to be pooled.
+For more information on pooling ARMs, see Chapter C3-5, Pooling Loans into ARM MBS.
+Pooling Standard Fannie Mae ARM Plans Without Special Disclosure
+To be pooled as a standard Fannie Mae ARM plan without a special disclosure, the ARM must meet all of the
+
+Published March 4, 2026
+193standard plan characteristics and must
+have a monthly payment that is due on the ﬁrst day of the month;
+have an original maturity no longer than 30 years; and
+be originated on the applicable Fannie Mae standard forms, with no modiﬁcations, which cover all other
+pooling requirements.
+See the Standard ARM Plan Matrix  for additional information.
+ARM Disclosures
+Lenders must provide borrowers with disclosures in compliance with all applicable laws.
+Disclosures Regarding Availability of Index Values
+In addition to any disclosures required by applicable law, lenders must inform borrowers that the movement in
+the index on which the mortgage interest rate is based can be monitored and where the value for the index can
+be obtained. A number of periodicals publish current index values. Lenders may refer borrowers to any of the
+periodicals.
+Lenders should advise borrowers that an alternative published index will be selected (consistent with the
+provisions of the mortgage note) should the original index for a speciﬁc ARM plan no longer be available or
+published. This is commonly referred to as the “fallback” language in the note.
+Fannie Mae relies on the following “oﬃcial” source for the index used for Fannie Mae ARM plans:
+A 30-day average of the SOFR index as published daily by the Federal Reserve Bank of New York.
+Disclosures Regarding Below-Market Interest Rates
+Lenders must notify borrowers of current index values and mortgage margins if the borrower’s initial interest
+rate is below-market.
+Unless the lender is already required by regulation to make a comparable disclosure, the lender must show by
+example what the interest rate would be if the loan had been adjusted at the time of origination.
+Lenders must ensure that borrowers are aware of, and prepared for, the possibility of both an interest rate
+increase and a payment increase on the ﬁrst interest rate adjustment date.
+Disclosures Regarding Conversions
+Disclosures regarding conversions must include the following:
+
+Published March 4, 2026
+194✓ Requirement: Conversion Disclosures Must Include
+ The instances when the conversion option may be exercised.
+ The time frame within which conversion requests must be received.
+ The time frame within which the borrower must return executed conversion documents.
+ Any fees that will be charged for processing the conversion.
+Note : Fannie Mae allows a $250 fee for ARM plans that have a monthly conversion option and
+a $100 fee for other ARM plans.
+ Once the ARM plan converts to a ﬁxed-rate loan, the mortgage is no longer assumable.
+ Any other special conditions.
+Disclosures Regarding Assumption of ARMs
+Although Fannie Mae ARMs are usually assumable, some plans do restrict assumability.
+When assumptions are restricted, the lender must advise the borrower of the exact nature of the restriction(s).
+Note : Lenders must disclose to borrowers that any ARM plan that includes an option to convert to a
+ﬁxed-rate mortgage cannot be assumed once the conversion option is exercised.
+See the Standard ARM Plan Matrix  for information about the assumability provisions of Fannie Mae’s various
+ARM plans.
+Requirements Regarding Interest Rate and Monthly Payment Adjustments
+The following requirements apply to interest rate and monthly payment adjustments for ARM loans:
+The loan being delivered must not be subject to any current litigation with respect to the manner in which
+the interest rate and/or payment adjustments were calculated or implemented.
+The lender must not be servicing other ARMs that include interest rate and payment adjustment
+provisions similar to those of the mortgage being sold to Fannie Mae that are the subject of current
+litigation related to the manner in which adjustments were made.
+ARM Payment Shock
+ARMs that provide for low initial payments based on ﬁxed introductory rates that expire after a short period of
+time and then adjust to a variable rate for the remaining term of the mortgage loan have the potential for
+
+Published March 4, 2026
+195payment shock. “Payment shock” refers to the impact on the borrower’s ability to continue making the
+mortgage payments once the introductory rate expires. After the rate and payment increase, the borrower is
+subsequently faced with a large increase in monthly PITIA.
+Lenders must limit the impact of any potential payment shock on an ARM with an initial ﬁxed-rate period of ﬁve
+years or less by qualifying borrowers based on the qualifying rate described in B3-6-04, Qualifying Payment
+Requirements .
+DU Generic ARM Plans
+Generic ARM plans are provided for loan caseﬁles underwritten through DU. These generic ARM plans are
+available:
+as tools for underwriting with DU, and
+to assist lenders in underwriting negotiated ARMs and standard ARM plans that are not speciﬁcally
+identiﬁed in the ARM plan ﬁeld in the DO/DU user interface (such as all SOFR ARM plans).
+The following generic ARM plans are listed in the DO/DU user interface:
+FM GENERIC, 1 YR, 1% ANNUAL Cap
+FM GENERIC, 1 YR, 2% ANNUAL Cap
+FM GENERIC, 3 YR
+FM-GENERIC, 5 YR
+FM-GENERIC, 7 YR
+FM-GENERIC, 10 YR
+Note : The term in these generic plans refers to the initial ﬁxed-rate period. Generic plan names, such
+as FM GENERIC, 10 YR, are only used to submit loan caseﬁles to DU. Lenders must identify the
+applicable Fannie Mae ARM plan number in closing documents and at delivery of the loan to Fannie
+Mae.
+Generic ARM Underwriting Guidelines
+DU applies standard Fannie Mae ARM underwriting and eligibility guidelines to the generic ARM plan equivalent
+based on the initial interest rate adjustment period.
+✓ For generic ARM plans, DU will …
+ apply standard ARM eligibility guidelines.
+ qualify borrowers based on ARM qualifying guidelines in B3-6-04, Qualifying Payment
+Requirements .
+ allow temporary buydowns based on standard ARM guidelines.
+
+Published March 4, 2026
+196✓ For generic ARM plans, DU will …
+ allow generic ARM plans equivalent to standard ARM plans on special mortgage products.
+ return a message stating that the lender must ensure that the loan is eligible for purchase.
+Loan-Level Price Adjustments
+An LLPA applies to certain ARM loans. These LLPAs are in addition to any other price adjustments that are
+otherwise applicable to the particular transaction. See the Loan-Level Price Adjustment (LLPA) Matrix.
+Recent Related Announcements
+The table below provides references to recently issued Announcements that are related to this topic.
+Announcements Issue Date
+Announcement SEL-2025-10 December 10, 2025
+Announcement SEL-2022-10 December 14, 2022
+Announcement SEL-2022-09 October 05, 2022
+Announcement SEL-2022-05 June 01, 2022
+Announcement SEL-2021-09 October 06, 2021
+Announcement SEL-2021-08 September 01, 2021
+Announcement SEL-2020-07 December 16, 2020
+Announcement SEL-2020-02 April 01, 2020
+Announcement SEL-2019-08 October 02, 2019
+Announcement SEL-2019-05 June 05, 2019
+Announcement SEL-2019-01 February 06, 2019

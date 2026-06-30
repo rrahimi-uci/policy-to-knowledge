@@ -1,0 +1,93 @@
+# Duration Analysis
+
+**Source:** risk_management_manual_complete.pdf
+**Chunk ID:** risk_management_manual_complete_864
+**Pages:** 316-316
+**Section Path:** section7-1 > INTEREST RATE RISK MEASUREMENT METHODS > Duration Analysis
+
+---
+
+SENSITIVITY TO MARKET RISK  Section 7.1  
+RMS Manual of Examination Policies  7.1-7 Sensitivity to Market Risk ( 10/2025 ) 
+Federal Deposit Insurance Corporation  However, the weaknesses of gap analysis often overshadow 
+its strengths, particularly for a majority of financial 
+institutions.  For example, gap analysis:  
+ 
+• Generally captures only repricing risk, 
+• Assumes parallel rate movements in assets and 
+liabilities , 
+• Generally does not adequately capture embedded 
+options or complex instruments , 
+• May not identify material intra -period repricing risk s, 
+and 
+• Does not measure changes in the economic value of 
+capital.  
+ 
+Some gap systems attempt to capture basis, yield curve, and option risk.  Multiple schedules (dynamic or scenario gap analysis) can show effects from non- parallel yield curve 
+shifts.  Additionally, sensitivity factors may be applied to account categories.  These factors assume that coupon rates 
+will change by a certain percentage for a given change in a market index.  Th e market index is designated as the driver 
+rate (sophisticated systems may use multiple driver rates).  These sensitivity percentages, also  called beta factors, may 
+dramatically change the results.  
+ 
+Institutions can also  use sensitivity factors in their gap 
+analysis to refine non- maturity deposit assumptions .  For 
+example, management may determine that the cost of funds 
+for money market deposit accounts (MMDA ) will increase 
+by 75 basis points whenever the six- month Treasury bill rate 
+increases by one percent.  Thus, management might 
+consider only 75 percent  of MMDA balances as rate 
+sensitive for gap analysis.  Management may expand its analysis by preparing gap schedules that assume different market rate movements and changing customer behaviors.  
+ 
+As noted above , gap  analysis is generally not suitable as the 
+sole measurement of IRR for the large majority of 
+institutions.  Only institutions with very simple balance sheet structures, limited assets and liabilities with embedded options, and limited derivative instruments and off -balance  
+sheet items should consider relying solely on gap analysis 
+for IRR measurement s.  
+ 
+Duration Analysis 
+ 
+Duration analysis measures  the change in the economic 
+value of a financial instrument or position that may  occur 
+given a small change in interest rates.  It considers  the 
+timing and size of cash flows that occur before the instrument ’s contractual maturity.  Additional  information 
+on different types of duration analysis is  included below and 
+in the glossary.  
+ Macaulay duration  calculates the weighted average term 
+to maturity of a security ’s cash flows.  Duration, stated in 
+months or years, always:  
+ 
+• Equals maturity for zero- coupon instruments,  
+• Equals less than maturity for instruments with 
+payments prior to maturity,  
+• Declines as time elapses , 
+• Is lower for amortizing instruments, and  
+• Is lower for instruments with higher coupons .  
+ Modified duration, calculated from Macaulay duration, estimates price sensitivity for small interest rate changes.  
+An instrument ’s modified duration represents its percentage 
+price change given a small change in interest rates.  
+ 
+Modified  duration assumes that interest rate shifts will not 
+change an instrument ’s cash flows.  As a result, it does not 
+estimate price sensitivity with an acceptable level of 
+precision for instruments with embedded options (e.g. , 
+callable bonds or mortgages).  Institutions with significant 
+option risk should not rely solely upon modified duration to 
+measure IRR . 
+ Effective duration  estimates price sensitivity more 
+accurately than modified duration for instruments with embedded options and is calculated using valuation models that contain option pricing components.  First, the user must determine the instrument ’s current value.  Next, the 
+valuation model assumes an interest rate change (usually 
+100 basis points) and estimates the instrument ’s new value 
+based on that assumption.  The percentage change between 
+the current and forecasted values represents the instrument ’s 
+effective durati on. 
+ All duration measures assume a linear price/yield 
+relationship.  However, that relationship actually is 
+curvilinear, which means that large shifts in rates have a greater effect than smaller changes.  Therefore, duration may only accurately estimate price sensitivity for rather small (up to 100 basis point) interest rate changes.  Convexity- adjusted duration should be used to more 
+accurately estimate price sensitivity for larger interest rate changes (over 100 basis points).  
+ Duration analysis contains significant weaknesses.  Accurate duration calculations require significant analysis 
+and complex management  information systems.  Further, 
+duration only measures value changes accurately for 
+relatively small interest rate fluctuations.  Therefore, institutions must frequently update duration measures when  
+interest rates are volatile or when any significant change 
+occurs in economic conditions, market conditions, or 
+underlying assumptions .

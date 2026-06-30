@@ -1,0 +1,47 @@
+# Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 59/289)
+
+**Source:** health_2024_02544.pdf
+**Chunk ID:** health_2024_02544_028_sub_059
+**Pages:** 1-160
+**Section Path:** Regulatory Impact Analysis > Paperwork Reduction Act of 1995 > Explanation of Estimated Capital Expenses for 42 CFR Part 2
+
+---
+
+12501 Federal Register / Vol. 89, No. 33 / Friday, February 16, 2024 / Rules and Regulations 
+141See 82 FR 6052, 6064. Comment 
+Comments on the proposed de- 
+identification standard are discussed in 
+the sections listed above where de- identification is applied. 
+Response 
+In addressing the comments received 
+on the proposed de-identification 
+standard and developing additional modification to better align part 2 with the HIPAA de-identification standard in 45 CFR 164.514(b), we identified additional changes needed to clarify and align terms related to de-identification, including ‘‘patient identifying information.’’ These changes are described below. 
+Final Rule 
+We are finalizing a modification to 
+clarify the definition of ‘‘patient 
+identifying information’’ and ensure consistency with the de-identification standard incorporated into this final rule. This change is in response to comments received on the NPRM and to align with the finalization of the de- identification standard in §§ 2.16, 2.52, and 2.54, and is consistent with the Department’s existing interpretation of the term. The final rule retains the part 2 term, ‘‘patient identifying information,’’ rather than replacing it with the HIPAA term, ‘‘individually identifiable health information,’’ because the two regulatory schemes apply to different sets of health information and the CARES Act mandate for alignment did not erase those distinctions. 
+The first sentence of the definition of 
+‘‘patient identifying information’’ lists the following identifiers: name, address, social security number, fingerprints, photograph, or similar information by which the identity of a patient, as defined in § 2.11, can be determined with reasonable accuracy either directly or by reference to other information. This identifying information is consistent with the identifiers listed in in 45 CFR 164.514(b)(2)(i) of the HIPAA Privacy Rule that must be removed from PHI for it to be considered de-identified and no longer subject to HIPAA protections. As explained in the background section of this rule, the Department clarified in a 2017 final rule that the definition of patient identifying information in part 2 includes the individual identifiers listed in the HIPAA Privacy Rule at 45 CFR 164.514(b)(2)(i) for those identifiers that are not already listed in the part 2 definition, and in preamble listed those identifiers.
+141 However, the second sentence of the 
+definition of ‘‘patient identifying 
+information’’ in the part 2 rule currently in effect allows retention of ‘‘a number assigned to a patient by a part 2 program, for internal use only by the part 2 program, if that number does not consist of or contain numbers (such as a social security, or driver’s license number) that could be used to identify a patient with reasonable accuracy from sources external to the part 2 program.’’ This exclusion from the definition for a number that could be a part 2 program’s equivalent of a medical record number conflicts with one of the identifiers that must be removed under the HIPAA de- identification standard (and that is listed in the 2017 Part 2 Final Rule), namely, ‘‘[a]ny other unique identifying number, characteristic, or code, except as permitted by paragraph (c) of this section[.]’’ Paragraph (c) of § 164.514 allows a covered entity to assign a code or other record identifier that can be used to re-identify the PHI, but it must be kept secure and not used for any other purpose. The allowable code referred to in paragraph (c) is different from the number assigned to a patient by a part 2 program, which is more likely to be a provider’s internal record identifier that may be ubiquitous throughout a patient’s medical record. Thus, we believe a clarification of the current rule is needed that removes the last sentence of the definition of patient identifying information. 
+The final rule adopts a modified 
+definition of ‘‘patient identifying information’’ to align more closely with the HIPAA standard in 45 CFR 164.514. 
+Payment 
+The Department proposed to adopt 
+the same definition of this term as in the 
+HIPAA regulations. This proposal would implement 42 U.S.C. 290dd–2(k), 
+added by section 3221(d) of the CARES Act, requiring the term ‘‘payment’’ in this part be given the same meaning of the term for the purposes of the HIPAA regulations. 
+Comment 
+The Department received general 
+support for aligning the part 2 definition 
+of payment with the HIPAA definition. 
+Response 
+We appreciate the comments on 
+adopting the HIPAA definition of 
+‘‘payment’’ and confirm that the intent is to uniformly apply the term ‘‘payment’’ in both this regulation and the HIPAA context. Final Rule 
+The final rule adopts the proposed 
+definition of ‘‘payment’’ without further modification. 
+Person 
+The term ‘‘person’’ is defined within 
+part 2 as ‘‘an individual, partnership,

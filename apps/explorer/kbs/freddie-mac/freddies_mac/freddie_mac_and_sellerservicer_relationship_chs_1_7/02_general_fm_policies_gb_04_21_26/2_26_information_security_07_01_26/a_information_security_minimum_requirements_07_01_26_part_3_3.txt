@@ -1,0 +1,117 @@
+# a. Information security minimum requirements (07/01/26) (part 3/3)
+
+**Source:** freddies_mac.pdf
+**Chunk ID:** freddies_mac_119_sub_003
+**Pages:** 45-52
+**Section Path:** Freddie Mac and SellerServicer Relationship (Chs 1-7) > 02 - General FM Policies GB-04-21-26 > 2.26 Information security (07/01/26) > a. Information security minimum requirements (07/01/26)
+
+---
+
+Guide Bulletin Update 04/21/26 Chapter 2 – Page 38 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the AllRegs 
+web site of ICE Mortgage Technology  (with a paid subscription).  Guide Chapter  2 – General Freddie Mac Policies  
+Guide Chapter 2 – General Freddie Mac Policies  
+ o Ensure that the software application development process includes measures to 
+address Open Web Application Security Project Top 10 security risks and that 
+these measures are clearly defined in policies and procedures  
+ 
+o Apply security and privacy engineering principles in the specification, design, 
+development, implementation and modification of the system  
+ 
+o Use established development processes, standards and tools that incorporate 
+threat modeling, security reviews and testing as appropriate  
+ 
+• Open -source requirement s.  For example, the Seller/Servicer must:  
+ 
+o Ensure that the software application development process includes requirements 
+to perform Dynamic Application Security Testing and/or Static Application Security 
+Testing scans on code  
+ 
+o Conduct security testing and evaluation to identify vulnerabilities and weaknesses 
+in the developed or procured software.  This testing and evaluation must include 
+code reviews, vulnerability assessments and penetration testing, where 
+applicable.  
+ 
+• Testing to validate functional and non -functional requirements are met prior to 
+production  
+ 
+• A process to manage, remediate and report on defects  
+ 
+• Requirements for documenting and assuring an accurate  software bill of materials  
+ 
+• Code development and security scanning pre - and post -deployment  
+  
+(xiv) Treatment of personal information  and Data Encryption  
+ 
+(i) Treatment of sensitive information  
+ 
+The Seller/Servicer must limit the storage , use and transmission  of potentially 
+sensitive personal information , including, without limitation, any information covered 
+by state or federal data privacy laws, to an as needed basis.  The Seller/Servicer 
+must develop and execute a process for de -identifying sensitive personal data (e.g., 
+masking or truncating the data)  that is stored in a system.  The data must be de -
+identified such that the remaining information does not identify an individual and there 
+is no reasonable basis to believe that the information can be used to i dentify the 
+individual.  
+ 
+(ii) Data Encryption  
+ 
+The Seller/Servicer must:  
+ 
+• Provide for the protection, integrity and confidentiality of data in transit and at rest
+
+Guide Bulletin Update 04/21/26 Chapter 2 – Page 39 
+ 
+The current official electronic version of the Guide is published by AllRegs® and accessible via either mf.freddiemac.com (for free) or the AllRegs 
+web site of ICE Mortgage Technology  (with a paid subscription).  Guide Chapter  2 – General Freddie Mac Policies  
+Guide Chapter 2 – General Freddie Mac Policies  
+ • Use Encryption during transmission and at rest for any potentially sensitive 
+personal information  
+ 
+• Deploy cryptography standards that meet or exceed the then current industry 
+standard ( e.g., those set forth by NIST or ISO/IEC ) Encryption strength and 
+technology  
+ 
+• Prohibit use of outdated and unsupported technologies  
+ 
+• Generate, exchange, store, use, replace and delete cryptographic keys in a timely 
+manner to prevent unauthorized access to those keys  
+ 
+• Maintain an encryption solution that enables the recovery of a compromised 
+database administrator account  
+ 
+• Maintain encryption solutions that allow privileged administrators to complete 
+required actions without the ability to decrypt data  
+ 
+• Use Encryption mechanisms on portable end -user devices to protect data , 
+including potentially sensitive personal information,  if the hardware (e.g., laptop, 
+mobile device) is lost or stolen  
+ 
+(xv) Incident management  
+ 
+The Seller/Servicer must:  
+ 
+• Develop and maintain an incident response plan with a process that applies incident 
+response capabilities and defines the resources and management support needed .   
+ 
+The plan must:  
+ 
+o Be tested at a pre -defined periodic frequency, or more frequently, if prudent, 
+given the circumstances  
+ 
+o Be reviewed and updated  at least annually  
+ 
+• Periodically test the effectiveness of the incident response capabilities : 
+ 
+o Annually, unless formally activated, audit the incident response plan.  The audit 
+may be performed by (i) an  internal independent function within the organization, 
+or (ii) an external entity that is qualified to conduct  such audits . 
+ 
+o Evaluate lessons learned from all Security Incidents  
+ 
+o Implement or identify an existing classification scale for  Security  Incidents to 
+quantify the severity of the Security Incident  
+ 
+o Have documented action plans for remediation of  Security  Incidents having high 
+severity ratings

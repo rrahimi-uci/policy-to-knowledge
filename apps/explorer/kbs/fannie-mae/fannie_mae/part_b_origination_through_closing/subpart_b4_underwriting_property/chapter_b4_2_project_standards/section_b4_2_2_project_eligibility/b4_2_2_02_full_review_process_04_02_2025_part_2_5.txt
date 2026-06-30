@@ -1,0 +1,76 @@
+# B4-2.2-02, Full Review Process (04/02/2025) (part 2/5)
+
+**Source:** fannie_mae.pdf
+**Chunk ID:** fannie_mae_302_sub_002
+**Pages:** 676-683
+**Section Path:** Part B, Origination Through Closing > Subpart B4, Underwriting Property > Chapter B4-2, Project Standards > Section B4-2.2, Project Eligibility > B4-2.2-02, Full Review Process (04/02/2025)
+
+---
+
+Published March 4, 2026
+660Status
+DesignationDeﬁnition
+UnavailableProject has been determined by Fannie Mae to be ineligible. Loans for units
+in this project cannot be sold to Fannie Mae.
+Guide
+IneligibleBased on information entered in CPM by the lender, loans in this project are
+not eligible for sale to Fannie Mae.
+Incomplete
+CertiﬁcationProject has been entered into CPM, but the lender's certiﬁcation process
+has not been completed. The required information must be entered into
+CPM for the lender to determine the project's eligibility.
+ 
+CPM Delivery Restrictions Notiﬁcations
+Project transaction eligibility or other loan-level restrictions will display in CPM and/or the DU
+Underwriting Findings report, when applicable. When CPM displays a delivery restriction for
+a speciﬁc project, lenders may only sell loans that comply with the stated restrictions, even
+if the loan receives a CPM Approved by Fannie Mae  message in DU.
+For example, loans in some projects may be limited to certain occupancy types (such as
+principal residences only, or principal residences and second homes), or there may be limits
+on the LTV ratios.
+CPM Approved by Fannie Mae Message in DU
+A loan submitted to DU will retain its Fannie Mae project approval status through the credit report expiration
+date speciﬁed on the DU Underwriting Findings report, provided it receives both:
+an Approve/Eligible recommendation, and
+a message indicating the project has an Approved by Fannie Mae status in CPM.
+When any of the following are changed by the lender when the loan caseﬁle is resubmitted to DU, the project
+eligibility status may change and result in the loss of the CPM Approved by Fannie Mae  message:
+CPM ID,
+project name,
+property address (state or zip code), or
+credit report.
+As with any other projects with an Approved by Fannie Mae status in CPM, lenders are required to validate
+compliance with all applicable insurance requirements outlined in Selling Guide Chapter B7-3, Property and
+
+Published March 4, 2026
+661Flood Insurance  and Chapter B7-4, Liability and Fidelity/Crime Insurance Requirements . Also, see Additional
+Obligations of the Lender for Projects Approved by Fannie Mae  below for additional requirements.
+Note : The loan is subject to delivery restrictions in CPM that may aﬀect the loan's eligibility, even if
+the loan has received the CPM Approved by Fannie Mae  message in DU.
+Additional Obligations of the Lender for Projects Approved by Fannie Mae
+If a lender becomes aware of any information that could impact the eligibility status reﬂected in CPM (such as,
+signiﬁcant deferred maintenance or major litigation), the lender must notify the CPM Management team (see
+E-1-02, List of Contacts ) with the relevant data and information. Fannie Mae will evaluate the new information
+and its impact on eligibility. Before selling a loan secured by a unit in such a project, the lender must conﬁrm
+that the project retains its approved status as of the note date, unless a loan has received and retains a CPM
+Approved by Fannie Mae  message in DU. Notiﬁcation must occur as soon as practicable but no later than ﬁve
+business days after becoming aware of such information.
+Fannie Mae reserves the right to change a project eligibility status designation if information acquired after
+approval or certiﬁcation has an impact on a previously issued eligibility determination.
+Note : Lenders are responsible for verifying and documenting that the project meets the applicable
+insurance requirements described in Chapters B7-3 and B7-4 . Fannie Mae does not review insurance
+policies as part of the review process, including when the loan has received a CPM Approved by Fannie
+Mae message  in DU.
+ 
+Full Review Eligibility Requirements
+When determining the eligibility of a condo project on the basis of a Full Review, lenders must ensure the condo
+project meets the eligibility requirements described in the following table.
+✓ Full Review Eligibility Requirements
+ The project meets the Requirements Applicable to All Properties in a Condo, Co-op, or PUD
+Project  described in B4-2.1-01, General Information on Project Standards .
+ The project must not be an ineligible project as described in  B4-2.1-03, Ineligible Projects .
+ No more than 15% of the total units in a project are 60 days or more past due on common
+expense assessments (also known as HOA fees). For example, a 100–unit project may not
+have more than 15 units that are 60 days or more past due.
+This ratio is calculated by dividing the number of units with common expense assessments
+that are past due by 60 or more days by the total number of units in the project.

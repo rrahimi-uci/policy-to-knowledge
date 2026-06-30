@@ -1,0 +1,78 @@
+# Section-by-Section Description of Proposed Amendments to the Security Rule (part 11/249)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_004_sub_011
+**Section Path:** Section-by-Section Description of Proposed Amendments to the Security Rule
+**Summary:** This section outlines the specific amendments proposed for the Security Rule, detailing changes to definitions, security standards, and administrative safeguards. It provides insight into how each amendment aims to enhance the security of ePHI.
+
+---
+
+903 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+43Sec. 262(a) of Public Law 104–191, 110 Stat. 
+2026, adding sec. 1174(a) (codified at 42 U.S.C. 
+1320d–3(a)). 
+44Sec. 262(a) of Public Law 104–191, 110 Stat. 
+2025, adding sec. 1173(d)(1) (codified at 42 U.S.C. 1320d–2(d)(1)). 
+45Id. 
+46Sec. 262(a) of Public Law 104–191, 110 Stat. 
+2026, adding sec. 1174(b)(1) (codified at 42 U.S.C. 1320d–3). 
+47Sec. 1102 of the SSA (codified at 42 U.S.C. 
+1302). 
+48Sec. 262(a) of Public Law 104–191, 110 Stat. 
+2023, adding sec. 1172 (codified at 42 U.S.C. 1320d–1). 
+49Id. 50Title XIII of Division A and title IV of Division 
+B of ARRA of 2009, Public Law 111–5, 123 Stat. 115 
+(Feb. 17, 2009) (codified at 42 U.S.C. 201 note). 
+51Id.; see also Subtitle B of title XIII of the 
+HITECH Act (codified at 42 U.S.C. 17911–17912), 42 U.S.C. 300jj–31–38. 
+52See H.R. Rep. No. 111–7, at 74 (2009), 
+accompanying H.R. 629, 111th Cong. 
+53H.R. 629, Energy and Commerce Recovery and 
+Reinvestment Act of 2009, introduced in the House on Jan. 22, 2009, contained nearly identical provisions to subtitle D of the HITECH Act. 
+54C. Stephen Redhead, ‘‘The Health Information 
+Technology for Economic and Clinical Health 
+(HITECH) Act,’’ Congressional Research Service, p. 8 (2009), https://crsreports.congress.gov/product/ pdf/R/R40161/9; id. at 9 (‘‘[Health IT], which generally refers to the use of computer applications in medical practice, is widely viewed as a necessary and vital component of health care reform.’’). 
+55Subtitle D of title XIII of the HITECH Act 
+(codified at 42 U.S.C. 17921, 42 U.S.C. 17931– 17941, and 42 U.S.C. 17951–17953). 
+56See S. Rept. 111–3, 111th Cong. accompanying 
+S. 336, 111th Cong., at 59 (2009). 57Sec. 13401 of Public Law 111–5, 123 Stat. 260 
+(codified at 42 U.S.C. 17931). 
+58Sec. 13401(a) of Public Law 111–5, 123 Stat. 
+260 (codified at 42 U.S.C. 17931). 
+59Sec. 13401(c) of Public Law 111–5, 123 Stat. 
+260 (codified at 42 U.S.C. 17931). 
+60Sec. 13421(b) of the HITECH Act (codified at 
+42 U.S.C. 17951). 
+61Sec. 3009(a)(1)(A) of the PHSA, as added by 
+sec. 13101 of the HITECH Act (codified at 42 U.S.C. 
+300jj–19(a)(1)). 
+62See Public Law 116–321, 134 Stat. 5072, 
+adding sec. 13412 (Jan. 5, 2021) (codified at 42 U.S.C. 17941); see also 42 U.S.C. 17931 et seq. 
+63See Public Law 116–321, 134 Stat. 5072, 
+adding sec. 13412 (Jan. 5, 2021) (codified at 42 U.S.C. 17941); see also sec. 13401 of Public Law 111–5, 123 Stat. 260 (codified at 42 U.S.C. 17931) (The HITECH Act adopts the same definition of business associate as the HIPAA Rules.); 45 CFR 160.103 (definition of ‘‘Business associate’’). enactment.43In adopting security 
+standards for health information, 
+HIPAA requires the Secretary to consider all of the following:
+44 
+•The technical capabilities of record 
+systems used to maintain health information. 
+•The costs of security measures. 
+•Training for persons who have 
+access to health information. 
+•The value of audit trails in 
+computerized record systems. 
+•The needs and capabilities of small 
+health care providers and rural health care providers.
+45 
+Congress contemplated that the 
+Department’s rulemaking authorities under HIPAA would not be static. In fact, Congress specifically built in a mechanism to adapt such regulations as technology and health care evolve, directing the Secretary to review and adopt modifications to the Administrative Simplification standards, including the security standards, as determined appropriate, but not more frequently than once every 12 months.
+46That statutory directive 
+complements the Secretary’s general rulemaking authority to make and publish such rules and regulations as may be necessary to the efficient administration of the functions with which the Secretary is charged.
+47The 
+Secretary may adopt either a standard developed, adopted, or modified by a standard setting organization that relates to a standard that the Secretary is authorized or required to adopt under the Administrative Simplification provisions, or a standard that is different if the different standard will substantially reduce administrative costs to health care providers and health plans.
+48If no standard has been adopted 
+by any standard setting organization, the Secretary shall rely on the recommendations of the National Committee on Vital and Health Statistics (NCVHS) and consult with Federal and State agencies and private organizations.
+49 2. Health Information Technology for 
+Economic and Clinical Health (HITECH) Act 
+On February 17, 2009, Congress 
+enacted the Health Information Technology for Economic and Clinical Health Act of 2009 (HITECH Act), part of the American Recovery and Reinvestment Act of 2009 (ARRA),
+50

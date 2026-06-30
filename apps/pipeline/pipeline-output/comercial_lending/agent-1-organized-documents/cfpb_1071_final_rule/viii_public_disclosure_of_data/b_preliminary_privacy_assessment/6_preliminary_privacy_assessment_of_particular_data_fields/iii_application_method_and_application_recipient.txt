@@ -1,0 +1,45 @@
+# iii. Application Method and Application Recipient
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_702
+**Pages:** 690-690
+**Section Path:** VIII. Public Disclosure of Data > B. Preliminary Privacy Assessment > 6. Preliminary Privacy Assessment of Particular Data Fields > iii. Application Method and Application Recipient
+
+---
+
+690 should be modified, it may consider disclosing the application date at a higher level; for 
+example, disclosing the month and year but not the specific date. In light of the potential re -
+identification risk arising from this data field, the Bureau sought  comment on whether there are 
+other specific modifications it should consi der, and whether it should consider deletion outright.   
+Several commenters provided feedback on the Bureau’s analysis . In supporting 
+disclosure of the application date field, a community group stated that it would promote 
+understanding of small business le nding. However, an academic research and policy organization 
+asserted that disclosure of application date would pose re -identification risk to applicants and 
+noted that HMDA does not disclose application date. This commenter, along with a group of 
+trade as sociations, urged the Bureau not to publish the application date field to ensure 
+consistency between 1071 and HMDA.  
+As discussed in part VIII.B.3 above , the Bureau  views the disclosure of application date 
+as having significant benefits.  This preliminary a ssessment is consistent with feedback that 
+publication of application date would promote understanding about small business lending. The 
+Bureau ’s preliminary assessment is that the application date field does not pose re -identification 
+risks such that the Bureau should modify or delete it before publication. Commenters supporting such modification or deletion did not provide additional evidence of re -identification risk that 
+would alter the partial privacy analysis described above. The Bureau also prelimina rily assesses 
+that this unmodified data field would present limited privacy risk if re -identification occurred.  
+iii. Application Method and Application Recipient 
+Proposed § 1002.107(a)(3) would have require d financial institutions to collect and report 
+the means by which the applicant submitted the covered application directly or indirectly to the 
+financial institution. A financial institution would have report ed whether the applicant submitted 
+the applicatio n in person, by telephone, by mail, or online. Proposed §  1002.107(a)(4) would 
+have require d financial institutions to collect and report whether the applicant submitted the 
+covered application directly to the financial institution or its affiliate, or whe ther the applicant 
+submitted the covered application directly or indirectly to the financial institution. As discussed 
+in the section -by-section analyses of  § 1002.107(a)(3) and (4),  the Bureau is finalizing these data 
+points  as proposed, with certain modifications to related commentary.  
+In the NPRM, the Bureau stated that d isclosing application method and whether the 
+application was submitted directly or indirectly, in unmodified form, would likely disclose minimal, if any, information about an applicant or related natural person that may be harmful or 
+sensitive if such person were re-identified. The Bureau reasoned that the application method is 
+likely to be of relatively limited utility to an adversary because it conveys little information about a natural person or a business ’s financial condition. While adversaries interested in targeted 
+marketing could direct future marketing efforts to a business using the same application channel, the Bureau noted that marketing firms already possess strategic i nformation about  methods for 
+establishing contact. Unmodified disclosure of application method and whether the application was submitted indirectly may reveal information that financial institutions regard as harmful or 
+sensitive, but  the Bureau did not be lieve that disclosure would permit the reverse -engineering of 
+a financial institution ’s proprietary lending models.

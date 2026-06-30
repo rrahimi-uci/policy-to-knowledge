@@ -1,0 +1,47 @@
+# xiv. Number of Workers
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_713
+**Pages:** 705-705
+**Section Path:** VIII. Public Disclosure of Data > B. Preliminary Privacy Assessment > 6. Preliminary Privacy Assessment of Particular Data Fields > xiv. Number of Workers
+
+---
+
+705 The NPRM stated that if the Bureau modified 6-digit code s for publication, it would consider 
+disclosing 2 -, 3-, or 4 -digit codes to reduc e re-identification risk  while maintaining data utility.  
+Community group commenters supported disclosing 6-digit NAICS codes to support the 
+fair lending purpose of the statute. Many industry commenters expressed concern that such 
+codes, particularly in small or rural communities where only a limited number of businesses 
+share certain NAICS codes, would create significant re-identification risks.  
+Several commenters expressed support for modifying the 6-digit NAICS code in the 
+public application -level data. One commenter stated that the NAICS code should be truncated to 
+general categories. Several industry commenters expressed specific support for disclosing a 2-digit NAICS code, and another supported a 4-digit modification, stating it would provide 
+sufficient information while mitigating re -identification risk.  
+As discussed above in part VIII.B.3 , the Bureau views disclosure of a NAICS code as 
+having significant disclosure benefits. In addition, the Bureau ’s shift to requiring collection and 
+reporting of a 3-digit code will significantly reduce re -identification risk while preserving the 
+utility of the dataset. This shift acknowledges privacy concerns raised by some commenters, 
+reducing the risk of cognizable privacy harms.  
+Overall, the Bureau preliminarily assesses that published 3 -digit codes by themselves 
+present limited privacy risk. It is unlikely that publication of these data would disclose personal 
+information about an applicant or related natural person that would be harmful or sensitive if 
+such person were re -identified. The Bureau also does not see evidence of non -personal  
+commercial privacy risks to small businesses, or of any compelling privacy risk to financial 
+institutions. However, the Bureau appreciates that there is a heightened risk of re -identification 
+when a NAICS code is combined with other data fields, such as c ensus tract.  
+xiv. Number of Workers  
+Proposed § 1002.107(a)(16) would have require d financial institutions to collect and 
+report to the Bureau the number of non-owners working for the applicant.  In the final rule, 
+however, a financial institution complies with  § 1002.107(a)(16) by reporting in ranges . The 
+Bureau is adopting this change in response to concerns expressed by commenters about the complexit y of providing an exact number.   
+The NPRM stated that d isclosing number of workers in unmodified form would likely 
+disclose minimal, if any, information about an applicant or related natural person that would be 
+harmful or sensitive if such person were re -identified . Additionally, the Bureau did not see 
+disclosure  being harmful or sensitive to financial institu tions. Financial institutions may use such 
+data to learn more about the types of small businesses with which their competitors do business , 
+but the Bureau did not see evidence that disclosure would permit reverse -engineering of 
+proprietary lending models.  
+The Bureau noted that information about the number of workers is likely to be publicly 
+available for many businesses. For example, S tate registries of businesses may include 
+information about a business ’s number of workers , and private databases also commo nly include 
+this information . This decreases  any potential sensitivity or harm of disclosing this data point in

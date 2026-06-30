@@ -1,0 +1,47 @@
+# xiii. NAICS Code
+
+**Source:** cfpb_1071_final_rule.pdf
+**Chunk ID:** cfpb_1071_final_rule_712
+**Pages:** 704-704
+**Section Path:** VIII. Public Disclosure of Data > B. Preliminary Privacy Assessment > 6. Preliminary Privacy Assessment of Particular Data Fields > xiii. NAICS Code
+
+---
+
+704 discriminatory lending patterns. Other community groups and a trade association expressed 
+support for publishing gross annual revenue data in bins to mitigate privacy risks for applicants. These community groups stated that modified data must still be detailed enough to permit 
+meaningful analysis, and they criticized the current CRA system of identifying all loans to 
+businesses with revenue under $1 million as not allowing for such analysis. One commenter 
+suggested that if the Bureau decided to modify the gross annual revenue data field it should 
+select the mid -point and recode the data in bins of $10,000 increments. They also exp ressed 
+support for top-coding provided that it did not mask any significant differences in data for larger small businesses, and suggested that the Bureau  conduct testing with in the first year of data to 
+assess whether the modification was appropriate.  
+As discussed above in part VIII .B.3, the Bureau views disclosure of gross annual revenue 
+data as having significant disclosure benefits. After reviewing comments, the Bureau 
+preliminarily assesses that if re -identification were to occur, disclosing gross annual revenue data 
+in unmodified form may present significant privacy risk to small business applicants and related 
+natural persons. The Bureau also preliminarily assesses that modifications to this field can be 
+made while preserving the utility of the data f or statutory purposes. The Bureau will continue to 
+consider feedback about potential modification techniques, such as binning at smaller intervals 
+and conducting testing before top-coding.  
+xiii. NAICS Code  
+Proposed § 1002.107(a)(15) would have  require d financial institutions to collect and 
+report to the Bureau a 6-digit NAICS code . As discussed above in the section-by -section analysis 
+of § 1002.107(a)(15), the Bureau is modifying how NAICS code is reported. Under the final 
+rule, financial institutions must collect and report a 3 -digit NAICS subsector code. Using only 3-
+digit NAICS subsector codes will decrease the risk of re-identification to applicants and owners 
+while adhering to the purposes of section 1071.  
+The NPRM stated that publishing 6 -digit NAICS c odes in unmodified form by itself 
+would likely disclose minimal, if any, information about an applicant or related natural person 
+that may be harmful or sensitive if such person were re -identified, or that may be harmful or 
+sensitive to an identified finan cial institution. Information about a small business ’s industry is 
+likely apparent to anyone interacting with it. The Bureau noted that disclosure of 6-digit codes in 
+unmodified form may reveal information that financial institutions regard as harmful or 
+sensitive, such as the industries with which the financial institution does business , but it did not 
+discern that such disclosure would permit reverse -engineering of proprietary lending models.  
+The Bureau acknowledged that 6 -digit code s were likely to produce unique instances in 
+the data, especially if combined with unmodified census tract data. It noted the existence of 73,057 census tracts and 1,057 6-digit NAICS codes .
+901 With over 77 million resulting 
+combinations , there would likely be many instances of this data forming unique combinations . 
+ 
+901 See 2010 Census Tallies; Off. of Mgmt. & Budget, North American Industry Classification System  (NAICS ) 
+Updates for 2022 , 86 FR 35350, 35352 (July 2, 2021).

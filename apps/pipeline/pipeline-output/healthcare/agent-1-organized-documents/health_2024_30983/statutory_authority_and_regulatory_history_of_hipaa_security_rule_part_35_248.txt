@@ -1,0 +1,64 @@
+# Statutory Authority and Regulatory History of HIPAA Security Rule (part 35/248)
+
+**Source:** health_2024_30983.pdf
+**Chunk ID:** health_2024_30983_002_sub_035
+**Section Path:** Statutory Authority and Regulatory History of HIPAA Security Rule
+**Summary:** This section details the statutory authority under which the HIPAA Security Rule was established, including the HIPAA and HITECH Acts, and provides a historical account of regulatory actions leading to the current proposed modifications. It emphasizes the legal framework guiding the proposed changes.
+
+---
+
+915 Federal Register / Vol. 90, No. 3 / Monday, January 6, 2025 / Proposed Rules 
+241Id. at 11. 
+242Id. at 27. 
+243Id. at 30. 
+244Id. at 27 and 30. 
+245See ‘‘OCR News Releases & Bulletins,’’ Office 
+for Civil Rights, U.S. Department of Health and 
+Human Services, https://www.hhs.gov/ocr/ newsroom/index.html. 
+246See Resolution Agreement, ‘‘Doctors’ 
+Management Services, Inc.,’’ Office for Civil Rights, 
+U.S. Department of Health and Human Services (Oct. 31, 2023), https://www.hhs.gov/hipaa/for- professionals/compliance-enforcement/agreements/ dms-ra-cap/index.html; Press Release, ‘‘HHS’ Office 
+for Civil Rights Settles Ransomware Cyber-Attack Investigation,’’ Office for Civil Rights, U.S. Department of Health and Human Services (Oct. 31, 2023), https://www.hhs.gov/about/news/2023/10/ 
+31/hhs-office-civil-rights-settles-ransomware-cyber- attack-investigation.html; see also ‘‘Breach Portal: Notice to the Secretary of HHS Breach of Unsecured Protected Health Information,’’ supra note 10. 247‘‘HHS’ Office for Civil Rights Settles 
+Ransomware Cyber-Attack Investigation,’’ supra 
+note 246. 
+248See Resolution Agreement, ‘‘Montefiore 
+Medical Center,’’ Office for Civil Rights, U.S. Department of Health and Human Services (Nov. 17, 2023), https://www.hhs.gov/hipaa/for- professionals/compliance-enforcement/agreements/ montiefore/index.html; ‘‘HHS’ Office for Civil 
+Rights Settles Malicious Insider Cybersecurity Investigation for $4.75 Million,’’ supra note 223. 
+249‘‘Muddling through cybersecurity: Insights 
+from the U.S. healthcare industry,’’ supra note 116, 
+p. 541; ‘‘Start with Security: A Guide for Business,’’ supra note 17. 
+250See 45 CFR 164.312(a)(1) and (e)(1); PR.DS–1 
+and 2, ‘‘Framework for Improving Critical Infrastructure Cybersecurity,’’ Cybersecurity Framework (CSF) Version 1.1, National Institute of Standards and Technology, U.S. Department of Commerce (Apr. 16, 2018), https://nvlpubs.nist.gov/ nistpubs/CSWP/NIST.CSWP.04162018.pdf; PR.DS– 
+01 and 02, ‘‘The NIST Cybersecurity Framework (CSF) 2.0,’’ supra note 15. 
+251‘‘2021 HIMSS Healthcare Cybersecurity 
+Survey,’’ supra note 231, p. 23. 
+252See ‘‘Hacking America’s Health Care: 
+Assessing the Change Healthcare Cyber Attack and What’s Next,’’ supra note 214 (According to CEO 
+Andrew Witty, intruders used compromised credentials to remotely access an application used to enable remote access to desktops, which did not have MFA.). The Department’s investigation into the Change Healthcare breach is ongoing, and no conclusion has been reached with respect to its cause or whether Change Healthcare was in violation of the Security Rule. 
+25345 CFR 164.308(a)(4)(ii)(B) and 164.312(a)(1); 
+‘‘The NIST Cybersecurity Framework (CSF) 2.0,’’ supra note 15; ‘‘Framework for Improving Critical 
+Infrastructure Cybersecurity,’’ supra note 250. 
+254RS.MA, ‘‘The NIST Cybersecurity Framework 
+(CSF) 2.0,’’ supra note 15. 
+255PR.IP–9, ‘‘Framework for Improving Critical 
+Infrastructure Cybersecurity,’’ supra note 250. 
+25645 CFR 164.304 (definition of ‘‘Security 
+incident’’). The definition of security incident includes both attempted and successful incidents. A successful incident is one in which a threat actor is able to, without authorization, access, use, disclose, modify, or destroy information or interfere with system operations in an information system. 
+257See, e.g., ‘‘Montefiore Medical Center,’’ supra 
+note 248. had experienced a breach generally 
+engaged in minimal or negligible efforts to address the risk analysis and risk management requirements.
+241 
+According to the report, at that time only 14 percent of covered entities and 17 percent of business associates were ‘‘substantially fulfilling their regulatory responsibilities to safeguard ePHI they [held] through risk analysis activities,’’
+242while 94 percent of 
+covered entities and 88 percent of business associates ‘‘failed to implement appropriate risk management activities sufficient to reduce risks and vulnerabilities to a reasonable and appropriate level.’’
+243The report 
+specifically noted that the audit results were consistent with the findings of OCR’s compliance reviews and complaint investigations.
+244 
+Recent enforcement actions provide 
+evidence that the results of the 2016– 
+2017 audits were not isolated cases. In 2023, OCR entered into seven resolution agreements with regulated entities after investigations indicated that they had potentially violated the Security Rule, constituting almost half of the total resolution agreements OCR entered into that year.
+245In each case, OCR’s 
+investigation found evidence of 
+multiple potential violations. For example, in one case, a regulated entity did not detect an intrusion into its network until 20 months later when its files were encrypted with ransomware.
+246OCR’s investigation

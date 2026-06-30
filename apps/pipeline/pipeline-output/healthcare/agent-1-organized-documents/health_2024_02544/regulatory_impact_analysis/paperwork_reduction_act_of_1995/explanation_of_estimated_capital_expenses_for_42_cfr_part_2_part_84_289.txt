@@ -1,0 +1,22 @@
+# Explanation of Estimated Capital Expenses for 42 CFR Part 2 (part 84/289)
+
+**Source:** health_2024_02544.pdf
+**Chunk ID:** health_2024_02544_028_sub_084
+**Pages:** 1-160
+**Section Path:** Regulatory Impact Analysis > Paperwork Reduction Act of 1995 > Explanation of Estimated Capital Expenses for 42 CFR Part 2
+
+---
+
+Response 
+We appreciate the comment about 
+improving the capabilities for EHRs to 
+segment data to maintain patient privacy while also remaining interoperable. The final rule change expressly stating that data segmentation is not required by recipients under a TPO consent does not preclude the voluntary use of data segmentation or tracking as means to protect sensitive data from improper disclosure or redisclosure. As a result of the modifications to paragraph (d)(2) of § 2.12, key recipients of part 2 records may choose the best method for their health IT environment and organizational structure to protect records from use and disclosure in legal proceedings against the patient, absent consent or a court order. For example, the use of the data segmentation for privacy (‘‘DS4P’’) standard as adopted as part of the ONC Health IT Certification Program criteria in 45 CFR 170.315(b) is a technical capability that would be acceptable/sufficient.
+169 
+Comment 
+A few individual commenters, a 
+police and community treatment collaborative, a health IT vendor, and an SUD recovery policy organization, requested changes to paragraph (e)(4), which applies to a ‘‘[d]iagnosis which is made on behalf of and at the request of a law enforcement agency or official or a court of competent jurisdiction solely for the purpose of providing evidence[.]’’ Specifically, they recommended in § 2.12(e)(4)(i) that we add language to include the purpose of determining eligibility for participation in deflection, diversion, or reentry alternatives to incarceration. The commenters stated that alternatives to incarceration require swift assessments, diagnoses, and referrals to treatment and care, and that the requested change is narrowly tailored and consistent with best practice and priorities within the justice field. 
+Response 
+We decline to further modify 
+paragraph (e)(4) in the manner 
+suggested, although we appreciate the comment and the intent to support criminal justice deflection programs and alternatives to incarceration where appropriate. The changes we proposed to this paragraph were for clarification and not intended to create substantive modifications. However, we believe that as drafted, the final regulatory language supports the disclosure of diagnoses made for the purpose of providing evidence for any number of purposes, which could include determining eligibility for participation in deflection, diversion, or reentry alternatives to incarceration. Thus, in our view, the 
+VerDate Sep<11>2014 18:41 Feb 15, 2024 Jkt 262001 PO 00000 Frm 00043 Fmt 4701 Sfmt 4700 E:\FR\FM\16FER2.SGM 16FER2lotter on DSK11XQN23PROD with RULES2
