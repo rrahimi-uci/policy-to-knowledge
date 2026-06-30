@@ -49,3 +49,41 @@ export function applySSELine(rawLine: string, state: SSEState): SSEState {
 
   return { content, currentStep };
 }
+
+/**
+ * Fold a list of raw lines into a running state. Convenience wrapper around
+ * {@link applySSELine} used when flushing a buffered chunk.
+ */
+export function applySSELines(lines: string[], state: SSEState): SSEState {
+  return lines.reduce((acc, line) => applySSELine(line, acc), state);
+}
+
+export interface SSEChunkResult {
+  state: SSEState;
+  /** Remaining partial line (no trailing newline yet) to carry into the next chunk. */
+  buffer: string;
+}
+
+/**
+ * Feed a decoded text chunk into the line buffer, applying every COMPLETE line
+ * (terminated by '\n') and returning the leftover partial line in `buffer`.
+ *
+ * Pass `final: true` for the terminal call (stream done) so any trailing line
+ * that was NOT newline-terminated is still applied instead of being dropped.
+ */
+export function feedSSEChunk(
+  chunk: string,
+  state: SSEState,
+  buffer: string,
+  final = false,
+): SSEChunkResult {
+  const combined = buffer + chunk;
+  const lines = combined.split('\n');
+  const remainder = lines.pop() ?? '';
+  let next = applySSELines(lines, state);
+  if (final && remainder) {
+    next = applySSELine(remainder, next);
+    return { state: next, buffer: '' };
+  }
+  return { state: next, buffer: remainder };
+}

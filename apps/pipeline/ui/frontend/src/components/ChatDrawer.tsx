@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { MessageSquare, X, Send, Loader2, Sparkles, ChevronRight } from 'lucide-react';
-import { applySSELine, initialSSEState, type SSEState } from '../lib/sse';
+import { feedSSEChunk, initialSSEState, type SSEState } from '../lib/sse';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -85,31 +85,32 @@ export default function ChatDrawer({ entityName, graphName }: Props) {
       let buffer = '';
       let sse: SSEState = { ...initialSSEState };
 
+      const sync = () => {
+        if (sse.content !== assistantContent) {
+          assistantContent = sse.content;
+          setMessages(prev => {
+            const updated = [...prev];
+            updated[updated.length - 1] = { role: 'assistant', content: assistantContent };
+            return updated;
+          });
+        }
+        setCurrentStep(sse.currentStep);
+      };
+
       while (reader) {
         const { done, value } = await reader.read();
         if (done) break;
-        buffer += decoder.decode(value, { stream: true });
-
-        const lines = buffer.split('\n');
-        buffer = lines.pop() || '';
-
-        for (const line of lines) {
-          const prevContent = sse.content;
-          const prevStep = sse.currentStep;
-          sse = applySSELine(line, sse);
-          if (sse.content !== prevContent) {
-            assistantContent = sse.content;
-            setMessages(prev => {
-              const updated = [...prev];
-              updated[updated.length - 1] = { role: 'assistant', content: assistantContent };
-              return updated;
-            });
-          }
-          if (sse.currentStep !== prevStep) {
-            setCurrentStep(sse.currentStep);
-          }
-        }
+        const chunk = feedSSEChunk(decoder.decode(value, { stream: true }), sse, buffer);
+        sse = chunk.state;
+        buffer = chunk.buffer;
+        sync();
       }
+
+      // Flush any trailing data not terminated by a newline. A server that ends
+      // the stream without a final '\n' would otherwise drop the last SSE line
+      // (and its token/content) entirely.
+      sse = feedSSEChunk(decoder.decode(), sse, buffer, true).state;
+      sync();
     } catch (err: any) {
       if (err.name === 'AbortError') {
         // Remove the empty assistant placeholder so aborted sends leave no ghost bubble

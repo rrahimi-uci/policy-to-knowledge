@@ -578,8 +578,10 @@ class KnowledgeGraphOptimizer:
                     batch_j_ids = {r.get('rule_id') for r in batches[j]}
                     true_cross_deps = [
                         d for d in cross_deps
-                        if (d['source_rule_id'] in batch_i_ids and d['target_rule_id'] in batch_j_ids) or
-                           (d['source_rule_id'] in batch_j_ids and d['target_rule_id'] in batch_i_ids)
+                        if isinstance(d, dict) and d.get('source_rule_id') and d.get('target_rule_id') and (
+                            (d['source_rule_id'] in batch_i_ids and d['target_rule_id'] in batch_j_ids) or
+                            (d['source_rule_id'] in batch_j_ids and d['target_rule_id'] in batch_i_ids)
+                        )
                     ]
                     if true_cross_deps:
                         print(f"   ✓ Found {len(true_cross_deps)} cross-batch dependencies ({i+1}↔{j+1})", flush=True)
@@ -603,9 +605,16 @@ class KnowledgeGraphOptimizer:
         rule_dependents_map = {}
         
         for dep in all_dependencies:
-            source_id = dep["source_rule_id"]
-            target_id = dep["target_rule_id"]
-            
+            # The model occasionally returns a dependency object missing one of
+            # the id keys. Skip those instead of letting a raw subscript raise a
+            # KeyError that would abort the entire optimization run.
+            if not isinstance(dep, dict):
+                continue
+            source_id = dep.get("source_rule_id")
+            target_id = dep.get("target_rule_id")
+            if not source_id or not target_id:
+                continue
+
             # Calculate confidence if breakdown provided
             if 'confidence' in dep and isinstance(dep['confidence'], dict):
                 dep['confidence'] = self._calculate_dependency_confidence(dep['confidence'])
@@ -615,25 +624,25 @@ class KnowledgeGraphOptimizer:
                 dep['confidence'] = {
                     5: 95, 4: 85, 3: 75, 2: 65, 1: 55
                 }.get(strength, 70)
-            
+
             # Track what this rule depends on
             if target_id not in rule_dependencies_map:
                 rule_dependencies_map[target_id] = []
             rule_dependencies_map[target_id].append({
                 "depends_on_rule": source_id,
-                "dependency_type": dep["dependency_type"],
-                "rationale": dep["rationale"],
+                "dependency_type": dep.get("dependency_type", "unknown"),
+                "rationale": dep.get("rationale", ""),
                 "impact_if_fails": dep.get("impact", "Unknown"),
                 "strength": dep.get("strength", "medium"),
                 "confidence": dep.get("confidence", 70)
             })
-            
+
             # Track what depends on this rule
             if source_id not in rule_dependents_map:
                 rule_dependents_map[source_id] = []
             rule_dependents_map[source_id].append({
                 "dependent_rule": target_id,
-                "dependency_type": dep["dependency_type"]
+                "dependency_type": dep.get("dependency_type", "unknown")
             })
         
         # Apply to rules
@@ -729,8 +738,10 @@ class KnowledgeGraphOptimizer:
             # Filter dependencies to only include non-removed rules
             filtered_deps = []
             for dep in dep_metadata.get('dependency_analysis', {}).get('dependencies', []):
-                if (dep['source_rule_id'] in deduplicated_rule_ids and 
-                    dep['target_rule_id'] in deduplicated_rule_ids):
+                if not isinstance(dep, dict):
+                    continue
+                if (dep.get('source_rule_id') in deduplicated_rule_ids and
+                    dep.get('target_rule_id') in deduplicated_rule_ids):
                     filtered_deps.append(dep)
             
             if dep_metadata.get('dependency_analysis'):
@@ -742,24 +753,29 @@ class KnowledgeGraphOptimizer:
             rule_dependents_map = {}
             
             for dep in filtered_deps:
-                source_id = dep["source_rule_id"]
-                target_id = dep["target_rule_id"]
-                
+                source_id = dep.get("source_rule_id")
+                target_id = dep.get("target_rule_id")
+                if not source_id or not target_id:
+                    continue
+
                 if target_id not in rule_dependencies_map:
                     rule_dependencies_map[target_id] = []
                 rule_dependencies_map[target_id].append({
                     "depends_on_rule": source_id,
-                    "dependency_type": dep["dependency_type"],
-                    "rationale": dep["rationale"],
+                    "dependency_type": dep.get("dependency_type", "unknown"),
+                    "rationale": dep.get("rationale", ""),
                     "impact_if_fails": dep.get("impact", "Unknown"),
-                    "strength": dep.get("strength", "medium")
+                    "strength": dep.get("strength", "medium"),
+                    # Preserve the per-dependency confidence computed upstream so
+                    # the saved rules keep their confidence (it was dropped here).
+                    "confidence": dep.get("confidence", 70)
                 })
-                
+
                 if source_id not in rule_dependents_map:
                     rule_dependents_map[source_id] = []
                 rule_dependents_map[source_id].append({
                     "dependent_rule": target_id,
-                    "dependency_type": dep["dependency_type"]
+                    "dependency_type": dep.get("dependency_type", "unknown")
                 })
             
             # Enhance deduplicated rules with dependencies

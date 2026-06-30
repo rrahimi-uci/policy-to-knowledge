@@ -65,8 +65,12 @@ async def start_analysis(
         return {"id": analysis["id"], "status": "running", "mode": "agentic",
                 "message": "Agentic analysis started. Connect to WebSocket for progress."}
     else:
-        # Synchronous basic analysis (original heuristic engine)
-        result = impact_service.run_analysis(
+        # Basic heuristic engine: fully synchronous (difflib O(n²) over
+        # provisions + blocking SQLite writes). Offload to a worker thread so a
+        # large document pair does not block the event loop and stall every
+        # other request / WebSocket keepalive while it runs.
+        result = await asyncio.to_thread(
+            impact_service.run_analysis,
             analysis_id=analysis["id"],
             old_text=old_text,
             new_text=new_text,

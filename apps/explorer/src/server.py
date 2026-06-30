@@ -4174,7 +4174,7 @@ def _execute_chat_tool(function_name, function_args):
         return llm_result, frontend_event
 
     elif function_name == "get_vertex_details":
-        graph_name = function_args.get("graph_name", "g")
+        graph_name = function_args.get("graph_name") or get_default_traversal_source()
         with get_traversal(graph_name) as (g, conn):
             vid_str = function_args["vertex_id"]
             # Try numeric ID first, then fall back to name lookup
@@ -4286,7 +4286,7 @@ def _execute_find_related_rules(function_args):
     """Compound tool: find a rule and return its full dependency neighborhood."""
     rule_name = function_args["rule_name"]
     show_on_graph = function_args.get("show_on_graph", True)
-    graph_name = function_args.get("graph_name", "g")
+    graph_name = function_args.get("graph_name") or get_default_traversal_source()
 
     with get_traversal(graph_name) as (g, conn):
         # Try exact match first, then fallback to fuzzy (textContains)

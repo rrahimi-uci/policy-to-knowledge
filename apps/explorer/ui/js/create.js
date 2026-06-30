@@ -434,7 +434,7 @@ function _renderStep2Content() {
                 return `<div class="pending-connection">
                     <span class="pending-arrow">${arrow}</span>
                     <span class="pending-name">${escapeHtml(c.target_name || c.source_name || '?')}</span>
-                    <span class="dep-type-badge dep-type-${c.dependency_type}">${c.dependency_type}</span>
+                    <span class="dep-type-badge dep-type-${c.dependency_type}">${escapeHtml(String(c.dependency_type || ''))}</span>
                     <span class="pending-strength">str=${c.strength}</span>
                     <button class="pending-remove" onclick="_removePending(${i})" title="Remove">✕</button>
                 </div>`;
@@ -565,7 +565,7 @@ const _onManualTargetInput = debounce(function (query) {
         return `<div class="manual-target-item" onclick="_selectManualTarget('${escapeHtml(String(n.id))}', '${escapeHtml(String(n.name)).replace(/'/g, "&#39;")}')">
             <span class="manual-target-dot" style="background:${typeColor}"></span>
             <span class="manual-target-name">${escapeHtml(truncate(n.name, 40))}</span>
-            <span class="manual-target-type">${n.rule_type || n.label}</span>
+            <span class="manual-target-type">${escapeHtml(String(n.rule_type || n.label || ''))}</span>
         </div>`;
     }).join('');
     container.style.display = 'block';

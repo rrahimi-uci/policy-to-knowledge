@@ -131,7 +131,7 @@ function _buildLegend(data) {
             row.className = 'legend-row';
             row.dataset.filter = type;
             row.onclick = function () { toggleLegendFilter(this, type); };
-            row.innerHTML = `<div class="legend-dot" style="background:${color}"></div> ${type}`;
+            row.innerHTML = `<div class="legend-dot" style="background:${color}"></div> ${escapeHtml(String(type))}`;
             ntContainer.appendChild(row);
         });
         if (hasCategory) {
@@ -152,7 +152,7 @@ function _buildLegend(data) {
             const color = _edgeColor(label);
             const row = document.createElement('div');
             row.className = 'legend-row';
-            row.innerHTML = `<div class="legend-edge-line" style="background:${color}; opacity:0.7"></div> ${label}`;
+            row.innerHTML = `<div class="legend-edge-line" style="background:${color}; opacity:0.7"></div> ${escapeHtml(String(label))}`;
             etContainer.appendChild(row);
         });
     }
@@ -324,9 +324,9 @@ function dynRadius(d) {
 function onNodeHover(event, d) {
     let html = `<div class="tooltip-name">${escapeHtml(d.name || d.id)}</div>`;
     html += `<div class="tooltip-meta">`;
-    html += `Type: <span>${d.label}</span>`;
-    if (d.rule_type) html += ` &middot; ${d.rule_type}`;
-    if (d.category) html += `<br>Category: <span>${d.category}</span>`;
+    html += `Type: <span>${escapeHtml(String(d.label))}</span>`;
+    if (d.rule_type) html += ` &middot; ${escapeHtml(String(d.rule_type))}`;
+    if (d.category) html += `<br>Category: <span>${escapeHtml(String(d.category))}</span>`;
     if (d.mandatory) html += `<br><span style="color:var(--amber)">Mandatory</span>`;
     html += `<br>Connections: <span>${d._degree || 0}</span>`;
     html += `</div>`;
@@ -370,7 +370,7 @@ async function onNodeClick(event, d) {
     panel.classList.add('open');
 
     try {
-        const res = await fetch(`/api/vertex/${d.id}?graph_name=${currentGraphName}`);
+        const res = await fetch(`/api/vertex/${encodeURIComponent(d.id)}?graph_name=${encodeURIComponent(currentGraphName)}`);
         const info = await res.json();
         if (!res.ok) throw new Error(info.error || 'Failed to load');
         renderDetail(info);
