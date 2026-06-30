@@ -582,7 +582,7 @@ function openReference(encodedRef, encodedGraph, encodedSourceRef) {
                 }
                 // Pass source_text for text-based fallback highlighting
                 const sourceText = best.source_text || (srcRefObj && srcRefObj.source_text);
-                if (sourceText && !highlightTerms.length) {
+                if (sourceText) {
                     url += '&source_text=' + encodeURIComponent(sourceText);
                 }
                 window.open(url, '_blank');

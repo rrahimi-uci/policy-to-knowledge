@@ -149,8 +149,11 @@ async def _run_publish(
             with tarfile.open(fileobj=buf, mode="w:gz") as tf:
                 # Add directory contents at the archive root so extracting
                 # into agent-1-organized-documents/ produces the same tree.
+                # recursive=False is required: rglob("*") already yields every
+                # nested file, so tarfile's default recursive add would re-add
+                # each subdirectory's contents, duplicating entries in the archive.
                 for entry in sorted(docs_dir.rglob("*")):
-                    tf.add(entry, arcname=str(entry.relative_to(docs_dir)))
+                    tf.add(entry, arcname=str(entry.relative_to(docs_dir)), recursive=False)
             docs_archive_bytes = buf.getvalue()
             run_store.add_log(
                 run_id,
