@@ -13,6 +13,19 @@ const BASE_PATH = (process.env.VITE_BASE_PATH ?? '/app').replace(/\/$/, '')
 export default defineConfig({
   base: `${BASE_PATH}/`,
   plugins: [react()],
+  build: {
+    rollupOptions: {
+      output: {
+        // Isolate the framework (incl. its transitive deps) into one long-lived
+        // chunk so it caches across deploys; per-page chunks come from the
+        // route-level React.lazy splits.
+        manualChunks(id: string) {
+          if (!id.includes('node_modules')) return;
+          if (/[\\/]react[\\/]|[\\/]react-dom[\\/]|react-router|[\\/]scheduler[\\/]/.test(id)) return 'react';
+        },
+      },
+    },
+  },
   resolve: {
     alias: { '@': path.resolve(__dirname, 'src') },
   },
