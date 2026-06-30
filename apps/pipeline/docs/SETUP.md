@@ -58,7 +58,10 @@ Get an API key from the [OpenAI Platform](https://platform.openai.com/api-keys).
 
 ## 3. Add Source Documents
 
-Place the documents you want to process in `compliance-files/` (gitignored). Supported formats: PDF, DOCX, Markdown, CSV, and Excel.
+Place the documents you want to process in `compliance-files/` (gitignored). The
+CLI discovers these formats: PDF (`.pdf`), text (`.txt`), Markdown (`.md`), and
+Word (`.docx`). Agent 1 also bundles CSV and Excel chunkers, but those extensions
+are not auto-discovered.
 
 ```bash
 cp /path/to/your-document.pdf compliance-files/
@@ -91,11 +94,11 @@ python cli/extract.py --file compliance-files/my-document.pdf
 ### Comparison pipeline (Agents 7–10)
 
 ```bash
-# List available graphs
+# List available graphs (these are extracted document/batch folder names)
 python cli/compare.py --list
 
-# Compare two extracted graphs
-python cli/compare.py --g1 mortgage --g2 commercial_lending
+# Compare two extracted graphs by name
+python cli/compare.py --g1 <graphA> --g2 <graphB>
 ```
 
 ### Web UI (backend + frontend)

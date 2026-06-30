@@ -11,10 +11,10 @@ All prompts target the OpenAI models configured in `config.json` (reasoning `gpt
 | `document_structure_analysis.txt` | Agent 1 — Document Organizer | Segment a document into logical sections when no usable table of contents is present. |
 | `entity_extraction.txt` | Agent 2 — Entity Extractor | Identify domain entities, attributes, and relationships from organized document sections. |
 | `entity_refinement.txt` | Agent 2 — Entity Extractor (refinement loop) | Score and iteratively improve entity/relationship extractions across passes. |
-| `entity_resolution.txt` | Entity reconciliation | Merge and reconcile duplicate or overlapping entities into a canonical set. |
+| `entity_resolution.txt` | Multi-document merge (Agent 2 path) | Merge and reconcile duplicate or overlapping entities across documents into a canonical set. |
 | `business_rules_extraction.txt` | Agent 3 — Rules Extractor | Extract structured business rules (conditions, consequences, exceptions, source references) from document batches. |
 | `validation_report.txt` | Agent 3.5 — Rule Validator | Produce a quality-assessment report over the extracted rules with actionable recommendations. |
-| `rule_resolution.txt` | Rule reconciliation | Reconcile conflicting or overlapping rules during merge steps. |
+| `rule_resolution.txt` | Multi-document merge (Agent 3 path) | Reconcile conflicting or overlapping rules when merging multiple documents. |
 | `rule_deduplication.txt` | Agent 5 — Knowledge Graph Optimizer | Identify and merge duplicate rules while preserving meaningful variations. |
 | `dependency_analysis.txt` | Agent 5 — Knowledge Graph Optimizer | Map dependencies and relationships between business rules. |
 | `rule_matcher.txt` | Agent 8 — Semantic Rule Matcher | Compare rules across two knowledge graphs for semantic equivalence (used by `cli/compare.py`). |

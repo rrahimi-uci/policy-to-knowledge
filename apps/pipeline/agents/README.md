@@ -17,17 +17,17 @@ agent uses `gpt-5-mini`). See [Configuration](#configuration).
 
 ## Agent Summary
 
-| # | Agent | File | Class | LLM | Workers |
+| # | Agent | File | Class | LLM | Parallel workers |
 | --- | --- | --- | --- | :---: | :---: |
 | 1 | Document Organizer | `agent_1_document_organizer.py` | `DocumentChunkingAgent` | ✓ | — |
 | 2 | Entity & Relationship Extractor | `agent_2_entity_extractor.py` | `ComplianceEntityRelationshipAgent` | ✓ | — |
-| 3 | Rules Extractor | `agent_3_rules_extractor.py` | `BusinessRulesExtractor` | ✓ | 10 |
+| 3 | Rules Extractor | `agent_3_rules_extractor.py` | `BusinessRulesExtractor` | ✓ | `pipeline.max_workers` (30) |
 | 3.5 | Rule Validator | `agent_3_5_rule_validator.py` | `RuleValidationAgent` | ✓ | — |
-| 4 | Rules + Entities Merger | `agent_4_rules_with_entities_merger.py` | `RulesEntitiesMerger` | — | — |
+| 4 | Rules + Entities Merger | `agent_4_rules_with_entities_merger.py` | `KnowledgeEnricher` | — | — |
 | 5 | Knowledge Graph Optimizer | `agent_5_knowledge_graph_optimizer.py` | `KnowledgeGraphOptimizer` | ✓ | — |
 | 6 | Visualization & Report | `agent_6_visualization_and_report.py` | `KnowledgeGraphVisualizer` | — | — |
 | 7 | Rule-Type Clusterer | `agent_7_rule_type_clusterer.py` | `RuleBehaviorClusterer` | — | — |
-| 8 | Semantic Rule Matcher | `agent_8_semantic_rule_matcher.py` | `SemanticRuleMatcher` | ✓ | 15 |
+| 8 | Semantic Rule Matcher | `agent_8_semantic_rule_matcher.py` | `SemanticRuleMatcher` | ✓ | `--workers` (31) |
 | 9 | Set Operations | `agent_9_set_operations.py` | `SetOperationsCalculator` | — | — |
 | 10 | Set Visualization | `agent_10_set_visualization.py` | `SetOperationsVisualizer` | — | — |
 
@@ -67,9 +67,13 @@ Chunks and organizes source documents using their table-of-contents structure.
   "chunk_size_target": 2000,
   "max_chunk_size": 3000,
   "min_chunk_size": 500,
-  "supported_formats": [".pdf", ".txt", ".docx", ".md", ".csv", ".xlsx"]
+  "supported_formats": [".pdf", ".txt", ".docx", ".md"]
 }
 ```
+
+> The CLI discovers `.pdf`, `.txt`, `.md`, and `.docx` files (`pipeline.supported_extensions`).
+> Agent 1 also ships `CSVChunker` (`.csv`, `.tsv`) and `ExcelChunker` (`.xlsx`, `.xls`)
+> tools that can be invoked directly, but those extensions are not auto-discovered by default.
 
 ### Agent 2 — Entity & Relationship Extractor
 
@@ -107,7 +111,7 @@ Extracts business rules with parallel batch processing.
 | | |
 |---|---|
 | **Consumes** | Organized chunks (Agent 1) + entity definitions (Agent 2) |
-| **Produces** | `agent-3-rules/compliance_rules_with_entities.json` and `.csv` |
+| **Produces** | `agent-3-rules/compliance_rules_with_entities.json` |
 | **Run** | `.venv/bin/python cli/extract.py --step 3` |
 
 - Parallel batches via `ThreadPoolExecutor` (10 workers).
@@ -148,11 +152,11 @@ No LLM calls.
 | | |
 |---|---|
 | **Consumes** | Rules (Agent 3) + entities (Agent 2) |
-| **Produces** | `agent-4-rules-with-entities/business_rules_complete.json` and `.csv` |
+| **Produces** | `agent-4-rules-with-entities/compliance_knowledge_graph.json` |
 | **Run** | `.venv/bin/python cli/extract.py --step 4` |
 
 - Combines rules with entity context and maintains referential integrity.
-- Exports a unified graph structure to JSON and CSV.
+- Exports a unified knowledge-graph structure to JSON.
 
 ### Agent 5 — Knowledge Graph Optimizer
 
@@ -161,7 +165,7 @@ Optimizes the knowledge graph through deduplication and dependency analysis.
 | | |
 |---|---|
 | **Consumes** | Complete KG from Agent 4 |
-| **Produces** | `agent-5-optimized/optimized_compliance_knowledge_graph.json`, `optimized-dependency_graph.json`, `optimized-optimization_report.txt` |
+| **Produces** | `agent-5-optimized/optimized_compliance_knowledge_graph.json` (deduplicated rules plus an embedded dependency graph and optimization metadata) |
 | **Run** | `.venv/bin/python cli/extract.py --step 5` |
 
 - Conservative deduplication that preserves meaningful variations.
@@ -187,7 +191,7 @@ Generates an interactive HTML visualization and report. No LLM calls.
 | | |
 |---|---|
 | **Consumes** | Optimized KG from Agent 5 |
-| **Produces** | `agent-6-visualization-and-report/<source>_knowledge_graph.html`, `extraction_metadata.json` |
+| **Produces** | `agent-6-visualization-and-report/<source>_knowledge_graph.html` |
 | **Run** | `.venv/bin/python cli/extract.py --step 6` |
 
 - Interactive network graph (vis.js), color-coded by rule type.
@@ -315,10 +319,10 @@ Worker counts and batch sizes:
 
 | Agent | Setting | Default | Set via |
 |-------|---------|---------|---------|
-| 3 | workers | 10 | code |
+| 3 | workers | 30 | `pipeline.max_workers` in `config.json` (or `MAX_WORKERS` env) |
 | 3 | `rules_per_batch` | 10 | `config.json` |
-| 8 | workers | 15 | `--workers` |
-| 8 | `batch_size` | 10 | `--batch-size` |
+| 8 | workers | 31 | `--workers` (falls back to `join_graphs.max_workers`) |
+| 8 | `batch_size` | 10 | `--batch-size` (falls back to `join_graphs.batch_size`) |
 
 ## Run commands
 

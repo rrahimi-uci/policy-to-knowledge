@@ -59,7 +59,7 @@ A polyglot-persistence architecture combining:
 ```mermaid
 graph TB
     subgraph "Presentation Layer"
-        UI[Web Client<br/>D3.js + EventSource API<br/>Visualization, interaction, SSE consumption]
+        UI[Web Client<br/>plain ES modules + D3.js<br/>Visualization, interaction, fetch-based SSE consumption]
     end
 
     subgraph "Application Layer"
@@ -167,62 +167,80 @@ graph TB
 ### Graph schema — domain model
 
 The schema models compliance as a directed property graph optimized for relationship
-traversal:
+traversal. The loader (`src/data_loader.py`) and schema (`src/schema.py`) define two
+vertex labels — `business_rule` and `entity_category` — and three edge labels:
+
+| Edge label | Connects | Carries |
+| --- | --- | --- |
+| `depends_on` | rule → rule | `dependency_type`, `strength`, `rationale`, `impact_if_fails` |
+| `belongs_to_category` | rule → entity category | (link only) |
+| `relates_to` | entity category ↔ entity category | (link only) |
 
 ```mermaid
 erDiagram
-    RULE ||--o{ DEPENDS_ON : "requires"
-    RULE ||--o{ DEFINES : "specifies"
-    RULE ||--o{ VALIDATES : "checks"
-    ENTITY ||--o{ DEFINES : "described-by"
-    ENTITY ||--o{ HAS_RELATIONSHIP : "relates-to"
+    BUSINESS_RULE ||--o{ DEPENDS_ON : "depends on"
+    BUSINESS_RULE ||--o{ BELONGS_TO_CATEGORY : "categorized as"
+    ENTITY_CATEGORY ||--o{ RELATES_TO : "relates to"
 
-    RULE {
-        string rule_id PK "Business key"
-        string name "Display name"
+    BUSINESS_RULE {
+        string rule_id "Business key"
+        string rule_name "Display name"
+        string rule_type "extracted classifier"
         text description "Full text"
-        string rule_type "validation|calculation|eligibility"
-        float confidence_score "0.0-1.0"
+        double confidence_score "0-100 scale"
         boolean mandatory "Required vs optional"
+        boolean requires_review "Review flag"
+        string source_reference "Provenance JSON"
     }
 
-    ENTITY {
-        string entity_id PK
+    ENTITY_CATEGORY {
         string name
-        string entity_type "borrower|property|loan"
-        text description
+        string node_type "entity_category"
+        string category
     }
 
     DEPENDS_ON {
         string dependency_type "prerequisite|conditional|cascading"
+        int strength "1-5"
     }
 ```
 
 **Schema principles:**
 
-1. **Edges as first-class entities** — dependency types are edge properties, enabling
-   queries such as "find all prerequisite dependencies".
-2. **Denormalization for read performance** — rule descriptions are stored on the
-   vertex (duplication accepted for query speed).
+1. **Edges as first-class entities** — dependency metadata (`dependency_type`,
+   `strength`, `rationale`, `impact_if_fails`) lives on the edge, enabling queries such
+   as "find all prerequisite dependencies" or "rank by dependency strength".
+2. **Denormalization for read performance** — full rule text and structured fields are
+   stored on the vertex (duplication accepted for query speed).
 3. **Weak schema** — no foreign-key constraints; graph relationships carry referential
    meaning.
-4. **Stable business keys** — `rule_id` is separate from internal JanusGraph IDs.
+4. **Stable business keys** — `rule_id` and `vertex_uuid` are separate from internal
+   JanusGraph IDs.
 
 **Index strategy:**
 
-| Index type | Fields | Purpose | Backend |
+`src/schema.py` builds a single JanusGraph **mixed index** (`mixedContentIndex`, backed
+by OpenSearch) over the searchable vertex fields, plus a separate k-NN vector index for
+embeddings:
+
+| Index | Fields | Purpose | Backend |
 | --- | --- | --- | --- |
-| Mixed | name, description (text) | Full-text search | OpenSearch |
-| Composite | rule_id (unique) | Fast PK lookup | Cassandra |
-| k-NN vector | embedding (384-dim float[]) | Semantic similarity | OpenSearch |
+| Mixed (`mixedContentIndex`) | `content` (text), `name` (text+string), `rule_type`, `node_type`, `rule_id`, `category`, `entity_or_relationship`, `vertex_uuid`, `jurisdiction`, `risk_level`, … (string) | Full-text + faceted search | OpenSearch |
+| k-NN vector (`vertex_embeddings`) | embedding (384-dim `float[]`) | Semantic similarity | OpenSearch |
 
 The k-NN embedding index (`vertex_embeddings` by default) is maintained separately by
-`src/semantic_search.py`, which keeps the embedding model independent of the graph
-schema and lets the rest of the app run when embeddings are absent.
+`src/semantic_search.py`, which keeps the embedding model independent of the JanusGraph
+schema and lets the rest of the app run when embeddings are absent. There is no
+dedicated composite index for `rule_id`; lookups go through the mixed index.
 
 ---
 
 ### Multi-graph isolation
+
+Each configured graph gets its own traversal source, its own Cassandra keyspace, and
+its own OpenSearch mixed index, while the k-NN embedding index (`vertex_embeddings`) is
+shared across graphs (entries are tagged by graph). The diagram below shows two of the
+configured graphs; the pattern generalizes to all of them.
 
 ```mermaid
 graph LR
@@ -239,7 +257,7 @@ graph LR
     subgraph "Shared OpenSearch Cluster"
         IDX1[Index: sample_guidelines_search]
         IDX2[Index: example_policies_search]
-        VIDX[Vector Index: vertex_embeddings]
+        VIDX[Shared Vector Index: vertex_embeddings]
     end
 
     JG -->|Tables| KS1
@@ -255,16 +273,25 @@ graph LR
     style KS2 fill:#ffe1e1
 ```
 
-**Graph manifest** (`conf/graphs.yaml`):
+**Graph manifest** (`conf/graphs.yaml`) — each entry maps a traversal source to its own
+Cassandra keyspace, OpenSearch index, KG JSON file, and source-document folder:
 
 | Graph | Traversal source | Cassandra keyspace | OpenSearch index | KG file |
 | --- | --- | --- | --- | --- |
 | Sample Guidelines | `sample_guidelines_g` | `janusgraph_sample_guidelines` | `sample_guidelines_search` | `kgs/sample-guidelines-kg.json` |
 | Example Policies | `example_policies_g` | `janusgraph_example_policies` | `example_policies_search` | `kgs/example-policies-kg.json` |
 
-Add a graph by appending a block to `conf/graphs.yaml` and running
-`python scripts/generate_graph_config.py`, which regenerates the JanusGraph properties
-files, `gremlin-server.yaml`, and `init-graphs.groovy`.
+The shipped manifest defines these two example graph slots; register additional
+graphs by adding an entry per graph (see below). Only graphs whose `kg_file` exists on disk
+are treated as **loaded** — `conf/graph_manifest.py` (`get_loaded_traversal_sources`)
+filters the rest out of the chat tool enums, default-graph selection, and statistics, so
+configured-but-empty slots stay inert until you supply their KG JSON.
+
+Add or remove a graph by editing `conf/graphs.yaml` and running
+`python scripts/generate_graph_config.py`, which regenerates the per-graph JanusGraph
+`.properties` files, `gremlin-server.yaml`, and `init-graphs.groovy`. (The UI's graph
+publish/activate/delete endpoints do this programmatically via
+`conf/graph_manifest.py`.)
 
 **Isolation benefits:**
 
@@ -354,25 +381,40 @@ poor chat experience.
 **Rationale:**
 
 - **Unidirectional** — server → client streaming is sufficient for chat
-- **HTTP-based** — works through proxies and load balancers
-- **Automatic reconnection** — handled by the browser
-- **Simpler** — no WebSocket handshake to manage
+- **HTTP-based** — works through proxies and load balancers, and reuses the existing
+  Flask request/response stack (`Response(generate(), mimetype="text/event-stream")`)
+- **Simpler** — no WebSocket handshake or separate transport to manage
 
-**SSE message protocol (illustrative):**
+**SSE message protocol** — the chat stream endpoint (`/api/chat/stream`) emits named
+events via the `_sse(event, data)` helper in `src/server.py`. The main event types:
 
 ```text
 event: step
-data: {"label": "Analyzing query", "status": "active"}
+data: {"label": "Analyzing your question", "status": "active"}
 
-event: search
-data: {"tool": "semantic_search", "nodes": [...]}
+event: tool_call
+data: {"name": "semantic_search", "args": {...}}
+
+event: tool_result
+data: {...}
 
 event: token
 data: {"content": "Based"}
 
+event: node_references
+data: {"references": {...}}
+
+event: navigate
+data: {...}
+
 event: done
 data: {}
 ```
+
+Additional events include `thinking` (the model's plan) and `error`. Because the chat
+endpoint is a `POST` (it carries the conversation body), the frontend (`ui/js/chat.js`)
+consumes the `text/event-stream` response with `fetch()` + `response.body.getReader()`
+rather than the GET-only `EventSource` API, parsing the `event:`/`data:` frames itself.
 
 ---
 
@@ -447,7 +489,7 @@ to a fraction of total host RAM and can trigger an OOM kill on memory-constraine
 | --- | --- | --- |
 | JanusGraph over Neo4j | Apache license; polyglot backends; TinkerPop standard | Smaller community; more operational complexity |
 | Hosted OpenAI vs self-hosted LLM | Strong quality; no inference infra; native tool calling | API cost and dependency; data leaves the host |
-| SSE vs WebSockets | Simpler, proxy-friendly, auto-reconnect | Unidirectional only |
+| SSE vs WebSockets | Simpler, proxy-friendly, reuses HTTP stack | Unidirectional only |
 | Cache-aside vs write-through | Simple logic; failure isolation; read-optimized | Possible stale reads; manual invalidation |
 | Multi-graph vs single multi-tenant graph | Complete isolation; config-driven via `graphs.yaml` | Operational overhead; routing complexity |
 | Optional semantic search | App still runs without `sentence-transformers`/embeddings | Reduced ranking quality when disabled |

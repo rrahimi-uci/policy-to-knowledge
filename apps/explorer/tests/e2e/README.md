@@ -13,12 +13,12 @@ its own `package.json` and `playwright.config.ts`.
 
 The test base URL comes from the `BASE_URL` environment variable and defaults to
 `http://localhost:5001/app` (see `playwright.config.ts`). Start the server on the
-matching port first:
+matching port and prefix first:
 
 ```bash
 # from apps/explorer
 docker compose up -d
-SERVER_PORT=5050 URL_PREFIX=/app .venv/bin/python -m src.server
+SERVER_PORT=5001 URL_PREFIX=/app .venv/bin/python -m src.server
 ```
 
 ## Running
@@ -28,15 +28,18 @@ SERVER_PORT=5050 URL_PREFIX=/app .venv/bin/python -m src.server
 npm install
 npx playwright install chromium
 
-# Run the full suite against the server
+# Run the full suite (uses the default BASE_URL: http://localhost:5001/app)
+npx playwright test
+
+# Against a server on a different port (e.g. 5050)
 BASE_URL=http://localhost:5050/app npx playwright test
 
 # A single spec
-BASE_URL=http://localhost:5050/app npx playwright test 01-graph-discovery.spec.ts
+npx playwright test 01-graph-discovery.spec.ts
 
 # Headed / debug
-BASE_URL=http://localhost:5050/app npx playwright test --headed
-BASE_URL=http://localhost:5050/app npx playwright test --debug
+npx playwright test --headed
+npx playwright test --debug
 ```
 
 Tests run sequentially with a single worker because they share server state.
