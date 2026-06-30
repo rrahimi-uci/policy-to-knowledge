@@ -16,6 +16,21 @@ export default defineConfig({
   // under the same base path via the suite-shell nginx proxy.
   build: {
     assetsDir: 'kg-assets',
+    rollupOptions: {
+      output: {
+        // Keep the framework and the heavy markdown/syntax-highlighting stack
+        // (with their transitive deps) in their own long-lived chunks: they
+        // cache across deploys, and markdown loads only on the routes that use
+        // it (Documents/Prompts) — the landing Dashboard pulls neither it nor
+        // any page bundle. Order matters: match markdown before the generic
+        // `react` bucket.
+        manualChunks(id) {
+          if (!id.includes('node_modules')) return;
+          if (/react-markdown|remark|rehype|micromark|mdast|hast|unist|react-syntax-highlighter|refractor|highlight\.js|prismjs/.test(id)) return 'markdown';
+          if (/[\\/]react[\\/]|[\\/]react-dom[\\/]|react-router|[\\/]scheduler[\\/]/.test(id)) return 'react';
+        },
+      },
+    },
   },
   resolve: {
     alias: { '@': path.resolve(__dirname, 'src') },
