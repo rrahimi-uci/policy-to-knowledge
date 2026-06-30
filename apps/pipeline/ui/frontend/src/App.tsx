@@ -1,13 +1,22 @@
+import { Suspense, lazy } from 'react';
 import { Routes, Route, useLocation, useSearchParams } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import ErrorBoundary from './components/ErrorBoundary';
-import Dashboard from './pages/Dashboard';
-import Documents from './pages/Documents';
-import Pipeline from './pages/Pipeline';
-import Explorer from './pages/Explorer';
-import Compare from './pages/Compare';
-import RunHistory from './pages/RunHistory';
-import Settings from './pages/Settings';
+
+// Route-level code splitting: the landing Dashboard no longer pulls in the
+// heavy graph (react-force-graph-2d → Explorer/Compare) or markdown/syntax
+// highlighting (Documents) libraries — they load only when those routes open.
+const Dashboard = lazy(() => import('./pages/Dashboard'));
+const Documents = lazy(() => import('./pages/Documents'));
+const Pipeline = lazy(() => import('./pages/Pipeline'));
+const Explorer = lazy(() => import('./pages/Explorer'));
+const Compare = lazy(() => import('./pages/Compare'));
+const RunHistory = lazy(() => import('./pages/RunHistory'));
+const Settings = lazy(() => import('./pages/Settings'));
+
+function PageFallback() {
+  return <div className="text-sm text-gray-500">Loading…</div>;
+}
 
 export default function App() {
   const location = useLocation();
@@ -20,6 +29,7 @@ export default function App() {
       <main className={embedded ? 'p-6' : 'ml-60 p-8'}>
         <div key={location.pathname} className="page-enter">
           <ErrorBoundary>
+          <Suspense fallback={<PageFallback />}>
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/documents" element={<Documents />} />
@@ -29,6 +39,7 @@ export default function App() {
             <Route path="/runs" element={<RunHistory />} />
             <Route path="/settings" element={<Settings />} />
           </Routes>
+          </Suspense>
           </ErrorBoundary>
         </div>
       </main>
