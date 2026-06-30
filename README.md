@@ -20,6 +20,16 @@
 
 ---
 
+## Demo
+
+A narrated walkthrough of the full suite — the extraction pipeline, graph compare, and the interactive Explorer (15 scenes, ~7 min).
+
+<video src="https://github.com/rrahimi-uci/policy-to-knowledge/releases/download/v0.1.0-demo/policy-to-knowledge.mp4" controls width="100%">
+  Your browser can't play the embedded video — <a href="https://github.com/rrahimi-uci/policy-to-knowledge/releases/download/v0.1.0-demo/policy-to-knowledge.mp4">watch or download the MP4</a>.
+</video>
+
+> Not seeing a player? [Watch / download the MP4](https://github.com/rrahimi-uci/policy-to-knowledge/releases/download/v0.1.0-demo/policy-to-knowledge.mp4). The video is generated from the deck in [`tools/video/`](tools/video).
+
 ## What it does
 
 Compliance teams drown in dense, ever-changing policy documents. **Policy to Knowledge** runs those documents through a **10-agent OpenAI pipeline** that extracts business rules and entities, deduplicates and links them, and emits an optimized **knowledge graph** — with every rule traceable back to the source passage it came from. A graph **Explorer** then lets you query, visualize, annotate, compare, and version the result.
