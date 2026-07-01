@@ -2,7 +2,7 @@ gremlinpython==3.7.6
 opensearch-py==3.1.0
 sentence-transformers==5.2.2
 scikit-learn==1.7.2
-numpy>=2.0
+numpy>=2.5.0
 flask==3.1.2
 flask-cors==6.0.2
 sqlalchemy>=2.0
