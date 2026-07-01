@@ -114,7 +114,7 @@ jobs:
     needs: [pipeline-pytest, assistant-pytest, shell-frontend, pipeline-ui-frontend]
     if: always()
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           pattern: allure-*
           path: allure-artifacts
