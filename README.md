@@ -22,22 +22,6 @@
 
 ---
 
-## 🎬 Demo
-
-A narrated walkthrough of the full suite — the extraction pipeline, graph compare, and the interactive Explorer (15 scenes, ~7 min).
-
-<div align="center">
-
-<video src="https://github.com/rrahimi-uci/policy-to-knowledge/releases/download/v0.1.0-demo/policy-to-knowledge.mp4" controls width="100%">
-  Your browser can't play the embedded video — <a href="https://github.com/rrahimi-uci/policy-to-knowledge/releases/download/v0.1.0-demo/policy-to-knowledge.mp4">watch or download the MP4</a>.
-</video>
-
-</div>
-
-> Not seeing a player? [**Watch / download the MP4**](https://github.com/rrahimi-uci/policy-to-knowledge/releases/download/v0.1.0-demo/policy-to-knowledge.mp4). The video is generated from the deck in [`tools/video/`](tools/video).
-
----
-
 ## 💡 What it does
 
 Compliance teams drown in dense, ever-changing policy documents. **Policy to Knowledge** runs those documents through a **10-agent OpenAI pipeline** that extracts business rules and entities, deduplicates and links them, and emits an optimized **knowledge graph** — with every rule traceable back to the source passage it came from. A graph **Explorer** then lets you query, visualize, annotate, compare, and version the result.
@@ -180,7 +164,6 @@ flowchart LR
 | [`apps/shell/`](apps/shell) | React + Vite **suite shell** that embeds the app UIs | `http://localhost:4000` |
 | [`apps/pipeline/`](apps/pipeline) | 10-agent extraction + compare pipeline, FastAPI API, React UI | API `:8000` · UI `:5173` |
 | [`apps/explorer/`](apps/explorer) | Graph **Explorer** (Flask + JanusGraph/Cassandra/OpenSearch/Redis) | `http://localhost:5000/app`¹ |
-| [`tools/video/`](tools/video) | Demo-video generator (deck + AI narration → mp4) | n/a |
 
 ¹ On macOS port `5000` is often taken by Docker/AirPlay; the launcher then serves the Explorer on `5050` (set `SERVER_PORT`).
 
@@ -194,7 +177,6 @@ flowchart LR
 │   ├── pipeline/     # 10-agent pipeline + FastAPI API + React UI
 │   │   └── cli/      #   extract.py (agents 1–6) · compare.py (agents 7–10)
 │   └── explorer/     # Graph explorer — Flask + JanusGraph + D3 UI
-├── tools/video/      # Demo capture & AI narration tooling
 ├── docs/             # GitHub Pages site (served from /docs)
 ├── assets/           # Shared brand assets
 ├── docker-compose.yml  # Full local stack

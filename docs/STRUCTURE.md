@@ -34,9 +34,6 @@ policy-to-knowledge/
 │       ├── src/             Components, hooks, bridge (unit tests co-located *.test.tsx)
 │       └── tests/e2e/       Playwright UI tests
 │
-├── tools/
-│   └── video/              Demo-video generator (presentation deck + AI narration → mp4)
-│
 ├── docs/                   GitHub Pages site (index.html, architecture.html, this file)
 ├── assets/                 Shared brand assets (logo)
 │

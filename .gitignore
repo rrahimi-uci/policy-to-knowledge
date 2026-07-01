@@ -65,9 +65,6 @@ apps/pipeline/pipeline-logs/
 # ─────────────────────────────────────────────────────────────────
 # Media / generated artifacts
 # ─────────────────────────────────────────────────────────────────
-tools/video/output/
-tools/video/screenshots/
-tools/video/raw_video/
 *.mp4
 *.webm
 *.mp3
