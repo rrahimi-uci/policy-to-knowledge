@@ -1,5 +1,5 @@
 # Core Dependencies
-openai>=1.59.7
+openai>=2.44.0
 python-dotenv>=1.0.0             # Load .env (was previously pulled in via litellm)
 PyPDF2>=3.0.1
 
