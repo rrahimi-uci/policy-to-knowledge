@@ -30,7 +30,6 @@ dist/
 # Pipeline output (large, not needed in images)
 pipeline-output/
 pipeline-logs/
-tools/video/
 
 # Test artifacts
 test-results/
