@@ -4,3 +4,35 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+
+  - package-ecosystem: "pip"
+    directories:
+      - "/apps/explorer"
+      - "/apps/explorer/tests/integration"
+      - "/apps/pipeline"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    groups:
+      dev-tooling:
+        patterns: ["ruff", "mypy", "pytest*"]
+
+  - package-ecosystem: "npm"
+    directories:
+      - "/apps/explorer/tests/e2e"
+      - "/apps/pipeline/ui/frontend"
+      - "/apps/shell"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+
+  - package-ecosystem: "docker"
+    directories:
+      - "/"
+      - "/apps/explorer"
+      - "/apps/pipeline"
+      - "/apps/pipeline/ui/frontend"
+      - "/apps/shell"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
