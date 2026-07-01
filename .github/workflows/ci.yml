@@ -32,7 +32,7 @@ jobs:
         run: python -m pytest tests/ -q
       - name: Upload Allure results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: allure-pipeline
           path: apps/pipeline/allure-results
@@ -57,7 +57,7 @@ jobs:
         run: python -m pytest tests/ -q
       - name: Upload Allure results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: allure-explorer
           path: apps/explorer/allure-results
@@ -80,7 +80,7 @@ jobs:
       - run: npm run build
       - name: Upload Allure results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: allure-shell
           path: apps/shell/allure-results
@@ -103,7 +103,7 @@ jobs:
       - run: npm run build
       - name: Upload Allure results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: allure-pipeline-ui
           path: apps/pipeline/ui/frontend/allure-results
@@ -129,7 +129,7 @@ jobs:
           allure generate allure-results -o allure-report --clean
       - name: Upload Allure report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: allure-report
           path: allure-report
