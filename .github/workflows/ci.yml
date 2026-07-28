@@ -36,6 +36,7 @@ jobs:
         with:
           name: allure-pipeline
           path: apps/pipeline/allure-results
+          retention-days: 1
 
   assistant-pytest:
     name: Explorer · pytest
@@ -61,6 +62,7 @@ jobs:
         with:
           name: allure-explorer
           path: apps/explorer/allure-results
+          retention-days: 1
 
   shell-frontend:
     name: Suite Shell · vitest + build
@@ -84,6 +86,7 @@ jobs:
         with:
           name: allure-shell
           path: apps/shell/allure-results
+          retention-days: 1
 
   pipeline-ui-frontend:
     name: Pipeline UI · vitest + build
@@ -107,6 +110,7 @@ jobs:
         with:
           name: allure-pipeline-ui
           path: apps/pipeline/ui/frontend/allure-results
+          retention-days: 1
 
   allure-report:
     name: Allure · combined report
@@ -133,3 +137,4 @@ jobs:
         with:
           name: allure-report
           path: allure-report
+          retention-days: 14
