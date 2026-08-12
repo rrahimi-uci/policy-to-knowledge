@@ -18,6 +18,10 @@
 [**🏛️ Architecture**](https://rrahimi-uci.github.io/policy-to-knowledge/architecture.html) &nbsp;·&nbsp;
 [**🗂️ Repository layout**](docs/STRUCTURE.md)
 
+**Release:** `p2k-v0.0.1` — a documented compliance-knowledge pipeline with a 10-agent
+OpenAI extraction flow, traceable graph provenance, Explorer workflows, and reproducible
+backend/frontend test commands.
+
 </div>
 
 ---
