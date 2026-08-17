@@ -1,1 +1,5 @@
-blank_issues_enabled: true
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/rrahimi-uci/policy-to-knowledge/security/advisories/new
+    about: Please report security issues privately — see SECURITY.md, do not open a public issue.

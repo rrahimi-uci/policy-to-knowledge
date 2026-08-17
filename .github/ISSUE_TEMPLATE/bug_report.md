@@ -1,28 +1,30 @@
 ---
 name: Bug report
-about: Report a problem to help us improve
-title: "[Bug]: "
+about: Report a problem so we can fix it
+title: "[bug] "
 labels: bug
 ---
 
-## Describe the bug
+**Which app?**
+<!-- Shell, Pipeline, or Explorer -->
 
+**Describe the bug**
 A clear and concise description of what the bug is.
 
-## To Reproduce
+**To reproduce**
+Steps to reproduce the behavior:
 
-Steps to reproduce the behavior.
+1. ...
+2. ...
 
-## Expected behavior
-
+**Expected behavior**
 What you expected to happen.
 
-## Environment
+**Logs / screenshots**
+Any relevant error output (redact secrets).
+
+**Environment**
 
 - OS:
-- Python version:
-- Commit/tag:
-
-## Additional context
-
-Add any other context, logs, or screenshots about the problem here.
+- Python / Node version:
+- Running via `./start.sh`, Docker, or another setup:

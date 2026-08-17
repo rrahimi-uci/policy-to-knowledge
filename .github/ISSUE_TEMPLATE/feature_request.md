@@ -1,22 +1,18 @@
 ---
 name: Feature request
-about: Suggest an idea for this project
-title: "[Feature]: "
+about: Suggest an idea or improvement
+title: "[feature] "
 labels: enhancement
 ---
 
-## Is your feature request related to a problem?
+**Which app / area?**
+<!-- Shell, Pipeline, Explorer, docs, CI, … -->
 
-A clear and concise description of what the problem is.
+**What problem does this solve?**
+A clear and concise description of the problem or use case.
 
-## Describe the solution you'd like
+**Proposed solution**
+What you'd like to happen.
 
-A clear and concise description of what you want to happen.
-
-## Describe alternatives you've considered
-
-Any alternative solutions or features you've considered.
-
-## Additional context
-
-Add any other context or screenshots about the feature request here.
+**Alternatives considered**
+Any alternative approaches you've thought about.
