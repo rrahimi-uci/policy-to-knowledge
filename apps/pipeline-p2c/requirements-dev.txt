@@ -10,6 +10,12 @@ allure-pytest>=2.13
 # Validates the committed Policy IR JSON Schema against every fixture.
 jsonschema>=4.20
 
+# PDF ingestion (optional at runtime, required for the ingestion tests). The exact
+# version matters to reproducibility, not to correctness: it is recorded in every
+# ingested document's parser_version, because a different extractor produces a
+# different canonical text.
+pypdf>=6.0
+
 # Only needed for the opt-in XSD conformance tests:
 #   python scripts/fetch_schemas.py --into schemas/omg
 #   python -m pytest tests/ --xsd-dir schemas/omg

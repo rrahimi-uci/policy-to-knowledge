@@ -5,4 +5,12 @@
 # code with no third-party surface, which is what lets the same admitted Policy IR
 # produce byte-identical DMN and BPMN on any machine with CPython 3.11+.
 #
+# PDF ingestion is the one optional extra:
+#
+#   pip install pypdf
+#
+# Only ingestion/pdf.py imports it, lazily, with a clear error when it is absent.
+# Everything downstream of ingestion — the gate, the compilers, the evaluator — stays
+# dependency-free, so a Policy IR document can be compiled anywhere.
+#
 # Test-only tooling (pytest, jsonschema, lxml) lives in requirements-dev.txt.
