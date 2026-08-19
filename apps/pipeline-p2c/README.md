@@ -20,7 +20,7 @@ failure.
 | --- | --- |
 | A deterministic compiler: Policy IR in, graph + DMN + BPMN out | An extraction pipeline. It calls no model and has no prompts |
 | A fail-closed gate that decides what may be compiled | A legal-correctness checker |
-| A conformance harness with 21 fixtures and 437 offline tests | A benchmark or a labelled dataset |
+| A conformance harness with 21 fixtures and 493 offline tests | A benchmark or a labelled dataset |
 | Standards-targeted: DMN 1.5 `formal/24-01-01`, BPMN 2.0.2 `formal/13-12-09` | A BPM engine, or a certified DMN implementation |
 
 The LLM-facing stages the plan describes (Stage 2 ontology extraction, Stage 3A
@@ -36,6 +36,9 @@ pip install -r requirements-dev.txt
 
 # Ingest real PDFs into a Policy IR skeleton (hashes, offsets, sections, coverage)
 python -m cli.compile_policy --ingest ../pipeline/compliance-files/**/*.pdf --out build/ingest/
+
+# …and extract evidenced, untyped clauses from them (no model involved)
+python -m cli.compile_policy --ingest ../pipeline/compliance-files/**/*.pdf --extract --out build/
 
 # Compile a built-in conformance fixture end to end
 python -m cli.compile_policy --fixture notice_process --out build/
@@ -98,6 +101,100 @@ Measured on the corpus:
 Everything downstream of ingestion stays dependency-free, so a Policy IR document can
 be compiled anywhere.
 
+## Extracting clauses
+
+`--extract` runs the deterministic, model-free extractor over the ingested chunks. It
+finds normative sentences, cites them by offset, and emits clauses that assert almost
+nothing: a modality, the text, and where that text is.
+
+It types **no** condition, effect or threshold, so its output is graph-only by
+construction and can never reach DMN or BPMN. That is deliberate — it gives the whole
+pipeline a real input path over the real corpus today, and it is the baseline any
+model-driven extractor has to beat.
+
+Role carving is conservative. Two drafting shapes have unambiguous boundaries and are
+recognised; anything else is cited whole as the effect rather than guessed at, because
+a mis-carved region attaches a condition to the wrong clause:
+
+```
+"If the loan is a short-term loan, the Lender must notify the borrower."
+   condition  [ 71,103] 'If the loan is a short-term loan'
+   effect     [105,141] 'the Lender must notify the borrower.'
+
+"A Seller may request an exception unless the property is in a restricted county."
+   effect     [142,175] 'A Seller may request an exception'
+   exception  [176,222] 'unless the property is in a restricted county.'
+```
+
+### The seam for a model-driven extractor
+
+`--emit-requests DIR` writes, per chunk, the three things an extractor needs:
+
+```
+chunk_<id>.request.json       numbered text units with absolute offsets
+chunk_<id>.schema.json        JSON Schema for the reply
+chunk_<id>.instructions.md    the prose contract
+```
+
+A reply cites **unit indices**, never span IDs or offsets, and the generated schema
+enumerates exactly the indices that request offered. So a citation to unseen text is not
+"rejected downstream" — it is **unexpressible**, and a structured-output API will not
+produce it:
+
+```
+99 is not one of [0, 1]
+```
+
+The application then builds every evidence span itself from offsets it already holds, so
+an admitted clause's provenance is always something the application computed rather than
+something a reply asserted. `--proposals FILE…` feeds replies back; ingestion is
+deterministic, so re-ingesting rebuilds byte-identical requests and the indices still
+resolve.
+
+The request deliberately excludes the document's full text: an extractor able to read
+past its units could reason about text it cannot cite.
+
+### What both paths share
+
+Three controls, each closing a way unsupported content could reach the IR:
+
+| Control | Why |
+| --- | --- |
+| Citations must be spans the application **offered** | stops a proposal citing text it was never shown |
+| A candidate has **no ID field** | identity is derived from document hash + spans + kind, so reordering a batch cannot change it |
+| A field cannot be **asserted and disclaimed** together | makes `missing` meaningful instead of decorative |
+
+Unknown keys and unknown enum values are refused, not ignored. Declaring `condition`
+absent while citing a *condition span* is consistent, and is exactly what an untyped
+extractor should say: "there is condition text here and I did not type it."
+
+**One caveat.** The deterministic extractor reads modality from the same marker table
+*and the same regions* the gate checks, so that check cannot fail for its output. A test
+states this explicitly so a green gate is not mistaken for validation, and shows the
+check biting the moment a modality is set independently. Nothing else is weakened:
+provenance, offsets and hashes are verified exactly as for any other clause.
+
+Getting that alignment right was not automatic. Reading modality from the whole sentence
+while the gate reads only the subject, condition and effect regions produced **216
+mislabels across the committed corpus** — every one a sentence whose only modal marker sat
+inside its `unless` clause, so the gate correctly found the declared modality unsupported
+by the parts carrying normative force. The fix is not to drop those sentences, since the
+requirement inside the exception is real, but to recognise the carve as wrong and cite the
+sentence whole.
+
+### Measured on the whole corpus
+
+```
+17 PDFs · 5,633 pages · 18.5M characters · 408s
+  → 4,350 chunks, 38,520 evidence spans, 29,343 clauses
+  → 29,343 graph rules, 0 DMN, 0 BPMN, 0 gate blockers
+  coverage: 2,599 candidates_emitted · 1,730 no_policy_semantics_found · 21 extraction_failed
+  37.7% of 77,830 sentences are normative
+```
+
+Zero DMN and zero BPMN is the correct outcome: nothing was typed. The coverage ledger
+accounts for every chunk, including the 21 image-only pages.
+
 ## How a compile run works
 
 ```text
@@ -120,6 +217,7 @@ eligible — that is what makes "fail closed" enforceable rather than aspiration
 ```text
 policy_ir/     enums, expression AST, type checker, FEEL, tabular decomposition, IDs, JSON Schema
 ingestion/     immutable source registry, PDF ingestion, section detection
+extraction/    sentence segmentation, the offer/proposal seam, the model-free baseline
 validation/    the fail-closed gate: provenance, semantics, eligibility, blockers
 evaluation/    the reference Policy IR evaluator (three-valued logic)
 compilers/     graph · DMN · BPMN · traceability · structural verification
@@ -291,18 +389,6 @@ matching wrong answers, which a round trip through the same AST would hide.
 This is a *reference* implementation, not a certified engine. Agreement with a
 third-party DMN engine remains future work and is stated as such.
 
-## Scale
-
-`PolicyIR` is a value — every field is a tuple — so its indexes are memoised, and the
-gate verifies each chunk's hash once per run rather than once per citation. Both matter
-only at corpus scale and were invisible in fixtures: a 3,200-clause run took **2.83s
-before and 0.04s after**, and the growth curve went from 4x per doubling (quadratic) to
-2x (linear).
-
-`tests/test_scaling.py` guards this by counting operations rather than timing, so the
-guards cannot flake: an index must return the same object twice, and one chunk must be
-hashed exactly once however many clauses cite it.
-
 ## Determinism
 
 Identical Policy IR plus an identical profile produces byte-identical artefacts.
@@ -342,6 +428,13 @@ the bug.
 
 Stated plainly, because the whole point of the app is not overstating things:
 
+- **The baseline extractor types nothing.** It produces evidenced graph-only clauses;
+  turning prose into a typed condition is the model-driven path's job, and this one
+  refuses to guess. Expect a corpus extracted this way to admit zero DMN and zero BPMN.
+- **Role carving handles two drafting shapes.** A leading condition and a trailing
+  qualifier; anything more complex is cited whole rather than mis-split.
+- **Sentence segmentation is conservative** and will occasionally join two short
+  sentences rather than risk splitting a requirement from its own condition.
 - **Image-only pages need OCR, and OCR is deliberately absent.** OCR output is not
   deterministic across versions or platforms, which would break the byte-stability the
   rest of the design rests on. Those pages are recorded as `extraction_failed` and left
@@ -374,14 +467,15 @@ Stated plainly, because the whole point of the app is not overstating things:
 ## Testing
 
 ```bash
-python -m pytest tests/ -q                      # 437 offline tests
+python -m pytest tests/ -q                      # 493 offline tests
 python -m pytest tests/ -q --xsd-dir schemas/omg  # + 8 XSD conformance tests
 ```
 
 Test files map onto the plan's test strategy: `test_contracts.py` (contract and
 provenance), `test_expressions.py` (expression and semantic), `test_scope.py`,
 `test_authority.py`, `test_timeline.py`, `test_ingestion.py`, `test_scaling.py`,
-`test_dmn.py`, `test_bpmn.py`,
+`test_extraction.py`,
+`test_offer.py`, `test_dmn.py`, `test_bpmn.py`,
 `test_compatibility.py`, `test_gate.py`, `test_stress_matrix.py` (one test per
 stress-matrix row), `test_cli.py`, `test_xsd_conformance.py`.
 

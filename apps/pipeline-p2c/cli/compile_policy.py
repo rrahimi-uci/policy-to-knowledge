@@ -40,6 +40,11 @@ from policy_ir.enums import CompilerProfile  # noqa: E402
 from policy_ir.models import PolicyIR  # noqa: E402
 from validation import blockers as codes  # noqa: E402
 
+def drop_empty(data: dict) -> dict:
+    """Omit empty metadata values so an ingest-only run has no misleading keys."""
+    return {key: value for key, value in data.items() if value}
+
+
 EXIT_OK = 0
 EXIT_STRUCTURAL = 1
 EXIT_INVALID_IR = 2
@@ -101,6 +106,31 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--run-timestamp",
         help="Optional ISO timestamp recorded in the manifest. Omit for byte-stable output.",
+    )
+    parser.add_argument(
+        "--extract",
+        action="store_true",
+        help="After --ingest, run the deterministic model-free extractor: normative "
+        "sentences become evidenced, untyped, graph-only clauses. This is the baseline "
+        "a model-driven extractor has to beat; it types nothing and so reaches neither "
+        "DMN nor BPMN.",
+    )
+    parser.add_argument(
+        "--emit-requests",
+        type=Path,
+        metavar="DIR",
+        help="With --ingest: write one extraction request per chunk, each with the JSON "
+        "Schema and prose contract a model-driven extractor should be given. The schema "
+        "constrains citations to the offered unit indices, so a citation to unseen text "
+        "cannot be produced.",
+    )
+    parser.add_argument(
+        "--proposals",
+        type=Path,
+        nargs="+",
+        metavar="FILE",
+        help="With --ingest: admit extractor proposals. Ingestion is deterministic, so "
+        "re-ingesting rebuilds byte-identical requests and the unit indices still resolve.",
     )
     parser.add_argument(
         "--max-chunk-chars",
@@ -253,11 +283,108 @@ def main(argv: Sequence[str] | None = None) -> int:
         except PdfSupportUnavailable as exc:
             parser.error(str(exc))
             return EXIT_CONDITION  # pragma: no cover - argparse exits
+        clauses: tuple = ()
+        spans: tuple = ()
+        role = "ingestion_skeleton"
+        extraction_stats: dict = {}
+
+        if args.emit_requests:
+            from extraction.contract import proposal_schema, render_instructions
+            from extraction.offer import build_requests
+
+            requests = build_requests(registry, registry.chunk_tuple())
+            args.emit_requests.mkdir(parents=True, exist_ok=True)
+            for request in requests:
+                stem = args.emit_requests / request.chunk_id
+                stem.with_suffix(".request.json").write_text(
+                    json.dumps(request.to_dict(), indent=2, sort_keys=True) + "\n",
+                    encoding="utf-8",
+                )
+                stem.with_suffix(".schema.json").write_text(
+                    json.dumps(proposal_schema(request), indent=2, sort_keys=True) + "\n",
+                    encoding="utf-8",
+                )
+                stem.with_suffix(".instructions.md").write_text(
+                    render_instructions(request), encoding="utf-8"
+                )
+            warnings.append(
+                f"emitted {len(requests)} extraction request(s) with schema and "
+                f"instructions to {args.emit_requests}"
+            )
+
+        if args.proposals:
+            from extraction.candidates import CandidateRejected
+            from extraction.offer import build_requests
+            from extraction.proposals import admit_proposals, proposal_from_dict
+
+            requests = {r.chunk_id: r for r in build_requests(registry, registry.chunk_tuple())}
+            admitted: list = []
+            admitted_spans: dict = {}
+            refused = 0
+            for path in args.proposals:
+                payload = json.loads(path.read_text(encoding="utf-8"))
+                batches = payload if isinstance(payload, list) else [payload]
+                for batch in batches:
+                    chunk_id = batch.get("chunk_id")
+                    request = requests.get(chunk_id)
+                    if request is None:
+                        parser.error(
+                            f"{path}: chunk {chunk_id!r} is not part of this ingestion; "
+                            "the proposals and the ingest arguments must match"
+                        )
+                    try:
+                        batch_clauses, batch_spans = admit_proposals(
+                            [proposal_from_dict(c) for c in batch.get("candidates", ())],
+                            request,
+                            registry,
+                            document_sha256=registry.documents[
+                                request.document_id
+                            ].canonical_text_sha256,
+                        )
+                    except CandidateRejected as exc:
+                        refused += 1
+                        warnings.append(f"refused proposals for {chunk_id}: {exc}")
+                        continue
+                    admitted.extend(batch_clauses)
+                    admitted_spans.update({s.evidence_id: s for s in batch_spans})
+            clauses = tuple(admitted)
+            spans = tuple(admitted_spans[k] for k in sorted(admitted_spans))
+            role = "model_extraction"
+            warnings.append(
+                f"admitted {len(clauses)} clause(s) from proposals"
+                + (f"; {refused} batch(es) refused" if refused else "")
+            )
+        if args.extract and not args.proposals:
+            from extraction.deterministic import extract_deterministic
+
+            extracted = extract_deterministic(registry, registry.chunk_tuple())
+            clauses, spans = extracted.clauses, extracted.spans
+            # Extraction coverage supersedes the ingestion note for a chunk it read.
+            read = {entry.chunk_id for entry in extracted.coverage}
+            coverage = [e for e in coverage if e.chunk_id not in read] + list(
+                extracted.coverage
+            )
+            role = "deterministic_extraction"
+            extraction_stats = extracted.stats.to_dict()
+            warnings.append(
+                f"extraction: {extraction_stats['clauses_emitted']} clause(s) from "
+                f"{extraction_stats['normative_sentences']} normative of "
+                f"{extraction_stats['sentences_scanned']} sentence(s) "
+                f"({extraction_stats['normative_rate']:.1%} normative)"
+            )
+            warnings.append(
+                "extraction: clauses are untyped by construction — no condition, effect "
+                "or threshold is typed, so none can reach DMN or BPMN"
+            )
         ir = PolicyIR(
             documents=registry.document_tuple(),
             chunks=registry.chunk_tuple(),
+            evidence_spans=spans,
+            clauses=clauses,
             coverage=tuple(coverage),
-            metadata={"artifact_role": "ingestion_skeleton"},
+            metadata=drop_empty(
+                {"artifact_role": role, "extraction_stats": extraction_stats}
+            ),
         )
         texts = dict(registry.texts)
     elif args.legacy_graph:
@@ -291,8 +418,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         args.out.mkdir(parents=True, exist_ok=True)
         files = dict(result.files())
         if args.ingest:
-            # The skeleton is the point of an ingest run: it is what clause
-            # extraction consumes next.
+            # The IR is the point of an ingest run: either a skeleton for extraction to
+            # consume, or the extracted clauses themselves.
             files["policy-ir-v2.json"] = (
                 json.dumps(ir.to_dict(), indent=2, sort_keys=True, ensure_ascii=False) + "\n"
             )

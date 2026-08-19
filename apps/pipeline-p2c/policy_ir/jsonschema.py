@@ -269,6 +269,21 @@ def _record_schema(record: type) -> dict[str, Any]:
     return schema
 
 
+def record_schema(record: type) -> dict[str, Any]:
+    """Schema for one IR record, for schemas that embed a subset of the IR."""
+    return _record_schema(record)
+
+
+def expression_defs() -> dict[str, Any]:
+    """The recursive expression grammar, for schemas that embed it."""
+    return _expression_defs()
+
+
+def enum_defs() -> dict[str, Any]:
+    """Every closed vocabulary, for schemas that constrain against them."""
+    return _enum_defs()
+
+
 def build_schema() -> dict[str, Any]:
     """Build the complete JSON Schema document."""
     defs: dict[str, Any] = {}

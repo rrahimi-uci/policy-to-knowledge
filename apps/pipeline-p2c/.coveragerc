@@ -4,6 +4,7 @@ source =
     cli
     compilers
     evaluation
+    extraction
     fixtures
     ingestion
     policy_ir

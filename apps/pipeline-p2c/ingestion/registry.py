@@ -186,6 +186,46 @@ class SourceRegistry:
             )
         return chunk.char_start + first, chunk.char_start + first + len(needle)
 
+    def span_at(
+        self,
+        chunk_id: str,
+        char_start: int,
+        char_end: int,
+        role: SemanticRole,
+        *,
+        match_status: MatchStatus = MatchStatus.EXACT,
+    ) -> EvidenceSpan:
+        """Build an evidence span from offsets that are already known.
+
+        :meth:`make_span` searches for a phrase and refuses an ambiguous one, which is
+        right for a human citing a quote. An extractor walking sentences already knows
+        where it is, and its sentence may legitimately recur verbatim elsewhere in the
+        document — so it must anchor by position, not by search.
+        """
+        chunk = self.chunks[chunk_id]
+        if not (chunk.char_start <= char_start <= char_end <= chunk.char_end):
+            raise ValueError(
+                f"[{char_start}, {char_end}) falls outside chunk {chunk_id!r} "
+                f"[{chunk.char_start}, {chunk.char_end})"
+            )
+        text = self.text(chunk.document_id)
+        return EvidenceSpan(
+            evidence_id=ids.evidence_id(
+                chunk.document_id, chunk.chunk_sha256, char_start, char_end, role.value
+            ),
+            document_id=chunk.document_id,
+            chunk_id=chunk_id,
+            chunk_sha256=chunk.chunk_sha256,
+            char_start=char_start,
+            char_end=char_end,
+            exact_text=text[char_start:char_end],
+            semantic_role=role,
+            match_status=match_status,
+            section_path=chunk.section_path,
+            page_start=chunk.page_start,
+            page_end=chunk.page_end,
+        )
+
     def make_span(
         self,
         chunk_id: str,
