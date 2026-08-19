@@ -162,6 +162,8 @@ def build_parser() -> argparse.ArgumentParser:
         help="Write conservative DMN/BPMN synthesis opportunities and abstention reasons. "
         "This report never creates executable models by itself.",
     )
+    parser.add_argument("--emit-review-queue", type=Path, metavar="FILE")
+    parser.add_argument("--emit-semantic-metrics", type=Path, metavar="FILE")
     parser.add_argument(
         "--max-chunk-chars",
         type=int,
@@ -495,6 +497,20 @@ def main(argv: Sequence[str] | None = None) -> int:
     except ValueError as exc:
         parser.error(str(exc))
         return EXIT_CONDITION  # pragma: no cover - argparse exits
+
+    if args.emit_review_queue or args.emit_semantic_metrics:
+        from semantic import review_queue, semantic_metrics
+
+        if args.emit_review_queue:
+            args.emit_review_queue.write_text(
+                json.dumps(review_queue(ir, result.report), indent=2, sort_keys=True) + "\n",
+                encoding="utf-8",
+            )
+        if args.emit_semantic_metrics:
+            args.emit_semantic_metrics.write_text(
+                json.dumps(semantic_metrics(ir, result.report), indent=2, sort_keys=True) + "\n",
+                encoding="utf-8",
+            )
 
     if args.out and not args.dry_run:
         args.out.mkdir(parents=True, exist_ok=True)
