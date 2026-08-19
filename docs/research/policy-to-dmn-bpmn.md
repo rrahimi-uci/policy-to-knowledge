@@ -2,11 +2,9 @@
 
 **Status:** proposed and unrun.
 
-**Repository baseline reviewed:** origin/main at 5179de7.
+**Repository baseline reviewed:** `origin/main` at 5179de7. Nothing under `apps/` has changed between that commit and the current tip of `main`, so every observation below still holds; re-verify before implementation begins.
 
 **Purpose:** change Policy-to-Knowledge from a prose-heavy graph generator into an evidence-bound policy compiler whose canonical intermediate representation can be projected deterministically into the existing knowledge graph, DMN 1.5, and a conservative BPMN 2.0.2 subset.
-
-The filename intentionally follows the requested name, polict-to-dmn-bpmn.md.
 
 ## 1. Executive decision
 
@@ -14,16 +12,18 @@ The current knowledge graph should not be sent directly to a DMN/BPMN exporter. 
 
 Make a versioned **Policy IR v2** the canonical artifact. The existing graph becomes one projection of that IR. DMN and BPMN become two additional projections with strict compilation eligibility and explicit abstention.
 
-    source documents
-      -> immutable source/chunk registry
-      -> evidence-anchored entity and clause candidates
-      -> typed Policy IR v2
-      -> fail-closed semantic and provenance validation
-      -> canonicalization and evidence-preserving deduplication
-      -> graph projection
-      -> DMN compiler
-      -> BPMN compiler
-      -> traceability and compilation reports
+```text
+source documents
+  -> immutable source/chunk registry
+  -> evidence-anchored entity and clause candidates
+  -> typed Policy IR v2
+  -> fail-closed semantic and provenance validation
+  -> canonicalization and evidence-preserving deduplication
+  -> graph projection
+  -> DMN compiler
+  -> BPMN compiler
+  -> traceability and compilation reports
+```
 
 The principal safety rule is: no source-supported typed semantics, no executable model element.
 
@@ -58,17 +58,17 @@ This is a design and execution plan. It does not claim the proposed schema, comp
 
 Relevant implementation surfaces include:
 
-- apps/pipeline/agents/agent_1_document_organizer.py
-- apps/pipeline/agents/agent_2_entity_extractor.py
-- apps/pipeline/agents/agent_3_rules_extractor.py
-- apps/pipeline/agents/agent_3_5_rule_validator.py
-- apps/pipeline/agents/agent_4_rules_with_entities_merger.py
-- apps/pipeline/agents/agent_5_knowledge_graph_optimizer.py
-- apps/pipeline/agents/agent_6_visualization_and_report.py
-- apps/pipeline/utils/prompt_manager.py
-- apps/pipeline/utils/config.py
-- apps/pipeline/cli/extract.py
-- apps/explorer/src/schema.py
+- [agent_1_document_organizer.py](../../apps/pipeline/agents/agent_1_document_organizer.py)
+- [agent_2_entity_extractor.py](../../apps/pipeline/agents/agent_2_entity_extractor.py)
+- [agent_3_rules_extractor.py](../../apps/pipeline/agents/agent_3_rules_extractor.py)
+- [agent_3_5_rule_validator.py](../../apps/pipeline/agents/agent_3_5_rule_validator.py)
+- [agent_4_rules_with_entities_merger.py](../../apps/pipeline/agents/agent_4_rules_with_entities_merger.py)
+- [agent_5_knowledge_graph_optimizer.py](../../apps/pipeline/agents/agent_5_knowledge_graph_optimizer.py)
+- [agent_6_visualization_and_report.py](../../apps/pipeline/agents/agent_6_visualization_and_report.py)
+- [utils/prompt_manager.py](../../apps/pipeline/utils/prompt_manager.py)
+- [utils/config.py](../../apps/pipeline/utils/config.py)
+- [cli/extract.py](../../apps/pipeline/cli/extract.py)
+- [explorer/src/schema.py](../../apps/explorer/src/schema.py)
 
 ## 4. Artifact-level findings
 
@@ -89,8 +89,8 @@ Observed structural facts:
 - Source references are not uniform: 73 rules use an array and 1,408 use an object.
 - Agent-2 entity attributes are plain strings in all four corpora; none of the committed entity definitions has a typed entity category or typed attribute schema.
 - The 185 process-tagged rules do not share a process contract containing trigger, actor, activity, input/output, precondition, postcondition, event, and end state.
-- The dependency inventory includes 600+ prerequisite edges and dozens of sequential, conditional, override, and contradictory edges, but these are model-generated hypotheses rather than source-validated control-flow semantics.
-- Some source records marked verified retain low text_match_score values. The meanings of location recovery, exact match, fuzzy match, and semantic support are therefore not cleanly separated for downstream consumers.
+- The 1,330 dependency edges are typed as prerequisite (603), conditional (249), complementary (179), override (110), sequential (95), validation (80), and contradictory (14), but all of them are model-generated hypotheses rather than source-validated control-flow semantics.
+- Of 1,582 span records carrying a `text_match_score`, 247 have `reference_verified: true` while scoring below 0.6, the lowest at 0.008. The meanings of location recovery, exact match, fuzzy match, and semantic support are therefore not cleanly separated for downstream consumers.
 
 These artifacts are historical engineering evidence. They must not be treated as proof that Policy IR v2 or generated DMN/BPMN is correct.
 
@@ -98,7 +98,7 @@ These artifacts are historical engineering evidence. They must not be treated as
 
 ### 5.1 Agent 2 mixes observation and invention
 
-The entity prompt asks the model to add five to ten attributes, concrete examples, and business-rule summaries, including from domain knowledge. This can improve a conceptual ontology, but it prevents a compiler from knowing which property is explicitly present in policy text.
+The entity prompt instructs the model to "Add 5-10 attributes per entity (use domain knowledge)" ([entity_extraction.txt](../../apps/pipeline/prompts/entity_extraction.txt)), and the refinement prompt scores entities on hitting that quota ([entity_refinement.txt](../../apps/pipeline/prompts/entity_refinement.txt)). This can improve a conceptual ontology, but it prevents a compiler from knowing which property is explicitly present in policy text.
 
 Change the contract so every entity, attribute, event, actor, and relationship is one of:
 
@@ -140,7 +140,7 @@ An attribute becomes a DataDefinition with:
 
 ### 5.3 Rule type currently conflates independent dimensions
 
-A rule can simultaneously be mandatory, prohibitive, temporal, process-related, and eligibility-related. Requiring one rule_type loses information.
+A rule can simultaneously be mandatory, prohibitive, temporal, process-related, and eligibility-related. The extraction prompt requires the model to "Classify each rule into exactly ONE of these 10 categories" ([business_rules_extraction.txt](../../apps/pipeline/prompts/business_rules_extraction.txt)), which loses information.
 
 Replace it with orthogonal fields:
 
@@ -155,17 +155,19 @@ Replace it with orthogonal fields:
 
 The model currently returns condition/consequence/exception prose. Add a restricted expression AST:
 
-    Expression =
-      all(expressions)
-      any(expressions)
-      not(expression)
-      comparison(left, operator, right)
-      in(value, allowed_values)
-      exists(variable)
-      date_arithmetic(base, operator, duration)
-      variable_ref(data_definition_id)
-      literal(value, type, unit)
-      function_ref(function_id, arguments)
+```text
+Expression =
+  all(expressions)
+  any(expressions)
+  not(expression)
+  comparison(left, operator, right)
+  in(value, allowed_values)
+  exists(variable)
+  date_arithmetic(base, operator, duration)
+  variable_ref(data_definition_id)
+  literal(value, type, unit)
+  function_ref(function_id, arguments)
+```
 
 Allowed comparison operators must be enumerated. The model must never emit raw FEEL, JavaScript, Python, SQL, or XML. A deterministic compiler serializes a validated AST into FEEL and XML.
 
@@ -173,13 +175,13 @@ Retain natural-language text for human display, but never compile from that disp
 
 ### 5.5 IDs depend on batch position
 
-Current rule IDs encode model-selected entity/category/batch/sequence. Reordering batches can change identity.
+Current rule IDs encode model-selected entity/category/batch/sequence: the prompt requires each `rule_id` to embed the batch number padded to three digits plus a sequence number. Reordering batches can change identity.
 
 Create deterministic IDs from document hash, exact evidence span, normalized clause kind, and schema version. Maintain aliases from legacy rule IDs. A deduplicated canonical rule receives a new canonical ID plus a complete many-to-one lineage list; it never silently replaces source candidates.
 
 ### 5.6 Prompts drift by domain
 
-The default, mortgage, AML, commercial-lending, and healthcare prompts have separate core output examples and sometimes different field shapes. For example, one domain asks for lists/objects where committed artifacts from other domains use strings.
+The default, mortgage, AML, commercial-lending, and healthcare prompts have separate core output examples and sometimes different field shapes. Concretely, the [AML overlay](../../apps/pipeline/domain-prompts/aml/business_rules_extraction.txt) asks for `conditions` as an array and `consequences` as an object, while the base prompt and the mortgage, healthcare, and commercial-lending overlays all ask for those same fields as strings — and all 1,481 committed rules store them as strings.
 
 Generate the core prompt contract from one versioned JSON Schema. Domain overlays may supply terminology, ontology seeds, valid scope values, and source-grounded examples, but may not redefine core field types.
 
@@ -189,26 +191,28 @@ Policy IR v2 is the source of truth. The graph, DMN, and BPMN files are determin
 
 ### 6.1 DocumentArtifact and EvidenceSpan
 
-    DocumentArtifact:
-      document_id
-      source_uri
-      source_sha256
-      media_type
-      retrieval_timestamp
-      license_record_id
-      parser_version
+```text
+DocumentArtifact:
+  document_id
+  source_uri
+  source_sha256
+  media_type
+  retrieval_timestamp
+  license_record_id
+  parser_version
 
-    EvidenceSpan:
-      evidence_id
-      document_id
-      chunk_id
-      chunk_sha256
-      page_start/page_end when available
-      char_start/char_end in canonical extracted text
-      exact_text
-      section_path
-      match_status: exact | normalized_exact | recovered | unresolved
-      semantic_role: subject | condition | effect | exception | temporal | authority | cross_reference
+EvidenceSpan:
+  evidence_id
+  document_id
+  chunk_id
+  chunk_sha256
+  page_start/page_end when available
+  char_start/char_end in canonical extracted text
+  exact_text
+  section_path
+  match_status: exact | normalized_exact | recovered | unresolved
+  semantic_role: subject | condition | effect | exception | temporal | authority | cross_reference
+```
 
 Every atomic semantic claim references at least one EvidenceSpan. Word offsets may remain for compatibility, but character offsets plus content hashes become authoritative.
 
@@ -216,50 +220,56 @@ Every atomic semantic claim references at least one EvidenceSpan. Word offsets m
 
 Separate source mentions from canonical entities:
 
-    EntityMention -> RESOLVES_TO -> EntityType
-    EntityType -> DECLARES -> DataDefinition
-    EvidenceSpan -> SUPPORTS -> EntityMention/DataDefinition
+```text
+EntityMention -> RESOLVES_TO -> EntityType
+EntityType -> DECLARES -> DataDefinition
+EvidenceSpan -> SUPPORTS -> EntityMention/DataDefinition
+```
 
 Entity resolution must preserve unresolved alternatives and evidence. It may not rewrite a source mention to a canonical entity without recording the mapping confidence and method.
 
 ### 6.3 AtomicPolicyClause
 
-    AtomicPolicyClause:
-      clause_id
-      modality
-      semantic_kind
-      subject_ref
-      action_ref
-      object_ref
-      condition_ast
-      effect_ast
-      exception_ast
-      temporal_constraint
-      jurisdiction_scope
-      effective_period
-      authority_ref
-      evidence_ids by field
-      validation_status
-      compilation_eligibility
-      abstention_reasons
+```text
+AtomicPolicyClause:
+  clause_id
+  modality
+  semantic_kind
+  subject_ref
+  action_ref
+  object_ref
+  condition_ast
+  effect_ast
+  exception_ast
+  temporal_constraint
+  jurisdiction_scope
+  effective_period
+  authority_ref
+  evidence_ids by field
+  validation_status
+  compilation_eligibility
+  abstention_reasons
+```
 
 Split compound source sentences into atomic clauses while retaining a shared source-group ID. Do not make one wide rule carry several independent conditions, actions, and exceptions.
 
 ### 6.4 DecisionModelCandidate
 
-    DecisionModelCandidate:
-      decision_id
-      question
-      input_data_refs
-      output_definition
-      decision_rule_refs
-      required_decision_refs
-      authority_refs
-      proposed_hit_policy
-      hit_policy_proof
-      completeness_status
-      dmn_eligibility
-      blockers
+```text
+DecisionModelCandidate:
+  decision_id
+  question
+  input_data_refs
+  output_definition
+  decision_rule_refs
+  required_decision_refs
+  authority_refs
+  proposed_hit_policy
+  hit_policy_proof
+  completeness_status
+  dmn_eligibility
+  blockers
+```
 
 A decision-table row references an AtomicPolicyClause. Hit policy is never guessed:
 
@@ -270,24 +280,26 @@ A decision-table row references an AtomicPolicyClause. Hit policy is never guess
 
 ### 6.5 ProcessFragmentCandidate
 
-    ProcessFragmentCandidate:
-      fragment_id
-      trigger_event
-      participant_refs
-      responsible_actor_ref
-      activity
-      input_refs
-      output_refs
-      precondition_ast
-      postcondition_ast
-      decision_ref
-      temporal_constraint
-      exception_or_escalation
-      predecessor/successor refs
-      end_state
-      evidence_ids by field
-      bpmn_eligibility
-      blockers
+```text
+ProcessFragmentCandidate:
+  fragment_id
+  trigger_event
+  participant_refs
+  responsible_actor_ref
+  activity
+  input_refs
+  output_refs
+  precondition_ast
+  postcondition_ast
+  decision_ref
+  temporal_constraint
+  exception_or_escalation
+  predecessor/successor refs
+  end_state
+  evidence_ids by field
+  bpmn_eligibility
+  blockers
+```
 
 A process tag alone is insufficient. Executable BPMN requires an explicit trigger or entry condition, an activity, responsible participant, and enough evidence to establish flow. Missing fields cause abstention or a clearly marked non-executable review fragment.
 
@@ -403,30 +415,32 @@ Dependency discovery order:
 4. validated model-assisted candidate;
 5. unresolved related association.
 
-Remove first-N cross-batch sampling from any path that can produce executable edges. Approximate sampling may remain for Explorer suggestions but must be labeled non-executable.
+Remove first-N cross-batch sampling from any path that can produce executable edges. Cross-batch dependency analysis currently takes `min(20, batch_size // 4)` rules from the head of each batch and truncates descriptions to a configured length, so ordering decides which pairs are ever compared. Approximate sampling may remain for Explorer suggestions but must be labeled non-executable.
 
 ### Stage 5.5 — deterministic compilers
 
 Add a non-agent compiler package:
 
-    apps/pipeline/policy_ir/
-      models.py
-      schema/policy-ir-v2.schema.json
-      validate.py
-      legacy_adapter.py
-      graph_projector.py
+```text
+apps/pipeline/policy_ir/
+  models.py
+  schema/policy-ir-v2.schema.json
+  validate.py
+  legacy_adapter.py
+  graph_projector.py
 
-    apps/pipeline/compilers/
-      dmn/
-        compiler.py
-        eligibility.py
-        feel.py
-        validate.py
-      bpmn/
-        compiler.py
-        eligibility.py
-        validate.py
-      traceability.py
+apps/pipeline/compilers/
+  dmn/
+    compiler.py
+    eligibility.py
+    feel.py
+    validate.py
+  bpmn/
+    compiler.py
+    eligibility.py
+    validate.py
+  traceability.py
+```
 
 The compilers consume only admitted Policy IR. They do not call an LLM.
 
@@ -449,21 +463,23 @@ Do not present a visually valid diagram as semantically executable.
 
 Replace copied full-domain contracts with:
 
-    prompts/v2/
-      entity_mentions.txt
-      atomic_policy_clauses.txt
-      policy_ir_normalization.txt
-      dependency_candidates.txt
-      schemas/
-        entity-mention-v2.schema.json
-        atomic-clause-v2.schema.json
-        policy-ir-v2.schema.json
+```text
+prompts/v2/
+  entity_mentions.txt
+  atomic_policy_clauses.txt
+  policy_ir_normalization.txt
+  dependency_candidates.txt
+  schemas/
+    entity-mention-v2.schema.json
+    atomic-clause-v2.schema.json
+    policy-ir-v2.schema.json
 
-    domain-prompts/<domain>/v2/
-      ontology.yaml
-      terminology.yaml
-      scope-values.yaml
-      source-grounded-examples.json
+domain-prompts/<domain>/v2/
+  ontology.yaml
+  terminology.yaml
+  scope-values.yaml
+  source-grounded-examples.json
+```
 
 PromptManager should assemble a shared versioned contract plus the selected overlay and include prompt/schema hashes in every run manifest.
 
@@ -518,7 +534,7 @@ Never ask a model to decide BPMN gateways, DMN hit policies, sequence flow, or e
 
 ## 9. Deterministic DMN 1.5 mapping
 
-Target the current formal [OMG DMN 1.5 specification](https://www.omg.org/spec/DMN/1.5/About-DMN), not a beta revision. Validate generated XML using the official DMN 1.5 XSD and diagram-interchange schema.
+Target the current formal [OMG DMN 1.5 specification](https://www.omg.org/spec/DMN/1.5/About-DMN) (`formal/24-01-01`, adopted August 2024), not the DMN 1.6 or 1.7 beta revisions that OMG also lists. Validate generated XML using the official DMN 1.5 XSD and diagram-interchange schema.
 
 | Policy IR | DMN 1.5 element |
 | --- | --- |
@@ -547,7 +563,7 @@ If the rule is qualitative, advisory, or lacks a decision output, retain it in t
 
 ## 10. Conservative BPMN 2.0.2 mapping
 
-Target the current formal [OMG BPMN 2.0.2 specification](https://www.omg.org/spec/BPMN/2.0.2/) and validate against its normative XSDs.
+Target the current formal [OMG BPMN 2.0.2 specification](https://www.omg.org/spec/BPMN/2.0.2/) (`formal/13-12-09`, January 2014, still the latest formal BPMN release) and validate against its normative XSDs (`BPMN20.xsd`, `Semantic.xsd`, `BPMNDI.xsd`, `DI.xsd`, `DC.xsd`).
 
 | Policy IR | BPMN 2.0.2 element |
 | --- | --- |
@@ -587,31 +603,33 @@ Do not add vendor-specific engine extensions to the canonical file. Put engine b
 
 Per run, produce:
 
-    agent-3-policy-ir-candidates/
-      candidates.jsonl
-      coverage.json
+```text
+agent-3-policy-ir-candidates/
+  candidates.jsonl
+  coverage.json
 
-    agent-3-5-policy-ir-validation/
-      admitted.jsonl
-      rejected.jsonl
-      validation-report.json
+agent-3-5-policy-ir-validation/
+  admitted.jsonl
+  rejected.jsonl
+  validation-report.json
 
-    agent-4-policy-ir/
-      policy-ir-v2.json
-      lineage.json
+agent-4-policy-ir/
+  policy-ir-v2.json
+  lineage.json
 
-    agent-5-optimized/
-      optimized-policy-ir-v2.json
-      legacy optimized_compliance_knowledge_graph.json
+agent-5-optimized/
+  optimized-policy-ir-v2.json
+  legacy optimized_compliance_knowledge_graph.json
 
-    agent-5-5-formal-models/
-      decisions.dmn
-      processes-review.bpmn
-      processes-executable.bpmn when nonempty
-      graph-v2.json
-      traceability.json
-      compilation-report.json
-      manifest.json
+agent-5-5-formal-models/
+  decisions.dmn
+  processes-review.bpmn
+  processes-executable.bpmn when nonempty
+  graph-v2.json
+  traceability.json
+  compilation-report.json
+  manifest.json
+```
 
 Keep existing business_rules/entity_types outputs during migration. Add policy_ir_version and artifact_role to metadata. Existing Explorer/API consumers read the legacy projection until a versioned API is ready.
 
@@ -840,4 +858,4 @@ The redesign is complete only when:
 - [OMG Business Process Model and Notation 2.0.2](https://www.omg.org/spec/BPMN/2.0.2/)
 - [OMG BPMN machine-readable schemas](https://www.omg.org/spec/BPMN/machine-readable)
 
-Recheck formal versions and normative schema URLs when implementation begins. As of this review, DMN 1.5 is the formal DMN target while newer DMN revisions listed by OMG are beta; BPMN 2.0.2 remains the formal BPMN target.
+Recheck formal versions and normative schema URLs when implementation begins. Verified on 19 August 2026: DMN 1.5 (`formal/24-01-01`) is the formal DMN target while DMN 1.6 and 1.7 are listed by OMG as beta, and BPMN 2.0.2 (`formal/13-12-09`) remains the latest formal BPMN release.
