@@ -141,6 +141,23 @@ def test_sharc_adapter_preserves_questions_and_context(tmp_path: Path) -> None:
     ]
 
 
+def test_case_id_selection_is_hash_bound_and_rejects_unknown_or_empty_subsets(tmp_path: Path) -> None:
+    source = _write_json(tmp_path / "sharc.json", _sharc_split())
+    case_ids = _write_json(tmp_path / "case-ids.json", ["sharc-question"])
+    from evaluation.benchmarks import load_benchmark
+
+    dataset = load_benchmark("sharc", source, case_ids_path=case_ids)
+    assert [case.case_id for case in dataset.cases] == ["sharc-question"]
+    assert dataset.selection == {
+        "case_ids_sha256": _sha256(case_ids),
+        "selected_case_count": 1,
+    }
+    with pytest.raises(BenchmarkError, match="unknown case IDs"):
+        load_benchmark("sharc", source, case_ids_path=_write_json(tmp_path / "unknown.json", ["missing"]))
+    with pytest.raises(BenchmarkError, match="must not be empty"):
+        load_benchmark("sharc", source, case_ids_path=_write_json(tmp_path / "empty.json", []))
+
+
 def test_contract_nli_adapter_preserves_existing_evidence_anchors(tmp_path: Path) -> None:
     source = _write_json(tmp_path / "contract.json", _contract_nli_split())
     dataset = load_contract_nli(source)

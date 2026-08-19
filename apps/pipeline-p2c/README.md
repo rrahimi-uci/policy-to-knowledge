@@ -430,6 +430,13 @@ it outside the repository, and record the exact split and release in the paper.
 The report records SHA-256 digests of the source annotations and submitted
 predictions.
 
+For a bounded development pilot, use `--case-ids` with a JSON list of case IDs.
+The adapter selects only those already-labelled cases and records both the selection
+manifest digest and count. Do not pass an incomplete full-split prediction file as a
+subset: missing predictions are intentionally scored as abstentions. The case-ID list
+must be retained with the run artifacts and should be defined without consulting gold
+labels (for example, a fixed lexical-ID slice).
+
 ```bash
 # Emit system-facing tasks and evidence-anchor IDs the system may cite. This file
 # deliberately omits gold answers and gold evidence.
@@ -493,6 +500,31 @@ manifest whose prediction digest differs from the submitted artifact. The
 selection must exactly match the corpus adapter's recorded selection (including
 the OPP-115 policy-level manifest digest). A manifest is optional for exploratory
 local scoring but required for any result represented as reproducible research.
+
+### Local direct-baseline pilot
+
+For a cost-free local baseline, `evaluation.ollama_runner` calls a locally running
+Ollama model with only the system-facing document, question, and context. It is a
+**direct baseline**, not a Policy IR system: it neither constructs Policy IR nor
+claims an advantage over one. Model failures become explicit `null` predictions,
+which the scorer reports as abstentions. The runner writes a label-safe prediction
+artifact and a separate secret-free configuration record; it never reads API keys.
+
+```bash
+git_rev=$(git rev-parse HEAD)
+python -m evaluation.ollama_runner \
+  --benchmark sharc --input /data/sharc_dev.json --model qwen2.5:7b \
+  --case-ids splits/sharc-dev-lexical-100.json \
+  --implementation-revision "$git_rev" \
+  --predictions-out results/sharc-qwen-direct.jsonl \
+  --config-out results/sharc-qwen-direct-config.json
+```
+
+Afterward, create a `p2c-evaluation-run-v1` manifest whose `configuration.sha256`
+is the SHA-256 digest of the emitted configuration record and whose prediction and
+source digests match the emitted artifact and selected corpus. Score it with
+`evaluation.benchmarks --run-manifest`; do not describe a run with this runner as
+`policy_ir` or an ablation.
 
 The OPP-115 adapter uses the corpus's `threshold-0.5-overlap-similarity`
 consolidation view and evaluates the ten original top-level data-practice
