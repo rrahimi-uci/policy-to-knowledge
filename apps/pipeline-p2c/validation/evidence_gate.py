@@ -43,9 +43,9 @@ from policy_ir.models import (
     PolicyIR,
     ProcessFragmentCandidate,
 )
-from policy_ir.typecheck import check, check_boolean, context_from_ir
 from policy_ir.feel import FeelError, feel_name, to_feel
 from policy_ir.tabular import NotTabular, Row, decompose, prove_disjoint, row_condition
+from policy_ir.typecheck import check, check_boolean, context_from_ir
 from ingestion.registry import normalize_text
 
 from . import blockers as codes

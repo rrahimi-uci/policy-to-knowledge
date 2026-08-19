@@ -22,11 +22,11 @@ from policy_ir.models import (
     DecisionModelCandidate,
     PolicyIR,
 )
+from policy_ir.feel import feel_name, literal_to_feel, to_feel, unary_test
+from policy_ir.tabular import decompose, row_condition
 from validation import blockers as codes
 from validation.evidence_gate import Blocker, GateReport
 
-from policy_ir.feel import feel_name, literal_to_feel, to_feel, unary_test
-from policy_ir.tabular import decompose, row_condition
 from .xmlwriter import Element, serialize
 
 DMN_MODEL_NS = "https://www.omg.org/spec/DMN/20230324/MODEL/"
@@ -71,7 +71,6 @@ def _reviewable(report_blockers: Iterable[Blocker]) -> bool:
 
 def _decision_is_emittable(
     decision: DecisionModelCandidate,
-    ir: PolicyIR,
     report: GateReport,
     profile: CompilerProfile,
 ) -> tuple[bool, tuple[Blocker, ...]]:
@@ -198,7 +197,7 @@ def compile_dmn(
     skipped: list[Blocker] = []
     row_map: dict[str, tuple[AtomicPolicyClause, ...]] = {}
     for decision in sorted(ir.decisions, key=lambda d: d.decision_id):
-        allowed, why = _decision_is_emittable(decision, ir, report, profile)
+        allowed, why = _decision_is_emittable(decision, report, profile)
         if not allowed:
             skipped.extend(why)
             continue

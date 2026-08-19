@@ -21,11 +21,11 @@ from __future__ import annotations
 from typing import Any, Mapping
 
 from policy_ir.enums import Modality, Status
+from policy_ir.expressions import referenced_variable_ids
+from policy_ir.feel import FeelError, feel_name, to_feel
 from policy_ir.ids import SCHEMA_VERSION
 from policy_ir.models import AtomicPolicyClause, PolicyIR
 from validation.evidence_gate import GateReport
-
-from policy_ir.feel import FeelError, feel_name, to_feel
 
 ARTIFACT_ROLE = "legacy_projection"
 PROJECTOR_VERSION = "p2c-graph-1.0.0"
@@ -107,7 +107,7 @@ def project_graph(
                 variable
                 for attribute in ("condition_ast", "effect_ast", "exception_ast")
                 if getattr(clause, attribute) is not None
-                for variable in _variables(getattr(clause, attribute))
+                for variable in referenced_variable_ids(getattr(clause, attribute))
             }
         )
         entity = entities.get(clause.subject_ref) if clause.subject_ref else None
@@ -254,9 +254,3 @@ def project_graph(
             "note": "Policy IR canonicalisation happens before projection.",
         },
     }
-
-
-def _variables(expression: Any) -> tuple[str, ...]:
-    from policy_ir.expressions import referenced_variable_ids
-
-    return referenced_variable_ids(expression)

@@ -17,6 +17,7 @@ record of the run is itself deterministic.
 
 from __future__ import annotations
 
+import json
 from typing import Any, Mapping, Sequence
 
 from policy_ir.ids import SCHEMA_VERSION, sha256_text
@@ -194,6 +195,4 @@ def build_manifest(
 
 
 def _canonical_json(value: Any) -> str:
-    import json
-
     return json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
