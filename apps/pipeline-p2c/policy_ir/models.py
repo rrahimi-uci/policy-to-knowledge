@@ -1131,6 +1131,70 @@ class DependencyEdge:
 
 
 @dataclass(frozen=True)
+class SemanticRelation:
+    """An evidenced relation in the canonical semantic graph.
+
+    This is deliberately distinct from ``DependencyEdge``: it captures concepts such
+    as ``defines`` or ``applies_to`` without asserting executable ordering.
+    """
+
+    relation_id: str
+    source_id: str
+    target_id: str
+    relation_type: str
+    provenance: Provenance = Provenance.PROPOSED
+    derivation_method: DerivationMethod = DerivationMethod.MODEL_ASSISTED_CANDIDATE
+    qualifiers: Mapping[str, str] = field(default_factory=dict)
+    evidence_ids: tuple[str, ...] = ()
+
+    def to_dict(self) -> dict[str, Any]:
+        return drop_none(
+            {
+                "relation_id": self.relation_id,
+                "source_id": self.source_id,
+                "target_id": self.target_id,
+                "relation_type": self.relation_type,
+                "provenance": self.provenance.value,
+                "derivation_method": self.derivation_method.value,
+                "qualifiers": dict(sorted(self.qualifiers.items())) or None,
+                "evidence_ids": list(self.evidence_ids) or None,
+            }
+        )
+
+    @classmethod
+    def from_dict(cls, data: Mapping[str, Any]) -> "SemanticRelation":
+        r = "SemanticRelation"
+        check_keys(
+            data,
+            r,
+            ["relation_id", "source_id", "target_id", "relation_type"],
+            ["provenance", "derivation_method", "qualifiers", "evidence_ids"],
+        )
+        qualifiers = data.get("qualifiers", {})
+        if not isinstance(qualifiers, Mapping) or not all(
+            isinstance(key, str) and isinstance(value, str) for key, value in qualifiers.items()
+        ):
+            raise SchemaError(f"{r}.qualifiers must be an object of string values")
+        return cls(
+            relation_id=as_str(data["relation_id"], r, "relation_id"),
+            source_id=as_str(data["source_id"], r, "source_id"),
+            target_id=as_str(data["target_id"], r, "target_id"),
+            relation_type=as_str(data["relation_type"], r, "relation_type"),
+            provenance=as_enum(
+                Provenance, data.get("provenance", Provenance.PROPOSED.value), r, "provenance"
+            ),
+            derivation_method=as_enum(
+                DerivationMethod,
+                data.get("derivation_method", DerivationMethod.MODEL_ASSISTED_CANDIDATE.value),
+                r,
+                "derivation_method",
+            ),
+            qualifiers=dict(qualifiers),
+            evidence_ids=as_tuple_of_str(data.get("evidence_ids", ()), r, "evidence_ids"),
+        )
+
+
+@dataclass(frozen=True)
 class CoverageEntry:
     """What happened to one chunk during extraction.
 
@@ -1187,6 +1251,7 @@ class PolicyIR:
     decisions: tuple[DecisionModelCandidate, ...] = ()
     processes: tuple[ProcessFragmentCandidate, ...] = ()
     dependencies: tuple[DependencyEdge, ...] = ()
+    semantic_relations: tuple[SemanticRelation, ...] = ()
     coverage: tuple[CoverageEntry, ...] = ()
     metadata: Mapping[str, Any] = field(default_factory=dict)
 
@@ -1244,6 +1309,11 @@ class PolicyIR:
     def entity_index(self) -> dict[str, EntityType]:
         return self._index("entities", lambda: {e.entity_type_id: e for e in self.entity_types})
 
+    def relation_index(self) -> dict[str, SemanticRelation]:
+        return self._index(
+            "semantic_relations", lambda: {r.relation_id: r for r in self.semantic_relations}
+        )
+
     def scope_dimension_index(self) -> dict[str, ScopeDimensionDefinition]:
         """Declared scope axes, keyed by the name clauses cite."""
         return self._index("scope_dimensions", lambda: {d.name: d for d in self.scope_dimensions})
@@ -1286,6 +1356,7 @@ class PolicyIR:
             "decisions": [d.to_dict() for d in self.decisions],
             "processes": [p.to_dict() for p in self.processes],
             "dependencies": [d.to_dict() for d in self.dependencies],
+            "semantic_relations": [r.to_dict() for r in self.semantic_relations],
             "coverage": [c.to_dict() for c in self.coverage],
             "metadata": dict(self.metadata),
         }
@@ -1312,6 +1383,7 @@ class PolicyIR:
                 "decisions",
                 "processes",
                 "dependencies",
+                "semantic_relations",
                 "coverage",
                 "metadata",
             ],
@@ -1359,6 +1431,9 @@ class PolicyIR:
             ),
             dependencies=as_tuple(
                 data.get("dependencies", ()), r, "dependencies", DependencyEdge.from_dict
+            ),
+            semantic_relations=as_tuple(
+                data.get("semantic_relations", ()), r, "semantic_relations", SemanticRelation.from_dict
             ),
             coverage=as_tuple(data.get("coverage", ()), r, "coverage", CoverageEntry.from_dict),
             metadata=dict(data.get("metadata", {})),

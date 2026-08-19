@@ -1075,6 +1075,12 @@
           },
           "type": "array"
         },
+        "semantic_relations": {
+          "items": {
+            "$ref": "#/$defs/SemanticRelation"
+          },
+          "type": "array"
+        },
         "unit_conversions": {
           "items": {
             "$ref": "#/$defs/UnitConversion"
@@ -1293,6 +1299,43 @@
         "unclassified"
       ]
     },
+    "SemanticRelation": {
+      "additionalProperties": false,
+      "properties": {
+        "derivation_method": {
+          "$ref": "#/$defs/DerivationMethod"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "qualifiers": {},
+        "relation_id": {
+          "type": "string"
+        },
+        "relation_type": {
+          "type": "string"
+        },
+        "source_id": {
+          "type": "string"
+        },
+        "target_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "relation_id",
+        "source_id",
+        "target_id",
+        "relation_type"
+      ],
+      "type": "object"
+    },
     "SemanticRole": {
       "enum": [
         "subject",
@@ -1503,6 +1546,12 @@
     "scope_dimensions": {
       "items": {
         "$ref": "#/$defs/ScopeDimensionDefinition"
+      },
+      "type": "array"
+    },
+    "semantic_relations": {
+      "items": {
+        "$ref": "#/$defs/SemanticRelation"
       },
       "type": "array"
     },

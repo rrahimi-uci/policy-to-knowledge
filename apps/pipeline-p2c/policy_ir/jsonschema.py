@@ -48,6 +48,7 @@ _RECORDS: tuple[type, ...] = (
     models.ProcessActivity,
     models.ProcessFragmentCandidate,
     models.DependencyEdge,
+    models.SemanticRelation,
     models.CoverageEntry,
     models.PolicyIR,
 )

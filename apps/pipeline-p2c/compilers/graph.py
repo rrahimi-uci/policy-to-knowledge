@@ -211,6 +211,26 @@ def project_graph(
             ],
         }
 
+    relationships = [
+        {
+            "relationship_id": relation.relation_id,
+            "source_id": relation.source_id,
+            "target_id": relation.target_id,
+            "relationship_type": relation.relation_type,
+            "provenance": relation.provenance.value,
+            "derivation_method": relation.derivation_method.value,
+            "qualifiers": dict(sorted(relation.qualifiers.items())),
+            "evidence_ids": list(relation.evidence_ids),
+            "admitted": report.relation_admitted(relation.relation_id),
+            "blockers": [
+                blocker.to_dict()
+                for blocker in report.semantic_relations.get(relation.relation_id, ()).blockers
+            ],
+        }
+        for relation in ir.semantic_relations
+        if report.relation_admitted(relation.relation_id)
+    ]
+
     dependencies = [
         {
             "edge_id": edge.edge_id,
@@ -238,6 +258,7 @@ def project_graph(
             "total_rules": len(business_rules),
             "total_entity_types": len(entity_types),
             "total_dependencies": len(dependencies),
+            "total_relationships": len(relationships),
             "documents": [
                 {
                     "document_id": document.document_id,
@@ -255,7 +276,7 @@ def project_graph(
         },
         "business_rules": business_rules,
         "entity_types": entity_types,
-        "relationships": [],
+        "relationships": relationships,
         "dependency_details": {
             "dependencies": dependencies,
             "dependency_chains": [],
