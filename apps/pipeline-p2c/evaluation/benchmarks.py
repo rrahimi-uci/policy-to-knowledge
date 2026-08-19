@@ -305,20 +305,26 @@ def _f1(precision: float | None, recall: float | None) -> float | None:
 
 
 def _classification_metrics(expected: Sequence[str], predicted: Sequence[str | None]) -> dict[str, Any]:
-    labels = sorted(set(expected))
+    canonical_labels: dict[str, str] = {}
+    normalized_expected: list[str] = []
+    for label in expected:
+        normalized = _normalise(label)
+        canonical_labels.setdefault(normalized, label)
+        normalized_expected.append(normalized)
+    labels = sorted(canonical_labels)
     per_label: dict[str, dict[str, float | int | None]] = {}
     f1_values: list[float] = []
     for label in labels:
-        true_positive = sum(want == label and got == label for want, got in zip(expected, predicted))
-        false_positive = sum(want != label and got == label for want, got in zip(expected, predicted))
-        false_negative = sum(want == label and got != label for want, got in zip(expected, predicted))
+        true_positive = sum(want == label and got == label for want, got in zip(normalized_expected, predicted))
+        false_positive = sum(want != label and got == label for want, got in zip(normalized_expected, predicted))
+        false_negative = sum(want == label and got != label for want, got in zip(normalized_expected, predicted))
         precision = _safe_divide(true_positive, true_positive + false_positive)
         recall = _safe_divide(true_positive, true_positive + false_negative)
         f1 = _f1(precision, recall)
         if f1 is not None:
             f1_values.append(f1)
-        per_label[label] = {
-            "support": sum(want == label for want in expected),
+        per_label[canonical_labels[label]] = {
+            "support": sum(want == label for want in normalized_expected),
             "precision": precision,
             "recall": recall,
             "f1": f1,
@@ -440,9 +446,10 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: Sequence[str] | None = None) -> int:
     """CLI entry point. Returns 2 for malformed files or invalid option combinations."""
-    args = build_parser().parse_args(argv)
+    parser = build_parser()
+    args = parser.parse_args(argv)
     if args.predictions and args.out is None:
-        raise SystemExit("--out is required with --predictions")
+        parser.error("--out is required with --predictions")
     try:
         dataset = load_benchmark(args.benchmark, args.input)
         if args.emit_cases:
@@ -466,7 +473,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         args.out.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
         return 0
     except BenchmarkError as exc:
-        raise SystemExit(f"benchmark evaluation error: {exc}") from exc
+        parser.error(f"benchmark evaluation error: {exc}")
 
 
 if __name__ == "__main__":  # pragma: no cover - module entry point

@@ -117,6 +117,19 @@ def test_scoring_reports_coverage_outcomes_and_existing_evidence_only(tmp_path: 
     assert report["outcome"]["coverage"] == 1.0
     assert report["outcome"]["overall_accuracy"] == 0.5
     assert report["outcome"]["answered_accuracy"] == 0.5
+    assert report["outcome"]["per_label"]["Entailment"] == {
+        "support": 1,
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": pytest.approx(2 / 3),
+    }
+    assert report["outcome"]["per_label"]["Contradiction"] == {
+        "support": 1,
+        "precision": None,
+        "recall": 0.0,
+        "f1": None,
+    }
+    assert report["outcome"]["macro_f1"] == pytest.approx(2 / 3)
     assert report["evidence"] == {
         "scored_cases": 2,
         "true_positives": 1,
@@ -153,3 +166,17 @@ def test_cli_emits_cases_and_scores_jsonl_predictions(tmp_path: Path) -> None:
     ) == 0
     assert json.loads(report.read_text(encoding="utf-8"))["outcome"]["coverage"] == 0.5
     assert load_predictions(predictions) == (BenchmarkPrediction("sharc-yes", "Yes", ()),)
+
+
+def test_cli_uses_usage_exit_code_for_invalid_option_combinations(tmp_path: Path) -> None:
+    source = _write_json(tmp_path / "sharc.json", _sharc_split())
+    with pytest.raises(SystemExit) as excinfo:
+        main(["--benchmark", "sharc", "--input", str(source), "--predictions", str(tmp_path / "predictions.jsonl")])
+    assert excinfo.value.code == 2
+
+
+def test_cli_uses_usage_exit_code_for_benchmark_errors(tmp_path: Path) -> None:
+    source = _write_json(tmp_path / "invalid.json", {"not": "a split"})
+    with pytest.raises(SystemExit) as excinfo:
+        main(["--benchmark", "sharc", "--input", str(source), "--emit-cases", str(tmp_path / "cases.json")])
+    assert excinfo.value.code == 2
