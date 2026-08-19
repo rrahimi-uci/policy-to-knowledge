@@ -951,6 +951,12 @@ def _check_dependency(edge, ir: PolicyIR) -> ElementReport:
     return ElementReport(edge.edge_id, frozenset(statuses), tuple(accumulator.blockers))
 
 
+#: Why a conflict could not be settled. A machine-readable code rather than prose,
+#: so a caller (or the tie report below) never has to match on wording.
+UNRESOLVED_EQUAL_WEIGHT = "equal_weight"
+UNRESOLVED_MISSING_AUTHORITY = "missing_authority"
+
+
 @dataclass(frozen=True)
 class ConflictOutcome:
     """What happened to one declared conflict between two clauses."""
@@ -961,6 +967,12 @@ class ConflictOutcome:
     kind: str
     loser_id: str | None = None
     reason: str = ""
+    #: Set only when ``kind == "unresolved"``: one of the constants above.
+    unresolved_code: str | None = None
+
+    @property
+    def is_tie(self) -> bool:
+        return self.unresolved_code == UNRESOLVED_EQUAL_WEIGHT
 
 
 def _resolve_conflicts(
@@ -1020,6 +1032,7 @@ def _resolve_conflicts(
                     "unresolved",
                     reason=f"no declared authority for {missing}, so precedence cannot "
                     "settle the conflict",
+                    unresolved_code=UNRESOLVED_MISSING_AUTHORITY,
                 )
             )
             continue
@@ -1031,6 +1044,7 @@ def _resolve_conflicts(
                     "unresolved",
                     reason=f"{left_authority.name!r} and {right_authority.name!r} carry "
                     f"equal weight ({left_authority.authority_weight})",
+                    unresolved_code=UNRESOLVED_EQUAL_WEIGHT,
                 )
             )
             continue
@@ -1122,22 +1136,8 @@ def run_gate(
                 )
     # An equal-weight tie is a gap in the corpus's own authority configuration, so
     # it is reported once against the IR rather than repeated per decision.
-    clauses = ir.clause_index()
-    authorities = ir.authority_index()
     for outcome in conflict_outcomes:
-        if outcome.kind != "unresolved":
-            continue
-        left = clauses.get(outcome.source_id)
-        right = clauses.get(outcome.target_id)
-        if left is None or right is None:
-            continue
-        left_authority = authorities.get(left.authority_ref or "")
-        right_authority = authorities.get(right.authority_ref or "")
-        if (
-            left_authority is not None
-            and right_authority is not None
-            and left_authority.authority_weight == right_authority.authority_weight
-        ):
+        if outcome.is_tie:
             global_blockers.append(
                 Blocker(codes.AUTHORITY_TIE, outcome.source_id, outcome.reason)
             )

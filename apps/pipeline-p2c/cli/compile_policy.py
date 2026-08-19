@@ -59,6 +59,15 @@ def build_parser() -> argparse.ArgumentParser:
         type=Path,
         help="Path to a legacy optimized_compliance_knowledge_graph.json to import.",
     )
+    source.add_argument(
+        "--ingest",
+        type=Path,
+        nargs="+",
+        metavar="PDF",
+        help="Ingest one or more PDFs into a Policy IR skeleton: hashed canonical "
+        "text, section-aligned chunks with real character offsets, and a coverage "
+        "ledger. Emits policy-ir-v2.json alongside the projections.",
+    )
     parser.add_argument(
         "--list-fixtures", action="store_true", help="List the built-in fixtures and exit."
     )
@@ -92,6 +101,13 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--run-timestamp",
         help="Optional ISO timestamp recorded in the manifest. Omit for byte-stable output.",
+    )
+    parser.add_argument(
+        "--max-chunk-chars",
+        type=int,
+        default=20_000,
+        help="Cap on chunk length when a section is long (default 20000). Offsets are "
+        "absolute, so the cap cannot move a span.",
     )
     parser.add_argument(
         "--as-of",
@@ -205,6 +221,45 @@ def main(argv: Sequence[str] | None = None) -> int:
 
         selected = load_fixture(args.fixture)
         ir, texts = selected.ir, dict(selected.texts)
+    elif args.ingest:
+        # Imported here so the optional pypdf dependency is only needed by an
+        # ingest run. PolicyIR is already imported at module scope: rebinding it
+        # locally would shadow it for every other branch of this function.
+        from ingestion import SourceRegistry
+        from ingestion.pdf import PdfSupportUnavailable, ingest_pdf
+
+        registry = SourceRegistry()
+        coverage: list = []
+        try:
+            for pdf_path in args.ingest:
+                if not pdf_path.exists():
+                    parser.error(f"{pdf_path} does not exist")
+                result = ingest_pdf(
+                    registry, pdf_path, max_chunk_chars=args.max_chunk_chars
+                )
+                coverage.extend(result.coverage)
+                warnings.append(
+                    f"{pdf_path.name}: {result.page_count} pages, "
+                    f"{len(result.canonical_text):,} canonical characters, "
+                    f"{len(result.headings)} headings, {len(result.chunks)} chunks"
+                )
+                if result.pages_without_text:
+                    warnings.append(
+                        f"{pdf_path.name}: {len(result.pages_without_text)} page(s) "
+                        f"produced no extractable text "
+                        f"({result.extraction_gap:.1%} of the document) and are recorded "
+                        "as extraction_failed, not silently dropped"
+                    )
+        except PdfSupportUnavailable as exc:
+            parser.error(str(exc))
+            return EXIT_CONDITION  # pragma: no cover - argparse exits
+        ir = PolicyIR(
+            documents=registry.document_tuple(),
+            chunks=registry.chunk_tuple(),
+            coverage=tuple(coverage),
+            metadata={"artifact_role": "ingestion_skeleton"},
+        )
+        texts = dict(registry.texts)
     elif args.legacy_graph:
         graph = json.loads(args.legacy_graph.read_text(encoding="utf-8"))
         imported = import_legacy_graph(graph, graph_name=args.legacy_graph.stem)
@@ -234,7 +289,14 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     if args.out and not args.dry_run:
         args.out.mkdir(parents=True, exist_ok=True)
-        for filename, content in sorted(result.files().items()):
+        files = dict(result.files())
+        if args.ingest:
+            # The skeleton is the point of an ingest run: it is what clause
+            # extraction consumes next.
+            files["policy-ir-v2.json"] = (
+                json.dumps(ir.to_dict(), indent=2, sort_keys=True, ensure_ascii=False) + "\n"
+            )
+        for filename, content in sorted(files.items()):
             (args.out / filename).write_text(content, encoding="utf-8")
 
     if not args.quiet:

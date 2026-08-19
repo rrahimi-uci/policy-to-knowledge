@@ -20,7 +20,7 @@ failure.
 | --- | --- |
 | A deterministic compiler: Policy IR in, graph + DMN + BPMN out | An extraction pipeline. It calls no model and has no prompts |
 | A fail-closed gate that decides what may be compiled | A legal-correctness checker |
-| A conformance harness with 21 fixtures and 401 offline tests | A benchmark or a labelled dataset |
+| A conformance harness with 21 fixtures and 432 offline tests | A benchmark or a labelled dataset |
 | Standards-targeted: DMN 1.5 `formal/24-01-01`, BPMN 2.0.2 `formal/13-12-09` | A BPM engine, or a certified DMN implementation |
 
 The LLM-facing stages the plan describes (Stage 2 ontology extraction, Stage 3A
@@ -33,6 +33,9 @@ plan requires to be deterministic and non-agentic.
 ```bash
 cd apps/pipeline-p2c
 pip install -r requirements-dev.txt
+
+# Ingest real PDFs into a Policy IR skeleton (hashes, offsets, sections, coverage)
+python -m cli.compile_policy --ingest ../pipeline/compliance-files/**/*.pdf --out build/ingest/
 
 # Compile a built-in conformance fixture end to end
 python -m cli.compile_policy --fixture notice_process --out build/
@@ -51,6 +54,49 @@ python -m pytest tests/ -q
 A run writes `graph-v2.json`, `decisions.dmn`, `processes-executable.bpmn` (or
 `processes-review.bpmn`), plus `traceability.json`, `compilation-report.json` and
 `manifest.json`.
+
+## Ingesting documents
+
+`--ingest` turns PDFs into a Policy IR skeleton: hashed canonical text,
+section-aligned chunks with real character offsets, and a coverage ledger. It emits
+`policy-ir-v2.json`, which is what clause extraction consumes next. No model is
+involved — this stage is entirely deterministic.
+
+Three decisions here were forced by what the real corpus does:
+
+**Canonical text is the whitespace-normalised extraction.** PDF extractors wrap lines
+mid-sentence, so a sentence-level citation cannot be anchored in the raw output at
+all — the phrase simply does not occur in it. Normalising at ingestion and hashing
+*that* makes offsets stable and citations readable. `parser_version` records exactly
+how (`pypdf-6.16.1+normalize-1`), because a different extractor is a different
+canonical text.
+
+**Section detection runs before normalisation, then its offsets are mapped.** Headings
+anchor at line starts, which normalisation destroys, so headings are found on the
+line-preserving form and their offsets translated — rather than keeping two texts with
+two coordinate systems. The patterns are drafting conventions, not domain terms:
+`§ 1016.5(a)`, `Section 4.2`, `Chapter 3`, `Ch. 12`, `Part II`, `Appendix V`,
+`Subpart C3`, `7.1`.
+
+**Pages that yield no text are recorded, not skipped.** 21 pages across the committed
+corpus are scanned images. Each becomes its own zero-length chunk with
+`extraction_failed` in the coverage ledger — countable, attributable to a page,
+impossible to mistake for content. A corpus that silently dropped them would look
+complete when it is not. The placeholder's ID is derived from the page number rather
+than its content, because every such page contributes the same content — nothing — and
+hashing that would give all of them one identical ID.
+
+Measured on the corpus:
+
+| Document | Pages | Canonical chars | Headings | Chunks | No text |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| `sop_technical_updates_effective.pdf` | 467 | 1,118,509 | 84 | 144 | 20 |
+| `som107ap_v_emerg.pdf` | 68 | 169,883 | 48 | 51 | 0 |
+| `bulletin_2013_9a.pdf` | 11 | 81,962 | 7 | 11 | 0 |
+
+`pypdf` is the one optional dependency, imported lazily by `ingestion/pdf.py` alone.
+Everything downstream of ingestion stays dependency-free, so a Policy IR document can
+be compiled anywhere.
 
 ## How a compile run works
 
@@ -73,7 +119,7 @@ eligible — that is what makes "fail closed" enforceable rather than aspiration
 
 ```text
 policy_ir/     enums, expression AST, type checker, FEEL, tabular decomposition, IDs, JSON Schema
-ingestion/     immutable source registry: hashes, canonical offsets, evidence spans
+ingestion/     immutable source registry, PDF ingestion, section detection
 validation/    the fail-closed gate: provenance, semantics, eligibility, blockers
 evaluation/    the reference Policy IR evaluator (three-valued logic)
 compilers/     graph · DMN · BPMN · traceability · structural verification
@@ -284,6 +330,14 @@ the bug.
 
 Stated plainly, because the whole point of the app is not overstating things:
 
+- **Image-only pages need OCR, and OCR is deliberately absent.** OCR output is not
+  deterministic across versions or platforms, which would break the byte-stability the
+  rest of the design rests on. Those pages are recorded as `extraction_failed` and left
+  out. If they are needed, OCR belongs behind an explicit flag with its own
+  `parser_version`, and its spans capped at `match_status: recovered` — which the gate
+  already refuses for anything executable.
+- **Section labels are readability, not provenance.** A missed heading makes a citation
+  harder to read; the document hash and character offsets are what anchor it.
 - **Scope is clause-level.** A decision inherits applicability from its rows; there is
   no decision-level scope override yet.
 - **Authority weights are flat integers.** `parent_authority_id` records a hierarchy
@@ -308,13 +362,13 @@ Stated plainly, because the whole point of the app is not overstating things:
 ## Testing
 
 ```bash
-python -m pytest tests/ -q                      # 401 offline tests
+python -m pytest tests/ -q                      # 432 offline tests
 python -m pytest tests/ -q --xsd-dir schemas/omg  # + 8 XSD conformance tests
 ```
 
 Test files map onto the plan's test strategy: `test_contracts.py` (contract and
 provenance), `test_expressions.py` (expression and semantic), `test_scope.py`,
-`test_authority.py`, `test_timeline.py`, `test_dmn.py`, `test_bpmn.py`,
+`test_authority.py`, `test_timeline.py`, `test_ingestion.py`, `test_dmn.py`, `test_bpmn.py`,
 `test_compatibility.py`, `test_gate.py`, `test_stress_matrix.py` (one test per
 stress-matrix row), `test_cli.py`, `test_xsd_conformance.py`.
 

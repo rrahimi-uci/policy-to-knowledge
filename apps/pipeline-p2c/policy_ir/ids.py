@@ -84,6 +84,17 @@ def chunk_id(doc_id: str, chunk_sha256: str, char_start: int) -> str:
     return derived_id("chunk", doc_id, chunk_sha256, str(char_start))
 
 
+def missing_page_chunk_id(doc_id: str, page_number: int) -> str:
+    """ID for the placeholder recording a page that produced no text.
+
+    Derived from the page number rather than from content, because every such page
+    contributes the *same* content — nothing. Hashing the empty string and the same
+    offset would give every missing page one identical ID, and 20 unextractable pages
+    would silently collapse into a single record.
+    """
+    return derived_id("chunk_missing", doc_id, str(page_number))
+
+
 def evidence_id(doc_id: str, chunk_sha: str, char_start: int, char_end: int, role: str) -> str:
     return derived_id("ev", doc_id, chunk_sha, str(char_start), str(char_end), role)
 

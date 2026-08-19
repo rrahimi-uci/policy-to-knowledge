@@ -179,6 +179,33 @@ which keep their meaning. `prerequisite` is ambiguous between an information
 requirement and a temporal precedence, and the gate would refuse either without
 evidence anyway.
 
+## Why canonical text is normalised, and offsets are mapped
+
+The first instinct is to treat the extractor's output as canonical and cite into it
+directly. That fails immediately on the real corpus: extractors wrap lines
+mid-sentence, so "the Lender must pay the fee within 10 business days" does not occur
+in the raw text as a contiguous string, and `SourceRegistry.locate` — correctly —
+refuses to find it.
+
+So canonical text is the whitespace-normalised form, and `canonical_text_sha256`
+covers that. This is not a loss of fidelity: the raw bytes are hashed separately in
+`source_sha256`, and `parser_version` names the transformation, so the chain from
+bytes to offsets is fully recorded.
+
+Section detection then has the opposite requirement — headings anchor at line starts,
+which normalisation destroys. Rather than carry two texts with two coordinate systems,
+`canonicalise()` builds the canonical text and translates a caller-supplied set of raw
+offsets in the same pass. The caller passes the offsets it cares about instead of
+getting a full index, because a full map over the largest document in the corpus would
+be three million entries to answer eighty questions.
+
+Zero-length chunks for image-only pages look odd until you consider the alternative.
+The schema attaches coverage to a chunk, and a page that produced no text has no span
+in the canonical text. Emitting nothing would make a 467-page document with 20 scanned
+pages look fully processed. A zero-length chunk carrying the page number and
+`extraction_failed` is the honest record: countable, attributable, and impossible to
+confuse with content.
+
 ## Why scope became a decision-table column
 
 The first design kept `jurisdiction_scope` as a tuple of strings on the clause. It

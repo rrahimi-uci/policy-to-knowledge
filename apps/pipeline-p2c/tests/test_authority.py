@@ -145,3 +145,34 @@ def test_every_outcome_records_why() -> None:
         for outcome in _resolve_conflicts(item.ir, clause_reports):
             assert outcome.kind in ("disjoint_scope", "resolved", "unresolved")
             assert outcome.reason.strip(), (name, outcome)
+
+
+def test_a_tie_is_reported_from_the_weights_not_from_the_wording() -> None:
+    """The tie flag is structural, so rephrasing a message cannot silence it."""
+    from validation.evidence_gate import (
+        UNRESOLVED_EQUAL_WEIGHT,
+        UNRESOLVED_MISSING_AUTHORITY,
+    )
+
+    item = all_fixtures()["authority_tie_conflict"]
+    clause_reports = dict(run_gate(item.ir, item.texts).clauses)
+    outcomes = _resolve_conflicts(item.ir, clause_reports)
+    assert [o.unresolved_code for o in outcomes] == [UNRESOLVED_EQUAL_WEIGHT]
+    assert all(o.is_tie for o in outcomes)
+
+    missing = all_fixtures()["authority_resolved_conflict"]
+    ir = missing.ir
+    stripped = type(ir)(
+        **{**{f: getattr(ir, f) for f in ir.__dataclass_fields__}, "authority_sources": ()}
+    )
+    outcomes = _resolve_conflicts(stripped, dict(run_gate(stripped, missing.texts).clauses))
+    assert [o.unresolved_code for o in outcomes] == [UNRESOLVED_MISSING_AUTHORITY]
+    assert not any(o.is_tie for o in outcomes)
+
+
+def test_a_resolved_or_disjoint_outcome_carries_no_unresolved_code() -> None:
+    for name in ("authority_resolved_conflict", "disjoint_scope_conflict"):
+        item = all_fixtures()[name]
+        outcomes = _resolve_conflicts(item.ir, dict(run_gate(item.ir, item.texts).clauses))
+        assert outcomes and all(o.unresolved_code is None for o in outcomes), name
+        assert not any(o.is_tie for o in outcomes), name
