@@ -1122,8 +1122,22 @@ def run_gate(
                 )
     # An equal-weight tie is a gap in the corpus's own authority configuration, so
     # it is reported once against the IR rather than repeated per decision.
+    clauses = ir.clause_index()
+    authorities = ir.authority_index()
     for outcome in conflict_outcomes:
-        if outcome.kind == "unresolved" and "equal weight" in outcome.reason:
+        if outcome.kind != "unresolved":
+            continue
+        left = clauses.get(outcome.source_id)
+        right = clauses.get(outcome.target_id)
+        if left is None or right is None:
+            continue
+        left_authority = authorities.get(left.authority_ref or "")
+        right_authority = authorities.get(right.authority_ref or "")
+        if (
+            left_authority is not None
+            and right_authority is not None
+            and left_authority.authority_weight == right_authority.authority_weight
+        ):
             global_blockers.append(
                 Blocker(codes.AUTHORITY_TIE, outcome.source_id, outcome.reason)
             )
