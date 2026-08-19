@@ -1,0 +1,8 @@
+# Runtime dependencies for pipeline-p2c: none.
+#
+# The compiler is deliberately pure standard library. Every stage — hashing,
+# type checking, FEEL serialisation, XML emission, evaluation — is deterministic
+# code with no third-party surface, which is what lets the same admitted Policy IR
+# produce byte-identical DMN and BPMN on any machine with CPython 3.11+.
+#
+# Test-only tooling (pytest, jsonschema, lxml) lives in requirements-dev.txt.
