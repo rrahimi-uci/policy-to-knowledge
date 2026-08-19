@@ -105,10 +105,12 @@ def test_semantic_proposal_can_add_only_records_citing_application_owned_evidenc
         raise AssertionError("fabricated evidence was admitted")
 
 
-def test_synthesis_report_abstains_without_creating_a_decision_or_process() -> None:
+def test_synthesis_report_does_not_mutate_ir() -> None:
     item = all_fixtures()["notice_process"]
+    before = (len(item.ir.decisions), len(item.ir.processes))
+
     report = synthesis_report(item.ir)
     assert report
-    assert {item.target for item in report} <= {"dmn", "bpmn"}
-    assert all(item.status in {"ready_for_explicit_model", "abstain"} for item in report)
-    assert item.ir.decisions and item.ir.processes  # Existing explicit records remain authoritative.
+    assert {op.target for op in report} <= {"dmn", "bpmn"}
+    assert all(op.status in {"ready_for_explicit_model", "abstain"} for op in report)
+    assert (len(item.ir.decisions), len(item.ir.processes)) == before
