@@ -133,6 +133,29 @@ def build_parser() -> argparse.ArgumentParser:
         "re-ingesting rebuilds byte-identical requests and the unit indices still resolve.",
     )
     parser.add_argument(
+        "--emit-semantic-proposal-schema",
+        type=Path,
+        metavar="FILE",
+        help="Write the generated JSON Schema for file-backed semantic additions. Providers may "
+        "propose typed records but cannot create documents, chunks, or evidence spans.",
+    )
+    parser.add_argument(
+        "--semantic-proposals",
+        type=Path,
+        nargs="+",
+        metavar="FILE",
+        help="Apply one or more schema-constrained semantic proposal files after loading the IR. "
+        "Every citation must resolve to application-owned evidence; the evidence gate still "
+        "decides graph, DMN, and BPMN admission.",
+    )
+    parser.add_argument(
+        "--domain-profile",
+        type=Path,
+        metavar="FILE",
+        help="Optional data-only domain profile. It can narrow accepted source formats and "
+        "semantic relation types but cannot relax compiler admission.",
+    )
+    parser.add_argument(
         "--max-chunk-chars",
         type=int,
         default=20_000,
@@ -399,6 +422,44 @@ def main(argv: Sequence[str] | None = None) -> int:
     else:
         parser.error("one of --ir, --fixture or --legacy-graph is required")
         return EXIT_CONDITION  # pragma: no cover - argparse exits
+
+    if args.emit_semantic_proposal_schema:
+        from semantic import proposal_schema as semantic_proposal_schema
+
+        args.emit_semantic_proposal_schema.write_text(
+            json.dumps(semantic_proposal_schema(), indent=2, sort_keys=True) + "\n",
+            encoding="utf-8",
+        )
+        warnings.append(f"wrote semantic proposal schema to {args.emit_semantic_proposal_schema}")
+
+    if args.semantic_proposals:
+        from semantic import AssemblyError, assemble_proposal
+
+        for path in args.semantic_proposals:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            batches = payload if isinstance(payload, list) else [payload]
+            for batch in batches:
+                if not isinstance(batch, dict):
+                    parser.error(f"{path}: semantic proposal must be an object or a list of objects")
+                try:
+                    ir = assemble_proposal(ir, batch)
+                except AssemblyError as exc:
+                    parser.error(f"{path}: {exc}")
+        warnings.append(f"applied {len(args.semantic_proposals)} semantic proposal file(s)")
+
+    if args.domain_profile:
+        from semantic import ProfileError, load_profile
+
+        try:
+            domain_profile = load_profile(args.domain_profile)
+        except ProfileError as exc:
+            parser.error(str(exc))
+        profile_errors = domain_profile.validate(ir)
+        if profile_errors:
+            parser.error("domain profile rejected Policy IR: " + "; ".join(profile_errors))
+        warnings.append(
+            f"domain profile: {domain_profile.profile_id}@{domain_profile.version}"
+        )
 
     try:
         result = compile_all(
