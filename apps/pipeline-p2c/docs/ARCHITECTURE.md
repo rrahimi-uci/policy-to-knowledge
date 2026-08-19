@@ -300,6 +300,29 @@ fail for this output — it is vacuous here, and informative only for a modality
 independently. A test asserts both halves of that, because a green gate over
 self-consistent output looks identical to a green gate over validated output.
 
+## Why a proposal cites indices rather than span IDs
+
+The first version of the contract had a proposal supply span IDs and checked them against
+an offer set. That works, but the failure mode is late: a fabricated ID is only caught
+after it has been produced, and the error surfaces as "unknown evidence" rather than as
+"this extractor cited text it never saw".
+
+Citing **unit indices** inverts the risk. The request numbers the units it offers, the
+generated schema enumerates exactly those numbers, and a structured-output API therefore
+cannot emit anything else — the fabrication is unexpressible rather than refused. The
+application then resolves an index to offsets it already holds and constructs the span
+itself, so provenance is never something a reply asserted.
+
+Two smaller consequences follow from the same reasoning. `display_text` comes from the
+cited unit rather than from free text, so it cannot drift from the source it claims to
+paraphrase. And the request excludes the document's full text, because an extractor that
+could read past its units would be able to reason about material it has no way to cite —
+producing a clause whose evidence does not cover its own claim.
+
+The schema and the prose contract are both generated, from the same definitions the
+parsers use. A hand-written prompt drifts from the code validating its output, and the
+drift always favours the looser side.
+
 ## Adding a check
 
 1. Name the blocker in `validation/blockers.py`.

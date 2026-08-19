@@ -20,7 +20,7 @@ failure.
 | --- | --- |
 | A deterministic compiler: Policy IR in, graph + DMN + BPMN out | An extraction pipeline. It calls no model and has no prompts |
 | A fail-closed gate that decides what may be compiled | A legal-correctness checker |
-| A conformance harness with 21 fixtures and 462 offline tests | A benchmark or a labelled dataset |
+| A conformance harness with 21 fixtures and 493 offline tests | A benchmark or a labelled dataset |
 | Standards-targeted: DMN 1.5 `formal/24-01-01`, BPMN 2.0.2 `formal/13-12-09` | A BPM engine, or a certified DMN implementation |
 
 The LLM-facing stages the plan describes (Stage 2 ontology extraction, Stage 3A
@@ -126,11 +126,37 @@ a mis-carved region attaches a condition to the wrong clause:
    exception  [176,222] 'unless the property is in a restricted county.'
 ```
 
-### The extraction contract
+### The seam for a model-driven extractor
 
-A model-driven extractor proposes `CandidateClause` records instead, and the same
-parser admits them. Three controls, each closing a way unsupported content could reach
-the IR:
+`--emit-requests DIR` writes, per chunk, the three things an extractor needs:
+
+```
+chunk_<id>.request.json       numbered text units with absolute offsets
+chunk_<id>.schema.json        JSON Schema for the reply
+chunk_<id>.instructions.md    the prose contract
+```
+
+A reply cites **unit indices**, never span IDs or offsets, and the generated schema
+enumerates exactly the indices that request offered. So a citation to unseen text is not
+"rejected downstream" — it is **unexpressible**, and a structured-output API will not
+produce it:
+
+```
+99 is not one of [0, 1]
+```
+
+The application then builds every evidence span itself from offsets it already holds, so
+an admitted clause's provenance is always something the application computed rather than
+something a reply asserted. `--proposals FILE…` feeds replies back; ingestion is
+deterministic, so re-ingesting rebuilds byte-identical requests and the indices still
+resolve.
+
+The request deliberately excludes the document's full text: an extractor able to read
+past its units could reason about text it cannot cite.
+
+### What both paths share
+
+Three controls, each closing a way unsupported content could reach the IR:
 
 | Control | Why |
 | --- | --- |
@@ -191,7 +217,7 @@ eligible — that is what makes "fail closed" enforceable rather than aspiration
 ```text
 policy_ir/     enums, expression AST, type checker, FEEL, tabular decomposition, IDs, JSON Schema
 ingestion/     immutable source registry, PDF ingestion, section detection
-extraction/    sentence segmentation, the candidate contract, the model-free baseline
+extraction/    sentence segmentation, the offer/proposal seam, the model-free baseline
 validation/    the fail-closed gate: provenance, semantics, eligibility, blockers
 evaluation/    the reference Policy IR evaluator (three-valued logic)
 compilers/     graph · DMN · BPMN · traceability · structural verification
@@ -441,14 +467,14 @@ Stated plainly, because the whole point of the app is not overstating things:
 ## Testing
 
 ```bash
-python -m pytest tests/ -q                      # 462 offline tests
+python -m pytest tests/ -q                      # 493 offline tests
 python -m pytest tests/ -q --xsd-dir schemas/omg  # + 8 XSD conformance tests
 ```
 
 Test files map onto the plan's test strategy: `test_contracts.py` (contract and
 provenance), `test_expressions.py` (expression and semantic), `test_scope.py`,
 `test_authority.py`, `test_timeline.py`, `test_ingestion.py`, `test_extraction.py`,
-`test_dmn.py`, `test_bpmn.py`,
+`test_offer.py`, `test_dmn.py`, `test_bpmn.py`,
 `test_compatibility.py`, `test_gate.py`, `test_stress_matrix.py` (one test per
 stress-matrix row), `test_cli.py`, `test_xsd_conformance.py`.
 

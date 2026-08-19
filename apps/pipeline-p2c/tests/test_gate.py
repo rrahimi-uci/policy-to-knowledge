@@ -144,7 +144,15 @@ def test_the_engine_names_no_domain_actors() -> None:
     from pathlib import Path
 
     engine = Path(__file__).resolve().parent.parent
-    packages = ("policy_ir", "validation", "compilers", "evaluation", "ingestion", "adapters")
+    packages = (
+        "policy_ir",
+        "validation",
+        "compilers",
+        "evaluation",
+        "ingestion",
+        "extraction",
+        "adapters",
+    )
     domain_nouns = re.compile(
         r"\b(lender|borrower|seller|servicer|patient|provider|policyholder|insurer|"
         r"mortgage|hipaa|medicare|medicaid)\b",
