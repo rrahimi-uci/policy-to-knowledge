@@ -38,6 +38,26 @@ UNRESOLVED_CROSS_REFERENCE = "unresolved_cross_reference"
 INVALID_EFFECTIVE_PERIOD = "invalid_effective_period"
 UNRESOLVED_CONFLICT = "unresolved_conflict"
 
+# -- scope ------------------------------------------------------------------
+UNKNOWN_SCOPE_DIMENSION = "unknown_scope_dimension"
+SCOPE_VALUE_NOT_ALLOWED = "scope_value_not_allowed"
+
+# -- authority --------------------------------------------------------------
+UNKNOWN_AUTHORITY = "unknown_authority"
+#: Both sides of a conflict cite authorities of equal weight, so precedence cannot
+#: settle it. The conflict stays unresolved rather than being decided arbitrarily.
+AUTHORITY_TIE = "authority_tie"
+#: Not a defect: a conflict *was* resolved and this clause lost. It stays in the
+#: graph and is refused for executable projection.
+OUTRANKED_BY_AUTHORITY = "outranked_by_authority"
+
+# -- supersession and time --------------------------------------------------
+SUPERSESSION_NOT_RECORDED = "supersession_not_recorded"
+SUPERSESSION_CYCLE = "supersession_cycle"
+SUPERSEDED_CLAUSE = "superseded_clause"
+NOT_IN_FORCE = "not_in_force"
+IN_FORCE_UNKNOWN = "in_force_unknown"
+
 # -- DMN --------------------------------------------------------------------
 CONDITION_NOT_TABULAR = "condition_not_tabular"
 ROW_USES_UNDECLARED_INPUT = "row_uses_undeclared_input"

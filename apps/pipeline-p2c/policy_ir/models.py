@@ -42,6 +42,12 @@ from .enums import (
 )
 from .expressions import Calendar, Expression, Literal, expression_from_dict
 from .ids import SCHEMA_VERSION
+from .scope import (  # noqa: F401  (re-exported: these are Policy IR records)
+    AuthoritySource,
+    Scope,
+    ScopeDimension,
+    ScopeDimensionDefinition,
+)
 
 
 def _expr(value: Any, record: str, key: str) -> Expression:
@@ -623,7 +629,7 @@ class AtomicPolicyClause:
     effect_ast: Expression | None = None
     exception_ast: Expression | None = None
     temporal_constraint: TemporalConstraint | None = None
-    jurisdiction_scope: tuple[str, ...] = ()
+    scope: Scope = field(default_factory=Scope)
     effective_period: EffectivePeriod = field(default_factory=EffectivePeriod)
     authority_ref: str | None = None
     cross_reference_targets: tuple[str, ...] = ()
@@ -662,7 +668,7 @@ class AtomicPolicyClause:
                 "temporal_constraint": (
                     self.temporal_constraint.to_dict() if self.temporal_constraint else None
                 ),
-                "jurisdiction_scope": list(self.jurisdiction_scope) or None,
+                "scope": self.scope.to_dict() if self.scope.dimensions else None,
                 "effective_period": self.effective_period.to_dict() or None,
                 "authority_ref": self.authority_ref,
                 "cross_reference_targets": list(self.cross_reference_targets) or None,
@@ -689,7 +695,7 @@ class AtomicPolicyClause:
                 "effect_ast",
                 "exception_ast",
                 "temporal_constraint",
-                "jurisdiction_scope",
+                "scope",
                 "effective_period",
                 "authority_ref",
                 "cross_reference_targets",
@@ -731,9 +737,7 @@ class AtomicPolicyClause:
                 if data.get("temporal_constraint")
                 else None
             ),
-            jurisdiction_scope=as_tuple_of_str(
-                data.get("jurisdiction_scope", ()), r, "jurisdiction_scope"
-            ),
+            scope=Scope.from_dict(data.get("scope", {})),
             effective_period=EffectivePeriod.from_dict(data.get("effective_period", {})),
             authority_ref=data.get("authority_ref"),
             cross_reference_targets=as_tuple_of_str(
@@ -1174,6 +1178,8 @@ class PolicyIR:
     evidence_spans: tuple[EvidenceSpan, ...] = ()
     entity_types: tuple[EntityType, ...] = ()
     entity_mentions: tuple[EntityMention, ...] = ()
+    scope_dimensions: tuple[ScopeDimensionDefinition, ...] = ()
+    authority_sources: tuple[AuthoritySource, ...] = ()
     data_definitions: tuple[DataDefinition, ...] = ()
     functions: tuple[FunctionSignature, ...] = ()
     unit_conversions: tuple[UnitConversion, ...] = ()
@@ -1212,6 +1218,13 @@ class PolicyIR:
     def entity_index(self) -> dict[str, EntityType]:
         return {e.entity_type_id: e for e in self.entity_types}
 
+    def scope_dimension_index(self) -> dict[str, ScopeDimensionDefinition]:
+        """Declared scope axes, keyed by the name clauses cite."""
+        return {d.name: d for d in self.scope_dimensions}
+
+    def authority_index(self) -> dict[str, AuthoritySource]:
+        return {a.authority_id: a for a in self.authority_sources}
+
     def conversion_index(self) -> dict[tuple[str, str], UnitConversion]:
         return {(c.from_unit, c.to_unit): c for c in self.unit_conversions}
 
@@ -1223,6 +1236,8 @@ class PolicyIR:
             "evidence_spans": [e.to_dict() for e in self.evidence_spans],
             "entity_types": [e.to_dict() for e in self.entity_types],
             "entity_mentions": [m.to_dict() for m in self.entity_mentions],
+            "scope_dimensions": [d.to_dict() for d in self.scope_dimensions],
+            "authority_sources": [a.to_dict() for a in self.authority_sources],
             "data_definitions": [d.to_dict() for d in self.data_definitions],
             "functions": [f.to_dict() for f in self.functions],
             "unit_conversions": [c.to_dict() for c in self.unit_conversions],
@@ -1247,6 +1262,8 @@ class PolicyIR:
                 "evidence_spans",
                 "entity_types",
                 "entity_mentions",
+                "scope_dimensions",
+                "authority_sources",
                 "data_definitions",
                 "functions",
                 "unit_conversions",
@@ -1275,6 +1292,15 @@ class PolicyIR:
             ),
             entity_mentions=as_tuple(
                 data.get("entity_mentions", ()), r, "entity_mentions", EntityMention.from_dict
+            ),
+            scope_dimensions=as_tuple(
+                data.get("scope_dimensions", ()),
+                r,
+                "scope_dimensions",
+                ScopeDimensionDefinition.from_dict,
+            ),
+            authority_sources=as_tuple(
+                data.get("authority_sources", ()), r, "authority_sources", AuthoritySource.from_dict
             ),
             data_definitions=as_tuple(
                 data.get("data_definitions", ()), r, "data_definitions", DataDefinition.from_dict

@@ -18,12 +18,14 @@ proofs.
 
 from __future__ import annotations
 
+import datetime as _dt
 from dataclasses import dataclass, field
 from typing import Iterable, Mapping, Sequence
 
 from policy_ir.enums import (
     EXECUTABLE_DEPENDENCY_KINDS,
     TRUSTED_DERIVATION_METHODS,
+    DataType,
     DependencyKind,
     EntityCategory,
     HitPolicy,
@@ -44,7 +46,17 @@ from policy_ir.models import (
     ProcessFragmentCandidate,
 )
 from policy_ir.feel import FeelError, feel_name, to_feel
-from policy_ir.tabular import NotTabular, Row, decompose, prove_disjoint, row_condition
+from policy_ir.tabular import (
+    NotTabular,
+    Row,
+    decompose,
+    is_scope_input,
+    prove_disjoint,
+    row_condition,
+    scope_atoms,
+    scope_dimension_name,
+)
+from policy_ir.timeline import in_force_on, supersession_cycles, superseded_by
 from policy_ir.typecheck import check, check_boolean, context_from_ir
 from ingestion.registry import normalize_text
 
@@ -291,6 +303,18 @@ def _role_text(clause: AtomicPolicyClause, ir: PolicyIR, roles: Sequence[Semanti
     return " ".join(parts)
 
 
+#: Reasons a row is legitimately left out of a table rather than being a defect in
+#: it. A decision that declares two rows and loses one to a heavier authority should
+#: still compile from the winner — otherwise resolving a conflict would achieve
+#: nothing.
+_ROW_EXCLUDED_BY_DESIGN = frozenset(
+    {
+        codes.OUTRANKED_BY_AUTHORITY,
+        codes.SUPERSEDED_CLAUSE,
+        codes.NOT_IN_FORCE,
+    }
+)
+
 _REQUIRED_EVIDENCE: tuple[tuple[str, SemanticRole], ...] = (
     ("condition_ast", SemanticRole.CONDITION),
     ("effect_ast", SemanticRole.EFFECT),
@@ -302,7 +326,10 @@ _REQUIRED_EVIDENCE: tuple[tuple[str, SemanticRole], ...] = (
 
 
 def _check_clause(
-    clause: AtomicPolicyClause, ir: PolicyIR, texts: Mapping[str, str]
+    clause: AtomicPolicyClause,
+    ir: PolicyIR,
+    texts: Mapping[str, str],
+    as_of: _dt.date | None = None,
 ) -> ElementReport:
     accumulator = _Accumulator(clause.clause_id)
     statuses: set[Status] = set()
@@ -421,6 +448,70 @@ def _check_clause(
                 SemanticRole.CROSS_REFERENCE.value,
             )
 
+    # Scope: every axis must be declared, valued from its vocabulary, and evidenced.
+    declared_dimensions = ir.scope_dimension_index()
+    for dimension in clause.scope.dimensions:
+        definition = declared_dimensions.get(dimension.name)
+        if definition is None:
+            accumulator.add(
+                codes.UNKNOWN_SCOPE_DIMENSION,
+                f"scope axis {dimension.name!r} is not a declared scope dimension",
+                SemanticRole.SCOPE.value,
+            )
+            continue
+        if definition.allowed_values:
+            unknown = sorted(set(dimension.values) - set(definition.allowed_values))
+            if unknown:
+                accumulator.add(
+                    codes.SCOPE_VALUE_NOT_ALLOWED,
+                    f"scope axis {dimension.name!r} uses {unknown}, which is outside its "
+                    "declared vocabulary",
+                    SemanticRole.SCOPE.value,
+                )
+        if not dimension.evidence_ids:
+            accumulator.add(
+                codes.MISSING_FIELD_EVIDENCE,
+                f"scope axis {dimension.name!r} cites no evidence, so the limit is "
+                "unsupported",
+                SemanticRole.SCOPE.value,
+            )
+        for evidence_id in dimension.evidence_ids:
+            if not _verify_span(evidence_id, ir, texts, accumulator):
+                exact = False
+
+    if clause.authority_ref and clause.authority_ref not in ir.authority_index():
+        accumulator.add(
+            codes.UNKNOWN_AUTHORITY,
+            f"authority {clause.authority_ref!r} is not a declared authority source",
+            SemanticRole.AUTHORITY.value,
+        )
+
+    # Supersession: a replaced clause must say what replaced it, and must not compile.
+    if clause.lifecycle is Lifecycle.SUPERSEDED:
+        if not superseded_by(ir, clause.clause_id):
+            accumulator.add(
+                codes.SUPERSESSION_NOT_RECORDED,
+                "the clause is marked superseded but no supersedes edge records the "
+                "replacement, so 'what was in force' cannot be answered",
+            )
+        accumulator.add(
+            codes.SUPERSEDED_CLAUSE,
+            "a superseded clause stays in the graph but cannot be compiled",
+        )
+
+    if as_of is not None:
+        verdict = in_force_on(ir, clause.clause_id, as_of)
+        if verdict is False:
+            accumulator.add(
+                codes.NOT_IN_FORCE, f"the clause is not in force on {as_of.isoformat()}"
+            )
+        elif verdict is None:
+            accumulator.add(
+                codes.IN_FORCE_UNKNOWN,
+                f"whether the clause is in force on {as_of.isoformat()} cannot be "
+                "determined from its lifecycle and effective period",
+            )
+
     period = clause.effective_period
     if period.start and period.end and period.start > period.end:
         accumulator.add(
@@ -441,6 +532,10 @@ def _check_clause(
             codes.MODALITY_NOT_ATTESTED,
             codes.UNRESOLVED_CROSS_REFERENCE,
             codes.INVALID_EFFECTIVE_PERIOD,
+            codes.UNKNOWN_SCOPE_DIMENSION,
+            codes.SCOPE_VALUE_NOT_ALLOWED,
+            codes.UNKNOWN_AUTHORITY,
+            codes.SUPERSESSION_NOT_RECORDED,
         )
     )
     if semantic_ok:
@@ -490,11 +585,20 @@ def _check_clause(
             codes.NULL_POLICY_UNDEFINED,
             codes.PROPOSED_ELEMENT_IN_EXECUTABLE,
             codes.NOT_FEEL_EXPRESSIBLE,
+            codes.SUPERSEDED_CLAUSE,
+            codes.NOT_IN_FORCE,
+            codes.IN_FORCE_UNKNOWN,
         )
     )
     if dmn_ok:
         statuses.add(Status.DMN_ELIGIBLE)
-    if semantic_ok and clause.semantic_kind is SemanticKind.PROCESS_FRAGMENT:
+    if (
+        semantic_ok
+        and clause.semantic_kind is SemanticKind.PROCESS_FRAGMENT
+        and not accumulator.has(
+            codes.SUPERSEDED_CLAUSE, codes.NOT_IN_FORCE, codes.IN_FORCE_UNKNOWN
+        )
+    ):
         statuses.add(Status.BPMN_ELIGIBLE)
 
     return ElementReport(clause.clause_id, frozenset(statuses), tuple(accumulator.blockers))
@@ -530,6 +634,9 @@ def _check_decision(
             )
 
     declared_inputs = set(decision.input_data_refs)
+    # Derived, not declared: the axes are the union of the rows' scopes, so a table's
+    # shape cannot drift out of step with the clauses it is built from.
+    scope_axes: set[str] = set()
     rows: list[Row] = []
     for clause_id in decision.decision_rule_refs:
         clause = clauses.get(clause_id)
@@ -538,10 +645,14 @@ def _check_decision(
             continue
         report = clause_reports.get(clause_id)
         if report is None or not report.has(Status.DMN_ELIGIBLE):
-            accumulator.add(
-                codes.ROW_NOT_ADMITTED,
-                f"clause {clause_id!r} is not DMN-eligible, so it cannot be a row",
-            )
+            excluded_by_design = report is not None and bool(report.blockers) and set(
+                report.codes()
+            ) <= _ROW_EXCLUDED_BY_DESIGN
+            if not excluded_by_design:
+                accumulator.add(
+                    codes.ROW_NOT_ADMITTED,
+                    f"clause {clause_id!r} is not DMN-eligible, so it cannot be a row",
+                )
             continue
         if clause.condition_ast is None or clause.effect_ast is None:  # pragma: no cover
             continue
@@ -550,7 +661,21 @@ def _check_decision(
         except NotTabular as exc:
             accumulator.add(codes.CONDITION_NOT_TABULAR, f"{clause_id}: {exc}")
             continue
-        undeclared = sorted(set(atoms) - declared_inputs)
+        # A scope axis becomes an extra input column, so a row's scope must key on an
+        # axis the corpus actually declares.
+        for key, dimension_atoms in scope_atoms(clause.scope).items():
+            name = scope_dimension_name(key)
+            if name not in ir.scope_dimension_index():
+                accumulator.add(
+                    codes.UNKNOWN_SCOPE_DIMENSION,
+                    f"clause {clause_id!r} is scoped on {name!r}, which is not a declared "
+                    "scope dimension",
+                )
+                continue
+            atoms[key] = dimension_atoms
+            scope_axes.add(key)
+
+        undeclared = sorted(key for key in set(atoms) - declared_inputs if not is_scope_input(key))
         if undeclared:
             accumulator.add(
                 codes.ROW_USES_UNDECLARED_INPUT,
@@ -583,8 +708,10 @@ def _check_decision(
         for input_id in decision.input_data_refs
         if input_id in definitions
     }
+    types.update({axis: DataType.STRING for axis in scope_axes})
+    proof_inputs = (*decision.input_data_refs, *sorted(scope_axes))
     if decision.proposed_hit_policy is HitPolicy.UNIQUE:
-        proof = prove_disjoint(rows, types, decision.input_data_refs)
+        proof = prove_disjoint(rows, types, proof_inputs)
         if not proof.disjoint:
             pairs = ", ".join(f"{a}/{b}" for a, b in proof.overlapping_pairs)
             accumulator.add(
@@ -824,7 +951,125 @@ def _check_dependency(edge, ir: PolicyIR) -> ElementReport:
     return ElementReport(edge.edge_id, frozenset(statuses), tuple(accumulator.blockers))
 
 
-def run_gate(ir: PolicyIR, texts: Mapping[str, str] | None = None) -> GateReport:
+@dataclass(frozen=True)
+class ConflictOutcome:
+    """What happened to one declared conflict between two clauses."""
+
+    source_id: str
+    target_id: str
+    #: "disjoint_scope" | "resolved" | "unresolved"
+    kind: str
+    loser_id: str | None = None
+    reason: str = ""
+
+
+def _resolve_conflicts(
+    ir: PolicyIR, clause_reports: dict[str, ElementReport]
+) -> tuple[ConflictOutcome, ...]:
+    """Decide each declared conflict, and refuse the losing clause in place.
+
+    Three outcomes, in the order they are tried:
+
+    1. **Disjoint scope** — the two clauses cannot both apply, so there is no real
+       conflict. A federal rule limited to California and one limited to New York
+       disagree only on paper.
+    2. **Resolved by authority** — both can apply and one cites a heavier authority.
+       The loser stays in the graph and is refused for executable projection. This is
+       the case that used to kill the whole decision.
+    3. **Unresolved** — equal weight, or an authority missing on either side.
+       Precedence cannot settle it, so both are refused and the decision is blocked.
+
+    The bias is deliberate: a conflict is only resolved when the corpus has declared
+    enough to resolve it.
+    """
+    clauses = ir.clause_index()
+    authorities = ir.authority_index()
+    outcomes: list[ConflictOutcome] = []
+
+    for edge in ir.dependencies:
+        if edge.kind is not DependencyKind.CONFLICT:
+            continue
+        left = clauses.get(edge.source_id)
+        right = clauses.get(edge.target_id)
+        if left is None or right is None:
+            continue
+
+        if not left.scope.overlaps(right.scope):
+            outcomes.append(
+                ConflictOutcome(
+                    edge.source_id,
+                    edge.target_id,
+                    "disjoint_scope",
+                    reason="the two clauses apply to provably disjoint scopes",
+                )
+            )
+            continue
+
+        left_authority = authorities.get(left.authority_ref or "")
+        right_authority = authorities.get(right.authority_ref or "")
+        if left_authority is None or right_authority is None:
+            missing = [
+                clause.clause_id
+                for clause, authority in ((left, left_authority), (right, right_authority))
+                if authority is None
+            ]
+            outcomes.append(
+                ConflictOutcome(
+                    edge.source_id,
+                    edge.target_id,
+                    "unresolved",
+                    reason=f"no declared authority for {missing}, so precedence cannot "
+                    "settle the conflict",
+                )
+            )
+            continue
+        if left_authority.authority_weight == right_authority.authority_weight:
+            outcomes.append(
+                ConflictOutcome(
+                    edge.source_id,
+                    edge.target_id,
+                    "unresolved",
+                    reason=f"{left_authority.name!r} and {right_authority.name!r} carry "
+                    f"equal weight ({left_authority.authority_weight})",
+                )
+            )
+            continue
+
+        if left_authority.outranks(right_authority):
+            winner, loser, winning_authority = left, right, left_authority
+        else:
+            winner, loser, winning_authority = right, left, right_authority
+        outcomes.append(
+            ConflictOutcome(
+                edge.source_id,
+                edge.target_id,
+                "resolved",
+                loser_id=loser.clause_id,
+                reason=f"{winning_authority.name!r} outranks the conflicting source",
+            )
+        )
+        report = clause_reports.get(loser.clause_id)
+        if report is not None:
+            blocker = Blocker(
+                codes.OUTRANKED_BY_AUTHORITY,
+                loser.clause_id,
+                f"conflicts with {winner.clause_id!r}, which cites the heavier authority "
+                f"{winning_authority.name!r}; kept in the graph, refused for execution",
+            )
+            clause_reports[loser.clause_id] = ElementReport(
+                report.element_id,
+                report.statuses - {Status.DMN_ELIGIBLE, Status.BPMN_ELIGIBLE},
+                report.blockers + (blocker,),
+            )
+    return tuple(outcomes)
+
+
+def run_gate(
+    ir: PolicyIR,
+    texts: Mapping[str, str] | None = None,
+    *,
+    as_of: _dt.date | None = None,
+) -> GateReport:
     """Run every gate check and return the admission report.
 
     ``texts`` maps document IDs to canonical text. Omitting a document's text does
@@ -836,8 +1081,9 @@ def run_gate(ir: PolicyIR, texts: Mapping[str, str] | None = None) -> GateReport
     global_blockers = _duplicate_ids(ir)
 
     clause_reports = {
-        clause.clause_id: _check_clause(clause, ir, texts) for clause in ir.clauses
+        clause.clause_id: _check_clause(clause, ir, texts, as_of) for clause in ir.clauses
     }
+    conflict_outcomes = _resolve_conflicts(ir, clause_reports)
     decision_reports = {
         decision.decision_id: _check_decision(decision, ir, clause_reports)
         for decision in ir.decisions
@@ -850,30 +1096,46 @@ def run_gate(ir: PolicyIR, texts: Mapping[str, str] | None = None) -> GateReport
         edge.edge_id: _check_dependency(edge, ir) for edge in ir.dependencies
     }
 
-    # A conflict edge between two admitted rows of the same decision is an
-    # unresolved contradiction, not a note: emitting both would let the compiler
-    # publish logic the source contradicts.
-    conflicts = {
-        (edge.source_id, edge.target_id)
-        for edge in ir.dependencies
-        if edge.kind is DependencyKind.CONFLICT
+    # Only conflicts precedence could not settle block a decision. A resolved
+    # conflict already refused its loser at clause level, so the decision can still
+    # compile from the winner.
+    unresolved = {
+        (outcome.source_id, outcome.target_id): outcome
+        for outcome in conflict_outcomes
+        if outcome.kind == "unresolved"
     }
     for decision in ir.decisions:
         members = set(decision.decision_rule_refs)
-        for source, target in conflicts:
+        for (source, target), outcome in sorted(unresolved.items()):
             if source in members and target in members:
                 report = decision_reports[decision.decision_id]
                 blocker = Blocker(
                     codes.UNRESOLVED_CONFLICT,
                     decision.decision_id,
-                    f"clauses {source!r} and {target!r} are declared to conflict but both "
-                    "appear as rows",
+                    f"clauses {source!r} and {target!r} are declared to conflict and "
+                    f"{outcome.reason}",
                 )
                 decision_reports[decision.decision_id] = ElementReport(
                     report.element_id,
                     report.statuses - {Status.DMN_ELIGIBLE},
                     report.blockers + (blocker,),
                 )
+    # An equal-weight tie is a gap in the corpus's own authority configuration, so
+    # it is reported once against the IR rather than repeated per decision.
+    for outcome in conflict_outcomes:
+        if outcome.kind == "unresolved" and "equal weight" in outcome.reason:
+            global_blockers.append(
+                Blocker(codes.AUTHORITY_TIE, outcome.source_id, outcome.reason)
+            )
+
+    for cycle in supersession_cycles(ir):
+        global_blockers.append(
+            Blocker(
+                codes.SUPERSESSION_CYCLE,
+                cycle[0],
+                f"supersession forms a cycle: {' -> '.join(cycle)}",
+            )
+        )
 
     decision_cycle = _detect_cycle(
         {d.decision_id: list(d.required_decision_refs) for d in ir.decisions}

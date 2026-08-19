@@ -179,6 +179,56 @@ which keep their meaning. `prerequisite` is ambiguous between an information
 requirement and a temporal precedence, and the gate would refuse either without
 evidence anyway.
 
+## Why scope became a decision-table column
+
+The first design kept `jurisdiction_scope` as a tuple of strings on the clause. It
+read fine and did nothing: the non-overlap prover only sees the condition AST, so two
+overlays scoped to different states with overlapping score bands were reported as
+overlapping and neither compiled. Scope was documentation.
+
+Turning each axis into an input keyed `scope:<name>` fixed it without a special case.
+The atoms a scope produces are ordinary membership atoms, so the existing prover
+separates `Allowed({US-CA})` from `Allowed({US-NY})` for free, and the DMN compiler
+emits the axis as an ordinary `inputData` column whose `itemDefinition` carries the
+declared vocabulary. The `:` in the key cannot collide with a data-definition ID
+because those are XML NCNames.
+
+The axes are **derived** from the union of a decision's rows rather than declared on
+the decision. Declaring them separately would create a second source of truth that
+could fall out of step with the clauses; deriving them cannot.
+
+## Why authority is an integer weight
+
+Precedence between a statute, a regulation, a guide and a bulletin is a legal
+judgement that differs by jurisdiction and industry. Inferring it from a document's
+`kind` string would put that judgement inside the engine and get it wrong somewhere.
+So a corpus declares `authority_weight` and the engine only compares — and `kind`
+stays a free string precisely because a closed enum would encode one domain's
+vocabulary.
+
+Resolution order matters: scope disjointness is tested *before* authority, because two
+rules that can never both apply need no precedence to separate them.
+
+The subtle part is what a resolved conflict does to the decision. Refusing the losing
+clause is not enough — the decision declared that clause as a row, so a naive
+implementation reports `row_not_admitted` and blocks the table, meaning resolution
+achieves nothing. `_ROW_EXCLUDED_BY_DESIGN` names the three reasons a row is
+legitimately absent (outranked, superseded, out of force under `--as-of`), and a row
+whose blockers fall entirely within that set is dropped silently.
+
+## Why supersession is an edge and time is an argument
+
+`Lifecycle.SUPERSEDED` describes a clause *now*. It cannot answer "what applied on 3
+March 2026", and worse, treating it as a veto breaks historical queries outright — the
+2025 standard *was* in force in 2025 even though it is superseded today. So
+`clause_in_force_on` ignores the flag and `in_force_on` decides from the `SUPERSEDES`
+edge plus the replacement's effective period.
+
+Every temporal query takes the date as an explicit argument. Nothing reads the clock,
+because a compiler whose output depends on when it ran cannot produce byte-stable
+artefacts, and byte-stability is the property the whole reproducibility story rests
+on.
+
 ## Adding a check
 
 1. Name the blocker in `validation/blockers.py`.

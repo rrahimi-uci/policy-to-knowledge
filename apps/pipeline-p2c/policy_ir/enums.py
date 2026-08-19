@@ -105,6 +105,7 @@ class SemanticRole(StrEnum):
     TEMPORAL = "temporal"
     AUTHORITY = "authority"
     CROSS_REFERENCE = "cross_reference"
+    SCOPE = "scope"
 
 
 class Provenance(StrEnum):
@@ -227,6 +228,9 @@ class DependencyKind(StrEnum):
     ACTIVATION = "activation"
     EXCEPTION_TO = "exception_to"
     OVERRIDE = "override"
+    #: source supersedes target. Paired with the superseding clause's effective
+    #: period, this is what makes "what was in force on date X" answerable.
+    SUPERSEDES = "supersedes"
     CONFLICT = "conflict"
     RELATED = "related"
 
@@ -248,6 +252,7 @@ EXECUTABLE_DEPENDENCY_KINDS = frozenset(
         DependencyKind.DERIVATION,
         DependencyKind.TEMPORAL_PRECEDENCE,
         DependencyKind.ACTIVATION,
+        DependencyKind.SUPERSEDES,
     }
 )
 

@@ -21,6 +21,7 @@ from dataclasses import dataclass
 from typing import Any, Iterable, Mapping
 
 from .enums import ORDERED_TYPES, DataType
+from .scope import Scope
 from .expressions import (
     All,
     Comparison,
@@ -106,6 +107,49 @@ def row_condition(condition: Expression, exception: Expression | None) -> Expres
     if exception is None:
         return condition
     return All((condition, Not(exception)))
+
+
+#: Prefix that turns a scope axis into a decision-table input key. ``:`` cannot occur
+#: in a data-definition ID (they are XML NCNames), so a scope axis can never collide
+#: with a real variable.
+SCOPE_INPUT_PREFIX = "scope:"
+
+
+def scope_input_key(dimension_name: str) -> str:
+    """The decision-table input key for a scope axis."""
+    return f"{SCOPE_INPUT_PREFIX}{dimension_name}"
+
+
+def is_scope_input(key: str) -> bool:
+    return key.startswith(SCOPE_INPUT_PREFIX)
+
+
+def scope_dimension_name(key: str) -> str:
+    return key[len(SCOPE_INPUT_PREFIX) :]
+
+
+def scope_atoms(scope: Scope) -> dict[str, tuple[Atom, ...]]:
+    """Express a scope as decision-table atoms, one axis per input.
+
+    This is what stops scope from being decorative. A rule limited to California and
+    one limited to New York have overlapping credit-score bands, so on their ASTs
+    alone the non-overlap proof fails and ``UNIQUE`` is refused. Treating the
+    jurisdiction axis as another input lets the same prover see that the two rows
+    can never both match — no special-casing, no separate code path.
+    """
+    return {
+        scope_input_key(dimension.name): (
+            Atom(
+                variable_id=scope_input_key(dimension.name),
+                operator=None,
+                members=tuple(
+                    Literal(value, DataType.STRING) for value in dimension.values
+                ),
+                negated=dimension.negated,
+            ),
+        )
+        for dimension in scope.dimensions
+    }
 
 
 def decompose(expression: Expression) -> dict[str, tuple[Atom, ...]]:

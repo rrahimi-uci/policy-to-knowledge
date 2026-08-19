@@ -42,14 +42,19 @@ from policy_ir.expressions import (
 )
 from policy_ir.models import (
     AtomicPolicyClause,
+    AuthoritySource,
     DataDefinition,
     DecisionModelCandidate,
     DecisionOutput,
     DependencyEdge,
+    EffectivePeriod,
     EntityType,
     PolicyIR,
     ProcessActivity,
     ProcessFragmentCandidate,
+    Scope,
+    ScopeDimension,
+    ScopeDimensionDefinition,
     TemporalConstraint,
     TriggerEvent,
 )
@@ -120,6 +125,29 @@ FEE_TEXT = """Section 5.1 Upfront Fee
 
 The Lender must pay an upfront fee of 0.25 percent of the guaranteed portion when \
 the loan amount is greater than $500,000.
+"""
+
+SCOPED_TEXT = """Section 12.1 State Overlays
+
+In California, a loan may be purchased when the borrower credit score is at least 660.
+
+In New York, a loan may be purchased when the borrower credit score is at least 640.
+"""
+
+AUTHORITY_TEXT = """Section 3.1 Loans Below 640
+
+The Guide provides that a loan must not be purchased if the borrower credit score \
+is below 640.
+
+Bulletin 2026-04 provides that a loan may be purchased when the borrower credit \
+score is below 640.
+"""
+
+SUPERSESSION_TEXT = """Section 8.2 Documentation Standard
+
+Effective 1 January 2025, a loan file must include 2 years of tax returns.
+
+Effective 1 January 2026, a loan file must include 1 year of tax returns.
 """
 
 RESTRICTED_TEXT = """Section 4.3 Restricted Counties
@@ -916,7 +944,339 @@ def _inferred_sequence() -> Fixture:
     )
 
 
+# ---------------------------------------------------------------------------
+# Scope, authority precedence and supersession
+# ---------------------------------------------------------------------------
+
+
+JURISDICTION = ScopeDimensionDefinition(
+    dimension_id="dim_jurisdiction",
+    name="jurisdiction",
+    description="US state or territory whose overlay applies.",
+    allowed_values=("US-CA", "US-NY", "US-TX"),
+)
+
+
+def _state_overlay(*, with_conflict: bool = False) -> Fixture:
+    """Two state overlays whose score bands overlap but whose scopes cannot."""
+    builder = FixtureBuilder()
+    handle = builder.document("fixture://overlays", SCOPED_TEXT, "Section 12.1")
+
+    ca_effect = handle.cite("In California, a loan may be purchased", SemanticRole.EFFECT)
+    ca_scope = handle.cite("In California", SemanticRole.SCOPE)
+    ca_condition = handle.cite(
+        "the borrower credit score is at least 660", SemanticRole.CONDITION
+    )
+    ny_effect = handle.cite("In New York, a loan may be purchased", SemanticRole.EFFECT)
+    ny_scope = handle.cite("In New York", SemanticRole.SCOPE)
+    ny_condition = handle.cite(
+        "the borrower credit score is at least 640", SemanticRole.CONDITION
+    )
+
+    credit_score = DataDefinition(
+        data_definition_id="credit_score",
+        name="borrower credit score",
+        type=N,
+        null_policy=NullPolicy.REJECT,
+        evidence_ids=(ca_condition,),
+    )
+
+    def overlay(name: str, state: str, threshold: int, condition_ev: str, effect_ev: str,
+                scope_ev: str) -> AtomicPolicyClause:
+        return AtomicPolicyClause(
+            clause_id=f"clause_overlay_{state.lower().replace('-', '_')}",
+            modality=Modality.PERMISSION,
+            semantic_kind=SemanticKind.DECISION_RULE,
+            effect=Effect.ALLOW,
+            display_text=f"In {name} a loan may be purchased at {threshold} or above.",
+            evidence={
+                SemanticRole.CONDITION.value: (condition_ev,),
+                SemanticRole.EFFECT.value: (effect_ev,),
+                SemanticRole.SCOPE.value: (scope_ev,),
+            },
+            lifecycle=Lifecycle.ACTIVE,
+            compilation_intent=CompilationIntent.DMN,
+            condition_ast=Comparison(VariableRef("credit_score"), GE, Literal(threshold, N)),
+            effect_ast=Literal("eligible", S),
+            scope=Scope((ScopeDimension("jurisdiction", (state,), evidence_ids=(scope_ev,)),)),
+        )
+
+    california = overlay("California", "US-CA", 660, ca_condition, ca_effect, ca_scope)
+    new_york = overlay("New York", "US-NY", 640, ny_condition, ny_effect, ny_scope)
+    decision = DecisionModelCandidate(
+        decision_id="decision_state_overlay",
+        name="State overlay eligibility",
+        question="May this loan be purchased under the applicable state overlay?",
+        output_definition=DecisionOutput(name="purchase eligibility", type=S),
+        input_data_refs=("credit_score",),
+        decision_rule_refs=(california.clause_id, new_york.clause_id),
+        proposed_hit_policy=HitPolicy.UNIQUE,
+    )
+    dependencies = ()
+    if with_conflict:
+        dependencies = (
+            DependencyEdge(
+                edge_id="dep_overlay_conflict",
+                source_id=california.clause_id,
+                target_id=new_york.clause_id,
+                kind=DependencyKind.CONFLICT,
+                derivation_method=DerivationMethod.MODEL_ASSISTED_CANDIDATE,
+                direction_semantics="the two overlays state different thresholds",
+            ),
+        )
+    ir = builder.ir(
+        scope_dimensions=(JURISDICTION,),
+        data_definitions=(credit_score,),
+        clauses=(california, new_york),
+        decisions=(decision,),
+        dependencies=dependencies,
+        entity_types=(_lender(),),
+    )
+    if with_conflict:
+        return Fixture(
+            name="disjoint_scope_conflict",
+            description=(
+                "A conflict is declared between two overlays, but their scopes are "
+                "provably disjoint, so there is no real contradiction and the decision "
+                "still compiles."
+            ),
+            ir=ir,
+            texts=builder.texts(),
+            expect_dmn=("State overlay eligibility",),
+            forbid_codes=frozenset({codes.UNRESOLVED_CONFLICT, codes.HIT_POLICY_NOT_PROVEN}),
+        )
+    return Fixture(
+        name="state_overlay_scope",
+        description=(
+            "660 in California and 640 in New York. The bands overlap, so UNIQUE is only "
+            "provable because the jurisdiction axis becomes an input column."
+        ),
+        ir=ir,
+        texts=builder.texts(),
+        expect_dmn=("State overlay eligibility",),
+        forbid_codes=frozenset({codes.HIT_POLICY_NOT_PROVEN}),
+    )
+
+
+def _undeclared_scope_dimension() -> Fixture:
+    base = _state_overlay()
+    ir = base.ir
+    stripped = type(ir)(
+        **{**{f: getattr(ir, f) for f in ir.__dataclass_fields__}, "scope_dimensions": ()}
+    )
+    return Fixture(
+        name="undeclared_scope_dimension",
+        description=(
+            "The clauses are scoped on 'jurisdiction' but the corpus declares no such "
+            "axis, so the limit is unverifiable and the rows are refused."
+        ),
+        ir=stripped,
+        texts=base.texts,
+        expect_codes=frozenset({codes.UNKNOWN_SCOPE_DIMENSION}),
+    )
+
+
+def _authority_conflict(*, tie: bool = False) -> Fixture:
+    builder = FixtureBuilder()
+    handle = builder.document("fixture://authority", AUTHORITY_TEXT, "Section 3.1")
+
+    guide_authority_ev = handle.cite("The Guide", SemanticRole.AUTHORITY)
+    guide_condition = handle.cite(
+        "if the borrower credit score is below 640", SemanticRole.CONDITION
+    )
+    guide_effect = handle.cite("a loan must not be purchased", SemanticRole.EFFECT)
+    bulletin_authority_ev = handle.cite("Bulletin 2026-04", SemanticRole.AUTHORITY)
+    bulletin_condition = handle.cite(
+        "when the borrower credit score is below 640", SemanticRole.CONDITION
+    )
+    bulletin_effect = handle.cite("a loan may be purchased", SemanticRole.EFFECT)
+
+    credit_score = DataDefinition(
+        data_definition_id="credit_score",
+        name="borrower credit score",
+        type=N,
+        null_policy=NullPolicy.REJECT,
+        evidence_ids=(guide_condition,),
+    )
+    guide_clause = AtomicPolicyClause(
+        clause_id="clause_guide_denies_below_640",
+        modality=Modality.PROHIBITION,
+        semantic_kind=SemanticKind.DECISION_RULE,
+        effect=Effect.DENY,
+        display_text="The Guide denies purchase below 640.",
+        evidence={
+            SemanticRole.CONDITION.value: (guide_condition,),
+            SemanticRole.EFFECT.value: (guide_effect,),
+            SemanticRole.AUTHORITY.value: (guide_authority_ev,),
+        },
+        lifecycle=Lifecycle.ACTIVE,
+        compilation_intent=CompilationIntent.DMN,
+        condition_ast=Comparison(VariableRef("credit_score"), LT, Literal(640, N)),
+        effect_ast=Literal("not_eligible", S),
+        authority_ref="auth_guide",
+    )
+    bulletin_clause = AtomicPolicyClause(
+        clause_id="clause_bulletin_allows_below_640",
+        modality=Modality.PERMISSION,
+        semantic_kind=SemanticKind.DECISION_RULE,
+        effect=Effect.ALLOW,
+        display_text="The bulletin allows purchase below 640.",
+        evidence={
+            SemanticRole.CONDITION.value: (bulletin_condition,),
+            SemanticRole.EFFECT.value: (bulletin_effect,),
+            SemanticRole.AUTHORITY.value: (bulletin_authority_ev,),
+        },
+        lifecycle=Lifecycle.ACTIVE,
+        compilation_intent=CompilationIntent.DMN,
+        condition_ast=Comparison(VariableRef("credit_score"), LT, Literal(640, N)),
+        effect_ast=Literal("eligible", S),
+        authority_ref="auth_bulletin",
+    )
+    decision = DecisionModelCandidate(
+        decision_id="decision_below_640",
+        name="Below-640 eligibility",
+        question="May a loan below 640 be purchased?",
+        output_definition=DecisionOutput(name="purchase eligibility", type=S),
+        input_data_refs=("credit_score",),
+        decision_rule_refs=(guide_clause.clause_id, bulletin_clause.clause_id),
+        proposed_hit_policy=HitPolicy.UNIQUE,
+    )
+    conflict = DependencyEdge(
+        edge_id="dep_guide_bulletin_conflict",
+        source_id=guide_clause.clause_id,
+        target_id=bulletin_clause.clause_id,
+        kind=DependencyKind.CONFLICT,
+        derivation_method=DerivationMethod.EXPLICIT_CROSS_REFERENCE,
+        direction_semantics="the two sources state opposite outcomes for the same band",
+        evidence_ids=(guide_effect, bulletin_effect),
+    )
+    ir = builder.ir(
+        authority_sources=(
+            AuthoritySource("auth_guide", "Selling Guide", 50, kind="guide"),
+            AuthoritySource(
+                "auth_bulletin", "Bulletin 2026-04", 50 if tie else 10, kind="bulletin"
+            ),
+        ),
+        data_definitions=(credit_score,),
+        clauses=(guide_clause, bulletin_clause),
+        decisions=(decision,),
+        dependencies=(conflict,),
+        entity_types=(_lender(),),
+    )
+    if tie:
+        return Fixture(
+            name="authority_tie_conflict",
+            description=(
+                "Both sources carry equal weight, so precedence cannot settle the "
+                "contradiction and both rows are refused."
+            ),
+            ir=ir,
+            texts=builder.texts(),
+            expect_codes=frozenset({codes.AUTHORITY_TIE, codes.UNRESOLVED_CONFLICT}),
+        )
+    return Fixture(
+        name="authority_resolved_conflict",
+        description=(
+            "The Guide outranks the bulletin, so the bulletin row is refused and the "
+            "decision compiles from the winner. Resolving a conflict has to enable "
+            "compilation, not merely describe the problem."
+        ),
+        ir=ir,
+        texts=builder.texts(),
+        expect_dmn=("Below-640 eligibility",),
+        expect_codes=frozenset({codes.OUTRANKED_BY_AUTHORITY}),
+        forbid_codes=frozenset({codes.UNRESOLVED_CONFLICT, codes.AUTHORITY_TIE}),
+    )
+
+
+def _supersession(*, recorded: bool = True) -> Fixture:
+    builder = FixtureBuilder()
+    handle = builder.document("fixture://supersession", SUPERSESSION_TEXT, "Section 8.2")
+
+    old_effect = handle.cite(
+        "a loan file must include 2 years of tax returns", SemanticRole.EFFECT
+    )
+    old_start = handle.cite("Effective 1 January 2025", SemanticRole.TEMPORAL)
+    new_effect = handle.cite(
+        "a loan file must include 1 year of tax returns", SemanticRole.EFFECT
+    )
+    new_start = handle.cite("Effective 1 January 2026", SemanticRole.TEMPORAL)
+
+    old = AtomicPolicyClause(
+        clause_id="clause_two_years_of_returns",
+        modality=Modality.OBLIGATION,
+        semantic_kind=SemanticKind.DOCUMENTATION_REQUIREMENT,
+        effect=Effect.CREATE_RECORD,
+        display_text="A loan file must include two years of tax returns.",
+        evidence={
+            SemanticRole.EFFECT.value: (old_effect,),
+            SemanticRole.TEMPORAL.value: (old_start,),
+        },
+        lifecycle=Lifecycle.SUPERSEDED,
+        compilation_intent=CompilationIntent.GRAPH_ONLY,
+        effective_period=EffectivePeriod(start="2025-01-01"),
+    )
+    new = AtomicPolicyClause(
+        clause_id="clause_one_year_of_returns",
+        modality=Modality.OBLIGATION,
+        semantic_kind=SemanticKind.DOCUMENTATION_REQUIREMENT,
+        effect=Effect.CREATE_RECORD,
+        display_text="A loan file must include one year of tax returns.",
+        evidence={
+            SemanticRole.EFFECT.value: (new_effect,),
+            SemanticRole.TEMPORAL.value: (new_start,),
+        },
+        lifecycle=Lifecycle.ACTIVE,
+        compilation_intent=CompilationIntent.GRAPH_ONLY,
+        effective_period=EffectivePeriod(start="2026-01-01"),
+    )
+    edges = ()
+    if recorded:
+        edges = (
+            DependencyEdge(
+                edge_id="dep_one_year_supersedes_two",
+                source_id=new.clause_id,
+                target_id=old.clause_id,
+                kind=DependencyKind.SUPERSEDES,
+                derivation_method=DerivationMethod.EXPLICIT_CROSS_REFERENCE,
+                direction_semantics="the 2026 standard replaces the 2025 standard",
+                evidence_ids=(new_start,),
+            ),
+        )
+    ir = builder.ir(clauses=(old, new), dependencies=edges, entity_types=(_lender(),))
+    if recorded:
+        return Fixture(
+            name="superseded_documentation",
+            description=(
+                "The 2026 standard supersedes the 2025 one. Both stay in the graph, the "
+                "superseded clause cannot compile, and 'what was in force' is answerable "
+                "for any date."
+            ),
+            ir=ir,
+            texts=builder.texts(),
+            expect_codes=frozenset({codes.SUPERSEDED_CLAUSE}),
+            forbid_codes=frozenset({codes.SUPERSESSION_NOT_RECORDED}),
+        )
+    return Fixture(
+        name="supersession_not_recorded",
+        description=(
+            "A clause marked superseded with no edge to its replacement. The status is "
+            "unusable for a historical query, so it is reported as a defect."
+        ),
+        ir=ir,
+        texts=builder.texts(),
+        expect_codes=frozenset({codes.SUPERSESSION_NOT_RECORDED, codes.SUPERSEDED_CLAUSE}),
+    )
+
+
 _FACTORIES: tuple[Callable[[], Fixture], ...] = (
+    _state_overlay,
+    lambda: _state_overlay(with_conflict=True),
+    _undeclared_scope_dimension,
+    _authority_conflict,
+    lambda: _authority_conflict(tie=True),
+    _supersession,
+    lambda: _supersession(recorded=False),
     _eligibility_decision,
     _exception_clause,
     _fee_calculation,

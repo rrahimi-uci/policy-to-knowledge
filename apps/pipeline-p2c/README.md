@@ -20,7 +20,7 @@ failure.
 | --- | --- |
 | A deterministic compiler: Policy IR in, graph + DMN + BPMN out | An extraction pipeline. It calls no model and has no prompts |
 | A fail-closed gate that decides what may be compiled | A legal-correctness checker |
-| A conformance harness with 14 fixtures and 297 offline tests | A benchmark or a labelled dataset |
+| A conformance harness with 21 fixtures and 401 offline tests | A benchmark or a labelled dataset |
 | Standards-targeted: DMN 1.5 `formal/24-01-01`, BPMN 2.0.2 `formal/13-12-09` | A BPM engine, or a certified DMN implementation |
 
 The LLM-facing stages the plan describes (Stage 2 ontology extraction, Stage 3A
@@ -103,6 +103,57 @@ A clause can be `provenance_exact` and still fail `semantic_supported`. The grap
 accepts far less than DMN does, which is how the product keeps working while the
 executable subset stays small and defensible.
 
+## Scope, authority and time
+
+Three things decide *whether* a clause applies, and they are declared as data so the
+engine stays domain-agnostic.
+
+**Scope** is a list of named axes, not fixed fields. Mortgage scoping uses state,
+product and channel; healthcare uses payer, facility type and state; insurance uses
+line of business. Fixed fields would hard-code one domain, so a corpus declares its
+axes as `ScopeDimensionDefinition` records and clauses constrain them:
+
+```json
+"scope": {"dimensions": [
+  {"name": "jurisdiction", "values": ["US-CA"], "evidence_ids": ["ev_…"]}
+]}
+```
+
+Scope is not metadata — it becomes an **input column** in the emitted decision
+table. That is what makes it earn its place: a 660 rule for California and a 640 rule
+for New York have overlapping score bands, so on their conditions alone `UNIQUE` is
+refused and neither compiles. With the jurisdiction axis as an input, the same
+non-overlap prover sees they can never both match, and both rules compile. The axes
+are derived from the rows rather than declared separately, so a table's shape cannot
+drift out of step with the clauses it is built from.
+
+**Authority** breaks ties. A regulated corpus routinely holds a guide and a bulletin
+that disagree, and which one wins is a stated fact, not a computable one — so
+`AuthoritySource.authority_weight` is declared per corpus (higher wins) and the
+engine only ever compares weights. It never infers a hierarchy from a document's
+name or kind. A declared conflict then has three outcomes:
+
+| Outcome | When | Effect |
+| --- | --- | --- |
+| No real conflict | the two scopes are provably disjoint | nothing blocked |
+| Resolved | both can apply, one authority is heavier | loser stays in the graph, refused for execution; **the decision still compiles from the winner** |
+| Unresolved | equal weight, or an authority missing | both refused, decision blocked |
+
+That middle row is the point. Previously *any* declared conflict killed the whole
+decision; now resolving one enables compilation instead of merely describing the
+problem.
+
+**Time** is an edge, not a flag. `Lifecycle.SUPERSEDED` records a status without
+recording the replacement, which makes "what applied on 3 March 2026" unanswerable,
+so supersession is a typed `SUPERSEDES` edge paired with the replacement's effective
+period. A replacement whose start date is still in the future does not yet displace
+what it supersedes, which lets a corpus hold both the current and the forthcoming
+version of a rule.
+
+`--as-of YYYY-MM-DD` restricts the executable projections to clauses definitely in
+force on that date. It is always an explicit argument: the compiler never reads the
+clock, because output that depends on when it ran cannot be byte-stable.
+
 ## What the compiler refuses to do
 
 Each refusal below is enforced by a named blocker code and at least one test.
@@ -135,6 +186,13 @@ Each refusal below is enforced by a named blocker code and at least one test.
   Source text containing `<script>` or FEEL-like text is escaped as data.
 - **Fabricate evidence on legacy import.** The adapter creates no spans and no
   expressions, and classifies nothing it cannot read.
+- **Accept an undeclared scope axis or value.** A limit narrows what a rule reaches,
+  so the axis must be declared, its value must be in the declared vocabulary, and the
+  limit must be evidenced.
+- **Settle a conflict it was not told how to settle.** Equal authority weight, or a
+  missing authority, leaves the conflict unresolved rather than picking a side.
+- **Compile a superseded clause,** or one that is out of force under `--as-of`, or one
+  whose in-force status cannot be determined.
 
 ### Two profiles
 
@@ -226,6 +284,11 @@ the bug.
 
 Stated plainly, because the whole point of the app is not overstating things:
 
+- **Scope is clause-level.** A decision inherits applicability from its rows; there is
+  no decision-level scope override yet.
+- **Authority weights are flat integers.** `parent_authority_id` records a hierarchy
+  for display but does not participate in comparison, so a deep authority tree has to
+  be flattened into weights by hand.
 - **Attestation is a surface check.** Finding "620" in a cited span does not prove
   the span *means* "credit score at least 620". It catches fabricated values, not
   misread ones.
@@ -245,14 +308,20 @@ Stated plainly, because the whole point of the app is not overstating things:
 ## Testing
 
 ```bash
-python -m pytest tests/ -q                      # 297 offline tests
+python -m pytest tests/ -q                      # 401 offline tests
 python -m pytest tests/ -q --xsd-dir schemas/omg  # + 8 XSD conformance tests
 ```
 
 Test files map onto the plan's test strategy: `test_contracts.py` (contract and
-provenance), `test_expressions.py` (expression and semantic), `test_dmn.py`,
-`test_bpmn.py`, `test_compatibility.py`, `test_gate.py`, `test_stress_matrix.py`
-(one test per stress-matrix row), `test_cli.py`, `test_xsd_conformance.py`.
+provenance), `test_expressions.py` (expression and semantic), `test_scope.py`,
+`test_authority.py`, `test_timeline.py`, `test_dmn.py`, `test_bpmn.py`,
+`test_compatibility.py`, `test_gate.py`, `test_stress_matrix.py` (one test per
+stress-matrix row), `test_cli.py`, `test_xsd_conformance.py`.
+
+`test_gate.py::test_the_engine_names_no_domain_actors` enforces the domain-agnostic
+rule mechanically: no domain noun may appear in engine *code*, only in prose. It found
+a real leak — a hard-coded `"no lender may"` prohibition marker, now a generic
+`no <actor> may|shall|can` pattern that covers every industry.
 
 Everything is deterministic and offline: no network, no credentials, no model
 calls, no uncommitted local data.

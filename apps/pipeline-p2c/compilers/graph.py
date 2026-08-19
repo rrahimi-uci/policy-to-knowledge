@@ -132,8 +132,21 @@ def project_graph(
                 "compilation_intent": clause.compilation_intent.value,
                 "effective_date": clause.effective_period.start,
                 "expiration_date": clause.effective_period.end,
-                "jurisdiction": list(clause.jurisdiction_scope),
-                "applicability_scope": list(clause.jurisdiction_scope),
+                # Legacy consumers read flat lists; the structured form travels
+                # alongside so a v2 reader loses nothing.
+                "jurisdiction": [
+                    value
+                    for dimension in clause.scope.dimensions
+                    if dimension.name == "jurisdiction"
+                    for value in dimension.values
+                ],
+                "applicability_scope": [
+                    f"{dimension.name}{'!=' if dimension.negated else '='}"
+                    f"{'|'.join(dimension.values)}"
+                    for dimension in clause.scope.dimensions
+                ],
+                "scope": clause.scope.to_dict(),
+                "authority_ref": clause.authority_ref,
                 "data_points_required": [names.get(v, v) for v in referenced],
                 "data_definitions_required": referenced,
                 "entity_or_relationship": entity.name if entity else None,

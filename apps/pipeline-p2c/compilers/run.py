@@ -7,6 +7,7 @@ report is the only authority the compilers consult.
 
 from __future__ import annotations
 
+import datetime as _dt
 import json
 from dataclasses import dataclass, field
 from typing import Any, Mapping
@@ -75,13 +76,19 @@ def compile_all(
     targets: tuple[str, ...] = TARGETS,
     graph_name: str = "policy_graph",
     run_timestamp: str | None = None,
+    as_of: _dt.date | None = None,
 ) -> CompileResult:
-    """Run the gate and every requested projection."""
+    """Run the gate and every requested projection.
+
+    ``as_of`` restricts the executable projections to clauses definitely in force on
+    that date. It is an explicit argument rather than a read of the clock, so a run
+    stays reproducible: the same IR and the same date always give the same bytes.
+    """
     unknown = sorted(set(targets) - set(TARGETS))
     if unknown:
         raise ValueError(f"unknown target(s) {unknown}; choose from {list(TARGETS)}")
 
-    report = run_gate(ir, texts)
+    report = run_gate(ir, texts, as_of=as_of)
     graph = project_graph(ir, report, graph_name=graph_name) if "graph" in targets else None
 
     artifacts: list[CompiledArtifact] = []
@@ -114,6 +121,7 @@ def compile_all(
             artifacts,
             profile=profile.value,
             run_timestamp=run_timestamp,
+            as_of=as_of.isoformat() if as_of else None,
             extra={"structural_problems": list(problems)} if problems else None,
         ),
     )
