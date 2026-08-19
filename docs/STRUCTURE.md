@@ -35,6 +35,7 @@ policy-to-knowledge/
 │       └── tests/e2e/       Playwright UI tests
 │
 ├── docs/                   GitHub Pages site (index.html, architecture.html, this file)
+│   └── research/           Research plans (proposed, unrun)
 ├── assets/                 Shared brand assets (logo)
 │
 ├── docker-compose.yml      Full local stack (explorer DB + all app services)

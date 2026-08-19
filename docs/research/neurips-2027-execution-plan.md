@@ -2,7 +2,7 @@
 
 **Status:** proposed and unrun. This is a falsifiable research plan, not a claim that the repository has achieved the proposed results.
 
-**Primary target:** NeurIPS 2027 Evaluations and Datasets track. Consider the main NeurIPS track only if the evidence-gating method yields a substantive cross-task algorithmic result. Do not target ICLR 2027: its September 2026 deadline does not permit enough time to complete, reproduce, and audit the study. NeurIPS 2027 dates are not yet announced; verify the official call before fixing dates.
+**Primary target:** the NeurIPS Evaluations and Datasets (E&D) track, 2027 edition. Consider the main NeurIPS track only if the evidence-gating method yields a substantive cross-task algorithmic result. Do not target ICLR 2027: its [call for papers](https://iclr.cc/Conferences/2027/CallForPapers) sets an abstract deadline of 18 September 2026 and a paper deadline of 25 September 2026 (AoE), which leaves too little time to complete, reproduce, and audit the study. The NeurIPS 2027 call is not published yet, and E&D is itself a recent rename of the Datasets and Benchmarks track, so confirm at Gate 0 that the track still exists under that name and fix no dates until the official 2027 call is out.
 
 ## 1. Decision in one paragraph
 
@@ -22,7 +22,7 @@ Proceed only if evidence gating improves supported correctness at comparable cov
 | Existing graphs | Four case-study graphs contain hundreds of rules/dependencies. | Their text and outputs are independent labels. | Qualitative audit and regression fixtures only. |
 | Tests | Unit/UI tests exist, primarily around prompts, interfaces, and mocks. | Benchmark adapters, scorers, contamination controls, repeated-run experiments. | Add a research harness with deterministic tests. |
 
-The implementation seams are the [rule extractor](apps/pipeline/agents/agent_3_rules_extractor.py), [validator](apps/pipeline/agents/agent_3_5_rule_validator.py), [graph optimizer](apps/pipeline/agents/agent_5_knowledge_graph_optimizer.py), [LLM client](apps/pipeline/utils/llm_client.py), [configuration](apps/pipeline/utils/config.py), and [extraction CLI](apps/pipeline/cli/extract.py). No proposed change below is implemented by this document.
+The implementation seams are the [rule extractor](../../apps/pipeline/agents/agent_3_rules_extractor.py), [validator](../../apps/pipeline/agents/agent_3_5_rule_validator.py), [graph optimizer](../../apps/pipeline/agents/agent_5_knowledge_graph_optimizer.py), [LLM client](../../apps/pipeline/utils/llm_client.py), [configuration](../../apps/pipeline/utils/config.py), and [extraction CLI](../../apps/pipeline/cli/extract.py). No proposed change below is implemented by this document.
 
 ## 3. Core claim, research questions, and failure conditions
 
@@ -51,7 +51,7 @@ An adapter may deterministically translate a published schema into the compiler 
 
 Synthetic tests are permitted only as known-oracle robustness tests. A program can flip must/must-not, alter a deadline or quantity, add an exception, or break a cross-reference. These test expected behavior but are not human evidence and cannot be a headline score.
 
-For every source, record upstream URL, version, license, retrieval date, SHA-256, and official split. Do not chunk-split overlapping documents. Release adapters, prompts, hashes, aggregate results, and derived predictions only where terms permit; prefer download scripts and hashes over redistributing documents.
+For every source, record upstream URL, version, license, retrieval date, SHA-256, and split definition: the official split where one is published, otherwise a preregistered deterministic split committed before test access. Do not chunk-split overlapping documents. Release adapters, prompts, hashes, aggregate results, and derived predictions only where terms permit; prefer download scripts and hashes over redistributing documents.
 
 ## 5. Public evaluation suite
 
@@ -59,9 +59,9 @@ No single resource measures extraction, evidence, reasoning, and policy QA. Do n
 
 | Track | Resource and role | Deterministic mapping | Headline metric | Guardrail |
 | --- | --- | --- | --- | --- |
-| Structured graph extraction | [CODE-ACCORD](https://www.nature.com/articles/s41597-024-04320-x), building-regulation entities/relations. | Published entity/relation ontology becomes typed nodes/edges; retain official split. | Entity and relation P/R/F1. | Freeze mapping before test access; report per type and micro/macro. |
+| Structured graph extraction | [CODE-ACCORD](https://arxiv.org/abs/2403.02231) ([Scientific Data version](https://www.nature.com/articles/s41597-024-04320-x)), building-regulation entities/relations. | Published entity/relation ontology becomes typed nodes/edges; keep the published split if one exists, otherwise preregister a deterministic split. | Entity and relation P/R/F1. | Freeze mapping and split before test access; report per type and micro/macro. The corpus is small (862 sentences, 4,297 entities, 4,329 relations), so report interval width and never rest a claim on it alone. |
 | Evidence-grounded decision | [ContractNLI](https://stanfordnlp.github.io/contract-nli/), hypotheses, NLI labels, evidence. | Hypothesis becomes query over extracted rules with evidence span. | Label macro-F1 plus evidence P/R/F1. | Do not treat missing evidence as contradiction; report classes separately. |
-| Applied normative reasoning | [DeonticBench](https://arxiv.org/abs/2604.04443), policy-rule reasoning. | Compile context to typed deontic predicates; preserve answer interface. | Official accuracy/macro-F1 by domain. | Any synthetic subset is secondary, not independent gold. |
+| Applied normative reasoning | [DeonticBench](https://arxiv.org/abs/2604.04443), long-context deontic reasoning over tax, airline, immigration, and housing rules. | Compile context to typed deontic predicates; preserve the answer interface; the released reference Prolog programs are an audit oracle, not a label source. | Official accuracy/macro-F1 by domain. | Any synthetic subset is secondary, not independent gold. This is a 2026 preprint: confirm release artifacts, license, and official scoring at Gate 0 before it counts as a core family. |
 | Policy QA | [PolicyQA](https://arxiv.org/abs/2010.02557) and, subject to terms, [PrivacyQA](https://arxiv.org/abs/1911.00841). | Retrieve graph rules then answer only from cited spans. | Official EM/F1; support rate where possible. | Score answer and support separately. |
 | Transfer diagnostic | [Re-DocRED](https://arxiv.org/abs/2205.12696). | Published ontology becomes an out-of-domain graph diagnostic. | Relation F1/provenance diagnostics. | Cannot establish policy-domain performance. |
 
@@ -80,9 +80,11 @@ The pipeline should be:
 
 A candidate rule must at minimum include:
 
-    rule_id; actor; deontic_type; action; object; conditions; exceptions;
-    temporal_scope; jurisdiction_or_scope; quantities; source_spans;
-    model_confidence; normalization_status; evidence_gate; gate_reasons
+```text
+rule_id; actor; deontic_type; action; object; conditions; exceptions;
+temporal_scope; jurisdiction_or_scope; quantities; source_spans;
+model_confidence; normalization_status; evidence_gate; gate_reasons
+```
 
 Source spans must include document SHA-256, chunk ID, character offsets, and text. A list of spans is first-class: each span is labeled primary support, exception, definition, or cross-reference target. Do not flatten multiple references into one field.
 
@@ -155,7 +157,7 @@ If expected behavior cannot be expressed as an executable oracle, narrow the cla
 
 | Gate | Must pass | Stop or pivot |
 | --- | --- | --- |
-| 0. Feasibility/rights | At least three independent benchmark families have stable access, usable licenses, official splits, and mapping sketches. | Fewer than three or no direct mapping: release an engineering/audit artifact, not a NeurIPS benchmark claim. |
+| 0. Feasibility/rights | At least three independent benchmark families have stable access, usable licenses, a frozen split definition (official where published, preregistered otherwise), and mapping sketches. Venue call, track name, and dates re-verified. | Fewer than three or no direct mapping: release an engineering/audit artifact, not a NeurIPS benchmark claim. |
 | 1. Adapter validity | Deterministic adapters pass on train/dev fixtures and reproduce a simple published/baseline result when available. | Any test mapping needs new annotation or test-label inspection: exclude dataset. |
 | 2. Method integrity | Schema, fail-closed mode, offset verifier, reference checks, manifest, and negatives work locally. | An accepted output bypasses a gate or cannot trace to hash: fix method before experiments. |
 | 3. Pilot signal | Full method credibly improves support quality and one native metric over direct LLM and frozen P2K on locked development data. | Gain is only low coverage, one prompt, or one corpus: narrow claim or stop. |
@@ -192,18 +194,20 @@ A focused execution can take about twelve weeks after Gate 0; cost, model drift,
 
 This is a target layout after Gate 0, not an instruction to add everything now.
 
-    research/neurips_2027/
-      protocol.yaml          preregistration/model budgets
-      sources.yaml           URLs, licenses, hashes, split metadata
-      adapters/              deterministic corpus adapters
-      evaluation/            scorers, bootstrap, reports
-      fixtures/              known-oracle perturbations
-      manifests/             ignored raw runs; committed indexes/hashes
-      tests/                 split/schema/adapter/scorer tests
-    apps/pipeline/
-      schemas/candidate_rule.json
-      validation/evidence_gate.py
-      cli/extract.py         explicit fail-closed research switch
+```text
+research/neurips_2027/
+  protocol.yaml          preregistration/model budgets
+  sources.yaml           URLs, licenses, hashes, split metadata
+  adapters/              deterministic corpus adapters
+  evaluation/            scorers, bootstrap, reports
+  fixtures/              known-oracle perturbations
+  manifests/             ignored raw runs; committed indexes/hashes
+  tests/                 split/schema/adapter/scorer tests
+apps/pipeline/
+  schemas/candidate_rule.json
+  validation/evidence_gate.py
+  cli/extract.py         explicit fail-closed research switch
+```
 
 Keep adapters outside product agents so task assumptions cannot leak into extraction. Keep normalization/gating deterministic and inspectable. Store content hashes plus offsets, not LLM-reported text alone. Preserve source rule records whenever graph projection collapses clauses. Version prompt, model config, schema, adapter, and scorer together.
 
@@ -221,7 +225,7 @@ Suggested structure:
 
 Submit to **NeurIPS E&D** when the contribution is a rigorous evaluation framework, reusable adapters/artifacts, and credible evidence-supported findings. Consider **main NeurIPS** only for a strong repeated cross-task algorithmic result. Submit neither if the work remains an application demonstration without independent-label evidence; publish a reproducible systems/audit release instead.
 
-The [NeurIPS 2026 E&D call](https://neurips.cc/Conferences/2026/CallForEvaluationsDatasets) emphasizes evaluation rigor, reusable artifacts, assumptions, and limitations. The [NeurIPS dates page](https://neurips.cc/Conferences/2026/Dates) is a reference only, not a statement of 2027 deadlines.
+The [NeurIPS 2026 E&D call](https://neurips.cc/Conferences/2026/CallForEvaluationsDatasets) treats evaluation as an object of study in its own right and emphasizes evaluation rigor, reusable artifacts, assumptions, and limitations. Its dates (abstracts 4 May 2026, papers 6 May 2026, notification 24 September 2026, per the [2026 dates page](https://neurips.cc/Conferences/2026/Dates)) are a shape reference only and say nothing about 2027 deadlines.
 
 ## 13. Risk register
 
@@ -240,7 +244,7 @@ The [NeurIPS 2026 E&D call](https://neurips.cc/Conferences/2026/CallForEvaluatio
 
 The paper is ready only when:
 
-- three or more legally usable, independently labeled benchmark tracks have frozen adapters and official-split tests;
+- three or more legally usable, independently labeled benchmark tracks have frozen adapters and frozen-split tests, using official splits wherever they are published;
 - research mode enforces evidence gating and every accepted rule has hash-linked offsets and a decision record;
 - baseline/full-method tables include repeated-run uncertainty, native task scores, support, coverage, calibration where applicable, cost, and latency;
 - all stress tests and duplicate checks have recorded outcomes;
@@ -249,12 +253,12 @@ The paper is ready only when:
 
 ## Sources to verify at Gate 0
 
-- [CODE-ACCORD dataset paper](https://www.nature.com/articles/s41597-024-04320-x)
+- [CODE-ACCORD preprint](https://arxiv.org/abs/2403.02231) and [Scientific Data article](https://www.nature.com/articles/s41597-024-04320-x)
 - [ContractNLI project](https://stanfordnlp.github.io/contract-nli/)
-- [DeonticBench paper](https://arxiv.org/abs/2604.04443)
+- [DeonticBench preprint](https://arxiv.org/abs/2604.04443) — peer-review status, artifact release, and license unconfirmed
 - [PolicyQA paper](https://arxiv.org/abs/2010.02557)
 - [PrivacyQA paper](https://arxiv.org/abs/1911.00841)
 - [Re-DocRED paper](https://arxiv.org/abs/2205.12696)
-- [NeurIPS 2026 E&D call](https://neurips.cc/Conferences/2026/CallForEvaluationsDatasets)
+- [NeurIPS 2026 E&D call](https://neurips.cc/Conferences/2026/CallForEvaluationsDatasets) and [ICLR 2027 call for papers](https://iclr.cc/Conferences/2027/CallForPapers), as the venue-timing baseline to re-verify
 
 Record access dates and final license decisions in sources.yaml. Recheck availability, terms, and submission requirements immediately before experiments and submission.
