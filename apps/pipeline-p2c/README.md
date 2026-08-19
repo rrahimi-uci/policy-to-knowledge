@@ -526,6 +526,21 @@ source digests match the emitted artifact and selected corpus. Score it with
 `evaluation.benchmarks --run-manifest`; do not describe a run with this runner as
 `policy_ir` or an ablation.
 
+`evaluation.openai_runner` provides the equivalent direct baseline through the
+OpenAI Responses API. It obtains a key only from a named environment variable,
+uses structured JSON output, and sends `store: false`; neither the key nor prompts
+or API replies are written to its configuration record.
+
+```bash
+git_rev=$(git rev-parse HEAD)
+python -m evaluation.openai_runner \
+  --benchmark sharc --input /data/sharc_dev.json --model gpt-5.2 \
+  --case-ids splits/sharc-dev-lexical-100.json \
+  --implementation-revision "$git_rev" \
+  --predictions-out results/sharc-openai-direct.jsonl \
+  --config-out results/sharc-openai-direct-config.json
+```
+
 The OPP-115 adapter uses the corpus's `threshold-0.5-overlap-similarity`
 consolidation view and evaluates the ten original top-level data-practice
 categories per policy segment. Its `Yes` labels are the consolidated annotations;
