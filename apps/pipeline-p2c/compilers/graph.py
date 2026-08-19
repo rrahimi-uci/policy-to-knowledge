@@ -132,12 +132,15 @@ def project_graph(
                 "compilation_intent": clause.compilation_intent.value,
                 "effective_date": clause.effective_period.start,
                 "expiration_date": clause.effective_period.end,
-                # Legacy consumers read flat lists; the structured form travels
-                # alongside so a v2 reader loses nothing.
+                # Legacy consumers read this flat field as an allow-list, so a negated
+                # constraint must be omitted rather than flattened: emitting
+                # ["US-CA"] for "everywhere except California" would invert the
+                # meaning. The exclusion is still carried exactly in
+                # applicability_scope and scope.
                 "jurisdiction": [
                     value
                     for dimension in clause.scope.dimensions
-                    if dimension.name == "jurisdiction"
+                    if dimension.name == "jurisdiction" and not dimension.negated
                     for value in dimension.values
                 ],
                 "applicability_scope": [

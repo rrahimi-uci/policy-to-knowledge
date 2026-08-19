@@ -231,3 +231,54 @@ def test_a_scope_dimension_definition_is_the_configuration_seam() -> None:
         allowed_values=("medicare", "medicaid", "commercial"),
     )
     assert ScopeDimensionDefinition.from_dict(definition.to_dict()) == definition
+
+
+def test_a_negated_jurisdiction_is_omitted_from_the_flat_legacy_field() -> None:
+    """Legacy consumers read `jurisdiction` as an allow-list.
+
+    Flattening "everywhere except California" to ``["US-CA"]`` would invert the
+    meaning for anyone reading that field, so a negated constraint is omitted there
+    and carried exactly in ``applicability_scope`` and ``scope`` instead.
+    """
+    from compilers.graph import project_graph
+
+    item = all_fixtures()["state_overlay_scope"]
+    ir = item.ir
+    clauses = list(ir.clauses)
+    original = clauses[0]
+    clauses[0] = type(original)(
+        **{
+            **{f: getattr(original, f) for f in original.__dataclass_fields__},
+            "scope": Scope(
+                (
+                    ScopeDimension(
+                        "jurisdiction",
+                        ("US-CA",),
+                        negated=True,
+                        evidence_ids=original.scope.dimensions[0].evidence_ids,
+                    ),
+                )
+            ),
+        }
+    )
+    mutated = type(ir)(
+        **{**{f: getattr(ir, f) for f in ir.__dataclass_fields__}, "clauses": tuple(clauses)}
+    )
+    graph = project_graph(mutated, run_gate(mutated, item.texts))
+    rule = next(r for r in graph["business_rules"] if r["rule_id"] == original.clause_id)
+
+    assert rule["jurisdiction"] == [], "a negation must not read as an allow-list"
+    assert rule["applicability_scope"] == ["jurisdiction!=US-CA"]
+    assert rule["scope"]["dimensions"][0]["negated"] is True
+
+
+def test_a_positive_jurisdiction_still_reaches_the_flat_field() -> None:
+    from compilers.graph import project_graph
+
+    item = all_fixtures()["state_overlay_scope"]
+    graph = project_graph(item.ir, run_gate(item.ir, item.texts))
+    flat = {
+        rule["rule_id"]: rule["jurisdiction"] for rule in graph["business_rules"]
+    }
+    assert flat["clause_overlay_us_ca"] == ["US-CA"]
+    assert flat["clause_overlay_us_ny"] == ["US-NY"]
