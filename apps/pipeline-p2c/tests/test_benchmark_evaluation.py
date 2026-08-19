@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 from pathlib import Path
 
@@ -17,11 +18,46 @@ from evaluation.benchmarks import (
     load_sharc,
     main,
 )
+from evaluation.run_manifest import RunManifestError, load_evaluation_run_manifest
 
 
 def _write_json(path: Path, payload: object) -> Path:
     path.write_text(json.dumps(payload), encoding="utf-8")
     return path
+
+
+def _sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def _run_manifest(
+    path: Path,
+    *,
+    source: Path,
+    predictions: Path,
+    selection: dict[str, object] | None = None,
+    source_sha256: str | None = None,
+    predictions_sha256: str | None = None,
+) -> Path:
+    return _write_json(
+        path,
+        {
+            "schema_version": "p2c-evaluation-run-v1",
+            "run_id": "sharc-dev-policy-ir-v1",
+            "system": {
+                "system_id": "policy-to-knowledge",
+                "kind": "policy_ir",
+                "implementation_revision": "test-revision",
+            },
+            "configuration": {"sha256": "c" * 64},
+            "benchmark": {
+                "name": "sharc",
+                "source_sha256": source_sha256 or _sha256(source),
+                "selection": selection or {},
+            },
+            "predictions_sha256": predictions_sha256 or _sha256(predictions),
+        },
+    )
 
 
 def _sharc_split() -> list[dict[str, object]]:
@@ -224,6 +260,111 @@ def test_cli_emits_cases_and_scores_jsonl_predictions(tmp_path: Path) -> None:
     ) == 0
     assert json.loads(report.read_text(encoding="utf-8"))["outcome"]["coverage"] == 0.5
     assert load_predictions(predictions) == (BenchmarkPrediction("sharc-yes", "Yes", ()),)
+
+
+def test_run_manifest_binds_scored_report_to_artifacts_and_system_declaration(tmp_path: Path) -> None:
+    source = _write_json(tmp_path / "sharc.json", _sharc_split())
+    predictions = tmp_path / "predictions.jsonl"
+    predictions.write_text('{"case_id": "sharc-yes", "answer": "Yes"}\n', encoding="utf-8")
+    manifest = _run_manifest(tmp_path / "run-manifest.json", source=source, predictions=predictions)
+    report = tmp_path / "report.json"
+
+    assert main(
+        [
+            "--benchmark", "sharc", "--input", str(source), "--predictions", str(predictions),
+            "--run-manifest", str(manifest), "--out", str(report),
+        ]
+    ) == 0
+
+    run = json.loads(report.read_text(encoding="utf-8"))["run_manifest"]
+    assert run["sha256"] == _sha256(manifest)
+    assert run["system"] == {
+        "system_id": "policy-to-knowledge",
+        "kind": "policy_ir",
+        "implementation_revision": "test-revision",
+    }
+    assert run["configuration"] == {"sha256": "c" * 64}
+    assert run["benchmark"]["source_sha256"] == _sha256(source)
+    assert run["predictions_sha256"] == _sha256(predictions)
+
+
+def test_run_manifest_rejects_mismatched_or_malformed_artifacts(tmp_path: Path) -> None:
+    source = _write_json(tmp_path / "sharc.json", _sharc_split())
+    predictions = tmp_path / "predictions.jsonl"
+    predictions.write_text('{"case_id": "sharc-yes", "answer": "Yes"}\n', encoding="utf-8")
+    manifest = _run_manifest(
+        tmp_path / "run-manifest.json",
+        source=source,
+        predictions=predictions,
+        source_sha256="d" * 64,
+    )
+    loaded = load_evaluation_run_manifest(manifest)
+    with pytest.raises(RunManifestError, match="does not match the input corpus"):
+        loaded.validate_for_scoring(
+            benchmark="sharc",
+            source_sha256=_sha256(source),
+            selection={},
+            predictions_sha256=_sha256(predictions),
+        )
+    _write_json(
+        manifest,
+        {
+            "schema_version": "p2c-evaluation-run-v1",
+            "run_id": "bad-kind",
+            "system": {"system_id": "p2k", "kind": "unknown", "implementation_revision": "r"},
+            "configuration": {"sha256": "c" * 64},
+            "benchmark": {"name": "sharc", "source_sha256": _sha256(source), "selection": {}},
+            "predictions_sha256": _sha256(predictions),
+        },
+    )
+    with pytest.raises(RunManifestError, match="system.kind"):
+        load_evaluation_run_manifest(manifest)
+
+
+@pytest.mark.parametrize(
+    ("manifest_selection", "scoring_selection", "manifest_predictions_sha256", "error"),
+    [
+        ({"selected_policy_count": 1}, {}, None, "selection does not match"),
+        ({}, {}, "d" * 64, "predictions_sha256 does not match"),
+    ],
+)
+def test_run_manifest_rejects_split_and_prediction_mismatches(
+    tmp_path: Path,
+    manifest_selection: dict[str, object],
+    scoring_selection: dict[str, object],
+    manifest_predictions_sha256: str | None,
+    error: str,
+) -> None:
+    source = _write_json(tmp_path / "sharc.json", _sharc_split())
+    predictions = tmp_path / "predictions.jsonl"
+    predictions.write_text('{"case_id": "sharc-yes", "answer": "Yes"}\n', encoding="utf-8")
+    manifest = _run_manifest(
+        tmp_path / "run-manifest.json",
+        source=source,
+        predictions=predictions,
+        selection=manifest_selection,
+        predictions_sha256=manifest_predictions_sha256,
+    )
+    with pytest.raises(RunManifestError, match=error):
+        load_evaluation_run_manifest(manifest).validate_for_scoring(
+            benchmark="sharc",
+            source_sha256=_sha256(source),
+            selection=scoring_selection,
+            predictions_sha256=_sha256(predictions),
+        )
+
+
+def test_cli_rejects_run_manifest_without_a_scoring_action(tmp_path: Path) -> None:
+    source = _write_json(tmp_path / "sharc.json", _sharc_split())
+    manifest = _write_json(tmp_path / "run-manifest.json", {})
+    with pytest.raises(SystemExit) as excinfo:
+        main(
+            [
+                "--benchmark", "sharc", "--input", str(source), "--emit-cases", str(tmp_path / "cases.json"),
+                "--run-manifest", str(manifest),
+            ]
+        )
+    assert excinfo.value.code == 2
 
 
 def test_cli_uses_usage_exit_code_for_invalid_option_combinations(tmp_path: Path) -> None:
