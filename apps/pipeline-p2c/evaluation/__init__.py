@@ -7,3 +7,14 @@ from .evaluator import (  # noqa: F401
     evaluate,
     evaluate_decision,
 )
+from .benchmarks import (  # noqa: F401
+    BenchmarkCase,
+    BenchmarkDataset,
+    BenchmarkError,
+    BenchmarkPrediction,
+    evaluate_predictions,
+    load_benchmark,
+    load_contract_nli,
+    load_predictions,
+    load_sharc,
+)

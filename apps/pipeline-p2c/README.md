@@ -415,6 +415,50 @@ as an alias; none of them becomes executable, because none carries hash-bound
 evidence or a typed expression. A change that made this table look better would be
 the bug.
 
+## Open-benchmark evaluation
+
+The repository contains adapters for existing public annotations, not a newly
+labelled policy-to-workflow benchmark. They are deliberately separate from the
+compiler: a benchmark adapter normalizes the official corpus and scores a submitted
+system-output artifact. It does not download, redistribute, or silently relabel a
+corpus, and it does not claim that a benchmark supplies a gold knowledge graph, DMN,
+or BPMN model.
+
+Supported first-party formats are the official ShARC JSON split and the official
+ContractNLI JSON split. Obtain each data set under its own terms, keep it outside
+the repository, and record the exact split and release in the paper. The report
+records SHA-256 digests of both the source annotations and submitted predictions.
+
+```bash
+# Emit system-facing tasks and evidence-anchor IDs the system may cite. This file
+# deliberately omits gold answers and gold evidence.
+python -m evaluation.benchmarks \
+  --benchmark sharc --input /data/sharc_dev.json \
+  --emit-cases /tmp/sharc-cases.json
+
+# Score JSON or JSONL predictions. Missing cases are explicit abstentions; unknown
+# case IDs are a hard error, preventing an accidental split mismatch from passing.
+python -m evaluation.benchmarks \
+  --benchmark contract_nli --input /data/contract-nli/dev.json \
+  --predictions results/contract-nli-predictions.jsonl \
+  --out results/contract-nli-report.json
+```
+
+Each prediction is an object with a `case_id`, an optional `answer`, and optional
+`evidence_ids`. ContractNLI evidence IDs are source anchors such as `span:84`,
+emitted by `--emit-cases`; the task export contains every source anchor, not only
+gold anchors, and arbitrary rationale text is not accepted as evidence.
+The report separates overall accuracy, accuracy on answered cases, coverage/
+abstention, per-label macro-F1, and micro evidence precision/recall/F1. ShARC's
+label can be `Yes`, `No`, `Irrelevant`, or a required follow-up question, so its
+outcome scorer uses normalized exact matching rather than an LLM judge.
+
+This is evaluation infrastructure, not an experimental result. A paper must still
+run a fixed release/split, publish the prediction artifacts and configuration, and
+report failures and abstentions alongside outcome metrics. BPMN receives structural
+and traceability validation in this repository, but no unsupported claim of gold
+BPMN similarity is made.
+
 ## Exit codes
 
 | Code | Meaning |
