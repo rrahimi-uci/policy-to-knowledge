@@ -15,7 +15,7 @@ import hashlib
 import html
 import json
 import re
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from pathlib import Path
 from typing import Any, Iterable, Mapping, Sequence
 
@@ -391,18 +391,49 @@ def load_opp115(path: Path, *, policy_ids_path: Path | None = None) -> Benchmark
     )
 
 
+def _load_case_id_selection(path: Path, dataset: BenchmarkDataset) -> BenchmarkDataset:
+    """Select a fixed case-level subset without inspecting or relabelling gold answers."""
+    raw = _load_json(path)
+    if not isinstance(raw, list) or not all(isinstance(item, str) and item.strip() for item in raw):
+        raise BenchmarkError("case ID selection must be a JSON list of non-empty strings")
+    if len(set(raw)) != len(raw):
+        raise BenchmarkError("case ID selection contains duplicates")
+    by_id = {case.case_id: case for case in dataset.cases}
+    unknown = sorted(set(raw) - set(by_id))
+    if unknown:
+        raise BenchmarkError(f"case ID selection contains unknown case IDs: {unknown[:3]}")
+    selected = tuple(case for case in dataset.cases if case.case_id in set(raw))
+    if not selected:
+        raise BenchmarkError("case ID selection must not be empty")
+    return replace(
+        dataset,
+        cases=selected,
+        selection={
+            **dataset.selection,
+            "case_ids_sha256": _sha256(path),
+            "selected_case_count": len(selected),
+        },
+    )
+
+
 def load_benchmark(
-    name: str, path: Path, *, policy_ids_path: Path | None = None
+    name: str,
+    path: Path,
+    *,
+    policy_ids_path: Path | None = None,
+    case_ids_path: Path | None = None,
 ) -> BenchmarkDataset:
     """Load one supported official split without accessing the network."""
     normalised = name.strip().lower().replace("-", "_")
     if normalised == "sharc":
-        return load_sharc(path)
-    if normalised == "contract_nli":
-        return load_contract_nli(path)
-    if normalised == "opp115":
-        return load_opp115(path, policy_ids_path=policy_ids_path)
-    raise BenchmarkError(f"unsupported benchmark {name!r}; choose sharc, contract_nli, or opp115")
+        dataset = load_sharc(path)
+    elif normalised == "contract_nli":
+        dataset = load_contract_nli(path)
+    elif normalised == "opp115":
+        dataset = load_opp115(path, policy_ids_path=policy_ids_path)
+    else:
+        raise BenchmarkError(f"unsupported benchmark {name!r}; choose sharc, contract_nli, or opp115")
+    return _load_case_id_selection(case_ids_path, dataset) if case_ids_path else dataset
 
 
 def _load_prediction_records(path: Path) -> list[Any]:
@@ -601,6 +632,12 @@ def build_parser() -> argparse.ArgumentParser:
         metavar="FILE",
         help="With --benchmark opp115: JSON list of policy file stems for a policy-level split.",
     )
+    parser.add_argument(
+        "--case-ids",
+        type=Path,
+        metavar="FILE",
+        help="JSON list of fixed case IDs for a hash-bound, label-preserving benchmark subset.",
+    )
     action = parser.add_mutually_exclusive_group(required=True)
     action.add_argument("--emit-cases", type=Path, metavar="FILE")
     action.add_argument("--predictions", type=Path, metavar="FILE")
@@ -625,7 +662,12 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.run_manifest and args.emit_cases:
         parser.error("--run-manifest requires --predictions, not --emit-cases")
     try:
-        dataset = load_benchmark(args.benchmark, args.input, policy_ids_path=args.opp115_policy_ids)
+        dataset = load_benchmark(
+            args.benchmark,
+            args.input,
+            policy_ids_path=args.opp115_policy_ids,
+            case_ids_path=args.case_ids,
+        )
         if args.emit_cases:
             args.emit_cases.write_text(
                 json.dumps(
