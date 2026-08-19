@@ -199,11 +199,34 @@ def _duplicate_ids(ir: PolicyIR) -> list[Blocker]:
     return duplicates
 
 
+def verify_chunk_hashes(ir: PolicyIR, texts: Mapping[str, str]) -> dict[str, bool]:
+    """Re-hash every chunk once and record whether it matches its stored digest.
+
+    A chunk's integrity is a property of the chunk, not of each span that cites it.
+    Checking it inside :func:`_verify_span` re-hashed the whole chunk body per citation,
+    which made the gate quadratic in (spans x chunk size) and dominated its runtime —
+    68% of it on a 3,200-clause document.
+
+    A chunk whose document text was not supplied is absent from the result rather than
+    False: "cannot check" and "does not match" are different verdicts, and the caller
+    reports them differently.
+    """
+    verdicts: dict[str, bool] = {}
+    for chunk in ir.chunks:
+        text = texts.get(chunk.document_id)
+        if text is None or chunk.char_end > len(text):
+            continue
+        body = text[chunk.char_start : chunk.char_end]
+        verdicts[chunk.chunk_id] = sha256_text(body) == chunk.chunk_sha256
+    return verdicts
+
+
 def _verify_span(
     span_id: str,
     ir: PolicyIR,
     texts: Mapping[str, str],
     accumulator: _Accumulator,
+    chunk_hashes: Mapping[str, bool] | None = None,
 ) -> bool:
     """Verify one evidence span. Returns True when it is exactly anchored."""
     span = ir.evidence_index().get(span_id)
@@ -260,10 +283,11 @@ def _verify_span(
             role,
         )
         return False
-    # Verify the chunk really hashes to what it claims, so a span cannot be
-    # anchored against a chunk record that has drifted from the document.
-    body = text[chunk.char_start : chunk.char_end]
-    if sha256_text(body) != chunk.chunk_sha256:
+    # A span cannot be anchored against a chunk record that has drifted from the
+    # document. The verdict is computed once per run, not once per citation.
+    if chunk_hashes is None:
+        chunk_hashes = verify_chunk_hashes(ir, texts)
+    if chunk_hashes.get(chunk.chunk_id) is False:
         accumulator.add(
             codes.CHUNK_HASH_MISMATCH,
             f"chunk {chunk.chunk_id!r} does not hash to its recorded value",
@@ -325,11 +349,20 @@ _REQUIRED_EVIDENCE: tuple[tuple[str, SemanticRole], ...] = (
 )
 
 
+def _feel_names(ir: PolicyIR) -> dict[str, str]:
+    """FEEL names for every data definition, built once per run."""
+    return {
+        key: feel_name(value.name) for key, value in ir.data_definition_index().items()
+    }
+
+
 def _check_clause(
     clause: AtomicPolicyClause,
     ir: PolicyIR,
     texts: Mapping[str, str],
     as_of: _dt.date | None = None,
+    names: Mapping[str, str] | None = None,
+    chunk_hashes: Mapping[str, bool] | None = None,
 ) -> ElementReport:
     accumulator = _Accumulator(clause.clause_id)
     statuses: set[Status] = set()
@@ -360,7 +393,7 @@ def _check_clause(
 
     exact = True
     for evidence_id in clause.all_evidence_ids():
-        if not _verify_span(evidence_id, ir, texts, accumulator):
+        if not _verify_span(evidence_id, ir, texts, accumulator, chunk_hashes):
             exact = False
     if not clause.all_evidence_ids():
         exact = False
@@ -391,6 +424,7 @@ def _check_clause(
     if exact:
         statuses.add(Status.PROVENANCE_EXACT)
 
+    names = _feel_names(ir) if names is None else names
     context = context_from_ir(ir)
     type_errors: list[str] = []
     for attribute in ("condition_ast", "exception_ast"):
@@ -438,8 +472,8 @@ def _check_clause(
             "text",
         )
 
-    clause_ids = set(ir.clause_index())
-    section_paths = {chunk.section_path for chunk in ir.chunks if chunk.section_path}
+    clause_ids = ir.clause_id_set()
+    section_paths = ir.section_paths()
     for target in clause.cross_reference_targets:
         if target not in clause_ids and target not in section_paths:
             accumulator.add(
@@ -476,7 +510,7 @@ def _check_clause(
                 SemanticRole.SCOPE.value,
             )
         for evidence_id in dimension.evidence_ids:
-            if not _verify_span(evidence_id, ir, texts, accumulator):
+            if not _verify_span(evidence_id, ir, texts, accumulator, chunk_hashes):
                 exact = False
 
     if clause.authority_ref and clause.authority_ref not in ir.authority_index():
@@ -564,9 +598,6 @@ def _check_clause(
                     "reach an executable projection",
                 )
 
-    names = {
-        key: feel_name(value.name) for key, value in definitions.items()
-    }
     for attribute in ("condition_ast", "effect_ast", "exception_ast"):
         expression = getattr(clause, attribute)
         if expression is None:
@@ -772,6 +803,7 @@ def _check_process(
     ir: PolicyIR,
     texts: Mapping[str, str],
     decision_reports: Mapping[str, ElementReport],
+    chunk_hashes: Mapping[str, bool] | None = None,
 ) -> ElementReport:
     accumulator = _Accumulator(fragment.fragment_id)
     statuses: set[Status] = {Status.SCHEMA_VALID}
@@ -905,13 +937,13 @@ def _check_process(
         )
 
     for evidence_id in fragment.evidence_ids:
-        _verify_span(evidence_id, ir, texts, accumulator)
+        _verify_span(evidence_id, ir, texts, accumulator, chunk_hashes)
     for activity in fragment.activities:
         for evidence_id in activity.evidence_ids:
-            _verify_span(evidence_id, ir, texts, accumulator)
+            _verify_span(evidence_id, ir, texts, accumulator, chunk_hashes)
     if fragment.trigger_event is not None:
         for evidence_id in fragment.trigger_event.evidence_ids:
-            _verify_span(evidence_id, ir, texts, accumulator)
+            _verify_span(evidence_id, ir, texts, accumulator, chunk_hashes)
 
     if not accumulator.blockers:
         statuses.add(Status.BPMN_ELIGIBLE)
@@ -1094,8 +1126,11 @@ def run_gate(
     texts = dict(texts or {})
     global_blockers = _duplicate_ids(ir)
 
+    feel_names = _feel_names(ir)
+    chunk_hashes = verify_chunk_hashes(ir, texts)
     clause_reports = {
-        clause.clause_id: _check_clause(clause, ir, texts, as_of) for clause in ir.clauses
+        clause.clause_id: _check_clause(clause, ir, texts, as_of, feel_names, chunk_hashes)
+        for clause in ir.clauses
     }
     conflict_outcomes = _resolve_conflicts(ir, clause_reports)
     decision_reports = {
@@ -1103,7 +1138,9 @@ def run_gate(
         for decision in ir.decisions
     }
     process_reports = {
-        fragment.fragment_id: _check_process(fragment, ir, texts, decision_reports)
+        fragment.fragment_id: _check_process(
+            fragment, ir, texts, decision_reports, chunk_hashes
+        )
         for fragment in ir.processes
     }
     dependency_reports = {

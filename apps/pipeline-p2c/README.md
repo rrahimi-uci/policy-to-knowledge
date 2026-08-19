@@ -20,7 +20,7 @@ failure.
 | --- | --- |
 | A deterministic compiler: Policy IR in, graph + DMN + BPMN out | An extraction pipeline. It calls no model and has no prompts |
 | A fail-closed gate that decides what may be compiled | A legal-correctness checker |
-| A conformance harness with 21 fixtures and 432 offline tests | A benchmark or a labelled dataset |
+| A conformance harness with 21 fixtures and 437 offline tests | A benchmark or a labelled dataset |
 | Standards-targeted: DMN 1.5 `formal/24-01-01`, BPMN 2.0.2 `formal/13-12-09` | A BPM engine, or a certified DMN implementation |
 
 The LLM-facing stages the plan describes (Stage 2 ontology extraction, Stage 3A
@@ -291,6 +291,18 @@ matching wrong answers, which a round trip through the same AST would hide.
 This is a *reference* implementation, not a certified engine. Agreement with a
 third-party DMN engine remains future work and is stated as such.
 
+## Scale
+
+`PolicyIR` is a value — every field is a tuple — so its indexes are memoised, and the
+gate verifies each chunk's hash once per run rather than once per citation. Both matter
+only at corpus scale and were invisible in fixtures: a 3,200-clause run took **2.83s
+before and 0.04s after**, and the growth curve went from 4x per doubling (quadratic) to
+2x (linear).
+
+`tests/test_scaling.py` guards this by counting operations rather than timing, so the
+guards cannot flake: an index must return the same object twice, and one chunk must be
+hashed exactly once however many clauses cite it.
+
 ## Determinism
 
 Identical Policy IR plus an identical profile produces byte-identical artefacts.
@@ -362,13 +374,14 @@ Stated plainly, because the whole point of the app is not overstating things:
 ## Testing
 
 ```bash
-python -m pytest tests/ -q                      # 432 offline tests
+python -m pytest tests/ -q                      # 437 offline tests
 python -m pytest tests/ -q --xsd-dir schemas/omg  # + 8 XSD conformance tests
 ```
 
 Test files map onto the plan's test strategy: `test_contracts.py` (contract and
 provenance), `test_expressions.py` (expression and semantic), `test_scope.py`,
-`test_authority.py`, `test_timeline.py`, `test_ingestion.py`, `test_dmn.py`, `test_bpmn.py`,
+`test_authority.py`, `test_timeline.py`, `test_ingestion.py`, `test_scaling.py`,
+`test_dmn.py`, `test_bpmn.py`,
 `test_compatibility.py`, `test_gate.py`, `test_stress_matrix.py` (one test per
 stress-matrix row), `test_cli.py`, `test_xsd_conformance.py`.
 

@@ -1191,42 +1191,83 @@ class PolicyIR:
     metadata: Mapping[str, Any] = field(default_factory=dict)
 
     # -- indexes ---------------------------------------------------------
+    #
+    # Each index is built once and memoised. Every field of this record is a tuple, so
+    # the document is genuinely immutable and a cached index can never go stale.
+    #
+    # The memo matters at corpus scale rather than in a fixture. Rebuilding an index
+    # inside a per-clause or per-span loop makes the gate and the graph projection
+    # O(clauses x spans): a synthetic run showed the time quadrupling on every doubling
+    # of input, so a corpus of tens of thousands of clauses never finished.
+    #
+    # The returned mapping is shared. Treat it as read-only; copy it before mutating.
+    def _index(self, name: str, build: Any) -> Any:
+        cache = getattr(self, "_index_cache", None)
+        if cache is None:
+            cache = {}
+            # A plain attribute, not a dataclass field, so equality, hashing and
+            # to_dict() are unaffected by its presence.
+            object.__setattr__(self, "_index_cache", cache)
+        if name not in cache:
+            cache[name] = build()
+        return cache[name]
+
     def document_index(self) -> dict[str, DocumentArtifact]:
-        return {d.document_id: d for d in self.documents}
+        return self._index("documents", lambda: {d.document_id: d for d in self.documents})
 
     def chunk_index(self) -> dict[str, Chunk]:
-        return {c.chunk_id: c for c in self.chunks}
+        return self._index("chunks", lambda: {c.chunk_id: c for c in self.chunks})
 
     def evidence_index(self) -> dict[str, EvidenceSpan]:
-        return {e.evidence_id: e for e in self.evidence_spans}
+        return self._index(
+            "evidence", lambda: {e.evidence_id: e for e in self.evidence_spans}
+        )
 
     def data_definition_index(self) -> dict[str, DataDefinition]:
-        return {d.data_definition_id: d for d in self.data_definitions}
+        return self._index(
+            "data_definitions",
+            lambda: {d.data_definition_id: d for d in self.data_definitions},
+        )
 
     def function_index(self) -> dict[str, FunctionSignature]:
-        return {f.function_id: f for f in self.functions}
+        return self._index("functions", lambda: {f.function_id: f for f in self.functions})
 
     def clause_index(self) -> dict[str, AtomicPolicyClause]:
-        return {c.clause_id: c for c in self.clauses}
+        return self._index("clauses", lambda: {c.clause_id: c for c in self.clauses})
 
     def decision_index(self) -> dict[str, DecisionModelCandidate]:
-        return {d.decision_id: d for d in self.decisions}
+        return self._index("decisions", lambda: {d.decision_id: d for d in self.decisions})
 
     def process_index(self) -> dict[str, ProcessFragmentCandidate]:
-        return {p.fragment_id: p for p in self.processes}
+        return self._index("processes", lambda: {p.fragment_id: p for p in self.processes})
 
     def entity_index(self) -> dict[str, EntityType]:
-        return {e.entity_type_id: e for e in self.entity_types}
+        return self._index("entities", lambda: {e.entity_type_id: e for e in self.entity_types})
 
     def scope_dimension_index(self) -> dict[str, ScopeDimensionDefinition]:
         """Declared scope axes, keyed by the name clauses cite."""
-        return {d.name: d for d in self.scope_dimensions}
+        return self._index("scope_dimensions", lambda: {d.name: d for d in self.scope_dimensions})
 
     def authority_index(self) -> dict[str, AuthoritySource]:
-        return {a.authority_id: a for a in self.authority_sources}
+        return self._index(
+            "authorities", lambda: {a.authority_id: a for a in self.authority_sources}
+        )
+
+    def clause_id_set(self) -> frozenset[str]:
+        """Cached set of clause IDs, for the many membership tests over it."""
+        return self._index("clause_ids", lambda: frozenset(c.clause_id for c in self.clauses))
+
+    def section_paths(self) -> frozenset[str]:
+        """Cached set of non-empty section paths, used to resolve cross references."""
+        return self._index(
+            "section_paths",
+            lambda: frozenset(c.section_path for c in self.chunks if c.section_path),
+        )
 
     def conversion_index(self) -> dict[tuple[str, str], UnitConversion]:
-        return {(c.from_unit, c.to_unit): c for c in self.unit_conversions}
+        return self._index(
+            "conversions", lambda: {(c.from_unit, c.to_unit): c for c in self.unit_conversions}
+        )
 
     def to_dict(self) -> dict[str, Any]:
         return {

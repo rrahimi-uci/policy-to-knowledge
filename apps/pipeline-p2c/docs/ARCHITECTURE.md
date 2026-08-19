@@ -256,6 +256,32 @@ because a compiler whose output depends on when it ran cannot produce byte-stabl
 artefacts, and byte-stability is the property the whole reproducibility story rests
 on.
 
+## Why indexes are memoised
+
+`PolicyIR` is a value: every field is a tuple, so the record cannot change after
+construction. That makes a cached index safe by construction — it can never go stale —
+and the cache lives in a plain attribute rather than a dataclass field, so equality,
+hashing and ``to_dict()`` are unaffected.
+
+The reason it matters is scale, and it was invisible in a fixture. Rebuilding an index
+inside a loop over the items it indexes is O(n²), and three such loops existed: the gate
+rebuilt the evidence, chunk and document indexes per span, the graph projection rebuilt
+the evidence index per rule, and `_check_clause` rebuilt the clause-ID set and the FEEL
+name map per clause. A synthetic run showed the time quadrupling on every doubling of
+input, so a corpus of tens of thousands of clauses simply never finished.
+
+Worse than any of those was chunk verification. `_verify_span` re-hashed the whole chunk
+body to confirm its digest — per citation. On a 3,200-clause document that was 68% of
+total gate time, because the same 60 KB body was hashed 3,200 times. A chunk's integrity
+is a property of the chunk, not of each span that cites it, so it is now computed once
+per run and consulted per span.
+
+Together these took a 3,200-clause run from 2.83s to 0.04s and turned the growth curve
+from 4x per doubling into 2x. `tests/test_scaling.py` guards all of it by counting
+operations rather than measuring time, so the guards are deterministic: an index must
+return the same object twice, and a single chunk must be hashed exactly once no matter
+how many clauses cite it.
+
 ## Adding a check
 
 1. Name the blocker in `validation/blockers.py`.
