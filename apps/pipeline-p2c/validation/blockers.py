@@ -90,6 +90,7 @@ BRANCHING_NOT_SUPPORTED = "branching_not_supported"
 # -- dependencies -----------------------------------------------------------
 UNVALIDATED_EXECUTABLE_DEPENDENCY = "unvalidated_executable_dependency"
 UNKNOWN_DEPENDENCY_ENDPOINT = "unknown_dependency_endpoint"
+UNKNOWN_RELATION_ENDPOINT = "unknown_relation_endpoint"
 
 
 @dataclass(frozen=True)

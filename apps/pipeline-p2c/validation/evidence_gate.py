@@ -95,6 +95,7 @@ class GateReport:
     decisions: Mapping[str, ElementReport] = field(default_factory=dict)
     processes: Mapping[str, ElementReport] = field(default_factory=dict)
     dependencies: Mapping[str, ElementReport] = field(default_factory=dict)
+    semantic_relations: Mapping[str, ElementReport] = field(default_factory=dict)
     global_blockers: tuple[Blocker, ...] = ()
 
     # -- queries ---------------------------------------------------------
@@ -114,6 +115,10 @@ class GateReport:
         report = self.dependencies.get(edge_id)
         return bool(report and report.has(Status.SCHEMA_VALID) and not report.blockers)
 
+    def relation_admitted(self, relation_id: str) -> bool:
+        report = self.semantic_relations.get(relation_id)
+        return bool(report and report.has(Status.GRAPH_ELIGIBLE))
+
     def admitted_decisions(self) -> tuple[str, ...]:
         return tuple(
             sorted(k for k, v in self.decisions.items() if v.has(Status.DMN_ELIGIBLE))
@@ -131,7 +136,9 @@ class GateReport:
 
     def all_blockers(self) -> tuple[Blocker, ...]:
         out = list(self.global_blockers)
-        for group in (self.clauses, self.decisions, self.processes, self.dependencies):
+        for group in (
+            self.clauses, self.decisions, self.processes, self.dependencies, self.semantic_relations
+        ):
             for report in group.values():
                 out.extend(report.blockers)
         return tuple(out)
@@ -148,6 +155,9 @@ class GateReport:
             "decisions": {k: v.to_dict() for k, v in sorted(self.decisions.items())},
             "processes": {k: v.to_dict() for k, v in sorted(self.processes.items())},
             "dependencies": {k: v.to_dict() for k, v in sorted(self.dependencies.items())},
+            "semantic_relations": {
+                k: v.to_dict() for k, v in sorted(self.semantic_relations.items())
+            },
             "global_blockers": [b.to_dict() for b in self.global_blockers],
             "blocker_counts": self.counts_by_code(),
         }
@@ -183,6 +193,7 @@ def _duplicate_ids(ir: PolicyIR) -> list[Blocker]:
         ("decision", (d.decision_id for d in ir.decisions)),
         ("process", (p.fragment_id for p in ir.processes)),
         ("dependency", (d.edge_id for d in ir.dependencies)),
+        ("semantic_relation", (r.relation_id for r in ir.semantic_relations)),
     )
     for kind, values in groups:
         for value in values:
@@ -983,6 +994,36 @@ def _check_dependency(edge, ir: PolicyIR) -> ElementReport:
     return ElementReport(edge.edge_id, frozenset(statuses), tuple(accumulator.blockers))
 
 
+def _check_semantic_relation(
+    relation, ir: PolicyIR, texts: Mapping[str, str], chunk_hashes: Mapping[str, bool]
+) -> ElementReport:
+    """Validate graph semantics without granting executable meaning to a relation."""
+    accumulator = _Accumulator(relation.relation_id)
+    known = (
+        set(ir.clause_index())
+        | set(ir.decision_index())
+        | set(ir.process_index())
+        | set(ir.entity_index())
+        | {mention.mention_id for mention in ir.entity_mentions}
+        | set(ir.data_definition_index())
+        | set(ir.authority_index())
+        | {activity.activity_id for process in ir.processes for activity in process.activities}
+    )
+    for endpoint in (relation.source_id, relation.target_id):
+        if endpoint not in known:
+            accumulator.add(codes.UNKNOWN_RELATION_ENDPOINT, f"endpoint {endpoint!r} is unknown")
+    if not relation.evidence_ids:
+        accumulator.add(codes.NO_EVIDENCE_CITED, "semantic relation cites no source evidence")
+    for evidence_id in relation.evidence_ids:
+        _verify_span(evidence_id, ir, texts, accumulator, chunk_hashes)
+    statuses: set[Status] = set()
+    if not accumulator.has(codes.UNKNOWN_RELATION_ENDPOINT):
+        statuses.add(Status.SCHEMA_VALID)
+    if not accumulator.blockers:
+        statuses.update({Status.PROVENANCE_EXACT, Status.SEMANTIC_SUPPORTED, Status.GRAPH_ELIGIBLE})
+    return ElementReport(relation.relation_id, frozenset(statuses), tuple(accumulator.blockers))
+
+
 #: Why a conflict could not be settled. A machine-readable code rather than prose,
 #: so a caller (or the tie report below) never has to match on wording.
 UNRESOLVED_EQUAL_WEIGHT = "equal_weight"
@@ -1146,6 +1187,10 @@ def run_gate(
     dependency_reports = {
         edge.edge_id: _check_dependency(edge, ir) for edge in ir.dependencies
     }
+    relation_reports = {
+        relation.relation_id: _check_semantic_relation(relation, ir, texts, chunk_hashes)
+        for relation in ir.semantic_relations
+    }
 
     # Only conflicts precedence could not settle block a decision. A resolved
     # conflict already refused its loser at clause level, so the decision can still
@@ -1205,5 +1250,6 @@ def run_gate(
         decisions=decision_reports,
         processes=process_reports,
         dependencies=dependency_reports,
+        semantic_relations=relation_reports,
         global_blockers=tuple(global_blockers),
     )
