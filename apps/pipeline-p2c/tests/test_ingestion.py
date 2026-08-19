@@ -22,14 +22,28 @@ from policy_ir.ids import sha256_text
 from policy_ir.models import PolicyIR
 from validation import run_gate
 
-pypdf = pytest.importorskip("pypdf", reason="PDF ingestion needs the optional pypdf extra")
-
-from ingestion.pdf import (  # noqa: E402  (after importorskip by design)
+# ingestion.pdf imports pypdf lazily, inside the functions that need it, so importing
+# these names is safe without the extra installed. Only the tests that actually open a
+# PDF are skipped — section detection and canonicalisation are pure and must keep
+# running in a minimal environment.
+from ingestion.pdf import (
     canonicalise,
     extract_pages,
     ingest_pdf,
     parser_version,
     section_for_offset,
+)
+
+
+def _pypdf_available() -> bool:
+    """Probe for the extra without importing it, so nothing is loaded needlessly."""
+    import importlib.util
+
+    return importlib.util.find_spec("pypdf") is not None
+
+
+requires_pypdf = pytest.mark.skipif(
+    not _pypdf_available(), reason="PDF ingestion needs the optional pypdf extra"
 )
 
 #: The committed source corpus, read-only. It lives in the sibling pipeline app; these
@@ -39,8 +53,15 @@ SMALL_PDF = COMPLIANCE / "comercial_lending" / "bulletin_2013_9a.pdf"
 #: 59 pages, one of which is a scanned image — the corpus's own coverage gap.
 GAPPED_PDF = COMPLIANCE / "healthcare" / "nursing_facility_icpg.pdf"
 
+#: 467 pages, 20 of them scanned images — the corpus's largest coverage gap, and the
+#: only document big enough to expose a placeholder-ID collision.
+MULTI_GAP_PDF = (
+    COMPLIANCE / "comercial_lending" / "sop_technical_updates_effective.pdf"
+)
+
 requires_corpus = pytest.mark.skipif(
-    not SMALL_PDF.exists(), reason="the committed compliance PDFs are not present"
+    not SMALL_PDF.exists() or not _pypdf_available(),
+    reason="the committed compliance PDFs or the pypdf extra are not present",
 )
 
 
@@ -225,7 +246,10 @@ def test_a_real_obligation_can_be_cited_and_round_trips() -> None:
     assert span.section_path
 
 
-@pytest.mark.skipif(not GAPPED_PDF.exists(), reason="gapped corpus PDF not present")
+@pytest.mark.skipif(
+    not GAPPED_PDF.exists() or not _pypdf_available(),
+    reason="gapped corpus PDF or pypdf extra not present",
+)
 def test_a_page_with_no_extractable_text_is_recorded_not_dropped() -> None:
     """A silently dropped page makes a corpus look complete when it is not."""
     result = ingest_pdf(SourceRegistry(), GAPPED_PDF)
@@ -239,12 +263,62 @@ def test_a_page_with_no_extractable_text_is_recorded_not_dropped() -> None:
     assert 0 < result.extraction_gap < 1
 
 
-@pytest.mark.skipif(not GAPPED_PDF.exists(), reason="gapped corpus PDF not present")
+@pytest.mark.skipif(
+    not GAPPED_PDF.exists() or not _pypdf_available(),
+    reason="gapped corpus PDF or pypdf extra not present",
+)
 def test_the_coverage_ledger_accounts_for_every_chunk() -> None:
     result = ingest_pdf(SourceRegistry(), GAPPED_PDF)
-    assert {entry.chunk_id for entry in result.coverage} == {
-        chunk.chunk_id for chunk in result.chunks
-    }
+    chunk_ids = [chunk.chunk_id for chunk in result.chunks]
+    coverage_ids = [entry.chunk_id for entry in result.coverage]
+    # Counts as well as sets: comparing sets alone would hide duplicate entries
+    # pointing at one chunk, which is exactly how a placeholder-ID collision hides.
+    assert sorted(coverage_ids) == sorted(chunk_ids)
+    assert len(set(chunk_ids)) == len(chunk_ids), "chunk ids must be unique"
+
+
+@pytest.mark.skipif(
+    not MULTI_GAP_PDF.exists() or not _pypdf_available(),
+    reason="the multi-gap corpus PDF or pypdf extra is not present",
+)
+def test_every_missing_page_gets_its_own_placeholder() -> None:
+    """20 unextractable pages must be 20 records, not one.
+
+    Every such page contributes the same content — nothing — so deriving the
+    placeholder ID from content and offset gave all of them one identical ID and 19
+    were silently overwritten. The ID comes from the page number instead.
+    """
+    registry = SourceRegistry()
+    result = ingest_pdf(registry, MULTI_GAP_PDF)
+    assert len(result.pages_without_text) > 1, "this document has several scanned pages"
+
+    placeholders = [c for c in result.chunks if c.char_end == c.char_start]
+    assert len(placeholders) == len(result.pages_without_text)
+    assert len({c.chunk_id for c in placeholders}) == len(placeholders)
+
+    # And they survive in the registry, so the emitted IR keeps them all.
+    registered = [c for c in registry.chunks.values() if c.char_end == c.char_start]
+    assert len(registered) == len(result.pages_without_text)
+    assert sorted(c.page_start for c in registered) == list(result.pages_without_text)
+
+    failed = [e for e in result.coverage if e.status == "extraction_failed"]
+    assert len({e.chunk_id for e in failed}) == len(failed) == len(placeholders)
+
+
+@requires_corpus
+def test_a_placeholder_id_is_derived_from_its_page() -> None:
+    from policy_ir.ids import missing_page_chunk_id
+
+    registry = SourceRegistry()
+    document = registry.register_document(
+        source_uri="mem://doc", raw_bytes=b"text", canonical_text="text"
+    )
+    first = registry.add_page_placeholder(document.document_id, 6)
+    second = registry.add_page_placeholder(document.document_id, 8)
+    assert first.chunk_id != second.chunk_id
+    assert first.chunk_id == missing_page_chunk_id(document.document_id, 6)
+    assert (first.char_start, first.char_end) == (4, 4)
+    assert first.page_start == first.page_end == 6
 
 
 @requires_corpus
@@ -295,7 +369,10 @@ def test_the_cli_writes_a_reusable_skeleton(tmp_path: Path) -> None:
     assert ir.metadata["artifact_role"] == "ingestion_skeleton"
 
 
-@pytest.mark.skipif(not GAPPED_PDF.exists(), reason="gapped corpus PDF not present")
+@pytest.mark.skipif(
+    not GAPPED_PDF.exists() or not _pypdf_available(),
+    reason="gapped corpus PDF or pypdf extra not present",
+)
 def test_the_cli_reports_the_extraction_gap(capsys: pytest.CaptureFixture[str]) -> None:
     from cli.compile_policy import main
 

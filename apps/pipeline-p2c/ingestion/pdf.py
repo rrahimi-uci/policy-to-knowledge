@@ -41,7 +41,6 @@ from .sections import Heading, find_headings, section_at
 NORMALIZER_VERSION = "normalize-1"
 
 _SPACES = re.compile(r"[ \t\f\v ]+")
-_LINE_BREAKS = re.compile(r"\s*\n\s*")
 
 
 class PdfSupportUnavailable(RuntimeError):
@@ -208,14 +207,7 @@ def ingest_pdf(
         # A zero-length chunk is the honest record: this page contributed nothing to
         # the canonical text, and pretending it was processed would make the corpus
         # look complete.
-        placeholder = registry.add_chunk(
-            document.document_id,
-            len(canonical),
-            len(canonical),
-            section_path=f"page {page_number}",
-            page_start=page_number,
-            page_end=page_number,
-        )
+        placeholder = registry.add_page_placeholder(document.document_id, page_number)
         chunks.append(placeholder)
         coverage.append(
             CoverageEntry(

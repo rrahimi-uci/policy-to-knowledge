@@ -128,6 +128,28 @@ class SourceRegistry:
         self.chunks[chunk.chunk_id] = chunk
         return chunk
 
+    def add_page_placeholder(self, document_id: str, page_number: int) -> Chunk:
+        """Register a zero-length chunk standing in for a page with no text.
+
+        The schema attaches coverage to a chunk, and a page that produced nothing has
+        no span in the canonical text. Emitting no record would make a document with
+        scanned pages look fully processed, so the placeholder carries the page number
+        and its ID is derived from that page — never from its (empty) content.
+        """
+        text = self.text(document_id)
+        chunk = Chunk(
+            chunk_id=ids.missing_page_chunk_id(document_id, page_number),
+            document_id=document_id,
+            chunk_sha256=ids.sha256_text(""),
+            char_start=len(text),
+            char_end=len(text),
+            section_path=f"page {page_number}",
+            page_start=page_number,
+            page_end=page_number,
+        )
+        self.chunks[chunk.chunk_id] = chunk
+        return chunk
+
     def chunk_whole_document(self, document_id: str, *, section_path: str = "") -> Chunk:
         """Convenience for small documents: one chunk covering everything."""
         return self.add_chunk(

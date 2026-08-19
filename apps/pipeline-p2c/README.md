@@ -20,7 +20,7 @@ failure.
 | --- | --- |
 | A deterministic compiler: Policy IR in, graph + DMN + BPMN out | An extraction pipeline. It calls no model and has no prompts |
 | A fail-closed gate that decides what may be compiled | A legal-correctness checker |
-| A conformance harness with 21 fixtures and 426 offline tests | A benchmark or a labelled dataset |
+| A conformance harness with 21 fixtures and 432 offline tests | A benchmark or a labelled dataset |
 | Standards-targeted: DMN 1.5 `formal/24-01-01`, BPMN 2.0.2 `formal/13-12-09` | A BPM engine, or a certified DMN implementation |
 
 The LLM-facing stages the plan describes (Stage 2 ontology extraction, Stage 3A
@@ -79,9 +79,12 @@ two coordinate systems. The patterns are drafting conventions, not domain terms:
 `Subpart C3`, `7.1`.
 
 **Pages that yield no text are recorded, not skipped.** 21 pages across the committed
-corpus are scanned images. Each becomes a zero-length chunk with `extraction_failed`
-in the coverage ledger — countable, attributable to a page, impossible to mistake for
-content. A corpus that silently dropped them would look complete when it is not.
+corpus are scanned images. Each becomes its own zero-length chunk with
+`extraction_failed` in the coverage ledger — countable, attributable to a page,
+impossible to mistake for content. A corpus that silently dropped them would look
+complete when it is not. The placeholder's ID is derived from the page number rather
+than its content, because every such page contributes the same content — nothing — and
+hashing that would give all of them one identical ID.
 
 Measured on the corpus:
 
@@ -359,7 +362,7 @@ Stated plainly, because the whole point of the app is not overstating things:
 ## Testing
 
 ```bash
-python -m pytest tests/ -q                      # 426 offline tests
+python -m pytest tests/ -q                      # 432 offline tests
 python -m pytest tests/ -q --xsd-dir schemas/omg  # + 8 XSD conformance tests
 ```
 
