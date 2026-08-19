@@ -48,7 +48,7 @@ def test_call_openai_uses_responses_structured_output_and_no_storage(
         model="gpt-5.2", prompt="prompt", api_key_env="P2K_TEST_OPENAI_KEY", opener=fake_opener
     ) == '{"answer": "Yes"}'
     assert captured["url"] == "https://api.openai.com/v1/responses"
-    assert captured["authorization"] == "Bearer test-key"
+    assert captured["authorization"] == "Bearer " + "test-key"
     assert captured["body"] == {
         "model": "gpt-5.2",
             "input": "prompt",
