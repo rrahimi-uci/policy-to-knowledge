@@ -95,3 +95,22 @@ Thumbs.db
 
 # Runtime symlink created by start.sh -> apps/pipeline/pipeline-output (machine-specific)
 apps/explorer/pipeline-output
+
+# ─────────────────────────────────────────────────────────────────
+# Policy compiler (pipeline-p2c) — what is worth committing and what is not
+#
+# The repo's policy is to commit real data so a clone runs out of the box (see the
+# bundled-dataset note above). These two exclusions do not weaken it:
+#
+#   compliance-files/ here is byte-for-byte identical to apps/pipeline/compliance-files/,
+#   which is already tracked. Committing it would add ~53 MB of duplicate PDFs. Point the
+#   compiler at the tracked copy, or copy it in locally.
+#
+#   outputs/02_extraction_requests/requests/ is 974 generated files (~13 MB) holding one
+#   JSON Schema and prompt per chunk. Stage 02 rebuilds all of it from stage 01 in under a
+#   second, so it is cache, not evidence. The stage summary stays committed, and every
+#   expensive artefact — the canonical text, the model replies, the IR, the gate report,
+#   the DMN/BPMN and the HTML report — is committed in full.
+# ─────────────────────────────────────────────────────────────────
+apps/pipeline-p2c/compliance-files/
+apps/pipeline-p2c/outputs/02_extraction_requests/requests/

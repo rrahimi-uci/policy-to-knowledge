@@ -19,6 +19,7 @@ import datetime as _dt
 import re
 import unicodedata
 from dataclasses import dataclass, field
+from typing import Iterable, Mapping
 
 from policy_ir import ids
 from policy_ir.enums import MatchStatus, SemanticRole
@@ -253,6 +254,35 @@ class SourceRegistry:
             page_start=chunk.page_start,
             page_end=chunk.page_end,
         )
+
+    @classmethod
+    def restore(
+        cls,
+        documents: Iterable[DocumentArtifact],
+        chunks: Iterable[Chunk],
+        texts: Mapping[str, str],
+    ) -> "SourceRegistry":
+        """Rebuild a registry from persisted state, without re-reading the sources.
+
+        Extracting a 1,200-page PDF costs minutes, and every stage after ingestion needs
+        the same canonical text and the same chunk boundaries. Since ingestion is
+        deterministic, persisting its output and restoring from it is equivalent to
+        re-running it and vastly cheaper — and it means a later stage can be fixed and
+        re-run without paying for extraction again.
+        """
+        registry = cls()
+        for document in documents:
+            registry.documents[document.document_id] = document
+            try:
+                registry.texts[document.document_id] = texts[document.document_id]
+            except KeyError as exc:
+                raise KeyError(
+                    f"no canonical text supplied for {document.document_id!r}; a restored "
+                    "registry cannot verify or slice a document it cannot read"
+                ) from exc
+        for chunk in chunks:
+            registry.chunks[chunk.chunk_id] = chunk
+        return registry
 
     def document_tuple(self) -> tuple[DocumentArtifact, ...]:
         return tuple(self.documents[key] for key in sorted(self.documents))

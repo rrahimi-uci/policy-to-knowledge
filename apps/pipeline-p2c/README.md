@@ -154,6 +154,68 @@ resolve.
 The request deliberately excludes the document's full text: an extractor able to read
 past its units could reason about text it cannot cite.
 
+### Closing that seam: the model extractor
+
+`extraction/model_extractor.py` fills the seam described above. It posts one request per
+chunk to the OpenAI Responses API with Structured Outputs in strict mode, so the reply is
+schema-valid by construction rather than by validation.
+
+```bash
+# the whole pipeline: PDFs in, HTML report out
+python -m cli.run_pipeline --input compliance-files/fannie_mae --output outputs
+
+# a costed pilot before committing to a full corpus
+python -m cli.run_pipeline --input compliance-files/fannie_mae --output outputs \
+    --to model_extraction --limit 4
+
+# re-run the free, deterministic tail after fixing a compiler
+python -m cli.run_pipeline --output outputs --from admission
+```
+
+There is no SDK dependency: the transport is one `urllib` POST behind a
+`Transport = Callable[[Mapping], Mapping]` alias, which keeps the app's zero-dependency
+property and makes every test offline — the whole retry, refusal and accounting surface
+is exercised through a fake transport.
+
+**Strict mode accepts a narrow subset of JSON Schema**, so `extraction/strict_schema.py`
+rewrites the generated schema into it: `oneOf` → `anyOf`, `const` → single-member `enum`,
+every enum given an explicit `type`, every object closed with all properties required,
+unreachable `$defs` pruned (37 → 19), and arrays never made nullable. Each of those rules
+exists because the live API rejected the schema without it.
+
+#### Narrowing beats refusing
+
+Two failure classes came out of the first live run, and both were the same mistake — an
+open slot the model filled reasonably and the parser then refused:
+
+| Slot | What the model sent | Fix |
+|---|---|---|
+| `TemporalConstraint.duration` | `30`, `"four months"`, a nested expression | `DurationLiteral`: ISO 8601 days-and-time string, pattern-checked |
+| `EffectivePeriod.start` / `end` | `"July 6, 2010"` | `YYYY-MM-DD`, pattern-checked |
+
+The first cost **8 of the first 45 chunks — 18%**, each one a paid call. Constraining the
+slot moves the failure from *refused after the fact* to *impossible to express*, which is
+the same move the unit-index citation contract makes. Where the IR is legitimately more
+expressive than the extractor needs — a duration can come from a variable at evaluation
+time — the narrowing lives in the **extraction contract only**, not in the IR schema.
+
+Months and years are still not expressible, deliberately: a month is not a fixed number
+of days, and approximating one would silently change a deadline. The instructions tell the
+model to record such a case in `missing` instead of converting it.
+
+#### The model pass is the only stage that can lose work
+
+It costs money and takes about an hour on a 1,200-page guide, so:
+
+* **every reply is written the moment it arrives**, not at the end of the batch. An
+  interrupted run keeps everything already paid for. (This was learned by losing 45
+  chunks to a run that persisted only on completion.)
+* **`--from`/`--to`/`--only`** re-run any contiguous span against artefacts on disk.
+* **resume is the default**: a chunk with a successful reply is skipped, and a chunk with
+  a *stored failure* is retried — so "fix the schema and re-run" costs only the chunks
+  that still need calling. `--no-resume` forces the whole corpus, for a prompt change.
+* raw replies are kept verbatim, so an admission or parsing fix re-runs for free.
+
 ### What both paths share
 
 Three controls, each closing a way unsupported content could reach the IR:
@@ -194,6 +256,29 @@ sentence whole.
 
 Zero DMN and zero BPMN is the correct outcome: nothing was typed. The coverage ledger
 accounts for every chunk, including the 21 image-only pages.
+
+## The nine stages
+
+Each stage owns `outputs/<NN>_<stage_name>/`, reads from the directories before it, and
+writes everything it produces into its own. The split follows where cost and risk are.
+
+| # | Stage | Costs | Produces |
+|---|---|---|---|
+| 01 | `ingestion` | minutes | hashed canonical text, section-aligned chunks, coverage |
+| 02 | `extraction_requests` | free | numbered units, per-chunk schema and prose contract |
+| 03 | `model_extraction` | **money** | raw replies verbatim, parsed proposals, token accounting |
+| 04 | `admission` | free | proposals resolved into evidenced clauses; refusals recorded |
+| 05 | `semantic_assembly` | free | declared intent, what each clause still lacks, domain profile |
+| 06 | `gate` | free | six statuses and every blocker, fail-closed |
+| 07 | `governance` | free | reviewer queue for every refusal, coverage metrics |
+| 08 | `projection` | free | knowledge graph, DMN, BPMN, traceability, run manifest |
+| 09 | `visualization` | free | the interactive HTML report |
+
+The semantic layer sits deliberately **before** the executable projections and is never
+skipped. The knowledge graph is the canonical representation; DMN and BPMN are narrow
+projections of the subset that qualifies for them. A clause that projects to neither — a
+definition, an entity, a constraint — is still a full member of the graph, which is why
+`clauses_with_no_declared_projection` is reported as a design outcome and not a gap.
 
 ## How a compile run works
 
