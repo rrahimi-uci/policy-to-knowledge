@@ -424,10 +424,11 @@ system-output artifact. It does not download, redistribute, or silently relabel 
 corpus, and it does not claim that a benchmark supplies a gold knowledge graph, DMN,
 or BPMN model.
 
-Supported first-party formats are the official ShARC JSON split and the official
-ContractNLI JSON split. Obtain each data set under its own terms, keep it outside
-the repository, and record the exact split and release in the paper. The report
-records SHA-256 digests of both the source annotations and submitted predictions.
+Supported first-party formats are the official ShARC JSON split, ContractNLI JSON
+split, and unpacked OPP-115 corpus. Obtain each data set under its own terms, keep
+it outside the repository, and record the exact split and release in the paper.
+The report records SHA-256 digests of the source annotations and submitted
+predictions.
 
 ```bash
 # Emit system-facing tasks and evidence-anchor IDs the system may cite. This file
@@ -442,6 +443,13 @@ python -m evaluation.benchmarks \
   --benchmark contract_nli --input /data/contract-nli/dev.json \
   --predictions results/contract-nli-predictions.jsonl \
   --out results/contract-nli-report.json
+
+# OPP-115 must stay outside the repository. Use a policy-level JSON selection
+# manifest, so examples from one policy cannot silently cross train/test splits.
+python -m evaluation.benchmarks \
+  --benchmark opp115 --input /data/OPP-115 \
+  --opp115-policy-ids splits/opp115-test-policy-stems.json \
+  --emit-cases /tmp/opp115-test-cases.json
 ```
 
 Each prediction is an object with a `case_id`, an optional `answer`, and optional
@@ -452,6 +460,15 @@ The report separates overall accuracy, accuracy on answered cases, coverage/
 abstention, per-label macro-F1, and micro evidence precision/recall/F1. ShARC's
 label can be `Yes`, `No`, `Irrelevant`, or a required follow-up question, so its
 outcome scorer uses normalized exact matching rather than an LLM judge.
+
+The OPP-115 adapter uses the corpus's `threshold-0.5-overlap-similarity`
+consolidation view and evaluates the ten original top-level data-practice
+categories per policy segment. Its `Yes` labels are the consolidated annotations;
+its `No` labels are the deterministic complement over that fixed category set. It
+does not convert fine-grained attributes into an invented gold knowledge graph or
+score evidence spans whose original indexing is documented as partially errant.
+OPP-115 is for research, teaching, and scholarship use under the corpus's stated
+terms; the data, annotations, and selection manifest must never be committed here.
 
 This is evaluation infrastructure, not an experimental result. A paper must still
 run a fixed release/split, publish the prediction artifacts and configuration, and

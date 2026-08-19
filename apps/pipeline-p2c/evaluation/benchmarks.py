@@ -10,14 +10,36 @@ by that corpus. It does not manufacture a knowledge-graph or BPMN gold standard.
 from __future__ import annotations
 
 import argparse
+import csv
 import hashlib
+import html
 import json
+import re
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Iterable, Mapping, Sequence
 
 
 SCHEMA_VERSION = "p2c-open-benchmark-v1"
+
+# The ten top-level categories in the OPP-115 annotation scheme. The adapter
+# intentionally evaluates these observed categories only; it does not infer a
+# new ontology from privacy-policy prose.
+OPP115_CATEGORIES = (
+    "First Party Collection/Use",
+    "Third Party Sharing/Collection",
+    "User Choice/Control",
+    "User Access, Edit and Deletion",
+    "Data Retention",
+    "Data Security",
+    "Policy Change",
+    "Do Not Track",
+    "International and Specific Audiences",
+    "Other",
+)
+OPP115_CONSOLIDATION = "threshold-0.5-overlap-similarity"
+_HTML_TAG = re.compile(r"<[^>]*>")
+_HTML_BREAK = re.compile(r"<br\s*/?>", flags=re.IGNORECASE)
 
 
 class BenchmarkError(ValueError):
@@ -80,6 +102,7 @@ class BenchmarkDataset:
     source_path: Path
     source_sha256: str
     cases: tuple[BenchmarkCase, ...]
+    selection: Mapping[str, Any] = field(default_factory=dict)
 
 
 @dataclass(frozen=True)
@@ -238,14 +261,146 @@ def load_contract_nli(path: Path) -> BenchmarkDataset:
     return BenchmarkDataset("contract_nli", path, _sha256(path), tuple(cases))
 
 
-def load_benchmark(name: str, path: Path) -> BenchmarkDataset:
+def _directory_sha256(root: Path, paths: Iterable[Path]) -> str:
+    """Hash a selected corpus view, including stable relative paths and bytes."""
+    digest = hashlib.sha256()
+    for path in sorted(paths):
+        relative = path.relative_to(root).as_posix().encode("utf-8")
+        digest.update(len(relative).to_bytes(8, "big"))
+        digest.update(relative)
+        content = path.read_bytes()
+        digest.update(len(content).to_bytes(8, "big"))
+        digest.update(content)
+    return digest.hexdigest()
+
+
+def _opp115_segments(path: Path) -> tuple[str, ...]:
+    """Read the corpus's literal ``|||`` segments without inventing sentence splits."""
+    raw = path.read_text(encoding="utf-8")
+    decoded = html.unescape(_HTML_BREAK.sub("\n", raw))
+    return tuple(_HTML_TAG.sub("", segment).strip() for segment in decoded.split("|||"))
+
+
+def _load_policy_ids(path: Path) -> frozenset[str]:
+    raw = _load_json(path)
+    if not isinstance(raw, list) or not raw or not all(isinstance(value, str) and value for value in raw):
+        raise BenchmarkError("OPP-115 policy selection must be a non-empty JSON list of policy file stems")
+    values = frozenset(raw)
+    if len(values) != len(raw):
+        raise BenchmarkError("OPP-115 policy selection contains duplicate policy file stems")
+    return values
+
+
+def load_opp115(path: Path, *, policy_ids_path: Path | None = None) -> BenchmarkDataset:
+    """Load OPP-115 consolidated category annotations from an unpacked official corpus.
+
+    Each case asks whether one original policy segment describes one of the ten
+    OPP-115 top-level categories. Positive labels come directly from the official
+    consolidation view; negatives are the deterministic complement over the fixed
+    category set. This adapter evaluates category-level semantic extraction only,
+    not unlabelled attributes, a gold knowledge graph, or BPMN.
+    """
+    consolidation = path / "consolidation" / OPP115_CONSOLIDATION
+    policies = path / "sanitized_policies"
+    if not consolidation.is_dir() or not policies.is_dir():
+        raise BenchmarkError(
+            "OPP-115 input must be the unpacked corpus root containing consolidation/"
+            f"{OPP115_CONSOLIDATION}/ and sanitized_policies/"
+        )
+    wanted = _load_policy_ids(policy_ids_path) if policy_ids_path else None
+    csv_paths = sorted(consolidation.glob("*.csv"))
+    if wanted is not None:
+        available = {item.stem for item in csv_paths}
+        missing = sorted(wanted - available)
+        if missing:
+            raise BenchmarkError(f"OPP-115 selection names policies absent from consolidation: {missing[:3]}")
+        csv_paths = [item for item in csv_paths if item.stem in wanted]
+    if not csv_paths:
+        raise BenchmarkError("OPP-115 selection contains no consolidated policy files")
+
+    cases: list[BenchmarkCase] = []
+    digested_paths: list[Path] = []
+    for csv_path in csv_paths:
+        html_path = policies / f"{csv_path.stem}.html"
+        if not html_path.is_file():
+            raise BenchmarkError(f"OPP-115 policy {csv_path.stem!r} has no sanitized policy text")
+        segments = _opp115_segments(html_path)
+        categories_by_segment: dict[int, set[str]] = {}
+        source_urls: dict[int, set[str]] = {}
+        try:
+            with csv_path.open("r", encoding="utf-8", newline="") as handle:
+                rows = csv.reader(handle)
+                for row_number, row in enumerate(rows, start=1):
+                    if len(row) < 8:
+                        raise BenchmarkError(f"OPP-115 {csv_path.name}:{row_number} has fewer than 8 columns")
+                    try:
+                        segment_id = int(row[4])
+                    except ValueError as exc:
+                        raise BenchmarkError(
+                            f"OPP-115 {csv_path.name}:{row_number} has a non-integer segment ID"
+                        ) from exc
+                    category = row[5]
+                    if category not in OPP115_CATEGORIES:
+                        raise BenchmarkError(
+                            f"OPP-115 {csv_path.name}:{row_number} uses unknown category {category!r}"
+                        )
+                    if not 0 <= segment_id < len(segments):
+                        raise BenchmarkError(
+                            f"OPP-115 {csv_path.name}:{row_number} references missing segment {segment_id}"
+                        )
+                    categories_by_segment.setdefault(segment_id, set()).add(category)
+                    if row[7]:
+                        source_urls.setdefault(segment_id, set()).add(row[7])
+        except OSError as exc:
+            raise BenchmarkError(f"cannot read OPP-115 consolidation file {csv_path}: {exc}") from exc
+        for segment_id, text in enumerate(segments):
+            if not text:
+                continue
+            positives = categories_by_segment.get(segment_id, set())
+            for category in OPP115_CATEGORIES:
+                cases.append(
+                    BenchmarkCase(
+                        benchmark="opp115",
+                        case_id=f"{csv_path.stem}:{segment_id}:{OPP115_CATEGORIES.index(category)}",
+                        document_id=csv_path.stem,
+                        source_text=text,
+                        query=f"Does this privacy-policy segment describe the OPP-115 category {category}?",
+                        expected_answer="Yes" if category in positives else "No",
+                        context={
+                            "policy_file": csv_path.stem,
+                            "segment_id": segment_id,
+                            "category": category,
+                            "source_urls": sorted(source_urls.get(segment_id, set())),
+                        },
+                    )
+                )
+        digested_paths.extend((csv_path, html_path))
+    selection: dict[str, Any] = {
+        "consolidation": OPP115_CONSOLIDATION,
+        "selected_policy_count": len(csv_paths),
+        "policy_ids_sha256": _sha256(policy_ids_path) if policy_ids_path else None,
+    }
+    return BenchmarkDataset(
+        "opp115",
+        path,
+        _directory_sha256(path, digested_paths),
+        tuple(cases),
+        selection,
+    )
+
+
+def load_benchmark(
+    name: str, path: Path, *, policy_ids_path: Path | None = None
+) -> BenchmarkDataset:
     """Load one supported official split without accessing the network."""
     normalised = name.strip().lower().replace("-", "_")
     if normalised == "sharc":
         return load_sharc(path)
     if normalised == "contract_nli":
         return load_contract_nli(path)
-    raise BenchmarkError(f"unsupported benchmark {name!r}; choose sharc or contract_nli")
+    if normalised == "opp115":
+        return load_opp115(path, policy_ids_path=policy_ids_path)
+    raise BenchmarkError(f"unsupported benchmark {name!r}; choose sharc, contract_nli, or opp115")
 
 
 def _load_prediction_records(path: Path) -> list[Any]:
@@ -406,6 +561,7 @@ def evaluate_predictions(
         "schema_version": SCHEMA_VERSION,
         "benchmark": dataset.benchmark,
         "source": {"path": str(dataset.source_path), "sha256": dataset.source_sha256},
+        "selection": dict(dataset.selection),
         "predictions_sha256": prediction_sha256,
         "outcome": {
             "total": total,
@@ -435,8 +591,14 @@ def build_parser() -> argparse.ArgumentParser:
         prog="open_benchmark_eval",
         description="Normalize existing benchmark annotations or score system prediction artifacts.",
     )
-    parser.add_argument("--benchmark", required=True, choices=("sharc", "contract_nli"))
+    parser.add_argument("--benchmark", required=True, choices=("sharc", "contract_nli", "opp115"))
     parser.add_argument("--input", required=True, type=Path, metavar="FILE")
+    parser.add_argument(
+        "--opp115-policy-ids",
+        type=Path,
+        metavar="FILE",
+        help="With --benchmark opp115: JSON list of policy file stems for a policy-level split.",
+    )
     action = parser.add_mutually_exclusive_group(required=True)
     action.add_argument("--emit-cases", type=Path, metavar="FILE")
     action.add_argument("--predictions", type=Path, metavar="FILE")
@@ -450,8 +612,10 @@ def main(argv: Sequence[str] | None = None) -> int:
     args = parser.parse_args(argv)
     if args.predictions and args.out is None:
         parser.error("--out is required with --predictions")
+    if args.opp115_policy_ids and args.benchmark != "opp115":
+        parser.error("--opp115-policy-ids requires --benchmark opp115")
     try:
-        dataset = load_benchmark(args.benchmark, args.input)
+        dataset = load_benchmark(args.benchmark, args.input, policy_ids_path=args.opp115_policy_ids)
         if args.emit_cases:
             args.emit_cases.write_text(
                 json.dumps(
@@ -459,6 +623,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                         "schema_version": SCHEMA_VERSION,
                         "benchmark": dataset.benchmark,
                         "source": {"path": str(dataset.source_path), "sha256": dataset.source_sha256},
+                        "selection": dict(dataset.selection),
                         "cases": [item.to_task_dict() for item in dataset.cases],
                     },
                     indent=2,

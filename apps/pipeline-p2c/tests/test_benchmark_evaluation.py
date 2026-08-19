@@ -12,6 +12,7 @@ from evaluation.benchmarks import (
     BenchmarkPrediction,
     evaluate_predictions,
     load_contract_nli,
+    load_opp115,
     load_predictions,
     load_sharc,
     main,
@@ -76,6 +77,24 @@ def _contract_nli_split() -> dict[str, object]:
     }
 
 
+def _opp115_root(tmp_path: Path) -> Path:
+    root = tmp_path / "OPP-115"
+    consolidated = root / "consolidation" / "threshold-0.5-overlap-similarity"
+    policies = root / "sanitized_policies"
+    consolidated.mkdir(parents=True)
+    policies.mkdir()
+    policies.joinpath("1_example.com.html").write_text(
+        "Introduction|||We collect contact data.<br>|||We retain contact data.",
+        encoding="utf-8",
+    )
+    with consolidated.joinpath("1_example.com.csv").open("w", encoding="utf-8", newline="") as handle:
+        handle.write(
+            "C1,batch,worker,1,1,First Party Collection/Use,{},https://example.test/privacy\n"
+            "C2,batch,worker,1,2,Data Retention,{},https://example.test/privacy\n"
+        )
+    return root
+
+
 def test_sharc_adapter_preserves_questions_and_context(tmp_path: Path) -> None:
     dataset = load_sharc(_write_json(tmp_path / "sharc.json", _sharc_split()))
     assert dataset.benchmark == "sharc"
@@ -103,6 +122,45 @@ def test_contract_nli_adapter_preserves_existing_evidence_anchors(tmp_path: Path
     assert len(first_task["evidence_anchors"]) == 2
     assert "expected_answer" not in first_task
     assert "gold_evidence" not in first_task
+
+
+def test_opp115_adapter_uses_consolidated_categories_and_policy_level_selection(tmp_path: Path) -> None:
+    root = _opp115_root(tmp_path)
+    selection = _write_json(tmp_path / "policies.json", ["1_example.com"])
+    dataset = load_opp115(root, policy_ids_path=selection)
+    assert dataset.benchmark == "opp115"
+    assert len(dataset.cases) == 30
+    collection = next(case for case in dataset.cases if case.case_id == "1_example.com:1:0")
+    retention = next(case for case in dataset.cases if case.case_id == "1_example.com:2:4")
+    assert collection.expected_answer == "Yes"
+    assert retention.expected_answer == "Yes"
+    assert collection.source_text == "We collect contact data."
+    assert collection.evidence_anchors == ()
+    assert dataset.selection["selected_policy_count"] == 1
+    assert dataset.selection["policy_ids_sha256"]
+    report = evaluate_predictions(
+        dataset,
+        [BenchmarkPrediction(case.case_id, case.expected_answer) for case in dataset.cases],
+    )
+    assert report["outcome"]["overall_accuracy"] == 1.0
+    assert report["evidence"]["scored_cases"] == 0
+    assert report["selection"] == dataset.selection
+
+
+def test_opp115_cli_exports_label_safe_tasks_and_records_selection(tmp_path: Path) -> None:
+    root = _opp115_root(tmp_path)
+    selection = _write_json(tmp_path / "policies.json", ["1_example.com"])
+    tasks = tmp_path / "opp-tasks.json"
+    assert main(
+        [
+            "--benchmark", "opp115", "--input", str(root),
+            "--opp115-policy-ids", str(selection), "--emit-cases", str(tasks),
+        ]
+    ) == 0
+    emitted = json.loads(tasks.read_text(encoding="utf-8"))
+    assert emitted["selection"]["consolidation"] == "threshold-0.5-overlap-similarity"
+    assert emitted["selection"]["policy_ids_sha256"]
+    assert "expected_answer" not in emitted["cases"][0]
 
 
 def test_scoring_reports_coverage_outcomes_and_existing_evidence_only(tmp_path: Path) -> None:
