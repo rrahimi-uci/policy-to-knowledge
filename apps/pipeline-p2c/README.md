@@ -473,7 +473,8 @@ python -m pytest tests/ -q --xsd-dir schemas/omg  # + 8 XSD conformance tests
 
 Test files map onto the plan's test strategy: `test_contracts.py` (contract and
 provenance), `test_expressions.py` (expression and semantic), `test_scope.py`,
-`test_authority.py`, `test_timeline.py`, `test_ingestion.py`, `test_extraction.py`,
+`test_authority.py`, `test_timeline.py`, `test_ingestion.py`, `test_scaling.py`,
+`test_extraction.py`,
 `test_offer.py`, `test_dmn.py`, `test_bpmn.py`,
 `test_compatibility.py`, `test_gate.py`, `test_stress_matrix.py` (one test per
 stress-matrix row), `test_cli.py`, `test_xsd_conformance.py`.
