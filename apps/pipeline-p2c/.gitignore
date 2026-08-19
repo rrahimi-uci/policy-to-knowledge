@@ -1,0 +1,33 @@
+# =============================================================================
+# pipeline-p2c .gitignore
+# NOTE: OS, IDE, and general Python rules live in the root ../../.gitignore.
+#       This file holds only project-specific rules.
+# =============================================================================
+
+# --- Python bytecode ---
+**/__pycache__/
+*.pyc
+
+# --- Virtual environment ---
+.venv/
+
+# --- Testing ---
+.pytest_cache/
+.coverage
+coverage-html/
+coverage.xml
+allure-results/
+
+# --- Normative OMG schemas ---
+# Downloaded by scripts/fetch_schemas.py and verified against schemas/PINNED.json.
+# Not committed: they are OMG documents, and PINNED.json is the redistributable
+# record of exactly which bytes this compiler was verified against.
+schemas/omg/
+
+# --- Compiler output ---
+build/
+out/
+*.dmn
+*.bpmn
+!fixtures/**/*.dmn
+!fixtures/**/*.bpmn
