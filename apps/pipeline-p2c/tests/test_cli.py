@@ -257,6 +257,19 @@ def test_cli_domain_profile_rejects_undeclared_semantic_relation(tmp_path: Path)
         )
 
 
+def test_cli_writes_a_conservative_synthesis_report(tmp_path: Path) -> None:
+    target = tmp_path / "synthesis.json"
+    code = main(
+        ["--fixture", "notice_process", "--emit-synthesis-report", str(target), "--dry-run", "--quiet"]
+    )
+    assert code == EXIT_OK
+    report = json.loads(target.read_text(encoding="utf-8"))
+    assert report["opportunities"]
+    assert {item["status"] for item in report["opportunities"]} <= {
+        "ready_for_explicit_model", "abstain"
+    }
+
+
 @pytest.mark.skipif(not legacy_graph_paths(), reason="legacy corpora not present")
 def test_legacy_graph_import_from_the_cli(capsys: pytest.CaptureFixture[str]) -> None:
     path = legacy_graph_paths()[0]
