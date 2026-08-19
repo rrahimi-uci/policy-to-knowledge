@@ -17,7 +17,7 @@ import datetime as _dt
 from dataclasses import dataclass, field
 from typing import Any, Mapping
 
-from policy_ir.enums import DataType, NullPolicy
+from policy_ir.enums import NullPolicy
 from policy_ir.expressions import (
     All,
     Any_,

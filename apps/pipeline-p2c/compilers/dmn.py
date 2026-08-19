@@ -12,10 +12,10 @@ listed by OMG as beta, so they are deliberately not targeted.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import Iterable, Mapping, Sequence
+from typing import Iterable, Mapping
 
-from policy_ir.enums import FEEL_TYPE_NAMES, CompilerProfile, DataType, HitPolicy, Status
-from policy_ir.ids import SCHEMA_VERSION, derived_id, ncname
+from policy_ir.enums import FEEL_TYPE_NAMES, CompilerProfile, HitPolicy, Status
+from policy_ir.ids import SCHEMA_VERSION, ncname
 from policy_ir.models import (
     AtomicPolicyClause,
     DataDefinition,
@@ -26,7 +26,7 @@ from validation import blockers as codes
 from validation.evidence_gate import Blocker, GateReport
 
 from policy_ir.feel import feel_name, literal_to_feel, to_feel, unary_test
-from policy_ir.tabular import NotTabular, decompose, row_condition
+from policy_ir.tabular import decompose, row_condition
 from .xmlwriter import Element, serialize
 
 DMN_MODEL_NS = "https://www.omg.org/spec/DMN/20230324/MODEL/"

@@ -21,7 +21,6 @@ from .enums import ORDERED_TYPES, DataType
 from .expressions import (
     All,
     Any_,
-    Calendar,
     Comparison,
     DateArithmetic,
     Exists,

@@ -27,7 +27,7 @@ import argparse
 import json
 import sys
 from pathlib import Path
-from typing import Mapping, Sequence
+from typing import Sequence
 
 _ROOT = Path(__file__).resolve().parent.parent
 if str(_ROOT) not in sys.path:  # pragma: no cover - import bootstrap

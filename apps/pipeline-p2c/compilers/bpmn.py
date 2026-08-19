@@ -22,8 +22,6 @@ The subset is deliberately narrow, and every narrowing is a refusal to invent:
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Mapping
-
 from policy_ir.enums import CompilerProfile, Status
 from policy_ir.ids import SCHEMA_VERSION, ncname
 from policy_ir.models import PolicyIR, ProcessFragmentCandidate

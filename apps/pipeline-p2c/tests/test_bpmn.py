@@ -9,13 +9,11 @@ from __future__ import annotations
 
 import xml.etree.ElementTree as ET
 
-import pytest
-
 from compilers.bpmn import BPMN_MODEL_NS, TRACE_NS, compile_bpmn
 from compilers.dmn import compile_dmn
 from compilers.verify import validate_bpmn
 from fixtures import all_fixtures
-from policy_ir.enums import CompilerProfile, Status
+from policy_ir.enums import CompilerProfile
 from policy_ir.models import ProcessFragmentCandidate, TriggerEvent
 from validation import blockers as codes
 from validation import run_gate

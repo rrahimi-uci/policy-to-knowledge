@@ -14,7 +14,7 @@ from __future__ import annotations
 
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass
-from typing import Any, Mapping, Sequence
+from typing import Any, Mapping
 
 from .dmn import DMN_MODEL_NS
 from policy_ir.feel import FeelError, parse_feel_value, parse_unary_test

@@ -13,7 +13,7 @@ a process with no actor, an unresolved cross-reference, and a wrong-span citatio
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Callable, Mapping
 
 from policy_ir import ids

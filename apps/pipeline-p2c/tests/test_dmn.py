@@ -17,7 +17,7 @@ from compilers.run import compile_all
 from compilers.verify import validate_dmn
 from evaluation import UNKNOWN, EvaluationContext, evaluate_decision
 from fixtures import all_fixtures
-from policy_ir.enums import CompilerProfile, HitPolicy, Status
+from policy_ir.enums import CompilerProfile, HitPolicy
 from policy_ir.feel import feel_name
 from policy_ir.models import DecisionModelCandidate
 from validation import blockers as codes

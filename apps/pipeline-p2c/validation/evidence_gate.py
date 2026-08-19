@@ -24,7 +24,6 @@ from typing import Iterable, Mapping, Sequence
 from policy_ir.enums import (
     EXECUTABLE_DEPENDENCY_KINDS,
     TRUSTED_DERIVATION_METHODS,
-    DataType,
     DependencyKind,
     EntityCategory,
     HitPolicy,
