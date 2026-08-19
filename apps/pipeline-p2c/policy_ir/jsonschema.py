@@ -35,6 +35,10 @@ _RECORDS: tuple[type, ...] = (
     models.UnitConversion,
     models.EntityType,
     models.EntityMention,
+    models.ScopeDimensionDefinition,
+    models.ScopeDimension,
+    models.Scope,
+    models.AuthoritySource,
     models.EffectivePeriod,
     models.TemporalConstraint,
     models.AtomicPolicyClause,
@@ -52,10 +56,21 @@ _RECORDS: tuple[type, ...] = (
 _EXPRESSION_FIELDS = frozenset(
     {"condition_ast", "effect_ast", "exception_ast", "precondition_ast", "postcondition_ast"}
 )
+#: Keyed by ``(record, field)`` rather than field name alone. Two records can use the
+#: same field name for different things — ``allowed_values`` is a list of typed
+#: literals on a DataDefinition and a list of plain strings on a scope dimension.
 _LITERAL_FIELDS = frozenset(
-    {"minimum", "maximum", "default_value", "duration", "default_output"}
+    {
+        ("DataDefinition", "minimum"),
+        ("DataDefinition", "maximum"),
+        ("DataDefinition", "default_value"),
+        ("TemporalConstraint", "duration"),
+        ("DecisionModelCandidate", "default_output"),
+    }
 )
-_LITERAL_LIST_FIELDS = frozenset({"allowed_values"})
+_LITERAL_LIST_FIELDS = frozenset(
+    {("DataDefinition", "allowed_values"), ("DecisionOutput", "allowed_values")}
+)
 
 #: Members constrained by a class-level tuple rather than an Enum.
 _STRING_ENUM_FIELDS: Mapping[tuple[str, str], tuple[str, ...]] = {
@@ -204,9 +219,9 @@ def _field_schema(record_name: str, field: dataclasses.Field, annotation: Any) -
         return {"enum": list(override)}
     if field.name in _EXPRESSION_FIELDS:
         return {"$ref": "#/$defs/Expression"}
-    if field.name in _LITERAL_FIELDS:
+    if (record_name, field.name) in _LITERAL_FIELDS:
         return {"$ref": "#/$defs/Literal"}
-    if field.name in _LITERAL_LIST_FIELDS:
+    if (record_name, field.name) in _LITERAL_LIST_FIELDS:
         return {"type": "array", "items": {"$ref": "#/$defs/Literal"}}
 
     origin = get_origin(annotation)

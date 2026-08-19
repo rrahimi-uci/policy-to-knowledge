@@ -14,7 +14,13 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Iterable, Mapping
 
-from policy_ir.enums import FEEL_TYPE_NAMES, CompilerProfile, HitPolicy, Status
+from policy_ir.enums import (
+    FEEL_TYPE_NAMES,
+    CompilerProfile,
+    DataType,
+    HitPolicy,
+    Status,
+)
 from policy_ir.ids import SCHEMA_VERSION, ncname
 from policy_ir.models import (
     AtomicPolicyClause,
@@ -23,7 +29,13 @@ from policy_ir.models import (
     PolicyIR,
 )
 from policy_ir.feel import feel_name, literal_to_feel, to_feel, unary_test
-from policy_ir.tabular import decompose, row_condition
+from policy_ir.tabular import (
+    decompose,
+    row_condition,
+    scope_atoms,
+    scope_dimension_name,
+    scope_input_key,
+)
 from validation import blockers as codes
 from validation.evidence_gate import Blocker, GateReport
 
@@ -63,6 +75,11 @@ class CompiledArtifact:
     @property
     def is_empty(self) -> bool:
         return not self.emitted_ids
+
+
+def _scope_input_id(dimension_name: str) -> str:
+    """Element ID for the synthetic ``inputData`` backing a scope axis."""
+    return ncname(f"scope_{dimension_name}")
 
 
 def _reviewable(report_blockers: Iterable[Blocker]) -> bool:
@@ -219,6 +236,20 @@ def compile_dmn(
     for decision in emitted:
         used_inputs.update(decision.input_data_refs)
 
+    # A scope axis is an ordinary input column in the emitted table. Deriving the
+    # axes from the rows keeps the table shape and the clauses in lockstep.
+    scope_axes: dict[str, tuple[str, ...]] = {}
+    for decision in emitted:
+        axes: list[str] = []
+        for clause in row_map[decision.decision_id]:
+            for key in scope_atoms(clause.scope):
+                name = scope_dimension_name(key)
+                if name not in axes:
+                    axes.append(name)
+        scope_axes[decision.decision_id] = tuple(sorted(axes))
+    declared_dimensions = ir.scope_dimension_index()
+    all_axes = sorted({name for axes in scope_axes.values() for name in axes})
+
     root = Element(
         "definitions",
         {
@@ -265,6 +296,19 @@ def compile_dmn(
                 "text", None, ", ".join(literal_to_feel(v) for v in output.allowed_values)
             )
 
+    for name in all_axes:
+        definition = declared_dimensions.get(name)
+        if definition is None or not definition.allowed_values:
+            continue
+        item = root.child(
+            "itemDefinition",
+            {"id": ncname(f"item_scope_{name}"), "name": ncname(f"tscope_{feel_name(name)}")},
+        )
+        item.child("typeRef", None, FEEL_TYPE_NAMES[DataType.STRING])
+        item.child("allowedValues", {"id": ncname(f"allowed_scope_{name}")}).child(
+            "text", None, ", ".join(f'"{value}"' for value in definition.allowed_values)
+        )
+
     for input_id in sorted(used_inputs):
         definition = definitions_index.get(input_id)
         if definition is None:
@@ -278,6 +322,25 @@ def compile_dmn(
                 "id": ncname(f"var_{input_id}"),
                 "name": names.get(input_id, input_id),
                 "typeRef": _type_ref(definition),
+            },
+        )
+
+    for name in all_axes:
+        definition = declared_dimensions.get(name)
+        node = root.child(
+            "inputData",
+            {"id": _scope_input_id(name), "name": feel_name(f"scope {name}")},
+        )
+        node.child(
+            "variable",
+            {
+                "id": ncname(f"var_scope_{name}"),
+                "name": feel_name(f"scope {name}"),
+                "typeRef": (
+                    ncname(f"tscope_{feel_name(name)}")
+                    if definition is not None and definition.allowed_values
+                    else FEEL_TYPE_NAMES[DataType.STRING]
+                ),
             },
         )
 
@@ -335,6 +398,12 @@ def compile_dmn(
                 {"id": ncname(f"ir_{decision.decision_id}_{input_id}")},
             )
             requirement.child("requiredInput", {"href": f"#{input_id}"})
+        for name in scope_axes[decision.decision_id]:
+            requirement = node.child(
+                "informationRequirement",
+                {"id": ncname(f"irscope_{decision.decision_id}_{name}")},
+            )
+            requirement.child("requiredInput", {"href": f"#{_scope_input_id(name)}"})
         for required in decision.required_decision_refs:
             requirement = node.child(
                 "informationRequirement",
@@ -376,6 +445,28 @@ def compile_dmn(
             )
             expression.child("text", None, names.get(input_id, input_id))
 
+        for name in scope_axes[decision.decision_id]:
+            definition = declared_dimensions.get(name)
+            clause_element = table.child(
+                "input",
+                {
+                    "id": ncname(f"inscope_{decision.decision_id}_{name}"),
+                    "label": definition.name if definition is not None else name,
+                },
+            )
+            expression = clause_element.child(
+                "inputExpression",
+                {
+                    "id": ncname(f"inexprscope_{decision.decision_id}_{name}"),
+                    "typeRef": (
+                        ncname(f"tscope_{feel_name(name)}")
+                        if definition is not None and definition.allowed_values
+                        else FEEL_TYPE_NAMES[DataType.STRING]
+                    ),
+                },
+            )
+            expression.child("text", None, feel_name(f"scope {name}"))
+
         table.child(
             "output",
             {
@@ -392,6 +483,7 @@ def compile_dmn(
             condition = clause.condition_ast
             assert condition is not None  # guaranteed by DMN eligibility
             atoms = decompose(row_condition(condition, clause.exception_ast))
+            row_scope = scope_atoms(clause.scope)
             for input_id in decision.input_data_refs:
                 entries = list(atoms.get(input_id, ()))
                 text = unary_test(entries)
@@ -399,6 +491,12 @@ def compile_dmn(
                     "inputEntry",
                     {"id": ncname(f"ie_{clause.clause_id}_{input_id}")},
                 ).child("text", None, text)
+            for name in scope_axes[decision.decision_id]:
+                entries = list(row_scope.get(scope_input_key(name), ()))
+                rule.child(
+                    "inputEntry",
+                    {"id": ncname(f"iescope_{clause.clause_id}_{name}")},
+                ).child("text", None, unary_test(entries))
             rule.child(
                 "outputEntry", {"id": ncname(f"oe_{clause.clause_id}")}
             ).child("text", None, to_feel(clause.effect_ast, names))  # type: ignore[arg-type]
@@ -419,6 +517,7 @@ def compile_dmn(
             "executable": executable,
             "hit_policy": _resolved_hit_policy(decision).value,
             "inputs": list(decision.input_data_refs),
+            "scope_axes": list(scope_axes[decision.decision_id]),
             "rules": rule_trace,
         }
 

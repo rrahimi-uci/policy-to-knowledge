@@ -38,6 +38,7 @@ from policy_ir.enums import (
     SemanticKind,
 )
 from policy_ir.ids import SCHEMA_VERSION, derived_id, ncname
+from policy_ir.scope import Scope
 from policy_ir.models import (
     AtomicPolicyClause,
     DataDefinition,
@@ -145,14 +146,10 @@ def _clause_for(rule: Mapping[str, Any], index: int) -> AtomicPolicyClause:
         evidence={},
         lifecycle=Lifecycle.UNKNOWN,
         compilation_intent=CompilationIntent.GRAPH_ONLY,
-        jurisdiction_scope=tuple(
-            value
-            for value in (
-                _first_str(rule.get("jurisdiction")),
-                _first_str(rule.get("applicability_scope")),
-            )
-            if value
-        ),
+        # Legacy jurisdiction and applicability are free text with no declared axis,
+        # so they cannot become a typed Scope without inventing a dimension. They are
+        # preserved as prose in the projection and the clause scope stays universal.
+        scope=Scope(),
         effective_period=EffectivePeriod(
             start=rule.get("effective_date") if isinstance(rule.get("effective_date"), str) else None,
             end=rule.get("expiration_date") if isinstance(rule.get("expiration_date"), str) else None,

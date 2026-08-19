@@ -103,12 +103,6 @@
         "exception_ast": {
           "$ref": "#/$defs/Expression"
         },
-        "jurisdiction_scope": {
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
-        },
         "legacy_rule_ids": {
           "items": {
             "type": "string"
@@ -123,6 +117,9 @@
         },
         "object_ref": {
           "type": "string"
+        },
+        "scope": {
+          "$ref": "#/$defs/Scope"
         },
         "semantic_kind": {
           "$ref": "#/$defs/SemanticKind"
@@ -143,6 +140,47 @@
         "semantic_kind",
         "effect",
         "display_text"
+      ],
+      "type": "object"
+    },
+    "AuthoritySource": {
+      "additionalProperties": false,
+      "properties": {
+        "authority_id": {
+          "type": "string"
+        },
+        "authority_weight": {
+          "type": "integer"
+        },
+        "citation": {
+          "type": "string"
+        },
+        "effective_from": {
+          "type": "string"
+        },
+        "effective_to": {
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "parent_authority_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "authority_id",
+        "name",
+        "authority_weight"
       ],
       "type": "object"
     },
@@ -506,6 +544,7 @@
         "activation",
         "exception_to",
         "override",
+        "supersedes",
         "conflict",
         "related"
       ]
@@ -948,6 +987,12 @@
     "PolicyIR": {
       "additionalProperties": false,
       "properties": {
+        "authority_sources": {
+          "items": {
+            "$ref": "#/$defs/AuthoritySource"
+          },
+          "type": "array"
+        },
         "chunks": {
           "items": {
             "$ref": "#/$defs/Chunk"
@@ -1023,6 +1068,12 @@
         },
         "schema_version": {
           "type": "string"
+        },
+        "scope_dimensions": {
+          "items": {
+            "$ref": "#/$defs/ScopeDimensionDefinition"
+          },
+          "type": "array"
         },
         "unit_conversions": {
           "items": {
@@ -1156,6 +1207,80 @@
         "unresolved"
       ]
     },
+    "Scope": {
+      "additionalProperties": false,
+      "properties": {
+        "dimensions": {
+          "items": {
+            "$ref": "#/$defs/ScopeDimension"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "ScopeDimension": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "name": {
+          "type": "string"
+        },
+        "negated": {
+          "type": "boolean"
+        },
+        "values": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "name",
+        "values"
+      ],
+      "type": "object"
+    },
+    "ScopeDimensionDefinition": {
+      "additionalProperties": false,
+      "properties": {
+        "allowed_values": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "description": {
+          "type": "string"
+        },
+        "dimension_id": {
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "name": {
+          "type": "string"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        }
+      },
+      "required": [
+        "dimension_id",
+        "name"
+      ],
+      "type": "object"
+    },
     "SemanticKind": {
       "enum": [
         "decision_rule",
@@ -1176,7 +1301,8 @@
         "exception",
         "temporal",
         "authority",
-        "cross_reference"
+        "cross_reference",
+        "scope"
       ]
     },
     "Status": {
@@ -1290,8 +1416,14 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
   "description": "Canonical intermediate representation for evidence-bound policy compilation. Generated from policy_ir.models; edit the dataclasses, not this file.",
-  "policyIrVersion": "policy-ir-2.0.0",
+  "policyIrVersion": "policy-ir-2.1.0",
   "properties": {
+    "authority_sources": {
+      "items": {
+        "$ref": "#/$defs/AuthoritySource"
+      },
+      "type": "array"
+    },
     "chunks": {
       "items": {
         "$ref": "#/$defs/Chunk"
@@ -1366,7 +1498,13 @@
       "type": "array"
     },
     "schema_version": {
-      "const": "policy-ir-2.0.0"
+      "const": "policy-ir-2.1.0"
+    },
+    "scope_dimensions": {
+      "items": {
+        "$ref": "#/$defs/ScopeDimensionDefinition"
+      },
+      "type": "array"
     },
     "unit_conversions": {
       "items": {

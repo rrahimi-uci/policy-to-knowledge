@@ -17,7 +17,7 @@ import unicodedata
 #: Versioned contract identifier. Any change to the enums, the expression
 #: grammar or the ID derivation rules must bump this, because it is mixed into
 #: every derived ID.
-SCHEMA_VERSION = "policy-ir-2.0.0"
+SCHEMA_VERSION = "policy-ir-2.1.0"
 
 #: Length of the hex digest kept in a derived ID. 16 hex characters is 64 bits,
 #: which keeps collisions negligible for corpora of a few million clauses while

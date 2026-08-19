@@ -24,6 +24,7 @@ run is broken" are different outcomes:
 from __future__ import annotations
 
 import argparse
+import datetime as _dt
 import json
 import sys
 from pathlib import Path
@@ -93,6 +94,12 @@ def build_parser() -> argparse.ArgumentParser:
         help="Optional ISO timestamp recorded in the manifest. Omit for byte-stable output.",
     )
     parser.add_argument(
+        "--as-of",
+        metavar="YYYY-MM-DD",
+        help="Restrict executable projections to clauses in force on this date. "
+        "Explicit by design: the compiler never reads the clock.",
+    )
+    parser.add_argument(
         "--fail-on-invalid-ir",
         action="store_true",
         help="Exit non-zero when the Policy IR itself is malformed.",
@@ -148,6 +155,7 @@ def load_texts(
 def _summarise(result: CompileResult, warnings: Sequence[str]) -> str:
     lines = [
         f"profile: {result.profile.value}",
+        *([f"as of: {result.manifest['as_of']}"] if result.manifest.get("as_of") else []),
         f"admitted decisions: {len(result.report.admitted_decisions())}",
         f"admitted processes: {len(result.report.admitted_processes())}",
     ]
@@ -181,6 +189,13 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(f"{name}\n    {item.description}")
         return EXIT_OK
 
+    as_of: _dt.date | None = None
+    if args.as_of:
+        try:
+            as_of = _dt.date.fromisoformat(args.as_of)
+        except ValueError:
+            parser.error(f"--as-of must be an ISO date (YYYY-MM-DD), got {args.as_of!r}")
+
     targets = tuple(part.strip() for part in args.compile.split(",") if part.strip())
     profile = CompilerProfile(args.compiler_profile)
     warnings: list[str] = []
@@ -211,6 +226,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             targets=targets,
             graph_name=args.graph_name,
             run_timestamp=args.run_timestamp,
+            as_of=as_of,
         )
     except ValueError as exc:
         parser.error(str(exc))

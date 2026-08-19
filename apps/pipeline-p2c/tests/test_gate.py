@@ -124,3 +124,66 @@ def test_statuses_are_independent_not_a_single_ladder() -> None:
 def test_fixture_names_are_stable() -> None:
     assert "eligibility_decision" in fixture_names()
     assert len(fixture_names()) == len(set(fixture_names()))
+
+
+def test_the_engine_names_no_domain_actors() -> None:
+    """Domain knowledge belongs in configuration, not in the engine's own tables.
+
+    A marker like "no lender may" would work, and would quietly make the compiler
+    lending-specific. The generic pattern covers every industry's actor noun, and
+    this test stops the specific form from creeping back in.
+
+    Prose is exempt: naming mortgages in a docstring as an illustration is useful.
+    What is checked is *code* — identifiers and the string literals the engine acts
+    on — which is where a domain assumption would actually change behaviour.
+    """
+    import ast
+    import io
+    import re
+    import tokenize
+    from pathlib import Path
+
+    engine = Path(__file__).resolve().parent.parent
+    packages = ("policy_ir", "validation", "compilers", "evaluation", "ingestion", "adapters")
+    domain_nouns = re.compile(
+        r"\b(lender|borrower|seller|servicer|patient|provider|policyholder|insurer|"
+        r"mortgage|hipaa|medicare|medicaid)\b",
+        re.IGNORECASE,
+    )
+
+    def docstring_lines(source: str) -> set[int]:
+        tree = ast.parse(source)
+        lines: set[int] = set()
+        for node in ast.walk(tree):
+            if not isinstance(
+                node, (ast.Module, ast.ClassDef, ast.FunctionDef, ast.AsyncFunctionDef)
+            ):
+                continue
+            body = getattr(node, "body", [])
+            if (
+                body
+                and isinstance(body[0], ast.Expr)
+                and isinstance(body[0].value, ast.Constant)
+                and isinstance(body[0].value.value, str)
+            ):
+                first = body[0].value
+                lines.update(range(first.lineno, (first.end_lineno or first.lineno) + 1))
+        return lines
+
+    offenders: list[str] = []
+    for package in packages:
+        for path in sorted((engine / package).rglob("*.py")):
+            source = path.read_text()
+            exempt = docstring_lines(source)
+            for token in tokenize.generate_tokens(io.StringIO(source).readline):
+                if token.type == tokenize.COMMENT:
+                    continue
+                if token.start[0] in exempt:
+                    continue
+                if token.type in (tokenize.NAME, tokenize.STRING) and domain_nouns.search(
+                    token.string
+                ):
+                    offenders.append(
+                        f"{path.relative_to(engine)}:{token.start[0]}: {token.string.strip()}"
+                    )
+    assert not offenders, "domain vocabulary found in engine code:\n" + "\n".join(offenders)

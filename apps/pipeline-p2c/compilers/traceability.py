@@ -147,6 +147,7 @@ def build_manifest(
     *,
     profile: str,
     run_timestamp: str | None = None,
+    as_of: str | None = None,
     extra: Mapping[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Build the reproducibility manifest for one compile run."""
@@ -154,6 +155,7 @@ def build_manifest(
         "tool": TOOL_NAME,
         "policy_ir_version": SCHEMA_VERSION,
         "compiler_profile": profile,
+        "as_of": as_of,
         "specifications": {"dmn": DMN_SPEC, "bpmn": BPMN_SPEC},
         "inputs": {
             "documents": [

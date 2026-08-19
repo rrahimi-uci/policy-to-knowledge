@@ -31,7 +31,6 @@ _MODALITY_MARKERS: tuple[tuple[Modality, tuple[str, ...]], ...] = (
             "are prohibited",
             "is not permitted",
             "are not permitted",
-            "no lender may",
             "cannot",
             "may no longer",
         ),
@@ -65,31 +64,48 @@ _MODALITY_MARKERS: tuple[tuple[Modality, tuple[str, ...]], ...] = (
 #: Prohibition markers that also contain an obligation marker as a substring.
 _NEGATED_OBLIGATIONS = ("must not", "shall not", "must never")
 
+#: Prohibitions phrased as "no <actor> may ...". Written as a pattern rather than a
+#: list of actors on purpose: naming "lender" here would put one domain's vocabulary
+#: inside the engine, and the architecture keeps domain knowledge in configuration.
+#: The pattern covers "no lender may", "no provider may", "no insurer shall" alike.
+_NO_ACTOR_MAY = re.compile(r"\bno\s+\w+(?:\s+\w+)?\s+(?:may|shall|can)\b", re.IGNORECASE)
+
 
 def attested_modalities(text: str) -> frozenset[Modality]:
     """Return the modalities the text plausibly expresses.
 
-    "The lender must not charge a fee" contains the substring "must", so a naive
-    scan would attest OBLIGATION for a prohibition. Negated obligations are
-    therefore stripped before the obligation markers are tested.
+    Negated forms are the whole difficulty. "The lender must not charge a fee"
+    contains the substring "must", and "no insurer shall deny" contains "shall", so
+    a naive scan attests an obligation for what is plainly a prohibition. Both
+    families of negation are therefore removed from the text *before* the obligation
+    and permission markers are tested, which is what makes the modal-flip stress
+    test fail closed instead of passing on a substring.
     """
     lowered = text.lower()
+    # Blank out negated constructions so their positive substrings cannot be read.
+    positive_haystack = lowered
+    for negated in _NEGATED_OBLIGATIONS:
+        positive_haystack = positive_haystack.replace(negated, " ")
+    positive_haystack = positive_haystack.replace("may not", " ").replace("cannot", " ")
+    positive_haystack = _NO_ACTOR_MAY.sub(" ", positive_haystack)
+
     found: set[Modality] = set()
     for modality, markers in _MODALITY_MARKERS:
-        haystack = lowered
-        if modality is Modality.OBLIGATION:
-            for negated in _NEGATED_OBLIGATIONS:
-                haystack = haystack.replace(negated, " ")
-        if modality is Modality.PERMISSION:
-            haystack = haystack.replace("may not", " ").replace("cannot", " ")
+        haystack = (
+            positive_haystack
+            if modality in (Modality.OBLIGATION, Modality.PERMISSION)
+            else lowered
+        )
         if any(marker in haystack for marker in markers):
             found.add(modality)
+    if _NO_ACTOR_MAY.search(lowered):
+        found.add(Modality.PROHIBITION)
     return frozenset(found)
 
 
-#: Cardinal number words that appear in policy prose. Without these, "retained
-#: for five years" would fail to attest a ``P1825D`` duration and the gate would
-#: refuse a perfectly well-evidenced clause.
+#: Cardinal number words that appear in policy prose. Without these, "retained for
+#: five years" would fail to attest a ``P1825D`` duration and the gate would refuse a
+#: perfectly well-evidenced clause.
 _NUMBER_WORDS: dict[int, str] = {
     0: "zero", 1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six",
     7: "seven", 8: "eight", 9: "nine", 10: "ten", 11: "eleven", 12: "twelve",
