@@ -116,6 +116,23 @@ def build_parser() -> argparse.ArgumentParser:
         "DMN nor BPMN.",
     )
     parser.add_argument(
+        "--emit-requests",
+        type=Path,
+        metavar="DIR",
+        help="With --ingest: write one extraction request per chunk, each with the JSON "
+        "Schema and prose contract a model-driven extractor should be given. The schema "
+        "constrains citations to the offered unit indices, so a citation to unseen text "
+        "cannot be produced.",
+    )
+    parser.add_argument(
+        "--proposals",
+        type=Path,
+        nargs="+",
+        metavar="FILE",
+        help="With --ingest: admit extractor proposals. Ingestion is deterministic, so "
+        "re-ingesting rebuilds byte-identical requests and the unit indices still resolve.",
+    )
+    parser.add_argument(
         "--max-chunk-chars",
         type=int,
         default=20_000,
@@ -270,7 +287,74 @@ def main(argv: Sequence[str] | None = None) -> int:
         spans: tuple = ()
         role = "ingestion_skeleton"
         extraction_stats: dict = {}
-        if args.extract:
+
+        if args.emit_requests:
+            from extraction.contract import proposal_schema, render_instructions
+            from extraction.offer import build_requests
+
+            requests = build_requests(registry, registry.chunk_tuple())
+            args.emit_requests.mkdir(parents=True, exist_ok=True)
+            for request in requests:
+                stem = args.emit_requests / request.chunk_id
+                stem.with_suffix(".request.json").write_text(
+                    json.dumps(request.to_dict(), indent=2, sort_keys=True) + "\n",
+                    encoding="utf-8",
+                )
+                stem.with_suffix(".schema.json").write_text(
+                    json.dumps(proposal_schema(request), indent=2, sort_keys=True) + "\n",
+                    encoding="utf-8",
+                )
+                stem.with_suffix(".instructions.md").write_text(
+                    render_instructions(request), encoding="utf-8"
+                )
+            warnings.append(
+                f"emitted {len(requests)} extraction request(s) with schema and "
+                f"instructions to {args.emit_requests}"
+            )
+
+        if args.proposals:
+            from extraction.candidates import CandidateRejected
+            from extraction.offer import build_requests
+            from extraction.proposals import admit_proposals, proposal_from_dict
+
+            requests = {r.chunk_id: r for r in build_requests(registry, registry.chunk_tuple())}
+            admitted: list = []
+            admitted_spans: dict = {}
+            refused = 0
+            for path in args.proposals:
+                payload = json.loads(path.read_text(encoding="utf-8"))
+                batches = payload if isinstance(payload, list) else [payload]
+                for batch in batches:
+                    chunk_id = batch.get("chunk_id")
+                    request = requests.get(chunk_id)
+                    if request is None:
+                        parser.error(
+                            f"{path}: chunk {chunk_id!r} is not part of this ingestion; "
+                            "the proposals and the ingest arguments must match"
+                        )
+                    try:
+                        batch_clauses, batch_spans = admit_proposals(
+                            [proposal_from_dict(c) for c in batch.get("candidates", ())],
+                            request,
+                            registry,
+                            document_sha256=registry.documents[
+                                request.document_id
+                            ].canonical_text_sha256,
+                        )
+                    except CandidateRejected as exc:
+                        refused += 1
+                        warnings.append(f"refused proposals for {chunk_id}: {exc}")
+                        continue
+                    admitted.extend(batch_clauses)
+                    admitted_spans.update({s.evidence_id: s for s in batch_spans})
+            clauses = tuple(admitted)
+            spans = tuple(admitted_spans[k] for k in sorted(admitted_spans))
+            role = "model_extraction"
+            warnings.append(
+                f"admitted {len(clauses)} clause(s) from proposals"
+                + (f"; {refused} batch(es) refused" if refused else "")
+            )
+        if args.extract and not args.proposals:
             from extraction.deterministic import extract_deterministic
 
             extracted = extract_deterministic(registry, registry.chunk_tuple())
