@@ -529,7 +529,9 @@ source digests match the emitted artifact and selected corpus. Score it with
 `evaluation.openai_runner` provides the equivalent direct baseline through the
 OpenAI Responses API. It obtains a key only from a named environment variable,
 uses structured JSON output, and sends `store: false`; neither the key nor prompts
-or API replies are written to its configuration record.
+or API replies are written to its configuration record. It reads `OPENAI_API_KEY`
+by default; use `--api-key-env NAME` only when the key is deliberately supplied
+through a different environment-variable name.
 
 ```bash
 git_rev=$(git rev-parse HEAD)

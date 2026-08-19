@@ -18,7 +18,7 @@ from .test_benchmark_evaluation import _sharc_split, _write_json
 
 
 def test_call_openai_uses_responses_structured_output_and_no_storage(
-    tmp_path, monkeypatch: pytest.MonkeyPatch
+    monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     monkeypatch.setenv("P2K_TEST_OPENAI_KEY", "test-key")
     captured: dict[str, object] = {}
