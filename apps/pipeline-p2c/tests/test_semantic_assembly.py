@@ -11,6 +11,7 @@ from policy_ir.enums import DerivationMethod, Provenance, Status
 from policy_ir.models import PolicyIR, SemanticRelation
 from semantic import DomainProfile, ProfileError, generic_profile, load_profile
 from semantic import AssemblyError, assemble_proposal, proposal_schema
+from semantic import synthesis_report
 from validation import blockers as codes
 from validation import run_gate
 
@@ -102,3 +103,14 @@ def test_semantic_proposal_can_add_only_records_citing_application_owned_evidenc
         assert "not owned by this IR" in str(exc)
     else:  # pragma: no cover
         raise AssertionError("fabricated evidence was admitted")
+
+
+def test_synthesis_report_does_not_mutate_ir() -> None:
+    item = all_fixtures()["notice_process"]
+    before = (len(item.ir.decisions), len(item.ir.processes))
+
+    report = synthesis_report(item.ir)
+    assert report
+    assert {op.target for op in report} <= {"dmn", "bpmn"}
+    assert all(op.status in {"ready_for_explicit_model", "abstain"} for op in report)
+    assert (len(item.ir.decisions), len(item.ir.processes)) == before

@@ -156,6 +156,13 @@ def build_parser() -> argparse.ArgumentParser:
         "semantic relation types but cannot relax compiler admission.",
     )
     parser.add_argument(
+        "--emit-synthesis-report",
+        type=Path,
+        metavar="FILE",
+        help="Write conservative DMN/BPMN synthesis opportunities and abstention reasons. "
+        "This report never creates executable models by itself.",
+    )
+    parser.add_argument(
         "--max-chunk-chars",
         type=int,
         default=20_000,
@@ -460,6 +467,20 @@ def main(argv: Sequence[str] | None = None) -> int:
         warnings.append(
             f"domain profile: {domain_profile.profile_id}@{domain_profile.version}"
         )
+
+    if args.emit_synthesis_report:
+        from semantic import synthesis_report
+
+        opportunities = synthesis_report(ir)
+        args.emit_synthesis_report.write_text(
+            json.dumps(
+                {"opportunities": [item.to_dict() for item in opportunities]},
+                indent=2,
+                sort_keys=True,
+            ) + "\n",
+            encoding="utf-8",
+        )
+        warnings.append(f"wrote {len(opportunities)} synthesis opportunity record(s)")
 
     try:
         result = compile_all(

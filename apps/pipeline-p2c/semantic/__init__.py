@@ -7,8 +7,10 @@ that owns identifiers, evidence, validation, and projection.
 
 from .profiles import DomainProfile, ProfileError, generic_profile, load_profile
 from .assembly import AssemblyError, assemble_proposal, proposal_schema
+from .synthesis import SynthesisOpportunity, synthesis_report
 
 __all__ = (
     "AssemblyError", "DomainProfile", "ProfileError", "assemble_proposal", "generic_profile",
     "load_profile", "proposal_schema",
+    "SynthesisOpportunity", "synthesis_report",
 )
