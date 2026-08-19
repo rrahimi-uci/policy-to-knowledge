@@ -256,6 +256,50 @@ because a compiler whose output depends on when it ran cannot produce byte-stabl
 artefacts, and byte-stability is the property the whole reproducibility story rests
 on.
 
+## Why the extraction contract has exactly those three controls
+
+Each one closes a distinct route by which an extractor could put unsupported content
+into the IR, and none of the three substitutes for another.
+
+**Citations restricted to offered spans.** Without it, a proposal can name any span ID
+— including one that does not exist, or one from a different document — and the gate
+would then report `unknown_evidence_id` rather than the real problem, which is that the
+extractor cited text it never saw. Restricting at admission makes the failure precise
+and local. The plan asks the same of the dependency prompt: "reject edges that cite text
+not supplied to the call."
+
+**No ID field on a candidate.** Legacy rule IDs embedded the batch number, so
+reordering a batch changed identity. Letting an extractor propose an ID reintroduces
+that in a subtler form — the same clause extracted twice could get two IDs, or two
+different clauses one ID. Deriving it from the document hash, the cited spans and the
+normalised kind means deduplication happens by construction rather than by a similarity
+threshold.
+
+**`missing` cannot contradict an assertion.** A field that merely lists absent
+semantics is decorative; nothing checks it, so nothing depends on it being true. Making
+a contradiction a rejection gives the field teeth. The asymmetry worth noting: declaring
+`condition` absent while citing a *condition span* is allowed, because those say
+different things — "there is condition text here" and "I did not type it" are both true
+of an untyped extractor, and the IR needs to be able to express exactly that.
+
+## Why the baseline extractor types nothing
+
+It would be easy to have it emit `condition_ast` by pattern-matching "at least N" into
+a comparison. That is precisely the failure the whole design exists to prevent: a
+plausible typed threshold, derived from a regex, carrying the authority of the type
+checker that validated its *shape* rather than its *meaning*.
+
+So the baseline reads only what it can establish — a modal verb, and where the text is —
+and declares everything else missing. Its clauses reach the graph and stop there. A
+corpus extracted this way admits zero DMN and zero BPMN, which is the honest result and
+the number a model-driven extractor has to improve on.
+
+The one place this needs stating out loud is modality. The extractor reads it from the
+same marker table `validation/attestation.py` checks it against, so that check cannot
+fail for this output — it is vacuous here, and informative only for a modality proposed
+independently. A test asserts both halves of that, because a green gate over
+self-consistent output looks identical to a green gate over validated output.
+
 ## Adding a check
 
 1. Name the blocker in `validation/blockers.py`.

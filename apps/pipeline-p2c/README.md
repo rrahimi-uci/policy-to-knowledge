@@ -20,7 +20,7 @@ failure.
 | --- | --- |
 | A deterministic compiler: Policy IR in, graph + DMN + BPMN out | An extraction pipeline. It calls no model and has no prompts |
 | A fail-closed gate that decides what may be compiled | A legal-correctness checker |
-| A conformance harness with 21 fixtures and 432 offline tests | A benchmark or a labelled dataset |
+| A conformance harness with 21 fixtures and 462 offline tests | A benchmark or a labelled dataset |
 | Standards-targeted: DMN 1.5 `formal/24-01-01`, BPMN 2.0.2 `formal/13-12-09` | A BPM engine, or a certified DMN implementation |
 
 The LLM-facing stages the plan describes (Stage 2 ontology extraction, Stage 3A
@@ -36,6 +36,9 @@ pip install -r requirements-dev.txt
 
 # Ingest real PDFs into a Policy IR skeleton (hashes, offsets, sections, coverage)
 python -m cli.compile_policy --ingest ../pipeline/compliance-files/**/*.pdf --out build/ingest/
+
+# …and extract evidenced, untyped clauses from them (no model involved)
+python -m cli.compile_policy --ingest ../pipeline/compliance-files/**/*.pdf --extract --out build/
 
 # Compile a built-in conformance fixture end to end
 python -m cli.compile_policy --fixture notice_process --out build/
@@ -98,6 +101,54 @@ Measured on the corpus:
 Everything downstream of ingestion stays dependency-free, so a Policy IR document can
 be compiled anywhere.
 
+## Extracting clauses
+
+`--extract` runs the deterministic, model-free extractor over the ingested chunks. It
+finds normative sentences, cites them by offset, and emits clauses that assert almost
+nothing: a modality, the text, and where that text is.
+
+It types **no** condition, effect or threshold, so its output is graph-only by
+construction and can never reach DMN or BPMN. That is deliberate — it gives the whole
+pipeline a real input path over the real corpus today, and it is the baseline any
+model-driven extractor has to beat.
+
+Role carving is conservative. Two drafting shapes have unambiguous boundaries and are
+recognised; anything else is cited whole as the effect rather than guessed at, because
+a mis-carved region attaches a condition to the wrong clause:
+
+```
+"If the loan is a short-term loan, the Lender must notify the borrower."
+   condition  [ 71,103] 'If the loan is a short-term loan'
+   effect     [105,141] 'the Lender must notify the borrower.'
+
+"A Seller may request an exception unless the property is in a restricted county."
+   effect     [142,175] 'A Seller may request an exception'
+   exception  [176,222] 'unless the property is in a restricted county.'
+```
+
+### The extraction contract
+
+A model-driven extractor proposes `CandidateClause` records instead, and the same
+parser admits them. Three controls, each closing a way unsupported content could reach
+the IR:
+
+| Control | Why |
+| --- | --- |
+| Citations must be spans the application **offered** | stops a proposal citing text it was never shown |
+| A candidate has **no ID field** | identity is derived from document hash + spans + kind, so reordering a batch cannot change it |
+| A field cannot be **asserted and disclaimed** together | makes `missing` meaningful instead of decorative |
+
+Unknown keys and unknown enum values are refused, not ignored. Declaring `condition`
+absent while citing a *condition span* is consistent, and is exactly what an untyped
+extractor should say: "there is condition text here and I did not type it."
+
+**One honest caveat.** The deterministic extractor reads modality from the same marker
+table the gate checks it against, so the gate's modality attestation is **vacuous** for
+that output — it cannot fail. `test_the_modality_check_is_vacuous_for_this_extractor`
+states this explicitly so a green gate is not mistaken for validation, and shows the
+check biting the moment a modality is set independently. Nothing else is weakened:
+provenance, offsets and hashes are verified exactly as for any other clause.
+
 ## How a compile run works
 
 ```text
@@ -120,6 +171,7 @@ eligible — that is what makes "fail closed" enforceable rather than aspiration
 ```text
 policy_ir/     enums, expression AST, type checker, FEEL, tabular decomposition, IDs, JSON Schema
 ingestion/     immutable source registry, PDF ingestion, section detection
+extraction/    sentence segmentation, the candidate contract, the model-free baseline
 validation/    the fail-closed gate: provenance, semantics, eligibility, blockers
 evaluation/    the reference Policy IR evaluator (three-valued logic)
 compilers/     graph · DMN · BPMN · traceability · structural verification
@@ -330,6 +382,13 @@ the bug.
 
 Stated plainly, because the whole point of the app is not overstating things:
 
+- **The baseline extractor types nothing.** It produces evidenced graph-only clauses;
+  turning prose into a typed condition is the model-driven path's job, and this one
+  refuses to guess. Expect a corpus extracted this way to admit zero DMN and zero BPMN.
+- **Role carving handles two drafting shapes.** A leading condition and a trailing
+  qualifier; anything more complex is cited whole rather than mis-split.
+- **Sentence segmentation is conservative** and will occasionally join two short
+  sentences rather than risk splitting a requirement from its own condition.
 - **Image-only pages need OCR, and OCR is deliberately absent.** OCR output is not
   deterministic across versions or platforms, which would break the byte-stability the
   rest of the design rests on. Those pages are recorded as `extraction_failed` and left
@@ -362,13 +421,14 @@ Stated plainly, because the whole point of the app is not overstating things:
 ## Testing
 
 ```bash
-python -m pytest tests/ -q                      # 432 offline tests
+python -m pytest tests/ -q                      # 462 offline tests
 python -m pytest tests/ -q --xsd-dir schemas/omg  # + 8 XSD conformance tests
 ```
 
 Test files map onto the plan's test strategy: `test_contracts.py` (contract and
 provenance), `test_expressions.py` (expression and semantic), `test_scope.py`,
-`test_authority.py`, `test_timeline.py`, `test_ingestion.py`, `test_dmn.py`, `test_bpmn.py`,
+`test_authority.py`, `test_timeline.py`, `test_ingestion.py`, `test_extraction.py`,
+`test_dmn.py`, `test_bpmn.py`,
 `test_compatibility.py`, `test_gate.py`, `test_stress_matrix.py` (one test per
 stress-matrix row), `test_cli.py`, `test_xsd_conformance.py`.
 

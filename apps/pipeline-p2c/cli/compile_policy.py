@@ -40,6 +40,11 @@ from policy_ir.enums import CompilerProfile  # noqa: E402
 from policy_ir.models import PolicyIR  # noqa: E402
 from validation import blockers as codes  # noqa: E402
 
+def drop_empty(data: dict) -> dict:
+    """Omit empty metadata values so an ingest-only run has no misleading keys."""
+    return {key: value for key, value in data.items() if value}
+
+
 EXIT_OK = 0
 EXIT_STRUCTURAL = 1
 EXIT_INVALID_IR = 2
@@ -101,6 +106,14 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--run-timestamp",
         help="Optional ISO timestamp recorded in the manifest. Omit for byte-stable output.",
+    )
+    parser.add_argument(
+        "--extract",
+        action="store_true",
+        help="After --ingest, run the deterministic model-free extractor: normative "
+        "sentences become evidenced, untyped, graph-only clauses. This is the baseline "
+        "a model-driven extractor has to beat; it types nothing and so reaches neither "
+        "DMN nor BPMN.",
     )
     parser.add_argument(
         "--max-chunk-chars",
@@ -253,11 +266,41 @@ def main(argv: Sequence[str] | None = None) -> int:
         except PdfSupportUnavailable as exc:
             parser.error(str(exc))
             return EXIT_CONDITION  # pragma: no cover - argparse exits
+        clauses: tuple = ()
+        spans: tuple = ()
+        role = "ingestion_skeleton"
+        extraction_stats: dict = {}
+        if args.extract:
+            from extraction.deterministic import extract_deterministic
+
+            extracted = extract_deterministic(registry, registry.chunk_tuple())
+            clauses, spans = extracted.clauses, extracted.spans
+            # Extraction coverage supersedes the ingestion note for a chunk it read.
+            read = {entry.chunk_id for entry in extracted.coverage}
+            coverage = [e for e in coverage if e.chunk_id not in read] + list(
+                extracted.coverage
+            )
+            role = "deterministic_extraction"
+            extraction_stats = extracted.stats.to_dict()
+            warnings.append(
+                f"extraction: {extraction_stats['clauses_emitted']} clause(s) from "
+                f"{extraction_stats['normative_sentences']} normative of "
+                f"{extraction_stats['sentences_scanned']} sentence(s) "
+                f"({extraction_stats['normative_rate']:.1%} normative)"
+            )
+            warnings.append(
+                "extraction: clauses are untyped by construction — no condition, effect "
+                "or threshold is typed, so none can reach DMN or BPMN"
+            )
         ir = PolicyIR(
             documents=registry.document_tuple(),
             chunks=registry.chunk_tuple(),
+            evidence_spans=spans,
+            clauses=clauses,
             coverage=tuple(coverage),
-            metadata={"artifact_role": "ingestion_skeleton"},
+            metadata=drop_empty(
+                {"artifact_role": role, "extraction_stats": extraction_stats}
+            ),
         )
         texts = dict(registry.texts)
     elif args.legacy_graph:
@@ -291,8 +334,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         args.out.mkdir(parents=True, exist_ok=True)
         files = dict(result.files())
         if args.ingest:
-            # The skeleton is the point of an ingest run: it is what clause
-            # extraction consumes next.
+            # The IR is the point of an ingest run: either a skeleton for extraction to
+            # consume, or the extracted clauses themselves.
             files["policy-ir-v2.json"] = (
                 json.dumps(ir.to_dict(), indent=2, sort_keys=True, ensure_ascii=False) + "\n"
             )

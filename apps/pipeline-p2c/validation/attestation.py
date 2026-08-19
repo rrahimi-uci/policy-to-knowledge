@@ -64,6 +64,22 @@ _MODALITY_MARKERS: tuple[tuple[Modality, tuple[str, ...]], ...] = (
 #: Prohibition markers that also contain an obligation marker as a substring.
 _NEGATED_OBLIGATIONS = ("must not", "shall not", "must never")
 
+
+def _word_pattern(marker: str) -> re.Pattern[str]:
+    """Compile a marker so it matches whole words only.
+
+    Plain substring matching is wrong here and the failure is quiet: "must not" occurs
+    inside "must notify", so a routine obligation reads as a prohibition, and stripping
+    the negation first then removes its obligation reading too. "can" inside
+    "candidate" and "may" inside "maybe" fail the same way.
+    """
+    return re.compile(r"\b" + re.escape(marker) + r"\b", re.IGNORECASE)
+
+
+#: Marker tables precompiled with word boundaries, keyed as the tables above.
+_MARKER_PATTERNS: dict[Modality, tuple[re.Pattern[str], ...]] = {}
+_NEGATED_PATTERNS: tuple[re.Pattern[str], ...] = ()
+
 #: Prohibitions phrased as "no <actor> may ...". Written as a pattern rather than a
 #: list of actors on purpose: naming "lender" here would put one domain's vocabulary
 #: inside the engine, and the architecture keeps domain knowledge in configuration.
@@ -81,24 +97,22 @@ def attested_modalities(text: str) -> frozenset[Modality]:
     and permission markers are tested, which is what makes the modal-flip stress
     test fail closed instead of passing on a substring.
     """
-    lowered = text.lower()
     # Blank out negated constructions so their positive substrings cannot be read.
-    positive_haystack = lowered
-    for negated in _NEGATED_OBLIGATIONS:
-        positive_haystack = positive_haystack.replace(negated, " ")
-    positive_haystack = positive_haystack.replace("may not", " ").replace("cannot", " ")
+    positive_haystack = text
+    for pattern in _NEGATED_PATTERNS:
+        positive_haystack = pattern.sub(" ", positive_haystack)
     positive_haystack = _NO_ACTOR_MAY.sub(" ", positive_haystack)
 
     found: set[Modality] = set()
-    for modality, markers in _MODALITY_MARKERS:
+    for modality, patterns in _MARKER_PATTERNS.items():
         haystack = (
             positive_haystack
             if modality in (Modality.OBLIGATION, Modality.PERMISSION)
-            else lowered
+            else text
         )
-        if any(marker in haystack for marker in markers):
+        if any(pattern.search(haystack) for pattern in patterns):
             found.add(modality)
-    if _NO_ACTOR_MAY.search(lowered):
+    if _NO_ACTOR_MAY.search(text):
         found.add(Modality.PROHIBITION)
     return frozenset(found)
 
@@ -114,6 +128,16 @@ _NUMBER_WORDS: dict[int, str] = {
     30: "thirty", 40: "forty", 50: "fifty", 60: "sixty", 70: "seventy",
     80: "eighty", 90: "ninety", 100: "one hundred",
 }
+
+
+_MARKER_PATTERNS.update(
+    {modality: tuple(_word_pattern(m) for m in markers) for modality, markers in _MODALITY_MARKERS}
+)
+_NEGATED_PATTERNS = (
+    *(_word_pattern(m) for m in _NEGATED_OBLIGATIONS),
+    _word_pattern("may not"),
+    _word_pattern("cannot"),
+)
 
 
 def _number_patterns(value: float) -> tuple[re.Pattern[str], ...]:
