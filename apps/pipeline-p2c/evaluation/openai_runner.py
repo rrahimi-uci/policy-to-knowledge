@@ -154,7 +154,7 @@ def configuration_record(
         "schema_version": OPENAI_RUNNER_SCHEMA_VERSION,
         "system": {"kind": "direct_baseline", "implementation_revision": implementation_revision},
         "benchmark": {"name": benchmark, "source_sha256": source_sha256, "selection": dict(selection)},
-        "provider": "openai_responses",
+        "api_backend": "openai_responses",
         "model": _require_string(model, "model"),
         "api_key_env": _require_string(api_key_env, "api_key_env"),
         "base_url": base_url,

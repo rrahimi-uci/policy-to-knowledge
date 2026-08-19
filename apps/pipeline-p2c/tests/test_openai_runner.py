@@ -100,6 +100,6 @@ def test_openai_configuration_is_secret_free() -> None:
         timeout_seconds=120,
         implementation_revision="abc123",
     )
-    assert configuration["provider"] == "openai_responses"
+    assert configuration["api_backend"] == "openai_responses"
     assert configuration["store"] is False
     assert "test-key" not in json.dumps(configuration)
