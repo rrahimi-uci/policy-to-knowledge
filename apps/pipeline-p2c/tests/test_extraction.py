@@ -288,12 +288,66 @@ def test_the_gate_finds_nothing_to_refuse() -> None:
         assert not report.clause_has(clause.clause_id, Status.DMN_ELIGIBLE)
 
 
-def test_the_modality_check_is_vacuous_for_this_extractor() -> None:
+def test_a_modal_verb_only_inside_an_exception_does_not_mislabel_the_clause() -> None:
+    """Regression: 216 mislabels across the committed corpus came from this shape.
+
+    Reading modality from the whole sentence while the gate reads only the subject,
+    condition and effect regions labelled a clause from text the gate does not treat as
+    modal-bearing. Every failing case was a sentence whose only marker sat inside its
+    "unless" clause. The requirement in that clause is real, so the fix is to recognise
+    the carve as wrong and cite the sentence whole rather than to drop it.
+    """
+    text = (
+        "This clause generally excludes loss caused by a director unless the director "
+        'is also a salaried employee. "Dishonest acts" are defined as acts of that kind.'
+    )
+    registry, chunk, document = registry_for(text)
+    result = extract_deterministic(registry, [chunk])
+    assert result.clauses, "the requirement must not be dropped"
+
+    ir = PolicyIR(
+        documents=registry.document_tuple(),
+        chunks=registry.chunk_tuple(),
+        evidence_spans=result.spans,
+        clauses=result.clauses,
+    )
+    report = run_gate(ir, {document.document_id: text})
+    assert codes.MODALITY_NOT_ATTESTED not in set(report.counts_by_code())
+    # Cited whole rather than carved, so the modal verb is inside a region the gate reads.
+    first = result.clauses[0]
+    assert set(first.evidence) == {"effect"}
+
+
+def test_the_extractor_reads_the_same_regions_the_gate_checks() -> None:
+    """Whatever the carve, a declared modality is supported by modal-bearing roles."""
+    from extraction.deterministic import _MODAL_BEARING_ROLES
+    from validation.attestation import attested_modalities
+
+    text = (
+        "If the loan is short-term, the Lender must notify the borrower. "
+        "A Seller may request an exception unless the county is restricted. "
+        "The clause applies unless the lender must first escalate the file."
+    )
+    registry, chunk, _ = registry_for(text)
+    result = extract_deterministic(registry, [chunk])
+    spans = {span.evidence_id: span for span in result.spans}
+    modal_roles = {role.value for role in _MODAL_BEARING_ROLES}
+    for clause in result.clauses:
+        supporting = " ".join(
+            spans[evidence_id].exact_text
+            for role, ids in clause.evidence.items()
+            if role in modal_roles
+            for evidence_id in ids
+        )
+        assert clause.modality in attested_modalities(supporting), clause.display_text
+
+
+def test_the_modality_check_cannot_fail_for_this_extractor() -> None:
     """Stated as a test so a green gate is not mistaken for validation.
 
-    The extractor reads modality from the same marker table the gate checks it
-    against, so the attestation cannot fail here. It only carries information when the
-    modality was proposed independently — which is why the modal-flip fixture exists.
+    The extractor reads modality from the same marker table *and the same regions* the
+    gate checks, so the attestation cannot fail here. It carries information only when
+    the modality was proposed independently — which is why the modal-flip fixture exists.
     """
     registry, chunk, document = registry_for()
     result = extract_deterministic(registry, [chunk])

@@ -1,18 +1,21 @@
 ## Summary
 
-<!-- What does this PR change and why? -->
+<!-- What changed and why? Link the issue or ticket. -->
 
-## Which app(s)?
+## Tests and validation
 
-- [ ] Shell (`apps/shell/`)
-- [ ] Pipeline (`apps/pipeline/`)
-- [ ] Explorer (`apps/explorer/`)
-- [ ] Docs / CI / tooling
+- [ ] Added or updated tests for changed behavior, or explained why tests are not applicable.
+- [ ] Ran all affected Python and frontend CI-equivalent checks and recorded exact commands/results below.
+- [ ] Ran `git diff --check`.
+- [ ] Checked for secrets, unrelated changes, and generated-file drift.
 
-## How was it tested?
+Validation commands and results:
 
-<!-- Commands run and their results. -->
+## Risks and follow-up
 
-- [ ] Relevant unit tests pass (`pytest` / `npm test`)
-- [ ] Frontend builds (`npm run build`) if UI changed
-- [ ] No secrets, real data, or generated artifacts committed
+<!-- State risks, limitations, migrations, deployment implications, and rollback notes. -->
+
+## Copilot handoff
+
+- [ ] This PR is ready for human review only after all applicable validation passes.
+- [ ] Copilot did not approve or merge this PR.

@@ -142,12 +142,32 @@ Unknown keys and unknown enum values are refused, not ignored. Declaring `condit
 absent while citing a *condition span* is consistent, and is exactly what an untyped
 extractor should say: "there is condition text here and I did not type it."
 
-**One honest caveat.** The deterministic extractor reads modality from the same marker
-table the gate checks it against, so the gate's modality attestation is **vacuous** for
-that output — it cannot fail. `test_the_modality_check_is_vacuous_for_this_extractor`
+**One caveat.** The deterministic extractor reads modality from the same marker table
+*and the same regions* the gate checks, so that check cannot fail for its output. A test
 states this explicitly so a green gate is not mistaken for validation, and shows the
 check biting the moment a modality is set independently. Nothing else is weakened:
 provenance, offsets and hashes are verified exactly as for any other clause.
+
+Getting that alignment right was not automatic. Reading modality from the whole sentence
+while the gate reads only the subject, condition and effect regions produced **216
+mislabels across the committed corpus** — every one a sentence whose only modal marker sat
+inside its `unless` clause, so the gate correctly found the declared modality unsupported
+by the parts carrying normative force. The fix is not to drop those sentences, since the
+requirement inside the exception is real, but to recognise the carve as wrong and cite the
+sentence whole.
+
+### Measured on the whole corpus
+
+```
+17 PDFs · 5,633 pages · 18.5M characters · 408s
+  → 4,350 chunks, 38,520 evidence spans, 29,343 clauses
+  → 29,343 graph rules, 0 DMN, 0 BPMN, 0 gate blockers
+  coverage: 2,599 candidates_emitted · 1,730 no_policy_semantics_found · 21 extraction_failed
+  37.7% of 77,830 sentences are normative
+```
+
+Zero DMN and zero BPMN is the correct outcome: nothing was typed. The coverage ledger
+accounts for every chunk, including the 21 image-only pages.
 
 ## How a compile run works
 

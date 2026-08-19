@@ -9,13 +9,21 @@ That is the point. It gives the whole pipeline a real input path over the real c
 today, and it is the baseline any model-driven extractor must beat — the plan requires
 a direct-extraction baseline that is not allowed to quietly benefit from the gate.
 
-**One honest caveat, stated because a passing gate could otherwise be mistaken for
-validation.** This extractor derives a clause's modality from the same marker table
-:mod:`validation.attestation` checks it against, so the gate's modality attestation is
-*vacuous* for this output — it cannot fail. The check only carries information for
-clauses whose modality was proposed independently, by a model or by hand. Nothing else
-about the gate is weakened: provenance, offsets and hashes are verified exactly as for
-any other clause.
+**One caveat, stated because a passing gate could otherwise be mistaken for
+validation.** This extractor reads modality from the same marker table
+:mod:`validation.attestation` checks it against, and — since the fix described below —
+from the same *regions* the gate reads. Its modality therefore cannot fail that check.
+The check carries information only for a modality proposed independently, by a model or
+by hand. Nothing else about the gate is weakened: provenance, offsets and hashes are
+verified exactly as for any other clause.
+
+Getting that alignment right was not automatic. Reading modality from the whole sentence
+while the gate reads only the subject, condition and effect regions produced 216
+mislabels across the committed corpus — every one a sentence whose only modal marker sat
+inside its ``unless`` clause, so the gate correctly found the declared modality
+unsupported by the parts of the clause that carry normative force. The response is not
+to drop those sentences, because the requirement inside the exception is real; it is to
+recognise the carve as wrong and cite the sentence whole.
 """
 
 from __future__ import annotations
@@ -59,6 +67,11 @@ _CONDITION_MARKERS = (
     "subject to",
 )
 _EXCEPTION_MARKERS = ("unless", "except that", "except as", "except when", "other than")
+
+#: Roles the gate reads when checking that a declared modality is supported. The
+#: extractor must read the same regions, or it will label a clause from text the gate
+#: does not treat as modal-bearing.
+_MODAL_BEARING_ROLES = (SemanticRole.SUBJECT, SemanticRole.CONDITION, SemanticRole.EFFECT)
 
 #: Semantics this extractor never produces in typed form.
 _ALWAYS_MISSING = ("condition", "effect", "exception", "subject", "action", "object")
@@ -109,6 +122,18 @@ def _choose_modality(text: str) -> Modality | None:
         if modality in attested:
             return modality
     return None
+
+
+def _modal_text(
+    sentence: Sentence, regions: Sequence[tuple[SemanticRole, int, int]]
+) -> str:
+    """The text the gate will read when checking this clause's modality."""
+    base = sentence.char_start
+    return " ".join(
+        sentence.text[begin - base : finish - base]
+        for role, begin, finish in regions
+        if role in _MODAL_BEARING_ROLES
+    )
 
 
 def _first_marker(lowered: str, markers: Sequence[str]) -> int | None:
@@ -188,13 +213,24 @@ def extract_from_chunk(
     for sentence in sentences:
         if not _WORD_BOUNDARY.search(sentence.text):
             continue
-        modality = _choose_modality(sentence.text)
-        if modality is None:
+        if _choose_modality(sentence.text) is None:
             continue
         normative += 1
 
+        regions = _carve_roles(sentence)
+        modality = _choose_modality(_modal_text(sentence, regions))
+        if modality is None:
+            # The sentence is normative but its modal verb landed outside the regions
+            # the gate reads — almost always inside an "unless" clause carrying its own
+            # requirement. Dropping it would lose that requirement, so cite the sentence
+            # whole and let the modality come from all of it.
+            regions = ((SemanticRole.EFFECT, sentence.char_start, sentence.char_end),)
+            modality = _choose_modality(sentence.text)
+            if modality is None:  # pragma: no cover - guarded above
+                continue
+
         evidence: dict[str, tuple[str, ...]] = {}
-        for role, begin, finish in _carve_roles(sentence):
+        for role, begin, finish in regions:
             if finish <= begin:
                 continue
             span = registry.span_at(chunk.chunk_id, begin, finish, role)
