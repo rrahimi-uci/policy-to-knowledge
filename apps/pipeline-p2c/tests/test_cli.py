@@ -270,6 +270,21 @@ def test_cli_writes_a_conservative_synthesis_report(tmp_path: Path) -> None:
     }
 
 
+def test_cli_writes_review_queue_and_semantic_metrics(tmp_path: Path) -> None:
+    queue, metrics = tmp_path / "queue.json", tmp_path / "metrics.json"
+    code = main(
+        [
+            "--fixture", "overlapping_rows", "--emit-review-queue", str(queue),
+            "--emit-semantic-metrics", str(metrics), "--dry-run", "--quiet",
+        ]
+    )
+    assert code == EXIT_OK
+    assert json.loads(queue.read_text(encoding="utf-8"))["total"] > 0
+    report = json.loads(metrics.read_text(encoding="utf-8"))
+    assert report["clauses"] > 0
+    assert report["blockers"]
+
+
 @pytest.mark.skipif(not legacy_graph_paths(), reason="legacy corpora not present")
 def test_legacy_graph_import_from_the_cli(capsys: pytest.CaptureFixture[str]) -> None:
     path = legacy_graph_paths()[0]
