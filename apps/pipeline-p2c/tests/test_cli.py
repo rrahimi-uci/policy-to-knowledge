@@ -196,6 +196,67 @@ def test_list_fixtures_describes_each_case(capsys: pytest.CaptureFixture[str]) -
     assert "retention_obligation" in output
 
 
+def test_cli_emits_and_applies_semantic_proposals(tmp_path: Path) -> None:
+    item = all_fixtures()["notice_process"]
+    relation = {
+        "relation_id": "rel_cli_governs",
+        "source_id": item.ir.entity_types[0].entity_type_id,
+        "target_id": item.ir.clauses[0].clause_id,
+        "relation_type": "governs",
+        "evidence_ids": [item.ir.evidence_spans[0].evidence_id],
+    }
+    proposal = tmp_path / "proposal.json"
+    proposal.write_text(json.dumps({"semantic_relations": [relation]}), encoding="utf-8")
+    schema = tmp_path / "semantic-proposal.schema.json"
+    out = tmp_path / "out"
+    code = main(
+        [
+            "--fixture", "notice_process", "--semantic-proposals", str(proposal),
+            "--emit-semantic-proposal-schema", str(schema), "--compile", "graph",
+            "--out", str(out), "--quiet",
+        ]
+    )
+    assert code == EXIT_OK
+    assert "SemanticRelation" in json.loads(schema.read_text(encoding="utf-8"))["$defs"]
+    graph = json.loads((out / "graph-v2.json").read_text(encoding="utf-8"))
+    assert [relation["relationship_id"] for relation in graph["relationships"]] == [
+        "rel_cli_governs"
+    ]
+
+
+def test_cli_domain_profile_rejects_undeclared_semantic_relation(tmp_path: Path) -> None:
+    item = all_fixtures()["notice_process"]
+    proposal = tmp_path / "proposal.json"
+    proposal.write_text(
+        json.dumps(
+            {
+                "semantic_relations": [
+                    {
+                        "relation_id": "rel_cli_rejected",
+                        "source_id": item.ir.entity_types[0].entity_type_id,
+                        "target_id": item.ir.clauses[0].clause_id,
+                        "relation_type": "governs",
+                        "evidence_ids": [item.ir.evidence_spans[0].evidence_id],
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    profile = tmp_path / "profile.json"
+    profile.write_text(
+        json.dumps({"profile_id": "strict", "version": "1", "relation_types": ["defines"]}),
+        encoding="utf-8",
+    )
+    with pytest.raises(SystemExit):
+        main(
+            [
+                "--fixture", "notice_process", "--semantic-proposals", str(proposal),
+                "--domain-profile", str(profile), "--quiet",
+            ]
+        )
+
+
 @pytest.mark.skipif(not legacy_graph_paths(), reason="legacy corpora not present")
 def test_legacy_graph_import_from_the_cli(capsys: pytest.CaptureFixture[str]) -> None:
     path = legacy_graph_paths()[0]
