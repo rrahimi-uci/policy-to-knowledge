@@ -531,17 +531,58 @@ OpenAI Responses API. It obtains a key only from a named environment variable,
 uses structured JSON output, and sends `store: false`; neither the key nor prompts
 or API replies are written to its configuration record. It reads `OPENAI_API_KEY`
 by default; use `--api-key-env NAME` only when the key is deliberately supplied
-through a different environment-variable name.
+through a different environment-variable name. The paper protocol fixes this runner
+to `gpt-5.2` and `temperature=0.0`; it writes its own run manifest so a direct run
+can be paired without hand-assembling provenance.
 
 ```bash
 git_rev=$(git rev-parse HEAD)
 python -m evaluation.openai_runner \
   --benchmark sharc --input /data/sharc_dev.json --model gpt-5.2 \
   --case-ids splits/sharc-dev-lexical-100.json \
+  --run-id sharc-dev-direct-v1 \
   --implementation-revision "$git_rev" \
   --predictions-out results/sharc-openai-direct.jsonl \
-  --config-out results/sharc-openai-direct-config.json
+  --config-out results/sharc-openai-direct-config.json \
+  --run-manifest-out results/sharc-openai-direct-manifest.json
 ```
+
+### Evidence-bounded PolicyIR comparison
+
+`evaluation.policy_ir_runner` is a separate paired-system variant. It creates a
+case-scoped PolicyIR evidence slice from application-offered sentence units, lets the
+query stage see only graph-eligible clauses plus the query, and maps a validated
+tri-valued QueryIR relation to a public benchmark answer. It is not a claim that any
+benchmark provides gold PolicyIR/DMN/BPMN. The runner emits prediction, safe admission
+trace, configuration, and run-manifest artifacts; it never writes prompts, raw model
+responses, or an API key.
+
+```bash
+git_rev=$(git rev-parse HEAD)
+python -m evaluation.policy_ir_runner \
+  --benchmark contract_nli --input /data/contract-nli/dev.json \
+  --run-id contract-nli-dev-policy-ir-v1 \
+  --implementation-revision "$git_rev" \
+  --predictions-out results/contract-nli-policy-ir.jsonl \
+  --trace-out results/contract-nli-policy-ir-trace.jsonl \
+  --config-out results/contract-nli-policy-ir-config.json \
+  --run-manifest-out results/contract-nli-policy-ir-manifest.json
+
+python -m evaluation.paired \
+  --benchmark contract_nli --input /data/contract-nli/dev.json \
+  --baseline-predictions results/contract-nli-direct.jsonl \
+  --baseline-run-manifest results/contract-nli-direct-manifest.json \
+  --policy-ir-predictions results/contract-nli-policy-ir.jsonl \
+  --policy-ir-run-manifest results/contract-nli-policy-ir-manifest.json \
+  --policy-ir-trace results/contract-nli-policy-ir-trace.jsonl \
+  --out results/contract-nli-paired-report.json
+```
+
+The paired report rejects anything other than a `direct_baseline` and `policy_ir`
+manifest over the identical source bytes and selection. It reports both systems'
+native metrics, PolicyIR compiler/query admission, and a fixed-seed paired bootstrap
+accuracy interval. See [the protocol](../../docs/research/policy-ir-query-evaluation-protocol.md)
+for the locked configuration, evidence boundaries, and final-test discipline.
 
 The OPP-115 adapter uses the corpus's `threshold-0.5-overlap-similarity`
 consolidation view and evaluates the ten original top-level data-practice

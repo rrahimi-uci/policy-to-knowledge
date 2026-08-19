@@ -1,6 +1,9 @@
 # Evidence-Gated Policy Graph Compilation: NeurIPS 2027 Execution Plan
 
-**Status:** proposed and unrun. This is a falsifiable research plan, not a claim that the repository has achieved the proposed results.
+**Status:** proposed and unrun as a paper study. The executable v1 comparison
+protocol is [PolicyIR Query Evaluation Protocol](policy-ir-query-evaluation-protocol.md),
+but it has produced no headline benchmark result. This remains a falsifiable research
+plan, not a claim that the repository has achieved the proposed results.
 
 **Primary target:** the NeurIPS Evaluations and Datasets (E&D) track, 2027 edition. Consider the main NeurIPS track only if the evidence-gating method yields a substantive cross-task algorithmic result. Do not target ICLR 2027: its [call for papers](https://iclr.cc/Conferences/2027/CallForPapers) sets an abstract deadline of 18 September 2026 and a paper deadline of 25 September 2026 (AoE), which leaves too little time to complete, reproduce, and audit the study. The NeurIPS 2027 call is not published yet, and E&D is itself a recent rename of the Datasets and Benchmarks track, so confirm at Gate 0 that the track still exists under that name and fix no dates until the official 2027 call is out.
 
@@ -16,11 +19,11 @@ Proceed only if evidence gating improves supported correctness at comparable cov
 
 | Area | Observed now | Not established | Paper consequence |
 | --- | --- | --- | --- |
-| Pipeline | A ten-agent extraction, validation, merge, optimization, comparison, and visualization workflow exists. | End-to-end performance against external gold labels. | Treat it as a baseline system. |
-| Validation | The CLI can continue after validation failure; the validator has placeholder contradiction logic and sample-level source-reference existence checking. | Semantic source fidelity, real contradiction detection, and enforced validation. | The evidence gate is a substantive method change. |
-| Provenance | Rules retain source references/source text; historical records may hold one or multiple references. | Stable provenance contract and reproducible hash-linked manifests. | Define one canonical, multi-span schema and run manifest. |
+| Pipeline | `pipeline-p2c` has a typed PolicyIR, source-unit offer/proposal seam, deterministic graph/DMN/BPMN projections, and a case-scoped QueryIR experiment path. | End-to-end performance against external gold labels. | Treat it as a candidate system, not a validated paper method. |
+| Validation | The p2c gate verifies application-built source spans and admits projections fail-closed; the QueryIR experiment uses graph eligibility only. | Semantic source fidelity beyond the closed checks, and real contradiction resolution. | Report compiler admission separately from answer correctness. |
+| Provenance | Documents, chunks, evidence spans, candidate clauses, configurations, predictions, and runs are hash-bound. | Public, complete benchmark artifact releases under every corpus's terms. | Keep data external and publish only permitted digests/artifacts. |
 | Existing graphs | Four case-study graphs contain hundreds of rules/dependencies. | Their text and outputs are independent labels. | Qualitative audit and regression fixtures only. |
-| Tests | Unit/UI tests exist, primarily around prompts, interfaces, and mocks. | Benchmark adapters, scorers, contamination controls, repeated-run experiments. | Add a research harness with deterministic tests. |
+| Tests | Offline adapters/scorers cover ShARC, ContractNLI, OPP-115, manifests, direct runs, PolicyIR/QueryIR contracts, and paired bootstrap mechanics. | Held-out paired results, repeated-run variance, and contamination audit. | Run the locked protocol before modifying it further. |
 
 The implementation seams are the [rule extractor](../../apps/pipeline/agents/agent_3_rules_extractor.py), [validator](../../apps/pipeline/agents/agent_3_5_rule_validator.py), [graph optimizer](../../apps/pipeline/agents/agent_5_knowledge_graph_optimizer.py), [LLM client](../../apps/pipeline/utils/llm_client.py), [configuration](../../apps/pipeline/utils/config.py), and [extraction CLI](../../apps/pipeline/cli/extract.py). No proposed change below is implemented by this document.
 
@@ -116,7 +119,10 @@ Do not drop direct LLM, frozen P2K, or full method under resource pressure; drop
 
 ## 7. Protocol and reproducibility
 
-Before the first test run, commit a versioned protocol under the future research/neurips_2027 directory. It must freeze:
+Before the first paper-level test run, use the committed versioned protocol in
+[`policy-ir-query-evaluation-protocol.md`](policy-ir-query-evaluation-protocol.md).
+It freezes the initial model, decoding, prompts, bootstrap settings, and run-manifest
+rules; the external source ledger must additionally freeze:
 
 - source URLs, hashes, licenses, splits, and adapter versions;
 - model IDs, decoding parameters, retry policy, prompts/prompt hashes, budgets;
