@@ -15,6 +15,7 @@ from .benchmarks import (  # noqa: F401
     evaluate_predictions,
     load_benchmark,
     load_contract_nli,
+    load_opp115,
     load_predictions,
     load_sharc,
 )
