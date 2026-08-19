@@ -137,7 +137,7 @@ def project_graph(
                 "jurisdiction": [
                     value
                     for dimension in clause.scope.dimensions
-                    if dimension.name == "jurisdiction"
+                    if dimension.name == "jurisdiction" and not dimension.negated
                     for value in dimension.values
                 ],
                 "applicability_scope": [
