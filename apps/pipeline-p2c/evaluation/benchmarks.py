@@ -19,6 +19,8 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Iterable, Mapping, Sequence
 
+from .run_manifest import RunManifestError, load_evaluation_run_manifest
+
 
 SCHEMA_VERSION = "p2c-open-benchmark-v1"
 
@@ -603,6 +605,12 @@ def build_parser() -> argparse.ArgumentParser:
     action.add_argument("--emit-cases", type=Path, metavar="FILE")
     action.add_argument("--predictions", type=Path, metavar="FILE")
     parser.add_argument("--out", type=Path, metavar="FILE", help="Required with --predictions.")
+    parser.add_argument(
+        "--run-manifest",
+        type=Path,
+        metavar="FILE",
+        help="Optional provenance declaration, validated and embedded when scoring predictions.",
+    )
     return parser
 
 
@@ -614,6 +622,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         parser.error("--out is required with --predictions")
     if args.opp115_policy_ids and args.benchmark != "opp115":
         parser.error("--opp115-policy-ids requires --benchmark opp115")
+    if args.run_manifest and args.emit_cases:
+        parser.error("--run-manifest requires --predictions, not --emit-cases")
     try:
         dataset = load_benchmark(args.benchmark, args.input, policy_ids_path=args.opp115_policy_ids)
         if args.emit_cases:
@@ -634,10 +644,20 @@ def main(argv: Sequence[str] | None = None) -> int:
             )
             return 0
         predictions = load_predictions(args.predictions)
-        report = evaluate_predictions(dataset, predictions, prediction_sha256=_sha256(args.predictions))
+        predictions_sha256 = _sha256(args.predictions)
+        report = evaluate_predictions(dataset, predictions, prediction_sha256=predictions_sha256)
+        if args.run_manifest:
+            run_manifest = load_evaluation_run_manifest(args.run_manifest)
+            run_manifest.validate_for_scoring(
+                benchmark=dataset.benchmark,
+                source_sha256=dataset.source_sha256,
+                selection=dataset.selection,
+                predictions_sha256=predictions_sha256,
+            )
+            report["run_manifest"] = run_manifest.to_report_dict()
         args.out.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
         return 0
-    except BenchmarkError as exc:
+    except (BenchmarkError, RunManifestError) as exc:
         parser.error(f"benchmark evaluation error: {exc}")
 
 

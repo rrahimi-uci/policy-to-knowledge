@@ -442,6 +442,7 @@ python -m evaluation.benchmarks \
 python -m evaluation.benchmarks \
   --benchmark contract_nli --input /data/contract-nli/dev.json \
   --predictions results/contract-nli-predictions.jsonl \
+  --run-manifest results/contract-nli-policy-ir-run.json \
   --out results/contract-nli-report.json
 
 # OPP-115 must stay outside the repository. Use a policy-level JSON selection
@@ -460,6 +461,38 @@ The report separates overall accuracy, accuracy on answered cases, coverage/
 abstention, per-label macro-F1, and micro evidence precision/recall/F1. ShARC's
 label can be `Yes`, `No`, `Irrelevant`, or a required follow-up question, so its
 outcome scorer uses normalized exact matching rather than an LLM judge.
+
+For a paper result, pass a versioned `--run-manifest` when scoring. It is a
+secret-free JSON declaration that the scorer verifies against the actual corpus,
+selection, and predictions before embedding it in the report. It binds the result
+to a system identity, one of `direct_baseline`, `policy_ir`, or `ablation`, an
+implementation revision, and the SHA-256 digest of a non-secret configuration;
+it does not copy prompts, credentials, or configuration values into the report.
+
+```json
+{
+  "schema_version": "p2c-evaluation-run-v1",
+  "run_id": "contract-nli-dev-policy-ir-v1",
+  "system": {
+    "system_id": "policy-to-knowledge",
+    "kind": "policy_ir",
+    "implementation_revision": "<git-commit-or-immutable-image-digest>"
+  },
+  "configuration": { "sha256": "<64-hex-digest-of-non-secret-config>" },
+  "benchmark": {
+    "name": "contract_nli",
+    "source_sha256": "<64-hex-digest-of-official-split>",
+    "selection": {}
+  },
+  "predictions_sha256": "<64-hex-digest-of-submitted-predictions>"
+}
+```
+
+The manifest is created after predictions exist, because the scorer refuses a
+manifest whose prediction digest differs from the submitted artifact. The
+selection must exactly match the corpus adapter's recorded selection (including
+the OPP-115 policy-level manifest digest). A manifest is optional for exploratory
+local scoring but required for any result represented as reproducible research.
 
 The OPP-115 adapter uses the corpus's `threshold-0.5-overlap-similarity`
 consolidation view and evaluates the ten original top-level data-practice

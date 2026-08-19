@@ -19,3 +19,9 @@ from .benchmarks import (  # noqa: F401
     load_predictions,
     load_sharc,
 )
+from .run_manifest import (  # noqa: F401
+    EvaluationRunManifest,
+    RUN_MANIFEST_SCHEMA_VERSION,
+    RunManifestError,
+    load_evaluation_run_manifest,
+)
