@@ -10,6 +10,7 @@ from fixtures import all_fixtures
 from policy_ir.enums import DerivationMethod, Provenance, Status
 from policy_ir.models import PolicyIR, SemanticRelation
 from semantic import DomainProfile, ProfileError, generic_profile, load_profile
+from semantic import AssemblyError, assemble_proposal, proposal_schema
 from validation import blockers as codes
 from validation import run_gate
 
@@ -85,3 +86,19 @@ def test_domain_profile_is_configuration_and_cannot_relax_relation_validation(tm
         assert "root must be an object" in str(exc)
     else:  # pragma: no cover - explicit failure message for a broken parser
         raise AssertionError("non-object profile unexpectedly loaded")
+
+
+def test_semantic_proposal_can_add_only_records_citing_application_owned_evidence() -> None:
+    item = all_fixtures()["notice_process"]
+    relation = _relation().to_dict()
+    assembled = assemble_proposal(item.ir, {"semantic_relations": [relation]})
+    assert assembled.semantic_relations == (_relation(),)
+    assert "SemanticRelation" in proposal_schema()["$defs"]
+
+    relation["evidence_ids"] = ["invented_evidence"]
+    try:
+        assemble_proposal(item.ir, {"semantic_relations": [relation]})
+    except AssemblyError as exc:
+        assert "not owned by this IR" in str(exc)
+    else:  # pragma: no cover
+        raise AssertionError("fabricated evidence was admitted")
