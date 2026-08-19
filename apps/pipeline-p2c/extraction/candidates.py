@@ -189,6 +189,10 @@ def candidate_from_dict(data: Mapping[str, Any]) -> CandidateClause:
             value = data.get(key)
             return None if value is None else expression_from_dict(value)
 
+        def opt_str(key: str) -> str | None:
+            value = data.get(key)
+            return None if value is None else as_str(value, record, key)
+
         candidate = CandidateClause(
             modality=as_enum(Modality, data["modality"], record, "modality"),
             semantic_kind=as_enum(
@@ -197,9 +201,9 @@ def candidate_from_dict(data: Mapping[str, Any]) -> CandidateClause:
             effect=as_enum(Effect, data["effect"], record, "effect"),
             display_text=as_str(data["display_text"], record, "display_text"),
             evidence=evidence,
-            subject_ref=data.get("subject_ref"),
-            action=data.get("action"),
-            object_ref=data.get("object_ref"),
+            subject_ref=opt_str("subject_ref"),
+            action=opt_str("action"),
+            object_ref=opt_str("object_ref"),
             condition_ast=expression("condition_ast"),
             effect_ast=expression("effect_ast"),
             exception_ast=expression("exception_ast"),
