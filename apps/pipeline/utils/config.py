@@ -359,7 +359,10 @@ class Config:
         return self.get('openai.rate_limiting.max_retries', 3)
 
     def get_timeout(self) -> int:
-        """Get API timeout in seconds."""
+        """Get API timeout in seconds, with a run-time override."""
+        env_val = os.getenv('KG_OPENAI_TIMEOUT')
+        if env_val:
+            return int(env_val)
         return self.get('openai.rate_limiting.timeout', 300)
 
     # ── LLM defaults ──
@@ -472,10 +475,16 @@ class Config:
 
     def get_rules_max_content_length(self) -> int:
         """Get max content length per document for rules extraction."""
+        env_val = os.getenv('KG_RULES_MAX_CONTENT_LENGTH')
+        if env_val:
+            return int(env_val)
         return self.get('rules_extractor.max_content_length', 8000)
 
     def get_rules_target_words_per_batch(self) -> int:
         """Get target words per batch for rules extraction."""
+        env_val = os.getenv('KG_RULES_TARGET_WORDS_PER_BATCH')
+        if env_val:
+            return int(env_val)
         return self.get('rules_extractor.target_words_per_batch', 8000)
 
     def get_rules_temperature(self) -> float:
@@ -484,6 +493,9 @@ class Config:
 
     def get_rules_max_tokens(self) -> int:
         """Get max tokens for rules extraction LLM calls."""
+        env_val = os.getenv('KG_RULES_MAX_TOKENS')
+        if env_val:
+            return int(env_val)
         return self.get('rules_extractor.max_tokens', 8192)
 
     def get_rules_low_confidence_threshold(self) -> int:

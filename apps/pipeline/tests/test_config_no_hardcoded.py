@@ -134,6 +134,11 @@ class TestConfigGetters:
         with patch.dict(os.environ, {"KG_OPENAI_MAX_RETRIES": "0"}):
             assert config.get_max_retries() == 0
 
+    def test_get_timeout_env_override(self):
+        config = get_config()
+        with patch.dict(os.environ, {"KG_OPENAI_TIMEOUT": "120"}):
+            assert config.get_timeout() == 120
+
     def test_get_reasoning_effort_env_override(self):
         config = get_config()
         with patch.dict(os.environ, {"KG_REASONING_EFFORT": "high"}):
@@ -179,6 +184,17 @@ class TestConfigGetters:
         config = get_config()
         with patch.dict(os.environ, {"KG_ENTITY_EXTRACTOR_MAX_TOKENS": "4096"}):
             assert config.get_entity_extractor_max_tokens() == 4096
+
+    def test_get_rules_runtime_overrides(self):
+        config = get_config()
+        with patch.dict(os.environ, {
+            "KG_RULES_MAX_CONTENT_LENGTH": "4000",
+            "KG_RULES_TARGET_WORDS_PER_BATCH": "2500",
+            "KG_RULES_MAX_TOKENS": "4096",
+        }):
+            assert config.get_rules_max_content_length() == 4000
+            assert config.get_rules_target_words_per_batch() == 2500
+            assert config.get_rules_max_tokens() == 4096
 
 
 class TestRulesExtractorGetters:
