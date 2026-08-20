@@ -205,6 +205,12 @@ class TestAgent2Iterations:
         assert calls["count"] == 2
         assert result["total_rules"] == 1
 
+    def test_agent3_main_wires_configured_content_limit(self):
+        import agents.agent_3_rules_extractor as a3
+
+        source = (Path(a3.__file__)).read_text(encoding="utf-8")
+        assert "max_content_length=config.get_rules_max_content_length()" in source
+
 
 # ── Bug 5: agent_1 ignores an option-like positional output arg ────────────
 

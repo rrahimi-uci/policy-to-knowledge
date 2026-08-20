@@ -1140,6 +1140,8 @@ def main():
     
     rules_config = RulesExtractionConfig(
         target_rules_count=TARGET_RULES,
+        batch_size=config.get_rules_batch_size(),
+        max_content_length=config.get_rules_max_content_length(),
         reasoning_model=REASONING_MODEL,
         optimization_model=OPTIMIZER_MODEL
     )
