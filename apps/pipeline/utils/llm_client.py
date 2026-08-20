@@ -7,6 +7,7 @@ for both standard chat models (gpt-4o, gpt-4o-mini, …) and reasoning models
 """
 
 import json
+import os
 import re
 import sys
 import threading
@@ -181,6 +182,13 @@ class LLMClient:
         worker.join(deadline)
 
         if worker.is_alive():
+            # Closing the transport is essential before returning.  Otherwise
+            # the daemon thread can remain blocked in an SSL read and every
+            # subsequent batch can leak another socket.
+            try:
+                client.close()
+            finally:
+                self._client = None
             raise TimeoutError(
                 f"LLM call exceeded the hard watchdog deadline ({deadline:.0f}s) — "
                 f"the connection is likely stalled or dead; aborting so the pipeline "
@@ -244,7 +252,13 @@ class LLMClient:
         # still capping runaway generations. Non-reasoning models honour the
         # caller's max_tokens directly.
         if is_reasoning:
-            params["max_completion_tokens"] = max(max_tokens * 4, 32768) if max_tokens else 32768
+            completion_budget = max(max_tokens * 4, 32768) if max_tokens else 32768
+            # A bounded, compact extraction run can opt out of the historical
+            # 32k minimum. The default remains unchanged for existing callers.
+            cap = os.getenv("KG_REASONING_MAX_COMPLETION_TOKENS")
+            if cap:
+                completion_budget = min(completion_budget, int(cap))
+            params["max_completion_tokens"] = completion_budget
             kwargs.pop('max_completion_tokens', None)
             kwargs.pop('max_tokens', None)
         elif max_tokens:

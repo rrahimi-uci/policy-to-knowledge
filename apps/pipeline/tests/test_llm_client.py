@@ -92,6 +92,17 @@ class TestChatCompletionParams:
         assert kwargs["reasoning_effort"] == "high"
         assert kwargs["max_completion_tokens"] >= 32768
 
+    @allure.title("Reasoning completion budget can be bounded for compact runs")
+    def test_reasoning_completion_budget_env_cap(self, monkeypatch):
+        client, mock = self._client_with_mock("gpt-5.2")
+        monkeypatch.setenv("KG_REASONING_MAX_COMPLETION_TOKENS", "4096")
+        client.chat_completion(
+            [{"role": "user", "content": "hi"}],
+            max_tokens=1024, reasoning_effort="medium",
+        )
+        kwargs = mock.chat.completions.create.call_args.kwargs
+        assert kwargs["max_completion_tokens"] == 4096
+
     @allure.title("get_text_response returns the message content")
     def test_get_text_response(self):
         client, _ = self._client_with_mock("gpt-4o-mini")
