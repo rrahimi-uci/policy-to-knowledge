@@ -8,6 +8,7 @@ prompt, or API response into its experiment configuration artifact.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -17,6 +18,8 @@ from urllib.request import Request, urlopen
 
 from .benchmarks import BenchmarkCase, BenchmarkError, load_benchmark
 from .ollama_runner import OllamaRunnerError, RunnerResult, parse_model_answer, render_direct_prompt
+from .protocol import DIRECT_PROMPT_VERSION, ProtocolError, protocol_record, validate_model_and_decoding
+from .run_manifest import build_run_manifest_record
 
 
 OPENAI_RUNNER_SCHEMA_VERSION = "p2c-openai-direct-baseline-v1"
@@ -66,24 +69,33 @@ def call_openai(
     api_key_env: str = "OPENAI_API_KEY",
     base_url: str = _DEFAULT_BASE_URL,
     timeout_seconds: float = 120.0,
+    temperature: float = 0.0,
+    schema: Mapping[str, Any] | None = None,
+    schema_name: str = "benchmark_answer",
+    max_output_tokens: int = 200,
     opener: Callable[..., Any] = urlopen,
 ) -> str:
     """Call Responses API without printing, persisting, or accepting a raw key flag."""
     api_key = os.getenv(api_key_env)
     if not api_key:
         raise OpenAIRunnerError(f"no API key found in environment variable {api_key_env!r}")
+    if temperature < 0 or temperature > 2:
+        raise OpenAIRunnerError("temperature must be between 0 and 2")
+    if not isinstance(max_output_tokens, int) or max_output_tokens <= 0:
+        raise OpenAIRunnerError("max_output_tokens must be a positive integer")
     body = json.dumps(
         {
             "model": _require_string(model, "model"),
             "input": prompt,
             "store": False,
-            "max_output_tokens": 200,
+            "temperature": temperature,
+            "max_output_tokens": max_output_tokens,
             "text": {
                 "format": {
                     "type": "json_schema",
-                    "name": "benchmark_answer",
+                    "name": _require_string(schema_name, "schema_name"),
                     "strict": True,
-                    "schema": _ANSWER_SCHEMA,
+                    "schema": dict(schema or _ANSWER_SCHEMA),
                 }
             },
         },
@@ -118,9 +130,11 @@ def run_openai_direct_baseline(
     api_key_env: str,
     base_url: str,
     timeout_seconds: float,
+    temperature: float = 0.0,
     generate: Callable[..., str] = call_openai,
 ) -> tuple[RunnerResult, ...]:
     """Generate one answer per case; provider failures remain explicit abstentions."""
+    validate_model_and_decoding(model=model, decoding={"temperature": temperature})
     results: list[RunnerResult] = []
     for case in cases:
         try:
@@ -130,6 +144,7 @@ def run_openai_direct_baseline(
                 api_key_env=api_key_env,
                 base_url=base_url,
                 timeout_seconds=timeout_seconds,
+                temperature=temperature,
             )
             results.append(RunnerResult({"case_id": case.case_id, "answer": parse_model_answer(case.benchmark, response)}))
         except (OpenAIRunnerError, OllamaRunnerError) as exc:
@@ -146,9 +161,12 @@ def configuration_record(
     api_key_env: str,
     base_url: str,
     timeout_seconds: float,
+    temperature: float = 0.0,
     implementation_revision: str,
 ) -> dict[str, Any]:
     """Return a secret-free OpenAI configuration for run-manifest hashing."""
+    decoding = {"temperature": temperature}
+    validate_model_and_decoding(model=model, decoding=decoding)
     return {
         "schema_version": OPENAI_RUNNER_SCHEMA_VERSION,
         "system": {"kind": "direct_baseline", "implementation_revision": implementation_revision},
@@ -158,6 +176,7 @@ def configuration_record(
         "api_key_env": _require_string(api_key_env, "api_key_env"),
         "base_url": base_url,
         "store": False,
+        "protocol": protocol_record(prompt_versions=(DIRECT_PROMPT_VERSION,)),
         "structured_output_schema": "benchmark_answer-v1",
         "max_output_tokens": 200,
         "timeout_seconds": timeout_seconds,
@@ -180,13 +199,17 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--input", required=True, type=Path, metavar="FILE")
     parser.add_argument("--opp115-policy-ids", type=Path, metavar="FILE")
     parser.add_argument("--case-ids", type=Path, metavar="FILE")
-    parser.add_argument("--model", required=True)
+    parser.add_argument("--model", default="gpt-5.2")
     parser.add_argument("--predictions-out", required=True, type=Path, metavar="FILE")
     parser.add_argument("--config-out", required=True, type=Path, metavar="FILE")
+    parser.add_argument("--run-manifest-out", required=True, type=Path, metavar="FILE")
+    parser.add_argument("--run-id", required=True)
     parser.add_argument("--implementation-revision", required=True)
+    parser.add_argument("--system-id", default="policy-to-knowledge")
     parser.add_argument("--api-key-env", default="OPENAI_API_KEY")
     parser.add_argument("--base-url", default=_DEFAULT_BASE_URL)
     parser.add_argument("--timeout-seconds", type=float, default=120.0)
+    parser.add_argument("--temperature", type=float, default=0.0)
     return parser
 
 
@@ -197,16 +220,18 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.opp115_policy_ids and args.benchmark != "opp115":
         parser.error("--opp115-policy-ids requires --benchmark opp115")
     try:
+        validate_model_and_decoding(model=args.model, decoding={"temperature": args.temperature})
         dataset = load_benchmark(
             args.benchmark,
             args.input,
             policy_ids_path=args.opp115_policy_ids,
             case_ids_path=args.case_ids,
         )
-        if args.predictions_out == args.config_out:
-            parser.error("--predictions-out and --config-out must be different files")
-        if args.predictions_out.exists() or args.config_out.exists():
-            existing = args.predictions_out if args.predictions_out.exists() else args.config_out
+        paths = (args.predictions_out, args.config_out, args.run_manifest_out)
+        if len(set(paths)) != len(paths):
+            parser.error("prediction, configuration, and run-manifest outputs must differ")
+        if any(path.exists() for path in paths):
+            existing = next(path for path in paths if path.exists())
             raise OpenAIRunnerError(f"refusing to overwrite existing file: {existing}")
         results = run_openai_direct_baseline(
             dataset.cases,
@@ -214,6 +239,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             api_key_env=args.api_key_env,
             base_url=args.base_url,
             timeout_seconds=args.timeout_seconds,
+            temperature=args.temperature,
         )
         _write_new(
             args.predictions_out,
@@ -227,6 +253,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             api_key_env=args.api_key_env,
             base_url=args.base_url,
             timeout_seconds=args.timeout_seconds,
+            temperature=args.temperature,
             implementation_revision=args.implementation_revision,
         )
         configuration["run"] = {
@@ -238,8 +265,20 @@ def main(argv: Sequence[str] | None = None) -> int:
             ],
         }
         _write_new(args.config_out, json.dumps(configuration, indent=2, sort_keys=True) + "\n")
+        manifest = build_run_manifest_record(
+            run_id=args.run_id,
+            system_id=args.system_id,
+            system_kind="direct_baseline",
+            implementation_revision=args.implementation_revision,
+            configuration_sha256=hashlib.sha256(args.config_out.read_bytes()).hexdigest(),
+            benchmark=dataset.benchmark,
+            benchmark_source_sha256=dataset.source_sha256,
+            selection=dataset.selection,
+            predictions_sha256=hashlib.sha256(args.predictions_out.read_bytes()).hexdigest(),
+        )
+        _write_new(args.run_manifest_out, json.dumps(manifest, indent=2, sort_keys=True) + "\n")
         return 0
-    except (BenchmarkError, OpenAIRunnerError) as exc:
+    except (BenchmarkError, OpenAIRunnerError, ProtocolError) as exc:
         parser.error(f"OpenAI baseline error: {exc}")
 
 

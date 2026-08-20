@@ -146,3 +146,42 @@ def load_evaluation_run_manifest(path: Path) -> EvaluationRunManifest:
         selection=dict(selection),
         predictions_sha256=_require_sha256(root.get("predictions_sha256"), "run manifest.predictions_sha256"),
     )
+
+
+def build_run_manifest_record(
+    *,
+    run_id: str,
+    system_id: str,
+    system_kind: str,
+    implementation_revision: str,
+    configuration_sha256: str,
+    benchmark: str,
+    benchmark_source_sha256: str,
+    selection: Mapping[str, Any],
+    predictions_sha256: str,
+) -> dict[str, Any]:
+    """Build a validated, serialisable manifest record for a newly written run."""
+    if system_kind not in SYSTEM_KINDS:
+        raise RunManifestError(
+            "system_kind must be one of " + ", ".join(sorted(SYSTEM_KINDS))
+        )
+    return {
+        "schema_version": RUN_MANIFEST_SCHEMA_VERSION,
+        "run_id": _require_string(run_id, "run_id"),
+        "system": {
+            "system_id": _require_string(system_id, "system_id"),
+            "kind": system_kind,
+            "implementation_revision": _require_string(
+                implementation_revision, "implementation_revision"
+            ),
+        },
+        "configuration": {"sha256": _require_sha256(configuration_sha256, "configuration_sha256")},
+        "benchmark": {
+            "name": _require_string(benchmark, "benchmark"),
+            "source_sha256": _require_sha256(
+                benchmark_source_sha256, "benchmark_source_sha256"
+            ),
+            "selection": dict(selection),
+        },
+        "predictions_sha256": _require_sha256(predictions_sha256, "predictions_sha256"),
+    }
