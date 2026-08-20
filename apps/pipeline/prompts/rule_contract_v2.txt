@@ -1,0 +1,148 @@
+# Non-overridable Structured Rule Contract v2
+
+This contract is appended by Agent 3 after the active domain prompt. It controls the
+shape of every extracted rule. Domain prompts may add terminology and examples,
+but must not change these field names, types, or validation rules.
+
+Return JSON using the container requested by the active prompt. Every rule in that
+container MUST use this structure:
+
+```json
+{
+  "schema_version": "2.0",
+  "rule_id": "stable rule identifier",
+  "rule_name": "human-readable title",
+  "rule_type": "existing domain category",
+  "description": "human-readable explanation",
+  "condition_predicates": [
+    {
+      "predicate_id": "p1",
+      "variable": "price_differential_amount",
+      "operator": ">=",
+      "value": "designated_threshold_amount",
+      "value_type": "variable_reference"
+    }
+  ],
+  "condition_logic": {"predicate_ref": "p1"},
+  "outcomes": [
+    {
+      "variable": "maximum_number_of_pools",
+      "operator": "=",
+      "value": 3,
+      "value_type": "number"
+    }
+  ],
+  "variables": [
+    {
+      "name": "price_differential_amount",
+      "type": "number",
+      "unit": "USD",
+      "allowed_range": [0, null],
+      "role": "input"
+    },
+    {
+      "name": "maximum_number_of_pools",
+      "type": "number",
+      "role": "output"
+    }
+  ],
+  "recommended_hit_policy": "UNIQUE",
+  "versioning_status": "current_no_known_supersession",
+  "applicability_scope": {},
+  "scope_basis": "inferred",
+  "inference_reasoning": "why scope was inferred from the cited text",
+  "responsible_party": "EXISTING_ENTITY_TYPE_ID",
+  "counterparties": [],
+  "exceptions": [],
+  "exception_basis": "explicitly_none_in_source",
+  "test_vectors": [
+    {
+      "inputs": {"price_differential_amount": 100000},
+      "expected_output": {"maximum_number_of_pools": 3},
+      "vector_basis": "source_attested",
+      "boundary_condition": true
+    }
+  ],
+  "source_reference": {
+    "chunk_path": "exact input FILE path",
+    "section_id": "source section",
+    "start_word_position": 0,
+    "end_word_position": 1,
+    "source_text": "direct quote from the input chunk"
+  },
+  "field_evidence": {
+    "condition_predicates": [
+      {
+        "chunk_path": "exact input FILE path",
+        "section_id": "source section",
+        "source_text": "direct quote supporting this predicate"
+      }
+    ],
+    "outcomes": [
+      {
+        "chunk_path": "exact input FILE path",
+        "section_id": "source section",
+        "source_text": "direct quote supporting this outcome"
+      }
+    ],
+    "responsible_party": [
+      {
+        "chunk_path": "exact input FILE path",
+        "section_id": "source section",
+        "source_text": "direct quote naming the party"
+      }
+    ],
+    "scope_basis": [
+      {
+        "chunk_path": "exact input FILE path",
+        "section_id": "source section",
+        "source_text": "direct quote supporting scope"
+      }
+    ],
+    "versioning_status": [
+      {
+        "chunk_path": "exact input FILE path",
+        "section_id": "source section",
+        "source_text": "direct quote supporting version status"
+      }
+    ],
+    "exceptions": [
+      {
+        "chunk_path": "exact input FILE path",
+        "section_id": "source section",
+        "source_text": "direct quote supporting the exception result"
+      }
+    ],
+    "test_vectors": [
+      {
+        "chunk_path": "exact input FILE path",
+        "section_id": "source section",
+        "source_text": "direct quote supporting the test value or boundary"
+      }
+    ]
+  }
+}
+```
+
+Rules:
+
+1. Each condition predicate is exactly one comparison for one variable. Never
+   copy a prose condition into multiple values.
+2. Use a nested tree for mixed logic such as A AND (B OR C):
+   `{"all": [{"predicate_ref": "p1"}, {"any": [{"predicate_ref": "p2"}, {"predicate_ref": "p3"}]}]}`.
+3. Declare every predicate and outcome variable in `variables`. Use `string`
+   only for genuine free text and add `"free_text": true`; use `enum` plus
+   `allowed_values` for categories.
+4. `responsible_party` and `counterparties` must use an existing entity type
+   from the supplied entity context. Do not invent actor identifiers.
+5. Use `exception_basis: "explicitly_none_in_source"` only when the source
+   explicitly establishes no exception. Otherwise use
+   `"not_found_in_chunk_recheck_needed"`.
+6. `scope_basis: "explicitly_universal_in_source"` requires direct universal
+   source wording. Do not infer universal scope from silence.
+7. Every test vector must be source-attested or derived from the source. Numeric
+   rules need a `boundary_condition: true` vector at a stated threshold.
+8. `source_reference.source_text` and every `field_evidence` quote must be
+   direct source text from the provided input, never a paraphrase.
+9. If a value is absent or ambiguous, keep the rule but mark
+   `requires_review: true` and state the uncertainty in `review_reason`.

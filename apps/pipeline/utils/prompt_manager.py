@@ -105,6 +105,23 @@ class PromptManager:
         """
         return self.load_prompt(prompt_name).format(**kwargs)
 
+    def load_rule_contract_v2(self) -> str:
+        """Load the extraction contract that domain prompts may not override.
+
+        Business-rule prompts resolve by active domain, but the v2 output shape
+        must remain identical across domains.  Keeping this document in the
+        shared prompt directory avoids each domain pack redefining rule fields.
+        """
+        cache_key = "__rule_contract_v2__"
+        if cache_key not in self._cache:
+            contract_file = self.fallback_dir / "rule_contract_v2.txt"
+            if not contract_file.exists():
+                raise FileNotFoundError(
+                    f"Required v2 rule contract not found: {contract_file}"
+                )
+            self._cache[cache_key] = contract_file.read_text(encoding="utf-8")
+        return self._cache[cache_key]
+
     # ------------------------------------------------------------------
     # Introspection
     # ------------------------------------------------------------------

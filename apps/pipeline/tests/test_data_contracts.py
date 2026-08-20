@@ -30,7 +30,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-DOMAINS = ["mortgage", "aml"]
+DOMAINS = ["mortgage", "aml", "healthcare", "commercial_lending"]
 DOMAIN_PROMPTS = PROJECT_ROOT / "domain-prompts"
 SHARED_PROMPTS = PROJECT_ROOT / "prompts"
 

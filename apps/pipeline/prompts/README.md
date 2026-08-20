@@ -13,6 +13,7 @@ All prompts target the OpenAI models configured in `config.json` (reasoning `gpt
 | `entity_refinement.txt` | Agent 2 — Entity Extractor (refinement loop) | Score and iteratively improve entity/relationship extractions across passes. |
 | `entity_resolution.txt` | Multi-document merge (Agent 2 path) | Merge and reconcile duplicate or overlapping entities across documents into a canonical set. |
 | `business_rules_extraction.txt` | Agent 3 — Rules Extractor | Extract structured business rules (conditions, consequences, exceptions, source references) from document batches. |
+| `rule_contract_v2.txt` | Agent 3 — Rules Extractor | Shared non-overridable v2 rule shape appended after every domain rule-extraction prompt. |
 | `validation_report.txt` | Agent 3.5 — Rule Validator | Produce a quality-assessment report over the extracted rules with actionable recommendations. |
 | `rule_resolution.txt` | Multi-document merge (Agent 3 path) | Reconcile conflicting or overlapping rules when merging multiple documents. |
 | `rule_deduplication.txt` | Agent 5 — Knowledge Graph Optimizer | Identify and merge duplicate rules while preserving meaningful variations. |
@@ -20,7 +21,8 @@ All prompts target the OpenAI models configured in `config.json` (reasoning `gpt
 | `rule_matcher.txt` | Agent 8 — Semantic Rule Matcher | Compare rules across two knowledge graphs for semantic equivalence (used by `cli/compare.py`). |
 | `rule_matcher_batch.txt` | Agent 8 — Semantic Rule Matcher | Batched variant of the matcher for higher-throughput cross-graph comparison. |
 
-The same 11 template names exist in every domain directory.
+The same 11 domain-specialized template names exist in every domain directory.
+`rule_contract_v2.txt` is shared only and intentionally has no domain override.
 
 ## Domains
 
@@ -44,6 +46,10 @@ Prompts are loaded through `utils/prompt_manager.py`. For each requested templat
 1. domain-prompts/<active_domain>/<name>.txt   (domain-specific)
 2. prompts/<name>.txt                          (shared fallback)
 ```
+
+`rule_contract_v2.txt` is the exception: Agent 3 always loads it from the
+shared `prompts/` directory after resolving the domain prompt. Domain packs may
+specialize vocabulary and examples, but cannot redefine the v2 rule fields.
 
 ```python
 from utils.prompt_manager import get_prompt_manager
