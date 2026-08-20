@@ -298,28 +298,58 @@ class BusinessRulesExtractor:
             if not content:
                 return {"entity_types": {}, "relationships": {}, "batch_num": batch_num, "error": "Empty response"}
             
-            # Try to parse JSON from response
-            try:
-                # Try direct JSON parse first
-                result = json.loads(content)
-            except json.JSONDecodeError:
-                # Try to extract JSON from markdown code blocks
-                if "```json" in content:
-                    json_str = content.split("```json", 1)[1].split("```", 1)[0].strip()
-                elif "```" in content:
-                    json_str = content.split("```", 1)[1].split("```", 1)[0].strip()
-                else:
-                    # Try to find JSON object directly
-                    json_start = content.find("{")
-                    json_end = content.rfind("}") + 1
-                    if json_start >= 0 and json_end > json_start:
-                        json_str = content[json_start:json_end]
+            def _decode_json(raw_content: str) -> Dict[str, Any]:
+                """Decode a model response, allowing one fenced/object slice."""
+                try:
+                    return json.loads(raw_content)
+                except json.JSONDecodeError:
+                    if "```json" in raw_content:
+                        json_str = raw_content.split("```json", 1)[1].split("```", 1)[0].strip()
+                    elif "```" in raw_content:
+                        json_str = raw_content.split("```", 1)[1].split("```", 1)[0].strip()
                     else:
-                        print(f"  DEBUG Batch {batch_num}: No JSON found in response", flush=True)
-                        print(f"  Response preview: {content[:500]}", flush=True)
-                        return {"entity_types": {}, "relationships": {}, "batch_num": batch_num, "error": "No JSON in response"}
-                
-                result = json.loads(json_str)
+                        json_start = raw_content.find("{")
+                        json_end = raw_content.rfind("}") + 1
+                        if json_start < 0 or json_end <= json_start:
+                            raise
+                        json_str = raw_content[json_start:json_end]
+                    return json.loads(json_str)
+
+            # GPT-5 occasionally returns a syntactically invalid object even
+            # with a stop finish reason. Retry only that batch, rather than
+            # discarding it and silently falling below the requested target.
+            parse_attempts = max(1, int(os.getenv("KG_BATCH_PARSE_ATTEMPTS", "2")))
+            for parse_attempt in range(1, parse_attempts + 1):
+                try:
+                    result = _decode_json(content)
+                    break
+                except json.JSONDecodeError:
+                    if parse_attempt >= parse_attempts:
+                        raise
+                    print(
+                        f"  DEBUG Batch {batch_num}: invalid JSON on parse attempt "
+                        f"{parse_attempt}/{parse_attempts}; requesting a fresh response",
+                        flush=True,
+                    )
+                    request_gate = getattr(self, "_request_gate", None)
+                    if request_gate is None:
+                        response = self.client.chat_completion(
+                            messages=[{"role": "user", "content": prompt}],
+                            temperature=self.global_config.get_rules_temperature(),
+                            max_tokens=self.global_config.get_rules_max_tokens(),
+                            reasoning_effort=self.reasoning_effort,
+                        )
+                    else:
+                        with request_gate:
+                            response = self.client.chat_completion(
+                                messages=[{"role": "user", "content": prompt}],
+                                temperature=self.global_config.get_rules_temperature(),
+                                max_tokens=self.global_config.get_rules_max_tokens(),
+                                reasoning_effort=self.reasoning_effort,
+                            )
+                    content = response.choices[0].message.content or ""
+                    if not content:
+                        raise json.JSONDecodeError("empty response", "", 0)
             
             # Normalize flat 'rules' format (used by domain-specific prompts like AML)
             # into the nested entity_types/relationships format expected by the rest of the pipeline.

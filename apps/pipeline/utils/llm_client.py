@@ -184,11 +184,18 @@ class LLMClient:
         if worker.is_alive():
             # Closing the transport is essential before returning.  Otherwise
             # the daemon thread can remain blocked in an SSL read and every
-            # subsequent batch can leak another socket.
-            try:
-                client.close()
-            finally:
-                self._client = None
+            # subsequent batch can leak another socket. ``close`` itself can
+            # block when another request is concurrently inside httpx, so run
+            # cleanup on a daemon thread with a short join bound. The caller
+            # must regain control even if the transport is irrecoverably stuck.
+            close_thread = threading.Thread(
+                target=client.close,
+                name="llm-client-close",
+                daemon=True,
+            )
+            close_thread.start()
+            close_thread.join(timeout=min(5, max(1, self.timeout)))
+            self._client = None
             raise TimeoutError(
                 f"LLM call exceeded the hard watchdog deadline ({deadline:.0f}s) — "
                 f"the connection is likely stalled or dead; aborting so the pipeline "
