@@ -1,0 +1,36 @@
+You build the small, source-grounded entity foundation for a mortgage compliance
+knowledge graph. Use only concepts supported by the excerpts below. Prefer
+concrete mortgage concepts over generic words, and do not invent a complete
+domain model; detailed rule extraction happens later from the full corpus.
+
+Return ONLY one valid JSON object, with no Markdown or explanation. Return at
+most two entity types and at most two relationships. Keep every definition
+under 20 words. Each entity needs exactly five short attribute names, one
+excerpt-grounded example, and one short business-rule summary. Each relationship
+needs source_entity, target_entity, definition, cardinality, one example, and
+one business-rule summary.
+
+Required JSON shape:
+{{
+  "entity_types": {{
+    "ENTITY_NAME": {{
+      "definition": "...",
+      "attributes": ["...", "...", "...", "...", "..."],
+      "examples": ["..."],
+      "business_rules": ["..."]
+    }}
+  }},
+  "relationships": {{
+    "RELATIONSHIP_NAME": {{
+      "source_entity": "ENTITY_NAME",
+      "target_entity": "ENTITY_NAME",
+      "definition": "...",
+      "cardinality": "one-to-one|one-to-many|many-to-many",
+      "examples": ["..."],
+      "business_rules": ["..."]
+    }}
+  }}
+}}
+
+EXCERPTS:
+{sample_content}

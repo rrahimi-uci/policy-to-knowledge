@@ -68,15 +68,15 @@ class EntityRelationshipExtractor:
         # Use representative, substantive excerpts rather than the first files
         # returned by rglob(), which are commonly table-of-contents fragments.
         docs = documents or text_samples or []
-        sample_docs = self.select_representative_documents(docs)
+        sample_docs = self.select_representative_documents(docs, max_documents=2)
         
         documents_text = "\n\n---DOCUMENT---\n".join([
-            f"File: {doc.get('path', 'unknown')}\n{doc.get('content', '')[:800]}"
+            f"File: {doc.get('path', 'unknown')}\n{doc.get('content', '')[:400]}"
             for doc in sample_docs
         ])
         
         return self.prompt_manager.format_prompt(
-            "entity_extraction",
+            "entity_extraction_compact",
             sample_content=documents_text
         )
     
@@ -230,18 +230,10 @@ class ComplianceEntityRelationshipAgent:
         except json.JSONDecodeError as e:
             print(f"  ✗ Error parsing JSON response: {e}")
             print(f"  Response preview: {content[:500] if content else 'None'}...")
-            return {
-                "entity_types": {},
-                "relationships": {},
-                "refinement_notes": f"Error parsing response: {str(e)}"
-            }
+            raise RuntimeError("Entity extraction returned invalid JSON") from e
         except Exception as e:
             print(f"  ✗ Error calling OpenAI API: {e}")
-            return {
-                "entity_types": {},
-                "relationships": {},
-                "refinement_notes": f"API Error: {str(e)}"
-            }
+            raise RuntimeError("Entity extraction request failed") from e
     
     def run_iterations_with_optimization(self, 
                                         documents: List[Dict[str, str]], 

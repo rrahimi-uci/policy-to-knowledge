@@ -141,8 +141,9 @@ class TestAgent2Iterations:
             documents=[{"path": "section.txt", "content": "Mortgage rules."}]
         )
 
-        assert "at most 6 entity types" in prompt
-        assert "at most 6 relationships" in prompt
+        normalized_prompt = " ".join(prompt.split())
+        assert "at most two entity types" in normalized_prompt
+        assert "at most two relationships" in normalized_prompt
 
     def test_entity_prompt_uses_substantive_distributed_samples(self):
         import agents.agent_2_entity_extractor as a2
@@ -160,6 +161,16 @@ class TestAgent2Iterations:
         assert all("table_of_contents" not in item["path"] for item in selected)
         assert selected[0]["content"] == "0"
         assert selected[-1]["content"] == "9"
+
+    def test_entity_extraction_failure_is_terminal(self):
+        agent = self._agent()
+        agent.client = type(
+            "FailingClient", (),
+            {"chat_completion": lambda *args, **kwargs: (_ for _ in ()).throw(TimeoutError("timeout"))}
+        )()
+
+        with pytest.raises(RuntimeError, match="request failed"):
+            agent.extract_entities_and_relationships("prompt")
 
 
 # ── Bug 5: agent_1 ignores an option-like positional output arg ────────────
