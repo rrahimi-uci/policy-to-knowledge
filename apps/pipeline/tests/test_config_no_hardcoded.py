@@ -129,6 +129,11 @@ class TestConfigGetters:
         with patch.dict(os.environ, {"MAX_WORKERS": "42"}):
             assert config.get_max_workers() == 42
 
+    def test_get_reasoning_effort_env_override(self):
+        config = get_config()
+        with patch.dict(os.environ, {"KG_REASONING_EFFORT": "high"}):
+            assert config.get_reasoning_effort() == "high"
+
     def test_get_supported_extensions(self):
         config = get_config()
         exts = config.get_supported_extensions()

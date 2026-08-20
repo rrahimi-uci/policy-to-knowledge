@@ -217,8 +217,17 @@ class Config:
         return self.get('openai.models.reasoning', 'gpt-5.2')
 
     def get_reasoning_effort(self) -> str:
-        """Get reasoning effort level (low, medium, high)."""
-        return self.get('openai.models.reasoning_effort', 'medium')
+        """Get reasoning effort level (low, medium, high).
+
+        ``KG_REASONING_EFFORT`` permits a one-off run to raise or lower the
+        effort without editing a developer's local ``config.json``.  This is
+        especially important for reproducible validation runs, where the
+        chosen model settings are supplied by the run environment.
+        """
+        return os.getenv(
+            'KG_REASONING_EFFORT',
+            self.get('openai.models.reasoning_effort', 'medium'),
+        )
 
     def get_model_provider(self) -> str:
         """Return the model provider. This build is OpenAI-only."""
