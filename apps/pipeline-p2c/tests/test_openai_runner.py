@@ -54,7 +54,7 @@ def test_call_openai_uses_responses_structured_output_and_no_storage(
         "model": "gpt-5.2",
             "input": "prompt",
             "store": False,
-            "temperature": 0.0,
+            "reasoning": {"effort": "medium"},
             "max_output_tokens": 200,
         "text": {
             "format": {
@@ -109,7 +109,7 @@ def test_openai_configuration_is_secret_free() -> None:
     assert configuration["api_backend"] == "openai_responses"
     assert configuration["store"] is False
     assert configuration["protocol"]["model"] == "gpt-5.2"
-    assert configuration["protocol"]["decoding"] == {"temperature": 0.0}
+    assert configuration["protocol"]["decoding"] == {"reasoning": {"effort": "medium"}}
     assert "test-key" not in json.dumps(configuration)
 
 

@@ -69,7 +69,7 @@ def call_openai(
     api_key_env: str = "OPENAI_API_KEY",
     base_url: str = _DEFAULT_BASE_URL,
     timeout_seconds: float = 120.0,
-    temperature: float = 0.0,
+    reasoning_effort: str = "medium",
     schema: Mapping[str, Any] | None = None,
     schema_name: str = "benchmark_answer",
     max_output_tokens: int = 200,
@@ -79,16 +79,15 @@ def call_openai(
     api_key = os.getenv(api_key_env)
     if not api_key:
         raise OpenAIRunnerError(f"no API key found in environment variable {api_key_env!r}")
-    if temperature < 0 or temperature > 2:
-        raise OpenAIRunnerError("temperature must be between 0 and 2")
+    if reasoning_effort not in {"none", "low", "medium", "high", "xhigh"}:
+        raise OpenAIRunnerError("reasoning_effort must be a supported GPT-5.2 effort")
     if not isinstance(max_output_tokens, int) or max_output_tokens <= 0:
         raise OpenAIRunnerError("max_output_tokens must be a positive integer")
-    body = json.dumps(
-        {
+    payload: dict[str, Any] = {
             "model": _require_string(model, "model"),
             "input": prompt,
             "store": False,
-            "temperature": temperature,
+            "reasoning": {"effort": reasoning_effort},
             "max_output_tokens": max_output_tokens,
             "text": {
                 "format": {
@@ -98,7 +97,9 @@ def call_openai(
                     "schema": dict(schema or _ANSWER_SCHEMA),
                 }
             },
-        },
+        }
+    body = json.dumps(
+        payload,
         ensure_ascii=False,
     ).encode("utf-8")
     request = Request(
@@ -130,11 +131,11 @@ def run_openai_direct_baseline(
     api_key_env: str,
     base_url: str,
     timeout_seconds: float,
-    temperature: float = 0.0,
+    reasoning_effort: str = "medium",
     generate: Callable[..., str] = call_openai,
 ) -> tuple[RunnerResult, ...]:
     """Generate one answer per case; provider failures remain explicit abstentions."""
-    validate_model_and_decoding(model=model, decoding={"temperature": temperature})
+    validate_model_and_decoding(model=model, decoding={"reasoning": {"effort": reasoning_effort}})
     results: list[RunnerResult] = []
     for case in cases:
         try:
@@ -144,7 +145,7 @@ def run_openai_direct_baseline(
                 api_key_env=api_key_env,
                 base_url=base_url,
                 timeout_seconds=timeout_seconds,
-                temperature=temperature,
+                reasoning_effort=reasoning_effort,
             )
             results.append(RunnerResult({"case_id": case.case_id, "answer": parse_model_answer(case.benchmark, response)}))
         except (OpenAIRunnerError, OllamaRunnerError) as exc:
@@ -161,11 +162,11 @@ def configuration_record(
     api_key_env: str,
     base_url: str,
     timeout_seconds: float,
-    temperature: float = 0.0,
+    reasoning_effort: str = "medium",
     implementation_revision: str,
 ) -> dict[str, Any]:
     """Return a secret-free OpenAI configuration for run-manifest hashing."""
-    decoding = {"temperature": temperature}
+    decoding = {"reasoning": {"effort": reasoning_effort}}
     validate_model_and_decoding(model=model, decoding=decoding)
     return {
         "schema_version": OPENAI_RUNNER_SCHEMA_VERSION,
@@ -209,7 +210,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--api-key-env", default="OPENAI_API_KEY")
     parser.add_argument("--base-url", default=_DEFAULT_BASE_URL)
     parser.add_argument("--timeout-seconds", type=float, default=120.0)
-    parser.add_argument("--temperature", type=float, default=0.0)
+    parser.add_argument("--reasoning-effort", default="medium", choices=("none", "low", "medium", "high", "xhigh"))
     return parser
 
 
@@ -220,7 +221,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.opp115_policy_ids and args.benchmark != "opp115":
         parser.error("--opp115-policy-ids requires --benchmark opp115")
     try:
-        validate_model_and_decoding(model=args.model, decoding={"temperature": args.temperature})
+        validate_model_and_decoding(model=args.model, decoding={"reasoning": {"effort": args.reasoning_effort}})
         dataset = load_benchmark(
             args.benchmark,
             args.input,
@@ -239,7 +240,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             api_key_env=args.api_key_env,
             base_url=args.base_url,
             timeout_seconds=args.timeout_seconds,
-            temperature=args.temperature,
+            reasoning_effort=args.reasoning_effort,
         )
         _write_new(
             args.predictions_out,
@@ -253,7 +254,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             api_key_env=args.api_key_env,
             base_url=args.base_url,
             timeout_seconds=args.timeout_seconds,
-            temperature=args.temperature,
+            reasoning_effort=args.reasoning_effort,
             implementation_revision=args.implementation_revision,
         )
         configuration["run"] = {
