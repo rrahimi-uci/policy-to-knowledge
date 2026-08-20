@@ -301,3 +301,16 @@ def test_a_broken_progress_callback_does_not_discard_the_run(sample_requests) ->
     assert len(run.replies) == len(sample_requests)
     assert run.proposal_count == len(sample_requests)
     assert run.failures == ()
+
+
+def test_progress_counts_completions_not_request_indexes(sample_requests) -> None:
+    """Replies land out of order, so the numerator has to count up monotonically.
+
+    Reporting `index + 1` looks like a counter and is not one: on a 324-chunk run it
+    printed [40/324] while 29 chunks had finished.
+    """
+    seen: list[int] = []
+    run_extraction(sample_requests, lambda body: _empty(), concurrency=3, attempts=1,
+                   on_reply=lambda reply, done, total: seen.append(done))
+    assert sorted(seen) == list(range(1, len(sample_requests) + 1))
+    assert seen == sorted(seen), "progress went backwards"

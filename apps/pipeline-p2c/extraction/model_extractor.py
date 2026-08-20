@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import json
 import sys
+import threading
 import os
 import time
 import urllib.error
@@ -279,14 +280,23 @@ def run_extraction(
     started = time.monotonic()
     total = len(requests)
     replies: list[ChunkReply | None] = [None] * total
+    # Replies land out of order, so the progress number has to count completions. Using
+    # the request index instead makes the numerator jump around while looking like a
+    # counter, which is worse than no progress at all on an hour-long run.
+    completed = 0
+    completed_lock = threading.Lock()
 
     def work(index: int) -> None:
+        nonlocal completed
         replies[index] = call_once(
             requests[index], transport, model=model, effort=effort, attempts=attempts
         )
+        with completed_lock:
+            completed += 1
+            done = completed
         if on_reply is not None:
             try:
-                on_reply(replies[index], index + 1, total)  # type: ignore[arg-type]
+                on_reply(replies[index], done, total)  # type: ignore[arg-type]
             except Exception as exc:  # noqa: BLE001 - reporting is not the work
                 # A broken callback must not discard replies the run already paid for,
                 # so the reply is kept. It is reported rather than swallowed: the
