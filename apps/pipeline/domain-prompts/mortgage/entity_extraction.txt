@@ -190,7 +190,7 @@ REQUIRED OUTPUT FORMAT (CRITICAL - EXACT STRUCTURE)
 Return ONLY valid JSON. No markdown, no explanations, ONLY JSON:
 
 SCOPE AND BREVITY LIMITS (required for reliable machine consumption):
-- Return at most 12 entity types and at most 12 relationships, prioritizing the
+- Return at most 6 entity types and at most 6 relationships, prioritizing the
   concepts that recur in the supplied source excerpts.
 - Each definition must be one concise sentence; include exactly 5 attributes,
   one concrete example, and one high-level business-rule summary per item.

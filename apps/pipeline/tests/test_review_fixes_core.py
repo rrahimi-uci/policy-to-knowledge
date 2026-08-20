@@ -141,8 +141,25 @@ class TestAgent2Iterations:
             documents=[{"path": "section.txt", "content": "Mortgage rules."}]
         )
 
-        assert "at most 12 entity types" in prompt
-        assert "at most 12 relationships" in prompt
+        assert "at most 6 entity types" in prompt
+        assert "at most 6 relationships" in prompt
+
+    def test_entity_prompt_uses_substantive_distributed_samples(self):
+        import agents.agent_2_entity_extractor as a2
+
+        documents = [
+            {"path": "table_of_contents_part_1.txt", "content": "TOC"},
+            *[
+                {"path": f"part_{index}/section.txt", "content": str(index)}
+                for index in range(10)
+            ],
+        ]
+        selected = a2.EntityRelationshipExtractor.select_representative_documents(documents)
+
+        assert len(selected) == 6
+        assert all("table_of_contents" not in item["path"] for item in selected)
+        assert selected[0]["content"] == "0"
+        assert selected[-1]["content"] == "9"
 
 
 # ── Bug 5: agent_1 ignores an option-like positional output arg ────────────

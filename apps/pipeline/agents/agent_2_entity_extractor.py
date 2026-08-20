@@ -35,17 +35,43 @@ class EntityRelationshipExtractor:
         self.model = model or self.config.get_optimizer_model()
         self.history = []
         self.prompt_manager = get_prompt_manager()
+
+    @staticmethod
+    def select_representative_documents(
+        documents: List[Dict], max_documents: int = 6
+    ) -> List[Dict]:
+        """Choose a small, evenly distributed set of substantive excerpts.
+
+        Table-of-contents fragments are useful navigation artifacts but make
+        poor evidence for entity modelling.  Bounding the selection keeps the
+        high-reasoning request within the configured timeout while preserving
+        coverage across a large organized guide.
+        """
+        substantive = [
+            document for document in documents
+            if "table_of_contents" not in document.get("path", "").lower()
+        ]
+        candidates = substantive or documents
+        if len(candidates) <= max_documents:
+            return candidates
+
+        last_index = len(candidates) - 1
+        return [
+            candidates[round(index * last_index / (max_documents - 1))]
+            for index in range(max_documents)
+        ]
     
     def generate_optimized_prompt(self, documents: List[Dict] = None, text_samples: List[Dict] = None, 
                                   previous_results: Optional[Dict] = None, previous_findings: Optional[Dict] = None,
                                   iteration: int = 1, quality_analysis: Optional[Dict] = None) -> str:
         """Generate extraction prompt with document samples."""
-        # Use first 10 documents as samples for extraction
+        # Use representative, substantive excerpts rather than the first files
+        # returned by rglob(), which are commonly table-of-contents fragments.
         docs = documents or text_samples or []
-        sample_docs = docs[:10] if docs else []
+        sample_docs = self.select_representative_documents(docs)
         
         documents_text = "\n\n---DOCUMENT---\n".join([
-            f"File: {doc.get('path', 'unknown')}\n{doc.get('content', '')[:2000]}" 
+            f"File: {doc.get('path', 'unknown')}\n{doc.get('content', '')[:800]}"
             for doc in sample_docs
         ])
         

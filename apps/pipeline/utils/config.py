@@ -352,7 +352,10 @@ class Config:
                         self.get('rules_extractor.rules_per_batch', 10))
 
     def get_max_retries(self) -> int:
-        """Get maximum number of API retries."""
+        """Get maximum number of API retries, with a run-time override."""
+        env_val = os.getenv('KG_OPENAI_MAX_RETRIES')
+        if env_val:
+            return int(env_val)
         return self.get('openai.rate_limiting.max_retries', 3)
 
     def get_timeout(self) -> int:
