@@ -85,6 +85,36 @@ class Segment:
         return self.char_end - self.char_start
 
 
+
+#: How much of the budget may be given up to reach whitespace. A long run of
+#: non-whitespace (a table of figures, a URL) must not be able to shrink a chunk
+#: arbitrarily, so past this the hard cut stands and the boundary stays where it was.
+_SNAP_FRACTION = 0.1
+
+
+def _snap_to_whitespace(text: str, stop: int, limit: int, budget: int) -> int:
+    """Move ``stop`` back to just after the last whitespace before it.
+
+    Returns ``stop`` unchanged at the end of the section, or when no whitespace lies
+    within the allowance — a boundary is better placed badly than a chunk left short.
+    The allowance is a fraction of the chunk *budget*, not of the absolute offset, so it
+    behaves the same at the start of a document as at the end.
+    """
+    if stop >= limit:
+        return limit
+    if stop <= 0 or stop >= len(text):
+        return stop
+    if text[stop].isspace() or text[stop - 1].isspace():
+        return stop
+    floor = max(0, stop - max(1, int(_SNAP_FRACTION * budget)))
+    index = stop
+    while index > floor:
+        if text[index - 1].isspace():
+            return index
+        index -= 1
+    return stop
+
+
 def segment_by_section(
     text: str, *, min_length: int = 1, max_length: int | None = None
 ) -> tuple[Segment, ...]:
@@ -95,6 +125,14 @@ def segment_by_section(
     deliberate: the boundary has no semantic meaning, and pretending otherwise would
     make chunking look like structure. Offsets stay absolute either way, so a span is
     unaffected by where the boundaries fall.
+
+    The budget is nevertheless snapped back to whitespace. A hard cut is byte-exact and
+    therefore passes every provenance check, but on a real 1,200-page guide it split 58
+    of 324 chunks mid-word: the first unit of such a chunk read "al who is not a loan
+    applicant", and the sentence straddling the cut was never presented whole to an
+    extractor in either chunk, so a requirement could go unextracted purely because of
+    where the budget landed. Snapping does not make the boundary semantic — it only
+    stops it falling inside a token.
     """
     headings = find_headings(text)
     boundaries: list[tuple[int, int, str]] = []
@@ -115,7 +153,9 @@ def segment_by_section(
             continue
         cursor = start
         while cursor < end:
-            stop = min(cursor + max_length, end)
+            stop = _snap_to_whitespace(
+                text, min(cursor + max_length, end), end, max_length
+            )
             segments.append(Segment(cursor, stop, label))
             cursor = stop
     return tuple(segments)

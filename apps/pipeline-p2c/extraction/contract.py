@@ -39,19 +39,29 @@ def proposal_schema(request: ExtractionRequest) -> dict[str, Any]:
     unit_indices = [unit.index for unit in request.units]
     unit_ref = {"type": "integer", "enum": unit_indices}
     defs: dict[str, Any] = {**enum_defs(), **expression_defs()}
-    defs["RoleCitation"] = {
+    # Citations are keyed *by role* rather than being a list of {role, units} pairs.
+    # Given the list form the model twice named the same role in one proposal, which the
+    # parser refuses because the evidence for a field would be ambiguous — and that
+    # refusal cost 5 chunks of a live run. As an object, a duplicate role cannot be
+    # written down at all.
+    defs["RoleCitations"] = {
         "type": "object",
         "additionalProperties": False,
+        "description": (
+            "Which units support each part of the clause. Give a role the units that "
+            "state it, and omit any role the cited text does not state. A role appears "
+            "at most once by construction."
+        ),
         "properties": {
-            "role": {"enum": [member.value for member in SemanticRole]},
-            "units": {
+            member.value: {
                 "type": "array",
                 "minItems": 1,
                 "uniqueItems": True,
                 "items": unit_ref,
-            },
+            }
+            for member in SemanticRole
         },
-        "required": ["role", "units"],
+        "required": [],
     }
     defs["CandidateProposal"] = {
         "type": "object",
@@ -61,11 +71,7 @@ def proposal_schema(request: ExtractionRequest) -> dict[str, Any]:
             "semantic_kind": {"enum": [k.value for k in SemanticKind]},
             "effect": {"enum": [e.value for e in Effect]},
             "display_unit": unit_ref,
-            "citations": {
-                "type": "array",
-                "minItems": 1,
-                "items": {"$ref": "#/$defs/RoleCitation"},
-            },
+            "citations": {"$ref": "#/$defs/RoleCitations"},
             "subject_ref": {"type": "string"},
             "action": {"type": "string"},
             "object_ref": {"type": "string"},
@@ -105,8 +111,75 @@ def proposal_schema(request: ExtractionRequest) -> dict[str, Any]:
             "candidates": {"type": "array", "items": {"$ref": "#/$defs/CandidateProposal"}}
         },
         "required": ["candidates"],
-        "$defs": defs,
+        "$defs": _narrow_temporal(defs),
     }
+
+
+#: ISO 8601 days-and-time durations, which is the subset the compiler evaluates. Years
+#: and months are deliberately absent: a "month" is not a fixed number of days, so FEEL
+#: and this compiler both refuse to approximate one.
+DURATION_PATTERN = r"^P(\d+D)?(T(\d+H)?(\d+M)?(\d+S)?)?$"
+
+#: A calendar date, which every date field in the IR parses with ``date.fromisoformat``.
+#: Left open, the model writes dates the way the source document does — "July 6, 2010" —
+#: which is valid JSON, valid against an open string slot, and refused by the parser.
+DATE_PATTERN = r"^\d{4}-\d{2}-\d{2}$"
+
+
+def _narrow_temporal(defs: dict[str, Any]) -> dict[str, Any]:
+    """Constrain every duration slot to a literal ISO 8601 days-and-time string.
+
+    The IR's own schema leaves a duration as any expression holding any literal value,
+    which is correct for the IR: a duration can legitimately come from a variable at
+    evaluation time. It is wrong for an *extraction contract*. Given the open slot the
+    model proposed ``30``, ``"four months"``, and a nested arithmetic node — all three
+    parsed as valid JSON, all three were refused downstream, and each refusal cost a
+    call. 18% of a live run failed this way on nothing else.
+
+    Narrowing the slot moves the failure from "refused after the fact" to "impossible to
+    express", which is the same move the unit-index citation contract makes.
+    """
+    narrowed = dict(defs)
+
+    period = narrowed.get("EffectivePeriod")
+    if isinstance(period, dict):
+        dated = {
+            key: {
+                "type": "string",
+                "pattern": DATE_PATTERN,
+                "description": "Calendar date as YYYY-MM-DD, exactly as ISO 8601 writes it.",
+            }
+            for key in ("start", "end")
+            if key in period.get("properties", {})
+        }
+        narrowed["EffectivePeriod"] = {
+            **period,
+            "properties": {**period["properties"], **dated},
+        }
+
+    narrowed["DurationLiteral"] = {
+        "type": "object",
+        "additionalProperties": False,
+        "description": (
+            "A duration stated in the cited text, as an ISO 8601 days-and-time string: "
+            "P30D for thirty days, PT12H for twelve hours, P1DT6H for a day and six "
+            "hours. Years and months cannot be expressed; see the instructions."
+        ),
+        "properties": {
+            "kind": {"const": "literal"},
+            "value": {"type": "string", "pattern": DURATION_PATTERN},
+            "type": {"const": "duration"},
+        },
+        "required": ["kind", "value", "type"],
+    }
+    duration_ref = {"$ref": "#/$defs/DurationLiteral"}
+    for name in ("TemporalConstraint", "DateArithmetic"):
+        record = narrowed.get(name)
+        if isinstance(record, dict) and "duration" in record.get("properties", {}):
+            record = {**record, "properties": {**record["properties"],
+                                               "duration": duration_ref}}
+            narrowed[name] = record
+    return narrowed
 
 
 def _record_stub(name: str) -> dict[str, Any]:
@@ -128,8 +201,17 @@ PROHIBITIONS = (
     "built only from the closed grammar in this schema, and the compiler serialises them.",
     "Do not cite a unit that is not listed below. There is no other way to reference the "
     "document, and an index outside the list will be refused.",
+    "Give each citation role the units that state it, and omit roles the cited text does "
+    "not state. Every unit supporting one role goes in that role's list together.",
     "Do not state a number, date or duration that does not appear in the units you cite. "
     "Every value is checked against the cited text.",
+    "Write every date as YYYY-MM-DD, whatever form the source uses. 'July 6, 2010' is "
+    "2010-07-06. A date in any other form will be refused.",
+    "Express a duration only in days, hours, minutes or seconds, as ISO 8601: P30D, "
+    "PT12H, P1DT6H. A duration in months or years cannot be represented, because a "
+    "month is not a fixed number of days and approximating one would change the "
+    "deadline. If the text says 'within four months', omit the temporal constraint and "
+    "name it in `missing` instead of converting it.",
     "Do not invent an attribute, actor, threshold or process step that the units do not "
     "state. If a semantic field is not stated, name it in `missing` instead.",
     "Do not supply a field you have also named in `missing`; that is a contradiction and "

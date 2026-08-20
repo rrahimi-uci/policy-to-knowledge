@@ -80,3 +80,38 @@ def legacy_graph_paths() -> list[Path]:
         if candidate.exists():
             paths.append(candidate)
     return paths
+
+
+@pytest.fixture
+def sample_request():
+    """One synthetic extraction request, built without touching a PDF."""
+    from extraction.offer import ExtractionRequest, TextUnit
+
+    sentences = (
+        "The Seller must verify the borrower's income before closing.",
+        "A loan is ineligible if the credit score is below 620.",
+        "This paragraph states no requirement.",
+    )
+    units = []
+    offset = 4000
+    for index, text in enumerate(sentences, start=1):
+        units.append(TextUnit(index=index, char_start=offset,
+                              char_end=offset + len(text), text=text))
+        offset += len(text) + 1
+    return ExtractionRequest(
+        chunk_id="chunk_0000000000test",
+        document_id="doc_0000000000test",
+        section_path="B3-3.1",
+        units=tuple(units),
+    )
+
+
+@pytest.fixture
+def sample_requests(sample_request):
+    """Three requests over distinct chunks, for the concurrency and isolation tests."""
+    from dataclasses import replace
+
+    return tuple(
+        replace(sample_request, chunk_id=f"chunk_000000000test{n}")
+        for n in range(3)
+    )

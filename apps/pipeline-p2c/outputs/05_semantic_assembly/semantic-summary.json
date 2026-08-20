@@ -1,0 +1,28 @@
+{
+  "by_target": {
+    "bpmn": {
+      "abstain": 471,
+      "ready_for_explicit_model": 383
+    },
+    "dmn": {
+      "abstain": 1082,
+      "ready_for_explicit_model": 18
+    }
+  },
+  "clauses": 5003,
+  "clauses_with_no_declared_projection": 3298,
+  "missing_by_field": {
+    "activity_evidence": 1,
+    "condition_ast": 631,
+    "condition_evidence": 477,
+    "decision_semantic_kind": 247,
+    "effect_ast": 818,
+    "effect_evidence": 2,
+    "process_semantic_kind": 445,
+    "responsible_actor": 25
+  },
+  "opportunities": 1954,
+  "profile": "generic",
+  "profile_version": "1",
+  "semantic_relations": 0
+}

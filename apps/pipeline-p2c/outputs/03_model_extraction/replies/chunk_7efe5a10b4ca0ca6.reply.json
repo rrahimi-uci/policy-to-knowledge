@@ -1,0 +1,986 @@
+{
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1787185225,
+  "created_at": 1787185093,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "id": "resp_0713838809971093006a8647c5033c819a8a60d325e996f053",
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "metadata": {},
+  "model": "gpt-5.2-2025-12-11",
+  "moderation": null,
+  "object": "response",
+  "output": [
+    {
+      "content": [],
+      "encrypted_content": "gAAAAABqhkhJDXKY83WzdHV72-pRZ4kMH7qs63xL4RhIk-G8bjn1lnI8NYLziZ3etXG1IoKO4yqo8BOuGeUksq_jitOJ47gOqptGPtMJ-fvpMD54HvqTB8zodBKT8-Gv26lkyHl15AMqDzTB8eiy89AZqHg0k8TGXL7nORvlMImZhUwCtzDpcNfo-fX5BV8Am3wjJmBShugNTMahafM3x-XzECnQvBXzJw4inREV0vnSHg2uMZUaN7myuRu-jKIljGsplh0lE8hV9xQn9Wk2W8AI-GWUpvPNkqsp0RJ7OGw9ocZF0wzABWvu0fzeFHeoCNXWhIxnh7l1SfIH7YYFE6Yw_gGhWd7IQ0KsedHI670qTJaC5iaA7O-QYvsCopNhK-11fXA4a8n8Bd2Luz7W9FMIqm436xj8CSql299XdCXsfkTrU7Tx2Pps7-PuClo--pkw_OF5ZkNcucXy14xCuajx6zG92U7lllPviu3a0cFmlDiPseWE3DWHjsD-eqVXzBFrRz92QwgxVld1Vc0G_KA2agosTjylNISr53s0xE5qEwdWvowOHHnT77jw7m1oYSF0ZNhdphspDVGPn95BIzoN06CmGF2pggKZ6MXXp31lu-bFtB-8mGR5u49lwnQVbM_GvocmeBDXERuky3cCekkEcQK4adk86tyvT2f4TRfDtMQ00lfrSPpPe4sX_a2jbnVt55ZcrntRNpkLxIYjYzzRleo7f7yQnZWMfp7smvmeWUTxJxG7a-bDuoSb7zFJNmzBotR-LZdJszXcxeGWDWUY__Vsh6Btevd2C0guu6EavYoPxhigCpXaZm_vvQhWs7TVzW09avcoCp5ZSUWstpCHdz_WXUf1KU5fdvBnlPqUtqXhKS1FVbaDGQiRoklmqC15r-S8Jycl25jzLdNJYjDwrA8ipeTQX-PiTyTsayINWkMSUJbaoegmRiKTIVS85PkFPOs3oY8JAxu-uA9CGG6QAKMqXwuPCTl9uLtu0ctHMMAWdlN0sz8kTrmrHIvMYGAWuAYxydoUUe-PLEA3gxxcOZExDQiL3rr0llRNuSbhQnvA3R0BKEK5q6Etd13iAANKTOwD4F-OHCKH96JUixOaFu85nJnfG8urqCet8Pv9IM7xgBlKl1FHm62tyw-2E7au7OdS3DKWGOgt2hnZZwCEN336yBRPAMxOOLLF6qgXK18WYuOhOkdR2cpivGnyWVLpPTP4PEenxquY9bNQ3Wr38f_Sg4PKnHF3auhEEmegDhT66Toso3L1lx1fR5-MHZOUYWcIGJkLjsFWrRxd6wYqytQ4_6U1zWBe_DgCdhqwKoemT6fPSNGGQVyufPcBqmemMKSUBcpUJwu1BhkRzs9WKXLJA_v0TrHgjSPWbroKOlbdei4iYE-SgXo9f8PcKgCnAnsb_KZzHKkcnCAswSAHQEqWVM0uen7lh63f1IDysdzdobZtFus5uHxFvbZEbX756zZyEY34YcNWqM7njGGTaGV0xKn9ShX8rf3OcA8dmk5OPvSUl8yjhGRqwRuQtIdtdld_-t6fpolPgCarKllvaAolqOOYXCjbkFwuIPyXYpewqGr2e1gm6KM0yV5OigVtE-ppOx6tA8rgg6KQWOvHgJv9-y0Tvt6L_D17xr-biMuP-S0axJ1zU0CHtnjdC-ZVpSe0qLnXric8KeVn4z5DmRNXlgWgyoonGU_sqqvPOnPZ44kOMEdayBsPj8nKogB4rKLo4Tn0PIHqf-2BWUf3hWPcaatlnuzriqChqrpzBkDccXFnjGzEZuKmr051y86TFctGK9x4_t6_KoofD_FtBjFJ3RCi37ZUw6AUF6Ucu05TuA1gWotiQUDeDuOHC6kU_us7LBu6DKDaZLuAYUNsXHctcT57fR0f7DlqQ62TeM9AzH8iRayrCuUpYEzx7CmEOWFGOc29VPHm2E_YU6AywtuvasfJ2yzu4lEunmq0yE34RtpuPibQzgiTWsLY-pXOAxoVG7vIMp63KcR2JTFxm-2yn7KF02wXW7dix0CcQywh1YuH-lE5zPDJGKpYhncnquKY7fnVRSxDk03cQCsND49WO-NynIHXnLR1wRt1JI5hz_Md-bwZtagulyIVkXEbV6fPIbVSkzJRMgMsy_vIu9Kh9GCUI770wxCeOmTRjvnN_mKKMLLDhR_-rP2dpcxd9WK8w6jcovB19KrjifyWC3lQu3qAysJsxJwSJ-0PUa8aWqT1a24bvnCMXIADvxzGqGekppATXNPnSdyzAMQKW0EVmq9jdkSqHVUSxshi3TKj0voMfVweNj8DfZxkKKfFDxCZjpaJ_g9LmIZ6AZDV9QI_akfVSbY5ddFcwVS5TGIDU6iOC0Z8HwVc47h8dtGRK5_eezl-HQ3ILtRtzqj-B-2hCILfNYcRIC9NkAMBBX3vLiwgwW139_ALKRRmsAS8QBGARIVLuk8cx89DHpcnBDoxY2FocG5qewMaSz6fVzUn5xz4ctvgdWKrwTDfsZaXd32lBqIfxqe5nzO9nQdj8AaTKPwW19xXBQ_dwOeL3GFUNZStLnCm6RtVceqwLPAUiFtqtOnxS0dwvqTX6MvW1WFNYZeiVA1AYhPImDzZFw8qN8DrHpbp8P0_HxLPu0psVxCmHHqUSdptJoX7O_IJE_WlGyPlgsJ020mkRfNV1LreUn5TQ4XpKc5i61C_l4im-6HNTaHst9YKk4wYsE_gDlBfd3H53h9KR0uajlOizoXQR24jLN2sv0Bh_OhkahZDd2goO8hCRTj5oeMng5_Ga-SiObhPjFtN2QxHnDXrr7f5S6P1anL1A5m7Tjf8yKgYiEzbqeIjSsX0P_Bqaw3DeZ5t0lkYEdwuSbplxYAV2SS71jr8H1CmCqQk3B8iDJmZ-P7Gjek9K0gJeyoJ1hS_m1Q03cQ61dRqc2eSYQ_k101iNSVEBbLD6KPPrT8TlBxIDRW3kGtUKqWROVUzvqrclhCOj6cmC4vzNvb3_014iBlomBtOSydwzPT5YnVvhxvKLTZ_V7nXfzYHdtrw5L9H94YKe8e-Yo8JOoICwaem9UHYaEYbzrPyeJItwhlcuDc_qUFqoTNaopXI-3QqcCSIaVaNjvNXTWxEmJxvBuC3Gd8IARiYh5aUkAO1nBlKPBtWEAWVt2_wo1rt15p_V2thaUdkA7jRNvIN81T4yS8NL1ESwta4ccqXRfnqZGa7ogfXhXxb7iybCI1jDXOKFID0JZjw6XcOOlv7mKPPFVAF2YPypU-8_ycfF296oqoMHi7l_JkHczwGwd2E9_bfELmjFO0BnBYfVJcoaiLK9Xf6OamDnGR_nE21sKn4kaGrUXEHOCOKNHUUMxLwzvupE8abzk6UKXgvj9oM9A3M8rPWYgERjh7V3sNZOtf69NHHUEvuuNURMJAK_vbD2m9zSKKdjTiwemRPPfT8CRTj-6qIPx6rmBBRfFjdJNnsS5tvLP6cYbX40aoJ3mQKDNIG5OwxDL1xIdE2fxbG4R1eW3YSZstARrBvGoct-47KExkq7zKAV0K7gIYJtR7AECAG6h8oUpduhT6CObkKhhGry-M-rDb0wFk-voTRizJOpatHdUi-ItPYzHKvKcGG-0QI7IHiPSdSCAjlFI10ZaBGgGqcQHWLaYYFwcF_Hv99tPPR0Z1qYQD3Y2Mjte8-ud1NbM9VlhHrUTKUV5UREfmiL7ET2Z_dfG7V_Sxzoyml0Jo0X6v2_hGZd9EErT5jqe2ev9tiIVZ3BEC6djXHeXa97LmsVZcSA2dWv7o1ixRnOn_YSv6RqzkB2g9JhXwwI-10dtIdLAWWLAhkzQIZXi6pu4OTfrfi4qg4op9PqvbNyRVGeb6xraxIyZerngAgAHskrBoRMO9MQ6R8HjgwPBWlBPqIZv8qxWdioPdUu2MsIcmU3dcqt-dp45Q0AGdhuceByRJDyRQ9inZKmb8FDJx1YDlvOBfjJoAAx2gVAMgjk6ANe91Jxz4THY4kml_h2xJ_NZccY7VAR-vNb-dxL2ycus862igw530ZlYKo8MUde2bmPpVA0ie5RgzwKy0WVZgamCJVeiWh1cRwCWAwMjQaJfYMnqZ8hQibnJArqvSO-wBffgesbJlxtvGv3EJNXbpRgbuJAt3RD1PQevnhIgii_PalEEU5374xvFChRFKYjkZzvEGKVl68sfM11WWzzxb_RnRh46LH_1Fe2zEUwjTmBNiClbfIzB_2hMAeJr5nkPpZoKF0uRvxkOhRXSA51nO1it49PuKnxDzs5vSRVXv3YNjHnXpT-8Wz1HBNJV4WEVtXnk3-pBxqfY7BY-lN7XohRGRMhNUqOlQdY8GnOZfthkB05wGVfbKFUTntql__VWpmDV19V1bCZ05Bjd5j3s2y5IBNaJK9V7cf9F3VEw_c_sChCydED3uqqL5zs0np1oGstJeBXs3xgzOmGSPT_hU4YiXXnOn8AdtKruaCcYNgli69Z-SQFS9fQBNBqJ1gUXGfxFaTAwYsSoQ8YG8pOQp2aBUXXKDvJAxS9-9QWY_IvPJZ0BnCGhEsjdEJUtOPfdezGA8TGgVjayt1BmLVtu5BoT4jo-TfYmumiy71ha046RvO84i3RSY9Aw7V8g_TQU9KWyeuTxziXU39rDG7cnTOyzERA-gSu_Va4IsuBUZpLIDsSrXMdaG3Uo9amvh2oJaEf5-CB-Nnf1c3H2LOvknT609MnEaXYML9aYfUnwweK7XZp13ftqvVFB3trLZno0FNdq5a-KdbHyrjyMzjMYEPIWaEgp12r5pU9UvH2iqGA0nj8ZaMCPiPEdGARO06pdG8Ayi1ii12hd7ct4HCp0zCRU-aVTpwefbpYV-zHiICeeaVN3Wac_haTQ6gxHhWofku7XZcwYYkqOkv2ZQl2NET6bJOqEtfm_Ph58MKvIfsetyLximlZ1nFSXbxtPAZloJrTxOalcKdeKRDo5qHlKc1TSBB68s_c7WfaRF_oACPH4Zxjcyq_Th5PXPiWwrssjA0q2Qh85JZHu8zQZrIcf9ZslZ65Nb4zx4iX_FoL1DNFP2-J0bq29xJTMyuLjJeFZ2O-8OL7VS2PlAsS2QupBZ7XcAd3vwnGrbjSLNd61zaWubdvDwAHa6nVLFgcs2DvET2shqON7xGHP236zaFtNZSyjCUZAQC6V4GlBtoTRZU5Nz_txvZ4zfd1CBIJnw-HFBpcB_aHinaFG_c_K_Ttgq1mSsQkOJMLePGqzdbx4AJc6FsTWKpXn6XBOyfGc5Dx__OVYF4pD-tvubw2f9gp9jyxkJRetEQA-1NofHUspda8d6cAxeZuw4LILZxjy95rlsENTN6Lt5V-cW7bZEry5b9sj6bObW4T9WGkEn9jZlb3_HZhMUfy1DxdyODNQnupqkHnXvhhEc7C3jv0iGeZ9g8G6L2CDARNpr8z-G6bYn-0VWejpF2REdAS8X5txcQhL9aCxYrGFtQLbzBDj-wNuxeX3F0PrTI74nb4o-9speskUQy8ont4ljKDN11vVPHahiFr9LveYQeVKIijDSuH6Zuk-r0exAP9ptVDrKESR2Wmfir6x2cdF-cILJaRatrd6EGp2xKIRPbGiaQYKSpH_5aWPck7a3DgpwN5GOfMQxbjeG117HcocRyoTWhBO81rCsLTfrcZJStR9eoRD1hi3s5_fiAIsRpQazWhBzOCOxPgP4OsZmG9HkKkGW75ulHerekjf2e-6qZoLKskUbEz_GsSZ4WvFu8asoEeZXtpqC9vzKn1qJokxBT7Cx1vjGJ3dVZJxDsHrC2Bsvhn-fz7R5LuS8cexfate7LJPEXbO5Qk0bivqhNq10_9l8CcrTWkh8a17VxobXaphk_QzCJK8xwttNV8zMf0VY7QLtmPMVjNjai6vlC06rrYhBNUbyTNmrh0Z9NGcOdJFYZg-4phD4U8pv5yaByR4xiLG-RO-NJspQbrNuMblIEi9h8OIZ4971-VV7_kpzJ4ggfiux5e1juMoFY7R6rxYcxbp2oAt6avK-IKtA-Ycc6_l8bqX0jxCnYukRf6OApubW9ODpZnCw-ctyBxsmkWnxZ1siMYoEHi5fK5U9sBan_h0W1hkINwJRXG4Bzu5VVEQC0S39w4IahMx9D9iRnrsdxqorLzfkKtNGea8XrkxVoZIviuSNk2CYmNCpIOIuvTNfYR3tVhI5yBcp9d-ucPrDhzWmfPF5RRMM983irsWJB6Mf5ve0GLmI-P-QnDdcGbQvazVPWOvXLVyXp2hletI5n6pHDi5m3NGzjp4_7k9pyBg-_nMEgbej1prRxEWUh6f0jwZXD0iryOpO02u6QX-z2Dq9VssfIcvQrX3TlsviJml1U0T8Ec6H2ui51aKCAkHXmhgW3eB26Qjk2UVziKuecEsHPiSXdk278fsPmvJnpFwAcQyb_VcU7uVkQhI9pqR0lDVNuwuic5ilIcwLCDA7uzxrKJ1pIPnx7QMJVaReoV0dYm2N-TLB0qvt212l1_7YxSb87BCabxK_mZkKOS4Mw0BUVWwTvQSOOyUDf8e5IQjkb9u5oMRJVnDDMAvkTPHKz8QEn7S20I_h0GdXcsfvgF9_QeuJ4z0pN3Ri2xPa5_zAoFCmtmy72_6m-2gMP-7udUue1eEKWkt9DDHg4uYKqQl0_FOQzY4DqtZ7_kLxoO9x8rqDnPXQ9amvn34rih-5a7WPJpkfZJcwa5MY11m_eJ8dudyxx-9NwkJIbjklXDMRfFvqLQHlNTWPJm-2Gda7dWR6vp094RQwfDiYAescvMxro6nuIZsSnu5Cp26PY_BRmJworOlptOEtbaGUQ9UjLqo7mfTnT6ZKlUnZW36oSTeSzrsjaIjB8G_1dRMFi4-semFyecicdCSJDQb0TYvhgTLT5GgmEq4CIkgqO0P1FjKhoE87pk90PGLtFdYF6YSA2q46l4qj5MdwbyiwPWZ-DiHOVXRmQbyru49cUNlY2x-3TByZkybNKZXl6EQ0GIjxLsjjj3-6gwhfBUJ_v2Mg0-e67z19PevlDnt_uXtE1IQuO0VYTyLSJdzK_DJZfsl33FvLpMN1V_pdQ0EH5z_Z7K79Ig3BhZTVII7H35U7oFo-q34BTOuI38bkF3FricAcChbLpwRfd3u2ptfJK_1Em24Fsm0iJCb-KWkjHh5fF9Jse-Q_O6eLDYuuGHx67tEAGGvqEXPYIqObGmFMKHPiE9KZCM0UM_4k5APKzcyEtX6AxogzfQGZt9s1uEnKGvO87NBG8lw3n7YDjerE6wqEltJEcXze9nHqhg38AyFQtzPQA4Jtgc6pNr-jRFX04bGHyRaM2t2hxiNNvb48FaLhjdTgSAKIFWWF-Lnt2UjyATwUFUasrNjTqGY2U0bYcRroQc1DPjn3DnTRxj7SRBDrwl_dYCnU4c1svOsGbEStL1b6_5sUIwvv3IrJtrhHsRXto1NCI4m9m-RjX5Ly6Ety3SL2G6fkUZkdOH2MVHMCsB2lV5LrvdU2lYWUyuSBBIuNjHMttYbCyC2bpwIr20UcwIcokZFt8zxY6uoJP2xqIofRlESARPEhgMB_8YUefHcKobk-uYp81hsONMD8rH66X5WqLaW5wSIsrUZOGKweyvbWKm9tGNJhkaWCOfknUFRUmQqoEx6RWVogipf2ibA5elooQPMt3or_pmbr1X7rRSBj1ey5ohYm62Jwwo6Bf3REKZ63RkVUFwu7Dk_QNhzk-s5ZuWfJMNUKPk9Ul9uizwZdOfiGSh_C9A5jfWmaD-YxTK-a2LLM2hZwyqOmtnZZxx2Ju9t0cLcAzb6cvlHgrXweRJ4kPY7Orpr6bj-aBR3GY7Wp8QEcA4bdUu0tAVNXXwTi_ItimsT2q4VmWK9D7ZByk437QeOVEPmzTkMIU46XeoyPC196A4KyNpfvChR4r7zNYEQntXgliQNq6jXfrGzlQvZ_lEEwco4qELBslTU-jw71lpFGlNyYgGKgrP4v6NNqP59aTxnWprGlIA__CFxAIw9RVTSQLyYTz9DTKnr1NiLosT7Au5_NqUZ0EWt3bwOtJA55BRG0AEEHSaD8tkn4Bc66Y8rlGZLn3SiZb9mhf6Oz8X_KA3T79PdDqlBBncX0fSH_DkXaz1_JkY9ujD3ckhSwNXnE8ha9eP3RaQmdsInvkiGIi4FpGKrc1fK7n8dtraXxaNAPABI6p-UknLQdSMu2JFc8QkJq-pigtCdS-MqRvBAYqPpRfghzNGHebapPFJhFj2qwPGR3iD4UfJHX22kYV0wTu692KUplXGq4sb7o7NBOM2iDg3uf_KTkVTjUsdsSICtrsfYKsCpjeihNjYl1vUC-xmP_iSrV-yqhq1vPmP_oqGpalHtgAjXClCbPbQWRUhTnOGFS2JELvwPoKD4key6-PlAlAa0otBRb0O0HF-rRrMwjT4ttvHW8JTIVxYP1BlAB4BhvdS6IngSRFKoFXr0Ub7G5ecRlSySD0NFtHBxYXSWuZVz0ju2v7GgYmvqOUI-KGxk3_RX8iYZ04rZstYspY_Lw_tO0rjc0VU8uGBWLq_KfMPdquNi6MKFyL443ANyucMCOU_JA48AP3vg9DdZG74V1xh_uhSxC2zALLcB3zId5l8UUq7_TGiTN0pIriuhRT6kj49bgmcc8uOE25o1pfCG82pB0kuUQLADr5YK1Z8-bHVEgUEnYJnCLiIU0oOLGKpMmmOes5GKfhuK7_M6N1tPGZ43GuMw4kn9Li86h3dy193ms-r8rbr8c6AqjpXG8UwGAeXFNR5DWOYvOslVksUhu-xcLnDdFPGDyXwNWCLithAjKayGVX23WNbZb7zR47u6Y41p_jk_ui61Bui4Otqk9qo7rtanySY--jymLzOrMpTK20TEIHdkLddB3yV_Pdxd-NUXHMzIN4PMuBtYeRt5Iweop4DxPNVs-ERjmFEutRCbaMTFVUwYh6u028eMoX-MSkJmJw8QIgqahkW86ADFHMlCpsc3yPbOjIME9wM1DrG9mOQl4tCUps2ryseQ7gGeu_-ClYnxQLWvNbMDzu9tj0paijKBjpOcPpZrfP5qmLcc8VNpR8LZQpUgcGkP4NLTSe8lLEsg8sKf89xCVR-sRo3LQNrAWOB0oCdE4INyKeUSLxLkF6wdgzP49v2sswDrlBwrvNhELN19oC6fcSC3AaiXFPO8gC_gROuE_2HV55WwYA4vYu9HIlgGxE09tTlSjMYCCbI71IoGWK85xy4CjY-ANTg6UiUFjgb-bem1gmqc4DdZzWCsyzD042kVB3GakBpGpBLfNmNUxSxa9psuz4N12tGk3pCAYum_zKIKUK7qC60UD3pb7H4q4H54FR0epVtZLFIcsVWBL_0n3fZs8K8e36VRdH3bQI55HRkYB42OjS7xoDaq78IkDJtoSsiQErTbUz2JLBbBIDT5-91TWJPrMA717Z-DHmgO6BtRQd_tmFWsKh65OyLwlvDq5wX5UjkrByUZIYoq53RYCgHF9UvCH7lLWtxSHxmYLrpQwk46n8jk_EQvCV_5ONGwDwCSs-V6BRrJbenQ_XbK4a5AV2hEiVf0V-k8VHkwhsRi08aCj_-myw6Dozi7ESvYkAfhu6n2z4PfyB_DyHmI-f_NngwbyHqz_ekkXb_71WWQNM99OVQwnh5rGMIU0cMkOfBBIsGc27bmKBD2hXocqbZNSuNTY6mG9TIDpU1IpjnCH5sTVLVAMu34glMdj06kTfRfyJpxlfwxMpvQVRP73JOyxBPtZEEj0FwzU78XBbmbffbvzxRgLmdArKE90ya_IyEvfZCN_ierhGu6jyX3D3h035h0B_1zucJqtV1Fx-UeIRSwC3zoZ2lYdWpUg3c4-BDlGLQS9Qlm682Yiv7muuXQ1nmtbbLBs7XFli4vMhPqw0XCdM_5fz7W3_B_G-i7NmkkHeDlnM_Q3EgPOcJcAOqlGq92T554zuec37BpRo0qS6PpcQ2lpwwbmQLkIxFs8TMibWTtkf_6Y311xr2EMkETeBcTyEbAbAkqVIVnOMqXkMFENNPqMws3M7moUtJRQElqOmamDt6UrkmRlrHaaQ1gD0EOOYRjyNVglBS7drFy2JK9dvkJR_4MJUj6WkaMxJA8rxMUTvKemQTeIgfaD4GlmpXx1Fz99xs3dzGdn-CdI1C2FZfpxHqHChbqtlcQx9cjcGLcFtctslCy01FH1xF_5aLPrEscp2RQG5gNkY0_2V0NMMGTIhSkOhta57gECXMh5wrIHSJltc7N_Dah0A71evf0Pb_FpLwk75B4CvqQ4YR3mwQgZgu-QxQrKQv3snJNg9PI8T2mhS0W9XXr-pwYvPmzLAJz2Mwsg3CvnxOfa-KvXFZ4jUBMkNB_oBt3fYbe3xj__W67fdqKihTEbHnhi_5dTirXHsT3y-O2xPj5NZd8BS-j8YyTClDNObbs33pSWLMzewkA1fQQAa8sY8PQaiNJcUI7-6jZ0AjqC-76bdLEFL-_MHqwaPB5Ycztb4EEq4wJKxMkBZmg4shVZArzL-5-uxQuBGlJrf-bzmAtWnAGbsLVW8irtu0NMA-Y4-43BG0OheY6Nqra9Yqbbs4gmBQk4kCFlmZvrJvhXP9QKts59_YV0Lerg7Xsnv4sOEESYQYYdOOyIQwnd-w8aH8W7GWqrqq3O4-YO34caKC-POawsxbrm2MSKFKT3v-4N9qCEhzIszs9NAtHQEAAc3JZ9aRE_iim82crPhq8WeysPNOMnmRpGhzaTxtBQskOrRHOTEdR1Y89lhMEH1lJth8R_gv4d8eZdyFuQ8eAUQi5pY5h8QXEV98kbnWNGX50N0Vp9N7k_y9DxhY9BVC8tdIYs-PKvQf1voyo7X77HvTElecwa1ANn_Tvf7TrPeHyvUF3i5pX6hflATk8W797w-qfWXqLjC09D29m39hHKVK8rvu2m4iS2OTNQwMVpm88XvUVpfNY6zt-Q6S_weSjGGOdaBnWk3gu0WLX9meLJgW0Zp5Xk4uHiSXQClflfT0IxoXnDeHGSA2yKuOxUpMke2QuOuCdG7oCSzFAPlu9C1iR1i31bvxSoCsTqhKdkEdcO_vWwR4SYPrbVkvZmSIQl5--vn6BnkBbM8IfKgJZKrx2XposePlilBsW0eLAXxhudIOQEC6oBh_C6NSjhZvitshshiFquxkRiL_hWfsFKgDl9cUcnfujKzQK_QCGmFMXth9RaEH7qpQrk7lGsz58K71Hh7qDD0WP6ixJdWxGuitqooJRT0gX0k1H2VluBh0i_GDKECnt7ssi-RgO7dXCNrmOeYatrtgvIcOoy8B_NsAJSERRrEqJDl-UNi-5N7rypm5XJBOIPFWa0p7tkSp9ydlxCZuFUUD1ugUlBImmPUJg37RfJavtomhC7KWBH3kuVKFY6sHM46842TC4rCYzkbp2cp76uJpas6wN0GMuFKeVG_IO_GSFXUmE9EIQQyinZ8ZqisD2MgmZG4P4PPOrIV-n_HsMylPMpglh77NAhQbcZB1H46qcfzZ33N2CUuZr4x_6qIILr-g5D26MjVN6HrwCLYnKpbyav0k7V64yYI5lwf4Lrr53zVyaUmyVkQoOAhg4o8575J6jfDs_mpbF3DdyH5QfRyhhLZJs1rh_1GZnKrtZzkMD6kp2-desxuwkZW9ylpIZ_HCnLAqlYI7Ycvy-vtjvFSsiryYE4pG7ldc2Ws5L00SXKrMMxVLTXuMzAPSh6x5yo4zHGYN8M08ngqQxsQvE0yrSsfpNTQWxj5740QvX2ygAatX8bnvmO3nEDH__4IaGWXPTc8PlLfCsD-MjJHuuWiZjoEiPYoJDUMSTikaslEZyrFC7dTTiDKV8gzKCy5Ml1tPhKQSriv4juyGhmUwze1Zy4N6NU45WQfuUk4EwcRAmsMiIlapqOsnHqFe5Hd5Bcmtywy5xEMD0VCkjisv71XCHvAKqzlYqPq4PWmNeKhIhSe6lVJv5nDG5EnUPcgsm6gr7Iu-yloIY4K6xThGfCxNmtToVKVDYqIcgpKPAHk6zxknmkCuMOLlKOgddwoJ_RFYeu4bcvc2_Ggpr6zkGtb9WfLVO56bDGAxTv-FZw0EUn3fA4KqI7a_gzAgUnK0UHNs00ByLGE8JXU9mgU7rfgxmyVpl8yEhqxb88oirq-UrfJyxpt64e2u0V0yYSDhpIBNuLPekWpTh-yMG9Qdz_elQWqQ6U4CtiIZPdKChy8u2ynJnq0UgQXHQ6B0c7G860XEx97D9naDbtDWbAr-kxvSep3XuX7jX_OqE0Wryd2GJkVsgiFfZRAUfDKdHoNKyEkz805CpEotpzZ-WJ_C4BFS7uk1_F7ysWCzrRHzYwjmqI-5ok3M_NQCx-N010GpG9M62wRkYZ0BatC8IRgNxOLMlUttCEXR2NKvZoaC-6zO7LX_ON3gRRKXZFnFDoqZ7w-f4zd82haXZ5QqgWfWcBlUGDVxkFMCtk6llHghIhRzkiZzrx__MNF_khuP1uaCZHPQHyisSiRWGL3QQ7N1OI8CqvBJOMiZaRxqaC-UxeOGIDX4GsijDvzmu-185VtIVeOoPOE3rzFRgW5RBolgucjuOCtQ20Jkx4af1VU1tvxtAzDIJL1vck28y0Gp5xGi1SQaL6w-ZvVvS4eTwJwHKQ4GHnpqJZoAMiw4l6lfB7xW1DbY9t04Mpk27dpcqejIjhq1mDuM5p20Yk651sZA4NnoaKyVUlYBopJwjYa98vCZb86E497GU9NCBTq6oLjfpC0A399Xe64cmJuPRjWpuoOu-LPdRbqqAJhExG4neRgoIhA3dY-vObCUhO74EpxHjgTrNRJO7uUU2Q0HUHlrWbtzSqmRgiyzojmoZbxeHGM1tjTHTB5CKurEKxucrO0Oo-ZQK19RNIZTABXljkvaInqH3xToTdU-54z2uowVTgpyDuRL0qy-MJdHBXxbszAyF5fquIk-wg7xj7bygknXJN6hUZrh6SPAkNK8UO_wdEjWBLn0PJcyE-SyvWxdMZQsI3u47AHYZid1zS8hvNgj5jrXjcgLM3pGLbUcLHRFhsHRLmMZ886ZX1CuDrU5j161W5sW4myY7gLg_kNgqTy70dJupO7nd-mlZL3qfRndronFslv3UFwasHhHaweHZJCi2l_cPqx6igHINP5lav5xqEwA5nfh2vbN60u8XR-TA44aIDhFyJxcLc1Atc91bJDTwKR_S6KFOXMPEePQr3TWAx3vOkdCzWp6W3UWGBbfPR2ge0YNoBg_U0ltl_6h3aBtKkB0ctfox3WcTAbEYYsbYR9kYFDuXj84XZ8gxp0ZqCj46tqgGI6yEG40ybJwY7TDh1Fp7MlSpCbB-VyTVyXbl8A82UCS0dGgPN1u22oShINpuMDOxuIWo0jWJAIIMuAu0d2Y3h2jWTSSOLE2dGkNahoirARomgDfDznVWGHIn9GjtHtxy2gJJcpI8SEK170sAONN2jIoYXpPfomLijXytN_qErBFNi8kywynRVFpvU0z6jyrWL56TzZlTRkquBZPbVQozbTiXY6ec6ALs_9KCKk2d-4uagaeRH_a046XtaJHm7y9UpAqgj1uo2pz9khtARBuviUVut6q8qtVf7d1pT6EkWQdeAjKDTIPpAUNYe-hluPMmbCd6aFR8GjB8ScnRJ8eZG1gBWrrGzAMZ-yJpNsTWaEqBdl9JqRzT5Z-SZ8eQobqMh_ckQLkarpmeDxtn6Q6aN3EtAtLtFaIoiV2aJRqGjO_pFzl7pBsISmmLqb9hpODlFaHhU6ZZDiwnjbAFkB4ebp7UUig7Hs6q5wKmm678MTH8_p2LxIjYC37RfiPdmHF03Ha5wqy1nUu6lHo6_14YHCwN1e4p7y-HeUQXh2CD0P3HGBS9P7aEBUJLOUW6AimwovOwIcrzzSaC5jMVIxE_7sieRz9Ib90wn31lZbSAmX357mvbs0ZhSqdySkFrDubTBlw3aMH0NLB3oBiq6rlqq7VmWsC9UTv4i5FShfvzCLuSNxM-yQj6Osk8QwaA9N49B6gtZWxEUz74mPPgu2f8MfEVUdWShQalWaeddEOqgh8Jma09rsnUz4U3Z7sJPHXcZWu2bFB1bwW9ZC_-NGw0smRE-NFXnnSQelmxwcsRg-q2adJ5cQyl1bpBBGgWjrFENy5q2iLx10U_eCZzzBy1gJOlydDSKptE4WYT_Xa99kO-krN8AJtaD9phZb5nev8vau015uJesgRnNo-VW3RbZw4CNQa37h3x3rJtAmMqOL-jw39Qe-RI6SxriO6UsFSLQg6aeNhuaO97sS2Wl9JqtyL2e_7m-mvL-Xbg3smkTT0jaGLu2-BhR2WMKMn3ateCkhiJS6UUEr47yeUoArFNfM8AzU6NNP6dk9wZGFG0jj3piskDKi7l_uIQcDOozkwZzbHUPfQp-1jaqbeqCvl0sK6ZFpJv2mgXkpHZoboG2RpvosSHBaH7WjK1GN4X7wXT7mJIhvkyOS_Mrp8U5ef2D-M8sPkTIpRqRhljosQMWSCPqBWZeKXMeobXpeYNMg4h4cotCOfdq3wnCq2wsnZDfYrhgAC0q3DNMtPMcSBzLLW-Zla5SjPH2ftPfiOYuk6SXU-DbRNlnQyPOBG2Kmzu0obS9AXcj5rAWh9g5Ymi8Jpd9TGYI9rGxORGGQQN2M3ij1GVtgK5V9gZyqrWDsRKFHSIZ5IXzhZUOH1kTWTX7RldLzBj8w0Q-3Oxua8wZ4jGQOfKakTcibbxNk_EEvS5Zd8PpKAupt6UeqBFHSYBblsH9UzLnNr-nmHyRZ6mi8_SQFNne7NYPdg9_roUno8i3XZGFnKntS-RtgXSVzezgo_JLGZwXipNMkQ4CyOgQmw0ByFmlfBggeBF4bNroyFahHH1tUY9_AXtNwkc-GRvpV4ytujx9FwNpZhB4zXb9SKVM7DqmudK1Q7EDhdEdMYKyeh2inG4SXD3dX-G59ZNEns1uEXkv7MW_H97bR98iOPvgbJ2p2aWqT_GNIj4HrQMdHv_TaAajkXWrcK68akh2MPnuUIv0TJYT6dkvMGoqhSdY0uHs6u4AmfMskvwodrdsdj_sFwGBCu8_jZKzlRIWKN_WG3L079f64WYQDZNpGRGShQQKLYeUFbETF0kx512yjvzzAGb-P2hJq2z7_zAhGzfLU32vSE49LKnoG6gyKrazPt8JMgA_cRPKqTHUUbASh_Em51qhHZJRMzD0901AuxHLSa6Qh_MqVP-gMbEZLY_6TRhZBHibsxSA4qTtT5c7QEAuc7ZHAs2SGzzbW6SEgOLI2HAAW_jDNhk-Pj_EzKS_YWvfNaGHRk14UjfQ9exsBRJVDXs6W3dAD07sEvvvLHZjfeq-lEC_KhwldLxr7ZMOHktWVgRSA-QmYJ5R5oLeMMcyQpouSb0EYA64OKle2tRZwZ1NhL1SaaERsuysHlCSL6Rmbk_LPGpxhsvpqVon3tW10sCBmIr7phNfAZ9HJW-I1ut7dk7OtqdYg0KN79la07XqFEUU65rt1YxJNW5hl4_ky5WqvFfER2I1dBXHEzF7jIr9h1C6g3iSnr6zPjFreq7N0D4ykIWoHPFzq52xl7jcHBo45IRWjaF6WfrlWGRRaEWtk5jyit8P5lwMpQ4O2FKvI4AqBW58XZ5a6-ip0r1DEwm0VixL9_8eTrkennYJKHFIixupaOMTTT_PxS4EWQfKM-rL6OfhwvMlVgz7fOfKI-5_8wGb_eEEMOnvKEHLxxriCu0_lFMTDY9I9S9JeZXVfQEbnPQnumu92yZDALF7ijv_tT7n4NJS3IVVzTfXlUXE_q2gPRe4wh_wNswsBMDznF36SFJbQNVRCGieWfcdPmdSBSnWoYxlX-v-CpWeG8J40yYcrjMAQeYcuIXeVMG6q6mpkaDu-fA02nUDdAbxWvdHV2L8UQEMywzDJNVMrY4ApYjeE2-rhOQVzp5spWmABrQvyq6V1TJEbKCpvtDLzSPCUFqitRKL_DcQCZzl9SVZOpy2vVYfBih08IIr4P2IvAGNCXoBD3Agz2ghS3ZryNUeQdGTIY6Mm8u9kMHJAg7keP0lttJrb2LDaFwL5WoctotPFtNcPwrd7tPRGhaXKDhS2oqzPOacXz3PKtoAB31mp9frLGjiPMOixpI_6WcK27ULvbIzmWOUG7LHsdM3Bf71GwkQR1p0hosew-4X-GosQVHur8BuLvyy5exkD_SJstAe4jWI8KR33aj1diJPj075tpeEJdHQ91w3aJv-jyjywMchHKK501_gixFdKiU81_Dda8cswC9qaYFe4DTAp-R3wRdUJY6NVZCzsbbPZ1JLuqzmdJs57CozZwfZpdEqiwDpJcw9rlODYaZUMRByU9iDeIiUScPmeUbvoO_zFfdChHUV-ggzwRBykRQ7FDHH5Kyj1fsR5njM-YS-bgeGvTGNeyltfBCNQUNbxR3KfudkRFrlrbSTQEv2lJ5a7rTXO-E8oVzsfZCkujM30QkObnh4xk6DITusdVH8oJrRHr7JCi3oE4-0FR5ESlMFh0B41jJgippN4YNSaBiuZQQ3MJeuEFm0EtwSf1THwxPWDIqyph0zI-mRAc7-FPwfjGHYj_VehM2DODx-uvVaOKkbUvNUiXDI-dgDJj3FEXdbmZDHigtzB4_Akda0HU8RZfm5WicdRZ3SYYsoVtwoQ4YtA5vjXJa5XOjSFpsXHqt9Rml3ZDsI6nUjvhhs48So_LnJOvGyDYYLjwK_fX5tIVVMjbIgoTHrhfWO8W9aWuX48tr-sq4n-BGRXquWDWyCIkPdjI62kgcC3nwUynPSGvKXaYzDrcJ-wSJ-taThFYJYnyTIPzJn0SvQmVIJZRfkE-zsTMbaRAe9c-bH01hQ-PKzia0JJ-qyjgQfT_YEg7uvpzRiAtmfwsuVN9xNW2kqzEvVjDJl_01SfOer6lKJaUb3iDVStykvz5QEuqZzMRF0pNMN5Pt2G8lCp5OIyeIJI-tOs8szgquu56wPxk_BkwyfZyVfzWHLYv_V4MhIyEe--pR4sO2tIlUB6_tVCdNQTCTpCWAv2yGJ5PVXBc1G12VushkQ2BZxMkJ2JUBZsD-KwxYfHIjGB0torRlBnUPXFLeLF5Jjg4QoH09zMDku_cw5cKRw98EO4J1f4qlO8mOQ_Zrc6oAV7lTh8tXzmtO1M4Ftab01jQvNii2wDWFeuDnwdRWzH2FtKdYNENht0AfNcuIMUN4Otj-84j29tWbEkxLHtR7iafPJujZWDMmO4MagO61fFXnZZImyqEy9j0KC4qokku-1sMIeQoip7ko5Xs0nfRV1sqwZlIKxZygrcB3zjSXYtoLB3bygZla9E4hBONXhHsLjybLYSpS0FkisnE0y52-_EcJtqynqq2fZ1m-SnBhEMQ9969v3mjgq3pDR3WRdqffesybivlrgzGCboo_roN8OShxJCALkqWGfIrN7tLNWO2jmZId_nvBb3r-Th0Ln38hGjASzSz41JN2XtwtTnOrnVP5I2w6XBD0Tpr3xPXX8q5uhFj-YQskhagsAXn6vWQW1N8rFNZxR6OjUJsFhWDa73kfhJ5DF9UdGx3v4jAoscYE8BIl6WjxLoaf9HuVdNEp6Sl0-XVnbUaXAfN97zwolLQ6NhQjaF49MkN1zqe5dXPEPwNbfYlPjwtdU4GLyawReQEevypSvTWbCeCKALHXdb5lPsJ73luQ-SWGdHbRaQKunPmkob1OV1w8WvD9qziRYKTGKAemsY_681jhs2EwmGnGBYAa8W1B5GQmtkD-D1OGnmJchTxKLqwC45ZWpMTaadOP92dYosv-1n7aZdFT73l6pAKltKuf8kTVFbt-PM41HHWcJlkw3mWnRxNRe1fxl3YTUnmRf_B2AnV5M_iPmo3Tciy9oloE2ryTeGXEoNhSYmyouSiS-X2jxvM4aGpT2cepKfpf5tsjPwru_0XbdOXcMwN9Th2Ka0srEvGnLP-b0xuoXVNezu9aCMmyF4-9AEr-hy_nTDA4oG8XBLPeYaeHl6E8d4z4-kjyVso1v9xo3I0Ue6Ly-30cn6NczLV1pSIdjc4PyzpMFcFI0Sxl7cni0eFS-IGiEVleOV2Z_gU2DR1XN2PkXkspgN8xDUES8steiqvKrWa_Y2abOL5v-sLXocdl-G5LBjA1i5PgZRkscwYDHHaucyofQYfC7qY0BrxgWPuvdRU3ZOl3P8AuTypr40on7iHVpHehjpK334z9v8tliMGD6oRaLvjlCE4dHUE0uxnpG352OBxzXSJN-jlLVKJKO9Yc-_lZoSYTwR_GQqYAgzqOm3HNx5rltnAyqifoyZUWebd45qFHt2eW96u0ou-panu96_ZbX1SgZQy5nVtDGZNmt5EGugzNBRajUdjqSRBFkefQXSIGdltySPiqkGZPj4L2hGs7pdvUEFXVTN5qPt44P9_NyJR-eGNiWb_C9sjcah5WwVxM7ocw1capJIfM7QhAj_CqsAkNNZtHC_Y8aZDV42Miwwm582fMQEusi5JU69WKqoqlCzmPr9E8zwqKfRUOMi0HgyTkhi1S1txgdht54HtZiwR8CEURyOZdgPtDFbaa6R82lKJDlb_2wXkqC6jsYQWg59g2YT7x7oNcu1SeIi6ND_2q2AyIc4MchNVZSqn3gJt8N8x4vPMcc2bfvkSZT2wNfgLWzsZ7JgW6Ni97WfRBbTrjm9T7cprqK-wDMUD4wgn028hs89fv_7MH7h2Cn6golIM74Nm1Ypqew-lyxubAgmQh1iAtR1umwrYoVZxt06neHWblHxNDgSd5tVi0nJ3zarlaOwWIzswNibGz70_g__PhkgqnL_PSguJ8v9cE2aC6SOguHlb5t2gmeU3ptlM4CjK_PdWr8RuhNSOaXeepoj7WOonvDhwqqeMjR3uAeoTPXyZ7hhC3BdLQOXSdsQWtakhZx3z7sa_PWp5t7Oy65xClQFt8mLn6OXQwBNyfqLrpv1jThFyXr0Zdzk4mmRzYHrxaeJtl7Pv1MLWxI9yXpis_8_HqBVNpnQEEToPxGtSXjZmwRW2SI5qVR4eT8FnHzAuGUIIIC1yqJJzCyBsX60St3jNvKKZhfCeCIxgaAoSrLjx3Ai_MdYMhFJ0sWkfAhTiryotVnkOJDbWWmZSU2vz8WvMgMfqOuRhrPjBE1m5_t71fjV60Qrw8i2ySLb9hG9enAKTWQ9y4Ge79UDzTmaevtukc191m7vEssqHVvfg63Xfb5pgOU0CFsilwoUrkcq-JoQhF9FF-m9zFAPpR8Buptx5HaWu0ZXrcQn8wfzOBwqlLWCxBrsnkSAuPDy7lTurqef9_v2hnX3GgM1TSHq78Q1nhUraQAzXYMPPoVInoBG4j2KhMInrbdckR6QMRlZ98Fjo5f4IJApBnkAXbHiqgCKVi-ClwWyFnwcnC72EDLUSiYHHOb_MQXig6IoHRGrr-Ov2rZ856AmBrq-HIroJUf9w9KTJT8EDHTty9S5Ubi7x9UorBHX3kspVgDfw1NVXUflrVzrtmhZyXKMUpWsbA_tPh8z_8WWiGtDhbKaepCEmtIKLGUUTJ7Swus4Zm59MaVVfDE88MgqBK5fV320RP4dex3V1RSJO_pYUIPm2rOxN0KzOTTjz0X_yhY8Aqswy6wpKxtTr-DcZtZx9-yXyed2A2MWzK_CAkmHRTc3lrUcN_6JveQTQoiEPMnYAaPxGIeHpbSAkkJTJW1r2iS5TyeBr5GdWXndbui8Chx-tNIexYlydbU8vF51f3knmDgQHPvnJVhSjocaPH5ydVfG_sCkmy8fjB3-DSKeIwQ0nrMySZBJuLu5FeELoM3DrpKmbgkMNKFi20oBC8zHh0ljdal_oZkrZVmCDKlwR9xUjb3GYjMFwVK8veC0Q-iGgCKqHUbmNTiQ0tQamJyi5KTsPHFUDUzDDQB2dLbfiP1JKB-TP-2aBlKD2Du4Qqqm50CRRAc8P-_qMu_UUeAdGBdl95KQQQ6iUElryyvCj8bE-BroamDLUa_55TVIDqihqIQ9wO6HTMPOazpQ8fvt0byC6fNINEKU6eQyGupjjrNMH9IkNT76k4JiB88lwN2VWPTUWIbTbixmnoAl-NftdmTvlBotUVxptAS3iQ4a1uG-KT4oyt_4tycbI1EWjIJxE5asu0O7HLnSET3x361WiYspecoPB76Ak5-GUCRqG2ot2BZiX0KeVGH76WlPKrSw9s_mj-RPJCzrudjW1QGkSMkGwpQavgZE1WTzy1qkMll5wL63riPuyO-GVuGrOo1gnnScNTmneXRLsdW-gLaYPhYIyVoLEK4IH3i2Ywy3qtCHgpJN_6jiYmPkB_B8QkgweLlxaiR__Zt48XemUge2NMSKG5wPiu-9BziebMjo-XTSaK8aq4P0dOhfOPbAeIjJ-7Fb2zqXLlGHH9FzVacZ-eL9qdZb96_Y_zfPmtpMZebW1fyqNr6Ev92NPoBPFhmlmzlhnoUw8MrtbYv_A1FLDLHobLRN6Zq06qy2EsDuwU6nlThVPBPRZCHUIuddIK4nyW4WHsd-ERbdWFqLWARDC4rDmvxlAseQzNUlP2BLCEVrckW7y6atx_dky71WBfFXt63rQ2UCFRzYza7XHa4c-bxBY3xkfVXCMyFGtd5JCC8f7j2w04HZvA6nqiv3w3s6TpnFODqUQl-0dsML92nTPSxMtKqNnmXAqSQJWQhX7VoSsXoEOWZqGxX_NCx4IxL3w83JN-3sY2qWYdlpJRLRMP2wsW4T2aInos2nZ82UIXVNuYsi0_fL9uB9vYZ86nOfGqj_QQpg3bmpyNVM-nzoM3Bfg9Zr48f-oCyh0UhMOT8ocrcDSDI0FauKtSk5rZLdsu3gtpj3pnQab6_gjY7j8Bc27s-evxlLL7PDo4HzgNww9UPsYknaA3xltMtPTo1drFqYatkHmZLnW5f6_fqHIO1FcTh2l494CmNDjnNIlimhdFZ7a-Be1e4NOtjnJSaFvt1mz2cc0dLLC5t3YNL2BygYyhvtULyuXSIrtigReY86Tz1Vy2mFGTFgJPX64lVQXu5XhnFoBSr42hxTKxQlomJuOUuStBC7bwpzwwCGMwBeBRGfCY-VScLZ1YHDFsUS1Wal0e7NBzejNItOOJgOv6RPoawN6yU4gY5gC91eRGyo2CL9S115k4SFI8SWIOeJsAgD2r9Nu3ePQ4UiJIYRDUjWgKebOwOFyDM3clfR6zVBisyV-xFxVTjCbUQfxAYaGGIyQCf2iUZfbYPIKmb4WfGVsEekGAcOxjEvfRP24Txavk44U7C3sLGOw0ynMXF-8Zo-3sWB_PJcWXH9PSbAH0nDg5povsGFoM8-jLhE3GiXQIuW4Fzb29DglWJME0wGdmOKEaFOHKBeK1Twa5DhX9NY8r1CU7k6z0uwX5a1nOo0UesAGrAJthakwfBlrZomJ5-mJqrhqyJVmktcvmHExuRhX-pT2qjkDSwdWsRVrNLWa2d4IQThMKKTT7AwTS6ZyWGLyyZDyuVWXS95McfAfibsNEFsdBANBmfUWchmXAVGL949tzKHhXsUuXdLZvJ7Ay6UW3M2_v208ZygCU_8BroL12O97ug3NdtSacfGr8aEaCQcDXM6sNfHOQKtGdNIiz93iyHDkYKTR0YG3qBulqFO0KWxjqKZVwmvR7_UytzTLBfMzDwwwH55ZeX-QF3Dro_7uLK4J03f_YOXBI3HB2lOxTNJOr1YgfeTQn4zClMXroJeJBlU3gt-SMZPfrBZDJW1ve-gyK6uOC0yfg2srA3j2UhF-fLUsiJzNkdDLhJG2NOtavHM-nzg72dJOsMUAYhPJFHaa_KUCxW6hDJbziyaxM8oCgZO4zuUWg_LFalZEHhTKLQ3-A4BOpDc0e2iY9JYL3TDPKw1YS6x6uoFB5c7nJ8rHx_vn0uocabL5y5-DW4IaNHCgo0JdnS_i7BsstNsMitdmOv0HJ6pXY0reybW0OmLBONjScWrqrjRuNvWTl_POkNmKFB5yfZ2nBBjkgXN4UZPc6KQAeNIOH7U_KMMe33z8Q8dAkI8dF84-3p7m0bThgAfLp8ryhfko4NMsBIIXsPb_EshHaoS6KRmYjCeN-MeNilQ9qMN_Zmx5jrY206EIl_4AoIPPMDfWiIMtrKrpzNvUtZuaLRuo51EDuDzca9J5z8O2Ndyo0lxVLWopfQ8JwHjvfdCJzpOJRmKRjWD5uEZ-2n0kfde4HmHJXBLBwaixFf5JeCqmG7IwCBFRFHKbOYb0nycztDFPZkaCGz4jjk4ElmzHb0GptwPmV0QtvzokKeWwri7653tR9HVRT6NEtefUfZU_LeSrMoO3VzuyJMwrETvG4nYaiX2hQgfDKSNuV1sNAhO7MyfekZ0r2gBX8RAjbjRL4yR4aEIatEfURTGSgAR56wmMsNXuQsY7bIFmlugazlFMzQP1brrQzFoHHvrXJ-totg_sGkO9hO1FVc2_II7JSaCmUarTq_mP0yDA4v4UqUM7EhJhCXq-rLrWmEUpzv0HDKBqRyoPRBtwAnH-AbuhFu3dTy0acRYgw_iXXTI99-uFWeHg5ll3I4oncaK6NStHoi6gm40JqlpDjhK4oOZidotALJBanJtF6u2beCRYXJrtsHdC2eDXsrbwaELKrB8rYCzsdojcPY5OeOw_hs8JaTAnsW5EJScAPhy_lhHE9dlyEuC8iWBTYBMNtKMzr0ceYV_XClg_ffDEbd9cvFab3x7dqMps13Mm7jugQWRaZY0FQJizXzafasqKcQy5yJ_1xuXZ1o2Cc3yKIW6nQ078hKmZYw7gH5DEJHUofwFicmbKFKHGzcwq0tjaKXxARVCjpIB4B8K4cdpI0dS3df-71zcdAMJqJtmbFyxZ-FMIio1aD3v_kSYF23xka1RKQZEgKmlhwy4Bmo6ozKymjwAHkcxnMjwM3S0EsglcVYHHKdLSsCNBtY2UYMzMSayPw4VAaJRyOl4nOVbeAnV-3tjmK97tSctbN_3OvL-iLhILoxwCkYNswzi7fdWh1ILWt6hhnzAltUBCDtevBoE-edGPOUiJiC9tGHS_wTWpSyijhD64WV4FPZx8cIPUSPWsqlq9YHy_lw4cMYEPKsPdYTlc3fmEvy6LNqvXKc1WfG0dXAuHGXqDwbhvjPBeDNdsl0-pkgxoeteOvujOv_MMin-bf3vMaUPDAoxp7O4mgGpeWGP68VvkVMpOKMYp4IVmbz0BLndPu1wyIhYDEZWR-dCTOmvFdv6Azu306HJZizb-XCtO16FiEXMgF0125oZjba-IzocbQGKJ5uU7mHycUPCIXE1RDgtJc5JQF8_uOpAeirh5su9XIA_m02IDzroAMWnN540RIPBpk040_XMZWMAWtjhwUN8eJET5Zvs787SLtw-uC1PL6seD5US8q4kzgiZod2eE7LZYNKGahTSTf7UkVJx8iNHQU3iWL9M_VYG7RVv92aDCx0IIUPc1baLBBy8gQ5Q5x5lEzOsd2j8v3XF8Iujul0JepFqihX-eQ0e41hXW2pKzS7777Qt0fUb17jVZ5TLyiyOxpec_XtmvU-6pYId9wH_ulUqLMXQlF5RaVd78-j2AP8JTh3_ap6t61Y8Xx055U4cJwNN8u1NFsdekQP2Q42CuF9_aXX6ilrzXN27Dj-T5ckBq3V__Nc5CXB77thsSYllvhGPtaCqRk6-4gZM1NJuRy2wf5gntN3pDZv8wQ0wMZtMrZLvsR-aNXLSflOB9KOl9FPBppF1RNXc2oKmQsfF-gqaBiqgMdFO3fOgUM_JfPfKm_SkSjIA_ySTnuKBDd4SGBdCZPJAWxvVseCcf8CSVSDNA9JJ6RF73iKGw9F3VmzA1tpYYuC1LNFIQEo7QZWxS6XSjBQu49nfxCcJN_ZxP3WuhMjOEMXozbMqqjcO-zQWj2CaCMlFiJJ0SLGCB2sOs6doJ3jyqLASrZEaX07oBAuo6XM8DCVojGtS5K-kAlUddOhq4GVTH8LBPLjvl5RVjLi1secuZylftIFXWkPrBXAybiP7hqtbSAcz6IaMSXQg5Kgmjja2wc4sP-rbig0DGqdOeOlvlmjqzzKPluw-ne-WqK97th6hWQQA0AMR6dXIcBD29KfRv7jTSG8pthHnqExbf8Lq5qTF-EER6nYKopBPazqOoUKqpT6r4CTm6B5ic4Fa2UCAWFOZcjI0knV0XETXHENnNKxZO6mZTXgbGlx3Mn9jY05WF9Q-rLzo-KtaNRWWmc45e6sHeukyif7RLMRSJ1GL4TKKecz2vuG6i00kPhjdkZYjQuMyh99_hd0GG-t9lLepis1GMMWibW4VKqfp3sz5BOzfnf7L89buIP4WaQumjQGjoK4eD2aEPGrF8ZZzBBi2v9e_uWrGowTnE07BxpADMMUHAQRRT5Cp9Rmsdh6-SVFemUs5HnLHp9I1lyw7_tCGppvcsnHOUpGVWMNA3MDyBJWDZdVp2qHh4SEGAMHASQLNDDyv6sFYwTMEwgxp6nukma0hujenSS5jtWRDQtCHrhfWtafuljDC_QAx6GRpo031-AJY5xYp62ljECi1NjYswT58ME6NG2ZUC8NPronyxAX9-iXQApa7w8BKcx7bg_8FxYzB8VSD7ZNNs5SpSUgFORo8hjAhJ0lwRPF-zZseFf6Sxu_vpgZNW2dFSNvpNoewxocqFJHv_Tg62vdiahVeytXAkamGw979_72n7b1oT1zo-Ub17yacFHzjcrnAF1e-KSzt6JrPdZU3RtUZCs46ZT5lwthuIfC0cppA-_DfBXpLzkdbSYqes6076IMpQ5v1vzLZwtIPFE6RTsHEpdYb1idlLiOwW8P-Efdgr1aL5nPnIgPEWn7ftz8vdw30NWEVZ8HHaOsWmkhv_OhqmiR4jnPLViAQZpueiDpr4JzlycKM5ECME-VQUEmGs2XwgFwUoZZJVSG8KfQyvFTLMq44rvNPcPqUtfZGj33DuaoRhwBttTyo06Zix4OswTvJcXcTUilduiuGM1_H_5cbUHU8HgzyAl1qxvUO48G8yeeE5kY4hqfosFq7guQM7q2N-3VbaBbxK3rLNPBvttULy2yjLiyfztlR-d9x0CUOHYUc5QzdbvunLBOp4Zyjo2jgOfCDs-cOzeML2mkpDL2iEunTVjbBcMr1B78o4SH4ydjB0Kk2j6ZuldMLbmnUjlnyZkne8L82zfRzq3e-ySigB7HOfgcnkeOAqMMmn1ePK2qk1ppuulddXRR-Esj_kqrOtDtCxO1Kc4croOq9p854bjSfYHiqPc3kbyoN0cjZqRQxxDOWXfKe7yXrWpom3eHGwGKzQcT8k4lv9tkTxmGYdqB-a2HJ512_kih3DBjXVFn4VW-do1fl5dOsBgA5qBrURHyzw_9SSXqbL8Q1aTngjOUq1y4g2Bahet1m1pWfrn2T9RcE7PsrbpPQWQPdmVHvWRecZ9oH8ry8vXJNSbvVMLz3yjxLWZj8sfh3KFOHC49nt7Jhl2nQXq9z9GxvqIhRNMvalIqmR7XJmSPYS6nKfZmUfplukjYF-rYcPtR3qUn2xbiMRU8rRY4ejL4ob8s08yzPY4dmzz0pFvqV46e271HrybkRSjwR1ZlnN8c4n_ZuNMAhS2u6Z81eB9GQr-lOaTfO-RMmzu4FMVJt9kn3064YXvo0b84vnj5WGXM3vpknGf6PgEnR7wEdjxTJlKgV-HzImxwVcVqxtRWPFev_IkuUfe-hdcUI9EYdhYpIF3U6t9uSy5XLn6JgR9mi2ZxzFIz8k_swLsNIxjNZUHAexmmFr9qk_G9QVDUs5DaHWNVe-nsclsL9zPh_nfb2FoA6ZR3SO2X2DQHuq2hJ3Gx7CYtnkBLJt3x4m9y3zqya8cf2a6bcg624lc-R4Omg60yc3CFZ-fvRiTXG2Pu4cvy_m-yXdhtHUkjc5731ZHudsAWr9dVyM-uq9_jJMXnpLSRkjghhoCkOrtXaPR3eByFdSLIm1qTTKFFAd_yD37p_RAErvYP-DVX7e56SqR_Xpc_yRJ4tYFwl68RbtDFNDzMstKces4x5BFhZrZSZU-iGVEYyRZ2Ic30ZbmGsqMZMLUUUQ7bkv8xPyGlFuHAt1JgvXmQ8zcQk-KsQ58re8w3112TpsVgH_wDpc7Pvpc7OSVvqpRvTcvzqCb4j0GlJTiAIg-KV5cA7j0GiDFvMr-f-zrlQumIpaojb6a-QlSOwVM_N691GsLNag8g4Alka3_3K0BIWQrLfqgQxm_uM3n2zJ2ZZ29OzP8Jp6HCUmGhmKeR5faWIq7TDfbmYjqK60t3iHPKBoYA3gnL4AZCurpJNzyX8veXYjBWH41StynFKxzRv_4QX__ORd9spw2v-iVgfpLNf2iBC2Z9ABaIwUvQJjYqZTSYOIpdso5PRHGRlIdXQxTdBCJLWa-y3GE-tBDAk_iMjwatCyXt8wDgrTCEAAIOvtLrDUD2wIQJA0Jm4o7GEAEVuaS1BtsXhexCo8xoiCiD1kwAAlOIx7XelcVAxk6GL_CYBDb44SwBqjylgYWgEXoBZ7Joh_vwox-P890N7j14qcxG3vgRzPJKeK8wqjtr5PrdSZktlKcmMv4WThc9r6kiM4LH-dNX_VofaiKId-S5LWjCq_R7E1xU7zmwUdwy4TmVM2pfIyZimVKDYGTS_aQ4R912s0b124TXfV_SPkS2v_zsp71ltES1g0CK1A62IcOatMQVN9QgaaQvmQA0RkwpO5f1Na63mfQbwraeH0GLCTnZoL0r-KbDUyujvJJZP2f8KA91x2vm9MYKW3dYioCHdYl98BYnFMjVmX6xwUNOyt1iSw3WOOVTBCgOEwY6IUlUUu1k5e8xIzCRddHT8LsYOSU3X6xpFz4nVZb9kJKyiJdobZ8ZleBXzIQ4yDzUsZ3TXHHP3S0NHpt2wrNnJFBYxLIBNJgaOmXo_8cucZIpVrf2_bqcd68g3HsB_OldWeHqnAlPxtp6vaZGEntGgqKcm-zQyWGp1h_nIXNJsRFscyQD1D58UOB0HQJKkB-4B-f9-L26DAi0yaXATWuQ1X47Uo_yOPpHvYOEmbTFAvUruZjOKnu0tyVhqh_Kt3rA-tn_G2j_2MRKhxtE1MhjPwQkcuHJJRcUd7DLCxeeH8IQuYQnkVMoBsItsw8EyWi44NS-7hGuf-zii1t69hHct4Pc7Na0ul2p12BvaADptO8VIS7issvBT-NqadtBCZKWZzJIPIpwoxI7n6LFimWjMXwEu3yJoDjI3w0W5achXIE4lil5fZHa05qEvt3IYHkDIKh15n1QiaemrzcHi2yhZ9mJDqli1Duq-lZu6J2560fFZZrC62noIHSheiYEr3OdxPx6Mg_TPSq6j9nb4lZiK9JvAogvsNjfcn4nKqE3ma3-D9pHmZJTI8ZInUFfklB206TXbSBegbCX4caEFmk_X0pcAb5EaORUwtJLA58MWNgdNltCtYdNRlf3KlfWQoxuBHOvSYwvpNeZZS3sMKD2dDHjzESSre11g-kiZgjby_8xMuWSMa6bChpr8JyS1eicBxB_pIzy6MoI26YCJ2uO_A6LVWSgVzKH1j4FnsKcuk2M4zTsc1zeaks7qjqeISopIw3Tea2JkZaEQtE1ZmG__7GouUSmH3XIRpRjQlV_mCsZsp8q1kzId2zrisziuaL2TNxpJtB4GyKEBTk11y_ImXbfZbyiXaSnY9QTftuAUWNfSzKudNIzZleoC89iaEG24OyiTqa3lfsoB6PUzo3tjO5gOJxqH_vyqGddHfGKJ4JCaV98YvVGP8kOfaBE2xZUV_B9pr3XLkNoSoieP_KF-qCdoaQzK0_c35H6cAGo4hO__kMv5JECNfBL4A8hk9aE7B-L3bVc8QNcMZk0lKOwGlLwNIhbqFJ5JnWDzLy97-QjvswVqCQG6dh1GGth167pf_oWC44pNOGfp9GWB75qvBN-CyUYmN-zJO1Qd_9Ltx4lCGZr2nTO9mm2ObP7_R0mcByU05SbpNm1UmtlsroRum2jCXFBqL1ogwWzRDbyrF5q_sNfNEjve5OEs7uZGaAQQ0gb86aLlqwBLAMDP0nIo7NILEEA8gbJnlbRD-yXLijtSdRUU-u5HWyTJichZ6HM_xm_m9Bdvh-2KoZCVppvhSPbHpcL90PWRnGgxO57cjAE_FYRAGVN_YSR3ogavmz5fppQUp9JmR0eXHJD8_kELdjzrhs9sfJjN",
+      "id": "rs_0713838809971093006a8647c5fce0819a8cacf7a0fd6d404b",
+      "summary": [],
+      "type": "reasoning"
+    },
+    {
+      "content": [
+        {
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"candidates\":[{\"modality\":\"recommendation\",\"semantic_kind\":\"process_fragment\",\"effect\":\"require_action\",\"display_unit\":1,\"citations\":[{\"role\":\"subject\",\"units\":[1]},{\"role\":\"effect\",\"units\":[1]}],\"subject_ref\":\"lender\",\"action\":\"focus on earnings trends and the actual sources of the income (not just on the total amount of the income) when analyzing a self-employed borrower’s personal income\",\"object_ref\":\"self-employed borrower’s personal income\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"validation\",\"effect\":\"require_action\",\"display_unit\":2,\"citations\":[{\"role\":\"subject\",\"units\":[2]},{\"role\":\"effect\",\"units\":[2]}],\"subject_ref\":\"lender\",\"action\":\"confirm the stability and likelihood of continuance for each source of income the borrower reports on IRS Form 1040\",\"object_ref\":\"each source of income reported on IRS Form 1040\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"prohibition\",\"semantic_kind\":\"decision_rule\",\"effect\":\"deny\",\"display_unit\":2,\"citations\":[{\"role\":\"subject\",\"units\":[2]},{\"role\":\"effect\",\"units\":[2]}],\"subject_ref\":\"lender\",\"action\":\"include income that does not appear to be stable or likely to continue\",\"object_ref\":\"income that does not appear to be stable or likely to continue\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"recommendation\",\"semantic_kind\":\"decision_rule\",\"effect\":\"require_action\",\"display_unit\":3,\"citations\":[{\"role\":\"subject\",\"units\":[3]},{\"role\":\"effect\",\"units\":[3]}],\"subject_ref\":\"lender\",\"action\":\"consider all recurring income that the borrower can expect to continue receiving over time\",\"object_ref\":\"recurring income expected to continue over time\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"definition\",\"semantic_kind\":\"validation\",\"effect\":\"no_direct_effect\",\"display_unit\":4,\"citations\":[{\"role\":\"condition\",\"units\":[4]}],\"subject_ref\":null,\"action\":\"income may be considered as recurring if there is no specific indication of an upcoming change in the borrower’s employment or income, the borrower’s employment history has no gaps or other significant fluctuations in income, and any income received under a contractual agreement (other than an “at will” contract) will continue to be received for at least three years\",\"object_ref\":\"recurring income (when income may be considered recurring)\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[\"temporal\"]},{\"modality\":\"recommendation\",\"semantic_kind\":\"calculation\",\"effect\":\"require_action\",\"display_unit\":6,\"citations\":[{\"role\":\"subject\",\"units\":[6]},{\"role\":\"effect\",\"units\":[6]}],\"subject_ref\":\"lender\",\"action\":\"exclude any nonrecurring loss from the cash flow analysis and adjust the borrower’s cash flow by the amount of any nonrecurring loss\",\"object_ref\":\"nonrecurring loss (e.g., extraordinary one-time expense)\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"documentation_requirement\",\"effect\":\"require_action\",\"display_unit\":13,\"citations\":[{\"role\":\"subject\",\"units\":[13]},{\"role\":\"condition\",\"units\":[13]},{\"role\":\"effect\",\"units\":[13]}],\"subject_ref\":\"lender\",\"action\":\"verify the spouse’s income directly with the spouse’s employer\",\"object_ref\":\"spouse’s income\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[\"condition\"]},{\"modality\":\"recommendation\",\"semantic_kind\":\"calculation\",\"effect\":\"require_action\",\"display_unit\":14,\"citations\":[{\"role\":\"subject\",\"units\":[14]},{\"role\":\"effect\",\"units\":[14]}],\"subject_ref\":\"lender\",\"action\":\"deduct from the borrower’s cash flow any income that is based on current earnings or that will not be used for qualifying purposes\",\"object_ref\":\"income based on current earnings or not used for qualifying purposes\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"permission\",\"semantic_kind\":\"decision_rule\",\"effect\":\"allow\",\"display_unit\":15,\"citations\":[{\"role\":\"subject\",\"units\":[15]},{\"role\":\"condition\",\"units\":[15]},{\"role\":\"effect\",\"units\":[15]}],\"subject_ref\":\"lender\",\"action\":\"count taxable interest and dividend income reported on IRS Form 1040, Schedule B, as stable income only if it has been received for the past two years\",\"object_ref\":\"taxable interest and dividend income (Schedule B)\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[\"temporal\"]},{\"modality\":\"prohibition\",\"semantic_kind\":\"decision_rule\",\"effect\":\"deny\",\"display_unit\":16,\"citations\":[{\"role\":\"subject\",\"units\":[16]},{\"role\":\"condition\",\"units\":[16]},{\"role\":\"effect\",\"units\":[16]}],\"subject_ref\":\"lender\",\"action\":\"count taxable interest or dividend income if the borrower is using the interest-bearing or dividend-producing asset as the source of the down payment or closing costs\",\"object_ref\":\"taxable interest or dividend income\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"calculation\",\"effect\":\"require_action\",\"display_unit\":17,\"citations\":[{\"role\":\"subject\",\"units\":[17]},{\"role\":\"effect\",\"units\":[17]}],\"subject_ref\":\"lender\",\"action\":\"deduct from the borrower’s cash flow any taxable interest or dividend income that is not recurring\",\"object_ref\":\"nonrecurring taxable interest or dividend income\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"permission\",\"semantic_kind\":\"decision_rule\",\"effect\":\"allow\",\"display_unit\":18,\"citations\":[{\"role\":\"subject\",\"units\":[18,19]},{\"role\":\"condition\",\"units\":[18]},{\"role\":\"effect\",\"units\":[18,19]}],\"subject_ref\":\"lender\",\"action\":\"count tax-exempt interest income as stable income only if it has been received for the past two years and is expected to continue; if so, add this income to the borrower’s cash flow\",\"object_ref\":\"tax-exempt interest income\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[\"temporal\"]},{\"modality\":\"prohibition\",\"semantic_kind\":\"decision_rule\",\"effect\":\"deny\",\"display_unit\":20,\"citations\":[{\"role\":\"subject\",\"units\":[20]},{\"role\":\"effect\",\"units\":[20]}],\"subject_ref\":\"lender\",\"action\":\"use taxable state and local tax refunds, credits, or offsets of state and local income taxes as qualifying income\",\"object_ref\":\"taxable state and local tax refunds, credits, or offsets of state and local income taxes\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"calculation\",\"effect\":\"require_action\",\"display_unit\":21,\"citations\":[{\"role\":\"subject\",\"units\":[21]},{\"role\":\"effect\",\"units\":[21]}],\"subject_ref\":\"lender\",\"action\":\"adjust the borrower’s cash flow accordingly (for taxable state and local tax refunds, credits, or offsets that should not be used as qualifying income)\",\"object_ref\":\"borrower cash flow adjustment for state and local tax refunds/credits/offsets\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[\"condition\"]},{\"modality\":\"permission\",\"semantic_kind\":\"decision_rule\",\"effect\":\"allow\",\"display_unit\":22,\"citations\":[{\"role\":\"subject\",\"units\":[22]},{\"role\":\"condition\",\"units\":[22]},{\"role\":\"effect\",\"units\":[22]},{\"role\":\"cross_reference\",\"units\":[22]}],\"subject_ref\":\"lender\",\"action\":\"accept alimony as qualifying income if it meets the requirements described in B3-3.4-02\",\"object_ref\":\"alimony\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[\"B3-3.4-02\"],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"calculation\",\"effect\":\"require_action\",\"display_unit\":23,\"citations\":[{\"role\":\"subject\",\"units\":[23]},{\"role\":\"condition\",\"units\":[23]},{\"role\":\"effect\",\"units\":[23]}],\"subject_ref\":\"lender\",\"action\":\"deduct from the borrower’s total income reported on IRS Form 1040 any reported alimony received that is determined to be nonrecurring\",\"object_ref\":\"nonrecurring alimony received\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"permission\",\"semantic_kind\":\"decision_rule\",\"effect\":\"allow\",\"display_unit\":23,\"citations\":[{\"role\":\"subject\",\"units\":[23,24]},{\"role\":\"effect\",\"units\":[23]},{\"role\":\"cross_reference\",\"units\":[24]}],\"subject_ref\":\"lender\",\"action\":\"accept income received from IRA distributions, pensions, annuities, and Social Security benefits as qualifying income (see referenced requirements)\",\"object_ref\":\"income from IRA distributions, pensions, annuities, and Social Security benefits\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[\"B3-3.4-03\",\"B3-3.4-15\"],\"missing\":[\"condition\"]},{\"modality\":\"obligation\",\"semantic_kind\":\"calculation\",\"effect\":\"require_action\",\"display_unit\":25,\"citations\":[{\"role\":\"subject\",\"units\":[25]},{\"role\":\"effect\",\"units\":[25]}],\"subject_ref\":\"lender\",\"action\":\"add the nontaxable portion of such recurring income to the borrower’s cash flow\",\"object_ref\":\"nontaxable portion of recurring IRA/pension/annuity/Social Security income\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"permission\",\"semantic_kind\":\"calculation\",\"effect\":\"produce_value\",\"display_unit\":26,\"citations\":[{\"role\":\"subject\",\"units\":[26]},{\"role\":\"effect\",\"units\":[26]},{\"role\":\"cross_reference\",\"units\":[26]}],\"subject_ref\":\"lender\",\"action\":\"increase the tax-exempt portion of income from these sources to reflect the tax savings, as described in B3-3.1-01\",\"object_ref\":\"tax-exempt portion of IRA/pension/annuity/Social Security income\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[\"B3-3.1-01\"],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"calculation\",\"effect\":\"require_action\",\"display_unit\":27,\"citations\":[{\"role\":\"subject\",\"units\":[27]},{\"role\":\"condition\",\"units\":[27]},{\"role\":\"effect\",\"units\":[27]}],\"subject_ref\":\"lender\",\"action\":\"deduct from the borrower’s cash flow income from these sources if it is determined to be nonrecurring\",\"object_ref\":\"nonrecurring IRA/pension/annuity/Social Security income\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"permission\",\"semantic_kind\":\"decision_rule\",\"effect\":\"allow\",\"display_unit\":28,\"citations\":[{\"role\":\"subject\",\"units\":[28]},{\"role\":\"condition\",\"units\":[28]},{\"role\":\"effect\",\"units\":[28]},{\"role\":\"cross_reference\",\"units\":[28]}],\"subject_ref\":\"lender\",\"action\":\"consider unemployment compensation as acceptable qualifying income if it meets the requirements described in B3-3.4-17\",\"object_ref\":\"unemployment compensation\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[\"B3-3.4-17\"],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"calculation\",\"effect\":\"require_action\",\"display_unit\":29,\"citations\":[{\"role\":\"subject\",\"units\":[29]},{\"role\":\"condition\",\"units\":[29]},{\"role\":\"effect\",\"units\":[29]}],\"subject_ref\":\"lender\",\"action\":\"deduct from the borrower’s cash flow any reported unemployment compensation that is determined to be nonrecurring\",\"object_ref\":\"nonrecurring unemployment compensation\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"validation\",\"effect\":\"require_action\",\"display_unit\":30,\"citations\":[{\"role\":\"subject\",\"units\":[30]},{\"role\":\"effect\",\"units\":[30]}],\"subject_ref\":\"lender\",\"action\":\"verify that other income the borrower reported is an eligible source for qualifying purposes per the requirements described in Chapter B3-3, Income Assessment, for the applicable income source\",\"object_ref\":\"income from other sources reported by the borrower\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[\"Chapter B3-3, Income Assessment\"],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"calculation\",\"effect\":\"require_action\",\"display_unit\":31,\"citations\":[{\"role\":\"subject\",\"units\":[31]},{\"role\":\"condition\",\"units\":[31]},{\"role\":\"effect\",\"units\":[31]}],\"subject_ref\":\"lender\",\"action\":\"deduct from the borrower’s cash flow income that is determined to be nonrecurring or ineligible for qualifying purposes\",\"object_ref\":\"nonrecurring or ineligible other income\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"recommendation\",\"semantic_kind\":\"calculation\",\"effect\":\"require_action\",\"display_unit\":32,\"citations\":[{\"role\":\"subject\",\"units\":[32]},{\"role\":\"condition\",\"units\":[32]},{\"role\":\"effect\",\"units\":[32]}],\"subject_ref\":\"lender\",\"action\":\"increase the borrower’s cash flow by the amount of any nonrecurring losses reported\",\"object_ref\":\"nonrecurring losses\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"recommendation\",\"semantic_kind\":\"calculation\",\"effect\":\"require_action\",\"display_unit\":36,\"citations\":[{\"role\":\"subject\",\"units\":[36]},{\"role\":\"condition\",\"units\":[36]},{\"role\":\"effect\",\"units\":[36]}],\"subject_ref\":\"lender\",\"action\":\"adjust the borrower’s cash flow by deducting nonrecurring income when the lender determines income reported on Schedule C is not recurring\",\"object_ref\":\"nonrecurring income on Schedule C not obtained from business profits\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"validation\",\"effect\":\"require_action\",\"display_unit\":38,\"citations\":[{\"role\":\"subject\",\"units\":[38]},{\"role\":\"effect\",\"units\":[38]}],\"subject_ref\":\"lender\",\"action\":\"determine whether income is recurring or non-recurring\",\"object_ref\":\"income (recurring vs. non-recurring determination)\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"calculation\",\"effect\":\"require_action\",\"display_unit\":39,\"citations\":[{\"role\":\"subject\",\"units\":[39]},{\"role\":\"effect\",\"units\":[39]}],\"subject_ref\":\"lender\",\"action\":\"deduct non-recurring income in the cash flow analysis, including any exclusion for meals and entertainment expenses reported by the borrower on Schedule C\",\"object_ref\":\"non-recurring income (including meals and entertainment expense exclusion) on Schedule C\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"calculation\",\"effect\":\"require_action\",\"display_unit\":39,\"citations\":[{\"role\":\"subject\",\"units\":[39]},{\"role\":\"effect\",\"units\":[39]}],\"subject_ref\":\"lender\",\"action\":\"add back to the cash flow analysis the following recurring items claimed by the borrower on Schedule C: depreciation, depletion, business use of a home, amortization, and casualty losses\",\"object_ref\":\"recurring Schedule C items to add back (depreciation; depletion; business use of a home; amortization; casualty losses)\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"recommendation\",\"semantic_kind\":\"decision_rule\",\"effect\":\"deny\",\"display_unit\":42,\"citations\":[{\"role\":\"condition\",\"units\":[42]},{\"role\":\"effect\",\"units\":[42]}],\"subject_ref\":\"lender\",\"action\":\"consider income received from a capital gain as part of the borrower’s stable monthly income (it is generally a one-time transaction)\",\"object_ref\":\"capital gain income (stable monthly income)\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"permission\",\"semantic_kind\":\"decision_rule\",\"effect\":\"allow\",\"display_unit\":43,\"citations\":[{\"role\":\"subject\",\"units\":[43]},{\"role\":\"condition\",\"units\":[43]},{\"role\":\"effect\",\"units\":[43]}],\"subject_ref\":\"lender\",\"action\":\"consider recurring capital gains in determining the borrower’s stable monthly income if Schedule D shows the borrower has realized capital gains for the last two years (e.g., constant turnover of assets producing regular gains)\",\"object_ref\":\"recurring capital gains (Schedule D)\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[\"temporal\"]},{\"modality\":\"obligation\",\"semantic_kind\":\"documentation_requirement\",\"effect\":\"create_record\",\"display_unit\":44,\"citations\":[{\"role\":\"subject\",\"units\":[44]},{\"role\":\"condition\",\"units\":[43]},{\"role\":\"effect\",\"units\":[44]}],\"subject_ref\":\"borrower\",\"action\":\"provide evidence of ownership of additional property or assets that can be sold if extra income is needed to make future mortgage payments\",\"object_ref\":\"evidence of ownership of additional property or assets\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[\"condition\"]},{\"modality\":\"obligation\",\"semantic_kind\":\"documentation_requirement\",\"effect\":\"create_record\",\"display_unit\":46,\"citations\":[{\"role\":\"subject\",\"units\":[46]},{\"role\":\"condition\",\"units\":[46]},{\"role\":\"effect\",\"units\":[46]}],\"subject_ref\":\"lender\",\"action\":\"obtain a copy of the applicable Sale of Business Property (IRS Form 4797) to support the recurring nature of recurring capital gains that relate to the sale of business property\",\"object_ref\":\"IRS Form 4797 (Sale of Business Property)\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"documentation_requirement\",\"effect\":\"create_record\",\"display_unit\":47,\"citations\":[{\"role\":\"subject\",\"units\":[47]},{\"role\":\"condition\",\"units\":[47]},{\"role\":\"effect\",\"units\":[47]}],\"subject_ref\":\"lender\",\"action\":\"obtain a copy of the Installment Sale Income (IRS Form 6252) and the note or contract to verify the borrower will continue to receive the payments for at least three years when Schedule D includes principal payments on an installment sales contract\",\"object_ref\":\"IRS Form 6252 and the note or contract (installment sales contract payments)\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[\"temporal\"]},{\"modality\":\"obligation\",\"semantic_kind\":\"calculation\",\"effect\":\"require_action\",\"display_unit\":47,\"citations\":[{\"role\":\"subject\",\"units\":[47]},{\"role\":\"condition\",\"units\":[47]},{\"role\":\"effect\",\"units\":[47]}],\"subject_ref\":\"lender\",\"action\":\"deduct from the borrower’s cash flow the amount of the capital gain on the principal payment and interest income from an installment sales contract when it is determined to be nonrecurring\",\"object_ref\":\"nonrecurring capital gain on principal payment and interest income from an installment sales contract\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"permission\",\"semantic_kind\":\"decision_rule\",\"effect\":\"allow\",\"display_unit\":48,\"citations\":[{\"role\":\"effect\",\"units\":[48]}],\"subject_ref\":\"lender\",\"action\":\"not consider capital losses identified on IRS Form 1040, Schedule D, when calculating income or liabilities, even if the losses are recurring\",\"object_ref\":\"capital losses on Schedule D\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"recommendation\",\"semantic_kind\":\"process_fragment\",\"effect\":\"require_action\",\"display_unit\":50,\"citations\":[{\"role\":\"subject\",\"units\":[50]},{\"role\":\"effect\",\"units\":[50]},{\"role\":\"cross_reference\",\"units\":[50]}],\"subject_ref\":\"lender\",\"action\":\"rely on Schedule K-1 rather than Schedule E for income related to distributions from partnerships, corporations, estates, and trusts\",\"object_ref\":\"income related to distributions from partnerships, corporations, estates, and trusts\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[\"B3-3.6-07\"],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"documentation_requirement\",\"effect\":\"create_record\",\"display_unit\":52,\"citations\":[{\"role\":\"subject\",\"units\":[52]},{\"role\":\"effect\",\"units\":[52]},{\"role\":\"cross_reference\",\"units\":[52]}],\"subject_ref\":\"lender\",\"action\":\"include the total amount of royalty payments received, and document the borrower’s receipt of royalty income for 12 months and the likelihood of continued receipt of such income for at least three years\",\"object_ref\":\"royalty income (total payments; documentation of receipt and continued receipt likelihood)\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[\"B3-3.4-13\"],\"missing\":[\"temporal\"]},{\"modality\":\"obligation\",\"semantic_kind\":\"decision_rule\",\"effect\":\"require_action\",\"display_unit\":53,\"citations\":[{\"role\":\"subject\",\"units\":[53]},{\"role\":\"condition\",\"units\":[53]},{\"role\":\"effect\",\"units\":[53]}],\"subject_ref\":\"lender\",\"action\":\"include only the rental income that relates to properties shown on the Schedule of Real Estate Owned on the borrower’s loan application when rental income is reported on Schedule E\",\"object_ref\":\"rental income from properties shown on the Schedule of Real Estate Owned\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"recommendation\",\"semantic_kind\":\"calculation\",\"effect\":\"require_action\",\"display_unit\":54,\"citations\":[{\"role\":\"subject\",\"units\":[54]},{\"role\":\"effect\",\"units\":[54]}],\"subject_ref\":\"lender\",\"action\":\"subtract all regular and ongoing expenses for the rental properties (such as maintenance, advertising, management fees, utilities, homeowners’ association dues, and supply costs) from the borrower’s cash flow\",\"object_ref\":\"regular and ongoing rental property expenses\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"recommendation\",\"semantic_kind\":\"calculation\",\"effect\":\"require_action\",\"display_unit\":55,\"citations\":[{\"role\":\"subject\",\"units\":[55]},{\"role\":\"effect\",\"units\":[55]}],\"subject_ref\":\"lender\",\"action\":\"make adjustments for depreciation and any one-time extraordinary expenses (such as costs of repairing damage that resulted from a natural disaster) depending on the approach used to calculate cash flow\",\"object_ref\":\"depreciation and one-time extraordinary expenses (rental property cash flow)\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"calculation\",\"effect\":\"require_action\",\"display_unit\":57,\"citations\":[{\"role\":\"subject\",\"units\":[57]},{\"role\":\"effect\",\"units\":[57]}],\"subject_ref\":\"lender\",\"action\":\"add back any portion of the mortgage payment, including interest, taxes, and insurance, necessary to avoid double counting of these expenses\",\"object_ref\":\"portion of mortgage payment (interest, taxes, insurance) to avoid double counting\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"calculation\",\"effect\":\"require_action\",\"display_unit\":58,\"citations\":[{\"role\":\"subject\",\"units\":[58]},{\"role\":\"effect\",\"units\":[58]}],\"subject_ref\":\"lender\",\"action\":\"pay particular attention to the effect of “passive loss” limitations or prior “carryovers” related to the borrower’s rental properties and make any special adjustments necessary to account for them (depending on the cash flow analysis method used)\",\"object_ref\":\"passive loss limitations and prior carryovers (rental properties)\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"calculation\",\"effect\":\"require_action\",\"display_unit\":62,\"citations\":[{\"role\":\"subject\",\"units\":[62]},{\"role\":\"condition\",\"units\":[62]},{\"role\":\"effect\",\"units\":[62]}],\"subject_ref\":\"lender\",\"action\":\"adjust the borrower’s cash flow by the nontaxable portion of any recurring income from these sources when the lender verifies that net income amounts transferred to IRS Form 1040 are stable, consistent, and continuing\",\"object_ref\":\"nontaxable portion of recurring income from certain farming-related sources (Schedule F context)\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"calculation\",\"effect\":\"require_action\",\"display_unit\":63,\"citations\":[{\"role\":\"subject\",\"units\":[63]},{\"role\":\"effect\",\"units\":[63]}],\"subject_ref\":\"lender\",\"action\":\"deduct the income from the borrower’s cash flow when the lender does not verify that the net income amounts transferred to IRS Form 1040 are stable, consistent, and continuing\",\"object_ref\":\"income not verified as stable/consistent/continuing (Schedule F context)\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[\"condition\"]},{\"modality\":\"permission\",\"semantic_kind\":\"calculation\",\"effect\":\"require_action\",\"display_unit\":64,\"citations\":[{\"role\":\"subject\",\"units\":[64]},{\"role\":\"effect\",\"units\":[64]}],\"subject_ref\":\"lender\",\"action\":\"adjust the borrower’s cash flow by adding the amount of any deductions the borrower claimed on Schedule F for depreciation, amortization, casualty loss, depletion, or business use of their home\",\"object_ref\":\"Schedule F deductions to add back (depreciation; amortization; casualty loss; depletion; business use of home)\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"process_fragment\",\"effect\":\"require_action\",\"display_unit\":67,\"citations\":[{\"role\":\"subject\",\"units\":[67]},{\"role\":\"effect\",\"units\":[67]}],\"subject_ref\":\"lender\",\"action\":\"use caution when including income that the borrower draws from the borrower’s partnership or S corporation as qualifying income\",\"object_ref\":\"income drawn from partnership or S corporation (Schedule K-1 context)\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"permission\",\"semantic_kind\":\"decision_rule\",\"effect\":\"allow\",\"display_unit\":68,\"citations\":[{\"role\":\"subject\",\"units\":[68]},{\"role\":\"condition\",\"units\":[68]},{\"role\":\"effect\",\"units\":[68]}],\"subject_ref\":\"lender\",\"action\":\"include ordinary income, net rental real estate income, and other net rental income reported on Schedule K-1 in the borrower’s cash flow provided the lender can confirm the business has adequate liquidity to support the withdrawal of earnings\",\"object_ref\":\"ordinary income, net rental real estate income, and other net rental income (Schedule K-1)\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"permission\",\"semantic_kind\":\"decision_rule\",\"effect\":\"allow\",\"display_unit\":68,\"citations\":[{\"role\":\"subject\",\"units\":[68]},{\"role\":\"condition\",\"units\":[68]},{\"role\":\"effect\",\"units\":[68]}],\"subject_ref\":\"lender\",\"action\":\"add “guaranteed payments to the partner” from a partnership or an LLC to the borrower’s cash flow if the borrower has a two-year history of receiving them\",\"object_ref\":\"guaranteed payments to the partner (partnership or LLC)\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[\"temporal\"]},{\"modality\":\"permission\",\"semantic_kind\":\"documentation_requirement\",\"effect\":\"require_action\",\"display_unit\":69,\"citations\":[{\"role\":\"subject\",\"units\":[69]},{\"role\":\"condition\",\"units\":[69]},{\"role\":\"effect\",\"units\":[69]}],\"subject_ref\":\"lender\",\"action\":\"require no further documentation of access to the income or adequate business liquidity if Schedule K-1 reflects a documented, stable history of receiving cash distributions of income from the business consistent with the level of business income being used to qualify\",\"object_ref\":\"documentation of access to income / adequate business liquidity (waiver condition based on K-1 history)\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"validation\",\"effect\":\"require_action\",\"display_unit\":70,\"citations\":[{\"role\":\"subject\",\"units\":[70]},{\"role\":\"condition\",\"units\":[70]},{\"role\":\"effect\",\"units\":[70]}],\"subject_ref\":\"lender\",\"action\":\"confirm adequate business liquidity if the Schedule K-1 does not reflect a documented, stable history of cash distributions\",\"object_ref\":\"adequate business liquidity (when K-1 history is not documented/stable)\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"process_fragment\",\"effect\":\"require_action\",\"display_unit\":71,\"citations\":[{\"role\":\"subject\",\"units\":[71]},{\"role\":\"condition\",\"units\":[71]},{\"role\":\"effect\",\"units\":[71]},{\"role\":\"cross_reference\",\"units\":[71]}],\"subject_ref\":\"lender\",\"action\":\"consider the type of business structure and analyze the business returns according to the requirements described in B3-3.5-01 when business tax returns are required\",\"object_ref\":\"business tax return analysis (when required)\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[\"B3-3.5-01\"],\"missing\":[]},{\"modality\":\"permission\",\"semantic_kind\":\"process_fragment\",\"effect\":\"allow\",\"display_unit\":72,\"citations\":[{\"role\":\"subject\",\"units\":[72]},{\"role\":\"effect\",\"units\":[72]}],\"subject_ref\":\"lender\",\"action\":\"use discretion in selecting the method to confirm that the business has adequate liquidity to support the withdrawal of earnings\",\"object_ref\":\"method to confirm adequate business liquidity\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"recommendation\",\"semantic_kind\":\"process_fragment\",\"effect\":\"require_action\",\"display_unit\":73,\"citations\":[{\"role\":\"subject\",\"units\":[73,74]},{\"role\":\"effect\",\"units\":[73,74]}],\"subject_ref\":\"lender\",\"action\":\"when business tax returns are provided, the lender may calculate a ratio using a generally accepted formula to measure business liquidity; it is important to select a business liquidity formula based on how the business operates\",\"object_ref\":\"business liquidity ratio calculation and formula selection\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"recommendation\",\"semantic_kind\":\"decision_rule\",\"effect\":\"require_action\",\"display_unit\":78,\"citations\":[{\"role\":\"effect\",\"units\":[78]}],\"subject_ref\":\"lender\",\"action\":\"treat a business liquidity ratio result of one or greater as generally sufficient to confirm adequate business liquidity to support the withdrawal of earnings; alternatively, support adequate liquidity using alternative methods with a documented rationale\",\"object_ref\":\"business liquidity confirmation threshold and alternative support methods\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"documentation_requirement\",\"effect\":\"create_record\",\"display_unit\":79,\"citations\":[{\"role\":\"subject\",\"units\":[79]},{\"role\":\"effect\",\"units\":[79]},{\"role\":\"cross_reference\",\"units\":[79]}],\"subject_ref\":\"borrower\",\"action\":\"provide the most recent one or two years of signed individual federal income tax returns (IRS Form 1040) including IRS Schedule K-1, in accordance with the requirements in B3-3.5-01\",\"object_ref\":\"signed individual federal income tax returns (IRS Form 1040) including IRS Schedule K-1\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[\"B3-3.5-01\"],\"missing\":[\"temporal\"]},{\"modality\":\"obligation\",\"semantic_kind\":\"documentation_requirement\",\"effect\":\"create_record\",\"display_unit\":80,\"citations\":[{\"role\":\"subject\",\"units\":[80]},{\"role\":\"effect\",\"units\":[80]},{\"role\":\"cross_reference\",\"units\":[80]}],\"subject_ref\":\"borrower\",\"action\":\"provide business federal income tax returns: the most recent two years (IRS Form 1065 or IRS Form 1120S) unless the requirements to waive business tax returns have been met; or the most recent one year of business federal income tax returns, in accordance with the requirements in B3-3.5-01\",\"object_ref\":\"business federal income tax returns (IRS Form 1065 or IRS Form 1120S)\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[\"B3-3.5-01\"],\"missing\":[\"temporal\"]}]}",
+          "type": "output_text"
+        }
+      ],
+      "id": "msg_0713838809971093006a8647f67b38819a9d2ae8f1fe78ba3d",
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "current_turn",
+    "effort": "high",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "description": null,
+      "name": "policy_ir_proposals",
+      "schema": {
+        "$defs": {
+          "All": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "all"
+                ],
+                "type": "string"
+              },
+              "operands": {
+                "items": {
+                  "$ref": "#/$defs/Expression"
+                },
+                "minItems": 1,
+                "type": "array"
+              }
+            },
+            "required": [
+              "kind",
+              "operands"
+            ],
+            "type": "object"
+          },
+          "AnyOf": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "any"
+                ],
+                "type": "string"
+              },
+              "operands": {
+                "items": {
+                  "$ref": "#/$defs/Expression"
+                },
+                "minItems": 1,
+                "type": "array"
+              }
+            },
+            "required": [
+              "kind",
+              "operands"
+            ],
+            "type": "object"
+          },
+          "Calendar": {
+            "enum": [
+              "calendar_days",
+              "business_days"
+            ],
+            "type": "string"
+          },
+          "CandidateProposal": {
+            "additionalProperties": false,
+            "properties": {
+              "action": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "authority_ref": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "citations": {
+                "items": {
+                  "$ref": "#/$defs/RoleCitation"
+                },
+                "minItems": 1,
+                "type": "array"
+              },
+              "compilation_intent": {
+                "enum": [
+                  "dmn",
+                  "bpmn",
+                  "both",
+                  "graph_only",
+                  "unresolved"
+                ],
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "condition_ast": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/Expression"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "cross_reference_targets": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "display_unit": {
+                "enum": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37,
+                  38,
+                  39,
+                  40,
+                  41,
+                  42,
+                  43,
+                  44,
+                  45,
+                  46,
+                  47,
+                  48,
+                  49,
+                  50,
+                  51,
+                  52,
+                  53,
+                  54,
+                  55,
+                  56,
+                  57,
+                  58,
+                  59,
+                  60,
+                  61,
+                  62,
+                  63,
+                  64,
+                  65,
+                  66,
+                  67,
+                  68,
+                  69,
+                  70,
+                  71,
+                  72,
+                  73,
+                  74,
+                  75,
+                  76,
+                  77,
+                  78,
+                  79,
+                  80,
+                  81,
+                  82
+                ],
+                "type": "integer"
+              },
+              "effect": {
+                "enum": [
+                  "allow",
+                  "deny",
+                  "require_action",
+                  "produce_value",
+                  "create_record",
+                  "notify",
+                  "escalate",
+                  "no_direct_effect"
+                ],
+                "type": "string"
+              },
+              "effect_ast": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/Expression"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "effective_period": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/EffectivePeriod"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "exception_ast": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/Expression"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "lifecycle": {
+                "enum": [
+                  "active",
+                  "future",
+                  "expired",
+                  "superseded",
+                  "unknown"
+                ],
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "missing": {
+                "items": {
+                  "enum": [
+                    "action",
+                    "authority",
+                    "condition",
+                    "effect",
+                    "exception",
+                    "object",
+                    "scope",
+                    "subject",
+                    "temporal"
+                  ],
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "modality": {
+                "enum": [
+                  "obligation",
+                  "prohibition",
+                  "permission",
+                  "recommendation",
+                  "definition"
+                ],
+                "type": "string"
+              },
+              "object_ref": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "scope": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/Scope"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "semantic_kind": {
+                "enum": [
+                  "decision_rule",
+                  "calculation",
+                  "validation",
+                  "temporal_constraint",
+                  "documentation_requirement",
+                  "process_fragment",
+                  "authority_statement",
+                  "unclassified"
+                ],
+                "type": "string"
+              },
+              "subject_ref": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "temporal_constraint": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/TemporalConstraint"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "modality",
+              "semantic_kind",
+              "effect",
+              "display_unit",
+              "citations",
+              "subject_ref",
+              "action",
+              "object_ref",
+              "condition_ast",
+              "effect_ast",
+              "exception_ast",
+              "temporal_constraint",
+              "scope",
+              "effective_period",
+              "lifecycle",
+              "compilation_intent",
+              "authority_ref",
+              "cross_reference_targets",
+              "missing"
+            ],
+            "type": "object"
+          },
+          "Comparison": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "comparison"
+                ],
+                "type": "string"
+              },
+              "left": {
+                "$ref": "#/$defs/Expression"
+              },
+              "operator": {
+                "enum": [
+                  "=",
+                  "!=",
+                  "<",
+                  "<=",
+                  ">",
+                  ">="
+                ],
+                "type": "string"
+              },
+              "right": {
+                "$ref": "#/$defs/Expression"
+              }
+            },
+            "required": [
+              "kind",
+              "left",
+              "operator",
+              "right"
+            ],
+            "type": "object"
+          },
+          "DataType": {
+            "enum": [
+              "string",
+              "number",
+              "boolean",
+              "date",
+              "time",
+              "date_time",
+              "duration",
+              "list",
+              "context"
+            ],
+            "type": "string"
+          },
+          "DateArithmetic": {
+            "additionalProperties": false,
+            "properties": {
+              "base": {
+                "$ref": "#/$defs/Expression"
+              },
+              "calendar": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/Calendar"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "duration": {
+                "$ref": "#/$defs/DurationLiteral"
+              },
+              "kind": {
+                "enum": [
+                  "date_arithmetic"
+                ],
+                "type": "string"
+              },
+              "operator": {
+                "enum": [
+                  "+",
+                  "-"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "base",
+              "operator",
+              "duration",
+              "calendar"
+            ],
+            "type": "object"
+          },
+          "DurationLiteral": {
+            "additionalProperties": false,
+            "description": "A duration stated in the cited text, as an ISO 8601 days-and-time string: P30D for thirty days, PT12H for twelve hours, P1DT6H for a day and six hours. Years and months cannot be expressed; see the instructions.",
+            "properties": {
+              "kind": {
+                "enum": [
+                  "literal"
+                ],
+                "type": "string"
+              },
+              "type": {
+                "enum": [
+                  "duration"
+                ],
+                "type": "string"
+              },
+              "value": {
+                "pattern": "^P(\\d+D)?(T(\\d+H)?(\\d+M)?(\\d+S)?)?$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "value",
+              "type"
+            ],
+            "type": "object"
+          },
+          "EffectivePeriod": {
+            "additionalProperties": false,
+            "properties": {
+              "end": {
+                "type": "string"
+              },
+              "start": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "start",
+              "end"
+            ],
+            "type": "object"
+          },
+          "Exists": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "exists"
+                ],
+                "type": "string"
+              },
+              "variable": {
+                "$ref": "#/$defs/VariableRef"
+              }
+            },
+            "required": [
+              "kind",
+              "variable"
+            ],
+            "type": "object"
+          },
+          "Expression": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/Literal"
+              },
+              {
+                "$ref": "#/$defs/VariableRef"
+              },
+              {
+                "$ref": "#/$defs/All"
+              },
+              {
+                "$ref": "#/$defs/AnyOf"
+              },
+              {
+                "$ref": "#/$defs/Not"
+              },
+              {
+                "$ref": "#/$defs/Comparison"
+              },
+              {
+                "$ref": "#/$defs/In"
+              },
+              {
+                "$ref": "#/$defs/Exists"
+              },
+              {
+                "$ref": "#/$defs/DateArithmetic"
+              },
+              {
+                "$ref": "#/$defs/FunctionRef"
+              }
+            ]
+          },
+          "FunctionRef": {
+            "additionalProperties": false,
+            "properties": {
+              "arguments": {
+                "items": {
+                  "$ref": "#/$defs/Expression"
+                },
+                "type": "array"
+              },
+              "function_id": {
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "function_ref"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "function_id",
+              "arguments"
+            ],
+            "type": "object"
+          },
+          "In": {
+            "additionalProperties": false,
+            "properties": {
+              "allowed_values": {
+                "items": {
+                  "$ref": "#/$defs/Literal"
+                },
+                "minItems": 1,
+                "type": "array"
+              },
+              "kind": {
+                "enum": [
+                  "in"
+                ],
+                "type": "string"
+              },
+              "value": {
+                "$ref": "#/$defs/Expression"
+              }
+            },
+            "required": [
+              "kind",
+              "value",
+              "allowed_values"
+            ],
+            "type": "object"
+          },
+          "Literal": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "literal"
+                ],
+                "type": "string"
+              },
+              "type": {
+                "$ref": "#/$defs/DataType"
+              },
+              "unit": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "value": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "kind",
+              "value",
+              "type",
+              "unit"
+            ],
+            "type": "object"
+          },
+          "Not": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "not"
+                ],
+                "type": "string"
+              },
+              "operand": {
+                "$ref": "#/$defs/Expression"
+              }
+            },
+            "required": [
+              "kind",
+              "operand"
+            ],
+            "type": "object"
+          },
+          "RoleCitation": {
+            "additionalProperties": false,
+            "properties": {
+              "role": {
+                "enum": [
+                  "subject",
+                  "condition",
+                  "effect",
+                  "exception",
+                  "temporal",
+                  "authority",
+                  "cross_reference",
+                  "scope"
+                ],
+                "type": "string"
+              },
+              "units": {
+                "items": {
+                  "enum": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    37,
+                    38,
+                    39,
+                    40,
+                    41,
+                    42,
+                    43,
+                    44,
+                    45,
+                    46,
+                    47,
+                    48,
+                    49,
+                    50,
+                    51,
+                    52,
+                    53,
+                    54,
+                    55,
+                    56,
+                    57,
+                    58,
+                    59,
+                    60,
+                    61,
+                    62,
+                    63,
+                    64,
+                    65,
+                    66,
+                    67,
+                    68,
+                    69,
+                    70,
+                    71,
+                    72,
+                    73,
+                    74,
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82
+                  ],
+                  "type": "integer"
+                },
+                "minItems": 1,
+                "type": "array"
+              }
+            },
+            "required": [
+              "role",
+              "units"
+            ],
+            "type": "object"
+          },
+          "Scope": {
+            "additionalProperties": false,
+            "properties": {
+              "dimensions": {
+                "items": {
+                  "$ref": "#/$defs/ScopeDimension"
+                },
+                "type": "array"
+              }
+            },
+            "required": [
+              "dimensions"
+            ],
+            "type": "object"
+          },
+          "ScopeDimension": {
+            "additionalProperties": false,
+            "properties": {
+              "evidence_ids": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "name": {
+                "type": "string"
+              },
+              "negated": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "values": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            },
+            "required": [
+              "name",
+              "values",
+              "negated",
+              "evidence_ids"
+            ],
+            "type": "object"
+          },
+          "TemporalConstraint": {
+            "additionalProperties": false,
+            "properties": {
+              "calendar": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/Calendar"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "duration": {
+                "$ref": "#/$defs/DurationLiteral"
+              },
+              "evidence_ids": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "relative_to": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "duration",
+              "calendar",
+              "relative_to",
+              "evidence_ids"
+            ],
+            "type": "object"
+          },
+          "VariableRef": {
+            "additionalProperties": false,
+            "properties": {
+              "data_definition_id": {
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "variable_ref"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "data_definition_id"
+            ],
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Zero or more proposed clauses for one chunk. Cite only the offered unit indices; the application builds every evidence span itself.",
+        "policyIrVersion": "policy-ir-2.1.0",
+        "properties": {
+          "candidates": {
+            "items": {
+              "$ref": "#/$defs/CandidateProposal"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "candidates"
+        ],
+        "title": "Policy IR extraction proposals for chunk_7efe5a10b4ca0ca6",
+        "type": "object"
+      },
+      "strict": true,
+      "type": "json_schema"
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 6548,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 13118,
+    "output_tokens_details": {
+      "reasoning_tokens": 3895
+    },
+    "total_tokens": 19666
+  },
+  "user": null
+}

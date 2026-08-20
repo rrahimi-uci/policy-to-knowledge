@@ -1,0 +1,952 @@
+{
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1787185882,
+  "created_at": 1787185793,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "id": "resp_0342dda4b6e6e875006a864a815ccc819987ac962f6fc1e0cf",
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "metadata": {},
+  "model": "gpt-5.2-2025-12-11",
+  "moderation": null,
+  "object": "response",
+  "output": [
+    {
+      "content": [],
+      "encrypted_content": "gAAAAABqhkra40SLeLG6zrRjSprxeudJycbrUoDGctclxvHJRlX-y7-VPKwdmIKI4CE-pCavYglamzvV2-6sRqTY6XyTeqh1viQ0q6L06QuJApL6RaIYvs-mwOE3X1wm8wi1VZJio7fVkgWEjhM0oRKNU19VSiwCIz1BWxqD6xCCLqtxpHBZLEixzZcSo7fD0SZVx6PU2YRZFj5CNWzuw9ZXfefc2RvnEjjy2U4j0rdlxQfGTzijc-712ei4nuO6nErAA-WF5zYJxOcorIvNP0wlqqlAx7spWshPHKk1rFN2Zcj7ZZhWVu-xv7K_h36CAIzT9hXdakDvkf0RkdUQVx3KK0wbvrRn4Xbg8tMpqhz_tqriwBOg0-Rkxsi9gXabyjQHd5KGQ0dQSoqkUIC4i1DPevcpuoulp0TLVRjEK9QVidx4Q29XT-gQLwCFUm8hNt04pDY5WAcbqpDctCJtr4NxAoR7F13aDyftwixcjWgYbcDMC5rBAdVvsAwtAMI8UmOIC2YFAP6xMqveZdfYjCuZjtBiPbrPLMzqBdisGi4zLgnsipEKOo2AqJ4i2ZIFHBP6V_XIepOJylL7A7AL7wVq_DwlzIvVt0wz265vyrdFa2F9W41SbjLj1b5RQnOujYA3_Gqtd0staIYKPqyLY_vFpWs0yZ9lF_pBOxX6cjsf3GjIsgG4NYAVcmei9t_QAADbdTIvwQ09S6gIbh5e5u5OS9ePdjeS08I9E-3HflH4oRsmS2G066QImlszdvSzKDqjwcCkKsSYqQtO0oZNrQg1b-MWj6rb8qufuI7K3EP6WCVIZV-8JrthegP0OlVbCioDixo-5VDRYbTmqsb2Ou_lB3RMNz2W0tSEYAQ-RD2iu-YFQqQ63J6a3QkKwNKcYSmkQLSbtCqS7LXW0-hY_zhkwZagjKgMdL_Np5GD3VmTNF2VLglADF94juXsGk7e5oNwTqwOsxuTlFDSs_qtQZaySW-LrUjSUhNEBExJAnovP1Gs5jRIyNlolK4EA4OD2EERQKeZXQLQe587DGhDp0QgW5gW87TtLKRfK2p2HuQOF8Lh06FCmWGN9lHkUD3aqZ4W17qamHkyhjuzrZvUeDzymdJRbHdJga2qMP-Rd1I0PwuTlxfAGieONhoC0D8k9l8JtM7szyFYTPeeidNmseWH_lb6hUL_WzISPq0F_nFpM9WYgdInZJURBIP730vVrACjW-wg2Zj82lrbpiPz47QgUp756Db6tgjYAD8Amug7STXhCPUDB008dVJVgrQtHacgFQro24mGcZyePpVT6JQwwrJUX-3EOkOYxhuOHT-MzHCCBVmQKEdnRVLvZ6ebV6xsPKPAWd75yPxY4Xn_Ulzf3yra0xOqkDyJ9-KDyyEDdXaqaA0Wepipe0ZWxCHFMLwWyIPZe_cMXe2SpKoXu73EokoyM_kS3x-FEH01S1J8bcR4uu1W-0BxxH9uosvWImLlJMIMkSkINCDCvUbGxVMAM2oRMztBELMPSXBUfBamDSeK5MbP7X49YeSl88i1N_w8ftU48B9RKf_qkpG_t1P8jE_hdj1eq2bgsnpE69C2GQ8IGPx08KttgDQ9cLm9lPvbKF0A4Kzy_G1MKk6Gf1ASWX2cYE8YyppjamXiIRWluOv7KxiXMQ48Cn3w_9poLMaDLjydsp2Iau9GLRdlIeitnek5zWh0dJW_8yymvV1S_rdYUAXt1RN2ckyLdx4PvtbjzYaNk6eia_QqAfmIzQY1Wp4xGWrsd4v4qe5wEQnEEXz6nHBgbn6ReOPhIPUphsiiIiN0xC3t57jOuBm6p7qbv1pM8r8OPFiH08V4s8Udv0qpz5kvSrJ8wR9SZUy-dAL7wRNYDnLBMz1Gj4gt5zGSkagmsrrY4B2f3c-MI52hI9WNAYlzEd0sEkWFXa--3i_mQuGOmsY-oNJl0haFjdZd3cVDlTnnOQvYaXgocQCknRBVc6lsnoEA37XkeToucaVtZ20iik_eHskZwdgoORRWeX-bcfsLgBPHHOj63zx7a13tS3BT7QJrgPS_lT_Y_7uo4wqhy5JqhXU68Fx5arWJeOV79KFqK1LYnnurAW4WJBgKW5L-p9ep4aegrAjbo4znwoWuumauWp4_H9hkdKLTN6nhJoWVuzOFaJiFGVTqG2B_9xiVobU8DqELrE6aHWvzKAQvA5GmWrdbwPsPaXcyXdnZHCMOE1aVBkVysnocFkeo2W2EDuVPjY8GA0QmbaNZnO6h4buT8DNsfo072UUtiBeduHlVvfV5Au6tWfPRbpFj0N5Jx7LQm74b_nLoh3H2E0VueqLRTYsPdTleQHdQo0IVbwpvE3qYtQo6AQr1Vp1W7mP9rh18d9VLhKHjs1f2v6UwJPxpCOo0TlQs8pe-Xqp75M0Zw5Vzcl_RadWcuCNb_eRXTPjvlnZFlgtw9g2gjvAY3ZdURpTrf7Uxzj-3iy5WVBzFKQZw10UJHIvwB71Jx9CVyCPJk36ZlA170xP4Qp6hIJLCk_AJh3XCu4QmzdvG8Qvh_6EQCPMg_njaiFBYzdXCffk95BksFL1V4Uvj-mCWx7w6UCjVLIZEkFIkh61qg38Shqo74iSz9TedAPOAgxWOeTZAxD7pPwYH7ULJ-VmZiW8LuRpntgErturBDGmZYDzT-C0GiOBpp-hKhYBX5XjL6saYm8Xw9P-yIHNYimUAvN_SPu-a-QiqpzJppt9aU0qgwxYDUdNhQXv964FoR8vCtu9zrA5HLwJhDqj05OutDJ0QiG0bn2EW8185BmZPBmBbwuTj-hDLW_GFTOL6ArZWX4lA15sxwHbJWGqk26ZTEzhQRwVNv5YvM5rYsnNlN58_zZU-qxHid5xWVdVoN_AN3kZm5fOT92w3-_RJFoUCOQbqxGQwI2NHtXIixopCnRus8CBJWvCGK_HKXG_Q_B2r_MPaZBkmA9C51mY6DLr130QS-D7MMid_KO33f2lio7WXPgVkAP6I139bysRwM1XfKJ6E9nJAIo0Nsbzcdlunv7zX7hEZKB8nOVUCQAbh7uVGDMxTcUuIVrG3W2mRYhiRcegG0DV2QwMBvnE2uOG8rsJU1vEs499brtpaMpLhukuiM5c3YYm_3O762WOnkD6VQBtl_WRtbhCTDoadpoHRUPK_OOLLyOz7xINPJ8K9mQLooqBx-DukW-ZpPoaWgkHQwrOkWpPr2GyQNBiMP48KpEkkWq0X9LiScAY2mpvMjZDs9IEwqPqj6JDtiXELlPhh4XbT3A2xMl9gxTM1ZBnLy35tAh556p0p1C82WSki1r4PjHT7vWMg33xaq6aVQK2EQLPagLlmuHfgXqeItpcX0lJ8-OSXftv5E11LHBt3Rd9FXT5Yx8tmdPRlGjvV2yLFhOWjbKokJYR-CE1JzSTY4AbjCwnmHd_YIBsKyfBRqhilXpzz1u077RbYxSF-Ugb07I41W7F3Wm3CDWuG3mXWKhGM-03sC12NrfdNMXP0FLijtQJ2LtCpqnHTjLbjw4p-gTbwKPjS8kzFxPlFZ1VzcNml9Ccy022lS-URWxmp2r-iC14dIPBpdKyqcdfZ0yYSx0QznvZYEUcY3WSg0QxhjFOQYkZ3rFEfEL1APSDJLmn_qYXQnJx7W6eE9-1vUhjkt4vJK7-88wY-C4NXCpfzbVrMEFC0mBPlMy3xtclRckfMR82HRRwax9-F_WmEbmTSBXy9__d3wIDaLGvD1PUe9KLgE3pgfxVQqBFglr5puGnu5k0uAGoaNv3gJkzDXd957QDhkGhI36P8LLAeEp8CBJ0EqedmbSdgD1f3EhRKEzorJNQ2xdYRdw8vOu8Q6z1cDmNM2y1uK6LhyxDDnZ-bEKAAY2oOaVpUQKoXGMcIEIkv487u7aAJ2tFSDiIXLxmjR4Eyj1dsmUI7441EH0Hz7RsNr1x1sS0nLgYVUgcCgRRHrZu1lJ_MguPFccVogIqfDRPn0lsj6S4FzTrmFuNZeswKjcwK31ETbx68EFCjaY9S6tQ4UEQS7cfYZnynqyG30_BPLhvDEtFrafN3dKX4P0G-gJ2J1KA3sm7r5sN5_hgVxzv61P4S-y8L-sSmFvMwQieBMaKUOtz0gVPQ5JmYzGDYlt45_E3kkGIWaYBw6jnlsVr6cy4b74N6RC3319EevGGiD1Pf-KBmkZOvGKbnOfgZFDipHwNWyLpcCK2_7fRJbwc8_xKaXmxDwvmz4aWsdI17UBc8bMfX4vuwPDmDD7Y5JJhO0zVXBKDPaYh-oG9xVLF2wDUg_NxFYNhXck5J03jcFQAWF-B8vbvzQHZUYcjLQE7oYlZZy8XB1RgEn9DDrUlNh6P4p4QE-Z9N0LzmNgk5qwm6LeL3pj3An3OmeGB3WwQAER2DdvuPaSNmrl3i1S2XL_ma5jPPh2NV84DjN0Vp0UZzaOhMttyk7tcbaEyiBRc6eO-oi0k3NzG5EHHCuv2ImAAo5FnBnK9bp9E-KhxwXcEd7ZC0HDBrYo72_MNKYZBjKOso-6bED9Kp0p9zY_EeXEhqT3Xt7j6EFCgSAuW-wHxZv3NEJD4kd5EaO6jfx3dg8Q9HhAy5Kr2Xh8gMm7fycVYxerMvtjiNzYrYInk9r70PLt0uCmcTve0tBpUdJFvIjf_smzLMXt5ojurms98NFiuRzqgeSynYWO6tvxYuUfr_RTFAccbdAwGaIjmzrUDkd3YCVGr_zk3slOYZKUenUYMz7Ytti7Qlgee2hLtR31ZngnOfvdmsOQJRvI6tXDSUosE59NwFyWXze0djlo71ljp_-koKpfzlYdIyUBRYKSBTx_4KZFyrfhU3f8jwVcvh2O8Vsx_vEQ_QyRN4R9U5TW-TOgBkMtg-i_VI4v14_pIfZeyogfxRyJwUL5suRBuQswxSVSSijsjBehOMX7XvjJSuTELa_NRaGiHRU3V6g4UYy7FnCacvvZjwA1eQQh0-IjaL9LqPM8Q_aVo-X13UuISzC22isVV8zujTxLO9mgoS0q_VpiMWvXhWm64pHjSpRMnL6VMi2xQs1pfgnLb2pAb_oAXk6pC_OX8_BkHTMEdnI4wgA0gaz9dslctu21DUXd3VBho5nDYveBVYyZc3Bsy6o7t0I3Y0kt7ldpwJA9DleHcMReppsZrFsn7b0mZK5U7MoRKzi-oEeI-L-ER-QOEv0eZ4VRn5VJdHKJ0vPlPlR16TqjSx4tOYeOV56VlVNSNMuLCE2kFJgGz8n-YbRyoXkoGe3-osEatYDobSXAzW7mNGRhjw6vYTzuZPIoDojYrTK_0lWciXQGhDQHt8Y2BA7nzyBWaqXR1z7fQjoMZrfygE1cB8YLqjA1qkq7DtsuLHn5e162Ydt9Y6f68TFpbNG_aQ5FpmcbTLIqhpos-sA0lFc22mx38IKgLXs5O-fkI22eAKUgfAwwbiKzk39dyNh6rkShHCDLJqhMU1u3cbZ4zHwTh2ANrvi_2pbJ_q9xUjC46jAwYJ6xSq-dozoO4_zFCDPxEID-CQ-hYeCY57rravMM1q5T0dbMcvk1bIO_1fm1FJvgV6k2XUIGrgzRe4DxiNjmIdETVJoLLwvj0eKOxxcgJY2G-JAdqBLLcL_60d86WJFiAQRYKsFmNDzb1xUipxg5HTHpW-pvL8NpYz1brwZlVPVsxQ5ScC4AjQeE7O70_0Ei5bto7o9keBsJM4B6Ra8Ulnw4sIsU3EoEomOvg8sPvGM7PDGvjFldOJQu8frl34QyAlSKxpCpJqcPY4r1aNsjaM_YkQTHAtwKVTHmRWVDgpYGIJru7bd50mrSrKu_8cvLDQIpw5iL2-mdNUHX4JnP1boxsaSKnph0-1DyWW9K0rNM73RqU-AoKvaUpB7ZfYdxGVdsfG7YiqsB6Eyl5SeA2GxxOXrslhIGdUxAFdfFD1jRB-VvN6WlreTw9iqfdRMjP_F52K4tHd0MT1PIKJ3oi7bEjULzHBfqLLbVF_fy1S8S7LWhzT7jv8A4oIkyGQO57zD9GeqUbsmNC-8Zo-TJ9kGoIAKaEE0uzWraL2Cx_4LHhvI8vbIuZdSbYj7le1Cg_e30ecqn2RHa7C8TAAK52PWXUkRVFwXHGHlk-4mrWDmWp-S_r--ZnlkTYnnXmPijg6T6MrwRPdSqcVr4vce0a4T_g2JIO8MCpwaKI5qv24-d_Uicc63M-tdiMDlpXQIqzYtqEf559vVm9xw2xUmVOHW-Me8BU99Pfvk_iXVLi-Ms9Yvr8UGTzE85dE0VVf_kWgluz06QQouBoWyimW197RRpyTDuaMzKX5poZUooFRbLz3fjJnKgYRxhQg4D5RPgXeTsSjTDgRy3dzOatMfE6LrIGIUHurOYf0iHXN_rERELb-kbmyPpGefKNfatFCueXDF9qwh46eDvz63_amsoOhe_ByqpIILFQzUAxoBox8yC6dXIQmkMqX9J4VxKYeXWRkX_5jBV-kjAiSxNKqy77NKs3qj5Ga5mD-ut1YpSDE0D3gvl7767o34w-pr78JyGm-BYJ7YHSIsC4Z_N1Efn4yLXs6KpRUMmNDdwN2Gc0IQ0Or9gxhLzM7SAEn6FW2awGM-JFgTNb2OoGPtOhbYpEaw1o8lYexRrumRNene_DIe5oyvK5lRqFmJfg06-GZLXMk-L5_UHun7GkrVCegfMmcBxN7mYFfNfsR0Jyy5ouq0mNmbOhmlXw8O2x2uuY-PAd7BN7P485CjYqBPaauXFJqxBGixI7FhZg411tj6u27-MVX2cXhPtliWNRraVbYg7B9--E_49tIkWdQ5JpQHniH-y3W11TH3lJuaboCHg20HHljPTWlPBF0JJd9kiiN9edE8edQm7Cs1hznDPoENYLWpNzI0RxyL-eq-8dtE8gM1kpoD6FGTIL-Renk_UCrNjy978G2o110rhRvBQb1jFYO7VJomX0jsW4HStcQop5S-OgNQRnGcnC8RfEY4OloqzK6BXp9EG0vjhnLfJA96w8WAeekgkBc-FkWqjyxcr3Ke3xb82mFtvXYkkIBBlR2slnjGv1tP7jzb2y-wUVy7uTmfEs1oQ2tyJqqEGD9JyPl5rNgEnj0hXBe2-9bco_lcdRoRQi7Fs5IjHOoUJNxUhPGvS-FlOrrqxzoX5rIHj0lpCpdKrqVSCzAVbMb9H5tUCVoMRS9PtWpn66G03HFas6W3I5TMBwFXqOnuzsFDCDlswRXEL8NenYYzHiKdla2lTfKoTHfKk3lwnMhUbBr-Txn_Mrkt8R8VGaga_VN3_YzuvKQKOCegBsX_f9eSh-IdRXz41t_0SxYrwzXxNkycTiTOsoh8v35M-eMtFaNmuKB4YYSg7h1tAY47QLbQeCO_xLsxIy_bnSyArkgOMtArWRxFbUA4E1W6FztMRkMd5-ol4FkvNWQy6lLvFOo4RKpxmHpp6nwayfPcKcU8aBEOUythd8-C2NFX4AfxgkWq9Qqs8fEdroR8-6C8uzyqPMyq3F4ly6XZJWeYebHv1va4xHrCHBrM8kkdFaa1a443LFrRPaJ3BQCyy4t_XzSYE4pjG_QmRoOW-dTqqG8OykZohQSilGkxJ6qlTU7NOH9BrBNjtAGQe5HZx9jBtj2Cz4al34E9b5rrXJObVlbFK8CHYxuSaMtSqxJVahNIa-LYnAO0jqB0nchygaMcs8ct8BETNs9KgnRi2FA2dFOq-I-W18OsFAYBI3jd2CTBnp9PMtLJ6NAOsbBkHBGp7_LGGo0Nav0PoXa7ni_wqOsxdfW4q79dd0a80W_vBl-HWlqZBLt0qlR--gkrSUeHP4MhxdstdElo-V9sDF9q4mS5lqF62TSCWpu1faz11mxxIGuUlA3zJmailAjKlVxGZlFfPmWQw2-M79h1AnmM3F-COm8W2lKp0sl0-HI0mV-DrNTXXNVWZSJvtS2lqv1VgnIHx1gdD2WBXD8Kv4mVMMIaLM4qBuCGvApDeEH16IQzZf4UkK18mQW9Hsj_PPvyy-y9AFLVi5NDHcx87DAkmFQ12nECWqSQABloKe9RpV5VTmFPkkMWH24IDL0kIXiY-hAkNihf1-RWS5PlBwaK2gIw78nn5i-fypbEPTgyuuKQ0F1diWv1PPgp7id2rz22Pelcyrtz2R3jHSzza_pJ7Oa_tsxbAxf7nQX0trNlwlMYRZnlIYk-O60rrFUs1WMylMByJ1PsfWlUjIbkiwTMUIlqweObfhctTAJ8SD5XkLzfrqDqTRjoweJIO8Dz9jQ4cNbL0SlRVr4ooZw3gPpMhxHnykKJJX_r5nLnD7LMZulNaPIGeJ6U7uexQfRyBjyl7DCTsmP9r0jfDufAzqKPzQhprIXJb9CtlIoX_p196IvYA1v49XC4R9YFBwpEBM6Os5giiZUr-kdLRko-NFbk2CbG2o_4p8k5kNgXNnH6o2XflRvaT_t5XpR1pNzgxb3E5ugw5Nji8Pn_bkPExfQL1KTx2b0HP4NV4ZGgaz93gOxvhkPOW1Ouv2dJbJJayKdx1oo09mXT3gj2sFlm1--L3QEWjaq5XxijD_R9jkzvvvdBviHWeR0fQyCsDGESxF_l4_a7a5ainkFIYHYbMLwXQ4ceYTcxiKKfUCktkXBdMepDEkYMoNRnAybGL_Q5_GhnTbONTOZkqd_gQjv7BMOlOWCI-wWqXJobplR9Yat7z6fR1_TRpqpMx0MVwuYDXhDjnLD5o5ynXBR5v9x2oG1W8l_N07-4dXP8cu8TUnMAijQVEK43EaG--TW_PS0ufSe2_bX3B_BWm6H_TQhSlJVf3hLXBM_aMRPOL3SXYew7bpfOsJdHneeP64szduYGJSylIifvWuZ_cBp4YVgn-Os_kqKVBlF3IgtQO9JDI3pl60tbNXvzfD0xXsOfMt0YlWNOjHucDFMF1R4HCzN6un-6brJ8HPjCiqP7P_ULWXZMFeKRJyjpq010hNYv2O-0LNH6yQ_-2M-CmkFXI3EfCB3v5NwTXKn_u3d8TGpNQG_GeJpCEwB3u3qpv3Ds49w4MoreURvNBrLEdf-TyXsKtKno0csgarOdHVp8tj3Kktn1rXE84kzMqpDjCrNJW4gjEm_S3CUj2J9Hv6eKUQoIOGmDFQCAabaIklFBuMNIB93dnHq0ZPOn2z0O7ydKiQn0HAxbSZS2iFyQp6keGsURxSEGnM6tsxcoPgT3OnPjlmq29MrhrMpjcI_kmJ9G8Gt-1zZ-Ua_Ti5jSz7pLC1Irsf2fs45yrkSouO3Zx18CGh8z-URBFjGCCJXUSDjjsUbMVUoEbzLUMgeFFj2xVbwuUtYP_aJxrVcUFPkVzIXhaAFwtDS_g2D_mS71qJJCYP2Hk1vDaSiiyfMKLZm0Yf6QBpyrNUiywfP6JE-KigxJdNAKQQ7utI_f5LspMGkU4CFPAkcbKD2lQRgLj-wGmJzNqc8xxHbRLeWIlYODMQQs17qBAQJG3q61dCriEiWS2_ZX3U7ZL3KJ4Lg86VYlEQX3KfApWvFWxr_g_Q9LJG_9Yuzedq82EJfk5mCsFkISBWRpnrgLLS2vVmr1I-yE0rDiNPHUWOo1VfprQM8sRV0vjZRsMUefN2_d0g5Pj3FFFeC8g4vqY8-uUJHIGKIWI4XL7HdXpvtfdRc3q-h9NjiBuQwFqSq2jdOByhn7Y7FuWDzZmwyx1RY-fpLOKSCGpZiSmyfpAXS3SqnzKAVQatwFR2UOEfo10xUsxq_3CCOJO6ZbbQoo770DgLeKqKj7i1n7-69gP7HKYCgJSThY5cWsFD22Ok2Vd9q6ENjtlQRkpK8UIVPTFg0CiKJkor3HkN2KM3G4Kn57Qf5z0dFpMSmoDXvjv7V6J9xK24-qFdj53E339A9rVFmZTs3hiBd96p3yf6gy2wLdLXJhlqvVI3ZXHXt4I32P4hwqUAY0YdTIipsbrrj7iSz0h1M0bPfEPeAc_zOnK4qN2V2PXNvHu1ktwk1dzMbsi0mUYt55eP-jn2BoqYiA_FEjlz5u-IEUWslngRyjFEPGCalbSaM6HbwAUSNWIcXOqpkTK6ahy8Fh3zXXx7QM07Bs-gUGqPTyOOqxP85iDMNH1XDJ8j8iLNxSohhTV_6PTYKdPF4ATskaKj_QP4iDk76bvSLvzblicvspsJlBzCAZD09dx7h1_MBXBssDHf9G6bBMErITd93PJ36gPR4FAH5ASB-dIcwhlqEnEgvBgWlJCLXy2jHunWCMcFSrUGLMP4w4x4R5EMwpKDfWIkIpMbG_h1FXvb6Q18BoNJayrTw5fQsS83RyrsKfjGX71z9ozk6gsXdb_hihjC8cUU3FzLG0qUrYpQKat2JcDJqCzJ88OofxNARo4hnDd0ckHP1vsQtVEv2gacBhU1uXryZv-3_pYXXy2VsaGM981btP0oygzd-VGnwiByT-MSvesxmwr7JYt2RgtnvZveV4K19r4w_ihTXNYuubwt4kDtSvm64aKt097v-FcDjbuohdg6VPHFL-eNowWyWxktN3uhDwR-yyo851RYsOseTMp1g2qWMQnxQEQ4sdA6d5sHAFQze7RQPayCB_zFpkHggwDCsKoL5I0dRwWBLDkUI17zqoE9CTQurP8oOmarVkiGT3nq8fc4qZYCPkT-YDCzpqh4kfGsHctBKost8trHJpNHP7I1ZJU-HFMXoTeXlD6jNVfY4nM9uLmj3mvry-LC26QlLcDYpKWtgIfO8mFuHgfoaQWZS2k8RzDU0BOlXDZtFYcJCov4480GDUShAq1kyEAjtSi3HYvs2_oBDOZz090ipQCWjQuT5hHDE-aCn0FwH3uvKWGM0M3chmZUx9F1UwqGcFZwYlpsjlviQRbdSEBjMg03l0MNpt9M7VcL1KgBSP7JS64dZ-RbxZe_FmdT8y0xWX_IpmjWZV68Hn1w9PtEt1G3U0gCtphznwqqG7umx4rf0ytOXGbKkdvQwpi7cguoePYOjMF-djjyKTxV_vDPWOnzRoZq-XGzNmvA3C81foupEjlEJLz3jD_j6rYp5ViKViNLpeB7VB6i1jfS0xfv7qBstWClarueMIXbRXie2kALMWak3FDjA7gSfWdtcqpxCoZlq2tKv3hgy8XB479EKYNXRx7CGCbzGlsP8fvY00LV8HnMAFWzyviaguFhIB-Iblv25NHhkQAHSXTO1r2IHGM525MTVomn19ZuVdCdRqNu110C6MGULodhwflpLiGZadMOjnBOxEHJzOQCEsorNPEafngfYVi16B0jwTXyAsGAyQGKz92iVC_PhSs1I63_MrnOhpo74XSDGxtvaouYqDCQTbv0UvrwbXiXfIDiibZOyN2st-O1y22DP6HYXuyPCcgNkzOcFJiTyOG95bCdysow5npOPH5VxyWoShhTze2fNJaWzYzVFen-kiSjzcVA1S4qpdPsZRNKLoResaHUp7py8VLujNztJE4NBJ__66jW6XBsTbHVcIsAEeK9kP3HgN-3j4TTpcDWAhpVAVG7DSvclicwbYEjkwTFP8dTHIzbEPLdGJhI9fOhaxUMFTnwAkgpR8_O3vD8-hKD9hMscd5TQApPLfio8Del18nBMS15h_zt76vkNGUYMouF2EWDfJdDotRUME4GpeAnFBSaXEdB_ruQi_BlHRCruXYoc0gmNYrPaFxJptGMJuXqzx1DRRyGtno1GMqEfApGkcvyZuaavABC5Wl7fdsm90Ya2aWEIjPA99VNVxCJWz1xbHnLEOq3gXlp6w4hW-aGrXQgYT1CYczDupuJx704GQn5KmH44b9hkE7W4Q7oaCqNm8edEScvh_bs7H2-J6UA7KOWYxBPqeygOr3EqEemOmXXD5faVo5WiKlkVKbNDlltcxFkQtll70f4JQIyK0Fsz-_1lzAAc1IEiogwiTuqqUa1q-5D04knsoLMHGgv6kR28S-4IQ5Yw-Ezrzuc4UszcaOyxbtAWAG5R-vrJTvUcmOJkRhyri9kIZraHtmTgRHOtypmvZjx_1vyATs_iaqN2Fone1bU8VbAgt-6etxYdhtdZHRkN_L-mDWt7JT4u0qhtGokgTeyj2vJTyMC0HLGSptbttfswceqNXrY_bYX6cglw-7p39kSdJWVACMHBRL6uNqUGWP2lXNtLdN0tLzgaO7t4FPF2rsjlX5P4d66LhdSYGAxeqGKDCz-wQmqyoG30tFFkzDjg_e5op1MbDU8e8Dlufyzydkp0pnkTd2EvuRK-hQ4wZqxHKCP1izbGkyNH26VuQwaLcFByGpcoEYHgKdrekSzvibbYSda3LcoIUDOIKzdo0nrBD8JFMMclDyznUEAZwJnjNq-KNiTQ4HR_Z7NUcZKOHrVJd7SgpQz2q5FfxeL3lLfSPBSsLnHXAM-uCCcCeNyK_5yDsbX6furY-AyhGxnFWuFwxBASrCqZ3WG5AJeAzGdP4mCHLsl79x6rNPs196jFbh9EVWV5W1ifeOmumg1eg3A0iNXXkWryviTMylpEp1okuB93TXRdfTCNJrAIsoNCrXFEAPAEUYLNWqAc6bb_HOXL2gxN24j57hegJu44fXka9MR9G5lCw9r17hnnsE9DVjfX-sSPa6ltFScOf_fBDn2BCig4ifdFwhcH28iQS4Dt7bakkO_UQw5AJfgHuuY3rkZOpjmQy0_1UV0lG9jreEGTyAPu2i2FwBUUL_egUADRNw4jOf27Wj5g_-QXrrFzpwxWWqx5XSvs72AlGPUv_czUniuT-LnaFyIhJlpMqX9n7drqTr8WJIm9vF8C1ljOubl29iO4xXaabQzT09y8z9UJYoSrj6PzuzYzlggB7w0_kaTfQIJY8_kExksCUmdjdLpdprXDIBXPBqAjYE5RPx-fm8OUAfElOYEFtieXhymxXI3etSRwBjhqWBx5zVlLFLWqWePzVGh-_sc5wi6Sca4BGiJKRIumVdUCVjY-6QDjTFfqnFTIS-x85aAO2H7K267ThElDex1BWIz5rjliwCTkJLYknXHSmQOm0NUylpJGsECPwiftfd5-ImIIRdEZ-T0faZkygAg_RaaQF5QbwVslRAdsVIXOifGW0A3nbToPiWoY72lKxWEY-LCJLPbNLUrCzLv5lKdK8SJLW2wxXYxusx04cvmbRwx7vv-pbjuB4slleR5V-tzQDdN-DdtLeGSXJQ35yg7l-kZQVRpqkuTJ5vnE36eJyJMaEq215px_ZEK8QJXYeqSgEeOYsB2zt4IXu89qywG_Jl9ePzPzrT90EpJMNaTa_Z_yBSK5kM42EAwcvG1Oc1UkG7GGU_eD3dPz5Ej1BwW8mWMpmOmZ9sbHHxUHQoUr3IvbLOzbaVPqQUkIXglo30TlhiLyDZE-pf7thC4ruf7j-c_kOsvZ_eUPiyW8-ZD8AbItFl3-Ikm0gmr6xrBPZJnkZHmJlx2zg_Vodk5-pxoXdt_FbJ60VAztpghNpAZu32547QchR5o-70JW4sDsl8q4TxbbWtOlxfjaS_VflSEMKMaWZpdkN699dQyUj1G3rCsR2gQNsQySFDmyBwv5OyFkXMKh0ruBDLA1hTqzbnZXDqsZJoNxdeieLQI8nDOnrxff6WP29XxbJGCtl8i_sq4MEyE6ZHlvxF6CNZgq16Wm4j5r0xlg_FNYxWF8WXG15L5nx4iI1luWqgJR8uTIlMstl3jLytq7U2_FjbTR4bNwMFKUOsQakeeBWKeZXACSl3sJZR-6zDlQxOkUmoU7cQwSeuBu6LNdlCjjJ3ys-3wZSo5TnwkkFxVoc6XV0E3AgYZIYCTiU7UBw2amrJRUleA3cSXn_vNoojGxEVZifd4u9pklRJGn1fgiYdgvOP40J3t1O8O_G7fPuJ76nmbFRkHhorV2rEK07Acy4TjVQtSlYPG7dWjQiD6ZJM5zsGRQBM78oot5DQC2Jrsh31BEVVlNwR2DWdBTCP8iU-lSVIn7arBtcbWutOioUh6Exi7umXdfftemdt5Mfe0GBk9mMnJm0LJh2AFQrxGAWPxM1Wg8oz4VIfrE_Q1P_jhXxwPtSVkJ1gPMYaN4z--zhMlfkrtQv6Er9_usZ9N5P5W5AYyH4A4T3YNSuhNvmA-oJV-pLAJa9kvujZ1ZtKyCEzGYrq_1glWQ3hYx4ZF83qobSjw_ko5lvh1agSwDzsPkDscRwDvF-WJQslkxhQaLMAF-XGC1T1mB_Djxx2ktb-7xxzTbhIBO6wHZNK2ZWEo5w7c7gkTegA1mrUmUB1sanPiu2OXpc7LNcBs0F5W6BQeVuYVeVGJeZqUdNNjB12RrZMUI4fpZI0ivhA9TPrH84or6YmEG3mwCUXMp2zdemkPRwiHjAaquf-zuNHUdWUz6Yo5xjFiA-GzWfsIZlO-8Dmq_cPfEbN6x_4NUl6rn-hBir4EVRYXn57HCOR7a6IOFsq1ltoKxqDyG2sotSsoix-2AcK_d85rGZwKG3-VhcqIs6oOK-ya1aHBAUQBkZaiknNMfApqf4J-Qe6yW0VTMfLvIt2vQZ2z1Y9Od5ZMLtS26CHjDB-ajtg3g6xYDr6zdCQPFTJIoMpi9Br0nSsmF7l2vdWIQF7NPjnOgt_eg11yZ6fNJJMm5nBPI9Kpp672dbig5vqtLjkzZHjWPvShfI32Vh2ulyIYhN-zB1zfAts_e9mhYw44KxhYTf7DOvVfhQB-KlP9WiuMCEYr6v62Se2_PzLkvnDSoUoIIc4pBPlznHltIqguUNITuqHIr1wLFfcOzbSNGwmhfqGBSbSvbmPvXJT47BwpncZ2e6ZaI0d1GLjjm-1AN1gt7ZgD5apn_E2VsDKQct7s1yrOGinU-GQbMqEBVcfjf33X9FLj-EoHfSdjMoAfcwjkpNabhPDQLkM4K9c8jzPe-kaoDZ8EvvnhJ2aYzJAgiuS2lD-NicjU-5DrLJp66JH8GdjmChTDitIfhr-9V9TFmr9bhf7yjhzVZB8vU3bIZ3gAOXNWh9Sd7oM05bpxFc1bhPIGnEnsC6O_hOAMPh_m9DEZ4_Ok-1ZItgcpxqLf3wQMtd09B_aXKrFyAUKC_0K-T5WRMxMqM8L95HRNbT4kO7bq7tg0u6h-AAEVGdsbjVFwxI_HPYCP6j_Xou8g_z2Piy8c8CJVHitMOLEdrQkoBk_fqlOdHKAIPOzZIE8N9qI3A3lmo1-EfxcYv_ifyV2hWaC79UZ0S4MhCO_oY2OD29e1bR3tETjnl18kuAgyjuN8In2ILPXfaJslHfkkIP6fLcq_IX1rcFCFbBzY8TxN9OOmC1XTa4mYr88S9GaYrDNPZX3dnwbwQHStI7CI7_Yt35_NBFOwBxx4pm8X6yqYHGJlgEmXOTfRr-1gc-SMMrb2gO4YnCYpoRk9wDnmcn5qazXhvamiQOnckdQjbmFCkNu_QJ62RfIWlL2SjWywU35srgZSb-QDCgb2nF7ONqUbm34L3UhqAydtWemdauSGncnyUt6qWdLwltztkvOXsYA_l10_C27x4D6dkUJTvV9nAUGZE-cLPikoPT-wTJudzURU0bJzttcWJ9F6MqilvRiZcn3u3wvcIOAp7yOErBPwwB0_rbPr_mUWBXW3dsGQDNWQovbstA6_GdQZSoIT1KJInW5PvyXhyaOYi820aBGd0_dz0sg36YRxbrGbNjvtmRBQMO5n_TcdbJSh-njiW9zlkEHv8kzFgmQoBcItU8a5uWO8c8QxtIDPi6qHMrDvp_ffUgakoabzVgtVrMGA_VqTYFxctjFqUb9CswTJnfCsW9w4hWmrC54J7wEZ1Kp8JBuwP6hLRdK4ZfCoJVSptoqWcQUG7SRsATUgvB5bBLGf2uGkk782Na4_Eakyv3QXa-ksKWnpTZuY1_EAons9SXLyVvOrnxccrOxAT2nF4noduW0_tULFemCzbwXbdG4E5ANRTDtEVjs8KKUyByxBBrzbu8oG5GXGTaX5N53fS0hj_Q01nY3nlhR2HcTCk0FUx7BXi06wKxOqJpoOB85s_Wr3d-xEFxUndkHcpU4AOw7k30QY9jjGjX0ED43hbfZHEaBNIB1LdrA7ko7F7q6IpfGPSriLmyGKsMGeR3rnaduYLHG2AUT3Ax7ae61M8Mmp66Lgbz-eFh9GBxY4dKpUuluXDyh7nmDj2AaIpF0eqPOHIoWDb_4DiAxdp0ZfMIxyjA6Ne4CuQhfMAet1bKfF25GhUw6F9MO0-OFkB2105V2oRq6H6Rtoulhwu4s9gT0a3GUGx1z5hcQ83wluGNgGDOOGFGn0znXDB1JuINWizWlICIXQmo3lCenLy2CSVClXTCpKsMpNGx1eJbAoDiDLNwpO1aFyzLFgLSNdPO-0T3Q8sGuYI1Zjk2Y9xLjXy73ojGddER8EQeY7NENpKr17PG-8WgLd7CJ96jg0daBhvUZ4ywvLyAl-j7Pxi86yewy22iWc5Kzc8ShlU_6u1ZOnbOgtnZxwsMdaR_8ehDGNH1Gwr_rHwfUCvnH-e-EV4D7vfv8wL56X_t7Pr4G0EO3DFO2YPoc3QcN89264LOhkW3ZSn1eW1GYwvAZcpJEqJZ6FV0EsK_kPHq_tfPdvab-sJLoGJPWyzSiVm6iP6GiTfhqnQ4FWRwHQ1vchgf3LjJoRr09CKEI-N_iLwPFdg4hRIRIwx89pUzVxp8k2R4Xh0yjfewT-RufsCSuzS75rdzx9wOz1WovC7DRjuq_LuZNWr4_mJv_567FuzUevPQl9PC0tcqHW4AxumDH-KZlfKeMx-FUfjXJwJ3PtWGuxB6hb1Qb3FUTYIajcXiYImPITpgAXZKIgFcoUsis32Ru_8L8j-w-FhNclulW7LSxeKnxU8T251M9ptb8a1aR-pIS-eNfUNWBcCguLMDWNBZGfyh8fBs5BaQjF7zkojbwHitVhh7lVnaB88TgzVNGlqp9bBYvY92n3ugCvjKBOKoGl7hTJgJegf7CsBNMn7ECNsHPugaiwM96MUEnvTxKcRvmFQMVIwNvb0aHgoS9l7RR4ewhPCrxMhglVa1QQdME1cw-gyr1y0Dm_k2q6BQ4x35a9l1bQVfiRzt6qoC4Lyr43Fokmkc8nME0ADdOj-a4s_DZ-W8JBKl_MkAJv_UXq511mycVQnKdyyzos4gLO4WQX7gOjrScN7DlRaxMUCUCNtF_SfFBtzet6DdfRJPYXf5YdoynlCjTjBMQ-IPsx0mL8SSqET5A1JEb504xX14u4Abo-TKkjSyNid1DUFpBV6_2mHhK0KcrAc6Gw8DcvDgrKmQU5UK_gooN9_FUxzmEl5sjEkAOJynzE1MmEftXIYX1WyM912ZvxpZyk9xV1-tB9nHmuupJ9Y9O56iPIh-a_3nVjhRHeZ7fKI9zA5psabGsELqePUDFtnbB-NsGQaOPzhsjV8WU36JChNPl8Ld3U63zRxyL4W4bycibbknyy5WGIDGaDcPlhUa4dd3R3KXYUDo-Ju8HBR0VvtWwtXpaVr2_cspbJDuHO_am7Jn5_Bf5vpgxfHa5TJuWZccyKjoJ9FQ8sUiQxS_0omvQvvvWwrAXdiVxZzYSa0NlFgGM9JYmrQjdmTc01gkizcOh7tiss2LY0o7ShYqj2dcZ-1_6nkB0Nt_SGIh4FcWS8jtTjRYEx5BnAHmyMJWKSO8fLUUuWvatNLNdI1i4QSYMx_HrA5AJoRcWqdkZCbA_e6Xba7JNc-ugIdtRERqsw4OnU_cpl3fApDQQF-7xJPFAnthqSiWfPPNekekwtd8ybfJXs0YY6Wz5fvixkoKGvenvP15Eq3QGyoHPQzMST2P3HNdvAA-sdzz8p_uexvQ276jt9NiyGJjdS3-LTtFw8VFquGdirTeK8euy4LLgA5MfZ8l_cgtoAom4-9ZlJhNGz2bH5fItpBnWaWpzswfrdaUIPoiQ0gmKgM8tFAjfxp6cRrSUzaV3qxw4tizGQIPm8nwbkwGTdLjelCo3waPHyzHGmS0aOKK8D9rlHAlARESXzFFuEGK7lpePO15rNga_pSQWmYeNZY-09QJlRkFceLEJF6qBeKgzZH6v7-44Je7ZZMtiCRfYxedTIHQ-yQyVdeRqqA2NaC_jVlvh4_o9ykgC-HERoND75jCmQD3JjKURiO1R7AO6vE0sxm1peiFOdPWPT6xEisN8jLP1x2zmklwjIqRhWp76DhIm0SQbNa9hwPrM10YyIrd-pmCNdpH-jSRRAauTmxh73s_bscWABEdHpg5CoLWlw7jWgh7GFFq79WQDK2fS0-WWNceKOOzmkcmBSmbr-fn4Aitt6QzK2zQCtLF5pcRTS9VRPSYmEzPUrigdFGcFymqE9bKIxvJ4Y7TPSGIA6Sfwaw9gYvjYoNEJMDgFfCsLhQUFqr35PWw1f0NuVGWtuMEKFHWNLORLMyv1Dj75QJoCwj4ESViK_TGjRTDHjnRQzvkPzL448xjrO5d9mfEcod-82CAV6Zdyli0jn6pj2VXh_UwSjiLFALUInp2hQD2zzjn0DjPFvwdkmy8kgraYpT4F5saVRyyJvUkbxa-Mxg7jxjOkgZ1dZdpAiyoxaqe_E3BTt4C_-O8kg1xjLHwGl-dwpJDhiGLqCDGYJnrlyWDuxqKl40T2cwWrKMcVemN0H8YOobx5QxOxvzNXu_tkle0kjjKPMmeFqAFIrMAtb9X6x8AaPVlzvlzcyYaboQwbO4yZKafo7mwhjPLXYvvNF_Yy1jDtgS8uuouGH2RYLBg0yXOKcAizBzHvk92kPMP74spL9mv-puUzoB14tKvxlP2G8KLUjeEwOdDHuNiC1HEn60lU9WH2QfhVcSC-1ukC26j4BIDNcS4NMLBpB063uRVbXRxqiAw0TeyXH4OLoorb3IlM3jgynYdESTf4zwnqbkpOIxxB-r88o7gZLwtqcanPGi98VAyK1gqUTRbeZkdO6RzDB8OXEFwHAq22ZGLoZhvZF4hRtFsDPafD0YgtHDN_VkV6oidQxQZho3o6MTg0osDey04qTO_GWBSH_K_e_rWQTwQLrCLIW1rfjZ1LEjiJOpLl5xcWO8FGSMrr8A80BFDpdCDJEvftRpEoGhfId-SVLLKO493XBgc5Duqrx4sC8b1jwo-KcNMPH1_Ttzcx7h4bxLNxCRJDx4XtR6ololMx15HqRhNXA9H7PRiEEOsIWR2V4hAyblMYzE-GN3mOhGyoDYREr99cOqCKR_ZR3J_dhxI3PCMCe3th8z_7ec2LqGtXA_t6Fy9BoNpbUMb9_BEuyLtqdshUNRTvm6Do4wbMhDJEVHotv3_RBQ4SpX2WAnfg5pny7otljsrU5bYz4WwqzLUwMroO4Mtnb6qBUCDcj6aro7hn8bZBi8EGAy9DYTuh1xi6PxikExAQcyFXaaQOpFV6ocU1i7HdQH8Ln3dVr7LjSczPy8Fu3a4lm6moGvHI50ZT03NfrBfVXWZJm5HbsZzDAadxDmELkVqjCY-d6kpi47TBpJtdi_6TwuldUoc51QOo4PC6SZJONE0TzwjazHwgxi-9Tqwal3lbRfVXsXLtNIjMo00kJlqqq1TUH7eKxIttLubLGjsyfyiE4iP05KVcBrxjpVJdmYVLDqYcsTIGtu_kdP76XZe_kvElohWFIPREgLjdmli9KpYCaUVOe0F6IQiu1XeDVbKwQmCiGUZUipt-BDvSOC",
+      "id": "rs_0342dda4b6e6e875006a864a81e9248199997afbfb7cac7664",
+      "summary": [],
+      "type": "reasoning"
+    },
+    {
+      "content": [
+        {
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"candidates\":[{\"modality\":\"permission\",\"semantic_kind\":\"process_fragment\",\"effect\":\"allow\",\"display_unit\":3,\"citations\":[{\"role\":\"subject\",\"units\":[3]},{\"role\":\"effect\",\"units\":[3]}],\"subject_ref\":\"lender\",\"action\":\"call the Capital Markets Pricing and Sales Desk to establish a trading account\",\"object_ref\":null,\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"documentation_requirement\",\"effect\":\"require_action\",\"display_unit\":4,\"citations\":[{\"role\":\"subject\",\"units\":[4]},{\"role\":\"effect\",\"units\":[4]}],\"subject_ref\":\"each lender\",\"action\":\"provide a corporate resolution from its board of directors or an officer’s certificate indicating its authority to establish a trading account with the Capital Markets Pricing and Sales Desk\",\"object_ref\":\"corporate resolution or officer’s certificate\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[\"E-1-02, List of Contacts\"],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"documentation_requirement\",\"effect\":\"require_action\",\"display_unit\":4,\"citations\":[{\"role\":\"subject\",\"units\":[4]},{\"role\":\"effect\",\"units\":[4]}],\"subject_ref\":\"each lender\",\"action\":\"provide the names of the designated individuals authorized to sell securities to, or to buy them from, the Capital Markets Pricing and Sales Desk and the limit of their authority (if any)\",\"object_ref\":\"names of designated authorized individuals and limits of authority (if any)\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"documentation_requirement\",\"effect\":\"require_action\",\"display_unit\":5,\"citations\":[{\"role\":\"subject\",\"units\":[5]},{\"role\":\"effect\",\"units\":[5]}],\"subject_ref\":\"each lender\",\"action\":\"provide an address for all official notices and communications and wiring instructions for the different types of payments Fannie Mae makes to the lender\",\"object_ref\":\"official notices address and wiring instructions\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"process_fragment\",\"effect\":\"require_action\",\"display_unit\":5,\"citations\":[{\"role\":\"subject\",\"units\":[5]},{\"role\":\"effect\",\"units\":[5]}],\"subject_ref\":\"the lender\",\"action\":\"continue to provide updates about any changes to its authority to perform under the trading account, authorized individuals (or their limits of authority), and the lender’s address or wiring instructions\",\"object_ref\":\"updates about changes to authority, authorized individuals (or limits), address, or wiring instructions\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"process_fragment\",\"effect\":\"require_action\",\"display_unit\":7,\"citations\":[{\"role\":\"subject\",\"units\":[7]},{\"role\":\"condition\",\"units\":[7]},{\"role\":\"effect\",\"units\":[7]}],\"subject_ref\":\"lenders\",\"action\":\"adhere to Fannie Mae’s guidelines for selling securities and to SIFMA's Uniform Practices for the Clearance and Settlement of Mortgage-Backed Securities and Other Related Securities (including any amendments)\",\"object_ref\":\"Fannie Mae guidelines and SIFMA Uniform Practices (including amendments)\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"definition\",\"semantic_kind\":\"decision_rule\",\"effect\":\"no_direct_effect\",\"display_unit\":8,\"citations\":[{\"role\":\"condition\",\"units\":[8]},{\"role\":\"effect\",\"units\":[8]}],\"subject_ref\":\"conflict between this Guide and SIFMA provisions\",\"action\":\"precedence\",\"object_ref\":\"requirements of this Guide take precedence\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"process_fragment\",\"effect\":\"require_action\",\"display_unit\":9,\"citations\":[{\"role\":\"subject\",\"units\":[9]},{\"role\":\"effect\",\"units\":[9]}],\"subject_ref\":\"the lender\",\"action\":\"grant Fannie Mae a first priority security interest in any and all of its right, title, and interest in its securities, money, or other property held for (or by) Fannie Mae\",\"object_ref\":\"lender’s securities, money, or other property held for (or by) Fannie Mae\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"documentation_requirement\",\"effect\":\"require_action\",\"display_unit\":10,\"citations\":[{\"role\":\"subject\",\"units\":[10]},{\"role\":\"condition\",\"units\":[10]},{\"role\":\"effect\",\"units\":[10]}],\"subject_ref\":\"the lender\",\"action\":\"execute and deliver any legal instruments required to protect or perfect Fannie Mae’s security interest\",\"object_ref\":\"legal instruments required to protect or perfect Fannie Mae’s security interest\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"process_fragment\",\"effect\":\"require_action\",\"display_unit\":11,\"citations\":[{\"role\":\"subject\",\"units\":[11]},{\"role\":\"condition\",\"units\":[11]},{\"role\":\"effect\",\"units\":[11]}],\"subject_ref\":\"the lender\",\"action\":\"agree that Fannie Mae’s electronic trading platform (MBS Trading Portal) will be a “Licensed Application” as defined in the Software Subscription Agreement General Terms and Conditions\",\"object_ref\":\"classification of the platform as a “Licensed Application”\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[\"Consolidated Technology Guide\"],\"missing\":[]},{\"modality\":\"definition\",\"semantic_kind\":\"decision_rule\",\"effect\":\"no_direct_effect\",\"display_unit\":14,\"citations\":[{\"role\":\"effect\",\"units\":[14]}],\"subject_ref\":\"Authorized User\",\"action\":\"includes\",\"object_ref\":\"individuals working for Third-Party Providers retained by the lender to perform mortgage-related services requiring access to the Licensed Application on the lender’s behalf, or third-party originators affiliated with lender requiring access to the Licensed Application, who have obtained Authentication Credentials as a result of the lender’s actions\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"definition\",\"semantic_kind\":\"decision_rule\",\"effect\":\"no_direct_effect\",\"display_unit\":15,\"citations\":[{\"role\":\"effect\",\"units\":[15]}],\"subject_ref\":\"actions of Authorized Users\",\"action\":\"are deemed to be\",\"object_ref\":\"actions of the lender\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"definition\",\"semantic_kind\":\"decision_rule\",\"effect\":\"no_direct_effect\",\"display_unit\":16,\"citations\":[{\"role\":\"effect\",\"units\":[16]}],\"subject_ref\":\"conclusive evidence of a trade and its terms\",\"action\":\"is\",\"object_ref\":\"Licensed Application confirmation of a trade as “Accepted,” together with the Selling Guide and any applicable MBS trading agreement between lender and Fannie Mae\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"permission\",\"semantic_kind\":\"authority_statement\",\"effect\":\"allow\",\"display_unit\":18,\"citations\":[{\"role\":\"subject\",\"units\":[18]},{\"role\":\"effect\",\"units\":[18]}],\"subject_ref\":\"Fannie Mae\",\"action\":\"immediately suspend or terminate any relationship established between a lender and a third party by and for the Licensed Application at any time, in its sole discretion\",\"object_ref\":\"relationship between a lender and a third party by and for the Licensed Application\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"permission\",\"semantic_kind\":\"authority_statement\",\"effect\":\"allow\",\"display_unit\":19,\"citations\":[{\"role\":\"subject\",\"units\":[19]},{\"role\":\"condition\",\"units\":[19]},{\"role\":\"effect\",\"units\":[19]}],\"subject_ref\":\"Fannie Mae\",\"action\":\"establish trading limits, margin requirements, a designated threshold amount, and a minimum transfer amount specific to a lender\",\"object_ref\":\"trading limits, margin requirements, designated threshold amount, and minimum transfer amount\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"permission\",\"semantic_kind\":\"authority_statement\",\"effect\":\"allow\",\"display_unit\":20,\"citations\":[{\"role\":\"subject\",\"units\":[20]},{\"role\":\"condition\",\"units\":[20]},{\"role\":\"effect\",\"units\":[20]}],\"subject_ref\":\"Fannie Mae\",\"action\":\"amend or cancel trading limits, margin requirements, designated threshold amounts, or minimum transfer amounts, and decline to engage in any specific transaction with the lender\",\"object_ref\":\"trading limits, margin requirements, designated threshold amounts, minimum transfer amounts, and specific transactions\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"permission\",\"semantic_kind\":\"process_fragment\",\"effect\":\"allow\",\"display_unit\":21,\"citations\":[{\"role\":\"subject\",\"units\":[21]},{\"role\":\"condition\",\"units\":[21]},{\"role\":\"effect\",\"units\":[21]}],\"subject_ref\":\"a lender and Fannie Mae\",\"action\":\"elect to exchange variation margin if there is a price differential on the lender’s open (unsettled) trades with Fannie Mae\",\"object_ref\":\"variation margin\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"permission\",\"semantic_kind\":\"process_fragment\",\"effect\":\"allow\",\"display_unit\":23,\"citations\":[{\"role\":\"subject\",\"units\":[23]},{\"role\":\"condition\",\"units\":[23]},{\"role\":\"effect\",\"units\":[23]}],\"subject_ref\":\"Fannie Mae\",\"action\":\"request that the lender wire cash to Fannie Mae\",\"object_ref\":\"cash wired to Fannie Mae\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"permission\",\"semantic_kind\":\"process_fragment\",\"effect\":\"allow\",\"display_unit\":24,\"citations\":[{\"role\":\"subject\",\"units\":[24]},{\"role\":\"condition\",\"units\":[24]},{\"role\":\"effect\",\"units\":[24]}],\"subject_ref\":\"the lender\",\"action\":\"request that Fannie Mae wire cash to the lender\",\"object_ref\":\"cash wired to the lender\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"definition\",\"semantic_kind\":\"decision_rule\",\"effect\":\"no_direct_effect\",\"display_unit\":26,\"citations\":[{\"role\":\"effect\",\"units\":[26]}],\"subject_ref\":\"designated threshold amount\",\"action\":\"represents\",\"object_ref\":\"a level of unsecured exposure an “in the money” party will accept before making a margin call on the “out of the money” party\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"definition\",\"semantic_kind\":\"calculation\",\"effect\":\"produce_value\",\"display_unit\":27,\"citations\":[{\"role\":\"effect\",\"units\":[27]}],\"subject_ref\":\"Fannie Mae’s designated threshold amount\",\"action\":\"shall be\",\"object_ref\":\"designated threshold amount\",\"condition_ast\":null,\"effect_ast\":{\"kind\":\"literal\",\"value\":3000000,\"type\":\"number\",\"unit\":\"$\"},\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"definition\",\"semantic_kind\":\"calculation\",\"effect\":\"produce_value\",\"display_unit\":27,\"citations\":[{\"role\":\"effect\",\"units\":[27]}],\"subject_ref\":\"a lender’s designated threshold amount\",\"action\":\"shall be\",\"object_ref\":\"designated threshold amount\",\"condition_ast\":null,\"effect_ast\":{\"kind\":\"literal\",\"value\":3000000,\"type\":\"number\",\"unit\":\"$\"},\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"definition\",\"semantic_kind\":\"decision_rule\",\"effect\":\"no_direct_effect\",\"display_unit\":29,\"citations\":[{\"role\":\"effect\",\"units\":[29]}],\"subject_ref\":\"minimum transfer\",\"action\":\"is\",\"object_ref\":\"a specified amount of money that must be exceeded before a margin call can be made\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"definition\",\"semantic_kind\":\"calculation\",\"effect\":\"produce_value\",\"display_unit\":30,\"citations\":[{\"role\":\"effect\",\"units\":[30]}],\"subject_ref\":\"Fannie Mae’s minimum transfer amount\",\"action\":\"shall be\",\"object_ref\":\"minimum transfer amount\",\"condition_ast\":null,\"effect_ast\":{\"kind\":\"literal\",\"value\":50000,\"type\":\"number\",\"unit\":\"$\"},\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"definition\",\"semantic_kind\":\"calculation\",\"effect\":\"produce_value\",\"display_unit\":30,\"citations\":[{\"role\":\"effect\",\"units\":[30]}],\"subject_ref\":\"a lender’s minimum transfer amount\",\"action\":\"shall be\",\"object_ref\":\"minimum transfer amount\",\"condition_ast\":null,\"effect_ast\":{\"kind\":\"literal\",\"value\":50000,\"type\":\"number\",\"unit\":\"$\"},\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"prohibition\",\"semantic_kind\":\"decision_rule\",\"effect\":\"deny\",\"display_unit\":31,\"citations\":[{\"role\":\"subject\",\"units\":[31]},{\"role\":\"condition\",\"units\":[31]},{\"role\":\"effect\",\"units\":[31]}],\"subject_ref\":\"Fannie Mae\",\"action\":\"wire cash to a lender in the event of a positive price differential\",\"object_ref\":\"cash wiring to a lender\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"permission\",\"semantic_kind\":\"authority_statement\",\"effect\":\"allow\",\"display_unit\":32,\"citations\":[{\"role\":\"subject\",\"units\":[32]},{\"role\":\"condition\",\"units\":[32]},{\"role\":\"effect\",\"units\":[32]}],\"subject_ref\":\"Fannie Mae\",\"action\":\"modify or eliminate the designated threshold amount and minimum transfer amount applicable to such lender without prior notice to the lender\",\"object_ref\":\"designated threshold amount and minimum transfer amount applicable to the lender\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"definition\",\"semantic_kind\":\"decision_rule\",\"effect\":\"no_direct_effect\",\"display_unit\":34,\"citations\":[{\"role\":\"effect\",\"units\":[34]}],\"subject_ref\":\"lender default under the trading account\",\"action\":\"occurs if\",\"object_ref\":\"Fannie Mae determines representations about the lender’s ability (or that of a designated authorized individual) to transact business are incorrect or untrue in any material respect, or if the lender takes/has taken certain bankruptcy/insolvency-related actions or fails to perform as required\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"definition\",\"semantic_kind\":\"decision_rule\",\"effect\":\"no_direct_effect\",\"display_unit\":35,\"citations\":[{\"role\":\"effect\",\"units\":[35]}],\"subject_ref\":\"instances of nonperformance that constitute a default\",\"action\":\"include failure to\",\"object_ref\":\"perform obligations in a confirmation or settlement notice; complete a trade (or admission of inability/unwillingness); perform obligations under other agreements with Fannie Mae; and satisfy the price differential by specified deadlines based on when notice is sent\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"definition\",\"semantic_kind\":\"decision_rule\",\"effect\":\"no_direct_effect\",\"display_unit\":36,\"citations\":[{\"role\":\"effect\",\"units\":[36]}],\"subject_ref\":\"default with respect to one transaction\",\"action\":\"will constitute\",\"object_ref\":\"a default for all of the lender’s transactions with the Capital Markets Pricing and Sales Desk\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"decision_rule\",\"effect\":\"require_action\",\"display_unit\":41,\"citations\":[{\"role\":\"subject\",\"units\":[41]},{\"role\":\"effect\",\"units\":[41]}],\"subject_ref\":\"the lender\",\"action\":\"be liable for any losses incurred by Fannie Mae due to the lender’s default with the Capital Markets Pricing and Sales Desk\",\"object_ref\":\"losses incurred by Fannie Mae due to the lender’s default\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"permission\",\"semantic_kind\":\"authority_statement\",\"effect\":\"allow\",\"display_unit\":44,\"citations\":[{\"role\":\"subject\",\"units\":[44]},{\"role\":\"condition\",\"units\":[44]},{\"role\":\"effect\",\"units\":[44]}],\"subject_ref\":\"Fannie Mae\",\"action\":\"require that the settlement for all of the lender’s outstanding transactions be accelerated and take place immediately\",\"object_ref\":\"settlement for all of the lender’s outstanding transactions\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"obligation\",\"semantic_kind\":\"calculation\",\"effect\":\"require_action\",\"display_unit\":50,\"citations\":[{\"role\":\"subject\",\"units\":[50]},{\"role\":\"effect\",\"units\":[50]},{\"role\":\"authority\",\"units\":[51]}],\"subject_ref\":\"the lender\",\"action\":\"pay all reasonable legal and other expenses Fannie Mae incurs in connection with (or as the result of) the lender’s default under its trading account, and pay interest on Fannie Mae losses and expenses from the date of default to the date the lender reimburses Fannie Mae\",\"object_ref\":\"reasonable legal and other expenses; interest on Fannie Mae losses and expenses\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":\"prime rate for commercial banks published in The Wall Street Journal (interest basis)\",\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"permission\",\"semantic_kind\":\"authority_statement\",\"effect\":\"allow\",\"display_unit\":52,\"citations\":[{\"role\":\"subject\",\"units\":[52]},{\"role\":\"condition\",\"units\":[52]},{\"role\":\"effect\",\"units\":[52]}],\"subject_ref\":\"Fannie Mae\",\"action\":\"liquidate and apply against the obligations the lender owes as a result of its default any and all of the lender’s securities, money, and other property held for (or by) Fannie Mae\",\"object_ref\":\"lender’s securities, money, and other property held for (or by) Fannie Mae\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]},{\"modality\":\"recommendation\",\"semantic_kind\":\"process_fragment\",\"effect\":\"no_direct_effect\",\"display_unit\":60,\"citations\":[{\"role\":\"subject\",\"units\":[60]},{\"role\":\"effect\",\"units\":[60]}],\"subject_ref\":\"a lender\",\"action\":\"consult its own business, legal, tax, risk, accounting, and other advisers and examine the provisions in this Chapter of the Guide to determine whether the risks are appropriate\",\"object_ref\":\"advisers consultation and review of Chapter provisions\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"active\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]}]}",
+          "type": "output_text"
+        }
+      ],
+      "id": "msg_0342dda4b6e6e875006a864aaa58588199b9771e5ee357bbc2",
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "current_turn",
+    "effort": "high",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "description": null,
+      "name": "policy_ir_proposals",
+      "schema": {
+        "$defs": {
+          "All": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "all"
+                ],
+                "type": "string"
+              },
+              "operands": {
+                "items": {
+                  "$ref": "#/$defs/Expression"
+                },
+                "minItems": 1,
+                "type": "array"
+              }
+            },
+            "required": [
+              "kind",
+              "operands"
+            ],
+            "type": "object"
+          },
+          "AnyOf": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "any"
+                ],
+                "type": "string"
+              },
+              "operands": {
+                "items": {
+                  "$ref": "#/$defs/Expression"
+                },
+                "minItems": 1,
+                "type": "array"
+              }
+            },
+            "required": [
+              "kind",
+              "operands"
+            ],
+            "type": "object"
+          },
+          "Calendar": {
+            "enum": [
+              "calendar_days",
+              "business_days"
+            ],
+            "type": "string"
+          },
+          "CandidateProposal": {
+            "additionalProperties": false,
+            "properties": {
+              "action": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "authority_ref": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "citations": {
+                "items": {
+                  "$ref": "#/$defs/RoleCitation"
+                },
+                "minItems": 1,
+                "type": "array"
+              },
+              "compilation_intent": {
+                "enum": [
+                  "dmn",
+                  "bpmn",
+                  "both",
+                  "graph_only",
+                  "unresolved"
+                ],
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "condition_ast": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/Expression"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "cross_reference_targets": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "display_unit": {
+                "enum": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37,
+                  38,
+                  39,
+                  40,
+                  41,
+                  42,
+                  43,
+                  44,
+                  45,
+                  46,
+                  47,
+                  48,
+                  49,
+                  50,
+                  51,
+                  52,
+                  53,
+                  54,
+                  55,
+                  56,
+                  57,
+                  58,
+                  59,
+                  60,
+                  61,
+                  62,
+                  63,
+                  64,
+                  65
+                ],
+                "type": "integer"
+              },
+              "effect": {
+                "enum": [
+                  "allow",
+                  "deny",
+                  "require_action",
+                  "produce_value",
+                  "create_record",
+                  "notify",
+                  "escalate",
+                  "no_direct_effect"
+                ],
+                "type": "string"
+              },
+              "effect_ast": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/Expression"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "effective_period": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/EffectivePeriod"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "exception_ast": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/Expression"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "lifecycle": {
+                "enum": [
+                  "active",
+                  "future",
+                  "expired",
+                  "superseded",
+                  "unknown"
+                ],
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "missing": {
+                "items": {
+                  "enum": [
+                    "action",
+                    "authority",
+                    "condition",
+                    "effect",
+                    "exception",
+                    "object",
+                    "scope",
+                    "subject",
+                    "temporal"
+                  ],
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "modality": {
+                "enum": [
+                  "obligation",
+                  "prohibition",
+                  "permission",
+                  "recommendation",
+                  "definition"
+                ],
+                "type": "string"
+              },
+              "object_ref": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "scope": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/Scope"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "semantic_kind": {
+                "enum": [
+                  "decision_rule",
+                  "calculation",
+                  "validation",
+                  "temporal_constraint",
+                  "documentation_requirement",
+                  "process_fragment",
+                  "authority_statement",
+                  "unclassified"
+                ],
+                "type": "string"
+              },
+              "subject_ref": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "temporal_constraint": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/TemporalConstraint"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "modality",
+              "semantic_kind",
+              "effect",
+              "display_unit",
+              "citations",
+              "subject_ref",
+              "action",
+              "object_ref",
+              "condition_ast",
+              "effect_ast",
+              "exception_ast",
+              "temporal_constraint",
+              "scope",
+              "effective_period",
+              "lifecycle",
+              "compilation_intent",
+              "authority_ref",
+              "cross_reference_targets",
+              "missing"
+            ],
+            "type": "object"
+          },
+          "Comparison": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "comparison"
+                ],
+                "type": "string"
+              },
+              "left": {
+                "$ref": "#/$defs/Expression"
+              },
+              "operator": {
+                "enum": [
+                  "=",
+                  "!=",
+                  "<",
+                  "<=",
+                  ">",
+                  ">="
+                ],
+                "type": "string"
+              },
+              "right": {
+                "$ref": "#/$defs/Expression"
+              }
+            },
+            "required": [
+              "kind",
+              "left",
+              "operator",
+              "right"
+            ],
+            "type": "object"
+          },
+          "DataType": {
+            "enum": [
+              "string",
+              "number",
+              "boolean",
+              "date",
+              "time",
+              "date_time",
+              "duration",
+              "list",
+              "context"
+            ],
+            "type": "string"
+          },
+          "DateArithmetic": {
+            "additionalProperties": false,
+            "properties": {
+              "base": {
+                "$ref": "#/$defs/Expression"
+              },
+              "calendar": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/Calendar"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "duration": {
+                "$ref": "#/$defs/DurationLiteral"
+              },
+              "kind": {
+                "enum": [
+                  "date_arithmetic"
+                ],
+                "type": "string"
+              },
+              "operator": {
+                "enum": [
+                  "+",
+                  "-"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "base",
+              "operator",
+              "duration",
+              "calendar"
+            ],
+            "type": "object"
+          },
+          "DurationLiteral": {
+            "additionalProperties": false,
+            "description": "A duration stated in the cited text, as an ISO 8601 days-and-time string: P30D for thirty days, PT12H for twelve hours, P1DT6H for a day and six hours. Years and months cannot be expressed; see the instructions.",
+            "properties": {
+              "kind": {
+                "enum": [
+                  "literal"
+                ],
+                "type": "string"
+              },
+              "type": {
+                "enum": [
+                  "duration"
+                ],
+                "type": "string"
+              },
+              "value": {
+                "pattern": "^P(\\d+D)?(T(\\d+H)?(\\d+M)?(\\d+S)?)?$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "value",
+              "type"
+            ],
+            "type": "object"
+          },
+          "EffectivePeriod": {
+            "additionalProperties": false,
+            "properties": {
+              "end": {
+                "type": "string"
+              },
+              "start": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "start",
+              "end"
+            ],
+            "type": "object"
+          },
+          "Exists": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "exists"
+                ],
+                "type": "string"
+              },
+              "variable": {
+                "$ref": "#/$defs/VariableRef"
+              }
+            },
+            "required": [
+              "kind",
+              "variable"
+            ],
+            "type": "object"
+          },
+          "Expression": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/Literal"
+              },
+              {
+                "$ref": "#/$defs/VariableRef"
+              },
+              {
+                "$ref": "#/$defs/All"
+              },
+              {
+                "$ref": "#/$defs/AnyOf"
+              },
+              {
+                "$ref": "#/$defs/Not"
+              },
+              {
+                "$ref": "#/$defs/Comparison"
+              },
+              {
+                "$ref": "#/$defs/In"
+              },
+              {
+                "$ref": "#/$defs/Exists"
+              },
+              {
+                "$ref": "#/$defs/DateArithmetic"
+              },
+              {
+                "$ref": "#/$defs/FunctionRef"
+              }
+            ]
+          },
+          "FunctionRef": {
+            "additionalProperties": false,
+            "properties": {
+              "arguments": {
+                "items": {
+                  "$ref": "#/$defs/Expression"
+                },
+                "type": "array"
+              },
+              "function_id": {
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "function_ref"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "function_id",
+              "arguments"
+            ],
+            "type": "object"
+          },
+          "In": {
+            "additionalProperties": false,
+            "properties": {
+              "allowed_values": {
+                "items": {
+                  "$ref": "#/$defs/Literal"
+                },
+                "minItems": 1,
+                "type": "array"
+              },
+              "kind": {
+                "enum": [
+                  "in"
+                ],
+                "type": "string"
+              },
+              "value": {
+                "$ref": "#/$defs/Expression"
+              }
+            },
+            "required": [
+              "kind",
+              "value",
+              "allowed_values"
+            ],
+            "type": "object"
+          },
+          "Literal": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "literal"
+                ],
+                "type": "string"
+              },
+              "type": {
+                "$ref": "#/$defs/DataType"
+              },
+              "unit": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "value": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "kind",
+              "value",
+              "type",
+              "unit"
+            ],
+            "type": "object"
+          },
+          "Not": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "not"
+                ],
+                "type": "string"
+              },
+              "operand": {
+                "$ref": "#/$defs/Expression"
+              }
+            },
+            "required": [
+              "kind",
+              "operand"
+            ],
+            "type": "object"
+          },
+          "RoleCitation": {
+            "additionalProperties": false,
+            "properties": {
+              "role": {
+                "enum": [
+                  "subject",
+                  "condition",
+                  "effect",
+                  "exception",
+                  "temporal",
+                  "authority",
+                  "cross_reference",
+                  "scope"
+                ],
+                "type": "string"
+              },
+              "units": {
+                "items": {
+                  "enum": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    37,
+                    38,
+                    39,
+                    40,
+                    41,
+                    42,
+                    43,
+                    44,
+                    45,
+                    46,
+                    47,
+                    48,
+                    49,
+                    50,
+                    51,
+                    52,
+                    53,
+                    54,
+                    55,
+                    56,
+                    57,
+                    58,
+                    59,
+                    60,
+                    61,
+                    62,
+                    63,
+                    64,
+                    65
+                  ],
+                  "type": "integer"
+                },
+                "minItems": 1,
+                "type": "array"
+              }
+            },
+            "required": [
+              "role",
+              "units"
+            ],
+            "type": "object"
+          },
+          "Scope": {
+            "additionalProperties": false,
+            "properties": {
+              "dimensions": {
+                "items": {
+                  "$ref": "#/$defs/ScopeDimension"
+                },
+                "type": "array"
+              }
+            },
+            "required": [
+              "dimensions"
+            ],
+            "type": "object"
+          },
+          "ScopeDimension": {
+            "additionalProperties": false,
+            "properties": {
+              "evidence_ids": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "name": {
+                "type": "string"
+              },
+              "negated": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "values": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            },
+            "required": [
+              "name",
+              "values",
+              "negated",
+              "evidence_ids"
+            ],
+            "type": "object"
+          },
+          "TemporalConstraint": {
+            "additionalProperties": false,
+            "properties": {
+              "calendar": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/Calendar"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "duration": {
+                "$ref": "#/$defs/DurationLiteral"
+              },
+              "evidence_ids": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "relative_to": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "duration",
+              "calendar",
+              "relative_to",
+              "evidence_ids"
+            ],
+            "type": "object"
+          },
+          "VariableRef": {
+            "additionalProperties": false,
+            "properties": {
+              "data_definition_id": {
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "variable_ref"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "data_definition_id"
+            ],
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Zero or more proposed clauses for one chunk. Cite only the offered unit indices; the application builds every evidence span itself.",
+        "policyIrVersion": "policy-ir-2.1.0",
+        "properties": {
+          "candidates": {
+            "items": {
+              "$ref": "#/$defs/CandidateProposal"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "candidates"
+        ],
+        "title": "Policy IR extraction proposals for chunk_ccb037592dd04abc",
+        "type": "object"
+      },
+      "strict": true,
+      "type": "json_schema"
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 6483,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 7918,
+    "output_tokens_details": {
+      "reasoning_tokens": 2664
+    },
+    "total_tokens": 14401
+  },
+  "user": null
+}

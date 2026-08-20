@@ -151,9 +151,53 @@ _OPTIONAL = (
 )
 
 
+def normalise_citations(data: Mapping[str, Any]) -> Mapping[str, Any]:
+    """Accept role-keyed citations as well as the record list form.
+
+    The wire contract keys citations by role, because given a list of ``{role, units}``
+    the model twice named the same role in one proposal — ambiguous evidence for a field,
+    refused by the parser, and a paid call wasted each time. Keyed by role the duplicate
+    is not a representable document.
+
+    The IR keeps the list form, since a citation is a record with its own identity. This
+    is the single place the two shapes meet, so no caller has to remember which it holds,
+    and replies captured before the contract changed still parse.
+    """
+    citations = data.get("citations")
+    if not isinstance(citations, Mapping):
+        return data
+
+    def unique(units: Any) -> Any:
+        """Collapse a repeated unit index, keeping first-seen order.
+
+        Strict mode drops ``uniqueItems``, so the schema cannot forbid a repeat and the
+        model duly sent unit 1 thirty-two times for one role. Unlike a duplicate *role*,
+        a repeated *unit* carries no information — a role's citation is the set of units
+        that support it — so collapsing it is lossless, where merging two roles' unit
+        lists would be a guess.
+        """
+        if not isinstance(units, list):
+            return units
+        seen: list[Any] = []
+        for unit in units:
+            if unit not in seen:
+                seen.append(unit)
+        return seen
+
+    return {
+        **data,
+        "citations": [
+            {"role": role, "units": unique(units)}
+            for role, units in citations.items()
+            if units
+        ],
+    }
+
+
 def proposal_from_dict(data: Mapping[str, Any]) -> CandidateProposal:
     """Parse one proposal, refusing anything outside the contract."""
     record = "CandidateProposal"
+    data = normalise_citations(data)
     try:
         check_keys(data, record, list(_REQUIRED), list(_OPTIONAL))
 

@@ -1,0 +1,27 @@
+{
+  "authority_sources": [],
+  "extraction_guidance": "",
+  "language": "en",
+  "profile_id": "generic",
+  "relation_types": [
+    "defines",
+    "aliases",
+    "applies_to",
+    "governs",
+    "requires",
+    "prohibits",
+    "permits",
+    "produces",
+    "uses",
+    "delegates_to",
+    "triggers",
+    "precedes",
+    "exception_to",
+    "overrides",
+    "references"
+  ],
+  "scope_dimensions": [],
+  "supported_media_types": [],
+  "terminology": {},
+  "version": "1"
+}

@@ -1,0 +1,130 @@
+{
+  "corpus": "fannie_mae",
+  "elapsed_seconds": 4.04,
+  "stages": [
+    {
+      "directory": "outputs/04_admission",
+      "elapsed_seconds": 0.66,
+      "files_written": 5,
+      "stage": "04_admission",
+      "summary": {
+        "chunks_read": 324,
+        "chunks_yielding_clauses": 185,
+        "clauses": 5003,
+        "evidence_spans": 12237,
+        "refused_batches": 25
+      }
+    },
+    {
+      "directory": "outputs/05_semantic_assembly",
+      "elapsed_seconds": 0.15,
+      "files_written": 4,
+      "stage": "05_semantic_assembly",
+      "summary": {
+        "by_target": {
+          "bpmn": {
+            "abstain": 471,
+            "ready_for_explicit_model": 383
+          },
+          "dmn": {
+            "abstain": 1082,
+            "ready_for_explicit_model": 18
+          }
+        },
+        "clauses": 5003,
+        "clauses_with_no_declared_projection": 3298,
+        "missing_by_field": {
+          "activity_evidence": 1,
+          "condition_ast": 631,
+          "condition_evidence": 477,
+          "decision_semantic_kind": 247,
+          "effect_ast": 818,
+          "effect_evidence": 2,
+          "process_semantic_kind": 445,
+          "responsible_actor": 25
+        },
+        "opportunities": 1954,
+        "profile": "generic",
+        "profile_version": "1",
+        "semantic_relations": 0
+      }
+    },
+    {
+      "directory": "outputs/06_gate",
+      "elapsed_seconds": 0.88,
+      "files_written": 4,
+      "stage": "06_gate",
+      "summary": {
+        "admitted_decisions": 0,
+        "admitted_processes": 0,
+        "blocker_counts": {
+          "condition_not_tabular": 557,
+          "ill_typed_expression": 1112,
+          "literal_not_attested": 25,
+          "missing_field_evidence": 2039,
+          "missing_required_field": 1414,
+          "modality_not_attested": 1693,
+          "not_feel_expressible": 385,
+          "unknown_authority": 654,
+          "unknown_scope_dimension": 225,
+          "unresolved_cross_reference": 424
+        },
+        "clauses_checked": 5003,
+        "fatal": false,
+        "status_counts": {
+          "bpmn_eligible": 480,
+          "graph_eligible": 2707,
+          "provenance_exact": 5003,
+          "schema_valid": 2707,
+          "semantic_supported": 1518
+        }
+      }
+    },
+    {
+      "directory": "outputs/07_governance",
+      "elapsed_seconds": 0.89,
+      "files_written": 3,
+      "stage": "07_governance",
+      "summary": {
+        "admitted_decisions": 0,
+        "admitted_processes": 0,
+        "clauses": 5003,
+        "graph_eligible_clauses": 2707,
+        "review_items": 5038,
+        "review_items_by_kind": {
+          "clause": 3485,
+          "synthesis": 1553
+        },
+        "synthesis": {
+          "abstentions": 1553,
+          "ready_for_explicit_model": 401
+        }
+      }
+    },
+    {
+      "directory": "outputs/08_projection",
+      "elapsed_seconds": 1.11,
+      "files_written": 7,
+      "stage": "08_projection",
+      "summary": {
+        "bpmn_processes": 0,
+        "dmn_decisions": 0,
+        "entity_types": 0,
+        "graph_rules": 2707,
+        "structural_problems": []
+      }
+    },
+    {
+      "directory": "outputs/09_visualization",
+      "elapsed_seconds": 0.28,
+      "files_written": 2,
+      "stage": "09_visualization",
+      "summary": {
+        "bytes": 541941,
+        "clauses_rendered": 5003,
+        "graph_library": "vis-network (CDN)",
+        "report": "fannie_mae_knowledge_graph.html"
+      }
+    }
+  ]
+}

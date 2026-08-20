@@ -1,0 +1,12 @@
+{
+  "condition_not_tabular": 557,
+  "ill_typed_expression": 1112,
+  "literal_not_attested": 25,
+  "missing_field_evidence": 2039,
+  "missing_required_field": 1414,
+  "modality_not_attested": 1693,
+  "not_feel_expressible": 385,
+  "unknown_authority": 654,
+  "unknown_scope_dimension": 225,
+  "unresolved_cross_reference": 424
+}

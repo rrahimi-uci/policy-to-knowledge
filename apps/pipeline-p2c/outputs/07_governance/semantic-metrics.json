@@ -1,0 +1,29 @@
+{
+  "admitted_decisions": 0,
+  "admitted_processes": 0,
+  "blockers": {
+    "condition_not_tabular": 557,
+    "ill_typed_expression": 1112,
+    "literal_not_attested": 25,
+    "missing_field_evidence": 2039,
+    "missing_required_field": 1414,
+    "modality_not_attested": 1693,
+    "not_feel_expressible": 385,
+    "unknown_authority": 654,
+    "unknown_scope_dimension": 225,
+    "unresolved_cross_reference": 424
+  },
+  "chunks": 324,
+  "clauses": 5003,
+  "coverage": {
+    "candidates_emitted": 185,
+    "no_policy_semantics_found": 139
+  },
+  "documents": 1,
+  "graph_eligible_clauses": 2707,
+  "semantic_relations": 0,
+  "synthesis": {
+    "abstentions": 1553,
+    "ready_for_explicit_model": 401
+  }
+}

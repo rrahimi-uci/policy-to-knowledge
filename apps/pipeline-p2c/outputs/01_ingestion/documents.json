@@ -1,0 +1,12 @@
+[
+  {
+    "canonical_text_sha256": "9daf256327f0248097965b37e00f3db91013cf72122d8609f4071f3bcb29e0cd",
+    "document_id": "doc_2a4580c9a474ea42",
+    "license_record_id": "local:fannie_mae",
+    "media_type": "application/pdf",
+    "parser_version": "pypdf-6.16.1+normalize-1",
+    "retrieval_timestamp": "2026-08-19T19:27:35.126302+00:00",
+    "source_sha256": "7e399d961c41a49b6b305b996d9c18f4facd60601db1f129654e18dd8eb578cc",
+    "source_uri": "file://fannie_mae.pdf"
+  }
+]
