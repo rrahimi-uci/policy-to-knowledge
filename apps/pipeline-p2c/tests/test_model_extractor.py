@@ -374,3 +374,29 @@ def test_the_wire_schema_cannot_express_a_duplicate_role(sample_request) -> None
     # one property per role, so naming a role twice is not a representable document
     assert "subject" in citations["properties"]
     assert citations["properties"]["subject"]["type"] == "array"
+
+
+def test_a_repeated_unit_in_one_role_is_collapsed() -> None:
+    """Strict mode drops `uniqueItems`, so the model sent unit 1 thirty-two times.
+
+    A role's citation is the set of units supporting it, so collapsing a repeat is
+    lossless — unlike merging two roles, which would be a guess.
+    """
+    from extraction.proposals import normalise_citations
+
+    out = normalise_citations({"citations": {"effect": [1] * 32, "subject": [2, 3, 2]}})
+    assert out["citations"] == [
+        {"role": "effect", "units": [1]},
+        {"role": "subject", "units": [2, 3]},
+    ]
+
+
+def test_a_repeated_unit_parses_end_to_end() -> None:
+    payload = _envelope({"candidates": [{
+        "modality": "obligation", "semantic_kind": "decision_rule",
+        "effect": "require_action", "display_unit": 1,
+        "citations": {"subject": [1, 1], "effect": [1, 1, 1]},
+    }]})
+    proposals = parse_reply(payload)
+    assert len(proposals) == 1
+    assert proposals[0].cited_units() == (1,)

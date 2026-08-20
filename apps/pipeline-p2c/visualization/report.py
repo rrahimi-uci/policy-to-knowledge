@@ -26,7 +26,7 @@ from policy_ir.enums import Status
 from policy_ir.models import PolicyIR
 
 from . import palette as pal
-from .charts import Slice, bar_rows, funnel_rows, stacked_bar, stat_tile
+from .charts import Slice, bar_rows, stacked_bar, stat_tile
 
 #: vis-network renders the node-link view. Loaded from a CDN, exactly as the existing
 #: pipeline report does, which means the file needs network to draw the graph; every
@@ -88,7 +88,14 @@ def _modality_slices(data: ReportData) -> list[Slice]:
     ]
 
 
-def _funnel_slices(data: ReportData) -> list[Slice]:
+def _status_slices(data: ReportData) -> list[Slice]:
+    """The six statuses, as independent proportions of all clauses.
+
+    They are deliberately *not* a funnel. The app grants each status on its own
+    evidence, so a clause can have exact provenance and still be ineligible for DMN, and
+    ``provenance_exact`` at 100% sitting below ``schema_valid`` at 54% is not an anomaly.
+    Drawing them as a funnel asserted a nesting that does not exist.
+    """
     statuses = _clause_statuses(data)
     total = len(data.ir.clauses)
 
@@ -96,7 +103,7 @@ def _funnel_slices(data: ReportData) -> list[Slice]:
         return sum(1 for granted in statuses.values() if status.value in granted)
 
     stages = (
-        ("Clauses extracted", total, "every clause the extractor proposed and the app admitted"),
+        ("Clauses admitted", total, "every clause the extractor proposed and the app admitted"),
         ("Schema valid", having(Status.SCHEMA_VALID), "required fields present, vocabularies known"),
         ("Provenance exact", having(Status.PROVENANCE_EXACT),
          "every cited span matches its document hash at its offsets"),
@@ -105,7 +112,10 @@ def _funnel_slices(data: ReportData) -> list[Slice]:
         ("DMN eligible", having(Status.DMN_ELIGIBLE), "may become a decision-table row"),
         ("BPMN eligible", having(Status.BPMN_ELIGIBLE), "may become a flow node"),
     )
-    return [Slice(label, float(value), pal.SERIES_LIGHT, note=note) for label, value, note in stages]
+    return [
+        Slice(label, float(value), pal.SERIES_LIGHT, note=note)
+        for label, value, note in stages
+    ]
 
 
 def _blocker_slices(data: ReportData) -> list[Slice]:
@@ -139,7 +149,7 @@ def _graph_payload(data: ReportData) -> tuple[dict[str, Any], dict[str, int]]:
                       f"bytes sha256 {document.source_sha256[:16]}…\n"
                       f"text sha256 {document.canonical_text_sha256[:16]}…\n"
                       f"parser {document.parser_version}"),
-            "group": "document", "shape": pal.NODE_SHAPES["document"],
+            "shape": pal.NODE_SHAPES["document"],
             "color": pal.NODE_LIGHT["document"], "size": 26, "font": {"size": 18},
         })
 
@@ -158,7 +168,7 @@ def _graph_payload(data: ReportData) -> tuple[dict[str, Any], dict[str, int]]:
             nodes.append({
                 "id": section_id, "label": section,
                 "title": f"Section\n{section}",
-                "group": "section", "shape": pal.NODE_SHAPES["section"],
+                "shape": pal.NODE_SHAPES["section"],
                 "color": pal.NODE_LIGHT["section"], "size": 16,
             })
             for document in data.ir.documents:
@@ -173,7 +183,7 @@ def _graph_payload(data: ReportData) -> tuple[dict[str, Any], dict[str, int]]:
             "title": (f"{clause.modality.value} · {clause.semantic_kind.value}\n"
                       f"{clause.display_text[:400]}\n\nstatus: {badge}\n"
                       f"clause {clause.clause_id}"),
-            "group": "clause", "shape": pal.NODE_SHAPES["clause"],
+            "shape": pal.NODE_SHAPES["clause"],
             "color": pal.NODE_LIGHT["clause"], "size": 10, "font": {"size": 11},
         })
         if section:
@@ -238,6 +248,14 @@ def _stage_table(data: ReportData) -> str:
         f"<th>Summary</th></tr></thead><tbody>{rows}</tbody></table>"
     )
 
+
+
+def _stage_path(name: str) -> str:
+    """``NN_stage`` for a stage, read from the stage table rather than written by hand."""
+    from pipeline.stages import STAGE_BY_NAME
+
+    number, _ = STAGE_BY_NAME[name]
+    return f"{number:02d}_{name}"
 
 
 def _semantic_panel(data: ReportData) -> str:
@@ -305,7 +323,7 @@ def build_report(data: ReportData) -> str:
     table_rows, clause_total = _clause_rows(data)
     coverage = _coverage_slices(data)
     modality = _modality_slices(data)
-    funnel = _funnel_slices(data)
+    statuses = _status_slices(data)
     blockers = _blocker_slices(data)
     generated = data.generated_at or _dt.datetime.now(_dt.timezone.utc).strftime(
         "%d %B %Y %H:%M UTC"
@@ -335,17 +353,21 @@ def build_report(data: ReportData) -> str:
                   f"{usage.get('reasoning_tokens', 0):,} reasoning"),
     ]) if model else ""
 
+    # Paths are derived from the stage table, never written out by hand: renumbering the
+    # stages once left this caption pointing at a directory that no longer existed.
+    clauses_path = f"{_stage_path('admission')}/clauses.json"
+    graph_path = f"{_stage_path('projection')}/graph-v2.json"
     omitted_note = (
         f'<p class="cap">Showing {caps["clauses_shown"]:,} of {caps["clauses_total"]:,} '
         f'clauses ({caps["clauses_omitted"]:,} omitted to keep the graph legible). '
-        "The full set is in <code>04_admission/clauses.json</code> and "
-        "<code>06_projection/graph-v2.json</code>.</p>"
+        f"The full set is in <code>{escape(clauses_path)}</code> and "
+        f"<code>{escape(graph_path)}</code>.</p>"
         if caps["clauses_omitted"] else
         f'<p class="cap">Showing all {caps["clauses_shown"]:,} clauses.</p>'
     )
     table_note = (
         f'<p class="cap">First {MAX_TABLE_ROWS:,} of {clause_total:,} clauses. '
-        "The complete table is <code>04_admission/clauses.json</code>.</p>"
+        f"The complete table is <code>{escape(clauses_path)}</code>.</p>"
         if clause_total > MAX_TABLE_ROWS else ""
     )
 
@@ -363,7 +385,9 @@ def build_report(data: ReportData) -> str:
         ),
         coverage=stacked_bar(coverage),
         modality=bar_rows(modality),
-        funnel=funnel_rows(funnel),
+        statuses=bar_rows(
+            statuses, max_value=float(len(data.ir.clauses)) or None, keep_zeros=True
+        ),
         semantic_panel=_semantic_panel(data),
         governance_panel=_governance_panel(data),
         blockers=(
@@ -555,10 +579,12 @@ _PAGE = """<!DOCTYPE html>
       {modality}
     </section>
     <section class="panel">
-      <h2>From extracted to executable</h2>
-      <p class="lede">Each stage is a subset of the one above it. The drop from
-      "semantically supported" to "DMN eligible" is where untyped prose stops.</p>
-      {funnel}
+      <h2>What each clause qualifies for</h2>
+      <p class="lede">Six statuses, each granted on its own evidence and
+      <strong>independent of the others</strong> — not a funnel. A clause can cite its
+      source exactly and still be ineligible for DMN. Bars are shares of all admitted
+      clauses.</p>
+      {statuses}
     </section>
   </div>
 

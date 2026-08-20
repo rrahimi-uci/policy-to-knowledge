@@ -258,3 +258,238 @@ def test_resume_retries_a_stored_failure(tmp_path) -> None:
     )
     assert stored["error"] is None
     assert stored["candidates"]
+
+
+def test_reparse_recovers_a_stored_failure_without_calling_the_model(tmp_path) -> None:
+    """Raw replies are kept verbatim precisely so a parsing fix costs nothing.
+
+    Re-calling the model would also change the answer, which makes the fix impossible
+    to evaluate.
+    """
+    from pipeline.runner import stage_model_extraction, stage_reparse_replies
+
+    _seed_requests(tmp_path, ["chunk_a"])
+    # A reply the parser refuses only because of a shape it does not yet tolerate.
+    stored = {
+        "output": [{"type": "message", "content": [{"type": "output_text", "text": json.dumps(
+            {"candidates": [{"modality": "obligation", "semantic_kind": "decision_rule",
+                             "effect": "require_action", "display_unit": 1,
+                             "citations": {"effect": [1, 1, 1]}}]})}]}],
+        "usage": {"input_tokens": 11, "output_tokens": 7},
+    }
+    calls = []
+
+    def transport(body):
+        calls.append(1)
+        return stored
+
+    stage_model_extraction(root=tmp_path, transport=transport, model="m", effort="high",
+                           concurrency=1, progress=False)
+    assert len(calls) == 1
+
+    result = stage_reparse_replies(root=tmp_path)
+    assert result.summary["model_calls"] == 0
+    assert len(calls) == 1, "reparse must not call the model"
+    assert result.summary["replies_reparsed"] == 1
+
+    stored_proposals = read_json(
+        stage_dir(tmp_path, "model_extraction") / "proposals" / "chunk_a.proposals.json"
+    )
+    assert stored_proposals["error"] is None
+    assert stored_proposals["candidates"]
+
+
+def test_reparse_keeps_a_genuine_failure_failing(tmp_path) -> None:
+    """It must never turn a refusal into a silent success."""
+    from pipeline.runner import stage_model_extraction, stage_reparse_replies
+
+    _seed_requests(tmp_path, ["chunk_a"])
+    bad = {"output": [{"type": "message", "content": [{"type": "output_text",
+            "text": '{"candidates": [{"modality": "not-a-modality"}]}'}]}],
+           "usage": {"input_tokens": 1, "output_tokens": 1}}
+    stage_model_extraction(root=tmp_path, transport=lambda body: bad, model="m",
+                           effort="high", concurrency=1, progress=False)
+    result = stage_reparse_replies(root=tmp_path)
+    assert result.summary["still_failing"] == 1
+    assert result.summary["recovered_from_error"] == 0
+
+
+def test_reparse_without_stored_replies_says_so(tmp_path) -> None:
+    from pipeline.runner import stage_reparse_replies
+
+    with pytest.raises(FileNotFoundError, match="no stored replies"):
+        stage_reparse_replies(root=tmp_path)
+
+
+def test_reparse_preserves_the_original_token_accounting(tmp_path) -> None:
+    """The call was paid for once; re-parsing must not double-count or zero it."""
+    from pipeline.runner import stage_model_extraction, stage_reparse_replies
+
+    _seed_requests(tmp_path, ["chunk_a"])
+    stage_model_extraction(root=tmp_path, transport=lambda body: _reply_envelope(),
+                           model="m", effort="high", concurrency=1, progress=False)
+    before = read_json(stage_dir(tmp_path, "model_extraction") / "proposals"
+                       / "chunk_a.proposals.json")["usage"]
+    stage_reparse_replies(root=tmp_path)
+    after = read_json(stage_dir(tmp_path, "model_extraction") / "proposals"
+                      / "chunk_a.proposals.json")["usage"]
+    assert after == before
+
+
+# ---------------------------------------------------------------------------
+# The deterministic stages, exercised against a real IR
+#
+# The stage-table tests above check wiring; these check the runners actually run.
+# Stage 05 shipped a wrong attribute name that only a real invocation could catch.
+# ---------------------------------------------------------------------------
+
+
+def _seed_ir(root, fixture):
+    """Write the stage-04 artefacts the deterministic tail reads."""
+    from pipeline.stages import stage_dir as _stage_dir
+
+    out = _stage_dir(root, "admission")
+    write_json(out / "policy-ir.json", fixture.ir.to_dict())
+    text_dir = _stage_dir(root, "ingestion") / "canonical-text"
+    text_dir.mkdir(parents=True, exist_ok=True)
+    for document_id, text in fixture.texts.items():
+        (text_dir / f"{document_id}.txt").write_text(text, encoding="utf-8")
+    write_json(
+        _stage_dir(root, "ingestion") / "documents.json",
+        [document.to_dict() for document in fixture.ir.documents],
+    )
+    return out
+
+
+def test_stage_semantic_assembly_runs_and_names_its_profile(tmp_path, fixtures) -> None:
+    from pipeline.runner import stage_semantic_assembly
+
+    _seed_ir(tmp_path, fixtures["eligibility_decision"])
+    result = stage_semantic_assembly(root=tmp_path)
+    assert result.number == 5
+    assert result.summary["profile"] == "generic"
+    assert result.summary["profile_version"]
+    assert "clauses_with_no_declared_projection" in result.summary
+    assert (stage_dir(tmp_path, "semantic_assembly") / "synthesis-report.json").exists()
+    assert (stage_dir(tmp_path, "semantic_assembly") / "domain-profile.json").exists()
+
+
+def test_a_clause_with_no_declared_intent_is_not_counted_as_a_shortfall(
+    tmp_path, fixtures
+) -> None:
+    """A definition or constraint belongs in the graph and nowhere else."""
+    from pipeline.runner import stage_semantic_assembly
+
+    fixture = fixtures["eligibility_decision"]
+    _seed_ir(tmp_path, fixture)
+    summary = stage_semantic_assembly(root=tmp_path).summary
+    accounted = summary["clauses_with_no_declared_projection"]
+    assert accounted == len(fixture.ir.clauses) - len(
+        {item["clause_id"] for item in
+         read_json(stage_dir(tmp_path, "semantic_assembly") / "synthesis-report.json")}
+    )
+
+
+def test_stage_governance_runs_and_queues_every_refusal(tmp_path, fixtures) -> None:
+    from pipeline.runner import stage_governance
+
+    _seed_ir(tmp_path, fixtures["eligibility_decision"])
+    result = stage_governance(root=tmp_path)
+    assert result.number == 7
+    assert "review_items" in result.summary
+    assert (stage_dir(tmp_path, "governance") / "review-queue.json").exists()
+    assert (stage_dir(tmp_path, "governance") / "semantic-metrics.json").exists()
+
+
+def test_the_deterministic_tail_runs_end_to_end(tmp_path, fixtures) -> None:
+    """Stages 05 to 09 in order, against a real IR, writing real files."""
+    from pipeline.runner import (
+        stage_gate,
+        stage_governance,
+        stage_projection,
+        stage_semantic_assembly,
+        stage_visualization,
+    )
+
+    _seed_ir(tmp_path, fixtures["eligibility_decision"])
+    for runner, kwargs in (
+        (stage_semantic_assembly, {}),
+        (stage_gate, {}),
+        (stage_governance, {}),
+        (stage_projection, {"graph_name": "test_corpus"}),
+        (stage_visualization, {"title": "Test Corpus"}),
+    ):
+        result = runner(root=tmp_path, **kwargs)
+        assert result.files > 0, result.name
+
+    report = next(stage_dir(tmp_path, "visualization").glob("*.html"))
+    html = report.read_text(encoding="utf-8")
+    assert html.startswith("<!DOCTYPE html>")
+    # the two stages added in this change must reach the page
+    assert "The semantic layer" in html
+    assert "Queued for human review" in html
+
+
+def test_the_run_summary_describes_the_corpus_not_the_last_invocation(tmp_path) -> None:
+    """A retry overwrote the summary with its own slice, and the report then said
+    "19 of 324 chunks sent" when all 324 had replies."""
+    from pipeline.runner import stage_model_extraction
+
+    chunk_ids = ["chunk_a", "chunk_b", "chunk_c"]
+    _seed_requests(tmp_path, chunk_ids)
+    fail_for = {"chunk_c"}
+
+    def transport(body):
+        payload = json.dumps(body)
+        if any(chunk in payload for chunk in fail_for):
+            return {"output": [{"type": "message", "content": [{
+                "type": "output_text", "text": '{"candidates": [{"modality": "bogus"}]}'}]}],
+                "usage": {"input_tokens": 5, "output_tokens": 2}}
+        return _reply_envelope()
+
+    stage_model_extraction(root=tmp_path, transport=transport, model="m", effort="high",
+                           concurrency=1, progress=False)
+    fail_for.clear()
+    result = stage_model_extraction(root=tmp_path, transport=transport, model="m",
+                                   effort="high", concurrency=1, progress=False)
+
+    # the retry called exactly one chunk, but the summary must describe all three
+    assert result.summary["this_invocation"]["requests_attempted"] == 1
+    summary = read_json(stage_dir(tmp_path, "model_extraction") / "run-summary.json")
+    assert summary["requests_attempted"] == 3
+    assert summary["requests_available"] == 3
+    assert summary["failed_requests"] == 0
+    assert summary["proposals"] == 3
+
+
+def test_corpus_totals_sum_the_tokens_of_every_stored_reply(tmp_path) -> None:
+    from pipeline.runner import corpus_totals, stage_model_extraction
+
+    _seed_requests(tmp_path, ["chunk_a", "chunk_b"])
+    stage_model_extraction(root=tmp_path, transport=lambda body: _reply_envelope(),
+                           model="m", effort="high", concurrency=1, progress=False)
+    totals = corpus_totals(tmp_path)
+    assert totals["usage"]["calls"] == 2
+    assert totals["usage"]["input_tokens"] == 20
+    assert totals["usage"]["output_tokens"] == 10
+    assert totals["usage"]["total_tokens"] == 30
+
+
+def test_reparse_refreshes_the_summary_the_report_reads(tmp_path) -> None:
+    """Recovering a chunk must update the totals, or the page keeps reporting a failure."""
+    from pipeline.runner import stage_model_extraction, stage_reparse_replies
+
+    _seed_requests(tmp_path, ["chunk_a"])
+    stored = {
+        "output": [{"type": "message", "content": [{"type": "output_text", "text": json.dumps(
+            {"candidates": [{"modality": "obligation", "semantic_kind": "decision_rule",
+                             "effect": "require_action", "display_unit": 1,
+                             "citations": {"effect": [1, 1]}}]})}]}],
+        "usage": {"input_tokens": 3, "output_tokens": 4},
+    }
+    stage_model_extraction(root=tmp_path, transport=lambda body: stored, model="m",
+                           effort="high", concurrency=1, progress=False)
+    stage_reparse_replies(root=tmp_path)
+    summary = read_json(stage_dir(tmp_path, "model_extraction") / "run-summary.json")
+    assert summary["failed_requests"] == 0
+    assert summary["proposals"] == 1

@@ -17,7 +17,7 @@ import pytest
 from policy_ir.enums import Status
 from validation.evidence_gate import run_gate
 from visualization import palette as pal
-from visualization.charts import Slice, bar_rows, funnel_rows, stacked_bar, stat_tile
+from visualization.charts import Slice, bar_rows, stacked_bar, stat_tile
 from visualization.report import (
     MAX_GRAPH_CLAUSES,
     MAX_TABLE_ROWS,
@@ -137,24 +137,6 @@ def test_bar_rows_scales_to_the_largest_value() -> None:
 
 def test_bar_rows_handles_an_empty_series() -> None:
     assert isinstance(bar_rows([]), str)
-
-
-def test_funnel_rows_are_monotonically_descending() -> None:
-    """A funnel whose stages grew would be reporting an impossible subset."""
-    html = funnel_rows([Slice("all", 100, "#111"), Slice("some", 40, "#111"),
-                        Slice("few", 10, "#111")])
-    widths = [float(w) for w in re.findall(r"width:\s*([0-9.]+)%", html)]
-    assert widths == sorted(widths, reverse=True)
-
-
-def test_funnel_uses_one_hue_because_order_is_carried_by_length() -> None:
-    """An ordinal colour ramp failed the adjacent-pair check; length carries order."""
-    html = funnel_rows([Slice(f"s{n}", 100 - n * 10, pal.SERIES_LIGHT) for n in range(6)])
-    hues = set(re.findall(r"background:\s*(#[0-9a-fA-F]{6})", html))
-    assert len(hues) <= 1
-
-
-# -------------------------------------------------------------------- the report
 
 
 def test_report_is_a_complete_html_document(report_html) -> None:
@@ -316,3 +298,97 @@ def test_the_report_renders_with_every_stage_absent_but_the_ir(fixtures) -> None
     fixture = fixtures["eligibility_decision"]
     html = build_report(ReportData(title="T", ir=fixture.ir, gate={}, graph={}))
     assert html.lstrip().startswith("<!DOCTYPE html>")
+
+
+def test_the_six_statuses_are_not_drawn_as_a_funnel(report_html) -> None:
+    """They are independent, so a funnel would assert a nesting that does not exist.
+
+    On the real corpus `provenance_exact` was 100% while `schema_valid` was 54% — a
+    funnel drew that as an increase mid-descent, and its caption claimed each stage was
+    a subset of the one above.
+    """
+    assert "subset of the one above" not in report_html
+    assert "independent of the others" in report_html
+
+
+def test_status_bars_are_shares_of_all_admitted_clauses(fixtures) -> None:
+    """A status bar must be comparable to its neighbours, so all share one denominator."""
+    import re
+
+    fixture = fixtures["eligibility_decision"]
+    gate = run_gate(fixture.ir, fixture.texts)
+    html = build_report(ReportData(title="T", ir=fixture.ir, gate=gate.to_dict(), graph={}))
+    section = html[html.index("What each clause qualifies for"):]
+    section = section[: section.index("</section>")]
+    widths = [float(w) for w in re.findall(r"width:\s*([0-9.]+)%", section)]
+    assert widths, "no status bars rendered"
+    assert max(widths) <= 100.5
+
+
+def test_a_zero_in_a_fixed_vocabulary_is_shown_not_dropped() -> None:
+    """"DMN eligible: 0" was the most important number on the corpus and vanished."""
+    html = bar_rows([Slice("present", 10, "#111"), Slice("absent", 0, "#111")],
+                    keep_zeros=True)
+    assert "absent" in html
+    assert ">0<" in html
+
+
+def test_a_zero_in_an_observed_list_is_dropped_as_noise() -> None:
+    """A blocker that was never raised is not a row worth drawing."""
+    html = bar_rows([Slice("raised", 3, "#111"), Slice("never_raised", 0, "#111")])
+    assert "raised" in html
+    assert "never_raised" not in html
+
+
+def test_every_status_reaches_the_page_even_at_zero(report_html) -> None:
+    """The six statuses are a fixed vocabulary; a missing row reads as "not applicable"."""
+    for status in ("Clauses admitted", "Schema valid", "Provenance exact",
+                   "Semantically supported", "DMN eligible", "BPMN eligible"):
+        assert status in report_html, status
+
+
+def test_a_zero_bar_draws_nothing_while_a_small_one_stays_visible() -> None:
+    """A sliver next to a printed 0 contradicts the number beside it."""
+    import re
+
+    html = bar_rows([Slice("big", 1000, "#111"), Slice("tiny", 1, "#111"),
+                     Slice("none", 0, "#111")], keep_zeros=True)
+    widths = [float(w) for w in re.findall(r"width:([0-9.]+)%", html)]
+    assert widths[0] == 100.0
+    assert 0 < widths[1] <= 1.0, "a small non-zero value must stay visible"
+    assert widths[2] == 0.0, "a zero must draw nothing"
+
+
+def test_graph_nodes_do_not_carry_a_vis_group(report_html) -> None:
+    """vis-network's group palette overrode the explicit colours, so the rendered graph
+    contradicted its own legend — green/orange/blue in the key, yellow/red/teal on
+    screen."""
+    assert '"group"' not in report_html
+
+
+def test_every_graph_node_carries_an_explicit_colour_and_shape(report_html) -> None:
+    import json as _json
+    import re
+
+    payload = _json.loads(
+        re.search(r"var data = (\{.*?\});\n", report_html, re.S).group(1)
+    )
+    assert payload["nodes"]
+    for node in payload["nodes"]:
+        assert node["color"].startswith("#")
+        assert node["shape"]
+
+
+def test_artifact_paths_in_the_report_come_from_the_stage_table(fixtures) -> None:
+    """Renumbering the stages once left this caption naming a directory that had moved."""
+    from pipeline.stages import STAGE_BY_NAME
+
+    fixture = fixtures["eligibility_decision"]
+    gate = run_gate(fixture.ir, fixture.texts)
+    html = build_report(ReportData(title="T", ir=fixture.ir, gate=gate.to_dict(), graph={}))
+    admission = f"{STAGE_BY_NAME['admission'][0]:02d}_admission"
+    projection = f"{STAGE_BY_NAME['projection'][0]:02d}_projection"
+    for path in (admission, projection):
+        # only asserted when the caps actually fire, so build a capped report too
+        assert path in html or "Showing all" in html
+    assert "06_projection" not in html or projection == "06_projection"

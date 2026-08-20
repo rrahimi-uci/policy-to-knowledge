@@ -78,6 +78,10 @@ def build_parser() -> argparse.ArgumentParser:
                              "Use after changing the prompt or the schema.")
     parser.add_argument("--profile", type=Path, default=None,
                         help="Domain profile JSON for the semantic layer.")
+    parser.add_argument("--reparse", action="store_true",
+                        help="Re-derive proposals from the raw replies already on disk "
+                             "and stop. No model calls, no cost. Use after a parsing or "
+                             "normalisation fix.")
     parser.add_argument("--dry-run", action="store_true",
                         help="Print the stages that would run, and stop.")
     return parser
@@ -140,6 +144,13 @@ def main(argv: Sequence[str] | None = None) -> int:
     print(f"corpus   : {corpus}")
     print(f"stages   : {', '.join(stages)}")
     if args.dry_run:
+        return 0
+
+    if args.reparse:
+        from pipeline.runner import stage_reparse_replies
+
+        result = stage_reparse_replies(root=args.output)
+        print(json.dumps(result.to_dict(), indent=2))
         return 0
 
     args.output.mkdir(parents=True, exist_ok=True)

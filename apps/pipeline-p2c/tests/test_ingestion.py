@@ -399,3 +399,68 @@ def test_ingesting_several_documents_keeps_them_distinct(tmp_path: Path) -> None
     assert len({d.source_sha256 for d in ir.documents}) == 2
     by_document = {d.document_id for d in ir.documents}
     assert {c.document_id for c in ir.chunks} == by_document
+
+
+# ---------------------------------------------------------------------------
+# Chunk boundaries
+#
+# A hard character budget is byte-exact and passes every provenance check, but on the
+# 1,191-page Fannie Mae guide it cut 58 of 324 chunks mid-word. The first unit of such a
+# chunk read "al who is not a loan applicant", and the sentence straddling the cut was
+# never presented whole to an extractor in either chunk.
+# ---------------------------------------------------------------------------
+
+
+def test_an_over_long_section_is_not_split_inside_a_word() -> None:
+    """At any realistic budget — production uses 20,000 characters — no cut lands
+    inside a token."""
+    from ingestion.sections import segment_by_section
+
+    text = ("An individual who is not a loan applicant but whose credit is used in "
+            "qualifying for the loan must sign the security instrument. ") * 6
+    for budget in range(120, 400, 7):
+        for segment in segment_by_section(text, max_length=budget):
+            if segment.char_start > 0:
+                assert text[segment.char_start - 1].isspace() or \
+                    text[segment.char_start].isspace(), (budget, segment.char_start)
+
+
+def test_a_token_longer_than_the_allowance_keeps_the_hard_cut() -> None:
+    """The allowance is 10% of the budget. A token longer than that cannot be snapped
+    around, and a boundary placed badly beats a chunk left short."""
+    from ingestion.sections import segment_by_section
+
+    text = "aa " + "z" * 60 + " bb"
+    segments = segment_by_section(text, max_length=20)
+    assert segments[-1].char_end == len(text)
+    assert sum(s.char_end - s.char_start for s in segments) == len(text)
+
+
+def test_snapping_never_loses_or_duplicates_a_character() -> None:
+    """Boundaries must stay contiguous: chunk N ends exactly where N+1 begins."""
+    from ingestion.sections import segment_by_section
+
+    text = " ".join(f"word{n}" for n in range(400))
+    segments = segment_by_section(text, max_length=97)
+    assert segments[0].char_start == 0
+    assert segments[-1].char_end == len(text)
+    for previous, following in zip(segments, segments[1:]):
+        assert previous.char_end == following.char_start
+
+
+def test_a_long_unbroken_token_still_gets_a_boundary() -> None:
+    """A URL or a run of digits must not be able to shrink a chunk arbitrarily."""
+    from ingestion.sections import segment_by_section
+
+    text = "x" * 500
+    segments = segment_by_section(text, max_length=100)
+    assert len(segments) == 5
+    assert segments[-1].char_end == len(text)
+
+
+def test_snapping_respects_the_end_of_the_section() -> None:
+    from ingestion.sections import segment_by_section
+
+    text = "alpha beta gamma delta"
+    segments = segment_by_section(text, max_length=10)
+    assert segments[-1].char_end == len(text)

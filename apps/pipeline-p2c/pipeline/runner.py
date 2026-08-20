@@ -274,19 +274,125 @@ def stage_model_extraction(
         requests, transport, model=model, effort=effort,
         concurrency=concurrency, on_reply=report,
     )
+    # The summary describes the corpus on disk, not just this invocation. A resumed or
+    # retried run would otherwise overwrite it with its own small slice, and a report
+    # built from that reads as "19 of 324 chunks sent" when all 324 have replies.
+    corpus = corpus_totals(root)
     summary = {
         "model": model,
         "reasoning_effort": effort,
         "concurrency": concurrency,
-        "requests_attempted": len(run.replies),
-        "requests_available": len(read_json(stage_dir(root, "extraction_requests") / "requests-index.json")),
-        **run.to_dict(),
+        "requests_available": len(
+            read_json(stage_dir(root, "extraction_requests") / "requests-index.json")
+        ),
+        **corpus,
+        "this_invocation": {
+            "requests_attempted": len(run.replies),
+            **run.to_dict(),
+        },
     }
     write_json(out / "run-summary.json", summary)
     return StageResult(
         "model_extraction", 3, out, count_files(out), time.monotonic() - started,
         {k: summary[k] for k in ("model", "reasoning_effort", "requests_attempted",
-                                 "failed_requests", "proposals", "usage")},
+                                 "failed_requests", "proposals", "usage",
+                                 "this_invocation")},
+    )
+
+
+def corpus_totals(root: Path) -> dict[str, Any]:
+    """Aggregate every persisted reply into the totals for the corpus as a whole.
+
+    The per-chunk proposal files are the ground truth: each is written once, when its
+    call returned, and carries that call's own token accounting. Summing them survives
+    resumes, retries and re-parses, which a per-invocation summary cannot.
+    """
+    out = stage_dir(root, "model_extraction")
+    usage = {"calls": 0, "input_tokens": 0, "output_tokens": 0, "reasoning_tokens": 0}
+    attempted = proposals = failed = 0
+    failures: list[dict[str, Any]] = []
+    for path in sorted((out / PROPOSAL_DIR).glob("*.proposals.json")):
+        record = read_json(path)
+        attempted += 1
+        proposals += len(record.get("candidates") or ())
+        for key in usage:
+            usage[key] += int((record.get("usage") or {}).get(key) or 0)
+        if record.get("error"):
+            failed += 1
+            failures.append({"chunk_id": record.get("chunk_id"), "error": record["error"]})
+    usage["total_tokens"] = usage["input_tokens"] + usage["output_tokens"]
+    return {
+        "requests_attempted": attempted,
+        "failed_requests": failed,
+        "proposals": proposals,
+        "usage": usage,
+        "failures": failures,
+    }
+
+
+def stage_reparse_replies(*, root: Path) -> StageResult:
+    """Re-derive proposals from the raw replies already on disk. No model calls.
+
+    Raw payloads are kept verbatim for exactly this: when a *parsing* fix lands — a
+    normalisation, a tolerated shape, a corrected refusal — the corpus can be re-derived
+    for free. Paying again for a reply already in hand is waste, and re-calling the model
+    would also change the answer, which makes the fix impossible to evaluate.
+
+    A reply that still fails to parse keeps its recorded error, so this is safe to run
+    repeatedly and never turns a refusal into a silent success.
+    """
+    started = time.monotonic()
+    out = stage_dir(root, "model_extraction")
+    reply_dir = out / REPLY_DIR
+    if not reply_dir.is_dir():
+        raise FileNotFoundError(
+            f"no stored replies under {reply_dir}; run the model_extraction stage first"
+        )
+
+    from extraction.model_extractor import Usage, parse_reply
+
+    recovered, still_failing, unchanged = 0, 0, 0
+    for path in sorted(reply_dir.glob("*.reply.json")):
+        chunk_id = path.name.removesuffix(".reply.json")
+        payload = read_json(path)
+        target = out / PROPOSAL_DIR / f"{chunk_id}.proposals.json"
+        previous = read_json(target) if target.exists() else {}
+        try:
+            proposals = parse_reply(payload)
+            error = None
+        except Exception as exc:  # noqa: BLE001 - any parse failure is recorded, not raised
+            proposals, error = (), f"{type(exc).__name__}: {exc}"
+        if error:
+            still_failing += 1
+        elif previous.get("error"):
+            recovered += 1
+        else:
+            unchanged += 1
+        write_json(
+            target,
+            {
+                "chunk_id": chunk_id,
+                "error": error,
+                "elapsed_seconds": previous.get("elapsed_seconds", 0.0),
+                "usage": previous.get("usage") or Usage.from_payload(payload).to_dict(),
+                "candidates": [proposal.to_dict() for proposal in proposals],
+            },
+        )
+
+    summary = {
+        "replies_reparsed": recovered + still_failing + unchanged,
+        "recovered_from_error": recovered,
+        "still_failing": still_failing,
+        "unchanged": unchanged,
+        "model_calls": 0,
+    }
+    write_json(out / "reparse-summary.json", summary)
+
+    # Proposal counts just changed, so the corpus summary the report reads must follow.
+    existing = read_json(out / "run-summary.json") if (out / "run-summary.json").exists() else {}
+    write_json(out / "run-summary.json", {**existing, **corpus_totals(root)})
+    return StageResult(
+        "model_extraction", 3, out, count_files(out), time.monotonic() - started, summary
     )
 
 
@@ -438,7 +544,8 @@ def stage_semantic_assembly(*, root: Path, profile_path: Path | None = None) -> 
         "opportunities": len(opportunities),
         "by_target": by_target,
         "missing_by_field": missing_counts,
-        "profile": profile.name,
+        "profile": profile.profile_id,
+        "profile_version": profile.version,
         # Stated explicitly: a clause with no declared intent is not a shortfall.
         "clauses_with_no_declared_projection": len(ir.clauses)
         - len({opportunity.clause_id for opportunity in opportunities}),
