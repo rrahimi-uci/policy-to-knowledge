@@ -39,19 +39,29 @@ def proposal_schema(request: ExtractionRequest) -> dict[str, Any]:
     unit_indices = [unit.index for unit in request.units]
     unit_ref = {"type": "integer", "enum": unit_indices}
     defs: dict[str, Any] = {**enum_defs(), **expression_defs()}
-    defs["RoleCitation"] = {
+    # Citations are keyed *by role* rather than being a list of {role, units} pairs.
+    # Given the list form the model twice named the same role in one proposal, which the
+    # parser refuses because the evidence for a field would be ambiguous — and that
+    # refusal cost 5 chunks of a live run. As an object, a duplicate role cannot be
+    # written down at all.
+    defs["RoleCitations"] = {
         "type": "object",
         "additionalProperties": False,
+        "description": (
+            "Which units support each part of the clause. Give a role the units that "
+            "state it, and omit any role the cited text does not state. A role appears "
+            "at most once by construction."
+        ),
         "properties": {
-            "role": {"enum": [member.value for member in SemanticRole]},
-            "units": {
+            member.value: {
                 "type": "array",
                 "minItems": 1,
                 "uniqueItems": True,
                 "items": unit_ref,
-            },
+            }
+            for member in SemanticRole
         },
-        "required": ["role", "units"],
+        "required": [],
     }
     defs["CandidateProposal"] = {
         "type": "object",
@@ -61,11 +71,7 @@ def proposal_schema(request: ExtractionRequest) -> dict[str, Any]:
             "semantic_kind": {"enum": [k.value for k in SemanticKind]},
             "effect": {"enum": [e.value for e in Effect]},
             "display_unit": unit_ref,
-            "citations": {
-                "type": "array",
-                "minItems": 1,
-                "items": {"$ref": "#/$defs/RoleCitation"},
-            },
+            "citations": {"$ref": "#/$defs/RoleCitations"},
             "subject_ref": {"type": "string"},
             "action": {"type": "string"},
             "object_ref": {"type": "string"},
@@ -195,6 +201,8 @@ PROHIBITIONS = (
     "built only from the closed grammar in this schema, and the compiler serialises them.",
     "Do not cite a unit that is not listed below. There is no other way to reference the "
     "document, and an index outside the list will be refused.",
+    "Give each citation role the units that state it, and omit roles the cited text does "
+    "not state. Every unit supporting one role goes in that role's list together.",
     "Do not state a number, date or duration that does not appear in the units you cite. "
     "Every value is checked against the cited text.",
     "Write every date as YYYY-MM-DD, whatever form the source uses. 'July 6, 2010' is "

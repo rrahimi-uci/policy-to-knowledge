@@ -314,3 +314,63 @@ def test_progress_counts_completions_not_request_indexes(sample_requests) -> Non
                    on_reply=lambda reply, done, total: seen.append(done))
     assert sorted(seen) == list(range(1, len(sample_requests) + 1))
     assert seen == sorted(seen), "progress went backwards"
+
+
+# --------------------------------------------------- role-keyed citations on the wire
+#
+# Given a list of {role, units}, the model twice named the same role in one proposal.
+# The parser refuses that — the evidence for a field would be ambiguous — and it cost 5
+# chunks of a live run. Keying by role makes the duplicate unexpressible.
+
+
+def test_role_keyed_citations_are_normalised_to_the_ir_shape() -> None:
+    from extraction.proposals import normalise_citations
+
+    out = normalise_citations({
+        "modality": "obligation",
+        "citations": {"subject": [1], "effect": [2, 3]},
+    })
+    assert out["citations"] == [
+        {"role": "subject", "units": [1]},
+        {"role": "effect", "units": [2, 3]},
+    ]
+
+
+def test_an_empty_role_is_dropped_rather_than_cited() -> None:
+    """Strict mode may force the key present; an empty list is not a citation."""
+    from extraction.proposals import normalise_citations
+
+    out = normalise_citations({"citations": {"subject": [1], "scope": []}})
+    assert out["citations"] == [{"role": "subject", "units": [1]}]
+
+
+def test_the_list_form_still_parses(sample_request) -> None:
+    """Replies captured before the contract changed must keep working."""
+    from extraction.proposals import normalise_citations
+
+    listed = {"citations": [{"role": "subject", "units": [1]}]}
+    assert normalise_citations(listed) == listed
+
+
+def test_a_role_keyed_reply_parses_end_to_end() -> None:
+    payload = _envelope({"candidates": [{
+        "modality": "obligation", "semantic_kind": "decision_rule",
+        "effect": "require_action", "display_unit": 1,
+        "citations": {"subject": [1], "effect": [1]},
+    }]})
+    proposals = parse_reply(payload)
+    assert len(proposals) == 1
+    assert {c.role.value for c in proposals[0].citations} == {"subject", "effect"}
+
+
+def test_the_wire_schema_cannot_express_a_duplicate_role(sample_request) -> None:
+    from extraction.contract import proposal_schema
+    from extraction.strict_schema import to_strict
+
+    strict = to_strict(proposal_schema(sample_request))
+    citations = strict["$defs"]["RoleCitations"]
+    assert citations["type"] == "object"
+    assert citations["additionalProperties"] is False
+    # one property per role, so naming a role twice is not a representable document
+    assert "subject" in citations["properties"]
+    assert citations["properties"]["subject"]["type"] == "array"

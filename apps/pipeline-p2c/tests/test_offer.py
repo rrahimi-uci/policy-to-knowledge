@@ -49,7 +49,7 @@ def minimal(**overrides) -> dict:
         "semantic_kind": "documentation_requirement",
         "effect": "create_record",
         "display_unit": 0,
-        "citations": [{"role": "effect", "units": [0]}],
+        "citations": {"effect": [0]},
     }
     base.update(overrides)
     return base
@@ -129,7 +129,7 @@ def test_the_schema_makes_a_fabricated_citation_unexpressible() -> None:
     jsonschema.validate({"candidates": [minimal()]}, schema)
     with pytest.raises(jsonschema.ValidationError, match="is not one of"):
         jsonschema.validate(
-            {"candidates": [minimal(citations=[{"role": "effect", "units": [99]}])]}, schema
+            {"candidates": [minimal(citations={"effect": [99]})]}, schema
         )
     with pytest.raises(jsonschema.ValidationError):
         jsonschema.validate({"candidates": [minimal(display_unit=99)]}, schema)
@@ -141,9 +141,8 @@ def test_the_schema_enumerates_only_the_offered_indices() -> None:
     schema = proposal_schema(request)
     expected = [unit.index for unit in request.units]
     assert schema["$defs"]["CandidateProposal"]["properties"]["display_unit"]["enum"] == expected
-    assert (
-        schema["$defs"]["RoleCitation"]["properties"]["units"]["items"]["enum"] == expected
-    )
+    for role_slot in schema["$defs"]["RoleCitations"]["properties"].values():
+        assert role_slot["items"]["enum"] == expected
 
 
 def test_the_schema_closes_every_vocabulary_and_forbids_extra_keys() -> None:
