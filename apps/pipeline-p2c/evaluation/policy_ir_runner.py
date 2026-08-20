@@ -13,6 +13,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Callable, Mapping, Sequence
@@ -37,9 +38,11 @@ from .query_ir import QueryIRError, evaluate_query, query_from_dict, query_schem
 from .run_manifest import build_run_manifest_record
 
 
-POLICY_IR_RUNNER_SCHEMA_VERSION = "p2c-openai-policy-ir-query-v1"
+POLICY_IR_RUNNER_SCHEMA_VERSION = "p2c-openai-policy-ir-query-v2"
 EXTRACTION_MAX_OUTPUT_TOKENS = 4_000
 QUERY_MAX_OUTPUT_TOKENS = 400
+EVIDENCE_BUDGET = 5
+_EXCEPTION_MARKERS = ("except", "unless", "however", "notwithstanding", "subject to", "but ")
 
 
 class PolicyIRRunnerError(ValueError):
@@ -137,8 +140,53 @@ def render_extraction_prompt(case: BenchmarkCase, request: ExtractionRequest) ->
     )
 
 
-def render_query_prompt(case: BenchmarkCase, clauses: Sequence[Any]) -> str:
-    """Render a QueryIR-only task; raw source text is intentionally absent."""
+def _tokens(text: str) -> set[str]:
+    return set(re.findall(r"[a-z0-9]+", text.casefold()))
+
+
+def _raw_evidence_text(clause: Any, spans_by_id: Mapping[str, Any], source_text: str) -> str:
+    """Recover exact source excerpts for an admitted clause, never generated text."""
+    span_ids = sorted({item for values in clause.evidence.values() for item in values})
+    excerpts = [source_text[spans_by_id[item].char_start : spans_by_id[item].char_end] for item in span_ids]
+    return " ".join(excerpts)
+
+
+def select_query_clauses(
+    *,
+    case: BenchmarkCase,
+    clauses: Sequence[Any],
+    spans: Sequence[Any],
+    evidence_budget: int = EVIDENCE_BUDGET,
+) -> tuple[tuple[Any, ...], bool]:
+    """Select a compact, query-relevant clause slice and retain one exception.
+
+    Selection is deterministic and label-free.  It ranks lexical overlap between
+    the benchmark query and *application-owned raw evidence*, then reserves a
+    slot for the strongest exception/limitation clause when one exists.
+    """
+    if evidence_budget < 1:
+        raise PolicyIRRunnerError("evidence_budget must be positive")
+    spans_by_id = {span.evidence_id: span for span in spans}
+    query_tokens = _tokens(case.query)
+    ranked: list[tuple[int, bool, str, Any]] = []
+    for clause in clauses:
+        raw = _raw_evidence_text(clause, spans_by_id, case.source_text)
+        normalized = _tokens(raw)
+        is_exception = any(marker in raw.casefold() for marker in _EXCEPTION_MARKERS)
+        ranked.append((len(query_tokens & normalized), is_exception, clause.clause_id, clause))
+    ranked.sort(key=lambda item: (-item[0], item[2]))
+    selected = [item[3] for item in ranked[:evidence_budget]]
+    exception = next((item[3] for item in ranked if item[1]), None)
+    retained_exception = exception is not None
+    if exception is not None and exception not in selected:
+        selected[-1] = exception
+    selected.sort(key=lambda clause: clause.clause_id)
+    return tuple(selected), retained_exception
+
+
+def render_query_prompt(case: BenchmarkCase, clauses: Sequence[Any], spans: Sequence[Any]) -> str:
+    """Render QueryIR over a compact PolicyIR slice with exact source excerpts."""
+    spans_by_id = {span.evidence_id: span for span in spans}
     records: list[str] = []
     for clause in clauses:
         evidence = ", ".join(
@@ -149,12 +197,14 @@ def render_query_prompt(case: BenchmarkCase, clauses: Sequence[Any]) -> str:
                 f"CLAUSE {clause.clause_id}",
                 f"kind={clause.semantic_kind.value}; modality={clause.modality.value}; effect={clause.effect.value}",
                 f"text={clause.display_text}",
+                f"raw_source={_raw_evidence_text(clause, spans_by_id, case.source_text)}",
                 f"evidence={evidence}",
             )
         )
     lines = [
         "You are a PolicyIR query adapter.",
-        "Use only the admitted PolicyIR clauses below. Do not use outside knowledge.",
+        "Use only the admitted PolicyIR clauses and raw source excerpts below. Do not use outside knowledge.",
+        "Treat exceptions, limitations, negations, and conditions in raw_source as controlling evidence.",
         "Return a tri-valued relationship: supported, contradicted, or unknown.",
         "Reference only clause identifiers shown below. Do not return a benchmark answer.",
         "",
@@ -205,11 +255,11 @@ def run_policy_ir_case(
     api_key_env: str,
     base_url: str,
     timeout_seconds: float,
-    temperature: float,
+    reasoning_effort: str,
     generate: Callable[..., str] = call_openai,
 ) -> PolicyIRRunnerResult:
     """Run one case through offered units, graph admission, QueryIR, and evaluation."""
-    validate_model_and_decoding(model=model, decoding={"temperature": temperature})
+    validate_model_and_decoding(model=model, decoding={"reasoning": {"effort": reasoning_effort}})
     registry, request = _case_registry(case)
     trace: dict[str, Any] = {
         "case_id": case.case_id,
@@ -219,6 +269,8 @@ def run_policy_ir_case(
         "graph_eligible_clause_count": 0,
         "compiler_admitted": False,
         "query_admitted": False,
+        "selected_clause_count": 0,
+        "exception_clause_retained": False,
     }
     try:
         extraction = generate(
@@ -227,7 +279,7 @@ def run_policy_ir_case(
             api_key_env=api_key_env,
             base_url=base_url,
             timeout_seconds=timeout_seconds,
-            temperature=temperature,
+            reasoning_effort=reasoning_effort,
             schema=extraction_schema(request),
             schema_name="policy_ir_evidence_slice",
             max_output_tokens=EXTRACTION_MAX_OUTPUT_TOKENS,
@@ -256,21 +308,24 @@ def run_policy_ir_case(
         if not eligible:
             trace["status"] = "abstained_no_graph_eligible_clause"
             return PolicyIRRunnerResult({"case_id": case.case_id, "answer": None}, trace)
+        selected, retained_exception = select_query_clauses(case=case, clauses=eligible, spans=spans)
+        trace["selected_clause_count"] = len(selected)
+        trace["exception_clause_retained"] = retained_exception
         query_response = generate(
             model=model,
-            prompt=render_query_prompt(case, eligible),
+            prompt=render_query_prompt(case, selected, spans),
             api_key_env=api_key_env,
             base_url=base_url,
             timeout_seconds=timeout_seconds,
-            temperature=temperature,
-            schema=query_schema(benchmark=case.benchmark, clause_ids=[item.clause_id for item in eligible]),
+            reasoning_effort=reasoning_effort,
+            schema=query_schema(benchmark=case.benchmark, clause_ids=[item.clause_id for item in selected]),
             schema_name="policy_ir_query",
             max_output_tokens=QUERY_MAX_OUTPUT_TOKENS,
         )
         query = query_from_dict(
             _load_object(query_response, where="PolicyIR query output"), benchmark=case.benchmark
         )
-        prediction = evaluate_query(case=case, query=query, clauses=eligible, spans=spans)
+        prediction = evaluate_query(case=case, query=query, clauses=selected, spans=spans)
         trace["query_admitted"] = True
         trace["status"] = "answered"
         return PolicyIRRunnerResult(
@@ -303,11 +358,11 @@ def configuration_record(
     api_key_env: str,
     base_url: str,
     timeout_seconds: float,
-    temperature: float,
+    reasoning_effort: str,
     implementation_revision: str,
 ) -> dict[str, Any]:
     """Return a secret-free, protocol-bound PolicyIR run configuration."""
-    validate_model_and_decoding(model=model, decoding={"temperature": temperature})
+    validate_model_and_decoding(model=model, decoding={"reasoning": {"effort": reasoning_effort}})
     return {
         "schema_version": POLICY_IR_RUNNER_SCHEMA_VERSION,
         "system": {"kind": "policy_ir", "implementation_revision": implementation_revision},
@@ -317,6 +372,7 @@ def configuration_record(
         "api_key_env": api_key_env,
         "base_url": base_url,
         "store": False,
+        "reasoning": {"effort": reasoning_effort},
         "protocol": protocol_record(
             prompt_versions=(POLICY_IR_EXTRACTION_PROMPT_VERSION, POLICY_IR_QUERY_PROMPT_VERSION)
         ),
@@ -353,7 +409,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--api-key-env", default="OPENAI_API_KEY")
     parser.add_argument("--base-url", default=_DEFAULT_BASE_URL)
     parser.add_argument("--timeout-seconds", type=float, default=120.0)
-    parser.add_argument("--temperature", type=float, default=0.0)
+    parser.add_argument("--reasoning-effort", default="medium", choices=("none", "low", "medium", "high", "xhigh"))
     return parser
 
 
@@ -367,7 +423,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     if len(set(paths)) != len(paths):
         parser.error("prediction, trace, configuration, and run-manifest outputs must differ")
     try:
-        validate_model_and_decoding(model=args.model, decoding={"temperature": args.temperature})
+        validate_model_and_decoding(model=args.model, decoding={"reasoning": {"effort": args.reasoning_effort}})
         if any(path.exists() for path in paths):
             existing = next(path for path in paths if path.exists())
             raise PolicyIRRunnerError(f"refusing to overwrite existing file: {existing}")
@@ -383,7 +439,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             api_key_env=args.api_key_env,
             base_url=args.base_url,
             timeout_seconds=args.timeout_seconds,
-            temperature=args.temperature,
+            reasoning_effort=args.reasoning_effort,
         )
         _write_new(args.predictions_out, "\n".join(json.dumps(item.prediction, sort_keys=True) for item in results) + "\n")
         _write_new(args.trace_out, "\n".join(json.dumps(item.trace, sort_keys=True) for item in results) + "\n")
@@ -395,7 +451,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             api_key_env=args.api_key_env,
             base_url=args.base_url,
             timeout_seconds=args.timeout_seconds,
-            temperature=args.temperature,
+            reasoning_effort=args.reasoning_effort,
             implementation_revision=args.implementation_revision,
         )
         configuration["run"] = {

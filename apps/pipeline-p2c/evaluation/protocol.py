@@ -13,12 +13,14 @@ import json
 from typing import Any, Mapping
 
 
-PROTOCOL_ID = "p2c-open-benchmark-policyir-2026-08-19-v1"
+PROTOCOL_ID = "p2c-open-benchmark-policyir-2026-08-20-v2"
 LOCKED_MODEL = "gpt-5.2"
 DIRECT_PROMPT_VERSION = "p2c-direct-policy-qa-v1"
-POLICY_IR_EXTRACTION_PROMPT_VERSION = "p2c-policy-ir-extraction-v1"
-POLICY_IR_QUERY_PROMPT_VERSION = "p2c-policy-ir-query-v1"
-OPENAI_DECODING: Mapping[str, Any] = {"temperature": 0.0}
+POLICY_IR_EXTRACTION_PROMPT_VERSION = "p2c-policy-ir-extraction-v2"
+POLICY_IR_QUERY_PROMPT_VERSION = "p2c-policy-ir-query-v2"
+# GPT-5.2 rejects temperature when reasoning is above ``none``.  Keep this
+# record explicit so a future comparison cannot silently use the API default.
+OPENAI_DECODING: Mapping[str, Any] = {"reasoning": {"effort": "medium"}}
 PAIRED_BOOTSTRAP_SEED = 20260819
 PAIRED_BOOTSTRAP_SAMPLES = 10_000
 

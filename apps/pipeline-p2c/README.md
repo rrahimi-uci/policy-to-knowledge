@@ -617,7 +617,7 @@ uses structured JSON output, and sends `store: false`; neither the key nor promp
 or API replies are written to its configuration record. It reads `OPENAI_API_KEY`
 by default; use `--api-key-env NAME` only when the key is deliberately supplied
 through a different environment-variable name. The paper protocol fixes this runner
-to `gpt-5.2` and `temperature=0.0`; it writes its own run manifest so a direct run
+to `gpt-5.2` with `reasoning.effort=medium` (and no temperature); it writes its own run manifest so a direct run
 can be paired without hand-assembling provenance.
 
 ```bash
@@ -635,8 +635,10 @@ python -m evaluation.openai_runner \
 ### Evidence-bounded PolicyIR comparison
 
 `evaluation.policy_ir_runner` is a separate paired-system variant. It creates a
-case-scoped PolicyIR evidence slice from application-offered sentence units, lets the
-query stage see only graph-eligible clauses plus the query, and maps a validated
+case-scoped PolicyIR evidence slice from application-offered sentence units, then
+deterministically selects at most five graph-eligible clauses using the query and
+their raw, source-backed evidence. An exception or limitation clause is retained when
+present. The query stage sees this compact slice plus exact source excerpts, and maps a validated
 tri-valued QueryIR relation to a public benchmark answer. It is not a claim that any
 benchmark provides gold PolicyIR/DMN/BPMN. The runner emits prediction, safe admission
 trace, configuration, and run-manifest artifacts; it never writes prompts, raw model
