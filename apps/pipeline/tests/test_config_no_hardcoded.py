@@ -170,6 +170,11 @@ class TestConfigGetters:
         config = get_config()
         assert config.get_entity_extractor_max_tokens() == 8192
 
+    def test_get_entity_extractor_max_tokens_env_override(self):
+        config = get_config()
+        with patch.dict(os.environ, {"KG_ENTITY_EXTRACTOR_MAX_TOKENS": "4096"}):
+            assert config.get_entity_extractor_max_tokens() == 4096
+
 
 class TestRulesExtractorGetters:
     """Verify rules extractor config getters."""

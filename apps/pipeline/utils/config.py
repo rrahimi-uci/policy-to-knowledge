@@ -451,7 +451,14 @@ class Config:
         return self.get('entity_extractor.temperature', 0.7)
 
     def get_entity_extractor_max_tokens(self) -> int:
-        """Get max tokens for entity extraction LLM calls."""
+        """Get max tokens for entity extraction LLM calls.
+
+        A real-document run can set ``KG_ENTITY_EXTRACTOR_MAX_TOKENS`` to
+        bound response latency without mutating the shared configuration.
+        """
+        env_val = os.getenv('KG_ENTITY_EXTRACTOR_MAX_TOKENS')
+        if env_val:
+            return int(env_val)
         return self.get('entity_extractor.max_tokens', 8192)
 
     # ── Rules extractor ──

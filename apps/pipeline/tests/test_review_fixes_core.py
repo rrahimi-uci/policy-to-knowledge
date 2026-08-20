@@ -132,6 +132,18 @@ class TestAgent2Iterations:
         with pytest.raises(ValueError):
             agent.run_iterations_with_optimization(documents=[], n_iterations=-1)
 
+    def test_entity_prompt_has_bounded_machine_readable_scope(self):
+        import agents.agent_2_entity_extractor as a2
+
+        prompt = a2.EntityRelationshipExtractor(
+            api_key="sk-dummy"
+        ).generate_optimized_prompt(
+            documents=[{"path": "section.txt", "content": "Mortgage rules."}]
+        )
+
+        assert "at most 12 entity types" in prompt
+        assert "at most 12 relationships" in prompt
+
 
 # ── Bug 5: agent_1 ignores an option-like positional output arg ────────────
 
