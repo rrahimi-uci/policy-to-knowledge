@@ -211,6 +211,12 @@ class TestAgent2Iterations:
         source = (Path(a3.__file__)).read_text(encoding="utf-8")
         assert "max_content_length=config.get_rules_max_content_length()" in source
 
+    def test_agent3_uses_compact_prompt(self):
+        import agents.agent_3_rules_extractor as a3
+
+        source = Path(a3.__file__).read_text(encoding="utf-8")
+        assert '"business_rules_extraction_compact"' in source
+
 
 # ── Bug 5: agent_1 ignores an option-like positional output arg ────────────
 

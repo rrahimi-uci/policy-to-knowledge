@@ -231,7 +231,7 @@ class BusinessRulesExtractor:
         rules_per_batch = self.global_config.get_rules_per_batch()
         
         domain_prompt = self.prompt_manager.format_prompt(
-            "business_rules_extraction",
+            "business_rules_extraction_compact",
             entity_context=entity_context,
             sample_content=sample_content,
             batch_num=batch_num,
