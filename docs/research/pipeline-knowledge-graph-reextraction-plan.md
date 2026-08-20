@@ -111,8 +111,8 @@ For simultaneously applicable rules on the same entity with incompatible or ambi
 {
   "rule_a": "rule-a",
   "rule_b": "rule-b",
-  "conflict_type": "overlapping_scope | contradictory_consequence | ordering_ambiguous",
-  "resolution": "rule_a_takes_precedence | requires_manual_adjudication | both_apply_cumulatively",
+  "conflict_type": "overlapping_scope",
+  "resolution": "requires_manual_adjudication",
   "evidence": []
 }
 ```
