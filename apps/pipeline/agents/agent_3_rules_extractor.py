@@ -256,12 +256,43 @@ class BusinessRulesExtractor:
         import time as _time
         batch_start = _time.time()
         try:
-            response = self.client.chat_completion(
-                messages=[{"role": "user", "content": prompt}],
-                temperature=self.global_config.get_rules_temperature(),
-                max_tokens=self.global_config.get_rules_max_tokens(),
-                reasoning_effort=self.reasoning_effort
-            )
+            # Keep the executor at the requested worker count while gating the
+            # number of simultaneous sockets. A 40-way burst can exceed the
+            # provider/client connection budget before rate limiting takes effect.
+            request_gate = getattr(self, "_request_gate", None)
+            attempts = max(1, int(os.getenv("KG_BATCH_MAX_ATTEMPTS", "3")))
+            response = None
+            last_error = None
+            for attempt in range(1, attempts + 1):
+                try:
+                    if request_gate is None:
+                        response = self.client.chat_completion(
+                            messages=[{"role": "user", "content": prompt}],
+                            temperature=self.global_config.get_rules_temperature(),
+                            max_tokens=self.global_config.get_rules_max_tokens(),
+                            reasoning_effort=self.reasoning_effort
+                        )
+                    else:
+                        with request_gate:
+                            response = self.client.chat_completion(
+                                messages=[{"role": "user", "content": prompt}],
+                                temperature=self.global_config.get_rules_temperature(),
+                                max_tokens=self.global_config.get_rules_max_tokens(),
+                                reasoning_effort=self.reasoning_effort
+                            )
+                    break
+                except Exception as exc:
+                    last_error = exc
+                    if attempt < attempts:
+                        delay = min(30, 2 ** (attempt - 1))
+                        print(
+                            f"  DEBUG Batch {batch_num}: request attempt {attempt}/{attempts} "
+                            f"failed ({exc}); retrying in {delay}s",
+                            flush=True,
+                        )
+                        _time.sleep(delay)
+            if response is None:
+                raise RuntimeError(f"LLM completion failed after {attempts} attempts: {last_error}")
             
             content = response.choices[0].message.content
             if not content:
@@ -422,6 +453,12 @@ class BusinessRulesExtractor:
         print(f"   Progress will be shown as batches complete.\n", flush=True)
         
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            gate_size = max(1, int(os.getenv(
+                "KG_LLM_CONCURRENCY",
+                str(min(max_workers, 8)),
+            )))
+            self._request_gate = threading.BoundedSemaphore(gate_size)
+            print(f"   ✓ API concurrency gate: {gate_size} in-flight requests", flush=True)
             # Submit all batch extraction tasks
             future_to_batch = {
                 executor.submit(self.extract_batch, prompt, batch_num): batch_num

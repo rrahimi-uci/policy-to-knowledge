@@ -172,6 +172,39 @@ class TestAgent2Iterations:
         with pytest.raises(RuntimeError, match="request failed"):
             agent.extract_entities_and_relationships("prompt")
 
+    def test_agent3_retries_transient_request(self, monkeypatch):
+        from types import SimpleNamespace
+        import agents.agent_3_rules_extractor as a3
+
+        extractor = a3.BusinessRulesExtractor.__new__(a3.BusinessRulesExtractor)
+        calls = {"count": 0}
+
+        class _Client:
+            def chat_completion(self, **kwargs):
+                calls["count"] += 1
+                if calls["count"] == 1:
+                    raise ConnectionError("transient connection failure")
+                return SimpleNamespace(choices=[SimpleNamespace(message=SimpleNamespace(
+                    content=json.dumps({
+                        "entity_types": {"LENDER": {"business_rules": [{"rule_id": "r1"}]}},
+                        "relationships": {},
+                    })
+                ))])
+
+        extractor.client = _Client()
+        extractor.global_config = SimpleNamespace(
+            get_rules_temperature=lambda: 0.0,
+            get_rules_max_tokens=lambda: 100,
+        )
+        extractor.reasoning_effort = "high"
+        monkeypatch.setenv("KG_BATCH_MAX_ATTEMPTS", "2")
+        monkeypatch.setattr(a3.time, "sleep", lambda _seconds: None)
+
+        result = extractor.extract_batch("prompt", 1)
+
+        assert calls["count"] == 2
+        assert result["total_rules"] == 1
+
 
 # ── Bug 5: agent_1 ignores an option-like positional output arg ────────────
 
