@@ -533,6 +533,11 @@ class BusinessRulesExtractor:
         print(f"   • Total time: {elapsed_time:.1f} seconds", flush=True)
         print(f"   • Avg time per batch: {elapsed_time/len(batches):.1f} seconds", flush=True)
         print(f"{'='*70}\n", flush=True)
+
+        if self.count_rules() == 0:
+            raise RuntimeError(
+                "Agent 3 extracted zero rules; refusing to continue with an empty knowledge graph"
+            )
     
     def count_rules(self) -> int:
         """Count total business rules."""

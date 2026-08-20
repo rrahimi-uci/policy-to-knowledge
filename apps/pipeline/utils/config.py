@@ -11,11 +11,17 @@ from typing import Any, Dict, Optional
 import re
 from dotenv import load_dotenv
 
-# Load environment variables from .env file at module level (runs once on import)
-# Use explicit path relative to project root
-_project_root = Path(__file__).parent.parent
-_env_path = _project_root / '.env'
-load_dotenv(dotenv_path=_env_path)
+# Load environment variables from the repository-root .env at module level.
+# The CLI runs from ``apps/pipeline`` but the documented secret location is
+# the repository root. Keep the app-local file as a fallback for standalone
+# copies; never let it override an already-loaded root value.
+_repo_root = Path(__file__).resolve().parents[3]
+_root_env_path = _repo_root / '.env'
+_app_env_path = Path(__file__).resolve().parents[1] / '.env'
+if _root_env_path.exists():
+    load_dotenv(dotenv_path=_root_env_path)
+elif _app_env_path.exists():
+    load_dotenv(dotenv_path=_app_env_path)
 
 # Rule-type colour palettes keyed by domain.
 # Mortgage uses the original 10-category set.
@@ -346,8 +352,15 @@ class Config:
     def get_rules_per_batch(self) -> int:
         """Get number of rules to extract per batch.
         
-        Configurable via rules_extractor.rules_per_batch_openai (default 10).
+        Configurable via ``KG_RULES_PER_BATCH`` for live-run tuning, then the
+        checked-in model-specific setting (default 10).
         """
+        env_val = os.getenv('KG_RULES_PER_BATCH')
+        if env_val:
+            value = int(env_val)
+            if value < 1:
+                raise ValueError('KG_RULES_PER_BATCH must be at least 1')
+            return value
         return self.get('rules_extractor.rules_per_batch_openai',
                         self.get('rules_extractor.rules_per_batch', 10))
 

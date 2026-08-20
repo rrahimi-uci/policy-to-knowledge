@@ -191,10 +191,18 @@ class TestConfigGetters:
             "KG_RULES_MAX_CONTENT_LENGTH": "4000",
             "KG_RULES_TARGET_WORDS_PER_BATCH": "2500",
             "KG_RULES_MAX_TOKENS": "4096",
+            "KG_RULES_PER_BATCH": "4",
         }):
             assert config.get_rules_max_content_length() == 4000
             assert config.get_rules_target_words_per_batch() == 2500
             assert config.get_rules_max_tokens() == 4096
+            assert config.get_rules_per_batch() == 4
+
+    def test_get_rules_per_batch_rejects_zero(self):
+        config = get_config()
+        with patch.dict(os.environ, {"KG_RULES_PER_BATCH": "0"}):
+            with pytest.raises(ValueError, match="at least 1"):
+                config.get_rules_per_batch()
 
 
 class TestRulesExtractorGetters:
