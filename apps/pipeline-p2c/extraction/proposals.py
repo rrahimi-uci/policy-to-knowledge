@@ -166,10 +166,30 @@ def normalise_citations(data: Mapping[str, Any]) -> Mapping[str, Any]:
     citations = data.get("citations")
     if not isinstance(citations, Mapping):
         return data
+
+    def unique(units: Any) -> Any:
+        """Collapse a repeated unit index, keeping first-seen order.
+
+        Strict mode drops ``uniqueItems``, so the schema cannot forbid a repeat and the
+        model duly sent unit 1 thirty-two times for one role. Unlike a duplicate *role*,
+        a repeated *unit* carries no information — a role's citation is the set of units
+        that support it — so collapsing it is lossless, where merging two roles' unit
+        lists would be a guess.
+        """
+        if not isinstance(units, list):
+            return units
+        seen: list[Any] = []
+        for unit in units:
+            if unit not in seen:
+                seen.append(unit)
+        return seen
+
     return {
         **data,
         "citations": [
-            {"role": role, "units": units} for role, units in citations.items() if units
+            {"role": role, "units": unique(units)}
+            for role, units in citations.items()
+            if units
         ],
     }
 
