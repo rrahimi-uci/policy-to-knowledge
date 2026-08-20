@@ -1,0 +1,198 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://policy-to-knowledge.local/schemas/rule_v2.schema.json",
+  "title": "Policy to Knowledge structured rule v2",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "rule_id",
+    "condition_predicates",
+    "condition_logic",
+    "outcomes",
+    "variables",
+    "recommended_hit_policy",
+    "versioning_status",
+    "applicability_scope",
+    "scope_basis",
+    "responsible_party",
+    "counterparties",
+    "exceptions",
+    "exception_basis",
+    "test_vectors",
+    "field_evidence"
+  ],
+  "properties": {
+    "schema_version": {"const": "2.0"},
+    "rule_id": {"type": "string", "minLength": 1},
+    "condition_predicates": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/predicate"}
+    },
+    "condition_logic": {
+      "oneOf": [
+        {"enum": ["AND", "OR"]},
+        {"$ref": "#/$defs/logic_node"}
+      ]
+    },
+    "outcomes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/outcome"}
+    },
+    "variables": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/variable"}
+    },
+    "recommended_hit_policy": {
+      "enum": ["UNIQUE", "FIRST", "PRIORITY", "COLLECT", "ANY"]
+    },
+    "versioning_status": {"type": "string", "minLength": 1},
+    "applicability_scope": {"type": "object"},
+    "scope_basis": {
+      "enum": ["explicitly_universal_in_source", "inferred"]
+    },
+    "responsible_party": {"type": "string", "minLength": 1},
+    "counterparties": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1}
+    },
+    "exceptions": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/predicate"}
+    },
+    "exception_basis": {
+      "enum": [
+        "explicitly_none_in_source",
+        "not_found_in_chunk_recheck_needed"
+      ]
+    },
+    "test_vectors": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/test_vector"}
+    },
+    "field_evidence": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "minItems": 1,
+        "items": {"$ref": "#/$defs/evidence"}
+      }
+    }
+  },
+  "$defs": {
+    "predicate": {
+      "type": "object",
+      "required": ["predicate_id", "variable", "operator", "value", "value_type"],
+      "properties": {
+        "predicate_id": {"type": "string", "minLength": 1},
+        "variable": {"type": "string", "minLength": 1},
+        "operator": {"enum": ["==", "!=", ">", ">=", "<", "<=", "in", "not_in"]},
+        "value": {},
+        "value_type": {
+          "enum": [
+            "number",
+            "boolean",
+            "enum",
+            "date",
+            "date_time",
+            "duration",
+            "string",
+            "range",
+            "list",
+            "variable_reference"
+          ]
+        }
+      }
+    },
+    "logic_node": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["predicate_ref"],
+          "properties": {"predicate_ref": {"type": "string", "minLength": 1}},
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["all"],
+          "properties": {
+            "all": {
+              "type": "array",
+              "minItems": 1,
+              "items": {"$ref": "#/$defs/logic_node"}
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["any"],
+          "properties": {
+            "any": {
+              "type": "array",
+              "minItems": 1,
+              "items": {"$ref": "#/$defs/logic_node"}
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "outcome": {
+      "type": "object",
+      "required": ["variable", "operator", "value", "value_type"],
+      "properties": {
+        "variable": {"type": "string", "minLength": 1},
+        "operator": {"const": "="},
+        "value": {},
+        "value_type": {"type": "string"}
+      }
+    },
+    "variable": {
+      "type": "object",
+      "required": ["name", "type", "role"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "type": {
+          "enum": ["number", "boolean", "enum", "date", "date_time", "duration", "string"]
+        },
+        "role": {"enum": ["input", "derived", "output"]},
+        "free_text": {"type": "boolean"},
+        "unit": {"type": "string"},
+        "allowed_range": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"type": ["number", "null"]}
+        },
+        "allowed_values": {"type": "array", "minItems": 1}
+      }
+    },
+    "test_vector": {
+      "type": "object",
+      "required": ["inputs", "expected_output", "vector_basis"],
+      "properties": {
+        "inputs": {"type": "object"},
+        "expected_output": {"type": "object"},
+        "vector_basis": {"enum": ["source_attested", "derived_from_source"]},
+        "boundary_condition": {"type": "boolean"}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["chunk_path", "section_id", "source_text"],
+      "properties": {
+        "chunk_path": {"type": "string", "minLength": 1},
+        "section_id": {"type": "string", "minLength": 1},
+        "source_text": {"type": "string", "minLength": 1},
+        "start_word_position": {"type": "integer", "minimum": 0},
+        "end_word_position": {"type": "integer", "minimum": 1},
+        "text_match_score": {"type": "number", "minimum": 0, "maximum": 1},
+        "reference_verified": {"type": "boolean"}
+      }
+    }
+  }
+}

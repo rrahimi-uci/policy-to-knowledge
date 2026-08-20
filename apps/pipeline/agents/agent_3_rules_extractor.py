@@ -24,6 +24,8 @@ from utils.prompt_manager import get_prompt_manager
 from utils.llm_client import create_llm_client
 from utils.config import get_config
 from utils.rule_uniqueness import enforce_rule_uniqueness
+from utils.readiness import annotate_rule_readiness
+from utils.rule_contract import annotate_rule_contract
 
 # Helper for real-time output
 def _print(msg):
@@ -228,13 +230,26 @@ class BusinessRulesExtractor:
         entity_context = self.create_entity_context()
         rules_per_batch = self.global_config.get_rules_per_batch()
         
-        return self.prompt_manager.format_prompt(
+        domain_prompt = self.prompt_manager.format_prompt(
             "business_rules_extraction",
             entity_context=entity_context,
             sample_content=sample_content,
             batch_num=batch_num,
             rules_per_batch=rules_per_batch
         )
+        return f"{domain_prompt}\n\n{self.prompt_manager.load_rule_contract_v2()}"
+
+    def _entity_catalog(self) -> List[str]:
+        """Return the only identifiers that v2 party fields may reference."""
+        catalog = []
+        if isinstance(self.entity_definitions, dict):
+            catalog.extend(self.entity_definitions.keys())
+        return catalog
+
+    def _annotate_v2_contract(self, rule: Dict[str, Any]) -> Dict[str, Any]:
+        """Retain each candidate while recording v2 contract/readiness findings."""
+        annotated = annotate_rule_contract(rule, self._entity_catalog())
+        return annotate_rule_readiness(annotated, self._entity_catalog())
     
     def extract_batch(self, prompt: str, batch_num: int) -> Dict[str, Any]:
         """Extract from a single batch using reasoning model."""
@@ -885,7 +900,7 @@ class BusinessRulesExtractor:
                 actual_slice = ' '.join(words[start_pos:end_pos])
                 ratio = SequenceMatcher(None, source_text.lower(), actual_slice.lower()).ratio()
                 ref['text_match_score'] = round(ratio, 3)
-                if ratio >= 0.3:
+                if ratio >= 0.5:
                     matched_at_positions = True
 
             if matched_at_positions:
@@ -911,7 +926,7 @@ class BusinessRulesExtractor:
             # 4. Last resort: try matching using the rule description as source_text
             description = rule.get('description', '')
             if description and len(description) > 30:
-                found = _find_text_in_words(words, description[:300], threshold=0.4)
+                found = _find_text_in_words(words, description[:300], threshold=0.5)
                 if found:
                     new_start, new_end, ratio = found
                     ref['start_word_position'] = new_start
@@ -965,12 +980,16 @@ class BusinessRulesExtractor:
         """Save combined results with detailed statistics."""
         # Calculate confidence scores for all rules before saving
         for entity_name, entity_info in self.all_entity_types.items():
-            for rule in entity_info.get('business_rules', []):
-                self._calculate_confidence_score(rule)
+            entity_info['business_rules'] = [
+                self._annotate_v2_contract(self._calculate_confidence_score(rule))
+                for rule in entity_info.get('business_rules', [])
+            ]
         
         for rel_name, rel_info in self.all_relationships.items():
-            for rule in rel_info.get('business_rules', []):
-                self._calculate_confidence_score(rule)
+            rel_info['business_rules'] = [
+                self._annotate_v2_contract(self._calculate_confidence_score(rule))
+                for rule in rel_info.get('business_rules', [])
+            ]
         
         results = {
             "entity_types": self.all_entity_types,
