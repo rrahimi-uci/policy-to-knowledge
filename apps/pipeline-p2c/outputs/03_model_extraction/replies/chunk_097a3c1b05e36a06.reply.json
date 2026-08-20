@@ -1,0 +1,822 @@
+{
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1787179266,
+  "created_at": 1787179251,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "id": "resp_03cae55be9dbb0bc006a8630f324fc87d09355041e1f44b5b1",
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "metadata": {},
+  "model": "gpt-5.2-2025-12-11",
+  "moderation": null,
+  "object": "response",
+  "output": [
+    {
+      "content": [],
+      "encrypted_content": "gAAAAABqhjECU4YEhmrIGTog-VFRNTs9Lai22b9k4fTKjQqg6EMBYRNOrb7fK64fCABfuKskrWne-x4fFiLlOo6uGTR9uD_JOWwxIU4PwjzvhImDhQArz6A6nhPNlQ960Lxs0w1AEq7gYnPd5U1Ut1aixkpgoE-nTA45ivSoEpj6UN6tX1sF5Wacfi1Kiox0foq6vARFZF6hSbM-Y61thkXj__cQTMYN8au_nz9UfOZWoq0btjra5KcY9QI3h8gZaa62rvwQQl4zLQNSy0pSyrgV9E6mhbvxoMeuyApdFanvKuA2ldm8KeMT_fhb0DBLTXIj8H9FwyETFgItjJmKLV47GOTMTLHpLYfGtchB4cuC3m1MFndvfG4bZMxZjPIaHW3Dw7zFtteaGGUs5moESPEMEuQblmwcHTQvI7v--rxaa8-WEf8DJMu8GLL2xh0QjPsvIfXR80Rl_Q6r0R8cbj4UkPNKz-zCIznlD0hVoXhzXHaANVXGuGQQb5lX8NRL7s0qRhXcv8oBBnBggwkTaCQxiimGgf4xvCFX5QgY86MZwkKFRszJ618SVuPWHQEh9ZUk8lfaCxr9FAFYYwq6YiyEL558w5httKFqPSbGG6Trl_o0boo459l7BEyfVwogUELOOxrpsz33WCd0Bk7gB6Y3YTMixXUWuqFa2AglqW9asejQO0NHjDm3mQ8jKtgZ0wEIHXALOwIH3Cw6ck8D7a2jw_tMLtqJKpY065QVXVjh8RcZs6KGYoIVVd5OczdDw2wfsC3Fvfdc4U6RzyCoDGKZ6O9Xqgp4VnnG56V0ADSm8FfCQ9Lf-q7ZG50Rl4sCI2sU5Csjxg8smlNiZL2tPMcBYSjHTZiVk7eMfTC0Q79A_Od1DjmhrIPIx-YRzayUg0PPEZDTwX-fpv1egjhJuM3ih3qXnDK_pY3BrfOq9pZF9TRaSDWraFAZFtG_8E_Rg5KHhsDHBh2qvteu1ybVTHba1qpyEjZ5ibwxuXZQWgrAAjKb_l84tTzkHmU1kw6gH3KrYaIfOmrugMW1dO7rEoSKzlDcatoH4ZXlzLZBu0VpeBse-vv1WQDeWM7twEgj10OpKtfu_1chLgOI7NlUU7ja1lfSdyK6IZjYESSwGdFUte5YdJK2K-coYscidAaR5wuZ-n3Z5zvzI1ZFkAG-8vjrUeH-Hfj6c9xwBCJdfFi4gk11gV4Fn_z79y6Ot8WHHuNbyZU3WRjUhjUDu4R7SdNtY1okVg2y--n0A8mG_mnPhW-HlPnxz1EpKWEToCpz9oHGkFS9GOujEqcwj_ukqC984_sjIupeS_EjK6XKY5pOpzlQ52Fv5DaY15JPQyas1GvedTJXzmdOcYOPo-iSOPWVWivc7BKjuwxetsH5V2tcQwd7K0Bw-PHYIutjuYN3Zz-Hg0xJ2gIMfyYuI8sSR8u67TzbynjaJi4adjg4Sia6uWn6qtBsOkRVan5yNhwvQ6TtWjyT9T7GRE_yk0KyDJ0NvF_Eb6aIx7EpnZU--VKao9qhC7jjhe4oLpAsDQ-L6tjuA3DJdtTkipAtXhBPvCCuj0qwgT_jSj0DE8dRqXaMF5hVzvXOYrjIB4iIYH9RbOvjQTnMcm5jjAQwDfTp3Fs7QWlLCfOCGh4VmDq7FYGYEM5Lyuahz8BLSem6UdKDzUjLnNUlsNoyrFGzdtfPmTo4YnZpce8JyTN4aB1fjarcGfXSqBXnzHmFgS3g-2Inrey0NUHzzKyDRik3UdXX29UdB5r3SnEZiENs5TiOMocPuLjkxqHGsLkqKn6zkIkY381DmQ1xEbTSc7mS61fxgWqsxxUqS9WSEnqkHZoaTE-5_-x1gYwXjGQzxAdFURliYSafbsVkym0K_drypCBplfUleDwphuOq3lRPko2lWKcMB5u7Z3oP6hD3JufmH6lY5ANWOKDdiOFyOA22uTfvT94TIR4gOoKiaXUzgfvhJeGn9ZtM6LXYBe57SI5NjJFZ1RctPK2RYiZsYcnO-gfqWpUZPAQ8qziB-W05RU3JCuPRyEZKhFSGw9Tdzj5awn3xxiKr5SwYW8JOxuJ8yxz5TFEcq-chRrKM5SWgjkGHMWI43Y19elHRlEfrhGpKO_g2l8XfUeFFvxdnFhnD0zPuCMJPzP-myhsY7TSucRSnQ47PGDjv0G46BKGMwBkaJZlQ19saUvaFDFBVEVOaV8coHI7iSYTwlqXrCso-g_yh4fTDYmS-rBrh5rvEAVJc-J_nDMDR5R__VUPOB27XLy4JTV_pzRSqy1Woo6At20vDWrzjIIvIqWBIQ2IJbwaQrenXv8OutzJHFlPt5k__MYddW4R60Fv-nAM8aNtWIR4bP13r8lFEixR4FTZEYfw-HOHTxmDdHtvjfjzNbrl6-iYrdPkQpawuT_MqZdRKseWgJwq8mjA9px_6PSORbJfnAwf2nvLiBvdgCRb_0LWF4sVjslPYUFxuprSokdzcmN9HqUyiq4Kn6EJ88LBqDAvehna89WgLLefgiDAx0FC7EsuqH2VuBTLMQVOGgcNyGbEJLLjxYt24pMBr-zJargArxi4nZNWzsw6hU98cR0rfGevtHVUMTKolAvK-7MRqerO-4a1NGO53KNdga38ts3BcgYi0eEPdYobBGP__kliH2sspZ3e51iFrwtLZWa2XiyySgq3olGy7MmechFC44h9b6zo40VcaLkrMQ8-6ksCUyngGQZLezS-aktBoWHamCHObjmXQtI5r0V-t4mJDfMHnNqNmZjJam8bDpckN0tuoiGEjvUk66t83tIQnM7katlm8JqsbYagh3sMvd8FzfMAvFkoa_ShYLzGOMiyD9JSFgcvbTmIC4TB9-JiGh_s7Z_94J1ZJtaPDAfXtb64GcNDZgnC8PhjSX50Q5UmhW3J3gh4_EzSyMwq7ANU0ufDqWtGH0ji6c-2oy7TJyb-KLZHoPWPxOnIG6_nEAYKuEb-angHddSwjZ_5HyzBD9O5xa7Cq5_S8QBeLIwjOzSbX1bfbdroL9RQvA68Tva-NuRBo-MwR1acHfIm4lxRES27ZLJiJ0jef6aAAQx_Od2szbqe9Dq_mNrVzD6AYkXpme6Ykix2CH6LkW58qpXWDHkvIffUPM68TrhTw7FG4WoDA8wxB7opi0Aqmo8_AJgFjAlE_oQ8IyRosvymm4-4zZs6NXsC7C0Y8SNfpa7FCT_XdiXnGPoOavjgQvyPeB7-4T_cq8ZZQwFWqfqr7yJ3QI4fivPnORaaK3KfUKpQ6uW5SwVfJv8DbYsyEUdnnkGzkxpWSoYQEJGzQPMKyrOH_19hkZxkN4F1kJWD3rIIHnAexB1aAMl7GoT4_4rW95hQwQT3PThyoQiCC6eMMosxw0QadIgnu8K2xXY2j1Tg3ZswrPtvusFb7Mp49OFxyW_QBmlrr8dF6PzcQWT7Kn6lb-Rqs7Fjz0CVd6FAh5Ilt4sbAAK5q77tndYFRYMuiHMvOczMDRZ2z_lW-doNifwdK52FAuz4O49Ux2VsmExawlo2m-uOr7hbvIqV4jXvzyy1rDj1kyAaPYVqmYog14GmNY2M0EitYQl3DtHPWg4IsnMrvBCFQsr5sCLud2NLl4Bv88miOm8OOspCpBH9Cv9inoxtBRJ8-xzYtBW4YdwqEhzBNuaUpAjnS4OKzWPyl0LctIuxGReFnqbz-LiSMvAOcME8_v5RbiMakfpophWhqY8D6IlgPbgX3UoBVp0ZP7Hzq175ISB47idO7ZAEebvTi28HC2HzG9zBHqzay1fK6CD9MJ2glpThmFQgIjED3L0AQHjJYfvTYkSTE0m-m0N-yqEbexVfpVTBorbMiaC0UU7Zt6Y0PlMErElEOKLtjY0Ji5SM3imtRZNlKUdB7BpWaAQKfawyVImR5W4KSsDs3VHOEXIFxYd7mSOyBetdYKHBF6cDpNUQHJVv-z9gqkDKs1r0YCxwlH5QXCBOnqAx0csmBoInUtDLWJtz0vCIES57ekc_UpuAdfVw71QXAJhl0l-9vRDuBvNMG1evvTW7ZRNJdF9IqUz3rQmNM7QHTu1zn5TQkwcpxhSS8ubDkK-kO5XLHbVyuype2r5ld13Wy07btRpxZ6YqKy1GxO1hIZuutj-Fn7ZdeZZjzv5teU0KGiQI0YXLikb3P2rbljiZY_j3bXARP-aaL72uZ6pOatAaOsOofRMltea0zLPiw7YWD6Xc-GUAdeW9d4uFvEmmNntseUJMqutZ-NuZrFvrOk5D8VCQepcodOrlgG8xkYNLpMdGNevveWJyqe6qNZH_hillIfZyCG5yFdK2gE0zKa6lPLywnQTVJEkMbKYsgb1gaPH09_YUIi34sUPwKpyOZQIuDGOg-fBfxu9JWZoSX2s8eYWqz4VXZbsHgy094iF85_-ZxWQ7hEUpgmf7MxSZhVkwa2fGRn3oeriqqhw643OM6j_vJi0ukVQOfpqOscTiRGxfIqLLDKmDElfs79MlitzCwZz_xElIiVCUl53ifKfwkd0d1y0YH9zQm-NMACIB40bzj8gtxdT3Nl5z1u5wYVGYtTurn55TxW62P-wxqQXcqI2HRMLzQrA9MccvteU3ZI2WWlOb8UEaKC0p4TbO6E84WlU6fTEFmCq6IQF3tGjvilAzrI7VKP6_HXczLwm5BSIdOXx9yWoGkQ-V6Y1dseV5Lt2ExmIq6-KOxGHNvAp0WmxGuO7C4C1bIbnkSRzDhPcN8CD5nSMnEr4LnaOXf3idrilpsJvoiBaIpTfsJoosB2UIj3Ri141KARO9AxsngueZm2007jz1VLuMkLuSgMWJlfAiY04q7Pj-ixZ65bCoSRMztWoMpIng11JqSwevoQDwVXSZKzyln4Aj1k71yCFDso_ctP-V6COGfr5H3pUSi6bLTg51ArR25atHWOdCWS2u4ee-EmKJ0HRvOF4u_mayAb75qV8cvBmulx7IXogqvpy8VbUuR4tfX9ylC3_LfXtLBAKtw-je5_fYXwCHDa2WHz9HUmpP4qeCL1ped-j1Z-NmZ3LdXJiQuFjjxqOrSyIJBnfmRuAprAk-1J3zDia8FXyW60RuYREqIzQxJsko7HOumZjyEc-k5pJdwCZ_K0JG5aKhxAYKi4s2SSHELjNxQzqu_p8Q4twDR5ombgZJ1L0oX-AUEPr68-4KdiknDLFWjjJWkrxcy39hpVbCahMBkDkCRPi3VeMP7f-l5HJGWK7BhX9unz36Jk1VdM9YYRAMnnwtcz7piTpoJkmlcfc3JXeTphUx8h42jbBNuoqtPy9ceoA5M0bhKc8Od_SRGGlI-yjRlg58JJbBeciT7l3hH-Obd-9XduXR8Cd_ESzKyRo3xZdJGgWUPjWshNLP9IfMpHkeulAos7vD7-SSzQnFQliVWGmNHDuZ-0jC27lS3Eyip44F6aYTEo1YiZQZgMCh7dj4YHLfJ1frP4o7yio1z4ZIeQqbndEw77Tm9kiyp4h4-5JrKUiZDYuOjncdEa4UFcRG9-i4vWWFNi-64F8hKMbLVTOY7ech6Xd_ite6WNzBmTcSSpD5O8lxcfzFs0i7xfYEXlU7UGzrsYqeRMqiwK016-tSIa1nls94FohCcqGYtxiaT2rlEhOLarlnGYQ_7pUY8CvYkpADhDzXKrEOlltsruedi9Jhw8aZhuTyhUfTsMdEu-H-4BNzxU6Sifz6Ae9de6aZnuAov0n7SBlzEp2nG5kPNsx_bcrF4P1fX44XHwNdVVyhr-EBDI2sPguubmYvGJyeRubNc_HiHBqzHVSymghbRdZaF7wCRfHZnJapynzuThNqww4HBfocHBWAGOwMYNF73M2ky4O4L9fBYxCRYmHVPD_6P9Y4lPuzPSxVAqxTEP3c_9OI3d_Hto3zR-9bZO0iXigx0hb4iGqJ4dT82IyGs-9laTTkW5PzPqW_VDOp_TlvN-CBaR-4byyDx0cgKd4UIMLT9LLGY-BBugcUWDTZZ998hXXPQcJB8EYpaDUH2aPRGrElvanZt7TwZtSBcIm7wJAGbf5UesZqs__upeBYZnSUSqC_8ActGu5_O3g0Ksyy6_Pmpch42EzUZjWrYADJHX16w-x9g1yvwWgERi5TkEkKzQVsCktdMy_ocTX4yfIIdlR89z9sFwxjBlbHjYp8pGt2iI19qpTR9mUH76RgcZME6s_RsexjAgLzDmuw8IBn0FJm_n1N0s9KhhqpjfbWw5oduhTpYlp9XUar3Bp-x4NBjKW9eOBWXjYx3vdGSX1nmTt_JTT1n-pgJuVzEZu-hy8txBP6NPPslNWGrfBCV20193nzOj7U28inU1fcPlhg-UMx6yr15BsW-tlw4ahr1tmFiednPoFu61i73yYqmz8UwwDOZVFKpRa5mor6_LF6YzTUsJAivrWirOChuehmYS-3z0Fo9bigm4_BVC-02dGP3gAFv7_4ErqtO8u9mNGz6EudEhFdWlc8lRL9owzuHUeFOiQDtSh0K0NUtbfuKhVbiZvd5Uael9phYChhIJQ0ZPxfIRQw8btWKooSBdKxHGTw9zKFFCNbZGOYZ1BsJbZA3ETaM3hdCBakNU0G49fjAtQlFJ51WvxeMuIn4MQocMCSAiOmCRFGw5ldiZcAQDozZ8ZGqZrBzwneR3WYblbfr9-Knkqa8MHZ30VeYuwo4A0q6jh59lxKJlLjzJYdY4j_-P9gV5djuFugk_QotGNyZenjQO6vyL2C6Y9bnvillhkonsxOTGYE8thnkmrKZDMSBXDeQNn-ijRMytgb6l3yp7IhB5gPA3_n1DsN9TKqhmMaYZbJWuy0uo65BmhuzRZE1bPo4TvShga2K5JhpZe1ZQvgfzR4698Zh5WWvRJj5y1VF1YfawCy-NuwnSxop8HohE_KD-duqtpNrLiu7ud6ghuQ_UNFl8K6Zn1lYmJAUzcEFpKSG69-Z4-5axRf6rcb7d1tdP6NDgD6-nWJ0uH8kXgsm5InPW6adp6B__B4uzvp7YtyexpYjN9DMcJip6knbH0WxW-c3_4fnHKeFmYQX0wSrHUfer__wCJRt6qSp-HYxYY8BLYXOESrtev5lVBh0pWRNf_k5uLTy8WDc0wrnCqCv2I0gRZ8mJ0KMmKmu3__TNswpVpRz5XeQ4v73NHmjYih0plKyZoP4rvJCWhVrAzfLiRO6gC0JoNF1PQINFdpd7HfA5BYzjgOEWhfbCNbr7_uEglDvt9VEkWd1hAaQoBJeH2Oig-SwjEVlIhECUsH1mJa0yBnG5j4lkSxG8x-lzeMD_nAVWDnyy39V7DJxk1bRIzdoAc3JTEV65fEVnqC8P2oGn2K6wRNBtWO2dshW5aAUW4hb5tAZlUl-c5nF06E3oyy3RIxCv1Ke279ZQn1Du4fTeNux-6offHf30---1TuUv8_PqPsfIyPfGqkmf39yA1LoMfuohHMr822gBpM5I7En-TttvOKDQ4guVyzn-IXnpy1hrc6rcOnWseXuwfyC-qriK-TRKMEVZ6xHC4NtV_jQM__R38bZ_uc7NfCg1L4FnNx3",
+      "id": "rs_03cae55be9dbb0bc006a8630f3fd1487d0ac8055ef8816501e",
+      "summary": [],
+      "type": "reasoning"
+    },
+    {
+      "content": [
+        {
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"candidates\":[{\"modality\":\"prohibition\",\"semantic_kind\":\"decision_rule\",\"effect\":\"deny\",\"display_unit\":0,\"citations\":[{\"role\":\"subject\",\"units\":[0]},{\"role\":\"effect\",\"units\":[0]},{\"role\":\"condition\",\"units\":[0]},{\"role\":\"exception\",\"units\":[0]},{\"role\":\"cross_reference\",\"units\":[0]}],\"subject_ref\":\"A corporation or other legal entity created by or owned in whole or in part by such an Indian tribe\",\"action\":\"be eligible\",\"object_ref\":\"eligibility\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"graph_only\",\"authority_ref\":null,\"cross_reference_targets\":[\"25 U.S.C.\"],\"missing\":[\"condition\",\"exception\"]}]}",
+          "type": "output_text"
+        }
+      ],
+      "id": "msg_03cae55be9dbb0bc006a863100c67487d08d3f050ff425d206",
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "current_turn",
+    "effort": "high",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "description": null,
+      "name": "policy_ir_proposals",
+      "schema": {
+        "$defs": {
+          "All": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "all"
+                ],
+                "type": "string"
+              },
+              "operands": {
+                "items": {
+                  "$ref": "#/$defs/Expression"
+                },
+                "minItems": 1,
+                "type": "array"
+              }
+            },
+            "required": [
+              "kind",
+              "operands"
+            ],
+            "type": "object"
+          },
+          "AnyOf": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "any"
+                ],
+                "type": "string"
+              },
+              "operands": {
+                "items": {
+                  "$ref": "#/$defs/Expression"
+                },
+                "minItems": 1,
+                "type": "array"
+              }
+            },
+            "required": [
+              "kind",
+              "operands"
+            ],
+            "type": "object"
+          },
+          "Calendar": {
+            "enum": [
+              "calendar_days",
+              "business_days"
+            ],
+            "type": "string"
+          },
+          "CandidateProposal": {
+            "additionalProperties": false,
+            "properties": {
+              "action": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "authority_ref": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "citations": {
+                "items": {
+                  "$ref": "#/$defs/RoleCitation"
+                },
+                "minItems": 1,
+                "type": "array"
+              },
+              "compilation_intent": {
+                "enum": [
+                  "dmn",
+                  "bpmn",
+                  "both",
+                  "graph_only",
+                  "unresolved"
+                ],
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "condition_ast": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/Expression"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "cross_reference_targets": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "display_unit": {
+                "enum": [
+                  0
+                ],
+                "type": "integer"
+              },
+              "effect": {
+                "enum": [
+                  "allow",
+                  "deny",
+                  "require_action",
+                  "produce_value",
+                  "create_record",
+                  "notify",
+                  "escalate",
+                  "no_direct_effect"
+                ],
+                "type": "string"
+              },
+              "effect_ast": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/Expression"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "effective_period": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/EffectivePeriod"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "exception_ast": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/Expression"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "lifecycle": {
+                "enum": [
+                  "active",
+                  "future",
+                  "expired",
+                  "superseded",
+                  "unknown"
+                ],
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "missing": {
+                "items": {
+                  "enum": [
+                    "action",
+                    "authority",
+                    "condition",
+                    "effect",
+                    "exception",
+                    "object",
+                    "scope",
+                    "subject",
+                    "temporal"
+                  ],
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "modality": {
+                "enum": [
+                  "obligation",
+                  "prohibition",
+                  "permission",
+                  "recommendation",
+                  "definition"
+                ],
+                "type": "string"
+              },
+              "object_ref": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "scope": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/Scope"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "semantic_kind": {
+                "enum": [
+                  "decision_rule",
+                  "calculation",
+                  "validation",
+                  "temporal_constraint",
+                  "documentation_requirement",
+                  "process_fragment",
+                  "authority_statement",
+                  "unclassified"
+                ],
+                "type": "string"
+              },
+              "subject_ref": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "temporal_constraint": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/TemporalConstraint"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "modality",
+              "semantic_kind",
+              "effect",
+              "display_unit",
+              "citations",
+              "subject_ref",
+              "action",
+              "object_ref",
+              "condition_ast",
+              "effect_ast",
+              "exception_ast",
+              "temporal_constraint",
+              "scope",
+              "effective_period",
+              "lifecycle",
+              "compilation_intent",
+              "authority_ref",
+              "cross_reference_targets",
+              "missing"
+            ],
+            "type": "object"
+          },
+          "Comparison": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "comparison"
+                ],
+                "type": "string"
+              },
+              "left": {
+                "$ref": "#/$defs/Expression"
+              },
+              "operator": {
+                "enum": [
+                  "=",
+                  "!=",
+                  "<",
+                  "<=",
+                  ">",
+                  ">="
+                ],
+                "type": "string"
+              },
+              "right": {
+                "$ref": "#/$defs/Expression"
+              }
+            },
+            "required": [
+              "kind",
+              "left",
+              "operator",
+              "right"
+            ],
+            "type": "object"
+          },
+          "DataType": {
+            "enum": [
+              "string",
+              "number",
+              "boolean",
+              "date",
+              "time",
+              "date_time",
+              "duration",
+              "list",
+              "context"
+            ],
+            "type": "string"
+          },
+          "DateArithmetic": {
+            "additionalProperties": false,
+            "properties": {
+              "base": {
+                "$ref": "#/$defs/Expression"
+              },
+              "calendar": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/Calendar"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "duration": {
+                "$ref": "#/$defs/DurationLiteral"
+              },
+              "kind": {
+                "enum": [
+                  "date_arithmetic"
+                ],
+                "type": "string"
+              },
+              "operator": {
+                "enum": [
+                  "+",
+                  "-"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "base",
+              "operator",
+              "duration",
+              "calendar"
+            ],
+            "type": "object"
+          },
+          "DurationLiteral": {
+            "additionalProperties": false,
+            "description": "A duration stated in the cited text, as an ISO 8601 days-and-time string: P30D for thirty days, PT12H for twelve hours, P1DT6H for a day and six hours. Years and months cannot be expressed; see the instructions.",
+            "properties": {
+              "kind": {
+                "enum": [
+                  "literal"
+                ],
+                "type": "string"
+              },
+              "type": {
+                "enum": [
+                  "duration"
+                ],
+                "type": "string"
+              },
+              "value": {
+                "pattern": "^P(\\d+D)?(T(\\d+H)?(\\d+M)?(\\d+S)?)?$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "value",
+              "type"
+            ],
+            "type": "object"
+          },
+          "EffectivePeriod": {
+            "additionalProperties": false,
+            "properties": {
+              "end": {
+                "type": "string"
+              },
+              "start": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "start",
+              "end"
+            ],
+            "type": "object"
+          },
+          "Exists": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "exists"
+                ],
+                "type": "string"
+              },
+              "variable": {
+                "$ref": "#/$defs/VariableRef"
+              }
+            },
+            "required": [
+              "kind",
+              "variable"
+            ],
+            "type": "object"
+          },
+          "Expression": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/Literal"
+              },
+              {
+                "$ref": "#/$defs/VariableRef"
+              },
+              {
+                "$ref": "#/$defs/All"
+              },
+              {
+                "$ref": "#/$defs/AnyOf"
+              },
+              {
+                "$ref": "#/$defs/Not"
+              },
+              {
+                "$ref": "#/$defs/Comparison"
+              },
+              {
+                "$ref": "#/$defs/In"
+              },
+              {
+                "$ref": "#/$defs/Exists"
+              },
+              {
+                "$ref": "#/$defs/DateArithmetic"
+              },
+              {
+                "$ref": "#/$defs/FunctionRef"
+              }
+            ]
+          },
+          "FunctionRef": {
+            "additionalProperties": false,
+            "properties": {
+              "arguments": {
+                "items": {
+                  "$ref": "#/$defs/Expression"
+                },
+                "type": "array"
+              },
+              "function_id": {
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "function_ref"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "function_id",
+              "arguments"
+            ],
+            "type": "object"
+          },
+          "In": {
+            "additionalProperties": false,
+            "properties": {
+              "allowed_values": {
+                "items": {
+                  "$ref": "#/$defs/Literal"
+                },
+                "minItems": 1,
+                "type": "array"
+              },
+              "kind": {
+                "enum": [
+                  "in"
+                ],
+                "type": "string"
+              },
+              "value": {
+                "$ref": "#/$defs/Expression"
+              }
+            },
+            "required": [
+              "kind",
+              "value",
+              "allowed_values"
+            ],
+            "type": "object"
+          },
+          "Literal": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "literal"
+                ],
+                "type": "string"
+              },
+              "type": {
+                "$ref": "#/$defs/DataType"
+              },
+              "unit": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "value": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "kind",
+              "value",
+              "type",
+              "unit"
+            ],
+            "type": "object"
+          },
+          "Not": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "not"
+                ],
+                "type": "string"
+              },
+              "operand": {
+                "$ref": "#/$defs/Expression"
+              }
+            },
+            "required": [
+              "kind",
+              "operand"
+            ],
+            "type": "object"
+          },
+          "RoleCitation": {
+            "additionalProperties": false,
+            "properties": {
+              "role": {
+                "enum": [
+                  "subject",
+                  "condition",
+                  "effect",
+                  "exception",
+                  "temporal",
+                  "authority",
+                  "cross_reference",
+                  "scope"
+                ],
+                "type": "string"
+              },
+              "units": {
+                "items": {
+                  "enum": [
+                    0
+                  ],
+                  "type": "integer"
+                },
+                "minItems": 1,
+                "type": "array"
+              }
+            },
+            "required": [
+              "role",
+              "units"
+            ],
+            "type": "object"
+          },
+          "Scope": {
+            "additionalProperties": false,
+            "properties": {
+              "dimensions": {
+                "items": {
+                  "$ref": "#/$defs/ScopeDimension"
+                },
+                "type": "array"
+              }
+            },
+            "required": [
+              "dimensions"
+            ],
+            "type": "object"
+          },
+          "ScopeDimension": {
+            "additionalProperties": false,
+            "properties": {
+              "evidence_ids": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "name": {
+                "type": "string"
+              },
+              "negated": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "values": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            },
+            "required": [
+              "name",
+              "values",
+              "negated",
+              "evidence_ids"
+            ],
+            "type": "object"
+          },
+          "TemporalConstraint": {
+            "additionalProperties": false,
+            "properties": {
+              "calendar": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/Calendar"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "duration": {
+                "$ref": "#/$defs/DurationLiteral"
+              },
+              "evidence_ids": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "relative_to": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "duration",
+              "calendar",
+              "relative_to",
+              "evidence_ids"
+            ],
+            "type": "object"
+          },
+          "VariableRef": {
+            "additionalProperties": false,
+            "properties": {
+              "data_definition_id": {
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "variable_ref"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "data_definition_id"
+            ],
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Zero or more proposed clauses for one chunk. Cite only the offered unit indices; the application builds every evidence span itself.",
+        "policyIrVersion": "policy-ir-2.1.0",
+        "properties": {
+          "candidates": {
+            "items": {
+              "$ref": "#/$defs/CandidateProposal"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "candidates"
+        ],
+        "title": "Policy IR extraction proposals for chunk_097a3c1b05e36a06",
+        "type": "object"
+      },
+      "strict": true,
+      "type": "json_schema"
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 2028,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1139,
+    "output_tokens_details": {
+      "reasoning_tokens": 949
+    },
+    "total_tokens": 3167
+  },
+  "user": null
+}

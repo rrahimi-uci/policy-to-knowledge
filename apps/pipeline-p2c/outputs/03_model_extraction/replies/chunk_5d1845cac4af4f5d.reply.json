@@ -1,0 +1,830 @@
+{
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1787184806,
+  "created_at": 1787184772,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "id": "resp_0fe58553759903c7006a8646848c34819b93057761c466b67e",
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "metadata": {},
+  "model": "gpt-5.2-2025-12-11",
+  "moderation": null,
+  "object": "response",
+  "output": [
+    {
+      "content": [],
+      "encrypted_content": "gAAAAABqhkamzSaAR3P17FqOidZ89q78XlsjZDb_Dafba3Xa0Wn6Z8m_fBVKz9x_zDy6E4JTAS0DeoyTOBtuwfUThKvsbXPag_f5jkDhd7-ZyMyFxrXspqcJ8ZmHmiQy2bsbnuZylPndTXGvKFPYr1J5AnW54wqSIsbr1zp985FGaWiaQ5IKM2mF4MbwMVoOv8UdnDUCouEXYBB--4awDs4yxsZiExL4I94wQcRbCXPD6y1TPxD8T_PcmkPsAPFBzJfSzDUi8AUiKz6lUnXBfgpmSwlL2A1JUONl1G1NX5zWPN_IPbaEQorZvLdnF0P5DMXFiZdr4zr-n8DekM_dPyEXmzirSgaM5D82RaGSKeGXIDCD06ycu-It5CHUz794_6Qok9C-QrTB0Hy2eBM7MK0lCiUejLmM7ytL8TMgIwj4pc08Y75NnRSFW7beSq3BnSV15QCc9wuyP5sFIHF0UrfPVqJasqs3sZfSoNHVP8XsPDrKVx5679SPVYnkAmDYO2-PkDJUJVjfH70x02lemfH7R-Q-ezlQRTkClu7kYr0viub1iA53euPpw7udrCAa4yn26DZcCKhpM_OkbLzJYWBNmk60-JvFSqOyVSmX5zbGiDUVZJMgL1v-4S3m__3_fO_ahh_bcTRd7Kr4vy1zlvXvvL0_QXwVpaRyXRm9i1w84r2xiag7Qj-RcI8k37Vf5twm4LXxzth-rrCPbfmu9UfGFEnycISaHoZeqaj6wfFWjx3jtya2FfuiHztyLYfwcgmNbLBwweDOt6gSe1djtBmSisyMU9jRGXQ9lNsITl9HxHJg-_zARJbqBEoQ0ZyJeVVfiNeVSk0XveyordHf_rIMR65tgMvm-Oc49QNcac0E68x-yIICWrLD5yDY2ZdMcnakk4DwbEb9vjLrKD7BATn_QBY9Epz_i0WSbB1qUnZYmXlt2pQhYhRDx_btAyZV3pzzX13TVRSX-9q-T1xRlBCL0oCr8J-CuB0hkVxKHJlB52GVFf4IOZNBhZWgex2pFIF1Ify6-mbLo7SSrVj-z-11rruoLICCFmphbixkZz9U0MKeS5dosVj8IN7JprwwtRB9KG3PBmQkd82AVjiTYkOk1WuX3u6a4aeez4LlF5UUGCbsHG_D43dj7p-zhX587nEN-BpKmV_8vQ_jzsOjnIPWCCtuqREU7DjAQUeDBruuNlWeaSkK1P3FwP1KpBvIRPfd9rF1SYCHiuDEMAlAUs4Ad4UE9ILvk-YPKmap8ZYZ5Sj80mOeG5UBYqByx_x7zqtCgXIvzhZhBbDWiQTlrcrnmQqBYih5bP_fk3QVYYNzwD1cAQGkkavWi0EpY0IsEGpAQMRUDO5RN8IXCZB82ieY_ITL9_r0Gow08M5ZJ6JtKRE5G_VEFQRAv1GytzCs2-bbxhq-mjliLKJQXhukFvbFa_GISB3uZ02vItOazeKxbcnBj_veo2ToEdh36fe37x9P207p06K1dMeL8Xg0eRAMOZRwLH8fiCmC3Ki0AYw-bNDfn20d1IMjIYiHO3K3c4dnS7FCAgEMzDrrYcSppifwdlbQVWMASWbcFGzWy0jI4eGrxSQ6xj87a_iK7A0wwAaTEP9zujxo4Im_mPRZM5z1p8QbNI6sVygXHC9itv6g0CoKVywDK5ViTiLb7Zwx6RmLyVyQgiBG8AHqfaVa9MMMAQy_5pzcj3_l-uA6MDD2bE7ekKmm4VmqX7NNbIKP_GTfqXBIBwBW3_GhrZuNtacJSa1BuwLL017FaBGGRzyIfqIkHGg8IrcEZCXpDfwaK6FA1Jd4yjBF_tmenugOcIiGLLx7JExoxmLRGSL0RDmZ_ODrLF90lY1U_4IvY5fKaf6qblLEY8MQjkm-tcy7UR6-CZd972bRsgGxQhlR37MBZFmyrDsfCvRqkOWzdsR0GI17ougsyKUWzU7SiIYwGUgYepCj2KBLdlM96LgCSmKE-T5ieyK4aZ5Q1fIBY19KEoh8WQc1L-ltW8VoL1jOrSmwCnK_udiVih7lA_2UmoJpS60NoQBvrfuIc2jj0P2wKKs7RByBEIM73d_h-gj2RUVJi5Dmy7jAfQsv9uHSPxAd4SHChY9U5SuBf80HRtZAS7U1dzcAlzwlbw4LtqkzpnfDphSxapDrN5L9mA8Yd8xsTnAjusbMkzIRh77WLVibeGM79uUOxEx5jm0uhSNkEJ25Q8PeFzSK91XiNdwFYkm4OaFWdxuxcN_ymJJJaH1-jra8whbT2_meseKJxvDaGJKFHMlRFLFyzr2n9-lbiogdBgKil7ugRLem7wbAkvH0l2rrw-aEHJswZHwnVjAWJMtB8M7_reRfcFd-tIl9e3m8Oa6c8RrTfH9djanWIAaYPuI4PkXzkgLS_IZBnROouB9ZibGgQYDf6e4slC_0QHxUCGPu31r0Joflri0Ohb7bOB5ihuqgNeyXqQk9J8fCDhprAMKlcfvN1dJd42H04kDmjvl0cYfVa1xUwaZrr94CSC1Vt7TQhNqVyW6uBDjXaAkhjH4dXdGOitguWxSL26uFg2kALOyuBphuOevNOZbvBLoTgw2S1K1VNWgNsymRJCVJoqByRzO9m4MuEpnpUkQ7nGomnoZNESlDNuLV7y-uIYhj_XB6PQGD4tlttv515aNhQubRokUjc0s5P7VYZSmkYpaZ1TX0_HxO9Rch9-3HE1_FSc5NSFyKysy4NIn_vvvwSmjmHDIMAJrGSP8DL-q5OpTTK4Gj8lDiTchrZGbK6VpddnrEgx5aj8YsTf0zex2xBV5aMQDN2pMVT6vCgLrtz8isxqr77oj_tc2UdRXGuYWPSBhPqINMY4q2EO5dYLa1vxpfcQruS0RltxP7Sx7c_F52KFirWL5W8F9CkmlM7Bp9mgZxYhv--0RfEECQs_hPHKXGyq2AdZNLVfOkMXZFb8ZPKuEZil2j_zbmAKUtKGw4MWFPnN4mkfVtWeSQUOei-SQEzPBZdvI65LOEdLJBP7sGY8GIp_CxKFwvLCqIVdD8LEfPC0OpygOaD8aL3M_yC9XWDV7HAJ6kt27xukzfQoE8PYIw3eWvIgjuhPk4GUka8_0DZpxpcl3ZaaXGn-aHY29sQzd2zgDmtzAlSvjVCz0Xb1OMlJPkBdSDTxrBOM1wLVD05cT_ZTISeIT5o9hp9Z5LJ5HEdZHSwOrj1s_RSul6co9xGoGsh1G4_BMjJIBzl3K4PjDLonrrljl0PV2cY5iTuPjO26-CdBglIId9M_DZ7MBgtm4fO5V_VBo46yAoWlPoIDsGm9lGrs__yzcw5QjjxuIvbq6cIq8-lJItbLlmLx8y_6AvVOrpUjAi8Os8TWuwEor-HulhJV3yw2Kbn_-v5oB51NsCTgqpzR1o_AyA4LP0Tx5g_yubgqqTTJVmguNksoN7LpkpIuViUzvIX4u92-IsJXzi1oDjb68Y4IbbaL1KYd_JfDZmKtCsmetyvPUJ67uqoAG0Jn6L0c9Er2woci7vLtOBJiRgtZVrnK8O8roZVjfZvZhUvnw-hjKmL0RB3wLCYWIJwcCAc9M8-jU9s4jSIF8e5lnE4IPBkpKKveSc5inhST5eiJe3Bcz0BwlYl3s7BJmcm5gasoh76T_ELQbMnmMOcXdqQeOV4Sa1vJAKI2-DKeJTU92JgAX4YvgpEbkV5sz4vlp4plwh1_kLT9bBSjFFZTQE1jPBEO9inStRfqtn5pOdNeNVmeRUmvxdAd0DLbtZsRgmGRdclatXPydVZxefAEdYp7YGzzPUg4lzdj5oBrYnJmNLemVZmGsBn9dNITfwKl1a79NqLGDcTubFsNy1avqw2WSbqHU4TEqH5U5gmjd9W4QimP9Lcs5KVMgeo7N4D8NFw7SFV200bcLmaKWXGkySYRnsbB_ro5m_DS-d7bvlcGJqXQ976lyoJiw_6iTyk_ltSp7YykbR_XJkNXpy6WJGWlZIWrC19ft85DFylPDnLLCsxdcK_vT1SYa5Ucjk436fztwoEPCAHQuNwM3CD_ckvpeKxvZng6Qz5l7XN3GSUzabLL8u-imyYo-nSFvoOeriLk-oh5QAloaWVP3QRT5q7y8E4HJJVU3q5Fm5tdroIi28SiwG1gNc_YZB_iPm2KaYtH9iKouxYVjbJaEI_BrOzcOlX5uVhQ8c_LiH5z72W4Q-KDZfKX-SzWFXZCq3MBzsS1LogW7hNTXgdZk66vSeICCoCLKgfNeo77z0DlsCPlMM0I5vF1Z7OJaA5nuDuDULR2-7HMeasY8oZTl3_zj_D2o-rVoZ_ASdlqZser5qmNnniiUk8tINWNpXcRf_GNBC3a96GCgxC_qJ7e8doMfX4PnaT_KiUYR6CJs6I1s0z5_dT_8_hD0cIHEvV9GRVyHE354uZH-fS9FX4R29Ypl6936hnlFal7t5sVFRvT0uw-OVPlVO-Jgu_0WEVbR3N_e8VIhfYZVUEI1ijW29TZEewzmKGO0caF5RZM3cDrQpmF6NHzYXJYehRl3k0QrrzeWD7FyfiTqLS0i2qo7ccME2nAYyKz7oRQGrxEsUon5P0z6tIzeXxyrPYNC_fzdhGlqA-iEKSKOhngp4eCLaRhoxqJTugyT60jIcrCSSHic1rEPtyX9QyoytpbdLy2AH-Fjcp157p86_zBO1MW_nEsLSu2bCZrBPaL7cQtakfPuT6JhUsvmZdBVKVS-V8mOdzBJaz64eqrHF1MT_1SmQSmdKvau00XaIa0rJEglg44YvaTZf1oYqqTsRkDuLaCDSPFF_b0-N_aUaylibjvkneGCKsVrKUW74YySr9Gjz6bSZ5P4jFW17AUn4yL-z-A-Hi-fUYOtRFDFZMAZzfYKxfsWGkpJhsstczoKeAfcfNJEwVgLry6KDcY-g8ZvoqnKky5CodEudw0e0PNZ9sZPbwsShkipEHC17na-t92oRH1bnvSqy_eA8Ia5U6wp4ih3AmtxFMdGys8WIBOhOVOcapBAilpTqIED8hkTRloUXutxOLASXXEtwCXjwibdlXJtjf8dpQLRC99BYBLSnmsTTT6h3cIUU2fzAW6tMo80SBz3fCPw_0ymUG8zgga-RiD9kWnWhK2QhXnSjmEdV9GEIxW0hJ85BatNB4ieMh1nvm2XtAiRkR4auBcO44wOUtj0GP2HWQVIgfGCTrYz9KgaJOMpZdaKne3oINt8ip7cmbHoncoUs72_5Fj4X6r1t5Ga1Jwu44M3Wf9iHGZZIeZobiSqwfLqGmx4ejKpjoa0kczzmAHCleMHkQq8GglTZCOnDoOboZ37vXsKxsC2U_BNRmrYp8HLfkxSP6_Qa3XoAtUf2n9wjnRP6ydf_qinBG56ftm1rOgdir5nv2yuEhttvY_JsfBI-S8YslyiMkENrwOHHvEQgSkinrvfqhKNcHBN7QGwaylYUccxvyl1LRmCVH0ye0940ptFX61WLPRy7ssHpBB3vZP1Ii7wiOHxrxr_uAjQ1XxHaOyhoObLcW4T6axVa6Se2bd0lpHNeBFv-hP2SJ3841_89Rmwhm2LHRVwHlCqGaNEWhV17pvoQvfM1SyGhbwd9LbaiLom5GxtdO0GdKBAliMWZyLvmDTOyj_rcxD1W69l_o_ijPuEFVEktm20ASU09n5K3uLDqkayCjxN40vNHpIEgBZMOk3Mng2Llr1Iz0qd7g89i4Ow_w7UW_14GvyOYNwfUFL9yQNk--7UW-ADnzEwwh8AyYpZSup7L86-TNSnxqt2YCxmK1FqRnk_hVa599AIXVxCq6wdCewt00ZCkpjHUb0FZTHGrh07r_ZMKmrvWNoNRybCsrMjmokiCHpyuqlrKJFyYQFNCE6WtbHs22FIjXvmw0Rh7P0KWMhTj8CbHAfiA3QoX32vKRbpRE-8-UEKseozFH6SU9O7t_hJ_i6wFye3riYP6vITfoQqjTcVO_ERHcbUMQu8dse0kCjLR0YLo79gVNeOWE7gd9hzOFs9hOits5opeMWkTIoR8G40INHmyKHJwu93dhOuvwa86-qZdogJBz2FdbEnHr1ATrutCe2h9vshj04hfRqQzj48MoasvauMP3AP7DoMcZNMll8enpLrs5ed1MNaE9UJTfLCfrVZBipEuKcrZkO7ETS_Deu26Fflv9vP4ZFQU6NIT6CY8v84eiGVr1V8V1H8_8xBhtoaqldxWjRFk9Cd9KScoxTowymzWF2T2Fionvgn3BXQ5ze-owSq0ujX-JhiOxp08NOKExFTQy0zLleNezxwKBYfpL5OYx_7VZgUSN8Skz2UEsy-RXUAe0aYga3mD3a6dYfoMG7mAjNHeMy4AqskE7Q-Tywosi97PRmKdAf2RehRX-jPJcejlx7301SYtQAfkIY633YGwSpE5gWqn9dR7PD9BXu2Ul0vlZt1oQ_mTh_flG8_Gq0Esolso0kJfSVU6W5RpbyNyLOMK_86pJO639b1-Z00yN6lxygBccwO29GxJ23XWh0TiyS1sUUpj8bnquRdYzrzH0MGWZ_AWyhJ6UKZqbtaKNQrukf9GCNIhvbawUWLtHK7DkruqoF3kQki24RG3Vi2AnKOWvOdC4KHWTLFvKQr8f9wRCdlGsFKE-npaFU4swDhQ9avzveZGRtuwW4hgBXEW3tVxJeFeQjvFujhpq7d04jIC6c0SQFIeV4dNPPYWsIUKCuh6fTghSWo5_DN0T6nNVxjJmyc_m2aHQCGYCJQWdWD12qugH-v9EDA9o6i7GhuFP8ZbR8JB08s0a_HBDeW_Vw7LAh1YXocLVELVjXw5ThkofA6_7GN-LTQpSsWRofJIIh-rA11X06V5UZF3uZihDeaVcwl0OZZymiAicyOGkwnTowIgqegmzvy6JvtOLiMa6QS0spxu8cmNY6sFpa2xGc5nUecMZNXbRzSuEwjavPRs_xiEcFuenEKmDADDg4OjjiJR5TqG_whjOP4kbAqmuJctFBDSsCjM38w-TBYFIMSrqtiwwSIi624I_RQvc8G_fBVl8A6cBIKyIyYpX9Kju_1xRI5SpHFjLrIsDlBBl--B6lscAcc7P-NBHMAd4coEY7nw4YrxEoa_7QyDTnHxfCzdGB6Z7OzqzzzBD0GJ_n60dQ3lemTqK_vz6DR92vZiyK6uP7USER4d2wm1ppr8AaF4jHCmHQMasBTNmsjOsPyBE_jcE3f_MbUDHq0dzm2P8YYxCVpM4jNpcqRm1zmvnI16ADaj3ijLVMtou0kHzeU3PXS7BlejCOpLKVjsl_suHy7x4LApi1FePOskvWnwpPntRB0oGikDho5hpI7T6fnCL7OGhYz_-rlx8ioEN511m23T03T35e3fSKJis91fNq-hd8PttdgsjQPeIDfylN3aLv_yO9AxCDuNDpJRxkrO9GLHryoOopP3dTXtvdIduNRiqKfjkLHF_6yrlmdJCOA8cO6BRjfzVgcT4s6XQLWy7UK2B45zbmdTNl0S6iHPqC3QIF7KymLbDqPu9FfTPH5JWgp9a8gk-moihicJKrfz_c0l8CBAEKgRaAMWpwiqaYVIanJ1dVEEdP5VGxWsU8aUC1iCt1fwrMumFPS-4DKquc7lHy5l2HJ-j0Kw3TldVJ9NM0jIZNCwOlTO_1Ut9CwTbmb2FnVwoUYFb9R41c21pSK5qDFqgOtV5LThHPAVsyc3-pKiVRgAHuYKhqNXlwaZzJu-0bAh0fzhQPE5an_Olnn3Goudc2p82qVNRNZiJ_7KCu22G9b0ADBaORbDYs-91hW2USSlFib4HjP2hmQo8B_dSFZxJpCkgb27ONFEI49v1sF6Ef6z2xk0_pI87GlMhyqNrA6Y2wgcRR3dh5bOjGhRGyKO4rSJPqrzViEDUNGFALa1VxuI2cMbpnzv1uTzC29LHvC6Asn4PAg8NLc3dizxqKU8Ky-vZVNCivGY5ZKVgwuTS3UVEsh092De9UrtlyGv__0X-x3ZXzQtThGgr9vJZxqufh3nJB_wpziIn8GQlS5pJdMTjl14xOtvF9mbA19UwWZXpv_aBYpXqUzOh5oOMLVFW-_Do6r7gpGbsOxIVIhrBE0n4-yy8p16SuJEK2Xj84hFTsRG_uAcRosqzvMfs3wRieBy1dV_C5DDUUw3FTNBjwZVd3gAKvI28lTNTOoi9oiAwwwPxuKbSp2sKwfpwGEyDve0xeAr0xEqV-_ne7IexP2oGrAzGUmikM91lkDwB4DxdaxZ4Y6Dp4lRwx8ckWLSxGjpZMjiygqAPvv8L5ho2DmZKYV02p4DGMdJ5PcVUm0P3YTQhiudS8ipohejKO75UhavEZDrnlC6Uwft1qtu2mMRw_H7FKH0Uic_jWOddokQUFbTGiyrDgtoX1-R8cVe-Is4Al_kdN8a8ToldZbHOPFN4WZpK--15Dv5yk5VcGV_3uRkxBXlfbG8CPVMJxc-1-RrkJTUJnaY2MM1rKw-HKskQkl_hF7J3Wg6HZBlg1aKyiXO7v5llkPcJ7ZddPiKXujvIm75BY-BbA0mYufax25BLGVnNXts9lr0Z-GPvg4vy3kPO6jKC4V70VfQjozDVsHn5EvIktZdK--axhaWc8xxAMzYvVUC7EihCgkxn1uC9uABwiiCga0Pyb0roeeotsYh4xg5Q9-sjIUDqFqsVWD2Bn5kTz87LfIplpJ9XyfJWQ5YovVdYeUQCbKeecm09WAbyzyEfV1b0Dw7GB5lzqB6m76FHd3gGJVC-gHujDzwZ2ov2bzk2Px8zd9adrLVaQu_qNHb1MgvxdrMnqRUYPO7ilUwfdIEp6cZFOGwQuocOnAS-m4uJSFIsnCNytOT4K6EF6Ax7r98VykAUzIVkdLrVdnJeF5YZbZr3cSoCVYg71Lv3GJNPm5ThN3gjbfQ1JTtoCentNA4QeqWSEthwQJy5YZ0QV17zJgpjBS-uRLtXBA7Kt1G9pBu5O_bVdycaPqo_DUiLwGvq9YIHLEfHRho7wJ2lLarmX9h12HzAPTfD6RKJpY4sbdHqZvLLBGNbIPUkswiYUOG7oqcz_eKqYQhJC33V5ffFbKAQEOnqOQJgiEw84VWexhS0DuREnzWN_j7CmVgDGvyO9HQAk5OesmcpsL_7Wovxd7SDnvqLzZKSHOhTeghpSS6cKrqEvTve32kOH69TbZOJZaAQiMTd6mGJMykgY-zeASRv9imbBDzemphGdFRFuoPqEHswws8ZbGW7GpTbdDW8GFEF26cCg0j2jJgXDpyXy9NLlmkoNEqL14weeWlp3ayETuUZQUfh3k7yzv5qze5dPZaO8-Sn8XnWjTdDFttDCfcdBz7V2hqneaNKNmWfkbem4SgtFkRFpTk5O3U7NaT30lFQXbm0T2zg8GpBL3W87AxaOo0GcEDhI7Cn75c8V8Z9mIGvtb3biU5jbuffX4zRpu0SsQrIPKe9dGlx0N5djOKgYk_y1OQ8UscScTOLPU2ulqcxQF-zVCKEeaqc_MpSK_DY6cqrSkIUSWnWyJAIhBpzsCNoy3Wk-MnpcmzarIILJc_MNsmW-SaY_4hwfpErxDp059-dc-mEz7VLGlyUsno1xozTHjrTqioWthfpMp4zetikpNw5JeDbv8Uo6mLtindE3MVBA9Ql6-v--ZoD7fxdkK-6moQaXDTdmJoiB9ldysOQzZ6Nel2bf-r5yhlJZWjFTpCdf6jIoKlcRiF3mIvGibCp-PGLkQ--PpuDydgkCe1KDUl7899bz91QjLOwCg5Z42Q78mjdBmCHLQyDt1ZCGeC6dABlOcj08cxTUt-gOmHj-3CB_BicUnNtc_vuiZqKoYJT9jslDi-jBCZdtcRvtZTwz2qjUSEQ6XaNYZMgwVRPqC3LLE3vft-cvwlflmocE4KFFSjSYvfps1ZBuzRVzX2Tt56DbHJznfCZaGtQdhqVSL7SFP6EJH5oxu1aKV_cl_TvMrx6B-ZdYigb8MFLF1FiIvXZF7JlVBYUOhmQjjBoGuzN2d0HCfhhh_t0ZPyY97XLCenlGrCCwObGXlBMTgv_aNSGLGMMix8IIlEwjXktN6lG45Rt6kJjV2yE9Cayx-ZXx1wJU5fJywCT5PJPBNmPFEeiaQDfNcwlrEfUVWzuEsQqNDeGwV4nRvYqwq0NreEKqNNtvhRAQiAwxKXROvAMgu40FSPJ8mS-BpJBpi6DulDIzs-LkI5WtGv8NFETdIhlbsprEOHCgQchFNyYJ7O6WXUwACpQkDFEtQBxc5qbeKN2LXDQW8-vtYrKLFRlVdsbREH2-OVG9hTaZucDwtSoiteym35UFxa9nmpd-4hE6q82QEFFJAsY1avqdqyUjp1mDeWtVY1ZTkRTcYAVIYvasWvpwd-gNa3FAfv5ZApB5-qtQNu6SeYyNtipnG-AsK9u3ZBequQkNL6iKEd21CSXMHFbNGVjYR_eK_WjsgebbYCRWu2sM934Updxu3wZUEvP5w5ycd2fW3ho6VX5hdI7dX1jadAUxEoeRJLSFl1C8NCy7dzYngj1aefauGlLPz4oq5NfpcThbjLJ1m17ywhwDCNsvWYFmmYIyv-IAAK43Y4JY_6g1dLf8HuhpSBpf6V9cLKIcttti4POwN736yxFDdRT9fGCN-ftTtziv-h3zHXJqn6wsSF4XxpC3Brxg5lB7PgQtP3o2MDf1cJHMG8SiPTjxDCZzlyxswjaYxJCwsZau0-KPbBPfx6X3Va4gyNkIl9Z1icd5-ihfiHBMb928lLIhkKLIGmnRdzu0hh6Xhhp2PPUx2txBoKlkBkdULsqeSBbfCh7PGxXPvSfaaZr8JZI3WuLVIPPBH3Y7sCahkVym7RmaEGH1AY46HgmN6uC2JumR_xsKej4rSpt7FVkbO27k9Z3V9vBJQjcUhsK688UOwZsZ7-xXwmqM6VgBwF_04fafLa6ti9cpCMFtw5Xx8edxdtPiagn5de9MNh5-zo_xBDaHAIqlNfG792j1ncI82MBsF7Z9Ma_95FwCcNR9fivHXOdIuB8J2mX_LnJa8POZU0L9IGwa7FIDx4BbToX-uW1TbR9y5XDuANAuwHYWELKfiGwiBAkdP9gJW4o8asq4cw2s77b9LHKCS3iopbbtccqBCEwmwAyVQWQPtOL7VRacRI3Ng9lLgjVMc_lIgzlSBSJLURTCROK4TnNFFbv-WtGFn8ZtceCnaxIGFjaGfJWoOaooQZZs4c1Lu7DnLmNW3qcFtF3yMu473xx_K1spkH9vP9P5AqgxgO3lnJ46tjM8IUOgd16QG9TowILvMTkFhbc5k-zXEBiFwuv7ufIJmjSsRFqgjVv3a5WsOyYekoeDv-5Nqr6nYkWvrvTM0Bd5FTXQmI1hxg42xZadEV2uhYCG1iL_V8AwQMkbIT8RpykW9Ptws4RaYT66aBbUi0lumUxnMbsCdiBY4wiCgHtf5zfbxLHGANcLC-Hu0V8HV67eniH4f32tvC4j8zzGLZQq1Hk7RBJ6Mo17Y47hydgbksm1gvRn8VUo-vJ6ZLtROX_nSTNlbjfaRVObpTt2II_EHs82AMlwqEQaOAHyAgYJanZ-13kUmYKgvmT-Nwp4F_9kN3UBymuO-B2bMnXdWbFhGAUhTGvNqEHWMSljZkzfWOclsHcpRl1Ys0smrleqEDQT1-9F4YASNIDj2yHbrrqt6sXAgj9OlinpznAmnizpB34z-tE8f5U2dJcHoF2FtU-bBeGkPSJcy9nl2k3rMAndmlMgPzTvTT1-YS7RB5p_lwxPqduPEUC4TCC1lhD9Pm1LUN2Savz8xweQRH0JjLECGrSoLbJ7G0eM7V3T3Kt-QaVDeHjAm-0y_bS6j3mTHUK_DnA6C9NnAm1vb7T0-EfSyociVgKq4cYJxzc7e75fuvNr2u8uKPMGnjegPUeUFJy_pKGbwf6eD8KkH7KxOubFrJk7HGaji9_DzFP0ar0oOtCuhvWspYxw9WDu6DVpvlRhwfUpHymZJJPe7O76xwiLmvelZ94HXMyVFFiVGn_e87TAPaZIMu_b0x9nVMniTGycIr7EbLbbB2uMPLVFWIhRo4ZKcdu5Urhj98vRJyeftvLjFusOztTrSG27oiPHuS2H2qfoz0B68Xv03jF6Ogki6y57GTjbs5x_v6LK2V9RG5bDwDfQudlbyESTjO2ILP0HZDnB8O10Cmobhek72ut2RtS_GReiMNV7FSOGjBuwWp9UYdF1M_cNoLCjqVQnUJmoP3MlserTaF26jKUfq2xP8oj4GsoGdnKnAXvrkmMN-dnT4bMX5Zg__nrAtsTq-c4rN4Af0mLffhSV7pNRHdeoJAwVGb4xEwau8LTXuYgZVz9L8YXnjgBYDjPnECtWuqXGgodRzVL1kJZ7D6RG7a0mTi-LSJm6ZwVm1ccZWHgAdhmwmfxdtUe7pVSq7sZzr7efJXlz2L1WXVUvDSir1ayh0Fg_PqXvsdy1tSV12Cg5qncvZX-GjWORVDJJ1zCsrmqtybMlynjO7fAFFRUDjOxSKhNmO5GK2o3o_gk6K68yuj5H1I_EFznyzhBMzU1wS2NEWq0x2wQMIINTa9QhzUYzU4tsb8i-HfwbFCzGjwImFQNBAqHx_0ZxRQOezKIiLc3WSsc1zhU2YaojYKrMi0_mn1_bzeuD4ofalsqbkdjgD49KSuJCTWnEPI-pW738QRA8jEz6GsWn6kMY4ETKEOTuufF4uMlDdjgDwwUvzgc0eh8Cfxnn6efDdwZFeINQVHLbTXP2n2uA39GLOtj2guOsvbAdX1MQ7SMii62bzfZczfABRvB-55EZEX1Mn3wLQd-I5TrNCQtjjkRP3yZ18pHpTrkaApRz5aNbC4bbcIOCe0HQVAnPC4e_HksgRl-gIPwwEEMVmZ_LZwn_XGtK0aGQIdVwbRMgLJxoGfTvR6a7khHu5zFUACK65A1UW5vjVyPNteudHPypVBudkfJadF1wLF2Cd197I997XgByO7Fym9VmHijsWt8RapWFLFcbAa9MpEns7_t115T7WrEvUoB2IyMTgtZvPVeTSowKfsfFapfo5__UleEa8c_vIlEHXibEbwKrUovg89kyIGCgfwXkaKHgZ_XN9ma5NdBo9sha1XI3HRjY7P2vhbpCUpJtWbKdBriIGACo6V0nOUfm_9Zs3jp3jsnFIipPEoxUzl5fnENu3KAexgVO6ctSQ9UuZGMHhzsOtbEam5BZbmQkRGmdpAeRS3PvZdlST71AfHLU1X9pw46NB0me86KbGcUz3ZUJCdkvTr-wpa6DnfKAGOzajhLwd-ckvWBwnWUiJObOILb6Px_upJpwTSt25xx7qDdjbYlmbfkPQauS8X6V9HgWvUHHfTF05JP9SQSma8_OGt9pTc0SqXS1JtalvxlHkx05PwV_8sdJB1stjd7R8nt545AvGJURsCxRPAmy7LuqPbmFtn6IghOgEYEYGv6kSsuqf5aqOjnMcr3HRp_G7QjK4SjhgZoiTvsaDntEzjtt_kpG46_B5hq0DfRkiu8eSk3UZIGagcl6qAQblFRmnlMBOUI9wuJOq1SnoFUREegXk4-AeK8nhD03GEt-3yRZleChWvu77zMkiWzQtC0isKykJ58HOMObDwWhqWoEBs3FhNim6aUDkGkXxDGGkGcAJjsGwDZd1XKO2_Qs6rwwty4wuDfs5Or6n4VqbAFwCUrGNZySRXU6a020O524tM30AoKx9qAY0aJrd3QTptoc46llx4Zg2BrIMKt2U72y2HY6IkPQZU9MvxhAj5qiVmJunjzz4982_K8Hm3E6d0uyC0d6UOClwMrJhrnALaqT0SDJaCr2kkZsfoQBjyY_OpMncv40AB0IVToP0fhvY52oC7dlRtUwbGK8b7pSFYW_d0MIGvSVUfue4imjq1OUJO6o4xbYOEwb9NeMYdOVjOAejg4Z8-tL_-nu6qkzV8AeMeAHI6rY4ropwiAkOM0jbAq0IhwhU7K9Q561gJmFZ-zCYjqPh2W1ukJxUZgTM9JGHGF3oylT_voKy62BmtB6KE1fzfqnM3TfSW7Yj92bFXGSEEcS7n3705N7O7K47xxTc5jVdd8Y711oKEDk9DquQUzpl5mKLIpQ-BEwZr1xTEfcf7UZLWuPvtMggiJAWiE19BpzQvJjYk5TfF1MjGlRLZMrpZkUFJmyQ36RMA2kT8kQqg7rl_91FRcv-ykAo8RhUcc82t2htpqml12iTig_d31GFeSVhjyxJiCvb_ZdAksgTLrCLEAuqCE3kd0lMBElj2FXAynDrvqCBqYN3_IuBCi3Dvjh0pZQCNw0xfp1suy057NNk35S7RHU7_v-BCfzhIxy2TzxXQ5bxvO8tEga2JqwUP22r174aOpY-a1QSERLc5Nb4q-dJHr3JZ-TkWKq3r9UpDzv5UngRXpiq3DHVUiCjsTVMr51BdGJ3UF8bHoV59P4A9-hxIzA8E4qbhnVWTLGyUSeIWmFaaH0Jyo5MKvgTAtqGWmx98gPqRJLCPXGO84pKmmREtH3HbhxAZz8YhD4bGzKIMHewpihNByd6e90nd2lprwO5xI8gkUTDq3iuQLEFVjO908H_-hKxe_S3aT6TEAtgVo3D2lXNTI2AHt2l7G1a1_Lu7pWij7ruHWgMH63pEIMR9XhM2Gnl-MbLGxROdOW5XwEezqNKoNHjTEAoRnuCc_157iHQWtx0JouJS_7BuCM6yIDrkWMY03hcaHQrY2Y_eP2QhMx2hdMouewShbGcP435AazsfhdZmoOtisYK36hjndWLYOdpJG0uQF6IEronkNvOSFdWZYsXfm2u9mGJFnly12vxjulgsoXVjrKpNOXj4QCDXJan-EwUef7UEdjryZw2v1_xJ-RA9UJLp8WNjYMYZdH2pI2x-_fLJUb412iHNyyKR3Kt35_u85w0kMdxGaTMZNvwsIvkX1Zll8N-77CteP6vDh7XZiG0MtwpCuR_KAoOLiLFmLfavrP9iZb1FcPHWG6yhmkLu-MP_5syJ67EOAq6CRMbgjhIyoMnH-dbPLnTqvib1Axm2ZTDYw5aia1hENem-_vdc4_ySnLpIdxNT70E3R49gi5whQJLoQn3XxDgWSFixdSRpQa67cnXHzXRIjAHWFV-TB2DgS-krkmbEmAmTCtCkTZATDnO9iT6PofloY_uxW1DLpyt3rxzWJikuJcARsfjPGp1meWy6KJISr9xlNNgRuHULC17_UoSs74lhyoorNGZpgq1P0WiSadz5Z0wqMl8CKJyplBn-ky5VnbB-9-OmZ72Z6gXBBYM8dA9Fo95_fINs757WEHM2mp4sfyW6Y9QlM4_ZbfmjOe817o120sL8ad8BkL-gD2Adt6wbBITGa5suCl-9EAgAUKFlDQ==",
+      "id": "rs_0fe58553759903c7006a864684eb3c819ba50898f56451dba9",
+      "summary": [],
+      "type": "reasoning"
+    },
+    {
+      "content": [
+        {
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"candidates\":[{\"modality\":\"permission\",\"semantic_kind\":\"decision_rule\",\"effect\":\"allow\",\"display_unit\":1,\"citations\":[{\"role\":\"subject\",\"units\":[1]},{\"role\":\"effect\",\"units\":[1]},{\"role\":\"condition\",\"units\":[1]},{\"role\":\"temporal\",\"units\":[1]},{\"role\":\"cross_reference\",\"units\":[1]}],\"subject_ref\":\"Servicer\",\"action\":\"charge\",\"object_ref\":\"Seller a fee (\\\"Late Document Fee\\\") equal to $100.00 per Mortgage Loan per month\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"unresolved\",\"authority_ref\":null,\"cross_reference_targets\":[\"“Final Documents” section of the Servicing Transfer Instructions\"],\"missing\":[\"temporal\"]},{\"modality\":\"definition\",\"semantic_kind\":\"temporal_constraint\",\"effect\":\"no_direct_effect\",\"display_unit\":2,\"citations\":[{\"role\":\"subject\",\"units\":[2]},{\"role\":\"effect\",\"units\":[2]},{\"role\":\"temporal\",\"units\":[2]}],\"subject_ref\":\"Late Document Fee\",\"action\":\"begin to accrue\",\"object_ref\":\"on the first (1st) day of the seventh (7th) month after the Purchase Date\",\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"unresolved\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[\"temporal\"]},{\"modality\":\"prohibition\",\"semantic_kind\":\"decision_rule\",\"effect\":\"deny\",\"display_unit\":3,\"citations\":[{\"role\":\"subject\",\"units\":[3]},{\"role\":\"effect\",\"units\":[3]},{\"role\":\"condition\",\"units\":[3]}],\"subject_ref\":\"Servicer\",\"action\":\"impose a Late Document Fee\",\"object_ref\":null,\"condition_ast\":null,\"effect_ast\":null,\"exception_ast\":null,\"temporal_constraint\":null,\"scope\":null,\"effective_period\":null,\"lifecycle\":\"unknown\",\"compilation_intent\":\"unresolved\",\"authority_ref\":null,\"cross_reference_targets\":[],\"missing\":[]}]}",
+          "type": "output_text"
+        }
+      ],
+      "id": "msg_0fe58553759903c7006a8646a262d4819b9f0383fef6423833",
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "current_turn",
+    "effort": "high",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "description": null,
+      "name": "policy_ir_proposals",
+      "schema": {
+        "$defs": {
+          "All": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "all"
+                ],
+                "type": "string"
+              },
+              "operands": {
+                "items": {
+                  "$ref": "#/$defs/Expression"
+                },
+                "minItems": 1,
+                "type": "array"
+              }
+            },
+            "required": [
+              "kind",
+              "operands"
+            ],
+            "type": "object"
+          },
+          "AnyOf": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "any"
+                ],
+                "type": "string"
+              },
+              "operands": {
+                "items": {
+                  "$ref": "#/$defs/Expression"
+                },
+                "minItems": 1,
+                "type": "array"
+              }
+            },
+            "required": [
+              "kind",
+              "operands"
+            ],
+            "type": "object"
+          },
+          "Calendar": {
+            "enum": [
+              "calendar_days",
+              "business_days"
+            ],
+            "type": "string"
+          },
+          "CandidateProposal": {
+            "additionalProperties": false,
+            "properties": {
+              "action": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "authority_ref": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "citations": {
+                "items": {
+                  "$ref": "#/$defs/RoleCitation"
+                },
+                "minItems": 1,
+                "type": "array"
+              },
+              "compilation_intent": {
+                "enum": [
+                  "dmn",
+                  "bpmn",
+                  "both",
+                  "graph_only",
+                  "unresolved"
+                ],
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "condition_ast": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/Expression"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "cross_reference_targets": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "display_unit": {
+                "enum": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4
+                ],
+                "type": "integer"
+              },
+              "effect": {
+                "enum": [
+                  "allow",
+                  "deny",
+                  "require_action",
+                  "produce_value",
+                  "create_record",
+                  "notify",
+                  "escalate",
+                  "no_direct_effect"
+                ],
+                "type": "string"
+              },
+              "effect_ast": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/Expression"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "effective_period": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/EffectivePeriod"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "exception_ast": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/Expression"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "lifecycle": {
+                "enum": [
+                  "active",
+                  "future",
+                  "expired",
+                  "superseded",
+                  "unknown"
+                ],
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "missing": {
+                "items": {
+                  "enum": [
+                    "action",
+                    "authority",
+                    "condition",
+                    "effect",
+                    "exception",
+                    "object",
+                    "scope",
+                    "subject",
+                    "temporal"
+                  ],
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "modality": {
+                "enum": [
+                  "obligation",
+                  "prohibition",
+                  "permission",
+                  "recommendation",
+                  "definition"
+                ],
+                "type": "string"
+              },
+              "object_ref": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "scope": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/Scope"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "semantic_kind": {
+                "enum": [
+                  "decision_rule",
+                  "calculation",
+                  "validation",
+                  "temporal_constraint",
+                  "documentation_requirement",
+                  "process_fragment",
+                  "authority_statement",
+                  "unclassified"
+                ],
+                "type": "string"
+              },
+              "subject_ref": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "temporal_constraint": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/TemporalConstraint"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "modality",
+              "semantic_kind",
+              "effect",
+              "display_unit",
+              "citations",
+              "subject_ref",
+              "action",
+              "object_ref",
+              "condition_ast",
+              "effect_ast",
+              "exception_ast",
+              "temporal_constraint",
+              "scope",
+              "effective_period",
+              "lifecycle",
+              "compilation_intent",
+              "authority_ref",
+              "cross_reference_targets",
+              "missing"
+            ],
+            "type": "object"
+          },
+          "Comparison": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "comparison"
+                ],
+                "type": "string"
+              },
+              "left": {
+                "$ref": "#/$defs/Expression"
+              },
+              "operator": {
+                "enum": [
+                  "=",
+                  "!=",
+                  "<",
+                  "<=",
+                  ">",
+                  ">="
+                ],
+                "type": "string"
+              },
+              "right": {
+                "$ref": "#/$defs/Expression"
+              }
+            },
+            "required": [
+              "kind",
+              "left",
+              "operator",
+              "right"
+            ],
+            "type": "object"
+          },
+          "DataType": {
+            "enum": [
+              "string",
+              "number",
+              "boolean",
+              "date",
+              "time",
+              "date_time",
+              "duration",
+              "list",
+              "context"
+            ],
+            "type": "string"
+          },
+          "DateArithmetic": {
+            "additionalProperties": false,
+            "properties": {
+              "base": {
+                "$ref": "#/$defs/Expression"
+              },
+              "calendar": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/Calendar"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "duration": {
+                "$ref": "#/$defs/DurationLiteral"
+              },
+              "kind": {
+                "enum": [
+                  "date_arithmetic"
+                ],
+                "type": "string"
+              },
+              "operator": {
+                "enum": [
+                  "+",
+                  "-"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "base",
+              "operator",
+              "duration",
+              "calendar"
+            ],
+            "type": "object"
+          },
+          "DurationLiteral": {
+            "additionalProperties": false,
+            "description": "A duration stated in the cited text, as an ISO 8601 days-and-time string: P30D for thirty days, PT12H for twelve hours, P1DT6H for a day and six hours. Years and months cannot be expressed; see the instructions.",
+            "properties": {
+              "kind": {
+                "enum": [
+                  "literal"
+                ],
+                "type": "string"
+              },
+              "type": {
+                "enum": [
+                  "duration"
+                ],
+                "type": "string"
+              },
+              "value": {
+                "pattern": "^P(\\d+D)?(T(\\d+H)?(\\d+M)?(\\d+S)?)?$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "value",
+              "type"
+            ],
+            "type": "object"
+          },
+          "EffectivePeriod": {
+            "additionalProperties": false,
+            "properties": {
+              "end": {
+                "type": "string"
+              },
+              "start": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "start",
+              "end"
+            ],
+            "type": "object"
+          },
+          "Exists": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "exists"
+                ],
+                "type": "string"
+              },
+              "variable": {
+                "$ref": "#/$defs/VariableRef"
+              }
+            },
+            "required": [
+              "kind",
+              "variable"
+            ],
+            "type": "object"
+          },
+          "Expression": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/Literal"
+              },
+              {
+                "$ref": "#/$defs/VariableRef"
+              },
+              {
+                "$ref": "#/$defs/All"
+              },
+              {
+                "$ref": "#/$defs/AnyOf"
+              },
+              {
+                "$ref": "#/$defs/Not"
+              },
+              {
+                "$ref": "#/$defs/Comparison"
+              },
+              {
+                "$ref": "#/$defs/In"
+              },
+              {
+                "$ref": "#/$defs/Exists"
+              },
+              {
+                "$ref": "#/$defs/DateArithmetic"
+              },
+              {
+                "$ref": "#/$defs/FunctionRef"
+              }
+            ]
+          },
+          "FunctionRef": {
+            "additionalProperties": false,
+            "properties": {
+              "arguments": {
+                "items": {
+                  "$ref": "#/$defs/Expression"
+                },
+                "type": "array"
+              },
+              "function_id": {
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "function_ref"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "function_id",
+              "arguments"
+            ],
+            "type": "object"
+          },
+          "In": {
+            "additionalProperties": false,
+            "properties": {
+              "allowed_values": {
+                "items": {
+                  "$ref": "#/$defs/Literal"
+                },
+                "minItems": 1,
+                "type": "array"
+              },
+              "kind": {
+                "enum": [
+                  "in"
+                ],
+                "type": "string"
+              },
+              "value": {
+                "$ref": "#/$defs/Expression"
+              }
+            },
+            "required": [
+              "kind",
+              "value",
+              "allowed_values"
+            ],
+            "type": "object"
+          },
+          "Literal": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "literal"
+                ],
+                "type": "string"
+              },
+              "type": {
+                "$ref": "#/$defs/DataType"
+              },
+              "unit": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "value": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "kind",
+              "value",
+              "type",
+              "unit"
+            ],
+            "type": "object"
+          },
+          "Not": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "not"
+                ],
+                "type": "string"
+              },
+              "operand": {
+                "$ref": "#/$defs/Expression"
+              }
+            },
+            "required": [
+              "kind",
+              "operand"
+            ],
+            "type": "object"
+          },
+          "RoleCitation": {
+            "additionalProperties": false,
+            "properties": {
+              "role": {
+                "enum": [
+                  "subject",
+                  "condition",
+                  "effect",
+                  "exception",
+                  "temporal",
+                  "authority",
+                  "cross_reference",
+                  "scope"
+                ],
+                "type": "string"
+              },
+              "units": {
+                "items": {
+                  "enum": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  "type": "integer"
+                },
+                "minItems": 1,
+                "type": "array"
+              }
+            },
+            "required": [
+              "role",
+              "units"
+            ],
+            "type": "object"
+          },
+          "Scope": {
+            "additionalProperties": false,
+            "properties": {
+              "dimensions": {
+                "items": {
+                  "$ref": "#/$defs/ScopeDimension"
+                },
+                "type": "array"
+              }
+            },
+            "required": [
+              "dimensions"
+            ],
+            "type": "object"
+          },
+          "ScopeDimension": {
+            "additionalProperties": false,
+            "properties": {
+              "evidence_ids": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "name": {
+                "type": "string"
+              },
+              "negated": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "values": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            },
+            "required": [
+              "name",
+              "values",
+              "negated",
+              "evidence_ids"
+            ],
+            "type": "object"
+          },
+          "TemporalConstraint": {
+            "additionalProperties": false,
+            "properties": {
+              "calendar": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/Calendar"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "duration": {
+                "$ref": "#/$defs/DurationLiteral"
+              },
+              "evidence_ids": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "relative_to": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "duration",
+              "calendar",
+              "relative_to",
+              "evidence_ids"
+            ],
+            "type": "object"
+          },
+          "VariableRef": {
+            "additionalProperties": false,
+            "properties": {
+              "data_definition_id": {
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "variable_ref"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "data_definition_id"
+            ],
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Zero or more proposed clauses for one chunk. Cite only the offered unit indices; the application builds every evidence span itself.",
+        "policyIrVersion": "policy-ir-2.1.0",
+        "properties": {
+          "candidates": {
+            "items": {
+              "$ref": "#/$defs/CandidateProposal"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "candidates"
+        ],
+        "title": "Policy IR extraction proposals for chunk_5d1845cac4af4f5d",
+        "type": "object"
+      },
+      "strict": true,
+      "type": "json_schema"
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 2200,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 2545,
+    "output_tokens_details": {
+      "reasoning_tokens": 2072
+    },
+    "total_tokens": 4745
+  },
+  "user": null
+}

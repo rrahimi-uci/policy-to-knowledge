@@ -113,4 +113,31 @@ apps/explorer/pipeline-output
 #   the DMN/BPMN and the HTML report — is committed in full.
 # ─────────────────────────────────────────────────────────────────
 apps/pipeline-p2c/compliance-files/
+
+# Derived bulk. The rule is: commit what cannot be regenerated without paying, plus the
+# human-facing deliverables. Everything below is rebuilt by deterministic stages from
+# artefacts that ARE committed, in the seconds noted, with no model calls:
+#
+#   cd apps/pipeline-p2c
+#   python -m cli.run_pipeline --output outputs --only extraction_requests  # ~0.5s
+#   python -m cli.run_pipeline --output outputs --reparse                   # ~1.5s
+#   python -m cli.run_pipeline --output outputs --name fannie_mae \
+#       --from admission --to visualization                                 # ~4s
+#
+# Verified, not assumed: with every path below deleted, that sequence reproduced
+# policy-ir.json, graph-v2.json, traceability.json, gate-report.json and
+# review-queue.json byte for byte, with zero model calls.
+#
+# What stays committed: the canonical text (minutes of PDF extraction, and the hash every
+# citation verifies against), the raw model replies (money — 3.3M tokens), every stage
+# summary, the DMN/BPMN artefacts, and the HTML report.
 apps/pipeline-p2c/outputs/02_extraction_requests/requests/
+apps/pipeline-p2c/outputs/03_model_extraction/proposals/
+apps/pipeline-p2c/outputs/04_admission/policy-ir.json
+apps/pipeline-p2c/outputs/04_admission/clauses.json
+apps/pipeline-p2c/outputs/04_admission/evidence-spans.json
+apps/pipeline-p2c/outputs/06_gate/gate-report.json
+apps/pipeline-p2c/outputs/07_governance/review-queue.json
+apps/pipeline-p2c/outputs/08_projection/graph-v2.json
+apps/pipeline-p2c/outputs/08_projection/traceability.json
+apps/pipeline-p2c/outputs/08_projection/compilation-report.json

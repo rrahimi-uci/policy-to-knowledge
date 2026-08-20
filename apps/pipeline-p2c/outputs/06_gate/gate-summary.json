@@ -1,0 +1,25 @@
+{
+  "admitted_decisions": 0,
+  "admitted_processes": 0,
+  "blocker_counts": {
+    "condition_not_tabular": 557,
+    "ill_typed_expression": 1112,
+    "literal_not_attested": 25,
+    "missing_field_evidence": 2039,
+    "missing_required_field": 1414,
+    "modality_not_attested": 1693,
+    "not_feel_expressible": 385,
+    "unknown_authority": 654,
+    "unknown_scope_dimension": 225,
+    "unresolved_cross_reference": 424
+  },
+  "clauses_checked": 5003,
+  "fatal": false,
+  "status_counts": {
+    "bpmn_eligible": 480,
+    "graph_eligible": 2707,
+    "provenance_exact": 5003,
+    "schema_valid": 2707,
+    "semantic_supported": 1518
+  }
+}
