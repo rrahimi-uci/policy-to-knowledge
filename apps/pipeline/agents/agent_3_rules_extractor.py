@@ -290,7 +290,24 @@ class BusinessRulesExtractor:
                 except Exception as exc:
                     last_error = exc
                     if attempt < attempts:
-                        delay = min(30, 2 ** (attempt - 1))
+                        # Connection resets/timeouts usually indicate a
+                        # provider-side saturation window. Retrying after
+                        # 1–2 seconds compounds the burst and causes the
+                        # next request to fail as well. Use a configurable
+                        # cooldown for transport errors while retaining the
+                        # short exponential delay for local/parse failures.
+                        error_text = str(exc).lower()
+                        is_transport_error = any(
+                            marker in error_text
+                            for marker in ("connection", "timed out", "timeout", "readerror")
+                        )
+                        if is_transport_error:
+                            delay = max(
+                                1,
+                                int(os.getenv("KG_BATCH_CONNECTION_BACKOFF_SECONDS", "30")),
+                            )
+                        else:
+                            delay = min(30, 2 ** (attempt - 1))
                         print(
                             f"  DEBUG Batch {batch_num}: request attempt {attempt}/{attempts} "
                             f"failed ({exc}); retrying in {delay}s",
