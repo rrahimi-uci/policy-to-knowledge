@@ -72,8 +72,9 @@ class RuleValidationAgent:
         # Extract rules from data structure
         rules = []
         entity_types = data.get('entity_types', {})
+        relationships = data.get('relationships', {})
         
-        for entity_name, entity_data in entity_types.items():
+        for entity_name, entity_data in {**entity_types, **relationships}.items():
             entity_rules = entity_data.get('business_rules', [])
             for rule in entity_rules:
                 rule['source_entity'] = entity_name

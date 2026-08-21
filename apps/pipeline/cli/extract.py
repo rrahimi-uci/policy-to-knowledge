@@ -35,6 +35,9 @@ from utils.config import get_config, reload_config
 
 def _count_business_rules(data: dict) -> int:
     """Count rules in both entity and relationship buckets."""
+    root_rules = data.get("business_rules")
+    if isinstance(root_rules, list):
+        return len(root_rules)
     total = 0
     for section in ("entity_types", "relationships"):
         buckets = data.get(section, {}) or {}
