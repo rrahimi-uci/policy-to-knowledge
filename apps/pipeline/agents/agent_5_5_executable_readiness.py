@@ -147,7 +147,38 @@ class ExecutableReadinessCompleter:
             if score or any(marker in lower for marker in markers):
                 matches.append({"chunk_path": chunk.get("chunk_path"), "section_id": chunk.get("section_id"), "text": chunk.get("text"), "anchor_hits": score})
         matches.sort(key=lambda item: (-item["anchor_hits"], str(item["chunk_path"])))
-        return {"searched_chunk_count": corpus.get("chunk_count", 0), "corpus_sha256": corpus.get("corpus_sha256"), "candidate_passages": matches[:80]}
+        # The complete corpus is searched above, but sending every matching
+        # chunk to the model can create 200K+ token prompts for a single rule.
+        # Preserve proof of complete coverage while sending a bounded,
+        # relevance-ranked evidence packet. The cited source chunk is retained
+        # whenever available, followed by the strongest anchor/exception hits.
+        try:
+            max_candidates = max(1, int(os.getenv("KG_READINESS_MAX_CANDIDATES", "12")))
+            max_chars = max(4000, int(os.getenv("KG_READINESS_MAX_EVIDENCE_CHARS", "24000")))
+        except (TypeError, ValueError):
+            max_candidates, max_chars = 12, 24000
+        cited_path = str(source.get("chunk_path", "")) if isinstance(source, Mapping) else ""
+        ordered = []
+        if cited_path:
+            ordered.extend(item for item in matches if str(item.get("chunk_path")) == cited_path)
+        ordered.extend(item for item in matches if item not in ordered)
+        bounded = []
+        used_chars = 0
+        for item in ordered:
+            if len(bounded) >= max_candidates:
+                break
+            text_value = str(item.get("text", ""))
+            remaining = max_chars - used_chars
+            if remaining <= 0:
+                break
+            clipped = text_value[:remaining]
+            bounded.append({**item, "text": clipped})
+            used_chars += len(clipped)
+        return {
+            "searched_chunk_count": corpus.get("chunk_count", 0),
+            "corpus_sha256": corpus.get("corpus_sha256"),
+            "candidate_passages": bounded,
+        }
 
     def _complete_evidence(self, rule: dict[str, Any], corpus: Mapping[str, Any]) -> dict[str, Any]:
         if self.resolver is None:

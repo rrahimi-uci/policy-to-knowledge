@@ -6,14 +6,14 @@ facts. Every populated exception or scope value must have direct supporting
 text in the candidate passages and the answer must retain evidence pointers.
 
 Return JSON only with exactly these fields:
-{
+{{
   "exceptions": ["structured predicate objects using declared rule variables"],
   "exception_basis": "explicit_in_source | explicitly_none_in_source | unresolved_after_full_document_search",
-  "exception_verification": {"status": "explicit_in_source | explicitly_none_in_source | unresolved", "searched_document_ids": ["organized_corpus"], "searched_chunk_count": 0, "corpus_sha256":"provided digest", "evidence": [{"chunk_path":"...", "section_id":"...", "source_text":"direct quote"}], "unresolved_reason": null},
-  "applicability_scope": {"loan_types": [], "occupancy_types": [], "transaction_types": []},
+  "exception_verification": {{"status": "explicit_in_source | explicitly_none_in_source | unresolved", "searched_document_ids": ["organized_corpus"], "searched_chunk_count": 0, "corpus_sha256":"provided digest", "evidence": [{{"chunk_path":"...", "section_id":"...", "source_text":"direct quote"}}], "unresolved_reason": null}},
+  "applicability_scope": {{"loan_types": [], "occupancy_types": [], "transaction_types": []}},
   "scope_basis": "explicit | explicitly_universal_in_source | genuinely_unscoped | unresolved_after_source_review",
-  "scope_derivation": {"status":"explicit | explicitly_universal | genuinely_unscoped | unresolved", "reviewed_chunk_count":0, "corpus_sha256":"provided digest", "evidence":[{"chunk_path":"...", "section_id":"...", "source_text":"direct quote"}], "unresolved_reason": null}
-}
+  "scope_derivation": {{"status":"explicit | explicitly_universal | genuinely_unscoped | unresolved", "reviewed_chunk_count":0, "corpus_sha256":"provided digest", "evidence":[{{"chunk_path":"...", "section_id":"...", "source_text":"direct quote"}}], "unresolved_reason": null}}
+}}
 
 Rules:
 - `explicitly_none_in_source` is allowed only after the complete corpus search
