@@ -50,8 +50,14 @@ class KnowledgeGraphVisualizer:
         self.rules = self.data.get('business_rules', [])
         metadata = self.data.get('metadata', {})
         
-        # Load entity definitions - they're already in the data or load from Agent 2 output
-        self.entity_definitions = self.data.get('entity_types', {})
+        # Load entity and relationship definitions.  Agent 5 keeps rules in a
+        # flat root array and uses ``entity_type`` only as the kind label
+        # (entity/relationship); the actual graph key is
+        # ``entity_or_relationship``.  Keep both definition namespaces so the
+        # visualization can resolve all 26 entities and 30 relationships.
+        self.entity_definitions = {}
+        self.entity_definitions.update(self.data.get('entity_types', {}) or {})
+        self.entity_definitions.update(self.data.get('relationships', {}) or {})
         if not self.entity_definitions:
             # Try loading from Agent 2 output
             from utils.config import get_config
@@ -60,11 +66,13 @@ class KnowledgeGraphVisualizer:
             if entity_file.exists():
                 with open(entity_file, 'r', encoding='utf-8') as f:
                     entity_data = json.load(f)
-                    self.entity_definitions = entity_data.get('entity_types', {})
+                    self.entity_definitions = {}
+                    self.entity_definitions.update(entity_data.get('entity_types', {}) or {})
+                    self.entity_definitions.update(entity_data.get('relationships', {}) or {})
         
         # Build entity types map
         for rule in self.rules:
-            entity = rule.get('entity_type', 'Unknown')
+            entity = rule.get('entity_or_relationship') or rule.get('entity_type', 'Unknown')
             if entity not in self.entity_types:
                 self.entity_types[entity] = []
             self.entity_types[entity].append(rule)
@@ -506,6 +514,7 @@ def generate_html_content(data, rules, entity_types, entity_definitions):
                 })
 
     entity_count = len(rules_by_entity)
+    definition_count = len(entity_definitions)
 
     # Build entity cards HTML
     entity_cards_html = []
@@ -1364,7 +1373,7 @@ def generate_html_content(data, rules, entity_types, entity_definitions):
                 </div>
                 <div class="legend-item">
                     <div class="legend-color" style="background: #0d9488; width: 22px; height: 22px; transform: rotate(45deg); border-radius: 2px;"></div>
-                    <span class="legend-label">Entity / Relationship (Diamond) — {entity_count} entities</span>
+                    <span class="legend-label">Entity / Relationship (Diamond) — {entity_count} connected ({definition_count} defined)</span>
                 </div>
                 <div class="legend-item">
                     <div class="legend-color" style="background: #93c5fd; width: 15px; height: 15px; border-radius: 50%; border: 2px solid #3b82f6;"></div>
@@ -1411,8 +1420,8 @@ def generate_html_content(data, rules, entity_types, entity_definitions):
         </div>
         
         <div class="entity-definitions-container">
-            <h2 class="section-title">� Entities & Relationships ({entity_count} connected to rules)</h2>
-            <p style="color: #64748b; margin-bottom: 15px;">Each entity is semantically connected to the business rules that govern it. Diamond nodes in the graph above show these connections.</p>
+            <h2 class="section-title">� Entities & Relationships ({entity_count} connected; {definition_count} defined)</h2>
+            <p style="color: #64748b; margin-bottom: 15px;">Each diamond is an entity or relationship with at least one connected rule; the total includes all definitions loaded from Agent 2.</p>
             <div class="entity-cards">
                 {entity_cards_html_str}
             </div>
@@ -1641,13 +1650,13 @@ def generate_html_content(data, rules, entity_types, entity_definitions):
                 function highlightSourceText(text, startWord, endWord) {{
                     if (!text) return '<em style="color:#94a3b8;">No source text available</em>';
                     if (typeof startWord !== 'number' || typeof endWord !== 'number') return escHtml(text);
-                    const words = text.split(/(\s+)/);
+                    const words = text.split(/(\\s+)/);
                     let wordIdx = 0;
                     let result = '';
                     let inHighlight = false;
                     for (let i = 0; i < words.length; i++) {{
                         // Whitespace tokens are not counted as words
-                        if (/^\s+$/.test(words[i])) {{
+                        if (/^\\s+$/.test(words[i])) {{
                             result += words[i];
                             continue;
                         }}

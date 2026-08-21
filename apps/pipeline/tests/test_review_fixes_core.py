@@ -132,6 +132,117 @@ class TestAgent2Iterations:
         with pytest.raises(ValueError):
             agent.run_iterations_with_optimization(documents=[], n_iterations=-1)
 
+    def test_entity_prompt_has_bounded_machine_readable_scope(self):
+        import agents.agent_2_entity_extractor as a2
+
+        prompt = a2.EntityRelationshipExtractor(
+            api_key="sk-dummy"
+        ).generate_optimized_prompt(
+            documents=[{"path": "section.txt", "content": "Mortgage rules."}]
+        )
+
+        normalized_prompt = " ".join(prompt.split())
+        assert "10 entity types" in normalized_prompt
+        assert "10 relationships" in normalized_prompt
+
+    def test_entity_prompt_uses_substantive_distributed_samples(self):
+        import agents.agent_2_entity_extractor as a2
+
+        documents = [
+            {"path": "table_of_contents_part_1.txt", "content": "TOC"},
+            *[
+                {"path": f"part_{index}/section.txt", "content": str(index)}
+                for index in range(10)
+            ],
+        ]
+        selected = a2.EntityRelationshipExtractor.select_representative_documents(documents)
+
+        assert len(selected) == 6
+        assert all("table_of_contents" not in item["path"] for item in selected)
+        assert selected[0]["content"] == "0"
+        assert selected[-1]["content"] == "9"
+
+    def test_entity_extraction_failure_is_terminal(self):
+        agent = self._agent()
+        agent.client = type(
+            "FailingClient", (),
+            {"chat_completion": lambda *args, **kwargs: (_ for _ in ()).throw(TimeoutError("timeout"))}
+        )()
+
+        with pytest.raises(RuntimeError, match="request failed"):
+            agent.extract_entities_and_relationships("prompt")
+
+    def test_entity_catalog_iterations_are_unionable(self):
+        import agents.agent_2_entity_extractor as a2
+
+        merged = a2.ComplianceEntityRelationshipAgent.merge_catalogs(
+            {"entity_types": {"LENDER": {"attributes": ["name"]}}, "relationships": {}},
+            {
+                "entity_types": {
+                    "LENDER": {"attributes": ["name", "id"]},
+                    "BORROWER": {"attributes": ["name"]},
+                },
+                "relationships": {},
+            },
+        )
+        assert set(merged["entity_types"]) == {"LENDER", "BORROWER"}
+        assert merged["entity_types"]["LENDER"]["attributes"] == ["name", "id"]
+
+    def test_entity_catalog_merge_collapses_case_and_punctuation_aliases(self):
+        import agents.agent_2_entity_extractor as a2
+
+        merged = a2.ComplianceEntityRelationshipAgent.merge_catalogs(
+            {"entity_types": {"FANNIE_MAE": {"attributes": ["id"]}}, "relationships": {}},
+            {"entity_types": {"FannieMae": {"attributes": ["name"]}}, "relationships": {}},
+        )
+        assert list(merged["entity_types"]) == ["FANNIE_MAE"]
+        assert merged["entity_types"]["FANNIE_MAE"]["attributes"] == ["id", "name"]
+
+    def test_agent3_retries_transient_request(self, monkeypatch):
+        from types import SimpleNamespace
+        import agents.agent_3_rules_extractor as a3
+
+        extractor = a3.BusinessRulesExtractor.__new__(a3.BusinessRulesExtractor)
+        calls = {"count": 0}
+
+        class _Client:
+            def chat_completion(self, **kwargs):
+                calls["count"] += 1
+                if calls["count"] == 1:
+                    raise ConnectionError("transient connection failure")
+                return SimpleNamespace(choices=[SimpleNamespace(message=SimpleNamespace(
+                    content=json.dumps({
+                        "entity_types": {"LENDER": {"business_rules": [{"rule_id": "r1"}]}},
+                        "relationships": {},
+                    })
+                ))])
+
+        extractor.client = _Client()
+        extractor.global_config = SimpleNamespace(
+            get_rules_temperature=lambda: 0.0,
+            get_rules_max_tokens=lambda: 100,
+        )
+        extractor.reasoning_effort = "high"
+        monkeypatch.setenv("KG_BATCH_MAX_ATTEMPTS", "2")
+        monkeypatch.setattr(a3.time, "sleep", lambda _seconds: None)
+
+        result = extractor.extract_batch("prompt", 1)
+
+        assert calls["count"] == 2
+        assert result["total_rules"] == 1
+
+    def test_agent3_main_wires_configured_content_limit(self):
+        import agents.agent_3_rules_extractor as a3
+
+        source = (Path(a3.__file__)).read_text(encoding="utf-8")
+        assert "max_content_length=config.get_rules_max_content_length()" in source
+
+    def test_agent3_uses_compact_prompt(self):
+        import agents.agent_3_rules_extractor as a3
+
+        source = Path(a3.__file__).read_text(encoding="utf-8")
+        assert '"business_rules_extraction_compact"' in source
+
 
 # ── Bug 5: agent_1 ignores an option-like positional output arg ────────────
 

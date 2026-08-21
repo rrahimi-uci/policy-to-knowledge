@@ -129,6 +129,21 @@ class TestConfigGetters:
         with patch.dict(os.environ, {"MAX_WORKERS": "42"}):
             assert config.get_max_workers() == 42
 
+    def test_get_max_retries_env_override(self):
+        config = get_config()
+        with patch.dict(os.environ, {"KG_OPENAI_MAX_RETRIES": "0"}):
+            assert config.get_max_retries() == 0
+
+    def test_get_timeout_env_override(self):
+        config = get_config()
+        with patch.dict(os.environ, {"KG_OPENAI_TIMEOUT": "120"}):
+            assert config.get_timeout() == 120
+
+    def test_get_reasoning_effort_env_override(self):
+        config = get_config()
+        with patch.dict(os.environ, {"KG_REASONING_EFFORT": "high"}):
+            assert config.get_reasoning_effort() == "high"
+
     def test_get_supported_extensions(self):
         config = get_config()
         exts = config.get_supported_extensions()
@@ -164,6 +179,30 @@ class TestConfigGetters:
     def test_get_entity_extractor_max_tokens(self):
         config = get_config()
         assert config.get_entity_extractor_max_tokens() == 8192
+
+    def test_get_entity_extractor_max_tokens_env_override(self):
+        config = get_config()
+        with patch.dict(os.environ, {"KG_ENTITY_EXTRACTOR_MAX_TOKENS": "4096"}):
+            assert config.get_entity_extractor_max_tokens() == 4096
+
+    def test_get_rules_runtime_overrides(self):
+        config = get_config()
+        with patch.dict(os.environ, {
+            "KG_RULES_MAX_CONTENT_LENGTH": "4000",
+            "KG_RULES_TARGET_WORDS_PER_BATCH": "2500",
+            "KG_RULES_MAX_TOKENS": "4096",
+            "KG_RULES_PER_BATCH": "4",
+        }):
+            assert config.get_rules_max_content_length() == 4000
+            assert config.get_rules_target_words_per_batch() == 2500
+            assert config.get_rules_max_tokens() == 4096
+            assert config.get_rules_per_batch() == 4
+
+    def test_get_rules_per_batch_rejects_zero(self):
+        config = get_config()
+        with patch.dict(os.environ, {"KG_RULES_PER_BATCH": "0"}):
+            with pytest.raises(ValueError, match="at least 1"):
+                config.get_rules_per_batch()
 
 
 class TestRulesExtractorGetters:

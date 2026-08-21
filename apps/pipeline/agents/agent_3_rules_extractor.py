@@ -231,7 +231,7 @@ class BusinessRulesExtractor:
         rules_per_batch = self.global_config.get_rules_per_batch()
         
         domain_prompt = self.prompt_manager.format_prompt(
-            "business_rules_extraction",
+            "business_rules_extraction_compact",
             entity_context=entity_context,
             sample_content=sample_content,
             batch_num=batch_num,
@@ -256,39 +256,100 @@ class BusinessRulesExtractor:
         import time as _time
         batch_start = _time.time()
         try:
-            response = self.client.chat_completion(
-                messages=[{"role": "user", "content": prompt}],
-                temperature=self.global_config.get_rules_temperature(),
-                max_tokens=self.global_config.get_rules_max_tokens(),
-                reasoning_effort=self.reasoning_effort
-            )
+            # Keep the executor at the requested worker count while gating the
+            # number of simultaneous sockets. A 40-way burst can exceed the
+            # provider/client connection budget before rate limiting takes effect.
+            request_gate = getattr(self, "_request_gate", None)
+            attempts = max(1, int(os.getenv("KG_BATCH_MAX_ATTEMPTS", "3")))
+            response = None
+            last_error = None
+            for attempt in range(1, attempts + 1):
+                try:
+                    if request_gate is None:
+                        response = self.client.chat_completion(
+                            messages=[{"role": "user", "content": prompt}],
+                            temperature=self.global_config.get_rules_temperature(),
+                            max_tokens=self.global_config.get_rules_max_tokens(),
+                            reasoning_effort=self.reasoning_effort
+                        )
+                    else:
+                        with request_gate:
+                            response = self.client.chat_completion(
+                                messages=[{"role": "user", "content": prompt}],
+                                temperature=self.global_config.get_rules_temperature(),
+                                max_tokens=self.global_config.get_rules_max_tokens(),
+                                reasoning_effort=self.reasoning_effort
+                            )
+                    break
+                except Exception as exc:
+                    last_error = exc
+                    if attempt < attempts:
+                        delay = min(30, 2 ** (attempt - 1))
+                        print(
+                            f"  DEBUG Batch {batch_num}: request attempt {attempt}/{attempts} "
+                            f"failed ({exc}); retrying in {delay}s",
+                            flush=True,
+                        )
+                        _time.sleep(delay)
+            if response is None:
+                raise RuntimeError(f"LLM completion failed after {attempts} attempts: {last_error}")
             
             content = response.choices[0].message.content
             if not content:
                 return {"entity_types": {}, "relationships": {}, "batch_num": batch_num, "error": "Empty response"}
             
-            # Try to parse JSON from response
-            try:
-                # Try direct JSON parse first
-                result = json.loads(content)
-            except json.JSONDecodeError:
-                # Try to extract JSON from markdown code blocks
-                if "```json" in content:
-                    json_str = content.split("```json", 1)[1].split("```", 1)[0].strip()
-                elif "```" in content:
-                    json_str = content.split("```", 1)[1].split("```", 1)[0].strip()
-                else:
-                    # Try to find JSON object directly
-                    json_start = content.find("{")
-                    json_end = content.rfind("}") + 1
-                    if json_start >= 0 and json_end > json_start:
-                        json_str = content[json_start:json_end]
+            def _decode_json(raw_content: str) -> Dict[str, Any]:
+                """Decode a model response, allowing one fenced/object slice."""
+                try:
+                    return json.loads(raw_content)
+                except json.JSONDecodeError:
+                    if "```json" in raw_content:
+                        json_str = raw_content.split("```json", 1)[1].split("```", 1)[0].strip()
+                    elif "```" in raw_content:
+                        json_str = raw_content.split("```", 1)[1].split("```", 1)[0].strip()
                     else:
-                        print(f"  DEBUG Batch {batch_num}: No JSON found in response", flush=True)
-                        print(f"  Response preview: {content[:500]}", flush=True)
-                        return {"entity_types": {}, "relationships": {}, "batch_num": batch_num, "error": "No JSON in response"}
-                
-                result = json.loads(json_str)
+                        json_start = raw_content.find("{")
+                        json_end = raw_content.rfind("}") + 1
+                        if json_start < 0 or json_end <= json_start:
+                            raise
+                        json_str = raw_content[json_start:json_end]
+                    return json.loads(json_str)
+
+            # GPT-5 occasionally returns a syntactically invalid object even
+            # with a stop finish reason. Retry only that batch, rather than
+            # discarding it and silently falling below the requested target.
+            parse_attempts = max(1, int(os.getenv("KG_BATCH_PARSE_ATTEMPTS", "2")))
+            for parse_attempt in range(1, parse_attempts + 1):
+                try:
+                    result = _decode_json(content)
+                    break
+                except json.JSONDecodeError:
+                    if parse_attempt >= parse_attempts:
+                        raise
+                    print(
+                        f"  DEBUG Batch {batch_num}: invalid JSON on parse attempt "
+                        f"{parse_attempt}/{parse_attempts}; requesting a fresh response",
+                        flush=True,
+                    )
+                    request_gate = getattr(self, "_request_gate", None)
+                    if request_gate is None:
+                        response = self.client.chat_completion(
+                            messages=[{"role": "user", "content": prompt}],
+                            temperature=self.global_config.get_rules_temperature(),
+                            max_tokens=self.global_config.get_rules_max_tokens(),
+                            reasoning_effort=self.reasoning_effort,
+                        )
+                    else:
+                        with request_gate:
+                            response = self.client.chat_completion(
+                                messages=[{"role": "user", "content": prompt}],
+                                temperature=self.global_config.get_rules_temperature(),
+                                max_tokens=self.global_config.get_rules_max_tokens(),
+                                reasoning_effort=self.reasoning_effort,
+                            )
+                    content = response.choices[0].message.content or ""
+                    if not content:
+                        raise json.JSONDecodeError("empty response", "", 0)
             
             # Normalize flat 'rules' format (used by domain-specific prompts like AML)
             # into the nested entity_types/relationships format expected by the rest of the pipeline.
@@ -422,6 +483,12 @@ class BusinessRulesExtractor:
         print(f"   Progress will be shown as batches complete.\n", flush=True)
         
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            gate_size = max(1, int(os.getenv(
+                "KG_LLM_CONCURRENCY",
+                str(min(max_workers, 8)),
+            )))
+            self._request_gate = threading.BoundedSemaphore(gate_size)
+            print(f"   ✓ API concurrency gate: {gate_size} in-flight requests", flush=True)
             # Submit all batch extraction tasks
             future_to_batch = {
                 executor.submit(self.extract_batch, prompt, batch_num): batch_num
@@ -496,6 +563,11 @@ class BusinessRulesExtractor:
         print(f"   • Total time: {elapsed_time:.1f} seconds", flush=True)
         print(f"   • Avg time per batch: {elapsed_time/len(batches):.1f} seconds", flush=True)
         print(f"{'='*70}\n", flush=True)
+
+        if self.count_rules() == 0:
+            raise RuntimeError(
+                "Agent 3 extracted zero rules; refusing to continue with an empty knowledge graph"
+            )
     
     def count_rules(self) -> int:
         """Count total business rules."""
@@ -1103,6 +1175,8 @@ def main():
     
     rules_config = RulesExtractionConfig(
         target_rules_count=TARGET_RULES,
+        batch_size=config.get_rules_batch_size(),
+        max_content_length=config.get_rules_max_content_length(),
         reasoning_model=REASONING_MODEL,
         optimization_model=OPTIMIZER_MODEL
     )

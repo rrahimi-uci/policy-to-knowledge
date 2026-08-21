@@ -33,6 +33,34 @@ sys.path.insert(0, str(_ROOT))
 from utils.config import get_config, reload_config
 
 
+def _count_business_rules(data: dict) -> int:
+    """Count rules in both entity and relationship buckets."""
+    root_rules = data.get("business_rules")
+    if isinstance(root_rules, list):
+        return len(root_rules)
+    total = 0
+    for section in ("entity_types", "relationships"):
+        buckets = data.get(section, {}) or {}
+        values = buckets.values() if isinstance(buckets, dict) else buckets
+        for bucket in values:
+            if isinstance(bucket, dict):
+                total += len(bucket.get("business_rules", []) or [])
+    return total
+
+
+def _count_nonempty_rule_buckets(data: dict) -> int:
+    """Count entity/relationship buckets containing at least one rule."""
+    count = 0
+    for section in ("entity_types", "relationships"):
+        buckets = data.get(section, {}) or {}
+        values = buckets.values() if isinstance(buckets, dict) else buckets
+        count += sum(
+            1 for bucket in values
+            if isinstance(bucket, dict) and bucket.get("business_rules")
+        )
+    return count
+
+
 def sync_knowledge_graph_to_catalog(provider: str = "openai", source_file_name: str = None):
     """
     Sync optimized knowledge graph files to the local catalog.
@@ -596,11 +624,9 @@ class KnowledgeExtractionPipeline:
             if rules_file.exists():
                 with open(rules_file, 'r') as f:
                     rules_data = json.load(f)
-                    total_rules = sum(len(entity_data.get('business_rules', [])) 
-                                    for entity_data in rules_data.get('entity_types', {}).values())
-                    num_entities = len([k for k, v in rules_data.get('entity_types', {}).items() 
-                                      if len(v.get('business_rules', [])) > 0])
-                    print(f"✅ Extracted {total_rules} business rules across {num_entities} entities/relationships")
+                    total_rules = _count_business_rules(rules_data)
+                    num_buckets = _count_nonempty_rule_buckets(rules_data)
+                    print(f"✅ Extracted {total_rules} business rules across {num_buckets} entities/relationships")
                     print(f"📄 JSON output: {rules_file.name}")
                     if csv_file.exists():
                         print(f"📄 CSV output: {csv_file.name}")
@@ -633,8 +659,7 @@ class KnowledgeExtractionPipeline:
         
         with open(rules_file, 'r') as f:
             rules_data = json.load(f)
-            total_rules = sum(len(entity_data.get('business_rules', [])) 
-                            for entity_data in rules_data.get('entity_types', {}).values())
+            total_rules = _count_business_rules(rules_data)
             print(f"✅ Found {total_rules} rules to validate")
         
         print(f"📤 Validation report will be saved to: {validation_dir}")
@@ -718,10 +743,9 @@ class KnowledgeExtractionPipeline:
             if merged_file.exists():
                 with open(merged_file, 'r') as f:
                     merged_data = json.load(f)
-                    total_rules = sum(len(entity_data.get('business_rules', [])) 
-                                    for entity_data in merged_data.get('entity_types', {}).values())
-                    num_entities = len(merged_data.get('entity_types', {}))
-                    print(f"✅ Successfully merged: {num_entities} entities with {total_rules} business rules")
+                    total_rules = _count_business_rules(merged_data)
+                    num_buckets = _count_nonempty_rule_buckets(merged_data)
+                    print(f"✅ Successfully merged: {num_buckets} entities/relationships with {total_rules} business rules")
                     print(f"📄 Knowledge graph: {merged_file.name}")
                     if csv_file.exists():
                         print(f"📄 CSV export: {csv_file.name}")
@@ -757,8 +781,7 @@ class KnowledgeExtractionPipeline:
         
         with open(merged_file, 'r') as f:
             merged_data = json.load(f)
-            total_rules = sum(len(entity_data.get('business_rules', [])) 
-                            for entity_data in merged_data.get('entity_types', {}).values())
+            total_rules = _count_business_rules(merged_data)
             print(f"✅ Found {total_rules} rules to optimize")
         
         print(f"\n📤 Optimized output will be saved to: {self.config.get_optimized_dir()}")
@@ -810,24 +833,27 @@ class KnowledgeExtractionPipeline:
             if domain_val:
                 env['KG_DOMAIN'] = domain_val
             
-            result = subprocess.run(
+            # Stream Agent 5 output as it is produced.  This step can run for
+            # a long time because it performs many model requests; buffering
+            # with subprocess.run(capture_output=True) made the CLI appear
+            # idle until the optimizer had completely finished.
+            print("📡 Streaming Agent 5 output in real time...")
+            process = subprocess.Popen(
                 cmd,
                 cwd=_ROOT,
-                capture_output=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
                 text=True,
-                env=env
+                bufsize=1,
+                env=env,
             )
-            
-            # Print output
-            if result.stdout:
-                print(result.stdout)
-            
-            if result.stderr:
-                print("⚠️ Warnings/Errors:", file=sys.stderr)
-                print(result.stderr, file=sys.stderr)
-            
-            if result.returncode != 0:
-                raise RuntimeError(f"Optimizer failed with exit code {result.returncode}")
+            for line in process.stdout:
+                print(line, end="", flush=True)
+            return_code = process.wait()
+            print(f"📡 Agent 5 process exited with code {return_code}", flush=True)
+
+            if return_code != 0:
+                raise RuntimeError(f"Optimizer failed with exit code {return_code}")
             
             # Verify outputs
             optimized_dir = self.config.get_optimized_dir()
@@ -851,11 +877,10 @@ class KnowledgeExtractionPipeline:
             
             with open(optimized_json, 'r') as f:
                 optimized_data = json.load(f)
-                # Count rules from entity_types AND root-level business_rules array
-                optimized_rules_in_entities = sum(len(entity_data.get('business_rules', [])) 
-                                    for entity_data in optimized_data.get('entity_types', {}).values())
-                optimized_rules_in_root = len(optimized_data.get('business_rules', []))
-                optimized_rules = optimized_rules_in_entities + optimized_rules_in_root
+                # Agent 5 keeps full rule objects in the root array while the
+                # entity/relationship buckets contain references.  Count the
+                # canonical root array when present to avoid double-counting.
+                optimized_rules = _count_business_rules(optimized_data)
                 num_entities = len(optimized_data.get('entity_types', {}))
                 
                 # Calculate original rules for comparison.  In step 5 the
@@ -868,10 +893,7 @@ class KnowledgeExtractionPipeline:
                 if merged_file.exists():
                     with open(merged_file, 'r') as orig_f:
                         orig_data = json.load(orig_f)
-                        original_rules_in_entities = sum(len(entity_data.get('business_rules', [])) 
-                                           for entity_data in orig_data.get('entity_types', {}).values())
-                        original_rules_in_root = len(orig_data.get('business_rules', []))
-                        original_rules = original_rules_in_entities + original_rules_in_root
+                        original_rules = _count_business_rules(orig_data)
                 else:
                     original_rules = optimized_rules
                     print(

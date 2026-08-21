@@ -71,6 +71,36 @@ This serves the API on `http://localhost:8000` and the frontend on
 .venv/bin/python cli/compare.py --g1 <graphA> --g2 <graphB> --workers 15
 ```
 
+### Full single-document run
+
+Run this from `apps/pipeline/` to use GPT-5.2 with medium reasoning, a
+40-worker executor, and bounded API concurrency. The repository-root `.env`
+is loaded automatically; it must contain `OPENAI_API_KEY`.
+
+```bash
+KG_BATCH_NAME=fannie_mae_manual_20260821 \
+KG_REASONING_EFFORT=medium \
+KG_LLM_CONCURRENCY=2 \
+KG_REASONING_MAX_COMPLETION_TOKENS=16384 \
+KG_OPENAI_TIMEOUT=240 \
+KG_OPENAI_MAX_RETRIES=0 \
+KG_OPTIMIZER_DEDUP_BATCH_SIZE=25 \
+KG_OPTIMIZER_BATCH_SIZE=25 \
+KG_OPTIMIZER_MAX_CROSS_BATCH_PAIRS=12 \
+../../.venv/bin/python cli/extract.py \
+  --file compliance-files/fannie_mae/fannie_mae.pdf \
+  --provider openai \
+  --workers 40 \
+  --domain mortgage \
+  --target-rules 300
+```
+
+Change `KG_BATCH_NAME`, `--file`, `--domain`, and `--target-rules` for a new
+run. Outputs are stored under `pipeline-output/<KG_BATCH_NAME>/`. The CLI
+streams each agent's output, including the long-running Agent 5 optimization,
+in real time. If your virtual environment is inside `apps/pipeline/`, replace
+`../../.venv/bin/python` with `.venv/bin/python`.
+
 Common `extract.py` flags:
 
 | Flag | Description |

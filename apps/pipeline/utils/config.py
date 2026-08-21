@@ -11,11 +11,17 @@ from typing import Any, Dict, Optional
 import re
 from dotenv import load_dotenv
 
-# Load environment variables from .env file at module level (runs once on import)
-# Use explicit path relative to project root
-_project_root = Path(__file__).parent.parent
-_env_path = _project_root / '.env'
-load_dotenv(dotenv_path=_env_path)
+# Load environment variables from the repository-root .env at module level.
+# The CLI runs from ``apps/pipeline`` but the documented secret location is
+# the repository root. Keep the app-local file as a fallback for standalone
+# copies; never let it override an already-loaded root value.
+_repo_root = Path(__file__).resolve().parents[3]
+_root_env_path = _repo_root / '.env'
+_app_env_path = Path(__file__).resolve().parents[1] / '.env'
+if _root_env_path.exists():
+    load_dotenv(dotenv_path=_root_env_path)
+elif _app_env_path.exists():
+    load_dotenv(dotenv_path=_app_env_path)
 
 # Rule-type colour palettes keyed by domain.
 # Mortgage uses the original 10-category set.
@@ -217,8 +223,17 @@ class Config:
         return self.get('openai.models.reasoning', 'gpt-5.2')
 
     def get_reasoning_effort(self) -> str:
-        """Get reasoning effort level (low, medium, high)."""
-        return self.get('openai.models.reasoning_effort', 'medium')
+        """Get reasoning effort level (low, medium, high).
+
+        ``KG_REASONING_EFFORT`` permits a one-off run to raise or lower the
+        effort without editing a developer's local ``config.json``.  This is
+        especially important for reproducible validation runs, where the
+        chosen model settings are supplied by the run environment.
+        """
+        return os.getenv(
+            'KG_REASONING_EFFORT',
+            self.get('openai.models.reasoning_effort', 'medium'),
+        )
 
     def get_model_provider(self) -> str:
         """Return the model provider. This build is OpenAI-only."""
@@ -337,17 +352,30 @@ class Config:
     def get_rules_per_batch(self) -> int:
         """Get number of rules to extract per batch.
         
-        Configurable via rules_extractor.rules_per_batch_openai (default 10).
+        Configurable via ``KG_RULES_PER_BATCH`` for live-run tuning, then the
+        checked-in model-specific setting (default 10).
         """
+        env_val = os.getenv('KG_RULES_PER_BATCH')
+        if env_val:
+            value = int(env_val)
+            if value < 1:
+                raise ValueError('KG_RULES_PER_BATCH must be at least 1')
+            return value
         return self.get('rules_extractor.rules_per_batch_openai',
                         self.get('rules_extractor.rules_per_batch', 10))
 
     def get_max_retries(self) -> int:
-        """Get maximum number of API retries."""
+        """Get maximum number of API retries, with a run-time override."""
+        env_val = os.getenv('KG_OPENAI_MAX_RETRIES')
+        if env_val:
+            return int(env_val)
         return self.get('openai.rate_limiting.max_retries', 3)
 
     def get_timeout(self) -> int:
-        """Get API timeout in seconds."""
+        """Get API timeout in seconds, with a run-time override."""
+        env_val = os.getenv('KG_OPENAI_TIMEOUT')
+        if env_val:
+            return int(env_val)
         return self.get('openai.rate_limiting.timeout', 300)
 
     # ── LLM defaults ──
@@ -442,7 +470,14 @@ class Config:
         return self.get('entity_extractor.temperature', 0.7)
 
     def get_entity_extractor_max_tokens(self) -> int:
-        """Get max tokens for entity extraction LLM calls."""
+        """Get max tokens for entity extraction LLM calls.
+
+        A real-document run can set ``KG_ENTITY_EXTRACTOR_MAX_TOKENS`` to
+        bound response latency without mutating the shared configuration.
+        """
+        env_val = os.getenv('KG_ENTITY_EXTRACTOR_MAX_TOKENS')
+        if env_val:
+            return int(env_val)
         return self.get('entity_extractor.max_tokens', 8192)
 
     # ── Rules extractor ──
@@ -453,10 +488,16 @@ class Config:
 
     def get_rules_max_content_length(self) -> int:
         """Get max content length per document for rules extraction."""
+        env_val = os.getenv('KG_RULES_MAX_CONTENT_LENGTH')
+        if env_val:
+            return int(env_val)
         return self.get('rules_extractor.max_content_length', 8000)
 
     def get_rules_target_words_per_batch(self) -> int:
         """Get target words per batch for rules extraction."""
+        env_val = os.getenv('KG_RULES_TARGET_WORDS_PER_BATCH')
+        if env_val:
+            return int(env_val)
         return self.get('rules_extractor.target_words_per_batch', 8000)
 
     def get_rules_temperature(self) -> float:
@@ -465,6 +506,9 @@ class Config:
 
     def get_rules_max_tokens(self) -> int:
         """Get max tokens for rules extraction LLM calls."""
+        env_val = os.getenv('KG_RULES_MAX_TOKENS')
+        if env_val:
+            return int(env_val)
         return self.get('rules_extractor.max_tokens', 8192)
 
     def get_rules_low_confidence_threshold(self) -> int:
@@ -509,7 +553,33 @@ class Config:
 
     def get_optimizer_batch_size(self) -> int:
         """Get batch size for optimizer."""
+        raw = os.getenv('KG_OPTIMIZER_BATCH_SIZE')
+        if raw:
+            try:
+                return max(1, int(raw))
+            except ValueError:
+                pass
         return self.get('optimizer.batch_size', 50)
+
+    def get_optimizer_dedup_batch_size(self) -> int:
+        """Get the maximum number of rules sent to one deduplication call."""
+        raw = os.getenv('KG_OPTIMIZER_DEDUP_BATCH_SIZE')
+        if raw:
+            try:
+                return max(1, int(raw))
+            except ValueError:
+                pass
+        return self.get('optimizer.dedup_batch_size', 25)
+
+    def get_optimizer_max_cross_batch_pairs(self) -> int:
+        """Bound cross-batch dependency calls while retaining broad coverage."""
+        raw = os.getenv('KG_OPTIMIZER_MAX_CROSS_BATCH_PAIRS')
+        if raw:
+            try:
+                return max(0, int(raw))
+            except ValueError:
+                pass
+        return self.get('optimizer.max_cross_batch_pairs', 20)
 
     def get_optimizer_description_truncation_length(self) -> int:
         """Get description truncation length for optimizer."""

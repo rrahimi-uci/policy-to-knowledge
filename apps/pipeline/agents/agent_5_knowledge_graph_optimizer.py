@@ -15,6 +15,7 @@ Date: December 20, 2025
 import json
 import sys
 import os
+import copy
 from pathlib import Path
 from typing import List, Dict, Any, Tuple, Optional
 from datetime import datetime
@@ -75,6 +76,52 @@ class KnowledgeGraphOptimizer:
         print(f"  Model: {self.model}", flush=True)
         print(f"  Reasoning Effort: {self.reasoning_effort}", flush=True)
         print(f"  Workers: {self.max_workers}", flush=True)
+
+    def _json_request(
+        self,
+        messages: List[Dict[str, str]],
+        *,
+        temperature: float,
+        max_tokens: int,
+        label: str,
+    ) -> Dict[str, Any]:
+        """Request and parse JSON with bounded retries for truncation/parse errors."""
+        try:
+            attempts = max(1, int(os.getenv("KG_OPTIMIZER_PARSE_ATTEMPTS", "2")))
+        except (TypeError, ValueError):
+            attempts = 2
+
+        last_error = None
+        for attempt in range(1, attempts + 1):
+            retry_messages = list(messages)
+            if attempt > 1:
+                retry_messages.append({
+                    "role": "user",
+                    "content": (
+                        "The previous response was not valid JSON. Retry the same "
+                        "analysis and return complete, parseable JSON only; do not "
+                        "truncate any string or omit required closing brackets."
+                    ),
+                })
+            try:
+                response = self.client.chat_completion(
+                    messages=retry_messages,
+                    temperature=temperature,
+                    max_tokens=max_tokens,
+                    reasoning_effort=self.reasoning_effort,
+                )
+                content = response.choices[0].message.content if response and response.choices else None
+                if not content:
+                    raise ValueError("empty model response")
+                return self._parse_json_response(content)
+            except Exception as exc:
+                last_error = exc
+                if attempt < attempts:
+                    print(
+                        f"   ⚠️ {label} JSON attempt {attempt}/{attempts} failed; retrying: {exc}",
+                        flush=True,
+                    )
+        raise last_error
     
     def _calculate_dependency_confidence(self, confidence_breakdown: dict) -> dict:
         """Calculate overall dependency confidence score from breakdown components."""
@@ -149,6 +196,74 @@ class KnowledgeGraphOptimizer:
         return data
     
     def deduplicate_rules(self, rules: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
+        """Deduplicate rules, chunking large inputs to keep requests bounded."""
+        batch_size = self.config.get_optimizer_dedup_batch_size()
+        if len(rules) > batch_size:
+            return self._deduplicate_rules_batched(rules, batch_size)
+        return self._deduplicate_rules_single(rules)
+
+    def _deduplicate_rules_batched(
+        self, rules: List[Dict[str, Any]], batch_size: int
+    ) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
+        """Run conservative deduplication on bounded chunks in parallel.
+
+        Cross-chunk merges are intentionally not inferred: a missed merge is
+        safer than combining rules whose numeric scope or source differs. The
+        dependency pass still provides cross-batch context separately.
+        """
+        import math
+
+        chunks = [rules[i:i + batch_size] for i in range(0, len(rules), batch_size)]
+        workers = min(self.max_workers, len(chunks))
+        print(
+            f"📦 Large rule set detected - deduplication uses {len(chunks)} chunks "
+            f"of ≤{batch_size} rules ({workers} workers)", flush=True
+        )
+
+        def _run(chunk):
+            try:
+                return self._deduplicate_rules_single(chunk)
+            except Exception as exc:
+                print(f"   ⚠️ Dedup chunk retained unchanged after error: {exc}", flush=True)
+                return chunk, {"error": str(exc), "duplicate_groups": [], "total_removed": 0}
+
+        results = []
+        with ThreadPoolExecutor(max_workers=workers) as executor:
+            for result in executor.map(_run, chunks):
+                results.append(result)
+
+        deduplicated = []
+        groups = []
+        removed_ids = []
+        errors = []
+        for chunk_rules, metadata in results:
+            deduplicated.extend(chunk_rules)
+            analysis = metadata.get("deduplication_analysis", metadata)
+            groups.extend(analysis.get("duplicate_groups", []))
+            removed_ids.extend(metadata.get("rules_removed_ids", []))
+            if metadata.get("error"):
+                errors.append(metadata["error"])
+
+        metadata = {
+            "deduplication_analysis": {
+                "duplicate_groups": groups,
+                "batched_analysis": True,
+                "batch_size": batch_size,
+                "num_batches": len(chunks),
+            },
+            "rules_removed_ids": removed_ids,
+            "total_removed": len(removed_ids),
+            "rules_remaining": len(deduplicated),
+        }
+        if errors:
+            metadata["errors"] = errors
+        print(
+            f"✅ Batched deduplication complete: {len(rules)} → "
+            f"{len(deduplicated)} rules ({len(removed_ids)} removed)", flush=True
+        )
+        return deduplicated, metadata
+
+    def _deduplicate_rules_single(self, rules: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
         """
         Deduplicate rationally identical rules using GPT-5 reasoning.
         
@@ -196,21 +311,13 @@ class KnowledgeGraphOptimizer:
             # Use configured reasoning model for deduplication
             print(f"      → Using {self.model} for deduplication...", flush=True)
             
-            response = self.client.chat_completion(
-                messages=[{"role": "user", "content": prompt}],
+            dedup_result = self._json_request(
+                [{"role": "user", "content": prompt}],
                 temperature=self.config.get_optimizer_dedup_temperature(),
                 max_tokens=self.config.get_optimizer_dedup_max_tokens(),
-                reasoning_effort=self.reasoning_effort
+                label="Deduplication",
             )
-            result_text = response.choices[0].message.content
-            if not result_text:
-                print(f"      ⚠️ Empty response from model (reasoning may have exhausted token budget)", flush=True)
-                return rules, {"error": "Empty response from model", "duplicate_groups": [], "statistics": {}}
-            print(f"      ✓ Response received ({len(result_text):,} characters)", flush=True)
-            print(f"      → Parsing JSON response...", flush=True)
-            
-            # Parse JSON response
-            dedup_result = self._parse_json_response(result_text)
+            print(f"      ✓ Parsed JSON response", flush=True)
             dup_groups = len(dedup_result.get('duplicate_groups', []))
             print(f"      ✓ Found {dup_groups} duplicate groups", flush=True)
             
@@ -512,20 +619,15 @@ class KnowledgeGraphOptimizer:
             )
             print(f"\n   Batch {batch_idx}/{num_batches}: {len(batch)} rules → Using {self.model}...", flush=True)
             try:
-                response = self.client.chat_completion(
-                    messages=[{"role": "user", "content": prompt}],
-                    temperature=self.config.get_optimizer_batched_temperature(),
-                    max_tokens=self.config.get_optimizer_batched_max_tokens(),
-                    reasoning_effort=self.reasoning_effort
-                )
-                if response and response.choices and response.choices[0].message.content:
-                    dep_result = self._parse_json_response(response.choices[0].message.content)
+                    dep_result = self._json_request(
+                        [{"role": "user", "content": prompt}],
+                        temperature=self.config.get_optimizer_batched_temperature(),
+                        max_tokens=self.config.get_optimizer_batched_max_tokens(),
+                        label=f"Dependency batch {batch_idx}",
+                    )
                     batch_deps = dep_result.get("dependencies", [])
                     print(f"   ✓ Found {len(batch_deps)} dependencies in batch {batch_idx}", flush=True)
                     return batch_deps
-                else:
-                    print(f"   ⚠️ Empty response for batch {batch_idx}", flush=True)
-                    return []
             except Exception as e:
                 print(f"   ❌ Error analyzing batch {batch_idx}: {e}", flush=True)
                 return []
@@ -537,6 +639,19 @@ class KnowledgeGraphOptimizer:
 # Step 2: Analyze cross-batch dependencies (parallelised)
         cross_batch_sample_size = min(20, batch_size // 4)  # Sample ~25% of each batch
         pairs = [(i, j) for i in range(len(batches)) for j in range(i + 1, len(batches))]
+        get_max_pairs = getattr(
+            self.config, "get_optimizer_max_cross_batch_pairs", lambda: 20
+        )
+        max_pairs = get_max_pairs()
+        if len(pairs) > max_pairs:
+            # Keep a deterministic spread across the batch matrix instead of
+            # always favoring the first batches.  A zero cap intentionally
+            # disables the expensive cross-batch pass.
+            if max_pairs == 0:
+                pairs = []
+            else:
+                stride = len(pairs) / max_pairs
+                pairs = [pairs[min(len(pairs) - 1, int(i * stride))] for i in range(max_pairs)]
         cross_workers = min(self.max_workers, len(pairs)) if pairs else 1
         print(f"\n📦 Step 2: Analyzing cross-batch dependencies ({len(pairs)} pairs, {cross_workers} workers)...", flush=True)
         print(f"   (Checking if rules in one batch depend on rules in another batch)", flush=True)
@@ -565,28 +680,25 @@ class KnowledgeGraphOptimizer:
                 total_rules=len(combined_sample)
             )
             try:
-                response = self.client.chat_completion(
-                    messages=[{"role": "user", "content": prompt}],
+                dep_result = self._json_request(
+                    [{"role": "user", "content": prompt}],
                     temperature=self.config.get_optimizer_cross_batch_temperature(),
                     max_tokens=self.config.get_optimizer_cross_batch_max_tokens(),
-                    reasoning_effort=self.reasoning_effort
+                    label=f"Cross-batch {i+1}↔{j+1}",
                 )
-                if response and response.choices and response.choices[0].message.content:
-                    dep_result = self._parse_json_response(response.choices[0].message.content)
-                    cross_deps = dep_result.get("dependencies", [])
-                    batch_i_ids = {r.get('rule_id') for r in batches[i]}
-                    batch_j_ids = {r.get('rule_id') for r in batches[j]}
-                    true_cross_deps = [
-                        d for d in cross_deps
-                        if isinstance(d, dict) and d.get('source_rule_id') and d.get('target_rule_id') and (
-                            (d['source_rule_id'] in batch_i_ids and d['target_rule_id'] in batch_j_ids) or
-                            (d['source_rule_id'] in batch_j_ids and d['target_rule_id'] in batch_i_ids)
-                        )
-                    ]
-                    if true_cross_deps:
-                        print(f"   ✓ Found {len(true_cross_deps)} cross-batch dependencies ({i+1}↔{j+1})", flush=True)
-                    return true_cross_deps
-                return []
+                cross_deps = dep_result.get("dependencies", [])
+                batch_i_ids = {r.get('rule_id') for r in batches[i]}
+                batch_j_ids = {r.get('rule_id') for r in batches[j]}
+                true_cross_deps = [
+                    d for d in cross_deps
+                    if isinstance(d, dict) and d.get('source_rule_id') and d.get('target_rule_id') and (
+                        (d['source_rule_id'] in batch_i_ids and d['target_rule_id'] in batch_j_ids) or
+                        (d['source_rule_id'] in batch_j_ids and d['target_rule_id'] in batch_i_ids)
+                    )
+                ]
+                if true_cross_deps:
+                    print(f"   ✓ Found {len(true_cross_deps)} cross-batch dependencies ({i+1}↔{j+1})", flush=True)
+                return true_cross_deps
             except Exception as e:
                 print(f"   ⚠️ Error analyzing cross-batch {i+1}↔{j+1}: {e}", flush=True)
                 return []
@@ -698,9 +810,12 @@ class KnowledgeGraphOptimizer:
         dep_error = None
 
         print("📄 Launching Task 1 (Deduplication) + Task 2 (Dependency Analysis) in parallel...", flush=True)
+        # The two analyses add metadata to rule dictionaries.  Give each task
+        # an isolated copy so concurrent dependency annotation cannot affect
+        # deduplication summaries or source rule selection.
         with ThreadPoolExecutor(max_workers=2) as executor:
-            fut_dedup = executor.submit(self.deduplicate_rules, rules)
-            fut_dep = executor.submit(self.analyze_dependencies, rules)
+            fut_dedup = executor.submit(self.deduplicate_rules, copy.deepcopy(rules))
+            fut_dep = executor.submit(self.analyze_dependencies, copy.deepcopy(rules))
 
             try:
                 dedup_result = fut_dedup.result()

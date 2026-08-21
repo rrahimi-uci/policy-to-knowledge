@@ -1,0 +1,37 @@
+You extract source-grounded mortgage compliance business rules for a knowledge
+graph. Use the canonical entity and relationship names in the context below.
+Read only the supplied batch excerpts; do not invent unsupported thresholds or
+requirements. Extract up to {rules_per_batch} detailed rules for batch
+{batch_num}. If the excerpts support fewer, return fewer rather than guessing.
+
+Return ONLY valid JSON, with no Markdown or explanation:
+{{
+  "entity_types": {{
+    "CANONICAL_ENTITY": {{"business_rules": [RULE_OBJECT]}}
+  }},
+  "relationships": {{
+    "CANONICAL_RELATIONSHIP": {{"business_rules": [RULE_OBJECT]}}
+  }}
+}}
+
+Every RULE_OBJECT must contain:
+- rule_id: globally unique and containing batch number {batch_num};
+- rule_name, rule_type, description, conditions, consequences, exceptions;
+- source_reference: {{"chunk_path": exact FILE path, "section_id": section,
+  "start_word_position": integer, "end_word_position": integer,
+  "source_text": verbatim 30-150 word excerpt}};
+- mandatory (boolean), examples (array), effective_date, expiration_date,
+  superseded_by, jurisdiction, risk_level, related_rules (array),
+  enforcement_action, applicability_scope (loan_types, occupancy_types,
+  transaction_types arrays), data_points_required (array), and audit_frequency.
+
+Use one of these rule_type values: eligibility, constraint, calculation,
+validation, process, compliance, documentation, prohibition, definition,
+exception. Use exact source paths and verbatim source text so the rule can be
+verified. Do not use TBD, placeholders, or paraphrased citations.
+
+CANONICAL ENTITY/RELATIONSHIP CONTEXT:
+{entity_context}
+
+SOURCE BATCH EXCERPTS:
+{sample_content}

@@ -14,6 +14,7 @@ Date: December 20, 2025
 import os
 import sys
 import json
+import re
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 import time
@@ -35,23 +36,68 @@ class EntityRelationshipExtractor:
         self.model = model or self.config.get_optimizer_model()
         self.history = []
         self.prompt_manager = get_prompt_manager()
+
+    @staticmethod
+    def select_representative_documents(
+        documents: List[Dict], max_documents: int = 6, offset: int = 0
+    ) -> List[Dict]:
+        """Choose a small, evenly distributed set of substantive excerpts.
+
+        Table-of-contents fragments are useful navigation artifacts but make
+        poor evidence for entity modelling.  Bounding the selection keeps the
+        high-reasoning request within the configured timeout while preserving
+        coverage across a large organized guide.
+        """
+        substantive = [
+            document for document in documents
+            if "table_of_contents" not in document.get("path", "").lower()
+        ]
+        candidates = substantive or documents
+        if len(candidates) <= max_documents:
+            return candidates
+
+        last_index = len(candidates) - 1
+        # Treat three iterations as three phases over the corpus. The offset
+        # changes the selected positions without making sampling random.
+        phase_count = max(1, 3 * (max_documents - 1))
+        return [
+            candidates[min(
+                last_index,
+                round((index * 3 + (offset % 3)) * last_index / phase_count),
+            )]
+            for index in range(max_documents)
+        ]
     
     def generate_optimized_prompt(self, documents: List[Dict] = None, text_samples: List[Dict] = None, 
                                   previous_results: Optional[Dict] = None, previous_findings: Optional[Dict] = None,
                                   iteration: int = 1, quality_analysis: Optional[Dict] = None) -> str:
         """Generate extraction prompt with document samples."""
-        # Use first 10 documents as samples for extraction
+        # Use representative, substantive excerpts rather than the first files
+        # returned by rglob(), which are commonly table-of-contents fragments.
+        # Shift the distributed window on each iteration so the three passes
+        # cover different sections of a large guide.
         docs = documents or text_samples or []
-        sample_docs = docs[:10] if docs else []
+        sample_documents = max(1, int(os.getenv("KG_ENTITY_SAMPLE_DOCUMENTS", "8")))
+        sample_chars = max(200, int(os.getenv("KG_ENTITY_SAMPLE_CHARS", "1200")))
+        sample_docs = self.select_representative_documents(
+            docs,
+            max_documents=sample_documents,
+            offset=max(0, iteration - 1),
+        )
         
         documents_text = "\n\n---DOCUMENT---\n".join([
-            f"File: {doc.get('path', 'unknown')}\n{doc.get('content', '')[:2000]}" 
+            f"File: {doc.get('path', 'unknown')}\n{doc.get('content', '')[:sample_chars]}"
             for doc in sample_docs
         ])
+
+        max_entities = max(1, int(os.getenv("KG_ENTITY_MAX_ENTITIES", "10")))
+        max_relationships = max(1, int(os.getenv("KG_ENTITY_MAX_RELATIONSHIPS", "10")))
         
         return self.prompt_manager.format_prompt(
-            "entity_extraction",
-            sample_content=documents_text
+            "entity_extraction_compact",
+            sample_content=documents_text,
+            max_entities=max_entities,
+            max_relationships=max_relationships,
         )
     
     def analyze_extraction_quality(self, results: Optional[Dict] = None, extraction_results: Optional[Dict] = None, 
@@ -204,18 +250,54 @@ class ComplianceEntityRelationshipAgent:
         except json.JSONDecodeError as e:
             print(f"  ✗ Error parsing JSON response: {e}")
             print(f"  Response preview: {content[:500] if content else 'None'}...")
-            return {
-                "entity_types": {},
-                "relationships": {},
-                "refinement_notes": f"Error parsing response: {str(e)}"
-            }
+            raise RuntimeError("Entity extraction returned invalid JSON") from e
         except Exception as e:
             print(f"  ✗ Error calling OpenAI API: {e}")
-            return {
-                "entity_types": {},
-                "relationships": {},
-                "refinement_notes": f"API Error: {str(e)}"
-            }
+            raise RuntimeError("Entity extraction request failed") from e
+
+    @staticmethod
+    def merge_catalogs(accumulated: Dict[str, Any], findings: Dict[str, Any]) -> Dict[str, Any]:
+        """Union entity/relationship definitions across extraction iterations."""
+        merged = accumulated or {"entity_types": {}, "relationships": {}}
+        def _key(name: Any) -> str:
+            return re.sub(r"[^A-Z0-9]", "", str(name).upper())
+
+        def _merge_definition(target: Dict[str, Any], name: str, definition: Dict[str, Any]) -> str:
+            aliases = {_key(existing_name): existing_name for existing_name in target}
+            canonical_name = aliases.get(_key(name), name)
+            if canonical_name not in target:
+                target[canonical_name] = dict(definition)
+                return canonical_name
+            existing = target[canonical_name]
+            for key, value in definition.items():
+                if isinstance(value, list):
+                    values = existing.setdefault(key, [])
+                    for item in value:
+                        if item not in values:
+                            values.append(item)
+                elif not existing.get(key):
+                    existing[key] = value
+            return canonical_name
+
+        entity_target = merged.setdefault("entity_types", {})
+        entity_aliases = {
+            _key(name): name for name in entity_target
+        }
+        for name, definition in (findings.get("entity_types", {}) or {}).items():
+            canonical_name = _merge_definition(entity_target, name, definition)
+            entity_aliases[_key(name)] = canonical_name
+            entity_aliases[_key(canonical_name)] = canonical_name
+
+        relationship_target = merged.setdefault("relationships", {})
+        for name, definition in (findings.get("relationships", {}) or {}).items():
+            normalized = dict(definition)
+            for endpoint in ("source_entity", "target_entity"):
+                if normalized.get(endpoint):
+                    normalized[endpoint] = entity_aliases.get(
+                        _key(normalized[endpoint]), normalized[endpoint]
+                    )
+            _merge_definition(relationship_target, name, normalized)
+        return merged
     
     def run_iterations_with_optimization(self, 
                                         documents: List[Dict[str, str]], 
@@ -246,6 +328,7 @@ class ComplianceEntityRelationshipAgent:
             )
 
         findings = None
+        accumulated_catalog = {"entity_types": {}, "relationships": {}}
         quality_analysis = None
 
         for iteration in range(1, n_iterations + 1):
@@ -269,6 +352,13 @@ class ComplianceEntityRelationshipAgent:
             # Add iteration metadata
             findings['iteration'] = iteration
             findings['timestamp'] = time.strftime('%Y-%m-%d %H:%M:%S')
+
+            # Preserve discoveries from every phase. Previously the final
+            # iteration replaced earlier findings, making repeated passes
+            # ineffective when each pass saw a different corpus window.
+            accumulated_catalog = self.merge_catalogs(
+                accumulated_catalog, findings
+            )
             
             # Step 3: Analyze extraction quality (except for last iteration)
             if iteration < n_iterations:
@@ -323,6 +413,10 @@ class ComplianceEntityRelationshipAgent:
                 print(f"    Business Rules: {quality_analysis.get('business_rules_score', 0)}/100")
                 print(f"    Coverage: {quality_analysis.get('coverage_score', 0)}/100")
         
+        findings = accumulated_catalog
+        findings['iteration'] = n_iterations
+        findings['timestamp'] = time.strftime('%Y-%m-%d %H:%M:%S')
+
         # Add optimization summary to findings
         findings['optimization_summary'] = self.meta_agent.get_optimization_summary()
         findings['final_quality_analysis'] = quality_analysis

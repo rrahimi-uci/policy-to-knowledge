@@ -7,6 +7,7 @@ for both standard chat models (gpt-4o, gpt-4o-mini, …) and reasoning models
 """
 
 import json
+import os
 import re
 import sys
 import threading
@@ -132,6 +133,16 @@ class LLMClient:
 
         self._api_key = api_key
         self._client: Optional[OpenAI] = None
+        # Worker pools in the pipeline can be intentionally large (for example
+        # MAX_WORKERS=40), but allowing every worker to open an API request at
+        # once causes connection-pool exhaustion and transient rate-limit
+        # failures.  Keep executor parallelism independent from bounded
+        # in-flight API concurrency; callers can tune the latter per run.
+        try:
+            gate_size = max(1, int(os.getenv("KG_LLM_CONCURRENCY", "2")))
+        except (TypeError, ValueError):
+            gate_size = 2
+        self._request_gate = threading.BoundedSemaphore(gate_size)
 
     def _get_client(self) -> OpenAI:
         """Lazily build the OpenAI client on first use.
@@ -181,6 +192,13 @@ class LLMClient:
         worker.join(deadline)
 
         if worker.is_alive():
+            # Closing the transport is essential before returning.  Otherwise
+            # the daemon thread can remain blocked in an SSL read and every
+            # subsequent batch can leak another socket. ``close`` itself can
+            # block when another request is concurrently inside httpx, so run
+            # cleanup on a daemon thread with a short join bound. The caller
+            # must regain control even if the transport is irrecoverably stuck.
+            self._reset_client()
             raise TimeoutError(
                 f"LLM call exceeded the hard watchdog deadline ({deadline:.0f}s) — "
                 f"the connection is likely stalled or dead; aborting so the pipeline "
@@ -189,6 +207,23 @@ class LLMClient:
         if "err" in box:
             raise box["err"]
         return box["resp"]
+
+    def _reset_client(self) -> None:
+        """Discard a failed transport without blocking the caller on close."""
+        client = self._client
+        self._client = None
+        if client is None:
+            return
+        close = getattr(client, "close", None)
+        if not callable(close):
+            return
+        close_thread = threading.Thread(
+            target=close,
+            name="llm-client-close",
+            daemon=True,
+        )
+        close_thread.start()
+        close_thread.join(timeout=min(5, max(1, self.timeout)))
 
     @staticmethod
     def is_reasoning_model(model: str) -> bool:
@@ -244,7 +279,13 @@ class LLMClient:
         # still capping runaway generations. Non-reasoning models honour the
         # caller's max_tokens directly.
         if is_reasoning:
-            params["max_completion_tokens"] = max(max_tokens * 4, 32768) if max_tokens else 32768
+            completion_budget = max(max_tokens * 4, 32768) if max_tokens else 32768
+            # A bounded, compact extraction run can opt out of the historical
+            # 32k minimum. The default remains unchanged for existing callers.
+            cap = os.getenv("KG_REASONING_MAX_COMPLETION_TOKENS")
+            if cap:
+                completion_budget = min(completion_budget, int(cap))
+            params["max_completion_tokens"] = completion_budget
             kwargs.pop('max_completion_tokens', None)
             kwargs.pop('max_tokens', None)
         elif max_tokens:
@@ -256,8 +297,13 @@ class LLMClient:
         params.update(kwargs)
 
         try:
-            response = self._create_with_watchdog(params)
+            with self._request_gate:
+                response = self._create_with_watchdog(params)
         except Exception as e:
+            # A connection error can leave the keep-alive pool unusable. Reset
+            # it before the caller's bounded batch retry constructs a fresh
+            # transport; otherwise retries repeat the same dead socket.
+            self._reset_client()
             raise Exception(f"LLM completion failed: {str(e)}")
 
         # ── Safety check: warn on unexpected empty or truncated output ──
