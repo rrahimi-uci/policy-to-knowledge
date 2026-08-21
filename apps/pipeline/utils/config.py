@@ -553,7 +553,33 @@ class Config:
 
     def get_optimizer_batch_size(self) -> int:
         """Get batch size for optimizer."""
+        raw = os.getenv('KG_OPTIMIZER_BATCH_SIZE')
+        if raw:
+            try:
+                return max(1, int(raw))
+            except ValueError:
+                pass
         return self.get('optimizer.batch_size', 50)
+
+    def get_optimizer_dedup_batch_size(self) -> int:
+        """Get the maximum number of rules sent to one deduplication call."""
+        raw = os.getenv('KG_OPTIMIZER_DEDUP_BATCH_SIZE')
+        if raw:
+            try:
+                return max(1, int(raw))
+            except ValueError:
+                pass
+        return self.get('optimizer.dedup_batch_size', 25)
+
+    def get_optimizer_max_cross_batch_pairs(self) -> int:
+        """Bound cross-batch dependency calls while retaining broad coverage."""
+        raw = os.getenv('KG_OPTIMIZER_MAX_CROSS_BATCH_PAIRS')
+        if raw:
+            try:
+                return max(0, int(raw))
+            except ValueError:
+                pass
+        return self.get('optimizer.max_cross_batch_pairs', 20)
 
     def get_optimizer_description_truncation_length(self) -> int:
         """Get description truncation length for optimizer."""

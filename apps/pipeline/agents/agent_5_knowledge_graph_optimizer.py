@@ -15,6 +15,7 @@ Date: December 20, 2025
 import json
 import sys
 import os
+import copy
 from pathlib import Path
 from typing import List, Dict, Any, Tuple, Optional
 from datetime import datetime
@@ -149,6 +150,74 @@ class KnowledgeGraphOptimizer:
         return data
     
     def deduplicate_rules(self, rules: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
+        """Deduplicate rules, chunking large inputs to keep requests bounded."""
+        batch_size = self.config.get_optimizer_dedup_batch_size()
+        if len(rules) > batch_size:
+            return self._deduplicate_rules_batched(rules, batch_size)
+        return self._deduplicate_rules_single(rules)
+
+    def _deduplicate_rules_batched(
+        self, rules: List[Dict[str, Any]], batch_size: int
+    ) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
+        """Run conservative deduplication on bounded chunks in parallel.
+
+        Cross-chunk merges are intentionally not inferred: a missed merge is
+        safer than combining rules whose numeric scope or source differs. The
+        dependency pass still provides cross-batch context separately.
+        """
+        import math
+
+        chunks = [rules[i:i + batch_size] for i in range(0, len(rules), batch_size)]
+        workers = min(self.max_workers, len(chunks))
+        print(
+            f"📦 Large rule set detected - deduplication uses {len(chunks)} chunks "
+            f"of ≤{batch_size} rules ({workers} workers)", flush=True
+        )
+
+        def _run(chunk):
+            try:
+                return self._deduplicate_rules_single(chunk)
+            except Exception as exc:
+                print(f"   ⚠️ Dedup chunk retained unchanged after error: {exc}", flush=True)
+                return chunk, {"error": str(exc), "duplicate_groups": [], "total_removed": 0}
+
+        results = []
+        with ThreadPoolExecutor(max_workers=workers) as executor:
+            for result in executor.map(_run, chunks):
+                results.append(result)
+
+        deduplicated = []
+        groups = []
+        removed_ids = []
+        errors = []
+        for chunk_rules, metadata in results:
+            deduplicated.extend(chunk_rules)
+            analysis = metadata.get("deduplication_analysis", metadata)
+            groups.extend(analysis.get("duplicate_groups", []))
+            removed_ids.extend(metadata.get("rules_removed_ids", []))
+            if metadata.get("error"):
+                errors.append(metadata["error"])
+
+        metadata = {
+            "deduplication_analysis": {
+                "duplicate_groups": groups,
+                "batched_analysis": True,
+                "batch_size": batch_size,
+                "num_batches": len(chunks),
+            },
+            "rules_removed_ids": removed_ids,
+            "total_removed": len(removed_ids),
+            "rules_remaining": len(deduplicated),
+        }
+        if errors:
+            metadata["errors"] = errors
+        print(
+            f"✅ Batched deduplication complete: {len(rules)} → "
+            f"{len(deduplicated)} rules ({len(removed_ids)} removed)", flush=True
+        )
+        return deduplicated, metadata
+
+    def _deduplicate_rules_single(self, rules: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
         """
         Deduplicate rationally identical rules using GPT-5 reasoning.
         
@@ -537,6 +606,19 @@ class KnowledgeGraphOptimizer:
 # Step 2: Analyze cross-batch dependencies (parallelised)
         cross_batch_sample_size = min(20, batch_size // 4)  # Sample ~25% of each batch
         pairs = [(i, j) for i in range(len(batches)) for j in range(i + 1, len(batches))]
+        get_max_pairs = getattr(
+            self.config, "get_optimizer_max_cross_batch_pairs", lambda: 20
+        )
+        max_pairs = get_max_pairs()
+        if len(pairs) > max_pairs:
+            # Keep a deterministic spread across the batch matrix instead of
+            # always favoring the first batches.  A zero cap intentionally
+            # disables the expensive cross-batch pass.
+            if max_pairs == 0:
+                pairs = []
+            else:
+                stride = len(pairs) / max_pairs
+                pairs = [pairs[min(len(pairs) - 1, int(i * stride))] for i in range(max_pairs)]
         cross_workers = min(self.max_workers, len(pairs)) if pairs else 1
         print(f"\n📦 Step 2: Analyzing cross-batch dependencies ({len(pairs)} pairs, {cross_workers} workers)...", flush=True)
         print(f"   (Checking if rules in one batch depend on rules in another batch)", flush=True)
@@ -698,9 +780,12 @@ class KnowledgeGraphOptimizer:
         dep_error = None
 
         print("📄 Launching Task 1 (Deduplication) + Task 2 (Dependency Analysis) in parallel...", flush=True)
+        # The two analyses add metadata to rule dictionaries.  Give each task
+        # an isolated copy so concurrent dependency annotation cannot affect
+        # deduplication summaries or source rule selection.
         with ThreadPoolExecutor(max_workers=2) as executor:
-            fut_dedup = executor.submit(self.deduplicate_rules, rules)
-            fut_dep = executor.submit(self.analyze_dependencies, rules)
+            fut_dedup = executor.submit(self.deduplicate_rules, copy.deepcopy(rules))
+            fut_dep = executor.submit(self.analyze_dependencies, copy.deepcopy(rules))
 
             try:
                 dedup_result = fut_dedup.result()
