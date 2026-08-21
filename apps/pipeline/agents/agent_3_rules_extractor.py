@@ -295,8 +295,47 @@ class BusinessRulesExtractor:
                 raise RuntimeError(f"LLM completion failed after {attempts} attempts: {last_error}")
             
             content = response.choices[0].message.content
-            if not content:
-                return {"entity_types": {}, "relationships": {}, "batch_num": batch_num, "error": "Empty response"}
+            finish_reason = getattr(response.choices[0], "finish_reason", None)
+            # A reasoning response can consume the entire completion budget
+            # before emitting JSON. Do not silently turn that batch into a
+            # missing-rule result; retry with an explicit compact-output
+            # instruction while preserving the original source batch.
+            if not content or finish_reason == "length":
+                compact_prompt = (
+                    f"{prompt}\n\nIMPORTANT RETRY: The previous response was empty or truncated. "
+                    "Return compact, complete JSON only. Include all supported rules, "
+                    "but omit prose, markdown, explanations, and optional examples."
+                )
+                recovery_attempts = max(1, int(os.getenv("KG_BATCH_EMPTY_RESPONSE_ATTEMPTS", "2")))
+                for recovery_attempt in range(1, recovery_attempts + 1):
+                    print(
+                        f"  DEBUG Batch {batch_num}: empty/truncated response; "
+                        f"compact retry {recovery_attempt}/{recovery_attempts}",
+                        flush=True,
+                    )
+                    try:
+                        if request_gate is None:
+                            response = self.client.chat_completion(
+                                messages=[{"role": "user", "content": compact_prompt}],
+                                temperature=self.global_config.get_rules_temperature(),
+                                max_tokens=self.global_config.get_rules_max_tokens(),
+                                reasoning_effort=self.reasoning_effort,
+                            )
+                        else:
+                            with request_gate:
+                                response = self.client.chat_completion(
+                                    messages=[{"role": "user", "content": compact_prompt}],
+                                    temperature=self.global_config.get_rules_temperature(),
+                                    max_tokens=self.global_config.get_rules_max_tokens(),
+                                    reasoning_effort=self.reasoning_effort,
+                                )
+                        content = response.choices[0].message.content
+                        if content and getattr(response.choices[0], "finish_reason", None) != "length":
+                            break
+                    except Exception as exc:
+                        print(f"  DEBUG Batch {batch_num}: compact retry failed: {exc}", flush=True)
+                if not content:
+                    return {"entity_types": {}, "relationships": {}, "batch_num": batch_num, "error": "Empty response after compact retries"}
             
             def _decode_json(raw_content: str) -> Dict[str, Any]:
                 """Decode a model response, allowing one fenced/object slice."""
