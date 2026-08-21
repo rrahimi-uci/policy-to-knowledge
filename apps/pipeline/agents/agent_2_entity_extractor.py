@@ -14,6 +14,7 @@ Date: December 20, 2025
 import os
 import sys
 import json
+import re
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 import time
@@ -258,21 +259,44 @@ class ComplianceEntityRelationshipAgent:
     def merge_catalogs(accumulated: Dict[str, Any], findings: Dict[str, Any]) -> Dict[str, Any]:
         """Union entity/relationship definitions across extraction iterations."""
         merged = accumulated or {"entity_types": {}, "relationships": {}}
-        for section in ("entity_types", "relationships"):
-            target = merged.setdefault(section, {})
-            for name, definition in (findings.get(section, {}) or {}).items():
-                if name not in target:
-                    target[name] = definition
-                    continue
-                existing = target[name]
-                for key, value in definition.items():
-                    if isinstance(value, list):
-                        values = existing.setdefault(key, [])
-                        for item in value:
-                            if item not in values:
-                                values.append(item)
-                    elif not existing.get(key):
-                        existing[key] = value
+        def _key(name: Any) -> str:
+            return re.sub(r"[^A-Z0-9]", "", str(name).upper())
+
+        def _merge_definition(target: Dict[str, Any], name: str, definition: Dict[str, Any]) -> str:
+            aliases = {_key(existing_name): existing_name for existing_name in target}
+            canonical_name = aliases.get(_key(name), name)
+            if canonical_name not in target:
+                target[canonical_name] = dict(definition)
+                return canonical_name
+            existing = target[canonical_name]
+            for key, value in definition.items():
+                if isinstance(value, list):
+                    values = existing.setdefault(key, [])
+                    for item in value:
+                        if item not in values:
+                            values.append(item)
+                elif not existing.get(key):
+                    existing[key] = value
+            return canonical_name
+
+        entity_target = merged.setdefault("entity_types", {})
+        entity_aliases = {
+            _key(name): name for name in entity_target
+        }
+        for name, definition in (findings.get("entity_types", {}) or {}).items():
+            canonical_name = _merge_definition(entity_target, name, definition)
+            entity_aliases[_key(name)] = canonical_name
+            entity_aliases[_key(canonical_name)] = canonical_name
+
+        relationship_target = merged.setdefault("relationships", {})
+        for name, definition in (findings.get("relationships", {}) or {}).items():
+            normalized = dict(definition)
+            for endpoint in ("source_entity", "target_entity"):
+                if normalized.get(endpoint):
+                    normalized[endpoint] = entity_aliases.get(
+                        _key(normalized[endpoint]), normalized[endpoint]
+                    )
+            _merge_definition(relationship_target, name, normalized)
         return merged
     
     def run_iterations_with_optimization(self, 

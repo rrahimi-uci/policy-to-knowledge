@@ -188,6 +188,16 @@ class TestAgent2Iterations:
         assert set(merged["entity_types"]) == {"LENDER", "BORROWER"}
         assert merged["entity_types"]["LENDER"]["attributes"] == ["name", "id"]
 
+    def test_entity_catalog_merge_collapses_case_and_punctuation_aliases(self):
+        import agents.agent_2_entity_extractor as a2
+
+        merged = a2.ComplianceEntityRelationshipAgent.merge_catalogs(
+            {"entity_types": {"FANNIE_MAE": {"attributes": ["id"]}}, "relationships": {}},
+            {"entity_types": {"FannieMae": {"attributes": ["name"]}}, "relationships": {}},
+        )
+        assert list(merged["entity_types"]) == ["FANNIE_MAE"]
+        assert merged["entity_types"]["FANNIE_MAE"]["attributes"] == ["id", "name"]
+
     def test_agent3_retries_transient_request(self, monkeypatch):
         from types import SimpleNamespace
         import agents.agent_3_rules_extractor as a3
