@@ -251,10 +251,16 @@ class BusinessRulesExtractor:
         annotated = annotate_rule_contract(rule, self._entity_catalog())
         return annotate_rule_readiness(annotated, self._entity_catalog())
     
-    def extract_batch(self, prompt: str, batch_num: int) -> Dict[str, Any]:
+    def extract_batch(
+        self,
+        prompt: str,
+        batch_num: int,
+        max_tokens_override: int | None = None,
+    ) -> Dict[str, Any]:
         """Extract from a single batch using reasoning model."""
         import time as _time
         batch_start = _time.time()
+        completion_limit = max_tokens_override or self.global_config.get_rules_max_tokens()
         try:
             # Keep the executor at the requested worker count while gating the
             # number of simultaneous sockets. A 40-way burst can exceed the
@@ -269,7 +275,7 @@ class BusinessRulesExtractor:
                         response = self.client.chat_completion(
                             messages=[{"role": "user", "content": prompt}],
                             temperature=self.global_config.get_rules_temperature(),
-                            max_tokens=self.global_config.get_rules_max_tokens(),
+                            max_tokens=completion_limit,
                             reasoning_effort=self.reasoning_effort
                         )
                     else:
@@ -277,7 +283,7 @@ class BusinessRulesExtractor:
                             response = self.client.chat_completion(
                                 messages=[{"role": "user", "content": prompt}],
                                 temperature=self.global_config.get_rules_temperature(),
-                                max_tokens=self.global_config.get_rules_max_tokens(),
+                                max_tokens=completion_limit,
                                 reasoning_effort=self.reasoning_effort
                             )
                     break
@@ -318,7 +324,7 @@ class BusinessRulesExtractor:
                             response = self.client.chat_completion(
                                 messages=[{"role": "user", "content": compact_prompt}],
                                 temperature=self.global_config.get_rules_temperature(),
-                                max_tokens=self.global_config.get_rules_max_tokens(),
+                                max_tokens=completion_limit,
                                 reasoning_effort=self.reasoning_effort,
                             )
                         else:
@@ -326,7 +332,7 @@ class BusinessRulesExtractor:
                                 response = self.client.chat_completion(
                                     messages=[{"role": "user", "content": compact_prompt}],
                                     temperature=self.global_config.get_rules_temperature(),
-                                    max_tokens=self.global_config.get_rules_max_tokens(),
+                                    max_tokens=completion_limit,
                                     reasoning_effort=self.reasoning_effort,
                                 )
                         content = response.choices[0].message.content
@@ -376,7 +382,7 @@ class BusinessRulesExtractor:
                         response = self.client.chat_completion(
                             messages=[{"role": "user", "content": retry_prompt}],
                             temperature=self.global_config.get_rules_temperature(),
-                            max_tokens=self.global_config.get_rules_max_tokens(),
+                            max_tokens=completion_limit,
                             reasoning_effort=self.reasoning_effort,
                         )
                     else:
@@ -384,7 +390,7 @@ class BusinessRulesExtractor:
                             response = self.client.chat_completion(
                                 messages=[{"role": "user", "content": retry_prompt}],
                                 temperature=self.global_config.get_rules_temperature(),
-                                max_tokens=self.global_config.get_rules_max_tokens(),
+                                max_tokens=completion_limit,
                                 reasoning_effort=self.reasoning_effort,
                             )
                     content = response.choices[0].message.content or ""
@@ -515,6 +521,7 @@ class BusinessRulesExtractor:
             (self.create_batch_prompt(batch, i+1, len(batches)), i+1)
             for i, batch in enumerate(batches)
         ]
+        prompt_by_batch = {batch_num: prompt for prompt, batch_num in batch_prompts}
         print(f"   ✓ Prompts prepared\n", flush=True)
         
         results = []
@@ -561,6 +568,79 @@ class BusinessRulesExtractor:
                 except Exception as e:
                     completed += 1
                     print(f"  [{completed}/{len(batches)}] Batch {batch_num}: ✗ Exception: {e}", flush=True)
+
+        # A length-truncated response is not recoverable by repeatedly sending
+        # the same completion budget. Retry only failed batches with a larger
+        # budget and an explicit compact-output instruction. This keeps the
+        # normal path fast while preventing token pressure from silently
+        # reducing the extracted corpus.
+        result_by_batch = {batch_num: result for batch_num, result in results}
+        failed_batches = [
+            batch_num for batch_num, result in results
+            if result.get("error")
+        ]
+        retry_tokens = int(os.getenv("KG_BATCH_RETRY_MAX_TOKENS", "32768"))
+        retry_attempts = max(0, int(os.getenv("KG_BATCH_RETRY_ATTEMPTS", "1")))
+        if failed_batches and retry_attempts:
+            print(
+                f"\n🔁 Retrying {len(failed_batches)} failed batch(es) with "
+                f"max_tokens={retry_tokens} (up to {retry_attempts} pass(es))...",
+                flush=True,
+            )
+            for retry_pass in range(1, retry_attempts + 1):
+                retry_targets = [
+                    batch_num for batch_num in failed_batches
+                    if result_by_batch.get(batch_num, {}).get("error")
+                ]
+                if not retry_targets:
+                    break
+                retry_prompt_by_batch = {
+                    batch_num: (
+                        f"{prompt_by_batch[batch_num]}\n\n"
+                        "RETRY REQUIREMENT: Return one complete JSON object for every "
+                        "supported rule in this batch. Use compact JSON only; omit all "
+                        "prose and optional examples. Do not stop before the closing brace."
+                    )
+                    for batch_num in retry_targets
+                }
+                retry_workers = min(max_workers, max(1, len(retry_targets)))
+                with ThreadPoolExecutor(max_workers=retry_workers) as retry_executor:
+                    retry_futures = {
+                        retry_executor.submit(
+                            self.extract_batch,
+                            retry_prompt_by_batch[batch_num],
+                            batch_num,
+                            retry_tokens,
+                        ): batch_num
+                        for batch_num in retry_targets
+                    }
+                    for future in as_completed(retry_futures):
+                        batch_num = retry_futures[future]
+                        try:
+                            retry_result = future.result()
+                        except Exception as exc:
+                            retry_result = {
+                                "entity_types": {},
+                                "relationships": {},
+                                "batch_num": batch_num,
+                                "error": str(exc),
+                            }
+                        result_by_batch[batch_num] = retry_result
+                        if retry_result.get("error"):
+                            print(
+                                f"  Retry {retry_pass}/{retry_attempts} Batch {batch_num}: "
+                                f"✗ {retry_result['error']}",
+                                flush=True,
+                            )
+                        else:
+                            print(
+                                f"  Retry {retry_pass}/{retry_attempts} Batch {batch_num}: ✓ "
+                                f"{retry_result.get('total_rules', 0)} rules",
+                                flush=True,
+                            )
+                failed_batches = retry_targets
+
+        results = sorted(result_by_batch.items())
         
         # Sort results by batch number and merge
         results.sort(key=lambda x: x[0])
