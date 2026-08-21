@@ -81,9 +81,17 @@ is loaded automatically; it must contain `OPENAI_API_KEY`.
 KG_BATCH_NAME=fannie_mae_manual_20260821 \
 KG_REASONING_EFFORT=medium \
 KG_LLM_CONCURRENCY=2 \
-KG_REASONING_MAX_COMPLETION_TOKENS=16384 \
+KG_REASONING_MAX_COMPLETION_TOKENS=32768 \
 KG_OPENAI_TIMEOUT=240 \
-KG_OPENAI_MAX_RETRIES=0 \
+KG_OPENAI_MAX_RETRIES=1 \
+KG_RULES_PER_BATCH=5 \
+KG_RULES_TARGET_WORDS_PER_BATCH=4500 \
+KG_RULES_MAX_TOKENS=32768 \
+KG_BATCH_MAX_ATTEMPTS=2 \
+KG_BATCH_EMPTY_RESPONSE_ATTEMPTS=2 \
+KG_BATCH_PARSE_ATTEMPTS=3 \
+KG_BATCH_RETRY_MAX_TOKENS=32768 \
+KG_BATCH_RETRY_ATTEMPTS=1 \
 KG_OPTIMIZER_DEDUP_BATCH_SIZE=25 \
 KG_OPTIMIZER_BATCH_SIZE=25 \
 KG_OPTIMIZER_MAX_CROSS_BATCH_PAIRS=12 \
@@ -100,6 +108,14 @@ run. Outputs are stored under `pipeline-output/<KG_BATCH_NAME>/`. The CLI
 streams each agent's output, including the long-running Agent 5 optimization
 and Agent 5.5 executable-readiness pass, in real time. If your virtual environment is inside
 `../../.venv/bin/python` with `.venv/bin/python`.
+
+The values above are the recommended repeatable-run profile. Keep the
+40-worker executor for local parallelism, but leave `KG_LLM_CONCURRENCY=2` so
+only two API requests are in flight at once; higher gates caused provider
+connection resets during long rule extraction runs. Five rules and roughly
+4,500 source words per batch keep the JSON response below the model's output
+ceiling, while the larger completion budget and bounded recovery settings
+prevent truncated batches from silently reducing the corpus.
 
 Common `extract.py` flags:
 
