@@ -188,14 +188,7 @@ class LLMClient:
             # block when another request is concurrently inside httpx, so run
             # cleanup on a daemon thread with a short join bound. The caller
             # must regain control even if the transport is irrecoverably stuck.
-            close_thread = threading.Thread(
-                target=client.close,
-                name="llm-client-close",
-                daemon=True,
-            )
-            close_thread.start()
-            close_thread.join(timeout=min(5, max(1, self.timeout)))
-            self._client = None
+            self._reset_client()
             raise TimeoutError(
                 f"LLM call exceeded the hard watchdog deadline ({deadline:.0f}s) — "
                 f"the connection is likely stalled or dead; aborting so the pipeline "
@@ -204,6 +197,20 @@ class LLMClient:
         if "err" in box:
             raise box["err"]
         return box["resp"]
+
+    def _reset_client(self) -> None:
+        """Discard a failed transport without blocking the caller on close."""
+        client = self._client
+        self._client = None
+        if client is None:
+            return
+        close_thread = threading.Thread(
+            target=client.close,
+            name="llm-client-close",
+            daemon=True,
+        )
+        close_thread.start()
+        close_thread.join(timeout=min(5, max(1, self.timeout)))
 
     @staticmethod
     def is_reasoning_model(model: str) -> bool:
@@ -279,6 +286,10 @@ class LLMClient:
         try:
             response = self._create_with_watchdog(params)
         except Exception as e:
+            # A connection error can leave the keep-alive pool unusable. Reset
+            # it before the caller's bounded batch retry constructs a fresh
+            # transport; otherwise retries repeat the same dead socket.
+            self._reset_client()
             raise Exception(f"LLM completion failed: {str(e)}")
 
         # ── Safety check: warn on unexpected empty or truncated output ──
