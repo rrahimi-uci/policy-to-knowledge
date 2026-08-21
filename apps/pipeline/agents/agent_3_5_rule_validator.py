@@ -299,6 +299,19 @@ class RuleValidationAgent:
             'jurisdiction', 'risk_level', 'enforcement_action',
             'applicability_scope', 'data_points_required', 'audit_frequency'
         ]
+        # Agent 3's v2 contract replaces the legacy taxonomy fields with
+        # typed predicates, variables, provenance, scope, parties, exceptions,
+        # and executable test vectors.  Do not report valid v2 rules as
+        # incomplete merely because legacy-only fields such as jurisdiction or
+        # audit_frequency are absent; readiness/contract_issues carry the
+        # evidence-specific review status separately.
+        v2_required_fields = [
+            'rule_id', 'rule_name', 'rule_type', 'description',
+            'condition_predicates', 'condition_logic', 'variables', 'outcomes',
+            'source_reference', 'applicability_scope', 'scope_basis',
+            'responsible_party', 'counterparties', 'exceptions', 'exception_basis',
+            'test_vectors', 'versioning_status', 'field_evidence'
+        ]
         
         # Fields that are expected but allowed to be null
         nullable_fields = {
@@ -318,20 +331,30 @@ class RuleValidationAgent:
         for rule in rules:
             rule_id = rule.get('rule_id', 'UNKNOWN')
             missing_fields = []
+            is_v2 = str(rule.get('schema_version', '')).startswith('2')
             
-            for field in required_fields:
-                # Check for legacy compatibility
-                legacy_field = legacy_compatible_fields.get(field)
-                has_field = (field in rule and rule[field]) or \
-                           (legacy_field and legacy_field in rule and rule[legacy_field])
+            for field in (v2_required_fields if is_v2 else required_fields):
+                if is_v2:
+                    # Empty arrays (e.g. no exceptions/counterparties found in
+                    # the cited chunk) are valid structured values; the field
+                    # itself must still be present.
+                    has_field = field in rule and rule[field] is not None
+                else:
+                    # Check for legacy compatibility
+                    legacy_field = legacy_compatible_fields.get(field)
+                    has_field = (field in rule and rule[field]) or \
+                               (legacy_field and legacy_field in rule and rule[legacy_field])
                 
                 if not has_field:
                     missing_fields.append(field)
             
-            # Also check nullable fields exist (they should be present even if null)
-            for field in nullable_fields:
-                if field not in rule:
-                    missing_fields.append(f"{field} (nullable but must be present)")
+            # Legacy output promised these nullable columns explicitly.  The
+            # v2 contract represents temporal state in versioning_status and
+            # does not require the legacy date columns.
+            if not is_v2:
+                for field in nullable_fields:
+                    if field not in rule:
+                        missing_fields.append(f"{field} (nullable but must be present)")
             
             if missing_fields:
                 incomplete_rules.append({
