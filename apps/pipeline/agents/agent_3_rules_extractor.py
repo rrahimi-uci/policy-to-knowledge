@@ -533,15 +533,43 @@ class BusinessRulesExtractor:
         print(f"   • Rules per batch: {self.global_config.get_rules_per_batch()}", flush=True)
         print(f"\n⏳ Preparing prompts for {len(batches)} batches...", flush=True)
         
-        # Create prompts for all batches
+        # Persist successful batch responses so an interrupted or provider-
+        # limited run can resume without re-paying for completed work. Errors
+        # are intentionally not checkpointed; they must be retried next run.
+        checkpoint_file = os.getenv("KG_BATCH_CHECKPOINT_FILE")
+        cached_results: Dict[int, Dict[str, Any]] = {}
+        if checkpoint_file:
+            checkpoint_path = Path(checkpoint_file)
+            if checkpoint_path.exists():
+                try:
+                    for line in checkpoint_path.read_text(encoding="utf-8").splitlines():
+                        payload = json.loads(line)
+                        batch_num = int(payload.get("batch_num"))
+                        if not payload.get("error"):
+                            cached_results[batch_num] = payload
+                    print(
+                        f"   ✓ Loaded {len(cached_results)} successful batch checkpoints from "
+                        f"{checkpoint_path}",
+                        flush=True,
+                    )
+                except (OSError, ValueError, json.JSONDecodeError) as exc:
+                    print(f"   ⚠️  Ignoring unreadable batch checkpoint: {exc}", flush=True)
+
+        # Keep original batch numbers in prompts when resuming; changing them
+        # would change the source-corpus provenance attached to each response.
         batch_prompts = [
-            (self.create_batch_prompt(batch, i+1, len(batches)), i+1)
-            for i, batch in enumerate(batches)
+            (self.create_batch_prompt(batch, batch_num, len(batches)), batch_num)
+            for batch_num, batch in enumerate(batches, start=1)
+            if batch_num not in cached_results
         ]
         prompt_by_batch = {batch_num: prompt for prompt, batch_num in batch_prompts}
-        print(f"   ✓ Prompts prepared\n", flush=True)
-        
-        results = []
+        print(
+            f"   ✓ Prompts prepared ({len(batch_prompts)} pending, "
+            f"{len(cached_results)} checkpointed)\n",
+            flush=True,
+        )
+
+        results = list(cached_results.items())
         completed = 0
         start_time = time.time()
         
@@ -581,6 +609,12 @@ class BusinessRulesExtractor:
                         print(f"  [{completed}/{len(batches)}] Batch {batch_num}: ✓ {total_rules} rules ({entity_rules} entity + {rel_rules} relationship) [{extraction_time:.1f}s]", flush=True)
                     
                     results.append((batch_num, result))
+                    if checkpoint_file and not result.get("error"):
+                        checkpoint_path = Path(checkpoint_file)
+                        checkpoint_path.parent.mkdir(parents=True, exist_ok=True)
+                        with checkpoint_path.open("a", encoding="utf-8") as handle:
+                            handle.write(json.dumps(result, ensure_ascii=False) + "\n")
+                            handle.flush()
                     
                 except Exception as e:
                     completed += 1
@@ -643,6 +677,12 @@ class BusinessRulesExtractor:
                                 "error": str(exc),
                             }
                         result_by_batch[batch_num] = retry_result
+                        if checkpoint_file and not retry_result.get("error"):
+                            checkpoint_path = Path(checkpoint_file)
+                            checkpoint_path.parent.mkdir(parents=True, exist_ok=True)
+                            with checkpoint_path.open("a", encoding="utf-8") as handle:
+                                handle.write(json.dumps(retry_result, ensure_ascii=False) + "\n")
+                                handle.flush()
                         if retry_result.get("error"):
                             print(
                                 f"  Retry {retry_pass}/{retry_attempts} Batch {batch_num}: "
@@ -1298,6 +1338,13 @@ def main():
     SOURCE_DIRECTORY = str(config.get_organized_dir())
     OUTPUT_FILE = str(config.get_rules_extracted_dir() / "compliance_rules_with_entities.json")
     TARGET_RULES = config.get_target_rules()
+    # Batch checkpoints are enabled by default. They are append-only and keep
+    # successful extraction work resumable across Ctrl-C, timeout, or provider
+    # connection failures; callers may override the location per run.
+    os.environ.setdefault(
+        "KG_BATCH_CHECKPOINT_FILE",
+        str(config.get_rules_extracted_dir() / "batch_results.jsonl"),
+    )
     
     print("="*80, flush=True)
     print("ENHANCED BUSINESS RULES EXTRACTOR", flush=True)
