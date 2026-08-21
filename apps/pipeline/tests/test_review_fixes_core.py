@@ -142,8 +142,8 @@ class TestAgent2Iterations:
         )
 
         normalized_prompt = " ".join(prompt.split())
-        assert "at most two entity types" in normalized_prompt
-        assert "at most two relationships" in normalized_prompt
+        assert "10 entity types" in normalized_prompt
+        assert "10 relationships" in normalized_prompt
 
     def test_entity_prompt_uses_substantive_distributed_samples(self):
         import agents.agent_2_entity_extractor as a2
@@ -171,6 +171,22 @@ class TestAgent2Iterations:
 
         with pytest.raises(RuntimeError, match="request failed"):
             agent.extract_entities_and_relationships("prompt")
+
+    def test_entity_catalog_iterations_are_unionable(self):
+        import agents.agent_2_entity_extractor as a2
+
+        merged = a2.ComplianceEntityRelationshipAgent.merge_catalogs(
+            {"entity_types": {"LENDER": {"attributes": ["name"]}}, "relationships": {}},
+            {
+                "entity_types": {
+                    "LENDER": {"attributes": ["name", "id"]},
+                    "BORROWER": {"attributes": ["name"]},
+                },
+                "relationships": {},
+            },
+        )
+        assert set(merged["entity_types"]) == {"LENDER", "BORROWER"}
+        assert merged["entity_types"]["LENDER"]["attributes"] == ["name", "id"]
 
     def test_agent3_retries_transient_request(self, monkeypatch):
         from types import SimpleNamespace

@@ -4,7 +4,7 @@ concrete mortgage concepts over generic words, and do not invent a complete
 domain model; detailed rule extraction happens later from the full corpus.
 
 Return ONLY one valid JSON object, with no Markdown or explanation. Return at
-most two entity types and at most two relationships. Keep every definition
+{max_entities} entity types and {max_relationships} relationships. Keep every definition
 under 20 words. Each entity needs exactly five short attribute names, one
 excerpt-grounded example, and one short business-rule summary. Each relationship
 needs source_entity, target_entity, definition, cardinality, one example, and
