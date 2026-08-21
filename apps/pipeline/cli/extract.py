@@ -833,24 +833,27 @@ class KnowledgeExtractionPipeline:
             if domain_val:
                 env['KG_DOMAIN'] = domain_val
             
-            result = subprocess.run(
+            # Stream Agent 5 output as it is produced.  This step can run for
+            # a long time because it performs many model requests; buffering
+            # with subprocess.run(capture_output=True) made the CLI appear
+            # idle until the optimizer had completely finished.
+            print("📡 Streaming Agent 5 output in real time...")
+            process = subprocess.Popen(
                 cmd,
                 cwd=_ROOT,
-                capture_output=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
                 text=True,
-                env=env
+                bufsize=1,
+                env=env,
             )
-            
-            # Print output
-            if result.stdout:
-                print(result.stdout)
-            
-            if result.stderr:
-                print("⚠️ Warnings/Errors:", file=sys.stderr)
-                print(result.stderr, file=sys.stderr)
-            
-            if result.returncode != 0:
-                raise RuntimeError(f"Optimizer failed with exit code {result.returncode}")
+            for line in process.stdout:
+                print(line, end="", flush=True)
+            return_code = process.wait()
+            print(f"📡 Agent 5 process exited with code {return_code}", flush=True)
+
+            if return_code != 0:
+                raise RuntimeError(f"Optimizer failed with exit code {return_code}")
             
             # Verify outputs
             optimized_dir = self.config.get_optimized_dir()
