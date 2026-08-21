@@ -133,6 +133,16 @@ class LLMClient:
 
         self._api_key = api_key
         self._client: Optional[OpenAI] = None
+        # Worker pools in the pipeline can be intentionally large (for example
+        # MAX_WORKERS=40), but allowing every worker to open an API request at
+        # once causes connection-pool exhaustion and transient rate-limit
+        # failures.  Keep executor parallelism independent from bounded
+        # in-flight API concurrency; callers can tune the latter per run.
+        try:
+            gate_size = max(1, int(os.getenv("KG_LLM_CONCURRENCY", "2")))
+        except (TypeError, ValueError):
+            gate_size = 2
+        self._request_gate = threading.BoundedSemaphore(gate_size)
 
     def _get_client(self) -> OpenAI:
         """Lazily build the OpenAI client on first use.
@@ -204,8 +214,11 @@ class LLMClient:
         self._client = None
         if client is None:
             return
+        close = getattr(client, "close", None)
+        if not callable(close):
+            return
         close_thread = threading.Thread(
-            target=client.close,
+            target=close,
             name="llm-client-close",
             daemon=True,
         )
@@ -284,7 +297,8 @@ class LLMClient:
         params.update(kwargs)
 
         try:
-            response = self._create_with_watchdog(params)
+            with self._request_gate:
+                response = self._create_with_watchdog(params)
         except Exception as e:
             # A connection error can leave the keep-alive pool unusable. Reset
             # it before the caller's bounded batch retry constructs a fresh
