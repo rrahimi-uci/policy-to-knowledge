@@ -11,6 +11,7 @@ import os
 import re
 import sys
 import threading
+import time
 from typing import Dict, Any, List, Optional
 
 from openai import OpenAI
@@ -189,7 +190,16 @@ class LLMClient:
         worker = threading.Thread(target=_call, name="llm-call", daemon=True)
         worker.start()
         deadline = self.timeout * (self.max_retries + 1) + self.watchdog_margin
-        worker.join(deadline)
+        # Poll against an absolute monotonic deadline instead of relying on a
+        # single long Thread.join(timeout).  A stalled TLS read has previously
+        # left the parent waiting far beyond the configured watchdog window on
+        # Python 3.14/macOS, even though the worker remained a daemon thread.
+        expires_at = time.monotonic() + max(0.0, float(deadline))
+        while worker.is_alive():
+            remaining = expires_at - time.monotonic()
+            if remaining <= 0:
+                break
+            worker.join(min(1.0, remaining))
 
         if worker.is_alive():
             # Closing the transport is essential before returning.  Otherwise
