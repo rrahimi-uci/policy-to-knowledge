@@ -357,7 +357,8 @@ class BusinessRulesExtractor:
             # GPT-5 occasionally returns a syntactically invalid object even
             # with a stop finish reason. Retry only that batch, rather than
             # discarding it and silently falling below the requested target.
-            parse_attempts = max(1, int(os.getenv("KG_BATCH_PARSE_ATTEMPTS", "2")))
+            parse_attempts = max(1, int(os.getenv("KG_BATCH_PARSE_ATTEMPTS", "3")))
+            retry_prompt = compact_prompt if "compact_prompt" in locals() else prompt
             for parse_attempt in range(1, parse_attempts + 1):
                 try:
                     result = _decode_json(content)
@@ -373,7 +374,7 @@ class BusinessRulesExtractor:
                     request_gate = getattr(self, "_request_gate", None)
                     if request_gate is None:
                         response = self.client.chat_completion(
-                            messages=[{"role": "user", "content": prompt}],
+                            messages=[{"role": "user", "content": retry_prompt}],
                             temperature=self.global_config.get_rules_temperature(),
                             max_tokens=self.global_config.get_rules_max_tokens(),
                             reasoning_effort=self.reasoning_effort,
@@ -381,12 +382,14 @@ class BusinessRulesExtractor:
                     else:
                         with request_gate:
                             response = self.client.chat_completion(
-                                messages=[{"role": "user", "content": prompt}],
+                                messages=[{"role": "user", "content": retry_prompt}],
                                 temperature=self.global_config.get_rules_temperature(),
                                 max_tokens=self.global_config.get_rules_max_tokens(),
                                 reasoning_effort=self.reasoning_effort,
                             )
                     content = response.choices[0].message.content or ""
+                    if getattr(response.choices[0], "finish_reason", None) == "length":
+                        content = ""
                     if not content:
                         raise json.JSONDecodeError("empty response", "", 0)
             
