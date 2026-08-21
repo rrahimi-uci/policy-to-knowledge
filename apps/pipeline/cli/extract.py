@@ -33,6 +33,31 @@ sys.path.insert(0, str(_ROOT))
 from utils.config import get_config, reload_config
 
 
+def _count_business_rules(data: dict) -> int:
+    """Count rules in both entity and relationship buckets."""
+    total = 0
+    for section in ("entity_types", "relationships"):
+        buckets = data.get(section, {}) or {}
+        values = buckets.values() if isinstance(buckets, dict) else buckets
+        for bucket in values:
+            if isinstance(bucket, dict):
+                total += len(bucket.get("business_rules", []) or [])
+    return total
+
+
+def _count_nonempty_rule_buckets(data: dict) -> int:
+    """Count entity/relationship buckets containing at least one rule."""
+    count = 0
+    for section in ("entity_types", "relationships"):
+        buckets = data.get(section, {}) or {}
+        values = buckets.values() if isinstance(buckets, dict) else buckets
+        count += sum(
+            1 for bucket in values
+            if isinstance(bucket, dict) and bucket.get("business_rules")
+        )
+    return count
+
+
 def sync_knowledge_graph_to_catalog(provider: str = "openai", source_file_name: str = None):
     """
     Sync optimized knowledge graph files to the local catalog.
@@ -596,11 +621,9 @@ class KnowledgeExtractionPipeline:
             if rules_file.exists():
                 with open(rules_file, 'r') as f:
                     rules_data = json.load(f)
-                    total_rules = sum(len(entity_data.get('business_rules', [])) 
-                                    for entity_data in rules_data.get('entity_types', {}).values())
-                    num_entities = len([k for k, v in rules_data.get('entity_types', {}).items() 
-                                      if len(v.get('business_rules', [])) > 0])
-                    print(f"✅ Extracted {total_rules} business rules across {num_entities} entities/relationships")
+                    total_rules = _count_business_rules(rules_data)
+                    num_buckets = _count_nonempty_rule_buckets(rules_data)
+                    print(f"✅ Extracted {total_rules} business rules across {num_buckets} entities/relationships")
                     print(f"📄 JSON output: {rules_file.name}")
                     if csv_file.exists():
                         print(f"📄 CSV output: {csv_file.name}")
@@ -633,8 +656,7 @@ class KnowledgeExtractionPipeline:
         
         with open(rules_file, 'r') as f:
             rules_data = json.load(f)
-            total_rules = sum(len(entity_data.get('business_rules', [])) 
-                            for entity_data in rules_data.get('entity_types', {}).values())
+            total_rules = _count_business_rules(rules_data)
             print(f"✅ Found {total_rules} rules to validate")
         
         print(f"📤 Validation report will be saved to: {validation_dir}")
@@ -718,10 +740,9 @@ class KnowledgeExtractionPipeline:
             if merged_file.exists():
                 with open(merged_file, 'r') as f:
                     merged_data = json.load(f)
-                    total_rules = sum(len(entity_data.get('business_rules', [])) 
-                                    for entity_data in merged_data.get('entity_types', {}).values())
-                    num_entities = len(merged_data.get('entity_types', {}))
-                    print(f"✅ Successfully merged: {num_entities} entities with {total_rules} business rules")
+                    total_rules = _count_business_rules(merged_data)
+                    num_buckets = _count_nonempty_rule_buckets(merged_data)
+                    print(f"✅ Successfully merged: {num_buckets} entities/relationships with {total_rules} business rules")
                     print(f"📄 Knowledge graph: {merged_file.name}")
                     if csv_file.exists():
                         print(f"📄 CSV export: {csv_file.name}")
@@ -757,8 +778,7 @@ class KnowledgeExtractionPipeline:
         
         with open(merged_file, 'r') as f:
             merged_data = json.load(f)
-            total_rules = sum(len(entity_data.get('business_rules', [])) 
-                            for entity_data in merged_data.get('entity_types', {}).values())
+            total_rules = _count_business_rules(merged_data)
             print(f"✅ Found {total_rules} rules to optimize")
         
         print(f"\n📤 Optimized output will be saved to: {self.config.get_optimized_dir()}")
