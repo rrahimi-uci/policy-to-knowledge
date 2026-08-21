@@ -97,8 +97,8 @@ KG_OPTIMIZER_MAX_CROSS_BATCH_PAIRS=12 \
 
 Change `KG_BATCH_NAME`, `--file`, `--domain`, and `--target-rules` for a new
 run. Outputs are stored under `pipeline-output/<KG_BATCH_NAME>/`. The CLI
-streams each agent's output, including the long-running Agent 5 optimization,
-in real time. If your virtual environment is inside `apps/pipeline/`, replace
+streams each agent's output, including the long-running Agent 5 optimization
+and Agent 5.5 executable-readiness pass, in real time. If your virtual environment is inside
 `../../.venv/bin/python` with `.venv/bin/python`.
 
 Common `extract.py` flags:
@@ -112,6 +112,22 @@ Common `extract.py` flags:
 | `--workers <n>` | Parallel LLM workers |
 | `--step <1-6>` | Run a single agent step |
 | `--skip-optimize` | Skip Agent 5 (Agent 6 uses Agent 4 output directly) |
+
+### Executable-readiness artifacts
+
+After Agent 5 optimizes the graph, Agent 5.5 performs the mandatory
+DMN/BPMN-readiness pass. It writes these files under
+`pipeline-output/<run>/agent-5-optimized/`:
+
+- `optimized_compliance_knowledge_graph.json` — final rules, including DMN/BPMN
+  projections, source-derived scope and exception-verification records.
+- `kg_readiness_report.json` and `.md` — required conflict, dependency-chain,
+  exception, scope, and four-invariant self-report.
+- `corpus_manifest.json` — input/final cited-section comparison.
+
+The extraction command exits nonzero if Agent 5.5 finds an invariant violation
+or any rule still requires review. The evidence artifacts are still written so
+the precise source limitation can be corrected and the pass rerun.
 
 ### Docker
 

@@ -51,7 +51,7 @@
     "versioning_status": {"type": "string", "minLength": 1},
     "applicability_scope": {"type": "object"},
     "scope_basis": {
-      "enum": ["explicitly_universal_in_source", "inferred"]
+      "enum": ["explicit", "explicitly_universal_in_source", "genuinely_unscoped", "inferred", "unresolved_after_source_review"]
     },
     "responsible_party": {"type": "string", "minLength": 1},
     "counterparties": {
@@ -64,14 +64,45 @@
     },
     "exception_basis": {
       "enum": [
+        "explicit_in_source",
         "explicitly_none_in_source",
-        "not_found_in_chunk_recheck_needed"
+        "not_found_in_chunk_recheck_needed",
+        "unresolved_after_full_document_search"
       ]
     },
     "test_vectors": {
       "type": "array",
       "minItems": 1,
       "items": {"$ref": "#/$defs/test_vector"}
+    },
+    "execution": {
+      "type": "object",
+      "required": ["targets"],
+      "properties": {
+        "targets": {"type": "array", "items": {"enum": ["DMN", "BPMN"]}, "minItems": 1},
+        "dmn": {"type": "object"},
+        "bpmn": {"type": "object"}
+      }
+    },
+    "exception_verification": {
+      "type": "object",
+      "required": ["status", "searched_chunk_count", "evidence"],
+      "properties": {
+        "status": {"enum": ["explicit_in_source", "explicitly_none_in_source", "unresolved"]},
+        "searched_chunk_count": {"type": "integer", "minimum": 1},
+        "evidence": {"type": "array"},
+        "unresolved_reason": {"type": ["string", "null"]}
+      }
+    },
+    "scope_derivation": {
+      "type": "object",
+      "required": ["status", "reviewed_chunk_count", "evidence"],
+      "properties": {
+        "status": {"enum": ["explicit", "explicitly_universal", "genuinely_unscoped", "unresolved"]},
+        "reviewed_chunk_count": {"type": "integer", "minimum": 1},
+        "evidence": {"type": "array"},
+        "unresolved_reason": {"type": ["string", "null"]}
+      }
     },
     "field_evidence": {
       "type": "object",

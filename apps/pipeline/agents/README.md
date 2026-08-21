@@ -2,11 +2,12 @@
 
 Agent reference for the Policy to Knowledge extraction and comparison pipeline.
 Each agent is a self-contained module in this directory. Agents 1–6 turn source
-documents into an optimized knowledge graph (driven by `cli/extract.py`); agents
+documents into an optimized knowledge graph (driven by `cli/extract.py`); Agent
+5.5 certifies executable readiness before visualization; agents
 7–10 compare and merge two existing graphs (driven by `cli/compare.py`).
 
 ```text
-Documents → [1] → [2] → [3] → [3.5] → [4] → [5] → [6] → Knowledge Graph
+Documents → [1] → [2] → [3] → [3.5] → [4] → [5] → [5.5] → [6] → Knowledge Graph
                                                               │
                         KG₁ + KG₂ → [7] → [8] → [9] → [10] → Comparison Reports
 ```
@@ -25,6 +26,7 @@ agent uses `gpt-5-mini`). See [Configuration](#configuration).
 | 3.5 | Rule Validator | `agent_3_5_rule_validator.py` | `RuleValidationAgent` | ✓ | — |
 | 4 | Rules + Entities Merger | `agent_4_rules_with_entities_merger.py` | `KnowledgeEnricher` | — | — |
 | 5 | Knowledge Graph Optimizer | `agent_5_knowledge_graph_optimizer.py` | `KnowledgeGraphOptimizer` | ✓ | — |
+| 5.5 | Executable Readiness | `agent_5_5_executable_readiness.py` | `ExecutableReadinessCompleter` | ✓ | — |
 | 6 | Visualization & Report | `agent_6_visualization_and_report.py` | `KnowledgeGraphVisualizer` | — | — |
 | 7 | Rule-Type Clusterer | `agent_7_rule_type_clusterer.py` | `RuleBehaviorClusterer` | — | — |
 | 8 | Semantic Rule Matcher | `agent_8_semantic_rule_matcher.py` | `SemanticRuleMatcher` | ✓ | `--workers` (31) |
@@ -183,6 +185,24 @@ Optimizes the knowledge graph through deduplication and dependency analysis.
 | `validation` | Rule B validates Rule A's outcome |
 
 > Skip this step with `--skip-optimize`; Agent 6 then uses Agent 4 output directly.
+
+### Agent 5.5 — Executable Readiness
+
+Completes the optimized graph for direct DMN/BPMN use and fails the extraction
+pass when any non-negotiable invariant or unresolved rule remains.
+
+| | |
+|---|---|
+| **Consumes** | Agent 4 corpus baseline, Agent 5 graph, and every organized source chunk |
+| **Produces** | Final optimized graph, `kg_readiness_report.{json,md}`, and `corpus_manifest.json` |
+| **Run** | Automatically as part of `cli/extract.py --step 5` |
+
+- Derives dependency chains by graph traversal and performs entity-local
+  co-firing/conflict analysis.
+- Rechecks exception and scope evidence against the full organized corpus;
+  unresolved findings remain explicit and set `requires_review: true`.
+- Enforces corpus integrity, canonical entity naming, uniform final schema, and
+  zero dangling rule references.
 
 ### Agent 6 — Visualization & Report
 
