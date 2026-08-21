@@ -874,11 +874,10 @@ class KnowledgeExtractionPipeline:
             
             with open(optimized_json, 'r') as f:
                 optimized_data = json.load(f)
-                # Count rules from entity_types AND root-level business_rules array
-                optimized_rules_in_entities = sum(len(entity_data.get('business_rules', [])) 
-                                    for entity_data in optimized_data.get('entity_types', {}).values())
-                optimized_rules_in_root = len(optimized_data.get('business_rules', []))
-                optimized_rules = optimized_rules_in_entities + optimized_rules_in_root
+                # Agent 5 keeps full rule objects in the root array while the
+                # entity/relationship buckets contain references.  Count the
+                # canonical root array when present to avoid double-counting.
+                optimized_rules = _count_business_rules(optimized_data)
                 num_entities = len(optimized_data.get('entity_types', {}))
                 
                 # Calculate original rules for comparison.  In step 5 the
@@ -891,10 +890,7 @@ class KnowledgeExtractionPipeline:
                 if merged_file.exists():
                     with open(merged_file, 'r') as orig_f:
                         orig_data = json.load(orig_f)
-                        original_rules_in_entities = sum(len(entity_data.get('business_rules', [])) 
-                                           for entity_data in orig_data.get('entity_types', {}).values())
-                        original_rules_in_root = len(orig_data.get('business_rules', []))
-                        original_rules = original_rules_in_entities + original_rules_in_root
+                        original_rules = _count_business_rules(orig_data)
                 else:
                     original_rules = optimized_rules
                     print(
