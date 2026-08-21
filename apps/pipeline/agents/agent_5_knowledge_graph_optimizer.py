@@ -76,6 +76,52 @@ class KnowledgeGraphOptimizer:
         print(f"  Model: {self.model}", flush=True)
         print(f"  Reasoning Effort: {self.reasoning_effort}", flush=True)
         print(f"  Workers: {self.max_workers}", flush=True)
+
+    def _json_request(
+        self,
+        messages: List[Dict[str, str]],
+        *,
+        temperature: float,
+        max_tokens: int,
+        label: str,
+    ) -> Dict[str, Any]:
+        """Request and parse JSON with bounded retries for truncation/parse errors."""
+        try:
+            attempts = max(1, int(os.getenv("KG_OPTIMIZER_PARSE_ATTEMPTS", "2")))
+        except (TypeError, ValueError):
+            attempts = 2
+
+        last_error = None
+        for attempt in range(1, attempts + 1):
+            retry_messages = list(messages)
+            if attempt > 1:
+                retry_messages.append({
+                    "role": "user",
+                    "content": (
+                        "The previous response was not valid JSON. Retry the same "
+                        "analysis and return complete, parseable JSON only; do not "
+                        "truncate any string or omit required closing brackets."
+                    ),
+                })
+            try:
+                response = self.client.chat_completion(
+                    messages=retry_messages,
+                    temperature=temperature,
+                    max_tokens=max_tokens,
+                    reasoning_effort=self.reasoning_effort,
+                )
+                content = response.choices[0].message.content if response and response.choices else None
+                if not content:
+                    raise ValueError("empty model response")
+                return self._parse_json_response(content)
+            except Exception as exc:
+                last_error = exc
+                if attempt < attempts:
+                    print(
+                        f"   ⚠️ {label} JSON attempt {attempt}/{attempts} failed; retrying: {exc}",
+                        flush=True,
+                    )
+        raise last_error
     
     def _calculate_dependency_confidence(self, confidence_breakdown: dict) -> dict:
         """Calculate overall dependency confidence score from breakdown components."""
@@ -265,21 +311,13 @@ class KnowledgeGraphOptimizer:
             # Use configured reasoning model for deduplication
             print(f"      → Using {self.model} for deduplication...", flush=True)
             
-            response = self.client.chat_completion(
-                messages=[{"role": "user", "content": prompt}],
+            dedup_result = self._json_request(
+                [{"role": "user", "content": prompt}],
                 temperature=self.config.get_optimizer_dedup_temperature(),
                 max_tokens=self.config.get_optimizer_dedup_max_tokens(),
-                reasoning_effort=self.reasoning_effort
+                label="Deduplication",
             )
-            result_text = response.choices[0].message.content
-            if not result_text:
-                print(f"      ⚠️ Empty response from model (reasoning may have exhausted token budget)", flush=True)
-                return rules, {"error": "Empty response from model", "duplicate_groups": [], "statistics": {}}
-            print(f"      ✓ Response received ({len(result_text):,} characters)", flush=True)
-            print(f"      → Parsing JSON response...", flush=True)
-            
-            # Parse JSON response
-            dedup_result = self._parse_json_response(result_text)
+            print(f"      ✓ Parsed JSON response", flush=True)
             dup_groups = len(dedup_result.get('duplicate_groups', []))
             print(f"      ✓ Found {dup_groups} duplicate groups", flush=True)
             
@@ -581,20 +619,15 @@ class KnowledgeGraphOptimizer:
             )
             print(f"\n   Batch {batch_idx}/{num_batches}: {len(batch)} rules → Using {self.model}...", flush=True)
             try:
-                response = self.client.chat_completion(
-                    messages=[{"role": "user", "content": prompt}],
-                    temperature=self.config.get_optimizer_batched_temperature(),
-                    max_tokens=self.config.get_optimizer_batched_max_tokens(),
-                    reasoning_effort=self.reasoning_effort
-                )
-                if response and response.choices and response.choices[0].message.content:
-                    dep_result = self._parse_json_response(response.choices[0].message.content)
+                    dep_result = self._json_request(
+                        [{"role": "user", "content": prompt}],
+                        temperature=self.config.get_optimizer_batched_temperature(),
+                        max_tokens=self.config.get_optimizer_batched_max_tokens(),
+                        label=f"Dependency batch {batch_idx}",
+                    )
                     batch_deps = dep_result.get("dependencies", [])
                     print(f"   ✓ Found {len(batch_deps)} dependencies in batch {batch_idx}", flush=True)
                     return batch_deps
-                else:
-                    print(f"   ⚠️ Empty response for batch {batch_idx}", flush=True)
-                    return []
             except Exception as e:
                 print(f"   ❌ Error analyzing batch {batch_idx}: {e}", flush=True)
                 return []
@@ -647,28 +680,25 @@ class KnowledgeGraphOptimizer:
                 total_rules=len(combined_sample)
             )
             try:
-                response = self.client.chat_completion(
-                    messages=[{"role": "user", "content": prompt}],
+                dep_result = self._json_request(
+                    [{"role": "user", "content": prompt}],
                     temperature=self.config.get_optimizer_cross_batch_temperature(),
                     max_tokens=self.config.get_optimizer_cross_batch_max_tokens(),
-                    reasoning_effort=self.reasoning_effort
+                    label=f"Cross-batch {i+1}↔{j+1}",
                 )
-                if response and response.choices and response.choices[0].message.content:
-                    dep_result = self._parse_json_response(response.choices[0].message.content)
-                    cross_deps = dep_result.get("dependencies", [])
-                    batch_i_ids = {r.get('rule_id') for r in batches[i]}
-                    batch_j_ids = {r.get('rule_id') for r in batches[j]}
-                    true_cross_deps = [
-                        d for d in cross_deps
-                        if isinstance(d, dict) and d.get('source_rule_id') and d.get('target_rule_id') and (
-                            (d['source_rule_id'] in batch_i_ids and d['target_rule_id'] in batch_j_ids) or
-                            (d['source_rule_id'] in batch_j_ids and d['target_rule_id'] in batch_i_ids)
-                        )
-                    ]
-                    if true_cross_deps:
-                        print(f"   ✓ Found {len(true_cross_deps)} cross-batch dependencies ({i+1}↔{j+1})", flush=True)
-                    return true_cross_deps
-                return []
+                cross_deps = dep_result.get("dependencies", [])
+                batch_i_ids = {r.get('rule_id') for r in batches[i]}
+                batch_j_ids = {r.get('rule_id') for r in batches[j]}
+                true_cross_deps = [
+                    d for d in cross_deps
+                    if isinstance(d, dict) and d.get('source_rule_id') and d.get('target_rule_id') and (
+                        (d['source_rule_id'] in batch_i_ids and d['target_rule_id'] in batch_j_ids) or
+                        (d['source_rule_id'] in batch_j_ids and d['target_rule_id'] in batch_i_ids)
+                    )
+                ]
+                if true_cross_deps:
+                    print(f"   ✓ Found {len(true_cross_deps)} cross-batch dependencies ({i+1}↔{j+1})", flush=True)
+                return true_cross_deps
             except Exception as e:
                 print(f"   ⚠️ Error analyzing cross-batch {i+1}↔{j+1}: {e}", flush=True)
                 return []
