@@ -332,7 +332,7 @@ class ComplianceEntityRelationshipAgent:
             # Preserve discoveries from every phase. Previously the final
             # iteration replaced earlier findings, making repeated passes
             # ineffective when each pass saw a different corpus window.
-            accumulated_catalog = self.meta_agent.merge_catalogs(
+            accumulated_catalog = self.merge_catalogs(
                 accumulated_catalog, findings
             )
             
