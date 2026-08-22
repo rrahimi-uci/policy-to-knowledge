@@ -285,6 +285,16 @@ def _normalise_operator(value: Any) -> Any:
 
 
 def _evidence_pointer(value: Any) -> dict[str, str] | None:
+    # source_reference is documented (rule_contract_v2.txt, every domain
+    # prompt) as a single object, but Agent 3 sometimes emits a list of
+    # citations for a rule whose justification spans more than one excerpt —
+    # Agent 5.7's own _iter_references already treats that as legitimate.
+    # Take the first usable entry rather than discarding real evidence: on
+    # one ContractNLI pilot run, a rule with source_reference shaped this way
+    # and no exceptions left field_evidence.exceptions empty, which is a hard
+    # v2 schema violation that fails the whole pipeline outright.
+    if isinstance(value, list):
+        value = next((item for item in value if isinstance(item, Mapping)), None)
     if not isinstance(value, Mapping):
         return None
     pointer = {
@@ -727,6 +737,10 @@ class ExecutableReadinessCompleter:
         unbounded document dump.
         """
         source = rule.get("source_reference", {})
+        if isinstance(source, list):
+            # See _evidence_pointer's comment: a rule can legitimately cite
+            # more than one excerpt; use the first for retrieval anchoring.
+            source = next((item for item in source if isinstance(item, Mapping)), {})
         quote = source.get("source_text", "") if isinstance(source, Mapping) else ""
         text = " ".join(str(rule.get(key, "")) for key in ("rule_name", "description")) + " " + str(quote)
         # A previous pass may identify an exact cross-section whose criteria
@@ -1109,7 +1123,19 @@ class ExecutableReadinessCompleter:
             "invariants": {
                 "corpus_integrity": {"pass": manifest["pass"], "evidence": f"{len(manifest['input_sections'])} input and {len(manifest['final_sections'])} final cited sections; every change has an explicit reason.", **manifest},
                 "naming_consistency": {"pass": not naming, "evidence": f"{len(entity_keys)} entity type keys checked; {len(naming)} violations.", "violations": naming},
-                "schema_consistency": {"pass": contract_error_count + final_contract_error_count == 0, "evidence": f"{len(reviewed_rules)} rules checked; {contract_error_count} v2 and {final_contract_error_count} final-readiness contract violations."},
+                # Gated on contract_error_count alone (genuine v2 structural
+                # violations — a malformed rule shape no amount of further
+                # evidence-gathering can fix) rather than also on
+                # final_contract_error_count (evidence/provenance gaps on an
+                # otherwise well-formed rule). final_contract_error_count is
+                # exactly what makes a rule requires_review — folding it into
+                # this invariant made schema_consistency fail on every real
+                # run that had any review-required rule, which always fires
+                # main()'s SystemExit(2) before the SystemExit(3) branch that
+                # launches Agent 5.6 is ever reached, silently defeating the
+                # auto-remediation this README documents. Both counts stay in
+                # the evidence string for visibility.
+                "schema_consistency": {"pass": contract_error_count == 0, "evidence": f"{len(reviewed_rules)} rules checked; {contract_error_count} v2 and {final_contract_error_count} final-readiness contract violations."},
                 "referential_integrity": {"pass": not references, "evidence": f"{len(edges)} dependency edges checked; {len(references)} dangling references.", "violations": references},
             },
             "conflicts_and_dependencies": {"entities_checked": len(groups), "conflicts_found": len(conflicts), "dependency_chains_derived": len(chains), "conflict_examples": conflicts[:3], "non_conflict_examples": non_conflicts[:max(10, 3)], "conflict_example_shortfall": max(0, 3 - len(conflicts)), "non_conflict_example_shortfall": max(0, 3 - len(non_conflicts)), "cycles": cycles},
