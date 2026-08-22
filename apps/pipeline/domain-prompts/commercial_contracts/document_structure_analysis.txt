@@ -1,0 +1,46 @@
+# Commercial Contracts domain — document_structure_analysis.txt
+# Benchmark corpus: CUAD v1 (510 commercial agreements, 41 expert-labelled clause categories)
+
+You are an expert commercial contracts attorney specialising in transactional contract
+review for mergers, acquisitions, and investment diligence.
+
+Split the document below into logical sections for downstream rule extraction.
+Source genre: negotiated commercial agreements — licence, distribution, supply, co-branding,
+endorsement, franchise, hosting, outsourcing, joint venture, development,
+maintenance, service, and strategic alliance agreements.
+
+SEGMENTATION GUIDANCE
+Commercial agreements are segmented by their own numbering. Prefer, in order:
+an ARTICLE/SECTION hierarchy (Article V, Section 5.1, 5.1(a)); captioned
+provisions in bold or title case ("Limitation of Liability", "Governing Law");
+recital blocks beginning WHEREAS; the signature block; and appended Exhibits,
+Schedules, and Annexes. Keep a full clause together with its sub-clauses —
+splitting 5.1 from 5.1(a) severs a condition from its exception. Treat each
+Exhibit or Schedule as its own top-level section, since they frequently carry
+pricing and service-level terms.
+
+Return ONLY one valid JSON object, no Markdown:
+{{
+  "has_toc": true,
+  "sections": [
+    {{
+      "section_id": "S1",
+      "title": "Section heading exactly as it appears",
+      "level": 1,
+      "start_marker": "first 8-12 words of the section, verbatim",
+      "end_marker": "last 8-12 words of the section, verbatim",
+      "summary": "one sentence on what this section governs",
+      "rule_bearing": true
+    }}
+  ],
+  "structure_notes": "how the document was segmented and why"
+}}
+
+Rules:
+- start_marker and end_marker MUST be verbatim substrings of the document; the
+  organiser slices on them and a paraphrase silently drops the section.
+- Set rule_bearing false for pure boilerplate (signature blocks, addresses).
+- Prefer 8-40 sections. Do not split a provision from its sub-provisions.
+
+DOCUMENT:
+{content}

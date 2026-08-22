@@ -63,13 +63,24 @@ The pipeline's batch mode treats a subdirectory of `--source` as one batch and
 writes its knowledge graph to `pipeline-output/<batch-name>/`, which gives one KG
 per benchmark:
 
+Each benchmark has a matching domain prompt pack under
+`apps/pipeline/domain-prompts/`, so pass `--domain` too. Without it the pipeline
+runs the default `mortgage` pack against contracts and privacy policies:
+
 ```bash
 cd ../pipeline
-python3 cli/extract.py --source ../benchmarks --batch-dir cuad-source-docs
-python3 cli/extract.py --source ../benchmarks --batch-dir opp-115-source-docs
-python3 cli/extract.py --source ../benchmarks --batch-dir contract-nli-source-docs
-python3 cli/extract.py --source ../benchmarks --batch-dir mapp-source-docs
+python3 cli/extract.py --source ../benchmarks --batch-dir cuad-source-docs         --domain commercial_contracts
+python3 cli/extract.py --source ../benchmarks --batch-dir contract-nli-source-docs --domain nda_confidentiality
+python3 cli/extract.py --source ../benchmarks --batch-dir opp-115-source-docs      --domain privacy_policy
+python3 cli/extract.py --source ../benchmarks --batch-dir mapp-source-docs         --domain mobile_app_privacy
 ```
+
+| Benchmark | Domain pack | Rule-type vocabulary aligned to |
+|---|---|---|
+| CUAD | `commercial_contracts` | the 41 clause categories — obligation, restriction, license_grant, ip_assignment, liability, … |
+| ContractNLI | `nda_confidentiality` | the 17 NDA propositions — confidentiality_scope, permitted_use, permitted_disclosure, return_destruction, survival, … |
+| OPP-115 | `privacy_policy` | the 10 data-practice categories — collection, sharing, user_choice, access_rights, retention, … |
+| MAPP | `mobile_app_privacy` | the practice attributes including the GDPR **legal_basis** axis; reads German source text and normalises rules to English |
 
 Always pass `--batch-dir`. A bare `--batch --source ../benchmarks` would also
 discover `data/` and `raw/` as batches and sweep in the corpora's own PDFs and

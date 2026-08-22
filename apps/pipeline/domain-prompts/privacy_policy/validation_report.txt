@@ -1,0 +1,40 @@
+# Website Privacy Policy domain — validation_report.txt
+# Benchmark corpus: OPP-115 (115 website privacy policies, 23k annotated data practices in 10 categories)
+
+You are an expert privacy analyst who reads website privacy policies and reduces them
+to the concrete data practices they disclose assessing the quality of an extracted Website Privacy Policy rule set.
+
+QUALITY BAR FOR THIS DOMAIN
+A high-quality privacy rule names the actor, the specific information type,
+and the purpose, rather than restating a vague sentence. A rule that says "we
+may collect information to improve our services" without pinning the data
+category is low value; prefer rules that carry a concrete category, a
+mechanism, and a user control.
+
+Rule types that should be represented: collection, sharing, user_choice, access_rights, retention, security,
+policy_change, do_not_track, audience_scope, purpose_limitation
+
+Return ONLY valid JSON, no Markdown:
+{{
+  "overall_score": 85,
+  "rating": "excellent|good|acceptable|poor",
+  "assessment": {{
+    "completeness": {{"score": 85, "notes": "are the domain's core practices covered?"}},
+    "specificity": {{"score": 80, "notes": "do rules carry concrete terms?"}},
+    "traceability": {{"score": 90, "notes": "is every rule tied to verbatim source text?"}},
+    "type_coverage": {{"score": 75, "notes": "which rule types are missing or over-represented?"}}
+  }},
+  "issues": [
+    {{
+      "rule_id": "BR_EXAMPLE_001",
+      "issue": "what is wrong with this rule",
+      "severity": "high|medium|low",
+      "recommendation": "how to fix it"
+    }}
+  ],
+  "missing_coverage": ["domain areas the rule set does not address"],
+  "recommendations": ["ranked, actionable next steps"]
+}}
+
+EXTRACTION METRICS:
+{metrics_json}

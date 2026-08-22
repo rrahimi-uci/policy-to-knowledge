@@ -1,0 +1,109 @@
+# NDA and Confidentiality domain — entity_extraction.txt
+# Benchmark corpus: ContractNLI (607 NDAs annotated against 17 confidentiality propositions)
+
+You are an expert confidentiality counsel who reviews non-disclosure agreements for
+scope of protected information and the limits of permitted use.
+
+Extract the domain model — entity types and relationships — from non-disclosure, confidentiality, and secrecy agreements — mutual and one-way,
+standalone and as annexes to procurement, employment, or diligence processes.
+The propositions a reviewer tests an NDA against include: whether all
+confidential information must be expressly identified or marked; whether
+verbally conveyed information is covered; whether the definition is limited to
+technical information; whether the Receiving Party may share with employees,
+or with third-party consultants, agents, and professional advisors; whether
+use is limited to a stated purpose; whether reverse engineering is barred;
+whether independently developed or third-party-sourced information is
+excluded; whether copies may be made; whether the Receiving Party must notify
+on legally compelled disclosure; whether information must be returned or
+destroyed on termination and whether any copy may be retained; whether the
+existence of the agreement itself is confidential; whether any licence or
+right in the information is granted; whether representatives may be solicited;
+and which obligations survive termination.
+
+CANONICAL ENTITY TYPES FOR THIS DOMAIN:
+- DISCLOSING_PARTY — The party that supplies protected information
+  attributes: legal_name, role, affiliate_scope, representative_classes,
+  notice_address
+  example: The Disclosing Party and its wholly owned subsidiaries
+- RECEIVING_PARTY — The party bound to protect information it receives
+  attributes: legal_name, role, permitted_recipients, flow_down_duty,
+  notice_address
+  example: The Receiving Party and its professional advisors
+- CONFIDENTIAL_INFORMATION — The protected subject matter and its definition
+  boundary
+  attributes: information_classes, marking_requirement,
+  oral_disclosure_treatment, technical_only_flag, exclusions
+  example: Technical and commercial information, whether or not marked
+  confidential
+- PERMITTED_PURPOSE — The stated purpose to which use of the information is
+  limited
+  attributes: purpose_statement, evaluation_scope, prohibited_uses, duration,
+  project_reference
+  example: Solely to evaluate a potential business relationship
+- PERMITTED_RECIPIENT — A class of person to whom onward disclosure is allowed
+  attributes: recipient_class, need_to_know_test, flow_down_obligation,
+  notification_duty, liability_for_breach
+  example: Employees, consultants, agents, and professional advisors on a
+  need-to-know basis
+- DISCLOSURE_EXCEPTION — A carve-out permitting or excusing disclosure
+  attributes: exception_basis, notice_obligation, protective_order_duty,
+  scope_limit, evidence_standard
+  example: Disclosure compelled by law, regulation, or judicial process
+- RETURN_DESTRUCTION_DUTY — The obligation to give back or destroy information
+  attributes: trigger, deadline_days, retention_carve_out,
+  certification_requirement, backup_exception
+  example: Return or destroy within 30 days of written request
+- SURVIVAL_TERM — The period obligations continue after the agreement ends
+  attributes: duration, surviving_obligations, perpetual_categories,
+  termination_trigger, tail_period
+  example: Confidentiality obligations survive for 5 years after termination
+
+CANONICAL RELATIONSHIPS:
+- RECEIVING_PARTY_PROTECTS_INFORMATION (RECEIVING_PARTY →
+  CONFIDENTIAL_INFORMATION) — The core duty of care and non-disclosure over
+  protected material
+- INFORMATION_LIMITED_TO_PURPOSE (CONFIDENTIAL_INFORMATION →
+  PERMITTED_PURPOSE) — Constrains use of the information to the stated purpose
+- DISCLOSURE_ALLOWED_TO_RECIPIENT (RECEIVING_PARTY → PERMITTED_RECIPIENT) —
+  Authorises onward disclosure to a defined class, usually with flow-down
+  duties
+- EXCEPTION_RELEASES_DUTY (DISCLOSURE_EXCEPTION → RECEIVING_PARTY) — Excuses
+  an otherwise prohibited disclosure, often with a notice condition
+
+Return ONLY one valid JSON object, no Markdown:
+{{
+  "entity_types": {{
+    "ENTITY_NAME": {{
+      "definition": "Clear business definition in NDA and Confidentiality context",
+      "description": "Longer explanation of the role this entity plays",
+      "attributes": ["attribute_one", "attribute_two", "attribute_three"],
+      "examples": ["excerpt-grounded example"],
+      "business_rules": ["High-level summary of a rule involving this entity"],
+      "business_rule_summaries": ["Alternate summary list for downstream compatibility"]
+    }}
+  }},
+  "relationships": {{
+    "RELATIONSHIP_NAME": {{
+      "source_entity": "SOURCE_ENTITY_NAME",
+      "target_entity": "TARGET_ENTITY_NAME",
+      "source": "SOURCE_ENTITY_NAME",
+      "target": "TARGET_ENTITY_NAME",
+      "definition": "What this relationship means in NDA and Confidentiality context",
+      "description": "Directional semantics of the relationship",
+      "cardinality": "one-to-one|one-to-many|many-to-many",
+      "examples": ["excerpt-grounded example"],
+      "business_rules": ["High-level summary of a rule governing this relationship"]
+    }}
+  }},
+  "extraction_metadata": {{
+    "source_document": "Document name or section",
+    "entity_count": 0,
+    "relationship_count": 0
+  }}
+}}
+
+Ground every entity and relationship in the excerpts. Do not invent entities the
+text does not support.
+
+EXCERPTS:
+{sample_content}

@@ -1,0 +1,79 @@
+# Website Privacy Policy domain — business_rules_extraction.txt
+# Benchmark corpus: OPP-115 (115 website privacy policies, 23k annotated data practices in 10 categories)
+
+You are an expert privacy analyst who reads website privacy policies and reduces them
+to the concrete data practices they disclose. Extract comprehensive, actionable business rules from
+consumer-facing website privacy policies and notices that will power a compliance knowledge graph.
+
+The data-practice categories an analyst annotates are: First Party
+Collection/Use, Third Party Sharing/Collection, User Choice/Control, User
+Access/Edit/Deletion, Data Retention, Data Security, Policy Change, Do Not
+Track, and International and Specific Audiences. Every practice is further
+characterised by what information is collected, how and why it is collected,
+who it is shared with, and what choice the user is given.
+
+Extract up to {rules_per_batch} rules for batch {batch_num}. Quality over
+quantity: a complete rule with exact terms beats three vague ones.
+
+RULE TYPES FOR THIS DOMAIN: collection, sharing, user_choice, access_rights, retention, security,
+policy_change, do_not_track, audience_scope, purpose_limitation
+
+collection = first-party gathering of data, including what, how, and why;
+sharing = third-party disclosure or third-party collection on the site;
+user_choice = opt-in, opt-out, and control mechanisms; access_rights = the
+user's ability to view, edit, or delete their data; retention = how long data
+is kept and deletion triggers; security = stated safeguards; policy_change =
+how changes are announced and what notice is given; do_not_track = treatment
+of DNT browser signals; audience_scope = practices specific to children, to a
+jurisdiction, or to international transfers; purpose_limitation = an express
+statement bounding the use of collected data.
+
+Worked example:
+"Contact Information Collected at Registration Is Shared With Advertising
+Partners Unless the User Opts Out" — rule_type sharing, bound to the
+INFORMATION_SHARED_WITH_THIRD_PARTY relationship, conditioned on the user not
+having exercised the opt-out, with the preference-centre mechanism captured as
+the user choice and children's accounts recorded as an exception.
+
+Return ONLY valid JSON, no Markdown:
+{{
+  "batch_metadata": {{
+    "batch_number": {batch_num},
+    "rules_extracted": 0,
+    "source_section": "Section name or title"
+  }},
+  "rules": [
+    {{
+      "rule_id": "BR_ENTITY_CATEGORY_BATCH_SEQ",
+      "rule_name": "Human-readable title in plain English, no underscores",
+      "rule_type": "collection|sharing|user_choice|access_rights|retention|security|policy_change|do_not_track|audience_scope|purpose_limitation",
+      "entity": "FIRST_PARTY",
+      "relationship": "FIRST_PARTY_COLLECTS_INFORMATION",
+      "description": "Complete, specific rule description",
+      "conditions": ["Condition 1 (specific and checkable)", "Condition 2"],
+      "consequences": {{
+        "if_compliant": "What follows when the rule is satisfied",
+        "if_violated": "Consequence, remedy, or exposure"
+      }},
+      "exceptions": ["Express carve-out stated in the source"],
+      "source_reference": {{
+        "chunk_path": "exact input FILE path",
+        "section_id": "source section",
+        "source_text": "verbatim quote supporting this rule"
+      }},
+      "mandatory": true,
+      "confidence_score": 0.9,
+      "examples": ["Concrete application of the rule"],
+      "applicability_scope": {{"note": "user_categories (array), information_types (array), jurisdictions (array)"}},
+      "related_rules": []
+    }}
+  ]
+}}
+
+Every rule MUST be traceable to verbatim source text. Do not invent thresholds.
+
+CANONICAL ENTITY/RELATIONSHIP CONTEXT:
+{entity_context}
+
+SOURCE BATCH EXCERPTS:
+{sample_content}

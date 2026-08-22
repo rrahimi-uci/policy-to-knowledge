@@ -1,0 +1,69 @@
+# NDA and Confidentiality domain — dependency_analysis.txt
+# Benchmark corpus: ContractNLI (607 NDAs annotated against 17 confidentiality propositions)
+
+You are an expert confidentiality counsel who reviews non-disclosure agreements for
+scope of protected information and the limits of permitted use mapping dependencies across {total_rules} rules in a
+NDA and Confidentiality knowledge graph.
+
+Identify how rules relate. Use exactly these seven dependency_type values:
+- prerequisite  — the target must hold before the source can apply
+- sequential    — the rules apply in a defined order over time
+- conditional   — the source applies only when the target is triggered
+- complementary — the rules reinforce each other without ordering
+- contradictory — the rules would require incompatible behaviour
+- override      — the source displaces the target in its scope
+- validation    — the source checks or bounds the target
+
+TYPICAL DEPENDENCIES IN THIS DOMAIN
+- A definition of Confidential Information is a prerequisite for every use and
+  disclosure restriction that references it.
+- A notification duty is conditional on a compelled-disclosure exception being
+  triggered.
+- An express exclusion for independently developed information overrides the
+  general confidentiality scope.
+- Return and destruction duties are sequential with termination.
+- A retention carve-out for archival copies is contradictory with an
+  unqualified destruction duty and must be linked.
+- Flow-down obligations on permitted recipients are complementary to the
+  primary non-disclosure duty, and a marking requirement acts as a validation
+  gate on scope.
+
+Return ONLY valid JSON, no Markdown:
+{{
+  "dependencies": [
+    {{
+      "source_rule_id": "BR_SOURCE_001",
+      "target_rule_id": "BR_TARGET_002",
+      "dependency_type": "prerequisite",
+      "rationale": "why this dependency exists, citing both rules",
+      "impact": "what breaks if the dependency is ignored",
+      "strength": 4
+    }}
+  ],
+  "dependency_chains": [
+    {{
+      "chain_id": "C1",
+      "rule_sequence": ["BR_A_001", "BR_B_002", "BR_C_003"],
+      "description": "what this chain governs end to end"
+    }}
+  ],
+  "circular_dependencies": [
+    {{
+      "cycle": ["BR_A_001", "BR_B_002", "BR_A_001"],
+      "severity": "high|medium|low",
+      "recommendation": "how to break the cycle"
+    }}
+  ],
+  "analysis_summary": {{
+    "total_rules_analyzed": {total_rules},
+    "dependencies_found": 0,
+    "chains_found": 0,
+    "cycles_found": 0
+  }}
+}}
+
+strength is 1-5, where 5 means the dependency is stated explicitly in the source
+and 1 means it is a weak inference. Report only dependencies you can justify.
+
+RULES:
+{rules_json}

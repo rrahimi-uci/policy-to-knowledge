@@ -1,0 +1,85 @@
+# Website Privacy Policy domain — entity_extraction_compact.txt
+# Benchmark corpus: OPP-115 (115 website privacy policies, 23k annotated data practices in 10 categories)
+
+You build the small, source-grounded entity foundation for a Website Privacy Policy
+compliance knowledge graph. You are an expert privacy analyst who reads website privacy policies and reduces them
+to the concrete data practices they disclose.
+Use only concepts supported by the excerpts below. Prefer concrete privacy_policy concepts
+over generic words, and do not invent a complete domain model; detailed rule
+extraction happens later from the full corpus.
+
+CANONICAL ENTITY TYPES FOR THIS DOMAIN (prefer these names when supported):
+- FIRST_PARTY — The operator of the site that collects the data
+  attributes: operator_name, service_scope, contact_channel, jurisdiction,
+  affiliate_scope
+  example: The website operator and its corporate affiliates
+- USER — The individual whose information is collected
+  attributes: user_category, account_status, age_bracket, geographic_scope,
+  consent_state
+  example: Registered users and unauthenticated visitors
+- INFORMATION_TYPE — A category of collected data
+  attributes: data_category, identifiability, sensitivity, source,
+  optional_flag
+  example: Contact information, cookies and tracking identifiers, location
+- COLLECTION_PRACTICE — A described act of gathering information
+  attributes: collection_mode, collection_process, purpose, trigger,
+  disclosure_position
+  example: Collected automatically via cookies when a page is loaded
+- THIRD_PARTY — An external recipient of shared information
+  attributes: recipient_class, sharing_purpose, named_entity, onward_transfer,
+  opt_out_available
+  example: Advertising networks and analytics providers
+- USER_CHOICE — A control the policy offers over a practice
+  attributes: choice_type, choice_scope, mechanism, default_state,
+  effect_of_refusal
+  example: Opt-out of targeted advertising via a preference centre
+- RETENTION_PERIOD — How long information is kept and on what basis
+  attributes: duration, retention_purpose, deletion_trigger,
+  aggregation_state, legal_hold
+  example: Retained until the account is closed plus 90 days
+- SECURITY_MEASURE — A stated safeguard over collected information
+  attributes: measure_type, scope, standard_referenced, breach_notification,
+  access_control
+  example: Encryption in transit and at rest
+
+CANONICAL RELATIONSHIPS:
+- FIRST_PARTY_COLLECTS_INFORMATION (FIRST_PARTY → INFORMATION_TYPE) — The core
+  first-party collection practice and its stated purpose
+- INFORMATION_SHARED_WITH_THIRD_PARTY (INFORMATION_TYPE → THIRD_PARTY) —
+  Onward disclosure of a data category to an external recipient
+- USER_EXERCISES_CHOICE (USER → USER_CHOICE) — The control a user is offered
+  over a collection or sharing practice
+- INFORMATION_SUBJECT_TO_RETENTION (INFORMATION_TYPE → RETENTION_PERIOD) —
+  Binds a data category to how long it is kept and when it is deleted
+
+Return ONLY one valid JSON object, with no Markdown or explanation. Return at
+{max_entities} entity types and {max_relationships} relationships. Keep every definition
+under 20 words. Each entity needs exactly five short attribute names, one
+excerpt-grounded example, and one short business-rule summary. Each relationship
+needs source_entity, target_entity, definition, cardinality, one example, and
+one business-rule summary.
+
+Required JSON shape:
+{{
+  "entity_types": {{
+    "ENTITY_NAME": {{
+      "definition": "...",
+      "attributes": ["...", "...", "...", "...", "..."],
+      "examples": ["..."],
+      "business_rules": ["..."]
+    }}
+  }},
+  "relationships": {{
+    "RELATIONSHIP_NAME": {{
+      "source_entity": "ENTITY_NAME",
+      "target_entity": "ENTITY_NAME",
+      "definition": "...",
+      "cardinality": "one-to-one|one-to-many|many-to-many",
+      "examples": ["..."],
+      "business_rules": ["..."]
+    }}
+  }}
+}}
+
+EXCERPTS:
+{sample_content}

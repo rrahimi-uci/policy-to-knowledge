@@ -1,0 +1,45 @@
+# Mobile App Privacy (GDPR, bilingual) domain — entity_resolution.txt
+# Benchmark corpus: MAPP Corpus (64 English and 91 German mobile-app privacy policies, GDPR-era annotation with an explicit legal-basis attribute)
+
+You are an expert data-protection analyst who reads mobile application privacy
+policies under the GDPR and records both the data practice and its lawful
+basis merging Mobile App Privacy (GDPR, bilingual) domain models extracted from several
+documents into one canonical set.
+
+Two entities are the same when they denote the same real-world concept, even if
+named differently. Two entities are different when they differ in role,
+direction, or scope — in this domain that most often means:
+Two rules are duplicates only when the controller, the data category, the
+purpose, AND the legal basis all match. A rule differing only in legal basis
+is NOT a duplicate — the same data collected under consent versus under
+legitimate interests is two distinct practices with different user rights
+attached. Also keep separate: German-source and English-source rules from
+different policies, first-party versus processor processing of the same
+category, and practices limited to minors.
+
+Return ONLY valid JSON, no Markdown:
+{{
+  "entity_clusters": [
+    {{
+      "canonical_name": "CANONICAL_ENTITY_NAME",
+      "member_entities": ["NAME_IN_DOC_A", "NAME_IN_DOC_B"],
+      "source_documents": ["doc_a", "doc_b"],
+      "merged_definition": "definition covering every member",
+      "merged_attributes": ["...", "..."],
+      "rationale": "why these are the same concept",
+      "confidence": "high|medium|low"
+    }}
+  ],
+  "resolution_summary": {{
+    "input_entity_count": 0,
+    "canonical_entity_count": 0,
+    "clusters_formed": 0,
+    "unmerged_entities": []
+  }}
+}}
+
+ENTITIES BY SOURCE:
+{entities_by_source}
+
+SOURCE DOCUMENTS:
+{source_documents}

@@ -248,15 +248,19 @@ class ExecutableReadinessCompleter:
             rule["execution"] = _project_execution(rule)
             return index, rule
 
-        print(f"▶ Agent 5.5 rule evidence: {len(rules)} rules, {readiness_workers} workers, "
-              f"{getattr(self.resolver, 'readiness_concurrency', 'bounded') if self.resolver else 0} API requests", flush=True)
-        completed_rules: list[dict[str, Any] | None] = [None] * len(rules)
-        with ThreadPoolExecutor(max_workers=readiness_workers, thread_name_prefix="kg-readiness") as executor:
-            futures = [executor.submit(complete_one, index, rule) for index, rule in enumerate(rules)]
-            for future in as_completed(futures):
-                index, completed = future.result()
-                completed_rules[index] = completed
-        rules = [rule for rule in completed_rules if rule is not None]
+        skip_evidence = os.getenv("KG_READINESS_SKIP_EVIDENCE", "").lower() in {"1", "true", "yes"}
+        if skip_evidence:
+            print(f"▶ Agent 5.5 rule evidence: reusing {len(rules)} completed rules", flush=True)
+        else:
+            print(f"▶ Agent 5.5 rule evidence: {len(rules)} rules, {readiness_workers} workers, "
+                  f"{getattr(self.resolver, 'readiness_concurrency', 'bounded') if self.resolver else 0} API requests", flush=True)
+            completed_rules: list[dict[str, Any] | None] = [None] * len(rules)
+            with ThreadPoolExecutor(max_workers=readiness_workers, thread_name_prefix="kg-readiness") as executor:
+                futures = [executor.submit(complete_one, index, rule) for index, rule in enumerate(rules)]
+                for future in as_completed(futures):
+                    index, completed = future.result()
+                    completed_rules[index] = completed
+            rules = [rule for rule in completed_rules if rule is not None]
         final_graph["business_rules"] = rules
 
         edges = dependency_edges(final_graph)
@@ -268,12 +272,72 @@ class ExecutableReadinessCompleter:
         conflict_entries: list[dict[str, Any]] = []
         ids = {str(rule.get("rule_id")): rule for rule in rules}
         groups = {key: members for key, members in entity_rule_groups(final_graph).items() if len(members) > 1}
+
+        def outcome_variables(rule_id: str) -> set[str]:
+            outcomes = ids[rule_id].get("outcomes", []) or []
+            return {str(item.get("variable")) for item in outcomes if isinstance(item, Mapping) and item.get("variable")}
+
         def analyse_group(entity: str, member_ids: list[str]) -> list[dict[str, Any]]:
             summaries = [{key: ids[rule_id].get(key) for key in ("rule_id", "condition_predicates", "condition_logic", "outcomes", "applicability_scope", "exceptions", "recommended_hit_policy")} for rule_id in member_ids]
-            analyses = self.resolver.analyse_entity(entity, summaries) if self.resolver else []
-            if not analyses:
-                analyses = [{"entity": entity, "status": "unresolved", "rule_ids": member_ids, "reasoning": "No entity-local conflict analysis was returned.", "resolution": "Manual review required."}]
-            entries = [dict(item) for item in analyses if isinstance(item, Mapping)]
+            try:
+                max_rules_per_call = max(2, int(os.getenv("KG_CONFLICT_MAX_RULES_PER_CALL", "32")))
+            except (TypeError, ValueError):
+                max_rules_per_call = 32
+
+            # Large generic groups (for example LENDER/ENTITY) can contain
+            # hundreds of rules. Only rules sharing an outcome variable can
+            # produce contradictory DMN assignments; disjoint-output pairs are
+            # proven non-conflicting mechanically and never sent in a giant
+            # prompt. This keeps conflict prompts bounded and pair coverage
+            # complete without weakening the conflict requirement.
+            output_buckets: dict[str, list[str]] = {}
+            for rule_id in member_ids:
+                for variable in outcome_variables(rule_id):
+                    output_buckets.setdefault(variable, []).append(rule_id)
+            overlapping_ids = {rule_id for bucket in output_buckets.values() if len(bucket) > 1 for rule_id in bucket}
+            entries: list[dict[str, Any]] = []
+            if len(member_ids) <= max_rules_per_call:
+                analyses = self.resolver.analyse_entity(entity, summaries) if self.resolver else []
+                entries.extend(dict(item) for item in analyses if isinstance(item, Mapping))
+            else:
+                for variable, bucket in sorted(output_buckets.items()):
+                    if len(bucket) < 2:
+                        continue
+                    bucket_ids = sorted(set(bucket))
+                    for start in range(0, len(bucket_ids), max_rules_per_call):
+                        batch_ids = bucket_ids[start:start + max_rules_per_call]
+                        if len(batch_ids) < 2:
+                            continue
+                        analyses = self.resolver.analyse_entity(
+                            entity,
+                            [item for item in summaries if str(item.get("rule_id")) in batch_ids],
+                        ) if self.resolver else []
+                        entries.extend(dict(item) for item in analyses if isinstance(item, Mapping))
+
+                # Cover all pairs that cannot share an output assignment with
+                # compact deterministic entries. The model is reserved for
+                # the materially ambiguous overlapping-output pairs.
+                non_overlapping_ids = sorted(set(member_ids) - overlapping_ids)
+                if len(non_overlapping_ids) > 1:
+                    entries.append({
+                        "entity": entity,
+                        "status": "non_conflict",
+                        "rule_ids": non_overlapping_ids,
+                        "reasoning": "These rules have pairwise disjoint outcome variables, so simultaneous firing cannot assign contradictory values.",
+                        "resolution": "No conflict; preserve each rule's distinct output mapping.",
+                    })
+                for rule_id in sorted(overlapping_ids):
+                    disjoint_ids = [other for other in member_ids if other != rule_id and outcome_variables(rule_id).isdisjoint(outcome_variables(other))]
+                    if disjoint_ids:
+                        entries.append({
+                            "entity": entity,
+                            "status": "non_conflict",
+                            "rule_ids": [rule_id, *sorted(disjoint_ids)],
+                            "reasoning": "The rules have disjoint outcome variables, so simultaneous firing cannot assign contradictory values.",
+                            "resolution": "No conflict; preserve each rule's distinct output mapping.",
+                        })
+            if not entries:
+                entries = [{"entity": entity, "status": "unresolved", "rule_ids": member_ids, "reasoning": "No entity-local conflict analysis was returned.", "resolution": "Manual review required."}]
             expected_pairs = {tuple(pair) for pair in combinations(member_ids, 2)}
             covered_pairs = {
                 tuple(pair)

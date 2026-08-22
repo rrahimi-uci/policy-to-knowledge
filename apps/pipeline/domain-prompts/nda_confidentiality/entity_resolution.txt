@@ -1,0 +1,44 @@
+# NDA and Confidentiality domain — entity_resolution.txt
+# Benchmark corpus: ContractNLI (607 NDAs annotated against 17 confidentiality propositions)
+
+You are an expert confidentiality counsel who reviews non-disclosure agreements for
+scope of protected information and the limits of permitted use merging NDA and Confidentiality domain models extracted from several
+documents into one canonical set.
+
+Two entities are the same when they denote the same real-world concept, even if
+named differently. Two entities are different when they differ in role,
+direction, or scope — in this domain that most often means:
+NDA obligations look alike because the vocabulary is formulaic. Two rules are
+duplicates only when they bind the same party in the same direction to the
+same duty with the same trigger. Keep separate: mutual versus one-way
+statements of the same duty; a permission for employees versus one for third-
+party advisors; a return obligation versus a destruction obligation where the
+text offers a choice; and any two rules whose survival periods or notice
+deadlines differ in days or years.
+
+Return ONLY valid JSON, no Markdown:
+{{
+  "entity_clusters": [
+    {{
+      "canonical_name": "CANONICAL_ENTITY_NAME",
+      "member_entities": ["NAME_IN_DOC_A", "NAME_IN_DOC_B"],
+      "source_documents": ["doc_a", "doc_b"],
+      "merged_definition": "definition covering every member",
+      "merged_attributes": ["...", "..."],
+      "rationale": "why these are the same concept",
+      "confidence": "high|medium|low"
+    }}
+  ],
+  "resolution_summary": {{
+    "input_entity_count": 0,
+    "canonical_entity_count": 0,
+    "clusters_formed": 0,
+    "unmerged_entities": []
+  }}
+}}
+
+ENTITIES BY SOURCE:
+{entities_by_source}
+
+SOURCE DOCUMENTS:
+{source_documents}

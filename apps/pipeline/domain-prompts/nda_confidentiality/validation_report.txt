@@ -1,0 +1,40 @@
+# NDA and Confidentiality domain — validation_report.txt
+# Benchmark corpus: ContractNLI (607 NDAs annotated against 17 confidentiality propositions)
+
+You are an expert confidentiality counsel who reviews non-disclosure agreements for
+scope of protected information and the limits of permitted use assessing the quality of an extracted NDA and Confidentiality rule set.
+
+QUALITY BAR FOR THIS DOMAIN
+A high-quality NDA rule states the direction of the duty (which party owes it
+to whom), quotes the operative sentence, and separates the permission from its
+conditions — a rule that says information may be shared with advisors without
+capturing the need-to-know test and the flow-down duty is incomplete.
+
+Rule types that should be represented: confidentiality_scope, permitted_use, permitted_disclosure,
+disclosure_exception, notification_duty, return_destruction, survival,
+non_solicitation, no_license, marking_requirement
+
+Return ONLY valid JSON, no Markdown:
+{{
+  "overall_score": 85,
+  "rating": "excellent|good|acceptable|poor",
+  "assessment": {{
+    "completeness": {{"score": 85, "notes": "are the domain's core practices covered?"}},
+    "specificity": {{"score": 80, "notes": "do rules carry concrete terms?"}},
+    "traceability": {{"score": 90, "notes": "is every rule tied to verbatim source text?"}},
+    "type_coverage": {{"score": 75, "notes": "which rule types are missing or over-represented?"}}
+  }},
+  "issues": [
+    {{
+      "rule_id": "BR_EXAMPLE_001",
+      "issue": "what is wrong with this rule",
+      "severity": "high|medium|low",
+      "recommendation": "how to fix it"
+    }}
+  ],
+  "missing_coverage": ["domain areas the rule set does not address"],
+  "recommendations": ["ranked, actionable next steps"]
+}}
+
+EXTRACTION METRICS:
+{metrics_json}

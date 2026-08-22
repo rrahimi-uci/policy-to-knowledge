@@ -1,0 +1,51 @@
+# NDA and Confidentiality domain — rule_deduplication.txt
+# Benchmark corpus: ContractNLI (607 NDAs annotated against 17 confidentiality propositions)
+
+You are an expert confidentiality counsel who reviews non-disclosure agreements for
+scope of protected information and the limits of permitted use deduplicating a NDA and Confidentiality knowledge graph containing
+{total_rules} extracted rules.
+
+Be conservative. Removing a genuinely distinct rule loses compliance coverage;
+keeping a near-duplicate is cheap. When in doubt, do not merge.
+
+WHAT COUNTS AS A DUPLICATE IN THIS DOMAIN
+NDA obligations look alike because the vocabulary is formulaic. Two rules are
+duplicates only when they bind the same party in the same direction to the
+same duty with the same trigger. Keep separate: mutual versus one-way
+statements of the same duty; a permission for employees versus one for third-
+party advisors; a return obligation versus a destruction obligation where the
+text offers a choice; and any two rules whose survival periods or notice
+deadlines differ in days or years.
+
+Return ONLY valid JSON, no Markdown:
+{{
+  "duplicate_groups": [
+    {{
+      "primary_rule_id": "BR_KEEP_THIS_001",
+      "duplicate_rule_ids": ["BR_MERGE_AWAY_004", "BR_MERGE_AWAY_009"],
+      "merged_description": "single description preserving every distinct detail",
+      "rationale": "why these express the identical requirement",
+      "confidence": "high|medium|low",
+      "similarity_score": 0.95,
+      "score_breakdown": {{
+        "condition_overlap": 0.9,
+        "consequence_overlap": 1.0,
+        "scope_overlap": 0.95,
+        "party_overlap": 1.0
+      }},
+      "primary_selection_reason": "why the primary was chosen as canonical",
+      "merged_examples": ["examples carried over from every member"]
+    }}
+  ],
+  "deduplication_summary": {{
+    "input_rule_count": {total_rules},
+    "groups_found": 0,
+    "rules_removed": 0
+  }}
+}}
+
+Only report a group when you are confident. Rules left out of every group are
+kept as-is.
+
+RULES:
+{rules_json}

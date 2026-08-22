@@ -1,0 +1,83 @@
+# Website Privacy Policy domain — entity_refinement.txt
+# Benchmark corpus: OPP-115 (115 website privacy policies, 23k annotated data practices in 10 categories)
+
+You are an expert privacy analyst who reads website privacy policies and reduces them
+to the concrete data practices they disclose reviewing an extracted Website Privacy Policy domain model for quality.
+
+This is refinement iteration {iteration_number}. Score the extraction, then
+improve it: merge near-duplicate entities, split entities that conflate two
+concepts, and drop entities the source does not support.
+
+Quality bar for this domain:
+A high-quality privacy rule names the actor, the specific information type,
+and the purpose, rather than restating a vague sentence. A rule that says "we
+may collect information to improve our services" without pinning the data
+category is low value; prefer rules that carry a concrete category, a
+mechanism, and a user control.
+
+CANONICAL ENTITY TYPES TO PREFER:
+- FIRST_PARTY — The operator of the site that collects the data
+  attributes: operator_name, service_scope, contact_channel, jurisdiction,
+  affiliate_scope
+  example: The website operator and its corporate affiliates
+- USER — The individual whose information is collected
+  attributes: user_category, account_status, age_bracket, geographic_scope,
+  consent_state
+  example: Registered users and unauthenticated visitors
+- INFORMATION_TYPE — A category of collected data
+  attributes: data_category, identifiability, sensitivity, source,
+  optional_flag
+  example: Contact information, cookies and tracking identifiers, location
+- COLLECTION_PRACTICE — A described act of gathering information
+  attributes: collection_mode, collection_process, purpose, trigger,
+  disclosure_position
+  example: Collected automatically via cookies when a page is loaded
+- THIRD_PARTY — An external recipient of shared information
+  attributes: recipient_class, sharing_purpose, named_entity, onward_transfer,
+  opt_out_available
+  example: Advertising networks and analytics providers
+- USER_CHOICE — A control the policy offers over a practice
+  attributes: choice_type, choice_scope, mechanism, default_state,
+  effect_of_refusal
+  example: Opt-out of targeted advertising via a preference centre
+- RETENTION_PERIOD — How long information is kept and on what basis
+  attributes: duration, retention_purpose, deletion_trigger,
+  aggregation_state, legal_hold
+  example: Retained until the account is closed plus 90 days
+- SECURITY_MEASURE — A stated safeguard over collected information
+  attributes: measure_type, scope, standard_referenced, breach_notification,
+  access_control
+  example: Encryption in transit and at rest
+
+Return ONLY valid JSON, no Markdown:
+{{
+  "quality_score": 85,
+  "assessment": {{
+    "coverage": "Are the domain's core concepts represented?",
+    "specificity": "Are entities concrete rather than generic?",
+    "grounding": "Is every entity supported by source text?"
+  }},
+  "issues": [
+    {{"entity": "ENTITY_NAME", "issue": "what is wrong", "severity": "high|medium|low"}}
+  ],
+  "refined_entity_types": {{
+    "ENTITY_NAME": {{
+      "definition": "...",
+      "attributes": ["...", "...", "...", "...", "..."],
+      "examples": ["..."],
+      "business_rules": ["..."]
+    }}
+  }},
+  "refined_relationships": {{
+    "RELATIONSHIP_NAME": {{
+      "source_entity": "ENTITY_NAME",
+      "target_entity": "ENTITY_NAME",
+      "definition": "...",
+      "cardinality": "one-to-one|one-to-many|many-to-many"
+    }}
+  }},
+  "changes_made": ["what was merged, split, renamed, or dropped"]
+}}
+
+CURRENT ENTITIES:
+{entities_json}

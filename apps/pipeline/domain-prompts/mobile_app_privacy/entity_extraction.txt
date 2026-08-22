@@ -1,0 +1,104 @@
+# Mobile App Privacy (GDPR, bilingual) domain — entity_extraction.txt
+# Benchmark corpus: MAPP Corpus (64 English and 91 German mobile-app privacy policies, GDPR-era annotation with an explicit legal-basis attribute)
+
+You are an expert data-protection analyst who reads mobile application privacy
+policies under the GDPR and records both the data practice and its lawful
+basis.
+
+Extract the domain model — entity types and relationships — from mobile application privacy policies published for app-store distribution,
+written in English or German.
+Practices are annotated as either first-party collection/use or third-party
+collection/use, and each carries attributes for Information Type, Purpose,
+Collection Process, Collection Mode, Third-Party Entity, Choice Type, Choice
+Scope, User Type, Anonymization, and — distinctively for this corpus — Legal
+Basis for Collection. The legal basis is the GDPR Article 6 ground: consent,
+performance of a contract, legal obligation, vital interests, public task, or
+legitimate interests.
+
+Source text is English OR German. Read both languages natively. Quote
+source_text verbatim in the original language, but write every rule_name,
+description, condition, and consequence in English so that rules from the two
+halves of the corpus merge into one graph. Record the detected language on
+each rule.
+
+CANONICAL ENTITY TYPES FOR THIS DOMAIN:
+- DATA_CONTROLLER — The app publisher that determines purposes and means of
+  processing
+  attributes: controller_name, app_identifier, establishment, dpo_contact,
+  representative_in_eu
+  example: The app publisher named as controller under GDPR Article 4(7)
+- DATA_SUBJECT — The individual whose personal data the app processes
+  attributes: user_type, age_bracket, account_status, residency, consent_state
+  example: App users resident in the European Economic Area
+- PERSONAL_DATA_TYPE — A category of personal data processed by the app
+  attributes: data_category, special_category_flag, identifiability, source,
+  anonymisation_state
+  example: Device identifiers, precise location, contact information
+- PROCESSING_PURPOSE — The stated reason a data category is processed
+  attributes: purpose_statement, necessity_basis, secondary_use,
+  profiling_flag, retention_link
+  example: Advertising and marketing measurement
+- LEGAL_BASIS — The GDPR Article 6 ground relied on for a processing activity
+  attributes: basis_type, consent_mechanism, legitimate_interest_test,
+  contract_reference, withdrawal_route
+  example: Consent under Article 6(1)(a), withdrawable in app settings
+- THIRD_PARTY_PROCESSOR — An external recipient or processor of app data
+  attributes: recipient_name, recipient_role, sdk_identifier,
+  transfer_mechanism, onward_sharing
+  example: Analytics SDK acting as processor under a data-processing agreement
+- DATA_SUBJECT_RIGHT — A GDPR right the policy tells the user how to exercise
+  attributes: right_type, exercise_mechanism, response_deadline,
+  verification_step, complaint_route
+  example: Right of erasure exercisable by email, answered within one month
+- CROSS_BORDER_TRANSFER — A transfer of personal data outside the EEA
+  attributes: destination, transfer_mechanism, adequacy_decision, safeguards,
+  onward_transfer
+  example: Transfer to the United States under Standard Contractual Clauses
+
+CANONICAL RELATIONSHIPS:
+- CONTROLLER_PROCESSES_DATA (DATA_CONTROLLER → PERSONAL_DATA_TYPE) — The
+  first-party processing activity and the data categories it covers
+- PROCESSING_RELIES_ON_BASIS (PROCESSING_PURPOSE → LEGAL_BASIS) — Binds a
+  purpose to the Article 6 ground the policy claims for it
+- DATA_SHARED_WITH_PROCESSOR (PERSONAL_DATA_TYPE → THIRD_PARTY_PROCESSOR) —
+  Disclosure to an SDK, analytics provider, or advertising partner
+- SUBJECT_EXERCISES_RIGHT (DATA_SUBJECT → DATA_SUBJECT_RIGHT) — The mechanism
+  and deadline for exercising a GDPR right
+
+Return ONLY one valid JSON object, no Markdown:
+{{
+  "entity_types": {{
+    "ENTITY_NAME": {{
+      "definition": "Clear business definition in Mobile App Privacy (GDPR, bilingual) context",
+      "description": "Longer explanation of the role this entity plays",
+      "attributes": ["attribute_one", "attribute_two", "attribute_three"],
+      "examples": ["excerpt-grounded example"],
+      "business_rules": ["High-level summary of a rule involving this entity"],
+      "business_rule_summaries": ["Alternate summary list for downstream compatibility"]
+    }}
+  }},
+  "relationships": {{
+    "RELATIONSHIP_NAME": {{
+      "source_entity": "SOURCE_ENTITY_NAME",
+      "target_entity": "TARGET_ENTITY_NAME",
+      "source": "SOURCE_ENTITY_NAME",
+      "target": "TARGET_ENTITY_NAME",
+      "definition": "What this relationship means in Mobile App Privacy (GDPR, bilingual) context",
+      "description": "Directional semantics of the relationship",
+      "cardinality": "one-to-one|one-to-many|many-to-many",
+      "examples": ["excerpt-grounded example"],
+      "business_rules": ["High-level summary of a rule governing this relationship"]
+    }}
+  }},
+  "extraction_metadata": {{
+    "source_document": "Document name or section",
+    "entity_count": 0,
+    "relationship_count": 0
+  }}
+}}
+
+Ground every entity and relationship in the excerpts. Do not invent entities the
+text does not support.
+
+EXCERPTS:
+{sample_content}
