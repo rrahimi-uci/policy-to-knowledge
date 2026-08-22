@@ -10,6 +10,7 @@ readiness_module = import_module("agents.agent_5_5_executable_readiness")
 ExecutableReadinessCompleter = readiness_module.ExecutableReadinessCompleter
 normalise_graph_entity_names = readiness_module._normalise_graph_entity_names
 normalise_rule_contract = readiness_module._normalise_rule_contract
+evidence_pointer = readiness_module._evidence_pointer
 
 
 class Resolver:
@@ -201,6 +202,53 @@ def test_valid_exception_basis_values_are_left_untouched():
         assert rule["exception_verification"]["unresolved_reason"] == ""
 
 
+# ─────────────────────────────────────────────────────────────────────────
+# source_reference: documented (rule_contract_v2.txt, every domain prompt) as
+# a single object, but Agent 3 sometimes emits a list of citations for a rule
+# whose justification spans more than one excerpt. Agent 5.7's own
+# _iter_references already treats that as legitimate — _evidence_pointer must
+# too, rather than silently discarding real evidence. Real case: a
+# ContractNLI pilot rule with an empty `exceptions` list and a list-shaped
+# source_reference left field_evidence.exceptions empty, a hard v2 schema
+# violation that failed the whole pipeline outright.
+# ─────────────────────────────────────────────────────────────────────────
+
+def test_evidence_pointer_accepts_a_single_object():
+    pointer = evidence_pointer({"chunk_path": "a.txt", "section_id": "S1", "source_text": "the term is 5 years"})
+    assert pointer == {"chunk_path": "a.txt", "section_id": "S1", "source_text": "the term is 5 years"}
+
+
+def test_evidence_pointer_accepts_a_list_and_uses_the_first_usable_entry():
+    pointer = evidence_pointer([
+        {"chunk_path": "a.txt", "section_id": "S1", "source_text": "the term is 5 years"},
+        {"chunk_path": "b.txt", "section_id": "S2", "source_text": "renewal requires written notice"},
+    ])
+    assert pointer == {"chunk_path": "a.txt", "section_id": "S1", "source_text": "the term is 5 years"}
+
+
+def test_evidence_pointer_skips_non_mapping_list_entries():
+    pointer = evidence_pointer(["not a dict", {"chunk_path": "a.txt", "section_id": "S1", "source_text": "quote"}])
+    assert pointer == {"chunk_path": "a.txt", "section_id": "S1", "source_text": "quote"}
+
+
+def test_field_evidence_backfill_uses_list_shaped_source_reference():
+    """End-to-end: a rule with exceptions=[] and a list-shaped source_reference
+    must still get a real field_evidence.exceptions pointer, not [] — the
+    exact condition that produced a hard v2 schema violation on a real run."""
+    rule = valid_rule()
+    rule["exceptions"] = []
+    rule["source_reference"] = [
+        {"chunk_path": "a.txt", "section_id": "S1", "source_text": "no exceptions apply to this obligation", "start_word_position": 0, "end_word_position": 6},
+    ]
+    rule["field_evidence"]["exceptions"] = []
+
+    normalise_rule_contract(rule)
+
+    assert rule["field_evidence"]["exceptions"] == [
+        {"chunk_path": "a.txt", "section_id": "S1", "source_text": "no exceptions apply to this obligation"}
+    ]
+
+
 def test_evidence_limited_final_state_stays_under_review(tmp_path):
     organized = tmp_path / "organized" / "B2-1-01"
     organized.mkdir(parents=True)
@@ -222,6 +270,40 @@ def test_evidence_limited_final_state_stays_under_review(tmp_path):
     assert report["invariants"]["schema_consistency"]["pass"] is True
     assert all(rule["requires_review"] is True for rule in final_graph["business_rules"])
     assert all("necessary decision variable" in rule["readiness"]["review_reason"] for rule in final_graph["business_rules"])
+
+
+def test_review_required_rules_without_v2_violations_do_not_fail_schema_consistency(tmp_path):
+    """The bug this reproduces: schema_consistency's pass condition folded in
+    final_contract_error_count (non-evidence_limited final_rule_issues) —
+    exactly what makes a rule requires_review. Since main() checks
+    invariant_pass before rules_requiring_review, that made SystemExit(2)
+    fire on every real run with any review-required rule at all (49-56 on one
+    mortgage run, 7 on a ContractNLI pilot run), permanently pre-empting the
+    SystemExit(3) branch that launches Agent 5.6 — silently defeating the
+    auto-remediation README.md documents ("The full pipeline launches 5.6
+    automatically when Agent 5.5 requests remediation"). schema_consistency
+    must stay gated on genuine v2 structural violations only, so a
+    well-formed-but-incomplete rule can still reach the remediation path."""
+    organized = tmp_path / "organized" / "B2-1-01"
+    organized.mkdir(parents=True)
+    (organized / "001.txt").write_text("A seller servicer must limit pools to three.")
+    graph = graph_with_two_rules()
+    for rule in graph["business_rules"]:
+        # No resolver is passed below, so this candidate state reaches
+        # final_rule_issues unchanged: exception_basis stays "explicit_in_source"
+        # (valid_rule()'s default) but exceptions is empty — flagged as
+        # "explicit exception lacks structured predicates or direct source
+        # evidence", which is NOT evidence_limited: a genuine, well-formed
+        # rule that simply isn't fully resolved yet, not a broken v2 shape.
+        rule["exceptions"] = []
+
+    final_graph, report = ExecutableReadinessCompleter().complete(
+        graph, graph, str(tmp_path / "organized")
+    )
+
+    assert report["rules_requiring_review"] > 0
+    assert report["invariants"]["schema_consistency"]["pass"] is True
+    assert all(rule.get("readiness", {}).get("status") == "review_required" for rule in final_graph["business_rules"])
 
 
 def test_uncovered_pairs_use_mechanical_disjoint_proof_before_falling_back_to_unresolved(tmp_path):
