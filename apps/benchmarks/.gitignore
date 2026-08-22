@@ -3,3 +3,6 @@
 # `python3 scripts/download_benchmarks.py`; datasets.json pins the checksums.
 data/
 raw/
+
+# Pipeline-ready plaintext derived from data/ by scripts/build_source_docs.py (~42 MB).
+*-source-docs/

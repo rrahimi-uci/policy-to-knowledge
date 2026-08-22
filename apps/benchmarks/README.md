@@ -4,11 +4,11 @@ Legal- and privacy-domain NLP corpora used to evaluate the policy-to-knowledge
 extraction pipeline: clause extraction, data-practice classification, and
 document-level inference against expert gold annotations.
 
-The corpora themselves are **not committed** — `data/` and `raw/` are git-ignored
-(~595 MB extracted, ~259 MB of archives, and two of the four are
-redistribution-restricted). [`datasets.json`](datasets.json) is the source of
-truth: it pins every upstream URL, SHA-256, license, and the verified contents,
-so a fresh clone reproduces byte-identical corpora.
+Nothing here is committed except the manifest, the two scripts, and this file —
+`data/`, `raw/`, and `*-source-docs/` are git-ignored (~637 MB in total, and two
+of the four corpora are redistribution-restricted). [`datasets.json`](datasets.json)
+is the source of truth: it pins every upstream URL, SHA-256, license, and the
+verified contents, so a fresh clone reproduces byte-identical corpora.
 
 ## Fetch the datasets
 
@@ -22,6 +22,62 @@ python3 scripts/download_benchmarks.py --force    # re-download existing archive
 
 Archives land in `raw/`, extracted trees in `data/<id>/`. Only `curl` and the
 Python standard library are required.
+
+## Build the pipeline-ready source docs
+
+Each corpus ships its documents in a different shape — plaintext, `|||`-segmented
+HTML, or embedded in the annotation JSON. `build_source_docs.py` normalizes all
+four into flat folders of `.txt`, one per benchmark, ready to feed the extraction
+pipeline:
+
+```bash
+python3 scripts/build_source_docs.py                 # all four
+python3 scripts/build_source_docs.py cuad --limit 20 # cheap pilot subset
+```
+
+| Folder | Documents | Size | Derived from |
+|---|---|---|---|
+| `cuad-source-docs/` | 510 | 27 MB | `full_contract_txt/` — copied verbatim |
+| `opp-115-source-docs/` | 115 | 1.9 MB | `sanitized_policies/` — `\|\|\|` segments unwrapped to text blocks |
+| `contract-nli-source-docs/` | 607 | 7.9 MB | `text` field of `train`/`dev`/`test.json` |
+| `mapp-source-docs/` | 155 | 5.8 MB | EN + DE sanitized policies, `en_`/`de_` prefixed |
+
+In every case the emitted text is **the same text the gold annotations index
+into**, so extracted rules stay alignable with the gold labels:
+
+- CUAD documents are byte-identical to the corpus originals (510/510 verified).
+- ContractNLI text matches the gold `text` exactly with all spans in range (607/607).
+- OPP-115 segment counts match the max segment ID in each policy's annotation CSV (115/115).
+- MAPP documents each resolve to their consolidation annotation file (155/155).
+
+Each folder also carries a `_manifest.json` mapping every emitted filename back to
+its annotation key and gold-annotation path. The pipeline ignores it — it only
+globs `.pdf`/`.txt`/`.md`/`.docx`. Stems are sanitized and capped at 120 characters
+so the pipeline's output directories stay under the filesystem limit; two truncated
+CUAD names collide and get a `__2` suffix, with the full original name preserved in
+the manifest.
+
+## Run the pipeline per benchmark
+
+The pipeline's batch mode treats a subdirectory of `--source` as one batch and
+writes its knowledge graph to `pipeline-output/<batch-name>/`, which gives one KG
+per benchmark:
+
+```bash
+cd ../pipeline
+python3 cli/extract.py --source ../benchmarks --batch-dir cuad-source-docs
+python3 cli/extract.py --source ../benchmarks --batch-dir opp-115-source-docs
+python3 cli/extract.py --source ../benchmarks --batch-dir contract-nli-source-docs
+python3 cli/extract.py --source ../benchmarks --batch-dir mapp-source-docs
+```
+
+Always pass `--batch-dir`. A bare `--batch --source ../benchmarks` would also
+discover `data/` and `raw/` as batches and sweep in the corpora's own PDFs and
+annotation files.
+
+> **Cost.** That is 1,387 documents through a 10-agent LLM pipeline. Start with
+> `build_source_docs.py <id> --limit 20` and one benchmark to size the spend
+> before committing to a full run.
 
 ## The corpora
 
