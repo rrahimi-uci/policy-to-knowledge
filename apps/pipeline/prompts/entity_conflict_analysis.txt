@@ -1,5 +1,5 @@
 Analyse the supplied rules attached to canonical entity `{entity_key}` for
-DMN/BPMN co-firing. Return JSON only: {"analyses":[...]}. Every analysis must
+DMN/BPMN co-firing. Return JSON only: {{"analyses":[...]}}. Every analysis must
 contain `entity`, `rule_ids`, `status` (`conflict`, `non_conflict`, or
 `unresolved`), `reasoning`, and `resolution`.
 
