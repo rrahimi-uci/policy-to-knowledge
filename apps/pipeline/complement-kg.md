@@ -30,6 +30,11 @@ This complement changes `apps/pipeline` only.
    but their cited sections are unioned into the surviving provenance. The
    output compares input and final cited-section sets. Any difference leads
    with `Sections added`, `Sections removed`, and a reason per section.
+5. **Certify the final graph independently (Agent 5.7).** Grounding is checked
+   only after Agent 5.5 completion and any Agent 5.6 remediation, so the
+   verifier sees the exact claims delivered to DMN/BPMN consumers. Agent 5.7
+   cannot rewrite a failed claim; it can only certify it or return a concrete
+   contradiction/evidence limitation.
 
 ## Final rule contract additions
 
@@ -223,8 +228,52 @@ schema-drift invariant.
 
 Pipeline throughput preserves the real dependency DAG: Agents 2 and 3 remain
 sequential, Agent 3.5 overlaps Agent 4, independent documents run in isolated
-subprocesses, Agent 5.5 and 5.6 use bounded batch requests, and a SQLite-backed
+subprocesses, Agents 5.5–5.7 use bounded batch requests, and a SQLite-backed
 adaptive limiter coordinates subprocesses. Agent 2 stops only after measured
 catalog convergence and saves its latest catalog after every iteration. The
 normal CLI reads all throughput, retry, batch, token, and remediation limits
 from `pipeline.performance`; environment variables are optional overrides.
+
+## Independent grounding-certification complement
+
+Agent 5.7 addresses a different failure mode from readiness completion. A rule
+can be structurally valid, conflict-resolved, and executable while still
+containing an invented threshold, inverted operator, wrong actor, unsupported
+scope, or test vector that does not follow from the cited text. The verifier
+therefore operates on a claim projection rather than on a single rule score.
+
+For each final rule, the stage projects atomic claims from the description,
+condition predicates and logic, outcomes, responsible party/counterparties,
+scope, exceptions, and test vectors. It joins these with de-duplicated evidence
+records from `source_reference`, `field_evidence`, exception verification, and
+scope derivation. Before an LLM result can count, deterministic code resolves
+the cited chunk and proves that the cited source text occurs in that chunk.
+
+The independent prompt returns exactly one of `supported`, `contradicted`, or
+`insufficient_evidence` for each `(rule_id, claim_id)`. Supported and
+contradicted verdicts require a quote copied from the supplied evidence. The
+runtime rejects invented evidence IDs/quotes, unexpected claims, duplicate
+answers, and incomplete response coverage. A failure appends a specific
+`grounding` readiness failure without altering the condition, outcome, scope,
+exception, or party claim that caused it.
+
+Verification is parallel at two bounded layers:
+
+1. Claims are packed by both rule count and claim count, preventing unusually
+   large rules from overflowing a request.
+2. Up to 40 local batch workers schedule requests, while the shared adaptive
+   limiter caps real API concurrency at the measured configured ceiling of 16
+   and backs off under rate/transport pressure.
+
+Every batch is checkpointed by model, reasoning effort, source-corpus hash, and
+complete claim/evidence packet. A retry or resumed run reuses only identical
+work. The final certificate binds both the organized-corpus digest and a digest
+of the grounded graph. Stage 6 recomputes both digests and refuses optimized
+input when the report failed, coverage is below 100%, any rule lacks certified
+grounding, or either digest has drifted.
+
+Agent 5.7 writes `kg_grounding_report.json`, `kg_grounding_report.md`, and
+`agent_5_7_grounding_checkpoint.jsonl`, and embeds
+`metadata.grounding_certification` into the optimized graph. These controls
+reduce hallucination risk and make failures auditable; they are evidence-based
+certification, not a claim that model verification is mathematically infallible.

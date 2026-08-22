@@ -91,7 +91,8 @@ KG_BATCH_NAME=fannie_mae_manual_20260821 \
 Change `KG_BATCH_NAME`, `--file`, `--domain`, and `--target-rules` for a new
 run. Outputs are stored under `pipeline-output/<KG_BATCH_NAME>/`. The CLI
 streams each agent's output, including the long-running Agent 5 optimization
-and Agent 5.5 executable-readiness pass, in real time. If your virtual environment is inside
+and Agents 5.5–5.7 readiness, remediation, and grounding passes in real time.
+If the virtual environment lives inside `apps/pipeline`, replace
 `../../.venv/bin/python` with `.venv/bin/python`.
 
 The repeatable profile lives in `config.json` (local runtime) and
@@ -112,7 +113,7 @@ Common `extract.py` flags:
 | `--domain <name>` | Domain prompt overrides (defaults to `config.json` `domain.active`) |
 | `--target-rules <n>` | Target number of rules to extract |
 | `--workers <n>` | Parallel LLM workers |
-| `--step <stage>` | Run one stage (`1`, `2`, `3`, `3.5`, `4`, `5`, `5.5`, `5.6`, or `6`) |
+| `--step <stage>` | Run one stage (`1`, `2`, `3`, `3.5`, `4`, `5`, `5.5`, `5.6`, `5.7`, or `6`) |
 | `--document-workers <n>` | Run independent documents in parallel subprocesses |
 | `--skip-optimize` | Skip Agent 5 (Agent 6 uses Agent 4 output directly) |
 
@@ -161,14 +162,48 @@ a pass makes no further rules ready, reruns all deterministic invariants, and
 never clears `requires_review` without passing those gates. The full pipeline
 launches 5.6 automatically when Agent 5.5 requests remediation.
 
+### Independent grounding certification
+
+Agent 5.7 runs after all Agent 5.5/5.6 mutations. It does not repair or rewrite
+rules. Instead, it projects every description, condition, condition-logic
+expression, outcome, party, scope, exception, and test vector into atomic
+claims and asks an independent verification prompt to classify each claim as
+`supported`, `contradicted`, or `insufficient_evidence`. A supported or
+contradicted result is accepted only when its exact quote can also be located
+deterministically in the organized source corpus.
+
+The stage fails closed if a claim is missing, duplicated, contradicted, or
+insufficient; if the verifier returns an unexpected rule/claim ID; or if any
+cited evidence text cannot be found in its source chunk. It writes:
+
+- `kg_grounding_report.json` and `.md` — graph-level pass/fail counts and
+  rule-level failure explanations.
+- `agent_5_7_grounding_checkpoint.jsonl` — content-keyed batch results reused
+  only while the model, reasoning effort, claim packets, and corpus hash match.
+- `metadata.grounding_certification` in the optimized graph — the corpus and
+  graph hashes certified by the pass.
+
+Run the verifier alone after a focused remediation or other optimized-graph
+change:
+
+```bash
+KG_BATCH_NAME=<existing-run> \
+PYTHONPATH=. ../../.venv/bin/python cli/extract.py \
+  --step 5.7 --provider openai --workers 40 --domain <domain>
+```
+
+Stage 6 refuses to visualize an optimized graph unless the Agent 5.7 report
+passes and its graph/corpus hashes still match. The explicit `--skip-optimize`
+path may visualize Agent 4 output, but labels that path as uncertified.
+
 ### Throughput and stable defaults
 
 Agents 2 and 3 remain sequential because Agent 3 consumes Agent 2's entity
 catalog. The pipeline safely overlaps read-only Agent 3.5 validation with Agent
 4, batches four Agent 5.5 evidence checks per request, checkpoints Agent
-2/5.5/5.6 progress, and shares an adaptive API limiter across subprocesses.
-The limiter starts at four requests, increases after 12 successes, caps at
-eight, and halves on throttling or transport backpressure. Each run writes
+2/5.5/5.6/5.7 progress, and shares an adaptive API limiter across subprocesses.
+The limiter starts at eight requests, increases after four successes, caps at
+16, and halves on throttling or transport backpressure. Each run writes
 `llm_performance.json`.
 
 | Variable | Default | Purpose |
@@ -176,15 +211,20 @@ eight, and halves on throttling or transport backpressure. Each run writes
 | `pipeline.max_workers` | `40` | Local scheduling capacity; not API concurrency |
 | `pipeline.document_workers` | `4` | Independent documents processed concurrently |
 | `KG_LLM_CONCURRENCY` | `8` | Per-process safety gate above the shared limiter |
-| `KG_GLOBAL_LLM_CONCURRENCY_INITIAL` | `4` | Proven stable starting request limit |
-| `KG_GLOBAL_LLM_CONCURRENCY_MAX` | `8` | Adaptive ceiling across subprocesses |
-| `KG_GLOBAL_LLM_SUCCESS_WINDOW` | `12` | Successes before increasing the ceiling |
+| `KG_GLOBAL_LLM_CONCURRENCY_INITIAL` | `8` | Measured stable starting request limit |
+| `KG_GLOBAL_LLM_CONCURRENCY_MAX` | `16` | Adaptive ceiling across subprocesses |
+| `KG_GLOBAL_LLM_SUCCESS_WINDOW` | `4` | Successes before increasing the ceiling |
 | `KG_READINESS_RULES_PER_REQUEST` | `4` | Agent 5.5 evidence batch size |
 | `KG_REMEDIATION_RULES_PER_REQUEST` | `4` | Agent 5.6 source-remediation batch size |
 | `KG_REMEDIATION_PAIRS_PER_REQUEST` | `12` | Agent 5.6 conflict-pair batch size |
 | `KG_REMEDIATION_WORKERS` | `40` | Local Agent 5.6 scheduling workers |
 | `KG_REMEDIATION_LLM_CONCURRENCY` | `8` | Local API gate; global limiter still applies |
 | `KG_REMEDIATION_MAX_PASSES` | `3` | Targeted passes, with no forced readiness |
+| `KG_GROUNDING_RULES_PER_REQUEST` | `4` | Rules per independent verifier request |
+| `KG_GROUNDING_CLAIMS_PER_REQUEST` | `48` | Claim ceiling per verifier request |
+| `KG_GROUNDING_RELATIONSHIPS_PER_REQUEST` | `12` | Compact graph relationships per request |
+| `KG_GROUNDING_WORKERS` | `40` | Local Agent 5.7 batch scheduling workers |
+| `KG_GROUNDING_LLM_CONCURRENCY` | `16` | Local verifier API gate; global limiter still applies |
 | `KG_ENTITY_EARLY_STOP` | `true` | Stop Agent 2 after measured convergence |
 | `KG_ENTITY_MIN_ITERATIONS` | `2` | Minimum Agent 2 iterations |
 

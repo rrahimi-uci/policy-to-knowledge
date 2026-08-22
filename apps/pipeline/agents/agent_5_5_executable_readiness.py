@@ -19,6 +19,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from utils.config import get_config
 from utils.kg_readiness import (
+    CANONICAL_ENTITY_RE,
     cited_sections,
     corpus_manifest,
     dependency_edges,
@@ -32,7 +33,14 @@ from utils.kg_readiness import (
 )
 from utils.llm_client import create_llm_client
 from utils.prompt_manager import get_prompt_manager
-from utils.rule_contract import validate_rule_v2
+from utils.rule_contract import EXCEPTION_BASES, SCOPE_BASES, validate_rule_v2
+
+# Completion fields that every downstream reader (kg_readiness.final_rule_issues,
+# this module's own searched_chunk_count/corpus_sha256 stamping) treats as a
+# structured object and calls .get() on directly. A resolver returning anything
+# else for one of these — a plain string, most often — must not overwrite the
+# rule's existing value; see the two field-copy loops in this file.
+_DICT_SHAPED_COMPLETION_FIELDS = {"exception_verification", "scope_derivation", "applicability_scope"}
 
 
 class EvidenceResolver(Protocol):
@@ -163,21 +171,108 @@ LEGACY_OPERATORS = {
 }
 
 
-def _normalise_graph_entity_names(value: Any) -> Any:
-    """Replace only exact legacy entity identifiers, including dictionary keys."""
+def _to_screaming_snake_case(name: str) -> str:
+    """CreditScore -> CREDIT_SCORE; PostClosingQCReview -> POST_CLOSING_QC_REVIEW.
+
+    Verified against all 24 entity names from one real extraction run,
+    including acronym runs (QC) and short words (Of) — every already-canonical
+    name passes through unchanged, so applying this to a name that doesn't
+    need it is always a no-op.
+    """
+    step1 = re.sub(r"(.)([A-Z][a-z]+)", r"\1_\2", name)
+    step2 = re.sub(r"([a-z0-9])([A-Z])", r"\1_\2", step1)
+    # Collapse any run of underscores/non-alphanumerics the substitutions above
+    # can introduce next to a name's own separators (e.g. "Mixed_Case" already
+    # has an underscore where step1 also inserts one) and strip the ends, so
+    # the result always matches CANONICAL_ENTITY_RE rather than failing it
+    # with a double underscore.
+    step3 = re.sub(r"[^A-Za-z0-9]+", "_", step2).strip("_")
+    return step3.upper()
+
+
+def _build_entity_name_map(graph: Any) -> dict[str, str]:
+    """Map every non-canonical entity_types key in *graph* to its
+    SCREAMING_SNAKE_CASE form, merged over the fixed legacy list.
+
+    The extraction prompt asks for entity type keys in this form, but nothing
+    enforces it at extraction time — Agent 2 has produced PascalCase names
+    (CreditScore, DocumentCustodian, ...) for entire graphs, and the fixed
+    LEGACY_ENTITY_NAMES list only ever covered six specific names discovered
+    reactively in earlier datasets. Building the map from the graph's own
+    entity_types generalizes the fix to whatever a given run actually
+    produced, instead of requiring every new bad name to be added by hand.
+
+    A rule's own `responsible_party`/`counterparties` references are scanned
+    too: a reference can be non-canonical even when the entity it refers to
+    is already canonical everywhere in entity_types (e.g. one rule citing
+    "Borrower" as a counterparty while entity_types only ever defines
+    "BORROWER") — that name never appears as an entity_types key, so it would
+    otherwise never become a normalization candidate at all.
+    """
+    mapping = dict(LEGACY_ENTITY_NAMES)
+    entity_types = graph.get("entity_types") if isinstance(graph, Mapping) else None
+    known_canonical_keys: set[str] = set(mapping.values())
+    if isinstance(entity_types, Mapping):
+        for key in entity_types:
+            key_str = str(key)
+            if not key_str:
+                continue
+            if CANONICAL_ENTITY_RE.fullmatch(key_str):
+                known_canonical_keys.add(key_str)
+                continue
+            canonical = _to_screaming_snake_case(key_str)
+            if canonical and canonical != key_str:
+                mapping.setdefault(key_str, canonical)
+                known_canonical_keys.add(canonical)
+
+    # A rule's own reference can be non-canonical even when the entity it
+    # refers to is already canonical everywhere in entity_types (e.g. one
+    # rule citing "Borrower" as a counterparty while entity_types only ever
+    # defines "BORROWER") — that string never appears as an entity_types key,
+    # so without this it would never become a normalization candidate at
+    # all. Only remap a reference when its canonical form is already a known
+    # entity: an unrelated typo ("Boroower") must stay exactly as written so
+    # it keeps failing naming_issues visibly, rather than being silently
+    # rewritten to a differently-wrong, canonical-looking name nobody defined.
+    rules = graph.get("business_rules") if isinstance(graph, Mapping) else None
+    if isinstance(rules, list):
+        for rule in rules:
+            if not isinstance(rule, Mapping):
+                continue
+            references = [rule.get("responsible_party"), *(rule.get("counterparties") or [])]
+            for reference in references:
+                key_str = str(reference) if reference else ""
+                if not key_str or key_str in mapping or CANONICAL_ENTITY_RE.fullmatch(key_str):
+                    continue
+                canonical = _to_screaming_snake_case(key_str)
+                if canonical and canonical != key_str and canonical in known_canonical_keys:
+                    mapping[key_str] = canonical
+    return mapping
+
+
+def _normalise_graph_entity_names(value: Any, mapping: Mapping[str, str] | None = None) -> Any:
+    """Replace exact entity identifiers — the fixed legacy list plus any
+    non-canonical entity_types key found in *value* itself — including
+    dictionary keys.
+
+    `mapping` is computed once from the top-level graph on the outermost call
+    and threaded through the recursion; callers normally pass only `value`.
+    """
+    if mapping is None:
+        mapping = _build_entity_name_map(value)
     if isinstance(value, dict):
         result: dict[Any, Any] = {}
         for key, item in value.items():
-            normalised_key = LEGACY_ENTITY_NAMES.get(str(key), key)
-            normalised_item = _normalise_graph_entity_names(item)
+            normalised_key = mapping.get(str(key), key)
+            normalised_item = _normalise_graph_entity_names(item, mapping)
             if normalised_key in result and result[normalised_key] != normalised_item:
                 raise ValueError(f"entity-name normalization collision at {normalised_key!r}")
             result[normalised_key] = normalised_item
         return result
     if isinstance(value, list):
-        return [_normalise_graph_entity_names(item) for item in value]
+        return [_normalise_graph_entity_names(item, mapping) for item in value]
     if isinstance(value, str):
-        return LEGACY_ENTITY_NAMES.get(value, value)
+        return mapping.get(value, value)
     return value
 
 
@@ -195,7 +290,7 @@ def _evidence_pointer(value: Any) -> dict[str, str] | None:
     pointer = {
         "chunk_path": str(value.get("chunk_path", "")).strip(),
         "section_id": str(value.get("section_id", "")).strip(),
-        "source_text": str(value.get("source_text", value.get("text", ""))).strip(),
+        "source_text": str(value.get("source_text", value.get("text", value.get("quote", "")))).strip(),
     }
     return pointer if all(pointer.values()) else None
 
@@ -282,8 +377,37 @@ def _threshold_output_name(variable_name: str, operator: Any) -> str:
     return variable_name
 
 
+def _coerce_unresolved_basis(rule: dict[str, Any], basis_field: str, valid_values: set[str], verification_field: str, unresolved_value: str) -> None:
+    """Coerce an off-schema *_basis string into the correct unresolved final
+    state, preserving the model's own explanation rather than discarding it.
+
+    Both scope_basis and exception_basis have been observed holding a
+    free-text explanation instead of an enum member — sometimes the model's
+    own reasoning wholesale ("unresolved_in_source_exception_not_structurable
+    _with_available_rule_variables (source states...)"), sometimes a compact
+    ad hoc label ("explicit_in_source_but_details_not_in_evidence_packet").
+    Every real case observed is semantically an unresolved state the model
+    couldn't cleanly structure — not a new final state and not one of the
+    documented ones — so it is normalized to the one unresolved bucket that
+    already exists for this field, with the original string kept as the
+    reviewable reason rather than silently dropped or left as a raw v2
+    schema violation with no actionable path.
+    """
+    value = rule.get(basis_field)
+    if not isinstance(value, str) or value in valid_values:
+        return
+    verification = rule.get(verification_field)
+    verification_map = dict(verification) if isinstance(verification, Mapping) else {}
+    if not str(verification_map.get("unresolved_reason", "")).strip():
+        verification_map["unresolved_reason"] = value
+    rule[verification_field] = verification_map
+    rule[basis_field] = unresolved_value
+
+
 def _normalise_rule_contract(rule: dict[str, Any]) -> dict[str, Any]:
     """Normalize legacy extraction shapes without changing rule/source identity."""
+    _coerce_unresolved_basis(rule, "exception_basis", EXCEPTION_BASES, "exception_verification", "unresolved_after_full_document_search")
+    _coerce_unresolved_basis(rule, "scope_basis", SCOPE_BASES, "scope_derivation", "unresolved_after_source_review")
     variables = rule.get("variables")
     if not isinstance(variables, list):
         variables = []
@@ -677,8 +801,16 @@ class ExecutableReadinessCompleter:
         # The resolver may only update evidence-derived fields, never IDs, rules,
         # dependencies, or source provenance established by earlier stages.
         for field in ("exceptions", "exception_basis", "exception_verification", "applicability_scope", "scope_basis", "scope_derivation"):
-            if field in completion:
-                rule[field] = completion[field]
+            if field not in completion:
+                continue
+            if field in _DICT_SHAPED_COMPLETION_FIELDS and not isinstance(completion[field], Mapping):
+                # A malformed resolver response (e.g. a plain string where a
+                # structured object was expected) must not silently corrupt
+                # the rule — keep whatever was already there and let
+                # final_rule_issues flag the rule as still needing evidence,
+                # rather than crash a later isinstance-unguarded read of it.
+                continue
+            rule[field] = completion[field]
         verification = rule.get("exception_verification")
         if isinstance(verification, dict):
             # Search coverage is evidence produced by the local complete-corpus
@@ -729,8 +861,11 @@ class ExecutableReadinessCompleter:
                 rule = self._complete_evidence(rule, packet)
             else:
                 for field in ("exceptions", "exception_basis", "exception_verification", "applicability_scope", "scope_basis", "scope_derivation"):
-                    if field in completion:
-                        rule[field] = deepcopy(completion[field])
+                    if field not in completion:
+                        continue
+                    if field in _DICT_SHAPED_COMPLETION_FIELDS and not isinstance(completion[field], Mapping):
+                        continue
+                    rule[field] = deepcopy(completion[field])
                 verification = rule.get("exception_verification")
                 if isinstance(verification, dict):
                     verification["searched_chunk_count"] = corpus.get("chunk_count", 0)
@@ -740,6 +875,15 @@ class ExecutableReadinessCompleter:
                 if isinstance(derivation, dict):
                     derivation["reviewed_chunk_count"] = corpus.get("chunk_count", 0)
                     derivation["corpus_sha256"] = corpus.get("corpus_sha256")
+            # Re-apply after the merge, not just before it: a completion's own
+            # applicability_scope (richer, but not obligated to repeat every
+            # standard key) replaces the pre-completion default wholesale
+            # above, which can silently drop a standard key the resolver
+            # didn't happen to populate.
+            if not isinstance(rule.get("applicability_scope"), dict):
+                rule["applicability_scope"] = {}
+            for key in ("loan_types", "occupancy_types", "transaction_types"):
+                rule["applicability_scope"].setdefault(key, [])
             rule = _normalise_rule_contract(rule)
             rule["execution"] = _project_execution(rule)
             self._save_checkpoint(cache_key, rule)
@@ -875,13 +1019,32 @@ class ExecutableReadinessCompleter:
                 for analysis in entries
                 for pair in combinations(sorted(str(rule_id) for rule_id in analysis.get("rule_ids", []) if str(rule_id) in member_ids), 2)
             }
-            entries.extend({
-                "entity": entity,
-                "status": "unresolved",
-                "rule_ids": list(pair),
-                "reasoning": "The entity-local analyser did not return a co-firing determination for this pair.",
-                "resolution": "Manual review required.",
-            } for pair in sorted(expected_pairs - covered_pairs))
+            # The prompt asks the model for "every material pair or an
+            # unresolved group with a specific reason" — it is not instructed
+            # to enumerate every combinatorial pair, so a small group's
+            # single-call response legitimately omits pairs it judged
+            # obviously safe. Apply the same mechanical disjoint-outcome
+            # proof the >max_rules_per_call branch already uses before
+            # falling back to a generic "unresolved" filler, so a small
+            # group gets the same non_conflict coverage a large group would.
+            for pair in sorted(expected_pairs - covered_pairs):
+                rule_a, rule_b = pair
+                if outcome_variables(rule_a).isdisjoint(outcome_variables(rule_b)):
+                    entries.append({
+                        "entity": entity,
+                        "status": "non_conflict",
+                        "rule_ids": list(pair),
+                        "reasoning": "The rules have disjoint outcome variables, so simultaneous firing cannot assign contradictory values.",
+                        "resolution": "No conflict; preserve each rule's distinct output mapping.",
+                    })
+                else:
+                    entries.append({
+                        "entity": entity,
+                        "status": "unresolved",
+                        "rule_ids": list(pair),
+                        "reasoning": "The entity-local analyser did not return a co-firing determination for this pair, and the rules share an outcome variable so disjointness cannot resolve it mechanically.",
+                        "resolution": "Manual review required.",
+                    })
             return entries
 
         if skip_conflicts is None:

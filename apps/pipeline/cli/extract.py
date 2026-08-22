@@ -9,6 +9,7 @@ Orchestrates the complete pipeline from raw PDF documents to structured knowledg
 3.5. Rule Validation: Validate extracted rules for quality and consistency
 4. Rules+Entities Merger: Merge business rules with entity definitions
 5. Knowledge Graph Optimization: Deduplicate rules and analyze dependencies
+5.5-5.7. Readiness, focused remediation, and independent source-grounding certification
 6. Visualization and Reports: Generate interactive HTML visualization
 
 Author: Reza Rahimi
@@ -204,10 +205,10 @@ class KnowledgeExtractionPipeline:
         profile_environment = {
             "KG_LLM_CONCURRENCY": ("llm_concurrency", 8),
             "KG_REASONING_MAX_COMPLETION_TOKENS": ("reasoning_max_completion_tokens", 32768),
-            "KG_GLOBAL_LLM_CONCURRENCY_INITIAL": ("global_llm_concurrency_initial", 4),
-            "KG_GLOBAL_LLM_CONCURRENCY_MAX": ("global_llm_concurrency_max", 8),
+            "KG_GLOBAL_LLM_CONCURRENCY_INITIAL": ("global_llm_concurrency_initial", 8),
+            "KG_GLOBAL_LLM_CONCURRENCY_MAX": ("global_llm_concurrency_max", 16),
             "KG_GLOBAL_LLM_CONCURRENCY_MIN": ("global_llm_concurrency_min", 1),
-            "KG_GLOBAL_LLM_SUCCESS_WINDOW": ("global_llm_success_window", 12),
+            "KG_GLOBAL_LLM_SUCCESS_WINDOW": ("global_llm_success_window", 4),
             "KG_GLOBAL_LLM_LEASE_SECONDS": ("global_llm_lease_seconds", 900),
             "KG_GLOBAL_LLM_POLL_SECONDS": ("global_llm_poll_seconds", 0.1),
             "KG_BATCH_MAX_ATTEMPTS": ("batch_max_attempts", 2),
@@ -234,6 +235,14 @@ class KnowledgeExtractionPipeline:
             "KG_REMEDIATION_MAX_PASSES": ("remediation_max_passes", 3),
             "KG_REMEDIATION_RULE_MAX_TOKENS": ("remediation_rule_max_tokens", 12000),
             "KG_REMEDIATION_CONFLICT_MAX_TOKENS": ("remediation_conflict_max_tokens", 12000),
+            "KG_GROUNDING_WORKERS": ("grounding_workers", 40),
+            "KG_GROUNDING_LLM_CONCURRENCY": ("grounding_llm_concurrency", 16),
+            "KG_GROUNDING_RULES_PER_REQUEST": ("grounding_rules_per_request", 4),
+            "KG_GROUNDING_CLAIMS_PER_REQUEST": ("grounding_claims_per_request", 48),
+            "KG_GROUNDING_RELATIONSHIPS_PER_REQUEST": ("grounding_relationships_per_request", 12),
+            "KG_GROUNDING_PARSE_ATTEMPTS": ("grounding_parse_attempts", 3),
+            "KG_GROUNDING_MAX_TOKENS": ("grounding_max_tokens", 16000),
+            "KG_GROUNDING_EVIDENCE_CHARS_PER_RULE": ("grounding_evidence_chars_per_rule", 8000),
             "KG_ENTITY_EARLY_STOP": ("entity_early_stop", True),
             "KG_ENTITY_MIN_ITERATIONS": ("entity_min_iterations", 2),
             "KG_ENTITY_QUALITY_TARGET": ("entity_quality_target", 90),
@@ -1032,6 +1041,28 @@ class KnowledgeExtractionPipeline:
                 if remediation_return_code != 0:
                     raise RuntimeError(f"Agent 5.6 failed with unexpected exit code {remediation_return_code}")
                 print("✓ Agent 5.6 made every rule executable-readiness complete", flush=True)
+
+            # Agent 5.7 is deliberately independent and non-rewriting. It
+            # certifies every executable claim against the organized source
+            # corpus after all optimization/readiness mutations are complete.
+            grounding_agent = _ROOT / "agents" / "agent_5_7_grounding_verifier.py"
+            print("📡 Streaming Agent 5.7 claim-grounding verification in real time...", flush=True)
+            grounding_process = subprocess.Popen(
+                [sys.executable, str(grounding_agent)], cwd=_ROOT,
+                stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True,
+                bufsize=1, env=env,
+            )
+            for line in grounding_process.stdout:
+                print(line, end="", flush=True)
+            grounding_return_code = grounding_process.wait()
+            if grounding_return_code == 3:
+                raise RuntimeError(
+                    "Agent 5.7 found unsupported, contradicted, or invalidly cited claims; inspect "
+                    f"{optimized_dir / 'kg_grounding_report.json'}"
+                )
+            if grounding_return_code != 0:
+                raise RuntimeError(f"Agent 5.7 failed with unexpected exit code {grounding_return_code}")
+            print("✓ Agent 5.7 certified every executable claim against the source corpus", flush=True)
             
             self.flow_state["steps_completed"].append({
                 "agent": "Knowledge Graph Optimization",
@@ -1078,6 +1109,19 @@ class KnowledgeExtractionPipeline:
             "Repairing only rules and conflict pairs that still require review",
             "5.6",
         )
+
+    def step5_7_verify_grounding(self) -> bool:
+        """Independently certify every optimized rule claim against source."""
+        graph = self.config.get_optimized_dir() / "optimized_compliance_knowledge_graph.json"
+        if not graph.exists():
+            print(f"❌ Agent 5.7 requires an existing optimized graph: {graph}")
+            return False
+        return self._run_agent(
+            "Independent Grounding Verifier",
+            [sys.executable, str(_ROOT / "agents" / "agent_5_7_grounding_verifier.py")],
+            "Certifying every condition, outcome, party, scope, exception, and test vector against source",
+            "5.7",
+        )
     
     def step6_visualize_knowledge_graph(self) -> bool:
         """
@@ -1099,9 +1143,33 @@ class KnowledgeExtractionPipeline:
         if optimized_json.exists():
             print(f"📂 Using optimized data: {optimized_json}")
             print(f"✅ Optimized knowledge graph exists")
+            grounding_report = self.config.get_optimized_dir() / "kg_grounding_report.json"
+            if not grounding_report.exists():
+                print(f"❌ Grounding certificate not found: {grounding_report}")
+                print("   Run Step 5.7 before visualizing an optimized graph.")
+                return False
+            try:
+                from agents.agent_5_7_grounding_verifier import certification_issues
+                from utils.kg_readiness import source_document_index
+
+                graph_data = json.loads(optimized_json.read_text(encoding="utf-8"))
+                report_data = json.loads(grounding_report.read_text(encoding="utf-8"))
+                corpus_sha256 = source_document_index(str(self.organized_dir))["corpus_sha256"]
+                grounding_issues = certification_issues(graph_data, report_data, corpus_sha256)
+            except (OSError, json.JSONDecodeError, TypeError, KeyError) as exc:
+                print(f"❌ Grounding certificate could not be validated: {exc}")
+                return False
+            if grounding_issues:
+                print("❌ Optimized graph is not eligible for visualization:")
+                for issue in grounding_issues:
+                    print(f"   • {issue}")
+                print("   Rerun Step 5.7 after correcting the reported grounding failures.")
+                return False
+            print("✅ Agent 5.7 grounding certificate matches the current graph and source corpus")
         elif merged_json.exists():
             print(f"📂 Using merged data (Step 5 skipped): {merged_json}")
             print(f"✅ Merged knowledge graph exists")
+            print("⚠️  This --skip-optimize path is not executable-readiness or grounding certified.")
         else:
             print(f"❌ No knowledge graph found. Run Step 4 (or Step 5) first!")
             print(f"   Looked for:")
@@ -1479,11 +1547,12 @@ class KnowledgeExtractionPipeline:
             "5": self.step5_optimize_knowledge_graph,
             "5.5": self.step5_5_complete_readiness,
             "5.6": self.step5_6_remediate_readiness,
+            "5.7": self.step5_7_verify_grounding,
             "6": self.step6_visualize_knowledge_graph,
         }
         
         if step_key not in steps:
-            print(f"❌ Invalid step number: {step_number}. Valid steps: 1, 2, 3, 3.5, 4, 5, 5.5, 5.6, 6")
+            print(f"❌ Invalid step number: {step_number}. Valid steps: 1, 2, 3, 3.5, 4, 5, 5.5, 5.6, 5.7, 6")
             return False
         
         print(f"🎬 Running Step {step_number} only")
@@ -1918,8 +1987,8 @@ Examples:
     
     parser.add_argument(
         "--step",
-        choices=["1", "2", "3", "3.5", "4", "5", "5.5", "5.6", "6"],
-        help="Run one stage only (5.5: readiness completion, 5.6: focused remediation)"
+        choices=["1", "2", "3", "3.5", "4", "5", "5.5", "5.6", "5.7", "6"],
+        help="Run one stage only (5.5: readiness, 5.6: remediation, 5.7: grounding certification)"
     )
     
     parser.add_argument(

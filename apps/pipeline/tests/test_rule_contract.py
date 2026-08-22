@@ -1,6 +1,6 @@
 from copy import deepcopy
 
-from utils.rule_contract import annotate_rule_contract, parse_rule_v2
+from utils.rule_contract import SCOPE_BASES, annotate_rule_contract, parse_rule_v2, validate_rule_v2
 
 
 def valid_rule():
@@ -155,3 +155,62 @@ def test_string_variables_must_be_explicitly_free_text():
     result = parse_rule_v2(candidate, {"SELLER_SERVICER", "FANNIE_MAE"})
 
     assert any(issue.code == "unjustified_string_variable" for issue in result.issues)
+
+
+# ─────────────────────────────────────────────────────────────────────────
+# scope_basis: "explicit_in_source" must validate like "explicit"
+#
+# rule_contract_v2.txt documents exception_basis's "explicit_in_source" /
+# "explicitly_none_in_source" convention explicitly, but never states
+# scope_basis's equivalent this precisely — so the model reasonably extends
+# that same convention to scope_basis by analogy. In one real extraction run
+# this was 254 of 352 rules (72%), all rejected by a schema that only
+# accepted bare "explicit", accounting for 261 of 275 schema violations
+# blocking that run's readiness certification.
+# ─────────────────────────────────────────────────────────────────────────
+
+def test_explicit_in_source_is_a_valid_scope_basis():
+    assert "explicit_in_source" in SCOPE_BASES
+    assert "explicit" in SCOPE_BASES
+
+
+def test_rule_with_explicit_in_source_scope_basis_has_no_scope_basis_issue():
+    rule = valid_rule()
+    rule["scope_basis"] = "explicit_in_source"
+
+    issues = validate_rule_v2(rule, {"SELLER_SERVICER", "FANNIE_MAE"})
+
+    assert not any(issue.code == "invalid_scope_basis" for issue in issues)
+
+
+def test_rule_with_genuinely_invalid_scope_basis_is_still_rejected():
+    """The fix must not turn scope_basis into an open field — an actual typo
+    or invented value must still fail."""
+    rule = valid_rule()
+    rule["scope_basis"] = "explicitly_scoped_in_source"  # a real one-off variant seen in practice
+
+    issues = validate_rule_v2(rule, {"SELLER_SERVICER", "FANNIE_MAE"})
+
+    assert any(issue.code == "invalid_scope_basis" for issue in issues)
+
+
+# ─────────────────────────────────────────────────────────────────────────
+# scope_basis: "explicitly_none_in_source" — the same cross-pollination from
+# exception_basis's own "explicitly_none_in_source" value, this time meaning
+# "the source explicitly confirms no loan/occupancy/transaction restriction
+# applies." Seen on 4 rules in one real run, each backed by a genuine source
+# citation (an affirmative claim, not an absence of information) — so it is
+# accepted the same way "explicit_in_source" was.
+# ─────────────────────────────────────────────────────────────────────────
+
+def test_explicitly_none_in_source_is_a_valid_scope_basis():
+    assert "explicitly_none_in_source" in SCOPE_BASES
+
+
+def test_rule_with_explicitly_none_in_source_scope_basis_has_no_scope_basis_issue():
+    rule = valid_rule()
+    rule["scope_basis"] = "explicitly_none_in_source"
+
+    issues = validate_rule_v2(rule, {"SELLER_SERVICER", "FANNIE_MAE"})
+
+    assert not any(issue.code == "invalid_scope_basis" for issue in issues)

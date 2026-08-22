@@ -129,13 +129,18 @@ class TestConfigGetters:
 
     def test_get_optimized_performance_profile(self):
         profile = get_config().get_performance_profile()
-        assert profile["global_llm_concurrency_initial"] == 4
-        assert profile["global_llm_concurrency_max"] == 8
+        assert profile["global_llm_concurrency_initial"] == 8
+        assert profile["global_llm_concurrency_max"] == 16
         assert profile["llm_concurrency"] == 8
         assert profile["batch_parse_attempts"] == 3
         assert profile["readiness_rules_per_request"] == 4
         assert profile["remediation_workers"] == 40
         assert profile["remediation_max_passes"] == 3
+        assert profile["grounding_workers"] == 40
+        assert profile["grounding_llm_concurrency"] == 16
+        assert profile["grounding_rules_per_request"] == 4
+        assert profile["grounding_claims_per_request"] == 48
+        assert profile["grounding_relationships_per_request"] == 12
 
     def test_get_max_workers_env_override(self):
         config = get_config()

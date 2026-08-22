@@ -2,19 +2,22 @@
 
 Agent reference for the Policy to Knowledge extraction and comparison pipeline.
 Each agent is a self-contained module in this directory. Agents 1–6 turn source
-documents into an optimized knowledge graph (driven by `cli/extract.py`); Agent
-5.5 certifies executable readiness before visualization; agents
+documents into an optimized knowledge graph (driven by `cli/extract.py`);
+Agents 5.5–5.7 complete readiness, remediate evidence-backed gaps, and certify
+claim-level grounding before visualization; agents
 7–10 compare and merge two existing graphs (driven by `cli/compare.py`).
 
 ```text
-Documents → [1] → [2] → [3] → [3.5] → [4] → [5] → [5.5] → [6] → Knowledge Graph
-                                                              │
+Documents → [1] → [2] → [3] → [3.5] → [4] → [5] → [5.5] → [5.6*] → [5.7] → [6]
+                                                                            │
                         KG₁ + KG₂ → [7] → [8] → [9] → [10] → Comparison Reports
 ```
 
+`5.6*` runs only when Agent 5.5 identifies evidence-backed remediation work.
+
 All LLM-using agents call the OpenAI model configured in `config.json`
 (default reasoning model `gpt-5.2`, `reasoning_effort: medium`; the optimizer
-agent uses `gpt-5-mini`). See [Configuration](#configuration).
+agent uses the configured optimizer model). See [Configuration](#configuration).
 
 ## Agent Summary
 
@@ -22,11 +25,13 @@ agent uses `gpt-5-mini`). See [Configuration](#configuration).
 | --- | --- | --- | --- | :---: | :---: |
 | 1 | Document Organizer | `agent_1_document_organizer.py` | `DocumentChunkingAgent` | ✓ | — |
 | 2 | Entity & Relationship Extractor | `agent_2_entity_extractor.py` | `ComplianceEntityRelationshipAgent` | ✓ | — |
-| 3 | Rules Extractor | `agent_3_rules_extractor.py` | `BusinessRulesExtractor` | ✓ | `pipeline.max_workers` (30) |
+| 3 | Rules Extractor | `agent_3_rules_extractor.py` | `BusinessRulesExtractor` | ✓ | `pipeline.max_workers` (40) |
 | 3.5 | Rule Validator | `agent_3_5_rule_validator.py` | `RuleValidationAgent` | ✓ | — |
 | 4 | Rules + Entities Merger | `agent_4_rules_with_entities_merger.py` | `KnowledgeEnricher` | — | — |
 | 5 | Knowledge Graph Optimizer | `agent_5_knowledge_graph_optimizer.py` | `KnowledgeGraphOptimizer` | ✓ | — |
-| 5.5 | Executable Readiness | `agent_5_5_executable_readiness.py` | `ExecutableReadinessCompleter` | ✓ | — |
+| 5.5 | Executable Readiness | `agent_5_5_executable_readiness.py` | `ExecutableReadinessCompleter` | ✓ | 16 local / 8 API |
+| 5.6 | Focused Readiness Remediation | `agent_5_6_readiness_remediator.py` | `ReadinessRemediator` | ✓ | 40 local / 8 API |
+| 5.7 | Independent Grounding Verifier | `agent_5_7_grounding_verifier.py` | `GroundingVerifier` | ✓ | 40 local / 16 API |
 | 6 | Visualization & Report | `agent_6_visualization_and_report.py` | `KnowledgeGraphVisualizer` | — | — |
 | 7 | Rule-Type Clusterer | `agent_7_rule_type_clusterer.py` | `RuleBehaviorClusterer` | — | — |
 | 8 | Semantic Rule Matcher | `agent_8_semantic_rule_matcher.py` | `SemanticRuleMatcher` | ✓ | `--workers` (31) |
@@ -204,19 +209,46 @@ pass when any non-negotiable invariant or unresolved rule remains.
 - Enforces corpus integrity, canonical entity naming, uniform final schema, and
   zero dangling rule references.
 
+### Agent 5.6 — Focused Readiness Remediation
+
+Processes only Agent 5.5 failures, in checkpointed parallel batches, and then
+reruns the deterministic readiness gates. It never forces unresolved evidence
+to pass.
+
+| | |
+|---|---|
+| **Consumes** | Optimized graph and Agent 5.5 readiness report |
+| **Produces** | Remediated graph and `agent_5_6_remediation_report.json` |
+| **Run** | Automatically when needed, or `cli/extract.py --step 5.6` |
+
+### Agent 5.7 — Independent Grounding Verifier
+
+Projects every final rule into atomic executable claims and independently
+checks each claim against the cited organized source. The stage cannot rewrite
+claims and fails closed on unsupported, contradicted, missing, duplicate, or
+invalidly cited results.
+
+| | |
+|---|---|
+| **Consumes** | Final optimized graph and organized source corpus |
+| **Produces** | Grounded graph, `kg_grounding_report.{json,md}`, and a reusable JSONL checkpoint |
+| **Run** | Automatically after readiness, or `cli/extract.py --step 5.7` |
+
 ### Agent 6 — Visualization & Report
 
 Generates an interactive HTML visualization and report. No LLM calls.
 
 | | |
 |---|---|
-| **Consumes** | Optimized KG from Agent 5 |
+| **Consumes** | Agent 5.7-certified optimized KG, or explicitly uncertified Agent 4 output with `--skip-optimize` |
 | **Produces** | `agent-6-visualization-and-report/<source>_knowledge_graph.html` |
 | **Run** | `.venv/bin/python cli/extract.py --step 6` |
 
 - Interactive network graph (vis.js), color-coded by rule type.
 - Searchable, sortable rules table with a dependency evidence column.
 - Self-contained HTML with a statistics dashboard.
+- Refuses optimized input when its Agent 5.7 graph/corpus certificate is absent,
+  failed, or stale.
 
 ---
 

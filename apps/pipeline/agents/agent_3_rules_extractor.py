@@ -16,6 +16,7 @@ import time
 import threading
 from dataclasses import dataclass, asdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from difflib import SequenceMatcher
 
 # Add project root to Python path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -31,6 +32,65 @@ from utils.rule_contract import annotate_rule_contract
 def _print(msg):
     """Print with immediate flush for real-time console output."""
     print(msg, flush=True)
+
+
+def bridge_exact_span(
+    source_text: str,
+    words: list,
+    start_hint: int,
+    end_hint: int,
+    search_margin: int = 300,
+    min_block_words: int = 4,
+    min_coverage_ratio: float = 0.5,
+) -> Optional[tuple]:
+    """Tighten an LLM-quoted source_text to a genuinely exact, contiguous span.
+
+    An LLM asked to quote a source verbatim will sometimes silently drop an
+    inline aside between two sentences it cites — a worked example, a
+    cross-reference, a footnote — while getting the surrounding words right.
+    The result scores well against `_verify_rule`'s fuzzy SequenceMatcher ratio
+    (that threshold exists precisely to tolerate minor wording drift), but it
+    is not a real substring of the document, so it fails any downstream check
+    that requires one (Agent 5.7's grounding verifier does).
+
+    This finds where the genuinely-matching words actually sit in the chunk —
+    using word-level SequenceMatcher.get_matching_blocks(), which naturally
+    tolerates a gap between two matching runs — and returns the span from the
+    start of the first matching run to the end of the last, rebuilt verbatim
+    from the chunk's own words. That span may be LONGER than the original
+    quote (it now includes whatever real content sat in the gap), but it is
+    always an exact substring, trading a longer quote for one that is never
+    fabricated.
+
+    Returns (start_word, end_word, exact_text), or None when too little of
+    source_text can be verified this way to be worth reporting — in which
+    case the caller should fall back to its existing (looser) acceptance path
+    rather than treat the absence of a bridge as a hard failure.
+    """
+    if not source_text or not words:
+        return None
+    needle_words = [w.lower() for w in source_text.split()]
+    if len(needle_words) < min_block_words:
+        return None
+    lo = max(0, start_hint - search_margin)
+    hi = min(len(words), end_hint + search_margin)
+    window = [w.lower() for w in words[lo:hi]]
+    if not window:
+        return None
+
+    matcher = SequenceMatcher(None, needle_words, window, autojunk=False)
+    blocks = [b for b in matcher.get_matching_blocks() if b.size >= min_block_words]
+    if not blocks:
+        return None
+    covered = sum(b.size for b in blocks)
+    if covered < min_coverage_ratio * len(needle_words):
+        return None
+
+    start_word = lo + blocks[0].b
+    end_word = lo + blocks[-1].b + blocks[-1].size
+    if start_word >= end_word:
+        return None
+    return start_word, end_word, ' '.join(words[start_word:end_word])
 
 
 @dataclass
@@ -989,7 +1049,6 @@ class BusinessRulesExtractor:
         usually quotes verbatim text but gets word offsets wrong.
         """
         from pathlib import Path
-        from difflib import SequenceMatcher
 
         # Build a lookup of chunk_path -> (content, words) from the source directory
         directory_path = Path(source_directory)
@@ -1147,16 +1206,34 @@ class BusinessRulesExtractor:
                 end_pos = len(words)
 
             matched_at_positions = False
+            bridged = False
             if positions_valid and source_text:
                 actual_slice = ' '.join(words[start_pos:end_pos])
                 ratio = SequenceMatcher(None, source_text.lower(), actual_slice.lower()).ratio()
                 ref['text_match_score'] = round(ratio, 3)
-                if ratio >= 0.5:
+                if ratio < 0.995:
+                    # A fuzzy-but-imperfect match at the stated position may mean
+                    # the LLM's quote silently elided real intervening content
+                    # (a worked example, a footnote). Prefer a wider but exactly
+                    # verbatim span over a shorter one that isn't a real
+                    # substring of the chunk — downstream grounding checks
+                    # require an exact quote, not merely a close paraphrase.
+                    span = bridge_exact_span(source_text, words, start_pos, end_pos)
+                    if span:
+                        new_start, new_end, exact_text = span
+                        ref['start_word_position'] = new_start
+                        ref['end_word_position'] = new_end
+                        ref['source_text'] = exact_text
+                        ref['text_match_score'] = 1.0
+                        ref['source_text_bridged'] = True
+                        matched_at_positions = True
+                        bridged = True
+                if not matched_at_positions and ratio >= 0.5:
                     matched_at_positions = True
 
             if matched_at_positions:
                 rule['reference_verified'] = True
-                rule['reference_verification_note'] = 'ok'
+                rule['reference_verification_note'] = 'ok_bridged_exact_span' if bridged else 'ok'
                 verified += 1
                 return
 
@@ -1165,11 +1242,19 @@ class BusinessRulesExtractor:
                 found = _find_text_in_words(words, source_text)
                 if found:
                     new_start, new_end, ratio = found
+                    note = 'ok_recovered_position'
+                    if ratio < 0.995:
+                        span = bridge_exact_span(source_text, words, new_start, new_end)
+                        if span:
+                            new_start, new_end, exact_text = span
+                            ref['source_text'] = exact_text
+                            ratio = 1.0
+                            note = 'ok_recovered_and_bridged_exact_span'
                     ref['start_word_position'] = new_start
                     ref['end_word_position'] = new_end
                     ref['text_match_score'] = round(ratio, 3)
                     rule['reference_verified'] = True
-                    rule['reference_verification_note'] = 'ok_recovered_position'
+                    rule['reference_verification_note'] = note
                     recovered += 1
                     verified += 1
                     return
