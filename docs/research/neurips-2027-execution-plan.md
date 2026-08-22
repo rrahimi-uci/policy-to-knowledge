@@ -5,6 +5,12 @@ protocol is [PolicyIR Query Evaluation Protocol](policy-ir-query-evaluation-prot
 but it has produced no headline benchmark result. This remains a falsifiable research
 plan, not a claim that the repository has achieved the proposed results.
 
+**Implementation status:** the `pipeline-p2c` compiler this plan treated as its
+candidate system was removed from the repository. No in-tree implementation of
+evidence-gated compilation remains. The plan is retained as a research design; it
+cannot be executed until a compiler is restored from history or rebuilt. Section 2
+records the resulting gap.
+
 **Primary target:** the NeurIPS Evaluations and Datasets (E&D) track, 2027 edition. Consider the main NeurIPS track only if the evidence-gating method yields a substantive cross-task algorithmic result. Do not target ICLR 2027: its [call for papers](https://iclr.cc/Conferences/2027/CallForPapers) sets an abstract deadline of 18 September 2026 and a paper deadline of 25 September 2026 (AoE), which leaves too little time to complete, reproduce, and audit the study. The NeurIPS 2027 call is not published yet, and E&D is itself a recent rename of the Datasets and Benchmarks track, so confirm at Gate 0 that the track still exists under that name and fix no dates until the official 2027 call is out.
 
 ## 1. Decision in one paragraph
@@ -19,8 +25,8 @@ Proceed only if evidence gating improves supported correctness at comparable cov
 
 | Area | Observed now | Not established | Paper consequence |
 | --- | --- | --- | --- |
-| Pipeline | `pipeline-p2c` has a typed PolicyIR, source-unit offer/proposal seam, deterministic graph/DMN/BPMN projections, and a case-scoped QueryIR experiment path. | End-to-end performance against external gold labels. | Treat it as a candidate system, not a validated paper method. |
-| Validation | The p2c gate verifies application-built source spans and admits projections fail-closed; the QueryIR experiment uses graph eligibility only. | Semantic source fidelity beyond the closed checks, and real contradiction resolution. | Report compiler admission separately from answer correctness. |
+| Pipeline | The `pipeline-p2c` compiler that provided the typed PolicyIR, the source-unit offer/proposal seam, the deterministic graph/DMN/BPMN projections, and the case-scoped QueryIR experiment path **was removed from the repository**. What remains is `apps/pipeline`: a ten-agent extraction flow emitting a knowledge graph with per-rule `source_reference` provenance. | Any in-tree implementation of evidence-gated compilation, and end-to-end performance against external gold labels. | The plan has no candidate system in the repository. Restoring or rebuilding the compiler is a precondition of Gate 0, not a step within it. |
+| Validation | The p2c fail-closed admission gate was removed with the compiler. `apps/pipeline` still validates extracted rules (`agent_3_5_rule_validator.py`) and stamps executable readiness (`agent_5_5_executable_readiness.py`, `utils/kg_readiness.py`), but neither is a fail-closed evidence gate. | Semantic source fidelity beyond the closed checks, and real contradiction resolution. | Report compiler admission separately from answer correctness. |
 | Provenance | Documents, chunks, evidence spans, candidate clauses, configurations, predictions, and runs are hash-bound. | Public, complete benchmark artifact releases under every corpus's terms. | Keep data external and publish only permitted digests/artifacts. |
 | Existing graphs | Four case-study graphs contain hundreds of rules/dependencies. | Their text and outputs are independent labels. | Qualitative audit and regression fixtures only. |
 | Tests | Offline adapters/scorers cover ShARC, ContractNLI, OPP-115, manifests, direct runs, PolicyIR/QueryIR contracts, and paired bootstrap mechanics. | Held-out paired results, repeated-run variance, and contamination audit. | Run the locked protocol before modifying it further. |
