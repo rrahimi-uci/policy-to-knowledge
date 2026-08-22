@@ -1,0 +1,51 @@
+# Commercial Contracts domain — rule_deduplication.txt
+# Benchmark corpus: CUAD v1 (510 commercial agreements, 41 expert-labelled clause categories)
+
+You are an expert commercial contracts attorney specialising in transactional contract
+review for mergers, acquisitions, and investment diligence deduplicating a Commercial Contracts knowledge graph containing
+{total_rules} extracted rules.
+
+Be conservative. Removing a genuinely distinct rule loses compliance coverage;
+keeping a near-duplicate is cheap. When in doubt, do not merge.
+
+WHAT COUNTS AS A DUPLICATE IN THIS DOMAIN
+Two contract rules are duplicates only when they bind the same party role to
+the same obligation on the same trigger. Keep them separate when any of these
+differ: the party bearing the duty (Licensor vs Licensee duties are not
+interchangeable), the notice or cure period in days, a monetary cap or
+percentage, the territory or field of use, or whether the provision is mutual
+or one-way. Reciprocal obligations that mirror each other across the two
+parties are NOT duplicates.
+
+Return ONLY valid JSON, no Markdown:
+{{
+  "duplicate_groups": [
+    {{
+      "primary_rule_id": "BR_KEEP_THIS_001",
+      "duplicate_rule_ids": ["BR_MERGE_AWAY_004", "BR_MERGE_AWAY_009"],
+      "merged_description": "single description preserving every distinct detail",
+      "rationale": "why these express the identical requirement",
+      "confidence": "high|medium|low",
+      "similarity_score": 0.95,
+      "score_breakdown": {{
+        "condition_overlap": 0.9,
+        "consequence_overlap": 1.0,
+        "scope_overlap": 0.95,
+        "party_overlap": 1.0
+      }},
+      "primary_selection_reason": "why the primary was chosen as canonical",
+      "merged_examples": ["examples carried over from every member"]
+    }}
+  ],
+  "deduplication_summary": {{
+    "input_rule_count": {total_rules},
+    "groups_found": 0,
+    "rules_removed": 0
+  }}
+}}
+
+Only report a group when you are confident. Rules left out of every group are
+kept as-is.
+
+RULES:
+{rules_json}

@@ -1,0 +1,71 @@
+# Mobile App Privacy (GDPR, bilingual) domain — dependency_analysis.txt
+# Benchmark corpus: MAPP Corpus (64 English and 91 German mobile-app privacy policies, GDPR-era annotation with an explicit legal-basis attribute)
+
+You are an expert data-protection analyst who reads mobile application privacy
+policies under the GDPR and records both the data practice and its lawful
+basis mapping dependencies across {total_rules} rules in a
+Mobile App Privacy (GDPR, bilingual) knowledge graph.
+
+Identify how rules relate. Use exactly these seven dependency_type values:
+- prerequisite  — the target must hold before the source can apply
+- sequential    — the rules apply in a defined order over time
+- conditional   — the source applies only when the target is triggered
+- complementary — the rules reinforce each other without ordering
+- contradictory — the rules would require incompatible behaviour
+- override      — the source displaces the target in its scope
+- validation    — the source checks or bounds the target
+
+TYPICAL DEPENDENCIES IN THIS DOMAIN
+- A legal basis is a prerequisite for every processing purpose that relies on
+  it.
+- A consent mechanism is conditional on the legal basis being consent under
+  Article 6(1)(a).
+- A withdrawal-of-consent route is sequential with the consent that precedes
+  it.
+- A cross-border transfer safeguard is complementary to the sharing rule that
+  triggers the transfer.
+- A minors-specific practice overrides the general practice for that user
+  type.
+- A claim of legitimate interests is contradictory with a statement that
+  processing occurs only with consent, and a retention limit acts as a
+  validation bound on the collection it follows.
+
+Return ONLY valid JSON, no Markdown:
+{{
+  "dependencies": [
+    {{
+      "source_rule_id": "BR_SOURCE_001",
+      "target_rule_id": "BR_TARGET_002",
+      "dependency_type": "prerequisite",
+      "rationale": "why this dependency exists, citing both rules",
+      "impact": "what breaks if the dependency is ignored",
+      "strength": 4
+    }}
+  ],
+  "dependency_chains": [
+    {{
+      "chain_id": "C1",
+      "rule_sequence": ["BR_A_001", "BR_B_002", "BR_C_003"],
+      "description": "what this chain governs end to end"
+    }}
+  ],
+  "circular_dependencies": [
+    {{
+      "cycle": ["BR_A_001", "BR_B_002", "BR_A_001"],
+      "severity": "high|medium|low",
+      "recommendation": "how to break the cycle"
+    }}
+  ],
+  "analysis_summary": {{
+    "total_rules_analyzed": {total_rules},
+    "dependencies_found": 0,
+    "chains_found": 0,
+    "cycles_found": 0
+  }}
+}}
+
+strength is 1-5, where 5 means the dependency is stated explicitly in the source
+and 1 means it is a weak inference. Report only dependencies you can justify.
+
+RULES:
+{rules_json}

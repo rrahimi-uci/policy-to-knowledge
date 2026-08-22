@@ -1,0 +1,44 @@
+# NDA and Confidentiality domain — document_structure_analysis.txt
+# Benchmark corpus: ContractNLI (607 NDAs annotated against 17 confidentiality propositions)
+
+You are an expert confidentiality counsel who reviews non-disclosure agreements for
+scope of protected information and the limits of permitted use.
+
+Split the document below into logical sections for downstream rule extraction.
+Source genre: non-disclosure, confidentiality, and secrecy agreements — mutual and one-way,
+standalone and as annexes to procurement, employment, or diligence processes.
+
+SEGMENTATION GUIDANCE
+NDAs are short and densely numbered. Segment on numbered clauses (1., 1.1,
+(a)), on captioned provisions ("Definition of Confidential Information",
+"Exclusions", "Term and Termination", "Return of Materials"), on the recital
+or preamble block, and on the signature block. Never split a definition from
+its enumerated exclusions, and never split a disclosure permission from the
+conditions attached to it — the conditions are what distinguish a permission
+from a prohibition.
+
+Return ONLY one valid JSON object, no Markdown:
+{{
+  "has_toc": true,
+  "sections": [
+    {{
+      "section_id": "S1",
+      "title": "Section heading exactly as it appears",
+      "level": 1,
+      "start_marker": "first 8-12 words of the section, verbatim",
+      "end_marker": "last 8-12 words of the section, verbatim",
+      "summary": "one sentence on what this section governs",
+      "rule_bearing": true
+    }}
+  ],
+  "structure_notes": "how the document was segmented and why"
+}}
+
+Rules:
+- start_marker and end_marker MUST be verbatim substrings of the document; the
+  organiser slices on them and a paraphrase silently drops the section.
+- Set rule_bearing false for pure boilerplate (signature blocks, addresses).
+- Prefer 8-40 sections. Do not split a provision from its sub-provisions.
+
+DOCUMENT:
+{content}

@@ -39,11 +39,65 @@ _RULE_TYPE_COLORS_BY_DOMAIN = {
         'definition':    '#6366f1',  # Indigo     – term definitions
         'exception':     '#f97316',  # Orange     – special-case waivers
     },
+    # Benchmark-corpus domains. Each palette matches the rule_type vocabulary its
+    # prompt pack defines, so Agent 6 does not colour every rule grey 'unknown'.
+    'commercial_contracts': {
+        'obligation':     '#3b82f6',  # Blue       – affirmative duties
+        'restriction':    '#ef4444',  # Red        – negative covenants
+        'license_grant':  '#06b6d4',  # Cyan       – IP rights conveyed
+        'ip_assignment':  '#8b5cf6',  # Purple     – ownership transfer
+        'termination':    '#f97316',  # Orange     – end-of-term triggers
+        'financial_term': '#10b981',  # Green      – pricing & revenue share
+        'liability':      '#dc2626',  # Dark Red   – caps & carve-outs
+        'renewal':        '#f59e0b',  # Amber      – auto-renewal & notice
+        'governance':     '#6366f1',  # Indigo     – law, venue, audit
+        'exception':      '#ec4899',  # Pink       – express carve-outs
+    },
+    'nda_confidentiality': {
+        'confidentiality_scope': '#3b82f6',  # Blue      – what is protected
+        'permitted_use':         '#10b981',  # Green     – purpose limitation
+        'permitted_disclosure':  '#06b6d4',  # Cyan      – onward sharing
+        'disclosure_exception':  '#f97316',  # Orange    – carve-outs
+        'notification_duty':     '#f59e0b',  # Amber     – notice on compulsion
+        'return_destruction':    '#dc2626',  # Dark Red  – return / destroy
+        'survival':              '#8b5cf6',  # Purple    – post-termination
+        'non_solicitation':      '#ef4444',  # Red       – no-poach
+        'no_license':            '#6366f1',  # Indigo    – no rights granted
+        'marking_requirement':   '#ec4899',  # Pink      – identification duty
+    },
+    'privacy_policy': {
+        'collection':         '#3b82f6',  # Blue     – first-party collection
+        'sharing':            '#ef4444',  # Red      – third-party disclosure
+        'user_choice':        '#10b981',  # Green    – opt-in / opt-out
+        'access_rights':      '#06b6d4',  # Cyan     – view / edit / delete
+        'retention':          '#f59e0b',  # Amber    – storage periods
+        'security':           '#8b5cf6',  # Purple   – safeguards
+        'policy_change':      '#ec4899',  # Pink     – change notification
+        'do_not_track':       '#6366f1',  # Indigo   – DNT signal handling
+        'audience_scope':     '#f97316',  # Orange   – children / jurisdiction
+        'purpose_limitation': '#14b8a6',  # Teal     – bounded use
+    },
+    'mobile_app_privacy': {
+        'collection':            '#3b82f6',  # Blue    – first-party processing
+        'third_party_sharing':   '#ef4444',  # Red     – SDKs & processors
+        'legal_basis':           '#8b5cf6',  # Purple  – GDPR Article 6 ground
+        'purpose_limitation':    '#14b8a6',  # Teal    – bounded use
+        'data_subject_rights':   '#10b981',  # Green   – access, erasure, etc.
+        'consent':               '#06b6d4',  # Cyan    – obtain / withdraw
+        'retention':             '#f59e0b',  # Amber   – storage periods
+        'security':              '#6366f1',  # Indigo  – TOMs
+        'cross_border_transfer': '#f97316',  # Orange  – outside the EEA
+        'minors':                '#ec4899',  # Pink    – children's data
+    },
 }
 
 # Quick-filter priority types shown as shortcut buttons per domain
 _DOMAIN_PRIORITY_FILTER_TYPES = {
-    'mortgage':           ['eligibility',     'validation',   'compliance'],
+    'mortgage':             ['eligibility',           'validation',      'compliance'],
+    'commercial_contracts': ['obligation',            'restriction',     'liability'],
+    'nda_confidentiality':  ['confidentiality_scope', 'permitted_use',   'disclosure_exception'],
+    'privacy_policy':       ['collection',            'sharing',         'user_choice'],
+    'mobile_app_privacy':   ['collection',            'legal_basis',     'data_subject_rights'],
 }
 
 

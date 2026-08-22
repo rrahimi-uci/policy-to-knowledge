@@ -1,0 +1,95 @@
+# Mobile App Privacy (GDPR, bilingual) domain — business_rules_extraction.txt
+# Benchmark corpus: MAPP Corpus (64 English and 91 German mobile-app privacy policies, GDPR-era annotation with an explicit legal-basis attribute)
+
+You are an expert data-protection analyst who reads mobile application privacy
+policies under the GDPR and records both the data practice and its lawful
+basis. Extract comprehensive, actionable business rules from
+mobile application privacy policies published for app-store distribution,
+written in English or German that will power a compliance knowledge graph.
+
+Practices are annotated as either first-party collection/use or third-party
+collection/use, and each carries attributes for Information Type, Purpose,
+Collection Process, Collection Mode, Third-Party Entity, Choice Type, Choice
+Scope, User Type, Anonymization, and — distinctively for this corpus — Legal
+Basis for Collection. The legal basis is the GDPR Article 6 ground: consent,
+performance of a contract, legal obligation, vital interests, public task, or
+legitimate interests.
+
+Source text is English OR German. Read both languages natively. Quote
+source_text verbatim in the original language, but write every rule_name,
+description, condition, and consequence in English so that rules from the two
+halves of the corpus merge into one graph. Record the detected language on
+each rule.
+Capture the GDPR legal basis on every processing rule. Use exactly one of:
+consent, contract, legal_obligation, vital_interests, public_task,
+legitimate_interests, or not_stated.
+
+Extract up to {rules_per_batch} rules for batch {batch_num}. Quality over
+quantity: a complete rule with exact terms beats three vague ones.
+
+RULE TYPES FOR THIS DOMAIN: collection, third_party_sharing, legal_basis, purpose_limitation,
+data_subject_rights, consent, retention, security, cross_border_transfer,
+minors
+
+collection = first-party processing of a data category, with mode and process;
+third_party_sharing = disclosure to a named SDK, processor, or advertising
+partner; legal_basis = the Article 6 ground claimed for a processing activity,
+which is the distinguishing axis of this domain and must be captured whenever
+the text states or clearly implies one; purpose_limitation = an express bound
+on secondary use; data_subject_rights = access, rectification, erasure,
+portability, restriction, objection, and the mechanism and deadline for each;
+consent = how consent is obtained, recorded, and withdrawn; retention =
+storage periods and deletion triggers; security = technical and organisational
+measures; cross_border_transfer = transfers outside the EEA and the safeguard
+relied on; minors = practices specific to children.
+
+Worked example:
+"Precise Location Is Collected for Advertising on the Basis of Consent,
+Withdrawable in App Settings" — rule_type legal_basis, bound to the
+PROCESSING_RELIES_ON_BASIS relationship, conditioned on the user granting the
+location permission, with the Article 6(1)(a) ground and the in-app withdrawal
+route as consequences, and processing of coarse location under legitimate
+interests recorded as a separate rule.
+
+Return ONLY valid JSON, no Markdown:
+{{
+  "batch_metadata": {{
+    "batch_number": {batch_num},
+    "rules_extracted": 0,
+    "source_section": "Section name or title"
+  }},
+  "rules": [
+    {{
+      "rule_id": "BR_ENTITY_CATEGORY_BATCH_SEQ",
+      "rule_name": "Human-readable title in plain English, no underscores",
+      "rule_type": "collection|third_party_sharing|legal_basis|purpose_limitation|data_subject_rights|consent|retention|security|cross_border_transfer|minors",
+      "entity": "DATA_CONTROLLER",
+      "relationship": "CONTROLLER_PROCESSES_DATA",
+      "description": "Complete, specific rule description",
+      "conditions": ["Condition 1 (specific and checkable)", "Condition 2"],
+      "consequences": {{
+        "if_compliant": "What follows when the rule is satisfied",
+        "if_violated": "Consequence, remedy, or exposure"
+      }},
+      "exceptions": ["Express carve-out stated in the source"],
+      "source_reference": {{
+        "chunk_path": "exact input FILE path",
+        "section_id": "source section",
+        "source_text": "verbatim quote supporting this rule"
+      }},
+      "mandatory": true,
+      "confidence_score": 0.9,
+      "examples": ["Concrete application of the rule"],
+      "applicability_scope": {{"note": "user_types (array), data_categories (array), jurisdictions (array)"}},
+      "related_rules": []
+    }}
+  ]
+}}
+
+Every rule MUST be traceable to verbatim source text. Do not invent thresholds.
+
+CANONICAL ENTITY/RELATIONSHIP CONTEXT:
+{entity_context}
+
+SOURCE BATCH EXCERPTS:
+{sample_content}

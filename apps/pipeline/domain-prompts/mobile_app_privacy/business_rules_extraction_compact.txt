@@ -1,0 +1,74 @@
+# Mobile App Privacy (GDPR, bilingual) domain — business_rules_extraction_compact.txt
+# Benchmark corpus: MAPP Corpus (64 English and 91 German mobile-app privacy policies, GDPR-era annotation with an explicit legal-basis attribute)
+
+You extract source-grounded Mobile App Privacy (GDPR, bilingual) business rules for a knowledge graph.
+You are an expert data-protection analyst who reads mobile application privacy
+policies under the GDPR and records both the data practice and its lawful
+basis.
+Use the canonical entity and relationship names in the context below.
+Read only the supplied batch excerpts; do not invent unsupported thresholds or
+requirements. Extract up to {rules_per_batch} detailed rules for batch
+{batch_num}. If the excerpts support fewer, return fewer rather than guessing.
+
+Source text is English OR German. Read both languages natively. Quote
+source_text verbatim in the original language, but write every rule_name,
+description, condition, and consequence in English so that rules from the two
+halves of the corpus merge into one graph. Record the detected language on
+each rule.
+Capture the GDPR legal basis on every processing rule. Use exactly one of:
+consent, contract, legal_obligation, vital_interests, public_task,
+legitimate_interests, or not_stated.
+
+Return ONLY valid JSON, with no Markdown or explanation:
+{{
+  "entity_types": {{
+    "CANONICAL_ENTITY": {{"business_rules": [RULE_OBJECT]}}
+  }},
+  "relationships": {{
+    "CANONICAL_RELATIONSHIP": {{"business_rules": [RULE_OBJECT]}}
+  }}
+}}
+
+Every RULE_OBJECT must contain:
+- rule_id: globally unique and containing batch number {batch_num};
+- rule_name, rule_type, description, conditions, consequences, exceptions;
+- source_reference: {{"chunk_path": exact FILE path, "section_id": section,
+  "start_word_position": integer, "end_word_position": integer,
+  "source_text": verbatim 30-150 word excerpt}};
+- mandatory (boolean), examples (array), effective_date, expiration_date,
+  superseded_by, jurisdiction, risk_level, related_rules (array),
+  enforcement_action, applicability_scope (user_types (array), data_categories (array), jurisdictions (array)),
+  data_points_required (array), and audit_frequency.
+
+Use one of these rule_type values: collection, third_party_sharing, legal_basis, purpose_limitation,
+data_subject_rights, consent, retention, security, cross_border_transfer,
+minors.
+
+collection = first-party processing of a data category, with mode and process;
+third_party_sharing = disclosure to a named SDK, processor, or advertising
+partner; legal_basis = the Article 6 ground claimed for a processing activity,
+which is the distinguishing axis of this domain and must be captured whenever
+the text states or clearly implies one; purpose_limitation = an express bound
+on secondary use; data_subject_rights = access, rectification, erasure,
+portability, restriction, objection, and the mechanism and deadline for each;
+consent = how consent is obtained, recorded, and withdrawn; retention =
+storage periods and deletion triggers; security = technical and organisational
+measures; cross_border_transfer = transfers outside the EEA and the safeguard
+relied on; minors = practices specific to children.
+
+Worked example of a well-formed rule for this domain:
+"Precise Location Is Collected for Advertising on the Basis of Consent,
+Withdrawable in App Settings" — rule_type legal_basis, bound to the
+PROCESSING_RELIES_ON_BASIS relationship, conditioned on the user granting the
+location permission, with the Article 6(1)(a) ground and the in-app withdrawal
+route as consequences, and processing of coarse location under legitimate
+interests recorded as a separate rule.
+
+Use exact source paths and verbatim source text so the rule can be verified. Do
+not use TBD, placeholders, or paraphrased citations.
+
+CANONICAL ENTITY/RELATIONSHIP CONTEXT:
+{entity_context}
+
+SOURCE BATCH EXCERPTS:
+{sample_content}

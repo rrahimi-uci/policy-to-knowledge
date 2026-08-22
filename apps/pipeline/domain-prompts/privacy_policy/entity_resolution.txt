@@ -1,0 +1,44 @@
+# Website Privacy Policy domain — entity_resolution.txt
+# Benchmark corpus: OPP-115 (115 website privacy policies, 23k annotated data practices in 10 categories)
+
+You are an expert privacy analyst who reads website privacy policies and reduces them
+to the concrete data practices they disclose merging Website Privacy Policy domain models extracted from several
+documents into one canonical set.
+
+Two entities are the same when they denote the same real-world concept, even if
+named differently. Two entities are different when they differ in role,
+direction, or scope — in this domain that most often means:
+Privacy policies restate practices in overview and detail sections. Two rules
+are duplicates only when the actor, the information type, the purpose, and the
+user choice all match. Keep separate: first-party collection versus third-
+party collection of the same data type; the same data type collected for
+different purposes; a practice stated for all users versus one stated for
+children or for a specific jurisdiction; and an opt-in versus an opt-out
+mechanism over the same practice.
+
+Return ONLY valid JSON, no Markdown:
+{{
+  "entity_clusters": [
+    {{
+      "canonical_name": "CANONICAL_ENTITY_NAME",
+      "member_entities": ["NAME_IN_DOC_A", "NAME_IN_DOC_B"],
+      "source_documents": ["doc_a", "doc_b"],
+      "merged_definition": "definition covering every member",
+      "merged_attributes": ["...", "..."],
+      "rationale": "why these are the same concept",
+      "confidence": "high|medium|low"
+    }}
+  ],
+  "resolution_summary": {{
+    "input_entity_count": 0,
+    "canonical_entity_count": 0,
+    "clusters_formed": 0,
+    "unmerged_entities": []
+  }}
+}}
+
+ENTITIES BY SOURCE:
+{entities_by_source}
+
+SOURCE DOCUMENTS:
+{source_documents}

@@ -1,0 +1,43 @@
+# Website Privacy Policy domain — document_structure_analysis.txt
+# Benchmark corpus: OPP-115 (115 website privacy policies, 23k annotated data practices in 10 categories)
+
+You are an expert privacy analyst who reads website privacy policies and reduces them
+to the concrete data practices they disclose.
+
+Split the document below into logical sections for downstream rule extraction.
+Source genre: consumer-facing website privacy policies and notices.
+
+SEGMENTATION GUIDANCE
+Privacy policies are already written in short topical blocks. Segment on
+headed sections ("Information We Collect", "How We Share Information", "Your
+Choices", "Data Security", "Changes to This Policy"), and where headings are
+absent, on paragraph boundaries — a paragraph is the natural unit of a data
+practice. Keep a bulleted list of data categories attached to the sentence
+that introduces it, and keep an opt-out mechanism attached to the practice it
+applies to.
+
+Return ONLY one valid JSON object, no Markdown:
+{{
+  "has_toc": true,
+  "sections": [
+    {{
+      "section_id": "S1",
+      "title": "Section heading exactly as it appears",
+      "level": 1,
+      "start_marker": "first 8-12 words of the section, verbatim",
+      "end_marker": "last 8-12 words of the section, verbatim",
+      "summary": "one sentence on what this section governs",
+      "rule_bearing": true
+    }}
+  ],
+  "structure_notes": "how the document was segmented and why"
+}}
+
+Rules:
+- start_marker and end_marker MUST be verbatim substrings of the document; the
+  organiser slices on them and a paraphrase silently drops the section.
+- Set rule_bearing false for pure boilerplate (signature blocks, addresses).
+- Prefer 8-40 sections. Do not split a provision from its sub-provisions.
+
+DOCUMENT:
+{content}

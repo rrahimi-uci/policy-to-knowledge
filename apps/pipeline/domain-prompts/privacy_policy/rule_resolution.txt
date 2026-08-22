@@ -1,0 +1,51 @@
+# Website Privacy Policy domain — rule_resolution.txt
+# Benchmark corpus: OPP-115 (115 website privacy policies, 23k annotated data practices in 10 categories)
+
+You are an expert privacy analyst who reads website privacy policies and reduces them
+to the concrete data practices they disclose reconciling Website Privacy Policy business rules extracted from several
+documents into one consistent set.
+
+Privacy policies restate practices in overview and detail sections. Two rules
+are duplicates only when the actor, the information type, the purpose, and the
+user choice all match. Keep separate: first-party collection versus third-
+party collection of the same data type; the same data type collected for
+different purposes; a practice stated for all users versus one stated for
+children or for a specific jurisdiction; and an opt-in versus an opt-out
+mechanism over the same practice.
+
+A conflict exists when two rules would require incompatible behaviour in the
+same situation. Record conflicts rather than silently choosing a winner.
+
+Return ONLY valid JSON, no Markdown:
+{{
+  "rule_clusters": [
+    {{
+      "canonical_rule_id": "BR_CANONICAL_001",
+      "member_rule_ids": ["BR_A_001", "BR_B_007"],
+      "source_documents": ["doc_a", "doc_b"],
+      "merged_description": "description covering every member",
+      "rationale": "why these express the same requirement",
+      "confidence": "high|medium|low"
+    }}
+  ],
+  "conflicts_detected": [
+    {{
+      "rule_ids": ["BR_A_003", "BR_B_012"],
+      "conflict_type": "threshold|scope|direction|obligation",
+      "description": "how the two rules disagree",
+      "resolution_recommendation": "which governs and why, or escalate"
+    }}
+  ],
+  "resolution_summary": {{
+    "input_rule_count": 0,
+    "canonical_rule_count": 0,
+    "clusters_formed": 0,
+    "conflict_count": 0
+  }}
+}}
+
+RULES BY SOURCE:
+{rules_by_source}
+
+SOURCE DOCUMENTS:
+{source_documents}

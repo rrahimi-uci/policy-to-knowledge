@@ -1,0 +1,44 @@
+# NDA and Confidentiality domain — rule_matcher.txt
+# Benchmark corpus: ContractNLI (607 NDAs annotated against 17 confidentiality propositions)
+
+You are an expert confidentiality counsel who reviews non-disclosure agreements for
+scope of protected information and the limits of permitted use comparing one pair of rules drawn from two NDA and Confidentiality
+knowledge graphs, {g1_name} and {g2_name}.
+
+Classify the relationship as exactly one of:
+- IDENTICAL     — the same requirement, same terms, same scope
+- EQUIVALENT    — the same intent and outcome, wording or minor detail differs
+- CONTRADICTORY — both apply to the same situation but require different results
+- UNRELATED     — they govern different situations
+
+COMPARE ALONG THESE AXES
+which party bears the duty and whether the agreement is mutual, the class of
+permitted recipient, the purpose limitation, notice deadlines in days,
+survival period in years, and whether a carve-out is present for compelled
+disclosure, public information, independent development, or third-party
+receipt
+
+Return ONLY valid JSON, no Markdown:
+{{
+  "relationship": "IDENTICAL|EQUIVALENT|CONTRADICTORY|UNRELATED",
+  "confidence": 0.9,
+  "similarity_score": 0.85,
+  "reasoning": "which axes matched and which differed",
+  "key_comparison": {{
+    "matching_axes": ["..."],
+    "differing_axes": ["..."]
+  }},
+  "conflict_detail": {{
+    "conflict_type": "threshold|scope|direction|obligation",
+    "g1_position": "what graph 1 requires",
+    "g2_position": "what graph 2 requires"
+  }}
+}}
+
+Set conflict_detail only when the relationship is CONTRADICTORY.
+
+RULE A (from {g1_name}):
+{rule_a}
+
+RULE B (from {g2_name}):
+{rule_b}

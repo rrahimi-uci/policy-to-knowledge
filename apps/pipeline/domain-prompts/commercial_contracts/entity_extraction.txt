@@ -1,0 +1,96 @@
+# Commercial Contracts domain — entity_extraction.txt
+# Benchmark corpus: CUAD v1 (510 commercial agreements, 41 expert-labelled clause categories)
+
+You are an expert commercial contracts attorney specialising in transactional contract
+review for mergers, acquisitions, and investment diligence.
+
+Extract the domain model — entity types and relationships — from negotiated commercial agreements — licence, distribution, supply, co-branding,
+endorsement, franchise, hosting, outsourcing, joint venture, development,
+maintenance, service, and strategic alliance agreements.
+Clause categories a reviewing attorney looks for include governing law,
+exclusivity, non-compete, no-solicit, most-favoured-nation, change of control,
+anti-assignment, revenue or profit sharing, minimum commitment, IP ownership
+assignment, licence grant and its transferability, source code escrow, audit
+rights, liability caps and uncapped liability, liquidated damages, warranty
+duration, insurance, and third-party beneficiary rights.
+
+CANONICAL ENTITY TYPES FOR THIS DOMAIN:
+- CONTRACTING_PARTY — A named legal person bound by the agreement
+  attributes: legal_name, role, jurisdiction_of_organisation, notice_address,
+  affiliate_scope
+  example: I-ESCROW, INC., a California corporation, as service provider
+- AGREEMENT — The contract instrument itself and its lifecycle dates
+  attributes: document_name, agreement_date, effective_date, expiration_date,
+  renewal_term
+  example: Co-Branding and Advertising Agreement dated June 21, 1999
+- CLAUSE — A numbered or captioned provision carrying one or more obligations
+  attributes: clause_number, caption, category, governing_section,
+  cross_references
+  example: Section 8.2 Limitation of Liability
+- LICENCE_GRANT — A conveyance of rights in intellectual property
+  attributes: licensed_property, exclusivity, transferability, territory,
+  duration
+  example: Non-exclusive, non-transferable licence to the Licensor marks
+- CONSIDERATION — Money or value flowing between the parties
+  attributes: amount, currency, payment_trigger, revenue_share_percentage,
+  minimum_commitment
+  example: 15% of net revenue, payable quarterly
+- TERRITORY — The geographic or market scope in which rights apply
+  attributes: region, exclusivity, carve_outs, channel, field_of_use
+  example: United States and Canada, excluding government channel
+- TERMINATION_EVENT — A condition that ends or may end the agreement
+  attributes: trigger, notice_period, cure_period, convenience_right,
+  survival_scope
+  example: Termination for convenience on 90 days written notice
+- LIABILITY_LIMIT — A cap, carve-out, or exclusion on damages
+  attributes: cap_amount, cap_basis, carve_outs, uncapped_categories,
+  liquidated_damages
+  example: Liability capped at fees paid in the preceding 12 months
+
+CANONICAL RELATIONSHIPS:
+- PARTY_BOUND_BY_CLAUSE (CONTRACTING_PARTY → CLAUSE) — Identifies which party
+  bears the obligation or restriction in a clause
+- AGREEMENT_CONTAINS_CLAUSE (AGREEMENT → CLAUSE) — Structural containment of a
+  provision within the instrument
+- GRANT_COVERS_TERRITORY (LICENCE_GRANT → TERRITORY) — Scopes a licence to a
+  region, channel, or field of use
+- CLAUSE_LIMITS_LIABILITY (CLAUSE → LIABILITY_LIMIT) — Ties a liability cap or
+  carve-out to the provision that creates it
+
+Return ONLY one valid JSON object, no Markdown:
+{{
+  "entity_types": {{
+    "ENTITY_NAME": {{
+      "definition": "Clear business definition in Commercial Contracts context",
+      "description": "Longer explanation of the role this entity plays",
+      "attributes": ["attribute_one", "attribute_two", "attribute_three"],
+      "examples": ["excerpt-grounded example"],
+      "business_rules": ["High-level summary of a rule involving this entity"],
+      "business_rule_summaries": ["Alternate summary list for downstream compatibility"]
+    }}
+  }},
+  "relationships": {{
+    "RELATIONSHIP_NAME": {{
+      "source_entity": "SOURCE_ENTITY_NAME",
+      "target_entity": "TARGET_ENTITY_NAME",
+      "source": "SOURCE_ENTITY_NAME",
+      "target": "TARGET_ENTITY_NAME",
+      "definition": "What this relationship means in Commercial Contracts context",
+      "description": "Directional semantics of the relationship",
+      "cardinality": "one-to-one|one-to-many|many-to-many",
+      "examples": ["excerpt-grounded example"],
+      "business_rules": ["High-level summary of a rule governing this relationship"]
+    }}
+  }},
+  "extraction_metadata": {{
+    "source_document": "Document name or section",
+    "entity_count": 0,
+    "relationship_count": 0
+  }}
+}}
+
+Ground every entity and relationship in the excerpts. Do not invent entities the
+text does not support.
+
+EXCERPTS:
+{sample_content}

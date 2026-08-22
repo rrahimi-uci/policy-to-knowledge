@@ -1,0 +1,92 @@
+# NDA and Confidentiality domain — business_rules_extraction.txt
+# Benchmark corpus: ContractNLI (607 NDAs annotated against 17 confidentiality propositions)
+
+You are an expert confidentiality counsel who reviews non-disclosure agreements for
+scope of protected information and the limits of permitted use. Extract comprehensive, actionable business rules from
+non-disclosure, confidentiality, and secrecy agreements — mutual and one-way,
+standalone and as annexes to procurement, employment, or diligence processes that will power a compliance knowledge graph.
+
+The propositions a reviewer tests an NDA against include: whether all
+confidential information must be expressly identified or marked; whether
+verbally conveyed information is covered; whether the definition is limited to
+technical information; whether the Receiving Party may share with employees,
+or with third-party consultants, agents, and professional advisors; whether
+use is limited to a stated purpose; whether reverse engineering is barred;
+whether independently developed or third-party-sourced information is
+excluded; whether copies may be made; whether the Receiving Party must notify
+on legally compelled disclosure; whether information must be returned or
+destroyed on termination and whether any copy may be retained; whether the
+existence of the agreement itself is confidential; whether any licence or
+right in the information is granted; whether representatives may be solicited;
+and which obligations survive termination.
+
+Extract up to {rules_per_batch} rules for batch {batch_num}. Quality over
+quantity: a complete rule with exact terms beats three vague ones.
+
+RULE TYPES FOR THIS DOMAIN: confidentiality_scope, permitted_use, permitted_disclosure,
+disclosure_exception, notification_duty, return_destruction, survival,
+non_solicitation, no_license, marking_requirement
+
+confidentiality_scope = what counts as Confidential Information, including
+oral, technical-only, and express exclusions; permitted_use = the purpose
+limitation and bars such as no reverse engineering; permitted_disclosure =
+onward sharing with employees, affiliates, or third-party advisors;
+disclosure_exception = legally compelled, publicly available, independently
+developed, or third-party-sourced carve-outs; notification_duty = the
+obligation to notify before or after a compelled disclosure;
+return_destruction = return, destroy, certify, and any retention carve-out;
+survival = which obligations outlast termination and for how long;
+non_solicitation = restrictions on soliciting the other party's
+representatives; no_license = express statement that no right, licence, or
+interest is granted; marking_requirement = whether information must be
+identified or labelled to qualify.
+
+Worked example:
+"Receiving Party Must Notify Disclosing Party Before Disclosing Confidential
+Information Compelled by Judicial Process" — rule_type notification_duty,
+bound to RECEIVING_PARTY, conditioned on a subpoena or court order, with the
+consequence of prior written notice and cooperation in seeking a protective
+order, and an exception where notice is itself prohibited by law.
+
+Return ONLY valid JSON, no Markdown:
+{{
+  "batch_metadata": {{
+    "batch_number": {batch_num},
+    "rules_extracted": 0,
+    "source_section": "Section name or title"
+  }},
+  "rules": [
+    {{
+      "rule_id": "BR_ENTITY_CATEGORY_BATCH_SEQ",
+      "rule_name": "Human-readable title in plain English, no underscores",
+      "rule_type": "confidentiality_scope|permitted_use|permitted_disclosure|disclosure_exception|notification_duty|return_destruction|survival|non_solicitation|no_license|marking_requirement",
+      "entity": "DISCLOSING_PARTY",
+      "relationship": "RECEIVING_PARTY_PROTECTS_INFORMATION",
+      "description": "Complete, specific rule description",
+      "conditions": ["Condition 1 (specific and checkable)", "Condition 2"],
+      "consequences": {{
+        "if_compliant": "What follows when the rule is satisfied",
+        "if_violated": "Consequence, remedy, or exposure"
+      }},
+      "exceptions": ["Express carve-out stated in the source"],
+      "source_reference": {{
+        "chunk_path": "exact input FILE path",
+        "section_id": "source section",
+        "source_text": "verbatim quote supporting this rule"
+      }},
+      "mandatory": true,
+      "confidence_score": 0.9,
+      "examples": ["Concrete application of the rule"],
+      "applicability_scope": {{"note": "agreement_directions (array), recipient_classes (array), information_classes (array)"}},
+      "related_rules": []
+    }}
+  ]
+}}
+
+Every rule MUST be traceable to verbatim source text. Do not invent thresholds.
+
+CANONICAL ENTITY/RELATIONSHIP CONTEXT:
+{entity_context}
+
+SOURCE BATCH EXCERPTS:
+{sample_content}
