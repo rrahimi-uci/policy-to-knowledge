@@ -35,6 +35,58 @@ def _print(msg):
     print(msg, flush=True)
 
 
+def _rule_variable_names(rule: Dict[str, Any]) -> set:
+    """Every variable name a rule's own logic references — its declared
+    variables plus whichever of them actually appear in its predicates and
+    outcomes. This is the vocabulary through which one rule could genuinely
+    affect another's evaluation."""
+    names = set()
+    for variable in rule.get("variables", []) or []:
+        if isinstance(variable, dict) and variable.get("name"):
+            names.add(str(variable["name"]).strip().lower())
+    for predicate in rule.get("condition_predicates", []) or []:
+        if isinstance(predicate, dict) and predicate.get("variable"):
+            names.add(str(predicate["variable"]).strip().lower())
+    for outcome in rule.get("outcomes", []) or []:
+        if isinstance(outcome, dict) and outcome.get("variable"):
+            names.add(str(outcome["variable"]).strip().lower())
+    return names
+
+
+def dependency_has_structural_support(source_rule: Any, target_rule: Any) -> bool:
+    """Whether two rules share any variable at all — the minimal, deterministic
+    signal that a claimed dependency between them has some basis in the rules'
+    own logic rather than being a purely thematic association.
+
+    This is deliberately a weak, permissive test (any single shared name is
+    enough): plenty of real dependencies are procedural ("check eligibility
+    before pricing") without a shared variable, and this check exists only to
+    flag the clearest false positives — dependencies between rules whose
+    condition/outcome vocabularies are completely disjoint — not to replace
+    Agent 5.7's independent, far stricter re-verification downstream.
+
+    Returns False (no support) whenever either side isn't a real rule dict,
+    so a bad or missing rule_id degrades to "unsupported" rather than raising.
+    """
+    if not isinstance(source_rule, dict) or not isinstance(target_rule, dict):
+        return False
+    return bool(_rule_variable_names(source_rule) & _rule_variable_names(target_rule))
+
+
+def annotate_dependency_structural_support(
+    entry: Dict[str, Any], source_rule: Any, target_rule: Any, *, unsupported_confidence_cap: int = 50
+) -> Dict[str, Any]:
+    """Stamp a dependency entry with whether it has structural backing, and
+    discount its confidence when it doesn't. Mutates and returns `entry`."""
+    supported = dependency_has_structural_support(source_rule, target_rule)
+    entry["structurally_supported"] = supported
+    if not supported:
+        confidence = entry.get("confidence", 70)
+        if isinstance(confidence, (int, float)):
+            entry["confidence"] = min(confidence, unsupported_confidence_cap)
+    return entry
+
+
 class KnowledgeGraphOptimizer:
     """
     Agent that optimizes business rules knowledge graph using LLM reasoning.
@@ -501,17 +553,24 @@ class KnowledgeGraphOptimizer:
         # Add dependencies to rules with confidence calculation
         rule_dependencies_map = {}
         rule_dependents_map = {}
-        
+        rule_lookup = {r.get("rule_id"): r for r in rules}
+
         for dep in dep_result.get("dependencies", []):
             source_id = dep["source_rule_id"]
             target_id = dep["target_rule_id"]
-            
+
             # Calculate confidence if breakdown provided
             if 'confidence' in dep and isinstance(dep['confidence'], dict):
                 dep['confidence'] = self._calculate_dependency_confidence(dep['confidence'])
             elif 'confidence' not in dep:
                 # Default confidence as int (consistent with batched path)
                 dep['confidence'] = dep.get('strength', 3) * 20
+
+            # Annotate `dep` itself (not just the derived entry below) so that
+            # downstream consumers reading the raw dependency_analysis metadata
+            # directly — e.g. optimize_parallel's post-dedup re-application —
+            # see the same structural-support signal and discounted confidence.
+            annotate_dependency_structural_support(dep, rule_lookup.get(source_id), rule_lookup.get(target_id))
 
             # Track what each rule depends on
             if target_id not in rule_dependencies_map:
@@ -523,6 +582,7 @@ class KnowledgeGraphOptimizer:
                 "impact_if_fails": dep.get("impact", "Unknown"),
                 "strength": dep.get("strength", "medium"),
                 "confidence": dep.get("confidence", 60),
+                "structurally_supported": dep["structurally_supported"],
             })
             
             # Track what depends on each rule
@@ -715,7 +775,8 @@ class KnowledgeGraphOptimizer:
         # Create maps
         rule_dependencies_map = {}
         rule_dependents_map = {}
-        
+        rule_lookup = {r.get("rule_id"): r for r in rules}
+
         for dep in all_dependencies:
             # The model occasionally returns a dependency object missing one of
             # the id keys. Skip those instead of letting a raw subscript raise a
@@ -737,6 +798,11 @@ class KnowledgeGraphOptimizer:
                     5: 95, 4: 85, 3: 75, 2: 65, 1: 55
                 }.get(strength, 70)
 
+            # Annotate `dep` itself so optimize_parallel's post-dedup
+            # re-application (which reads the raw dependency_analysis
+            # metadata, not this per-target map) sees the same signal.
+            annotate_dependency_structural_support(dep, rule_lookup.get(source_id), rule_lookup.get(target_id))
+
             # Track what this rule depends on
             if target_id not in rule_dependencies_map:
                 rule_dependencies_map[target_id] = []
@@ -746,7 +812,8 @@ class KnowledgeGraphOptimizer:
                 "rationale": dep.get("rationale", ""),
                 "impact_if_fails": dep.get("impact", "Unknown"),
                 "strength": dep.get("strength", "medium"),
-                "confidence": dep.get("confidence", 70)
+                "confidence": dep.get("confidence", 70),
+                "structurally_supported": dep["structurally_supported"],
             })
 
             # Track what depends on this rule
@@ -883,7 +950,12 @@ class KnowledgeGraphOptimizer:
                     "strength": dep.get("strength", "medium"),
                     # Preserve the per-dependency confidence computed upstream so
                     # the saved rules keep their confidence (it was dropped here).
-                    "confidence": dep.get("confidence", 70)
+                    "confidence": dep.get("confidence", 70),
+                    # Preserve the structural-support signal computed upstream
+                    # (analyze_dependencies / _analyze_dependencies_batched
+                    # already annotated `dep` in place with this and the
+                    # confidence discount it implies).
+                    "structurally_supported": dep.get("structurally_supported", True),
                 })
 
                 if source_id not in rule_dependents_map:
