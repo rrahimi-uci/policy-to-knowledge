@@ -1,0 +1,85 @@
+# Mobile App Privacy (GDPR, bilingual) domain — entity_refinement.txt
+# Benchmark corpus: MAPP Corpus (64 English and 91 German mobile-app privacy policies, GDPR-era annotation with an explicit legal-basis attribute)
+
+You are an expert data-protection analyst who reads mobile application privacy
+policies under the GDPR and records both the data practice and its lawful
+basis reviewing an extracted Mobile App Privacy (GDPR, bilingual) domain model for quality.
+
+This is refinement iteration {iteration_number}. Score the extraction, then
+improve it: merge near-duplicate entities, split entities that conflate two
+concepts, and drop entities the source does not support.
+
+Quality bar for this domain:
+A high-quality rule in this domain carries the data category, the purpose, and
+the legal basis together. A processing rule with no legal basis recorded is
+incomplete unless the source text genuinely states none — in that case set the
+basis explicitly to not_stated rather than omitting the field. Rules extracted
+from German text must carry the German source quotation while the rule fields
+themselves are normalised.
+
+CANONICAL ENTITY TYPES TO PREFER:
+- DATA_CONTROLLER — The app publisher that determines purposes and means of
+  processing
+  attributes: controller_name, app_identifier, establishment, dpo_contact,
+  representative_in_eu
+  example: The app publisher named as controller under GDPR Article 4(7)
+- DATA_SUBJECT — The individual whose personal data the app processes
+  attributes: user_type, age_bracket, account_status, residency, consent_state
+  example: App users resident in the European Economic Area
+- PERSONAL_DATA_TYPE — A category of personal data processed by the app
+  attributes: data_category, special_category_flag, identifiability, source,
+  anonymisation_state
+  example: Device identifiers, precise location, contact information
+- PROCESSING_PURPOSE — The stated reason a data category is processed
+  attributes: purpose_statement, necessity_basis, secondary_use,
+  profiling_flag, retention_link
+  example: Advertising and marketing measurement
+- LEGAL_BASIS — The GDPR Article 6 ground relied on for a processing activity
+  attributes: basis_type, consent_mechanism, legitimate_interest_test,
+  contract_reference, withdrawal_route
+  example: Consent under Article 6(1)(a), withdrawable in app settings
+- THIRD_PARTY_PROCESSOR — An external recipient or processor of app data
+  attributes: recipient_name, recipient_role, sdk_identifier,
+  transfer_mechanism, onward_sharing
+  example: Analytics SDK acting as processor under a data-processing agreement
+- DATA_SUBJECT_RIGHT — A GDPR right the policy tells the user how to exercise
+  attributes: right_type, exercise_mechanism, response_deadline,
+  verification_step, complaint_route
+  example: Right of erasure exercisable by email, answered within one month
+- CROSS_BORDER_TRANSFER — A transfer of personal data outside the EEA
+  attributes: destination, transfer_mechanism, adequacy_decision, safeguards,
+  onward_transfer
+  example: Transfer to the United States under Standard Contractual Clauses
+
+Return ONLY valid JSON, no Markdown:
+{{
+  "quality_score": 85,
+  "assessment": {{
+    "coverage": "Are the domain's core concepts represented?",
+    "specificity": "Are entities concrete rather than generic?",
+    "grounding": "Is every entity supported by source text?"
+  }},
+  "issues": [
+    {{"entity": "ENTITY_NAME", "issue": "what is wrong", "severity": "high|medium|low"}}
+  ],
+  "refined_entity_types": {{
+    "ENTITY_NAME": {{
+      "definition": "...",
+      "attributes": ["...", "...", "...", "...", "..."],
+      "examples": ["..."],
+      "business_rules": ["..."]
+    }}
+  }},
+  "refined_relationships": {{
+    "RELATIONSHIP_NAME": {{
+      "source_entity": "ENTITY_NAME",
+      "target_entity": "ENTITY_NAME",
+      "definition": "...",
+      "cardinality": "one-to-one|one-to-many|many-to-many"
+    }}
+  }},
+  "changes_made": ["what was merged, split, renamed, or dropped"]
+}}
+
+CURRENT ENTITIES:
+{entities_json}

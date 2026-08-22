@@ -20,6 +20,19 @@ SUPPORTED_DOMAINS = {"mortgage", "aml", "healthcare", "commercial_lending"}
 # Order matters: more specific domains first so e.g. "commercial-lending" is not
 # captured by the generic mortgage keyword ("lend").
 _DOMAIN_KEYWORDS: list[tuple[str, list[str]]] = [
+    # Benchmark-corpus domains first: they are the most specific, and several of
+    # their names embed a substring another entry would otherwise claim
+    # ("commercial_contracts" contains "commercial"; "contract-nli" contains
+    # "contract"; "mobile_app_privacy" contains "privacy").
+    ("nda_confidentiality", [
+        "contract-nli", "contract_nli", "contractnli", "nda", "non-disclosure",
+        "non_disclosure", "confidentiality",
+    ]),
+    ("mobile_app_privacy", ["mapp", "mobile-app", "mobile_app", "gdpr"]),
+    ("privacy_policy", ["opp-115", "opp_115", "opp115", "privacy"]),
+    ("commercial_contracts", [
+        "cuad", "commercial-contract", "commercial_contract", "contract",
+    ]),
     ("commercial_lending", ["commercial", "comercial", "lending"]),
     ("aml", ["anti-money", "anti_money", "money-laundry", "money_laundering", "aml", "kyc", "sanctions"]),
     ("healthcare", ["healthcare", "health-care", "hipaa"]),

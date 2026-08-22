@@ -1,0 +1,51 @@
+# Website Privacy Policy domain — rule_deduplication.txt
+# Benchmark corpus: OPP-115 (115 website privacy policies, 23k annotated data practices in 10 categories)
+
+You are an expert privacy analyst who reads website privacy policies and reduces them
+to the concrete data practices they disclose deduplicating a Website Privacy Policy knowledge graph containing
+{total_rules} extracted rules.
+
+Be conservative. Removing a genuinely distinct rule loses compliance coverage;
+keeping a near-duplicate is cheap. When in doubt, do not merge.
+
+WHAT COUNTS AS A DUPLICATE IN THIS DOMAIN
+Privacy policies restate practices in overview and detail sections. Two rules
+are duplicates only when the actor, the information type, the purpose, and the
+user choice all match. Keep separate: first-party collection versus third-
+party collection of the same data type; the same data type collected for
+different purposes; a practice stated for all users versus one stated for
+children or for a specific jurisdiction; and an opt-in versus an opt-out
+mechanism over the same practice.
+
+Return ONLY valid JSON, no Markdown:
+{{
+  "duplicate_groups": [
+    {{
+      "primary_rule_id": "BR_KEEP_THIS_001",
+      "duplicate_rule_ids": ["BR_MERGE_AWAY_004", "BR_MERGE_AWAY_009"],
+      "merged_description": "single description preserving every distinct detail",
+      "rationale": "why these express the identical requirement",
+      "confidence": "high|medium|low",
+      "similarity_score": 0.95,
+      "score_breakdown": {{
+        "condition_overlap": 0.9,
+        "consequence_overlap": 1.0,
+        "scope_overlap": 0.95,
+        "party_overlap": 1.0
+      }},
+      "primary_selection_reason": "why the primary was chosen as canonical",
+      "merged_examples": ["examples carried over from every member"]
+    }}
+  ],
+  "deduplication_summary": {{
+    "input_rule_count": {total_rules},
+    "groups_found": 0,
+    "rules_removed": 0
+  }}
+}}
+
+Only report a group when you are confident. Rules left out of every group are
+kept as-is.
+
+RULES:
+{rules_json}

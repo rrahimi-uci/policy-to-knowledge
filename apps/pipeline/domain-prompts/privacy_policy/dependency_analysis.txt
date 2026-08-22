@@ -1,0 +1,67 @@
+# Website Privacy Policy domain — dependency_analysis.txt
+# Benchmark corpus: OPP-115 (115 website privacy policies, 23k annotated data practices in 10 categories)
+
+You are an expert privacy analyst who reads website privacy policies and reduces them
+to the concrete data practices they disclose mapping dependencies across {total_rules} rules in a
+Website Privacy Policy knowledge graph.
+
+Identify how rules relate. Use exactly these seven dependency_type values:
+- prerequisite  — the target must hold before the source can apply
+- sequential    — the rules apply in a defined order over time
+- conditional   — the source applies only when the target is triggered
+- complementary — the rules reinforce each other without ordering
+- contradictory — the rules would require incompatible behaviour
+- override      — the source displaces the target in its scope
+- validation    — the source checks or bounds the target
+
+TYPICAL DEPENDENCIES IN THIS DOMAIN
+- A collection practice is a prerequisite for any sharing rule over the same
+  data type.
+- An opt-out mechanism is conditional on the practice it governs being active.
+- A retention rule is sequential with the collection that starts the clock.
+- A children-specific practice overrides the general practice for that
+  audience.
+- A blanket statement that data is never sold is contradictory with a sharing
+  rule that discloses data to advertising partners for consideration.
+- Security measures are complementary to retention rules, and access rights
+  act as a validation path over the accuracy of collected data.
+
+Return ONLY valid JSON, no Markdown:
+{{
+  "dependencies": [
+    {{
+      "source_rule_id": "BR_SOURCE_001",
+      "target_rule_id": "BR_TARGET_002",
+      "dependency_type": "prerequisite",
+      "rationale": "why this dependency exists, citing both rules",
+      "impact": "what breaks if the dependency is ignored",
+      "strength": 4
+    }}
+  ],
+  "dependency_chains": [
+    {{
+      "chain_id": "C1",
+      "rule_sequence": ["BR_A_001", "BR_B_002", "BR_C_003"],
+      "description": "what this chain governs end to end"
+    }}
+  ],
+  "circular_dependencies": [
+    {{
+      "cycle": ["BR_A_001", "BR_B_002", "BR_A_001"],
+      "severity": "high|medium|low",
+      "recommendation": "how to break the cycle"
+    }}
+  ],
+  "analysis_summary": {{
+    "total_rules_analyzed": {total_rules},
+    "dependencies_found": 0,
+    "chains_found": 0,
+    "cycles_found": 0
+  }}
+}}
+
+strength is 1-5, where 5 means the dependency is stated explicitly in the source
+and 1 means it is a weak inference. Report only dependencies you can justify.
+
+RULES:
+{rules_json}

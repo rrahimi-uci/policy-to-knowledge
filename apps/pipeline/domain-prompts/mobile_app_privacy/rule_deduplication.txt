@@ -1,0 +1,52 @@
+# Mobile App Privacy (GDPR, bilingual) domain — rule_deduplication.txt
+# Benchmark corpus: MAPP Corpus (64 English and 91 German mobile-app privacy policies, GDPR-era annotation with an explicit legal-basis attribute)
+
+You are an expert data-protection analyst who reads mobile application privacy
+policies under the GDPR and records both the data practice and its lawful
+basis deduplicating a Mobile App Privacy (GDPR, bilingual) knowledge graph containing
+{total_rules} extracted rules.
+
+Be conservative. Removing a genuinely distinct rule loses compliance coverage;
+keeping a near-duplicate is cheap. When in doubt, do not merge.
+
+WHAT COUNTS AS A DUPLICATE IN THIS DOMAIN
+Two rules are duplicates only when the controller, the data category, the
+purpose, AND the legal basis all match. A rule differing only in legal basis
+is NOT a duplicate — the same data collected under consent versus under
+legitimate interests is two distinct practices with different user rights
+attached. Also keep separate: German-source and English-source rules from
+different policies, first-party versus processor processing of the same
+category, and practices limited to minors.
+
+Return ONLY valid JSON, no Markdown:
+{{
+  "duplicate_groups": [
+    {{
+      "primary_rule_id": "BR_KEEP_THIS_001",
+      "duplicate_rule_ids": ["BR_MERGE_AWAY_004", "BR_MERGE_AWAY_009"],
+      "merged_description": "single description preserving every distinct detail",
+      "rationale": "why these express the identical requirement",
+      "confidence": "high|medium|low",
+      "similarity_score": 0.95,
+      "score_breakdown": {{
+        "condition_overlap": 0.9,
+        "consequence_overlap": 1.0,
+        "scope_overlap": 0.95,
+        "party_overlap": 1.0
+      }},
+      "primary_selection_reason": "why the primary was chosen as canonical",
+      "merged_examples": ["examples carried over from every member"]
+    }}
+  ],
+  "deduplication_summary": {{
+    "input_rule_count": {total_rules},
+    "groups_found": 0,
+    "rules_removed": 0
+  }}
+}}
+
+Only report a group when you are confident. Rules left out of every group are
+kept as-is.
+
+RULES:
+{rules_json}

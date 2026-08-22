@@ -1,0 +1,95 @@
+# Website Privacy Policy domain — entity_extraction.txt
+# Benchmark corpus: OPP-115 (115 website privacy policies, 23k annotated data practices in 10 categories)
+
+You are an expert privacy analyst who reads website privacy policies and reduces them
+to the concrete data practices they disclose.
+
+Extract the domain model — entity types and relationships — from consumer-facing website privacy policies and notices.
+The data-practice categories an analyst annotates are: First Party
+Collection/Use, Third Party Sharing/Collection, User Choice/Control, User
+Access/Edit/Deletion, Data Retention, Data Security, Policy Change, Do Not
+Track, and International and Specific Audiences. Every practice is further
+characterised by what information is collected, how and why it is collected,
+who it is shared with, and what choice the user is given.
+
+CANONICAL ENTITY TYPES FOR THIS DOMAIN:
+- FIRST_PARTY — The operator of the site that collects the data
+  attributes: operator_name, service_scope, contact_channel, jurisdiction,
+  affiliate_scope
+  example: The website operator and its corporate affiliates
+- USER — The individual whose information is collected
+  attributes: user_category, account_status, age_bracket, geographic_scope,
+  consent_state
+  example: Registered users and unauthenticated visitors
+- INFORMATION_TYPE — A category of collected data
+  attributes: data_category, identifiability, sensitivity, source,
+  optional_flag
+  example: Contact information, cookies and tracking identifiers, location
+- COLLECTION_PRACTICE — A described act of gathering information
+  attributes: collection_mode, collection_process, purpose, trigger,
+  disclosure_position
+  example: Collected automatically via cookies when a page is loaded
+- THIRD_PARTY — An external recipient of shared information
+  attributes: recipient_class, sharing_purpose, named_entity, onward_transfer,
+  opt_out_available
+  example: Advertising networks and analytics providers
+- USER_CHOICE — A control the policy offers over a practice
+  attributes: choice_type, choice_scope, mechanism, default_state,
+  effect_of_refusal
+  example: Opt-out of targeted advertising via a preference centre
+- RETENTION_PERIOD — How long information is kept and on what basis
+  attributes: duration, retention_purpose, deletion_trigger,
+  aggregation_state, legal_hold
+  example: Retained until the account is closed plus 90 days
+- SECURITY_MEASURE — A stated safeguard over collected information
+  attributes: measure_type, scope, standard_referenced, breach_notification,
+  access_control
+  example: Encryption in transit and at rest
+
+CANONICAL RELATIONSHIPS:
+- FIRST_PARTY_COLLECTS_INFORMATION (FIRST_PARTY → INFORMATION_TYPE) — The core
+  first-party collection practice and its stated purpose
+- INFORMATION_SHARED_WITH_THIRD_PARTY (INFORMATION_TYPE → THIRD_PARTY) —
+  Onward disclosure of a data category to an external recipient
+- USER_EXERCISES_CHOICE (USER → USER_CHOICE) — The control a user is offered
+  over a collection or sharing practice
+- INFORMATION_SUBJECT_TO_RETENTION (INFORMATION_TYPE → RETENTION_PERIOD) —
+  Binds a data category to how long it is kept and when it is deleted
+
+Return ONLY one valid JSON object, no Markdown:
+{{
+  "entity_types": {{
+    "ENTITY_NAME": {{
+      "definition": "Clear business definition in Website Privacy Policy context",
+      "description": "Longer explanation of the role this entity plays",
+      "attributes": ["attribute_one", "attribute_two", "attribute_three"],
+      "examples": ["excerpt-grounded example"],
+      "business_rules": ["High-level summary of a rule involving this entity"],
+      "business_rule_summaries": ["Alternate summary list for downstream compatibility"]
+    }}
+  }},
+  "relationships": {{
+    "RELATIONSHIP_NAME": {{
+      "source_entity": "SOURCE_ENTITY_NAME",
+      "target_entity": "TARGET_ENTITY_NAME",
+      "source": "SOURCE_ENTITY_NAME",
+      "target": "TARGET_ENTITY_NAME",
+      "definition": "What this relationship means in Website Privacy Policy context",
+      "description": "Directional semantics of the relationship",
+      "cardinality": "one-to-one|one-to-many|many-to-many",
+      "examples": ["excerpt-grounded example"],
+      "business_rules": ["High-level summary of a rule governing this relationship"]
+    }}
+  }},
+  "extraction_metadata": {{
+    "source_document": "Document name or section",
+    "entity_count": 0,
+    "relationship_count": 0
+  }}
+}}
+
+Ground every entity and relationship in the excerpts. Do not invent entities the
+text does not support.
+
+EXCERPTS:
+{sample_content}
