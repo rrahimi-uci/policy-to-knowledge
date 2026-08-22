@@ -8,6 +8,7 @@ import os
 import re
 import sys
 from copy import deepcopy
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from itertools import combinations
 from pathlib import Path
 from typing import Any, Mapping, Protocol
@@ -40,7 +41,16 @@ class OpenAIEvidenceResolver:
     """Source interpreter. It never performs graph/corpus integrity decisions."""
 
     def __init__(self, api_key: str, model: str, reasoning_effort: str) -> None:
-        self.client = create_llm_client(api_key=api_key, model=model)
+        try:
+            readiness_concurrency = max(1, int(os.getenv("KG_READINESS_LLM_CONCURRENCY", "4")))
+        except (TypeError, ValueError):
+            readiness_concurrency = 4
+        self.readiness_concurrency = readiness_concurrency
+        self.client = create_llm_client(
+            api_key=api_key,
+            model=model,
+            concurrency=readiness_concurrency,
+        )
         self.reasoning_effort = reasoning_effort
         self.prompts = get_prompt_manager()
 
@@ -54,18 +64,39 @@ class OpenAIEvidenceResolver:
             raise ValueError("readiness response must be an object")
         return value
 
+    def _json_completion(self, prompt: str, max_tokens: int) -> Mapping[str, Any]:
+        """Request JSON with bounded retries for occasional malformed model output."""
+        attempts = max(1, int(os.getenv("KG_READINESS_PARSE_ATTEMPTS", "3")))
+        retry_prompt = prompt
+        last_error: Exception | None = None
+        for attempt in range(attempts):
+            response = self.client.chat_completion(
+                messages=[{"role": "user", "content": retry_prompt}], temperature=0,
+                max_tokens=max_tokens, reasoning_effort=self.reasoning_effort,
+            )
+            content = response.choices[0].message.content or ""
+            try:
+                return self._parse(content)
+            except (json.JSONDecodeError, ValueError, TypeError) as exc:
+                last_error = exc
+                retry_prompt = (
+                    prompt
+                    + "\n\nYour previous response was not valid JSON. Retry now. "
+                    "Return one complete JSON object only, with double-quoted keys and strings; "
+                    "do not include markdown fences or explanatory text."
+                )
+                if attempt + 1 < attempts:
+                    print(f"⚠️ Readiness JSON parse retry {attempt + 1}/{attempts - 1}", flush=True)
+        assert last_error is not None
+        raise last_error
+
     def complete_rule(self, rule: Mapping[str, Any], corpus: Mapping[str, Any]) -> Mapping[str, Any]:
         prompt = self.prompts.format_prompt(
             "executable_readiness_completion",
             rule_json=json.dumps(rule, ensure_ascii=False),
             corpus_json=json.dumps(corpus, ensure_ascii=False),
         )
-        response = self.client.chat_completion(
-            messages=[{"role": "user", "content": prompt}], temperature=0,
-            max_tokens=int(os.getenv("KG_READINESS_MAX_TOKENS", "6000")),
-            reasoning_effort=self.reasoning_effort,
-        )
-        return self._parse(response.choices[0].message.content)
+        return self._json_completion(prompt, int(os.getenv("KG_READINESS_MAX_TOKENS", "6000")))
 
     def analyse_entity(self, entity: str, rules: list[Mapping[str, Any]]) -> list[Mapping[str, Any]]:
         prompt = self.prompts.format_prompt(
@@ -73,12 +104,7 @@ class OpenAIEvidenceResolver:
             entity_key=entity,
             rules_json=json.dumps(rules, ensure_ascii=False),
         )
-        response = self.client.chat_completion(
-            messages=[{"role": "user", "content": prompt}], temperature=0,
-            max_tokens=int(os.getenv("KG_CONFLICT_MAX_TOKENS", "6000")),
-            reasoning_effort=self.reasoning_effort,
-        )
-        value = self._parse(response.choices[0].message.content)
+        value = self._json_completion(prompt, int(os.getenv("KG_CONFLICT_MAX_TOKENS", "6000")))
         analyses = value.get("analyses", [])
         return analyses if isinstance(analyses, list) else []
 
@@ -208,12 +234,29 @@ class ExecutableReadinessCompleter:
         rules = [deepcopy(dict(rule)) for rule in final_graph.get("business_rules", []) if isinstance(rule, Mapping)]
         initial_chunk_rechecks = sum(rule.get("exception_basis") == "not_found_in_chunk_recheck_needed" for rule in rules)
         before_scope = {str(rule.get("rule_id")): deepcopy(rule.get("applicability_scope")) for rule in rules}
-        for rule in rules:
+        try:
+            readiness_workers = max(1, int(os.getenv("KG_READINESS_WORKERS", "8")))
+        except (TypeError, ValueError):
+            readiness_workers = 8
+
+        def complete_one(index: int, original: Mapping[str, Any]) -> tuple[int, dict[str, Any]]:
+            rule = deepcopy(dict(original))
             rule.setdefault("applicability_scope", {})
             for key in ("loan_types", "occupancy_types", "transaction_types"):
                 rule["applicability_scope"].setdefault(key, [])
             rule = self._complete_evidence(rule, self._evidence_packet(rule, corpus))
             rule["execution"] = _project_execution(rule)
+            return index, rule
+
+        print(f"▶ Agent 5.5 rule evidence: {len(rules)} rules, {readiness_workers} workers, "
+              f"{getattr(self.resolver, 'readiness_concurrency', 'bounded') if self.resolver else 0} API requests", flush=True)
+        completed_rules: list[dict[str, Any] | None] = [None] * len(rules)
+        with ThreadPoolExecutor(max_workers=readiness_workers, thread_name_prefix="kg-readiness") as executor:
+            futures = [executor.submit(complete_one, index, rule) for index, rule in enumerate(rules)]
+            for future in as_completed(futures):
+                index, completed = future.result()
+                completed_rules[index] = completed
+        rules = [rule for rule in completed_rules if rule is not None]
         final_graph["business_rules"] = rules
 
         edges = dependency_edges(final_graph)
@@ -225,26 +268,34 @@ class ExecutableReadinessCompleter:
         conflict_entries: list[dict[str, Any]] = []
         ids = {str(rule.get("rule_id")): rule for rule in rules}
         groups = {key: members for key, members in entity_rule_groups(final_graph).items() if len(members) > 1}
-        for entity, member_ids in groups.items():
+        def analyse_group(entity: str, member_ids: list[str]) -> list[dict[str, Any]]:
             summaries = [{key: ids[rule_id].get(key) for key in ("rule_id", "condition_predicates", "condition_logic", "outcomes", "applicability_scope", "exceptions", "recommended_hit_policy")} for rule_id in member_ids]
             analyses = self.resolver.analyse_entity(entity, summaries) if self.resolver else []
             if not analyses:
                 analyses = [{"entity": entity, "status": "unresolved", "rule_ids": member_ids, "reasoning": "No entity-local conflict analysis was returned.", "resolution": "Manual review required."}]
-            conflict_entries.extend(dict(item) for item in analyses if isinstance(item, Mapping))
+            entries = [dict(item) for item in analyses if isinstance(item, Mapping)]
             expected_pairs = {tuple(pair) for pair in combinations(member_ids, 2)}
             covered_pairs = {
                 tuple(pair)
-                for analysis in analyses if isinstance(analysis, Mapping)
+                for analysis in entries
                 for pair in combinations(sorted(str(rule_id) for rule_id in analysis.get("rule_ids", []) if str(rule_id) in member_ids), 2)
             }
-            for pair in sorted(expected_pairs - covered_pairs):
-                conflict_entries.append({
-                    "entity": entity,
-                    "status": "unresolved",
-                    "rule_ids": list(pair),
-                    "reasoning": "The entity-local analyser did not return a co-firing determination for this pair.",
-                    "resolution": "Manual review required.",
-                })
+            entries.extend({
+                "entity": entity,
+                "status": "unresolved",
+                "rule_ids": list(pair),
+                "reasoning": "The entity-local analyser did not return a co-firing determination for this pair.",
+                "resolution": "Manual review required.",
+            } for pair in sorted(expected_pairs - covered_pairs))
+            return entries
+
+        entity_results: dict[str, list[dict[str, Any]]] = {}
+        with ThreadPoolExecutor(max_workers=min(readiness_workers, max(1, len(groups))), thread_name_prefix="kg-conflict") as executor:
+            futures = {executor.submit(analyse_group, entity, member_ids): entity for entity, member_ids in groups.items()}
+            for future in as_completed(futures):
+                entity_results[futures[future]] = future.result()
+        for entity in groups:
+            conflict_entries.extend(entity_results.get(entity, []))
         final_graph["dependency_details"]["conflicts"] = conflict_entries
 
         naming = naming_issues(final_graph)

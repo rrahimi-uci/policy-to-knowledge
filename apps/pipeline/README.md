@@ -81,6 +81,9 @@ is loaded automatically; it must contain `OPENAI_API_KEY`.
 KG_BATCH_NAME=fannie_mae_manual_20260821 \
 KG_REASONING_EFFORT=medium \
 KG_LLM_CONCURRENCY=2 \
+KG_READINESS_WORKERS=8 \
+KG_READINESS_LLM_CONCURRENCY=4 \
+KG_READINESS_PARSE_ATTEMPTS=3 \
 KG_REASONING_MAX_COMPLETION_TOKENS=32768 \
 KG_OPENAI_TIMEOUT=240 \
 KG_OPENAI_MAX_RETRIES=1 \
@@ -110,12 +113,18 @@ and Agent 5.5 executable-readiness pass, in real time. If your virtual environme
 `../../.venv/bin/python` with `.venv/bin/python`.
 
 The values above are the recommended repeatable-run profile. Keep the
-40-worker executor for local parallelism, but leave `KG_LLM_CONCURRENCY=2` so
-only two API requests are in flight at once; higher gates caused provider
-connection resets during long rule extraction runs. Five rules and roughly
-4,500 source words per batch keep the JSON response below the model's output
-ceiling, while the larger completion budget and bounded recovery settings
-prevent truncated batches from silently reducing the corpus.
+40-worker executor for local extraction parallelism, but leave
+`KG_LLM_CONCURRENCY=2` for the extraction stages, where higher gates caused
+provider connection resets during long rule runs. Stage 5.5 independently
+uses eight local evidence workers and a bounded four-request API gate because
+each rule's evidence check is independent; lower `KG_READINESS_LLM_CONCURRENCY`
+to `2` if the provider returns rate-limit or connection errors. Malformed JSON
+from an individual readiness call is retried up to
+`KG_READINESS_PARSE_ATTEMPTS` times instead of aborting the entire pass.
+Five rules and roughly 4,500 source words per extraction batch keep the JSON
+response below the model's output ceiling, while the larger completion budget
+and bounded recovery settings prevent truncated batches from silently reducing
+the corpus.
 
 Common `extract.py` flags:
 

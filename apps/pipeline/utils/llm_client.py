@@ -113,6 +113,7 @@ class LLMClient:
         model: str = None,
         timeout: int = None,
         max_retries: int = None,
+        concurrency: int = None,
     ):
         """
         Initialize the client.
@@ -140,7 +141,7 @@ class LLMClient:
         # failures.  Keep executor parallelism independent from bounded
         # in-flight API concurrency; callers can tune the latter per run.
         try:
-            gate_size = max(1, int(os.getenv("KG_LLM_CONCURRENCY", "2")))
+            gate_size = max(1, int(concurrency if concurrency is not None else os.getenv("KG_LLM_CONCURRENCY", "2")))
         except (TypeError, ValueError):
             gate_size = 2
         self._request_gate = threading.BoundedSemaphore(gate_size)
@@ -383,6 +384,7 @@ def create_llm_client(
     model: str = None,
     timeout: int = None,
     max_retries: int = None,
+    concurrency: int = None,
 ) -> LLMClient:
     """Factory for an OpenAI-backed LLMClient."""
     return LLMClient(
@@ -390,4 +392,5 @@ def create_llm_client(
         model=model,
         timeout=timeout,
         max_retries=max_retries,
+        concurrency=concurrency,
     )
