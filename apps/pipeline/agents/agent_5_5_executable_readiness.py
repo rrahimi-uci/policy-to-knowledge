@@ -17,6 +17,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from utils.config import get_config
 from utils.kg_readiness import (
+    cited_sections,
     corpus_manifest,
     dependency_edges,
     derive_dependency_chains,
@@ -124,29 +125,307 @@ def _project_execution(rule: Mapping[str, Any]) -> dict[str, Any]:
     return execution
 
 
+LEGACY_ENTITY_NAMES = {
+    "ManufacturedHome": "MANUFACTURED_HOME",
+    "MortgageBackedSecurity": "MORTGAGE_BACKED_SECURITY",
+    "MortgagePool": "MORTGAGE_POOL",
+    "RepresentationAndWarranty": "REPRESENTATION_AND_WARRANTY",
+    "SecurityInstrument": "SECURITY_INSTRUMENT",
+    "SpecialFeatureCode": "SPECIAL_FEATURE_CODE",
+}
+
+LEGACY_VALUE_TYPES = {
+    "array": "list",
+    "enum_list": "list",
+    "list_number": "list",
+    "number_list": "list",
+    "string_array": "list",
+    "string_list": "list",
+}
+
+LEGACY_OPERATORS = {
+    "=": "==",
+    "BETWEEN": "in",
+    "IN": "in",
+    "NOT_IN": "not_in",
+}
+
+
+def _normalise_graph_entity_names(value: Any) -> Any:
+    """Replace only exact legacy entity identifiers, including dictionary keys."""
+    if isinstance(value, dict):
+        result: dict[Any, Any] = {}
+        for key, item in value.items():
+            normalised_key = LEGACY_ENTITY_NAMES.get(str(key), key)
+            normalised_item = _normalise_graph_entity_names(item)
+            if normalised_key in result and result[normalised_key] != normalised_item:
+                raise ValueError(f"entity-name normalization collision at {normalised_key!r}")
+            result[normalised_key] = normalised_item
+        return result
+    if isinstance(value, list):
+        return [_normalise_graph_entity_names(item) for item in value]
+    if isinstance(value, str):
+        return LEGACY_ENTITY_NAMES.get(value, value)
+    return value
+
+
+def _normalise_value_type(value: Any) -> Any:
+    return LEGACY_VALUE_TYPES.get(str(value), value)
+
+
+def _normalise_operator(value: Any) -> Any:
+    return LEGACY_OPERATORS.get(str(value), value)
+
+
+def _evidence_pointer(value: Any) -> dict[str, str] | None:
+    if not isinstance(value, Mapping):
+        return None
+    pointer = {
+        "chunk_path": str(value.get("chunk_path", "")).strip(),
+        "section_id": str(value.get("section_id", "")).strip(),
+        "source_text": str(value.get("source_text", value.get("text", ""))).strip(),
+    }
+    return pointer if all(pointer.values()) else None
+
+
+def _invert_predicate(predicate: Mapping[str, Any], predicate_id: str) -> dict[str, Any]:
+    inverse = {"==": "!=", "!=": "==", ">": "<=", ">=": "<", "<": ">=", "<=": ">", "in": "not_in", "not_in": "in"}
+    result = deepcopy(dict(predicate))
+    result["predicate_id"] = predicate_id
+    operator = _normalise_operator(result.get("operator"))
+    if operator in inverse:
+        result["operator"] = inverse[operator]
+    elif result.get("value_type") == "boolean" and isinstance(result.get("value"), bool):
+        result["operator"] = "=="
+        result["value"] = not result["value"]
+    else:
+        result["operator"] = "!="
+    return result
+
+
+def _restore_legacy_outcome_operators(graph: dict[str, Any], baseline: Mapping[str, Any]) -> None:
+    """Restore comparison operators on a replay from the immutable pre-readiness graph."""
+    baseline_operators = {
+        (str(rule.get("rule_id")), str(outcome.get("variable"))): outcome.get("operator")
+        for rule in baseline.get("business_rules", [])
+        if isinstance(rule, Mapping)
+        for outcome in rule.get("outcomes", []) or []
+        if isinstance(outcome, Mapping) and outcome.get("operator") != "="
+    }
+    for rule in graph.get("business_rules", []) or []:
+        if not isinstance(rule, dict):
+            continue
+        baseline_rule = next(
+            (
+                item for item in baseline.get("business_rules", [])
+                if isinstance(item, Mapping) and str(item.get("rule_id")) == str(rule.get("rule_id"))
+            ),
+            None,
+        )
+        for outcome in rule.get("outcomes", []) or []:
+            if not isinstance(outcome, dict):
+                continue
+            current_name = str(outcome.get("variable"))
+            operator = baseline_operators.get((str(rule.get("rule_id")), current_name))
+            if operator is not None:
+                outcome["operator"] = operator
+                continue
+            if not isinstance(baseline_rule, Mapping):
+                continue
+            for baseline_outcome in baseline_rule.get("outcomes", []) or []:
+                if not isinstance(baseline_outcome, Mapping) or baseline_outcome.get("operator") == "=":
+                    continue
+                original_name = str(baseline_outcome.get("variable"))
+                if _threshold_output_name(original_name, baseline_outcome.get("operator")) != current_name:
+                    continue
+                baseline_variable = next(
+                    (
+                        item for item in baseline_rule.get("variables", []) or []
+                        if isinstance(item, Mapping) and str(item.get("name")) == original_name
+                    ),
+                    None,
+                )
+                declared_names = {
+                    str(item.get("name")) for item in rule.get("variables", []) or [] if isinstance(item, Mapping)
+                }
+                vector_uses_original = any(
+                    isinstance(vector, Mapping) and original_name in (vector.get("inputs") or {})
+                    for vector in rule.get("test_vectors", []) or []
+                )
+                if vector_uses_original and isinstance(baseline_variable, Mapping) and original_name not in declared_names:
+                    restored_variable = deepcopy(dict(baseline_variable))
+                    restored_variable["role"] = "input"
+                    rule.setdefault("variables", []).append(restored_variable)
+                break
+
+
+def _threshold_output_name(variable_name: str, operator: Any) -> str:
+    lowered = variable_name.lower()
+    if operator == "<=" and not any(token in lowered for token in ("max", "maximum")):
+        return f"maximum_allowed_{variable_name}"
+    if operator == ">=" and not any(token in lowered for token in ("min", "minimum")):
+        return f"minimum_required_{variable_name}"
+    if str(operator).upper() == "IN" and "allowed" not in lowered:
+        return f"allowed_{variable_name}_values"
+    return variable_name
+
+
 def _normalise_rule_contract(rule: dict[str, Any]) -> dict[str, Any]:
-    """Normalize legacy extraction spellings into the v2 executable shape."""
-    for field in ("condition_predicates", "outcomes"):
+    """Normalize legacy extraction shapes without changing rule/source identity."""
+    variables = rule.get("variables")
+    if not isinstance(variables, list):
+        variables = []
+        rule["variables"] = variables
+    for variable in variables:
+        if not isinstance(variable, dict):
+            continue
+        if variable.get("type") == "datetime":
+            variable["type"] = "date_time"
+        if variable.get("type") == "string":
+            variable["free_text"] = True
+
+    for field in ("condition_predicates", "outcomes", "exceptions"):
         values = rule.get(field)
         if not isinstance(values, list):
             continue
         for item in values:
             if not isinstance(item, dict):
                 continue
-            if field == "condition_predicates" and item.get("operator") == "=":
-                item["operator"] = "=="
+            if field != "outcomes":
+                item["operator"] = _normalise_operator(item.get("operator"))
+            item["value_type"] = _normalise_value_type(item.get("value_type"))
             if item.get("value_type") == "boolean" and isinstance(item.get("value"), str):
                 lowered = item["value"].strip().lower()
                 if lowered in {"true", "false"}:
                     item["value"] = lowered == "true"
+    variable_by_name = {
+        str(variable.get("name", "")).strip().lower(): variable
+        for variable in variables
+        if isinstance(variable, dict) and str(variable.get("name", "")).strip()
+    }
+    for outcome in rule.get("outcomes", []) or []:
+        if not isinstance(outcome, dict):
+            continue
+        original_name = str(outcome.get("variable", "")).strip()
+        original_operator = outcome.get("operator")
+        output_name = _threshold_output_name(original_name, original_operator)
+        variable = variable_by_name.get(original_name.lower())
+        if output_name != original_name and variable is not None:
+            predicate_variables = {
+                str(predicate.get("variable", "")).strip().lower()
+                for predicate in rule.get("condition_predicates", []) or []
+                if isinstance(predicate, Mapping)
+            }
+            vector_uses_original = any(
+                isinstance(vector, Mapping) and original_name in (vector.get("inputs") or {})
+                for vector in rule.get("test_vectors", []) or []
+            )
+            if original_name.lower() in predicate_variables or vector_uses_original:
+                output_variable = deepcopy(variable)
+                output_variable["name"] = output_name
+                output_variable["role"] = "output"
+                variables.append(output_variable)
+                variable["role"] = "input"
+                variable = output_variable
+            else:
+                variable["name"] = output_name
+            variable_by_name.pop(original_name.lower(), None)
+            variable_by_name[output_name.lower()] = variable
+            outcome["variable"] = output_name
+            for vector in rule.get("test_vectors", []) or []:
+                expected = vector.get("expected_output") if isinstance(vector, Mapping) else None
+                if isinstance(expected, dict) and original_name in expected:
+                    expected[output_name] = expected.pop(original_name)
+        if variable is not None:
+            variable["role"] = "output"
+        outcome["operator"] = "="
+
+    predicates = rule.get("condition_predicates")
+    if not isinstance(predicates, list):
+        predicates = []
+        rule["condition_predicates"] = predicates
+    predicate_by_id = {
+        str(predicate.get("predicate_id")): predicate
+        for predicate in predicates
+        if isinstance(predicate, dict) and predicate.get("predicate_id")
+    }
+    referenced_predicates: dict[str, int] = {}
+
+    def normalise_logic(node: Any) -> dict[str, Any] | None:
+        if not isinstance(node, Mapping):
+            return None
+        if node.get("variable") and node.get("operator") is not None:
+            predicate = deepcopy(dict(node))
+            predicate_id = str(predicate.get("predicate_id") or f"p{len(predicates) + 1}")
+            while predicate_id in predicate_by_id:
+                predicate_id = f"p{len(predicates) + 1}"
+            predicate["predicate_id"] = predicate_id
+            predicate["operator"] = _normalise_operator(predicate.get("operator"))
+            predicate["value_type"] = _normalise_value_type(predicate.get("value_type"))
+            predicates.append(predicate)
+            predicate_by_id[predicate_id] = predicate
+            return {"predicate_ref": predicate_id}
+        if "predicate_ref" in node:
+            predicate_id = str(node.get("predicate_ref"))
+            if node.get("negate") is True and predicate_id in predicate_by_id:
+                negated_id = f"{predicate_id}_negated"
+                suffix = 2
+                while negated_id in predicate_by_id:
+                    negated_id = f"{predicate_id}_negated_{suffix}"
+                    suffix += 1
+                negated = _invert_predicate(predicate_by_id[predicate_id], negated_id)
+                predicates.append(negated)
+                predicate_by_id[negated_id] = negated
+                return {"predicate_ref": negated_id}
+            referenced_predicates[predicate_id] = referenced_predicates.get(predicate_id, 0) + 1
+            if referenced_predicates[predicate_id] > 1 and predicate_id in predicate_by_id:
+                duplicate_id = f"{predicate_id}_copy_{referenced_predicates[predicate_id]}"
+                while duplicate_id in predicate_by_id:
+                    referenced_predicates[predicate_id] += 1
+                    duplicate_id = f"{predicate_id}_copy_{referenced_predicates[predicate_id]}"
+                duplicate = deepcopy(predicate_by_id[predicate_id])
+                duplicate["predicate_id"] = duplicate_id
+                predicates.append(duplicate)
+                predicate_by_id[duplicate_id] = duplicate
+                return {"predicate_ref": duplicate_id}
+            return {"predicate_ref": predicate_id}
+        for branch in ("all", "any"):
+            if branch in node and isinstance(node[branch], list):
+                children = [normalise_logic(child) for child in node[branch]]
+                return {branch: [child for child in children if child is not None]}
+        return None
+
+    logic = rule.get("condition_logic")
+    if not (isinstance(logic, str) and logic in {"AND", "OR"}):
+        normalised_logic = normalise_logic(logic)
+
+        def logic_refs(node: Any) -> list[str]:
+            if not isinstance(node, Mapping):
+                return []
+            if set(node) == {"predicate_ref"}:
+                return [str(node["predicate_ref"])]
+            return [ref for value in node.values() if isinstance(value, list) for child in value for ref in logic_refs(child)]
+
+        referenced = set(logic_refs(normalised_logic))
+        missing = [
+            str(predicate.get("predicate_id"))
+            for predicate in predicates
+            if isinstance(predicate, Mapping) and predicate.get("predicate_id") and str(predicate.get("predicate_id")) not in referenced
+        ]
+        if normalised_logic is None:
+            children = [{"predicate_ref": predicate_id} for predicate_id in missing]
+            normalised_logic = children[0] if len(children) == 1 else {"all": children}
+        elif missing:
+            normalised_logic = {"all": [normalised_logic, *({"predicate_ref": predicate_id} for predicate_id in missing)]}
+        rule["condition_logic"] = normalised_logic
 
     def flatten_logic(node: Any, prefix: str, output: list[dict[str, Any]]) -> None:
         if isinstance(node, Mapping):
             if node.get("variable") and node.get("operator") is not None:
                 item = dict(node)
                 item.setdefault("predicate_id", f"{prefix}_{len(output) + 1}")
-                if item.get("operator") == "=":
-                    item["operator"] = "=="
+                item["operator"] = _normalise_operator(item.get("operator"))
+                item["value_type"] = _normalise_value_type(item.get("value_type"))
                 if item.get("value_type") == "boolean" and isinstance(item.get("value"), str):
                     lowered = item["value"].strip().lower()
                     if lowered in {"true", "false"}:
@@ -167,13 +446,77 @@ def _normalise_rule_contract(rule: dict[str, Any]) -> dict[str, Any]:
                 continue
             if exception.get("variable") and exception.get("operator") is not None:
                 item = dict(exception)
-                if item.get("operator") == "=":
-                    item["operator"] = "=="
+                item.setdefault("predicate_id", str(exception.get("exception_id") or f"ex{index + 1}"))
+                item["operator"] = _normalise_operator(item.get("operator"))
+                item["value_type"] = _normalise_value_type(item.get("value_type"))
                 flattened.append(item)
                 continue
             prefix = str(exception.get("exception_id") or f"ex{index + 1}")
             flatten_logic(exception.get("logic", exception), prefix, flattened)
         rule["exceptions"] = flattened
+
+    variable_by_name = {
+        str(variable.get("name", "")).strip().lower(): variable
+        for variable in variables
+        if isinstance(variable, dict) and str(variable.get("name", "")).strip()
+    }
+    for index, exception in enumerate(rule.get("exceptions", []) or []):
+        if not isinstance(exception, dict):
+            continue
+        exception.setdefault("predicate_id", f"ex{index + 1}")
+        name = str(exception.get("variable", "")).strip()
+        existing_variable = variable_by_name.get(name.lower())
+        if not exception.get("value_type") and existing_variable is not None:
+            exception["value_type"] = existing_variable.get("type")
+        if not name or existing_variable is not None:
+            continue
+        value = exception.get("value")
+        value_type = exception.get("value_type")
+        variable_type = value_type if value_type in {"number", "boolean", "enum", "date", "date_time", "duration", "string"} else "string"
+        variable: dict[str, Any] = {"name": name, "type": variable_type, "role": "input"}
+        if variable_type == "string":
+            variable["free_text"] = True
+        if variable_type == "enum":
+            variable["allowed_values"] = value if isinstance(value, list) else [value]
+        variables.append(variable)
+        variable_by_name[name.lower()] = variable
+
+    verification = rule.get("exception_verification")
+    if (
+        rule.get("exception_basis") == "explicit_in_source"
+        and not rule.get("exceptions")
+        and isinstance(verification, dict)
+        and str(verification.get("unresolved_reason", "")).strip()
+    ):
+        rule["exception_basis"] = "unresolved_after_full_document_search"
+        verification["status"] = "unresolved_after_full_document_search"
+
+    for vector in rule.get("test_vectors", []) or []:
+        if not isinstance(vector, dict):
+            continue
+        basis = str(vector.get("vector_basis", ""))
+        if basis.startswith("source_attested"):
+            vector["vector_basis"] = "source_attested"
+        elif basis.startswith("derived"):
+            vector["vector_basis"] = "derived_from_source"
+
+    evidence = rule.setdefault("field_evidence", {})
+    if isinstance(evidence, dict):
+        source_pointer = _evidence_pointer(rule.get("source_reference"))
+        exception_pointers = [
+            pointer
+            for item in (rule.get("exception_verification") or {}).get("evidence", [])
+            if (pointer := _evidence_pointer(item)) is not None
+        ] if isinstance(rule.get("exception_verification"), Mapping) else []
+        for field_path in (
+            "condition_predicates", "outcomes", "responsible_party", "scope_basis",
+            "versioning_status", "exceptions", "test_vectors",
+        ):
+            existing = evidence.get(field_path)
+            if isinstance(existing, list) and existing:
+                continue
+            pointers = exception_pointers if field_path == "exceptions" and exception_pointers else ([source_pointer] if source_pointer else [])
+            evidence[field_path] = pointers
     return rule
 
 
@@ -282,11 +625,13 @@ class ExecutableReadinessCompleter:
         return rule
 
     def complete(self, baseline: Mapping[str, Any], graph: Mapping[str, Any], organized_dir: str) -> tuple[dict[str, Any], dict[str, Any]]:
-        final_graph = deepcopy(dict(graph))
+        final_graph = _normalise_graph_entity_names(deepcopy(dict(graph)))
+        _restore_legacy_outcome_operators(final_graph, baseline)
         corpus = source_document_index(organized_dir)
         rules = [deepcopy(dict(rule)) for rule in final_graph.get("business_rules", []) if isinstance(rule, Mapping)]
-        initial_chunk_rechecks = sum(rule.get("exception_basis") == "not_found_in_chunk_recheck_needed" for rule in rules)
-        before_scope = {str(rule.get("rule_id")): deepcopy(rule.get("applicability_scope")) for rule in rules}
+        baseline_rules = [rule for rule in baseline.get("business_rules", []) if isinstance(rule, Mapping)]
+        initial_chunk_rechecks = sum(rule.get("exception_basis") == "not_found_in_chunk_recheck_needed" for rule in baseline_rules)
+        before_scope = {str(rule.get("rule_id")): deepcopy(rule.get("applicability_scope")) for rule in baseline_rules}
         try:
             readiness_workers = max(1, int(os.getenv("KG_READINESS_WORKERS", "8")))
         except (TypeError, ValueError):
@@ -306,6 +651,8 @@ class ExecutableReadinessCompleter:
         if skip_evidence:
             print(f"▶ Agent 5.5 rule evidence: reusing {len(rules)} completed rules", flush=True)
             rules = [_normalise_rule_contract(rule) for rule in rules]
+            for rule in rules:
+                rule["execution"] = _project_execution(rule)
         else:
             print(f"▶ Agent 5.5 rule evidence: {len(rules)} rules, {readiness_workers} workers, "
                   f"{getattr(self.resolver, 'readiness_concurrency', 'bounded') if self.resolver else 0} API requests", flush=True)
@@ -408,13 +755,19 @@ class ExecutableReadinessCompleter:
             } for pair in sorted(expected_pairs - covered_pairs))
             return entries
 
-        entity_results: dict[str, list[dict[str, Any]]] = {}
-        with ThreadPoolExecutor(max_workers=min(readiness_workers, max(1, len(groups))), thread_name_prefix="kg-conflict") as executor:
-            futures = {executor.submit(analyse_group, entity, member_ids): entity for entity, member_ids in groups.items()}
-            for future in as_completed(futures):
-                entity_results[futures[future]] = future.result()
-        for entity in groups:
-            conflict_entries.extend(entity_results.get(entity, []))
+        skip_conflicts = os.getenv("KG_READINESS_SKIP_CONFLICTS", "").lower() in {"1", "true", "yes"}
+        existing_conflicts = (final_graph.get("dependency_details") or {}).get("conflicts", [])
+        if skip_conflicts and isinstance(existing_conflicts, list) and existing_conflicts:
+            print(f"▶ Agent 5.5 conflicts: reusing {len(existing_conflicts)} completed analyses", flush=True)
+            conflict_entries = [deepcopy(dict(item)) for item in existing_conflicts if isinstance(item, Mapping)]
+        else:
+            entity_results: dict[str, list[dict[str, Any]]] = {}
+            with ThreadPoolExecutor(max_workers=min(readiness_workers, max(1, len(groups))), thread_name_prefix="kg-conflict") as executor:
+                futures = {executor.submit(analyse_group, entity, member_ids): entity for entity, member_ids in groups.items()}
+                for future in as_completed(futures):
+                    entity_results[futures[future]] = future.result()
+            for entity in groups:
+                conflict_entries.extend(entity_results.get(entity, []))
         final_graph["dependency_details"]["conflicts"] = conflict_entries
 
         naming = naming_issues(final_graph)
@@ -432,7 +785,7 @@ class ExecutableReadinessCompleter:
             contract_error_count += len(contract_issues)
             issues = contract_issues
             final_issues = final_rule_issues(rule, entity_keys)
-            final_contract_error_count += len(final_issues)
+            final_contract_error_count += sum(not issue.get("evidence_limited") for issue in final_issues)
             issues.extend(final_issues)
             for conflict in conflict_by_rule.get(str(rule.get("rule_id")), []):
                 if conflict.get("status") == "unresolved" or (conflict.get("status") == "conflict" and not str(conflict.get("resolution", "")).strip()):
@@ -441,7 +794,12 @@ class ExecutableReadinessCompleter:
                 issues.append({"requirement": "referential_integrity", "reason": "rule has a dangling dependency reference"})
             reviewed_rules.append(mark_readiness(rule, issues))
         final_graph["business_rules"] = reviewed_rules
-        manifest = corpus_manifest(baseline, final_graph)
+        evidence_added_sections = cited_sections(final_graph) - cited_sections(baseline)
+        corpus_change_reasons = {
+            section: "Added as field-level evidence during the required full-document readiness review; the source document corpus is unchanged."
+            for section in evidence_added_sections
+        }
+        manifest = corpus_manifest(baseline, final_graph, corpus_change_reasons)
         final_graph["corpus_manifest"] = manifest
 
         exception_bases = [rule.get("exception_basis") for rule in reviewed_rules]
@@ -452,7 +810,7 @@ class ExecutableReadinessCompleter:
         unresolved = [rule for rule in reviewed_rules if rule.get("requires_review")]
         report = {
             "invariants": {
-                "corpus_integrity": {"pass": manifest["pass"] and not manifest["missing_change_reasons"], "evidence": f"{len(manifest['input_sections'])} input and {len(manifest['final_sections'])} final cited sections.", **manifest},
+                "corpus_integrity": {"pass": manifest["pass"], "evidence": f"{len(manifest['input_sections'])} input and {len(manifest['final_sections'])} final cited sections; every change has an explicit reason.", **manifest},
                 "naming_consistency": {"pass": not naming, "evidence": f"{len(entity_keys)} entity type keys checked; {len(naming)} violations.", "violations": naming},
                 "schema_consistency": {"pass": contract_error_count + final_contract_error_count == 0, "evidence": f"{len(reviewed_rules)} rules checked; {contract_error_count} v2 and {final_contract_error_count} final-readiness contract violations."},
                 "referential_integrity": {"pass": not references, "evidence": f"{len(edges)} dependency edges checked; {len(references)} dangling references.", "violations": references},

@@ -154,6 +154,20 @@ The extraction command exits nonzero if Agent 5.5 finds an invariant violation
 or any rule still requires review. The evidence artifacts are still written so
 the precise source limitation can be corrected and the pass rerun.
 
+After changing only deterministic Agent 5.5 normalization or validation code,
+replay the saved evidence and conflict results instead of repeating model calls:
+
+```bash
+KG_BATCH_NAME=<existing-run> \
+KG_READINESS_SKIP_EVIDENCE=1 \
+KG_READINESS_SKIP_CONFLICTS=1 \
+PYTHONPATH=. ../../.venv/bin/python agents/agent_5_5_executable_readiness.py
+```
+
+Use these two skip flags only when the selected run already contains completed
+full-document evidence and entity-conflict analyses. A normal/new document run
+must leave both flags unset.
+
 ### Docker
 
 ```bash

@@ -3,11 +3,13 @@ from importlib import import_module
 
 from tests.test_rule_contract import valid_rule
 from utils.kg_readiness import derive_dependency_chains, referential_integrity_issues
+from utils.rule_contract import validate_rule_v2
 
 
-ExecutableReadinessCompleter = import_module(
-    "agents.agent_5_5_executable_readiness"
-).ExecutableReadinessCompleter
+readiness_module = import_module("agents.agent_5_5_executable_readiness")
+ExecutableReadinessCompleter = readiness_module.ExecutableReadinessCompleter
+normalise_graph_entity_names = readiness_module._normalise_graph_entity_names
+normalise_rule_contract = readiness_module._normalise_rule_contract
 
 
 class Resolver:
@@ -95,3 +97,68 @@ def test_chain_traversal_is_graph_derived_and_cycle_safe():
 
     assert chains == [{"rule_ids": ["A", "B", "C"], "dependency_types": ["prerequisite", "conditional"]}]
     assert cycles == [["B", "C", "B"]]
+
+
+def test_legacy_naming_and_rule_shapes_normalise_to_one_v2_contract():
+    rule = valid_rule()
+    rule["responsible_party"] = "MortgagePool"
+    rule["counterparties"] = ["ManufacturedHome"]
+    rule["variables"].append({"name": "review_note", "type": "string", "role": "input"})
+    rule["condition_predicates"].append({
+        "predicate_id": "p2",
+        "variable": "price_differential_amount",
+        "operator": "IN",
+        "value": [1, 2],
+        "value_type": "number_list",
+    })
+    rule["condition_logic"] = {
+        "any": [
+            {"all": [{"predicate_ref": "p1"}, {"predicate_ref": "p2"}]},
+            {"predicate_ref": "p1"},
+        ]
+    }
+    rule["outcomes"][0]["operator"] = "<="
+    rule["test_vectors"][0]["vector_basis"] = "derived_from_source_threshold_text"
+    rule["exceptions"] = [{
+        "variable": "price_differential_amount",
+        "operator": "=",
+        "value": 10,
+    }]
+    graph = normalise_graph_entity_names({
+        "entity_types": {"MortgagePool": {}, "ManufacturedHome": {}},
+        "business_rules": [rule],
+    })
+    rule = graph["business_rules"][0]
+
+    normalise_rule_contract(rule)
+    issues = validate_rule_v2(rule, graph["entity_types"])
+
+    assert set(graph["entity_types"]) == {"MORTGAGE_POOL", "MANUFACTURED_HOME"}
+    assert rule["responsible_party"] == "MORTGAGE_POOL"
+    assert rule["counterparties"] == ["MANUFACTURED_HOME"]
+    assert issues == []
+    assert rule["test_vectors"][0]["vector_basis"] == "derived_from_source"
+    assert rule["variables"][-1]["free_text"] is True
+
+
+def test_evidence_limited_final_state_stays_under_review(tmp_path):
+    organized = tmp_path / "organized" / "B2-1-01"
+    organized.mkdir(parents=True)
+    (organized / "001.txt").write_text("The exception cannot be expressed from the available variables.")
+    graph = graph_with_two_rules()
+    for rule in graph["business_rules"]:
+        rule["exception_basis"] = "unresolved_after_full_document_search"
+        rule["exception_verification"] = {
+            "searched_chunk_count": 1,
+            "unresolved_reason": "The cited source does not define the necessary decision variable.",
+        }
+        rule["scope_basis"] = "genuinely_unscoped"
+        rule["scope_derivation"] = {"reviewed_chunk_count": 1}
+
+    final_graph, report = ExecutableReadinessCompleter().complete(
+        graph, graph, str(tmp_path / "organized")
+    )
+
+    assert report["invariants"]["schema_consistency"]["pass"] is True
+    assert all(rule["requires_review"] is True for rule in final_graph["business_rules"])
+    assert all("necessary decision variable" in rule["readiness"]["review_reason"] for rule in final_graph["business_rules"])
