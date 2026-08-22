@@ -15,6 +15,7 @@ import os
 import sys
 import json
 import re
+from copy import deepcopy
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 import time
@@ -330,8 +331,18 @@ class ComplianceEntityRelationshipAgent:
         findings = None
         accumulated_catalog = {"entity_types": {}, "relationships": {}}
         quality_analysis = None
+        iterations_run = 0
+        early_stop = os.getenv("KG_ENTITY_EARLY_STOP", "1").lower() in {"1", "true", "yes"}
+        min_iterations = max(1, int(os.getenv("KG_ENTITY_MIN_ITERATIONS", "2")))
+        min_new_items = max(0, int(os.getenv("KG_ENTITY_MIN_NEW_ITEMS", "0")))
+        quality_target = float(os.getenv("KG_ENTITY_QUALITY_TARGET", "90"))
+        checkpoint_value = os.getenv("KG_ENTITY_CHECKPOINT_FILE", "").strip()
+        checkpoint_path = Path(checkpoint_value) if checkpoint_value else None
 
         for iteration in range(1, n_iterations + 1):
+            iterations_run = iteration
+            before_entities = len(accumulated_catalog.get("entity_types", {}))
+            before_relationships = len(accumulated_catalog.get("relationships", {}))
             print(f"\n{'─'*70}")
             print(f"ITERATION {iteration}/{n_iterations}")
             print(f"{'─'*70}")
@@ -360,61 +371,66 @@ class ComplianceEntityRelationshipAgent:
                 accumulated_catalog, findings
             )
             
-            # Step 3: Analyze extraction quality (except for last iteration)
+            # Step 3: Analyze each iteration once. The result supports both
+            # prompt refinement and deterministic convergence detection.
+            label = "Final Quality Analysis" if iteration == n_iterations else "Quality Analysis"
+            print(f"\n[Step 3] {label}")
+            quality_analysis = self.meta_agent.analyze_extraction_quality(
+                extraction_results=findings,
+                iteration=iteration,
+            )
+            self.meta_agent.record_extraction_results(
+                iteration=iteration,
+                extraction_results=findings,
+                quality_analysis=quality_analysis,
+            )
+            print(f"  ✓ {label} Complete")
+            print(f"    Overall Score: {quality_analysis.get('overall_score', 0)}/100")
+            print(f"    Entity Quality: {quality_analysis.get('entity_quality_score', 0)}/100")
+            print(f"    Relationship Quality: {quality_analysis.get('relationship_quality_score', 0)}/100")
+            print(f"    Business Rules: {quality_analysis.get('business_rules_score', 0)}/100")
+            print(f"    Coverage: {quality_analysis.get('coverage_score', 0)}/100")
+
+            if checkpoint_path is not None:
+                checkpoint_path.parent.mkdir(parents=True, exist_ok=True)
+                checkpoint = deepcopy(accumulated_catalog)
+                checkpoint["iteration"] = iteration
+                checkpoint["final_quality_analysis"] = quality_analysis
+                checkpoint_path.write_text(
+                    json.dumps(checkpoint, indent=2, ensure_ascii=False) + "\n",
+                    encoding="utf-8",
+                )
+                print(f"  💾 Entity iteration checkpoint: {checkpoint_path}", flush=True)
+
+            new_items = (
+                len(accumulated_catalog.get("entity_types", {})) - before_entities
+                + len(accumulated_catalog.get("relationships", {})) - before_relationships
+            )
+            quality_score = float((quality_analysis or {}).get("overall_score", 0) or 0)
+            if (
+                early_stop
+                and iteration >= min_iterations
+                and iteration < n_iterations
+                and (new_items <= min_new_items or quality_score >= quality_target)
+            ):
+                print(
+                    f"  ⏩ Entity extraction converged after iteration {iteration}: "
+                    f"new catalog items={new_items}, quality={quality_score:.1f}",
+                    flush=True,
+                )
+                break
+
             if iteration < n_iterations:
-                print(f"\n[Step 3] Quality Analysis")
-                quality_analysis = self.meta_agent.analyze_extraction_quality(
-                    extraction_results=findings,
-                    iteration=iteration
-                )
-                
-                # Record results for learning
-                self.meta_agent.record_extraction_results(
-                    iteration=iteration,
-                    extraction_results=findings,
-                    quality_analysis=quality_analysis
-                )
-                
-                # Display quality metrics
-                print(f"  ✓ Quality Analysis Complete")
-                print(f"    Overall Score: {quality_analysis.get('overall_score', 0)}/100")
-                print(f"    Entity Quality: {quality_analysis.get('entity_quality_score', 0)}/100")
-                print(f"    Relationship Quality: {quality_analysis.get('relationship_quality_score', 0)}/100")
-                print(f"    Business Rules: {quality_analysis.get('business_rules_score', 0)}/100")
-                print(f"    Coverage: {quality_analysis.get('coverage_score', 0)}/100")
-                
-                # Show top improvements for next iteration
+                # Show top improvements for next iteration.
                 priorities = quality_analysis.get('improvement_priorities', [])
                 if priorities:
                     print(f"\n    Top Priorities for Next Iteration:")
                     for i, priority in enumerate(priorities[:3], 1):
                         print(f"      {i}. [{priority.get('priority', 'N/A')}] {priority.get('issue', 'N/A')}")
-                
-                # Brief pause before next iteration
                 time.sleep(2)
-            else:
-                # Final iteration - do final quality analysis
-                print(f"\n[Step 3] Final Quality Analysis")
-                quality_analysis = self.meta_agent.analyze_extraction_quality(
-                    extraction_results=findings,
-                    iteration=iteration
-                )
-                
-                self.meta_agent.record_extraction_results(
-                    iteration=iteration,
-                    extraction_results=findings,
-                    quality_analysis=quality_analysis
-                )
-                
-                print(f"  ✓ Final Quality Scores:")
-                print(f"    Overall: {quality_analysis.get('overall_score', 0)}/100")
-                print(f"    Entity Quality: {quality_analysis.get('entity_quality_score', 0)}/100")
-                print(f"    Relationship Quality: {quality_analysis.get('relationship_quality_score', 0)}/100")
-                print(f"    Business Rules: {quality_analysis.get('business_rules_score', 0)}/100")
-                print(f"    Coverage: {quality_analysis.get('coverage_score', 0)}/100")
         
         findings = accumulated_catalog
-        findings['iteration'] = n_iterations
+        findings['iteration'] = iterations_run
         findings['timestamp'] = time.strftime('%Y-%m-%d %H:%M:%S')
 
         # Add optimization summary to findings
@@ -521,6 +537,10 @@ def main():
     TEXT_DIR = str(config.get_organized_dir())
     OUTPUT_DIR = str(config.get_entity_relationship_dir())
     N_ITERATIONS = config.get_n_iterations()
+    os.environ.setdefault(
+        "KG_ENTITY_CHECKPOINT_FILE",
+        str(Path(OUTPUT_DIR) / "entity_iteration_checkpoint.json"),
+    )
     
     print("""
 ╔══════════════════════════════════════════════════════════════════════╗

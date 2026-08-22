@@ -1,0 +1,35 @@
+You are Agent 5.6. Remediate ONLY the supplied rules that failed executable
+readiness. The evidence packets were produced by deterministic searches over
+the complete organized source corpus. Do not invent facts and do not change a
+rule ID, source reference, condition, outcome, dependency, or entity binding.
+
+Return JSON only:
+{{
+  "remediations": [
+    {{
+      "rule_id": "exact supplied ID",
+      "variables_to_add": [{{"name":"snake_case", "type":"boolean | enum | number | date | date_time | duration | string", "role":"input", "allowed_values":[]}}],
+      "exceptions": [{{"predicate_id":"ex1", "variable":"declared or newly added variable", "operator":"== | != | > | >= | < | <= | in | not_in", "value":true, "value_type":"boolean | enum | number | date | date_time | duration | string | list | variable_reference"}}],
+      "exception_basis": "explicit_in_source | explicitly_none_in_source | unresolved_after_full_document_search",
+      "exception_verification": {{"status":"explicit_in_source | explicitly_none_in_source | unresolved", "evidence":[{{"chunk_path":"...", "section_id":"...", "source_text":"direct quote"}}], "unresolved_reason":null}},
+      "applicability_scope": {{"loan_types":[], "occupancy_types":[], "transaction_types":[]}},
+      "scope_basis": "explicit | explicitly_universal_in_source | genuinely_unscoped | unresolved_after_source_review",
+      "scope_derivation": {{"status":"explicit | explicitly_universal | genuinely_unscoped | unresolved", "evidence":[{{"chunk_path":"...", "section_id":"...", "source_text":"direct quote"}}], "unresolved_reason":null}}
+    }}
+  ]
+}}
+
+Rules:
+- Add the minimum typed input variables needed to express an explicit source
+  exception. Enum variables require non-empty allowed_values. String variables
+  require free_text=true. Never add a variable merely to remove review status.
+- Every explicit exception/scope value requires a direct evidence pointer from
+  the supplied packet. Do not cite unshown text.
+- Use explicitly_none_in_source or genuinely_unscoped only when the packet
+  proves the complete corpus was searched and the relevant evidence is absent.
+- When evidence is genuinely insufficient, retain an unresolved state with the
+  precise evidence limit. Never manufacture readiness.
+- Return one entry for every supplied rule and no additional rule IDs.
+
+FAILED RULES AND FULL-CORPUS EVIDENCE PACKETS:
+{remediation_json}

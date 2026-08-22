@@ -201,3 +201,30 @@ an unresolved rule is not specifically explained, or a rule labelled `ready`
 lacks an executable DMN/BPMN projection. The report may contain failing rules,
 but it must clearly report the failed pass and preserve every input rule and
 source citation.
+
+## Focused remediation and performance complement
+
+Agent 5.5 is followed by Agent 5.6 only when concrete review failures remain.
+Agent 5.6 selects those rules and unresolved entity-local pairs by ID, batches
+source work by cited section, may add the minimum source-backed typed inputs
+needed to encode an explicit exception, and then reruns Agent 5.5's
+deterministic schema, corpus, naming, reference, and readiness checks. It uses
+append-only content-keyed checkpoints and stops after three passes or when the
+review count no longer falls. Evidence insufficiency remains explicit review;
+the stage never forces a 352/352 result.
+
+When evidence establishes that a shared outcome is multi-valued (for example,
+one special feature code is required in addition to any other applicable
+codes), Agent 5.6 promotes that output to one graph-wide list contract. Every
+rule using the same output name is normalized to the same type and COLLECT
+policy before conflicts are re-evaluated. This prevents a source-supported
+collection from remaining scalar in a neighboring rule and preserves the no
+schema-drift invariant.
+
+Pipeline throughput preserves the real dependency DAG: Agents 2 and 3 remain
+sequential, Agent 3.5 overlaps Agent 4, independent documents run in isolated
+subprocesses, Agent 5.5 and 5.6 use bounded batch requests, and a SQLite-backed
+adaptive limiter coordinates subprocesses. Agent 2 stops only after measured
+catalog convergence and saves its latest catalog after every iteration. The
+normal CLI reads all throughput, retry, batch, token, and remediation limits
+from `pipeline.performance`; environment variables are optional overrides.

@@ -12,9 +12,11 @@ import re
 import sys
 import threading
 import time
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any, List, Mapping, Optional
 
 from openai import OpenAI
+
+from utils.adaptive_limiter import AdaptiveRequestLimiter
 
 
 def _build_keepalive_http_client(timeout):
@@ -144,6 +146,7 @@ class LLMClient:
             gate_size = max(1, int(concurrency if concurrency is not None else os.getenv("KG_LLM_CONCURRENCY", "2")))
         except (TypeError, ValueError):
             gate_size = 2
+        self._adaptive_limiter = AdaptiveRequestLimiter.from_environment()
         self._request_gate = threading.BoundedSemaphore(gate_size)
 
     def _get_client(self) -> OpenAI:
@@ -307,15 +310,34 @@ class LLMClient:
 
         params.update(kwargs)
 
+        lease = None
+        request_started = time.monotonic()
         try:
             with self._request_gate:
+                if self._adaptive_limiter is not None:
+                    lease = self._adaptive_limiter.acquire(
+                        timeout=self.timeout * (self.max_retries + 1) + self.watchdog_margin
+                    )
                 response = self._create_with_watchdog(params)
         except Exception as e:
+            if lease is not None and self._adaptive_limiter is not None:
+                throttled, penalize = self._classify_backpressure_error(e)
+                snapshot = self._adaptive_limiter.release(
+                    lease, success=False, penalize=penalize, throttled=throttled,
+                    request_seconds=time.monotonic() - request_started,
+                )
+                self._emit_request_metric(lease, snapshot, False, e)
             # A connection error can leave the keep-alive pool unusable. Reset
             # it before the caller's bounded batch retry constructs a fresh
             # transport; otherwise retries repeat the same dead socket.
             self._reset_client()
             raise Exception(f"LLM completion failed: {str(e)}")
+
+        if lease is not None and self._adaptive_limiter is not None:
+            snapshot = self._adaptive_limiter.release(
+                lease, success=True, request_seconds=time.monotonic() - request_started
+            )
+            self._emit_request_metric(lease, snapshot, True, None)
 
         # ── Safety check: warn on unexpected empty or truncated output ──
         content = (response.choices[0].message.content or "").strip()
@@ -358,6 +380,29 @@ class LLMClient:
             print(f"[LLM_COST]{json.dumps(cost_entry)}", flush=True)
 
         return response
+
+    @staticmethod
+    def _classify_backpressure_error(error: BaseException) -> tuple[bool, bool]:
+        status_code = getattr(error, "status_code", None)
+        value = f"{type(error).__name__}: {error}".lower()
+        throttled = status_code == 429 or "429" in value or "rate limit" in value
+        penalize = throttled or any(token in value for token in ("timeout", "timed out", "connection", "socket"))
+        return throttled, penalize
+
+    def _emit_request_metric(
+        self, lease, snapshot: Mapping[str, Any], success: bool, error: BaseException | None
+    ) -> None:
+        metric = {
+            "model": self.model, "success": success,
+            "wait_seconds": round(float(lease.wait_seconds), 3),
+            "current_limit": snapshot.get("current_limit"),
+            "active_leases": snapshot.get("active_leases"),
+            "total_success": snapshot.get("total_success"),
+            "total_failure": snapshot.get("total_failure"),
+            "total_throttled": snapshot.get("total_throttled"),
+            "error_type": None if error is None else type(error).__name__,
+        }
+        print(f"[LLM_METRIC]{json.dumps(metric)}", flush=True)
 
     def get_text_response(
         self,

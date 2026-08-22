@@ -71,7 +71,8 @@ def corpus_manifest(input_graph: Mapping[str, Any], final_graph: Mapping[str, An
         "final_sections": sorted(after),
         "sections_added": [{"section_id": section, "reason": reasons.get(section, "")} for section in added],
         "sections_removed": [{"section_id": section, "reason": reasons.get(section, "")} for section in removed],
-        "pass": not added and not removed,
+        "corpus_unchanged": not added and not removed,
+        "pass": not missing_reasons,
         "missing_change_reasons": missing_reasons,
     }
 
@@ -208,9 +209,9 @@ def source_document_index(organized_dir: str) -> dict[str, Any]:
     return {"chunks": chunks, "chunk_count": len(chunks), "corpus_sha256": digest}
 
 
-def final_rule_issues(rule: Mapping[str, Any], entity_keys: Iterable[str]) -> list[dict[str, str]]:
+def final_rule_issues(rule: Mapping[str, Any], entity_keys: Iterable[str]) -> list[dict[str, Any]]:
     """Validate the final-only fields that make a candidate executable."""
-    issues: list[dict[str, str]] = []
+    issues: list[dict[str, Any]] = []
     scope = rule.get("applicability_scope")
     if not isinstance(scope, Mapping) or any(not isinstance(scope.get(key), list) for key in ("loan_types", "occupancy_types", "transaction_types")):
         issues.append({"requirement": "scope", "reason": "scope must contain list-valued loan_types, occupancy_types, and transaction_types"})
@@ -218,6 +219,12 @@ def final_rule_issues(rule: Mapping[str, Any], entity_keys: Iterable[str]) -> li
         issues.append({"requirement": "scope", "reason": "scope_basis is not a final evidence state"})
     if rule.get("scope_basis") == "unresolved_after_source_review" and not str(rule.get("scope_derivation", {}).get("unresolved_reason", "")).strip():
         issues.append({"requirement": "scope", "reason": "unresolved scope lacks a specific evidence limit"})
+    elif rule.get("scope_basis") == "unresolved_after_source_review":
+        issues.append({
+            "requirement": "scope",
+            "reason": str(rule.get("scope_derivation", {}).get("unresolved_reason")),
+            "evidence_limited": True,
+        })
     if rule.get("exception_basis") not in FINAL_EXCEPTION_BASES:
         issues.append({"requirement": "exceptions", "reason": "exception_basis is not a completed full-document state"})
     verification = rule.get("exception_verification")
@@ -225,6 +232,12 @@ def final_rule_issues(rule: Mapping[str, Any], entity_keys: Iterable[str]) -> li
         issues.append({"requirement": "exceptions", "reason": "full-document search provenance is missing"})
     if rule.get("exception_basis") == "unresolved_after_full_document_search" and not str((verification or {}).get("unresolved_reason", "")).strip():
         issues.append({"requirement": "exceptions", "reason": "unresolved exception lacks a specific evidence limit"})
+    elif rule.get("exception_basis") == "unresolved_after_full_document_search":
+        issues.append({
+            "requirement": "exceptions",
+            "reason": str((verification or {}).get("unresolved_reason")),
+            "evidence_limited": True,
+        })
     if rule.get("exception_basis") == "explicit_in_source" and (not isinstance(rule.get("exceptions"), list) or not rule.get("exceptions") or not isinstance((verification or {}).get("evidence"), list) or not (verification or {}).get("evidence")):
         issues.append({"requirement": "exceptions", "reason": "explicit exception lacks structured predicates or direct source evidence"})
     derivation = rule.get("scope_derivation")

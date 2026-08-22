@@ -63,7 +63,7 @@ This serves the API on `http://localhost:8000` and the frontend on
 # Extraction (agents 1–6)
 .venv/bin/python cli/extract.py --provider openai
 .venv/bin/python cli/extract.py --file compliance-files/<batch>/<file>.pdf --provider openai
-.venv/bin/python cli/extract.py --batch-dir <domain> --domain <domain> --target-rules 300 --workers 30
+.venv/bin/python cli/extract.py --batch-dir <domain> --domain <domain> --target-rules 300
 .venv/bin/python cli/extract.py --step 3 --provider openai
 
 # Comparison (agents 7–10)
@@ -73,35 +73,17 @@ This serves the API on `http://localhost:8000` and the frontend on
 
 ### Full single-document run
 
-Run this from `apps/pipeline/` to use GPT-5.2 with medium reasoning, a
-40-worker executor, and bounded API concurrency. The repository-root `.env`
-is loaded automatically; it must contain `OPENAI_API_KEY`.
+Run this from `apps/pipeline/`. The checked-in performance profile selects
+GPT-5.2 with medium reasoning, 40 local scheduling workers, four concurrent
+documents, adaptive API concurrency, bounded retries, batched readiness work,
+and checkpointed remediation. The repository-root `.env` is loaded
+automatically; it must contain `OPENAI_API_KEY`.
 
 ```bash
 KG_BATCH_NAME=fannie_mae_manual_20260821 \
-KG_REASONING_EFFORT=medium \
-KG_LLM_CONCURRENCY=2 \
-KG_READINESS_WORKERS=8 \
-KG_READINESS_LLM_CONCURRENCY=4 \
-KG_READINESS_PARSE_ATTEMPTS=3 \
-KG_REASONING_MAX_COMPLETION_TOKENS=32768 \
-KG_OPENAI_TIMEOUT=240 \
-KG_OPENAI_MAX_RETRIES=1 \
-KG_RULES_PER_BATCH=5 \
-KG_RULES_TARGET_WORDS_PER_BATCH=4500 \
-KG_RULES_MAX_TOKENS=32768 \
-KG_BATCH_MAX_ATTEMPTS=2 \
-KG_BATCH_EMPTY_RESPONSE_ATTEMPTS=2 \
-KG_BATCH_PARSE_ATTEMPTS=3 \
-KG_BATCH_RETRY_MAX_TOKENS=32768 \
-KG_BATCH_RETRY_ATTEMPTS=1 \
-KG_OPTIMIZER_DEDUP_BATCH_SIZE=25 \
-KG_OPTIMIZER_BATCH_SIZE=25 \
-KG_OPTIMIZER_MAX_CROSS_BATCH_PAIRS=12 \
 ../../.venv/bin/python cli/extract.py \
   --file compliance-files/fannie_mae/fannie_mae.pdf \
   --provider openai \
-  --workers 40 \
   --domain mortgage \
   --target-rules 300
 ```
@@ -112,19 +94,14 @@ streams each agent's output, including the long-running Agent 5 optimization
 and Agent 5.5 executable-readiness pass, in real time. If your virtual environment is inside
 `../../.venv/bin/python` with `.venv/bin/python`.
 
-The values above are the recommended repeatable-run profile. Keep the
-40-worker executor for local extraction parallelism, but leave
-`KG_LLM_CONCURRENCY=2` for the extraction stages, where higher gates caused
-provider connection resets during long rule runs. Stage 5.5 independently
-uses eight local evidence workers and a bounded four-request API gate because
-each rule's evidence check is independent; lower `KG_READINESS_LLM_CONCURRENCY`
-to `2` if the provider returns rate-limit or connection errors. Malformed JSON
-from an individual readiness call is retried up to
-`KG_READINESS_PARSE_ATTEMPTS` times instead of aborting the entire pass.
-Five rules and roughly 4,500 source words per extraction batch keep the JSON
-response below the model's output ceiling, while the larger completion budget
-and bounded recovery settings prevent truncated batches from silently reducing
-the corpus.
+The repeatable profile lives in `config.json` (local runtime) and
+`config.example.json` (versioned defaults), so a normal CLI invocation does not
+need a wall of environment flags. Environment variables remain optional,
+per-run overrides. Forty workers keep local scheduling busy while the shared
+adaptive limiter governs actual API pressure. Five rules and roughly 4,500
+source words per extraction batch keep responses below the model output
+ceiling; bounded retries and checkpoints recover individual failures without
+repeating successful work.
 
 Common `extract.py` flags:
 
@@ -135,7 +112,8 @@ Common `extract.py` flags:
 | `--domain <name>` | Domain prompt overrides (defaults to `config.json` `domain.active`) |
 | `--target-rules <n>` | Target number of rules to extract |
 | `--workers <n>` | Parallel LLM workers |
-| `--step <1-6>` | Run a single agent step |
+| `--step <stage>` | Run one stage (`1`, `2`, `3`, `3.5`, `4`, `5`, `5.5`, `5.6`, or `6`) |
+| `--document-workers <n>` | Run independent documents in parallel subprocesses |
 | `--skip-optimize` | Skip Agent 5 (Agent 6 uses Agent 4 output directly) |
 
 ### Executable-readiness artifacts
@@ -153,6 +131,67 @@ DMN/BPMN-readiness pass. It writes these files under
 The extraction command exits nonzero if Agent 5.5 finds an invariant violation
 or any rule still requires review. The evidence artifacts are still written so
 the precise source limitation can be corrected and the pass rerun.
+
+After changing only deterministic Agent 5.5 normalization or validation code,
+replay the saved evidence and conflict results instead of repeating model calls:
+
+```bash
+KG_BATCH_NAME=<existing-run> \
+KG_READINESS_SKIP_EVIDENCE=1 \
+KG_READINESS_SKIP_CONFLICTS=1 \
+PYTHONPATH=. ../../.venv/bin/python agents/agent_5_5_executable_readiness.py
+```
+
+Use these two skip flags only when the selected run already contains completed
+full-document evidence and entity-conflict analyses. A normal/new document run
+must leave both flags unset.
+
+If Agent 5.5 reports review-required rules, run only the focused remediation
+stage; Agents 1-5 do not need to be repeated:
+
+```bash
+KG_BATCH_NAME=<existing-run> \
+PYTHONPATH=. ../../.venv/bin/python cli/extract.py \
+  --step 5.6 --provider openai --workers 40 --domain <domain>
+```
+
+Agent 5.6 processes only failed exception/scope rules and unresolved conflict
+pairs. It checkpoints model results in `agent_5_6_checkpoint.jsonl`, stops when
+a pass makes no further rules ready, reruns all deterministic invariants, and
+never clears `requires_review` without passing those gates. The full pipeline
+launches 5.6 automatically when Agent 5.5 requests remediation.
+
+### Throughput and stable defaults
+
+Agents 2 and 3 remain sequential because Agent 3 consumes Agent 2's entity
+catalog. The pipeline safely overlaps read-only Agent 3.5 validation with Agent
+4, batches four Agent 5.5 evidence checks per request, checkpoints Agent
+2/5.5/5.6 progress, and shares an adaptive API limiter across subprocesses.
+The limiter starts at four requests, increases after 12 successes, caps at
+eight, and halves on throttling or transport backpressure. Each run writes
+`llm_performance.json`.
+
+| Variable | Default | Purpose |
+| --- | ---: | --- |
+| `pipeline.max_workers` | `40` | Local scheduling capacity; not API concurrency |
+| `pipeline.document_workers` | `4` | Independent documents processed concurrently |
+| `KG_LLM_CONCURRENCY` | `8` | Per-process safety gate above the shared limiter |
+| `KG_GLOBAL_LLM_CONCURRENCY_INITIAL` | `4` | Proven stable starting request limit |
+| `KG_GLOBAL_LLM_CONCURRENCY_MAX` | `8` | Adaptive ceiling across subprocesses |
+| `KG_GLOBAL_LLM_SUCCESS_WINDOW` | `12` | Successes before increasing the ceiling |
+| `KG_READINESS_RULES_PER_REQUEST` | `4` | Agent 5.5 evidence batch size |
+| `KG_REMEDIATION_RULES_PER_REQUEST` | `4` | Agent 5.6 source-remediation batch size |
+| `KG_REMEDIATION_PAIRS_PER_REQUEST` | `12` | Agent 5.6 conflict-pair batch size |
+| `KG_REMEDIATION_WORKERS` | `40` | Local Agent 5.6 scheduling workers |
+| `KG_REMEDIATION_LLM_CONCURRENCY` | `8` | Local API gate; global limiter still applies |
+| `KG_REMEDIATION_MAX_PASSES` | `3` | Targeted passes, with no forced readiness |
+| `KG_ENTITY_EARLY_STOP` | `true` | Stop Agent 2 after measured convergence |
+| `KG_ENTITY_MIN_ITERATIONS` | `2` | Minimum Agent 2 iterations |
+
+Independent-document concurrency defaults to four; use `--document-workers
+<n>` only to override it. Each file receives an isolated subprocess/output tree
+while every file shares the adaptive limiter. Custom shared `--organized` or
+`--output` paths disable document concurrency to prevent collisions.
 
 ### Docker
 

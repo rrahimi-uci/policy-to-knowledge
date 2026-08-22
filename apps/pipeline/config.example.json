@@ -15,18 +15,56 @@
       }
     },
     "rate_limiting": {
-      "max_retries": 3,
+      "max_retries": 1,
       "retry_delay": 100,
-      "timeout": 300
+      "timeout": 240
     }
   },
   "llm": {
     "default_temperature": 0.7,
     "default_max_tokens": 8192,
-    "default_model": "gpt-4o"
+    "default_model": "gpt-5.2"
   },
   "pipeline": {
-    "max_workers": 30,
+    "max_workers": 40,
+    "document_workers": 4,
+    "performance": {
+      "llm_concurrency": 8,
+      "reasoning_max_completion_tokens": 32768,
+      "global_llm_concurrency_initial": 4,
+      "global_llm_concurrency_max": 8,
+      "global_llm_concurrency_min": 1,
+      "global_llm_success_window": 12,
+      "global_llm_lease_seconds": 900,
+      "global_llm_poll_seconds": 0.1,
+      "batch_max_attempts": 2,
+      "batch_empty_response_attempts": 2,
+      "batch_parse_attempts": 3,
+      "batch_retry_max_tokens": 32768,
+      "batch_retry_attempts": 1,
+      "batch_connection_backoff_seconds": 30,
+      "optimizer_parse_attempts": 3,
+      "readiness_workers": 16,
+      "readiness_llm_concurrency": 8,
+      "readiness_rules_per_request": 4,
+      "readiness_parse_attempts": 3,
+      "readiness_max_candidates": 12,
+      "readiness_max_evidence_chars": 24000,
+      "readiness_batch_max_tokens": 16000,
+      "conflict_max_rules_per_call": 32,
+      "conflict_max_tokens": 6000,
+      "remediation_workers": 40,
+      "remediation_llm_concurrency": 8,
+      "remediation_rules_per_request": 4,
+      "remediation_pairs_per_request": 12,
+      "remediation_parse_attempts": 3,
+      "remediation_max_passes": 3,
+      "remediation_rule_max_tokens": 12000,
+      "remediation_conflict_max_tokens": 12000,
+      "entity_early_stop": true,
+      "entity_min_iterations": 2,
+      "entity_quality_target": 90
+    },
     "supported_extensions": [
       ".pdf",
       ".txt",
@@ -75,13 +113,13 @@
   },
   "rules_extractor": {
     "target_rules": 300,
-    "rules_per_batch": 10,
-    "rules_per_batch_openai": 10,
+    "rules_per_batch": 5,
+    "rules_per_batch_openai": 5,
     "batch_size": 8,
     "max_content_length": 8000,
-    "target_words_per_batch": 8000,
+    "target_words_per_batch": 4500,
     "temperature": 0.7,
-    "max_tokens": 8192,
+    "max_tokens": 32768,
     "low_confidence_threshold": 70,
     "default_confidence_score": 75,
     "confidence_weights": {
@@ -106,12 +144,12 @@
     ]
   },
   "optimizer": {
-    "model": "gpt-5-mini",
+    "model": "gpt-5.2",
     "dedup_temperature": 0.2,
     "dedup_max_tokens": 8192,
     "dependency_temperature": 0.7,
     "dependency_max_tokens": 16384,
-    "batch_size": 50,
+    "batch_size": 25,
     "description_truncation_length": 500,
     "batched_temperature": 0.2,
     "batched_max_tokens": 16384,
