@@ -115,7 +115,7 @@ jobs:
   allure-report:
     name: Allure · combined report
     runs-on: ubuntu-latest
-    needs: [pipeline-pytest, assistant-pytest, p2c-pytest, shell-frontend, pipeline-ui-frontend]
+    needs: [pipeline-pytest, assistant-pytest, shell-frontend, pipeline-ui-frontend]
     if: always()
     steps:
       - uses: actions/download-artifact@v4
