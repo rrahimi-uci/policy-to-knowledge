@@ -30,17 +30,6 @@ policy-to-knowledge/
 │   │       ├── integration/ Backend API tests against a live stack (pytest, not in CI)
 │   │       └── e2e/         Playwright UI tests against a live server (not in CI)
 │   │
-│   ├── pipeline-p2c/        Evidence-bound policy compiler (Policy IR → graph/DMN/BPMN)
-│   │   ├── policy_ir/       Schema, expression AST, type checker, FEEL, IDs
-│   │   ├── ingestion/       Immutable source registry (hashes + canonical offsets)
-│   │   ├── validation/      Fail-closed evidence + semantic gate
-│   │   ├── evaluation/      Reference Policy IR evaluator
-│   │   ├── compilers/       Graph, DMN 1.5, BPMN 2.0.2, traceability
-│   │   ├── adapters/        Legacy knowledge graph → IR candidates
-│   │   ├── fixtures/        Conformance fixtures with expected outcomes
-│   │   ├── cli/             compile_policy entry point
-│   │   └── tests/           Unit tests (pytest) — run in CI
-│   │
 │   └── shell/               React/Vite suite shell that embeds the app UIs
 │       ├── src/             Components, hooks, bridge (unit tests co-located *.test.tsx)
 │       └── tests/e2e/       Playwright UI tests
