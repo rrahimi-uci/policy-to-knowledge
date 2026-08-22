@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "description": "Legal/privacy NLP benchmark corpora used to evaluate the policy-to-knowledge extraction pipeline.",
+  "datasets": [
+    {
+      "id": "cuad",
+      "name": "CUAD v1 \u2014 Contract Understanding Atticus Dataset",
+      "url": "https://zenodo.org/records/4595826/files/CUAD_v1.zip?download=1",
+      "archive": "CUAD_v1.zip",
+      "bytes": 105883672,
+      "license": "CC BY 4.0",
+      "doi": "10.5281/zenodo.4595826",
+      "homepage": "https://www.atticusprojectai.org/cuad",
+      "task": "Clause extraction / span QA over 510 commercial contracts, 41 clause categories, 13k+ expert annotations.",
+      "citation": "Hendrycks, D., Burns, C., Chen, A., & Ball, S. (2021). CUAD: An Expert-Annotated NLP Dataset for Legal Contract Review. NeurIPS Datasets and Benchmarks.",
+      "sha256": "88b694d99007d39777fa44cd72daf8297773d285dc3eab0091ba32078888d18e",
+      "verified": {
+        "root": "data/cuad/CUAD_v1",
+        "files": 1051,
+        "extracted_mb": 173.7,
+        "contents": "510 contract PDFs, 510 plaintext contracts, 28 label-group XLSX, master_clauses.csv (83 cols x 510 rows), CUAD_v1.json (SQuAD 2.0 format, 510 docs / 20,910 QA pairs)"
+      }
+    },
+    {
+      "id": "opp-115",
+      "name": "OPP-115 \u2014 Online Privacy Policies Corpus v1.0",
+      "url": "https://usableprivacy.org/static/data/OPP-115_v1_0.zip",
+      "archive": "OPP-115_v1_0.zip",
+      "bytes": 99101239,
+      "license": "Free for research use; citation required (Usable Privacy Policy Project)",
+      "homepage": "https://usableprivacy.org/data",
+      "task": "Multi-label data-practice classification over 115 website privacy policies, 23k annotated practices in 10 categories.",
+      "citation": "Wilson, S. et al. (2016). The Creation and Analysis of a Website Privacy Policy Corpus. ACL 2016.",
+      "sha256": "305ccb1dddaaab5e12f49decf8b132844eb7fd31fce284650d77213e5d3e37e2",
+      "verified": {
+        "root": "data/opp-115/OPP-115",
+        "files": 7309,
+        "extracted_mb": 338.6,
+        "contents": "115 annotation CSVs, 115 sanitized HTML policies, original policies, pretty_print(+uniquified) renderings, consolidation at 0.5/0.75/1.0 overlap thresholds, documentation"
+      }
+    },
+    {
+      "id": "contract-nli",
+      "name": "ContractNLI \u2014 Document-level NLI for Contracts",
+      "url": "https://stanfordnlp.github.io/contract-nli/resources/contract-nli.zip",
+      "archive": "contract-nli.zip",
+      "bytes": 65362913,
+      "license": "CC BY 4.0",
+      "homepage": "https://stanfordnlp.github.io/contract-nli/",
+      "task": "Document-level natural language inference + evidence identification over 607 NDAs against 17 fixed hypotheses.",
+      "citation": "Koreeda, Y., & Manning, C. D. (2021). ContractNLI: A Dataset for Document-level Natural Language Inference for Contracts. Findings of EMNLP 2021.",
+      "sha256": "e03fc77bbf8b53e2976a250e81d8a294bc3d5e5fb014521e477dee9340d6287b",
+      "verified": {
+        "root": "data/contract-nli/contract-nli",
+        "files": 613,
+        "extracted_mb": 83.8,
+        "contents": "train.json (423 NDAs), dev.json (61), test.json (123) = 607 documents x 17 hypotheses; raw/ holds the 607 source documents"
+      }
+    },
+    {
+      "id": "mapp",
+      "name": "MAPP Corpus \u2014 Mobile App Privacy Policies (bilingual)",
+      "url": "https://usableprivacy.org/static/data/MAPP_Corpus.zip",
+      "archive": "MAPP_Corpus.zip",
+      "bytes": 2293746,
+      "license": "Free for research use; citation required (Usable Privacy Policy Project)",
+      "homepage": "https://usableprivacy.org/data",
+      "task": "Bilingual (EN/DE) data-practice annotation over 64 English and 91 German mobile-app privacy policies.",
+      "citation": "Arora, S. et al. (2022). A Tale of Two Regulatory Regimes: Creation and Analysis of a Bilingual Privacy Policy Corpus. LREC 2022.",
+      "sha256": "0b512e200a04dc26b234e2dbc612c05b8d53558f2e00cbf29385dc0f41b8a0fa",
+      "verified": {
+        "root": "data/mapp/MAPP_Corpus",
+        "files": 313,
+        "extracted_mb": 7.6,
+        "contents": "64 English + 91 German sanitized policies with matching English_consolidation / German_consolidation annotations, documentation"
+      }
+    }
+  ]
+}

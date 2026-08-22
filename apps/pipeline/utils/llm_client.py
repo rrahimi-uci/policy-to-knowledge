@@ -11,6 +11,7 @@ import os
 import re
 import sys
 import threading
+import time
 from typing import Dict, Any, List, Optional
 
 from openai import OpenAI
@@ -112,6 +113,7 @@ class LLMClient:
         model: str = None,
         timeout: int = None,
         max_retries: int = None,
+        concurrency: int = None,
     ):
         """
         Initialize the client.
@@ -139,7 +141,7 @@ class LLMClient:
         # failures.  Keep executor parallelism independent from bounded
         # in-flight API concurrency; callers can tune the latter per run.
         try:
-            gate_size = max(1, int(os.getenv("KG_LLM_CONCURRENCY", "2")))
+            gate_size = max(1, int(concurrency if concurrency is not None else os.getenv("KG_LLM_CONCURRENCY", "2")))
         except (TypeError, ValueError):
             gate_size = 2
         self._request_gate = threading.BoundedSemaphore(gate_size)
@@ -189,7 +191,16 @@ class LLMClient:
         worker = threading.Thread(target=_call, name="llm-call", daemon=True)
         worker.start()
         deadline = self.timeout * (self.max_retries + 1) + self.watchdog_margin
-        worker.join(deadline)
+        # Poll against an absolute monotonic deadline instead of relying on a
+        # single long Thread.join(timeout).  A stalled TLS read has previously
+        # left the parent waiting far beyond the configured watchdog window on
+        # Python 3.14/macOS, even though the worker remained a daemon thread.
+        expires_at = time.monotonic() + max(0.0, float(deadline))
+        while worker.is_alive():
+            remaining = expires_at - time.monotonic()
+            if remaining <= 0:
+                break
+            worker.join(min(1.0, remaining))
 
         if worker.is_alive():
             # Closing the transport is essential before returning.  Otherwise
@@ -373,6 +384,7 @@ def create_llm_client(
     model: str = None,
     timeout: int = None,
     max_retries: int = None,
+    concurrency: int = None,
 ) -> LLMClient:
     """Factory for an OpenAI-backed LLMClient."""
     return LLMClient(
@@ -380,4 +392,5 @@ def create_llm_client(
         model=model,
         timeout=timeout,
         max_retries=max_retries,
+        concurrency=concurrency,
     )

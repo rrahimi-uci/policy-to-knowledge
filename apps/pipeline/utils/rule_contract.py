@@ -34,10 +34,18 @@ VARIABLE_TYPES = {
 }
 OPERATORS = {"==", "!=", ">", ">=", "<", "<=", "in", "not_in"}
 VARIABLE_ROLES = {"input", "derived", "output"}
-SCOPE_BASES = {"explicitly_universal_in_source", "inferred"}
+SCOPE_BASES = {
+    "explicit",
+    "explicitly_universal_in_source",
+    "genuinely_unscoped",
+    "inferred",  # candidate-stage only; final readiness rejects inferred-empty scope
+    "unresolved_after_source_review",
+}
 EXCEPTION_BASES = {
+    "explicit_in_source",
     "explicitly_none_in_source",
-    "not_found_in_chunk_recheck_needed",
+    "not_found_in_chunk_recheck_needed",  # candidate-stage only
+    "unresolved_after_full_document_search",
 }
 HIT_POLICIES = {"UNIQUE", "FIRST", "PRIORITY", "COLLECT", "ANY"}
 
@@ -410,7 +418,7 @@ def _validate_rule_metadata(rule: Mapping[str, Any], entity_catalog: Iterable[st
     if not isinstance(scope, Mapping):
         _issue(issues, 4, "missing_applicability_scope", "applicability_scope", "A structured scope object is required.")
     if rule.get("scope_basis") not in SCOPE_BASES:
-        _issue(issues, 4, "invalid_scope_basis", "scope_basis", "scope_basis must be explicitly_universal_in_source or inferred.")
+        _issue(issues, 4, "invalid_scope_basis", "scope_basis", "scope_basis is not a recognized candidate or final evidence state.")
     if rule.get("scope_basis") == "inferred" and not str(rule.get("inference_reasoning", "")).strip():
         _issue(issues, 4, "missing_inference_reasoning", "inference_reasoning", "Inferred scope requires an explanation.")
 

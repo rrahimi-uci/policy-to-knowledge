@@ -920,11 +920,33 @@ class KnowledgeExtractionPipeline:
                     print(f"📄 Optimization report: {optimized_report.name}")
                 print(f"📂 Output directory: {optimized_dir}")
             print(f"{'=' * 80}\n")
+
+            # Agent 5.5 deliberately runs after the optimizer has produced its
+            # canonical graph. It resolves source-derived scope/exceptions,
+            # derives graph chains, validates invariants, and writes the final
+            # DMN/BPMN readiness report. A failed readiness pass is a pipeline
+            # failure even though its evidence artifacts remain available.
+            readiness_agent = _ROOT / "agents" / "agent_5_5_executable_readiness.py"
+            print("📡 Streaming Agent 5.5 executable-readiness output in real time...")
+            readiness_process = subprocess.Popen(
+                [sys.executable, str(readiness_agent)], cwd=_ROOT,
+                stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True,
+                bufsize=1, env=env,
+            )
+            for line in readiness_process.stdout:
+                print(line, end="", flush=True)
+            readiness_return_code = readiness_process.wait()
+            if readiness_return_code != 0:
+                raise RuntimeError(
+                    "Executable readiness failed; inspect "
+                    f"{optimized_dir / 'kg_readiness_report.json'}"
+                )
+            print("✓ Verified Agent 5.5 executable readiness report", flush=True)
             
             self.flow_state["steps_completed"].append({
                 "agent": "Knowledge Graph Optimization",
                 "timestamp": datetime.now().isoformat(),
-                "description": "Deduplicated rules and analyzed dependencies"
+                "description": "Deduplicated rules, analyzed dependencies, and completed executable readiness"
             })
             
             print("✅ Knowledge Graph Optimization completed successfully")

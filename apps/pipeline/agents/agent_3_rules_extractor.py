@@ -251,10 +251,16 @@ class BusinessRulesExtractor:
         annotated = annotate_rule_contract(rule, self._entity_catalog())
         return annotate_rule_readiness(annotated, self._entity_catalog())
     
-    def extract_batch(self, prompt: str, batch_num: int) -> Dict[str, Any]:
+    def extract_batch(
+        self,
+        prompt: str,
+        batch_num: int,
+        max_tokens_override: int | None = None,
+    ) -> Dict[str, Any]:
         """Extract from a single batch using reasoning model."""
         import time as _time
         batch_start = _time.time()
+        completion_limit = max_tokens_override or self.global_config.get_rules_max_tokens()
         try:
             # Keep the executor at the requested worker count while gating the
             # number of simultaneous sockets. A 40-way burst can exceed the
@@ -269,7 +275,7 @@ class BusinessRulesExtractor:
                         response = self.client.chat_completion(
                             messages=[{"role": "user", "content": prompt}],
                             temperature=self.global_config.get_rules_temperature(),
-                            max_tokens=self.global_config.get_rules_max_tokens(),
+                            max_tokens=completion_limit,
                             reasoning_effort=self.reasoning_effort
                         )
                     else:
@@ -277,14 +283,31 @@ class BusinessRulesExtractor:
                             response = self.client.chat_completion(
                                 messages=[{"role": "user", "content": prompt}],
                                 temperature=self.global_config.get_rules_temperature(),
-                                max_tokens=self.global_config.get_rules_max_tokens(),
+                                max_tokens=completion_limit,
                                 reasoning_effort=self.reasoning_effort
                             )
                     break
                 except Exception as exc:
                     last_error = exc
                     if attempt < attempts:
-                        delay = min(30, 2 ** (attempt - 1))
+                        # Connection resets/timeouts usually indicate a
+                        # provider-side saturation window. Retrying after
+                        # 1–2 seconds compounds the burst and causes the
+                        # next request to fail as well. Use a configurable
+                        # cooldown for transport errors while retaining the
+                        # short exponential delay for local/parse failures.
+                        error_text = str(exc).lower()
+                        is_transport_error = any(
+                            marker in error_text
+                            for marker in ("connection", "timed out", "timeout", "readerror")
+                        )
+                        if is_transport_error:
+                            delay = max(
+                                1,
+                                int(os.getenv("KG_BATCH_CONNECTION_BACKOFF_SECONDS", "30")),
+                            )
+                        else:
+                            delay = min(30, 2 ** (attempt - 1))
                         print(
                             f"  DEBUG Batch {batch_num}: request attempt {attempt}/{attempts} "
                             f"failed ({exc}); retrying in {delay}s",
@@ -295,8 +318,47 @@ class BusinessRulesExtractor:
                 raise RuntimeError(f"LLM completion failed after {attempts} attempts: {last_error}")
             
             content = response.choices[0].message.content
-            if not content:
-                return {"entity_types": {}, "relationships": {}, "batch_num": batch_num, "error": "Empty response"}
+            finish_reason = getattr(response.choices[0], "finish_reason", None)
+            # A reasoning response can consume the entire completion budget
+            # before emitting JSON. Do not silently turn that batch into a
+            # missing-rule result; retry with an explicit compact-output
+            # instruction while preserving the original source batch.
+            if not content or finish_reason == "length":
+                compact_prompt = (
+                    f"{prompt}\n\nIMPORTANT RETRY: The previous response was empty or truncated. "
+                    "Return compact, complete JSON only. Include all supported rules, "
+                    "but omit prose, markdown, explanations, and optional examples."
+                )
+                recovery_attempts = max(1, int(os.getenv("KG_BATCH_EMPTY_RESPONSE_ATTEMPTS", "2")))
+                for recovery_attempt in range(1, recovery_attempts + 1):
+                    print(
+                        f"  DEBUG Batch {batch_num}: empty/truncated response; "
+                        f"compact retry {recovery_attempt}/{recovery_attempts}",
+                        flush=True,
+                    )
+                    try:
+                        if request_gate is None:
+                            response = self.client.chat_completion(
+                                messages=[{"role": "user", "content": compact_prompt}],
+                                temperature=self.global_config.get_rules_temperature(),
+                                max_tokens=completion_limit,
+                                reasoning_effort=self.reasoning_effort,
+                            )
+                        else:
+                            with request_gate:
+                                response = self.client.chat_completion(
+                                    messages=[{"role": "user", "content": compact_prompt}],
+                                    temperature=self.global_config.get_rules_temperature(),
+                                    max_tokens=completion_limit,
+                                    reasoning_effort=self.reasoning_effort,
+                                )
+                        content = response.choices[0].message.content
+                        if content and getattr(response.choices[0], "finish_reason", None) != "length":
+                            break
+                    except Exception as exc:
+                        print(f"  DEBUG Batch {batch_num}: compact retry failed: {exc}", flush=True)
+                if not content:
+                    return {"entity_types": {}, "relationships": {}, "batch_num": batch_num, "error": "Empty response after compact retries"}
             
             def _decode_json(raw_content: str) -> Dict[str, Any]:
                 """Decode a model response, allowing one fenced/object slice."""
@@ -318,7 +380,8 @@ class BusinessRulesExtractor:
             # GPT-5 occasionally returns a syntactically invalid object even
             # with a stop finish reason. Retry only that batch, rather than
             # discarding it and silently falling below the requested target.
-            parse_attempts = max(1, int(os.getenv("KG_BATCH_PARSE_ATTEMPTS", "2")))
+            parse_attempts = max(1, int(os.getenv("KG_BATCH_PARSE_ATTEMPTS", "3")))
+            retry_prompt = compact_prompt if "compact_prompt" in locals() else prompt
             for parse_attempt in range(1, parse_attempts + 1):
                 try:
                     result = _decode_json(content)
@@ -334,20 +397,22 @@ class BusinessRulesExtractor:
                     request_gate = getattr(self, "_request_gate", None)
                     if request_gate is None:
                         response = self.client.chat_completion(
-                            messages=[{"role": "user", "content": prompt}],
+                            messages=[{"role": "user", "content": retry_prompt}],
                             temperature=self.global_config.get_rules_temperature(),
-                            max_tokens=self.global_config.get_rules_max_tokens(),
+                            max_tokens=completion_limit,
                             reasoning_effort=self.reasoning_effort,
                         )
                     else:
                         with request_gate:
                             response = self.client.chat_completion(
-                                messages=[{"role": "user", "content": prompt}],
+                                messages=[{"role": "user", "content": retry_prompt}],
                                 temperature=self.global_config.get_rules_temperature(),
-                                max_tokens=self.global_config.get_rules_max_tokens(),
+                                max_tokens=completion_limit,
                                 reasoning_effort=self.reasoning_effort,
                             )
                     content = response.choices[0].message.content or ""
+                    if getattr(response.choices[0], "finish_reason", None) == "length":
+                        content = ""
                     if not content:
                         raise json.JSONDecodeError("empty response", "", 0)
             
@@ -468,14 +533,43 @@ class BusinessRulesExtractor:
         print(f"   • Rules per batch: {self.global_config.get_rules_per_batch()}", flush=True)
         print(f"\n⏳ Preparing prompts for {len(batches)} batches...", flush=True)
         
-        # Create prompts for all batches
+        # Persist successful batch responses so an interrupted or provider-
+        # limited run can resume without re-paying for completed work. Errors
+        # are intentionally not checkpointed; they must be retried next run.
+        checkpoint_file = os.getenv("KG_BATCH_CHECKPOINT_FILE")
+        cached_results: Dict[int, Dict[str, Any]] = {}
+        if checkpoint_file:
+            checkpoint_path = Path(checkpoint_file)
+            if checkpoint_path.exists():
+                try:
+                    for line in checkpoint_path.read_text(encoding="utf-8").splitlines():
+                        payload = json.loads(line)
+                        batch_num = int(payload.get("batch_num"))
+                        if not payload.get("error"):
+                            cached_results[batch_num] = payload
+                    print(
+                        f"   ✓ Loaded {len(cached_results)} successful batch checkpoints from "
+                        f"{checkpoint_path}",
+                        flush=True,
+                    )
+                except (OSError, ValueError, json.JSONDecodeError) as exc:
+                    print(f"   ⚠️  Ignoring unreadable batch checkpoint: {exc}", flush=True)
+
+        # Keep original batch numbers in prompts when resuming; changing them
+        # would change the source-corpus provenance attached to each response.
         batch_prompts = [
-            (self.create_batch_prompt(batch, i+1, len(batches)), i+1)
-            for i, batch in enumerate(batches)
+            (self.create_batch_prompt(batch, batch_num, len(batches)), batch_num)
+            for batch_num, batch in enumerate(batches, start=1)
+            if batch_num not in cached_results
         ]
-        print(f"   ✓ Prompts prepared\n", flush=True)
-        
-        results = []
+        prompt_by_batch = {batch_num: prompt for prompt, batch_num in batch_prompts}
+        print(
+            f"   ✓ Prompts prepared ({len(batch_prompts)} pending, "
+            f"{len(cached_results)} checkpointed)\n",
+            flush=True,
+        )
+
+        results = list(cached_results.items())
         completed = 0
         start_time = time.time()
         
@@ -515,10 +609,95 @@ class BusinessRulesExtractor:
                         print(f"  [{completed}/{len(batches)}] Batch {batch_num}: ✓ {total_rules} rules ({entity_rules} entity + {rel_rules} relationship) [{extraction_time:.1f}s]", flush=True)
                     
                     results.append((batch_num, result))
+                    if checkpoint_file and not result.get("error"):
+                        checkpoint_path = Path(checkpoint_file)
+                        checkpoint_path.parent.mkdir(parents=True, exist_ok=True)
+                        with checkpoint_path.open("a", encoding="utf-8") as handle:
+                            handle.write(json.dumps(result, ensure_ascii=False) + "\n")
+                            handle.flush()
                     
                 except Exception as e:
                     completed += 1
                     print(f"  [{completed}/{len(batches)}] Batch {batch_num}: ✗ Exception: {e}", flush=True)
+
+        # A length-truncated response is not recoverable by repeatedly sending
+        # the same completion budget. Retry only failed batches with a larger
+        # budget and an explicit compact-output instruction. This keeps the
+        # normal path fast while preventing token pressure from silently
+        # reducing the extracted corpus.
+        result_by_batch = {batch_num: result for batch_num, result in results}
+        failed_batches = [
+            batch_num for batch_num, result in results
+            if result.get("error")
+        ]
+        retry_tokens = int(os.getenv("KG_BATCH_RETRY_MAX_TOKENS", "32768"))
+        retry_attempts = max(0, int(os.getenv("KG_BATCH_RETRY_ATTEMPTS", "1")))
+        if failed_batches and retry_attempts:
+            print(
+                f"\n🔁 Retrying {len(failed_batches)} failed batch(es) with "
+                f"max_tokens={retry_tokens} (up to {retry_attempts} pass(es))...",
+                flush=True,
+            )
+            for retry_pass in range(1, retry_attempts + 1):
+                retry_targets = [
+                    batch_num for batch_num in failed_batches
+                    if result_by_batch.get(batch_num, {}).get("error")
+                ]
+                if not retry_targets:
+                    break
+                retry_prompt_by_batch = {
+                    batch_num: (
+                        f"{prompt_by_batch[batch_num]}\n\n"
+                        "RETRY REQUIREMENT: Return one complete JSON object for every "
+                        "supported rule in this batch. Use compact JSON only; omit all "
+                        "prose and optional examples. Do not stop before the closing brace."
+                    )
+                    for batch_num in retry_targets
+                }
+                retry_workers = min(max_workers, max(1, len(retry_targets)))
+                with ThreadPoolExecutor(max_workers=retry_workers) as retry_executor:
+                    retry_futures = {
+                        retry_executor.submit(
+                            self.extract_batch,
+                            retry_prompt_by_batch[batch_num],
+                            batch_num,
+                            retry_tokens,
+                        ): batch_num
+                        for batch_num in retry_targets
+                    }
+                    for future in as_completed(retry_futures):
+                        batch_num = retry_futures[future]
+                        try:
+                            retry_result = future.result()
+                        except Exception as exc:
+                            retry_result = {
+                                "entity_types": {},
+                                "relationships": {},
+                                "batch_num": batch_num,
+                                "error": str(exc),
+                            }
+                        result_by_batch[batch_num] = retry_result
+                        if checkpoint_file and not retry_result.get("error"):
+                            checkpoint_path = Path(checkpoint_file)
+                            checkpoint_path.parent.mkdir(parents=True, exist_ok=True)
+                            with checkpoint_path.open("a", encoding="utf-8") as handle:
+                                handle.write(json.dumps(retry_result, ensure_ascii=False) + "\n")
+                                handle.flush()
+                        if retry_result.get("error"):
+                            print(
+                                f"  Retry {retry_pass}/{retry_attempts} Batch {batch_num}: "
+                                f"✗ {retry_result['error']}",
+                                flush=True,
+                            )
+                        else:
+                            print(
+                                f"  Retry {retry_pass}/{retry_attempts} Batch {batch_num}: ✓ "
+                                f"{retry_result.get('total_rules', 0)} rules",
+                                flush=True,
+                            )
+                failed_batches = retry_targets
+
+        results = sorted(result_by_batch.items())
         
         # Sort results by batch number and merge
         results.sort(key=lambda x: x[0])
@@ -1159,6 +1338,13 @@ def main():
     SOURCE_DIRECTORY = str(config.get_organized_dir())
     OUTPUT_FILE = str(config.get_rules_extracted_dir() / "compliance_rules_with_entities.json")
     TARGET_RULES = config.get_target_rules()
+    # Batch checkpoints are enabled by default. They are append-only and keep
+    # successful extraction work resumable across Ctrl-C, timeout, or provider
+    # connection failures; callers may override the location per run.
+    os.environ.setdefault(
+        "KG_BATCH_CHECKPOINT_FILE",
+        str(config.get_rules_extracted_dir() / "batch_results.jsonl"),
+    )
     
     print("="*80, flush=True)
     print("ENHANCED BUSINESS RULES EXTRACTOR", flush=True)

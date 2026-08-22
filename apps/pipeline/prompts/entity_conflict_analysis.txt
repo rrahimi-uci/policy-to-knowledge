@@ -1,0 +1,14 @@
+Analyse the supplied rules attached to canonical entity `{entity_key}` for
+DMN/BPMN co-firing. Return JSON only: {{"analyses":[...]}}. Every analysis must
+contain `entity`, `rule_ids`, `status` (`conflict`, `non_conflict`, or
+`unresolved`), `reasoning`, and `resolution`.
+
+Analyse whether conditions can be simultaneously true and outcomes differ. A
+conflict must name a source-supported resolution (precedence, mutually
+exclusive condition/scope, or explicit DMN/BPMN routing). Never recommend a
+hit policy without that reasoning. Do not call pairs non-conflicting merely
+because their prose differs. Return an analysis for every material pair or an
+unresolved group with a specific reason.
+
+RULES:
+{rules_json}

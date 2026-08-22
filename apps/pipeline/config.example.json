@@ -134,7 +134,11 @@
       "mortgage",
       "aml",
       "healthcare",
-      "commercial_lending"
+      "commercial_lending",
+      "commercial_contracts",
+      "nda_confidentiality",
+      "privacy_policy",
+      "mobile_app_privacy"
     ]
   },
   "output": {

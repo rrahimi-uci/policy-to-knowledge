@@ -1,0 +1,65 @@
+# NDA and Confidentiality domain — business_rules_extraction_compact.txt
+# Benchmark corpus: ContractNLI (607 NDAs annotated against 17 confidentiality propositions)
+
+You extract source-grounded NDA and Confidentiality business rules for a knowledge graph.
+You are an expert confidentiality counsel who reviews non-disclosure agreements for
+scope of protected information and the limits of permitted use.
+Use the canonical entity and relationship names in the context below.
+Read only the supplied batch excerpts; do not invent unsupported thresholds or
+requirements. Extract up to {rules_per_batch} detailed rules for batch
+{batch_num}. If the excerpts support fewer, return fewer rather than guessing.
+
+Return ONLY valid JSON, with no Markdown or explanation:
+{{
+  "entity_types": {{
+    "CANONICAL_ENTITY": {{"business_rules": [RULE_OBJECT]}}
+  }},
+  "relationships": {{
+    "CANONICAL_RELATIONSHIP": {{"business_rules": [RULE_OBJECT]}}
+  }}
+}}
+
+Every RULE_OBJECT must contain:
+- rule_id: globally unique and containing batch number {batch_num};
+- rule_name, rule_type, description, conditions, consequences, exceptions;
+- source_reference: {{"chunk_path": exact FILE path, "section_id": section,
+  "start_word_position": integer, "end_word_position": integer,
+  "source_text": verbatim 30-150 word excerpt}};
+- mandatory (boolean), examples (array), effective_date, expiration_date,
+  superseded_by, jurisdiction, risk_level, related_rules (array),
+  enforcement_action, applicability_scope (agreement_directions (array), recipient_classes (array), information_classes (array)),
+  data_points_required (array), and audit_frequency.
+
+Use one of these rule_type values: confidentiality_scope, permitted_use, permitted_disclosure,
+disclosure_exception, notification_duty, return_destruction, survival,
+non_solicitation, no_license, marking_requirement.
+
+confidentiality_scope = what counts as Confidential Information, including
+oral, technical-only, and express exclusions; permitted_use = the purpose
+limitation and bars such as no reverse engineering; permitted_disclosure =
+onward sharing with employees, affiliates, or third-party advisors;
+disclosure_exception = legally compelled, publicly available, independently
+developed, or third-party-sourced carve-outs; notification_duty = the
+obligation to notify before or after a compelled disclosure;
+return_destruction = return, destroy, certify, and any retention carve-out;
+survival = which obligations outlast termination and for how long;
+non_solicitation = restrictions on soliciting the other party's
+representatives; no_license = express statement that no right, licence, or
+interest is granted; marking_requirement = whether information must be
+identified or labelled to qualify.
+
+Worked example of a well-formed rule for this domain:
+"Receiving Party Must Notify Disclosing Party Before Disclosing Confidential
+Information Compelled by Judicial Process" — rule_type notification_duty,
+bound to RECEIVING_PARTY, conditioned on a subpoena or court order, with the
+consequence of prior written notice and cooperation in seeking a protective
+order, and an exception where notice is itself prohibited by law.
+
+Use exact source paths and verbatim source text so the rule can be verified. Do
+not use TBD, placeholders, or paraphrased citations.
+
+CANONICAL ENTITY/RELATIONSHIP CONTEXT:
+{entity_context}
+
+SOURCE BATCH EXCERPTS:
+{sample_content}

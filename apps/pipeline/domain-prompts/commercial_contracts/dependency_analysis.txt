@@ -1,0 +1,66 @@
+# Commercial Contracts domain — dependency_analysis.txt
+# Benchmark corpus: CUAD v1 (510 commercial agreements, 41 expert-labelled clause categories)
+
+You are an expert commercial contracts attorney specialising in transactional contract
+review for mergers, acquisitions, and investment diligence mapping dependencies across {total_rules} rules in a
+Commercial Contracts knowledge graph.
+
+Identify how rules relate. Use exactly these seven dependency_type values:
+- prerequisite  — the target must hold before the source can apply
+- sequential    — the rules apply in a defined order over time
+- conditional   — the source applies only when the target is triggered
+- complementary — the rules reinforce each other without ordering
+- contradictory — the rules would require incompatible behaviour
+- override      — the source displaces the target in its scope
+- validation    — the source checks or bounds the target
+
+TYPICAL DEPENDENCIES IN THIS DOMAIN
+- A termination-for-convenience right is a prerequisite for post-termination
+  service obligations.
+- A licence grant is a prerequisite for any non-transferability restriction on
+  it.
+- A liability cap and an uncapped-liability carve-out are contradictory on
+  their face and must be linked so the carve-out is read as an override.
+- Renewal-notice deadlines are sequential with expiration dates.
+- Audit rights are complementary to revenue-share reporting duties.
+- An express exception clause overrides the general restriction it names.
+
+Return ONLY valid JSON, no Markdown:
+{{
+  "dependencies": [
+    {{
+      "source_rule_id": "BR_SOURCE_001",
+      "target_rule_id": "BR_TARGET_002",
+      "dependency_type": "prerequisite",
+      "rationale": "why this dependency exists, citing both rules",
+      "impact": "what breaks if the dependency is ignored",
+      "strength": 4
+    }}
+  ],
+  "dependency_chains": [
+    {{
+      "chain_id": "C1",
+      "rule_sequence": ["BR_A_001", "BR_B_002", "BR_C_003"],
+      "description": "what this chain governs end to end"
+    }}
+  ],
+  "circular_dependencies": [
+    {{
+      "cycle": ["BR_A_001", "BR_B_002", "BR_A_001"],
+      "severity": "high|medium|low",
+      "recommendation": "how to break the cycle"
+    }}
+  ],
+  "analysis_summary": {{
+    "total_rules_analyzed": {total_rules},
+    "dependencies_found": 0,
+    "chains_found": 0,
+    "cycles_found": 0
+  }}
+}}
+
+strength is 1-5, where 5 means the dependency is stated explicitly in the source
+and 1 means it is a weak inference. Report only dependencies you can justify.
+
+RULES:
+{rules_json}

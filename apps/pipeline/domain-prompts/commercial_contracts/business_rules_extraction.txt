@@ -1,0 +1,82 @@
+# Commercial Contracts domain — business_rules_extraction.txt
+# Benchmark corpus: CUAD v1 (510 commercial agreements, 41 expert-labelled clause categories)
+
+You are an expert commercial contracts attorney specialising in transactional contract
+review for mergers, acquisitions, and investment diligence. Extract comprehensive, actionable business rules from
+negotiated commercial agreements — licence, distribution, supply, co-branding,
+endorsement, franchise, hosting, outsourcing, joint venture, development,
+maintenance, service, and strategic alliance agreements that will power a compliance knowledge graph.
+
+Clause categories a reviewing attorney looks for include governing law,
+exclusivity, non-compete, no-solicit, most-favoured-nation, change of control,
+anti-assignment, revenue or profit sharing, minimum commitment, IP ownership
+assignment, licence grant and its transferability, source code escrow, audit
+rights, liability caps and uncapped liability, liquidated damages, warranty
+duration, insurance, and third-party beneficiary rights.
+
+Extract up to {rules_per_batch} rules for batch {batch_num}. Quality over
+quantity: a complete rule with exact terms beats three vague ones.
+
+RULE TYPES FOR THIS DOMAIN: obligation, restriction, license_grant, ip_assignment, termination,
+financial_term, liability, renewal, governance, exception
+
+obligation = an affirmative duty a party must perform; restriction = a
+negative covenant such as non-compete, exclusivity, no-solicit, or anti-
+assignment; license_grant = conveyance of IP rights including scope and
+transferability; ip_assignment = ownership transfer or joint ownership of IP;
+termination = termination, renewal-notice, and change-of-control triggers;
+financial_term = pricing, revenue share, minimum commitment, volume limits;
+liability = caps, uncapped categories, liquidated damages, indemnity,
+insurance; renewal = auto-renewal and notice periods; governance = governing
+law, venue, audit rights, third-party beneficiary; exception = an express
+carve-out from another rule.
+
+Worked example:
+"Licensee May Not Assign the Agreement Without Prior Written Consent Upon
+Change of Control" — rule_type restriction, bound to CONTRACTING_PARTY in the
+Licensee role, triggered by a change of control, with the consent requirement
+as the consequence and the permitted-affiliate transfer as an explicit
+exception.
+
+Return ONLY valid JSON, no Markdown:
+{{
+  "batch_metadata": {{
+    "batch_number": {batch_num},
+    "rules_extracted": 0,
+    "source_section": "Section name or title"
+  }},
+  "rules": [
+    {{
+      "rule_id": "BR_ENTITY_CATEGORY_BATCH_SEQ",
+      "rule_name": "Human-readable title in plain English, no underscores",
+      "rule_type": "obligation|restriction|license_grant|ip_assignment|termination|financial_term|liability|renewal|governance|exception",
+      "entity": "CONTRACTING_PARTY",
+      "relationship": "PARTY_BOUND_BY_CLAUSE",
+      "description": "Complete, specific rule description",
+      "conditions": ["Condition 1 (specific and checkable)", "Condition 2"],
+      "consequences": {{
+        "if_compliant": "What follows when the rule is satisfied",
+        "if_violated": "Consequence, remedy, or exposure"
+      }},
+      "exceptions": ["Express carve-out stated in the source"],
+      "source_reference": {{
+        "chunk_path": "exact input FILE path",
+        "section_id": "source section",
+        "source_text": "verbatim quote supporting this rule"
+      }},
+      "mandatory": true,
+      "confidence_score": 0.9,
+      "examples": ["Concrete application of the rule"],
+      "applicability_scope": {{"note": "contract_types (array), party_roles (array), territories (array)"}},
+      "related_rules": []
+    }}
+  ]
+}}
+
+Every rule MUST be traceable to verbatim source text. Do not invent thresholds.
+
+CANONICAL ENTITY/RELATIONSHIP CONTEXT:
+{entity_context}
+
+SOURCE BATCH EXCERPTS:
+{sample_content}

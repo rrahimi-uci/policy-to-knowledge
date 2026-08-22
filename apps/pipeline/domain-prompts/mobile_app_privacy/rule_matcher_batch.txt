@@ -1,0 +1,45 @@
+# Mobile App Privacy (GDPR, bilingual) domain — rule_matcher_batch.txt
+# Benchmark corpus: MAPP Corpus (64 English and 91 German mobile-app privacy policies, GDPR-era annotation with an explicit legal-basis attribute)
+
+You are an expert data-protection analyst who reads mobile application privacy
+policies under the GDPR and records both the data practice and its lawful
+basis comparing {num_pairs} rule pairs drawn from two Mobile App Privacy (GDPR, bilingual)
+knowledge graphs, {g1_name} and {g2_name}, in a single call.
+
+Classify each pair as exactly one of:
+- IDENTICAL     — the same requirement, same terms, same scope
+- EQUIVALENT    — the same intent and outcome, wording or minor detail differs
+- CONTRADICTORY — both apply to the same situation but require different results
+- UNRELATED     — they govern different situations
+
+COMPARE ALONG THESE AXES
+the controller, the data category, the processing purpose, the Article 6 legal
+basis, the named third-party processor or SDK, the choice type and its scope,
+the retention duration, the transfer destination and safeguard, and the user
+type the practice applies to
+
+Return ONLY a valid JSON array with one object per pair, no Markdown:
+[
+  {{
+    "pair_id": 0,
+    "relationship": "IDENTICAL|EQUIVALENT|CONTRADICTORY|UNRELATED",
+    "confidence": 0.9,
+    "similarity_score": 0.85,
+    "reasoning": "which axes matched and which differed",
+    "key_comparison": {{
+      "matching_axes": ["..."],
+      "differing_axes": ["..."]
+    }},
+    "conflict_detail": {{
+      "conflict_type": "threshold|scope|direction|obligation",
+      "g1_position": "what graph 1 requires",
+      "g2_position": "what graph 2 requires"
+    }}
+  }}
+]
+
+Return exactly {num_pairs} objects with pair_id values matching the input. Set
+conflict_detail only for CONTRADICTORY pairs.
+
+RULE PAIRS:
+{rule_pairs_json}

@@ -1,0 +1,51 @@
+# NDA and Confidentiality domain — rule_resolution.txt
+# Benchmark corpus: ContractNLI (607 NDAs annotated against 17 confidentiality propositions)
+
+You are an expert confidentiality counsel who reviews non-disclosure agreements for
+scope of protected information and the limits of permitted use reconciling NDA and Confidentiality business rules extracted from several
+documents into one consistent set.
+
+NDA obligations look alike because the vocabulary is formulaic. Two rules are
+duplicates only when they bind the same party in the same direction to the
+same duty with the same trigger. Keep separate: mutual versus one-way
+statements of the same duty; a permission for employees versus one for third-
+party advisors; a return obligation versus a destruction obligation where the
+text offers a choice; and any two rules whose survival periods or notice
+deadlines differ in days or years.
+
+A conflict exists when two rules would require incompatible behaviour in the
+same situation. Record conflicts rather than silently choosing a winner.
+
+Return ONLY valid JSON, no Markdown:
+{{
+  "rule_clusters": [
+    {{
+      "canonical_rule_id": "BR_CANONICAL_001",
+      "member_rule_ids": ["BR_A_001", "BR_B_007"],
+      "source_documents": ["doc_a", "doc_b"],
+      "merged_description": "description covering every member",
+      "rationale": "why these express the same requirement",
+      "confidence": "high|medium|low"
+    }}
+  ],
+  "conflicts_detected": [
+    {{
+      "rule_ids": ["BR_A_003", "BR_B_012"],
+      "conflict_type": "threshold|scope|direction|obligation",
+      "description": "how the two rules disagree",
+      "resolution_recommendation": "which governs and why, or escalate"
+    }}
+  ],
+  "resolution_summary": {{
+    "input_rule_count": 0,
+    "canonical_rule_count": 0,
+    "clusters_formed": 0,
+    "conflict_count": 0
+  }}
+}}
+
+RULES BY SOURCE:
+{rules_by_source}
+
+SOURCE DOCUMENTS:
+{source_documents}

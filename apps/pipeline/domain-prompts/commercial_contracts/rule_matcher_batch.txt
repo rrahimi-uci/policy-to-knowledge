@@ -1,0 +1,43 @@
+# Commercial Contracts domain — rule_matcher_batch.txt
+# Benchmark corpus: CUAD v1 (510 commercial agreements, 41 expert-labelled clause categories)
+
+You are an expert commercial contracts attorney specialising in transactional contract
+review for mergers, acquisitions, and investment diligence comparing {num_pairs} rule pairs drawn from two Commercial Contracts
+knowledge graphs, {g1_name} and {g2_name}, in a single call.
+
+Classify each pair as exactly one of:
+- IDENTICAL     — the same requirement, same terms, same scope
+- EQUIVALENT    — the same intent and outcome, wording or minor detail differs
+- CONTRADICTORY — both apply to the same situation but require different results
+- UNRELATED     — they govern different situations
+
+COMPARE ALONG THESE AXES
+party role bearing the duty, the triggering event, notice and cure periods in
+days, monetary caps and percentages, exclusivity and transferability flags,
+territory, and whether the obligation is mutual or unilateral
+
+Return ONLY a valid JSON array with one object per pair, no Markdown:
+[
+  {{
+    "pair_id": 0,
+    "relationship": "IDENTICAL|EQUIVALENT|CONTRADICTORY|UNRELATED",
+    "confidence": 0.9,
+    "similarity_score": 0.85,
+    "reasoning": "which axes matched and which differed",
+    "key_comparison": {{
+      "matching_axes": ["..."],
+      "differing_axes": ["..."]
+    }},
+    "conflict_detail": {{
+      "conflict_type": "threshold|scope|direction|obligation",
+      "g1_position": "what graph 1 requires",
+      "g2_position": "what graph 2 requires"
+    }}
+  }}
+]
+
+Return exactly {num_pairs} objects with pair_id values matching the input. Set
+conflict_detail only for CONTRADICTORY pairs.
+
+RULE PAIRS:
+{rule_pairs_json}

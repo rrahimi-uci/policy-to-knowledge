@@ -135,9 +135,12 @@ Rules:
    `allowed_values` for categories.
 4. `responsible_party` and `counterparties` must use an existing entity type
    from the supplied entity context. Do not invent actor identifiers.
-5. Use `exception_basis: "explicitly_none_in_source"` only when the source
-   explicitly establishes no exception. Otherwise use
-   `"not_found_in_chunk_recheck_needed"`.
+5. At candidate extraction, use `exception_basis:
+   "not_found_in_chunk_recheck_needed"` whenever the provided chunk cannot
+   establish the exception result. Agent 5.5 must later replace it through a
+   complete organized-source-document recheck. Final output may use only
+   `explicit_in_source`, `explicitly_none_in_source`, or a specifically
+   explained unresolved final state; the candidate state is forbidden.
 6. `scope_basis: "explicitly_universal_in_source"` requires direct universal
    source wording. Do not infer universal scope from silence.
 7. Every test vector must be source-attested or derived from the source. Numeric
@@ -146,3 +149,7 @@ Rules:
    direct source text from the provided input, never a paraphrase.
 9. If a value is absent or ambiguous, keep the rule but mark
    `requires_review: true` and state the uncertainty in `review_reason`.
+10. `inferred` scope with all scope dimensions empty is a candidate only. The
+    final readiness stage must use direct scope evidence, explicitly universal
+    language, genuinely_unscoped after source review, or an explained
+    unresolved state.
