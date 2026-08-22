@@ -4,9 +4,11 @@
 from __future__ import annotations
 
 import json
+import hashlib
 import os
 import re
 import sys
+import threading
 from copy import deepcopy
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from itertools import combinations
@@ -35,6 +37,7 @@ from utils.rule_contract import validate_rule_v2
 
 class EvidenceResolver(Protocol):
     def complete_rule(self, rule: Mapping[str, Any], corpus: Mapping[str, Any]) -> Mapping[str, Any]: ...
+    def complete_rules(self, rules: list[Mapping[str, Any]]) -> list[Mapping[str, Any]]: ...
     def analyse_entity(self, entity: str, rules: list[Mapping[str, Any]]) -> list[Mapping[str, Any]]: ...
 
 
@@ -98,6 +101,15 @@ class OpenAIEvidenceResolver:
             corpus_json=json.dumps(corpus, ensure_ascii=False),
         )
         return self._json_completion(prompt, int(os.getenv("KG_READINESS_MAX_TOKENS", "6000")))
+
+    def complete_rules(self, rules: list[Mapping[str, Any]]) -> list[Mapping[str, Any]]:
+        prompt = self.prompts.format_prompt(
+            "executable_readiness_batch_completion",
+            rules_json=json.dumps(rules, ensure_ascii=False),
+        )
+        value = self._json_completion(prompt, int(os.getenv("KG_READINESS_BATCH_MAX_TOKENS", "16000")))
+        completions = value.get("completions", [])
+        return completions if isinstance(completions, list) else []
 
     def analyse_entity(self, entity: str, rules: list[Mapping[str, Any]]) -> list[Mapping[str, Any]]:
         prompt = self.prompts.format_prompt(
@@ -547,6 +559,39 @@ class ExecutableReadinessCompleter:
 
     def __init__(self, resolver: EvidenceResolver | None = None) -> None:
         self.resolver = resolver
+        self.checkpoint_path: Path | None = None
+        self._checkpoint_lock = threading.Lock()
+        self._checkpoint: dict[str, dict[str, Any]] = {}
+
+    @staticmethod
+    def _fingerprint(rule: Mapping[str, Any], packet: Mapping[str, Any]) -> str:
+        payload = json.dumps(
+            {"rule": rule, "packet": packet}, sort_keys=True,
+            ensure_ascii=False, separators=(",", ":"),
+        )
+        return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+    def _load_checkpoint(self) -> None:
+        self._checkpoint = {}
+        if self.checkpoint_path is None or not self.checkpoint_path.exists():
+            return
+        for line in self.checkpoint_path.read_text(encoding="utf-8", errors="replace").splitlines():
+            try:
+                row = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            if isinstance(row, Mapping) and row.get("key") and isinstance(row.get("rule"), Mapping):
+                self._checkpoint[str(row["key"])] = dict(row["rule"])
+
+    def _save_checkpoint(self, key: str, rule: Mapping[str, Any]) -> None:
+        if self.checkpoint_path is None:
+            return
+        row = json.dumps({"key": key, "rule": rule}, ensure_ascii=False)
+        with self._checkpoint_lock:
+            self.checkpoint_path.parent.mkdir(parents=True, exist_ok=True)
+            with self.checkpoint_path.open("a", encoding="utf-8") as handle:
+                handle.write(row + "\n")
+            self._checkpoint[key] = deepcopy(dict(rule))
 
     @staticmethod
     def _evidence_packet(rule: Mapping[str, Any], corpus: Mapping[str, Any]) -> dict[str, Any]:
@@ -560,12 +605,26 @@ class ExecutableReadinessCompleter:
         source = rule.get("source_reference", {})
         quote = source.get("source_text", "") if isinstance(source, Mapping) else ""
         text = " ".join(str(rule.get(key, "")) for key in ("rule_name", "description")) + " " + str(quote)
+        # A previous pass may identify an exact cross-section whose criteria
+        # were outside the first bounded packet. Include that evidence limit in
+        # retrieval anchors so remediation can fetch the named section.
+        text += " " + json.dumps({
+            "exception_verification": rule.get("exception_verification"),
+            "scope_derivation": rule.get("scope_derivation"),
+        }, ensure_ascii=False)
         anchors = {token.lower() for token in re.findall(r"[A-Za-z][A-Za-z0-9_-]{3,}", text)}
         markers = {"except", "unless", "notwithstanding", "however", "waiver", "exempt"}
         matches = []
         for chunk in corpus.get("chunks", []):
             lower = str(chunk.get("text", "")).lower()
-            score = sum(anchor in lower for anchor in anchors)
+            path_lower = str(chunk.get("chunk_path", "")).lower()
+            normalized_path = re.sub(r"[^a-z0-9]", "", path_lower)
+            score = sum(
+                anchor in lower
+                or anchor in path_lower
+                or re.sub(r"[^a-z0-9]", "", anchor) in normalized_path
+                for anchor in anchors
+            )
             if score or any(marker in lower for marker in markers):
                 matches.append({"chunk_path": chunk.get("chunk_path"), "section_id": chunk.get("section_id"), "text": chunk.get("text"), "anchor_hits": score})
         matches.sort(key=lambda item: (-item["anchor_hits"], str(item["chunk_path"])))
@@ -581,8 +640,17 @@ class ExecutableReadinessCompleter:
             max_candidates, max_chars = 12, 24000
         cited_path = str(source.get("chunk_path", "")) if isinstance(source, Mapping) else ""
         ordered = []
+        section_refs = {
+            re.sub(r"[^a-z0-9]", "", match.lower())
+            for match in re.findall(r"\b[A-Z]\d+(?:[-.]\d+){2,}\b", text)
+        }
+        if section_refs:
+            ordered.extend(
+                item for item in matches
+                if any(reference in re.sub(r"[^a-z0-9]", "", str(item.get("chunk_path", "")).lower()) for reference in section_refs)
+            )
         if cited_path:
-            ordered.extend(item for item in matches if str(item.get("chunk_path")) == cited_path)
+            ordered.extend(item for item in matches if str(item.get("chunk_path")) == cited_path and item not in ordered)
         ordered.extend(item for item in matches if item not in ordered)
         bounded = []
         used_chars = 0
@@ -624,7 +692,15 @@ class ExecutableReadinessCompleter:
             derivation["corpus_sha256"] = corpus.get("corpus_sha256")
         return rule
 
-    def complete(self, baseline: Mapping[str, Any], graph: Mapping[str, Any], organized_dir: str) -> tuple[dict[str, Any], dict[str, Any]]:
+    def complete(
+        self,
+        baseline: Mapping[str, Any],
+        graph: Mapping[str, Any],
+        organized_dir: str,
+        *,
+        skip_evidence: bool | None = None,
+        skip_conflicts: bool | None = None,
+    ) -> tuple[dict[str, Any], dict[str, Any]]:
         final_graph = _normalise_graph_entity_names(deepcopy(dict(graph)))
         _restore_legacy_outcome_operators(final_graph, baseline)
         corpus = source_document_index(organized_dir)
@@ -637,31 +713,84 @@ class ExecutableReadinessCompleter:
         except (TypeError, ValueError):
             readiness_workers = 8
 
-        def complete_one(index: int, original: Mapping[str, Any]) -> tuple[int, dict[str, Any]]:
+        self._load_checkpoint()
+
+        def finish_rule(index: int, original: Mapping[str, Any], completion: Mapping[str, Any] | None = None) -> tuple[int, dict[str, Any]]:
             rule = deepcopy(dict(original))
             rule.setdefault("applicability_scope", {})
             for key in ("loan_types", "occupancy_types", "transaction_types"):
                 rule["applicability_scope"].setdefault(key, [])
-            rule = self._complete_evidence(rule, self._evidence_packet(rule, corpus))
+            packet = self._evidence_packet(rule, corpus)
+            cache_key = self._fingerprint(rule, packet)
+            cached = self._checkpoint.get(cache_key)
+            if cached is not None:
+                return index, deepcopy(cached)
+            if completion is None:
+                rule = self._complete_evidence(rule, packet)
+            else:
+                for field in ("exceptions", "exception_basis", "exception_verification", "applicability_scope", "scope_basis", "scope_derivation"):
+                    if field in completion:
+                        rule[field] = deepcopy(completion[field])
+                verification = rule.get("exception_verification")
+                if isinstance(verification, dict):
+                    verification["searched_chunk_count"] = corpus.get("chunk_count", 0)
+                    verification["corpus_sha256"] = corpus.get("corpus_sha256")
+                    verification.setdefault("searched_document_ids", ["organized_corpus"])
+                derivation = rule.get("scope_derivation")
+                if isinstance(derivation, dict):
+                    derivation["reviewed_chunk_count"] = corpus.get("chunk_count", 0)
+                    derivation["corpus_sha256"] = corpus.get("corpus_sha256")
             rule = _normalise_rule_contract(rule)
             rule["execution"] = _project_execution(rule)
+            self._save_checkpoint(cache_key, rule)
             return index, rule
 
-        skip_evidence = os.getenv("KG_READINESS_SKIP_EVIDENCE", "").lower() in {"1", "true", "yes"}
+        def complete_batch(batch: list[tuple[int, Mapping[str, Any]]]) -> list[tuple[int, dict[str, Any]]]:
+            requests = []
+            pending = []
+            completed = []
+            for index, original in batch:
+                packet = self._evidence_packet(original, corpus)
+                cache_key = self._fingerprint(original, packet)
+                if cache_key in self._checkpoint:
+                    completed.append((index, deepcopy(self._checkpoint[cache_key])))
+                else:
+                    requests.append({"rule": original, "evidence_packet": packet})
+                    pending.append((index, original))
+            if not pending:
+                return completed
+            if self.resolver is not None and hasattr(self.resolver, "complete_rules"):
+                response = self.resolver.complete_rules(requests)
+                by_id = {
+                    str(item.get("rule_id")): item for item in response
+                    if isinstance(item, Mapping) and item.get("rule_id")
+                }
+                for index, original in pending:
+                    completion = by_id.get(str(original.get("rule_id")))
+                    completed.append(finish_rule(index, original, completion))
+            else:
+                completed.extend(finish_rule(index, original) for index, original in pending)
+            return completed
+
+        if skip_evidence is None:
+            skip_evidence = os.getenv("KG_READINESS_SKIP_EVIDENCE", "").lower() in {"1", "true", "yes"}
         if skip_evidence:
             print(f"▶ Agent 5.5 rule evidence: reusing {len(rules)} completed rules", flush=True)
             rules = [_normalise_rule_contract(rule) for rule in rules]
             for rule in rules:
                 rule["execution"] = _project_execution(rule)
         else:
-            print(f"▶ Agent 5.5 rule evidence: {len(rules)} rules, {readiness_workers} workers, "
-                  f"{getattr(self.resolver, 'readiness_concurrency', 'bounded') if self.resolver else 0} API requests", flush=True)
+            batch_size = max(1, int(os.getenv("KG_READINESS_RULES_PER_REQUEST", "4")))
+            indexed = list(enumerate(rules))
+            batches = [indexed[start:start + batch_size] for start in range(0, len(indexed), batch_size)]
+            print(f"▶ Agent 5.5 rule evidence: {len(rules)} rules in {len(batches)} batches, "
+                  f"{readiness_workers} workers, {getattr(self.resolver, 'readiness_concurrency', 'bounded') if self.resolver else 0} API concurrency", flush=True)
             completed_rules: list[dict[str, Any] | None] = [None] * len(rules)
             with ThreadPoolExecutor(max_workers=readiness_workers, thread_name_prefix="kg-readiness") as executor:
-                futures = [executor.submit(complete_one, index, rule) for index, rule in enumerate(rules)]
+                futures = [executor.submit(complete_batch, batch) for batch in batches]
                 for future in as_completed(futures):
-                    index, completed = future.result()
-                    completed_rules[index] = completed
+                    for index, completed in future.result():
+                        completed_rules[index] = completed
             rules = [rule for rule in completed_rules if rule is not None]
         final_graph["business_rules"] = rules
 
@@ -755,7 +884,8 @@ class ExecutableReadinessCompleter:
             } for pair in sorted(expected_pairs - covered_pairs))
             return entries
 
-        skip_conflicts = os.getenv("KG_READINESS_SKIP_CONFLICTS", "").lower() in {"1", "true", "yes"}
+        if skip_conflicts is None:
+            skip_conflicts = os.getenv("KG_READINESS_SKIP_CONFLICTS", "").lower() in {"1", "true", "yes"}
         existing_conflicts = (final_graph.get("dependency_details") or {}).get("conflicts", [])
         if skip_conflicts and isinstance(existing_conflicts, list) and existing_conflicts:
             print(f"▶ Agent 5.5 conflicts: reusing {len(existing_conflicts)} completed analyses", flush=True)
@@ -775,6 +905,10 @@ class ExecutableReadinessCompleter:
         entity_keys = list((final_graph.get("entity_types") or {}).keys())
         conflict_by_rule: dict[str, list[dict[str, Any]]] = {}
         for conflict in conflict_entries:
+            if len({str(value) for value in conflict.get("rule_ids", [])}) < 2:
+                # Conflict readiness concerns interactions between distinct
+                # rules. Legacy self-analysis records are not co-firing edges.
+                continue
             for rule_id in conflict.get("rule_ids", []):
                 conflict_by_rule.setdefault(str(rule_id), []).append(conflict)
         reviewed_rules = []
@@ -825,6 +959,7 @@ class ExecutableReadinessCompleter:
 
     def run(self, baseline_path: Path, graph_path: Path, organized_dir: Path, output_dir: Path) -> dict[str, Any]:
         baseline, graph = json.loads(baseline_path.read_text()), json.loads(graph_path.read_text())
+        self.checkpoint_path = output_dir / "agent_5_5_rule_checkpoint.jsonl"
         final_graph, report = self.complete(baseline, graph, str(organized_dir))
         output_dir.mkdir(parents=True, exist_ok=True)
         graph_path.write_text(json.dumps(final_graph, indent=2, ensure_ascii=False) + "\n")
@@ -843,9 +978,12 @@ def main() -> None:
     output_dir = config.get_optimized_dir()
     report = completer.run(baseline, output_dir / "optimized_compliance_knowledge_graph.json", config.get_organized_dir(), output_dir)
     invariant_pass = all(result["pass"] for result in report["invariants"].values())
-    if not invariant_pass or report["rules_requiring_review"]:
-        print("❌ Agent 5.5 readiness pass failed; inspect kg_readiness_report.json.", flush=True)
+    if not invariant_pass:
+        print("❌ Agent 5.5 invariant validation failed; inspect kg_readiness_report.json.", flush=True)
         raise SystemExit(2)
+    if report["rules_requiring_review"]:
+        print("⚠️ Agent 5.5 found rules requiring focused Agent 5.6 remediation.", flush=True)
+        raise SystemExit(3)
 
 
 if __name__ == "__main__":

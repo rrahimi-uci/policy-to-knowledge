@@ -118,11 +118,24 @@ class TestConfigGetters:
 
     def test_get_default_model(self):
         config = get_config()
-        assert config.get_default_model() == "gpt-4o"
+        assert config.get_default_model() == "gpt-5.2"
 
     def test_get_max_workers(self):
         config = get_config()
-        assert config.get_max_workers() == 30
+        assert config.get_max_workers() == 40
+
+    def test_get_document_workers(self):
+        assert get_config().get_document_workers() == 4
+
+    def test_get_optimized_performance_profile(self):
+        profile = get_config().get_performance_profile()
+        assert profile["global_llm_concurrency_initial"] == 4
+        assert profile["global_llm_concurrency_max"] == 8
+        assert profile["llm_concurrency"] == 8
+        assert profile["batch_parse_attempts"] == 3
+        assert profile["readiness_rules_per_request"] == 4
+        assert profile["remediation_workers"] == 40
+        assert profile["remediation_max_passes"] == 3
 
     def test_get_max_workers_env_override(self):
         config = get_config()
@@ -215,13 +228,13 @@ class TestRulesExtractorGetters:
         assert get_config().get_rules_max_content_length() == 8000
 
     def test_get_rules_target_words_per_batch(self):
-        assert get_config().get_rules_target_words_per_batch() == 8000
+        assert get_config().get_rules_target_words_per_batch() == 4500
 
     def test_get_rules_temperature(self):
         assert get_config().get_rules_temperature() == 0.7
 
     def test_get_rules_max_tokens(self):
-        assert get_config().get_rules_max_tokens() == 8192
+        assert get_config().get_rules_max_tokens() == 32768
 
     def test_get_rules_low_confidence_threshold(self):
         assert get_config().get_rules_low_confidence_threshold() == 70
@@ -242,7 +255,7 @@ class TestOptimizerGetters:
     """Verify optimizer config getters."""
 
     def test_get_optimizer_model_name(self):
-        assert get_config().get_optimizer_model_name() == "gpt-5-mini"
+        assert get_config().get_optimizer_model_name() == "gpt-5.2"
 
     def test_get_optimizer_dedup_temperature(self):
         assert get_config().get_optimizer_dedup_temperature() == 0.2
@@ -257,7 +270,7 @@ class TestOptimizerGetters:
         assert get_config().get_optimizer_dependency_max_tokens() == 16384
 
     def test_get_optimizer_batch_size(self):
-        assert get_config().get_optimizer_batch_size() == 50
+        assert get_config().get_optimizer_batch_size() == 25
 
     def test_get_optimizer_description_truncation_length(self):
         assert get_config().get_optimizer_description_truncation_length() == 500
@@ -360,8 +373,8 @@ class TestLLMClientConfigIntegration:
     def test_llm_client_default_model_from_config(self):
         from utils.llm_client import LLMClient
         client = LLMClient()
-        # Should use config default_model (gpt-4o) rather than hardcoded
-        assert client.model == "gpt-4o"
+        # Should use the configured pipeline model rather than a hardcoded fallback.
+        assert client.model == "gpt-5.2"
 
     def test_llm_client_explicit_model_overrides(self):
         from utils.llm_client import LLMClient
@@ -371,9 +384,9 @@ class TestLLMClientConfigIntegration:
     def test_llm_client_default_timeout_from_config(self):
         from utils.llm_client import LLMClient
         client = LLMClient()
-        assert client.timeout == 300
+        assert client.timeout == 240
 
     def test_llm_client_default_max_retries_from_config(self):
         from utils.llm_client import LLMClient
         client = LLMClient()
-        assert client.max_retries == 3
+        assert client.max_retries == 1

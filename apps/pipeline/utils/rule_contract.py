@@ -31,6 +31,7 @@ VARIABLE_TYPES = {
     "date_time",
     "duration",
     "string",
+    "list",
 }
 OPERATORS = {"==", "!=", ">", ">=", "<", "<=", "in", "not_in"}
 VARIABLE_ROLES = {"input", "derived", "output"}

@@ -24,6 +24,7 @@ from pathlib import Path
 from datetime import datetime
 from typing import Dict, List
 import subprocess
+from concurrent.futures import ThreadPoolExecutor
 
 # Add the pipeline app root (parent of cli/) to path so `agents`/`utils`
 # resolve whether this is run as `python cli/extract.py` or `python -m cli.extract`.
@@ -159,7 +160,7 @@ class KnowledgeExtractionPipeline:
             provider: AI provider to use ('openai')
             max_workers: Maximum number of parallel workers for LLM calls. When
                 omitted, each agent falls back to the configured
-                ``pipeline.max_workers`` (default 30).
+                ``pipeline.max_workers`` (default 40).
             domain: Compliance domain to use for prompts (e.g., 'mortgage', 'aml')
         """
         self.max_workers = max_workers
@@ -191,6 +192,60 @@ class KnowledgeExtractionPipeline:
         self.organized_dir = Path(organized_dir) if organized_dir else self.config.get_organized_dir()
         self.output_dir = Path(output_dir) if output_dir else self.config.get_output_dir()
         self.target_rules = target_rules if target_rules is not None else self.config.get_target_rules()
+
+        # Every agent subprocess in one run shares an adaptive request budget.
+        # A parent multi-document scheduler may provide a broader shared path;
+        # otherwise keep limiter state isolated to this output tree.
+        self._limiter_state_file = os.getenv(
+            "KG_GLOBAL_LLM_STATE_FILE",
+            str(self.config.get_pipeline_base_path() / ".llm_limiter.sqlite3"),
+        )
+        profile = self.config.get_performance_profile()
+        profile_environment = {
+            "KG_LLM_CONCURRENCY": ("llm_concurrency", 8),
+            "KG_REASONING_MAX_COMPLETION_TOKENS": ("reasoning_max_completion_tokens", 32768),
+            "KG_GLOBAL_LLM_CONCURRENCY_INITIAL": ("global_llm_concurrency_initial", 4),
+            "KG_GLOBAL_LLM_CONCURRENCY_MAX": ("global_llm_concurrency_max", 8),
+            "KG_GLOBAL_LLM_CONCURRENCY_MIN": ("global_llm_concurrency_min", 1),
+            "KG_GLOBAL_LLM_SUCCESS_WINDOW": ("global_llm_success_window", 12),
+            "KG_GLOBAL_LLM_LEASE_SECONDS": ("global_llm_lease_seconds", 900),
+            "KG_GLOBAL_LLM_POLL_SECONDS": ("global_llm_poll_seconds", 0.1),
+            "KG_BATCH_MAX_ATTEMPTS": ("batch_max_attempts", 2),
+            "KG_BATCH_EMPTY_RESPONSE_ATTEMPTS": ("batch_empty_response_attempts", 2),
+            "KG_BATCH_PARSE_ATTEMPTS": ("batch_parse_attempts", 3),
+            "KG_BATCH_RETRY_MAX_TOKENS": ("batch_retry_max_tokens", 32768),
+            "KG_BATCH_RETRY_ATTEMPTS": ("batch_retry_attempts", 1),
+            "KG_BATCH_CONNECTION_BACKOFF_SECONDS": ("batch_connection_backoff_seconds", 30),
+            "KG_OPTIMIZER_PARSE_ATTEMPTS": ("optimizer_parse_attempts", 3),
+            "KG_READINESS_WORKERS": ("readiness_workers", 16),
+            "KG_READINESS_LLM_CONCURRENCY": ("readiness_llm_concurrency", 8),
+            "KG_READINESS_RULES_PER_REQUEST": ("readiness_rules_per_request", 4),
+            "KG_READINESS_PARSE_ATTEMPTS": ("readiness_parse_attempts", 3),
+            "KG_READINESS_MAX_CANDIDATES": ("readiness_max_candidates", 12),
+            "KG_READINESS_MAX_EVIDENCE_CHARS": ("readiness_max_evidence_chars", 24000),
+            "KG_READINESS_BATCH_MAX_TOKENS": ("readiness_batch_max_tokens", 16000),
+            "KG_CONFLICT_MAX_RULES_PER_CALL": ("conflict_max_rules_per_call", 32),
+            "KG_CONFLICT_MAX_TOKENS": ("conflict_max_tokens", 6000),
+            "KG_REMEDIATION_WORKERS": ("remediation_workers", 40),
+            "KG_REMEDIATION_LLM_CONCURRENCY": ("remediation_llm_concurrency", 8),
+            "KG_REMEDIATION_RULES_PER_REQUEST": ("remediation_rules_per_request", 4),
+            "KG_REMEDIATION_PAIRS_PER_REQUEST": ("remediation_pairs_per_request", 12),
+            "KG_REMEDIATION_PARSE_ATTEMPTS": ("remediation_parse_attempts", 3),
+            "KG_REMEDIATION_MAX_PASSES": ("remediation_max_passes", 3),
+            "KG_REMEDIATION_RULE_MAX_TOKENS": ("remediation_rule_max_tokens", 12000),
+            "KG_REMEDIATION_CONFLICT_MAX_TOKENS": ("remediation_conflict_max_tokens", 12000),
+            "KG_ENTITY_EARLY_STOP": ("entity_early_stop", True),
+            "KG_ENTITY_MIN_ITERATIONS": ("entity_min_iterations", 2),
+            "KG_ENTITY_QUALITY_TARGET": ("entity_quality_target", 90),
+        }
+        self._performance_environment: dict[str, str] = {}
+        for environment_name, (config_name, fallback) in profile_environment.items():
+            value = profile.get(config_name, fallback)
+            if not isinstance(value, (str, int, float, bool)):
+                value = fallback
+            if isinstance(value, bool):
+                value = str(value).lower()
+            self._performance_environment[environment_name] = os.getenv(environment_name, str(value))
         
         # Detect model provider
         self.model_provider = self.config.get_model_provider()
@@ -231,6 +286,49 @@ class KnowledgeExtractionPipeline:
             print(f"👷 Max Workers: {self.max_workers}")
         print("=" * 80)
         print()
+
+    def _agent_environment(self) -> dict:
+        """Build the consistent environment inherited by every agent."""
+        env = os.environ.copy()
+        env.setdefault("KG_GLOBAL_LLM_STATE_FILE", self._limiter_state_file)
+        for name, value in self._performance_environment.items():
+            env.setdefault(name, value)
+        if self.model_provider:
+            env["KG_PROVIDER"] = self.model_provider
+        if self.max_workers:
+            env["MAX_WORKERS"] = str(self.max_workers)
+        batch_name = self.config.get_batch_name()
+        if batch_name:
+            env["KG_BATCH_NAME"] = batch_name
+        source_file_name = self.config.get_source_file_name()
+        if source_file_name:
+            env["KG_SOURCE_FILE_NAME"] = source_file_name
+        domain = self.config.get_domain()
+        if domain:
+            env["KG_DOMAIN"] = domain
+        return env
+
+    def _write_llm_performance(self) -> None:
+        """Persist run-wide limiter metrics without making reporting fatal."""
+        state_file = self._limiter_state_file
+        if not state_file or not Path(state_file).exists():
+            return
+        try:
+            from utils.adaptive_limiter import AdaptiveRequestLimiter
+            limiter = AdaptiveRequestLimiter(
+                state_file,
+                initial_limit=int(self._performance_environment["KG_GLOBAL_LLM_CONCURRENCY_INITIAL"]),
+                maximum_limit=int(self._performance_environment["KG_GLOBAL_LLM_CONCURRENCY_MAX"]),
+                minimum_limit=int(self._performance_environment["KG_GLOBAL_LLM_CONCURRENCY_MIN"]),
+                success_window=int(self._performance_environment["KG_GLOBAL_LLM_SUCCESS_WINDOW"]),
+                lease_seconds=float(self._performance_environment["KG_GLOBAL_LLM_LEASE_SECONDS"]),
+                poll_seconds=float(self._performance_environment["KG_GLOBAL_LLM_POLL_SECONDS"]),
+            )
+            destination = self.config.get_pipeline_base_path() / "llm_performance.json"
+            limiter.write_snapshot(destination)
+            print(f"📈 LLM performance metrics: {destination}", flush=True)
+        except Exception as exc:
+            print(f"⚠️ Could not write LLM performance metrics: {exc}", flush=True)
     
     def _print_progress_summary(self, completed_steps: list, current_step: str = None, total_steps: int = 7):
         """Print a quick progress summary showing completed and remaining steps."""
@@ -294,24 +392,7 @@ class KnowledgeExtractionPipeline:
         
         try:
             # Set environment variables for subprocess
-            env = os.environ.copy()
-            if self.model_provider:
-                env['KG_PROVIDER'] = self.model_provider
-            # Pass max_workers to subprocess so agents use the correct parallelism
-            if self.max_workers:
-                env['MAX_WORKERS'] = str(self.max_workers)
-            # Pass batch name to subprocess so it uses the correct batch paths
-            batch_name = self.config.get_batch_name()
-            if batch_name:
-                env['KG_BATCH_NAME'] = batch_name
-            # Pass source file name to subprocess so it uses the correct per-file paths
-            source_file_name = self.config.get_source_file_name()
-            if source_file_name:
-                env['KG_SOURCE_FILE_NAME'] = source_file_name
-            # Pass domain to subprocesses
-            domain = self.config.get_domain()
-            if domain:
-                env['KG_DOMAIN'] = domain
+            env = self._agent_environment()
             
             # Use Popen for real-time output streaming
             process = subprocess.Popen(
@@ -813,25 +894,7 @@ class KnowledgeExtractionPipeline:
             print(f"📌 Executing: {' '.join(cmd)}")
             print()
             
-            # Set environment variables for subprocess
-            env = os.environ.copy()
-            if self.model_provider:
-                env['KG_PROVIDER'] = self.model_provider
-            # Pass max_workers to subprocess so agents use the correct parallelism
-            if self.max_workers:
-                env['MAX_WORKERS'] = str(self.max_workers)
-            # Pass batch name to subprocess so it uses the correct batch paths
-            batch_name = self.config.get_batch_name()
-            if batch_name:
-                env['KG_BATCH_NAME'] = batch_name
-            # Pass source file name to subprocess so it uses the correct per-file paths
-            source_file_name = self.config.get_source_file_name()
-            if source_file_name:
-                env['KG_SOURCE_FILE_NAME'] = source_file_name
-            # Pass domain to subprocesses
-            domain_val = self.config.get_domain()
-            if domain_val:
-                env['KG_DOMAIN'] = domain_val
+            env = self._agent_environment()
             
             # Stream Agent 5 output as it is produced.  This step can run for
             # a long time because it performs many model requests; buffering
@@ -936,12 +999,39 @@ class KnowledgeExtractionPipeline:
             for line in readiness_process.stdout:
                 print(line, end="", flush=True)
             readiness_return_code = readiness_process.wait()
-            if readiness_return_code != 0:
+            if readiness_return_code == 2:
                 raise RuntimeError(
-                    "Executable readiness failed; inspect "
+                    "Executable readiness invariant validation failed; inspect "
                     f"{optimized_dir / 'kg_readiness_report.json'}"
                 )
+            if readiness_return_code not in {0, 3}:
+                raise RuntimeError(f"Agent 5.5 failed with unexpected exit code {readiness_return_code}")
             print("✓ Verified Agent 5.5 executable readiness report", flush=True)
+
+            if readiness_return_code == 3:
+                print("📡 Agent 5.5 found review rules; launching focused Agent 5.6 remediation...", flush=True)
+                remediation_agent = _ROOT / "agents" / "agent_5_6_readiness_remediator.py"
+                remediation_process = subprocess.Popen(
+                    [sys.executable, str(remediation_agent)], cwd=_ROOT,
+                    stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True,
+                    bufsize=1, env=env,
+                )
+                for line in remediation_process.stdout:
+                    print(line, end="", flush=True)
+                remediation_return_code = remediation_process.wait()
+                if remediation_return_code == 2:
+                    raise RuntimeError(
+                        "Agent 5.6 produced an invariant failure; inspect "
+                        f"{optimized_dir / 'kg_readiness_report.json'}"
+                    )
+                if remediation_return_code == 3:
+                    raise RuntimeError(
+                        "Agent 5.6 exhausted evidence-backed remediation with rules still under review; inspect "
+                        f"{optimized_dir / 'agent_5_6_remediation_report.json'}"
+                    )
+                if remediation_return_code != 0:
+                    raise RuntimeError(f"Agent 5.6 failed with unexpected exit code {remediation_return_code}")
+                print("✓ Agent 5.6 made every rule executable-readiness complete", flush=True)
             
             self.flow_state["steps_completed"].append({
                 "agent": "Knowledge Graph Optimization",
@@ -961,6 +1051,33 @@ class KnowledgeExtractionPipeline:
                 "error": str(e)
             })
             return False
+
+    def step5_5_complete_readiness(self) -> bool:
+        """Run readiness completion against an existing Agent 5 graph."""
+        graph = self.config.get_optimized_dir() / "optimized_compliance_knowledge_graph.json"
+        if not graph.exists():
+            print(f"❌ Optimized graph not found: {graph}")
+            return False
+        return self._run_agent(
+            "Executable Readiness Agent",
+            [sys.executable, str(_ROOT / "agents" / "agent_5_5_executable_readiness.py")],
+            "Completing source-backed scope/exceptions and conflict analysis",
+            "5.5",
+        )
+
+    def step5_6_remediate_readiness(self) -> bool:
+        """Remediate only existing review rules without rerunning Agents 1-5."""
+        graph = self.config.get_optimized_dir() / "optimized_compliance_knowledge_graph.json"
+        report = self.config.get_optimized_dir() / "kg_readiness_report.json"
+        if not graph.exists() or not report.exists():
+            print(f"❌ Agent 5.6 requires an existing Agent 5.5 graph/report under {graph.parent}")
+            return False
+        return self._run_agent(
+            "Focused Readiness Remediator",
+            [sys.executable, str(_ROOT / "agents" / "agent_5_6_readiness_remediator.py")],
+            "Repairing only rules and conflict pairs that still require review",
+            "5.6",
+        )
     
     def step6_visualize_knowledge_graph(self) -> bool:
         """
@@ -1025,24 +1142,7 @@ class KnowledgeExtractionPipeline:
             print()
             
             # Set environment variables for subprocess
-            env = os.environ.copy()
-            if self.model_provider:
-                env['KG_PROVIDER'] = self.model_provider
-            # Pass max_workers to subprocess so agents use the correct parallelism
-            if self.max_workers:
-                env['MAX_WORKERS'] = str(self.max_workers)
-            # Pass batch name to subprocess so it uses the correct batch paths
-            batch_name = self.config.get_batch_name()
-            if batch_name:
-                env['KG_BATCH_NAME'] = batch_name
-            # Pass source file name to subprocess so it uses the correct per-file paths
-            source_file_name = self.config.get_source_file_name()
-            if source_file_name:
-                env['KG_SOURCE_FILE_NAME'] = source_file_name
-            # Pass domain to subprocesses
-            domain_val = self.config.get_domain()
-            if domain_val:
-                env['KG_DOMAIN'] = domain_val
+            env = self._agent_environment()
             
             result = subprocess.run(
                 cmd,
@@ -1220,22 +1320,29 @@ class KnowledgeExtractionPipeline:
         print(f"✅ [{source_name}] Step 3/6 completed - proceeding to Step 3.5 (Validation)...")
         self._print_progress_summary(completed_steps, current_step="3.5")
         
-        # Step 3.5: Validate Rules (NEW)
+        # Step 3.5 is read-only and non-blocking. It can safely overlap Step 4,
+        # which consumes Agent 2/3 outputs but does not consume validation.
         print("\n" + "=" * 80)
-        print(f"📍 PIPELINE PROGRESS [{source_name}]: Step 3.5 - Rule Validation (Quality Check)")
+        print(f"📍 PIPELINE PROGRESS [{source_name}]: Step 3.5 - Rule Validation (parallel with Step 4)")
         print("=" * 80 + "\n")
-        if not self.step3_5_validate_rules():
-            print(f"\n⚠️  WARNING [{source_name}]: Rule Validation failed - continuing anyway (non-blocking)")
-        else:
-            completed_steps.append("3.5")
-            print(f"✅ [{source_name}] Step 3.5 completed - proceeding to Step 4...")
+        validation_executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="pipeline-validation")
+        validation_future = validation_executor.submit(self.step3_5_validate_rules)
+        print("↗ Rule validation started in the background; Step 4 is starting now.", flush=True)
         self._print_progress_summary(completed_steps, current_step="4")
         
         # Step 4: Merge Rules with Entities
         print("\n" + "=" * 80)
         print(f"📍 PIPELINE PROGRESS [{source_name}]: Step 4/6 - Merge Rules with Entities")
         print("=" * 80 + "\n")
-        if not self.step4_merge_rules_with_entities():
+        merge_ok = self.step4_merge_rules_with_entities()
+        validation_ok = validation_future.result()
+        validation_executor.shutdown(wait=True)
+        if validation_ok:
+            completed_steps.append("3.5")
+            print(f"✅ [{source_name}] Step 3.5 completed in parallel with Step 4")
+        else:
+            print(f"\n⚠️  WARNING [{source_name}]: Rule Validation failed - continuing anyway (non-blocking)")
+        if not merge_ok:
             print(f"\n❌ PIPELINE STOPPED [{source_name}]: Rules+Entities Merge failed")
             self._print_failure_summary(start_time)
             return False
@@ -1274,11 +1381,13 @@ class KnowledgeExtractionPipeline:
         self._print_progress_summary(completed_steps)
         
         # Final success summary
+        self._write_llm_performance()
         self._print_success_summary(start_time)
         return True
     
     def _print_failure_summary(self, start_time: datetime):
         """Print failure summary with timing information."""
+        self._write_llm_performance()
         end_time = datetime.now()
         duration = end_time - start_time
         
@@ -1350,7 +1459,7 @@ class KnowledgeExtractionPipeline:
         print()
         print("=" * 80)
     
-    def run_single_step(self, step_number: int) -> bool:
+    def run_single_step(self, step_number: int | str | float) -> bool:
         """
         Run a single step of the pipeline.
         
@@ -1360,23 +1469,27 @@ class KnowledgeExtractionPipeline:
         Returns:
             True if successful, False otherwise
         """
+        step_key = str(step_number)
         steps = {
-            1: self.step1_organize_knowledge,
-            2: self.step2_extract_entity_relationships,
-            3: self.step3_extract_business_rules,
-            4: self.step4_merge_rules_with_entities,
-            5: self.step5_optimize_knowledge_graph,
-            6: self.step6_visualize_knowledge_graph
+            "1": self.step1_organize_knowledge,
+            "2": self.step2_extract_entity_relationships,
+            "3": self.step3_extract_business_rules,
+            "3.5": self.step3_5_validate_rules,
+            "4": self.step4_merge_rules_with_entities,
+            "5": self.step5_optimize_knowledge_graph,
+            "5.5": self.step5_5_complete_readiness,
+            "5.6": self.step5_6_remediate_readiness,
+            "6": self.step6_visualize_knowledge_graph,
         }
         
-        if step_number not in steps:
-            print(f"❌ Invalid step number: {step_number}. Valid steps: 1-6")
+        if step_key not in steps:
+            print(f"❌ Invalid step number: {step_number}. Valid steps: 1, 2, 3, 3.5, 4, 5, 5.5, 5.6, 6")
             return False
         
         print(f"🎬 Running Step {step_number} only")
         print()
         
-        return steps[step_number]()
+        return steps[step_key]()
 
 
 def discover_batch_directories(source_dir: Path) -> Dict[str, List[Path]]:
@@ -1805,9 +1918,8 @@ Examples:
     
     parser.add_argument(
         "--step",
-        type=int,
-        choices=[1, 2, 3, 4, 5, 6],
-        help="Run single step only (1: organize, 2: entities, 3: rules, 4: merge, 5: optimize, 6: visualize)"
+        choices=["1", "2", "3", "3.5", "4", "5", "5.5", "5.6", "6"],
+        help="Run one stage only (5.5: readiness completion, 5.6: focused remediation)"
     )
     
     parser.add_argument(
@@ -1848,7 +1960,14 @@ Examples:
         "--workers",
         type=int,
         default=None,
-        help="Maximum number of parallel workers for LLM calls. Defaults to the configured pipeline.max_workers (30). Higher values increase throughput but use more API quota."
+        help="Maximum number of local scheduling workers. Defaults to configured pipeline.max_workers (40); adaptive concurrency separately bounds API requests."
+    )
+
+    parser.add_argument(
+        "--document-workers",
+        type=int,
+        default=None,
+        help="Concurrent document subprocesses. Defaults to configured pipeline.document_workers (4); all share the adaptive API limiter.",
     )
 
     parser.add_argument(
@@ -1895,7 +2014,7 @@ Examples:
     # STANDARD MODE: Process individual files separately
     # ==========================================================================
     # Steps 5+ don't need source files — they operate on pipeline-output
-    if args.step and args.step >= 5:
+    if args.step and float(args.step) >= 5:
         # Late steps: skip source file discovery, run directly
         temp_config = get_config(provider=provider, domain=domain)
         flow = KnowledgeExtractionPipeline(
@@ -1961,6 +2080,59 @@ Examples:
     for i, f in enumerate(source_files, 1):
         print(f"  {i}. {f.name}")
     print("=" * 80 + "\n")
+
+    document_workers = max(1, int(
+        args.document_workers
+        if args.document_workers is not None
+        else get_config(provider=provider, domain=domain).get_document_workers()
+    ))
+    if (
+        len(source_files) > 1
+        and document_workers > 1
+        and os.getenv("KG_MULTI_DOCUMENT_CHILD") != "1"
+        and not args.organized
+        and not args.output
+    ):
+        print(f"🚀 Multi-document scheduler: {document_workers} concurrent document subprocesses", flush=True)
+        shared_env = os.environ.copy()
+        shared_env["KG_MULTI_DOCUMENT_CHILD"] = "1"
+        shared_env.setdefault(
+            "KG_GLOBAL_LLM_STATE_FILE",
+            str(Path("pipeline-output") / ".multi_document_llm_limiter.sqlite3"),
+        )
+
+        def run_document(source_file: Path) -> tuple[str, int]:
+            command = [
+                sys.executable, str(Path(__file__).resolve()),
+                "--file", str(source_file),
+                "--provider", provider,
+                "--document-workers", "1",
+            ]
+            if args.workers is not None:
+                command += ["--workers", str(args.workers)]
+            if args.domain:
+                command += ["--domain", args.domain]
+            if args.target_rules is not None:
+                command += ["--target-rules", str(args.target_rules)]
+            if args.step:
+                command += ["--step", args.step]
+            if args.skip_optimize:
+                command.append("--skip-optimize")
+            print(f"▶ [{source_file.name}] {' '.join(command)}", flush=True)
+            result = subprocess.run(command, cwd=_ROOT, env=shared_env)
+            print(f"{'✓' if result.returncode == 0 else '✗'} [{source_file.name}] exit={result.returncode}", flush=True)
+            return source_file.name, result.returncode
+
+        with ThreadPoolExecutor(max_workers=min(document_workers, len(source_files))) as executor:
+            scheduled = [executor.submit(run_document, source_file) for source_file in source_files]
+            scheduled_results = [future.result() for future in scheduled]
+        failed = [name for name, code in scheduled_results if code != 0]
+        print(f"📊 Multi-document result: {len(scheduled_results) - len(failed)} succeeded, {len(failed)} failed")
+        if failed:
+            print(f"❌ Failed documents: {', '.join(failed)}")
+        sys.exit(0 if not failed else 1)
+    elif len(source_files) > 1 and document_workers > 1 and (args.organized or args.output):
+        print("⚠️ Custom --organized/--output paths are shared, so documents will run sequentially to prevent output collisions.")
     
     # Track results for all files
     all_results = []

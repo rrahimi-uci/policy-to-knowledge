@@ -1,0 +1,23 @@
+Complete the supplied structured compliance rules for direct DMN/BPMN use.
+Each evidence packet was produced by a deterministic scan of EVERY organized
+chunk in the available source corpus. Do not invent facts or references.
+
+Return JSON only: {{"completions":[...]}}. Each completion must contain the
+exact supplied rule_id plus exactly the same evidence-derived fields required
+by the single-rule readiness contract:
+- exceptions
+- exception_basis
+- exception_verification
+- applicability_scope
+- scope_basis
+- scope_derivation
+
+Use explicit_in_source only with structured predicates and direct evidence.
+Use explicitly_none_in_source only after the recorded complete-corpus search.
+Use explicitly_universal_in_source only with universal source wording and
+genuinely_unscoped only when the reviewed material contains no scope signal.
+If evidence is insufficient, retain an unresolved state with the precise
+evidence limit. Return every supplied rule exactly once and no other rule IDs.
+
+RULES AND FULL-CORPUS SEARCH EVIDENCE PACKETS:
+{rules_json}
