@@ -8,8 +8,7 @@ outcomes are typed and deterministic, its entity-local interactions have been
 analysed, its scope and exceptions have been resolved from the available source
 corpus, and every identifier and reference is valid in the final graph.
 
-This complement changes `apps/pipeline` only. It does not change
-`apps/pipeline-p2c`.
+This complement changes `apps/pipeline` only.
 
 ## Design decisions
 
