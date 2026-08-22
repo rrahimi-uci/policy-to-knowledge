@@ -124,6 +124,59 @@ def _project_execution(rule: Mapping[str, Any]) -> dict[str, Any]:
     return execution
 
 
+def _normalise_rule_contract(rule: dict[str, Any]) -> dict[str, Any]:
+    """Normalize legacy extraction spellings into the v2 executable shape."""
+    for field in ("condition_predicates", "outcomes"):
+        values = rule.get(field)
+        if not isinstance(values, list):
+            continue
+        for item in values:
+            if not isinstance(item, dict):
+                continue
+            if field == "condition_predicates" and item.get("operator") == "=":
+                item["operator"] = "=="
+            if item.get("value_type") == "boolean" and isinstance(item.get("value"), str):
+                lowered = item["value"].strip().lower()
+                if lowered in {"true", "false"}:
+                    item["value"] = lowered == "true"
+
+    def flatten_logic(node: Any, prefix: str, output: list[dict[str, Any]]) -> None:
+        if isinstance(node, Mapping):
+            if node.get("variable") and node.get("operator") is not None:
+                item = dict(node)
+                item.setdefault("predicate_id", f"{prefix}_{len(output) + 1}")
+                if item.get("operator") == "=":
+                    item["operator"] = "=="
+                if item.get("value_type") == "boolean" and isinstance(item.get("value"), str):
+                    lowered = item["value"].strip().lower()
+                    if lowered in {"true", "false"}:
+                        item["value"] = lowered == "true"
+                output.append(item)
+                return
+            for value in node.values():
+                flatten_logic(value, prefix, output)
+        elif isinstance(node, list):
+            for value in node:
+                flatten_logic(value, prefix, output)
+
+    exceptions = rule.get("exceptions")
+    if isinstance(exceptions, list):
+        flattened: list[dict[str, Any]] = []
+        for index, exception in enumerate(exceptions):
+            if not isinstance(exception, Mapping):
+                continue
+            if exception.get("variable") and exception.get("operator") is not None:
+                item = dict(exception)
+                if item.get("operator") == "=":
+                    item["operator"] = "=="
+                flattened.append(item)
+                continue
+            prefix = str(exception.get("exception_id") or f"ex{index + 1}")
+            flatten_logic(exception.get("logic", exception), prefix, flattened)
+        rule["exceptions"] = flattened
+    return rule
+
+
 def _report_markdown(report: Mapping[str, Any]) -> str:
     corpus = report["invariants"]["corpus_integrity"]
     lines = ["# Sections added", ""]
@@ -245,12 +298,14 @@ class ExecutableReadinessCompleter:
             for key in ("loan_types", "occupancy_types", "transaction_types"):
                 rule["applicability_scope"].setdefault(key, [])
             rule = self._complete_evidence(rule, self._evidence_packet(rule, corpus))
+            rule = _normalise_rule_contract(rule)
             rule["execution"] = _project_execution(rule)
             return index, rule
 
         skip_evidence = os.getenv("KG_READINESS_SKIP_EVIDENCE", "").lower() in {"1", "true", "yes"}
         if skip_evidence:
             print(f"▶ Agent 5.5 rule evidence: reusing {len(rules)} completed rules", flush=True)
+            rules = [_normalise_rule_contract(rule) for rule in rules]
         else:
             print(f"▶ Agent 5.5 rule evidence: {len(rules)} rules, {readiness_workers} workers, "
                   f"{getattr(self.resolver, 'readiness_concurrency', 'bounded') if self.resolver else 0} API requests", flush=True)
