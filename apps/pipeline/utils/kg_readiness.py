@@ -22,10 +22,20 @@ FINAL_EXCEPTION_BASES = {
 }
 FINAL_SCOPE_BASES = {
     "explicit",
+    # See the matching entries (and their rationale) in rule_contract.SCOPE_BASES.
+    "explicit_in_source",
+    "explicitly_none_in_source",
     "explicitly_universal_in_source",
     "genuinely_unscoped",
     "unresolved_after_source_review",
 }
+# The subset of FINAL_SCOPE_BASES that asserts something affirmative about the
+# source text (as opposed to "genuinely_unscoped"/"unresolved_after_source_review",
+# which assert the absence or unavailability of scope language) — these require
+# an actual evidence citation before a rule can be marked ready. Named once so
+# the two checks below (and any future one) can't drift apart the way
+# scope_basis and exception_basis's enums did.
+SCOPE_BASES_REQUIRING_EVIDENCE = {"explicit", "explicit_in_source", "explicitly_none_in_source", "explicitly_universal_in_source"}
 
 
 def canonical_entity_key(value: Any) -> str:
@@ -209,41 +219,114 @@ def source_document_index(organized_dir: str) -> dict[str, Any]:
     return {"chunks": chunks, "chunk_count": len(chunks), "corpus_sha256": digest}
 
 
+def _non_empty_list(value: Any) -> list | None:
+    return value if isinstance(value, list) and value else None
+
+
+def _best_evidence(dedicated: Any, field_evidence_entries: Any) -> list | None:
+    """Prefer a field's own dedicated evidence list; fall back to the rule's
+    field_evidence entries for that same field when the resolver completion
+    omitted it.
+
+    The dominant real cause: a candidate rule Agent 3 already marked with a
+    final-looking basis (e.g. scope_basis "explicit_in_source") is reasonably
+    treated by the completion resolver as not needing further derivation, so
+    its response omits scope_derivation/exception_verification entirely —
+    leaving whatever shape Agent 3's own extraction happened to put there
+    (observed in practice: an ad hoc object with fields like
+    "primary_source_reference" that this reader never asked for). Rather than
+    depend on every upstream shape matching exactly, fall back to
+    field_evidence.scope_basis / field_evidence.exceptions — validate_rule_v2
+    already requires those to have this exact {chunk_path, section_id,
+    source_text} shape, so this recognizes evidence that was already
+    validated, it does not invent anything.
+    """
+    return _non_empty_list(dedicated) or _non_empty_list(field_evidence_entries)
+
+
 def final_rule_issues(rule: Mapping[str, Any], entity_keys: Iterable[str]) -> list[dict[str, Any]]:
     """Validate the final-only fields that make a candidate executable."""
     issues: list[dict[str, Any]] = []
+    field_evidence = rule.get("field_evidence")
+    field_evidence_map = field_evidence if isinstance(field_evidence, Mapping) else {}
+    # Computed once up top (not just where the evidence checks need it further
+    # down) so the unresolved_reason read a few lines below can't fall into
+    # the same `(x or {}).get(...)` trap already fixed for exception_verification
+    # — scope_derivation is just as often a malformed non-dict.
+    derivation = rule.get("scope_derivation")
+    derivation_map = derivation if isinstance(derivation, Mapping) else {}
+
     scope = rule.get("applicability_scope")
-    if not isinstance(scope, Mapping) or any(not isinstance(scope.get(key), list) for key in ("loan_types", "occupancy_types", "transaction_types")):
+    # A rule that scopes itself with richer, domain-specific keys (e.g.
+    # "jurisdiction", "trigger_event") alongside the three standard ones is not
+    # thereby less scoped — but a resolver completion that replaces
+    # applicability_scope wholesale can drop a standard key it didn't happen to
+    # populate. Agent 5.5's own defaulting (`.setdefault(key, [])`) only runs
+    # before that replacement, so a missing key here means "not stated", the
+    # same as an explicit empty list — `.get(key, [])` treats them alike
+    # rather than failing an absent key as if it were a wrong type.
+    if not isinstance(scope, Mapping) or any(not isinstance(scope.get(key, []), list) for key in ("loan_types", "occupancy_types", "transaction_types")):
         issues.append({"requirement": "scope", "reason": "scope must contain list-valued loan_types, occupancy_types, and transaction_types"})
     if rule.get("scope_basis") not in FINAL_SCOPE_BASES:
         issues.append({"requirement": "scope", "reason": "scope_basis is not a final evidence state"})
-    if rule.get("scope_basis") == "unresolved_after_source_review" and not str(rule.get("scope_derivation", {}).get("unresolved_reason", "")).strip():
+    if rule.get("scope_basis") == "unresolved_after_source_review" and not str(derivation_map.get("unresolved_reason", "")).strip():
         issues.append({"requirement": "scope", "reason": "unresolved scope lacks a specific evidence limit"})
     elif rule.get("scope_basis") == "unresolved_after_source_review":
         issues.append({
             "requirement": "scope",
-            "reason": str(rule.get("scope_derivation", {}).get("unresolved_reason")),
+            "reason": str(derivation_map.get("unresolved_reason")),
             "evidence_limited": True,
         })
     if rule.get("exception_basis") not in FINAL_EXCEPTION_BASES:
         issues.append({"requirement": "exceptions", "reason": "exception_basis is not a completed full-document state"})
     verification = rule.get("exception_verification")
-    if not isinstance(verification, Mapping) or not isinstance(verification.get("searched_chunk_count"), int) or verification.get("searched_chunk_count", 0) < 1:
+    # `verification` may be malformed (e.g. a plain string, if an upstream
+    # completion response didn't match the expected shape) — every read below
+    # guards with isinstance rather than `verification or {}`, which only
+    # substitutes {} for falsy values and does nothing for a truthy non-dict
+    # like a non-empty string.
+    verification_map = verification if isinstance(verification, Mapping) else {}
+    # Some completions/candidate rules name this list "source_evidence"
+    # (entries shaped {chunk_path, section_id, quote}) instead of the
+    # documented "evidence" ({chunk_path, section_id, source_text}) — treat
+    # them as the same field rather than losing a real citation to a naming
+    # difference.
+    exception_evidence = _best_evidence(
+        verification_map.get("evidence") or verification_map.get("source_evidence"),
+        field_evidence_map.get("exceptions"),
+    )
+    exception_has_positive_citation = rule.get("exception_basis") == "explicit_in_source" and exception_evidence
+    if (
+        not isinstance(verification_map.get("searched_chunk_count"), int)
+        or verification_map.get("searched_chunk_count", 0) < 1
+    ) and not exception_has_positive_citation:
+        # A rule with field_evidence-backed direct proof of its exception
+        # doesn't also need a separate full-corpus-search count — the citation
+        # itself is the evidence. An exhaustive-search count is still required
+        # for the "nothing found"/unresolved states, where there is no
+        # positive citation to point to instead.
         issues.append({"requirement": "exceptions", "reason": "full-document search provenance is missing"})
-    if rule.get("exception_basis") == "unresolved_after_full_document_search" and not str((verification or {}).get("unresolved_reason", "")).strip():
+    if rule.get("exception_basis") == "unresolved_after_full_document_search" and not str(verification_map.get("unresolved_reason", "")).strip():
         issues.append({"requirement": "exceptions", "reason": "unresolved exception lacks a specific evidence limit"})
     elif rule.get("exception_basis") == "unresolved_after_full_document_search":
         issues.append({
             "requirement": "exceptions",
-            "reason": str((verification or {}).get("unresolved_reason")),
+            "reason": str(verification_map.get("unresolved_reason")),
             "evidence_limited": True,
         })
-    if rule.get("exception_basis") == "explicit_in_source" and (not isinstance(rule.get("exceptions"), list) or not rule.get("exceptions") or not isinstance((verification or {}).get("evidence"), list) or not (verification or {}).get("evidence")):
+    if rule.get("exception_basis") == "explicit_in_source" and (not isinstance(rule.get("exceptions"), list) or not rule.get("exceptions") or not exception_evidence):
         issues.append({"requirement": "exceptions", "reason": "explicit exception lacks structured predicates or direct source evidence"})
-    derivation = rule.get("scope_derivation")
-    if not isinstance(derivation, Mapping) or not isinstance(derivation.get("reviewed_chunk_count"), int) or derivation.get("reviewed_chunk_count", 0) < 1:
+    scope_evidence = _best_evidence(
+        derivation_map.get("evidence") or derivation_map.get("source_evidence"),
+        field_evidence_map.get("scope_basis"),
+    )
+    scope_has_positive_citation = rule.get("scope_basis") in SCOPE_BASES_REQUIRING_EVIDENCE and scope_evidence
+    if (
+        not isinstance(derivation_map.get("reviewed_chunk_count"), int)
+        or derivation_map.get("reviewed_chunk_count", 0) < 1
+    ) and not scope_has_positive_citation:
         issues.append({"requirement": "scope", "reason": "scope review provenance is missing"})
-    if rule.get("scope_basis") in {"explicit", "explicitly_universal_in_source"} and (not isinstance((derivation or {}).get("evidence"), list) or not (derivation or {}).get("evidence")):
+    if rule.get("scope_basis") in SCOPE_BASES_REQUIRING_EVIDENCE and not scope_evidence:
         issues.append({"requirement": "scope", "reason": "source-derived scope lacks evidence entries"})
     execution = rule.get("execution")
     if not isinstance(execution, Mapping) or not isinstance(execution.get("targets"), list) or not set(execution.get("targets", [])).intersection({"DMN", "BPMN"}):

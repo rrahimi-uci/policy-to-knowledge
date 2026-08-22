@@ -37,6 +37,22 @@ OPERATORS = {"==", "!=", ">", ">=", "<", "<=", "in", "not_in"}
 VARIABLE_ROLES = {"input", "derived", "output"}
 SCOPE_BASES = {
     "explicit",
+    # The extraction prompt documents exception_basis's "explicit_in_source" /
+    # "explicitly_none_in_source" convention explicitly (rule_contract_v2.txt
+    # item 5) but never states scope_basis's equivalent this precisely, so the
+    # model reasonably extends that same convention here by analogy — 254 of
+    # 352 rules in one real run used it. Accepted as a synonym for "explicit"
+    # everywhere "explicit" is treated specially: see the matching entries in
+    # FINAL_SCOPE_BASES and the evidence-requirement checks in kg_readiness.py.
+    "explicit_in_source",
+    # Same cross-pollination from exception_basis's convention, this time for
+    # its "explicitly_none_in_source" value — the model uses it to mean "the
+    # source explicitly confirms no loan/occupancy/transaction restriction
+    # applies," an affirmative claim backed by a real citation in every case
+    # observed, so it is treated the same as "explicit_in_source" for
+    # evidence-requirement purposes rather than as the evidence-free
+    # "genuinely_unscoped".
+    "explicitly_none_in_source",
     "explicitly_universal_in_source",
     "genuinely_unscoped",
     "inferred",  # candidate-stage only; final readiness rejects inferred-empty scope
