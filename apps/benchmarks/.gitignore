@@ -1,0 +1,5 @@
+# Benchmark corpora are downloaded, not vendored: ~595 MB extracted / ~259 MB of
+# archives, and several are redistribution-restricted. Reproduce them with
+# `python3 scripts/download_benchmarks.py`; datasets.json pins the checksums.
+data/
+raw/
