@@ -2,7 +2,7 @@
 
 **Status:** proposed; implementation and re-extraction are unrun.
 
-**Scope:** `apps/pipeline` only. This plan changes the six-agent extraction workflow, its prompt packs, graph contract, validation, optimization, reporting, and tests. It does **not** change `apps/pipeline-p2c`, PolicyIR, DMN, BPMN, or any downstream compiler. Those are consumers of a better graph and are outside this team's delivery.
+**Scope:** `apps/pipeline` only. This plan changes the six-agent extraction workflow, its prompt packs, graph contract, validation, optimization, reporting, and tests. It does **not** change PolicyIR, DMN, BPMN, or any downstream compiler. Those are consumers of a better graph and are outside this team's delivery. The `apps/pipeline-p2c` compiler that previously consumed this graph was removed from the repository; see [the NeurIPS execution plan](neurips-2027-execution-plan.md) for what that costs a study built on it.
 
 ## 1. Decision and outcome
 
