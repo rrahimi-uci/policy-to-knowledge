@@ -22,6 +22,7 @@ import os
 import sys
 import re
 import json
+import shutil
 from pathlib import Path
 from typing import List, Dict, Any, Optional, Tuple
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -1759,9 +1760,22 @@ If no TOC is found, return {{"has_toc": false, "toc_entries": []}}
             Dictionary with organization statistics
         """
         print(f"  → Organizing {len(chunks)} chunks into folder structure...")
-        
+
         # Create folder for this document (sanitized to match naming rule)
         doc_folder = output_base / self._sanitize_folder_name(source_file.stem)
+        if doc_folder.exists():
+            # Chunking is LLM-driven and non-deterministic: a re-run of Step 1
+            # (retry, resumed batch, manual reprocessing) can produce a
+            # different set of chunk filenames than the previous run. Without
+            # clearing the folder first, files from the earlier pass that
+            # aren't overwritten by this pass are orphaned but still present
+            # — and every downstream stage globs this folder for every
+            # .txt file, so a stale chunk gets treated as live content
+            # indistinguishable from the current extraction. Observed in
+            # practice: a document's earlier "untitled.txt" chunk survived a
+            # rerun whose fixed chunking no longer produced any blank
+            # titles, and a rule still cited the leftover file.
+            shutil.rmtree(doc_folder)
         doc_folder.mkdir(parents=True, exist_ok=True)
         
         # Save document metadata

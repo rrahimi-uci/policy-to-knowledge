@@ -145,6 +145,40 @@ def test_documents_are_actually_processed_concurrently_not_one_at_a_time(tmp_pat
     assert elapsed < 0.8, f"took {elapsed:.2f}s — looks serial, not concurrent"
 
 
+def test_reorganizing_a_document_clears_stale_chunks_from_a_prior_run(tmp_path):
+    """Chunking is LLM-driven and non-deterministic — a re-run of Step 1 can
+    produce a different set of chunk filenames than the previous run.
+    Without clearing the document's folder first, a chunk file the new run
+    didn't happen to overwrite is orphaned but still present, and every
+    downstream stage globs the folder for every .txt file, so the stale
+    chunk gets treated as live content. Real case from a full OPP-115 run:
+    a document's earlier "untitled.txt" chunk survived a rerun whose fixed
+    chunking no longer produced any blank titles, and a rule still cited
+    the leftover file."""
+    docs = _write_docs(tmp_path, 1)
+    out_dir = tmp_path / "organized"
+    agent = _agent()
+
+    # First pass: produces a chunk named after a blank/fallback title.
+    with patch.object(agent, "chunk_document_with_reasoning", return_value=[
+        DocumentChunk(chunk_id="doc_0-1", title="Untitled", content="stale content", metadata={"word_count": 10}),
+    ]):
+        agent.process_knowledge_folder(str(tmp_path), output_folder=str(out_dir))
+
+    stale_files = {p.name for p in (out_dir / "doc_0").iterdir()}
+    assert "untitled.txt" in stale_files
+
+    # Second pass over the same document: different chunk breakdown/titles.
+    with patch.object(agent, "chunk_document_with_reasoning", return_value=[
+        DocumentChunk(chunk_id="doc_0-1", title="Real Section", content="current content", metadata={"word_count": 10}),
+    ]):
+        agent.process_knowledge_folder(str(tmp_path), output_folder=str(out_dir))
+
+    current_files = {p.name for p in (out_dir / "doc_0").iterdir()}
+    assert "untitled.txt" not in current_files, "stale chunk from the prior run was not cleared"
+    assert "real_section.txt" in current_files
+
+
 def test_organizer_workers_env_var_is_respected(tmp_path, monkeypatch):
     monkeypatch.setenv("KG_ORGANIZER_WORKERS", "1")
     _write_docs(tmp_path, 4)
