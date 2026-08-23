@@ -6,3 +6,6 @@ raw/
 
 # Pipeline-ready plaintext derived from data/ by scripts/build_source_docs.py (~42 MB).
 *-source-docs/
+
+# Small hand-curated subsets of a downloaded corpus used for pilot/smoke-test runs.
+*-pilot-docs/
