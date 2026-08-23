@@ -18,7 +18,10 @@ graph and the Agent 6 dependency DAGs; it does not modify any extraction stage.
 **Feasible, with one hard precondition.** The v2 rule contract already carries
 essentially everything DMN needs. I measured this rather than assumed it, by
 building a throwaway generator and running it over a real 352-rule certified
-graph (`pipeline-output/fannie_mae_readiness_20260821/`):
+graph — `pipeline-output/fannie_mae_readiness_20260821/`, which is the **only**
+v2 graph in the repo and therefore the sole source of every number below
+(see "The evidence base is a single run" for what that does and does not
+generalize):
 
 | Measurement | Result |
 | --- | ---: |
@@ -402,6 +405,7 @@ process contains a cycle; every task resolves to an existing decision id.
 | FEEL subset diverges from real engines | Medium | Bounded subset + loud failures; optional engine cross-check (C4) |
 | Grounding failures on real runs | Medium | The certified run had 345/352 rules grounding-failed. Decision 7 refuses these by default — expect to confront grounding quality before shipping artifacts |
 | Value types permitted but unexercised (`duration`, `range`) | Low | Fail loudly rather than guess a rendering |
+| **Entire feasibility case rests on one run, one domain (n=1)** | **High** | Re-run one non-mortgage domain under v2 and re-run the spike before committing to C1 — see "The evidence base is a single run" |
 
 ---
 
@@ -462,3 +466,40 @@ well-formedness and internal replay were checked — this is exactly what the
 optional C4 cross-check exists to settle); BPMN emission of any kind, which is
 design-only at this point; and whether re-running the v1 corpora under v2 yields
 comparable rule quality.
+
+### The evidence base is a single run (n=1)
+
+Every measurement above comes from **one** directory:
+`pipeline-output/fannie_mae_readiness_20260821/` — one run, one domain
+(`mortgage`), 352 rules, one extraction vintage. It is the only v2 graph that
+exists in the repo (P1), so there was no second corpus to cross-check against.
+This is worth stating plainly because it bounds how far the feasibility verdict
+should be trusted.
+
+**What should generalize.** The v2 contract's operators, value types, variable
+roles, and hit policies are defined in `utils/rule_contract.py` at the *schema*
+level, not per-domain, and `_project_execution`'s DMN branch keys off
+`variables[].role` alone. So FEEL mappability, DNF tractability, and DMN column
+derivation are structural properties of the contract rather than of mortgage
+data, and should hold for any domain that satisfies the contract.
+
+**What may not generalize.** Anything keyed off domain-specific content:
+
+- `rule_type`-dependent behaviour — P6 is direct proof this *does* break, since
+  BPMN targeting silently yields nothing for five of the eight domains.
+- The hit-policy mix (324 `UNIQUE` / 24 `COLLECT` / 4 `ANY`), the 27 conflict
+  count, the 94% replay rate, the 87.5% single-row DNF share, and the
+  323-of-336 singleton-signature distribution are all observations about *this*
+  corpus, not invariants. A domain with denser rule interaction could shift the
+  consolidation and hit-policy picture substantially.
+- Whether other domains' extractions are as cleanly structured at all. This run
+  passed all four invariants; nothing establishes that a `privacy_policy` or
+  `nda_confidentiality` run would.
+
+**Cheap mitigation, worth doing before committing to C1.** Re-run one
+non-mortgage domain under the v2 contract — ideally one of the benchmark corpora
+(`privacy_policy` or `nda_confidentiality`, whose `rule_type` vocabularies are
+furthest from mortgage's) — and re-run the spike against it. That converts the
+riskiest assumption in this plan from "probably fine, it's schema-level" into a
+measurement, for roughly the cost of a single extraction run. It also directly
+informs Q1.
