@@ -116,7 +116,15 @@ class KnowledgeGraphOptimizer:
             max_retries=self.config.get_max_retries()
         )
         self.prompt_manager = get_prompt_manager()
-        self.max_workers = int(os.environ.get('MAX_WORKERS', '1'))
+        # config.get_max_workers() already implements "MAX_WORKERS env var,
+        # else pipeline.max_workers (40)" — reading os.environ directly here
+        # duplicated that logic with the wrong fallback (1, not 40), so any
+        # run that didn't explicitly pass --workers silently serialized this
+        # agent's entire dedup batch loop and cross-batch dependency pass
+        # (both otherwise built to run on a ThreadPoolExecutor sized to
+        # self.max_workers) despite the CLI's own --workers help text and
+        # this class's docstring both describing a default of 40.
+        self.max_workers = self.config.get_max_workers()
         
         print(f"""
 ╔══════════════════════════════════════════════════════════════════════╗

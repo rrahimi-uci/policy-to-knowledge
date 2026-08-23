@@ -281,30 +281,61 @@ class TestRunAgentMaxWorkersEnv:
 # ---------------------------------------------------------------------------
 
 class TestAgent3MaxWorkersEnvReading:
-    """Test that agent_3_rules_extractor reads MAX_WORKERS from environment."""
+    """Test that agent_3_rules_extractor and agent_5_knowledge_graph_optimizer
+    read max_workers via Config.get_max_workers(), not their own ad hoc
+    os.environ.get('MAX_WORKERS', <different hardcoded default>) reads.
 
-    def test_agent3_reads_max_workers_default(self):
-        """When MAX_WORKERS is not set, agent 3 should default to 20."""
-        env_backup = os.environ.pop("MAX_WORKERS", None)
-        try:
-            result = int(os.environ.get("MAX_WORKERS", "20"))
-            assert result == 20
-        finally:
-            if env_backup is not None:
-                os.environ["MAX_WORKERS"] = env_backup
+    Both agents used to reimplement that lookup themselves with the wrong
+    fallback (20 for agent_3, 1 for agent_5) instead of calling the config
+    helper that already existed and correctly falls back to
+    pipeline.max_workers (40) — the CLI intentionally leaves MAX_WORKERS
+    unset when --workers isn't passed (see this file's own module docstring,
+    point 4), so an agent that doesn't consult the config default that
+    scenario correctly silently loses most or all of its parallelism. On a
+    real OPP-115 benchmark run this meant Agent 5's entire dedup batch loop
+    and cross-batch dependency pass ran with exactly 1 worker — fully
+    serial — despite config.json declaring pipeline.max_workers: 40.
+    """
 
-    def test_agent3_reads_max_workers_custom(self):
-        """When MAX_WORKERS is set to 40, agent 3 should pick it up."""
-        env_backup = os.environ.get("MAX_WORKERS")
-        os.environ["MAX_WORKERS"] = "40"
-        try:
-            result = int(os.environ.get("MAX_WORKERS", "20"))
-            assert result == 40
-        finally:
-            if env_backup is not None:
-                os.environ["MAX_WORKERS"] = env_backup
-            else:
-                os.environ.pop("MAX_WORKERS", None)
+    def test_agent3_main_calls_config_get_max_workers(self):
+        """agent_3's main() builds its ThreadPoolExecutor size from
+        config.get_max_workers() — not its own hardcoded os.environ.get(...,
+        '20') read, which never picked up the config-declared 40 default."""
+        import agents.agent_3_rules_extractor as a3
+
+        source = Path(a3.__file__).read_text(encoding="utf-8")
+        assert "max_workers = config.get_max_workers()" in source
+
+    def test_config_get_max_workers_default(self, monkeypatch):
+        """When MAX_WORKERS is not set, the shared config default is 40 —
+        the value every agent should now be reading via this one method."""
+        from utils.config import get_config
+
+        monkeypatch.delenv("MAX_WORKERS", raising=False)
+        assert get_config().get_max_workers() == 40
+
+    def test_config_get_max_workers_custom(self, monkeypatch):
+        from utils.config import get_config
+
+        monkeypatch.setenv("MAX_WORKERS", "7")
+        assert get_config().get_max_workers() == 7
+
+    def test_agent5_defaults_to_forty_not_one(self, monkeypatch):
+        """The specific regression: agent_5's own max_workers must come from
+        config.get_max_workers() (default 40), not a hardcoded '1' that
+        silently serialized dedup and cross-batch dependency analysis."""
+        import agents.agent_5_knowledge_graph_optimizer as a5
+
+        monkeypatch.delenv("MAX_WORKERS", raising=False)
+        optimizer = a5.KnowledgeGraphOptimizer(api_key="sk-dummy")
+        assert optimizer.max_workers == 40
+
+    def test_agent5_reads_max_workers_custom(self, monkeypatch):
+        import agents.agent_5_knowledge_graph_optimizer as a5
+
+        monkeypatch.setenv("MAX_WORKERS", "12")
+        optimizer = a5.KnowledgeGraphOptimizer(api_key="sk-dummy")
+        assert optimizer.max_workers == 12
 
 
 # ---------------------------------------------------------------------------
