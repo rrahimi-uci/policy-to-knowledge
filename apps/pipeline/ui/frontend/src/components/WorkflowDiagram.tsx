@@ -8,6 +8,7 @@ import {
   Sparkles,
   BarChart3,
   Layers,
+  GitBranch,
   GitCompareArrows,
   Calculator,
   PieChart,
@@ -71,7 +72,17 @@ const STEPS: StepMeta[] = [
     description: 'Removes duplicate and near-duplicate rules, resolves conflicts, and adds dependency links between rules that reference each other. Substantially reduces graph size while preserving coverage.',
   },
   {
-    id: '6', phase: 1, icon: BarChart3,
+    id: '6', phase: 1, icon: GitBranch,
+    label: 'Dependency DAG Generation',
+    description: 'Partitions every rule into one or more directed acyclic graphs built from the dependency edges Agent 5 computed. Every rule is covered by exactly one generated DAG, whether or not it has any dependencies; a dependency cycle is condensed into a single node rather than dropped.',
+  },
+  {
+    // NOTE: this id ('7') is also used below by the comparison-flow step at
+    // phase 2 ("Cross-Graph Rule Clustering"). The two never collide in
+    // practice — a single run's `steps` only ever contains ids from one
+    // pipeline type (extraction xor comparison) — but don't assume `id` is
+    // globally unique across this whole STEPS array when adding new steps.
+    id: '7', phase: 1, icon: BarChart3,
     label: 'Graph Visualization & Export',
     description: 'Generates an interactive HTML visualization of the final knowledge graph and exports JSON and CSV artefacts for downstream use.',
   },
@@ -545,9 +556,13 @@ export default function WorkflowDiagram({
     return 'pending';
   };
 
-  // Phase connector status (between phase 1 last → phase 2 first)
+  // Phase connector status (between phase 1 last → phase 2 first).
+  // NOTE: phase-1's last step id ('7') is shared with phase-2's first step
+  // id ('7') in STEPS above — see the comment there. `steps` here always
+  // belongs to a single run (extraction xor comparison), so this still
+  // resolves to the right step's status in practice.
   const phaseLink = (): string => {
-    const last1 = statusOf('6', steps);
+    const last1 = statusOf('7', steps);
     if (last1 === 'completed') return 'completed';
     if (last1 === 'running') return 'running';
     return 'pending';

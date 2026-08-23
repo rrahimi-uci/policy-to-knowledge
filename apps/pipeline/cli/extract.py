@@ -339,7 +339,7 @@ class KnowledgeExtractionPipeline:
         except Exception as exc:
             print(f"⚠️ Could not write LLM performance metrics: {exc}", flush=True)
     
-    def _print_progress_summary(self, completed_steps: list, current_step: str = None, total_steps: int = 7):
+    def _print_progress_summary(self, completed_steps: list, current_step: str = None, total_steps: int = 8):
         """Print a quick progress summary showing completed and remaining steps."""
         all_steps = [
             ("1", "Document Organizer"),
@@ -348,7 +348,8 @@ class KnowledgeExtractionPipeline:
             ("3.5", "Rule Validator"),
             ("4", "Rules+Entities Merger"),
             ("5", "KG Optimizer"),
-            ("6", "Visualizer"),
+            ("6", "DAG Generator"),
+            ("7", "Visualizer"),
         ]
         
         print(f"\n{'─' * 80}")
@@ -1123,17 +1124,150 @@ class KnowledgeExtractionPipeline:
             "5.7",
         )
     
-    def step6_visualize_knowledge_graph(self) -> bool:
+    def step6_generate_dag(self) -> bool:
         """
-        Step 6: Visualization and Reports - Generate interactive HTML and reports.
-        
+        Step 6: Dependency DAG Generation - Partition the graph into DAGs.
+
+        Reads Agent 5's optimized graph and builds one or more directed
+        acyclic graphs from the rule dependency edges, guaranteeing every
+        rule is covered by exactly one generated DAG (see
+        agents/agent_6_dag_generator.py and utils/dag_builder.py).
+
+        Returns:
+            True if DAG generation succeeded and covers 100% of the graph,
+            False otherwise.
+        """
+        print("\n" + "=" * 80)
+        print("📌 STEP 6 PRE-CHECK: Dependency DAG Generation")
+        print("=" * 80)
+
+        optimized_json = self.config.get_optimized_dir() / "optimized_compliance_knowledge_graph.json"
+        merged_json = self.config.get_rules_with_entities_dir() / "compliance_knowledge_graph.json"
+
+        if optimized_json.exists():
+            print(f"📂 Using optimized data: {optimized_json}")
+            print(f"✅ Optimized knowledge graph exists")
+        elif merged_json.exists():
+            print(f"📂 Using merged data (Step 5 skipped): {merged_json}")
+            print("⚠️  Dependency edges are computed by Agent 5; DAGs will have no edges (every rule isolated).")
+        else:
+            print(f"❌ No knowledge graph found. Run Step 4 (or Step 5) first!")
+            print(f"   Looked for:")
+            print(f"     - {optimized_json}")
+            print(f"     - {merged_json}")
+            return False
+
+        dag_dir = self.config.get_dag_dir()
+        print(f"\n📤 Dependency DAGs will be saved to: {dag_dir}")
+        print("=" * 80)
+        print()
+        print("🎯 Agent: DependencyDAGGenerator")
+        print("📋 Tasks:")
+        print("   • Partition every rule into weakly-connected dependency components")
+        print("   • Condense any dependency cycle into a single node (stays acyclic)")
+        print("   • Verify 100% of the graph's rules are covered by the generated DAGs")
+        print()
+        print("⏳ Generating dependency DAGs...")
+        print()
+
+        try:
+            dag_script = _ROOT / "agents" / "agent_6_dag_generator.py"
+
+            if not dag_script.exists():
+                raise FileNotFoundError(f"DAG generator script not found: {dag_script}")
+
+            cmd = [sys.executable, str(dag_script)]
+
+            print(f"\n🤖 LAUNCHING AGENT: agent_6_dag_generator.py")
+            print(f"📜 Script:     {dag_script.name}")
+            print(f"📌 Step:       6")
+            print(f"📌 Executing: {' '.join(cmd)}")
+            print()
+
+            env = self._agent_environment()
+
+            result = subprocess.run(
+                cmd,
+                cwd=_ROOT,
+                capture_output=True,
+                text=True,
+                env=env
+            )
+
+            if result.stdout:
+                print(result.stdout)
+
+            if result.stderr:
+                print("⚠️ Warnings/Errors:", file=sys.stderr)
+                print(result.stderr, file=sys.stderr)
+
+            if result.returncode != 0:
+                raise RuntimeError(f"DAG generator failed with exit code {result.returncode}")
+
+            dag_json = dag_dir / "dependency_dags.json"
+            if not dag_json.exists():
+                raise FileNotFoundError(f"Expected output not found: {dag_json}")
+
+            with open(dag_json, 'r') as f:
+                dag_data = json.load(f)
+
+            # Re-verify the coverage guarantee here too (belt-and-suspenders:
+            # agent_6_dag_generator.py already exits nonzero on incomplete
+            # coverage, but step5's post-check re-reads Agent 5's own output
+            # the same way — don't just trust the subprocess's exit code).
+            coverage = dag_data.get("coverage", {})
+            if not coverage.get("complete"):
+                raise RuntimeError(
+                    f"DAG coverage check failed: {coverage.get('covered_rules', 0)}/"
+                    f"{coverage.get('total_rules', '?')} rules covered "
+                    f"(missing: {coverage.get('missing_rule_ids', [])})"
+                )
+
+            print("✓ Verified DAG output:")
+            print(f"  • {dag_json.name}")
+            print(f"  • dag_generation_report.md")
+            print()
+
+            print("\n" + "=" * 80)
+            print("✅ STEP 6 POST-CHECK: Dependency DAG Generation")
+            print("=" * 80)
+            num_dags = len(dag_data.get('dags', []))
+            print(f"✅ {num_dags} DAG(s) generated, covering "
+                  f"{coverage.get('covered_rules', 0)}/{coverage.get('total_rules', 0)} rules (100%)")
+            print(f"📂 Output directory: {dag_dir}")
+            print(f"{'=' * 80}\n")
+
+            self.flow_state["steps_completed"].append({
+                "agent": "Dependency DAG Generator",
+                "timestamp": datetime.now().isoformat(),
+                "description": f"Generated {num_dags} DAG(s) covering 100% of the graph"
+            })
+
+            print("✅ Dependency DAG generation completed successfully")
+            print()
+
+            return True
+
+        except Exception as e:
+            print(f"❌ Dependency DAG generation failed: {str(e)}")
+            self.flow_state["steps_failed"].append({
+                "agent": "Dependency DAG Generator",
+                "timestamp": datetime.now().isoformat(),
+                "error": str(e)
+            })
+            return False
+
+    def step7_visualize_knowledge_graph(self) -> bool:
+        """
+        Step 7: Visualization and Reports - Generate interactive HTML and reports.
+
         Creates an interactive visualization with network graph and rules table.
-        
+
         Returns:
             True if visualization succeeded, False otherwise
         """
         print("\n" + "=" * 80)
-        print("📌 STEP 6 PRE-CHECK: Visualization and Reports")
+        print("📌 STEP 7 PRE-CHECK: Visualization and Reports")
         print("=" * 80)
         
         # Check for input data: prefer optimized (Step 5), fall back to merged (Step 4)
@@ -1205,7 +1339,7 @@ class KnowledgeExtractionPipeline:
             
             print(f"\n🤖 LAUNCHING AGENT: agent_6_visualization_and_report.py")
             print(f"📜 Script:     {visualizer_script.name}")
-            print(f"📌 Step:       6")
+            print(f"📌 Step:       7")
             print(f"📌 Executing: {' '.join(cmd)}")
             print()
             
@@ -1246,7 +1380,7 @@ class KnowledgeExtractionPipeline:
             print()
             
             print("\n" + "=" * 80)
-            print("✅ STEP 6 POST-CHECK: Visualization and Reports")
+            print("✅ STEP 7 POST-CHECK: Visualization and Reports")
             print("=" * 80)
             print(f"✅ Visualization created successfully")
             print(f"📄 HTML file: {viz_file.name}")
@@ -1296,8 +1430,8 @@ class KnowledgeExtractionPipeline:
             True if all steps completed successfully, False otherwise
         """
         start_time = datetime.now()
-        total_steps = 7  # 6 main steps + validation (step 3.5)
-        
+        total_steps = 8  # 7 main steps + validation (step 3.5)
+
         # Define agent scripts for reference
         script_dir = _ROOT / "agents"
         agent_scripts = {
@@ -1307,7 +1441,12 @@ class KnowledgeExtractionPipeline:
             "3.5": ("agent_3_5_rule_validator.py", "Rule Validator", "Validates rule quality & consistency"),
             4: ("agent_4_rules_with_entities_merger.py", "Rules+Entities Merger", "Merges rules with entity definitions"),
             5: ("agent_5_knowledge_graph_optimizer.py", "KG Optimizer", "Deduplicates & analyzes dependencies"),
-            6: ("agent_6_visualization_and_report.py", "Visualizer", "Generates interactive HTML reports"),
+            6: ("agent_6_dag_generator.py", "DAG Generator", "Builds dependency DAGs covering 100% of the graph"),
+            # Step 7 still runs agent_6_visualization_and_report.py: only the
+            # pipeline's step *number* moved to 7, not this script's filename
+            # or its output directory name (agent-6-visualization-and-report/)
+            # — see the get_visualization_dir() docstring in utils/config.py.
+            7: ("agent_6_visualization_and_report.py", "Visualizer", "Generates interactive HTML reports"),
         }
         
         print("\n" + "=" * 80)
@@ -1319,7 +1458,7 @@ class KnowledgeExtractionPipeline:
         print(f"   🏷️  Domain:          {self.config.get_domain().upper()}")
         print(f"   📁 Source:         {self.source_dir}")
         print(f"   🎯 Target Rules:   {self.target_rules}")
-        print(f"   📊 Total Steps:    {total_steps} (6 main + validation)")
+        print(f"   📊 Total Steps:    {total_steps} (7 main + validation)")
         print()
         print("🤖 AGENTS TO BE EXECUTED:")
         print("─" * 80)
@@ -1340,7 +1479,8 @@ class KnowledgeExtractionPipeline:
             print("   5️⃣  Optimize Knowledge Graph (SKIPPED - --skip-optimize)")
         else:
             print("   5️⃣  Optimize Knowledge Graph (Deduplication)")
-        print("   6️⃣  Visualization and Reports (HTML)")
+        print("   6️⃣  Dependency DAG Generation (100% graph coverage)")
+        print("   7️⃣  Visualization and Reports (HTML)")
         print()
         print("=" * 80)
         print()
@@ -1353,7 +1493,7 @@ class KnowledgeExtractionPipeline:
         
         # Step 1: Organize Knowledge
         print("\n" + "=" * 80)
-        print(f"📍 PIPELINE PROGRESS [{source_name}]: Step 1/6 - Knowledge Organization")
+        print(f"📍 PIPELINE PROGRESS [{source_name}]: Step 1/7 - Knowledge Organization")
         print("=" * 80 + "\n")
         self._print_progress_summary(completed_steps, current_step="1")
         if not self.step1_organize_knowledge():
@@ -1361,33 +1501,33 @@ class KnowledgeExtractionPipeline:
             self._print_failure_summary(start_time)
             return False
         completed_steps.append("1")
-        print(f"✅ [{source_name}] Step 1/6 completed - proceeding to Step 2...")
+        print(f"✅ [{source_name}] Step 1/7 completed - proceeding to Step 2...")
         self._print_progress_summary(completed_steps, current_step="2")
-        
+
         # Step 2: Extract Entity-Relationships
         print("\n" + "=" * 80)
-        print(f"📍 PIPELINE PROGRESS [{source_name}]: Step 2/6 - Entity-Relationship Extraction")
+        print(f"📍 PIPELINE PROGRESS [{source_name}]: Step 2/7 - Entity-Relationship Extraction")
         print("=" * 80 + "\n")
         if not self.step2_extract_entity_relationships():
             print(f"\n❌ PIPELINE STOPPED [{source_name}]: Entity-Relationship Extraction failed")
             self._print_failure_summary(start_time)
             return False
         completed_steps.append("2")
-        print(f"✅ [{source_name}] Step 2/6 completed - proceeding to Step 3...")
+        print(f"✅ [{source_name}] Step 2/7 completed - proceeding to Step 3...")
         self._print_progress_summary(completed_steps, current_step="3")
-        
+
         # Step 3: Extract Business Rules
         print("\n" + "=" * 80)
-        print(f"📍 PIPELINE PROGRESS [{source_name}]: Step 3/6 - Business Rules Extraction (Parallel)")
+        print(f"📍 PIPELINE PROGRESS [{source_name}]: Step 3/7 - Business Rules Extraction (Parallel)")
         print("=" * 80 + "\n")
         if not self.step3_extract_business_rules():
             print(f"\n❌ PIPELINE STOPPED [{source_name}]: Business Rules Extraction failed")
             self._print_failure_summary(start_time)
             return False
         completed_steps.append("3")
-        print(f"✅ [{source_name}] Step 3/6 completed - proceeding to Step 3.5 (Validation)...")
+        print(f"✅ [{source_name}] Step 3/7 completed - proceeding to Step 3.5 (Validation)...")
         self._print_progress_summary(completed_steps, current_step="3.5")
-        
+
         # Step 3.5 is read-only and non-blocking. It can safely overlap Step 4,
         # which consumes Agent 2/3 outputs but does not consume validation.
         print("\n" + "=" * 80)
@@ -1397,10 +1537,10 @@ class KnowledgeExtractionPipeline:
         validation_future = validation_executor.submit(self.step3_5_validate_rules)
         print("↗ Rule validation started in the background; Step 4 is starting now.", flush=True)
         self._print_progress_summary(completed_steps, current_step="4")
-        
+
         # Step 4: Merge Rules with Entities
         print("\n" + "=" * 80)
-        print(f"📍 PIPELINE PROGRESS [{source_name}]: Step 4/6 - Merge Rules with Entities")
+        print(f"📍 PIPELINE PROGRESS [{source_name}]: Step 4/7 - Merge Rules with Entities")
         print("=" * 80 + "\n")
         merge_ok = self.step4_merge_rules_with_entities()
         validation_ok = validation_future.result()
@@ -1415,37 +1555,49 @@ class KnowledgeExtractionPipeline:
             self._print_failure_summary(start_time)
             return False
         completed_steps.append("4")
-        print(f"✅ [{source_name}] Step 4/6 completed - proceeding to Step 5...")
+        print(f"✅ [{source_name}] Step 4/7 completed - proceeding to Step 5...")
         self._print_progress_summary(completed_steps, current_step="5")
-        
+
         # Step 5: Optimize Knowledge Graph
         if self.skip_optimize:
             print("\n" + "=" * 80)
-            print(f"⏭️  PIPELINE PROGRESS [{source_name}]: Step 5/6 - SKIPPED (--skip-optimize)")
+            print(f"⏭️  PIPELINE PROGRESS [{source_name}]: Step 5/7 - SKIPPED (--skip-optimize)")
             print("=" * 80 + "\n")
             completed_steps.append("5-skipped")
         else:
             print("\n" + "=" * 80)
-            print(f"📍 PIPELINE PROGRESS [{source_name}]: Step 5/6 - Optimize Knowledge Graph (Parallel)")
+            print(f"📍 PIPELINE PROGRESS [{source_name}]: Step 5/7 - Optimize Knowledge Graph (Parallel)")
             print("=" * 80 + "\n")
             if not self.step5_optimize_knowledge_graph():
                 print(f"\n❌ PIPELINE STOPPED [{source_name}]: Knowledge Graph Optimization failed")
                 self._print_failure_summary(start_time)
                 return False
             completed_steps.append("5")
-            print(f"✅ [{source_name}] Step 5/6 completed - proceeding to Step 6...")
+            print(f"✅ [{source_name}] Step 5/7 completed - proceeding to Step 6...")
         self._print_progress_summary(completed_steps, current_step="6")
-        
-        # Step 6: Visualization and Reports
+
+        # Step 6: Dependency DAG Generation
         print("\n" + "=" * 80)
-        print(f"📍 PIPELINE PROGRESS [{source_name}]: Step 6/6 - Visualization and Reports")
+        print(f"📍 PIPELINE PROGRESS [{source_name}]: Step 6/7 - Dependency DAG Generation")
         print("=" * 80 + "\n")
-        if not self.step6_visualize_knowledge_graph():
-            print(f"\n❌ PIPELINE STOPPED [{source_name}]: Visualization and Reports failed")
+        if not self.step6_generate_dag():
+            print(f"\n❌ PIPELINE STOPPED [{source_name}]: Dependency DAG Generation failed")
             self._print_failure_summary(start_time)
             return False
         completed_steps.append("6")
-        print(f"✅ [{source_name}] Step 6/6 completed - all steps finished!")
+        print(f"✅ [{source_name}] Step 6/7 completed - proceeding to Step 7...")
+        self._print_progress_summary(completed_steps, current_step="7")
+
+        # Step 7: Visualization and Reports
+        print("\n" + "=" * 80)
+        print(f"📍 PIPELINE PROGRESS [{source_name}]: Step 7/7 - Visualization and Reports")
+        print("=" * 80 + "\n")
+        if not self.step7_visualize_knowledge_graph():
+            print(f"\n❌ PIPELINE STOPPED [{source_name}]: Visualization and Reports failed")
+            self._print_failure_summary(start_time)
+            return False
+        completed_steps.append("7")
+        print(f"✅ [{source_name}] Step 7/7 completed - all steps finished!")
         self._print_progress_summary(completed_steps)
         
         # Final success summary
@@ -1532,8 +1684,8 @@ class KnowledgeExtractionPipeline:
         Run a single step of the pipeline.
         
         Args:
-            step_number: Step to execute (1-6)
-            
+            step_number: Step to execute (1-7)
+
         Returns:
             True if successful, False otherwise
         """
@@ -1548,11 +1700,12 @@ class KnowledgeExtractionPipeline:
             "5.5": self.step5_5_complete_readiness,
             "5.6": self.step5_6_remediate_readiness,
             "5.7": self.step5_7_verify_grounding,
-            "6": self.step6_visualize_knowledge_graph,
+            "6": self.step6_generate_dag,
+            "7": self.step7_visualize_knowledge_graph,
         }
-        
+
         if step_key not in steps:
-            print(f"❌ Invalid step number: {step_number}. Valid steps: 1, 2, 3, 3.5, 4, 5, 5.5, 5.6, 5.7, 6")
+            print(f"❌ Invalid step number: {step_number}. Valid steps: 1, 2, 3, 3.5, 4, 5, 5.5, 5.6, 5.7, 6, 7")
             return False
         
         print(f"🎬 Running Step {step_number} only")
@@ -1987,14 +2140,15 @@ Examples:
     
     parser.add_argument(
         "--step",
-        choices=["1", "2", "3", "3.5", "4", "5", "5.5", "5.6", "5.7", "6"],
-        help="Run one stage only (5.5: readiness, 5.6: remediation, 5.7: grounding certification)"
+        choices=["1", "2", "3", "3.5", "4", "5", "5.5", "5.6", "5.7", "6", "7"],
+        help="Run one stage only (5.5: readiness, 5.6: remediation, 5.7: grounding certification, "
+             "6: dependency DAG generation, 7: visualization)"
     )
-    
+
     parser.add_argument(
         "--skip-optimize",
         action="store_true",
-        help="Skip Step 5 (knowledge graph optimization/deduplication). Saves time; Step 6 uses Step 4 output directly."
+        help="Skip Step 5 (knowledge graph optimization/deduplication). Saves time; Steps 6 and 7 use Step 4 output directly."
     )
     
     parser.add_argument(

@@ -190,7 +190,8 @@ const STEP_LABELS: Record<number, string> = {
   3: 'Business Rules Extraction',
   4: 'Rules & Entity Integration',
   5: 'Knowledge Graph Deduplication & Optimization',
-  6: 'Graph Visualization & Export',
+  6: 'Dependency DAG Generation',
+  7: 'Graph Visualization & Export',
 };
 
 function formatSize(bytes: number) {
@@ -807,7 +808,7 @@ function CreationPipeline({
                 <select title="Step" value={stepNum} onChange={e => setStepNum(Number(e.target.value))}
                   className="bg-gray-800 border border-gray-700 rounded px-3 py-1.5 text-sm text-gray-200 focus:outline-none focus:border-blue-500" disabled={isRunning}
                 >
-                  {[1,2,3,4,5,6].map(n => <option key={n} value={n}>Step {n} — {STEP_LABELS[n]}</option>)}
+                  {[1,2,3,4,5,6,7].map(n => <option key={n} value={n}>Step {n} — {STEP_LABELS[n]}</option>)}
                 </select>
               )}
             </div>

@@ -8,7 +8,12 @@ const STEP_LABELS: Record<string, string> = {
   '3.5': 'Rule Quality Validation',
   '4':   'Rules & Entity Integration',
   '5':   'Knowledge Graph Deduplication & Optimization',
-  '6':   'Graph Visualization & Export',
+  // NOTE: this component is only ever rendered by pages/Compare.tsx, whose
+  // steps are always the join-pipeline ids '7'-'10' below — '1'-'6' are
+  // listed for completeness but never actually looked up here. Id '7' is
+  // therefore kept as the comparison-flow meaning, not the extraction
+  // flow's (also '7', since Agent 6's DAG generator took over '6' there).
+  '6':   'Dependency DAG Generation',
   '7':   'Cross-Graph Rule Clustering',
   '8':   'Semantic Rule Alignment',
   '9':   'Graph Set Analysis',

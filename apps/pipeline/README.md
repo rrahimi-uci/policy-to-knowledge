@@ -1,19 +1,21 @@
 # Pipeline
 
 The Pipeline app turns compliance policy documents into queryable knowledge
-graphs. It bundles a FastAPI backend, a React/Vite UI, a 10-agent LLM extraction
+graphs. It bundles a FastAPI backend, a React/Vite UI, an 11-agent LLM extraction
 pipeline, the prompt packs, and the generated outputs. This is the primary app
 in the Policy to Knowledge suite.
 
 - **Backend** — FastAPI API on port `8000`
 - **Frontend** — React/Vite UI on port `5173`
-- **Pipeline** — agents 1–6 extract a graph; agents 7–10 compare and merge graphs
+- **Pipeline** — agents 1–7 extract a graph and its dependency DAGs; agents
+  7–10 (a separate, independently-numbered pipeline) compare and merge graphs.
+  See [agents/README.md](agents/README.md) for why both sequences reach "7".
 
 ## What Lives Here
 
 | Path | Purpose |
 | --- | --- |
-| `cli/extract.py` | Extraction orchestrator (agents 1–6): documents → optimized knowledge graph |
+| `cli/extract.py` | Extraction orchestrator (agents 1–7): documents → optimized knowledge graph + dependency DAGs |
 | `cli/compare.py` | Comparison orchestrator (agents 7–10): compare/merge two graphs |
 | `agents/` | Agent implementations (see `agents/README.md`) |
 | `ui/backend/` | FastAPI API and WebSocket endpoints |
@@ -60,7 +62,7 @@ This serves the API on `http://localhost:8000` and the frontend on
 ### CLI
 
 ```bash
-# Extraction (agents 1–6)
+# Extraction (agents 1–7)
 .venv/bin/python cli/extract.py --provider openai
 .venv/bin/python cli/extract.py --file compliance-files/<batch>/<file>.pdf --provider openai
 .venv/bin/python cli/extract.py --batch-dir <domain> --domain <domain> --target-rules 300
@@ -113,9 +115,9 @@ Common `extract.py` flags:
 | `--domain <name>` | Domain prompt overrides (defaults to `config.json` `domain.active`) |
 | `--target-rules <n>` | Target number of rules to extract |
 | `--workers <n>` | Parallel LLM workers |
-| `--step <stage>` | Run one stage (`1`, `2`, `3`, `3.5`, `4`, `5`, `5.5`, `5.6`, `5.7`, or `6`) |
+| `--step <stage>` | Run one stage (`1`, `2`, `3`, `3.5`, `4`, `5`, `5.5`, `5.6`, `5.7`, `6`, or `7`) |
 | `--document-workers <n>` | Run independent documents in parallel subprocesses |
-| `--skip-optimize` | Skip Agent 5 (Agent 6 uses Agent 4 output directly) |
+| `--skip-optimize` | Skip Agent 5 (Steps 6 and 7 use Agent 4 output directly) |
 
 ### Executable-readiness artifacts
 
