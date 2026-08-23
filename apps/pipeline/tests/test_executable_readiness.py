@@ -143,6 +143,53 @@ def test_legacy_naming_and_rule_shapes_normalise_to_one_v2_contract():
 
 
 # ─────────────────────────────────────────────────────────────────────────
+# variables[].type / condition_predicates[].operator: the same
+# LEGACY_VALUE_TYPES/LEGACY_OPERATORS alias tables already used for
+# value_type fields were never applied to variables[].type itself, and two
+# real-world aliases the model produced ("enum_array", "contains_any") were
+# missing from those tables entirely. Real case from a full OPP-115 run: 5
+# rules failed v2 validation with invalid_variable_type ("string_array"/
+# "enum_array") and 2 more with invalid_predicate_operator ("contains_any"),
+# each a reasonable, unambiguous alias for an already-accepted value.
+# ─────────────────────────────────────────────────────────────────────────
+
+def test_variable_type_gets_the_same_legacy_alias_normalisation_as_value_type():
+    rule = valid_rule()
+    rule["variables"].append({"name": "notification_channels", "type": "string_array", "role": "input"})
+    rule["variables"].append({"name": "sharing_purposes", "type": "enum_array", "role": "input"})
+
+    normalise_rule_contract(rule)
+
+    assert rule["variables"][-2]["type"] == "list"
+    assert rule["variables"][-1]["type"] == "list"
+
+
+def test_contains_any_operator_normalises_to_in():
+    rule = valid_rule()
+    rule["condition_predicates"].append({
+        "predicate_id": "p2",
+        "variable": "price_differential_amount",
+        "operator": "contains_any",
+        "value": ["sale", "merger", "bankruptcy"],
+        "value_type": "list",
+    })
+
+    normalise_rule_contract(rule)
+
+    assert rule["condition_predicates"][-1]["operator"] == "in"
+
+
+def test_string_array_variable_type_no_longer_fails_v2_validation():
+    rule = valid_rule()
+    rule["variables"].append({"name": "notification_channels", "type": "string_array", "role": "input"})
+
+    normalise_rule_contract(rule)
+    issues = validate_rule_v2(rule, {"SELLER_SERVICER", "FANNIE_MAE"})
+
+    assert not any(issue.code == "invalid_variable_type" for issue in issues)
+
+
+# ─────────────────────────────────────────────────────────────────────────
 # exception_basis / scope_basis: a free-text explanation instead of an enum
 # member must be coerced to the unresolved final state, not left as a raw v2
 # schema violation with no actionable path. Real values observed on one run:

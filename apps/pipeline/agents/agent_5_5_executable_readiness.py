@@ -156,6 +156,7 @@ LEGACY_ENTITY_NAMES = {
 
 LEGACY_VALUE_TYPES = {
     "array": "list",
+    "enum_array": "list",
     "enum_list": "list",
     "list_number": "list",
     "number_list": "list",
@@ -166,6 +167,11 @@ LEGACY_VALUE_TYPES = {
 LEGACY_OPERATORS = {
     "=": "==",
     "BETWEEN": "in",
+    # "contains_any" is the model's reasonable-but-undocumented name for
+    # exactly what "in" already means (does the actual value match any of a
+    # given set) — same cross-pollination pattern as the other legacy
+    # aliases here, just for operators instead of value/variable types.
+    "contains_any": "in",
     "IN": "in",
     "NOT_IN": "not_in",
 }
@@ -425,6 +431,16 @@ def _normalise_rule_contract(rule: dict[str, Any]) -> dict[str, Any]:
     for variable in variables:
         if not isinstance(variable, dict):
             continue
+        # variables[].type shares VARIABLE_TYPES with condition_predicates/
+        # outcomes/exceptions' value_type, but only this loop's own two
+        # special cases (datetime, string) were ever normalised here — the
+        # LEGACY_VALUE_TYPES alias table used everywhere else was never
+        # applied to it, so a variable typed "string_array"/"enum_array"
+        # (the model's reasonable-but-undocumented plural of an accepted
+        # type, exactly like the aliases already mapped below) failed v2
+        # validation outright instead of normalising to "list" like its
+        # value_type counterparts already do.
+        variable["type"] = _normalise_value_type(variable.get("type"))
         if variable.get("type") == "datetime":
             variable["type"] = "date_time"
         if variable.get("type") == "string":
