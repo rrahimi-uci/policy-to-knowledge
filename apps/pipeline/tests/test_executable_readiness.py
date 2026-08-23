@@ -1,3 +1,5 @@
+import threading
+import time
 from copy import deepcopy
 from importlib import import_module
 
@@ -420,3 +422,65 @@ def test_uncovered_pairs_use_mechanical_disjoint_proof_before_falling_back_to_un
     overlapping_pair = by_pair[("BR-1", "BR-3")]
     assert overlapping_pair["status"] == "unresolved"
     assert "share an outcome variable" in overlapping_pair["reasoning"]
+
+
+def test_large_entity_group_dispatches_its_output_variable_buckets_concurrently(tmp_path, monkeypatch):
+    """A single dominant entity (e.g. a generic LENDER/FIRST_PARTY bucket)
+    can hold most of a graph's rules, splitting into many independent
+    output-variable batches once it exceeds KG_CONFLICT_MAX_RULES_PER_CALL.
+    Each batch is its own LLM call with no dependency on the others — this
+    regression guards against dispatching them one at a time in a plain
+    loop, which on a real OPP-115 benchmark run left the whole
+    conflict-analysis phase running at an effective concurrency of 1 despite
+    the outer per-entity thread pool having far more room to give it."""
+    monkeypatch.setenv("KG_CONFLICT_MAX_RULES_PER_CALL", "2")
+    organized = tmp_path / "organized" / "B2-1-01"
+    organized.mkdir(parents=True)
+    (organized / "001.txt").write_text("A seller servicer must limit pools to three.")
+
+    rules = []
+    for i, var in enumerate(("var_a", "var_b", "var_c")):
+        for j in range(2):
+            rule = deepcopy(valid_rule())
+            rule["rule_id"] = f"BR-{var}-{j}"
+            rule["outcomes"][0]["variable"] = var
+            rule["variables"][-1]["name"] = var
+            rule["test_vectors"][0]["expected_output"] = {var: j}
+            rules.append(rule)
+    graph = {
+        "business_rules": rules,
+        "entity_types": {"SELLER_SERVICER": {}, "FANNIE_MAE": {}},
+        "relationships": [],
+        "dependency_details": {"dependencies": []},
+    }
+
+    active = 0
+    peak_active = 0
+    lock = threading.Lock()
+
+    class ConcurrencyTrackingResolver(Resolver):
+        def analyse_entity(self, entity, rules):
+            nonlocal active, peak_active
+            with lock:
+                active += 1
+                peak_active = max(peak_active, active)
+            time.sleep(0.2)
+            with lock:
+                active -= 1
+            return [{
+                "entity": entity,
+                "rule_ids": [rule["rule_id"] for rule in rules],
+                "status": "non_conflict",
+                "reasoning": "distinct outputs",
+                "resolution": "no conflict",
+            }]
+
+    start = time.monotonic()
+    ExecutableReadinessCompleter(ConcurrencyTrackingResolver()).complete(
+        graph, graph, str(tmp_path / "organized")
+    )
+    elapsed = time.monotonic() - start
+
+    assert peak_active > 1, "output-variable buckets ran one at a time despite concurrent dispatch"
+    # 3 buckets at 0.2s each: ~0.6s serial vs a fraction of that concurrently.
+    assert elapsed < 0.5, f"took {elapsed:.2f}s — looks serial, not concurrent"
