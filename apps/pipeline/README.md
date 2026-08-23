@@ -74,7 +74,7 @@ This serves the API on `http://localhost:8000` and the frontend on
 ### Full single-document run
 
 Run this from `apps/pipeline/`. The checked-in performance profile selects
-GPT-5.2 with medium reasoning, 40 local scheduling workers, four concurrent
+GPT-5.2 with medium reasoning, 40 local scheduling workers, six concurrent
 documents, adaptive API concurrency, bounded retries, batched readiness work,
 and checkpointed remediation. The repository-root `.env` is loaded
 automatically; it must contain `OPENAI_API_KEY`.
@@ -202,36 +202,49 @@ Agents 2 and 3 remain sequential because Agent 3 consumes Agent 2's entity
 catalog. The pipeline safely overlaps read-only Agent 3.5 validation with Agent
 4, batches four Agent 5.5 evidence checks per request, checkpoints Agent
 2/5.5/5.6/5.7 progress, and shares an adaptive API limiter across subprocesses.
-The limiter starts at eight requests, increases after four successes, caps at
-16, and halves on throttling or transport backpressure. Each run writes
-`llm_performance.json`.
+The limiter starts at twelve requests, increases after three successes, caps
+at 32, and halves on throttling or transport backpressure — so a burst of 429s
+or connection errors self-corrects back down instead of hanging the run. Each
+run writes `llm_performance.json`; watch `current_limit`/`total_throttled`
+there and lower the `KG_GLOBAL_LLM_CONCURRENCY_*` variables below if your
+OpenAI project's rate limits sit below these defaults.
 
 | Variable | Default | Purpose |
 | --- | ---: | --- |
 | `pipeline.max_workers` | `40` | Local scheduling capacity; not API concurrency |
-| `pipeline.document_workers` | `4` | Independent documents processed concurrently |
-| `KG_LLM_CONCURRENCY` | `8` | Per-process safety gate above the shared limiter |
-| `KG_GLOBAL_LLM_CONCURRENCY_INITIAL` | `8` | Measured stable starting request limit |
-| `KG_GLOBAL_LLM_CONCURRENCY_MAX` | `16` | Adaptive ceiling across subprocesses |
-| `KG_GLOBAL_LLM_SUCCESS_WINDOW` | `4` | Successes before increasing the ceiling |
+| `pipeline.document_workers` | `6` | Independent documents processed concurrently |
+| `KG_LLM_CONCURRENCY` | `16` | Per-process safety gate above the shared limiter |
+| `KG_GLOBAL_LLM_CONCURRENCY_INITIAL` | `12` | Measured stable starting request limit |
+| `KG_GLOBAL_LLM_CONCURRENCY_MAX` | `32` | Adaptive ceiling across subprocesses |
+| `KG_GLOBAL_LLM_SUCCESS_WINDOW` | `3` | Successes before increasing the ceiling |
+| `KG_READINESS_WORKERS` | `40` | Local Agent 5.5 scheduling workers |
+| `KG_READINESS_LLM_CONCURRENCY` | `16` | Local API gate; global limiter still applies |
 | `KG_READINESS_RULES_PER_REQUEST` | `4` | Agent 5.5 evidence batch size |
 | `KG_REMEDIATION_RULES_PER_REQUEST` | `4` | Agent 5.6 source-remediation batch size |
 | `KG_REMEDIATION_PAIRS_PER_REQUEST` | `12` | Agent 5.6 conflict-pair batch size |
 | `KG_REMEDIATION_WORKERS` | `40` | Local Agent 5.6 scheduling workers |
-| `KG_REMEDIATION_LLM_CONCURRENCY` | `8` | Local API gate; global limiter still applies |
+| `KG_REMEDIATION_LLM_CONCURRENCY` | `16` | Local API gate; global limiter still applies |
 | `KG_REMEDIATION_MAX_PASSES` | `3` | Targeted passes, with no forced readiness |
 | `KG_GROUNDING_RULES_PER_REQUEST` | `4` | Rules per independent verifier request |
 | `KG_GROUNDING_CLAIMS_PER_REQUEST` | `48` | Claim ceiling per verifier request |
 | `KG_GROUNDING_RELATIONSHIPS_PER_REQUEST` | `12` | Compact graph relationships per request |
 | `KG_GROUNDING_WORKERS` | `40` | Local Agent 5.7 batch scheduling workers |
-| `KG_GROUNDING_LLM_CONCURRENCY` | `16` | Local verifier API gate; global limiter still applies |
+| `KG_GROUNDING_LLM_CONCURRENCY` | `24` | Local verifier API gate; global limiter still applies |
 | `KG_ENTITY_EARLY_STOP` | `true` | Stop Agent 2 after measured convergence |
 | `KG_ENTITY_MIN_ITERATIONS` | `2` | Minimum Agent 2 iterations |
 
-Independent-document concurrency defaults to four; use `--document-workers
+Independent-document concurrency defaults to six; use `--document-workers
 <n>` only to override it. Each file receives an isolated subprocess/output tree
-while every file shares the adaptive limiter. Custom shared `--organized` or
-`--output` paths disable document concurrency to prevent collisions.
+while every file shares the adaptive limiter, so raising document concurrency
+increases scheduling parallelism without bypassing the shared API ceiling.
+Custom shared `--organized` or `--output` paths disable document concurrency
+to prevent collisions.
+
+If your OpenAI project's actual rate limit is lower than these defaults, the
+adaptive limiter discovers that automatically (it halves `current_limit` and
+backs off on the first 429/timeout) — but for a known-lower tier it's faster
+to set `KG_GLOBAL_LLM_CONCURRENCY_INITIAL`/`_MAX` explicitly than to let the
+first run rediscover it via throttling.
 
 ### Docker
 
