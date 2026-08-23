@@ -47,7 +47,8 @@ STEP_LABELS = {
     "3.5": "Rule Quality Validation",
     "4":   "Rules & Entity Integration",
     "5":   "Knowledge Graph Deduplication & Optimization",
-    "6":   "Graph Visualization & Export",
+    "6":   "Dependency DAG Generation",
+    "7":   "Graph Visualization & Export",
 }
 
 # cli/compare.py prints "STEP 1/4", "STEP 2/4", … but pipeline_runner
@@ -218,7 +219,7 @@ async def start_extraction(
         else:
             cmd += ["--file", file_path]
 
-    steps_to_track = ["1", "2", "3", "3.5", "4", "5", "6"] if not step else [str(step)]
+    steps_to_track = ["1", "2", "3", "3.5", "4", "5", "6", "7"] if not step else [str(step)]
     for s in steps_to_track:
         run_store.upsert_step(run_id, s, "pending")
 
@@ -481,7 +482,7 @@ def _orphan_succeeded(
     Signal 2 — filesystem: look for a visualization HTML that was written
                 after this run started (works for both batch and folder runs).
     """
-    final_step = "10" if run_type == "comparison" else "6"
+    final_step = "10" if run_type == "comparison" else "7"
 
     # Signal 1: scan the log file
     if log_file and Path(log_file).exists():
@@ -541,7 +542,7 @@ async def _monitor_orphan(
     # Reconstruct the step list from what's already in the DB so that
     # _advance_step can keep the workflow diagram in sync.
     existing_steps = [s["step"] for s in run_store.get_steps(run_id)]
-    steps = existing_steps or ["1", "2", "3", "3.5", "4", "5", "6"]
+    steps = existing_steps or ["1", "2", "3", "3.5", "4", "5", "6", "7"]
     current_step_idx = 0
 
     reader = None

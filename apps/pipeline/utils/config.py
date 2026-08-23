@@ -365,9 +365,22 @@ class Config:
         """Get optimized directory path (Agent 5 output)."""
         base = self.get_pipeline_base_path()
         return base / 'agent-5-optimized'
-    
+
+    def get_dag_dir(self) -> Path:
+        """Get dependency-DAG directory path (Agent 6 output: agent_6_dag_generator.py)."""
+        base = self.get_pipeline_base_path()
+        return base / 'agent-6-dag-generation'
+
     def get_visualization_dir(self) -> Path:
-        """Get visualization and reports directory path (Agent 6 output)."""
+        """Get visualization and reports directory path.
+
+        Produced by agent_6_visualization_and_report.py, which now runs as
+        pipeline step 7 (agent_6_dag_generator.py took over step 6). The
+        script filename and this directory name were kept as ``agent-6-...``
+        rather than renamed to ``agent-7-...``, since the latter already
+        exists inside several committed canonical pipeline-output batches —
+        only the pipeline's step numbering shifted, not this path.
+        """
         base = self.get_pipeline_base_path()
         return base / 'agent-6-visualization-and-report'
     

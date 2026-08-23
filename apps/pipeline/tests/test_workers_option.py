@@ -65,7 +65,7 @@ class TestCLIArgumentParsing:
         parser.add_argument("--workers", type=int, default=None)
         parser.add_argument("--source", default=None)
         parser.add_argument("--file", default=None)
-        parser.add_argument("--step", type=int, choices=[1, 2, 3, 4, 5, 6])
+        parser.add_argument("--step", type=int, choices=[1, 2, 3, 4, 5, 6, 7])
         parser.add_argument("--skip-optimize", action="store_true")
         parser.add_argument("--organized", default=None)
         parser.add_argument("--output", default=None)

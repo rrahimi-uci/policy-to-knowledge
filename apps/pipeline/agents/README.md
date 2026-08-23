@@ -1,19 +1,25 @@
 # Pipeline Agents
 
 Agent reference for the Policy to Knowledge extraction and comparison pipeline.
-Each agent is a self-contained module in this directory. Agents 1–6 turn source
-documents into an optimized knowledge graph (driven by `cli/extract.py`);
-Agents 5.5–5.7 complete readiness, remediate evidence-backed gaps, and certify
-claim-level grounding before visualization; agents
-7–10 compare and merge two existing graphs (driven by `cli/compare.py`).
+Each agent is a self-contained module in this directory. Steps 1–7 turn source
+documents into an optimized knowledge graph and its dependency DAGs (driven by
+`cli/extract.py`); steps 5.5–5.7 complete readiness, remediate evidence-backed
+gaps, and certify claim-level grounding before DAG generation and
+visualization; agents 7–10 compare and merge two existing graphs (driven by
+`cli/compare.py`).
 
 ```text
-Documents → [1] → [2] → [3] → [3.5] → [4] → [5] → [5.5] → [5.6*] → [5.7] → [6]
-                                                                            │
-                        KG₁ + KG₂ → [7] → [8] → [9] → [10] → Comparison Reports
+Extraction  (cli/extract.py):
+  Documents → [1] → [2] → [3] → [3.5] → [4] → [5] → [5.5] → [5.6*] → [5.7] → [6] → [7]
+
+Comparison  (cli/compare.py — independent step numbering, see note below):
+  KG₁ + KG₂ → [7] → [8] → [9] → [10] → Comparison Reports
 ```
 
 `5.6*` runs only when Agent 5.5 identifies evidence-backed remediation work.
+Extraction step `[6]` (Dependency DAG Generation) and comparison step `[7]`
+(Rule-Type Clusterer) are unrelated stages in two separate CLIs whose step
+numbers happen to both reach "7" — see the note below the Agent Summary table.
 
 All LLM-using agents call the OpenAI model configured in `config.json`
 (default reasoning model `gpt-5.2`, `reasoning_effort: medium`; the optimizer
@@ -32,18 +38,35 @@ agent uses the configured optimizer model). See [Configuration](#configuration).
 | 5.5 | Executable Readiness | `agent_5_5_executable_readiness.py` | `ExecutableReadinessCompleter` | ✓ | 16 local / 8 API |
 | 5.6 | Focused Readiness Remediation | `agent_5_6_readiness_remediator.py` | `ReadinessRemediator` | ✓ | 40 local / 8 API |
 | 5.7 | Independent Grounding Verifier | `agent_5_7_grounding_verifier.py` | `GroundingVerifier` | ✓ | 40 local / 16 API |
-| 6 | Visualization & Report | `agent_6_visualization_and_report.py` | `KnowledgeGraphVisualizer` | — | — |
-| 7 | Rule-Type Clusterer | `agent_7_rule_type_clusterer.py` | `RuleBehaviorClusterer` | — | — |
+| 6 | Dependency DAG Generation | `agent_6_dag_generator.py` | `DependencyDAGGenerator` | — | — |
+| 7¹ | Visualization & Report | `agent_6_visualization_and_report.py` | `KnowledgeGraphVisualizer` | — | — |
+| 7² | Rule-Type Clusterer | `agent_7_rule_type_clusterer.py` | `RuleBehaviorClusterer` | — | — |
 | 8 | Semantic Rule Matcher | `agent_8_semantic_rule_matcher.py` | `SemanticRuleMatcher` | ✓ | `--workers` (31) |
 | 9 | Set Operations | `agent_9_set_operations.py` | `SetOperationsCalculator` | — | — |
 | 10 | Set Visualization | `agent_10_set_visualization.py` | `SetOperationsVisualizer` | — | — |
+
+¹ `cli/extract.py --step 7`. ² `cli/compare.py`'s own, independent step
+numbering — unrelated to ¹ even though both reach "7". See below.
+
+> **Why is `agent_6_visualization_and_report.py` step 7, and why do two
+> files both start with `agent_6_`?** Its output directory,
+> `agent-6-visualization-and-report/`, already exists inside several
+> canonical `pipeline-output/` example batches committed to this repo.
+> Renaming the script (and that directory, in every existing batch) purely
+> to match its new step number was judged not worth the churn when Agent 6
+> (DAG generation) was inserted immediately before it — only the CLI-facing
+> step number moved, not the script's filename or its output directory.
+> Comparison's `agent_7_rule_type_clusterer.py` is a separate, unrelated
+> file with its own independent numbering (`cli/compare.py`, not
+> `cli/extract.py`) — the shared "7" between it and extraction step 7 is
+> coincidental, not a collision.
 
 Per-document outputs land in `pipeline-output/<source>/agent-N-.../`; comparison
 outputs land in `pipeline-output/_merged/<g1>_<g2>/agent-N-.../`.
 
 ---
 
-## Extraction agents (1–6)
+## Extraction agents (1–7)
 
 ### Agent 1 — Document Organizer
 
@@ -189,7 +212,7 @@ Optimizes the knowledge graph through deduplication and dependency analysis.
 | `override` | Rule B supersedes Rule A |
 | `validation` | Rule B validates Rule A's outcome |
 
-> Skip this step with `--skip-optimize`; Agent 6 then uses Agent 4 output directly.
+> Skip this step with `--skip-optimize`; Steps 6 and 7 then use Agent 4 output directly.
 
 ### Agent 5.5 — Executable Readiness
 
@@ -234,7 +257,30 @@ invalidly cited results.
 | **Produces** | Grounded graph, `kg_grounding_report.{json,md}`, and a reusable JSONL checkpoint |
 | **Run** | Automatically after readiness, or `cli/extract.py --step 5.7` |
 
-### Agent 6 — Visualization & Report
+### Agent 6 — Dependency DAG Generation
+
+Partitions every rule into one or more directed acyclic graphs built from the
+dependency edges Agent 5 computed. No LLM calls — purely deterministic graph
+construction (see `utils/dag_builder.py`).
+
+| | |
+|---|---|
+| **Consumes** | Agent 5's optimized KG (or Agent 4 output directly under `--skip-optimize`, with no dependency edges to build from) |
+| **Produces** | `agent-6-dag-generation/dependency_dags.json` and `dag_generation_report.md` |
+| **Run** | `.venv/bin/python cli/extract.py --step 6` |
+
+- Every rule is assigned to exactly one weakly-connected dependency component,
+  which becomes one output DAG — a rule with no dependencies becomes its own
+  single-node DAG. This is a structural guarantee, not a best-effort pass: the
+  union of every generated DAG's rules always equals the full rule set.
+- A dependency cycle (Kosaraju's algorithm detects any strongly-connected
+  component of size > 1) is condensed into a single `cycle_groups` node so the
+  emitted DAG stays acyclic without dropping any rule from it.
+- Fails the extraction pass (nonzero exit) if the coverage check ever finds a
+  missing or duplicated rule — this should be unreachable given the
+  partitioning algorithm, but the step does not just trust that.
+
+### Agent 7 — Visualization & Report
 
 Generates an interactive HTML visualization and report. No LLM calls.
 
@@ -242,7 +288,7 @@ Generates an interactive HTML visualization and report. No LLM calls.
 |---|---|
 | **Consumes** | Agent 5.7-certified optimized KG, or explicitly uncertified Agent 4 output with `--skip-optimize` |
 | **Produces** | `agent-6-visualization-and-report/<source>_knowledge_graph.html` |
-| **Run** | `.venv/bin/python cli/extract.py --step 6` |
+| **Run** | `.venv/bin/python cli/extract.py --step 7` |
 
 - Interactive network graph (vis.js), color-coded by rule type.
 - Searchable, sortable rules table with a dependency evidence column.
@@ -379,7 +425,7 @@ Worker counts and batch sizes:
 ## Run commands
 
 ```bash
-# Extraction (agents 1–6)
+# Extraction (agents 1–7)
 .venv/bin/python cli/extract.py --provider openai            # full pipeline
 .venv/bin/python cli/extract.py --file compliance-files/<batch>/<file>.pdf --provider openai
 .venv/bin/python cli/extract.py --batch-dir <domain> --domain <domain> --target-rules 300 --workers 30

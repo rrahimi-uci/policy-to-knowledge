@@ -273,7 +273,7 @@ def test_certificate_detects_graph_or_corpus_drift(tmp_path):
     )
 
 
-def test_stage_6_rejects_optimized_graph_without_certificate(tmp_path):
+def test_stage_7_rejects_optimized_graph_without_certificate(tmp_path):
     from cli.extract import KnowledgeExtractionPipeline
 
     optimized = tmp_path / "optimized"
@@ -287,7 +287,7 @@ def test_stage_6_rejects_optimized_graph_without_certificate(tmp_path):
     pipeline.organized_dir = tmp_path / "organized"
     pipeline.output_dir = tmp_path / "visualization"
 
-    assert pipeline.step6_visualize_knowledge_graph() is False
+    assert pipeline.step7_visualize_knowledge_graph() is False
 
 
 # ─────────────────────────────────────────────────────────────────────────

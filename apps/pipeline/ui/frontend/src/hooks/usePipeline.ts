@@ -304,7 +304,7 @@ export function usePipeline(type: 'extraction' | 'comparison' = 'extraction') {
     } else if (config.step) {
       stepIds = [String(config.step)];
     } else {
-      stepIds = ['1', '2', '3', '3.5', '4', '5', '6'];
+      stepIds = ['1', '2', '3', '3.5', '4', '5', '6', '7'];
     }
 
     const newRun: RunState = {
