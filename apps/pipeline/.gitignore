@@ -23,12 +23,20 @@ config.json
 config_test.json
 secrets.json
 
-# --- Pipeline output (regeneratable, ~8 MB+) ---
-# These files are produced by running the pipeline and should not be committed.
-# Use `git rm -r --cached pipeline-output/` after adding this rule if already tracked.
-#pipeline-output/**
-#!pipeline-output/README.md
-#!pipeline-output/**/.gitkeep
+# --- Pipeline output ---
+# The canonical example batches below are committed intentionally (see the
+# root .gitignore's "Bundled dataset" note) so a fresh clone has real,
+# populated graphs to inspect. Everything else under pipeline-output/ is a
+# regeneratable local run — ad-hoc test runs, dated batches, benchmark-corpus
+# outputs — and should not be committed. Ignore every pipeline-output
+# subdirectory by default, then opt only the canonical batches back in.
+# If a new domain's example batch should become canonical, add it here too.
+pipeline-output/*/
+!pipeline-output/_merged/
+!pipeline-output/comercial_lending/
+!pipeline-output/fannie_mae/
+!pipeline-output/freddie_mac/
+!pipeline-output/healthcare/
 
 # --- Pipeline data (SQLite run history DB) ---
 pipeline-data/
