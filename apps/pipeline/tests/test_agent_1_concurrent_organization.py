@@ -19,6 +19,7 @@ actually achieves overlap rather than just being reorganized code that still
 runs one at a time.
 """
 
+import json
 import threading
 import time
 from pathlib import Path
@@ -169,3 +170,54 @@ def test_organizer_workers_env_var_is_respected(tmp_path, monkeypatch):
 
     assert results["processed"] == 4
     assert peak_active == 1, "KG_ORGANIZER_WORKERS=1 must serialize processing"
+
+
+class _FakeMessage:
+    def __init__(self, content: str):
+        self.content = content
+
+
+class _FakeChoice:
+    def __init__(self, content: str):
+        self.message = _FakeMessage(content)
+
+
+class _FakeResponse:
+    def __init__(self, content: str):
+        self.choices = [_FakeChoice(content)]
+
+
+def test_blank_ai_section_title_falls_back_to_a_stable_placeholder(tmp_path):
+    """.get('title', default) only applies default when the key is missing —
+    the model sometimes returns a present but blank/whitespace title (e.g.
+    "" or " + " after merging with an equally untitled neighbor), which
+    then propagated all the way to source_reference.section_id as an empty
+    string. Real case from a full OPP-115 benchmark run: several chunks
+    from one document had this exact "" / " + " title, and the rules citing
+    them failed v2's missing_evidence_reference_field check outright."""
+    doc = tmp_path / "policy.txt"
+    content = "First section content here.\n\nSecond section content here."
+    doc.write_text(content)
+
+    agent = _agent()
+    # "" and whitespace-only are the two shapes actually observed on a real
+    # run (a blank title, and " + " produced downstream by
+    # _normalize_chunk_sizes joining two already-blank titles — fixing the
+    # source here means that join never sees a blank operand again).
+    fake_content = json.dumps({
+        "document_type": "privacy_policy",
+        "sections": [
+            {"title": "", "level": 0, "start_marker": "First section", "end_marker": "Second section", "summary": "s1"},
+            {"title": "   ", "level": 0, "start_marker": "Second section", "end_marker": "END_OF_DOCUMENT", "summary": "s2"},
+        ],
+    })
+
+    with patch.object(agent.client, "chat_completion", return_value=_FakeResponse(fake_content)):
+        chunks = agent.chunk_document_with_reasoning(doc)
+
+    assert len(chunks) == 2
+    for chunk in chunks:
+        assert chunk.title.strip(), f"blank title survived: {chunk.title!r}"
+        assert all(part.strip() for part in chunk.section_path), f"blank section_path entry: {chunk.section_path!r}"
+    assert chunks[0].title == "Section 1"
+    assert chunks[1].title == "Section 2"

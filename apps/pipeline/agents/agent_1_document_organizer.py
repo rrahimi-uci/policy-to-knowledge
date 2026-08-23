@@ -1416,7 +1416,14 @@ If no TOC is found, return {{"has_toc": false, "toc_entries": []}}
                     
                     chunk = DocumentChunk(
                         chunk_id=f"{file_path.stem}_{i+1:03d}",
-                        title=section.get('title', f"Section {i+1}"),
+                        # .get(key, default) only applies default when the key
+                        # is missing — the model sometimes returns a present
+                        # but blank/whitespace title (e.g. "" or " + " after a
+                        # merge with an equally untitled neighbor), which then
+                        # propagates all the way to source_reference.section_id
+                        # as an empty string, later failing v2's
+                        # missing_evidence_reference_field check outright.
+                        title=(section.get('title') or "").strip() or f"Section {i+1}",
                         content=chunk_content.strip(),
                         section_path=section_path,
                         metadata={
@@ -1487,12 +1494,12 @@ If no TOC is found, return {{"has_toc": false, "toc_entries": []}}
         # Find parent sections by looking backward
         for i in range(index - 1, -1, -1):
             if sections[i].get('level', 0) < current_level:
-                path.insert(0, sections[i].get('title', f'Section {i+1}'))
+                path.insert(0, (sections[i].get('title') or "").strip() or f'Section {i+1}')
                 current_level = sections[i].get('level', 0)
                 if current_level == 0:
                     break
-        
-        path.append(sections[index].get('title', f'Section {index+1}'))
+
+        path.append((sections[index].get('title') or "").strip() or f'Section {index+1}')
         return path
     
     def _normalize_chunk_sizes(self, chunks: List[DocumentChunk], source_file: Path) -> List[DocumentChunk]:
