@@ -17,7 +17,7 @@
     "rate_limiting": {
       "max_retries": 1,
       "retry_delay": 100,
-      "timeout": 240
+      "timeout": 900
     }
   },
   "llm": {
