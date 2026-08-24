@@ -22,12 +22,13 @@ import os
 import sys
 import re
 import json
+import shutil
 from pathlib import Path
 from typing import List, Dict, Any, Optional, Tuple
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass, asdict
 from abc import ABC, abstractmethod
 import PyPDF2
-import time
 
 # OCR for scanned PDFs
 try:
@@ -1416,7 +1417,14 @@ If no TOC is found, return {{"has_toc": false, "toc_entries": []}}
                     
                     chunk = DocumentChunk(
                         chunk_id=f"{file_path.stem}_{i+1:03d}",
-                        title=section.get('title', f"Section {i+1}"),
+                        # .get(key, default) only applies default when the key
+                        # is missing — the model sometimes returns a present
+                        # but blank/whitespace title (e.g. "" or " + " after a
+                        # merge with an equally untitled neighbor), which then
+                        # propagates all the way to source_reference.section_id
+                        # as an empty string, later failing v2's
+                        # missing_evidence_reference_field check outright.
+                        title=(section.get('title') or "").strip() or f"Section {i+1}",
                         content=chunk_content.strip(),
                         section_path=section_path,
                         metadata={
@@ -1487,12 +1495,12 @@ If no TOC is found, return {{"has_toc": false, "toc_entries": []}}
         # Find parent sections by looking backward
         for i in range(index - 1, -1, -1):
             if sections[i].get('level', 0) < current_level:
-                path.insert(0, sections[i].get('title', f'Section {i+1}'))
+                path.insert(0, (sections[i].get('title') or "").strip() or f'Section {i+1}')
                 current_level = sections[i].get('level', 0)
                 if current_level == 0:
                     break
-        
-        path.append(sections[index].get('title', f'Section {index+1}'))
+
+        path.append((sections[index].get('title') or "").strip() or f'Section {index+1}')
         return path
     
     def _normalize_chunk_sizes(self, chunks: List[DocumentChunk], source_file: Path) -> List[DocumentChunk]:
@@ -1752,9 +1760,22 @@ If no TOC is found, return {{"has_toc": false, "toc_entries": []}}
             Dictionary with organization statistics
         """
         print(f"  → Organizing {len(chunks)} chunks into folder structure...")
-        
+
         # Create folder for this document (sanitized to match naming rule)
         doc_folder = output_base / self._sanitize_folder_name(source_file.stem)
+        if doc_folder.exists():
+            # Chunking is LLM-driven and non-deterministic: a re-run of Step 1
+            # (retry, resumed batch, manual reprocessing) can produce a
+            # different set of chunk filenames than the previous run. Without
+            # clearing the folder first, files from the earlier pass that
+            # aren't overwritten by this pass are orphaned but still present
+            # — and every downstream stage globs this folder for every
+            # .txt file, so a stale chunk gets treated as live content
+            # indistinguishable from the current extraction. Observed in
+            # practice: a document's earlier "untitled.txt" chunk survived a
+            # rerun whose fixed chunking no longer produced any blank
+            # titles, and a rule still cited the leftover file.
+            shutil.rmtree(doc_folder)
         doc_folder.mkdir(parents=True, exist_ok=True)
         
         # Save document metadata
@@ -1900,99 +1921,128 @@ If no TOC is found, return {{"has_toc": false, "toc_entries": []}}
             "files": []
         }
         
-        for i, file_path in enumerate(files, 1):
-            print(f"[{i}/{len(files)}] Processing: {file_path.name}")
+        def _process_one(index: int, file_path: Path) -> Dict[str, Any]:
+            """Chunk and organize a single file; isolated per-document output
+            folder makes this safe to run concurrently with other files."""
+            print(f"[{index}/{len(files)}] Processing: {file_path.name}")
             print(f"{'─'*70}")
-            
+
+            outcome: Dict[str, Any] = {
+                "sub_chunks_created": 0, "merges_performed": 0, "chunk_word_counts": [],
+                "processed": 0, "failed": 0, "total_chunks": 0, "chunker_tools_used": {},
+                "file_entry": None,
+            }
             try:
                 chunks = []
                 chunker_used = None
-                
+
                 # First, check if a specialized chunker tool can handle this file
                 chunker = self.get_chunker_for_file(file_path)
-                
+
                 if chunker:
                     # Use specialized chunker tool
                     print(f"  → Using {chunker.name} tool...")
                     chunks = chunker.chunk(file_path)
                     chunker_used = chunker.name
-                
+
                 # PDF handling (built-in with TOC support)
                 elif file_path.suffix.lower() == '.pdf':
                     print(f"  → Using PDFChunker (built-in)...")
                     print(f"  → Analyzing PDF structure...")
                     toc = self.extract_pdf_toc(file_path)
-                    
+
                     if toc:
                         chunks = self.chunk_pdf_with_toc(file_path, toc)
                         chunker_used = "PDFChunker (TOC)"
                     else:
                         chunks = self.chunk_document_with_reasoning(file_path)
                         chunker_used = "PDFChunker (AI)"
-                
+
                 # Fallback: use reasoning-based chunking for text files
                 elif not chunks:
                     print(f"  → Using TextChunker (AI reasoning)...")
                     chunks = self.chunk_document_with_reasoning(file_path)
                     chunker_used = "TextChunker"
-                
+
                 if chunks:
                     # Track pre-normalization count
                     pre_norm_count = len(chunks)
-                    
+
                     # Normalize chunk sizes (sub-chunk oversized, merge undersized)
                     chunks = self._normalize_chunk_sizes(chunks, file_path)
-                    
+
                     # Track normalization stats
-                    results["sub_chunks_created"] += max(0, len(chunks) - pre_norm_count)
-                    results["merges_performed"] += max(0, pre_norm_count - len(chunks))
-                    
+                    outcome["sub_chunks_created"] = max(0, len(chunks) - pre_norm_count)
+                    outcome["merges_performed"] = max(0, pre_norm_count - len(chunks))
+
                     # Collect word counts for summary
                     for c in chunks:
                         wc = c.metadata.get('word_count', len(c.content.split()))
-                        results["chunk_word_counts"].append(wc)
-                    
+                        outcome["chunk_word_counts"].append(wc)
+
                     # Organize chunks into folders
-                    file_metadata = self.organize_chunks(chunks, file_path, output_path)
-                    
-                    results["processed"] += 1
-                    results["total_chunks"] += len(chunks)
-                    
+                    self.organize_chunks(chunks, file_path, output_path)
+
+                    outcome["processed"] = 1
+                    outcome["total_chunks"] = len(chunks)
+
                     # Track chunker tool usage
                     if chunker_used:
-                        results["chunker_tools_used"][chunker_used] = results["chunker_tools_used"].get(chunker_used, 0) + 1
-                    
-                    results["files"].append({
+                        outcome["chunker_tools_used"][chunker_used] = 1
+
+                    outcome["file_entry"] = {
                         "file": file_path.name,
                         "status": "success",
                         "chunks": len(chunks),
                         "method": chunks[0].metadata.get('chunk_method', 'unknown') if chunks else 'unknown',
                         "chunker_tool": chunker_used
-                    })
+                    }
                 else:
                     print(f"  ✗ No chunks created")
-                    results["failed"] += 1
-                    results["files"].append({
-                        "file": file_path.name,
-                        "status": "failed",
-                        "chunks": 0
-                    })
-                
+                    outcome["failed"] = 1
+                    outcome["file_entry"] = {"file": file_path.name, "status": "failed", "chunks": 0}
+
             except Exception as e:
                 print(f"  ✗ Error processing file: {e}")
-                results["failed"] += 1
-                results["files"].append({
-                    "file": file_path.name,
-                    "status": "error",
-                    "error": str(e)
-                })
-            
+                outcome["failed"] = 1
+                outcome["file_entry"] = {"file": file_path.name, "status": "error", "error": str(e)}
+
             print()
-            
-            # Brief pause between files
-            if i < len(files):
-                time.sleep(1)
-        
+            return outcome
+
+        # Each document is chunked/organized independently (its own output
+        # subfolder, no shared mutable state besides the already
+        # thread-safe LLM client), so documents run concurrently instead of
+        # one-at-a-time — sequential per-document reasoning calls made a
+        # 100+ document batch take hours even though the LLM client itself
+        # already supports KG_LLM_CONCURRENCY-many in-flight requests.
+        try:
+            organizer_workers = max(1, int(os.getenv("KG_ORGANIZER_WORKERS", os.getenv("KG_LLM_CONCURRENCY", "8"))))
+        except (TypeError, ValueError):
+            organizer_workers = 8
+        organizer_workers = min(organizer_workers, len(files))
+
+        file_outcomes: List[Dict[str, Any]] = [None] * len(files)
+        with ThreadPoolExecutor(max_workers=organizer_workers) as executor:
+            futures = {
+                executor.submit(_process_one, i, file_path): i
+                for i, file_path in enumerate(files, 1)
+            }
+            for future in as_completed(futures):
+                file_outcomes[futures[future] - 1] = future.result()
+
+        for outcome in file_outcomes:
+            results["processed"] += outcome["processed"]
+            results["failed"] += outcome["failed"]
+            results["total_chunks"] += outcome["total_chunks"]
+            results["sub_chunks_created"] += outcome["sub_chunks_created"]
+            results["merges_performed"] += outcome["merges_performed"]
+            results["chunk_word_counts"].extend(outcome["chunk_word_counts"])
+            for tool, count in outcome["chunker_tools_used"].items():
+                results["chunker_tools_used"][tool] = results["chunker_tools_used"].get(tool, 0) + count
+            if outcome["file_entry"] is not None:
+                results["files"].append(outcome["file_entry"])
+
         # Save overall results
         results_file = output_path / "_processing_results.json"
         
