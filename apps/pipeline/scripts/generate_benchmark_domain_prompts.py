@@ -805,7 +805,11 @@ Return ONLY valid JSON, with no Markdown or explanation:
 
 Every RULE_OBJECT must contain:
 - rule_id: globally unique and containing batch number {batch_num};
-- rule_name, rule_type, description, conditions, consequences, exceptions;
+- rule_name, rule_type, description;
+- condition_predicates, condition_logic, outcomes, variables, exceptions,
+  test_vectors: structured per the v2 rule contract appended below — do NOT
+  also emit prose "conditions"/"consequences" string fields, the appended
+  contract fully specifies these shapes and supersedes any other description;
 - source_reference: {{"chunk_path": exact FILE path, "section_id": section,
   "start_word_position": integer, "end_word_position": integer,
   "source_text": verbatim 30-150 word excerpt}};

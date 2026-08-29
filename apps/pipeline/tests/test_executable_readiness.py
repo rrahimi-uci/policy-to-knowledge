@@ -78,7 +78,12 @@ def test_completion_emits_ready_dmn_rules_and_required_report(tmp_path):
     assert report["invariants"]["naming_consistency"]["pass"] is True
     assert report["invariants"]["referential_integrity"]["pass"] is True
     assert report["conflicts_and_dependencies"]["dependency_chains_derived"] == 1
-    assert all(rule["execution"]["targets"] == ["DMN"] for rule in final_graph["business_rules"])
+    # _project_execution's BPMN gate is domain-agnostic here (outputs +
+    # responsible_party), not keyed off a fixed rule_type set — see
+    # agent_5_5_executable_readiness.py's docstring on _project_execution.
+    # Both fixture rules have an output variable and a responsible_party, so
+    # both should now also target BPMN, not just DMN.
+    assert all(rule["execution"]["targets"] == ["DMN", "BPMN"] for rule in final_graph["business_rules"])
     assert all(rule["requires_review"] is False for rule in final_graph["business_rules"])
 
 

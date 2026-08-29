@@ -33,6 +33,7 @@ from utils.kg_readiness import (
 )
 from utils.llm_client import create_llm_client
 from utils.prompt_manager import get_prompt_manager
+from utils.rule_contract import annotate_rule_contract
 from utils.rule_contract import EXCEPTION_BASES, SCOPE_BASES, validate_rule_v2
 
 # Completion fields that every downstream reader (kg_readiness.final_rule_issues,
@@ -131,7 +132,17 @@ class OpenAIEvidenceResolver:
 
 
 def _project_execution(rule: Mapping[str, Any]) -> dict[str, Any]:
-    """Mechanical projection; final readiness still requires evidence checks."""
+    """Mechanical projection; final readiness still requires evidence checks.
+
+    BPMN eligibility is domain-agnostic by design: it is keyed off whether the
+    rule has a named ``responsible_party`` (i.e. it can plausibly gate a
+    process step in someone's lane), not off ``rule_type``. ``rule_type`` is a
+    free-form string whose vocabulary each domain's extraction prompt defines
+    independently (compare mortgage's eligibility/constraint/... against
+    nda_confidentiality's confidentiality_scope/permitted_use/...), so gating
+    on a fixed set of rule_type strings silently produces zero BPMN targets
+    for every domain that doesn't happen to share mortgage's vocabulary.
+    """
     variables = [item for item in rule.get("variables", []) if isinstance(item, Mapping)]
     inputs = [str(item.get("name")) for item in variables if item.get("role") in {"input", "derived"}]
     outputs = [str(item.get("name")) for item in variables if item.get("role") == "output"]
@@ -139,7 +150,7 @@ def _project_execution(rule: Mapping[str, Any]) -> dict[str, Any]:
     execution: dict[str, Any] = {"targets": targets}
     if "DMN" in targets:
         execution["dmn"] = {"input_columns": inputs, "output_columns": outputs, "hit_policy": rule.get("recommended_hit_policy")}
-    if str(rule.get("rule_type", "")).lower() in {"process", "validation", "compliance", "exception"} and outputs:
+    if outputs and str(rule.get("responsible_party", "")).strip():
         targets.append("BPMN")
         execution["bpmn"] = {"gateway_type": "exclusive", "lane": rule.get("responsible_party"), "true_path_outcome_variables": outputs}
     return execution
@@ -915,6 +926,17 @@ class ExecutableReadinessCompleter:
             for key in ("loan_types", "occupancy_types", "transaction_types"):
                 rule["applicability_scope"].setdefault(key, [])
             rule = _normalise_rule_contract(rule)
+            # Re-validate against the now-normalised values. Agent 3 stamped
+            # contract_issues/requires_review against the raw model output at
+            # extraction time; _normalise_rule_contract above can alias a
+            # legacy operator/value_type into canonical form afterward, which
+            # left those annotations stale (observed on a real run: ~97% of
+            # rules still carried invalid_predicate_operator issues against
+            # operators that were visibly valid in the same JSON). This only
+            # ever adds requires_review=True for a genuine remaining issue —
+            # annotate_rule_contract() never clears a True set for another
+            # reason (e.g. an unresolved evidence gap) elsewhere in this file.
+            rule = annotate_rule_contract(rule)
             rule["execution"] = _project_execution(rule)
             self._save_checkpoint(cache_key, rule)
             return index, rule
@@ -950,7 +972,7 @@ class ExecutableReadinessCompleter:
             skip_evidence = os.getenv("KG_READINESS_SKIP_EVIDENCE", "").lower() in {"1", "true", "yes"}
         if skip_evidence:
             print(f"▶ Agent 5.5 rule evidence: reusing {len(rules)} completed rules", flush=True)
-            rules = [_normalise_rule_contract(rule) for rule in rules]
+            rules = [annotate_rule_contract(_normalise_rule_contract(rule)) for rule in rules]
             for rule in rules:
                 rule["execution"] = _project_execution(rule)
         else:
