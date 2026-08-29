@@ -387,9 +387,18 @@ class TestLLMClientConfigIntegration:
         assert client.model == "gpt-5.2"
 
     def test_llm_client_default_timeout_from_config(self):
+        # 900s, matching KG_GLOBAL_LLM_LEASE_SECONDS (900) — the shared
+        # concurrency lease already assumed a single request could take up
+        # to 15 minutes, but the HTTP client's own per-attempt timeout was
+        # only 240s, so a request that was genuinely still generating (a
+        # real, repeatedly observed case with gpt-5.2 reasoning_effort
+        # medium on multi-thousand-token batches, regularly taking
+        # 400-600+ seconds to complete) got cut off and misreported as an
+        # APIConnectionError, needlessly punishing the adaptive concurrency
+        # limiter for a timeout that was simply set too low.
         from utils.llm_client import LLMClient
         client = LLMClient()
-        assert client.timeout == 240
+        assert client.timeout == 900
 
     def test_llm_client_default_max_retries_from_config(self):
         from utils.llm_client import LLMClient

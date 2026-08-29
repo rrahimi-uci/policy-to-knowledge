@@ -263,3 +263,61 @@ class TestAgent1OutputFolder:
         from agents.agent_1_document_organizer import resolve_output_folder
 
         assert resolve_output_folder(["agent_1.py", "input-folder"]) == "knowledge-files-organized"
+
+
+# ── Bug 6: agent_2's quality-analysis stub returns the wrong key names ─────
+#
+# run_iterations_with_optimization reads overall_score/entity_quality_score/
+# relationship_quality_score/business_rules_score/coverage_score from
+# EntityRelationshipExtractor.analyze_extraction_quality's return value —
+# the stub instead returned quality_score/completeness/suggestions, so every
+# one of those .get(key, 0) reads silently defaulted to 0. On a real
+# OPP-115 benchmark run this printed "Overall/Entity/Relationship/Coverage
+# Score: 0/100" on every iteration despite genuine, non-empty extraction
+# results (6 entities, 9-10 relationships), and permanently disabled the
+# `quality_score >= entity_quality_target` early-stop path — the configured
+# KG_ENTITY_QUALITY_TARGET could never be satisfied, only the new_items
+# diminishing-returns heuristic could ever trigger convergence.
+
+class TestAgent2QualityAnalysisKeys:
+    def test_stub_returns_every_key_the_convergence_check_reads(self):
+        import agents.agent_2_entity_extractor as a2
+
+        analysis = a2.EntityRelationshipExtractor(api_key="sk-dummy").analyze_extraction_quality(
+            extraction_results={"entity_types": {"LENDER": {}}, "relationships": {}},
+            iteration=1,
+        )
+
+        for key in (
+            "overall_score", "entity_quality_score", "relationship_quality_score",
+            "business_rules_score", "coverage_score", "improvement_priorities",
+        ):
+            assert key in analysis, f"missing {key!r} — run_iterations_with_optimization would silently read 0"
+        assert analysis["overall_score"] > 0
+        assert analysis["entity_quality_score"] > 0
+        assert analysis["relationship_quality_score"] > 0
+
+    def test_quality_based_early_stop_can_actually_fire(self, monkeypatch):
+        """End-to-end: with the target set at or below the stub's overall_score,
+        the quality path (not just new_items) must be able to converge the
+        run — proving the read and write sides now genuinely agree."""
+        import agents.agent_2_entity_extractor as a2
+
+        monkeypatch.setenv("KG_ENTITY_QUALITY_TARGET", "85")
+        monkeypatch.setenv("KG_ENTITY_MIN_ITERATIONS", "1")
+        # Every fake iteration below adds one genuinely new entity (new_items=1),
+        # so the new_items<=0 path never fires — only the quality path can converge.
+        monkeypatch.setenv("KG_ENTITY_MIN_NEW_ITEMS", "0")
+
+        agent = a2.ComplianceEntityRelationshipAgent(api_key="sk-dummy")
+        calls = {"count": 0}
+
+        def fake_extract(prompt):
+            calls["count"] += 1
+            return {"entity_types": {f"ENTITY_{calls['count']}": {}}, "relationships": {}}
+
+        monkeypatch.setattr(agent, "extract_entities_and_relationships", fake_extract)
+
+        agent.run_iterations_with_optimization(documents=[], n_iterations=5)
+
+        assert calls["count"] == 1, "quality_score >= quality_target should have converged after iteration 1"

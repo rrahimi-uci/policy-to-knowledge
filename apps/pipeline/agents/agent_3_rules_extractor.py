@@ -1475,7 +1475,10 @@ def main():
     
     # Process batches in parallel (simultaneous API calls)
     # This reduces extraction time significantly
-    max_workers = int(os.environ.get('MAX_WORKERS', '20'))  # Default to 20 workers, override with MAX_WORKERS env var
+    # config.get_max_workers() already implements "MAX_WORKERS env var, else
+    # pipeline.max_workers (40)" — reading os.environ directly here
+    # duplicated that logic with a different, lower hardcoded fallback (20).
+    max_workers = config.get_max_workers()
     extractor.extract_rules_parallel(batches, max_workers=max_workers)
 
     # Validate that every rule is bucketed under a canonical Agent 2

@@ -116,7 +116,15 @@ class KnowledgeGraphOptimizer:
             max_retries=self.config.get_max_retries()
         )
         self.prompt_manager = get_prompt_manager()
-        self.max_workers = int(os.environ.get('MAX_WORKERS', '1'))
+        # config.get_max_workers() already implements "MAX_WORKERS env var,
+        # else pipeline.max_workers (40)" — reading os.environ directly here
+        # duplicated that logic with the wrong fallback (1, not 40), so any
+        # run that didn't explicitly pass --workers silently serialized this
+        # agent's entire dedup batch loop and cross-batch dependency pass
+        # (both otherwise built to run on a ThreadPoolExecutor sized to
+        # self.max_workers) despite the CLI's own --workers help text and
+        # this class's docstring both describing a default of 40.
+        self.max_workers = self.config.get_max_workers()
         
         print(f"""
 ╔══════════════════════════════════════════════════════════════════════╗
@@ -391,6 +399,15 @@ class KnowledgeGraphOptimizer:
             
             # Collect all source_references from primary + duplicates into an array
             collected_refs = []
+            # Collect field_evidence too — a removed duplicate's per-field
+            # citations (scope_basis, outcomes, exceptions, ...) are real
+            # evidence for the merged rule, not just its source_reference.
+            # Dropping them silently loses a section's only citation whenever
+            # that section was cited exclusively through a duplicate's
+            # field_evidence, which corpus_manifest's "every corpus change
+            # needs an explicit reason" check then correctly flags as an
+            # unexplained removal — this preserves the evidence instead.
+            collected_field_evidence: Dict[str, List[Any]] = {}
             for rid in [primary_id] + duplicates:
                 r = rule_lookup.get(rid)
                 if not r:
@@ -402,7 +419,15 @@ class KnowledgeGraphOptimizer:
                     collected_refs.extend(ref)
                 elif isinstance(ref, str) and ref:
                     collected_refs.append(ref)
-            
+                field_evidence = r.get('field_evidence')
+                if isinstance(field_evidence, dict):
+                    for field_path, entries in field_evidence.items():
+                        entry_list = entries if isinstance(entries, list) else ([entries] if entries else [])
+                        bucket = collected_field_evidence.setdefault(field_path, [])
+                        for entry in entry_list:
+                            if entry not in bucket:
+                                bucket.append(entry)
+
             # Store enhanced information for primary rule
             enhanced_rules[primary_id] = {
                 "merged_description": group["merged_description"],
@@ -416,7 +441,8 @@ class KnowledgeGraphOptimizer:
                     "primary_selection_reason": group.get("primary_selection_reason", "")
                 },
                 "merged_examples": group.get("merged_examples", []),
-                "collected_references": collected_refs
+                "collected_references": collected_refs,
+                "collected_field_evidence": collected_field_evidence
             }
         
         # Build deduplicated list
@@ -443,7 +469,17 @@ class KnowledgeGraphOptimizer:
                     else:
                         # Multiple references — store as array
                         rule["source_reference"] = collected
-            
+                # Merge in field_evidence collected from every merged duplicate,
+                # keeping the primary rule's own entries (added first, above)
+                # rather than replacing them.
+                collected_field_evidence = enhanced_rules[rule_id].get("collected_field_evidence", {})
+                if collected_field_evidence:
+                    existing_field_evidence = rule.get("field_evidence")
+                    merged_field_evidence = dict(existing_field_evidence) if isinstance(existing_field_evidence, dict) else {}
+                    for field_path, entries in collected_field_evidence.items():
+                        merged_field_evidence[field_path] = entries
+                    rule["field_evidence"] = merged_field_evidence
+
             deduplicated_rules.append(rule)
         
         metadata = {

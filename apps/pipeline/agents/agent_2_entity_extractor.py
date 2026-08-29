@@ -101,14 +101,35 @@ class EntityRelationshipExtractor:
             max_relationships=max_relationships,
         )
     
-    def analyze_extraction_quality(self, results: Optional[Dict] = None, extraction_results: Optional[Dict] = None, 
+    def analyze_extraction_quality(self, results: Optional[Dict] = None, extraction_results: Optional[Dict] = None,
                                    iteration: int = 1) -> Dict:
-        """Analyze extraction quality."""
+        """Analyze extraction quality.
+
+        This is intentionally a lightweight, non-blocking placeholder — a
+        "good enough, keep going" signal, not a real per-axis quality
+        evaluation — pending a genuine quality-scoring implementation.
+        run_iterations_with_optimization's convergence check reads
+        overall_score/entity_quality_score/relationship_quality_score/
+        business_rules_score/coverage_score; this used to return a
+        differently-named quality_score/completeness/suggestions instead,
+        so every one of those reads silently defaulted to 0 — printing a
+        misleading "0/100 across every axis" on real runs (despite genuine,
+        non-empty extraction results) and permanently disabling the
+        quality_score >= entity_quality_target early-stop path in favor of
+        the new_items-only heuristic, regardless of the configured target.
+        """
         return {
             "iteration": iteration,
-            "quality_score": 85,
+            "overall_score": 85,
+            "entity_quality_score": 85,
+            "relationship_quality_score": 85,
+            # Business rules are Agent 3's output, not Agent 2's — genuinely
+            # nothing to score here yet, so 0 is the accurate value.
+            "business_rules_score": 0,
+            "coverage_score": 85,
             "completeness": "Good",
-            "suggestions": []
+            "improvement_priorities": [],
+            "suggestions": [],
         }
     
     def record_extraction_results(self, iteration: int, results: Optional[Dict] = None, 

@@ -1,3 +1,5 @@
+import threading
+import time
 from copy import deepcopy
 from importlib import import_module
 
@@ -140,6 +142,53 @@ def test_legacy_naming_and_rule_shapes_normalise_to_one_v2_contract():
     assert issues == []
     assert rule["test_vectors"][0]["vector_basis"] == "derived_from_source"
     assert rule["variables"][-1]["free_text"] is True
+
+
+# ─────────────────────────────────────────────────────────────────────────
+# variables[].type / condition_predicates[].operator: the same
+# LEGACY_VALUE_TYPES/LEGACY_OPERATORS alias tables already used for
+# value_type fields were never applied to variables[].type itself, and two
+# real-world aliases the model produced ("enum_array", "contains_any") were
+# missing from those tables entirely. Real case from a full OPP-115 run: 5
+# rules failed v2 validation with invalid_variable_type ("string_array"/
+# "enum_array") and 2 more with invalid_predicate_operator ("contains_any"),
+# each a reasonable, unambiguous alias for an already-accepted value.
+# ─────────────────────────────────────────────────────────────────────────
+
+def test_variable_type_gets_the_same_legacy_alias_normalisation_as_value_type():
+    rule = valid_rule()
+    rule["variables"].append({"name": "notification_channels", "type": "string_array", "role": "input"})
+    rule["variables"].append({"name": "sharing_purposes", "type": "enum_array", "role": "input"})
+
+    normalise_rule_contract(rule)
+
+    assert rule["variables"][-2]["type"] == "list"
+    assert rule["variables"][-1]["type"] == "list"
+
+
+def test_contains_any_operator_normalises_to_in():
+    rule = valid_rule()
+    rule["condition_predicates"].append({
+        "predicate_id": "p2",
+        "variable": "price_differential_amount",
+        "operator": "contains_any",
+        "value": ["sale", "merger", "bankruptcy"],
+        "value_type": "list",
+    })
+
+    normalise_rule_contract(rule)
+
+    assert rule["condition_predicates"][-1]["operator"] == "in"
+
+
+def test_string_array_variable_type_no_longer_fails_v2_validation():
+    rule = valid_rule()
+    rule["variables"].append({"name": "notification_channels", "type": "string_array", "role": "input"})
+
+    normalise_rule_contract(rule)
+    issues = validate_rule_v2(rule, {"SELLER_SERVICER", "FANNIE_MAE"})
+
+    assert not any(issue.code == "invalid_variable_type" for issue in issues)
 
 
 # ─────────────────────────────────────────────────────────────────────────
@@ -373,3 +422,65 @@ def test_uncovered_pairs_use_mechanical_disjoint_proof_before_falling_back_to_un
     overlapping_pair = by_pair[("BR-1", "BR-3")]
     assert overlapping_pair["status"] == "unresolved"
     assert "share an outcome variable" in overlapping_pair["reasoning"]
+
+
+def test_large_entity_group_dispatches_its_output_variable_buckets_concurrently(tmp_path, monkeypatch):
+    """A single dominant entity (e.g. a generic LENDER/FIRST_PARTY bucket)
+    can hold most of a graph's rules, splitting into many independent
+    output-variable batches once it exceeds KG_CONFLICT_MAX_RULES_PER_CALL.
+    Each batch is its own LLM call with no dependency on the others — this
+    regression guards against dispatching them one at a time in a plain
+    loop, which on a real OPP-115 benchmark run left the whole
+    conflict-analysis phase running at an effective concurrency of 1 despite
+    the outer per-entity thread pool having far more room to give it."""
+    monkeypatch.setenv("KG_CONFLICT_MAX_RULES_PER_CALL", "2")
+    organized = tmp_path / "organized" / "B2-1-01"
+    organized.mkdir(parents=True)
+    (organized / "001.txt").write_text("A seller servicer must limit pools to three.")
+
+    rules = []
+    for i, var in enumerate(("var_a", "var_b", "var_c")):
+        for j in range(2):
+            rule = deepcopy(valid_rule())
+            rule["rule_id"] = f"BR-{var}-{j}"
+            rule["outcomes"][0]["variable"] = var
+            rule["variables"][-1]["name"] = var
+            rule["test_vectors"][0]["expected_output"] = {var: j}
+            rules.append(rule)
+    graph = {
+        "business_rules": rules,
+        "entity_types": {"SELLER_SERVICER": {}, "FANNIE_MAE": {}},
+        "relationships": [],
+        "dependency_details": {"dependencies": []},
+    }
+
+    active = 0
+    peak_active = 0
+    lock = threading.Lock()
+
+    class ConcurrencyTrackingResolver(Resolver):
+        def analyse_entity(self, entity, rules):
+            nonlocal active, peak_active
+            with lock:
+                active += 1
+                peak_active = max(peak_active, active)
+            time.sleep(0.2)
+            with lock:
+                active -= 1
+            return [{
+                "entity": entity,
+                "rule_ids": [rule["rule_id"] for rule in rules],
+                "status": "non_conflict",
+                "reasoning": "distinct outputs",
+                "resolution": "no conflict",
+            }]
+
+    start = time.monotonic()
+    ExecutableReadinessCompleter(ConcurrencyTrackingResolver()).complete(
+        graph, graph, str(tmp_path / "organized")
+    )
+    elapsed = time.monotonic() - start
+
+    assert peak_active > 1, "output-variable buckets ran one at a time despite concurrent dispatch"
+    # 3 buckets at 0.2s each: ~0.6s serial vs a fraction of that concurrently.
+    assert elapsed < 0.5, f"took {elapsed:.2f}s — looks serial, not concurrent"

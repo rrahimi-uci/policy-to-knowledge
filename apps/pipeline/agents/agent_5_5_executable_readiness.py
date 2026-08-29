@@ -156,6 +156,7 @@ LEGACY_ENTITY_NAMES = {
 
 LEGACY_VALUE_TYPES = {
     "array": "list",
+    "enum_array": "list",
     "enum_list": "list",
     "list_number": "list",
     "number_list": "list",
@@ -166,6 +167,11 @@ LEGACY_VALUE_TYPES = {
 LEGACY_OPERATORS = {
     "=": "==",
     "BETWEEN": "in",
+    # "contains_any" is the model's reasonable-but-undocumented name for
+    # exactly what "in" already means (does the actual value match any of a
+    # given set) — same cross-pollination pattern as the other legacy
+    # aliases here, just for operators instead of value/variable types.
+    "contains_any": "in",
     "IN": "in",
     "NOT_IN": "not_in",
 }
@@ -425,6 +431,16 @@ def _normalise_rule_contract(rule: dict[str, Any]) -> dict[str, Any]:
     for variable in variables:
         if not isinstance(variable, dict):
             continue
+        # variables[].type shares VARIABLE_TYPES with condition_predicates/
+        # outcomes/exceptions' value_type, but only this loop's own two
+        # special cases (datetime, string) were ever normalised here — the
+        # LEGACY_VALUE_TYPES alias table used everywhere else was never
+        # applied to it, so a variable typed "string_array"/"enum_array"
+        # (the model's reasonable-but-undocumented plural of an accepted
+        # type, exactly like the aliases already mapped below) failed v2
+        # validation outright instead of normalising to "list" like its
+        # value_type counterparts already do.
+        variable["type"] = _normalise_value_type(variable.get("type"))
         if variable.get("type") == "datetime":
             variable["type"] = "date_time"
         if variable.get("type") == "string":
@@ -989,19 +1005,35 @@ class ExecutableReadinessCompleter:
                 analyses = self.resolver.analyse_entity(entity, summaries) if self.resolver else []
                 entries.extend(dict(item) for item in analyses if isinstance(item, Mapping))
             else:
-                for variable, bucket in sorted(output_buckets.items()):
-                    if len(bucket) < 2:
-                        continue
-                    bucket_ids = sorted(set(bucket))
-                    for start in range(0, len(bucket_ids), max_rules_per_call):
-                        batch_ids = bucket_ids[start:start + max_rules_per_call]
-                        if len(batch_ids) < 2:
-                            continue
-                        analyses = self.resolver.analyse_entity(
-                            entity,
-                            [item for item in summaries if str(item.get("rule_id")) in batch_ids],
-                        ) if self.resolver else []
-                        entries.extend(dict(item) for item in analyses if isinstance(item, Mapping))
+                # One dominant entity (e.g. a generic LENDER/FIRST_PARTY
+                # bucket) can hold most of a graph's rules, splitting into
+                # dozens of independent output-variable batches — each is
+                # its own LLM call with no dependency on the others. This
+                # used to dispatch them one at a time in a plain loop, which
+                # on a real run left this entire conflict-analysis phase
+                # running at an effective concurrency of 1 even though the
+                # outer per-entity ThreadPoolExecutor (and the shared LLM
+                # concurrency gate) had far more room to give it.
+                batch_id_groups = [
+                    bucket_ids[start:start + max_rules_per_call]
+                    for _variable, bucket in sorted(output_buckets.items())
+                    if len(bucket) >= 2
+                    for bucket_ids in [sorted(set(bucket))]
+                    for start in range(0, len(bucket_ids), max_rules_per_call)
+                    if len(bucket_ids[start:start + max_rules_per_call]) >= 2
+                ]
+
+                def _call_bucket(batch_ids: list[str]) -> list[dict[str, Any]]:
+                    analyses = self.resolver.analyse_entity(
+                        entity,
+                        [item for item in summaries if str(item.get("rule_id")) in batch_ids],
+                    ) if self.resolver else []
+                    return [dict(item) for item in analyses if isinstance(item, Mapping)]
+
+                if batch_id_groups:
+                    with ThreadPoolExecutor(max_workers=min(readiness_workers, len(batch_id_groups)), thread_name_prefix="kg-conflict-bucket") as bucket_executor:
+                        for bucket_entries in bucket_executor.map(_call_bucket, batch_id_groups):
+                            entries.extend(bucket_entries)
 
                 # Cover all pairs that cannot share an output assignment with
                 # compact deterministic entries. The model is reserved for
