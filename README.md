@@ -18,9 +18,10 @@
 [**🏛️ Architecture**](https://rrahimi-uci.github.io/policy-to-knowledge/architecture.html) &nbsp;·&nbsp;
 [**🗂️ Repository layout**](docs/STRUCTURE.md)
 
-**Release:** `p2k-v0.0.1` — a documented compliance-knowledge pipeline with a 10-agent
-OpenAI extraction flow, traceable graph provenance, Explorer workflows, and reproducible
-backend/frontend test commands.
+**Release:** `p2k-v0.0.1` — the tagged snapshot: a documented compliance-knowledge pipeline
+with a 10-agent OpenAI flow, traceable graph provenance, Explorer workflows, and reproducible
+backend/frontend test commands. `main` has since added the executable-readiness, remediation,
+grounding-verification, and dependency-DAG stages described below.
 
 </div>
 
@@ -28,7 +29,7 @@ backend/frontend test commands.
 
 ## 💡 What it does
 
-Compliance teams drown in dense, ever-changing policy documents. **Policy to Knowledge** runs those documents through a **10-agent OpenAI pipeline** that extracts business rules and entities, deduplicates and links them, and emits an optimized **knowledge graph** — with every rule traceable back to the source passage it came from. A graph **Explorer** then lets you query, visualize, annotate, compare, and version the result.
+Compliance teams drown in dense, ever-changing policy documents. **Policy to Knowledge** runs those documents through a **15-agent OpenAI pipeline** — eleven for extraction, four for comparison — that extracts business rules and entities, deduplicates and links them, gates the result on executable readiness, independently re-verifies every claim against the source corpus, partitions the survivors into dependency DAGs, and emits an optimized **knowledge graph** — with every rule traceable back to the source passage it came from. A graph **Explorer** then lets you query, visualize, annotate, compare, and version the result.
 
 <table>
 <tr>
@@ -73,9 +74,9 @@ flowchart LR
         DOCS["Policy documents<br/>PDF · DOCX · MD · CSV"]
     end
 
-    subgraph PIPE["⚙️ Pipeline &nbsp;— &nbsp;10 OpenAI agents"]
+    subgraph PIPE["⚙️ Pipeline &nbsp;— &nbsp;15 OpenAI agents"]
         direction TB
-        EXTRACT["Extract &nbsp;(1→6)<br/>chunk · entities · rules<br/>validate · merge · optimize"]
+        EXTRACT["Extract &nbsp;(1→7)<br/>chunk · entities · rules · validate · merge<br/>optimize · readiness · ground · DAGs · report"]
         COMPARE["Compare &nbsp;(7→10)<br/>cluster · match<br/>set ops · visualize"]
         EXTRACT -.->|two graphs| COMPARE
     end
@@ -103,7 +104,7 @@ flowchart LR
     class EXPLORER ui;
 ```
 
-### The 10-agent pipeline
+### The 15-agent pipeline
 
 <div align="center">
 
@@ -118,10 +119,15 @@ flowchart LR
         A3 --> A35["✅ 3.5<br/>Validator"]
         A35 --> A4["🔗 4<br/>Merger"]
         A4 --> A5["⚡ 5<br/>Optimizer"]
-        A5 --> A6["📊 6<br/>Visualize"]
+        A5 --> A55{{"🚦 5.5<br/>Readiness"}}
+        A55 -.->|"rules under review"| A56["🩹 5.6<br/>Remediator"]
+        A56 -.->|"re-check"| A55
+        A55 --> A57{{"🔍 5.7<br/>Grounding"}}
+        A57 --> A6D["🕸️ 6<br/>DAGs"]
+        A6D --> A7V["📊 7<br/>Visualize"]
     end
 
-    A6 --> KG[("🕸️ Knowledge<br/>graph")]
+    A7V --> KG[("🕸️ Knowledge<br/>graph")]
 
     subgraph COMPARE["Comparison &nbsp;· &nbsp;cli/compare.py"]
         direction LR
@@ -136,7 +142,7 @@ flowchart LR
     classDef ext fill:#fef3c7,stroke:#d97706,color:#451a03;
     classDef cmp fill:#e0f2fe,stroke:#0284c7,color:#082f49;
     classDef data fill:#dcfce7,stroke:#16a34a,color:#052e16;
-    class A1,A2,A3,A35,A4,A5,A6 ext;
+    class A1,A2,A3,A35,A4,A5,A55,A56,A57,A6D,A7V ext;
     class A7,A8,A9,A10 cmp;
     class KG,DIFF data;
 ```
@@ -151,11 +157,25 @@ flowchart LR
 | 3.5 | ✅ Validator | Extraction | Verify rules against source text |
 | 4 | 🔗 Merger | Extraction | Merge rules and entities into a graph |
 | 5 | ⚡ Optimizer | Extraction | Deduplicate and map dependencies |
-| 6 | 📊 Visualization | Extraction | Render HTML report and graph |
+| 5.5 | 🚦 Executable Readiness | Extraction | Resolve scope/exceptions, derive chains, validate the readiness invariants |
+| 5.6 | 🩹 Readiness Remediator | Extraction | Focused, evidence-backed repair — runs only when 5.5 reports rules under review |
+| 5.7 | 🔍 Grounding Verifier | Extraction | Independently re-certify every executable claim against the organized source corpus; never rewrites |
+| 6 | 🕸️ DAG Generator | Extraction | Partition rules into dependency DAGs with a checked 100%-coverage guarantee |
+| 7 | 📊 Visualization | Extraction | Render HTML report and graph |
 | 7 | 📊 Clusterer | Comparison | Cluster rules across two graphs |
 | 8 | 🔍 Semantic Matcher | Comparison | Match semantically equivalent rules |
 | 9 | ➗ Set Operations | Comparison | Compute intersection / difference / union |
 | 10 | 🎨 Set Visualization | Comparison | Render comparison HTML outputs |
+
+> **On the numbering.** The two pipelines number their agents independently, so
+> "7" means the extraction visualizer in `extract.py` and the clusterer in
+> `compare.py`. Two module names also lag their step number for backwards
+> compatibility: extraction step 7 still executes
+> `agents/agent_6_visualization_and_report.py` and still writes to
+> `agent-6-visualization-and-report/`, and step 3.5 runs in parallel with step 4
+> because it is read-only and non-blocking. Step 5 is one step that launches four
+> agents in sequence (5 → 5.5 → 5.7, with 5.6 in between only when 5.5 exits 3);
+> `--skip-optimize` skips all four.
 
 > Full technical breakdown in [**apps/pipeline/docs/ARCHITECTURE.md**](apps/pipeline/docs/ARCHITECTURE.md).
 
@@ -166,7 +186,7 @@ flowchart LR
 | Path | Purpose | Default URL |
 | --- | --- | --- |
 | [`apps/shell/`](apps/shell) | React + Vite **suite shell** that embeds the app UIs | `http://localhost:4000` |
-| [`apps/pipeline/`](apps/pipeline) | 10-agent extraction + compare pipeline, FastAPI API, React UI | API `:8000` · UI `:5173` |
+| [`apps/pipeline/`](apps/pipeline) | 15-agent extraction + compare pipeline, FastAPI API, React UI | API `:8000` · UI `:5173` |
 | [`apps/explorer/`](apps/explorer) | Graph **Explorer** (Flask + JanusGraph/Cassandra/OpenSearch/Redis) | `http://localhost:5000/app`¹ |
 
 ¹ On macOS port `5000` is often taken by Docker/AirPlay; the launcher then serves the Explorer on `5050` (set `SERVER_PORT`).
@@ -178,8 +198,8 @@ flowchart LR
 .
 ├── apps/
 │   ├── shell/        # Suite shell — React + Vite (:4000)
-│   ├── pipeline/     # 10-agent pipeline + FastAPI API + React UI
-│   │   └── cli/      #   extract.py (agents 1–6) · compare.py (agents 7–10)
+│   ├── pipeline/     # 15-agent pipeline + FastAPI API + React UI
+│   │   └── cli/      #   extract.py (agents 1–7) · compare.py (agents 7–10)
 │   └── explorer/     # Graph explorer — Flask + JanusGraph + D3 UI
 ├── docs/             # GitHub Pages site (served from /docs)
 ├── assets/           # Shared brand assets
